@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-3
-title: Použití migrace Code First počáteční hodnoty databázi | Microsoft Docs
+title: Přidání dat do databáze pomocí migrace Code First | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,37 +9,36 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: 76e2013a-65b7-488c-834d-9448ecea378e
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 33bc6d82daa9ca5f46452a1adf4e2eebea04fa6c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d753ea52c57af2cbffff9e1e8741bbe49bc6d7b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869930"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37370523"
 ---
-<a name="use-code-first-migrations-to-seed-the-database"></a>Použití migrace Code First počáteční hodnoty databáze
+<a name="use-code-first-migrations-to-seed-the-database"></a>Přidání dat do databáze pomocí migrace Code First
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
+[Stáhnout dokončený projekt](https://github.com/MikeWasson/BookService)
 
-V této části budete používat [migrace Code First](https://msdn.microsoft.com/data/jj591621) v EF počáteční hodnoty databáze s testovacích datech.
+V této části použijete [migrace Code First](https://msdn.microsoft.com/data/jj591621) v EF naplnit databázi daty testu.
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**, pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-console[Main](part-3/samples/sample1.cmd)]
 
-Tento příkaz přidá složku s názvem migrace do projektu a kód soubor s názvem Configuration.cs ve složce migrace.
+Tento příkaz přidá složku do projektu s názvem migrace a navíc Configuration.cs ve složce migrace s názvem souboru kódu.
 
 ![](part-3/_static/image1.png)
 
-Otevřete soubor Configuration.cs. Přidejte následující **pomocí** příkaz.
+Otevřete soubor Configuration.cs. Přidejte následující **pomocí** příkazu.
 
 [!code-csharp[Main](part-3/samples/sample2.cs)]
 
-Pak přidejte následující kód, který **Configuration.Seed** metoda:
+Pak přidejte následující kód, který **Configuration.Seed** metody:
 
 [!code-csharp[Main](part-3/samples/sample3.cs)]
 
@@ -47,7 +46,7 @@ V okně konzoly Správce balíčků zadejte následující příkazy:
 
 [!code-console[Main](part-3/samples/sample4.cmd)]
 
-První příkaz vygeneruje kód, který vytvoří databázi a v druhém příkazu spustí tento kód. Databáze je vytvořená místně, pomocí [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx).
+První příkaz vygeneruje kód, který vytvoří databázi a druhý příkaz spustí tento kód. Databáze se vytvoří místně, pomocí [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx).
 
 ![](part-3/_static/image2.png)
 
@@ -55,11 +54,11 @@ První příkaz vygeneruje kód, který vytvoří databázi a v druhém příkaz
 
 Stisknutím klávesy F5 spusťte aplikaci v režimu ladění. Visual Studio spustí službu IIS Express a spustí webovou aplikaci. Visual Studio pak spustí prohlížeč a otevře domovskou stránku aplikace.
 
-Po spuštění webového projektu sady Visual Studio přiřadí číslo portu. Na obrázku níže číslo portu je 50524. Při spuštění aplikace se zobrazí jiné číslo portu.
+Když Visual Studio spustí webový projekt, přiřadí číslo portu. Na následujícím obrázku je číslo portu 50524. Při spuštění aplikace se zobrazí jiné číslo portu.
 
 ![](part-3/_static/image3.png)
 
-Domovská stránka je implementovaná pomocí ASP.NET MVC. V horní části stránky je odkaz, který uvádí "API". Tento odkaz vám přináší na stránku nápovědy automaticky generovaných pro webové rozhraní API. (Další způsob, jakým vygeneruje tuto stránku nápovědy a jak můžete přidat vlastní dokumentaci na stránku najdete v tématu [vytváření pomoci stránek pro ASP.NET Web API](../../getting-started-with-aspnet-web-api/creating-api-help-pages.md).) Chcete-li zobrazit podrobnosti o rozhraní API, včetně formát požadavku a odpovědi odkazů na stránky se můžete kliknutím na tlačítko Nápověda.
+Na domovské stránce se implementuje pomocí technologie ASP.NET MVC. V horní části stránky je odkaz, který říká "Rozhraní API". Tento odkaz vám přináší na stránku nápovědy pro automaticky generované pro webové rozhraní API. (Další způsob, jakým vygeneruje tuto stránku nápovědy a jak můžete přidat vlastní dokumentaci na stránku, najdete v článku [vytváření stránky nápovědy pro rozhraní ASP.NET Web API](../../getting-started-with-aspnet-web-api/creating-api-help-pages.md).) Kliknutím na dlaždici Nápověda odkazů na stránky zobrazíte podrobnosti o rozhraní API, včetně formát požadavku a odpovědi.
 
 ![](part-3/_static/image4.png)
 
@@ -67,31 +66,31 @@ Rozhraní API umožňuje operace CRUD v databázi. Zde je souhrn rozhraní API.
 
 | Autoři |  |
 | --- | -- |
-| ZÍSKAT rozhraní api nebo autoři | Získáte všechny autory. |
-| Rozhraní api nebo autoři GET / {id} | Získat Autor podle ID. |
-| POST/api/autoři | Vytvořte nový autora. |
-| UVEĎTE /api/autoři / {id} | Aktualizujte stávající autora. |
-| Odstranit /api/autoři / {id} | Odstraňte Autor. |
+| ZÍSKÁNÍ rozhraní api/autorů | Získáte všichni autoři. |
+| Rozhraní api GET/autoři / {id} | Získat Autor podle ID. |
+| PŘÍSPĚVEK/api/autorů | Vytvořte nový Autor. |
+| Vložení/webové rozhraní API/autoři / {id} | Aktualizujte existující Autor. |
+| ODSTRANIT/webové rozhraní API/autoři / {id} | Odstraňte Autor. |
 
 | Knihy |  |
 | --- | -- |
-| ZÍSKAT /api/books | Získání všech knih. |
-| ZÍSKAT /api/books / {id} | Získání seznamu pomocí ID. |
-| ODESÍLÁNÍ/api/seznamů | Vytvoření nového seznamu. |
-| UVEĎTE /api/books / {id} | Aktualizujte stávající adresáře. |
-| Odstranit /api/books / {id} | Odstranění seznamu. |
+| ZÍSKAT /api/books | Získáte všechny knihy. |
+| ZÍSKAT/webové rozhraní API/books / {id} | Získat knihu podle ID. |
+| Publikovat/api/knihy | Vytvoření nového adresáře. |
+| Vložení/webové rozhraní API/books / {id} | Aktualizace existujícího adresáře. |
+| ODSTRANIT/webové rozhraní API/books / {id} | Odstraňte knihy. |
 
-## <a name="view-the-database-optional"></a>Zobrazení databáze (volitelné)
+## <a name="view-the-database-optional"></a>Zobrazení databáze (nepovinné)
 
-Když jste spustili příkaz Update-Database, EF databáze a názvem `Seed` metoda. Když aplikaci spouštíte místně, použije EF [LocalDB](https://blogs.msdn.com/b/sqlexpress/archive/2011/07/12/introducing-localdb-a-better-sql-express.aspx). Databázi můžete zobrazit v sadě Visual Studio. Z **zobrazení** nabídce vyberte možnost **Průzkumník objektů systému SQL Server**.
+Při spuštění příkazu Update-databázi EF vytváření databáze a volá se, `Seed` metody. Když aplikaci spouštíte místně, pomocí EF [LocalDB](https://blogs.msdn.com/b/sqlexpress/archive/2011/07/12/introducing-localdb-a-better-sql-express.aspx). Databázi můžete zobrazit v sadě Visual Studio. Z **zobrazení** nabídce vyberte možnost **Průzkumník objektů systému SQL Server**.
 
 ![](part-3/_static/image5.png)
 
-V **připojit k serveru** dialogové okno, v **název serveru** textové pole, zadejte "(localdb) \v11.0". Ponechte **ověřování** možnost jako "Ověřování systému Windows". Klikněte na tlačítko **připojit**.
+V **připojit k serveru** dialogového okna v **název serveru** textové pole, zadejte "(localdb) \v11.0". Nechte **ověřování** možnost "Ověřování Windows". Klikněte na tlačítko **připojit**.
 
 ![](part-3/_static/image6.png)
 
-Visual Studio připojí na instanci LocalDB a ukazuje vaše stávající databáze, v okně Průzkumník objektů systému SQL Server. Můžete rozbalit uzly zobrazíte tabulek, které EF vytvořeny.
+Visual Studio na instanci LocalDB se připojí a zobrazuje existujících databází v okně Průzkumník objektů systému SQL Server. Lze rozbalit uzly zobrazíte tabulky, které EF vytvořili.
 
 ![](part-3/_static/image7.png)
 
@@ -99,7 +98,7 @@ Chcete-li zobrazit data, klikněte pravým tlačítkem na tabulku a vyberte **Da
 
 ![](part-3/_static/image8.png)
 
-Následující snímek obrazovky ukazuje výsledky pro knihy tabulky. Všimněte si, že EF naplní databázi s počáteční hodnoty data a tabulka obsahuje cizí klíč k tabulce Autoři.
+Následující snímek obrazovky ukazuje výsledky pro tabulku knihy. Všimněte si, že EF naplnit databázi daty počáteční hodnoty a tabulka obsahuje cizí klíč do tabulky autoři.
 
 ![](part-3/_static/image9.png)
 

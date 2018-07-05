@@ -1,199 +1,198 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
-title: Fronty způsob práce zaměřený (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Vzor založený na frontě práce (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 124e673206ecea2eac5efb8c2802a32a690fa104
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fd8f9165de333d22bed0001bb932d7bab8430672
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30875432"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37370255"
 ---
-<a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Fronty způsob práce zaměřený (vytváření reálných cloudových aplikací s Azure)
+<a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Vzor založený na frontě práce (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Informace o elektronická kniha najdete v tématu [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Jsme viděli dříve, že pomocí několika služeb může vést ke "složené" SLA, kde je aplikace efektivní SLA *produktu* z jednotlivých SLA. Například aplikace opravte používá webové servery, úložiště a databáze SQL. V případě selhání některého z těchto služeb aplikaci vrátí chybu pro uživatele.
+Dříve jsme viděli, že pomocí několika služeb může způsobit "složený" smlouvou SLA, kde je aplikace platné smlouvy SLA *produktu* jednotlivých smlouvách SLA. Například aplikace Fix It používá webové servery, úložiště a SQL Database. Pokud selže některý z těchto služeb aplikaci vrátí chybu uživateli.
 
-Ukládání do mezipaměti je dobrý způsob, jak zpracovat přechodných chyb obsahu jen pro čtení. Ale co když aplikace potřebuje fungují? Například když uživatel odešle nové úlohy opravte ji, aplikace nelze právě přidat úloha do mezipaměti. Aplikace potřebuje k zápisu do úložiště dat, úloha opravit, tak může být zpracována.
+Ukládání do mezipaměti je dobrým způsobem, jak řešit přechodná selhání pro obsah jen pro čtení. Ale co když vaše aplikace potřebuje k práci? Například když uživatel odešle nový úkol Fix It, aplikace nejde stačí umístit úlohy do mezipaměti. Aplikace musí zapisovat úloha opravit do do trvalého úložiště dat, takže je možné je zpracovat.
 
-To je, kde vzoru fronty způsob práce se dodává. Tento vzor umožňuje volné párování mezi webovou vrstvu a back-end službu.
+Je to, kde vzor založený na frontě práci dodává. Tento model umožňuje volné párování mezi webovou vrstvu a back-end službu.
 
-Zde je, jak funguje vzoru. Když aplikace získá žádost, zařadí do fronty pracovní položku a hned vrátí odpověď. Proces samostatné back-end pak vrátí pracovní položky z fronty a provádí práce.
+Zde je, jak funguje vzor. Když aplikace načte žádost, vloží pracovní položky do fronty a okamžitě se vrátí odpověď. Samostatné back-endový proces pak načte pracovní položky z fronty a provádí.
 
-Vzor fronty způsob práce je užitečné pro:
+Pracovní postup založený na frontě model je vhodný pro:
 
-- Práci, kterou je časově náročná (vysokou latencí).
-- Práci, kterou vyžaduje externí služba, která nemusí být k dispozici.
-- Fungovat, který je náročný (vysoké využití procesoru).
-- Práci, kterou by těžit z míry vyrovnávání (přičemž podléhá shluky nečekané zatížení).
+- Práce, která je časově náročné (vysoká latence).
+- Práce, která vyžaduje externí služby, která nemusí být k dispozici.
+- Práce, který je náročné (vysoké využití procesoru).
+- Práce, která je výhodná míra vyrovnání (v souladu s nárůstem zatížení i s náhlými).
 
-## <a name="reduced-latency"></a>Menší latence
+## <a name="reduced-latency"></a>Nižší latence
 
-Fronty jsou užitečné, když budete věnovat práci časově náročná. Pokud úloha trvá několik sekund nebo déle místo blokování koncového uživatele, umístí do fronty pracovní položku. Informace pro uživatele "Pracujeme na něm" a pak používat naslouchací proces fronty ke zpracování úloh na pozadí.
+Fronty jsou užitečné pokaždé, když provádíte časově náročné práce. Pokud úloha trvá několik sekund nebo delší, místo blokuje koncovému uživateli, vložit do fronty pracovní položku. Informace pro uživatele "Pořád pracujeme na něm" a potom použití naslouchací proces fronty ke zpracování úloh na pozadí.
 
-Například při nákupu něco v online prodejce, webová stránka potvrzuje vaši objednávku okamžitě. Ale který neznamená, že se vaše vlastní položky již vůz, doručování. Jejich uvést úlohu do fronty, a na pozadí jsou to pro účely ověření kredibility, Příprava položek pro přesouvání a tak dále.
+Například když zakoupíte na online prodejce, na webu společnosti potvrdí vaši objednávku okamžitě. Ale to neznamená, že váš obsah je již v truck distribuována. Úlohu se umístit do fronty, a na pozadí jsou to kredibility Příprava položek pro přesouvání a tak dále.
 
-Pro scénáře s krátkou latencí může být delší, pomocí fronty, porovná se provádění úlohy synchronně celkový čas začátku do konce. Ale dokonce i pak můžete další výhody převáží nad tuto nevýhody.
+Pro scénáře s krátkou latencí může být celkový čas začátku do konce delší použití fronty jako ve srovnání s synchronně provádění úkolu. Ale i pak, můžete další výhody převáží nad tuto nevýhodou.
 
-## <a name="increased-reliability"></a>Větší spolehlivost
+## <a name="increased-reliability"></a>Zvýšení spolehlivosti
 
-Ve verzi opravte ji, který jsme jste byla prohlížení dosavadní webového front-endu úzce spojeny s back-end databáze SQL. Pokud není k dispozici služba SQL databáze, uživatel získá chybu. Pokud nefungují opakovaných pokusů (to znamená, je více než přechodné selhání) je jediné, co můžete provést zobrazí chybu a požádat uživatele, a zkuste to znovu později.
+Ve verzi Fix It, který jste se díváme na zatím webového front-endu těsně spjat s back endovou databází SQL. Pokud službu SQL database k dispozici, uživatel obdrží chybu. Pokud nefunguje opakovaných pokusů (to znamená, je více než přechodné selhání) je jediné, co můžete dělat zobrazit chybu a požádat uživatele, a zkuste to znovu později.
 
-![Diagram znázorňující webový front-end selhání při selhání SQL Database back-end](queue-centric-work-pattern/_static/image1.png)
+![Diagram znázorňující webový front-end selhání back endovou databází SQL v případě selhání](queue-centric-work-pattern/_static/image1.png)
 
-Používání front, když uživatel odešle úlohu opravte ji aplikace zapíše zprávu do fronty. Datovou část zprávy je [JSON](http://json.org/) reprezentace úlohy. Jakmile je zpráva zapsána do fronty, aplikace vrátí a okamžitě zobrazí zpráva o úspěšném provedení uživateli.
+Použití front, když uživatel odešle úlohu Fix It, aplikace zapíše zprávu do fronty. Je datovou část zprávy [JSON](http://json.org/) reprezentace úlohy. Jakmile zapíše se do fronty, vrátí aplikace a okamžitě zobrazí uživateli zprávu o úspěšném dokončení.
 
-Pokud některé z služeb back-end – například databázi SQL nebo naslouchací proces fronty – přejít do režimu offline, uživatelé stále odesílat nové opravte ji úkoly. Zprávy se právě fronty, dokud znovu jsou k dispozici služby back-end. V tomto bodě se back-end služby aktualizovány na nevyřízené položky.
+Pokud některý z back-endové služby – jako je SQL database nebo fronty naslouchací proces – přejdou do režimu offline, mohou uživatelé stále odeslat novou Fix It úkolů. Zprávy pouze fronty až do back-endových služeb jsou k dispozici znovu. Back-endových služeb se od tohoto okamžiku se dohnat v nevyřízených položkách.
 
-![Diagram zobrazující webové front-endu nadále fungovat, když dojde k chybě SQL Database](queue-centric-work-pattern/_static/image2.png)
+![Diagram znázorňující webového front-endu nadále fungovat v případě, že dochází k chybě SQL Database](queue-centric-work-pattern/_static/image2.png)
 
-Kromě toho nyní můžete přidat další logiku back-end bez obav o odolnost front-endu. Například můžete chtít odeslat e-mail nebo SMS zprávy o vlastníkovi vždy, když je přiřazen nový opravte ji. E-mailu nebo služba SMS přestane být dostupný, můžete zpracovat všechno ostatní a pak přesuňte zprávu do samostatné frontu pro odesílání e-mailu nebo SMS zprávy.
+Kromě toho teď můžete přidat další logiku back-end bez starostí o odolnosti front-endu. Například můžete odesílat e-mailu nebo SMS zprávy o vlastníkovi pokaždé, když je přiřazen nové Fix It. Pokud e-mailu nebo služba SMS přestane být dostupný, můžete zpracovávat všechno ostatní a potom vložit zprávu do samostatné fronty pro odesílání e-mailu nebo SMS zprávy.
 
-Naše efektivní SLA byla dřív, webové aplikace &times; úložiště &times; SQL Database = 99,7 %. (Viz [návrhu, které zůstanou platné i po selhání](design-to-survive-failures.md).)
+SLA efektivní byl předtím Web Apps &times; úložiště &times; SQL Database = 99,7 %. (Viz [návrh odolný proti chybám](design-to-survive-failures.md).)
 
-Pokud jsme změnit aplikaci, aby používala fronty, má front-end webový závisí pouze na webové aplikace a úložiště pro složené SLA 99.8 %. (Všimněte si, že fronty jsou součástí služby úložiště Azure, jsou součástí stejné SLA jako úložiště objektů blob.)
+Když se změní app používáte frontu, webového front-endu závisí jenom na webové aplikace a úložiště, pro složené SLA 99,8 %. (Všimněte si, že fronty jsou součástí služby Azure storage, budou obsaženy ve stejné SLA jako na úložiště objektů blob.)
 
-Pokud potřebujete i lépe než 99.8 %, můžete vytvořit dvě fronty ve dvou různých oblastech. Určete jeden primární a druhý jako sekundární. V aplikaci převzetí služeb při selhání sekundární fronty je-li primární fronta není k dispozici. Možnost je k dispozici ve stejnou dobu jsou velmi malé.
+Pokud budete potřebovat ještě lepší než 99,8 %, můžete vytvořit dvě fronty ve dvou různých oblastech. Určete jeden jako primární a druhý jako sekundární. Ve vaší aplikaci převzetí služeb při selhání do sekundární fronty. Pokud se primární fronta není k dispozici. Možnost je k dispozici ve stejnou dobu je velmi malý.
 
-## <a name="rate-leveling-and-independent-scaling"></a>Míra vyrovnání a nezávislé škálování
+## <a name="rate-leveling-and-independent-scaling"></a>Míra vyrovnávání a nezávislé škálování
 
-Fronty jsou užitečné pro takzvaný *míra vyrovnávání* nebo *vyrovnávání zátěže*.
+Fronty jsou také užitečné se nazývá *ohodnotit vyrovnání* nebo *vyrovnávání zátěže*.
 
-Webové aplikace jsou často náchylné k nečekané shluky v provozu. I když můžete používat automatické škálování a automaticky tak přidejte webové servery pro zpracování zvýšené webový provoz, nemusí být schopné dostatečně rychle reagovat na zpracování náhlému špičky v zatížení automatické škálování. Pokud na webových serverech může přenést některé úkoly, které se mají udělat napsáním zprávu do fronty, jejich zvládli větší provoz. Back-end službu můžete číst zprávy z fronty a jejich zpracování. Hloubka fronty budou zvětšovat a zmenšovat jako příchozí zátěží se mění.
+Webové aplikace jsou často náchylné k náhlým nárůstům provozu. Při použití automatického škálování můžete automaticky přidávat webové servery pro zpracování zvýšené webového provozu, automatické škálování nemusí být schopné reagovat dostatečně rychle k náhlému poraďte se špičkami zatížení. Pokud webové servery může převzít některé činnosti, které se mají provést napsáním zprávu do fronty, které zpracovávají další provoz. Back-end službu můžete číst zprávy z fronty a jejich zpracování. Hloubka fronty bude zvětšovat nebo zmenšovat podle příchozí zátěží se mění.
 
-Mnohem časově náročné práce úlovek přeložen na back-end službu můžete se webová úroveň snadněji reagovat na nečekané špičky v provozu. A ušetřit peníze, protože jakékoli dané objem provozu, můžete ji zpracovat méně webové servery.
+S mnohem časově náročné práce úlovek přeložen na back-end službu můžete snadněji webové vrstvy reagovat k nečekaným špičkám provozu. A ušetřit peníze, protože jakýkoli daný objem provozu může být zpracována méně webových serverů.
 
-Můžete nezávisle škálovat webovou vrstvu a back-end službu. Například může vyžadovat tři webových serverů, ale pouze jeden server zpracování fronty zpráv. Nebo pokud spouštíte výpočetně náročných úloh na pozadí, bude pravděpodobně nutné další back-end serverů.
+Můžete nezávisle škálovat webovou vrstvu a back-end službu. Například můžete potřebovat tří webových serverů, ale pouze jeden server zpracování fronty zpráv. Nebo pokud spouštíte úlohy náročné na výpočetní prostředky na pozadí, bude pravděpodobně nutné další back-end serverů.
 
 ![](queue-centric-work-pattern/_static/image3.png)
 
-Automatické škálování funguje s back-end služby a také s webovou vrstvu. Můžete škálovat nebo snížit počet virtuálních počítačů, které jsou zpracování úloh ve frontě, na základě využití procesoru z back-end virtuálních počítačů. Nebo můžete použít automatické škálování na základě toho, kolik položek se ve frontě. Můžete například zjistit škálování pokusit se zachová maximálně 10 položek ve frontě. Pokud fronta má více než 10 položek, přidá škálování virtuálních počítačů. Pokud budou aktualizovány, bude škálování přerušit další virtuální počítače.
+Automatické škálování funguje s back-endových služeb můžou mít webové vrstvy. Můžete vertikálně navýšit kapacitu nebo vertikálně snížit kapacitu počtu virtuálních počítačů, které jsou zpracování úloh ve frontě a na základě využití procesoru z back-endový virtuální počítače. Nebo můžete automaticky škálovat podle toho, kolik položek se do fronty. Například můžete zjistit, automatické škálování se pokouší uchovávat maximálně 10 položek ve frontě. Pokud fronta má více než 10 položek, přidá automatické škálování virtuálních počítačů. Když se dozvíte, automatické škálování se dovolí nadbytečné virtuální počítače.
 
-## <a name="adding-queues-to-the-fix-it-application"></a>Přidání fronty pro opravu jeho aplikace
+## <a name="adding-queues-to-the-fix-it-application"></a>Přidání zařadí do fronty pro opravu se aplikace
 
-Implementace vzoru fronty, musíme mít dvě změny do aplikace opravit.
+Pro implementaci vzoru fronty, musíme provést dva změny do aplikace Fix It.
 
-- Když uživatel odešle nové úlohy opravte ji, uveďte úlohu ve frontě, místo zápis do databáze.
-- Vytvoření služby back-end, který zpracovává zprávy ve frontě.
+- Když uživatel odešle nový úkol Fix It, úloha má zařadit do fronty, namísto zapisuje do databáze.
+- Vytvoření back endové služby, který zpracovává zprávy ve frontě.
 
-Do fronty, použijeme [Azure Queue Storage Service](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/). Další možností je použít [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
+Do fronty, použijeme [služby Azure Queue Storage](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/). Další možností je použít [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
 
-Při rozhodování, služby, která fronty používat, zvažte, jak vaše aplikace musí odesílat a přijímat zprávy ve frontě:
+Rozhodněte, které služby front, zvažte, jak vaše aplikace musí posílat a přijímat zprávy ve frontě:
 
-- Pokud máte spolupracující výrobci a konkurenčních spotřebitelů, zvažte použití služby úložiště front Azure. "Spolupracující výrobci" znamená, že přidáváte více procesů zprávy do fronty. "Neslučitelných příjemci" znamená více procesů jsou stahování zpráv vypnout fronty pro jejich zpracování, ale jakékoli dané zprávy mohou být zpracovány pouze podle jednoho "příjemce." Pokud potřebujete další propustnosti, než můžete získat pomocí jedné frontě, použijte další fronty nebo dalších účtů úložiště.
-- Pokud potřebujete [publikování a přihlášení k odběru modelu](http://en.wikipedia.org/wiki/Publish/subscribe), zvažte použití fronty Azure Service Bus.
+- Pokud máte spolupracující výrobci a konkurenčních spotřebitelů, zvažte použití služby Azure Queue Storage. "Spolupracující producenti" znamená, že více procesů se přidání zprávy do fronty. "Modelu konkurenčních příjemců" znamená více procesů se stahují se zprávy z fronty pro jejich zpracování, ale jakékoli dané zprávy může zpracovat pouze jednoho "příjemce." Pokud potřebujete větší propustnost než můžete začít s jednou frontou, použijte další fronty a/nebo dalších účtů úložiště.
+- Pokud potřebujete [publikování/odběr modelu](http://en.wikipedia.org/wiki/Publish/subscribe), zvažte použití fronty Azure Service Bus.
 
-Aplikace opravte odpovídá spolupracující výrobci a modelu konkurenčních spotřebitelů.
+Aplikace Fix It vyhovovat spolupracující výrobce a model konkurenčních spotřebitelů.
 
-Je potřeba zamyslet se dostupnosti aplikace. Služba fronty úložiště je součástí služby používáme pro úložiště objektů blob, tak ho pomocí nemá žádný vliv na našem SLA. Azure Service Bus je samostatná služba s vlastním SLA. Pokud jsme použili fronty služby Service Bus, nám okolnosti další procento SLA System a naše složené SLA by být nižší. Když zvolíte služby front, ujistěte se, že rozumíte dopad podle svého výběru na dostupnosti aplikace. Další informace najdete v tématu [prostředky](#resources) části.
+Je potřeba zamyslet se dostupnost aplikace. Služba fronty úložiště je součástí stejnou službu, kterou používáme pro úložiště objektů blob, takže jeho použití nemá žádný vliv na naše smlouva SLA. Azure Service Bus je samostatná služba s vlastní smlouvu SLA. Použili fronty služby Service Bus, budeme něco muset zvážit další procentní smlouvy SLA a našich Složená hodnota SLA bude nižší. Služba front, abyste dokázali vybrat, ujistěte se, že rozumíte jejímu dopadu podle vašeho výběru na dostupnost aplikace. Další informace najdete v tématu [prostředky](#resources) oddílu.
 
-## <a name="creating-queue-messages"></a>Vytváření zprávy fronty
+## <a name="creating-queue-messages"></a>Vytvoření zprávy fronty
 
-Do úlohy opravte ji umístit fronty, má front-end webový provede následující kroky:
+Pokud chcete změnit úlohu oprava ve frontě, webového front-endu provede následující kroky:
 
-1. Vytvoření [CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instance. `CloudQueueClient` Instance se používá k provedení požadavků na službu fronty.
+1. Vytvoření [CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instance. `CloudQueueClient` Instance se používá k provádění požadavků služby front.
 2. Vytvořte frontu, pokud ještě neexistuje.
-3. Serializuje úloha opravit.
-4. Volání [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) uvést zprávy do fronty.
+3. Úloha opravit Serializujte.
+4. Volání [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) vložit zprávu do fronty.
 
-Provedeme tato práce v konstruktoru a `SendMessageAsync` metoda nové `FixItQueueManager` třídy.
+Provedeme tuto práci v konstruktoru a `SendMessageAsync` metoda nové `FixItQueueManager` třídy.
 
 [!code-csharp[Main](queue-centric-work-pattern/samples/sample1.cs?highlight=11-12,16,18-25)]
 
-Tady se používá [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) knihovny určená k serializaci automatickou do formátu JSON. Můžete použít libovolnou metodu serializace dáváte přednost. JSON má výhodu v podobě se čitelný, aniž by byly míň podrobné než XML.
+Tady se používá [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) knihovny k serializaci automatickou do formátu JSON. Můžete použít jakýkoli přístup serializace dáváte přednost. Výhodou čitelný, přičemž je míň podrobné než XML má kód JSON.
 
-Kód produkční kvality by přidat logiku zpracování chyb, pozastavení, pokud jsou databáze není k dispozici, více řádně zpracovávat obnovení, vytvořit frontu na spuštění aplikace a spravovat "[poškozených" zprávy](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx). (Zprávu, která nelze zpracovat z nějakého důvodu je poškozená zpráva. Nechcete, aby poškozených zprávy a pokuste se nacházejí ve frontě, kde role pracovního procesu průběžně pokusí zpracovat, nezdaří, zkuste to znovu, nezdaří atd.)
+Produkční kvality kódu by přidat logiku zpracování chyb, pozastavit, pokud databáze začal být nedostupný, zpracování obnovení čistěji, vytvořte frontu na spuštění aplikace a spravovat "[nezpracovatelných" zprávy](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx). (Nezpracovatelná zpráva se zpráva, která z nějakého důvodu nelze zpracovat. Nechcete nezpracovatelných zpráv se vám sedět ve frontě, kde role pracovního procesu se průběžně pokusí zpracovat, nezdaří, zkuste to znovu, selhání a tak dále.)
 
-Ve front-endu aplikace MVC musíme aktualizovat kód, který vytvoří novou úlohu. Místo uvedení úlohu do úložiště, volání `SendMessageAsync` metoda uvedené výše.
+Ve front-endové aplikace MVC musíme aktualizovat kód, který vytvoří nový úkol. Namísto vložení hodnoty úlohy do úložiště, zavolejte `SendMessageAsync` metody uvedené výše.
 
 [!code-csharp[Main](queue-centric-work-pattern/samples/sample2.cs?highlight=10)]
 
-## <a name="processing-queue-messages"></a>Zpracování zprávy fronty
+## <a name="processing-queue-messages"></a>Zpracování zpráv fronty
 
-Při zpracování zprávy ve frontě, vytvoříme back-end službu. Back-end službu spustí nekonečnou smyčku, která provede následující kroky:
+Ke zpracování zpráv ve frontě, vytvoříme back-end službu. Back-end služba se spustí nekonečnou smyčku, která provede následující kroky:
 
 1. Získáte další zprávy z fronty.
-2. Deserializuje zprávy k úloze opravte ji.
-3. Úloha opravit zapsat do databáze.
+2. Deserializaci zprávy k úloze Fix It.
+3. Úloha opravit zapisovat do databáze.
 
-K hostování back-end službu, Cloudová služba Azure, který obsahuje vytvoříme *role pracovního procesu*. Role pracovního procesu se skládá z jedné nebo více virtuálních počítačů, které můžete provést zpracování back-end. Kód, který běží v těchto virtuálních počítačů bude načítat zprávy z fronty, jakmile budou k dispozici. Pro každou zprávu jsme budete deserializovat datové části JSON a instanci entity, opravte ji úloh zapsat do databáze, použití stejné úložiště, který jsme použili dříve v webová vrstva.
+K hostování back-end službu Azure Cloud Service, která obsahuje vytvoříme *role pracovního procesu*. Role pracovního procesu se skládá z jednoho nebo více virtuálních počítačů, které můžou provádět zpracování back-endem. Kód, který běží v těchto virtuálních počítačů přetáhne zprávy z fronty, jakmile budou k dispozici. Pro každou zprávu vytvoříme datovou část JSON deserializovat a instanci entity, opravte ji úloh zapisovat do databáze, používat stejné úložiště, kterou jste použili dříve ve webové vrstvě.
 
-Následující kroky ukazují, jak přidat pracovní projekt role na řešení, které má standardní webového projektu. Tyto kroky byla neudělali v opravte ji projekt, který si můžete stáhnout.
+Následující kroky ukazují, jak přidat pracovní roli projektu do řešení, která má standardní webového projektu. Tyto kroky již byla v Fix It projekt, který si můžete stáhnout udělali.
 
-Nejprve přidáte projekt cloudové služby na řešení sady Visual Studio. Klikněte pravým tlačítkem na řešení a vyberte **přidat**, pak **nový projekt**. V levém podokně rozbalte **Visual C#** a vyberte **cloudu**.
+Nejprve přidáte projekt cloudové služby do řešení sady Visual Studio. Klikněte pravým tlačítkem na řešení a vyberte **přidat**, pak **nový projekt**. V levém podokně rozbalte **Visual C#** a vyberte **cloudu**.
 
 [![](queue-centric-work-pattern/_static/image5.png)](queue-centric-work-pattern/_static/image4.png)
 
-V **nová Cloudová služba Azure** dialogové okno, rozbalte **Visual C#** uzlu v levém podokně. Vyberte **Role pracovního procesu** a klikněte na ikonu se šipkou vpravo.
+V **novou Cloudovou službu Azure** dialogového okna, rozbalte **Visual C#** uzlu v levém podokně. Vyberte **Role pracovního procesu** a klikněte na ikonu se šipkou vpravo.
 
 ![](queue-centric-work-pattern/_static/image6.png)
 
-(Všimněte si, že můžete také přidat *webovou roli*. Jsme by mohl spustit opravte ji front-endu v rámci stejné cloudové služby namísto spuštění se webu v Azure. Který má několik výhod v snadněji připojení mezi front-end a back-end pro koordinaci. Ale zjednodušení této ukázku jsme se udržuje front-endu ve webové aplikaci Azure App Service a pouze spuštěný back-end v cloudové službě.)
+(Všimněte si, že můžete také přidat *webová role*. Spouštět Fix It front-endu v rámci stejné cloudové služby namísto jeho spuštění ve webech Azure. Který má několik výhod v usnadnění připojení mezi front-endu a back endu ke koordinaci. Ale pro zjednodušení této ukázce jsme uchovávání front-endu v Azure App Service Web App a jenom spuštěné back-end v cloudové službě.)
 
 Výchozí název je přiřazen k roli pracovního procesu. Chcete-li změnit název, najeďte myší role pracovního procesu v pravém podokně a pak klikněte na ikonu tužky.
 
 ![](queue-centric-work-pattern/_static/image7.png)
 
-Klikněte na tlačítko **OK** k dokončení dialogové okno. Tento postup přidá dva projekty do řešení sady Visual Studio.
+Klikněte na tlačítko **OK** dokončete dialogového okna. Tento postup přidá dva projekty do řešení sady Visual Studio.
 
-- Azure projekt, který definuje cloudové služby, včetně informací o konfiguraci.
+- Projekt Azure, který definuje cloudové služby, včetně informací o konfiguraci.
 - Projekt role pracovního procesu, který definuje roli pracovního procesu.
 
 ![](queue-centric-work-pattern/_static/image8.png)
 
 Další informace najdete v tématu [vytvoření projektu Azure pomocí sady Visual Studio.](https://msdn.microsoft.com/library/windowsazure/ee405487.aspx)
 
-V roli pracovního procesu, jsme dotazování pro zprávy voláním `ProcessMessageAsync` metodu `FixItQueueManager` třídu, která jsme viděli dříve.
+V roli pracovního procesu jsme dotazovat na zprávy voláním `ProcessMessageAsync` metodu `FixItQueueManager` třídu, která jsme viděli dříve.
 
 [!code-csharp[Main](queue-centric-work-pattern/samples/sample3.cs?highlight=25)]
 
-`ProcessMessagesAsync` Metoda prověří, pokud je zpráva čekání. Pokud existuje, je deserializuje zprávy do `FixItTask` entity a uloží entitu v databázi. Ho opakovací je fronta prázdná.
+`ProcessMessagesAsync` Metoda zkontroluje, zda je zpráva čekání. Pokud existuje, deserializuje zprávy do `FixItTask` entitu a entitu uloží do databáze. Opakuje cyklus, dokud je fronta prázdná.
 
 [!code-csharp[Main](queue-centric-work-pattern/samples/sample4.cs)]
 
-Dotazování pro zprávy fronty způsobuje malé transakce účtují, takže pokud není žádná zpráva čeká na zpracování, role pracovního procesu `RunAsync` druhý před dotazování metoda znovu čeká voláním `Task.Delay(1000)`.
+Dotazování pro fronty zpráv s sebou nese náklady malé transakce účtovat, takže když neexistuje žádná zpráva čeká na zpracování, role pracovního procesu `RunAsync` metoda čeká sekunda předcházející dotazování znovu voláním `Task.Delay(1000)`.
 
-Ve webovém projektu přidání asynchronní kódu automaticky zlepšit výkon, protože služba IIS spravuje fondu vláken omezené. To není případ v projektu role pracovního procesu. Pokud chcete zlepšit škálovatelnost role pracovního procesu, můžete zapsat Vícevláknová kódu nebo použít asynchronní kód pro implementaci [paralelní programování](https://msdn.microsoft.com/library/ff963553.aspx). Ukázka neimplementuje paralelní programování ale ukazuje, jak chcete-li kód asynchronní, takže můžete implementovat paralelní programování.
+Ve webovém projektu přidání asynchronní kód automaticky zlepšit výkon, protože služba IIS spravuje fondu omezená vláken. To není případ v projektu role pracovního procesu. Cílem vylepšit škálovatelnost, role pracovního procesu, můžete psát vícevláknový kód nebo použít asynchronní kód pro implementaci [paralelní programování](https://msdn.microsoft.com/library/ff963553.aspx). Ukázka neimplementuje paralelní programování, ale ukazuje, jak provést asynchronní kód, tak můžete implementovat paralelní programování.
 
 ## <a name="summary"></a>Souhrn
 
-V této kapitole jste viděli, jak zlepšit odezvu aplikací, spolehlivosti a škálovatelnosti implementací fronty způsob práce zaměřený.
+V této kapitole jste viděli, jak můžete zlepšit odezvu aplikace, spolehlivost a škálovatelnost implementace vzoru fronty.
 
-Toto je poslední vzoru 13 popsané v této e knihy, ale jsou samozřejmě mnoha dalších schémat a postupy, které vám mohou pomoci sestavení úspěšné cloudových aplikací. [Konečné kapitoly](more-patterns-and-guidance.md) poskytuje odkazy na zdroje informací pro témata, které nebyly popsaná v 13 vzorce.
+Toto je poslední 13 vzorce popsané v této e knihy, ale jsou samozřejmě mnoha dalšími vzory a postupy, které vám pomůžou vytvářet úspěšné cloudové aplikace. [Konečné kapitoly](more-patterns-and-guidance.md) poskytuje odkazy na zdroje informací pro témata, která ještě popsaná v těchto 13 vzory.
 
 <a id="resources"></a>
 ## <a name="resources"></a>Prostředky
 
-Další informace o frontách najdete v následujících zdrojích informací.
+Další informace o frontách najdete v následující prostředky.
 
-Dokumentace:
+Dokumentace ke službě:
 
-- [Microsoft Azure Storage fronty část 1: Začínáme](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/). Článek podle římské Schacherl.
-- [Provádění úlohy na pozadí](https://msdn.microsoft.com/library/ff803365.aspx), kapitoly 5 z [přesunutí aplikace do cloudu, 3. vydání](https://msdn.microsoft.com/library/ff728592.aspx) z Microsoft Patterns and Practices. (Zejména v části ["Pomocí Azure úložiště fronty"](https://msdn.microsoft.com/library/ff803365.aspx#sec7).)
-- [Osvědčené postupy pro maximalizaci škálovatelnost a finanční efektivita na základě fronty zasílání zpráv řešení v Azure](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx). Dokument White paper podle Valery Mizonov.
-- [Porovnání Azure fronty a fronty služby Service Bus](https://msdn.microsoft.com/magazine/jj159884.aspx). Článek v časopise MSDN, poskytuje další informace, které vám pomohou vybrat fronty služby, která chcete použít. Článek uvádí, že Service Bus je závislá na služby ACS pro ověřování, což znamená, že vaše SB fronty nebude k dispozici, když není k dispozici služby ACS. Ale vzhledem k tomu, že byl článek napsán, SB byl změněn na umožňují používat [tokeny SAS](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx) jako alternativu k služby ACS.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Viz Úvod do asynchronního zasílání zpráv, kanály a filtry vzor, kompenzace transakce vzor, neslučitelných příjemci vzor, CQRS vzor.
-- [Cesty CQRS](https://msdn.microsoft.com/library/jj554200). Elektronická kniha o CQRS podle Microsoft Patterns and Practices.
+- [Microsoft Azure Storage fronty 1. část: Začínáme](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/). Článek o Schacherl římské číslice.
+- [Spouštění úloh na pozadí](https://msdn.microsoft.com/library/ff803365.aspx), kapitola 5 [přesouvání aplikací do cloudu, 3. vydání](https://msdn.microsoft.com/library/ff728592.aspx) z Microsoft Patterns and Practices. (Konkrétně část ["Pomocí úložiště front Azure"](https://msdn.microsoft.com/library/ff803365.aspx#sec7).)
+- [Osvědčené postupy pro maximalizaci škálovatelnost a finanční efektivita na základě fronty zasílání zpráv řešení v Azure](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx). Dokument White paper o Valery Mizonov.
+- [Srovnání front Azure a fronty služby Service Bus](https://msdn.microsoft.com/magazine/jj159884.aspx). Zpravodaj MSDN Magazine článek poskytuje další informace, které vám můžou pomoct vybrat které fronty služby. Tento článek uvádí, že Service Bus je závislá na ACS pro ověřování, což znamená, že vaše SB fronty nebude k dispozici, když ACS není k dispozici. Nicméně, protože byl článek napsán, SB byl změněn na vám umožní používat [tokeny SAS](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx) jako alternativu k ACS.
+- [Microsoft Vzory a postupy – doprovodné materiály k Azure](https://msdn.microsoft.com/library/dn568099.aspx). Úvod do asynchronního zasílání zpráv, kanálů a filtrů, model kompenzační transakce, modelu konkurenčních příjemců, model CQRS, naleznete v tématu.
+- [CQRS cesty](https://msdn.microsoft.com/library/jj554200). Elektronická kniha o CQRS od Microsoft Patterns and Practices.
 
 Video:
 
-- [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Uvede základními koncepty a architektury zásady způsobem, velmi přístupné a zajímavé, s scénářů čerpají z prostředí Microsoft zákazníka poradní tým (CAT) s skutečným zákazníkům. Úvod do služby Azure Storage a fronty najdete v části díl 5 počínaje 35:13.
+- [Bezporuchový: Sestavování škálovatelných, odolných cloudových služeb](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Marc Mercuri a Mark Simms. Nabídne základními koncepty a Principy architektury tak vysoce dostupné a zajímavé příběhy z prostředí Microsoft zákazníka poradní tým (CAT) se skutečným zákazníkům. Úvod do služby Azure Storage a fronty naleznete v tématu epizodě 5 počínaje 35:13.
 
 > [!div class="step-by-step"]
 > [Předchozí](distributed-caching.md)

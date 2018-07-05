@@ -1,71 +1,70 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
-title: Animace v odezvě na interakci s uživatelem (VB) | Microsoft Docs
+title: Animace v reakci na interakci uživatele (VB) | Dokumentace Microsoftu
 author: wenz
-description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Můžete hvězdičkami animací...
+description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze hvězdičkami...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: c8204c05-ec27-40fe-933d-88e4e727a482
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e12467bfeb88c2ab9d1cfb866506e9e8e7f9ae25
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d3a118d3dc44dd74780fafd00d139160f8fc3bc5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869436"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37366874"
 ---
-<a name="animating-in-response-to-user-interaction-vb"></a>Animace v odezvě na interakci s uživatelem (VB)
+<a name="animating-in-response-to-user-interaction-vb"></a>Animace v reakci na interakci uživatele (VB)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.vb.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6VB.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation6.vb.zip) nebo [stahovat PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation6VB.pdf)
 
-> V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animací spustit automaticky nebo může být aktivovány interakci s uživatelem, například kliknutím myší.
+> Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze spustit automaticky nebo může být aktivované interakci s uživatelem, například po kliknutí myší.
 
 
 ## <a name="overview"></a>Přehled
 
-V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animací spustit automaticky nebo může být aktivovány interakci s uživatelem, například kliknutím myší.
+Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze spustit automaticky nebo může být aktivované interakci s uživatelem, například po kliknutí myší.
 
 ## <a name="steps"></a>Kroky
 
-První řadě zahrnují `ScriptManager` na stránce; potom knihovny ASP.NET AJAX je načtena, aby bylo možné použít Toolkitu:
+Za prvé, zahrnout `ScriptManager` na stránce; potom technologie ASP.NET AJAX je načíst knihovnu, což umožňuje použití Control Toolkit:
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample1.aspx)]
 
-Animace se použijí na panel textu, který vypadá takto:
+Animace se použijí pro panel text, který vypadá takto:
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample2.aspx)]
 
-Související třídy CSS pro panel definovat barvu pozadí dobrý a také nastavit pevnou šířku pro panel:
+V přidružené třídy šablony stylů CSS pro panel definovat barvu pozadí nice a také nastavit Pevná šířka panelu:
 
 [!code-css[Main](animating-in-response-to-user-interaction-vb/samples/sample3.css)]
 
-Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj `runat="server"`:
+Pak přidejte `AnimationExtender` na stránku, poskytování `ID`, `TargetControlID` atribut a povinný údaj `runat="server"`:
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample4.aspx)]
 
-V rámci `<Animations>` uzlu pět způsobů, jak pro spuštění animace prostřednictvím zásah uživatele (chybí element je `<OnLoad>` který je proveden po celé stránky se načetl plně):
+V rámci `<Animations>` uzlu, jsou pět jeden ze způsobů spuštění animace prostřednictvím interakce uživatele (chybí element je `<OnLoad>` který je proveden, jakmile úplným načtením celé stránky):
 
-- `<OnClick>` (myši klikněte na ovládací prvek)
+- `<OnClick>` (kliknutí myší na ovládací prvek)
 - `<OnHoverOut>` (ukazatel myši opustí ovládací prvek)
-- `<OnHoverOver>` (ukazatel myši nachází ovládacího prvku zastavení `<OnHoverOut>` animace)
-- `<OnMouseOut>` (myši ponechá ovládací prvek)
-- `<OnMouseOver>` (ukazatel myši nachází ovládacího prvku není zastavení `<OnMouseOut>` animace)
+- `<OnHoverOver>` (ovládací prvek, zastavuje se ukazatel myši nachází `<OnHoverOut>` animace)
+- `<OnMouseOut>` (ukazatel myši opustí ovládací prvek)
+- `<OnMouseOver>` (myší na ovládací prvek není zastavení `<OnMouseOut>` animace)
 
-V tomto scénáři `<OnClick>` se používá. Když uživatel klikne na panelu, se změnila velikost a setmívá ve stejnou dobu.
+V tomto scénáři `<OnClick>` se používá. Když uživatel klikne na panelu, je velikost a setmívá ve stejnou dobu.
 
 [!code-aspx[Main](animating-in-response-to-user-interaction-vb/samples/sample5.aspx)]
 
 
-[![Animace bude spuštěna, klikněte na tlačítko myši](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
+[![Animace bude spuštěna kliknutí myší](animating-in-response-to-user-interaction-vb/_static/image2.png)](animating-in-response-to-user-interaction-vb/_static/image1.png)
 
-Animace bude spuštěna, klikněte na tlačítko myši ([Kliknutím zobrazit obrázek v plné velikosti](animating-in-response-to-user-interaction-vb/_static/image3.png))
+Animace bude spuštěna kliknutí myší ([kliknutím ji zobrazíte obrázek v plné velikosti](animating-in-response-to-user-interaction-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](picking-one-animation-out-of-a-list-vb.md)

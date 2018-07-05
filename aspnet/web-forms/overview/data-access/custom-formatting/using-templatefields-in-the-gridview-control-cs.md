@@ -1,287 +1,286 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
-title: Pomocí TemplateFields v ovládacím prvku GridView (C#) | Microsoft Docs
+title: Použití vlastností TemplateField v ovládacím prvku GridView (C#) | Dokumentace Microsoftu
 author: rick-anderson
-description: Zajistit flexibilitu nabízí GridView TemplateField, která vykreslí pomocí šablony. Šablony můžete zahrnout směs statické HTML, ovládací prvky webového, a...
+description: K zajištění flexibility, nabízí prvku GridView TemplateField, která vykresluje pomocí šablony. Šablona může obsahovat kombinaci statický kód HTML, webové ovládací prvky, a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
 ms.topic: article
 ms.assetid: 11de31e8-a78a-4f96-bd75-66e994175902
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6485cbda50912920808fc0caf41c888493f210dc
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fe84bd24824f4a0326a6e8d41c0d291c7ef585af
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30877873"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37363828"
 ---
-<a name="using-templatefields-in-the-gridview-control-c"></a>Pomocí TemplateFields v ovládacím prvku GridView (C#)
+<a name="using-templatefields-in-the-gridview-control-c"></a>Použití vlastností TemplateField v ovládacím prvku GridView (C#)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_12_CS.exe) nebo [stáhnout PDF](using-templatefields-in-the-gridview-control-cs/_static/datatutorial12cs1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_12_CS.exe) nebo [stahovat PDF](using-templatefields-in-the-gridview-control-cs/_static/datatutorial12cs1.pdf)
 
-> Zajistit flexibilitu nabízí GridView TemplateField, která vykreslí pomocí šablony. Šablona může obsahovat kombinaci statických HTML webové ovládací prvky a syntaxe datové vazby. V tomto kurzu podíváme, jak používat TemplateField k dosažení vyšší stupeň přizpůsobení pomocí ovládacího prvku GridView.
+> K zajištění flexibility, nabízí prvku GridView TemplateField, která vykresluje pomocí šablony. Šablona může obsahovat kombinaci statických jazyka HTML, webové ovládací prvky a syntaxe datové vazby. V tomto kurzu prozkoumáme způsob použití pole TemplateField dosáhnout větší míru přizpůsobení pomocí ovládacího prvku GridView.
 
 
 ## <a name="introduction"></a>Úvod
 
-GridView se skládá ze sady polí, které indikují jaké vlastnosti z `DataSource` budou zahrnuty ve vykresleném výstupu spolu s jak se data zobrazí. Nejjednodušší typ pole není BoundField, která zobrazuje data hodnotu jako text. Ostatní typy polí zobrazit data pomocí alternativního elementů HTML. Vlastnost CheckBoxField, například vykreslí jako zaškrtávací políčko jejichž zaškrtnutého stavu závisí na hodnotě pole zadaných dat; ImageField vykreslí image, jejíž zdroj bitové kopie je podle pole Zadaná data. Hypertextové odkazy a tlačítka, jejichž stav závisí na základní hodnotu datového pole může být vykreslen pomocí HyperLinkField a ButtonField typy polí.
+GridView tvoří sadu polí, které označují vlastností z `DataSource` mají být zahrnuty do vykresleného výstupu spolu s jak se data zobrazí. Nejjednodušší typ pole je vlastnost BoundField, která zobrazuje datovou hodnotu jako text. Jiné typy polí zobrazit data pomocí alternativního elementů HTML. Třída CheckBoxField, například vykreslí jako zaškrtávací políčko jehož zaškrtnutý stav závisí na hodnotě zadané datové pole. třídy ImageField vykreslí obrázek jejíž zdroj obrázku je založena na zadané datové pole. Hypertextové odkazy a tlačítka, jehož stav závisí na základní hodnotou pole dat může být vykreslen pomocí HyperLinkField a ButtonField typy polí.
 
-Při typy polí Vlastnost CheckBoxField, ImageField, HyperLinkField a ButtonField povolit pro alternativní zobrazení dat, ještě jsou velmi omezené s ohledem na formátování. Třída CheckBoxField může zobrazit pouze jeden zaškrtávací políčko, zatímco ImageField může zobrazit pouze jeden obrázek. Co když konkrétního pole musí zobrazit část textu, zaškrtávací políčko, *a* image všechny závislosti na rozsahu hodnot různých datových polí? Nebo co když jsme chtěli zobrazení dat pomocí ovládacího prvku webového než zaškrtávací políčko, Image, hypertextový odkaz nebo tlačítko? Kromě toho BoundField omezuje jeho zobrazení do jednoho datového pole. Co když jsme chtěli zobrazit dvě nebo více hodnot dat pole do jednoho sloupce GridView?
+Typy polí třídě CheckBoxField, ImageField, HyperLinkField a ButtonField povolit alternativní zobrazení dat, ale přesto jsou velmi omezené s ohledem na formátování. Třídě CheckBoxField lze zobrazit pouze jeden checkbox, že ImageField lze zobrazit pouze jedné image. Co když je potřeba určité pole zobrazí text, zaškrtávací políčko, *a* bitové kopie, které jsou všechny založené na různých datových polí? Nebo co když jsme chtěli zobrazit data s využitím webový ovládací prvek, než je zaškrtávací políčko, Image, hypertextový odkaz nebo tlačítko? Kromě toho Vlastnost BoundField omezuje jeho zobrazení do jednoho datového pole. Co když jsme chtěli zobrazit dvě nebo víc hodnot dat pole do jednoho sloupce GridView?
 
-K přizpůsobení tato úroveň flexibilitu GridView poskytuje TemplateField, která vykreslí pomocí *šablony*. Šablona může obsahovat kombinaci statických HTML webové ovládací prvky a syntaxe datové vazby. Kromě toho TemplateField má řadu šablon, které lze použít k přizpůsobení vykreslování pro různé situace. Například `ItemTemplate` se ve výchozím nastavení použije k vykreslení buňky pro každý řádek, ale `EditItemTemplate` šablonu můžete použít k přizpůsobení rozhraní při úpravě data.
+K přizpůsobení této úrovni flexibilitu prvku GridView poskytuje TemplateField, která vykresluje pomocí *šablony*. Šablona může obsahovat kombinaci statických jazyka HTML, webové ovládací prvky a syntaxe datové vazby. Kromě toho TemplateField má celou řadu šablon, které lze použít k přizpůsobení vykreslování pro různé situace. Například `ItemTemplate` se ve výchozím nastavení použije k vykreslení buňky pro každý řádek, ale `EditItemTemplate` šablony umožňuje přizpůsobit rozhraní při úpravách data.
 
-V tomto kurzu podíváme, jak používat TemplateField k dosažení vyšší stupeň přizpůsobení pomocí ovládacího prvku GridView. V [předchozí kurzu](custom-formatting-based-upon-data-cs.md) jsme viděli postup přizpůsobení formátování založené na základní dat pomocí `DataBound` a `RowDataBound` obslužné rutiny událostí. Jiný způsob, jak přizpůsobit formátování podle zadaných dat je formátování voláním metod z v rámci šablony. Podíváme tento postup v tomto kurzu také.
+V tomto kurzu prozkoumáme způsob použití pole TemplateField dosáhnout větší míru přizpůsobení pomocí ovládacího prvku GridView. V [předchozím kurzu](custom-formatting-based-upon-data-cs.md) jsme viděli, jak přizpůsobit formátování založené na podkladová data s využitím `DataBound` a `RowDataBound` obslužných rutin událostí. Jinou možností přizpůsobení formátování na základě podkladových dat je voláním metody pro formátování z v rámci šablony. Podíváme se na tento postup v tomto kurzu také.
 
-V tomto kurzu použijeme TemplateFields k přizpůsobení vzhledu seznam zaměstnanců. Konkrétně jsme budete seznam všech zaměstnanců, ale zobrazí zaměstnance první a poslední názvy v jeden sloupec, datum jejich přijetí v ovládacím prvku kalendář a sloupec Stav, který určuje, jak dlouho budou jste byl použit při společnosti.
-
-
-[![Tři TemplateFields slouží k přizpůsobení zobrazení](using-templatefields-in-the-gridview-control-cs/_static/image2.png)](using-templatefields-in-the-gridview-control-cs/_static/image1.png)
-
-**Obrázek 1**: tři TemplateFields slouží k přizpůsobení zobrazení ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image3.png))
+Pro účely tohoto kurzu používáme vlastností TemplateField pro přizpůsobení vzhledu seznam zaměstnanců. Konkrétně jsme zobrazí seznam všech zaměstnanců, ale zobrazí zaměstnance jména a příjmení v jeden sloupec, jejich Datum zařazení do ovládacího prvku kalendář a sloupec Stav, který určuje, kolik dní se jsme se použijí ve firmě.
 
 
-## <a name="step-1-binding-the-data-to-the-gridview"></a>Krok 1: Vytvoření vazby dat GridView
+[![Tři vlastností TemplateField se používají pro přizpůsobení zobrazení](using-templatefields-in-the-gridview-control-cs/_static/image2.png)](using-templatefields-in-the-gridview-control-cs/_static/image1.png)
 
-U sestav, které budete muset použít TemplateFields přizpůsobit vzhled, najít je nejjednodušší začněte tím, že vytvoření ovládacího prvku GridView, která obsahuje jenom BoundFields nejdřív a pak přidejte nový TemplateFields nebo převést stávající BoundFields na TemplateFields podle potřeby. Přidáním GridView na stránku prostřednictvím návrháře a vytvoření vazby ObjectDataSource, který vrátí seznam zaměstnanci proto začněme tohoto kurzu. Tyto kroky vytvoří GridView s BoundFields pro každé pole zaměstnanců.
-
-Otevřete `GridViewTemplateField.aspx` stránky a přetáhněte ji GridView z panelu nástrojů na návrháře. Z prvku GridView inteligentních značek vyberte přidání nové ovládacího prvku ObjectDataSource, která volá `EmployeesBLL` třídy `GetEmployees()` metoda.
+**Obrázek 1**: tři vlastností TemplateField se používají pro přizpůsobení zobrazení ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image3.png))
 
 
-[![Přidání nové ovládacího prvku ObjectDataSource, která volá metodu GetEmployees()](using-templatefields-in-the-gridview-control-cs/_static/image5.png)](using-templatefields-in-the-gridview-control-cs/_static/image4.png)
+## <a name="step-1-binding-the-data-to-the-gridview"></a>Krok 1: Vytvoření vazby dat na prvku GridView.
 
-**Obrázek 2**: Přidání nové ovládacího prvku ObjectDataSource této vyvolá `GetEmployees()` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image6.png))
+U sestav, které je potřeba použití vlastností TemplateField k přizpůsobení vzhledu, můžu vás bude nejjednodušší začít tím, že vytvoření ovládacího prvku GridView, který obsahuje pouze BoundFields nejprve a potom k přidání nových vlastností TemplateField, nebo konvertovat existující BoundFields do Vlastností TemplateField podle potřeby. Přidáním na stránku prostřednictvím návrháře GridView a vytvoříte jejich vazbu na ObjectDataSource, který vrátí seznam zaměstnanců, proto začneme v tomto kurzu. Tyto kroky vytvoří GridView s BoundFields pro každé pole zaměstnance.
+
+Otevřít `GridViewTemplateField.aspx` stránku a přetáhněte z panelu nástrojů na Návrhář GridView. V prvku GridView inteligentních značek zvolte Přidat nový ovládací prvek ObjectDataSource, která volá `EmployeesBLL` třídy `GetEmployees()` metody.
 
 
-Vazba GridView tímto způsobem automaticky přidá BoundField pro každé z vlastností zaměstnanec: `EmployeeID`, `LastName`, `FirstName`, `Title`, `HireDate`, `ReportsTo`, a `Country`. Tato sestava umožňuje není zabývat zobrazení `EmployeeID`, `ReportsTo`, nebo `Country` vlastnosti. Chcete-li odebrat tyto BoundFields můžete:
+[![Přidat nový ovládací prvek ObjectDataSource, která volá metodu GetEmployees()](using-templatefields-in-the-gridview-control-cs/_static/image5.png)](using-templatefields-in-the-gridview-control-cs/_static/image4.png)
 
-- Pomocí klikněte na pole dialogové okno pole na odkaz Upravit sloupce z prvku GridView inteligentních značek zprovoznit tohoto dialogového okna. V dalším kroku vyberte BoundFields z levého dolního rohu seznamu a klikněte na červené X tlačítko odebrání BoundField.
-- Ručně upravte deklarativní syntaxe prvku GridView ze zobrazení zdroje, odstraňte `<asp:BoundField>` element pro BoundField, kterého chcete odebrat.
+**Obrázek 2**: Přidání nového ovládacího prvku ObjectDataSource tohoto volání `GetEmployees()` – metoda ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image6.png))
 
-Po odebrání `EmployeeID`, `ReportsTo`, a `Country` BoundFields, vaše GridView značek by měl vypadat jako:
+
+Vazby prvku GridView. tímto způsobem bude automaticky přidat vlastnost BoundField pro každou z vlastností zaměstnance: `EmployeeID`, `LastName`, `FirstName`, `Title`, `HireDate`, `ReportsTo`, a `Country`. Pro tuto sestavu teď není zabývat zobrazení `EmployeeID`, `ReportsTo`, nebo `Country` vlastnosti. Chcete-li odebrat tyto BoundFields můžete:
+
+- Pomocí polích dialogového okna klepněte na odkaz Upravit sloupce v prvku GridView inteligentních značek zobrazí toto dialogové okno se. V dalším kroku vyberte BoundFields z levé dolní části seznamu a klikněte na červené X tlačítko Odebrat vlastnost BoundField.
+- Deklarativní syntaxe prvku GridView upravit ručně ze zobrazení zdroje, odstranit `<asp:BoundField>` – element pro vlastnost BoundField, kterou chcete odebrat.
+
+Po odebrání `EmployeeID`, `ReportsTo`, a `Country` BoundFields, prvku GridView značek by měl vypadat takto:
 
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample1.aspx)]
 
-Chcete-li zobrazit naše průběh v prohlížeči chvíli trvat. V tomto okamžiku byste měli vidět tabulku s záznam pro každý zaměstnanec a čtyři sloupce: jeden pro zaměstnance příjmení, jeden pro jejich křestní jméno, jeden pro jejich název a jeden pro společnost pracovat.
+Chcete-li zobrazit náš postup v prohlížeči chvíli trvat. V tomto okamžiku byste měli vidět tabulku s záznam pro každý zaměstnanec a čtyři sloupce: jeden pro zaměstnance příjmení, jeden pro své křestní jméno, jeden pro jejich funkce a jeden pro datum jejich přijetí.
 
 
-[![Zobrazení LastName, FirstName, název a HireDate pole pro každý zaměstnanec](using-templatefields-in-the-gridview-control-cs/_static/image8.png)](using-templatefields-in-the-gridview-control-cs/_static/image7.png)
+[![Pro každý zaměstnanec zobrazené LastName, jméno, název a HireDate pole](using-templatefields-in-the-gridview-control-cs/_static/image8.png)](using-templatefields-in-the-gridview-control-cs/_static/image7.png)
 
-**Obrázek 3**: `LastName`, `FirstName`, `Title`, a `HireDate` pole jsou zobrazeny pro každý zaměstnanec ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image9.png))
-
-
-## <a name="step-2-displaying-the-first-and-last-names-in-a-single-column"></a>Krok 2: Názvy první a poslední zobrazení do jednoho sloupce
-
-V současné době je každý zaměstnanec první a poslední názvy jsou zobrazeny v samotném sloupci. Může to být dobrý se místo toho zkombinovat do jednoho sloupce. K tomu je potřeba použít TemplateField. Jsme můžete buď přidejte nové TemplateField, přidejte do ní potřebné značky a syntaxe datové vazby a pak odstraňte `FirstName` a `LastName` BoundFields nebo jsme můžete převést `FirstName` BoundField do TemplateField, upravit TemplateField zahrnout `LastName` hodnotu a pak odeberte `LastName` BoundField.
-
-Oba přístupy net stejný výsledek, ale osobní líbí převodu BoundFields na TemplateFields, pokud je to možné, protože převod automaticky přidá `ItemTemplate` a `EditItemTemplate` s syntaxi vazby dat tak, aby napodoboval vzhled a webové ovládací prvky a funkcí BoundField. Výhodou je, že budeme muset udělat méně práce s TemplateField jako proces převodu budou mít provádět některé úkoly pro nás.
-
-Převést stávající BoundField TemplateField, klikněte na odkaz Upravit sloupce z prvku GridView inteligentních značek, přináší dialogové okno pole. Vyberte BoundField převést ze seznamu v levém dolním a potom klikněte na odkaz "Převést toto pole do TemplateField" v pravém dolním rohu.
+**Obrázek 3**: `LastName`, `FirstName`, `Title`, a `HireDate` jsou zobrazena pole pro každý zaměstnanec ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image9.png))
 
 
-[![Převést BoundField TemplateField z dialogového okna pole](using-templatefields-in-the-gridview-control-cs/_static/image11.png)](using-templatefields-in-the-gridview-control-cs/_static/image10.png)
+## <a name="step-2-displaying-the-first-and-last-names-in-a-single-column"></a>Krok 2: Zobrazení v jednom sloupci jména a příjmení
 
-**Obrázek 4**: převod BoundField do TemplateField dialogové okno pole ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image12.png))
+V současné době jednotliví zaměstnanci vaší první a poslední názvy se zobrazí v samostatném sloupci. Může být dobré si je zkombinovat do jednoho sloupce. K tomu potřeba použít na pole TemplateField. Jsme můžete buď přidejte nové TemplateField, přidejte do ní potřebné značky a syntaxe vázání dat a odstraňte `FirstName` a `LastName` BoundFields nebo nám můžete převést `FirstName` Vlastnost BoundField na pole TemplateField, upravte TemplateField zahrnout `LastName` hodnotu a pak odeberte `LastName` Vlastnost BoundField.
+
+Oba přístupy net stejný výsledek, ale osobně chci převod BoundFields do vlastností TemplateField, pokud je to možné, protože převod automaticky přidá `ItemTemplate` a `EditItemTemplate` webové ovládací prvky a syntaxe datové vazby k napodobení vzhledu a funkce Vlastnost BoundField. Výhodou je, že nám budete muset udělat méně práce s pole TemplateField podle procesu převodu se dá provést určitou část práce pro nás.
+
+Chcete-li převést existující vlastnost BoundField TemplateField, klikněte na odkaz Upravit sloupce z inteligentních značek prvku GridView, spustit až dialogové okno pole. Vyberte vlastnost BoundField převést ze seznamu v levém dolním rohu a pak klikněte na odkaz "Převést toto pole na pole TemplateField" v pravém dolním rohu.
 
 
-Pokračujte a proveďte převod `FirstName` BoundField do TemplateField. Po této změně není žádný perceptive rozdíl v návrháři. To je proto převodu BoundField TemplateField vytvoří TemplateField, která udržuje vzhledu a chování BoundField. Navzdory bylo žádné visual rozdíly v tomto okamžiku v návrháři, tento proces převodu nahradili deklarativní syntaxe BoundField - `<asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />` – s následující syntaxí TemplateField:
+[![Vlastnost BoundField převést z dialogového okna pole TemplateField](using-templatefields-in-the-gridview-control-cs/_static/image11.png)](using-templatefields-in-the-gridview-control-cs/_static/image10.png)
+
+**Obrázek 4**: Vlastnost BoundField do TemplateField převést pole dialogových oken ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image12.png))
+
+
+Pokračujte a převést `FirstName` Vlastnost BoundField na pole TemplateField. Po této změně není žádný perceptive rozdíl v návrháři. Je to proto, že vlastnost BoundField převod na pole TemplateField vytvoří TemplateField udržuje vzhledu a chování Vlastnost BoundField. I když bylo žádný vizuální rozdíl v tuto chvíli v návrháři, tento proces převodu nahradil deklarativní syntaxe Vlastnost BoundField – `<asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />` – s následující syntaxí TemplateField:
 
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample2.aspx)]
 
-Jak můžete vidět, TemplateField se skládá ze dvou šablon `ItemTemplate` , má popisek jejichž `Text` je nastavena na hodnotu `FirstName` pole dat a `EditItemTemplate` textové pole kontrolu jehož `Text` je nastavena také vlastnost na `FirstName` datové pole. Datové vazby syntaxe – `<%# Bind("fieldName") %>` -znamená, že datové pole *`fieldName`* je vázána na zadanou vlastnost webové ovládací prvek.
+Jak je vidět pole TemplateField se skládá ze dvou šablon `ItemTemplate` , který má popisek jehož `Text` je nastavena na hodnotu `FirstName` datové pole a `EditItemTemplate` u objektu TextBox ovládací prvek, jehož `Text` nastavena také vlastnost Chcete `FirstName` datové pole. Syntaxe databinding – `<%# Bind("fieldName") %>` – znamená, že datové pole *`fieldName`* je vázán na zadané vlastnosti webového ovládacího prvku.
 
-Chcete-li přidat `LastName` data pole hodnota, která má toto TemplateField budeme muset přidat další ovládací prvek popisek webu v `ItemTemplate` a vytvořte vazbu jeho `Text` vlastnost `LastName`. To můžete provést ručně nebo pomocí návrháře. Chcete-li provést ručně, jednoduše přidejte příslušné deklarativní syntaxe `ItemTemplate`:
+Chcete-li přidat `LastName` hodnota tohoto pole TemplateField potřebujeme přidat jiný popisek webový ovládací prvek pole data `ItemTemplate` a vytvořit vazbu jeho `Text` vlastnost `LastName`. To můžete provést ručně nebo prostřednictvím návrháře. Provést ručně, stačí přidat vhodné deklarativní syntaxe na `ItemTemplate`:
 
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample3.aspx)]
 
-Přidejte ho pomocí návrháře, klikněte na odkaz Upravit šablony z prvku GridView inteligentních značek. Zobrazení a úpravy rozhraní prvku GridView šablony. V tomto rozhraní inteligentní značky je uveden seznam šablon v GridView. Vzhledem k tomu můžeme mít pouze jeden TemplateField v tomto okamžiku, v rozevíracím seznamu uvedeny pouze šablony jsou tyto šablony pro `FirstName` TemplateField spolu s `EmptyDataTemplate` a `PagerTemplate`. `EmptyDataTemplate` Šablony,-li zadána, se použije k vykreslení výstupu GridView Pokud v data vázaná na GridView; nebyly nalezeny žádné výsledky `PagerTemplate`, je-li zadána, je použita k vykreslení rozhraní stránkování pro GridView, který podporuje stránkování.
+Přidejte prostřednictvím návrháře, klikněte na odkaz Upravit šablony z inteligentních značek v prvku GridView. Zobrazí se rozhraní úprav šablony prvku GridView. V tomto rozhraní inteligentních značek je seznam šablon v prvku GridView. Protože máme pouze jeden TemplateField v tomto okamžiku, pouze šablony, které jsou uvedeny v rozevíracím seznamu jsou pro tyto šablony `FirstName` TemplateField spolu s `EmptyDataTemplate` a `PagerTemplate`. `EmptyDataTemplate` Šablony,-li zadán, slouží k vykreslení výstupu prvku GridView, pokud neexistují žádné výsledky v data vázaná na GridView; `PagerTemplate`, je-li zadán, slouží k vykreslení rozhraní stránkování prvku GridView, který podporuje stránkování.
 
 
-[![Prvku GridView šablony lze upravovat pomocí návrháře](using-templatefields-in-the-gridview-control-cs/_static/image14.png)](using-templatefields-in-the-gridview-control-cs/_static/image13.png)
+[![Prvku GridView šablony se dá upravit v Návrháři](using-templatefields-in-the-gridview-control-cs/_static/image14.png)](using-templatefields-in-the-gridview-control-cs/_static/image13.png)
 
-**Obrázek 5**: The GridView šablony může být upravit prostřednictvím Návrhář ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image15.png))
-
-
-Také zobrazit `LastName` v `FirstName` TemplateField přetáhněte ovládací prvek popisek z nástrojů do `FirstName` na TemplateField `ItemTemplate` v GridView je šablona úpravy rozhraní.
+**Obrázek 5**: prvku GridView šablony může být upravovat prostřednictvím návrháře ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image15.png))
 
 
-[![Přidání ovládacího prvku popisek na FirstName TemplateField ItemTemplate](using-templatefields-in-the-gridview-control-cs/_static/image17.png)](using-templatefields-in-the-gridview-control-cs/_static/image16.png)
-
-**Obrázek 6**: Přidání ovládacího prvku popisek k `FirstName` na TemplateField ItemTemplate ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image18.png))
+Také zobrazíte `LastName` v `FirstName` TemplateField přetáhnout z panelu nástrojů do ovládacího prvku popisku `FirstName` společnosti TemplateField `ItemTemplate` v prvku GridView uživatele úprav šablony rozhraní.
 
 
-V tomto okamžiku má ovládací prvek popisek webové přidán do TemplateField jeho `Text` vlastnost nastavena na hodnotu "Popisek". Je potřeba změnit tak, aby tato vlastnost je vázána na hodnotu `LastName` místo pole data. K provedení této klikněte na inteligentní značky ovládacího prvku popisek a vyberte možnost Upravit datové vazby.
+[![Přidání ovládacího prvku popisku ItemTemplate FirstName TemplateField](using-templatefields-in-the-gridview-control-cs/_static/image17.png)](using-templatefields-in-the-gridview-control-cs/_static/image16.png)
+
+**Obrázek 6**: Přidání ovládacího prvku popisku k `FirstName` ItemTemplate TemplateField společnosti ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image18.png))
 
 
-[![Zvolte možnost Upravit datové vazby ze jmenovky inteligentní značky](using-templatefields-in-the-gridview-control-cs/_static/image20.png)](using-templatefields-in-the-gridview-control-cs/_static/image19.png)
-
-**Obrázek 7**: Zvolte možnost Upravit datové vazby ze jmenovky inteligentní značky ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image21.png))
+V tomto okamžiku je ovládací prvek popisek Web přidán pole TemplateField jeho `Text` vlastnost nastavena na "Štítku". Budeme muset změnit tak, aby tato vlastnost je vázána na hodnotu `LastName` datové pole místo. Chcete-li provést tento klikněte na inteligentní značky ovládacího prvku popisku a zvolte možnost Upravit datové vazby.
 
 
-Tím se otevře dialogové okno datové vazby. Tady můžete vybrat vlastnost, která má účastnit datové vazby v seznamu na levé straně a vyberte pole, které chcete vytvořit vazbu na data z rozevíracího seznamu na pravé straně. Vyberte `Text` vlastnost z levé straně a `LastName` pole vpravo a klikněte na tlačítko OK.
+[![Zvolte možnost Upravit datové vazby z popisku inteligentních značek](using-templatefields-in-the-gridview-control-cs/_static/image20.png)](using-templatefields-in-the-gridview-control-cs/_static/image19.png)
+
+**Obrázek 7**: Zvolte možnost upravit vlastnosti DataBindings z inteligentních značek popisku ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image21.png))
 
 
-[![Vytvořit vazbu vlastnosti textu k LastName datové pole](using-templatefields-in-the-gridview-control-cs/_static/image23.png)](using-templatefields-in-the-gridview-control-cs/_static/image22.png)
+Tím se otevře dialogové okno datové vazby. Odtud můžete vybrat vlastnost, která má účastnit datové vazby v seznamu na levé straně a zvolte pole, které chcete vytvořit vazbu data z rozevíracího seznamu na pravé straně. Zvolte `Text` vlastnost z levé strany a `LastName` polí z pravé strany a klikněte na tlačítko OK.
 
-**Obrázek 8**: vytvoření vazby `Text` vlastnost, která má `LastName` datové pole ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image24.png))
+
+[![Vytvořit vazbu vlastnosti Text do pole LastName dat](using-templatefields-in-the-gridview-control-cs/_static/image23.png)](using-templatefields-in-the-gridview-control-cs/_static/image22.png)
+
+**Obrázek 8**: vytvoření vazby `Text` vlastnost `LastName` datové pole ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image24.png))
 
 
 > [!NOTE]
-> Dialogové okno datové vazby umožňuje určit, jestli se má provést obousměrný datové vazby. Pokud ji necháte za není zaškrtnuto, vazby dat syntaxe `<%# Eval("LastName")%>` se použije místo `<%# Bind("LastName")%>`. Buď přístup je vhodná pro tento kurz. Obousměrné vazby dat se změní na důležité při vkládání a úpravy dat. Pro jednoduše zobrazení dat, ale buď přístup bude fungovat stejně dobře. Obousměrné vazby dat podrobně probereme v budoucnu kurzy.
+> Dialogové okno vlastnosti DataBindings umožňuje určit, jestli se má provést dvousměrnou datovou vazbou. Pokud ji necháte nezaškrtnuté, syntaxe databinding `<%# Eval("LastName")%>` se použije namísto `<%# Bind("LastName")%>`. Kterýkoliv přístup je v pořádku pro účely tohoto kurzu. Obousměrná vazba dat je důležitá při vkládání a úpravy dat. Jednoduše zobrazení dat, ale kterýkoliv přístup bude fungovat stejně dobře. Obousměrná vazba dat podrobně probereme v budoucích kurzech.
 
 
-Chcete-li zobrazit tuto stránku prostřednictvím prohlížeče chvíli trvat. Jak vidíte, GridView stále zahrnuje čtyři sloupce; ale `FirstName` sloupec teď uvádí *i* `FirstName` a `LastName` dat, pole hodnoty.
+Za chvíli zobrazení této stránky prostřednictvím prohlížeče. Jak je vidět, prvku GridView stále obsahuje čtyři sloupce; ale `FirstName` nyní obsahuje sloupec *obě* `FirstName` a `LastName` datové pole hodnot.
 
 
 [![Jak FirstName a LastName hodnoty jsou uvedeny v jednom sloupci](using-templatefields-in-the-gridview-control-cs/_static/image26.png)](using-templatefields-in-the-gridview-control-cs/_static/image25.png)
 
-**Obrázek 9**: Jak `FirstName` a `LastName` hodnoty jsou zobrazeny v jeden sloupec ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image27.png))
+**Obrázek 9**: Jak `FirstName` a `LastName` hodnoty jsou zobrazeny v jednom sloupci ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image27.png))
 
 
-Chcete-li dokončit tento první krok, odeberte `LastName` BoundField a přejmenujte `FirstName` na TemplateField `HeaderText` vlastnost "Název". Po provedení těchto změn rutina GridView deklarativní by měl vypadat následovně:
+Chcete-li dokončit tento první krok, odeberte `LastName` Vlastnost BoundField a přejmenovat `FirstName` společnosti TemplateField `HeaderText` vlastnost "Name". Po provedení těchto změn prvku GridView deklarativní by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample4.aspx)]
 
 
-[![Každý zaměstnanec první a poslední názvy se zobrazují v jedním sloupcem](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
+[![Jména a příjmení jednotliví zaměstnanci jsou zobrazeny v jedním sloupcem](using-templatefields-in-the-gridview-control-cs/_static/image29.png)](using-templatefields-in-the-gridview-control-cs/_static/image28.png)
 
-**Obrázek 10**: každý zaměstnanec první a poslední názvy se zobrazují v jedním sloupcem ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
-
-
-## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Krok 3: Použití ovládacího prvku kalendář pro zobrazení`HiredDate`pole
-
-Zobrazení dat pole hodnotu jako text v GridView je jednoduché, použití BoundField. Pro určité scénáře ale data se nejlépe vyjádřit pomocí konkrétní ovládací prvek webu místo pouze text. Takové přizpůsobení zobrazení dat je možné s TemplateFields. Například spíš než jako text zobrazit datum přijetí zaměstnance, může ukážeme kalendáře (pomocí [ovládacího prvku Kalendář](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) s jejich datum přijetí zvýrazněná.
-
-Chcete-li dosáhnout, spusťte převod `HiredDate` BoundField do TemplateField. Jednoduše přejděte do prvku GridView inteligentních značek a klikněte na odkaz Upravit sloupce, přináší dialogové okno pole. Vyberte `HiredDate` BoundField a klikněte na tlačítko "převést toto pole TemplateField."
+**Obrázek 10**: každý zaměstnanec jména a příjmení se zobrazují v jedním sloupcem ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image30.png))
 
 
-[![Převést HiredDate BoundField TemplateField](using-templatefields-in-the-gridview-control-cs/_static/image32.png)](using-templatefields-in-the-gridview-control-cs/_static/image31.png)
+## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Krok 3: Použití ovládacího prvku kalendáře do zobrazení`HiredDate`pole
 
-**Obrázek 11**: převést `HiredDate` BoundField do TemplateField ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image33.png))
+Zobrazení hodnoty datového pole jako text v GridView je snadné – stačí použít vlastnost BoundField. Pro určité scénáře ale data se nejlépe vyjádřena pomocí konkrétní ovládací prvek webové místo pouze text. Tato přizpůsobení zobrazení dat je možné s vlastností TemplateField. Například, spíše než zobrazit datum zaměstnance přijetím jako text, jsme byli schopni ukázat kalendáře (pomocí [ovládacího prvku Kalendář](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) s jejich datum přijetí zvýrazní.
 
-
-Jak jsme viděli v kroku 2, touto akcí BoundField TemplateField, který obsahuje nahradíte `ItemTemplate` a `EditItemTemplate` s popisek a textové pole jehož `Text` vlastnosti je vázána na `HiredDate` hodnotu pomocí syntaxe datové vazby `<%# Bind("HiredDate")%>`.
-
-Nahraďte text pomocí ovládacího prvku kalendář, úpravě šablony odebrání popisek a přidání ovládacího prvku kalendář. Z návrháře, vyberte Upravit šablony z prvku GridView inteligentních značek a zvolte `HireDate` na TemplateField `ItemTemplate` z rozevíracího seznamu. V dalším kroku odstranit ovládací prvek popisek a přetáhněte ovládacího prvku kalendář z panelu nástrojů do rozhraní úpravy šablony.
+Chcete-li to provést, začněte tím, že převod `HiredDate` Vlastnost BoundField na pole TemplateField. Stačí přejít na inteligentní značky prvku GridView a klikněte na odkaz Upravit sloupce spustit až dialogové okno pole. Vyberte `HiredDate` Vlastnost BoundField a klikněte na tlačítko "převést toto pole TemplateField."
 
 
-[![Přidání ovládacího prvku Kalendář HireDate ItemTemplate TemplateField společnosti](using-templatefields-in-the-gridview-control-cs/_static/image35.png)](using-templatefields-in-the-gridview-control-cs/_static/image34.png)
+[![Vlastnost HiredDate BoundField převést na pole TemplateField](using-templatefields-in-the-gridview-control-cs/_static/image32.png)](using-templatefields-in-the-gridview-control-cs/_static/image31.png)
 
-**Obrázek 12**: Přidání ovládacího prvku Kalendář `HireDate` na TemplateField `ItemTemplate` ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
-
-
-V tomto okamžiku každý řádek v GridView bude obsahovat ovládacího prvku kalendář v jeho `HiredDate` TemplateField. Ale je skutečný zaměstnanec `HiredDate` hodnota není nastavená, kdekoli v ovládacím prvku Kalendář způsobuje každý ovládací prvek kalendáře výchozí zobrazí aktuální měsíc a den. Chcete-li to opravit, je potřeba přiřadit každý zaměstnanec `HiredDate` do ovládacího prvku Kalendář [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) a [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) vlastnosti.
-
-Z ovládacího prvku inteligentních značek zvolte Upravit datové vazby. V dalším kroku vazby obě `SelectedDate` a `VisibleDate` vlastnosti, které chcete `HiredDate` datové pole.
+**Obrázek 11**: převod `HiredDate` Vlastnost BoundField do TemplateField ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image33.png))
 
 
-[![Vytvořit vazbu SelectedDate a vlastnosti VisibleDate HiredDate datové pole](using-templatefields-in-the-gridview-control-cs/_static/image38.png)](using-templatefields-in-the-gridview-control-cs/_static/image37.png)
+Jak jsme viděli v kroku 2, tato operace nahradí Vlastnost BoundField s TemplateField obsahuje `ItemTemplate` a `EditItemTemplate` s popisku a textového pole jejichž `Text` vlastnosti, které jsou vázány na `HiredDate` hodnotu pomocí syntaxe databinding `<%# Bind("HiredDate")%>`.
 
-**Obrázek 13**: vytvoření vazby `SelectedDate` a `VisibleDate` vlastnosti, které chcete `HiredDate` datové pole ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image39.png))
+Nahradit text s ovládacím prvkem kalendáře, upravte šablonu odeberete příslušný popisek a přidáním ovládacího prvku kalendář. Z návrháře, vyberte Upravit šablony z inteligentních značek v prvku GridView a zvolte `HireDate` společnosti TemplateField `ItemTemplate` z rozevíracího seznamu. V dalším kroku odstranit ovládací prvek popisku a přetáhněte ovládací prvek Calendar z panelu nástrojů do rozhraní pro úpravy šablony.
+
+
+[![Přidání ovládacího prvku kalendáře HireDate ItemTemplate TemplateField.](using-templatefields-in-the-gridview-control-cs/_static/image35.png)](using-templatefields-in-the-gridview-control-cs/_static/image34.png)
+
+**Obrázek 12**: Přidání ovládacího prvku kalendáře `HireDate` společnosti TemplateField `ItemTemplate` ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
+
+
+V tomto okamžiku každého řádku v prvku GridView, bude obsahovat ovládacího prvku kalendáře v jeho `HiredDate` TemplateField. Ale zaměstnance skutečné `HiredDate` hodnota není nastavená, kdekoli v ovládacím prvku kalendář, způsobí každého ovládacího prvku kalendáře na výchozím nastavení zobrazuje aktuální měsíc a den. Chcete-li to napravit, musíme přiřadit každý zaměstnanec `HiredDate` do ovládacího prvku Kalendář [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) a [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) vlastnosti.
+
+Z ovládacího prvku Kalendář inteligentních značek zvolte možnost Upravit datové vazby. V dalším kroku navázat obě `SelectedDate` a `VisibleDate` vlastnosti, které chcete `HiredDate` datové pole.
+
+
+[![Vytvořit vazbu vlastnosti SelectedDate a VisibleDate HiredDate datového pole](using-templatefields-in-the-gridview-control-cs/_static/image38.png)](using-templatefields-in-the-gridview-control-cs/_static/image37.png)
+
+**Obrázek 13**: vytvoření vazby `SelectedDate` a `VisibleDate` vlastnosti, které chcete `HiredDate` datové pole ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image39.png))
 
 
 > [!NOTE]
-> Zvolené datum ovládacího prvku nemusí být nutně viditelné. Například může mít kalendář srpen 1<sup>st</sup>, 1999 jako vybraným datem, ale se zobrazuje aktuální měsíc a rok. Vybrané datum a zobrazené datum je určené vlastností ovládacího prvku `SelectedDate` a `VisibleDate` vlastnosti. Vzhledem k tomu, že chceme obou vyberte zaměstnance `HiredDate` a ujistěte se, zda je zobrazen musíme obě tyto vlastnosti, které chcete vytvořit vazbu `HireDate` datové pole.
+> Vybrané datum kalendáře ovládacího prvku nemusí být nutně viditelné. Kalendáře může mít například od 1. srpna<sup>st</sup>, 1999 jako vybraným datem, ale měly zobrazovat v aktuálním měsíci a roce. Vybrané datum a datum viditelné jsou určena pomocí ovládacího prvku Kalendář `SelectedDate` a `VisibleDate` vlastnosti. Protože chceme, aby obě vybrat zaměstnance `HiredDate` a ujistěte se, že se zobrazí, potřebujeme pro obě tyto vlastnosti k vytvoření vazby `HireDate` datové pole.
 
 
-Při zobrazení stránky v prohlížeči, kalendáře nyní zobrazuje měsíc datum přijetí zaměstnance a vybere konkrétní datum.
+Při zobrazení stránky v prohlížeči, kalendáře nyní zobrazuje měsíc datum přijetí zaměstnance a vybere konkrétní data.
 
 
 [![Zaměstnance HiredDate se zobrazí v ovládacím prvku Kalendář](using-templatefields-in-the-gridview-control-cs/_static/image41.png)](using-templatefields-in-the-gridview-control-cs/_static/image40.png)
 
-**Obrázek 14**: zaměstnance `HiredDate` se zobrazí v ovládacím prvku Kalendář ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image42.png))
+**Obrázek 14**: zaměstnance `HiredDate` se zobrazí v ovládacím prvku Kalendář ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image42.png))
 
 
 > [!NOTE]
-> Na rozdíl od všech příkladech jsme viděli doposud, v tomto kurzu jsme se *není* nastavit `EnableViewState` vlastnost `false` pro tato rutina GridView. Z důvodu pro toto rozhodnutí je vzhledem k tomu, že kliknete na kalendářní data ovládacího prvku Kalendář způsobí, že zpětné volání, nastavení zvolené datum v kalendáři k datu právě kliknutí na. Pokud je stav zobrazení GridView vypnutá, ale na každé zpětné volání prvku GridView dat je odrážejí na základní zdroj dat, což způsobí, že zvolené datum v kalendáři nastavit *zpět* na zaměstnance `HireDate`, přepisování Datum volená uživatelem.
+> Rozporu s všechny příklady jsme viděli doposud, pro účely tohoto kurzu jsme to udělali *není* nastavit `EnableViewState` vlastnost `false` tohoto prvku GridView. Důvod pro toto rozhodnutí je vzhledem k tomu, že kliknete na data ovládacím prvku Kalendář vyvolá zpětné volání, nastavení vybrané datum v kalendáři na kliknutí na datum. Pokud je stav zobrazení prvku GridView zakázán, ale při každém postbacku dat prvku GridView je odrážejí podkladový zdroj dat, což způsobí, že vybrané datum v kalendáři nastavit *zpět* na zaměstnance `HireDate`, přepisování data vybraného uživatele.
 
 
-V tomto kurzu jde moot diskusní vzhledem k tomu, že uživatel není možné aktualizovat zaměstnance `HireDate`. Pravděpodobně je nejvhodnější nakonfigurovat ovládacího prvku kalendář tak, aby jeho data se nedá vybrat. Bez ohledu na to tento kurz ukazuje, že v některých případech musí být stav zobrazení zapnutý s cílem poskytnout určité funkce.
+Pro účely tohoto kurzu jde diskusi moot vzhledem k tomu, že uživatel není možné aktualizovat zaměstnance `HireDate`. Bylo by pravděpodobně nejlepší konfigurovat ovládací prvek Calendar tak, aby jeho data se nedá vybrat. Bez ohledu na to tento kurz ukazuje, že v některých případech povolen stav zobrazení musí být cílem poskytnout určité funkce.
 
-## <a name="step-4-showing-the-number-of-days-the-employee-has-worked-for-the-company"></a>Krok 4: Zobrazuje počet dní, zaměstnanec fungovala společnosti
+## <a name="step-4-showing-the-number-of-days-the-employee-has-worked-for-the-company"></a>Krok 4: Zobrazující počet dní, zaměstnanec pracoval pro společnost
 
-Pokud jsme viděli dvě aplikace TemplateFields:
+Zatím jsme viděli dvě aplikace vlastností TemplateField:
 
-- Kombinování dvě nebo více hodnot dat pole do jednoho sloupce a
-- Vyjádření hodnotu pole dat pomocí ovládacího prvku webového místo textu
+- Kombinace dvou nebo víc hodnot dat pole do jednoho sloupce a
+- Vyjádření hodnoty datového pole pomocí ovládacího prvku webového namísto textu
 
-V zobrazení metadata o prvku GridView je třetí použití TemplateFields základní data. Kromě zobrazení dat zaměstnanců, například může také Chceme mít sloupec, který zobrazuje, kolik celkový počet dnů, které jste se v úloze.
+Třetí použití vlastností TemplateField je v zobrazení metadat o prvku GridView podkladová data. Kromě zobrazení dat zaměstnanců, například může být také Chceme mít sloupec, který zobrazuje počet celkový počet dnů, jsme se vydali na úlohu.
 
-Ještě jiné použití TemplateFields vznikl ve scénářích, při podkladová data musí být jinak zobrazena v sestavě webové stránky než ve formátu je uložena v databázi. Představte si, která `Employees` z tabulek `Gender` pole, která uložená znak `M` nebo `F` označíte, pohlaví zaměstnance. Při zobrazení těchto informací na webové stránce chceme zobrazit pohlaví jako "Mužského" nebo "Ženského", oproti právě "M" nebo "F".
+Ještě nastane jiný použití vlastností TemplateField v situacích při podkladová data musí být jinak zobrazí v sestavě webové stránky než ve formátu je uložena v databázi. Představte si, že `Employees` měla tabulka `Gender` pole, které ukládají znak `M` nebo `F` udávajících pohlaví zaměstnance. Při zobrazení těchto informací na webové stránce budeme chtít zobrazit pohlaví jako "Mužského" nebo "Ženský", na rozdíl od jenom "M" nebo "F".
 
-Oba scénáře lze zpracovat tak, že vytvoříte *formátování metoda* ve třídě kódu stránky ASP.NET (nebo v samostatné třídy knihovny, implementovaný jako `static` metoda) který lze vyvolat pomocí šablony. Formátování metoda je volána z šablony pomocí stejné datové vazby syntaxe viděli dříve. Metoda formátování využít libovolný počet parametrů, ale musí vrátit řetězec. Tato vrácený řetězec je HTML, který je vložit do šablony.
+Obou těchto scénářích může zpracovat tak, že vytvoříte *formátování – metoda* v třídě modelu code-behind stránky ASP.NET (nebo v samostatné knihovně tříd, implementovat jako `static` – metoda), která je vyvolána z šablony. Tyto metody pro formátování je vyvolána z šablony pomocí stejné syntaxe databinding viděli dříve. Metoda formátování můžete provést v libovolném počtu parametrů, ale musí vracet řetězce. Vrácený řetězec je HTML, který se vloží do šablony.
 
-Pro ilustraci tento koncept, můžeme posílení našem kurzu zobrazíte na sloupec, který uvádí celkový počet dní, po které zaměstnanec byl v úloze. Tato metoda formátování bude trvat `Northwind.EmployeesRow` objektu a vrátí počet dní zaměstnanec být použitá jako řetězec. Tuto metodu lze přidat do třídy kódu stránky ASP.NET, ale *musí* označit jako `protected` nebo `public` Chcete-li být přístupné ze šablony.
+Pro ilustraci tohoto konceptu, můžeme rozšířit v našem kurzu zobrazíte na sloupec, který uvádí celkový počet dní, po které se zaměstnanci v úloze. Bude mít tato metoda formátování `Northwind.EmployeesRow` objekt a vrátí počet dní, zaměstnanec má se použijí jako řetězec. Tuto metodu lze přidat na stránku ASP.NET použití modelu code-behind třídu, ale *musí* označit jako `protected` nebo `public` -li být přístupné ze šablony.
 
 
 [!code-csharp[Main](using-templatefields-in-the-gridview-control-cs/samples/sample5.cs)]
 
-Vzhledem k tomu `HiredDate` pole může obsahovat `NULL` databáze hodnoty jsme musíte nejdříve se ujistěte, že hodnota není `NULL` před pokračováním výpočtu. Pokud `HiredDate` hodnota je `NULL`, můžeme jednoduše vrátí řetězec "Neznámý"; Pokud není `NULL`, jsme výpočetní rozdíl mezi aktuální čas a `HiredDate` hodnotu a vrátí počet dní.
+Protože `HiredDate` pole může obsahovat `NULL` databáze hodnoty jsme musíte napřed zajistit, že hodnota není `NULL` než se pustíte do výpočtu. Pokud `HiredDate` hodnotu `NULL`, můžeme jednoduše vrátit řetězec "Neznámý"; Pokud není `NULL`, můžeme následujícím způsobem vypočítat rozdíl mezi aktuální čas a `HiredDate` hodnotu a vrátí počet dní.
 
-Abyste mohli využívat tuto metodu, musíme vyvolat z TemplateField v GridView pomocí syntaxe datové vazby. Začněte přidáním nové TemplateField GridView kliknutím na odkaz Upravit sloupce v prvku GridView inteligentních značek a přidáním nové TemplateField.
-
-
-[![Přidat nové TemplateField do GridView](using-templatefields-in-the-gridview-control-cs/_static/image44.png)](using-templatefields-in-the-gridview-control-cs/_static/image43.png)
-
-**Obrázek 15**: Přidání nové TemplateField do GridView ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image45.png))
+Chcete-li využívají tuto metodu, musíme ho vyvolat z TemplateField v prvku GridView pomocí syntaxe datové vazby. Začněte přidáním nové TemplateField do prvku GridView. Kliknutím na odkaz Upravit sloupce v prvku GridView inteligentních značek a přidáním nové TemplateField.
 
 
-Nastavit tento nový TemplateField `HeaderText` vlastnost "Dní na the úloha" a jeho `ItemStyle`na `HorizontalAlign` vlastnost `Center`. K volání `DisplayDaysOnJob` metoda ze šablony, přidejte `ItemTemplate` a použijte následující syntaxi vazby dat:
+[![Přidat nový TemplateField do prvku GridView.](using-templatefields-in-the-gridview-control-cs/_static/image44.png)](using-templatefields-in-the-gridview-control-cs/_static/image43.png)
+
+**Obrázek 15**: přidejte nový TemplateField do prvku GridView ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image45.png))
+
+
+Nastavit tento nový TemplateField `HeaderText` vlastnost "Dní na the úlohy" a jeho `ItemStyle`společnosti `HorizontalAlign` vlastnost `Center`. Volání `DisplayDaysOnJob` metoda ze šablony, přidejte `ItemTemplate` a použijte následující syntaxi datové vazby:
 
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample6.aspx)]
 
-`Container.DataItem` Vrátí `DataRowView` objekt odpovídající `DataSource` záznam vázána `GridViewRow`. Jeho `Row` vlastnost vrací silného typu `Northwind.EmployeesRow`, který je předán `DisplayDaysOnJob` metoda. Tato syntaxe vazby dat se může zobrazit přímo v `ItemTemplate` (jak je znázorněno níže uvedené deklarativní syntaxe) nebo lze přiřadit k `Text` vlastností ovládacího prvku popisek Web.
+`Container.DataItem` Vrátí `DataRowView` objekt odpovídající `DataSource` záznam vázán na `GridViewRow`. Jeho `Row` vlastnost vrací silných `Northwind.EmployeesRow`, které se předává `DisplayDaysOnJob` metoda. Tato syntaxe vázání dat se může zobrazit přímo v `ItemTemplate` (jak je znázorněno níže uvedené deklarativní syntaxe) nebo je možné přiřadit `Text` vlastnost ovládacího prvku popisku Web.
 
 > [!NOTE]
-> Alternativně místo předávání `EmployeesRow` instance, jsme právě předat v `HireDate` hodnotu pomocí `<%# DisplayDaysOnJob(Eval("HireDate")) %>`. Ale `Eval` metoda vrátí `object`, takže nám změnit naše `DisplayDaysOnJob` podpis metody tak, aby přijímal vstupní parametr typu `object`, místo toho. Jsme slepě nejde přetypovat `Eval("HireDate")` volat na `DateTime` protože `HireDate` sloupec v `Employees` tabulka může obsahovat `NULL` hodnoty. Proto je potřeba přijmout `object` jako vstupní parametr pro `DisplayDaysOnJob` metoda, zkontrolujte, pokud ji měla databázi `NULL` hodnotu (jehož lze dosáhnout pomocí `Convert.IsDBNull(objectToCheck)`) a poté pokračujte odpovídajícím způsobem.
+> Alternativně namísto předávání `EmployeesRow` instance, jsme mohli stačí pouze předat `HireDate` hodnotu pomocí `<%# DisplayDaysOnJob(Eval("HireDate")) %>`. Ale `Eval` vrátí metoda `object`, takže budeme něco muset změnit náš `DisplayDaysOnJob` podpis metody tak, aby přijímal vstupní parametr typu `object`, místo toho. Jsme slepě nejde přetypovat `Eval("HireDate")` volání `DateTime` protože `HireDate` sloupec v `Employees` tabulka může obsahovat `NULL` hodnoty. Proto budeme muset přijmout `object` jako vstupní parametr `DisplayDaysOnJob` metody, zkontrolujte, pokud má databáze `NULL` hodnotu (jehož lze dosáhnout pomocí `Convert.IsDBNull(objectToCheck)`) a pak pokračujte odpovídajícím způsobem.
 
 
-Z důvodu těchto odlišnosti I jste se rozhodli předávat celý `EmployeesRow` instance. V dalším kurzu ukážeme další příklad vhodnosti pro použití `Eval("columnName")` syntaxe pro předávání vstupního parametru do metody pro formátování.
+Z důvodu těchto odlišností můžu nepřejete a zajistěte tak předání celý `EmployeesRow` instance. V dalším kurzu uvidíme více přizpůsobování příkladu pro použití `Eval("columnName")` syntaxe pro předávání vstupního parametru do metody pro formátování.
 
-Následující příklad zobrazuje deklarativní syntaxi pro naše GridView po přidání TemplateField a `DisplayDaysOnJob` metoda volána z `ItemTemplate`:
+Následující příklad zobrazuje deklarativní syntaxe pro naše GridView po přidání pole TemplateField a `DisplayDaysOnJob` metodu s názvem z `ItemTemplate`:
 
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample7.aspx)]
 
-Obrázek 16 zobrazuje dokončené kurzu, když zobrazit pomocí prohlížeče.
+Obrázek 16 ukazuje dokončení kurzu při prohlížení prostřednictvím prohlížeče.
 
 
-[![Zobrazují počet dní, které zaměstnanec byl v úloze](using-templatefields-in-the-gridview-control-cs/_static/image47.png)](using-templatefields-in-the-gridview-control-cs/_static/image46.png)
+[![Zobrazí počet dní, zaměstnanec bylo v úloze](using-templatefields-in-the-gridview-control-cs/_static/image47.png)](using-templatefields-in-the-gridview-control-cs/_static/image46.png)
 
-**Obrázek 16**: počtem dnů se zobrazí zaměstnanec byl v úloze ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
+**Obrázek 16**: The číslo ze dnů zaměstnance bylo v úloze se zobrazí ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
 
 
 ## <a name="summary"></a>Souhrn
 
-TemplateField v ovládacím prvku GridView umožňuje vyšší stupeň flexibilitu při zobrazení dat, než je k dispozici v dalších ovládacích prvků pole. TemplateFields jsou ideální pro situace, kde:
+Umožňuje vyšší míra flexibility v zobrazení dat, než je k dispozici s dalšími prvky pole TemplateField v ovládacím prvku GridView. Vlastností TemplateField jsou ideální pro situace, kde:
 
-- Více datových polí je nutné na jeden sloupec GridView
-- Data se nejlépe vyjádřit pomocí ovládacího prvku webového spíše než prostý text
-- Výstup závisí na základní data, například zobrazení metadat nebo v přeformátování data
+- Potřebujete více datových polí zobrazeného do jednoho sloupce GridView
+- Data je nejlepší vyjádřena pomocí webový ovládací prvek spíše než prostý text
+- Výstup závisí na podkladová data, například zobrazení metadat nebo přeformátování dat
 
-Kromě přizpůsobení zobrazení dat, jsou TemplateFields také použít pro přizpůsobení uživatelského rozhraní, použít pro úpravy a vkládání dat, jako ukážeme v budoucnosti kurzy.
+Kromě přizpůsobení zobrazení dat, jsou vlastností TemplateField také používá pro přizpůsobení uživatelských rozhraní pro úpravy a vložení dat, používat, protože uvidíme v budoucích kurzech.
 
-Další dvě kurzy dál zkoumat šablon, podívejte se na použití TemplateFields v DetailsView počínaje. Následující, jsme budete zapněte k FormView, která poskytují větší flexibilitu v rozložení a strukturu dat pomocí šablony místo pole.
+Následující dva kurzy pokračujte ve zkoumání šablon, podívejte se na použití vlastností TemplateField v DetailsView počínaje. Pod jsme budete přepněte FormView, který používá šablony k zajištění větší flexibility v rozložení a strukturu dat namísto polí.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Zvláštní poděkování
+## <a name="special-thanks-to"></a>Speciální k
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Dana Jagers. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Vedoucí kontrolor pro účely tohoto kurzu byla Jagers daň. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Předchozí](custom-formatting-based-upon-data-cs.md)

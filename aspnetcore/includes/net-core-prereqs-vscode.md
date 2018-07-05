@@ -6,7 +6,7 @@ Nainstalujte následující:
 * [C# pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
-* [! [] – INCLUDE (~ / includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
+* [! Zahrnout [] (~ / includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 ::: moniker-end

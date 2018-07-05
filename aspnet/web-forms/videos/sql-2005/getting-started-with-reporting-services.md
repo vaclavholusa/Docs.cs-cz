@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/sql-2005/getting-started-with-reporting-services
-title: Začínáme se službou Reporting Services | Microsoft Docs
+title: Začínáme se službou Reporting Services | Dokumentace Microsoftu
 author: microsoft
-description: SQL Server Reporting Services umožňuje návrh a nasazení vhodně formátovaná a interaktivní sestavy reprezentativní vaše data. Vhodná pro tisk nebo jen...
+description: SQL Server Reporting Services můžete navrhnout a nasadit hezky formátovaný a interaktivní sestavy reprezentativní data. Vhodná pro tisk nebo jen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/21/2006
 ms.topic: article
 ms.assetid: f348a388-d3a2-4ea8-baf0-be2e6ef8efe1
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/sql-2005/getting-started-with-reporting-services
 msc.type: video
-ms.openlocfilehash: 187b40f53bad7d81bbeb0a3efb332568317aa162
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 75325dc3ae9e30a61b989ce2e8a7a18e1be98f25
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892852"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37361523"
 ---
-<a name="getting-started-with-reporting-services"></a>Začínáme s služby Reporting Services
+<a name="getting-started-with-reporting-services"></a>Začínáme se službou Reporting Services
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-SQL Server Reporting Services umožňuje návrh a nasazení vhodně formátovaná a interaktivní sestavy reprezentativní vaše data. Vhodné pro distribuci tisku nebo online ale tyto sestavy umožňuje získat profesionální výsledky velmi rychle. Toto video ukazuje, jak nastavení služby Reporting Services a Business Intelligence Development Studio pro vytváření sestav pomocí průvodců a návrhářů a nasadit je na serveru sestav.
+SQL Server Reporting Services můžete navrhnout a nasadit hezky formátovaný a interaktivní sestavy reprezentativní data. Vhodný pro distribuci tištěná verze nebo online a tyto sestavy vám umožní získat profesionální výsledky velmi rychle. Toto video ukazuje, jak nastavit služby Reporting Services a Business Intelligence Development Studio pro vytváření sestav pomocí průvodci a návrháři a nasazujte je na serveru sestav.
 
-[&#9654;Podívejte se na video (32 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/getting-started-with-reporting-services)
+[&#9654;Podívejte se na video (32 min)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/getting-started-with-reporting-services)
 
 > [!div class="step-by-step"]
 > [Předchozí](using-sql-server-management-studio.md)

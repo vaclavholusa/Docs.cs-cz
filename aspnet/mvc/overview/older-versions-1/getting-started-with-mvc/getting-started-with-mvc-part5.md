@@ -1,68 +1,67 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
-title: Přístup k vašemu modelu datům z řadiče | Microsoft Docs
+title: Přístup k datům modelu z Kontroleru | Dokumentace Microsoftu
 author: shanselman
-description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
+description: Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvořte jednoduchou webovou aplikaci, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
 ms.topic: article
 ms.assetid: 004703cd-e0e9-4ba7-9974-1b0475c71222
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: 2ba1b73f40a920e27e4a03d9f703e62054d3f25c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fe5111e2f103e9b20f27385421a1985062acaac1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
-ms.locfileid: "30876433"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371610"
 ---
-<a name="accessing-your-models-data-from-a-controller"></a>Přístup k vašemu modelu datům z řadiče
+<a name="accessing-your-models-data-from-a-controller"></a>Přístup k datům modelu z Kontroleru
 ====================
 podle [Scott Hanselman](https://github.com/shanselman)
 
-> Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze. Přejděte [výukové centrum pro rozhraní ASP.NET MVC](../../../index.md) kurzy a ukázky najdete další ASP.NET MVC.
+> Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze. Přejděte [výukové centrum pro ASP.NET MVC](../../../index.md) najít další technologie ASP.NET MVC, kurzů a ukázek.
 
 
-V této části jsme se chystáte vytvořit novou třídu MoviesController a napsat kód, naše film data načte a zobrazí zpět do prohlížeče pomocí šablony zobrazení.
+V této části jsme se chystáte vytvořit novou třídu MoviesController a napsat kód, který načte naše data o filmech a zobrazí ji zpět do prohlížeče pomocí zobrazení šablony.
 
 Klikněte pravým tlačítkem na složku řadiče a proveďte nové MoviesController.
 
 [![Přidání Kontroleru](getting-started-with-mvc-part5/_static/image2.png)](getting-started-with-mvc-part5/_static/image1.png)
 
-Tím se vytvoří nový soubor "MoviesController.cs" pod naše \Controllers složku v rámci naší projektu. Umožňuje aktualizovat MovieController načíst seznam filmy z našich nově vyplněná databáze.
+Tím se vytvoří nový soubor "MoviesController.cs" pod naše \Controllers složky v rámci naší projektu. Umožňuje aktualizovat MovieController načíst seznam video z naší nově mají údaj vyplněný databáze.
 
 [!code-csharp[Main](getting-started-with-mvc-part5/samples/sample1.cs)]
 
-Dotaz LINQ jsme se provádí tak, aby načteme filmy vydanou po letní 1984. Budeme potřebovat šablonu zobrazení k vykreslení tento seznam filmy zpět, takže klikněte pravým tlačítkem myši v metodě a vyberte možnost Přidat zobrazení k jeho vytvoření.
+Tak, aby načteme filmy vydanou po léta 1984 jsme provádění dotazu LINQ. Budeme potřebovat zobrazit šablonu pro vykreslení tohoto seznamu filmy zpět, takže klikněte pravým tlačítkem na metodu a vyberte Přidat zobrazení k jeho vytvoření.
 
-V dialogovém okně Přidat zobrazení jsme budete znamenat předali seznam&lt;Movies.Models.Movie&gt; do našich zobrazení šablony. Na rozdíl od předchozích dobu jsme používá dialogové okno Přidat zobrazení a rozhodli se vytvořit šablonu "Prázdný" tentokrát jsme budete označuje, že chceme sady Visual Studio automaticky "vygenerovat" Zobrazit šablonu pro nám s některé výchozí obsah. Provedeme to tak, že vyberete "Seznam" položky v rámci "obsahu rozevírací nabídce zobrazení.
+V dialogovém okně Přidat zobrazení budete Udáváme, že jsme prochází seznam&lt;Movies.Models.Movie&gt; do našich zobrazení šablony. Na rozdíl od předchozích časy použít dialogové okno Přidat zobrazení jsme se rozhodli vytvořit šablonu služby "Prázdný" tentokrát jsme budete označuje, že chceme, aby Visual Studio automaticky "scaffold" Zobrazit šablonu pro nás s nějakou výchozí obsah. Provedeme to tak, že vyberete "Seznam" položky v rámci "zobrazení obsahu rozevírací nabídky.
 
-Mějte na paměti, když jste vytvořili novou třídu budete potřebovat kompilace aplikace se zobrazí v dialogovém okně Přidat zobrazení.
+Mějte na paměti, když jste vytvořili novou třídu, budete muset kompilovat aplikaci, aby se zobrazí v dialogovém okně Přidat zobrazení.
 
 ![Přidání zobrazení](getting-started-with-mvc-part5/_static/image3.png)
 
-Klikněte na tlačítko Přidat a systém automaticky vygeneruje kód pro zobrazení pro nás, které zobrazuje seznam filmy. To je dobrý čas na přechod &lt;h2&gt; záhlaví něco jako "Moje film seznam", jako jsme provedli dříve s zobrazení Hello World.
+Klikněte na tlačítko Přidat a systém automaticky vygeneruje kód pro zobrazení pro USA, který zobrazuje náš seznam videa. Toto je změna vhodná doba &lt;h2&gt; přepravuje do něco jako "Moje film seznam", jako jsme to udělali dříve se zobrazením Hello World.
 
-[![Filmy - sadu Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
+[![Videa – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part5/_static/image5.png)](getting-started-with-mvc-part5/_static/image4.png)
 
-Spusťte aplikaci a navštivte /Movies na panelu Adresa. Jsme teď načíst data z databáze pomocí základního dotazu v Kontroleru a vrátí data zobrazení, které zná filmy. Toto zobrazení potom otáčí prostřednictvím seznamu filmy a vytvoří tabulku dat pro nás.
+Spusťte aplikaci a přejděte do adresního řádku /Movies. Jsme teď načíst data z databáze pomocí základní dotaz do třídy Kontroleru a vrátí data zobrazení, které ví o filmech. Toto zobrazení pak přede prostřednictvím seznamu filmy a vytvoří tabulky dat pro nás.
 
 [![Seznam film – Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
 
-Jsme nebude být implementace úpravy, podrobnosti a odstranění funkce pomocí této aplikace - tak jsme nepotřebujete výchozí odkazy, které vytvořit šablonu vygenerované uživatelské rozhraní pro nás. Otevřete soubor /Movies/Index.aspx a je odebrat.
+Jsme nesmí být implementace úpravy, podrobností a odstraněných funkcí s touto aplikací – proto nepotřebujeme výchozí odkazy, které šablona scaffold vytváří. Otevřete soubor /Movies/Index.aspx a neodeberete.
 
-Tady je zdrojový kód by měl vypadat naše aktualizovanou šablonu zobrazení po jsme proveďte tyto změny:
+Zde je zdrojový kód by měl vypadat naše aktualizovanou šablonu zobrazení po jsme tyto změny:
 
 [!code-aspx[Main](getting-started-with-mvc-part5/samples/sample2.aspx)]
 
-Vytváří odkazy, které nebudou potřebujeme, takže jsme budete odstranit v tomto příkladu. Ponecháme naše vytvořit nové propojení ale, jak se další! Zde je, jak naše aplikace vypadá se tento sloupec odebrat.
+Odkazy, které jsme nebudete potřebovat, se vytváří, je v tomto příkladu odstraníme. Budeme udržovat naše vytvořit nové propojení, jako to je další! Tady je vypadá naši aplikaci pomocí tohoto sloupce odebrány.
 
 [![Seznam film – Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
 
-Nyní je k dispozici jednoduchý seznam naše film data. Ale když kliknete na odkaz "Vytvořit nové", jsme budete dojde k chybě jako ji není připojili! Umožňuje implementovat metodu vytvořit akce a umožní uživateli zadat nové filmy v naší databázi.
+Nyní je k dispozici jednoduchý seznam naše data o filmech. Ale když kliknete na odkaz "Vytvořit nový", jsme chybu, protože získáte ji není připojili! Můžeme implementovat metodu akce vytvoření a povolit tak uživateli zadat nové filmy v databázi.
 
 > [!div class="step-by-step"]
 > [Předchozí](getting-started-with-mvc-part4.md)

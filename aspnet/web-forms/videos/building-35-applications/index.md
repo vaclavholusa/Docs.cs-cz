@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/building-35-applications/index
-title: Vytváření aplikací 3.5 | Microsoft Docs
+title: Vytváření aplikací verze 3.5 | Dokumentace Microsoftu
 author: rick-anderson
 description: Základy vytváření aplikací webových formulářů ASP.NET.
 ms.author: aspnetcontent
@@ -9,34 +9,33 @@ ms.date: 10/05/2011
 ms.topic: article
 ms.assetid: 20060b05-3c1b-41ca-9621-4434ba233adc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/building-35-applications
 msc.type: chapter
-ms.openlocfilehash: 3a0c07ec2b8bd47e37dcce750a003ac6c0e824d8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 223a54303094162cb2cc5b6da2b8548418ca5bb8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572224"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364530"
 ---
-<a name="building-35-applications"></a>Vytváření aplikací, 3.5
+<a name="building-35-applications"></a>Vytváření aplikací verze 3.5
 ====================
 > Základy vytváření aplikací webových formulářů ASP.NET.
 
 
-- [Úvod do Visual Web Developer](intro-to-visual-web-developer.md)
+- [Úvod do aplikace Visual Web Developer](intro-to-visual-web-developer.md)
 - [IntelliSense](intellisense.md)
 - [Úvod do webových formulářů](intro-to-web-forms.md)
 - [Rozložení stránky](page-layout.md)
 - [Události životního cyklu stránky](page-lifecycle-events.md)
-- [Úvod do ovládacích prvků technologie ASP.NET](intro-to-aspnet-controls.md)
-- [Odeslání a odeslat zpět](submit-and-postback.md)
-- [Objekty na úrovni aplikací](application-level-objects.md)
-- [Objekty relace úrovně](session-level-objects.md)
+- [Úvod do ovládacích prvků ASP.NET](intro-to-aspnet-controls.md)
+- [Odeslání a postback](submit-and-postback.md)
+- [Objekty na úrovni aplikace](application-level-objects.md)
+- [Objekty na úrovni relace](session-level-objects.md)
 - [Ladění](debugging.md)
-- [ŠABLON STYLŮ CSS](css.md)
-- [Hlavní stránky](masterpages.md)
-- [Úvod do protokolu SOAP na základě webové služby s Visual Web Developer 2008](an-introduction-to-soap-based-web-services-with-visual-web-developer-2008.md)
-- [Styl služby AJAX s Microsoft Visual Web Developer 2008](ajax-style-services-with-microsoft-visual-web-developer-2008.md)
-- [Ověření](validation.md)
-- [Ovládací prvky pro přihlášení](login-controls.md)
+- [CSS](css.md)
+- [Stránky předlohy](masterpages.md)
+- [Úvod do webových služeb založených na protokolu SOAP v aplikaci Visual Web Developer 2008](an-introduction-to-soap-based-web-services-with-visual-web-developer-2008.md)
+- [Služby stylu AJAX v aplikaci Microsoft Visual Web Developer 2008](ajax-style-services-with-microsoft-visual-web-developer-2008.md)
+- [Ověřování](validation.md)
+- [Přihlašovací ovládací prvky](login-controls.md)

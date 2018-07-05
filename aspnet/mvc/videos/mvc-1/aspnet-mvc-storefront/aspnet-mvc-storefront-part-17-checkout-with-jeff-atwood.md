@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
-title: 'ASP.NET MVC Storefront část 17: Najdete v článku věnovaném s Jeff Atwood | Microsoft Docs'
+title: 'ASP.NET MVC prezentace – část 17: Pokladna s Jeffem Atwoodem | Dokumentace Microsoftu'
 author: robconery
-description: V této díl I připraveni si projít procesem a komunikovat s CodingHorror PAN, sám Jeff Atwood. Jsme v souvislosti se všechny typy věcí, ale většinou popisují Ope...
+description: V této epizodě jsem připraven až proces platby u pokladny a obraťte se na Mr. CodingHorror, sám Jeffem Atwoodem. Mluvíme o všech různých věcí, ale většinou diskutovat o Ope...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
 ms.topic: article
 ms.assetid: a39182f9-a82c-41fa-9be0-92c2291a3a96
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
 msc.type: video
-ms.openlocfilehash: ccb6b6bb76598c1aef2321e22eb0cfc2846f53a4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3c5acf743757a088b22de63f5882e0b3f425c3c1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867148"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365156"
 ---
-<a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>ASP.NET MVC Storefront část 17: Najdete v článku věnovaném s Jeff Atwood
+<a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a>ASP.NET MVC prezentace – část 17: Pokladna s Jeffem Atwoodem
 ====================
-podle [ukrást Conery](https://github.com/robconery)
+podle [Rob Conery](https://github.com/robconery)
 
-V této díl I připraveni si projít procesem a komunikovat s CodingHorror PAN, sám Jeff Atwood. Jsme v souvislosti se všechny typy věcí, ale většinou zabývat Open ID, CardSpace a jak Jeff rádi viděli proces najdete v článku věnovaném fungovat ideální světě. I pak vás provede procesem nastavení CardSpace na místním počítači.
+V této epizodě jsem připraven až proces platby u pokladny a obraťte se na Mr. CodingHorror, sám Jeffem Atwoodem. Mluvíme o všech různých věcí, ale většinou diskutovat o Open ID, služba CardSpace a jak Jan byste si rádi ideální světě pracovní proces platby u pokladny. Můžu pak vás provede nastavením CardSpace na místním počítači.
 
 [&#9654;Podívejte se na video (34 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood)
 

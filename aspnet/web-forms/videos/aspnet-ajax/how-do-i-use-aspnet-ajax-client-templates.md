@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-aspnet-ajax-client-templates
-title: 'Jak na: použití ASP.NET AJAX klienta šablony | Microsoft Docs'
+title: 'Postup: použití technologie ASP.NET AJAX klientských šablon | Dokumentace Microsoftu'
 author: rick-anderson
-description: Účastnící se vytváření interakce AJAX, asynchronní volání služby a aktualizovat stránku s Výsledná data jsou dvě klíčové kroky. H prvku ASP.NET AJAX...
+description: Účastnící se vytváření AJAX interakce, asynchronní volání služby a aktualizace na stránce s Výsledná data jsou dvě klíčové kroky. ASP.NET AJAX h...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2009
 ms.topic: article
 ms.assetid: 2ab9d1eb-25b7-4bb6-b334-b83e45e9fcbb
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-aspnet-ajax-client-templates
 msc.type: video
-ms.openlocfilehash: 6e960049128c3a3428ede04621b8b665ac7dd0fc
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f2873c9ec4ae57f34f7e41bdf7662d890df40d0f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886339"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367519"
 ---
-<a name="how-do-i-use-aspnet-ajax-client-templates"></a>Jak na: použití ASP.NET AJAX klienta šablony
+<a name="how-do-i-use-aspnet-ajax-client-templates"></a>Postup: použití technologie ASP.NET AJAX klientských šablon
 ====================
 podle [Rob Windsor](https://twitter.com/robwindsor)
 
-Účastnící se vytváření interakce AJAX, asynchronní volání služby a aktualizovat stránku s Výsledná data jsou dvě klíčové kroky. Prvku ASP.NET AJAX vždy udělal první část snadno ale ho nebyl k dispozici mnoho podporu pro druhý. Chcete-li tento problém vyřešit, společnost Microsoft přidala šablony na straně klienta a datové vazby a v tomto videu Rob Windsor ukazují, jak používat tyto nové funkce ve svých aplikacích AJAX.
+Účastnící se vytváření AJAX interakce, asynchronní volání služby a aktualizace na stránce s Výsledná data jsou dvě klíčové kroky. ASP.NET AJAX má vždy snadné první část, ale neposkytl rozsah podpory pro druhý. A tento problém vyřešit, společnost Microsoft přidala na straně klienta šablony a datové vazby a v tomto videu Rob Windsor ukazuje, jak používat tyto nové funkce v aplikacích jazyka AJAX.
 
 [&#9654;Podívejte se na video (33 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-aspnet-ajax-client-templates)
 

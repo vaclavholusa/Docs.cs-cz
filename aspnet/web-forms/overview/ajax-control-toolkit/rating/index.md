@@ -1,28 +1,27 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/index
-title: Hodnocení | Microsoft Docs
+title: Hodnocení | Dokumentace Microsoftu
 author: rick-anderson
-description: Tento kurz ukazuje, jak používat řízení hodnocení tak, aby uživatelé zadejte hodnocení pro články nebo položek.
+description: Tento kurz ukazuje, jak pomocí ovládacího prvku hodnocení umožňuje uživatelům zadat hodnocení pro články nebo položky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
 ms.topic: article
 ms.assetid: 2af1ffb5-c6a6-40fa-b431-1e03190dedfd
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating
 msc.type: chapter
-ms.openlocfilehash: cabc043fd4be36d5d81563fa2f4b7e46a08fcad8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46c495af4cc0fcb7802277631cc0524104edaed2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26567787"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37361659"
 ---
 <a name="rating"></a>Hodnocení
 ====================
-> Tento kurz ukazuje, jak používat řízení hodnocení tak, aby uživatelé zadejte hodnocení pro články nebo položek.
+> Tento kurz ukazuje, jak pomocí ovládacího prvku hodnocení umožňuje uživatelům zadat hodnocení pro články nebo položky.
 
 
-- [Vytvoření ovládacího prvku hodnocení (C#)](creating-a-rating-control-cs.md)
-- [Vytvoření ovládacího prvku hodnocení (VB)](creating-a-rating-control-vb.md)
+- [Vytvoření ovládacího prvku Rating (C#)](creating-a-rating-control-cs.md)
+- [Vytvoření ovládacího prvku Rating (VB)](creating-a-rating-control-vb.md)

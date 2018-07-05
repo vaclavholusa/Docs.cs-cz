@@ -1,27 +1,26 @@
 ---
 uid: web-forms/videos/jquery/index
-title: jQuery | Microsoft Docs
+title: jQuery | Dokumentace Microsoftu
 author: rick-anderson
-description: Jak používat funkce jQuery na stránkách ASP.NET.
+description: Jak používat funkce jQuery stránek v ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
 ms.topic: article
 ms.assetid: e9dd0075-0273-48b5-ad2c-0b0ec8e1055b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/jquery
 msc.type: chapter
-ms.openlocfilehash: 314848f3d591e6e671abba983dafbf81d8856415
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5893cf8a674688c5ae1b700d8ca088efa9ac20fc
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572110"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364395"
 ---
 <a name="jquery"></a>jQuery
 ====================
-> Jak používat funkce jQuery na stránkách ASP.NET.
+> Jak používat funkce jQuery stránek v ASP.NET.
 
 
-- [Ujistěte se, jQuery pomocí volání Ajax](how-do-i-make-ajax-calls-using-jquery.md)
+- [Volání Ajax pomocí jQuery](how-do-i-make-ajax-calls-using-jquery.md)

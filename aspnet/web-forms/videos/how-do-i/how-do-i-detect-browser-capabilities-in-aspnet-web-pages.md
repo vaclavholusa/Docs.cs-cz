@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
-title: '[Jak na:] Zjistit možnosti prohlížeče na webových stránkách ASP.NET | Microsoft Docs'
+title: '[Postup:] Zjištění možností prohlížeče v rozhraní ASP.NET Web Pages | Dokumentace Microsoftu'
 author: rick-anderson
-description: V tomto videu se Jan PEL ukazují, jak určit, jaké funkce prohlížeč při zobrazení stránky na webu technologie ASP.NET. Nejdřív zjistěte, jak účet...
+description: V tomto videu se zobrazí Chris pixelů na tom, jak určit, jaké možnosti prohlížeče uživatele má při prohlížení stránky na webu technologie ASP.NET. Nejdřív zjistěte, jak účet...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
 ms.topic: article
 ms.assetid: aabfeabb-459e-4cfd-b067-44da3bbb291b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
 msc.type: video
-ms.openlocfilehash: 3c1c644412ffdafd52d1589b7f52188db85fe6ce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 336797efbe3ea2a78b6bf5b9ba514107e54f17fe
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28884088"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364572"
 ---
-<a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[Jak na:] Zjistit možnosti prohlížeče na webových stránkách ASP.NET
+<a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[Postup:] Zjištění možností prohlížeče webovými stránkami ASP.NET
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V tomto videu se Jan PEL ukazují, jak určit, jaké funkce prohlížeč při zobrazení stránky na webu technologie ASP.NET. Nejdřív zjistěte, jak pro přístup k instanci objektu HttpBrowserCapabilities z objektu žádost ASP.NET přidružený k požadavku na webovou stránku. Dále najdete různé informace, které jsou k dispozici v objektu HttpBrowserCapabilities, jako je například typ prohlížeče a jestli uživatele prohlížeč podporuje JavaScript a soubory cookie. Pak uvidí tyto informace o prohlížeči uživatele příklad toho, jak pro uživatele a zjistěte, zda prohledávací modul přistupuje k webu, může být přesměrován na konkrétní webovou stránku prohledávacího modulu.
+V tomto videu se zobrazí Chris pixelů na tom, jak určit, jaké možnosti prohlížeče uživatele má při prohlížení stránky na webu technologie ASP.NET. Nejdřív zjistěte, jak získat přístup k instanci objektu HttpBrowserCapabilities z žádosti ASP.NET objekt přidružený k požadavku na webovou stránku. Dál si představíme různé informace, které jsou k dispozici v objektu HttpBrowserCapabilities, jako je například typ prohlížeče a určuje, zda uživatele prohlížeč podporuje JavaScript a soubory cookie. Potom tyto informace o webového prohlížeče najdete příklad toho, jak pro uživatele a určit, zda prohledávací modul přistupuje k webové stránky, je možné přesměrovat do konkrétní webovou stránku prohledávacího modulu.
 
-[&#9654; Podívejte se na video (14 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-detect-browser-capabilities-in-aspnet-web-pages)
+[&#9654;Podívejte se na video (14 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-detect-browser-capabilities-in-aspnet-web-pages)

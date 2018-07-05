@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
-title: '[Jak na:] Používat k odesílání e-mailu z webu ASP.NET | Microsoft Docs'
+title: '[Postup:] Použití ASP.NET k odeslání e-mailu z webu | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan ukazuje, jak vytvořit a odeslat e-mailu na webu technologie ASP.NET. První informace o základní třídy v f obor názvů System.Net.Mail...
+description: V toto video pixelů na Chris ukazuje, jak vytvořit a odeslat e-mailu na webu technologie ASP.NET. Nejprve informace o základní třídy v oboru názvů f System.Net.Mail...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2008
 ms.topic: article
 ms.assetid: 97f7323a-efc6-4e32-9a16-b011ed2a781b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
 msc.type: video
-ms.openlocfilehash: 1b6b6ebf60ab33ecaf33e55fbf2a09b6d83c5120
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1e8463200e8c69a19230dc62305404bf4fa100b8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572119"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364485"
 ---
-<a name="how-do-i-use-aspnet-to-send-email-from-a-web-site"></a>[Jak na:] Pomocí technologie ASP.NET můžete odesílat e-mailu z webu.
+<a name="how-do-i-use-aspnet-to-send-email-from-a-web-site"></a>[Postup:] Použití ASP.NET k odeslání e-mailu z webu
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan ukazuje, jak vytvořit a odeslat e-mailu na webu technologie ASP.NET. První informace o základní třídy v oboru názvů System.Net.Mail pro odesílání e-mailu na webu technologie ASP.NET. Zjistit, jak vytvořit e-mailovou zprávu pomocí třídy poštovní zpráva, včetně toho, jak používat třídu MailAddress pro adresa odesílatele a jak se zahrnuje jednu nebo více adres. V dalším kroku najdete v části jak e-mail je odeslán pomocí třídy SmtpClient. Nakonec přečtěte si o dalších možností pro konfiguraci e-mailové zprávy, jako je například SKRYTÁ kopie, prioritu a přidání příloh.
+V toto video pixelů na Chris ukazuje, jak vytvořit a odeslat e-mailu na webu technologie ASP.NET. Poprvé přečtěte si o základní třídy v oboru názvů System.Net.Mail pro odeslání e-mailu na webu technologie ASP.NET. Zjistit, jak vytvořit e-mailovou zprávu pomocí třídy MailMessage, jak použít třídu MailAddress adresa odesílatele a postupu při obsahovat jednu nebo více adres. Dál si představíme způsob odesílání e-mailu pomocí SmtpClient třídy. A konečně přečtěte si o další možnosti pro konfiguraci e-mailové zprávy, jako je například kopie, SKRYTÁ, Priority a přidávání příloh.
 
-[&#9654; Podívejte se na video (25 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-aspnet-to-send-email-from-a-web-site)
+[&#9654;Podívejte se na video (25 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-aspnet-to-send-email-from-a-web-site)

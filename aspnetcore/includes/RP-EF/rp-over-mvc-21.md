@@ -1,17 +1,17 @@
 ::: moniker range=">= aspnetcore-2.1"
 
-V tomto kurzu nebyla upgradována, aby ASP.NET Core 2.1. Technologii ASP.NET 2.0 základní verze tohoto kurzu je k dispozici výběrem **technologii ASP.NET 2.0 základní** nahoře v tabulce obsahu nebo v horní části stránky:
+V tomto kurzu nebyl upgradován na verzi ASP.NET Core 2.1. ASP.NET Core 2.0 verzi tohoto kurzu je k dispozici výběrem **ASP.NET Core 2.0** výše uvedené tabulky obsahu nebo v horní části stránky:
 
-Stránky ASP.NET Core 2.1 Razor verzi v tomto kurzu má mnoho vylepšení verze 2.0.
+ASP.NET Core 2.1 Razor Pages verzi tohoto kurzu má mnoho vylepšení verze 2.0.
 
-2.0 kurzu se dozvíte, jaké technologie ASP.NET MVC jádra a Entity Framework Core s kontrolery a zobrazení. Stránky Razor je na stránce programovací model, který umožňuje vytváření webové uživatelské rozhraní snadnější a zvýšit produktivitu. Doporučujeme, abyste [stránky Razor](xref:data/ef-rp/intro) kurz přes verze MVC. Kurz Razor stránky:
+2.0 kurzu se naučíte ASP.NET, MVC Core a Entity Framework Core pomocí kontrolerů a zobrazení. Stránky Razor je na stránce programovací model, který je vytváření webového uživatelského rozhraní jednodušší a produktivnější. Doporučujeme, abyste [Razor Pages](xref:data/ef-rp/intro) kurz přes verze MVC. Kurz pro stránky Razor:
 
-* Je snazší postupujte podle. Například kód generování uživatelského rozhraní je výrazně jednodušší.
-* Poskytuje další EF základní osvědčené postupy.
-* Používá efektivnější dotazy.
+* Je usnadňuje její sledování. Například kód generování uživatelského rozhraní je výrazně zjednodušené.
+* Poskytuje další EF Core osvědčené postupy.
+* Používá účinnější dotazy.
 * Je více aktuální pomocí nejnovější rozhraní API.
-* Popisuje další funkce.
-* Je žádoucí pro nový vývoj aplikací.
+* Zahrnuje další funkce.
+* Je upřednostňovaný způsob pro nový vývoj aplikací.
 
-Pokud se rozhodnete v tomto kurzu přes [stránky Razor](xref:data/ef-rp/intro) verze, dejte nám vědět, proč v [toto pojednání Githubu](https://github.com/aspnet/Docs/issues/6146).
+Pokud se rozhodnete v tomto kurzu přes [Razor Pages](xref:data/ef-rp/intro) verze, dejte nám vědět, proč v [této diskuse Githubu](https://github.com/aspnet/Docs/issues/6146).
 ::: moniker-end

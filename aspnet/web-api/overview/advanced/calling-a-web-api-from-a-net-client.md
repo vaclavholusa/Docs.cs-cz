@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: Volání webového rozhraní API z klienta .NET (C#) | Microsoft Docs
+title: Volání webového rozhraní API z klienta .NET (C#) | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -8,66 +8,65 @@ manager: wpickett
 ms.date: 11/24/2017
 ms.topic: article
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: fdb74b0eb74ce7f387f49a0b25ceebd3fc389da9
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 434515692a53c0939652b643b080cea9f2102564
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/26/2018
-ms.locfileid: "32006154"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37370915"
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>Volání webového rozhraní API z klienta .NET (C#)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson) a [Rick Anderson](https://twitter.com/RickAndMSFT)
+podle [Mike Wasson](https://github.com/MikeWasson) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Stáhněte si dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Pokyny ke stahování](/aspnet/core/tutorials/#how-to-download-a-sample). 
+[Stáhnout dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample). [Pokyny ke stažení](/aspnet/core/tutorials/#how-to-download-a-sample). 
 
-Tento kurz ukazuje způsob volání webového rozhraní API z aplikace .NET, pomocí [System.Net.Http.HttpClient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
+Tento kurz ukazuje postupy při zavolání webového rozhraní API z aplikace .NET pomocí [System.Net.Http.HttpClient.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
-V tomto kurzu je zapsán klientskou aplikaci, která využívá následující webové rozhraní API:
+V tomto kurzu je zapsán klientskou aplikaci, že následující webové rozhraní API, který využívá:
 
 | Akce | Metoda HTTP | Relativní identifikátor URI |
 | --- | --- | --- |
-| Získání ID produktu | GET | /API/produkty/*id* |
-| Vytvoření nového produktu | POST | / api/produkty |
-| Aktualizace produktu | PUT | /API/produkty/*id* |
-| Odstranit produktu | DELETE | /API/produkty/*id* |
+| Získání produktu podle ID | ZÍSKAT | / webové rozhraníAPI/produkty/*id* |
+| Vytvořit nový produkt | PŘÍSPĚVEK | / api/produkty |
+| Aktualizace produktu | PUT | / webové rozhraníAPI/produkty/*id* |
+| Odstranit produkt | DELETE | / webové rozhraníAPI/produkty/*id* |
 
-Pokud chcete dozvědět, jak implementovat toto rozhraní API s rozhraním ASP.NET Web API, přečtěte si téma [vytváření webového rozhraní API této operace CRUD podporuje](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
+Další postup implementace tohoto rozhraní API s rozhraním ASP.NET Web API najdete v tématu [této operace CRUD podporuje vytvoření webového rozhraní API](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 ).
 
-Pro jednoduchost klientská aplikace v tomto kurzu je konzolová aplikace z Windows. **HttpClient** je také podporována pro aplikace Windows Phone a Windows Store. Další informace najdete v tématu [psaní webové rozhraní API klienta kódu pro více platforem, pomocí přenosné knihovny](https://blogs.msdn.com/b/webdev/archive/2013/07/19/writing-web-api-client-code-for-multiple-platforms-using-portable-libraries.aspx)
+Pro jednoduchost klientská aplikace v tomto kurzu je konzolová aplikace Windows. **HttpClient** je také podporována pro aplikace pro Windows Phone a Windows Store. Další informace najdete v tématu [psaní webové rozhraní API klienta kódu pro více platforem, pomocí přenosné knihovny](https://blogs.msdn.com/b/webdev/archive/2013/07/19/writing-web-api-client-code-for-multiple-platforms-using-portable-libraries.aspx)
 
 <a id="CreateConsoleApp"></a>
 ## <a name="create-the-console-application"></a>Vytvoření konzolové aplikace
 
-V sadě Visual Studio vytvořte novou konzolovou aplikaci systému Windows s názvem **HttpClientSample** a vložte následující kód:
+V sadě Visual Studio vytvořte novou konzolovou aplikaci s Windows s názvem **HttpClientSample** a vložte následující kód:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_all)]
 
 Předchozí kód je kompletní klientské aplikace.
 
-`RunAsync` Spustí a bloky až do dokončení. Většina **HttpClient** metody jsou asynchronní, protože fungují v/v sítě. Všechny asynchronních úloh se provádějí v `RunAsync`. Za normálních okolností aplikace neblokuje hlavního vlákna, ale tato aplikace nebude povolovat interakce.
+`RunAsync` spuštění a blokuje, dokud se nedokončí. Většina **HttpClient** metody jsou asynchronní, protože jejich provádění v / v sítě. Všechny asynchronní úlohy dokončení uvnitř `RunAsync`. Obvykle aplikace nebrání v hlavním vlákně, ale tuto aplikaci neumožňuje zásahu.
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
 <a id="InstallClientLib"></a>
-## <a name="install-the-web-api-client-libraries"></a>Nainstalujte knihovny webové rozhraní API klienta
+## <a name="install-the-web-api-client-libraries"></a>Instalace webové rozhraní API klientské knihovny
 
-Použití Správce balíčků NuGet nainstalujte balíček knihovny klienta webové rozhraní API.
+Použití Správce balíčků NuGet nainstalujte balíček webové rozhraní API klientské knihovny.
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet** > **Konzola správce balíčků**. V balíček správce konzoly (pomocí PMC), zadejte následující příkaz:
+Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet** > **Konzola správce balíčků**. V balíčku správce konzoly (konzolu PMC), zadejte následující příkaz:
 
 `Install-Package Microsoft.AspNet.WebApi.Client`
 
-Předchozí příkaz přidá následující balíčky NuGet do projektu:
+Ve výstupu předchozího příkazu přidá následující balíčky NuGet do projektu:
 
 * Microsoft.AspNet.WebApi.Client
 * Newtonsoft.Json
 
-Json.NET je oblíbených rozhraní vysoce výkonné JSON pro rozhraní .NET.
+Json.NET je oblíbená architektura výkonné JSON pro .NET.
 
 <a id="AddModelClass"></a>
 ## <a name="add-a-model-class"></a>Přidejte třídu modelu
@@ -76,48 +75,48 @@ Zkontrolujte `Product` třídy:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_prod)]
 
-Tato třída neodpovídá modelu dat používá webové rozhraní API. Aplikace můžete použít **HttpClient** ke čtení `Product` instance z odpovědi HTTP. Aplikace nemá psaní jakéhokoli kódu deserializace.
+Tato třída odpovídá datového modelu používají webové rozhraní API. Můžete použít aplikaci **HttpClient** ke čtení `Product` instanci z odpovědi HTTP. Aplikace nebude muset psát kód deserializace.
 
 <a id="InitClient"></a>
-## <a name="create-and-initialize-httpclient"></a>Vytvoření a inicializace HttpClient
+## <a name="create-and-initialize-httpclient"></a>Vytváření a inicializace HttpClient
 
-Zkontrolujte statických **HttpClient** vlastnost:
+Prozkoumejte statické **HttpClient** vlastnost:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_HttpClient)]
 
-**HttpClient** je určená pro vytvoření instance jednou a znovu po celou dobu životnosti aplikace. Může mít za následek následující podmínky **SocketException** chyby:
+**HttpClient** by se měly vytvořit jednou a opětovně používat v rámci životnosti aplikace. Následující podmínky mohou způsobit **socketexception –** chyby:
 
-* Vytvoření nové **HttpClient** instance pro každý požadavek.
+* Vytvoření nového **HttpClient** instance pro každý požadavek.
 * Server v případě velkého zatížení.
 
-Vytvoření nové **HttpClient** instance pro každý požadavek může vyčerpat dostupných soketů.
+Vytvoření nového **HttpClient** instance pro každý požadavek lze vyčerpání dostupných soketů.
 
-Následující kód inicializuje **HttpClient** instance:
+V následujícím kódu inicializuje **HttpClient** instance:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5)]
 
 Předchozí kód:
 
-* Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port použitý při aplikace serveru. Aplikace nebude fungovat, pokud se používá port pro aplikace serveru.
-* Nastaví hlavičku Accept pro "application/json". Nastavení této hlavičky informuje server k odesílání dat ve formátu JSON.
+* Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port v serveru aplikaci. Aplikace nebude fungovat, pokud se používá port pro serverovou aplikaci.
+* Nastaví hlavičku Accept na "application/json". Nastavení této hlavičky určuje server k odesílání dat ve formátu JSON.
 
 <a id="GettingResource"></a>
-## <a name="send-a-get-request-to-retrieve-a-resource"></a>Odeslat požadavek GET pro načtení prostředku
+## <a name="send-a-get-request-to-retrieve-a-resource"></a>Odeslat požadavek GET na načtení prostředku
 
 Následující kód odešle požadavek GET pro produkt:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_GetProductAsync)]
 
-**GetAsync** metoda odešle požadavek HTTP GET. Po metodě dokončení vrátí **objekt HttpResponseMessage** , který obsahuje odpověď HTTP. Pokud stavový kód v odpovědi kód úspěch, text odpovědi obsahuje reprezentace JSON produktu. Volání **ReadAsAsync** k datové části JSON k deserializaci `Product` instance. **ReadAsAsync** metoda je asynchronní, protože text odpovědi lze libovolně velké.
+**GetAsync** metoda odešle požadavek HTTP GET. Když dokončení metody, vrátí **objekt HttpResponseMessage** , který obsahuje odpověď HTTP. Pokud stavový kód odpovědi na kód úspěchu, tělo odpovědi obsahuje reprezentaci JSON produktu. Volání **ReadAsAsync** datovou část JSON k deserializaci `Product` instance. **ReadAsAsync** metoda je asynchronní, protože tělo odpovědi může být libovolně velké.
 
-**HttpClient** nevyvolá výjimku, pokud odpověď HTTP, která obsahuje kód chyby. Místo toho **IsSuccessStatusCode** vlastnost je **false** Pokud je stav chybový kód. Pokud dáváte přednost zacházet s kódy chyb HTTP jako výjimky, volání [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) na objekt odpovědi. `EnsureSuccessStatusCode` vyvolá výjimku, pokud kód stavu spadá mimo rozsah 200&ndash;299. Všimněte si, že **HttpClient** může vyvolat výjimky z jiných důvodů &mdash; například, pokud vyprší časový limit žádosti.
+**HttpClient** nevyvolá výjimku, pokud odpověď HTTP, která obsahuje kód chyby. Místo toho **IsSuccessStatusCode** vlastnost je **false** -li stav nastaven chybový kód. Pokud chcete přistupovat ke všem chybových kódech HTTP jako výjimky, volání [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) v objektu odpovědi. `EnsureSuccessStatusCode` vyvolá výjimku, pokud se stavovým kódem spadá mimo rozsah 200&ndash;299. Všimněte si, že **HttpClient** může vyvolat výjimky z jiných důvodů &mdash; například, pokud vyprší časový limit žádosti.
 
 <a id="MediaTypeFormatters"></a>
-### <a name="media-type-formatters-to-deserialize"></a>Formátovací moduly typu média k deserializaci
+### <a name="media-type-formatters-to-deserialize"></a>Formátovací moduly typu médií k deserializaci
 
-Když **ReadAsAsync** je volána bez parametrů, používá výchozí sadu *formátovací moduly pro média* ke čtení textu odpovědi. Výchozí formátování podporovat JSON, XML a data formuláře kódovaná adresy url.
+Když **ReadAsAsync** je volána bez parametrů, použije výchozí sadu *formátovací moduly médií* ke čtení textu odpovědi. Výchozí formátování Podpora JSON, XML a data formuláře kódovaná adresy url.
 
-Místo použití výchozí formátování, můžete zadat seznam formátovací moduly, které **ReadAsAsync** metoda.  Použití seznam formátovacích modulů je užitečné, pokud máte vlastní typ média formátování:
+Místo použití výchozí formátování, můžete zadat seznam formátovacích modulů k **ReadAsAsync** metody.  Použití seznam formátovacích modulů je užitečné, pokud máte vlastní typ média formátování:
 
 ```csharp
 var formatters = new List<MediaTypeFormatter>() {
@@ -128,51 +127,51 @@ var formatters = new List<MediaTypeFormatter>() {
 resp.Content.ReadAsAsync<IEnumerable<Product>>(formatters);
 ```
 
-Další informace najdete v tématu [formátovací moduly pro média ve webovém rozhraní API 2 ASP.NET](../formats-and-model-binding/media-formatters.md)
+Další informace najdete v tématu [formátovací moduly médií ve ASP.NET Web API 2](../formats-and-model-binding/media-formatters.md)
 
-## <a name="sending-a-post-request-to-create-a-resource"></a>Odesílání požadavku POST k vytvoření prostředku
+## <a name="sending-a-post-request-to-create-a-resource"></a>Odeslání požadavku POST vytvořit prostředek
 
-Odešle požadavek POST, který obsahuje následující kód `Product` instance ve formátu JSON:
+Následující kód odešle požadavek POST, který obsahuje `Product` instance ve formátu JSON:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_CreateProductAsync)]
 
-**PostAsJsonAsync** metoda:
+**PostAsJsonAsync** metody:
 
 * Serializuje objekt do formátu JSON.
 * Odešle datové části JSON v požadavku POST.
 
-Pokud neproběhne:
+Pokud je žádost úspěšná:
 
 * Měla by vrátit odpověď 201 (vytvořeno).
-* Odpověď by měla obsahovat adresu URL vytvořené prostředky hlavička umístění.
+* Má odpověď obsahovat adresu URL vytvořené prostředky v hlavičce Location.
 
 <a id="PuttingResource"></a>
-## <a name="sending-a-put-request-to-update-a-resource"></a>Odesílání PUT žádost o aktualizaci prostředku
+## <a name="sending-a-put-request-to-update-a-resource"></a>Odesílání požadavek PUT pro aktualizace prostředku
 
 Následující kód odešle požadavek PUT pro aktualizaci produktu:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_UpdateProductAsync)]
 
-**PutAsJsonAsync** metoda se dá použít jako **PostAsJsonAsync**kromě toho, že odešle požadavek PUT místo POST.
+**PutAsJsonAsync** metoda se dá použít jako **PostAsJsonAsync**, s tím rozdílem, že odešle žádost PUT místo příspěvku.
 
 <a id="DeletingResource"></a>
 ## <a name="sending-a-delete-request-to-delete-a-resource"></a>Odesílání požadavku na odstranění odstranění prostředku
 
-Následující kód odešle požadavek DELETE k odstranění produktu:
+Následující kód odešle žádost o odstranění se odstranit produkt:
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_DeleteProductAsync)]
 
-Žádost o odstranění jako GET, nemá textu požadavku. Nemusíte zadejte ve formátu JSON nebo XML s odstranit.
+Třeba GET žádost o odstranění nemá tělo požadavku. Není nutné zadat ve formátu JSON nebo XML DELETE.
 
-## <a name="test-the-sample"></a>Testování vzorku
+## <a name="test-the-sample"></a>Testování ukázky
 
-K testování aplikace klienta:
+Testování aplikace klienta:
 
-1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spuštění aplikace serveru. [Pokyny ke stahování](/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, zda že je funkční aplikace serveru. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
-2. Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port použitý při aplikace serveru.
+1. [Stáhněte si](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) a spusťte serverovou aplikaci. [Pokyny ke stažení](/aspnet/core/tutorials/#how-to-download-a-sample). Ověřte, že server aplikace funguje. Pro exaxmple `http://localhost:64195/api/products` by měla vrátit seznam produktů.
+2. Nastaví základní identifikátor URI pro požadavky HTTP. Změňte číslo portu na port v serveru aplikaci.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 
-3. Spusťte klientskou aplikaci. Vytváří následující výstup:
+3. Spuštění klientské aplikace. Následující výstup je vytvořen:
 
    ```console
    Created at http://localhost:64195/api/products/4

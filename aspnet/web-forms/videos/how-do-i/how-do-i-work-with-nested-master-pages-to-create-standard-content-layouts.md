@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts
-title: '[Jak na:] Práce s vnořené hlavní stránky vytvořit standardní rozložení obsahu | Microsoft Docs'
+title: '[Postup:] Práce s vnořenými stránkami předlohy při vytvoření standardního rozložení obsahu | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan zobrazí postup pomocí vnořené hlavní stránky můžete vytvořit jednotlivé hlavní stránky, které představují různých standardní obsahu rozložení pro w...
+description: V toto video pixelů na Chris vám ukáže jak můžete vytvořit jednotlivé stránky předlohy, které představují různé standardního rozložení obsahu pro w vložené hlavní stránky...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
 ms.topic: article
 ms.assetid: c9af2298-7b95-4a5d-af1c-4f3589a2a8da
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts
 msc.type: video
-ms.openlocfilehash: 677838c370b3a695041c94fe2e530b5418b035fb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a216e0cf0cce9f83abd3b228e290d20ab6c5aa20
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572092"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364559"
 ---
-<a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a>[Jak na:] Práce s vnořené hlavní stránky vytvořit standardní rozložení obsahu
+<a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a>[Postup:] Práce s vnořenými stránkami předlohy při vytvoření standardního rozložení obsahu
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan zobrazí postup pomocí vnořené hlavní stránky můžete vytvořit jednotlivé hlavní stránky, které představují různých standardní rozložení obsahu pro webovou stránku. První najdete v části Jak několik webových serverů komerční hlavní použít standardní sadu rozložení obsahu. V dalším kroku naleznete v části vnořit hlavní stránky v rámci jiné stránky předlohy a používat podporu čas návrhu v sadě Visual Studio 2008. Potom zjistěte, jaké jsou požadavky na zřízení "stránka architektura", která představuje hlavní typy obsahu rozložení použít v ukázkového webu. Po dokončení této definici naleznete v části struktury vnořené hlavní stránky, takže vývojáři pak můžete vybrat stránku předlohy, což vede k standardizované a konzistentní zobrazení obsahu pro webovou stránku.
+V toto video pixelů na Chris ukáže jak používat vložené hlavní stránky k vytvoření jednotlivé stránky předlohy, které představují různé standardního rozložení obsahu pro webový server. Nejdříve si projděte, jak několika hlavní obchodní weby používají standardní sadu rozložení obsahu. Dál si představíme vnořené hlavní stránky v rámci jiné stránky předlohy a používání podpory během návrhu v sadě Visual Studio 2008. Potom přečtěte si, jaké jsou požadavky na zřízení "stránka architekturu", která představuje hlavní typy používané ukázkového webu rozložení obsahu. Po dokončení této definice naleznete v tématu Jak strukturovat vložené hlavní stránky, takže vývojáři můžete pak vybrat stránky předlohy, výsledkem je standardizovaný a konzistentní zobrazení obsahu pro webový server.
 
-[&#9654; Podívejte se na video (30 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts)
+[&#9654;Podívejte se na video (30 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts)

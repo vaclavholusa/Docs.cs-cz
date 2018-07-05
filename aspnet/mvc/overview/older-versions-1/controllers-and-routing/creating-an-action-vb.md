@@ -1,69 +1,68 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
-title: Vytváření akce (VB) | Microsoft Docs
+title: Vytvoření akce (VB) | Dokumentace Microsoftu
 author: microsoft
-description: Zjistěte, jak přidat novou akci k řadiči ASP.NET MVC. Informace o požadavcích pro metodu jako akce.
+description: Zjistěte, jak přidat novou akci kontroler ASP.NET MVC. Další informace o požadavcích pro metodu na akci.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
 ms.topic: article
 ms.assetid: c8d93e11-ef78-4a30-afbc-f30419000a60
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c77e4738444c61d60bdd78a50b36f98be41fc271
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 64bc75eaccdd71ebff59f34a824c9b6c520a27ef
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867889"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367865"
 ---
-<a name="creating-an-action-vb"></a>Vytváření akce (VB)
+<a name="creating-an-action-vb"></a>Vytvoření akce (VB)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-> Zjistěte, jak přidat novou akci k řadiči ASP.NET MVC. Informace o požadavcích pro metodu jako akce.
+> Zjistěte, jak přidat novou akci kontroler ASP.NET MVC. Další informace o požadavcích pro metodu na akci.
 
 
-Cílem tohoto kurzu je vysvětlují, jak můžete vytvořit nové akce kontroleru. Můžete další informace o požadavcích metody akce. Také zjistíte, jak zabránit metodu zasahování přímo jako akce.
+Cílem tohoto kurzu je vysvětlují, jak můžete vytvořit nové akce kontroleru. Informace o požadavky na metodu akce. Také se dozvíte, jak zabránit metodu vystaven jako akci.
 
-## <a name="adding-an-action-to-a-controller"></a>Přidání akce do řadiče
+## <a name="adding-an-action-to-a-controller"></a>Přidání akce Kontroleru
 
-Přidat novou akci k řadiči přidáním nové metody pro kontroler. Například řadič v výpis 1 obsahuje akci s názvem Index() a akce s názvem SayHello(). Obě metody jsou zveřejněné jako akce.
+Přidejte novou akci k řadiči tak, že přidáte nové metody pro kontroler. Například řadič v informacích 1 obsahuje akce s názvem Index() a akce s názvem SayHello(). Obě metody jsou vystaveny jako akce.
 
 **Výpis 1 - Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample1.vb)]
 
-Chcete-li být vystavený universe jako akce, metody musí splňovat určité požadavky:
+Aby bylo možné vystavit rozhraní universe jako akci, metoda musí splňovat určité požadavky:
 
 - Metoda musí být veřejné.
-- Metodu nelze statickou metodu.
-- Metodu nelze metody rozšíření.
-- Metodu nelze konstruktor, metody getter nebo setter.
-- Metoda nemůže mít otevřete obecné typy.
-- Metoda není metoda základní třídy controller.
-- Nemůže obsahovat metodu **ref** nebo **out** parametry.
+- Metoda nemůže být statickou metodu.
+- Metoda nemůže být metodou rozšíření.
+- Metoda nemůže být konstruktor, metoda getter nebo setter.
+- Metoda nemůže mít otevřených obecných typů.
+- Metoda není metodu základní třídy kontroleru.
+- Metoda nemůže obsahovat **ref** nebo **si** parametry.
 
-Všimněte si, že neexistují žádná omezení návratový typ akce kontroleru. Akce kontroleru vrátit řetězec, DateTime, instance třídy náhodných nebo void. Rozhraní ASP.NET MVC se převést žádný návratový typ, který není výsledek akce do řetězce a vykreslit řetězec do prohlížeče.
+Všimněte si, že neexistují žádná omezení u návratového typu akce kontroleru. Akce kontroleru vrátit řetězec, DateTime, instance třídy Random nebo void. Architektura ASP.NET MVC se převést návratový typ, který není výsledek akce do řetězce a vykreslit řetězec, který se v prohlížeči.
 
-Když přidáte libovolné metody, která není porušují tyto požadavky na řadič, je metoda zpřístupněná jako akce kontroleru. Dávejte pozor, zde. Akce kontroleru můžete vyvolat každý, kdo připojený k Internetu. Například nevytvářejte DeleteMyWebsite() akce kontroleru.
+Když přidáte jakoukoli metodu, která nebudou porušovat tyto požadavky na řadič, metoda je vystavena jako akce kontroleru. Buďte opatrní tady. Akce kontroleru můžete vyvolat každý připojený k Internetu. Ne, například vytvořit DeleteMyWebsite() akce kontroleru.
 
-## <a name="preventing-a-public-method-from-being-invoked"></a>Volaná brání veřejná metoda
+## <a name="preventing-a-public-method-from-being-invoked"></a>Brání veřejnou metodu volanou
 
-Pokud potřebujete vytvořit veřejnou metodu do třídy kontroleru a nechcete, aby ke zveřejnění metodu jako akce kontroleru, pak můžete zabránit metodu volanou pomocí &lt;NonAction&gt; atribut. Například řadič v výpis 2 obsahuje veřejnou metodu s názvem CompanySecrets(), který je upraven pomocí &lt;NonAction&gt; atribut.
+Pokud je potřeba vytvořit veřejnou metodu do třídy kontroleru a nechcete vystavit metodu akce kontroleru, pak můžete zabránit metodu volanou pomocí &lt;NonAction&gt; atribut. Například kontroler v informacích 2 obsahuje veřejnou metodu s názvem CompanySecrets(), která je upravena pomocí &lt;NonAction&gt; atribut.
 
 **Výpis 2 - Controllers\WorkController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample2.vb)]
 
-Pokud se pokusíte vyvolání akce kontroleru CompanySecrets() zadáním /Work/CompanySecrets do adresního řádku prohlížeče budete získání chybové zprávy na obrázku 1.
+Pokud při pokusu o vyvolání akce kontroleru CompanySecrets() zadáním /Work/CompanySecrets do adresního řádku prohlížeče zobrazí se zpráva chyby na obrázku 1.
 
 
 [![Volání metody NonAction](creating-an-action-vb/_static/image1.jpg)](creating-an-action-vb/_static/image1.png)
 
-**Obrázek 01**: volání metody NonAction ([Kliknutím zobrazit obrázek v plné velikosti](creating-an-action-vb/_static/image2.png))
+**Obrázek 01**: volání metody NonAction ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-an-action-vb/_static/image2.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](creating-a-controller-vb.md)

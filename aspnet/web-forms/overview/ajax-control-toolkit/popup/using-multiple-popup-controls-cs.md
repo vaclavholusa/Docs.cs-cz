@@ -1,61 +1,60 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
-title: Použití více ovládacích prvků místní (C#) | Microsoft Docs
+title: Použití několika překryvných ovládacích prvků (C#) | Dokumentace Microsoftu
 author: wenz
-description: Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Je také možné použít m...
+description: Zařízení extender PopupControl v sadou nástrojů AJAX Control Toolkit nabízí snadný způsob, jak aktivovat automaticky otevíraného okna, když se aktivuje jiný ovládací prvek. Je také možné použít m...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 91511b0b-311d-481f-9e7c-73f07b813b79
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7acd1b53e1b3e3e0d09d248b68941b166da3e81e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b00f720b66e6826c29f51690ab3361958aa8677
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869683"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364812"
 ---
-<a name="using-multiple-popup-controls-c"></a>Použití více ovládacích prvků místní (C#)
+<a name="using-multiple-popup-controls-c"></a>Použití několika překryvných ovládacích prvků (C#)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.cs.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1CS.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/PopupControl1.cs.zip) nebo [stahovat PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/popupcontrol1CS.pdf)
 
-> Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Je také možné použít více než jeden prvek automaticky otevřeném okně na jedné stránce.
+> Zařízení extender PopupControl v sadou nástrojů AJAX Control Toolkit nabízí snadný způsob, jak aktivovat automaticky otevíraného okna, když se aktivuje jiný ovládací prvek. Je také možné použít více než jeden ovládací prvek popup na jedné stránce.
 
 
 ## <a name="overview"></a>Přehled
 
-Rozšiřujícího objektu PopupControl v Toolkitu AJAX nabízí snadný způsob, jak aktivovat místní okno, pokud je aktivován další ovládací prvek. Je také možné použít více než jeden prvek automaticky otevřeném okně na jedné stránce.
+Zařízení extender PopupControl v sadou nástrojů AJAX Control Toolkit nabízí snadný způsob, jak aktivovat automaticky otevíraného okna, když se aktivuje jiný ovládací prvek. Je také možné použít více než jeden ovládací prvek popup na jedné stránce.
 
 ## <a name="steps"></a>Kroky
 
-Chcete aktivovat funkce ASP.NET AJAX a sady nástrojů ovládacího prvku `ScriptManager` řízení musíte umístit kdekoli na stránce (ale uvnitř `<form>` element):
+K aktivaci funkce technologie ASP.NET AJAX a Control Toolkit `ScriptManager` ovládací prvek je třeba umístit kdekoli na stránce (ale v rámci `<form>` element):
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample1.aspx)]
 
-Dál přidejte panel, který slouží jako místní nabídce. Scénář, aktuální, obsahuje panel `Calendar` ovládacího prvku. Aby se zabránilo aktualizace stránky způsobené postback v kalendáři, panelu zprovozněn v rámci `UpdatePanel` ovládacího prvku:
+V dalším kroku přidáte panel, který slouží jako automaticky otevíraného okna. V aktuální scénář obsahuje panel `Calendar` ovládacího prvku. Pokud se chcete vyhnout aktualizuje stránku způsobené postbacků kalendáře, se zařadí na panelu v rámci `UpdatePanel` ovládacího prvku:
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample2.aspx)]
 
-Tato stránka také obsahuje dvě textová pole. Pro každého textového pole se zobrazí místní nabídka kalendáře po aktivaci textového pole.
+Stránka také obsahuje dvě textová pole. Pro každé pole kalendář automaticky otevírané okno se zobrazí po aktivaci do textového pole.
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample3.aspx)]
 
-Nyní rozšiřte každou z do dvou textových polí s `PopupControlExtender`. `TargetControlID` Atribut poskytuje ID ovládacího prvku vázáno rozšiřujícího objektu. `PopupControlID` Atribut obsahuje ID místní panelu. V takovém případě obou Extender zobrazit panel stejné, ale jiné panelů je také možné.
+Rozšiřte každou z tato dvě textová pole se teď `PopupControlExtender`. `TargetControlID` Atribut obsahuje ID vázané na zařízení extender ovládacího prvku. `PopupControlID` Atribut obsahuje ID panelu automaticky otevíraného okna. V takovém případě obou zařízení Extender zobrazit stejný panel, ale jiné panely je to možné, jsou také.
 
 [!code-aspx[Main](using-multiple-popup-controls-cs/samples/sample4.aspx)]
 
-Nyní vždy, když kliknete na tlačítko v textovém poli, kalendář se objeví pod polem, což vám umožní vybrat datum. (Získávání vybrané data zpět do textových polí se budeme v různých kurzu.)
+Nyní pokaždé, když kliknete do textového pole, kalendář zobrazí pod polem, což vám umožní vybrat datum. (Načítání vybraného data zpět do textových polí se budeme v různých kurz.)
 
 
-[![Kalendář se zobrazí, když uživatel klikne do textového pole](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
+[![Když uživatel klikne do textového pole, zobrazí se v kalendáři](using-multiple-popup-controls-cs/_static/image2.png)](using-multiple-popup-controls-cs/_static/image1.png)
 
-Kalendář se zobrazí, když uživatel klikne do textového pole ([Kliknutím zobrazit obrázek v plné velikosti](using-multiple-popup-controls-cs/_static/image3.png))
+Když uživatel klikne do textového pole, zobrazí se v kalendáři ([kliknutím ji zobrazíte obrázek v plné velikosti](using-multiple-popup-controls-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Next](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)

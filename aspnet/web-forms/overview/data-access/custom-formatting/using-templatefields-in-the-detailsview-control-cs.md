@@ -1,210 +1,209 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
-title: Pomocí TemplateFields v ovládacím prvku DetailsView (C#) | Microsoft Docs
+title: Použití vlastností TemplateField v ovládacím prvku DetailsView (C#) | Dokumentace Microsoftu
 author: rick-anderson
-description: K dispozici GridView stejné TemplateFields funkce jsou k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazujeme jeden produktu...
+description: Stejné vlastností TemplateField možnosti dostupné v prvku GridView jsou také k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazíme jednoho produktu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
 ms.topic: article
 ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f1d2e8312451c0bd1b3aba448963317f5fe06029
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 33f8e86ad15559440b31b975f9db565d7f331fed
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879101"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368441"
 ---
-<a name="using-templatefields-in-the-detailsview-control-c"></a>Pomocí TemplateFields v ovládacím prvku DetailsView (C#)
+<a name="using-templatefields-in-the-detailsview-control-c"></a>Použití vlastností TemplateField v ovládacím prvku DetailsView (C#)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_13_CS.exe) nebo [stáhnout PDF](using-templatefields-in-the-detailsview-control-cs/_static/datatutorial13cs1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/6/9/969e5c94-dfb6-4e47-9570-d6d9e704c3c1/ASPNET_Data_Tutorial_13_CS.exe) nebo [stahovat PDF](using-templatefields-in-the-detailsview-control-cs/_static/datatutorial13cs1.pdf)
 
-> K dispozici GridView stejné TemplateFields funkce jsou k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazujeme jeden produktu současně pomocí DetailsView obsahující TemplateFields.
+> Stejné vlastností TemplateField možnosti dostupné v prvku GridView jsou také k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazíme jeden produkt v době použití DetailsView s vlastností TemplateField.
 
 
 ## <a name="introduction"></a>Úvod
 
-TemplateField nabízí vyšší stupeň flexibilitu při vykreslování dat, než BoundField, vlastnost CheckBoxField, HyperLinkField a jiných ovládacích prvků pole data. V [předchozí kurzu](using-templatefields-in-the-gridview-control-cs.md) jsme se podívali na použití TemplateField v GridView na:
+Pole TemplateField nabízí vyšší míra flexibility v datech pro vykreslení, než vlastnost BoundField, třídě CheckBoxField, HyperLinkField a další ovládací prvky pole data. V [předchozí kurz o službě](using-templatefields-in-the-gridview-control-cs.md) jsme se podívali na použití pole TemplateField v prvku GridView pro:
 
-- Zobrazte více hodnot polí data v jeden sloupec. Konkrétně i `FirstName` a `LastName` pole měla zkombinované do jednoho sloupce GridView.
-- Pomocí prvku alternativní express hodnotu datového pole. Jsme viděli, jak zobrazit `HiredDate` hodnotu pomocí ovládacího prvku kalendář.
-- Zobrazit na základě dat základní informace o stavu. Když `Employees` tabulka neobsahuje sloupec, který vrátí počet dní zaměstnanec byl v úloze, jsme byli schopni zobrazit tyto informace v příkladu rutina GridView v předchozí kurzu s použitím TemplateField a metody pro formátování.
+- Zobrazte více hodnot dat pole do jednoho sloupce. Konkrétně, jak `FirstName` a `LastName` pole byly sloučeny do jednoho sloupce prvku GridView.
+- Pomocí prvku alternativní express datovou hodnotu pole. Jsme viděli, jak zobrazit `HiredDate` hodnotu použití ovládacího prvku kalendář.
+- Zobrazit informace o stavu, které jsou založené na podkladová data. Zatímco `Employees` tabulka neobsahuje sloupec, který vrátí počet dní, zaměstnanec bylo v úloze, jsme byli schopni zobrazit tyto informace v prvku GridView příklad v předchozím kurzu s použitím TemplateField a metody pro formátování.
 
-K dispozici GridView stejné TemplateFields funkce jsou k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazujeme jeden produktu současně pomocí DetailsView, který obsahuje dva TemplateFields. První TemplateField sloučí `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` datová pole do jednoho řádku DetailsView. Druhý TemplateField se zobrazí hodnota `Discontinued` pole, ale použije formátování metoda zobrazí tlačítko Ano"Pokud `Discontinued` je `true`a"Ne"jinak.
-
-
-[![Dva TemplateFields slouží k přizpůsobení zobrazení](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
-
-**Obrázek 1**: dva TemplateFields slouží k přizpůsobení zobrazení ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image3.png))
+Stejné vlastností TemplateField možnosti dostupné v prvku GridView jsou také k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazíme jeden produkt v době použití prvku DetailsView, která obsahuje dvě vlastností TemplateField. Sloučí první TemplateField `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` datová pole do jednoho řádku prvku DetailsView. Druhý TemplateField zobrazí hodnotu `Discontinued` pole, ale použije metoda formátování se zobrazí "Ano", pokud `Discontinued` je `true`a "Ne" jinak.
 
 
-Můžeme začít!
+[![Dvou vlastností TemplateField se používají pro přizpůsobení zobrazení](using-templatefields-in-the-detailsview-control-cs/_static/image2.png)](using-templatefields-in-the-detailsview-control-cs/_static/image1.png)
 
-## <a name="step-1-binding-the-data-to-the-detailsview"></a>Krok 1: Vytvoření vazby dat DetailsView
-
-Jak je popsáno v předchozí kurzu při práci s TemplateFields je často nejjednodušší začněte vytvořením DetailsView ovládací prvek, který obsahuje pouze BoundFields a pak přidejte nový TemplateFields nebo převést stávající BoundFields TemplateFields jako potřeby . V tomto kurzu proto Začněte přidáním na stránku prostřednictvím návrháře DetailsView a vytvoření vazby ObjectDataSource, který vrátí seznam produktů. Tyto kroky vytvoří DetailsView s BoundFields pro každé pole hodnot logická hodnota produktu a vlastnost CheckBoxField do jednoho pole logická hodnota (Nákup ukončen).
-
-Otevřete `DetailsViewTemplateField.aspx` stránky a přetáhněte ji DetailsView z panelu nástrojů na návrháře. Z prvku DetailsView inteligentních značek vyberte přidání nové ovládacího prvku ObjectDataSource, která volá `ProductsBLL` třídy `GetProducts()` metoda.
+**Obrázek 1**: dvou vlastností TemplateField se používají pro přizpůsobení zobrazení ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image3.png))
 
 
-[![Přidání nové ovládacího prvku ObjectDataSource, která volá metodu GetProducts()](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
+Pusťme se do práce!
 
-**Obrázek 2**: Přidání nové ovládacího prvku ObjectDataSource této vyvolá `GetProducts()` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image6.png))
+## <a name="step-1-binding-the-data-to-the-detailsview"></a>Krok 1: Vytvoření vazby dat na ovládacím prvku DetailsView.
+
+Jak je popsáno v předchozím kurzu, při práci s vlastností TemplateField je často nejjednodušší začněte vytvořením prvku DetailsView, který obsahuje pouze BoundFields a přidání nových vlastností TemplateField nebo převést existující BoundFields vlastností TemplateField jako potřeby . Proto se pustíte do tohoto kurzu DetailsView přidáním na stránku prostřednictvím návrháře a vytvoříte jejich vazbu na ObjectDataSource, který vrátí seznam produktů. Tyto kroky vytvoří DetailsView s BoundFields všech polí hodnot – datový typ Boolean produktu a třídě CheckBoxField pro jedno pole logická hodnota (vyřazeno).
+
+Otevřít `DetailsViewTemplateField.aspx` stránku a přetáhněte z panelu nástrojů na Návrhář DetailsView. V ovládacím prvku DetailsView inteligentních značek zvolte Přidat nový ovládací prvek ObjectDataSource, která volá `ProductsBLL` třídy `GetProducts()` metody.
 
 
-Pro tuto sestavu odebrat `ProductID`, `SupplierID`, `CategoryID`, a `ReorderLevel` BoundFields. V dalším kroku změnit pořadí BoundFields tak, aby `CategoryName` a `SupplierName` BoundFields zobrazí okamžitě po `ProductName` BoundField. Můžete upravit `HeaderText` vlastnosti a vlastnosti formátování pro BoundFields podle svých potřeb. Jako s GridView, tyto úpravy BoundField úrovni lze provést pomocí pole dialogových oken (k dispozici kliknutím na odkaz upravit pole v ovládacím prvku DetailsView inteligentních značek) nebo pomocí deklarativní syntaxe. Nakonec vyčistit prvku DetailsView `Height` a `Width` hodnoty vlastností, aby bylo možné povolit DetailsView řízení rozšiřovat na základě dat zobrazí a zaškrtněte políčko Povolit stránkování v inteligentní značky.
+[![Přidat nový ovládací prvek ObjectDataSource, která volá metodu GetProducts()](using-templatefields-in-the-detailsview-control-cs/_static/image5.png)](using-templatefields-in-the-detailsview-control-cs/_static/image4.png)
 
-Po provedení těchto změn, deklarativní prvek DetailsView by měl vypadat takto:
+**Obrázek 2**: Přidání nového ovládacího prvku ObjectDataSource tohoto volání `GetProducts()` – metoda ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image6.png))
+
+
+Pro tuto sestavu odstranit `ProductID`, `SupplierID`, `CategoryID`, a `ReorderLevel` BoundFields. V dalším kroku změnit pořadí BoundFields tak, aby `CategoryName` a `SupplierName` BoundFields zobrazovat ihned za `ProductName` Vlastnost BoundField. Můžete upravit `HeaderText` podle potřeby vlastnosti a vlastnosti formátování pro BoundFields jako vy. Stejně jako s použitím prvku GridView, tyto úpravy Vlastnost BoundField úrovni lze provést prostřednictvím dialogového okna pole (přístupný kliknutím na odkaz upravit pole v ovládacím prvku DetailsView inteligentních značek) nebo využijte deklarativní syntaxi. A konečně, smažte ovládacím prvku DetailsView `Height` a `Width` hodnoty vlastností, aby bylo možné povolit ovládacím prvku DetailsView. Rozbalte na základě dat zobrazí pod kontrolou a zaškrtněte políčko Povolit stránkování v inteligentních značek.
+
+Po provedení těchto změn, deklarativní prvku DetailsView by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-cs/samples/sample1.aspx)]
 
-Chcete-li zobrazit stránku prostřednictvím prohlížeče chvíli trvat. V tomto okamžiku byste měli vidět uvedené jednoho produktu (Chai) s řádky zobrazuje název produktu, kategorie, dodavatele, ceny, jednotek na skladě, jednotky v pořadí a její stav – starší formáty.
+Pokud chcete zobrazit stránku prostřednictvím prohlížeče chvíli trvat. V tomto okamžiku byste měli vidět uvedené jednoho produktu (Chai) se zobrazuje název produktu, kategorie, Dodavatel, ceny, jednotek v zásobách, jednotky na pořadí a stav ukončená řádky.
 
 
 [![Jsou uvedeny podrobnosti produktu pomocí řady BoundFields](using-templatefields-in-the-detailsview-control-cs/_static/image8.png)](using-templatefields-in-the-detailsview-control-cs/_static/image7.png)
 
-**Obrázek 3**: jsou uvedeny podrobnosti produktu pomocí řady BoundFields ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image9.png))
+**Obrázek 3**: jsou uvedeny podrobnosti produktu pomocí řady BoundFields ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image9.png))
 
 
-## <a name="step-2-combining-the-price-units-in-stock-and-units-on-order-into-one-row"></a>Krok 2: Kombinace ceníku, jednotky v Stock a jednotek v pořadí do jeden řádek
+## <a name="step-2-combining-the-price-units-in-stock-and-units-on-order-into-one-row"></a>Krok 2: Kombinace cena, jednotek v zásobách a jednotky v pořadí jeden řádek
 
-DetailsView má řádek pro `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` pole. Jsme můžete kombinovat těchto polí dat do jednoho řádku s TemplateField přidáním nové TemplateField nebo převedením jednu z existujících `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` BoundFields do TemplateField. Při osobní nechci převod existující BoundFields, můžeme přidáním nové TemplateField praxi.
+V řádku pro obsahuje ovládacím prvku DetailsView `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` pole. Jsme můžete zkombinovat tato data pole do jednoho řádku s TemplateField tak, že přidáte nový TemplateField nebo převedením některou existující `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` BoundFields na pole TemplateField. Zatímco osobně raději převod existující BoundFields, vyzkoušejme tak, že přidáte nový TemplateField.
 
-Spusťte kliknutím na odkaz upravit pole v ovládacím prvku DetailsView inteligentní značky se zprovoznit dialogové okno pole. V dalším kroku přidejte TemplateField nový a nastavit jeho `HeaderText` vlastnost "A cena inventáře" a přesunutí nové TemplateField, které je umístěn výše `UnitPrice` BoundField.
-
-
-[![Přidat nové TemplateField do ovládacího prvku DetailsView](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
-
-**Obrázek 4**: Přidání nové TemplateField do ovládacího prvku DetailsView ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image12.png))
+Začněte tím, že kliknete na odkaz upravit pole v ovládacím prvku DetailsView inteligentních značek zobrazíte dialogové okno pole. V dalším kroku přidejte nové TemplateField a nastavte jeho `HeaderText` vlastnost "A cena inventáře" a přesunutí nové TemplateField tak, že je umístěn nad `UnitPrice` Vlastnost BoundField.
 
 
-Vzhledem k tomu, že tento nový TemplateField bude obsahovat hodnoty v aktuálně zobrazený `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` BoundFields, můžeme je odebrat.
+[![Přidat nový TemplateField k ovládacímu prvku DetailsView.](using-templatefields-in-the-detailsview-control-cs/_static/image11.png)](using-templatefields-in-the-detailsview-control-cs/_static/image10.png)
 
-Poslední úloha pro tento krok je určit `ItemTemplate` kód pro cenové a TemplateField inventáře, který lze provést buď pomocí šablony DetailsView úpravy rozhraní v Návrháři nebo ručně pomocí deklarativní syntaxe ovládacího prvku. Stejně jako u GridView, jsou přístupné DetailsView šablony úpravy rozhraní kliknutím na odkaz Upravit šablony v inteligentní značky. Tady můžete vybrat šablonu, kterou chcete upravit v rozevíracím seznamu a poté přidejte všechny ovládací prvky webového z panelu nástrojů.
-
-V tomto kurzu, začněte přidáním ovládací prvek popisek ceny a inventáře TemplateField `ItemTemplate`. Potom klikněte na odkaz Upravit datové vazby z ovládacího prvku popisek webového inteligentních značek a vytvořte vazbu `Text` vlastnost, která má `UnitPrice` pole.
+**Obrázek 4**: přidejte nový TemplateField do ovládacího prvku DetailsView ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image12.png))
 
 
-[![Pole UnitPrice dat vytvořit vazbu popisku Text – vlastnost](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
+Protože toto nové TemplateField bude obsahovat hodnoty aktuálně zobrazené v `UnitPrice`, `UnitsInStock`, a `UnitsOnOrder` BoundFields, je Odebereme.
 
-**Obrázek 5**: vytvoření vazby popisku `Text` vlastnost, která má `UnitPrice` datové pole ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image15.png))
+Posledním úkolem v tomto kroku je definování `ItemTemplate` značky ceny a TemplateField inventář, který lze provést buď prostřednictvím úpravy rozhraní v Návrháři nebo ručně pomocí deklarativní syntaxe ovládacího prvku DetailsView šablony. Stejně jako u prvku GridView, je přístupný kliknutím na odkaz Upravit šablony v inteligentních značek rozhraní úprav šablony ovládacím prvku DetailsView. Odtud můžete vybrat šablonu, kterou chcete upravit z rozevíracího seznamu a pak přidejte všechny webové ovládací prvky ze sady nástrojů.
 
-
-## <a name="formatting-the-price-as-a-currency"></a>Formátování cenu jako měny
-
-Pomocí tohoto přidání ovládací prvek popisek webu ceny a inventáře TemplateField nyní zobrazí pouze ceny pro vybrané produktu. Obrázek 6 zobrazuje snímek obrazovky naše průběh doposud, když zobrazit pomocí prohlížeče.
+Pro účely tohoto kurzu, začněte přidáním ovládacího prvku popisku na ceny a inventáře TemplateField `ItemTemplate`. V dalším kroku klikněte na odkaz upravit vlastnosti DataBindings z ovládacího prvku popisku webového inteligentních značek a vytvořit vazbu `Text` vlastnost `UnitPrice` pole.
 
 
-[![Ceny a inventáře TemplateField ukazuje za cenu.](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
+[![Pole UnitPrice Data svázat vlastnost textu popisku](using-templatefields-in-the-detailsview-control-cs/_static/image14.png)](using-templatefields-in-the-detailsview-control-cs/_static/image13.png)
 
-**Obrázek 6**: cenové a inventáře TemplateField zobrazí cenu ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image18.png))
-
-
-Všimněte si, že není ceny produktu formátu měny. S BoundField, formátování je možné nastavením `HtmlEncode` vlastnost `false` a `DataFormatString` vlastnost `{0:formatSpecifier}`. Pro TemplateField ale žádné formátování pokyny musí být zadané syntaxe vazby dat nebo prostřednictvím metody pro formátování definován někde v kódu aplikace (například v třídy kódu stránky ASP.NET).
-
-K určení, formátování, které se používá v ovládacím prvku popisek webové Syntaxe datové vazby, vrátí dialogové okno datové vazby kliknutím na odkaz Upravit datové vazby ze jmenovky inteligentní značky. Můžete zadat pokyny k formátování přímo v rozevíracím seznamu formát nebo vyberte jednu z řetězce definované formátu. Upozorňujeme BoundField `DataFormatString` vlastnost, formátování, které je zadán pomocí `{0:formatSpecifier}`.
-
-Pro `UnitPrice` pole použití formátování měny zadat tak, že vyberete hodnotu odpovídající rozevíracím seznamu nebo zadáním `{0:C}` ručně.
+**Obrázek 5**: vytvoření vazby popisku `Text` vlastnost `UnitPrice` datové pole ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image15.png))
 
 
-[![Formátuje cenu jako měny](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
+## <a name="formatting-the-price-as-a-currency"></a>Formátování ceny jako měna
 
-**Obrázek 7**: formátu cena jako měny ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image21.png))
+Uveďte ovládací prvek popisek webu ceny a inventáře TemplateField se teď budou zobrazovat jenom cena za vybraný produkt. Obrázek 6 doposud ukazuje snímek obrazovky náš postup při prohlížení prostřednictvím prohlížeče.
 
 
-Deklarativně, formátování specifikace uvedené jako druhý parametr do `Bind` nebo `Eval` metody. Nastavení právě provedená prostřednictvím návrháře výsledků v následujícím výrazu datové vazby v deklarativní:
+[![Ceny a inventáře TemplateField ukazuje cenu](using-templatefields-in-the-detailsview-control-cs/_static/image17.png)](using-templatefields-in-the-detailsview-control-cs/_static/image16.png)
+
+**Obrázek 6**: The ceny a inventáře TemplateField ukazuje cenu ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image18.png))
+
+
+Všimněte si, že ceny produktu není naformátovaný jako měnu. S Vlastnost BoundField, formátování je možné tak, že nastavíte `HtmlEncode` vlastnost `false` a `DataFormatString` vlastnost `{0:formatSpecifier}`. Pro TemplateField ale žádné formátování pokyny je nutné zadat v syntaxi vázání dat nebo prostřednictvím metody pro formátování někde definovaný v rámci kódu vaší aplikace (například třídy modelu code-behind stránky technologie ASP.NET).
+
+Chcete-li určit formátování syntaxe vázání dat v ovládacím prvku popisek Web, vrátíte kliknutím na odkaz upravit vlastnosti DataBindings z popisku inteligentních značek dialogové okno datové vazby. Můžete zadat pokyny k formátování přímo do formátu rozevíracího seznamu nebo vyberte některou z definovaných formátovací řetězce. Jak je vlastnost BoundField `DataFormatString` vlastnost, formátování je určen pomocí `{0:formatSpecifier}`.
+
+Pro `UnitPrice` pole použijte formátování měny uvedené výběrem hodnoty příslušného rozevíracího seznamu nebo zadáním `{0:C}` ručně.
+
+
+[![Cena formátu měny](using-templatefields-in-the-detailsview-control-cs/_static/image20.png)](using-templatefields-in-the-detailsview-control-cs/_static/image19.png)
+
+**Obrázek 7**: formátování ceny jako měnu ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image21.png))
+
+
+Deklarativní, formátování specifikace je označen jako druhý parametr do `Bind` nebo `Eval` metody. Nastavení právě vytvořili prostřednictvím návrháře výsledků v následující výraz datové vazby v deklarativním označení:
 
 
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-cs/samples/sample2.aspx)]
 
-## <a name="adding-the-remaining-data-fields-to-the-templatefield"></a>Přidání do TemplateField zbývající datová pole
+## <a name="adding-the-remaining-data-fields-to-the-templatefield"></a>Přidání zbývající datových polí pole TemplateField
 
-V tuto chvíli jsme zobrazí a formátu `UnitPrice` data pole v cenové a TemplateField inventáře, ale stále je třeba zobrazit `UnitsInStock` a `UnitsOnOrder` pole. Umožňuje zobrazit tyto na řádek nižší než cena a v závorkách. Z úpravy rozhraní šablona v Návrháři takové značek přidáte tak, že umístění kurzoru v rámci šablony a jednoduše zadejte text, který se zobrazí. Tento kód Alternativně lze zadat přímo v deklarativní syntaxi.
+V tuto chvíli jsme zobrazí a ve formátu `UnitPrice` data pole Price a TemplateField inventáře, ale stále potřebovat zobrazit `UnitsInStock` a `UnitsOnOrder` pole. Umožňuje zobrazit tyto na řádku níže cena a v závorkách. Z rozhraní úprav šablony v Návrháři je možné přidat tyto značky umístěním kurzoru v rámci šablony a jednoduše zadáte text, který se zobrazí. Alternativně je možné zadat Tento kód přímo v deklarativní syntaxe.
 
-Přidejte statické značek, ovládací prvky webového popisek a syntaxe vazby dat tak, že cenové a inventáře TemplateField zobrazuje informace o ceny a inventáře takto:
+Přidání statických značky, ovládacích prvků popisku a syntaxe vázání dat tak, že ceny a inventáře TemplateField zobrazuje informace o ceně a inventáře takto:
 
-*unitPrice*  
-(**Stock vstupně v pořadí:** *JednotkyNaSkladě* / *ObjednánoJednotek*)
+*UnitPrice*  
+(**v zásobách / On Order:** *UnitsInStock* / *ObjednánoJednotek*)
 
-Po provedení této úlohy vaší DetailsView deklarativní by měl vypadat takto:
+Po provedení této úlohy prvku DetailsView deklarativní by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-cs/samples/sample3.aspx)]
 
-Tyto změny jsme jste konsolidovat informace o ceny a inventáře do jednoho řádku DetailsView.
+S těmito změnami jsme sloučili informace ceny a inventáře do jednoho řádku prvku DetailsView.
 
 
-[![Ceny a informace o inventáři se zobrazí v jeden řádek](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
+[![Ceny a informace o inventáři se zobrazí v jednoho řádku](using-templatefields-in-the-detailsview-control-cs/_static/image23.png)](using-templatefields-in-the-detailsview-control-cs/_static/image22.png)
 
-**Obrázek 8**: ceny a informace o inventáři se zobrazí v jeden řádek ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image24.png))
-
-
-## <a name="step-3-customizing-the-discontinued-field-information"></a>Krok 3: Přizpůsobení informace – starší formáty pole
-
-`Products` Tabulky `Discontinued` sloupec je bitová hodnota, která určuje, zda již není k dispozici produktu. Při vytváření vazby DetailsView (nebo GridView) pro ovládací prvek zdroje dat, pole logickou hodnotu, jako jsou `Discontinued`, jsou implementované jako CheckBoxFields, zatímco pole hodnot logickou hodnotu, jako například `ProductID`, `ProductName`a tak dále jsou implementované jako BoundFields. Třída CheckBoxField vykreslí jako zakázané zaškrtávací políčko je zaškrtnuto, pokud je datové pole hodnota je True a nezaškrtnuto jinak.
-
-Místo zobrazení třídy CheckBoxField chceme místo toho zobrazí text označující, zda produktu se zastaví. K tomu můžeme může vlastnost CheckBoxField odebrání DetailsView a poté přidejte BoundField jejichž `DataField` byla nastavena na `Discontinued`. Uděláte to chvíli trvat. Po této změně DetailsView zobrazí text "True" pro – starší formáty produkty a "Nepravda" pro produkty, které jsou stále aktivní.
+**Obrázek 8**: The ceny a informace o inventáři se zobrazí v jednoho řádku ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image24.png))
 
 
-[![Řetězce hodnotu True a False slouží k zobrazení stavu – starší formáty](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
+## <a name="step-3-customizing-the-discontinued-field-information"></a>Krok 3: Přizpůsobení informace ukončená pole
 
-**Obrázek 9**: řetězce True a False se používají k zobrazení stavu Nákup ukončen ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image27.png))
+`Products` Tabulky `Discontinued` sloupec je bitová hodnota, která určuje, zda produkt už není podporován. Při vytváření vazby prvku DetailsView (nebo ovládacího prvku GridView) na ovládací prvek zdroje dat, jako jsou pole logická hodnota `Discontinued`, jsou implementovány jako CheckBoxFields, zatímco – datový typ Boolean hodnotu pole, jako jsou `ProductID`, `ProductName`, atd., jsou implementovány jako BoundFields. Třídě CheckBoxField vykreslí jako zakázané zaškrtávací políčko je zaškrtnuté políčko, pokud je datové pole Hodnota True a nezaškrtnuto jinak.
+
+Místo zobrazení třídě CheckBoxField může být vhodné místo toho zobrazit text označující jestli produktu je přerušeno. K tomu jsme mohli odeberte třídě CheckBoxField v ovládacím prvku DetailsView a pak přidejte vlastnost BoundField jehož `DataField` nastavenou na `Discontinued`. Za chvíli to provést. Po této změně ovládacím prvku DetailsView zobrazí text "True" pro odpojené produkty a "False" pro produkty, které jsou stále aktivní.
 
 
-Představte si, že jsme nechtěli řetězce "True" nebo "Nepravda", "Ano" a "Ne", místo toho použít. Takové přizpůsobení lze provést pomocí TemplateField a metody pro formátování. Metody pro formátování využít libovolný počet vstupních parametrů, ale musí vracet HTML (jako řetězec) se vložit do šablony.
+[![Řetězce True a False slouží k zobrazení stavu ukončená](using-templatefields-in-the-detailsview-control-cs/_static/image26.png)](using-templatefields-in-the-detailsview-control-cs/_static/image25.png)
 
-Přidejte metodu k formátování `DetailsViewTemplateField.aspx` třídy kódu stránky s názvem `DisplayDiscontinuedAsYESorNO` který přijímá logickou hodnotu jako vstupní parametr a vrátí řetězec. Jak je popsáno v předchozí kurzu, tato metoda *musí* označit jako `protected` nebo `public` Chcete-li být přístupné ze šablony.
+**Obrázek 9**: řetězce True a False se používají k zobrazení stavu Vyřazeno ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image27.png))
+
+
+Představte si, že jsme nechtěli řetězce "True" nebo "False" mají být použity, ale "Ano" a "Žádný", místo toho. Tato vlastní nastavení lze provést s pomocí TemplateField a metody pro formátování. Metody pro formátování můžete provést v libovolném počtu vstupních parametrů, ale musí vracet HTML (jako řetězec) k vložení do šablony.
+
+Přidejte metodu pro formátování `DetailsViewTemplateField.aspx` stránky použití modelu code-behind třídu s názvem `DisplayDiscontinuedAsYESorNO` , který přijímá jako vstupní parametr logickou hodnotu a vrátí hodnotu typu string. Jak je popsáno v předchozím kurzu, tato metoda *musí* označit jako `protected` nebo `public` -li být přístupné ze šablony.
 
 
 [!code-csharp[Main](using-templatefields-in-the-detailsview-control-cs/samples/sample4.cs)]
 
-Tato metoda zkontroluje vstupní parametr (`discontinued`) a vrátí "Ano", pokud je `true`, jinak je "Ne".
+Tato metoda zkontroluje vstupní parametr (`discontinued`) a vrátí "Ano", pokud je `true`jinak "Ne".
 
 > [!NOTE]
-> V metodě formátování v předchozí odvolání kurz, který jsme byly předávání v datové pole, která může obsahovat `NULL` s a je proto potřeba zkontrolujte, zda zaměstnance `HiredDate` hodnotu vlastnosti měla databázi `NULL` hodnotu před přístup k `EmployeesRow`na `HiredDate` vlastnost. Tuto kontrolu není zde nutné od `Discontinued` sloupec může mít nikdy databáze `NULL` přiřazených hodnot. Kromě toho z tohoto důvodu metodu může přijmout logickou hodnotu vstupní parametr, místo aby se tak, aby přijímal `ProductsRow` instance nebo parametr typu `object`.
+> V metodě formátování zkoumány podle předchozí kurz odvolání, který jsme se předávání v datovém poli, které mohou obsahovat `NULL` s a je proto potřeba a zkontrolujte, zda zaměstnance `HiredDate` hodnota vlastnosti měli nějakou databázi `NULL` hodnota před přístup k `EmployeesRow`společnosti `HiredDate` vlastnost. Tato kontrola není zde vyžadováno, protože `Discontinued` sloupec nikdy nemůžete mít databázi `NULL` hodnoty přiřazené. Kromě toho to je důvod, proč metodu můžete přijímají logickou hodnotu vstupní parametr namísto nutnosti tak, aby přijímal `ProductsRow` instance nebo parametr typu `object`.
 
 
-Pomocí této formátování metody dokončení zbývá volat z TemplateField `ItemTemplate`. Chcete-li vytvořit TemplateField buď odstranit `Discontinued` BoundField a přidat nové TemplateField nebo převést `Discontinued` BoundField do TemplateField. Potom z pohledu deklarativní upravit TemplateField tak, aby obsahoval pouze ItemTemplate, která volá `DisplayDiscontinuedAsYESorNO` metodu předáním v hodnotě aktuální `ProductRow` instance `Discontinued` vlastnost. To je přístupný prostřednictvím `Eval` metoda. Konkrétně TemplateField značek by měl vypadat podobně jako:
+Pomocí této metody pro formátování kompletní, už jen zbývá k jeho volání z TemplateField `ItemTemplate`. Chcete-li vytvořit pole TemplateField buď odstranit `Discontinued` Vlastnost BoundField a přidat nový TemplateField nebo převést `Discontinued` Vlastnost BoundField na pole TemplateField. Pak ze zobrazení deklarativní úpravy pole TemplateField tak, aby obsahoval jenom šablona ItemTemplate, která volá `DisplayDiscontinuedAsYESorNO` metodu hodnotu aktuálního `ProductRow` instance `Discontinued` vlastnost. To je přístupná prostřednictvím `Eval` metody. Konkrétně TemplateField kód by měl vypadat:
 
 
 [!code-aspx[Main](using-templatefields-in-the-detailsview-control-cs/samples/sample5.aspx)]
 
-To způsobí, že `DisplayDiscontinuedAsYESorNO` metoda má být vyvolána při vykreslování DetailsView, předávání v `ProductRow` instance `Discontinued` hodnotu. Vzhledem k tomu `Eval` metoda vrátí hodnotu typu `object`, ale `DisplayDiscontinuedAsYESorNO` metoda očekává vstupní parametr typu `bool`, jsme přetypovat `Eval` metody vrátit hodnotu `bool`. `DisplayDiscontinuedAsYESorNO` Metoda pak vrátí hodnotu "Ano" nebo "Ne" přijme v závislosti na hodnotě. Vrácená hodnota je určeno v této DetailsView řádek (viz obrázek 10).
+To způsobí, že `DisplayDiscontinuedAsYESorNO` metoda má být vyvolána při vykreslování ovládacím prvku DetailsView předávajícího `ProductRow` instance `Discontinued` hodnotu. Protože `Eval` metoda vrátí hodnotu typu `object`, ale `DisplayDiscontinuedAsYESorNO` metoda očekává, že vstupní parametr typu `bool`, jsme přetypovat `Eval` metody vrací hodnotu `bool`. `DisplayDiscontinuedAsYESorNO` Metoda pak vrátí "Ano" nebo "Ne" přijímá v závislosti na hodnotě. Vrácená hodnota je, co se zobrazí v prvku DetailsView. Tento řádek (viz obrázek 10).
 
 
-[![Ano nebo ne hodnoty se nyní zobrazí v řádku Nákup ukončen](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
+[![Ano nebo ne hodnoty se teď zobrazují v řádku vyřazeno](using-templatefields-in-the-detailsview-control-cs/_static/image29.png)](using-templatefields-in-the-detailsview-control-cs/_static/image28.png)
 
-**Obrázek 10**: Ano nebo ne hodnoty se nyní zobrazí v řádku Nákup ukončen ([Kliknutím zobrazit obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image30.png))
+**Obrázek 10**: Ano nebo ne hodnoty se teď zobrazují v řádku Vyřazeno ([kliknutím ji zobrazíte obrázek v plné velikosti](using-templatefields-in-the-detailsview-control-cs/_static/image30.png))
 
 
 ## <a name="summary"></a>Souhrn
 
-TemplateField v ovládacím prvku DetailsView umožňuje vyšší stupeň flexibilitu při zobrazení dat, než je k dispozici s dalšími kontrolami pole a jsou ideální pro situace, kde:
+TemplateField v ovládacím prvku DetailsView umožňuje vyšší míra flexibility v zobrazení dat, než je k dispozici s dalšími prvky pole a jsou ideální pro situace, kde:
 
-- Více datových polí je nutné na jeden sloupec GridView
-- Data se nejlépe vyjádřit pomocí ovládacího prvku webového spíše než prostý text
-- Výstup závisí na základní data, například zobrazení metadat nebo v přeformátování data
+- Potřebujete více datových polí zobrazeného do jednoho sloupce GridView
+- Data je nejlepší vyjádřena pomocí webový ovládací prvek spíše než prostý text
+- Výstup závisí na podkladová data, například zobrazení metadat nebo přeformátování dat
 
-Při TemplateFields povolit pro větší flexibilitu při vykreslování dat prvku DetailsView základní úroveň, výstup DetailsView stále funguje trochu boxy jako každé pole je vykreslen jako řádek v kódu HTML `<table>`.
+Zatímco vlastností TemplateField umožňují vyšší stupeň flexibilitu při vykreslování prvku DetailsView podkladová data, výstup prvku DetailsView. stále pracuje trochu boxy jako jednotlivá pole se vykreslí jako řádek v HTML `<table>`.
 
-Ovládací prvek FormView nabízí vyšší stupeň flexibilitu při konfiguraci Vykreslený výstup. FormView neobsahuje pole, ale spíš jenom řadu šablon (`ItemTemplate`, `EditItemTemplate`, `HeaderTemplate`a tak dále). Postup použití FormView k dosažení ještě větší kontrolu nad vykreslené rozložení v našem kurzu další uvidíme.
+Ovládacího prvku FormView nabízí větší míru flexibility při konfiguraci vykresleného výstupu. FormView neobsahuje pole, ale spíš jenom řadu šablon (`ItemTemplate`, `EditItemTemplate`, `HeaderTemplate`, a tak dále). Uvidíme, jak používat FormView dosáhnout ještě větší kontrolu nad vykreslovaném rozložení v následujícím kurzem.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Zvláštní poděkování
+## <a name="special-thanks-to"></a>Speciální k
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Dana Jagers. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Vedoucí kontrolor pro účely tohoto kurzu byla Jagers daň. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Předchozí](using-templatefields-in-the-gridview-control-cs.md)

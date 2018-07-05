@@ -1,32 +1,31 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/index
-title: Začínáme | Microsoft Docs
+title: Začínáme | Dokumentace Microsoftu
 author: rick-anderson
-description: Tato stránka popisuje, jak stáhnout sadu ovládacích prvků Ajax a postup přidání jeho ovládacích prvků do sady nástrojů Visual Studio nebo Visual Web Developer.
+description: Tato stránka popisuje, jak stáhnout sadou nástrojů Ajax Control Toolkit a přidání ovládacích prvků do sady nástrojů Visual Studio nebo Visual Web Developer.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
 ms.topic: article
 ms.assetid: e87dbaaf-fcbe-4e42-87ee-e60e25856e8c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started
 msc.type: chapter
-ms.openlocfilehash: a2bee0fa190a0215546bd5ac72e14df23b2be87b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3c7103a32dfbc03a2bad6c78441e88ff0f7d80f2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26567454"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368800"
 ---
 <a name="getting-started"></a>Začínáme
 ====================
-> Tato stránka popisuje, jak stáhnout sadu ovládacích prvků Ajax a postup přidání jeho ovládacích prvků do sady nástrojů Visual Studio nebo Visual Web Developer.
+> Tato stránka popisuje, jak stáhnout sadou nástrojů Ajax Control Toolkit a přidání ovládacích prvků do sady nástrojů Visual Studio nebo Visual Web Developer.
 
 
-- [Začínáme s Toolkitu AJAX (C#)](get-started-with-the-ajax-control-toolkit-cs.md)
-- [Pomocí ovládacích prvků Toolkit řízení AJAX a řízení Extender (C#)](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
-- [Vytváření AJAX vlastní ovládací prvek řízení Toolkit rozšiřujícího objektu (C#)](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
-- [Začínáme s Toolkitu AJAX (VB)](get-started-with-the-ajax-control-toolkit-vb.md)
-- [Pomocí ovládacích prvků Toolkit řízení AJAX a řízení Extender (VB)](using-ajax-control-toolkit-controls-and-control-extenders-vb.md)
-- [Vytváření vlastních AJAX řízení Toolkit řízení Extender (VB)](creating-a-custom-ajax-control-toolkit-control-extender-vb.md)
+- [Začínáme se sadou nástrojů AJAX Control Toolkit (C#)](get-started-with-the-ajax-control-toolkit-cs.md)
+- [Použití ovládacích prvků a extenderů ovládacích prvků AJAX Control Toolkit (C#)](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+- [Vytvoření vlastního extenderu ovládacího prvku AJAX Control Toolkit (C#)](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
+- [Začínáme se sadou nástrojů AJAX Control Toolkit (VB)](get-started-with-the-ajax-control-toolkit-vb.md)
+- [Použití ovládacích prvků a extenderů ovládacích prvků AJAX Control Toolkit (VB)](using-ajax-control-toolkit-controls-and-control-extenders-vb.md)
+- [Vytvoření vlastního extenderu ovládacího prvku AJAX Control Toolkit (VB)](creating-a-custom-ajax-control-toolkit-control-extender-vb.md)

@@ -1,52 +1,51 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
-title: Vytvoření databáze | Microsoft Docs
+title: Vytvoření databáze | Dokumentace Microsoftu
 author: shanselman
-description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
+description: Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvořte jednoduchou webovou aplikaci, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
 ms.topic: article
 ms.assetid: 742df67f-484d-4ef3-af6b-8c791e556b43
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
 msc.type: authoredcontent
-ms.openlocfilehash: ff2a41803cd31ce50bbf79e630d827b6de441ba3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0e72359095e4c40ef7e56f1290a45ded257143c9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868071"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362353"
 ---
 <a name="creating-a-database"></a>Vytvoření databáze
 ====================
 podle [Scott Hanselman](https://github.com/shanselman)
 
-> Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze. Přejděte [výukové centrum pro rozhraní ASP.NET MVC](../../../index.md) kurzy a ukázky najdete další ASP.NET MVC.
+> Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze. Přejděte [výukové centrum pro ASP.NET MVC](../../../index.md) najít další technologie ASP.NET MVC, kurzů a ukázek.
 
 
-V této části jsme se chystáte vytvořit novou databázi SQL Express, jsme budete používat k ukládání a načítání naše film data. V prostředí Visual Web Developer IDE, vyberte zobrazení | Průzkumník serveru. Klikněte pravým tlačítkem na připojení dat a klikněte na tlačítko Přidat připojení...
+V této části jsme se chystáte vytvořit novou databázi SQL Express, který použijeme k ukládání a načítání naše data o filmech. Z integrovaného vývojového prostředí Visual Web Developer, vyberte zobrazení | Průzkumník serveru. Klikněte pravým tlačítkem na datová připojení a klikněte na tlačítko Přidat připojení...
 
 ![AddConnection](getting-started-with-mvc-part4/_static/image1.png)
 
-V dialogovém okně Zvolit zdroj dat vyberte server Microsoft SQL Server a vyberte pokračovat.
+V dialogovém okně Zvolit zdroj dat vyberte Microsoft SQL Server a vyberte možnost pokračovat.
 
 ![](getting-started-with-mvc-part4/_static/image2.png)
 
-V dialogovém okně Přidat připojení zadejte ". \SQLEXPRESS" pro název serveru a zadejte "Filmy" jako název nové databáze.
+V dialogovém okně Přidat připojení zadejte ". \SQLEXPRESS" pro název serveru a zadejte "Filmy" jako název pro novou databázi.
 
-[![Přidat dialogové okno připojení](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
+[![Přidat připojení – dialogové okno](getting-started-with-mvc-part4/_static/image4.png)](getting-started-with-mvc-part4/_static/image3.png)
 
-Klikněte na tlačítko OK a zobrazí se dotaz, pokud chcete vytvořit tuto databázi. Vyberte možnost Ano.
+Klikněte na tlačítko OK a zobrazí se dotaz, pokud chcete vytvořit databázi. Výběrem možnosti Ano.
 
-[![Vytvořit filmy?](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
+[![Vytvářet videa?](getting-started-with-mvc-part4/_static/image6.png)](getting-started-with-mvc-part4/_static/image5.png)
 
 Nyní máte v Průzkumníku serveru k dispozici prázdnou databázi.
 
 ![Přidat novou tabulku](getting-started-with-mvc-part4/_static/image7.png)
 
-Klikněte pravým tlačítkem na tabulky a klikněte na tlačítko Přidat tabulku. Zobrazí se návrháře tabulky. Přidáte sloupce pro Id, názvu, ReleaseDate, Genre a ceny. Klikněte pravým tlačítkem na sloupec ID a klikněte na tlačítko Nastavit primární klíč. Zde je můj návrh oblasti, které vypadá jako.
+Klikněte pravým tlačítkem na tabulky a klikněte na tlačítko Přidat tabulku. Zobrazí se Návrhář tabulky. Přidání sloupce pro Id, název, ReleaseDate, rozšířením podle tematických a ceny. Klikněte pravým tlačítkem na sloupec ID a klikněte na nastavit primární klíč. Tady je Moje návrhu oblasti, které vypadá.
 
 [![Editor tabulek databáze](getting-started-with-mvc-part4/_static/image9.png)](getting-started-with-mvc-part4/_static/image8.png)
 
@@ -54,39 +53,39 @@ Vyberte sloupec Id také a v části Vlastnosti sloupce níže změňte "Specifi
 
 [![IsIdentity – vlastnosti sloupce](getting-started-with-mvc-part4/_static/image11.png)](getting-started-with-mvc-part4/_static/image10.png)
 
-Když vám to provést, klikněte na ikonu Uložit na panelu nástrojů nebo vyberte soubor | Uložit v nabídce a název nové tabulky "**film**" (singulární). My jsme databázi a tabulku!
+Když máte to Hotovo, klikněte na ikonu Uložit na panelu nástrojů nebo si vybrat soubor | Uložte v nabídce a pojmenujte tabulku "**film**" (singulární). Máme databáze a tabulky!
 
 [![Zvolte název](getting-started-with-mvc-part4/_static/image13.png)](getting-started-with-mvc-part4/_static/image12.png)
 
-Přejděte zpět do Průzkumníka serveru a klikněte pravým tlačítkem v tabulce film a pak vyberte příkaz "Zobrazit Data tabulky". Zadejte pár filmy, takže databáze má některá data.
+Přejděte zpět do Průzkumníka serveru a tabulky Movie klikněte pravým tlačítkem myši a pak vyberte "Zobrazit Data tabulky." Zadejte několik filmy, aby naše databáze má nějaká data.
 
 [![Úpravy tabulek databáze](getting-started-with-mvc-part4/_static/image15.png)](getting-started-with-mvc-part4/_static/image14.png)
 
 ## <a name="creating-a-model"></a>Vytvoření modelu
 
-Nyní přejděte zpět do Průzkumníka řešení na pravé straně rozhraní IDE a klikněte pravým tlačítkem na složku modely a vyberte Přidat | Nová položka.
+Nyní, přepněte zpět do Průzkumníku řešení v integrovaném vývojovém prostředí pravé straně a klikněte pravým tlačítkem na složku modely a vyberte možnost Přidat | Nová položka.
 
 [![addnewmodelitem](getting-started-with-mvc-part4/_static/image17.png)](getting-started-with-mvc-part4/_static/image16.png)
 
-Vytvoříme pro vytvoření modelu Entity z naší nové databáze. Sadu tříd, se přidá do našich projekt, který lze snadno nám pro dotazování a pracovat s daty v rámci naší databáze. Vyberte datový uzel na levé straně dialogového okna a potom vyberte šablonu, položka ADO.NET Entity Data Model. Pojmenujte ji Movies.edmx.
+My budeme k vytvoření modelu Entity z naší nové databáze. Sada tříd bude přidán do projektu, který usnadňuje nám pro dotazování a manipulaci s daty v rámci naší databázi. Vyberte datový uzel na levé straně dialogového okna a pak vyberte šablonu položky ADO.NET Entity Data Model. Pojmenujte ji Movies.edmx.
 
 [![AddNewDataModel](getting-started-with-mvc-part4/_static/image19.png)](getting-started-with-mvc-part4/_static/image18.png)
 
-Kliknutím na tlačítko "Přidat". Tím se pak spustí "Entity Data Model průvodce".
+Klikněte na tlačítko "Přidat". Tím se spustí potom "Průvodce entitního modelu dat".
 
-V dialogu Nový, která se objeví vyberte generování z databáze. Vzhledem k tomu, že jsme provedli právě databáze, budeme potřebovat pouze říct o našem novou databázi a její tabulkou rozhraní Entity Framework. Klikněte na tlačítko vedle uložit naše připojení k databázi v konfiguraci naše webové aplikace. Teď, zkontrolujte tabulky a film zaškrtávací políčko a klikněte na tlačítko Dokončit.
+V dialogovém okně Nový, která se otevře vyberte možnost Generovat z databáze. Protože jsme právě databázi, potřebujeme jenom Entity Framework říct naši novou databázi a její tabulky. Klikněte na tlačítko vedle uložit připojení k naší databázi v konfiguraci naši webovou aplikaci. Teď zkontrolujte tabulky a filmové zaškrtávací políčko a klikněte na tlačítko Dokončit.
 
-[![Průvodce Model dat entity](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
+[![Průvodce datovým modelem entity](getting-started-with-mvc-part4/_static/image21.png)](getting-started-with-mvc-part4/_static/image20.png)
 
-Nyní jsme v tématu naše nová tabulka film v Návrháři Entity Framework a k němu přístup z kódu.
+Nyní jsme najdete v naší nové tabulky Movie v Entity Framework Designer a k němu přístup z kódu.
 
-[![Filmy - sadu Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
+[![Videa – Microsoft Visual Web Developer 2010 Express](getting-started-with-mvc-part4/_static/image23.png)](getting-started-with-mvc-part4/_static/image22.png)
 
-Na návrhovou plochu, která se zobrazí třídu "Film". Tato třída se mapuje na tabulku "Film" v naší databázi, a každou vlastnost v něm mapuje na sloupec v tabulce. Každá instance třídy "Film" bude odpovídat na řádek v tabulce "Film".
+Na návrhové ploše vidíte třídou "Video". Tato třída se mapuje na tabulku "Video" v naší databázi a každou vlastnost v něm se mapuje na sloupec v tabulce. Každá instance třídy "Video" bude odpovídat řádek v tabulce "Video".
 
-Pokud chcete výchozí pojmenovávání a mapování názvů používá rozhraní Entity Framework, můžete změnit nebo si je přizpůsobit návrháře Entity Framework. Pro tuto aplikaci jsme budete používat výchozí hodnoty a právě uložte soubor jako-je.
+Pokud se vám výchozí názvy a mapování konvencemi použitými rozhraním Entity Framework, můžete změnit nebo si je přizpůsobit, Entity Framework designer. Pro tuto aplikaci použijeme výchozí hodnoty a stačí uložit soubor jako-je.
 
-Teď umožňuje pracovat s některé reálná data!
+Nyní se budeme pracovat s daty skutečné!
 
 > [!div class="step-by-step"]
 > [Předchozí](getting-started-with-mvc-part3.md)

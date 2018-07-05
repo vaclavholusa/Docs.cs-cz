@@ -1,93 +1,92 @@
 ---
 uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
-title: Ověřování a autorizace v rozhraní ASP.NET Web API | Microsoft Docs
+title: Ověřování a autorizace v rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: MikeWasson
-description: Poskytuje obecný přehled ověřování a autorizace v rozhraní ASP.NET Web API.
+description: Poskytuje obecný přehled o ověřování a autorizace v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/27/2012
 ms.topic: article
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 9d7cbb9505afb6461ba4c2087d57e9ea0da38ede
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 981eebeaa1daaf85cb90a52f073c88cb71099edb
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/02/2018
-ms.locfileid: "29726755"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365617"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Ověřování a autorizace v rozhraní ASP.NET Web API
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-Vytvoření webové rozhraní API, ale teď chcete řídit přístup k němu. Z této série články podíváme některé možnosti pro zabezpečení webového rozhraní API před neoprávněnými uživateli. Tato řada se bude zabývat ověřování a autorizace.
+Vytvoření webového rozhraní API, ale nyní chcete řídit přístup k němu. V této sérii článků se podíváme na některé možnosti pro zabezpečení webového rozhraní API před neoprávněnými uživateli. Tato série probereme ověřování a autorizace.
 
-- *Ověřování* je znalost identitu uživatele. Například Alice přihlásí pomocí svého uživatelského jména a hesla a server používá heslo k ověření Alice.
-- *Autorizace* je rozhodování, zda má uživatel k provedení akce. Například Alice má oprávnění k získání prostředek, ale není vytvoření prostředku.
+- *Ověřování* je znalost identitu uživatele. Například Alice přihlásí pomocí svého uživatelského jména a hesla, a server používá heslo k ověření Alice.
+- *Autorizace* rozhoduje, jestli uživatel může provádět akce. Alice má například oprávnění získat prostředek, ale ne vytvořit prostředek.
 
-První článek v řadě poskytuje obecný přehled ověřování a autorizace v rozhraní ASP.NET Web API. Další témata popisují běžné scénáře ověřování pro webové rozhraní API.
+První článek v sérii poskytuje obecný přehled o ověřování a autorizace v rozhraní ASP.NET Web API. Další témata popisují běžné scénáře ověřování pro webové rozhraní API.
 
 > [!NOTE]
-> Díky osob, které tato řada zkontrolovány a poskytuje cenné zpětné vazby: Rick Anderson, Levi Broderick, Jiří Dorrans, tní Dykstra, Hongmei Ge, David Matson, ADAM Roth, Tim Teebken.
+> Díky ti, kdo zkontrolovat tuto řadu a poskytuje cenné názory: Rick Anderson, Levi Broderick, Jiří Dorrans, Tom Dykstra, Hongmei Ge, David Matson, Daniel Roth, Tim Teebken.
 
 
 ## <a name="authentication"></a>Ověřování
 
-Webové rozhraní API předpokládá, že se stane, že ověřování na hostiteli. Pro hostování webů, je hostitele služby IIS, která používá vytváření modulů HTTP pro ověřování. Můžete nakonfigurovat projektu pro použití žádné z modulů ověřování, které jsou součástí služby IIS nebo v technologii ASP.NET, nebo napsat vlastní modul protokolu HTTP k provedení vlastní ověřování.
+Webové rozhraní API předpokládá, že v hostiteli se stane, že ověřování. Hostitel je pro hostování webů služby IIS, která používá z modulů HTTP pro ověřování. Můžete nakonfigurovat projektu pro použití žádné z modulů ověření integrované do služby IIS nebo v technologii ASP.NET nebo napsat vlastní modul HTTP pro provedení vlastního ověření.
 
-Když hostitel ověřuje uživatele, vytvoří *hlavní*, který je [IPrincipal](https://msdn.microsoft.com/library/System.Security.Principal.IPrincipal.aspx) objekt, který reprezentuje kontext zabezpečení, v němž je spuštěn kód. Hostitel připojí k objektu zabezpečení pro aktuální vlákno nastavením **Thread.CurrentPrincipal**. Objekt zabezpečení obsahuje přiřazený **Identity** objekt, který obsahuje informace o uživateli. Pokud je uživatel ověřený, **Identity.IsAuthenticated** vlastnost vrátí **true**. U anonymních požadavků **IsAuthenticated** vrátí **false**. Další informace o objekty zabezpečení najdete v tématu [na základě rolí zabezpečení](https://msdn.microsoft.com/library/shz8h065.aspx).
+Když hostitel ověří uživatele, vytvoří *instančního objektu*, což je [IPrincipal](https://msdn.microsoft.com/library/System.Security.Principal.IPrincipal.aspx) objekt, který reprezentuje kontext zabezpečení, pod kterým běží kód. Hostitel připojí objekt zabezpečení pro aktuální vlákno nastavením **vlastnost Thread.CurrentPrincipal**. Objekt zabezpečení obsahuje přiřazený **Identity** objekt, který obsahuje informace o uživateli. Pokud uživatel je ověřen, **Identity.IsAuthenticated** vrátí vlastnost **true**. U anonymních požadavků **ověření identity** vrátí **false**. Další informace o objektech najdete v tématu [zabezpečení na základě](https://msdn.microsoft.com/library/shz8h065.aspx).
 
 ### <a name="http-message-handlers-for-authentication"></a>Obslužné rutiny zpráv HTTP pro ověřování
 
-Místo použití hostitele pro ověřování, které můžete vložit logika ověřování do [obslužné rutiny zpráv HTTP](../advanced/http-message-handlers.md). V takovém případě popisovač zpráv prozkoumá požadavek HTTP a nastaví objekt zabezpečení.
+Místo tohoto hostitele používat pro ověřování, můžete umístit logika ověřování do [obslužná rutina zprávy HTTP](../advanced/http-message-handlers.md). V takovém případě obslužná rutina zprávy prozkoumá požadavek HTTP a nastaví objekt zabezpečení.
 
-Kdy mám použít obslužné rutiny zpráv pro ověřování? Zde jsou některé kompromisy:
+Kdy byste měli použít obslužné rutiny zpráv pro ověřování? Tady jsou některé nevýhody:
 
-- Modul HTTP se zobrazí všechny požadavky, které procházejí kanálu ASP.NET. Obslužné rutiny zpráv se zobrazují pouze požadavků, které jsou směrovány do webového rozhraní API.
-- Můžete nastavit obslužné rutiny zpráv za trasy, který vám umožňuje použít příslušné schéma ověřování pro konkrétní trasy.
-- Vytváření modulů HTTP jsou specifické pro službu IIS. Obslužné rutiny zpráv jsou vázané na hostitele, takže je můžete použít pro hostování webů a samoobslužné hostování.
-- Vytváření modulů HTTP v účasti v protokolování služby IIS, auditování a tak dále.
-- Vytváření modulů HTTP v spustit dříve v kanálu. Pokud zpracováváte ověřování v obslužné rutiny zpráv, získat objekt není nastaven, dokud obslužná rutina se spustí. Kromě toho se objekt vrátí zpět na předchozí objekt zabezpečení při odesílání odpovědi popisovač zpráv.
+- Modulu HTTP se zobrazí všechny požadavky, které procházejí kanálu ASP.NET. Obslužná rutina zprávy se zobrazují pouze požadavky, které jsou směrovány do webového rozhraní API.
+- Můžete nastavit obslužné rutiny zpráv na trasy, která vám umožní použít schéma ověřování na konkrétní postup.
+- Z modulů HTTP jsou specifické pro službu IIS. Obslužné rutiny zpráv jsou nezávislá na hostitele, takže je možné s hostování webů a samoobslužné hostování.
+- Z modulů HTTP účasti v protokolování služby IIS, auditování a tak dále.
+- Z modulů HTTP spouštět dříve v kanálu. Pokud budete zpracovávat ověřování v obslužné rutiny zpráv, získat objekt zabezpečení není nastavený, dokud se obslužná rutina se spustí. Kromě toho se objekt zabezpečení vrátí zpět na předchozí objekt zabezpečení při odpovědi opustí obslužná rutina zprávy.
 
-Obecně platí Pokud nemusíte podporovat samoobslužné hostování, modul HTTP je lepší volbou. Pokud potřebujete podporovat samoobslužné hostování, zvažte obslužné rutiny zpráv.
+Obecně platí Pokud už nebudete potřebovat pro podporu s vlastním hostováním, modul HTTP je lepší volbou. Pokud budete potřebovat pro podporu s vlastním hostováním, vezměte v úvahu obslužné rutiny zpráv.
 
 ### <a name="setting-the-principal"></a>Nastavení objektu zabezpečení
 
-Pokud aplikace provede všechny vlastní ověřovací logiku, je nutné nastavit objekt zabezpečení na dvou místech:
+Pokud vaše aplikace provádí všechny vlastní ověřovací logiku, je nutné nastavit objekt zabezpečení na dvou místech:
 
-- **Thread.CurrentPrincipal**. Tato vlastnost je standardní způsob, jak nastavit objekt zabezpečení vlákna v rozhraní .NET.
-- **HttpContext.Current.User**. Tato vlastnost je specifická pro technologii ASP.NET.
+- **Vlastnost Thread.CurrentPrincipal**. Tato vlastnost je standardní způsob, jak nastavit objekt zabezpečení vlákna v rozhraní .NET.
+- **HttpContext.Current.User**. Tato vlastnost je specifické pro technologii ASP.NET.
 
-Následující kód ukazuje, jak nastavit objekt zabezpečení:
+Následující kód ukazuje, jak nastavit zabezpečení:
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample1.cs)]
 
-Pro hostování webů, je potřeba nastavit objekt zabezpečení v obou místech; v opačném případě se může stát nekonzistentní kontext zabezpečení. Pro vlastní hostování, ale **HttpContext.Current** má hodnotu null. Aby váš kód je bez ohledu na hostitele, proto zkontrolujte null před přiřazením **HttpContext.Current**, jak je vidět.
+Pro hostování webů, je nutné nastavit objekt zabezpečení na obou místech; v opačném případě kontextu zabezpečení může být nekonzistentní. Hostování na vlastním však **HttpContext.Current** má hodnotu null. Aby váš kód je nezávislá na hostitele, proto se zajišťuje hodnota null před přiřazením **HttpContext.Current**, jak je znázorněno.
 
 ## <a name="authorization"></a>Autorizace
 
-Autorizace se stane později v kanálu, co nejblíže ke kontroleru. Který vám umožňuje provést podrobnější volby při uděluje přístup k prostředkům.
+Později v kanálu, se stane autorizace blíž ke kontroleru. Který vám umožňuje provést podrobnější volby, pokud udělíte přístup k prostředkům.
 
-- *Filtry autorizace* spustit před akce kontroleru. Pokud požadavek není ověřen, filtr vrátí odpověď chyba a akce není vyvolána.
-- V rámci akce kontroleru, můžete získat z aktuální objekt zabezpečení **ApiController.User** vlastnost. Může například filtrovat seznam prostředků podle uživatelské jméno, vrácení jenom prostředky, které patří do tohoto uživatele.
+- *Filtry autorizace* spuštěn akce kontroleru. Pokud požadavek není autorizovaný, filtr vrátí odpověď a není vyvolána akce.
+- V rámci akce kontroleru, můžete získat aktuální objekt zabezpečení z **ApiController.User** vlastnost. Například můžete filtrovat seznam prostředků podle uživatelské jméno, vracet jenom prostředky, které patří do daného uživatele.
 
 ![](authentication-and-authorization-in-aspnet-web-api/_static/image1.png)
 
 <a id="auth3"></a>
-### <a name="using-the-authorize-attribute"></a>Pomocí [Povolit] atributu
+### <a name="using-the-authorize-attribute"></a>Použití [Povolit] atributu
 
 Webové rozhraní API poskytuje integrované autorizační filtr, [třídy AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx). Tento filtr kontroluje, zda je uživatel ověřený. V opačném případě vrátí stavový kód HTTP 401 (Neautorizováno), bez vyvolání akce.
 
-Můžete použít filtr globálně, na úrovni kontroleru, nebo na úrovni jednotlivých akcí.
+Můžete použít filtr na úrovni kontroleru globálně, nebo na úrovni jednotlivých akcí.
 
-**Globálně**: Pokud chcete omezit přístup pro každý kontroler Web API, přidejte **třídy AuthorizeAttribute** filtru do seznamu globálních filtrů:
+**Globálně**: Pokud chcete omezit přístup pro každý kontroler Web API, přidejte **třídy AuthorizeAttribute** filtr na seznam globálních filtrů:
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample2.cs)]
 
-**Řadič**: Pokud chcete omezit přístup k určitému kontroleru, přidejte filtr jako atribut řadiče:
+**Kontroler**: Pokud chcete omezit přístup k určitému kontroleru, přidejte filtr jako atribut ke kontroleru:
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample3.cs)]
 
@@ -95,32 +94,32 @@ Můžete použít filtr globálně, na úrovni kontroleru, nebo na úrovni jedno
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample4.cs)]
 
-Alternativně můžete omezit kontroler a pak umožnit anonymní přístup k určitým akcím, pomocí `[AllowAnonymous]` atribut. V následujícím příkladu `Post` metoda je omezená, ale `Get` metoda umožňuje anonymní přístup.
+Alternativně můžete omezit kontroler a pak umožnit anonymní přístup k určitým akcím s použitím `[AllowAnonymous]` atribut. V následujícím příkladu `Post` metoda je omezená, ale `Get` metoda umožňuje anonymní přístup.
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample5.cs)]
 
-V předchozích příkladech filtr povoluje všechny ověřené uživatele pro přístup s omezeným přístupem metody; jsou uchovány pouze anonymní uživatelé. Chcete-li omezit přístup na určité uživatele nebo pro uživatele v určitých rolích:
+V předchozích příkladech filtr umožňuje všem ověřeným uživatelům přístup k metodám s omezeným přístupem; navýšení kapacity jsou uchovány pouze anonymní uživatelé. Můžete také omezit přístup pro určité uživatele nebo pro uživatele v určitých rolích:
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample6.cs)]
 
 > [!NOTE]
-> **Třídy AuthorizeAttribute** filtru pro řadiče webového rozhraní API se nachází v **System.Web.Http** oboru názvů. Není k dispozici podobné filtr pro kontrolery MVC v **System.Web.Mvc** názvů, který není kompatibilní s řadiči webového rozhraní API.
+> **Třídy AuthorizeAttribute** filtru pro kontrolery rozhraní Web API se nachází v **System.Web.Http** oboru názvů. Je podobné filtr pro kontrolery MVC v **System.Web.Mvc** obor názvů, který není kompatibilní s kontrolerů rozhraní Web API.
 
 
 ### <a name="custom-authorization-filters"></a>Filtry autorizace
 
-Zápis filtru autorizace, odvodíte z jedné z těchto typů:
+Zápis filtru autorizace, odvození od některého z těchto typů:
 
-- **Třídy AuthorizeAttribute**. Rozšíření této třídy lze provádět logiku ověřování na základě aktuálního uživatele a role uživatele.
-- **AuthorizationFilterAttribute**. Rozšíření této třídy lze provádět logiku synchronní autorizace, který není nutně na základě aktuální uživatel nebo role.
-- **IAuthorizationFilter**. Implementace tohoto rozhraní k provedení asynchronní autorizace logiku; například, pokud je logika ověřování volá asynchronní vstupně-výstupních operací nebo sítě. (Pokud je logika ověřování vázané na procesor, je jednodušší odvozena od **AuthorizationFilterAttribute**, protože pak nemusíte zápis asynchronní metody.)
+- **Třídy AuthorizeAttribute**. Rozšíření této třídy provádět logiku autorizace na základě aktuálního uživatele a role uživatele.
+- **AuthorizationFilterAttribute**. Rozšíření této třídy pro provádění synchronní autorizace logiky, která není nutně založená na aktuální uživatel nebo role.
+- **IAuthorizationFilter**. Implementace tohoto rozhraní pro provádění asynchronní autorizace logiky; například, pokud svoji logiku autorizace volá asynchronní vstupně-výstupních operací nebo sítě. (Pokud svoji logiku autorizace je vázané na procesor, je jednodušší odvodit z **AuthorizationFilterAttribute**, protože pak není nutné psát asynchronní metody.)
 
-Následující diagram znázorňuje hierarchie tříd pro **třídy AuthorizeAttribute** třídy.
+Následující diagram znázorňuje hierarchii tříd pro **třídy AuthorizeAttribute** třídy.
 
 ![](authentication-and-authorization-in-aspnet-web-api/_static/image2.png)
 
-### <a name="authorization-inside-a-controller-action"></a>Autorizace uvnitř akce Kontroleru
+### <a name="authorization-inside-a-controller-action"></a>Povolení uvnitř akce Kontroleru
 
-V některých případech může povolit požadavek na pokračovat, ale změnit chování založené na objekt zabezpečení. Například informace, které vrátíte může změnit v závislosti na roli uživatele. V rámci metoda kontroleru, můžete získat z aktuální Princip **ApiController.User** vlastnost.
+V některých případech může umožnit požadavek na pokračovat, ale změnit chování podle objektu zabezpečení. Například informace, které vrátíte se může změnit v závislosti na roli uživatele. V rámci metody kontroleru, můžete získat z aktuální zásady **ApiController.User** vlastnost.
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample7.cs)]

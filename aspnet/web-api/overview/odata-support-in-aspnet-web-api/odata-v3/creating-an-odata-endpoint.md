@@ -1,33 +1,32 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
-title: Vytváření koncový bod OData v3 s Web API 2 | Microsoft Docs
+title: Vytvoření koncového bodu OData v3 s webovým rozhraním API 2 | Dokumentace Microsoftu
 author: MikeWasson
-description: Open Data Protocol (OData) je protokol přístupu dat pro web. OData poskytuje uniform způsob, jak struktury dat, dotaz na data a manipulovat s daty...
+description: Open Data Protocol (OData) je protokol data access pro web. OData nabízí jednotné způsob, jak strukturovat data, zadávat dotazy na data a manipulaci s daty...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
 ms.topic: article
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: bcf089003cfb4233fd2aa70cf669972de46c27b1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "30874626"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362587"
 ---
-<a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Vytváření koncový bod OData v3 s Web API 2
+<a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Vytvoření koncového bodu OData v3 s webovým rozhraním API 2
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
-> [Protokol](http://www.odata.org/) (OData) je protokol přístupu dat pro web. Poskytuje jednotným způsobem struktury dat, dotaz na data a manipulovat s sadu dat prostřednictvím operace CRUD OData (vytvářet, číst, aktualizovat a odstranit). OData podporuje jak formáty JSON a AtomPub (XML). OData také definuje způsob, jak vystavit metadata o datech. Klienti mohou používat metadata ke zjištění informací o typu a vztahů pro datovou sadu.
+> [Open Data Protocol](http://www.odata.org/) (OData) je protokol data access pro web. OData nabízí jednotné způsob, jak strukturovat data, zadávat dotazy na data a manipulovat s sady dat prostřednictvím operace CRUD (vytváření, čtení, aktualizace a odstranění). OData podporuje formáty JSON a AtomPub (XML). OData definuje také způsob, jak vystavit metadata o datech. Klienti mohou používat metadata a zjistit informace o typu a vztahy pro datovou sadu.
 > 
-> Rozhraní ASP.NET Web API usnadňuje vytvořit koncový bod OData pro datovou sadu. Můžete ovládat, přesně OData operací, které podporuje koncový bod. Je možné hostovat několik koncových bodů protokolu OData, spolu s koncových bodů protokolu OData. Máte plnou kontrolu nad vašeho datového modelu, back-end obchodní logiky a datové vrstvy.
+> Rozhraní ASP.NET Web API usnadňuje vytvoření koncového bodu OData pro datovou sadu. Můžete řídit přesně OData operace, které podporuje koncový bod. Můžete hostovat víc koncových bodů protokolu OData, společně s koncovými body mimo prostředí OData. Máte plnou kontrolu nad datový model, back-end obchodní logiku a data vrstev.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
@@ -36,79 +35,79 @@ podle [Wasson Jan](https://github.com/MikeWasson)
 > - Webové rozhraní API 2
 > - OData verze 3
 > - Entity Framework 6
-> - [Webovou aplikaci Fiddler ladění Proxy (volitelné)](http://www.fiddler2.com)
+> - [Fiddler webový ladicí proxy server (volitelné)](http://www.fiddler2.com)
 > 
-> Přidala se podpora web API OData v [ASP.NET a webové nástroje 2012.2 aktualizace](https://go.microsoft.com/fwlink/?LinkId=282650). Tento kurz používá však generování uživatelského rozhraní, která byla přidána v sadě Visual Studio 2013.
+> Přidala se podpora web API OData v [technologie ASP.NET a Web Tools 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=282650). Tento kurz používá však generování uživatelského rozhraní, která byla přidána do sady Visual Studio 2013.
 
 
-V tomto kurzu vytvoříte jednoduchý koncový bod OData, který klienti mohou odesílat dotazy. Pokud vytvoříte klienta C# pro koncový bod. Po dokončení tohoto kurzu sadu další kurzy ukazují, jak přidat další funkce, včetně vztahy entit, akce, a vyberte možnost rozbalte $/ $.
+V tomto kurzu vytvoříte jednoduchou koncový bod OData, který můžou klienti dotazovat. Pokud vytvoříte klienta jazyka C# pro koncový bod. Po dokončení tohoto kurzu, další sadu kurzy ukazují, jak přidat další funkce, včetně vztahů entit, akce, a vyberte rozbalte $/ $.
 
-- [Vytvoření projektu Visual Studio](#create-project)
-- [Přidat Entity Model](#add-model)
-- [Přidání Kontroleru OData](#add-controller)
-- [Přidejte EDM a trasy](#edm)
-- [Počáteční hodnoty databázi (volitelné)](#seed-db)
-- [Zkoumání koncový bod OData](#explore)
+- [Vytvoření projektu sady Visual Studio](#create-project)
+- [Přidání modelu Entity](#add-model)
+- [Přidat kontroler OData](#add-controller)
+- [Přidat EDM a trasy](#edm)
+- [Přidání dat do databáze (volitelné)](#seed-db)
+- [Zkoumání koncového bodu OData](#explore)
 - [Formáty serializace OData](#formats)
 
 <a id="create-project"></a>
-## <a name="create-the-visual-studio-project"></a>Vytvoření projektu Visual Studio
+## <a name="create-the-visual-studio-project"></a>Vytvoření projektu sady Visual Studio
 
-V tomto kurzu vytvoříte koncový bod OData, který podporuje základní operace CRUD. Koncový bod zveřejní jediný zdroj, seznam produktů. Další kurzy přidá další funkce.
+V tomto kurzu vytvoříte koncový bod OData, který podporuje základní operace CRUD. Koncový bod bude vystavovat jeden prostředek, seznam produktů. Dalších kurzech přidáte další funkce.
 
-Spuštění sady Visual Studio a vyberte **nový projekt** z úvodní stránky. Nebo z **soubor** nabídce vyberte možnost **nový** a potom **projektu**.
+Spusťte sadu Visual Studio a vyberte **nový projekt** z úvodní stránky. Nebo z **souboru** nabídce vyberte možnost **nový** a potom **projektu**.
 
-V **šablony** podokně, vyberte **nainstalovaných šablonách** a rozbalte uzel Visual C#. V části **Visual C#**, vyberte **webové**. Vyberte **webové aplikace ASP.NET** šablony.
+V **šablony** vyberte **nainstalované šablony** a rozbalte uzel Visual C#. V části **Visual C#** vyberte **webové**. Vyberte **webová aplikace ASP.NET** šablony.
 
 ![](creating-an-odata-endpoint/_static/image1.png)
 
-V **nový projekt ASP.NET** dialogovém okně, vyberte **prázdný** šablony. V části &quot;přidat složky a odkazy na základní... &quot;, zkontrolujte **webového rozhraní API**. Click **OK**.
+V **nový projekt ASP.NET** dialogového okna, vyberte **prázdný** šablony. V části &quot;přidat složky a základní odkazy pro... &quot;, zkontrolujte **webového rozhraní API**. Klikněte na tlačítko **OK**.
 
 ![](creating-an-odata-endpoint/_static/image2.png)
 
 <a id="add-model"></a>
-## <a name="add-an-entity-model"></a>Přidat Entity Model
+## <a name="add-an-entity-model"></a>Přidání modelu Entity
 
-A *modelu* je objekt, který představuje data ve vaší aplikaci. V tomto kurzu potřebujeme model, který představuje produkt. Model odpovídá naše OData typu entity.
+A *modelu* je objekt, který představuje data ve vaší aplikaci. Pro účely tohoto kurzu potřebujeme model, který představuje produkt. Model odpovídá naše prostředí OData typu entity.
 
-V Průzkumníku řešení klikněte pravým tlačítkem na složku modely. V místní nabídce vyberte **přidat** vyberte **třída**.
+V Průzkumníku řešení klikněte pravým tlačítkem na složku modely. V místní nabídce vyberte **přidat** vyberte **třídy**.
 
 ![](creating-an-odata-endpoint/_static/image3.png)
 
-V **přidat nové** položky dialogové okno, název třídy &quot;produktu&quot;.
+V **přidat nový** položky dialogového okna, název třídy &quot;produktu&quot;.
 
 ![](creating-an-odata-endpoint/_static/image4.png)
 
 > [!NOTE]
-> Podle konvence třídy modelu jsou umístěny ve složce modelů. Nemáte postupujte podle touto konvencí ve vašich vlastních projektů, ale použijeme ho v tomto kurzu.
+> Podle konvence tříd modelu jsou umístěny ve složce modely. Nemusíte si odpovídají této konvenci ve vašich vlastních projektů, ale použijeme ho pro účely tohoto kurzu.
 
 
 V souboru Product.cs přidejte následující definici třídy:
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample1.cs)]
 
-Vlastnost ID bude klíč entity. Klienti mohou odesílat dotazy produkty podle ID. Toto pole by také primární klíč v databázi back-end.
+Vlastnost ID bude klíč entity. Klienti mohou odesílat dotazy produkty podle ID. Toto pole by také být primární klíč v back-end databáze.
 
-Nyní sestavte projekt. V dalším kroku použijeme některé sady Visual Studio generování uživatelského rozhraní, která používá reflexe najít typ produktu.
+Sestavte projekt. V dalším kroku použijeme některé sady Visual Studio generování uživatelského rozhraní, který používá reflexi najít typ produktu.
 
 <a id="add-controller"></a>
-## <a name="add-an-odata-controller"></a>Přidání Kontroleru OData
+## <a name="add-an-odata-controller"></a>Přidat kontroler OData
 
-A *řadič* je třída, která zpracovává požadavky HTTP. Definujete samostatné řadič pro každou sadu entit v jste službu OData. V tomto kurzu vytvoříme jediného kontroleru.
+A *řadič* je třída, která zpracovává požadavky HTTP. Definujte samostatný kontrolerem pro každou sadu entit v můžete službu OData. V tomto kurzu vytvoříme jediného kontroleru.
 
-V Průzkumníku řešení klikněte pravým tlačítkem na složku řadiče. Vyberte **přidat** a pak vyberte **řadič**.
+V Průzkumníku řešení klikněte pravým tlačítkem myši na složku řadiče. Vyberte **přidat** a pak vyberte **řadič**.
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 
-V **přidat vygenerované uživatelské rozhraní** dialogovém okně, vyberte &quot;webové rozhraní API 2 kontroler OData s akcemi používající rozhraní Entity Framework&quot;.
+V **přidat vygenerované uživatelské rozhraní** dialogového okna, vyberte &quot;Kontroleru webového rozhraní API 2 OData s akcemi používající nástroj Entity Framework&quot;.
 
 ![](creating-an-odata-endpoint/_static/image6.png)
 
-V **přidat kontroler** dialogové okno, názvu kontroleru "ProductsController". Vyberte &quot;použít asynchronní akce kontroleru&quot; zaškrtávací políčko. V **modelu** rozevíracího seznamu, vyberte třídu produktu.
+V **přidat kontroler** dialogového okna, názvu kontroleru "ProductsController". Vyberte &quot;použít asynchronní akce kontroleru&quot; zaškrtávací políčko. V **modelu** rozevíracího seznamu vyberte třídu produktu.
 
 ![](creating-an-odata-endpoint/_static/image7.png)
 
-Klikněte **nový kontext data...**  tlačítko. Ponechte výchozí název pro datový typ kontextu a klikněte na tlačítko **přidat**.
+Klikněte na tlačítko **nový kontext dat...**  tlačítko. Ponechte výchozí název typu datového kontextu a klikněte na **přidat**.
 
 ![](creating-an-odata-endpoint/_static/image8.png)
 
@@ -116,57 +115,57 @@ V dialogovém okně Přidat kontroler, přidat kontroler, klikněte na tlačítk
 
 ![](creating-an-odata-endpoint/_static/image9.png)
 
-Poznámka: Pokud se zobrazí chybové hlášení, uvádí &quot;došlo k chybě při načítání typu... &quot;, ujistěte se, jste vytvořili projekt Visual Studio, po přidání třídě produktu. Generování reflexe používá k nalezení třídy.
+Poznámka: Pokud se zobrazí chybová zpráva, která uvádí, že &quot;došlo k chybě při získávání typu... &quot;, ujistěte se, že jste sestavili projekt sady Visual Studio po přidání třídy produktu. Základní kostry aplikace používá reflexi k nalezení třídy.
 
 ![](creating-an-odata-endpoint/_static/image10.png)
 
-Generování uživatelského rozhraní přidá do projektu dva soubory kódu:
+Základní kostry aplikace přidá do projektu dva soubory kódu:
 
-- Products.cs definuje kontroleru webového rozhraní API, který implementuje koncový bod OData.
-- ProductServiceContext.cs poskytuje metody pro dotaz na základní databázi pomocí Entity Framework.
+- Products.cs definuje kontroler Web API, která implementuje koncový bod OData.
+- ProductServiceContext.cs poskytuje metody pro dotazování databáze pomocí Entity Frameworku.
 
 ![](creating-an-odata-endpoint/_static/image11.png)
 
 <a id="edm"></a>
-## <a name="add-the-edm-and-route"></a>Přidejte EDM a trasy
+## <a name="add-the-edm-and-route"></a>Přidat EDM a trasy
 
-V Průzkumníku řešení rozbalte aplikace\_spustit složku a otevřete soubor s názvem WebApiConfig.cs. Tato třída obsahuje kód konfigurace pro webové rozhraní API. Nahraďte tento kód s následujícími službami:
+V Průzkumníku řešení rozbalte aplikace\_spusťte složky a otevřete soubor s názvem WebApiConfig.cs. Tato třída obsahuje konfigurační kód pro webové rozhraní API. Nahraďte tento kód následujícím kódem:
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample2.cs)]
 
 Tento kód provede dvě věci:
 
-- Vytvoří modelu Entity Data Model (EDM) pro koncový bod OData.
-- Přidá trasy pro koncový bod.
+- Vytvoří Entity Data Model (EDM) pro koncový bod OData.
+- Přidá trasu pro koncový bod.
 
-EDM je abstraktní model dat. EDM slouží k vytvoření dokument metadat a zadejte identifikátory URI pro službu. **ODataConventionModelBuilder** vytvoří EDM pomocí sadu výchozí zásady vytváření názvů EDM. Tento postup vyžaduje minimálně kódu. Pokud chcete mít větší kontrolu nad EDM, můžete použít **Tvůrce ODataModelBuilder** třídy za účelem vytvoření modelu EDM přidáním vlastností, klíčů a navigačních vlastností explicitně.
+EDM je abstraktní modelem data. EDM slouží k vytvoření dokumentu metadata a definovat identifikátory URI pro službu. **ODataConventionModelBuilder** vytvoří EDM tak, že používáte sadu výchozích konvencí pojmenování EDM. Tento přístup vyžaduje nejméně kódu. Pokud chcete mít větší kontrolu nad EDM, můžete použít **Tvůrce ODataModelBuilder** třídy za účelem vytvoření tak, že explicitně přidáte vlastností, klíčů a navigačních vlastností EDM.
 
-**EntitySet** metoda přidá k modelu EDM sadu entit:
+**Objektu EntitySet** metoda přidá do modelu EDM sadu entit:
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample3.cs)]
 
-Řetězec "Produkty" definuje název sady entit. Název kontroleru musí odpovídat názvu sady entit. V tomto kurzu je sada entit s názvem "Produkty" a má název kontroleru `ProductsController`. Pokud jste s názvem "ProductSet" sady entit, by název kontroleru `ProductSetController`. Všimněte si, že koncový bod může mít několik sad entit. Volání **EntitySet&lt;T&gt;**  každé entity nastavení a potom zadejte odpovídající kontroler.
+Řetězec "Produktů" definuje název sady entit. Název kontroleru musí odpovídat názvu sady entit. V tomto kurzu je název sady entit s názvem "Produktů" a má název kontroleru `ProductsController`. Pokud pojmenujete "ProductSet" sada entit, bude název kontroleru `ProductSetController`. Všimněte si, že koncový bod může mít více sad entit. Volání **objektu EntitySet&lt;T&gt;**  pro každou entitu nastavení a pak definovat odpovídající kontroler.
 
 **MapODataRoute** metoda přidá trasu pro koncový bod OData.
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample4.cs)]
 
-První parametr je popisný název pro tuto trasu. Klienti služby nejsou vidět tento název. Druhý parametr je předpony identifikátoru URI pro koncový bod. Daný tento kód, je identifikátor URI pro sadu entit produkty http://<em>hostname</em>  /odata/produkty. Vaše aplikace může mít více než jeden koncový bod OData. Pro každý koncový bod volání <strong>MapODataRoute</strong> a zadejte název jedinečné trasy a jedinečný předpony identifikátoru URI.
+První parametr je popisný název pro tuto trasu. Klienti služby se tento název nezobrazuje. Druhý parametr je předpona identifikátoru URI pro koncový bod. Zadaný tento kód, je identifikátor URI pro sadu entit produkty http://<em>hostname</em>  /odata/produktů. Vaše aplikace může mít více než jeden koncový bod OData. Pro každý koncový bod, volání <strong>MapODataRoute</strong> a zadejte název jedinečné cesty a jedinečný identifikátor URI předponu.
 
 <a id="seed-db"></a>
-## <a name="seed-the-database-optional"></a>Počáteční hodnoty databázi (volitelné)
+## <a name="seed-the-database-optional"></a>Přidání dat do databáze (volitelné)
 
-V tomto kroku použijete rozhraní Entity Framework počáteční hodnoty databáze s nějaká testovací data. Tento krok je volitelný, ale umožňuje vám hned otestovat váš koncový bod OData.
+V tomto kroku použijete rozhraní Entity Framework pro přidání dat do databáze s daty testu. Tento krok je volitelný, ale umožňuje vám to hned otestovat na váš koncový bod OData.
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**, pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
-Tento postup přidá složku s názvem migrace a kód soubor s názvem Configuration.cs.
+Tento postup přidá složku s názvem migrace a s názvem Configuration.cs soubor kódu.
 
 ![](creating-an-odata-endpoint/_static/image12.png)
 
-Umožňuje otevřít tento soubor a přidejte následující kód, který `Configuration.Seed` metoda.
+Otevřete tento soubor a přidejte následující kód, který `Configuration.Seed` metody.
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample6.cs)]
 
@@ -174,38 +173,38 @@ V okně konzoly Správce balíčků zadejte následující příkazy:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample7.cmd)]
 
-Tyto příkazy Generovat kód, který vytvoří databázi a potom provede tento kód.
+Tyto příkazy Generovat kód, který vytvoří databázi a potom tento kód spustí.
 
 <a id="explore"></a>
-## <a name="exploring-the-odata-endpoint"></a>Zkoumání koncový bod OData
+## <a name="exploring-the-odata-endpoint"></a>Zkoumání koncového bodu OData
 
-V této části, použijeme [ladění Proxy webové aplikaci Fiddler](http://www.fiddler2.com) k odeslání požadavků na koncový bod a zkontrolujte zprávy odpovědi. To vám pomůže Seznamte se s možnostmi koncový bod OData.
+V této části, použijeme [ladění Proxy webové aplikace Fiddler](http://www.fiddler2.com) posílat žádosti na koncový bod a zkontrolujte zprávy odpovědi. To vám pomůže pochopit možnosti koncový bod OData.
 
-Ve Visual Studiu stisknutím klávesy F5 spusťte ladění. Ve výchozím nastavení, Visual Studio otevře prohlížeč tak, aby `http://localhost:*port*`, kde *portu* je číslo portu, který je nakonfigurovaný v nastavení projektu.
+V sadě Visual Studio stisknutím klávesy F5 spusťte ladění. Ve výchozím nastavení, Visual Studio otevře prohlížeč na `http://localhost:*port*`, kde *port* je číslo portu, který je nakonfigurovaný v nastavení projektu.
 
-Můžete změnit číslo portu v nastavení projektu. V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. V okně vlastností vyberte **webové**. Zadejte číslo portu v části **adresa Url projektu**.
+Můžete změnit číslo portu v nastavení projektu. V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyberte **vlastnosti**. V okně Vlastnosti vyberte **webové**. Zadejte číslo portu v rámci **adresa Url projektu**.
 
 ### <a name="service-document"></a>Dokument služby
 
-*Dokument služby* obsahuje seznam sad entit pro koncový bod OData. Získat dokument služby, odeslat požadavek GET na kořenové identifikátor URI služby.
+*Dokument služby* obsahuje seznam ze sady entit pro koncový bod OData. Získat dokument služby, odeslat požadavek GET na kořenový identifikátor URI služby.
 
-Použijte aplikaci Fiddler, zadejte následující identifikátor URI v **autora** karta: `http://localhost:port/odata/`, kde *portu* je číslo portu.
+Použití aplikace Fiddler, zadejte následující identifikátor URI v **Composer** kartě: `http://localhost:port/odata/`, kde *port* je číslo portu.
 
 ![](creating-an-odata-endpoint/_static/image13.png)
 
-Klikněte **Execute** tlačítko. Fiddler odešle požadavek HTTP GET do vaší aplikace. Měli byste vidět odpovědi v seznamu webové relace. Pokud se vše funguje stavový kód bude 200.
+Klikněte na tlačítko **Execute** tlačítko. Fiddler odesílá požadavek HTTP GET do vaší aplikace. Měli byste vidět odpovědi v seznamu webovými relacemi. Pokud všechno funguje, bude se stavovým kódem 200.
 
 ![](creating-an-odata-endpoint/_static/image14.png)
 
-Dvakrát klikněte na odpovědi v seznamu webové relace a zobrazit podrobnosti zprávy s odpovědí na kartě kontroly.
+Dvakrát klikněte na panel odpovědi v seznamu webových relací a zobrazit podrobnosti zprávy s odpovědí na kartě kontroly.
 
 ![](creating-an-odata-endpoint/_static/image15.png)
 
-Nezpracovaná zprávy s odpovědí HTTP by měl vypadat takto:
+Nezpracované zprávy s odpovědí HTTP by měl vypadat nějak takto:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample8.cmd)]
 
-Ve výchozím nastavení webového rozhraní API vrátí dokumentu služby ve formátu AtomPub. Požádat o JSON, přidejte následující hlavičku požadavku HTTP:
+Ve výchozím nastavení webové rozhraní API vrátí dokument služby ve formátu AtomPub. Požádat o JSON, přidejte následující záhlaví požadavku HTTP:
 
 `Accept: application/json`
 
@@ -217,53 +216,53 @@ Odpověď HTTP, která nyní obsahuje datovou část JSON:
 
 ### <a name="service-metadata-document"></a>Dokument metadat služby
 
-*Dokument metadat služby* popisuje datový model služby, pomocí jazyka XML nazývaného koncepční schéma definice Language (CSDL). Dokument metadat ukazuje strukturu dat v rámci služby a slouží ke generování kódu klienta.
+*Dokumentu metadat služby* popisuje datového modelu služby pomocí jazyka XML nazývaného Konceptuální schéma definici jazyka (CSDL). Dokument metadat znázorňuje strukturu dat ve službě a slouží ke generování kódu klienta.
 
-Chcete-li získat dokument metadat, odešlete požadavek GET na `http://localhost:port/odata/$metadata`. Zde je metadata pro koncový bod uvedené v tomto kurzu.
+K získání dokumentu metadata, odeslat požadavek GET na `http://localhost:port/odata/$metadata`. Tady jsou metadata pro koncový bod je znázorněno v tomto kurzu.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample10.cmd)]
 
 ### <a name="entity-set"></a>Sada entit
 
-Chcete-li získat sadu entit produkty, odeslat požadavek GET na `http://localhost:port/odata/Products`.
+Pokud chcete získat sadu entit produkty, odeslat požadavek GET na `http://localhost:port/odata/Products`.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample11.cmd)]
 
 ### <a name="entity"></a>Entity
 
-Potřebujete jednotlivých produktů, pošlete požadavek GET na `http://localhost:port/odata/Products(1)`, kde "1" je ID produktu.
+Chcete-li získat jednotlivé produkty, odeslat požadavek GET na `http://localhost:port/odata/Products(1)`, kde "1" je ID produktu.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample12.cmd)]
 
 <a id="formats"></a>
 ## <a name="odata-serialization-formats"></a>Formáty serializace OData
 
-OData podporuje několik formáty serializace:
+OData podporuje několik formátů serializace:
 
-- Atom Pub (XML)
-- JSON "light" (dostupné v OData v3)
-- JSON "podrobné" (OData v2)
+- Publikování a odběru Atom (XML)
+- JSON výraz "light" (představíme v OData v3)
+- JSON "verbose" (OData v2)
 
-Ve výchozím nastavení používá formát "light" AtomPubJSON webového rozhraní API. 
+Ve výchozím nastavení používá formát "výraz light" AtomPubJSON webového rozhraní API. 
 
-Formát AtomPub získáte nastavte hlavičku Accept "application/atom + xml". Tady je odpovědi na příkladu:
+Získat AtomPub formát, nastavte hlavičku Accept "application/atom + xml". Tady je text odpovědi příkladu:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample13.cmd)]
 
-Zobrazí jednu zřejmé nevýhodou formát Atom: je mnohem podrobnější než JSON light. Ale pokud máte klienta, který jste srozuměni s tím AtomPub, klient může dáváte přednost tento formát přes JSON.
+Zobrazí se jednou z nevýhod zřejmé ve formátu Atom: je mnohem podrobnější než JSON light. Nicméně pokud máte klienta, která analyzuje AtomPub upřednostňují klienta tento formát přes JSON.
 
-Tady je JSON light verzi stejné entity:
+Tady je JSON light verze stejné entity:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample14.cmd)]
 
-Formát JSON light byla zavedena v protokolu OData verze 3. Pro zpětnou kompatibilitu může klient požadovat starší "podrobný" formát JSON. Chcete-li požádat o podrobné JSON, nastavte hlavička Accept `application/json;odata=verbose`. Zde je podrobný verze:
+Formát JSON light byla zavedena ve verzi 3 protokolu OData. Z důvodu zpětné kompatibility může klient požadovat starší "verbose" formátu JSON. Požádat o podrobné JSON, nastavte hlavičku Accept na `application/json;odata=verbose`. Tady je podrobné verze:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample15.cmd)]
 
-Tento formát přenese tak další metadata v textu odpovědi, které lze přidat značné režijní náklady za celou relace. Kromě toho přidá úroveň dereference nástrojem pro zabalení objektu v vlastnost s názvem "d".
+Tento formát přenáší další metadata v textu odpovědi, které lze přidat značné režijní náklady za celou relaci. Kromě toho přidá určitou úroveň dereference obalením objektu ve vlastnosti s názvem "d".
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Přidat vztahy entit](working-with-entity-relations.md)
+- [Přidání relace Entity](working-with-entity-relations.md)
 - [Přidání akcí OData](odata-actions.md)
 - [Volání služby OData z klienta .NET](calling-an-odata-service-from-a-net-client.md)

@@ -1,23 +1,22 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
-title: Konfigurace serveru Team Foundation Server pro nasazení webu | Microsoft Docs
+title: Konfigurace serveru Team Foundation Server pro nasazení webu | Dokumentace Microsoftu
 author: jrjlee
-description: Tento kurz vám ukáže, jak nakonfigurovat Team Foundation Server (TFS) 2010 sestavení řešení a nasazení webového obsahu na různé cílové prostředí. To...
+description: Tomto kurzu se dozvíte, jak nakonfigurovat Team Foundation Server (TFS) 2010 k sestavení řešení a nasazení webového obsahu do různých cílových prostředích. To...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: ff55233a-e795-4007-a4fc-861fe1bb590b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c4cfac333c9400d9ee613ba88520b0b0439873f5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6430a96a8e430a8a30d062ec22868de829680806
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892644"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365338"
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>Konfigurace serveru Team Foundation Server pro nasazení webu
 ====================
@@ -25,58 +24,58 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Tento kurz vám ukáže, jak nakonfigurovat Team Foundation Server (TFS) 2010 sestavení řešení a nasazení webového obsahu na různé cílové prostředí. To zahrnuje scénáře průběžnou integraci (CI), kde nasadíte obsah automaticky pokaždé, když vývojář provede změny. Může také obsahovat ruční aktivační událost scénáře, kde může správce pro aktivaci nasazení konkrétní sestavení do pracovního prostředí po sestavení byl ověřen a ověřit v testovacím prostředí. Témata v tomto kurzu vás provede proces celé konfigurace, včetně:
+> Tomto kurzu se dozvíte, jak nakonfigurovat Team Foundation Server (TFS) 2010 k sestavení řešení a nasazení webového obsahu do různých cílových prostředích. To zahrnuje scénáře kontinuální integrace (CI), kde nasadíte obsah automaticky pokaždé, když vývojář provádí změny. Můžou také zahrnovat ruční aktivační události scénáře, ve kterém může správce k aktivaci nasazení konkrétního sestavení do přípravného prostředí po sestavení byl ověřen a ověření v testovacím prostředí. Témata v tomto kurzu vás provede celou konfiguraci procesu, včetně:
 > 
-> - Postup vytvoření nového týmového projektu v sadě TFS.
+> - Postup vytvoření nového týmového projektu v TFS.
 > - Postup přidání obsahu do správy zdrojového kódu.
-> - Postup konfigurace serveru sestavení pro podporu položek konfigurace a nasazení.
-> - Jak vytvořit definici sestavení, která obsahuje logiku nasazení.
+> - Jak nakonfigurovat server sestavení pro podporu CI a nasazení.
+> - Jak vytvořit definici sestavení, která obsahuje logiku pro nasazení.
 > - Jak nakonfigurovat oprávnění pro automatické nasazení.
 > 
-> Italská překlad tyto kurzy, najdete v článku [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
+> Italština překlad těchto kurzů, navštivte web [ http://www.lucamorelli.it ](http://www.lucamorelli.it).
 
 
-Tento kurz předpokládá, že máte nainstalované sady TFS 2010 a vytvořit kolekci týmových projektů v rámci procesu počáteční konfigurace. [Team Foundation Průvodce instalací pro Visual Studio 2010](https://go.microsoft.com/?linkid=9805132) poskytuje komplexní pokyny v těchto úloh.
+Tento kurz předpokládá, že jste nainstalovali TFS 2010 a vytvoření kolekce týmových projektů jako součást počáteční konfigurace procesu. [Team Foundation Průvodce instalací pro Visual Studio 2010](https://go.microsoft.com/?linkid=9805132) poskytuje komplexní pokyny pro tyto úlohy.
 
 ## <a name="context"></a>Kontext
 
-To je součástí ze série kurzů v závislosti na požadavcích nasazení enterprise fiktivní společnosti s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
+To je součástí série kurzů na základě požadavků organizace nasazení fiktivní společnosti s názvem společnosti Fabrikam, Inc. V této sérii kurzů používá ukázkové řešení&#x2014; [Správce kontaktů](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s realistické úroveň složitosti, včetně aplikace ASP.NET MVC 3, komunikace Windows Služba Foundation (WCF) a databázový projekt.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metody nasazení v srdci těchto kurzů je založen na rozdělení přístupu soubor projektu je popsáno v [Principy procesu sestavení](../web-deployment-in-the-enterprise/understanding-the-build-process.md), ve které je řízena procesem sestavení dva soubory projektu&#x2014;jeden obsahující pokyny, které platí pro všechny cílové prostředí a jeden obsahuje nastavení pro konkrétní prostředí sestavení a nasazení pro sestavení. V okamžiku sestavení souboru projektu specifických pro prostředí se sloučí do souboru projektu bez ohledu na prostředí a vytvoří kompletní sadu pokynů sestavení.
 
-## <a name="scenario-overview"></a>Přehled scénáře
+## <a name="scenario-overview"></a>Přehled scénářů
 
-Tento scénář vysoké úrovně pro tyto kurzy je popsaná v [Enterprise nasazení webu: přehled scénářů](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md). Doporučujeme si přečíst toto téma, než začnete tento kurz.
+Základní scénář pro tyto kurzy je popsaný v [nasazení podnikového webu: přehled scénářů](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md). Doporučujeme, abyste si toto téma před zahájením práce v tomto kurzu.
 
 ## <a name="how-to-use-this-tutorial"></a>Jak používat v tomto kurzu
 
-Pokud je to poprvé, které jste provedli úkoly popsané v tomto kurzu, nebo pokud chcete použít postup popsaný v příkladech použití ukázkové řešení, měli nejdřív projít kurz témata v pořadí. Alternativně můžete použít jednotlivé témata jako pokyny pro konkrétní úlohy. Tento kurz obsahuje následující témata:
+Pokud je to první úkoly popsané v tomto kurzu jste provedli, nebo pokud chcete postupovat podle příkladů použití ukázkové řešení, měli nejdřív projít témata kurzu v pořadí. Alternativně můžete použít jednotlivých tématech jako pokyny pro konkrétní úlohy. Tento kurz obsahuje následující témata:
 
-- [Vytvoření týmového projektu v sadě TFS](creating-a-team-project-in-tfs.md). Týmového projektu je základní jednotkou správy zdrojového kódu, Správa procesů a sestavení v sadě TFS. Potřebujete k vytvoření týmového projektu, než budete moct přidat obsahu ovládací prvek zdroje nebo vytvoření definice sestavení.
-- [Přidávání obsahu do správy zdrojového kódu](adding-content-to-source-control.md). Po vytvoření týmového projektu, můžete začít přidávat obsah do správy zdrojového kódu. Budete muset přidat své projekty a řešení, společně s žádné externí závislosti, před zahájením konfigurace sestavení.
-- [Konfigurace sady TFS sestavení serveru pro nasazení webu](configuring-a-tfs-build-server-for-web-deployment.md). Pokud chcete k vytvoření týmového projektu obsahu, musíte nakonfigurovat server sestavení. Ve většině případů to by měl být na samostatný počítač z instalace sady TFS. Chcete-li nakonfigurovat server sestavení, je potřeba nainstalovat a konfigurovat službu sestavení sady TFS, nainstalujte Visual Studio 2010, vytvořit sestavení řadiče a agentů sestavení, nainstalovat všechny produkty nebo součásti, které potřebuje váš kód, aby sestavení úspěšně a nainstalovat Internetová informační služba (IIS) webové nástroje pro nasazení (Web Deploy).
-- [Vytvoření definice sestavení, který podporuje nasazení](creating-a-build-definition-that-supports-deployment.md). Před zahájením služby Řízení front nebo spuštění sestavení v sadě TFS, musíte vytvořit alespoň jednu sestavení definice pro týmový projekt. Definici sestavení definuje všechny aspekty sestavení, včetně věcí, které by měl být součástí sestavení, co by měly aktivovat sestavení a kde Team Build by měli poslat výstupy sestavení. Můžete nakonfigurovat definice sestavení ke spuštění vlastní soubory projektu Microsoft Build Engine (MSBuild), který umožňuje zahrnout nasazení logiku v automatizovaných sestaveních.
-- [Nasazení konkrétní sestavení](deploying-a-specific-build.md). V celá řada možných scénářů budete chtít nasadit konkrétní sestavení, nikoli na nejnovější verzi, na cílovém prostředí. V takovém případě můžete nakonfigurovat definice buildu, která nasadí obsah ze složky konkrétní vyřaďte.
-- [Konfigurace oprávnění pro tým nasazení sestavení](configuring-permissions-for-team-build-deployment.md). Pokud službu sestavení pro nasazení obsahu v rámci procesu automatizované sestavení, budete muset udělit různé oprávnění k účtu služby sestavení na všechny cílové webové servery a servery databáze.
+- [Vytvoření týmového projektu v TFS](creating-a-team-project-in-tfs.md). Týmový projekt je základní jednotkou správy zdrojového kódu, řízení procesů a sestavení v TFS. Potřebujete vytvořit týmový projekt, než budete moct přidat obsah do správy zdrojového kódu nebo vytváření definice sestavení.
+- [Přidávání obsahu do správy zdrojových kódů](adding-content-to-source-control.md). Po vytvoření týmového projektu, můžete začít přidávat obsah do správy zdrojového kódu. Bude potřeba přidat projekty a řešení, společně s externích závislostí, před zahájením konfigurace sestavení.
+- [Konfigurace serveru TFS Server sestavení pro nasazení webu](configuring-a-tfs-build-server-for-web-deployment.md). Pokud chcete k sestavení obsahu vašeho týmu projektu, budete potřebovat ke konfiguraci serveru sestavení. Ve většině případů by měl být na samostatném počítači z instalace TFS. Ke konfiguraci serveru sestavení, je potřeba nainstalovat a nakonfigurovat službu sestavení TFS, nainstalujte Visual Studio 2010, vytvořit kontrolery sestavení a agenty sestavení, nainstalovat všechny produkty nebo komponenty, které váš kód potřebuje, aby bylo možné úspěšně sestavit a nainstalovat Internetová informační služba (IIS) webu nástroj pro nasazení (Web Deploy).
+- [Vytvoření definice sestavení, která podporuje nasazení](creating-a-build-definition-that-supports-deployment.md). Před zahájením zařazování do fronty a budou spouštět buildy na serveru TFS, je potřeba vytvořit definice alespoň jedno sestavení pro týmový projekt. Definice sestavení definuje každý aspekt sestavení, včetně věci, které by měl být součástí sestavení, co by měly aktivovat sestavení a kam by měl Team Build poslat výstupy sestavení. Můžete nakonfigurovat definici sestavení spouštět vlastní soubory projektu Microsoft Build Engine (MSBuild), která umožňuje zahrnout logiky nasazení v automatizovaných sestaveních.
+- [Nasazení konkrétního sestavení](deploying-a-specific-build.md). V možných scénářů budete chtít nasazení konkrétního sestavení, nikoli na nejnovější verzi na cílovém prostředí. V takovém případě můžete nakonfigurovat definici sestavení, která nasadí obsah z konkrétní odkládací složky.
+- [Nasazení sestavení konfigurace oprávnění pro tým](configuring-permissions-for-team-build-deployment.md). Pokud je sestavovací služba pro nasazení obsahu jako součást automatizovaného procesu sestavení, budete muset poskytnout různá oprávnění k účtu sestavovací služby na všechny cílové webové servery a databázové servery.
 
 ## <a name="key-technologies"></a>Klíčové technologie
 
-Tento kurz se zaměřuje na tom, jak používat tyto produkty a technologie pro podporu automatizované sestavení a nasazení webu:
+Tento kurz se zaměřuje na tom, jak používat tyto produkty a technologie pro podporu automatické sestavení a nasazení webu:
 
 - Visual Studio Team Foundation Server 2010
-- Týmovém sestavení a nástroje MSBuild
+- Týmové sestavení a nástroje MSBuild
 - Web Deploy
 
-Tento kurz dotykem také na stránce použít Windows Server 2008 R2, IIS 7.5, SQL Server 2008 R2, technologii ASP.NET 4.0 a ASP.NET MVC 3.
+Tento kurz se dotýká také při použití Windows serveru 2008 R2, IIS 7.5, SQL Server 2008 R2, technologii ASP.NET 4.0 a ASP.NET MVC 3.
 
-## <a name="other-tutorials-in-this-series"></a>Další kurzy v této série
+## <a name="other-tutorials-in-this-series"></a>Další kurzy v této sérii
 
-To je součástí ze série kurzů pět v podnikovém měřítku nasazení webu. Toto jsou další kurzy v této sérii:
+To je součástí série pěti kurzů na podnikové úrovni, nasazení webu. Toto jsou další kurzy v této sérii:
 
-- [Nasazení webové aplikace v podnikové scénáře](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md). Tento úvodní obsah poskytuje kontextové pozadí pro kurz řady. Popisuje kurz scénář a ukazuje, jak se úlohy a postupy popsané v celé řady začlenit do procesu širší Application Lifecycle Management (ALM).
-- [Nasazení v podnikové síti webu](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md). V tomto kurzu poskytuje koncepční Úvod do souborů projektu nástroje MSBuild, webových publikování kanálu (WPP), nasazení webu a další související technologie. Vysvětluje, jak můžete pomocí těchto nástrojů současně ke správě procesů komplexní nasazení.
-- [Konfigurace serveru prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). Tento kurz popisuje postup konfigurace serverů Windows na podporu různých scénářů nasazení, včetně nasazení balíčku vzdáleném webovém pomocí agenta služba pro nasazení webu (vzdáleného agenta) nebo obslužné rutiny nasazení webu a nasazení vzdálené databáze. Na výběr metody nasazení pro vaše vlastní prostředí obsahuje pokyny a popisuje, jak použít k replikaci nasazených webových aplikací ve všech webových serverech ve farmě serverů webové farmy Framework (WFF).
-- [Pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých dalších pokročilých úloh nasazení, jako vlastní nastavení nasazení databáze pro prostředí s více, vyloučení souborů a složek z nasazení a přepnutím do režimu offline webové aplikace během procesu nasazení .
+- [Nasazení webové aplikace v podnikových scénářích](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md). Tento úvodní obsah obsahuje kontextové informace týkající se série kurzů. Popisuje scénář tohoto kurzu a ukazuje, jak se úlohy a názorné postupy popsané v celé řadě vejde do širší proces správy životního cyklu aplikací (ALM).
+- [Webové nasazení v podniku](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md). Tento kurz obsahuje koncepční Úvod do souborů projektu MSBuild, webových publikování kanálu (WPP), nasazení webu a dalších souvisejících technologiích. Vysvětluje, jak můžete pomocí těchto nástrojů společně ke správě nasazení komplexních procesů.
+- [Konfigurace serverového prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md). Tento kurz popisuje, jak nakonfigurovat servery Windows pro podporu různých scénářů nasazení, včetně nasazení vzdáleného webového balíčku pomocí Služba agenta nasazení webu (vzdálený agent) nebo obslužná rutina webového nasazení a nasazení vzdálené databáze. Poskytuje rady, jak volba metody nasazení pro konkrétní prostředí, a je zde popsán způsob použít webové farmy Framework (WFF) k replikaci nasazených webových aplikací ve všech webových serverů v serverové farmě.
+- [Pokročilé nasazení podnikového webu](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md). Tento kurz popisuje, jak k provádění různých rozšířené nasazení úkoly, jako je přizpůsobení nasazené databáze pro více prostředí, s výjimkou souborů a složek z nasazení a převedení webové aplikace do offline režimu během procesu nasazení .
 
 > [!div class="step-by-step"]
 > [Next](creating-a-team-project-in-tfs.md)

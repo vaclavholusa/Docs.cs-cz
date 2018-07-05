@@ -1,28 +1,27 @@
 ---
 uid: web-api/overview/error-handling/index
-title: Zpracování chyb v rozhraní ASP.NET Web API | Microsoft Docs
+title: Zpracování chyb v rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: rick-anderson
-description: 'Postupy: zpracování výjimek v rozhraní ASP.NET Web API.'
+description: Způsob zpracování výjimek v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
 ms.topic: article
 ms.assetid: 0b2f1edb-816c-4a86-95bc-0c55797eb3af
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling
 msc.type: chapter
-ms.openlocfilehash: 955c334f1e11b9dc28e2cc0a0fc055226fa0607f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 447b77d104d7b76e9d0e4184507cd59b086d2a8b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566338"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37370368"
 ---
 <a name="error-handling-in-aspnet-web-api"></a>Zpracování chyb v rozhraní ASP.NET Web API
 ====================
-> Postupy: zpracování výjimek v rozhraní ASP.NET Web API.
+> Způsob zpracování výjimek v rozhraní ASP.NET Web API.
 
 
-- [Zpracování výjimek v rozhraní Web API](exception-handling.md)
-- [Globální zpracování chyb v rozhraní Web API 2](web-api-global-error-handling.md)
+- [Zpracování výjimek ve webovém rozhraní API](exception-handling.md)
+- [Globální zpracování výjimek ve webovém rozhraní API 2](web-api-global-error-handling.md)

@@ -1,27 +1,26 @@
 ---
 uid: whitepapers/mvc4-release-notes
-title: ASP.NET MVC 4 | Microsoft Docs
+title: ASP.NET MVC 4 | Dokumentace Microsoftu
 author: rick-anderson
-description: Tento dokument popisuje verzi rozhraní ASP.NET MVC 4.
+description: Tento dokument popisuje verzi technologie ASP.NET MVC 4.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: dbcea6090a0376b8732e02c0891721672bfe50f9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f86220d296e0058b0d482cef066c33e5474d51ef
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898578"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37369454"
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
-> Tento dokument popisuje verzi rozhraní ASP.NET MVC 4.
+> Tento dokument popisuje verzi technologie ASP.NET MVC 4.
 
 
 - [Poznámky k instalaci](#_Toc303253802)
@@ -31,130 +30,130 @@ ms.locfileid: "30898578"
 - [Nové funkce v architektuře ASP.NET MVC 4](#_Toc303253807)
 
     - [Webové rozhraní API v ASP.NET](#_Toc317096197)
-    - [Vylepšení výchozí šablony projektů](#_Toc303253808)
+    - [Vylepšení pro výchozí šablony projektu](#_Toc303253808)
     - [Šablona projektu mobilní](#_Toc303253809)
     - [Režimy zobrazení](#_Toc303253810)
-    - [jQuery Mobile, přepínači zobrazení a přepsání prohlížeče](#_Toc303253811)
-    - [Podpora úloh pro asynchronní řadiče](#_Toc303253813)
+    - [jQuery Mobile, přepínání zobrazení a přepsání prohlížeče](#_Toc303253811)
+    - [Podpora úkol pro asynchronní řadiče](#_Toc303253813)
     - [Azure SDK](#_Toc303253814)
-    - [Migrace databáze](#_Toc303253818)
+    - [Migrace databází](#_Toc303253818)
     - [Prázdná šablona projektu](#_Toc303253819)
-    - [Přidat řadič do libovolné složky projektu](#_Toc303253820)
+    - [Přidat kontroler do libovolné složky projektu](#_Toc303253820)
     - [Vytváření sady a minifikace](#_Toc303253821)
-    - [Povolení přihlášení ze sítě Facebook a jiných lokalitách pomocí OAuth a OpenID](#_Toc303253822)
-- [Upgrade projektu aplikace ASP.NET MVC 3 na rozhraní ASP.NET MVC 4](#_Toc303253806)
-- [Změny z verze Release Candidate architektury ASP.NET MVC 4](#_Toc303253817)
-- [Známé problémy a nejnovější změny](#_Toc303253815)
+    - [Povolení přihlášení z Facebooku a dalších lokalit pomocí OAuth a OpenID](#_Toc303253822)
+- [Upgrade projektu aplikace ASP.NET MVC 3 na ASP.NET MVC 4](#_Toc303253806)
+- [Změny v architektuře ASP.NET MVC 4 Release Candidate](#_Toc303253817)
+- [Známé problémy a změny způsobující chyby](#_Toc303253815)
 
 <a id="_Toc303253802"></a>
 ## <a name="installation-notes"></a>Poznámky k instalaci
 
-ASP.NET MVC 4 pro Visual Studio 2010 můžete nainstalovat z [domovskou stránku ASP.NET MVC 4](../mvc/mvc4.md) pomocí služby instalace webové platformy.
+ASP.NET MVC 4 pro Visual Studio 2010 můžete nainstalovat pomocí [domovskou stránku ASP.NET MVC 4](../mvc/mvc4.md) pomocí instalačního programu webové platformy.
 
-Doporučujeme odinstalaci všechny dříve nainstalované náhledy ASP.NET MVC 4 před instalací architektury ASP.NET MVC 4. ASP.NET MVC 4 Beta a verze Release Candidate můžete upgradovat na ASP.NET MVC 4 bez odinstalace.
+Doporučujeme, abyste odinstalace všechny dříve nainstalované verze Preview architektury ASP.NET MVC 4 před instalací technologie ASP.NET MVC 4. ASP.NET MVC 4 Beta a verze Release Candidate můžete upgradovat na ASP.NET MVC 4 bez odinstalování.
 
-Tato verze není kompatibilní s všechny verze preview rozhraní .NET Framework 4.5. Žádné nainstalované preview verze rozhraní .NET Framework 4.5 je nutné upgradovat samostatně na finální verzi před instalací architektury ASP.NET MVC 4.
+Tato verze není kompatibilní s vydané verze preview rozhraní .NET Framework 4.5. Samostatně je nutné upgradovat všechny nainstalované ve verzi preview verze rozhraní .NET Framework 4.5 na finální verzi před instalací technologie ASP.NET MVC 4.
 
-ASP.NET MVC 4 může být nainstalovaná a spustit-souběžného v architektuře ASP.NET MVC 3.
+ASP.NET MVC 4, může být nainstalovaná a spuštění – souběžně v architektuře ASP.NET MVC 3.
 
 <a id="_Toc303253803"></a>
 ## <a name="documentation"></a>Dokumentace
 
-Dokumentace k rozhraní ASP.NET MVC je k dispozici na webu MSDN na následující adrese URL:
+Dokumentace k ASP.NET MVC je k dispozici na webu MSDN na následující adrese URL:
 
 [https://go.microsoft.com/fwlink/?LinkID=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
 
-Kurzy a další informace o architektuře ASP.NET MVC jsou dostupné na stránce webu ASP.NET MVC 4 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
+Kurzy a další informace o architektuře ASP.NET MVC jsou k dispozici na stránce na webu technologie ASP.NET MVC 4 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
 <a id="_Toc303253804"></a>
 ## <a name="support"></a>Podpora
 
-ASP.NET MVC 4 je plně podporována. Pokud máte dotazy týkající se práce v této verzi můžete také publikovat je do fóra ASP.NET MVC ([https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)), kde jsou často schopen poskytnout neformální podporu členové komunity služby ASP.NET.
+ASP.NET MVC 4 je plně podporováno. Pokud máte dotazy týkající se práce v této verzi můžete také publikovat je do fóra ASP.NET MVC ([https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx)), kde jsou často schopni poskytovat podporu neformální členové komunity technologie ASP.NET.
 
 <a id="_Toc303253805"></a>
 ## <a name="software-requirements"></a>Požadavky na software
 
-Komponenty architektury ASP.NET MVC 4 pro sadu Visual Studio vyžadují prostředí PowerShell 2.0 a buď Visual Studio 2010 s aktualizací Service Pack 1 nebo Visual Web Developer Express 2010 s aktualizací Service Pack 1.
+Komponenty architektury ASP.NET MVC 4 pro Visual Studio vyžadují prostředí PowerShell 2.0 a Visual Studio 2010 s aktualizací Service Pack 1 nebo Visual Web Developer Express 2010 s aktualizací Service Pack 1.
 
 <a id="_Toc303253807"></a>
 ## <a name="new-features-in-aspnet-mvc-4"></a>Nové funkce v architektuře ASP.NET MVC 4
 
-Tato část popisuje funkce, které byly zavedeny ve verzi ASP.NET MVC 4.
+Tato část popisuje funkce, které se zavedly ve verzi ASP.NET MVC 4.
 
 <a id="_Toc317096197"></a>
 ### <a name="aspnet-web-api"></a>Rozhraní API pro ASP.NET Web
 
-ASP.NET MVC 4 obsahuje rozhraní ASP.NET Web API, nové rozhraní pro vytváření služeb HTTP, které mohou být využity širokou škálou klientů včetně prohlížečů a mobilních zařízení. Rozhraní ASP.NET Web API je také ideální platformu pro vytváření služeb RESTful.
+ASP.NET MVC 4 zahrnuje webové rozhraní API ASP.NET, nové rozhraní pro vytváření služeb HTTP, které mohou být využity širokou škálou klientů včetně prohlížečů a mobilních zařízení. ASP.NET Web API je také ideální platformu pro vytváření služby typu REST.
 
 Rozhraní ASP.NET Web API zahrnuje podporu pro následující funkce:
 
-- **Moderní programovací model HTTP:** přímo přistupovat a zpracování požadavků HTTP a odpovědi v webová rozhraní API pomocí nové, silného typu HTTP objektový model. Stejný programovací model a kanál protokolu HTTP je symetricky dostupný na klientovi prostřednictvím nové *HttpClient* typu.
-- **Podpora pro trasy plně:** rozhraní ASP.NET Web API podporuje úplnou sadu možností směrování ASP.NET, včetně parametry trasy a omezení trasy. Kromě toho použijte jednoduché konvence k mapování akcí na metody HTTP.
-- **Vyjednávání obsahu:** klient a server můžou spolupracovat a určit správném formátu pro data návratu z webového rozhraní API. Rozhraní ASP.NET Web API poskytuje výchozí podporu pro formát XML, JSON, a kódovaná adresou URL formuláře formáty a můžete rozšířit tato podpora přidáním vlastní formátování, nebo dokonce nahrazení výchozí strategie vyjednávání obsahu.
-- **Modelu a ověření vazeb:** vazače modelů poskytují snadný způsob, jak extrahovat data z různých částí požadavku HTTP a převést objekty .NET, které se dají použít v akcích webového rozhraní API ty části zprávy. Ověření je také provádět akce parametry podle datových poznámek.
-- **Filtry:** rozhraní ASP.NET Web API podporuje filtry včetně dobře známé filtry, jako *[Authorize]* atribut. Můžete vytvářet a zařadit vlastní filtry akce, autorizace a výjimek.
-- **Vytváření dotazu:** použití *[Queryable]* atribut filtru na akci, která vrátí *IQueryable* povolení podpory pro dotazování webového rozhraní API prostřednictvím konvence dotazu OData.
-- **Vylepšené možnosti testování:** místo nastavení HTTP podrobnosti ve statickém kontextu objekty, webové rozhraní API akce pracují s instancí *HttpRequestMessage* a *objekt HttpResponseMessage*. Vytvoření projektu testování částí společně s projektu webového rozhraní API začít rychle zápis testů částí pro fungování vašeho webového rozhraní API.
-- **Konfigurace založená na kódu:** výhradně prostřednictvím kódu se provádí konfiguraci webového rozhraní API ASP.NET, a vaše konfigurace vyčistit soubory. Slouží ke konfiguraci body rozšiřitelnosti vzoru Lokátor zadaná služba.
-- **Vylepšená podpora pro kontejnery v inverzi řízení (IoC):** rozhraní ASP.NET Web API poskytuje podpory pro kontejnery IoC prostřednictvím abstrakci překladač závislostí vylepšené
-- **Hostování na vlastním:** webová rozhraní API je možné hostovat v vlastního procesu kromě služby IIS, při použití stále potenciál trasy a další funkce webového rozhraní API.
-- **Vytvoření vlastní Nápověda a testovat stránky:** teď můžete snadno vytvářet vlastní Nápověda a testovat stránky webového rozhraní API pomocí nové *IApiExplorer* službu a získat úplný runtime popis webového rozhraní API.
-- **Monitorovací a diagnostické:** rozhraní ASP.NET Web API nyní poskytuje infrastrukturu lehká trasování, která lze snadno integrovat existující řešení protokolování, jako je například System.Diagnostics, trasování a protokolování rozhraní třetích stran. Můžete povolit trasování tím, že poskytuje *ITraceWriter* implementace a její přidání do vaší konfigurace rozhraní web API.
-- **Odkaz generování:** používat rozhraní ASP.NET Web API *UrlHelper* ke generování odkazy na související prostředky ve stejné aplikaci.
-- **Šablona projektu webového rozhraní API:** vyberte nový formulář průvodce Nový projekt MVC 4 s rozhraním ASP.NET Web API rychle získat nastavení a spuštění projektu webového rozhraní API.
-- **Generování uživatelského rozhraní:** použití **přidat kontroler** dialogovém okně můžete rychle vygenerovat řadič webového rozhraní API, která je založena na Entity Framework na základě typu modelu.
+- **Moderní programovací model HTTP:** přímo přistupovat k a manipulaci s žádostí HTTP a odpovědí v rozhraní Web API s využitím nové, silného typu HTTP objektový model. Stejné programovací model a kanálu protokolu HTTP je symetricky dostupný na klientovi, prostřednictvím nového *HttpClient* typu.
+- **Plnou podporu pro trasy:** rozhraní ASP.NET Web API podporuje kompletní sadu funkcí trasu směrování ASP.NET, včetně parametry trasy a omezení. Kromě toho pomocí jednoduchého konvence mapování akcí na metody HTTP.
+- **Vyjednávání obsahu:** klienta a serveru můžou spolupracovat a určit správný formát pro data se vrací z webového rozhraní API. Rozhraní ASP.NET Web API poskytuje výchozí podporu pro XML, JSON, a kódovaná adresou URL formuláře formátů a mohou rozšířit tuto podporu tak, že přidáte vlastní formátovací moduly, nebo dokonce nahrazujte výchozí strategie vyjednávání obsahu.
+- **Vazby modelu a ověření:** vazače modelů poskytují snadný způsob, jak extrahovat data z různých částí požadavek HTTP a převést tyto části zprávy do objektů .NET, které mohou být využívána akcí webového rozhraní API. Ověření se provádí také na parametry akce založené na datových poznámek.
+- **Filtry:** rozhraní ASP.NET Web API podporuje filtry, včetně dobře známých filtry, jako *[Authorize]* atribut. Můžete vytvářet a zapojte vlastní filtry pro akce a povolení zpracování výjimek.
+- **Vytváření dotazu:** použití *[Queryable]* atribut filtru na akci, která vrátí *IQueryable* povolení podpory pro dotazování na vaše webové rozhraní API prostřednictvím konvence prostředí OData pro dotazování.
+- **Vylepšené testovatelnost:** místo nastavení podrobností protokolu HTTP v objektech statického kontextu, webové rozhraní API pracovní akce s instancemi *HttpRequestMessage* a *objekt HttpResponseMessage*. Vytvořte projekt testu jednotek spolu s projekt webového rozhraní API tak, aby mohli začít rychle zápis testů jednotek pro vaše webového rozhraní API funkce.
+- **Konfigurace založená na kódu:** konfigurace ASP.NET Web API se provádí pouze pomocí kódu, vyčistit byste museli opustit váš konfigurační soubory. Pomocí vzoru Lokátor poskytované služby můžete nakonfigurovat body rozšiřitelnosti.
+- **Vylepšená podpora pro kontejnery ovládacích IOC (Inversion):** rozhraní ASP.NET Web API poskytuje skvělou podporu pro technologie IoC kontejnerů prostřednictvím abstrakce překladač závislostí vylepšené
+- **Hostování na vlastním serveru:** webová rozhraní API je možné hostovat ve vašem vlastním procesu kromě IIS stále přitom výkon trasy a dalších funkcích služby webového rozhraní API.
+- **Vlastní Nápověda k vytvoření a testování stránek:** teď můžete snadno vytvářet vlastní nápovědy a testovat stránky pro vaše webového rozhraní API pomocí nových *IApiExplorer* služby runtime úplný popis vašeho webového rozhraní API.
+- **Monitorování a Diagnostika:** rozhraní ASP.NET Web API nyní infrastrukturu lehký trasování, která umožňuje snadno integrovat se stávajícími řešeními protokolování, jako je například System.Diagnostics, trasování událostí pro Windows a jiných rozhraní protokolování. Můžete povolit trasování tím, že poskytuje *ITraceWriter* provádění a jeho přidání do konfigurace webového rozhraní API.
+- **Propojit generování:** pomocí rozhraní ASP.NET Web API *UrlHelper* ke generování odkazů k souvisejícím prostředkům ve stejné aplikaci.
+- **Šablona projektu webového rozhraní API:** vyberte nový formulář průvodce Nový projekt MVC 4 rychle začít pracovat s rozhraním ASP.NET Web API projekt webového rozhraní API.
+- **Generování uživatelského rozhraní:** použití **přidat kontroler** založené na dialogu rychle scaffold kontroleru webového rozhraní API založené na Entity Framework typ modelu.
 
-Pro další informace o rozhraní ASP.NET Web API naleznete [ https://www.asp.net/web-api ](../web-api/index.md).
+Další informace o rozhraní ASP.NET Web API najdete [ https://www.asp.net/web-api ](../web-api/index.md).
 
 <a id="_Toc303253808"></a>
-### <a name="enhancements-to-default-project-templates"></a>Vylepšení výchozí šablony projektů
+### <a name="enhancements-to-default-project-templates"></a>Vylepšení pro výchozí šablony projektu
 
-Šablony, která se používá k vytvoření nové projekty ASP.NET MVC 4 je aktualizovaná k vytvoření webu více moderních vyhledávání:
+Jak vytvořit web více moderního vzhledu byl aktualizován šablonu, která se používá k vytvoření nových projektech ASP.NET MVC 4:
 
 ![](mvc4-release-notes/_static/image1.png)
 
-Kromě kosmetické vylepšení obsahuje vylepšené funkce v nové šabloně. Šablona využívá techniku zvanou adaptivního vykreslování na vzhledu v stolních počítačů a mobilních prohlížečů bez nutnosti přizpůsobení.
+Kromě kosmetické vylepšení obsahuje vylepšené funkce v nové šablony. Šablona využívá techniky označované jako adaptivního vykreslování do vypadat dobře v počítačových prohlížečů a mobilní prohlížeče bez jakéhokoli přizpůsobení.
 
 ![](mvc4-release-notes/_static/image2.png)
 
-Pokud chcete zobrazit adaptivního vykreslování v akci, můžete použít emulátoru mobilního nebo zkuste použít Změna velikosti okna Prohlížeč pro stolní počítač, na menší. Když v okně prohlížeče získá dostatečně malé, se změní rozložení stránky.
+Zobrazíte adaptivního vykreslování v akci, můžete použít mobilní emulátor nebo zkuste použít mění velikost okna prohlížeči v počítači. Chcete-li být menší. Pokud okno prohlížeče získá dostatečně malá, se změní rozložení stránky.
 
 <a id="_Toc303253809"></a>
 ### <a name="mobile-project-template"></a>Šablona projektu mobilní
 
-Pokud se spuštění nového projektu a chcete vytvořit web speciálně pro mobilní a tablet prohlížeče, můžete v šabloně projektů nové mobilní aplikace. To je založené na technologii jQuery Mobile, knihovny open source pro vytváření dotykovým uživatelského rozhraní:
+Pokud začíná nový projekt a chcete vytvořit web speciálně pro mobilní zařízení a prohlížečů tablet, můžete použít novou šablonu projektu mobilní aplikace. To je založené na technologii jQuery Mobile, knihovny open source pro vytváření optimalizovaných pro dotykové ovládání uživatelského rozhraní:
 
 ![](mvc4-release-notes/_static/image3.png)
 
-Tato šablona obsahuje stejnou strukturu aplikací jako šablonu internetovou aplikaci (a kódu kontroleru je téměř identický), ale je navržen tak, funkční a chovat i na mobilních zařízeních se systémem touch pomocí jQuery Mobile. Další informace o tom, jak struktury a stylu mobilní uživatelského rozhraní, najdete v článku [jQuery mobilní projektu webu](http://jquerymobile.com/).
+Tato šablona obsahuje stejnou strukturu aplikace jako šablony internetovou aplikaci (a kódu kontroleru je prakticky totožný), ale je ve stylu pomocí jQuery Mobile vypadat dobře a chovat i na mobilních zařízeních s dotykovým ovládáním. Další informace o tom, jak strukturovat a stylu mobilní uživatelského rozhraní, najdete v článku [jQuery Mobile projektu webu](http://jquerymobile.com/).
 
-Pokud již máte orientované na ploše lokality, které chcete přidat mobilní optimalizované zobrazení nebo pokud chcete vytvořit v jedné lokalitě, který slouží jinak stylem zobrazení pro stolní počítače a mobilní prohlížeče, můžete novou funkci režimů zobrazení. (Viz další část).
+Pokud už máte orientované na ploše lokality, které chcete přidat zobrazení optimalizovaných pro mobilní zařízení nebo pokud chcete vytvořit jeden web, který slouží jinak upravený zobrazení pro stolní počítače a mobilní prohlížeče, můžete novou funkci režimů zobrazení. (Viz další části.)
 
 <a id="_Toc303253810"></a>
 ### <a name="display-modes"></a>Režimy zobrazení
 
-Nová funkce režimů zobrazení umožňuje aplikaci, vyberte zobrazení v závislosti na prohlížeči, který je vytvoření požadavku. Například pokud prohlížeč pro stolní počítač požadavky na domovskou stránku, aplikace může použít šablonu Views\Home\Index.cshtml. Pokud prohlížeč pro mobilní zařízení požadavky na domovskou stránku, aplikace může vrátit Views\Home\Index.mobile.cshtml šablony.
+Nová funkce režimů zobrazení umožní aplikaci vyberte zobrazení v závislosti na prohlížeči, který provádí požadavek. Například pokud prohlížeč pro stolní počítač požadavků na domovskou stránku, aplikaci použít Views\Home\Index.cshtml šablony. Pokud mobilního prohlížeče požadavků na domovskou stránku, aplikace může vrátit Views\Home\Index.mobile.cshtml šablony.
 
-Rozložení a částečné můžete také přepsat u určitého prohlížeče typů. Příklad:
+Rozložení a částečných zobrazení lze také přepsat u určitého prohlížeče typů. Příklad:
 
-- Pokud vaše složku Views\Shared obsahuje i \_Layout.cshtml a \_Layout.mobile.cshtml šablony, ve výchozím nastavení aplikace bude používat \_Layout.mobile.cshtml během požadavky z mobilních prohlížečů a \_Layout.cshtml během dalších požadavků.
-- Pokud složka obsahuje oba \_MyPartial.cshtml a \_MyPartial.mobile.cshtml pokyn @Html.Partial("\_MyPartial") vykreslí \_MyPartial.mobile.cshtml během požadavky od mobile prohlížeče, a \_MyPartial.cshtml během dalších požadavků.
+- Pokud obsahuje složku Views\Shared \_Layout.cshtml a \_Layout.mobile.cshtml šablony, ve výchozím nastavení bude aplikace používat \_Layout.mobile.cshtml během žádosti od mobilních prohlížečů a \_Layout.cshtml během dalších požadavků.
+- Pokud složka obsahuje oba \_MyPartial.cshtml a \_MyPartial.mobile.cshtml instrukce @Html.Partial("\_MyPartial") bude vykreslení \_MyPartial.mobile.cshtml během požadavků z mobile prohlížeče, a \_MyPartial.cshtml během dalších požadavků.
 
-Pokud chcete vytvořit více konkrétních zobrazení, rozložení nebo částečné zobrazení pro jiná zařízení, můžete zaregistrovat nový *DefaultDisplayMode* instance k určení, který název pro vyhledání, pokud požadavek splňuje určité podmínky. Můžete například přidat následující kód, který *aplikace\_spustit* metoda v souboru Global.asax zaregistrovat řetězec "iPhone" jako režim zobrazení, která se použije, když prohlížeč Apple iPhone odešle žádost:
+Pokud chcete vytvořit podrobnější zobrazení, rozložení nebo částečná zobrazení pro další zařízení, můžete zaregistrovat nový *DefaultDisplayMode* instance k určení, které název vyhledávat požadavek splňuje určité podmínky. Můžete například přidat následující kód, který *aplikace\_Start* metody v souboru Global.asax pro registraci řetězec "iPhone" jako režim zobrazení, která se použije, když prohlížeč Apple iPhone odešle požadavek:
 
 [!code-csharp[Main](mvc4-release-notes/samples/sample1.cs)]
 
-Po tento kód spustí, když požádá prohlížeč Apple iPhone, vaše aplikace bude používat Views\Shared\\_Layout.iPhone.cshtml rozložení (pokud existuje). Další informace o režimu zobrazení najdete v tématu [ASP.NET MVC 4 mobilní funkce](../mvc/overview/older-versions/aspnet-mvc-4-mobile-features.md). Nainstalovat aplikace, které používají DisplayModeProvider [pevné DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) balíček NuGet. [ASP.NET patří 2012 Update](https://go.microsoft.com/fwlink/?LinkID=271322) zahrnuje [pevné DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) balíček NuGet v nové šablony projektu. V tématu [ASP.NET MVC 4 Mobile ukládání do mezipaměti chyb Fixedd](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx) podrobnosti o opravu.
+Po spuštění tohoto kódu, pokud prohlížeče pro iPhone Apple odešle požadavek, bude aplikace používat Views\Shared\\_Layout.iPhone.cshtml rozložení (pokud existuje). Další informace o režim zobrazení, naleznete v tématu [funkcí technologie ASP.NET MVC 4 Mobile](../mvc/overview/older-versions/aspnet-mvc-4-mobile-features.md). Nainstalujte aplikací s použitím DisplayModeProvider [pevné DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) balíček NuGet. [ASP.NET Fall 2012 Update](https://go.microsoft.com/fwlink/?LinkID=271322) zahrnuje [pevné DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) balíčku NuGet, nové projektové šablony. Zobrazit [ASP.NET MVC 4 Mobile ukládání do mezipaměti chyb Fixedd](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx) podrobnosti o opravu.
 
 <a id="_Toc303253811"></a>
 ### <a name="jquery-mobile-and-mobile-features"></a>jQuery Mobile a mobilní funkce
 
-Informace o vytváření mobilních aplikací pomocí ASP.NET MVC 4 pomocí jQuery Mobile, najdete v tématu kurzu [ASP.NET MVC 4 mobilní funkce](../mvc/overview/older-versions/aspnet-mvc-4-mobile-features.md).
+Informace o sestavení mobilní aplikace s ASP.NET MVC 4 pomocí jQuery Mobile, najdete v kurzu [funkcí technologie ASP.NET MVC 4 Mobile](../mvc/overview/older-versions/aspnet-mvc-4-mobile-features.md).
 
 <a id="_Toc303253813"></a>
-### <a name="task-support-for-asynchronous-controllers"></a>Podpora úloh pro asynchronní řadiče
+### <a name="task-support-for-asynchronous-controllers"></a>Podpora úkol pro asynchronní řadiče
 
-Nyní můžete napsat metody asynchronní akce v jedné metody, které vracejí objekt typu *úloh* nebo *úloh&lt;ActionResult&gt;*.
+Teď můžete psát asynchronní akce metody jako jedné metody, které vracejí objekt typu *úloh* nebo *úloh&lt;ActionResult&gt;*.
 
  Další informace najdete v části [použití asynchronních metod v architektuře ASP.NET MVC 4](../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md).
 
@@ -164,122 +163,122 @@ Nyní můžete napsat metody asynchronní akce v jedné metody, které vracejí 
 ASP.NET MVC 4 podporuje verzi 1.6 a novějších verzích Windows Azure SDK.
 
 <a id="_Toc303253818"></a>
-### <a name="database-migrations"></a>Migrace databáze
+### <a name="database-migrations"></a>Migrace databází
 
-Projekty ASP.NET MVC 4 nyní zahrnují Entity Framework 5. Jednou z skvělé funkce na Entity Framework 5 je podpora pro databáze migrace. Tato funkce umožňuje snadno momentální svého schématu databáze pomocí migrace zaměřené na kód při zachování dat v databázi. Další informace o databázi migrace najdete v tématu [přidáním nového pole modelu film a tabulku](../mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table.md) v [Úvod do architektury ASP.NET MVC 4 kurzu](../mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md).
+Projekty ASP.NET MVC 4 teď obsahují Entity Framework 5. Jednou z nejlepších funkcí v Entity Framework 5 je podpora migracemi databází. Tato funkce umožňuje snadno vyvíjet schématu databáze pomocí migrace zaměřený na kód při zachování dat v databázi. Další informace o migrace databází, naleznete v tématu [přidání nového pole do modelu a tabulky Movie](../mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table.md) v [Úvod do ASP.NET MVC 4 kurzu](../mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4.md).
 
 <a id="_Toc303253819"></a>
 ### <a name="empty-project-template"></a>Prázdná šablona projektu
 
-MVC prázdný v šabloně projektů je skutečně prázdný teď tak, aby bylo možné spustit z úplně čistou projektem. Starší verze produktu prázdná šablona projektu byl přejmenován na Basic.
+MVC prázdná šablona projektu je skutečně prázdný nyní tak, aby bylo možné spustit z zcela čisté břidlicová. V předchozích verzích šablonu prázdného projektu byla přejmenována na Basic.
 
 <a id="_Toc303253820"></a>
-### <a name="add-controller-to-any-project-folder"></a>Přidat řadič do libovolné složky projektu
+### <a name="add-controller-to-any-project-folder"></a>Přidat kontroler do libovolné složky projektu
 
-Teď můžete klikněte pravým tlačítkem a vyberte **přidat kontroler** z libovolné složky ve vašem projektu MVC. To vám dává větší flexibilitu pro uspořádání řadičů, ale chcete, včetně zachování řadičů MVC a webového rozhraní API v samostatné složky.
+Teď klikněte pravým tlačítkem a vyberte **přidat kontroler** z libovolné složky ve vašem projektu MVC. To poskytuje větší flexibilitu při uspořádání vašich řadičů představ, včetně udržování vašeho řadiče MVC a webového rozhraní API do samostatné složky.
 
 <a id="_Toc303253821"></a>
-### <a name="bundling-and-minification"></a>Sdružování a minimalizace
+### <a name="bundling-and-minification"></a>Sdružování a Minifikace
 
-Sdružování a minimalizace framework umožňuje snížit počet požadavků HTTP, které webové stránky musí být kombinací jednotlivé soubory do jedné připojené soubor skriptů a šablon stylů CSS. Potom může snížit celkovou velikost těchto požadavků podle zmenšování obsah sady. Zmenšování může zahrnovat činnosti, jako například odstraňuje prázdné znaky na zkrátit názvy proměnných na i sbalení podle jejich sémantiku Selektory šablon stylů CSS. Sady deklarovaný a nakonfigurované v kódu a jsou snadno odkazovaná v zobrazeních prostřednictvím pomocné metody, které lze vygenerovat buď jeden odkaz na sadu nebo při ladění, více odkazuje na jednotlivé obsah sady. Další informace najdete v části [sdružování a Minifikace](../mvc/overview/performance/bundling-and-minification.md).
+Sdružování a minifikace rozhraní můžete snížit počet požadavků HTTP, které je potřeba na webové stránce díky kombinaci jednotlivých souborů do jedné sady souborů pro skripty a CSS. Potom může snížit celkovou velikost těchto požadavků podle minifikace obsah sady. Minifikace může obsahovat aktivity, jako jsou odstranění zkrácení názvy proměnných i sbalení selektorů CSS podle jejich sémantiku prázdné znaky. Sady jsou deklarovány a konfigurovat v kódu a jsou snadno odkazovat v zobrazeních prostřednictvím pomocné metody, které můžete buď vygenerovat jediný odkaz na sadu nebo při ladění, více odkazuje na jednotlivé obsah sady. Další informace najdete v části [sdružování a Minifikace](../mvc/overview/performance/bundling-and-minification.md).
 
 <a id="_Toc303253822"></a>
-### <a name="enabling-logins-from-facebook-and-other-sites-using-oauth-and-openid"></a>Povolení přihlášení ze sítě Facebook a jiných lokalitách pomocí OAuth a OpenID
+### <a name="enabling-logins-from-facebook-and-other-sites-using-oauth-and-openid"></a>Povolení přihlášení z Facebooku a dalších lokalit pomocí OAuth a OpenID
 
-Výchozí šablony v šabloně projektu ASP.NET MVC 4 Internet teď zahrnuje podporu pro OAuth a OpenID přihlášení s použitím knihovna DotNetOpenAuth. Informace o konfiguraci zprostředkovatele účtu OAuth nebo OpenID najdete v tématu [účtu OAuth/OpenID podpora WebForms, MVC a webových stránkách](https://blogs.msdn.com/b/webdev/archive/2012/08/15/oauth-openid-support-for-webforms-mvc-and-webpages.aspx) a [OAuth a OpenID funkci dokumentace na webových stránkách ASP.NET](../web-pages/overview/releases/top-features-in-web-pages-2.md#oauthsetup).
+Výchozí šablony v šabloně projektu ASP.NET MVC 4 Internet teď zahrnuje podporu pro přihlášení OAuth a OpenID pomocí knihovna DotNetOpenAuth. Informace o konfiguraci zprostředkovatele účtu OAuth nebo OpenID, naleznete v tématu [podpora účtu OAuth/OpenID pro webové formuláře, MVC a webových stránkách](https://blogs.msdn.com/b/webdev/archive/2012/08/15/oauth-openid-support-for-webforms-mvc-and-webpages.aspx) a [OAuth a OpenID funkcí dokumentace k ASP.NET Web Pages](../web-pages/overview/releases/top-features-in-web-pages-2.md#oauthsetup).
 
 <a id="_Toc303253806"></a>
-## <a name="upgrading-an-aspnet-mvc-3-project-to-aspnet-mvc-4"></a>Upgrade projektu aplikace ASP.NET MVC 3 na rozhraní ASP.NET MVC 4
+## <a name="upgrading-an-aspnet-mvc-3-project-to-aspnet-mvc-4"></a>Upgrade projektu aplikace ASP.NET MVC 3 na ASP.NET MVC 4
 
-ASP.NET MVC 4 lze nainstalovat node souběžně s ASP.NET MVC 3 na stejném počítači, který poskytuje flexibilitu při volbě, když chcete upgradovat aplikaci ASP.NET MVC 3, ASP.NET MVC 4.
+ASP.NET MVC 4 je nainstalovat souběžně s ASP.NET MVC 3 na stejném počítači, který poskytuje flexibilitu při výběru, kdy se má upgradovat aplikaci ASP.NET MVC 3 na ASP.NET MVC 4.
 
-Nejjednodušší způsob, jak upgradovat je vytvoření nového projektu ASP.NET MVC 4 a zkopírujte všechna zobrazení, řadičů, kód a obsah souborů z existující projekt MVC 3 do nového projektu a potom aktualizovat sestavení odkazuje v novém projektu tak, aby odpovídaly žádné šablony bez MVC v Vložená assembiles, který používáte. Pokud jste provedli změny v souboru Web.config v projektu MVC 3, musí také sloučit tyto změny do souboru Web.config v projektu MVC 4.
+Nejjednodušší způsob, jak upgradovat je k vytvoření nového projektu ASP.NET MVC 4 a zkopírujte všechny zobrazení, kontrolery, kódu a obsah souborů z existující projekt MVC 3 na nový projekt a potom aktualizovat sestavení odkazuje v novém projektu tak, aby odpovídaly všechny šablony mimo MVC v Vložená assembiles, který používáte. Pokud jste provedli změny v souboru Web.config v projektu MVC 3, musíte také sloučit tyto změny do souboru Web.config v projekt MVC 4.
 
-Pokud chcete ručně upgradovat do verze 4 existující aplikaci ASP.NET MVC 3, postupujte takto:
+Ručně upgradovat existující aplikaci ASP.NET MVC 3 na verzi 4, postupujte takto:
 
-1. V souboru Web.config. všechny soubory v projektu (je v kořenovém adresáři projektu, jeden ve složce zobrazení a jeden v zobrazení složky pro každou oblast ve vašem projektu), nahraďte všechny výskyty následující text (Poznámka: System.Web.WebPages, verze = 1.0.0.0 nebyl nalezen v projekty vytvořené pomocí sady Visual Studio 2012): 
+1. V souboru Web.config všechny soubory v projektu (je v kořenovém adresáři projektu, jeden v zobrazení složky a druhý ve složce zobrazení pro každou oblast, ve vašem projektu), nahraďte každou instanci následující text (Poznámka: System.Web.WebPages, verze = 1.0.0.0 nebyl nalezen v projekty vytvořené pomocí sady Visual Studio 2012): 
 
     [!code-console[Main](mvc4-release-notes/samples/sample2.cmd)]
 
-    Následující odpovídající text:
+    s odpovídající následujícím textem:
 
     [!code-console[Main](mvc4-release-notes/samples/sample3.cmd)]
-2. V kořenovém souboru Web.config, aktualizovat *webPages:Version* element "2.0.0.0" a přidejte nový *PreserveLoginUrl* klíč, který má hodnotu "true": 
+2. V kořenovém souboru Web.config aktualizujte *webPages:Version* element na "2.0.0.0" a přidejte nový *PreserveLoginUrl* klíč, který má hodnotu "true": 
 
     [!code-xml[Main](mvc4-release-notes/samples/sample4.xml)]
-3. V Průzkumníku řešení klikněte pravým tlačítkem na odkazy a vyberte spravovat balíčky NuGet. V levém podokně vyberte **zdroj oficiální balíčku Online\NuGet**, aktualizujte následující:
+3. V Průzkumníku řešení klikněte pravým tlačítkem myši na odkazy a vyberte spravovat balíčky NuGet. V levém podokně vyberte **zdroj balíčku oficiální Online\NuGet**, aktualizujte následující:
 
     - ASP.NET MVC 4
-    - (Volitelné) jQuery, jQuery ověření a jQuery uživatelského rozhraní
-    - (Volitelné) Rozhraní Entity Framework
+    - (Volitelné) jQuery, jQuery ověření a uživatelské rozhraní jQuery
+    - (Volitelné) Entity Framework
     - (Optonal) Modernizr
-4. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
-5. Vyhledejte *ProjectTypeGuids* elementu a nahraďte {E3E379DF-F4C6-4180-9B81-6769533ABE47} {E53F8FEA-EAE0-44A6-8774-FFD645390401}.
-6. Uložte změny, zavřete soubor projektu (.csproj), kterou jste upravovali, klikněte pravým tlačítkem na projekt a potom vyberte znovu načíst projekt.
-7. Pokud projekt odkazuje na knihovny jakékoli třetí strany, kompilovaná pomocí předchozích verzích rozhraní ASP.NET MVC, otevřete v kořenovém souboru Web.config a přidejte následující tři *bindingRedirect* elementů v rámci  *konfigurace* části: 
+4. V Průzkumníku řešení klikněte pravým tlačítkem myši na název projektu a pak vyberte Uvolnit projekt. Klikněte pravým tlačítkem na název a vyberte Upravit *ProjectName*csproj.
+5. Vyhledejte *ProjectTypeGuids* prvku a nahraďte {E53F8FEA-EAE0-44A6-8774-FFD645390401} s {E3E379DF-F4C6-4180-9B81-6769533ABE47}.
+6. Změny uložte, zavřete soubor projektu (.csproj), který jste dříve upravovali, klikněte pravým tlačítkem na projekt a poté vyberte znovu načíst projekt.
+7. Pokud projekt odkazuje na žádné knihovny třetích stran, které jsou kompilovány pomocí předchozí verze technologie ASP.NET MVC, otevřete v kořenovém souboru Web.config a přidat následující tři *bindingRedirect* prvků  *konfigurace* části: 
 
     [!code-xml[Main](mvc4-release-notes/samples/sample5.xml)]
 
 <a id="_Toc303253817"></a>
-## <a name="changes-from-aspnet-mvc-4-release-candidate"></a>Změny z verze Release Candidate architektury ASP.NET MVC 4
+## <a name="changes-from-aspnet-mvc-4-release-candidate"></a>Změny v architektuře ASP.NET MVC 4 Release Candidate
 
-V poznámkách k verzi ASP.NET MVC 4 Release Candidate naleznete zde:
+Zpráva k vydání verze pro ASP.NET MVC 4 Release Candidate najdete tady:
 
-Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté níž:
+Z ASP.NET MVC 4 Release Candidate hlavní změny v této verzi jsou shrnuté dole:
 
-- **Podle konfigurace řadiče:** řadiče rozhraní ASP.NET Web API je spojena s vlastní atribut, který implementuje *IControllerConfiguration* nastavit své vlastní formátování, selektor akcí a parametr vazače . *HttpControllerConfigurationAttribute* byla odebrána.
-- **Za trasy obslužné rutiny zpráv:** nyní můžete určit popisovač poslední zpráv v řetězci žádost pro danou trasu. To umožňuje podporu podél pravé architektury, pokud chcete používat směrování k odeslání do svých vlastních (jinou hodnotu než*IHttpController*) koncových bodů.
-- **Průběhu oznámení:** *ProgressMessageHandler* generuje oznámení o průběhu pro odesílané entity požadavků i pro stahované entity odpovědí. Pomocí této obslužné rutiny je možné udržovat přehled o tom, jak daleko jsou nahrávání textu žádosti nebo stahování text odpovědi.
-- **Push obsah:** *PushStreamContent* třída umožňuje scénáře, kde chce poskytovatel dat zapisovat přímo do požadavku nebo odpovědi (synchronně nebo nesynchronně) pomocí datového proudu. Když *PushStreamContent* je připravena přijímat data, zavolá delegáta akce s do výstupního datového proudu. Vývojář může pak zápisu do datového proudu pro stejně dlouho jako potřebné a zavřít datový proud při zápisu byla dokončena. *PushStreamContent* zjistí ukončovací datového proudu a dokončení základní asynchronní *úloh* pro vypsání obsah.
-- **Vytváření chybové odpovědi:** použití *HttpError* typ konzistentně představují informace o chybě z například ověření chyby a výjimky stále respektováním *IncludeErrorDetailPolicy*. Použít novou *CreateErrorResponse* rozšiřující metody snadno vytvářet chybové odpovědi s *HttpError* jako obsah. *HttpError* obsah je plně obsahu vyjednal.
-- **Odebrat MediaRangeMapping:** vyjednavač obsahu výchozí teď zpracovává rozsahy typu média.
-- **Výchozí parametr vazby parametrů jednoduchého typu je nyní [FromUri]:** v předchozích verzích rozhraní ASP.NET Web API výchozí parametr vazby pro jednoduchý typ. parametry použít vazby modelu. Výchozí parametr vazby parametrů jednoduchého typu je nyní *[FromUri]*.
-- **Výběr akce ctí požadované parametry:** výběr akce v rozhraní ASP.NET Web API nyní pouze vybere akci. Pokud jsou k dispozici všechny požadované parametry, které pocházejí z identifikátoru URI. Parametr lze zadat jako volitelné tím, že poskytuje výchozí hodnotu argumentu ve podpis metody akce.
-- **Přizpůsobení vazby parametru HTTP:** použít *ParameterBindingAttribute* přizpůsobit vazbu parametru pro parametr určité akce nebo použít *ParameterBindingRules* na *HttpConfiguration* k přizpůsobení vazby parametrů více široce.
-- **Vylepšení objekt MediaTypeFormatter:** formátovací moduly mají nyní přístup k kompletní *HttpContent* instance.
-- **Ukládání do vyrovnávací paměti výběr zásad hostitele:** implementace a konfigurace *IHostBufferPolicySelector* služby v rozhraní ASP.NET Web API umožňující hostiteli k určení zásad pro ukládání do vyrovnávací paměti po který se má použít.
-- **Přístup klientské certifikáty, bez rozpoznání hostitele:** použití *GetClientCertificate* metodu rozšíření k získání zadaný certifikát klienta z zprávu požadavku.
-- **Rozšíření vyjednávání obsahu:** odvozování z přizpůsobit vyjednávání obsahu *DefaultContentNegotiator* a přepsáním kteréhokoli aspektu vyjednávání obsahu, který chcete.
-- **Podpora pro vracení odpovědí 406 Nepřijatelný:** můžete nyní vrátit 406 Nepřijatelný odpovědi v rozhraní ASP.NET Web API při vytvořením nebyl nalezen vhodný formátovací modul *DefaultContentNegotiator* s *excludeMatchOnTypeOnly* parametr nastaven na *true*.
-- **Čtení dat formuláře jako NameValueCollection nebo JToken:** si můžete přečíst v řetězci dotazu identifikátoru URI, nebo v těle žádosti jako data ve formuláři *NameValueCollection* pomocí *ParseQueryString* a  *ReadAsFormDataAsync* rozšiřující metody v uvedeném pořadí. Podobně můžete číst data formuláře v řetězci dotazu identifikátoru URI, nebo v těle žádosti jako *JToken* pomocí *TryReadQueryAsJson* a *ReadAsAsync*&lt;T&gt; rozšiřující metody v uvedeném pořadí.
-- **S více částmi vylepšení:** je nyní možné zapsat *MultipartStreamProvider* , je zcela podle typu MIME s více částmi dat, můžete načíst a zobrazit výsledek způsobem optimální pro uživatele. Krok zpracování post lze také připojit na *MultipartStreamProvider* implementace udělat ať následného zpracování je chce na částí textu vícedílné zprávy standardu MIME, který umožňuje. Například *MultipartFormDataStreamProvider* implementace čte data části formuláře HTML a přidá je do *NameValueCollection* tak, aby byly snadno získat v volající.
-- **Odkaz vylepšení generování:** *UrlHelper* už závisí na *HttpControllerContext*. Nyní máte přístup *UrlHelper* z jakékoli kontextu kde *HttpRequestMessage* je k dispozici.
-- **Změna pořadí spuštění obslužné rutiny zpráv:** obslužné rutiny zpráv jsou nyní spouštěny v pořadí, které jsou nakonfigurované místo v obráceném pořadí.
-- **Pomocník pro zapojení do obslužné rutiny zpráv:** nové *HttpClientFactory* , můžete se propojit *DelegatingHandlers* a vytvoření *HttpClient* s jste připraveni... požadované kanál. Také poskytuje funkce pro zapojení až s alternativní vnitřní obslužné rutiny (výchozí hodnota je *HttpClientHandler*) a také udělá spojení při použití *HttpMessageInvoker* nebo jiný  *DelegatingHandler* místo *HttpClient* jako původce volání top.
-- **Podpora pro sítím CDN v optimalizaci webů ASP.NET:** optimalizaci webů ASP.NET teď poskytuje podporu pro sady další adresu URL, která odkazuje na stejný prostředku v síti pro doručování obsahu CDN umožňuje pro každé zadejte alternativní cesty. Podpora sítím CDN umožňuje získat váš skript a stylu sady geograficky blíže k příjemce end webových aplikací. Když není k dispozici CDN produkční aplikace by měla implementovat zálohu. Test záložní.
-- **Rozhraní ASP.NET Web API tras a konfigurace přesunut do *WebApiConfig.Register* statickou metodu, která může být resused v testovací kód.** Rozhraní ASP.NET Web API trasy byly dříve přidány v *RouteConfig.RegisterRoutes* společně s standardní MVC tras. Výchozí směrování ASP.NET Web API a konfigurace jsou nyní zpracovávány v samostatném *WebApiConfig.Register* metoda usnadňuje testování.
+- **Za konfiguraci kontroleru:** kontrolerů rozhraní Web API ASP.NET může být přiděleny s vlastní atribut, který implementuje *IControllerConfiguration* nastavit vlastní formátovací moduly, selektor akcí a parametr vazače . *HttpControllerConfigurationAttribute* byla odebrána.
+- **Podle postupu obslužné rutiny zpráv:** teď můžete zadat popisovač poslední zprávy v řetězci žádost pro danou trasu. To umožňuje podporu pro jízdní podél platformy, které používají k odeslání do své vlastní směrování (jinou hodnotu než*IHttpController*) koncových bodů.
+- **Oznámení o průběhu:** *ProgressMessageHandler* generuje oznámení o průběhu pro odesílané entity požadavků i pro stahované entity odpovědí. Pomocí této rutiny je možné sledovat, jak daleko se nahrávání tělo požadavku nebo stahování tělo odpovědi.
+- **Vložit obsah:** *PushStreamContent* třída umožňuje scénáře, kdy chce poskytovatel dat psát přímo do požadavku nebo odpovědi (synchronně nebo nesynchronně) pomocí datového proudu. Když *PushStreamContent* je připravena přijímat data volání delegáta akce s výstupního datového proudu. Vývojář poté můžete napsat do datového proudu pro dlouho podle potřeby a zavřít datový proud při psaní se dokončilo. *PushStreamContent* zjistí zavření datového proudu a dokončení asynchronní základní *úloh* pro vypsání obsahu.
+- **Vytváření chybové odpovědi:** použití *HttpError* typ konzistentně představující informace o chybě z například výjimek a chyb při ověřování stále respektováním *IncludeErrorDetailPolicy*. Pomocí nové *CreateErrorResponse* metody rozšíření můžete snadno vytvořit chybové odpovědi s *HttpError* jako obsah. *HttpError* obsah je plně obsahu vyjedná.
+- **Odebrat MediaRangeMapping:** vyjednavače obsahu výchozí nyní zpracovává rozsahy typu média.
+- **Výchozí parametr vazby parametrů jednoduchého typu, je teď [FromUri]:** v předchozích verzích rozhraní ASP.NET Web API výchozí parametr vazby pro jednoduchý typ. parametry používá vazbu modelu. Výchozí parametr vazby parametrů jednoduchého typu, je teď *[FromUri]*.
+- **Výběr akce respektuje požadované parametry:** výběr akce v rozhraní ASP.NET Web API nyní pouze vybere akci Pokud jsou k dispozici všechny požadované parametry, které pochází z identifikátoru URI. Parametr lze zadat jako volitelné tím, že poskytuje výchozí hodnota pro argument v podpisu metody akce.
+- **Upravit vazby parametru HTTP:** použít *ParameterBindingAttribute* přizpůsobit vazbu parametru pro parametr určité akce nebo použít *ParameterBindingRules* na *HttpConfiguration* přizpůsobení vazby parametrů šířeji.
+- **Vylepšení objekt MediaTypeFormatter:** formátovací moduly mají nyní přístup k úplné *HttpContent* instance.
+- **Výběr zásad ukládání do vyrovnávací paměti hostitele:** implementovat a konfigurovat *IHostBufferPolicySelector* službu v rozhraní ASP.NET Web API umožňuje hostiteli k určení zásad pro ukládání do vyrovnávací paměti po který se má použít.
+- **Přístup ke klientským certifikátům v hostiteli certifikátům:** použití *GetClientCertificate* metodu rozšíření k získání zadaný certifikát klienta ze zprávy požadavku.
+- **Rozšíření vyjednávání obsahu:** upravit vyjednávání obsahu tak, že odvozený od *DefaultContentNegotiator* a přepsání jiného aspektu vyjednávání obsahu, kterou byste uvítali.
+- **Podpora pro vracení odpovědí na 406 Nepřijatelný:** můžete nyní vracet 406 Nepřijatelný odpovědi v rozhraní ASP.NET Web API. když nenajde vhodný formátovací modul tak, že vytvoříte *DefaultContentNegotiator* s *excludeMatchOnTypeOnly* parametr nastaven na *true*.
+- **Čtení dat formuláře jako kolekce NameValueCollection nebo JToken:** si můžete přečíst data formuláře v řetězci dotazu identifikátoru URI nebo v textu žádosti jako *NameValueCollection* pomocí *ParseQueryString* a  *ReadAsFormDataAsync* metody rozšíření v uvedeném pořadí. Podobně můžete číst data formuláře v řetězci dotazu identifikátoru URI nebo v textu žádosti jako *JToken* pomocí *TryReadQueryAsJson* a *ReadAsAsync*&lt;T&gt; metody rozšíření v uvedeném pořadí.
+- **Vylepšení vícedílné zprávy standardu:** je teď možné zapisovat *MultipartStreamProvider* , který je zcela přizpůsobená pro typ dat vícedílné zprávy standardu MIME, že může číst a zobrazit výsledek optimální způsobem, který uživatel. Následné zpracování kroku lze také připojit na *MultipartStreamProvider* , který umožňuje implementovat provedení jakýkoli příspěvek zpracování chce na částí textu vícedílné zprávy standardu MIME. Například *MultipartFormDataStreamProvider* implementace přečte formulář HTML části dat a přidá je do *NameValueCollection* tak, aby byly snadno získat na od volajícího.
+- **Propojit vylepšení generování:** *UrlHelper* už závisí na *HttpControllerContext*. Nyní máte přístup *UrlHelper* z jakýkoli kontext kde *HttpRequestMessage* je k dispozici.
+- **Změna pořadí provádění obslužné rutiny zpráv:** obslužné rutiny zpráv jsou nyní provedeny v pořadí, ve kterém jsou nakonfigurované místo v obráceném pořadí.
+- **Pomocník pro zapojení do obslužné rutiny zpráv:** nové *HttpClientFactory* , která můžete nastavit *DelegatingHandlers* a vytvoření *HttpClient* s jste připravení začít požadované kanálu. Také poskytuje funkce pro její nahoru s alternativní vnitřní obslužné rutiny (výchozí hodnota je *HttpClientHandler*) stejně jako provádět vedení pomocí *HttpMessageInvoker* nebo jiném  *DelegatingHandler* místo *HttpClient* jako původce volání nahoře.
+- **Podpora CDN v optimalizaci webů ASP.NET:** optimalizaci webů ASP.NET teď poskytuje podporu pro CDN alternativní cesty umožňuje zadat pro každou sadu další adresa URL, která odkazuje na tento stejný prostředek na síť pro doručování obsahu. Podpora CDN umožní, abyste váš skript a styl sady blíž koncovým uživatelům webových aplikací. Produkční aplikace by měla implementovat záložní CDN není k dispozici. Testování na náhradní řešení.
+- **Trasy rozhraní ASP.NET Web API a konfigurace se přesunula do *WebApiConfig.Register* statická metoda, která může být resused v kódu testu.** Trasy rozhraní ASP.NET Web API byly dříve přidány v *RouteConfig.RegisterRoutes* spolu s standardní MVC trasy. Výchozí trasy rozhraní Web API ASP.NET a konfigurace nyní provádí v samostatném *WebApiConfig.Register* metoda usnadňuje testování.
 
 <a id="_Toc303253815"></a>
-## <a name="known-issues-and-breaking-changes"></a>Známé problémy a nejnovější změny
+## <a name="known-issues-and-breaking-changes"></a>Známé problémy a změny způsobující chyby
 
-- **Verze RC a RTM technologie ASP.NET MVC 4 nesprávně vrátit zobrazení plochy v mezipaměti, pokud má být vrácen mobilní zobrazení.**
+- **Verze RC a RTM technologie ASP.NET MVC 4 nesprávně vrátí zobrazení uložené v mezipaměti klientů při mobilní zobrazení má být vrácen.**
 
-    - V tématu [ASP.NET MVC 4 Mobile ukládání do mezipaměti chyb pevné](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx) podrobnosti o opravu. Je možné nainstalovat opravu z [pevné DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) balíček NuGet.
-- **Nejnovější změny ve zobrazovací modul Razor**. Následující typy byly odebrány z *System.Web.Mvc.Razor*: 
+    - Zobrazit [ASP.NET MVC 4 Mobile ukládání do mezipaměti chyby opravené](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx) podrobnosti o opravu. Oprava si můžete nainstalovat pomocí [pevné DisplayModes](http://nuget.org/packages/Microsoft.AspNet.Mvc.FixedDisplayModes) balíček NuGet.
+- **Rozbíjející změny v zobrazovací modul Razor**. Následující typy byly odebrány z *System.Web.Mvc.Razor*: 
 
     - *ModelSpan*
     - *MvcVBRazorCodeGenerator*
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
-  Také byly odebrány následující metody: 
+  Také byly odstraněny následující metody: 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
     - *MvcVBRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
-- **Když WebMatrix.WebData.dll je zahrnutý v adresáři/Bin aplikace ASP.NET MVC 4, přebírá adresu URL pro ověřování pomocí formulářů.** Přidání WebMatrix.WebData.dll sestavení do vaší aplikace (například výběrem "ASP.NET Web Pages se syntaxí Razor" při použití dialogové okno Přidat nasaditelné závislosti) se přepíše přihlášení přesměrování ověřování/účet/Logon místo nebo účet nebo přihlášení očekávaným ve výchozím nastavení technologie ASP.NET MVC jsou řadič MVC účtu. Pokud chcete zakázat toto chování a používat zadaná adresa URL již v části ověření souboru Web.config, můžete přidat appSetting názvem PreserveLoginUrl a nastavte ji na hodnotu true: 
+- **WebMatrix.WebData.dll je obsažen v adresáři/Bin aplikací technologie ASP.NET MVC 4, převezme adresu URL pro ověřování pomocí formulářů.** Přidání WebMatrix.WebData.dll sestavení pro vaši aplikaci (například tak, že vyberete "ASP.NET Web Pages se syntaxí Razor" při použití dialogového okna Přidat Nasaditelných závislostí) se přepíše přihlášení přesměrování ověřování/účet/Logon spíše než / / přihlášení k účtu očekávaným ve výchozím nastavení kontroler ASP.NET MVC účtu. K tomuto chování zabráníte a použijte adresu URL již definováno v sekci ověřování souboru Web.config, můžete přidat nastavení aplikace volá PreserveLoginUrl a nastavte ho na hodnotu true: 
 
     [!code-xml[Main](mvc4-release-notes/samples/sample6.xml)]
-- **Správce balíčků NuGet se nepodaří nainstalovat při pokusu o instalaci ASP.NET MVC 4 pro souběžné instalace sady Visual Studio 2010 a program Visual Web Developer 2010.** Ke spuštění sady Visual Studio 2010 a program Visual Web Developer 2010 node souběžně s ASP.NET MVC 4 je nutné nainstalovat ASP.NET MVC 4 po obě verze sady Visual Studio již byl nainstalován.
-- **Odinstalace ASP.NET MVC 4 selže, pokud již byl odinstalován požadavky.** Chcete-li řádně odinstalovat ASP.NET MVC musí 4you odinstalovat ASP.NET MVC 4 před odinstalací nástroje Visual Studio.
-- **Instalace technologie ASP.NET MVC 4 dělí aplikace ASP.NET MVC 3 RTM.** Verze aplikací ASP.NET MVC 3, které se vytvořily s verzi RTM (s [ASP.NET MVC 3 nástroje aktualizace](https://www.microsoft.com/download/details.aspx?id=1491) vydání) vyžaduje následující změny fungování souběžného s ASP.NET MVC 4. Vytváření projektu bez provedení těchto výsledků aktualizací k chybám kompilace. 
+- **Správce balíčků NuGet se nepodařilo nainstalovat při pokusu o instalaci technologie ASP.NET MVC 4 pro souběžné instalace sady Visual Studio 2010 a Visual Web Developer 2010.** Ke spuštění sady Visual Studio 2010 a Visual Web Developer 2010 souběžně s ASP.NET MVC 4 je nutné nainstalovat technologie ASP.NET MVC 4 po již byly nainstalovány obě verze systému Visual Studio.
+- **Odinstalování technologie ASP.NET MVC 4 selže, pokud již byly odinstalovány požadavky.** Čistě odinstalování technologie ASP.NET MVC 4you odinstalujte před odinstalací sady Visual Studio ASP.NET MVC 4.
+- **Instalace technologie ASP.NET MVC 4 dělí aplikace ASP.NET MVC 3 RTM.** Vydání aplikace ASP.NET MVC 3, které byly vytvořeny verzi RTM (ne s [ASP.NET MVC 3 nástroje Update](https://www.microsoft.com/download/details.aspx?id=1491) release) vyžaduje následující změny fungování souběžně s ASP.NET MVC 4. Vytváření projektu bez provedení těchto aktualizací výsledky v chyby kompilace. 
 
     **Požadované aktualizace**
 
-  1. V kořenovém souboru Web.config, přidejte nový *&lt;appSettings&gt;* položka s klíčem *webPages:Version* a hodnotu *1.0.0.0*. 
+  1. V kořenovém souboru Web.config přidejte nový *&lt;appSettings&gt;* položka s klíčem *webPages:Version* a hodnota *1.0.0.0*. 
 
       [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
-  2. V Průzkumníku řešení klikněte pravým tlačítkem na název projektu a pak vyberte Uvolnit projekt. Potom znovu klikněte pravým tlačítkem a vyberte Upravit *ProjectName*.csproj.
+  2. V Průzkumníku řešení klikněte pravým tlačítkem myši na název projektu a pak vyberte Uvolnit projekt. Klikněte pravým tlačítkem na název a vyberte Upravit *ProjectName*csproj.
   3. Vyhledejte následující odkazy na sestavení: 
 
       [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
@@ -287,12 +286,12 @@ Hlavní změny z Release Candidate. ASP.NET MVC 4 v této verzi jsou shrnuté n�
       Nahraďte je následující:
 
       [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
-  4. Uložte změny, zavřete soubor projektu (.csproj) byly úpravy a potom klikněte pravým tlačítkem na projekt a vyberte znovu načíst.
+  4. Změny uložte, zavřete soubor projektu (.csproj) dříve upravovali a pak klikněte pravým tlačítkem na projekt a vyberte znovu načíst.
 
-- **Změna projektu ASP.NET MVC 4 k cíli 4.0, 4.5 nelze aktualizovat odkaz na sestavení EntityFramework:** Pokud změníte projektu ASP.NET MVC 4 k cíli 4.0 po které se budou zaměřovat 4.5 odkaz na sestavení EntityFramework budou i nadále odkazovat verze 4.5. Chcete-li vyřešit tento problém odinstalovat a znovu nainstalujte balíček EntityFramework NuGet.
-- **403 Zakázáno při spuštění aplikace ASP.NET MVC 4 v Azure po změně cíl 4.0, 4.5:** Pokud změníte projektu ASP.NET MVC 4 k cíli 4.0, po které se budou zaměřovat 4.5 a nasadit do Azure, mohou se zobrazit chybou 403 Zakázáno za běhu. Chcete-li vyřešit tento problém, přidejte následující do souboru web.config: `<modules runAllManagedModulesForAllRequests="true" />`
-- **Visual Studio 2012, dojde k chybě při zadávání '\' v řetězcový literál v souboru nástroje Razor.** Postup řešení problému zadejte uvozovky literálu řetězce první.
-- <strong>Procházení k &quot;účet nebo spravovat&quot; ve výsledcích Internet šablony v chybě modulu runtime pro jazyky, CHS, TRK a CHT.</strong> Vyřešte problém upravit stránce oddělit <em>@User.Identity.Name</em> umístěním jako jediný obsah v rámci <em>&lt;silné&gt;</em> značky.
-- **Nepodporují se zprostředkovatelé Google a LinkedIn v rámci webů Azure.** Zprostředkovatelé alternativní ověřování používejte při nasazování na weby Azure.
-- **Při použití UriPathExtensionMapping 8 služby IIS Express nebo IIS, by se při pokusu o použití rozšíření přijímat chyb 404 nebyl nalezen.** Obslužné rutiny statických souborů koliduje s požadavky na webové rozhraní API, která použít *UriPathExtensionMappings*. Nastavit *runAllManagedModulesForAllRequests = true* v souboru web.config. Chcete-li vyřešit tento problém.
-- **Už je volána metoda Controller.Execute.** Všechny řadiče MVC jsou nyní vždycky spustí asynchronně.
+- **Změna projektu ASP.NET MVC 4 do cíle 4.0 4.5 nelze aktualizovat odkaz na sestavení EntityFramework:** Pokud změníte projektu ASP.NET MVC 4 do cíle 4.0 po odkaz na sestavení objektu EntityFramework, se stále odkazují na která cílí 4.5 verze 4.5. Chcete-li vyřešit tento problém odinstalovat a znovu nainstalujte balíček NuGet objektu EntityFramework.
+- **403 Zakázáno při spuštění aplikace ASP.NET MVC 4 v Azure po změně na cíl 4.0, 4.5:** Pokud změníte projektu ASP.NET MVC 4 do cíle 4.0 po zaměřen 4.5 a pak nasadit do Azure, může se zobrazit Chyba 403 Zakázáno v době běhu. Chcete-li vyřešit tento problém, přidejte následující text do souboru web.config: `<modules runAllManagedModulesForAllRequests="true" />`
+- **Visual Studio 2012, dojde k chybě při zadávání "\' v řetězcovém literálu v souboru Razor.** Postup řešení problému zadejte první pravou uvozovku řetězcového literálu.
+- <strong>Přejdete na adresu &quot;účtu/Správa&quot; ve výsledcích šablony Internet chybu modulu runtime pro jazykovou sadou CHS, rev a CHT jazyky.</strong> Chcete-li vyřešit tento problém upravte stránku k tomu oddělit <em>@User.Identity.Name</em> tak, že ji vložíte jako jediný obsah v rámci <em>&lt;silné&gt;</em> značky.
+- **Zprostředkovatelé Google a LinkedIn se nepodporují v rámci webů Azure.** Použití poskytovatelů alternativní ověření při nasazování na weby Azure.
+- **Při použití UriPathExtensionMapping 8 služby IIS Express nebo IIS, by se zobrazí chyby 404 Nenalezeno, při pokusu o použití rozšíření.** Obslužná rutina statického souboru koliduje s požadavky do webového rozhraní API, která pomocí *UriPathExtensionMappings*. Nastavte *runAllManagedModulesForAllRequests = true* v souboru web.config pro tento problém obejít.
+- **Už je volána metoda Controller.Execute.** Všechny kontrolery MVC jsou teď vždy spuštěn asynchronně.

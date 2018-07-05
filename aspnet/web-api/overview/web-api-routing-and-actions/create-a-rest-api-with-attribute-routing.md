@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
-title: Vytvořit rozhraní REST API s atribut směrování v rozhraní ASP.NET Web API 2 | Microsoft Docs
+title: Vytvořit rozhraní REST API se směrováním atributů v rozhraní ASP.NET Web API 2 | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,34 +9,33 @@ ms.date: 06/26/2013
 ms.topic: article
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 20538348504427c30d5d75705271a5c3c3c2c171
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "30223259"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362217"
 ---
-<a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Vytvořit rozhraní REST API s atributem směrování v rozhraní ASP.NET Web API 2
+<a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Vytvořit rozhraní REST API se směrováním atributů ve rozhraní ASP.NET Web API 2
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-Webové rozhraní API 2 podporuje nový typ směrování, nazývá *směrováním atributů*. Obecné přehled směrováním atributů, najdete v tématu [atribut směrování ve webovém rozhraní API 2](attribute-routing-in-web-api-2.md). V tomto kurzu budete používat směrováním atributů k vytvoření rozhraní REST API pro kolekci knih. Rozhraní API se podporují následující akce:
+Webové rozhraní API 2 podporuje nový typ směrování, nazývá *směrováním atributů*. Obecný přehled směrování atributů, naleznete v tématu [směrováním atributů ve webovém rozhraní API 2](attribute-routing-in-web-api-2.md). V tomto kurzu použijete směrováním atributů k vytvoření rozhraní REST API pro kolekce knihy. Rozhraní API bude podporovat tyto akce:
 
 | Akce | Příklad identifikátoru URI |
 | --- | --- |
-| Získejte seznam všech knih. | / api/knihy |
-| Získání seznamu pomocí ID. | /API/Books/1 |
-| Získání podrobností o knihy. | /API/Books/1/details |
-| Získáte seznam seznamů genre. | /API/Books/fantasy |
-| Získáte seznam seznamů datum publikace. | /API/Books/Date/2013-02-16 /api/books/date/2013/02/16 (alternativní formulář) |
-| Získáte seznam seznamů určitého autora. | /API/authors/1/Books |
+| Získání seznamu všech knih. | / api/knihy |
+| Získat knihu podle ID. | /API/Books/1 |
+| Získání podrobností o knize. | /API/Books/1/details |
+| Získání seznamu knih podle žánru. | /API/Books/fantasy |
+| Získání seznamu sad knihy datu publikování. | /API/Books/Date/2013-02-16 /api/books/date/2013/02/16 (alternativní formuláře) |
+| Získání seznamu sad knihy konkrétním autorem. | /API/authors/1/Books |
 
 Všechny metody jsou jen pro čtení (požadavky HTTP GET).
 
-Datová vrstva použijeme Entity Framework. Seznam záznamů, bude mít následující pole:
+Datová vrstva použijeme Entity Framework. Záznamy o knihách bude mít tahle pole:
 
 - ID
 - Název
@@ -44,77 +43,77 @@ Datová vrstva použijeme Entity Framework. Seznam záznamů, bude mít následu
 - Datum publikování
 - Cena
 - Popis
-- AuthorID (cizí klíč k tabulce Autoři)
+- AuthorID (cizí klíč do tabulky autoři)
 
-Pro většinu požadavky ale rozhraní API vrátí podmnožinu těchto dat (název, autor a genre). Chcete-li získat úplný záznam klienta požadavky `/api/books/{id}/details`.
+Pro většinu požadavků, ale rozhraní API vrátí podmnožinu těchto dat (názvu, autora a rozšířením podle tematických). Chcete-li získat úplný záznam klienta požadavky `/api/books/{id}/details`.
 
 ## <a name="prerequisites"></a>Požadavky
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional nebo Enterprise edition.
 
-## <a name="create-the-visual-studio-project"></a>Vytvoření projektu Visual Studio
+## <a name="create-the-visual-studio-project"></a>Vytvoření projektu sady Visual Studio
 
-Spusťte spuštěním sady Visual Studio. Z **soubor** nabídce vyberte možnost **nový** a pak vyberte **projektu**.
+Začněte tím, že spustíte Visual Studio. Z **souboru** nabídce vyberte možnost **nový** a pak vyberte **projektu**.
 
-V **šablony** podokně, vyberte **nainstalovaných šablonách** a rozbalte **Visual C#** uzlu. V části **Visual C#**, vyberte **webové**. V seznamu šablon projektu, vyberte **webové aplikace ASP.NET MVC 4**. Název projektu &quot;BooksAPI&quot;.
+V **šablony** vyberte **nainstalované šablony** a rozbalte **Visual C#** uzlu. V části **Visual C#** vyberte **webové**. V seznamu šablon projektu vyberte **webové aplikace ASP.NET MVC 4**. Pojmenujte projekt &quot;BooksAPI&quot;.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 
-V **nový projekt ASP.NET** dialogovém okně, vyberte **prázdný** šablony. V části "Přidat složky a odkazy na základní" vyberte **webového rozhraní API** zaškrtávací políčko. Klikněte na tlačítko **vytvoření projektu**.
+V **nový projekt ASP.NET** dialogového okna, vyberte **prázdný** šablony. V části "Přidat složky a základní odkazy pro" vyberte **webového rozhraní API** zaškrtávací políčko. Klikněte na tlačítko **vytvoření projektu**.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image2.png)
 
-Tím se vytvoří kostru projektu, který je nakonfigurován pro funkce webového rozhraní API.
+Tím se vytvoří kostru projektu, který je nakonfigurovaný pro webové rozhraní API funkce.
 
-### <a name="domain-models"></a>Modely domény
+### <a name="domain-models"></a>Doménových modelů
 
-Dál přidejte třídy pro modely domény. V Průzkumníku řešení klikněte pravým tlačítkem na složku modely. Vyberte **přidat**, pak vyberte **třída**. Název třídy `Author`.
+Dále přidejte třídy pro doménových modelů. V Průzkumníku řešení klikněte pravým tlačítkem na složku modely. Vyberte **přidat**a pak vyberte **třídy**. Název třídy `Author`.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image3.png)
 
-Nahraďte kód v Author.cs s následujícími službami:
+Nahraďte kód v Author.cs následujícími způsoby:
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample1.cs)]
 
-Nyní přidejte jinou třídu s názvem `Book`.
+Nyní přidejte další třídu s názvem `Book`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample2.cs)]
 
-### <a name="add-a-web-api-controller"></a>Přidat řadič webové rozhraní API
+### <a name="add-a-web-api-controller"></a>Přidat kontroler rozhraní Web API
 
-V tomto kroku přidáme kontroleru webového rozhraní API, používající rozhraní Entity Framework jako datové vrstvy.
+V tomto kroku přidáme kontroler Web API, která používá Entity Framework jako datová vrstva.
 
-Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B. Rozhraní Entity Framework využívá reflexe k vyhledávání vlastností modely, takže vyžaduje kompilované sestavení vytvořit schéma databáze.
+Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B. Entity Framework používá reflexi ke zjišťování vlastností modely, takže vyžaduje zkompilovaného sestavení k vytvoření schématu databáze.
 
-V Průzkumníku řešení klikněte pravým tlačítkem na složku řadiče. Vyberte **přidat**, pak vyberte **řadič**.
+V Průzkumníku řešení klikněte pravým tlačítkem myši na složku řadiče. Vyberte **přidat**a pak vyberte **řadič**.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image4.png)
 
-V **přidat vygenerované uživatelské rozhraní** dialogovém okně, vyberte možnost "Web API 2 řadiče s akcemi čtení/zápisu používající rozhraní Entity Framework."
+V **přidat vygenerované uživatelské rozhraní** dialogového okna, vyberte možnost "webového rozhraní API 2 kontroler s akcemi čtení/zápisu pomocí Entity Frameworku."
 
 [![](create-a-rest-api-with-attribute-routing/_static/image6.png)](create-a-rest-api-with-attribute-routing/_static/image5.png)
 
-V **přidat kontroler** dialogu pro **názvu Kontroleru**, zadejte &quot;BooksController&quot;. Vyberte &quot;použít asynchronní akce kontroleru&quot; zaškrtávací políčko. Pro **třída modelu**, vyberte &quot;kniha&quot;. (Pokud se nezobrazí `Book` třídy uvedené v rozevírací nabídce, ujistěte se, že jste vytvořili projekt.) Klikněte na tlačítko "+".
+V **přidat kontroler** dialogovém okně pro **názvu Kontroleru**, zadejte &quot;BooksController&quot;. Vyberte &quot;použít asynchronní akce kontroleru&quot; zaškrtávací políčko. Pro **třída modelu**vyberte &quot;knihy&quot;. (Pokud se nezobrazí `Book` třídy uvedené v rozevíracím seznamu, ujistěte se, že jste sestavili projekt.) Klikněte na tlačítko "+".
 
 ![](create-a-rest-api-with-attribute-routing/_static/image7.png)
 
-Klikněte na tlačítko **přidat** v **nový kontext dat** dialogové okno.
+Klikněte na tlačítko **přidat** v **nový kontext dat** dialogového okna.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image8.png)
 
-Klikněte na tlačítko **přidat** v **přidat kontroler** dialogové okno. Přidá třídu s názvem generování uživatelského rozhraní `BooksController` , který definuje kontroler API. Také přidá třídu s názvem `BooksAPIContext` ve složce modely, která definuje kontextu dat rozhraní Entity Framework.
+Klikněte na tlačítko **přidat** v **přidat kontroler** dialogového okna. Základní kostry aplikace přidá třídu s názvem `BooksController` , který definuje kontroleru rozhraní API. Také přidá třídu s názvem `BooksAPIContext` ve složce modelů, která definuje kontext dat pro Entity Framework.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image9.png)
 
-### <a name="seed-the-database"></a>Počáteční hodnoty databáze
+### <a name="seed-the-database"></a>Přidání dat do databáze
 
-Z nabídky Nástroje, vyberte **Správce balíčků knihoven**a potom vyberte **Konzola správce balíčků**.
+V nabídce Nástroje vyberte **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**.
 
 V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-powershell[Main](create-a-rest-api-with-attribute-routing/samples/sample3.ps1)]
 
-Tento příkaz vytvoří složku Migrations a přidá nový kód soubor s názvem Configuration.cs. Umožňuje otevřít tento soubor a přidejte následující kód, který `Configuration.Seed` metoda.
+Tento příkaz vytvoří složku migrace a přidá nový soubor kódu s názvem Configuration.cs. Otevřete tento soubor a přidejte následující kód, který `Configuration.Seed` metody.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample4.cs)]
 
@@ -122,130 +121,130 @@ V okně konzoly Správce balíčků zadejte následující příkazy.
 
 [!code-powershell[Main](create-a-rest-api-with-attribute-routing/samples/sample5.ps1)]
 
-Tyto příkazy vytvořit místní databázi a vyvolání metody počáteční hodnoty k naplnění databáze.
+Tyto příkazy vytvoří místní databáze a vyvolat metodu počáteční hodnoty k naplnění databáze.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image10.png)
 
-## <a name="add-dto-classes"></a>Přidat DTO třídy
+## <a name="add-dto-classes"></a>Přidat objekt DTO třídy
 
-Pokud aplikaci nyní spustit a odeslat požadavek GET na /api/books/1, odpověď bude vypadat podobně jako následující. (Po přidání odsazení čitelnější.)
+Pokud aplikaci nyní spustit a odeslat požadavek GET na /api/books/1 odpověď vypadá podobně jako následující. (Po přidání odsazení pro lepší čitelnost).
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample6.json)]
 
-Místo toho chci, aby tento požadavek vrátí podmnožinu pole. Navíc má být vrátit jméno autora, nikoli Autor ID. K tomu, upravíme metody kontroleru vrátit *objekt pro přenos dat* (DTO) namísto EF modelu. DTO je objekt, který je určena pouze pro přenášejí data.
+Místo toho chci, aby tento požadavek vrátí podmnožinu polí. Také jsem má vrátí jméno autora, spíše než ID autora. K tomu upravíme metody kontroleru se vraťte *objekt pro přenos dat* (DTO) namísto EF modelu. Objekt DTO je objekt, který je určena pouze pro přenášejí data.
 
-V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **přidat** | **novou složku**. Název složky &quot;DTOs&quot;. Přidejte třídu s názvem `BookDto` do složky DTOs, s následující definice:
+V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyberte **přidat** | **novou složku**. Název složky &quot;DTO&quot;. Přidejte třídu pojmenovanou `BookDto` ke složce DTO s následující definice:
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample7.cs)]
 
-Přidejte jinou třídu s názvem `BookDetailDto`.
+Přidejte další třídu s názvem `BookDetailDto`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-Potom aktualizujte `BooksController` třídy vracení `BookDto` instance. Použijeme [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) metoda do projektu `Book` instance k `BookDto` instance. Tady je aktualizovaný kód pro třídy kontroleru.
+Dále, aktualizujte `BooksController` třídy pro vracení `BookDto` instancí. Použijeme [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) metoda do projektu `Book` instance na `BookDto` instancí. Tady je aktualizovaný kód pro třídu kontroleru.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 
 > [!NOTE]
-> Odstraněné `PutBook`, `PostBook`, a `DeleteBook` metody, protože nejsou pro tento kurz potřeba.
+> Odstranil jsem `PutBook`, `PostBook`, a `DeleteBook` metody, protože nejsou potřeba pro účely tohoto kurzu.
 
 
-Teď Pokud spuštění aplikace a požádat o /api/books/1, text odpovědi by měl vypadat takto:
+Teď Pokud spuštění aplikace a požádat o /api/books/1 tělo odpovědi by měl vypadat takto:
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample10.json)]
 
-## <a name="add-route-attributes"></a>Přidat trasy atributů
+## <a name="add-route-attributes"></a>Přidat atributy trasy
 
-V dalším kroku se nám budete převést řadiče, pokud chcete používat směrování atribut. Nejprve přidejte **RoutePrefix** atribut kontroleru. Tento atribut definuje počáteční segmenty identifikátor URI pro všechny metody v tomto řadiči.
+V dalším kroku se nám budete převést řadiče na použití směrování atributů. Nejprve přidejte **RoutePrefix** atributů kontroleru. Tento atribut definuje počáteční identifikátor URI segmenty pro všechny metody v tomto kontroleru.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample11.cs?highlight=1)]
 
-Pak přidejte **[trasy]** atributy pro akce kontroleru, následujícím způsobem:
+Pak přidejte **[trasy]** atributy na akce kontroleru, následujícím způsobem:
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample12.cs?highlight=1,7)]
 
-Šablona trasy pro jednotlivé metody kontroleru je předpona plus řetězec zadaný v **trasy** atribut. Pro `GetBook` metoda šablonu trasy zahrnuje parametrizovaný řetězec &quot;{id: int}&quot;, který odpovídá, pokud segment identifikátoru URI obsahuje celočíselnou hodnotu.
+Šablona trasy pro jednotlivé metody kontroleru je předpona plus řetězec zadaný v **trasy** atribut. Pro `GetBook` parametrizovaný řetězec obsahuje metodu, šablona trasy &quot;{id: int}&quot;, který odpovídá, pokud segment identifikátoru URI obsahuje celočíselnou hodnotu.
 
 | Metoda | Šablona trasy | Příklad identifikátoru URI |
 | --- | --- | --- |
-| `GetBooks` | "rozhraní api nebo seznamy." | `http://localhost/api/books` |
+| `GetBooks` | "api/knihy" | `http://localhost/api/books` |
 | `GetBook` | "api/books / {id: int}" | `http://localhost/api/books/5` |
 
 ## <a name="get-book-details"></a>Získat podrobnosti adresáře
 
-Chcete-li získat podrobnosti adresáře, klient odešle požadavek GET na `/api/books/{id}/details`, kde *{id}* je ID knihy.
+Pokud chcete získat podrobnosti adresáře, klient odešle požadavek GET na `/api/books/{id}/details`, kde *{id}* je ID knihy.
 
 Přidejte následující metodu do `BooksController` třídy.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample13.cs)]
 
-Pokud si vyžádáte `/api/books/1/details`, odpověď bude vypadat takto:
+Pokud jste požádali o `/api/books/1/details`, odpověď vypadá takto:
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample14.json)]
 
-## <a name="get-books-by-genre"></a>Získání seznamů pomocí Genre
+## <a name="get-books-by-genre"></a>Získat knihy podle žánru
 
-Chcete-li získat seznam seznamů v konkrétní genre, klient odešle požadavek GET na `/api/books/genre`, kde *genre* je název genre. (Například `/api/books/fantasy`.)
+K získání seznamu knih v konkrétní genre, klient odešle požadavek GET na `/api/books/genre`, kde *žánr* je název žánr. (Například `/api/books/fantasy`.)
 
 Přidejte následující metodu do `BooksController`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample15.cs)]
 
-Zde jsme se definování trasy, která obsahuje parametr {genre} v šabloně identifikátor URI. Všimněte si, že webového rozhraní API je možné rozlišit tyto dva identifikátory URI a směrovat je do různých metod:
+Tady jsme definovat trasu, která obsahuje parametr {žánr} v šablona identifikátoru URI. Všimněte si, že se k rozlišení těchto dvou identifikátory URI a směrovat na různé metody webového rozhraní API:
 
 `/api/books/1`
 
 `/api/books/fantasy`
 
-Důvodem je, že `GetBook` metoda obsahuje omezení, že segment "id" musí být celočíselná hodnota:
+Důvodem je, `GetBook` metoda obsahuje omezení, že segment "id" musí být celočíselná hodnota:
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample16.cs?highlight=1)]
 
-Pokud budete požadovat /api/books/fantasy, odpověď vypadá takto:
+Pokud jste požádali o /api/books/fantasy, odpověď vypadá takto:
 
 `[ { "Title": "Midnight Rain", "Author": "Ralls, Kim", "Genre": "Fantasy" }, { "Title": "Maeve Ascendant", "Author": "Corets, Eva", "Genre": "Fantasy" }, { "Title": "The Sundered Grail", "Author": "Corets, Eva", "Genre": "Fantasy" } ]`
 
 ## <a name="get-books-by-author"></a>Získat knihy autorem
 
-Pokud chcete získat seznam seznamů, pro konkrétní autora, klient odešle požadavek GET na `/api/authors/id/books`, kde *id* je ID autora.
+Pokud chcete získat seznam webu knihy pro konkrétní Autor, klient odešle požadavek GET na `/api/authors/id/books`, kde *id* je ID autora.
 
 Přidejte následující metodu do `BooksController`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample17.cs)]
 
-V tomto příkladu je zajímavé protože &quot;knihy&quot; je zpracováván prostředkem podřízené &quot;autoři&quot;. Tento vzor je celkem běžné rozhraní RESTful API.
+V tomto příkladu je zajímavé protože &quot;knihy&quot; je zacházeno podřízený prostředek &quot;autoři&quot;. Tento model je celkem běžné v rozhraní RESTful API.
 
-Znak tilda (~) v šabloně trasy přepsání předponu trasy v **RoutePrefix** atribut.
+Předpona trasy v přepsání tilda (~) v šabloně trasy **RoutePrefix** atribut.
 
-## <a name="get-books-by-publication-date"></a>Získat knihy podle data publikování
+## <a name="get-books-by-publication-date"></a>Získat knihy datum publikace
 
-Pokud chcete získat seznam seznamů, datu publikace, klient odešle požadavek GET na `/api/books/date/yyyy-mm-dd`, kde *rrrr mm-dd* je datum.
+K získání seznamu knih podle data zveřejnění, klient odešle požadavek GET na `/api/books/date/yyyy-mm-dd`, kde *rrrr mm-dd* datum.
 
-Zde je možné provést toto:
+Tady je jeden způsob, jak to udělat:
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample18.cs)]
 
-`{pubdate:datetime}` Parametr je omezena tak, aby odpovídala **data a času** hodnotu. Tento postup funguje, ale je ve skutečnosti mírnější, než rádi bychom znali. Tyto identifikátory URI například bude odpovídat trasy:
+`{pubdate:datetime}` Parametr je omezená tak, aby odpovídaly **data a času** hodnotu. Tento postup funguje, ale je ve skutečnosti mnohem mírnější, než jsme chtěli. Například tyto identifikátory URI se taky shodovat trasy:
 
 `/api/books/date/Thu, 01 May 2008`
 
 `/api/books/date/2000-12-16T00:00:00`
 
-Není co nesprávný s povolením tyto identifikátory URI. Můžete však omezit trasy na konkrétní formát přidáním regulární výraz omezení pro šablonu trasy:
+Není nic špatného s povolením tyto identifikátory URI. Můžete však omezit trasy na konkrétní formát přidáním omezení regulární výraz pro šablonu trasy:
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample19.cs?highlight=1)]
 
-Nyní pouze data ve formě &quot;rrrr mm-dd&quot; bude odpovídat. Všimněte si, že jsme nepoužívejte regulární výraz k ověření, že My skutečná data. Zpracovává když se pokusí převést segment identifikátoru URI do webového rozhraní API **data a času** instance. Neplatné datum například 2012-47-99 se nepodaří převést, a klient získá chybu 404.
+Nyní pouze data ve formě &quot;rrrr mm-dd&quot; bude odpovídat. Všimněte si, že nebudeme používat k ověření, že jsme získali skutečné datum regulární výraz. Při pokusí převést segment identifikátoru URI do webového rozhraní API, která je zpracována **data a času** instance. Neplatné datum jako je například "2012-47-99 se nepodařilo převést, a klient se zobrazí chyba 404.
 
-Může také podporovat oddělovač lomítko (`/api/books/date/yyyy/mm/dd`) tak, že přidáte další **[trasy]** atribut s jiný regulární výraz.
+Může také podporovat lomítko oddělovačem (`/api/books/date/yyyy/mm/dd`) tak, že přidáte další **[trasy]** atribut s jiný regulární výraz.
 
 [!code-html[Main](create-a-rest-api-with-attribute-routing/samples/sample20.html)]
 
-Je zde podrobností jemně ale důležité. Druhá šablona trasy obsahovala zástupný znak (\*) na začátku parametr {pubdate}:
+Je zde podrobností drobným ale důležité. Druhá šablona trasy obsahuje zástupný znak (\*) na začátku parametru {pubdate}:
 
 [!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample21.json)]
 
-Tato hodnota informuje modulu směrování, že tento {pubdate} by měl odpovídat zbytek identifikátor URI. Ve výchozím nastavení odpovídá parametru šablony jeden segment identifikátoru URI. V tomto případě chceme {pubdate} rozmístěny v několika segmentům URI:
+Modul směrování říká, že {pubdate} by měl odpovídat zbývající části identifikátoru URI. Ve výchozím nastavení odpovídá parametru šablony jeden segment identifikátoru URI. V tomto případě chceme {pubdate} span několik segmentů identifikátor URI:
 
 `/api/books/date/2013/06/17`
 
@@ -257,4 +256,4 @@ Tady je kompletní kód pro třídu BooksController.
 
 ## <a name="summary"></a>Souhrn
 
-Atribut směrování nabízí další ovládací prvek a větší flexibilitu při navrhování identifikátory URI pro vaše rozhraní API.
+Směrování atributů nabízí další ovládací prvek a větší flexibilitu při navrhování identifikátory URI pro vaše rozhraní API.

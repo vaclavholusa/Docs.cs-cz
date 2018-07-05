@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public-code-review
-title: 'ASP.NET MVC výkladní skříň část 15: Revize veřejné kódu | Microsoft Docs'
+title: 'ASP.NET MVC z prodejních míst – část 15: Revize veřejného kódu | Dokumentace Microsoftu'
 author: robconery
-description: V této díl nemá Rob Conery revize veřejné kódu výkladní skříň aplikace založené na zpětnou vazbu od uživatelů. Rob Conery má zdokumentovaný každý krok vývoj...
+description: V této epizodě se Rob Conery revize veřejného kódu z prodejních míst aplikace na základě názorů uživatelů. Každý krok vývoj má zdokumentované Rob Conery...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/10/2008
 ms.topic: article
 ms.assetid: c06b991f-b1d8-4315-9bc7-d17bc644cbd3
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-15-public-code-review
 msc.type: video
-ms.openlocfilehash: b29e718c2b7ca42cb603cc51a20f8fb38a56162b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1191b92176dc5b052a7cb7e107cab4be71bf32de
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867824"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37363117"
 ---
-<a name="aspnet-mvc-storefront-part-15-public-code-review"></a>ASP.NET MVC výkladní skříň část 15: Revize veřejné kódu
+<a name="aspnet-mvc-storefront-part-15-public-code-review"></a>ASP.NET MVC z prodejních míst – část 15: Revize veřejného kódu
 ====================
-podle [ukrást Conery](https://github.com/robconery)
+podle [Rob Conery](https://github.com/robconery)
 
-V této díl nemá Rob Conery revize veřejné kódu výkladní skříň aplikace založené na zpětnou vazbu od uživatelů. Rob Conery má zdokumentovaný každý krok v procesu vývoje na svůj [blog](http://blog.wekeroad.com/mvc-storefront/mvcstore-part-15/).
+V této epizodě se Rob Conery revize veřejného kódu z prodejních míst aplikace na základě názorů uživatelů. Rob Conery má zdokumentované každý krok v procesu vývoje na jeho [blogu](http://blog.wekeroad.com/mvc-storefront/mvcstore-part-15/).
 
 [&#9654;Podívejte se na video (37 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-15-public-code-review)
 

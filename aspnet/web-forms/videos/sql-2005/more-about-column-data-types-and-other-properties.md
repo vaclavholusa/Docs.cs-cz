@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/sql-2005/more-about-column-data-types-and-other-properties
-title: Další informace o datové typy sloupce a dalších vlastností | Microsoft Docs
+title: Další informace o datových typech sloupců a dalších vlastností | Dokumentace Microsoftu
 author: microsoft
-description: Začátečníka systému SQL Server bude prozkoumat integritu dat, další typy dat, které chcete použít pro co a vyhnout se běžné nástrahy datového typu.
+description: Začátečníky systému SQL Server bude zkoumat integritu dat, další typy dat, které se má použít pro co a vyhnout běžným nástrahám datového typu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/22/2006
 ms.topic: article
 ms.assetid: 8fcd3402-1711-4f19-b0cc-b91edfe285fc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/sql-2005/more-about-column-data-types-and-other-properties
 msc.type: video
-ms.openlocfilehash: 4287702c3906e9447edb5b9d40ec88510bacc174
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a96226aaa43eeeff653ac8f246f00fceb6c85c46
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895888"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364333"
 ---
-<a name="more-about-column-data-types-and-other-properties"></a>Další informace o datové typy sloupce a dalších vlastností
+<a name="more-about-column-data-types-and-other-properties"></a>Další informace o datových typech sloupců a dalších vlastností
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-Začátečníka systému SQL Server bude prozkoumat integritu dat, další typy dat, které chcete použít pro co a vyhnout se běžné nástrahy datového typu.
+Začátečníky systému SQL Server bude zkoumat integritu dat, další typy dat, které se má použít pro co a vyhnout běžným nástrahám datového typu.
 
 [&#9654;Podívejte se na video (21 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/more-about-column-data-types-and-other-properties)
 

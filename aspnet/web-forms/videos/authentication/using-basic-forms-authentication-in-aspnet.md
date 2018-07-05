@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/authentication/using-basic-forms-authentication-in-aspnet
-title: Ověřování pomocí Basic formulářů technologie ASP.NET | Microsoft Docs
+title: Díky Basic ověřování formulářů ASP.NET | Dokumentace Microsoftu
 author: JoeStagner
-description: Jan Stagner nevystavíte slabé stránky zabezpečení procesu využívat základní forms na základě ověřování prostřednictvím kódu programu s technologií ASP.NET. Doporučuje se, že prohlížeče ke čtení této befor...
+description: Joe Stagner procházení procesem využívat založeného na základních formulářích na základě ověřování prostřednictvím kódu programu pomocí technologie ASP.NET. Doporučuje se, že prohlížeče, přečtěte si tento dříve než...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2008
 ms.topic: article
 ms.assetid: 5356f9f4-63a5-4481-87a3-78bb1dfc6f0f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/using-basic-forms-authentication-in-aspnet
 msc.type: video
-ms.openlocfilehash: a1ed9b043f680b836c68c00855c29d2bd6ef2d82
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 08d849ee763bc89e635e74b5ca75aefc57b5a1f6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30887639"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37364604"
 ---
-<a name="using-basic-forms-authentication-in-aspnet"></a>Základní ověřování pomocí formulářů technologie ASP.NET
+<a name="using-basic-forms-authentication-in-aspnet"></a>Pomocí ověřování založeného na základních formulářích v ASP.NET
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Jan Stagner nevystavíte slabé stránky zabezpečení procesu využívat základní forms na základě ověřování prostřednictvím kódu programu s technologií ASP.NET. Je navrženo, že ke čtení prohlížeče [to](../../overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb.md) před zobrazení. Další informace v této ukázce má vztah k kurzu nachází [zde](../../overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb.md).
+Joe Stagner procházení procesem využívat založeného na základních formulářích na základě ověřování prostřednictvím kódu programu pomocí technologie ASP.NET. Doporučujeme prostudovat prohlížeče [to](../../overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb.md) před zobrazením. Další informace v této ukázce má vztah k kurzu nachází [tady](../../overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb.md).
 
-[&#9654;Podívejte se na video (23 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-basic-forms-authentication-in-aspnet)
+[&#9654;Podívejte se na video (23 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/using-basic-forms-authentication-in-aspnet)
 
 > [!div class="step-by-step"]
 > [Next](how-to-change-the-forms-authentication-properties.md)

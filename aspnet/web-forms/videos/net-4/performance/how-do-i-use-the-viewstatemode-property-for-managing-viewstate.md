@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
-title: 'Jak I: použijte vlastnost ViewStateMode pro správu ViewState | Microsoft Docs'
+title: 'Návody: použití vlastnosti ViewStateMode ke správě ViewState | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan ukazuje, jak používat vlastnost ViewStateMode při navrhování ViewState na webu technologie ASP.NET.
+description: V pixelů na toto video Chris ukazuje způsob použití vlastnosti ViewStateMode při navrhování ViewState pro webový server v technologii ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/17/2010
 ms.topic: article
 ms.assetid: e5b1cc5e-fe11-4ede-9e28-af6477277b0c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
 msc.type: video
-ms.openlocfilehash: 0d663cc58f655aa4439071ebd5f895feafc6e898
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9e31f7826be4905d250b12dc050e1ae2b2d24913
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30894204"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379203"
 ---
-<a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a>Jak I: použijte vlastnost ViewStateMode pro správu ViewState
+<a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a>Návody: použití vlastnosti ViewStateMode ke správě ViewState
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V tomto videu [Jan PEL](http://www.idevtech.com) ukazuje, jak používat vlastnost ViewStateMode při navrhování ViewState na webu technologie ASP.NET. Nejprve je popsána funkce pro správu ViewState technologie ASP.NET před ASP.NET 4. V dalším kroku vlastnost ViewStateMode přidat v technologii ASP.NET 4 ukazují na úrovni stránky a na stránce ukázkové s vnořené podřízených ovládacích prvků. Význam hierarchické dědičnost vlastnosti ViewStateMode popsané. Nakonec se demonstruje vzorový scénář pro minimalizaci ViewState na stránkách ASP.NET.
+V tomto videu [pixelů na Chris](http://www.idevtech.com) ukazuje způsob použití vlastnosti ViewStateMode při navrhování ViewState pro webový server v technologii ASP.NET. Nejprve jsou popsány funkce pro správu vlastnosti ViewState v technologii ASP.NET před ASP.NET 4. V dalším kroku vlastnosti ViewStateMode přidán v technologii ASP.NET 4 je znázorněn na úrovni stránky a ukázkovou stránku s vnořené podřízené ovládací prvky. Důležitost hierarchické dědičnost vlastnosti ViewStateMode jsou popsány. Nakonec je znázorněn vzorový scénář pro minimalizaci ViewState na stránkách ASP.NET.
 
-[&#9654;Podívejte se na video (16 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
+[&#9654;Podívejte se na video (16 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-viewstatemode-property-for-managing-viewstate)
 
 > [!div class="step-by-step"]
 > [Předchozí](aspnet-4-quick-hit-easy-state-compression.md)

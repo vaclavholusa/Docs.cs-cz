@@ -1,118 +1,117 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
-title: Funkce SignalR technologie ASP.NET centra API Průvodce – Server (SignalR 1.x) | Microsoft Docs
+title: Pokyny k rozhraní API Center SignalR technologie ASP.NET – Server (SignalR 1.x) | Dokumentace Microsoftu
 author: pfletcher
-description: Tento dokument obsahuje úvod do programovací rozhraní API ASP.NET SignalR rozbočovače na straně serveru pro funkci SignalR verze 1.1, s demonstratin ukázky kódu...
+description: Tento dokument obsahuje úvod do programování na straně serveru rozhraní API pro rozbočovače SignalR technologie ASP.NET SignalR verze 1.1, s demonstratin ukázky kódu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/17/2013
 ms.topic: article
 ms.assetid: 03e4b9f5-0fea-4d94-959f-014b2762a301
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 96155b1c648e5f6092b3ba67a560197f86a593b9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5597b89688382ab7eb2c2c724baf9a32abee49c9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28044179"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396663"
 ---
-<a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>Funkce SignalR technologie ASP.NET centra API Průvodce – Server (SignalR 1.x)
+<a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>Pokyny k rozhraní API Center SignalR technologie ASP.NET – Server (SignalR 1.x)
 ====================
-podle [Patrik Fletcher](https://github.com/pfletcher), [tní Dykstra](https://github.com/tdykstra)
+podle [Patrick Fletcher](https://github.com/pfletcher), [Petr Dykstra](https://github.com/tdykstra)
 
-> Tento dokument obsahuje úvod do programování na straně serveru rozhraní API ASP.NET SignalR centra pro SignalR verze 1.1, s ukázky kódu demonstraci běžné možnosti.
+> Tento dokument obsahuje úvod do programování na straně serveru rozhraní API pro rozbočovače SignalR technologie ASP.NET SignalR verze 1.1, s představením běžných možností ukázky kódu.
 > 
-> Rozhraní API rozbočovače SignalR umožňuje vytvářet vzdálená volání procedur (RPC) ze serveru pro připojené klienty a z klientů k serveru. V serverovém kódu můžete definovat metody, které lze volat klienty a volání metody, které běží na klientovi. V kódu klienta můžete definovat metody, které lze volat ze serveru a volání metody, které běží na serveru. SignalR se stará o všechny záležitosti klient server pro vás.
+> Rozhraní API pro rozbočovače SignalR umožňuje vytvářet vzdálených volání procedur (RPC) ze serveru pro připojené klienty a z klientů k serveru. V serverovém kódu můžete definovat metody, které mohou být volány klientů a volat metody, které běží na straně klienta. V klientském kódu můžete definovat metody, které lze volat ze serveru a volání metody, které běží na serveru. Funkce SignalR postará za vás zajistí funkčnost systému klient server.
 > 
-> Funkce SignalR také nabízí nižší úrovně rozhraní API volat trvalé připojení. Úvod do SignalR, rozbočovače a trvalé připojení nebo kurz, který ukazuje, jak sestavit kompletní aplikaci SignalR, najdete v části [SignalR – Začínáme](index.md).
+> Funkce SignalR také nabízí nižší úrovně rozhraní API volá trvalé připojení. Úvod do SignalR, rozbočovačů a trvalá připojení, nebo kurz, který ukazuje, jak sestavit kompletní aplikace SignalR, přečtěte si téma [SignalR – Začínáme](index.md).
 
 
 ## <a name="overview"></a>Přehled
 
 Tento dokument obsahuje následující části:
 
-- [Jak zaregistrovat SignalR trasy a konfigurovat možnosti SignalR](#route)
+- [Jak zaregistrovat směrování funkce SignalR a nakonfigurovat možnosti SignalR](#route)
 
     - [Adresa URL /signalr](#signalrurl)
     - [Konfigurace možností SignalR](#options)
-- [Postup vytvoření a používání třídy rozbočovače](#hubclass)
+- [Jak vytvořit a použít třídy rozbočovače](#hubclass)
 
-    - [Doba života objektu rozbočovače](#transience)
-    - [Formátu camelCase-velká a malá písmena rozbočovače názvů klientů JavaScript](#hubnames)
+    - [Doba života objektu centra](#transience)
+    - [Camel-malých a velkých písmen názvů centra v klientech jazyka JavaScript](#hubnames)
     - [Více rozbočovače](#multiplehubs)
-- [Jak definovat metody ve třídě rozbočovače, která můžete volat klientů](#hubmethods)
+- [Definování metody ve třídě rozbočovače, která může volat klientů](#hubmethods)
 
-    - [Formátu camelCase-velká a malá písmena metoda názvů klientů JavaScript](#methodnames)
-    - [Při spuštění asynchronně](#asyncmethods)
+    - [Camel-malých a velkých písmen názvů metody do klientů JavaScript](#methodnames)
+    - [Kdy se má spustit asynchronně](#asyncmethods)
     - [Definování přetížení](#overloads)
-- [Jak volat metody klienta z třídy rozbočovače](#callfromhub)
+- [Volání metody klienta z třídy rozbočovače](#callfromhub)
 
-    - [Výběr klienty, kteří obdrží vzdálené volání Procedur](#selectingclients)
-    - [Žádné ověření kompilace pro názvy – metoda](#dynamicmethodnames)
-    - [S odpovídajícím názvem velká a malá písmena – metoda](#caseinsensitive)
-    - [Asynchronního spuštění](#asyncclient)
-- [Správa členství ve skupině z třídy rozbočovače](#groupsfromhub)
+    - [Výběr klientů, kteří obdrží vzdálené volání Procedur](#selectingclients)
+    - [Žádné názvy metod ověřování za kompilace](#dynamicmethodnames)
+    - [Shoda názvu malá a velká písmena – metoda](#caseinsensitive)
+    - [Asynchronní provádění](#asyncclient)
+- [Správa členství ve skupině ze třídy rozbočovače](#groupsfromhub)
 
     - [Asynchronní provádění metody přidat a odebrat](#asyncgroupmethods)
     - [Trvalost členství ve skupině](#grouppersistence)
     - [Skupiny jednoho uživatele](#singleusergroups)
-- [Postupy: zpracování události životnost připojení v třídy rozbočovače](#connectionlifetime)
+- [Zpracování událostí doby platnosti ve třídě centra](#connectionlifetime)
 
     - [Kdy jsou volány onconnected rozbočovače, ondisconnected rozbočovače a onreconnected rozbočovače](#onreconnected)
-    - [Stav volajícího není naplněno.](#nocallerstate)
-- [Jak získat informace o klientovi z vlastností kontextu](#contextproperty)
-- [Jak předat stavu mezi klienty a třídy rozbočovače](#passstate)
-- [Postupy: zpracování chyb v třídy rozbočovače](#handleErrors)
-- [Tom, jak volat metody klienta a Správa skupin z mimo třídy rozbočovače](#callfromoutsidehub)
+    - [Stav volajícího není naplněn.](#nocallerstate)
+- [Jak získat informace o klientovi z kontextové vlastnosti](#contextproperty)
+- [Jak předávat stavu mezi klienty a třídy rozbočovače](#passstate)
+- [Zpracování chyb ve třídě centra](#handleErrors)
+- [Jak volat metody klienta a spravovat skupiny mimo třídy rozbočovače](#callfromoutsidehub)
 
     - [Volání metody klienta](#callingclientsoutsidehub)
     - [Správa členství ve skupině](#managinggroupsoutsidehub)
-- [Postup povolení trasování](#tracing)
-- [Postup přizpůsobení kanálu rozbočovače](#hubpipeline)
+- [Jak povolit trasování](#tracing)
+- [Přizpůsobení kanálu rozbočovače](#hubpipeline)
 
-Dokumentaci k programu klientů najdete v následujících materiálech:
+Dokumentace o tom, jak program klientů naleznete v následujících zdrojích:
 
-- [Rozhraní API Průvodce pro rozbočovače SignalR – JavaScript klienta](index.md)
-- [Rozhraní API Průvodce pro rozbočovače SignalR – klient .NET](index.md)
+- [Pokyny k rozhraní API Center SignalR – javascriptový klient](index.md)
+- [Pokyny k rozhraní API Center SignalR – klient .NET](index.md)
 
-Odkazy na témata referenční dokumentace rozhraní API jsou na rozhraní .NET 4.5 verzi rozhraní API. Pokud používáte rozhraní .NET 4, přečtěte si téma [verze .NET 4 témat rozhraní API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
+Odkazy na témata, Reference k rozhraní API se API verze rozhraní .NET 4.5. Pokud používáte .NET 4, přečtěte si téma [verze .NET 4 témat API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="route"></a>
 
-## <a name="how-to-register-the-signalr-route-and-configure-signalr-options"></a>Jak zaregistrovat SignalR trasy a konfigurovat možnosti SignalR
+## <a name="how-to-register-the-signalr-route-and-configure-signalr-options"></a>Jak zaregistrovat směrování funkce SignalR a nakonfigurovat možnosti SignalR
 
-Chcete-li definovat trasy, která budou klienti používat pro připojení do vašeho centra, volejte [MapHubs](https://msdn.microsoft.com/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx) metoda při spuštění aplikace. `MapHubs`je [metoda rozšíření](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) pro `System.Web.Routing.RouteCollection` třídy. Následující příklad ukazuje, jak definovat v trasu rozbočovače SignalR *Global.asax* souboru.
+Chcete-li definovat trasy, která budou klienti používat pro připojení k centru, zavolejte [MapHubs](https://msdn.microsoft.com/library/system.web.routing.signalrrouteextensions.maphubs(v=vs.111).aspx) metoda při spuštění aplikace. `MapHubs` je [– metoda rozšíření](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) pro `System.Web.Routing.RouteCollection` třídy. Následující příklad ukazuje, jak definovat trasu rozbočovače SignalR v *Global.asax* souboru.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample1.cs)]
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample2.cs?highlight=5)]
 
-Pokud přidáváte funkce SignalR pro aplikaci ASP.NET MVC, ujistěte se, zda SignalR trasy, která je přidána před dalším postupům. Další informace najdete v tématu [kurz: Začínáme s SignalR a MVC 4](index.md).
+Pokud přidáváte funkce SignalR pro aplikace ASP.NET MVC, ujistěte se, přidá se trasa SignalR před jiným trasám. Další informace najdete v tématu [kurz: Začínáme s knihovnou SignalR a MVC 4](index.md).
 
 <a id="signalrurl"></a>
 
 ### <a name="the-signalr-url"></a>Adresa URL /signalr
 
-Ve výchozím nastavení, je adresa URL trasy, který budou klienti používat pro připojení do vašeho centra "/ signalr". (Nepleťte si tuto adresu URL s adresou URL "/ signalr/hubs", což je pro automaticky generované soubor JavaScript. Další informace o vygenerovaný proxy server, najdete v části [průvodce rozhraní API rozbočovače SignalR - JavaScript klienta - vygenerovaný proxy server a jakým způsobem vám](index.md).)
+Ve výchozím nastavení, je adresa URL trasy, které budou klienti používat pro připojení k vašemu centru "/ signalr". (Nezaměňujte tuto adresu URL s adresou URL "/ signalr/centra", která je automaticky vygenerovaný soubor jazyka JavaScript. Další informace o vygenerovaný proxy server, naleznete v tématu [pokyny k rozhraní API Center SignalR – javascriptový klient - vygenerovaný proxy server a co to dělá za vás](index.md).)
 
-Může být výjimečných případech, které bylo není použít tuto základní adresu URL pro SignalR; například máte složku v projektu s názvem *signalr* a nechcete, aby změna názvu. V takovém případě můžete změnit základní adresu URL, jak je znázorněno v následujících příkladech (nahraďte "/ signalr" v ukázkovém kódu s požadovanou adresu URL).
+Může být výjimečných případech, které zkontrolujte tuto základní adresu URL nelze použít pro funkci SignalR; například máte složku ve vašem projektu s názvem *signalr* a nechcete, aby změna názvu. V takovém případě můžete změnit základní adresa URL, jak je znázorněno v následujících příkladech (nahradit "/ signalr" ve vzorovém kódu s požadovanou adresu URL).
 
 **Kód serveru, který určuje adresu URL**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample3.cs?highlight=1)]
 
-**Kód jazyka JavaScript klienta, který určuje adresu URL (s vygenerovaný proxy server)**
+**Klientský kód jazyka JavaScript, který určuje adresu URL (s vygenerovaný proxy server)**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample4.js?highlight=1)]
 
-**Kód jazyka JavaScript klienta, který určuje adresu URL (bez vygenerovaný proxy server)**
+**Klientský kód jazyka JavaScript, který určuje adresu URL (bez vygenerovaný proxy server)**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample5.js?highlight=1)]
 
-**Kód klienta rozhraní .NET, který určuje adresu URL**
+**Klientský kód .NET, který určuje adresu URL**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample6.cs?highlight=1)]
 
@@ -120,27 +119,27 @@ Může být výjimečných případech, které bylo není použít tuto základn
 
 ### <a name="configuring-signalr-options"></a>Konfigurace možností SignalR
 
-Přetížení `MapHubs` metoda umožňují zadejte vlastní adresu URL, překladač závislostí vlastní a následující možnosti:
+Přetížení `MapHubs` metody umožňují určit vlastní adresu URL, překladače vlastní závislost a následující možnosti:
 
 - Povolte volání mezi doménami z prohlížečů klientů.
 
-    Obvykle Pokud prohlížeč načte stránky z `http://contoso.com`, připojení SignalR je ve stejné doméně, v `http://contoso.com/signalr`. Pokud stránku z `http://contoso.com` vytvoří připojení k `http://fabrikam.com/signalr`, který je připojení mezi doménami. Z bezpečnostních důvodů jsou ve výchozím nastavení zakázány připojení mezi doménami. Další informace najdete v tématu [ASP.NET SignalR centra API Průvodce - JavaScript klienta - postup připojení mezi doménami](index.md).
+    Obvykle Pokud prohlížeč načte stránku z `http://contoso.com`, připojení SignalR je ve stejné doméně, v `http://contoso.com/signalr`. Pokud stránku z `http://contoso.com` vytvoří připojení k `http://fabrikam.com/signalr`, to znamená připojení mezi doménami. Z bezpečnostních důvodů jsou ve výchozím nastavení zakázané připojení mezi doménami. Další informace najdete v tématu [ASP.NET pokyny k rozhraní API Center SignalR – javascriptový klient – jak k navázání připojení mezi doménami](index.md).
 - Povolte podrobné chybové zprávy.
 
-    Pokud dojde k chybám, je výchozí chování SignalR klientům odeslat zprávu oznámení bez podrobnosti o co se stalo. Odesílání podrobné informace o chybě klientům se nedoporučuje v produkčním prostředí, protože uživatelé se zlými úmysly pravděpodobně moci použijte informace v útoky na vaší aplikace. Řešení potíží, můžete použít tuto možnost dočasně povolit informativnější zasílání zpráv o chybách.
-- Zakažte automaticky generované soubory proxy server JavaScript.
+    Když dojde k chybám, je výchozí chování SignalR klientům odeslat zprávu oznámení bez podrobnosti o co se stalo. Odesílání podrobné informace o chybě pro klienty se nedoporučuje v produkčním prostředí, protože uživatelé se zlými úmysly může být schopni použijte informace v útoků, které vaše aplikace. S řešením problémů, můžete použít tuto možnost dočasně povolit informativnější zasílání zpráv o chybách.
+- Zakážete automaticky generovaných souborů proxy server JavaScript.
 
-    Ve výchozím nastavení je soubor s proxy JavaScript pro třídy rozbočovače vygenerované v reakci na adresu "/ signalr/hubs". Pokud nechcete použít třídy proxy JavaScript, nebo pokud chcete generovat ručně tento soubor a odkazovat na fyzický soubor v vašim klientům, můžete tuto možnost zakažte generování proxy serveru. Další informace najdete v tématu [průvodce rozhraní API rozbočovače SignalR - JavaScript klienta - vytvoření fyzického souboru pro funkci SignalR generované proxy](index.md).
+    Ve výchozím nastavení je soubor JavaScript s proxy pro vaše Centrum třídy vygenerované v reakci na adresu URL "/ signalr/centra". Pokud už nechcete používat třídy proxy JavaScript, nebo pokud chcete vygenerovat soubor ručně a odkazovat na fyzický soubor v vašim klientům, můžete tuto možnost zakažte generování proxy serveru. Další informace najdete v tématu [pokyny k rozhraní API Center SignalR – javascriptový klient – proxy generované vytváření fyzického souboru pro funkci SignalR](index.md).
 
-Následující příklad ukazuje, jak určit adresu URL připojení SignalR a tyto možnosti ve volání `MapHubs` metoda. Chcete-li zadat vlastní adresu URL, nahraďte "/ signalr" v příkladu s adresou URL, kterou chcete použít.
+Následující příklad ukazuje, jak zadat adresu URL připojení SignalR a tyto možnosti ve volání `MapHubs` metody. Chcete-li určit vlastní adresu URL, nahraďte "/ signalr" v příkladu nahraďte adresu URL, kterou chcete použít.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample7.cs)]
 
 <a id="hubclass"></a>
 
-## <a name="how-to-create-and-use-hub-classes"></a>Postup vytvoření a používání třídy rozbočovače
+## <a name="how-to-create-and-use-hub-classes"></a>Jak vytvořit a použít třídy rozbočovače
 
-K vytvoření rozbočovač, vytvořte třídu, která je odvozena z [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). Následující příklad ukazuje jednoduchý třídy rozbočovače pro chatovací aplikace.
+Pokud chcete Centrum vytvořit, vytvořit třídu, která je odvozena z [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). Následující příklad ukazuje jednoduchý třída rozbočovače pro chatovací aplikaci.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample8.cs)]
 
@@ -148,35 +147,35 @@ V tomto příkladu můžete volat připojený klient `NewContosoChatMessage` met
 
 <a id="transience"></a>
 
-### <a name="hub-object-lifetime"></a>Doba života objektu rozbočovače
+### <a name="hub-object-lifetime"></a>Doba života objektu centra
 
-Nepřidávejte vytvořit instanci třídy rozbočovače nebo volat jeho metody z vlastního kódu na serveru. všechny možnosti, které je potřeba pro vás kanálu rozbočovače SignalR. SignalR vytvoří novou instanci třídy vašeho centra pokaždé, když je potřeba zpracovat operaci rozbočovače, například když je klient připojí, odpojí nebo provede metodu volání na server.
+Nevidíte vytvořit instanci třídy rozbočovače nebo volání obsažených metod z vlastního kódu na serveru. všechny možnosti, které se za vás provádí kanálu rozbočovače SignalR. Funkce SignalR vytvoří novou instanci třídy rozbočovače pokaždé, když je potřeba zpracovat operaci rozbočovače, jako je například při připojení, odpojení klienta nebo je volána metoda k serveru.
 
-Protože jsou přechodné instancí třídy rozbočovače, nelze je použít pro uchování stavu z volání jedné metody na další. Pokaždé, když server obdrží volání metody z klienta, novou instanci třídy procesů rozbočovače zprávu. Pro uchování stavu pomocí více připojení a volání metod, pomocí jiné metody, jako je například databáze, nebo proměnnou statické třídy rozbočovače nebo jinou třídu, která není odvozena od `Hub`. Pokud jste uchovávat data v paměti, pomocí metody například statické proměnné na třídy rozbočovače, data se ztratí recyklování domény aplikace.
+Protože instance třídy centra jsou přechodné, nelze je použít pro uchování stavu z jedné metody volání na další. Pokaždé, když server přijímá volání metody z klienta, novou instanci třídy procesů centra zprávy. Pro uchování stavu prostřednictvím více připojení a volání metod, pomocí některé jiné metody, jako jsou databáze nebo statická proměnná v třídě rozbočovač nebo jinou třídu, která není odvozena od `Hub`. Pokud můžete uchovávat data v paměti, způsobem například statická proměnná u třídy rozbočovače, data se ztratí dojde k recyklování domény aplikace.
 
-Pokud chcete odesílat zprávy pro klienty z vlastní kód, který je spuštěn mimo třídy rozbočovače, nelze provést po vytvoření instance instance třídy rozbočovače, ale můžete provést získáním odkaz na objekt context SignalR pro vlastní třídy rozbočovače. Další informace najdete v tématu [jak volat metody klienta a spravovat skupiny z mimo třídy rozbočovače](#callfromoutsidehub) dál v tomto tématu.
+Pokud chcete odesílat zprávy pro klienty z vlastní kód, který běží mimo třídy rozbočovače, nemůžete to udělal po vytvoření instance třídy instanci rozbočovače, ale dělejte to tím, že získáme odkaz na objekt kontextu SignalR pro rozbočovač třídu. Další informace najdete v tématu [klienta volat metody a Správa skupiny mimo třídy rozbočovače](#callfromoutsidehub) dále v tomto tématu.
 
 <a id="hubnames"></a>
 
-### <a name="camel-casing-of-hub-names-in-javascript-clients"></a>Formátu camelCase-velká a malá písmena rozbočovače názvů klientů JavaScript
+### <a name="camel-casing-of-hub-names-in-javascript-clients"></a>Camel-malých a velkých písmen názvů centra v klientech jazyka JavaScript
 
-Ve výchozím nastavení najdete klientů JavaScript do centra pomocí názvu třídy verze ve formátu camelCase. SignalR tuto změnu automaticky provede tak, aby JavaScript konvence může odpovídat kódu jazyka JavaScript. V předchozím příkladu by se označuje jako `contosoChatHub` v kódu jazyka JavaScript.
+Ve výchozím nastavení klientů JavaScript odkazovat centra pomocí verze název třídy – ve formátu camelCase. Funkce SignalR tato změna automaticky provede tak, aby kód jazyka JavaScript může odpovídat konvence jazyka JavaScript. V předchozím příkladu by se označuje jako `contosoChatHub` v kódu jazyka JavaScript.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample9.cs?highlight=1)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample10.js?highlight=1)]
 
-Pokud chcete zadat jiný název pro klienty použít, přidejte `HubName` atribut. Při použití `HubName` atributu, se nezměnila název na formát camelCase na klientech JavaScript.
+Pokud chcete zadat jiný název pro klienty použít, přidejte `HubName` atribut. Při použití `HubName` atribut, není žádná změna název na formát camelCase u klientů jazyka JavaScript.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample11.cs?highlight=1)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample12.js?highlight=1)]
 
@@ -184,44 +183,44 @@ Pokud chcete zadat jiný název pro klienty použít, přidejte `HubName` atribu
 
 ### <a name="multiple-hubs"></a>Více rozbočovače
 
-V aplikaci můžete definovat více třídy rozbočovače. Pokud můžete udělat, připojení se sdílí, ale jsou samostatné skupiny:
+V aplikaci můžete definovat více tříd rozbočovače. Když to uděláte, připojení se sdílí, ale jsou oddělené skupiny:
 
-- Budou všichni klienti používat stejnou adresu URL k navázání připojení SignalR s služby ("/ signalr" nebo vaše vlastní adresu URL, pokud byl zadán), a zda připojení se používá pro všechny rozbočovače definované službu.
+- Budou všichni klienti používat k navázání připojení SignalR ve vaší službě stejná adresa URL ("/ signalr" nebo vaší vlastní adresu URL, pokud byl zadán), a používá se, že připojení pro všechna centra definovány službou.
 
-    Neexistuje žádné rozdíly ve výkonnosti pro více rozbočovače ve srovnání s definování všechny funkce rozbočovače do jedné třídy.
-- Všechny rozbočovače získat stejné informace o požadavku HTTP.
+    Neexistuje žádné rozdíly ve výkonnosti více hubs ve srovnání s definování všechny funkce centra v jedné třídě.
+- Všechna centra získat stejné informace o požadavku HTTP.
 
-    Vzhledem k tomu, že všechny rozbočovače sdílet stejné připojení, je pouze informace žádosti HTTP, který server bude, co se dodává v původní požadavek HTTP, který vytvoří připojení SignalR. Pokud používáte k předávání informací z klienta na server tak, že zadáte řetězec dotazu požadavku na připojení, nemůžete zadat odlišné řetězce dotazu do různých rozbočovače. Stejné informace se zobrazí všechny rozbočovače.
-- Vygenerovaný soubor proxy JavaScript bude obsahovat proxy pro všechny rozbočovače v jednom souboru.
+    Od všech centrech sdílejí stejné připojení, je pouze informace žádosti HTTP, která vrací na server, co se dodává v původní požadavek protokolu HTTP, která vytváří připojení SignalR. Pokud používáte žádosti o připojení k předávání informací od klienta k serveru zadáním řetězce dotazu, nemůže poskytnout různé řetězce dotazu do různých rozbočovače. Všechna centra obdrží stejné informace.
+- Vygenerovaný soubor JavaScript proxy bude obsahovat servery proxy pro všechna centra v jednom souboru.
 
-    Informace o třídy proxy JavaScript najdete v tématu [průvodce rozhraní API rozbočovače SignalR - JavaScript klienta - vygenerovaný proxy server a jakým způsobem vám](index.md).
-- Skupiny jsou definovány v rámci centra.
+    Informace o třídy proxy JavaScript naleznete v tématu [pokyny k rozhraní API Center SignalR – javascriptový klient - vygenerovaný proxy server a co to dělá za vás](index.md).
+- Skupiny jsou definovány v rámci rozbočovače.
 
-    V systému SignalR, které můžete definovat název skupiny pro všesměrové vysílání pro podmnožiny připojených klientů. Skupiny jsou udržovány odděleně pro každý rozbočovač. Například skupina s názvem "Administrators" by mělo zahrnovat jednu sadu klientů pro vaše `ContosoChatHub` třídy a stejný název skupiny by se označují jinou sadu klientů pro vaše `StockTickerHub` třídy.
+    V knihovně SignalR, které můžete definovat pojmenovaným skupinám na podmnožiny připojených klientů. Skupiny jsou spravovány samostatně pro každý rozbočovač. Například skupina s názvem "Administrators" zahrnuje jednu sadu klientů pro vaše `ContosoChatHub` třídy a stejný název skupiny by odkazovat na jinou sadu klientů pro vaše `StockTickerHub` třídy.
 
 <a id="hubmethods"></a>
 
-## <a name="how-to-define-methods-in-the-hub-class-that-clients-can-call"></a>Jak definovat metody ve třídě rozbočovače, která můžete volat klientů
+## <a name="how-to-define-methods-in-the-hub-class-that-clients-can-call"></a>Definování metody ve třídě rozbočovače, která může volat klientů
 
-Ke zveřejnění metodu v rozbočovači, kterou chcete být možné volat z klienta, deklarujte veřejnou metodu, jak je znázorněno v následujících příkladech.
+Chcete-li vystavit metodu v rozbočovači, které mají být volány z klienta, deklarujte veřejnou metodu, jak je znázorněno v následujícím příkladu.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample13.cs?highlight=3)]
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample14.cs?highlight=3)]
 
-Můžete zadat návratový typ a parametry, včetně komplexní typy a pole, jako byste v libovolné metody C#. Žádná data, která přijímat parametry nebo vrací volajícímu informace se předávají mezi klientem a serverem pomocí JSON a SignalR automaticky zpracovává vazba na komplexní objekty a pole objektů.
+Můžete určit návratový typ a parametry, včetně komplexní typy a pole, stejně jako v jakékoli metodě jazyka C#. Všechna data, která zobrazí v parametrech nebo vrácení volajícímu je komunikace mezi klientem a serverem s použitím souboru JSON a SignalR automaticky zpracovává vazby složité objekty a pole objektů.
 
 <a id="methodnames"></a>
 
-### <a name="camel-casing-of-method-names-in-javascript-clients"></a>Formátu camelCase-velká a malá písmena metoda názvů klientů JavaScript
+### <a name="camel-casing-of-method-names-in-javascript-clients"></a>Camel-malých a velkých písmen názvů metody do klientů JavaScript
 
-Ve výchozím nastavení klienti JavaScript odkazovat na metod rozbočovače pomocí ve formátu camelCase verzi název metody. SignalR tuto změnu automaticky provede tak, aby JavaScript konvence může odpovídat kódu jazyka JavaScript.
+Ve výchozím nastavení klienti JavaScript odkazovat metod rozbočovače na pomocí-ve formátu camelCase verzi název metody. Funkce SignalR tato změna automaticky provede tak, aby kód jazyka JavaScript může odpovídat konvence jazyka JavaScript.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample15.cs?highlight=1)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample16.js?highlight=1)]
 
@@ -231,19 +230,19 @@ Pokud chcete zadat jiný název pro klienty použít, přidejte `HubMethodName` 
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample17.cs?highlight=1)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample18.js?highlight=1)]
 
 <a id="asyncmethods"></a>
 
-### <a name="when-to-execute-asynchronously"></a>Při spuštění asynchronně
+### <a name="when-to-execute-asynchronously"></a>Kdy se má spustit asynchronně
 
-Pokud metoda bude se dlouho běžící nebo pracovat, by zahrnovat čekání, jako je vyhledávání v databázi nebo volání webové služby, zkontrolujte asynchronní metody rozbočovače vrácením [úloh](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (místě `void` vrátit) nebo [ Úloha&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) objektu (místě `T` návratový typ). Když se vrátíte `Task` objekt z metody SignalR čeká `Task` k dokončení, a pak pošle rozbalenou výsledek zpět do klienta, takže není žádný rozdíl v tom, jak kód volání metody, které v klientovi.
+Metoda bude být dlouhotrvající nebo má práce, které by zahrnovat čekání, jako je například vyhledávání v databázi nebo volání webové služby, vrácením provést asynchronní metody rozbočovače [úloh](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (místo `void` vrátit) nebo [ Úloha&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) objektu (místo `T` návratový typ). Po návratu `Task` objekt z metody SignalR čeká `Task` k dokončení, a pak pošle nezabalené výsledek zpět do klienta, takže není žádný rozdíl v tom, jak kód volání metody v klientovi.
 
-Provedení metody rozbočovače asynchronní zabraňuje blokování připojení, když používá přenos protokolu WebSocket. Když metoda rozbočovače spouští synchronně a přenosu je WebSocket, následných volání metod rozbočovače ze stejného klienta jsou zablokovány, dokud se nedokončí metody rozbočovače.
+Provedení metody rozbočovače asynchronní se vyhnete blokuje připojení, když používá přenos pomocí protokolu WebSocket. Když je přenos pomocí protokolu WebSocket centra metoda provedena synchronně, následné volání metod rozbočovače ze stejného klienta jsou blokovány, dokud dokončení metody rozbočovače.
 
-Následující příklad ukazuje stejnou metodu zakódované spouští synchronně nebo asynchronně, za nímž následuje kód JavaScript klienta, který se dá použít pro volání buď verze.
+Následující příklad ukazuje stejnou metodu naprogramovány tak, aby běžely synchronně nebo asynchronně, za nímž následuje klientský kód jazyka JavaScript, který se dá použít pro volání jedné verze.
 
 **Synchronní**
 
@@ -253,37 +252,37 @@ Následující příklad ukazuje stejnou metodu zakódované spouští synchronn
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample20.cs?highlight=1,7-8)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample21.js)]
 
-Další informace o tom, jak použít asynchronní metody v technologii ASP.NET 4.5 najdete v tématu [použití asynchronních metod v architektuře ASP.NET MVC 4](../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md).
+Další informace o tom, jak použít asynchronní metody v technologii ASP.NET 4.5 naleznete v tématu [použití asynchronních metod v architektuře ASP.NET MVC 4](../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md).
 
 <a id="overloads"></a>
 
 ### <a name="defining-overloads"></a>Definování přetížení
 
-Pokud chcete definovat přetížení pro metodu, musí být jiný počet parametrů v každé přetížení. Pokud jste právě zadáním různé typy parametrů rozlišit přetížení, bude kompilovat vaší třídy rozbočovače ale služby SignalR vyvolá výjimku za běhu, když se klienti pokusí volání, jedno z přetížení.
+Pokud chcete definovat přetížení pro metodu, musí být jiný počet parametrů v každé přetížení. Rozlišení přetížení pouze zadáním různé typy parametrů, bude zkompilována vaše třída rozbočovače, ale služby SignalR vyvolá výjimku v době běhu, když se klienti pokusí volání jednoho z přetížení.
 
 <a id="callfromhub"></a>
 
-## <a name="how-to-call-client-methods-from-the-hub-class"></a>Jak volat metody klienta z třídy rozbočovače
+## <a name="how-to-call-client-methods-from-the-hub-class"></a>Volání metody klienta z třídy rozbočovače
 
-Chcete-li volat metody klienta ze serveru, použijte `Clients` vlastnost metodu v třídě rozbočovače. Následující příklad ukazuje kód serveru, který volá `addNewMessageToPage` na všechny připojené klienty a klientský kód, který definuje metodu v klientovi JavaScript.
+Chcete-li volat metody klienta ze serveru, použijte `Clients` vlastnost v metodě ve své třídě rozbočovače. Následující příklad ukazuje kód serveru, který volá `addNewMessageToPage` na všechny připojené klienty a klientský kód, který definuje metodu v klientovi JavaScript.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample22.cs?highlight=5)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-html[Main](signalr-1x-hubs-api-guide-server/samples/sample23.html?highlight=1)]
 
-Nelze získat návratovou hodnotu z klienta metody; syntaxe jako `int x = Clients.All.add(1,1)` nefunguje.
+Nelze získat návratovou hodnotu z metody; syntaxe jako `int x = Clients.All.add(1,1)` nefunguje.
 
-Můžete zadat komplexní typy a pole parametrů. Následující příklad předá do klienta v parametru metody komplexního typu.
+Můžete zadat komplexní typy a pole parametrů. Následující příklad předá komplexní typ klienta v parametru metody.
 
-**Kód serveru, který volá metodu klienta pomocí komplexní objekt**
+**Kód serveru, který volá metodu klienta pomocí komplexního objektu**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample24.cs?highlight=3)]
 
@@ -291,15 +290,15 @@ Můžete zadat komplexní typy a pole parametrů. Následující příklad před
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample25.cs?highlight=1)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample26.js?highlight=2-3)]
 
 <a id="selectingclients"></a>
 
-### <a name="selecting-which-clients-will-receive-the-rpc"></a>Výběr klienty, kteří obdrží vzdálené volání Procedur
+### <a name="selecting-which-clients-will-receive-the-rpc"></a>Výběr klientů, kteří obdrží vzdálené volání Procedur
 
-Vrátí vlastnost klientů [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objekt, který poskytuje několik možností pro zadání klienty, kteří obdrží vzdálené volání Procedur:
+Vrátí vlastnost klientů [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objekt, který poskytuje několik možností pro určení, které klienti obdrží vzdálené volání Procedur:
 
 - Všichni připojení klienti.
 
@@ -310,91 +309,91 @@ Vrátí vlastnost klientů [HubConnectionContext](https://msdn.microsoft.com/lib
 - Všichni klienti s výjimkou volajícího klienta.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample29.cs)]
-- Konkrétním klientovi identifikovaný ID připojení.
+- Konkrétního klienta, které identifikují pomocí ID připojení.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample30.css)]
 
-    Tento příklad volá `addContosoChatMessageToPage` na volajícího klienta a má stejný účinek jako použití `Clients.Caller`.
-- Všichni připojení klienti s výjimkou zadaných klientů, identifikovaný ID připojení.
+    Tento příklad příkladu volá `addContosoChatMessageToPage` na volajícího klienta a má stejný účinek jako použití `Clients.Caller`.
+- Všichni připojení klienti s výjimkou určitých klientech identifikují pomocí ID připojení.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample31.cs)]
-- Všechny připojené klienty v zadané skupině.
+- Všichni připojení klienti do zadané skupiny.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample32.css)]
-- Všechny připojené klienty v zadané skupině s výjimkou zadaných klientů, identifikovaný ID připojení.
+- Všechny připojené klienty v zadané skupině s výjimkou určitých klientech identifikují pomocí ID připojení.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample33.cs)]
-- Všechny připojené klienty v zadané skupině s výjimkou volajícího klienta.
+- Všichni připojení klienti v zadané skupině s výjimkou volajícího klienta.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample34.css)]
 
 <a id="dynamicmethodnames"></a>
 
-### <a name="no-compile-time-validation-for-method-names"></a>Žádné ověření kompilace pro názvy – metoda
+### <a name="no-compile-time-validation-for-method-names"></a>Žádné názvy metod ověřování za kompilace
 
-Název metody, který zadáte interpretována jako dynamický objekt, což znamená, že není žádná IntelliSense nebo kompilace přijme se. Vyhodnotí výraz v době běhu. Při volání metody, které spouští, se k němu předávají SignalR odešle klientovi název metody a hodnoty parametru, a pokud má klient metodu, která odpovídá názvu, že metoda je volána a hodnoty parametru. Pokud žádná odpovídající metoda nenajde na straně klienta, je vyvolána žádná chyba. Informace o formátu dat, která SignalR odesílá klientovi na pozadí při volání metody klienta najdete v tématu [Úvod do SignalR](index.md).
+Název metody, který zadáte, je interpretován jako dynamický objekt, což znamená, že odpadá technologie IntelliSense a ověření za kompilace pro něj. Výraz je vyhodnocen v době běhu. Při volání metody, které spouští, SignalR odešle klientovi názvu metody a hodnoty parametrů, a pokud má klient metodu, která odpovídá názvu, že metoda je volána a hodnoty parametru jsou předány do něj. Pokud na straně klienta se nenašla žádná odpovídající metoda, je vyvolána žádná chyba. Informace o formátu dat, která SignalR odesílá do klienta na pozadí při volání metody klienta najdete v tématu [Úvod ke knihovně SignalR](index.md).
 
 <a id="caseinsensitive"></a>
 
-### <a name="case-insensitive-method-name-matching"></a>S odpovídajícím názvem velká a malá písmena – metoda
+### <a name="case-insensitive-method-name-matching"></a>Shoda názvu malá a velká písmena – metoda
 
-Metoda shoda názvů nerozlišuje. Například `Clients.All.addContosoChatMessageToPage` na serveru, budou spuštěny `AddContosoChatMessageToPage`, `addcontosochatmessagetopage`, nebo `addContosoChatMessageToPage` na straně klienta.
+Shoda názvu metody je velká a malá písmena. Například `Clients.All.addContosoChatMessageToPage` na serveru spustí `AddContosoChatMessageToPage`, `addcontosochatmessagetopage`, nebo `addContosoChatMessageToPage` na straně klienta.
 
 <a id="asyncclient"></a>
 
-### <a name="asynchronous-execution"></a>Asynchronního spuštění
+### <a name="asynchronous-execution"></a>Asynchronní provádění
 
-Asynchronně provede metodu, kterou je možné volat. Kód, který se dodává po volání metody pro klienta, budou spuštěny okamžitě bez čekání na SignalR k dokončení přenosu dat do klientů, pokud je určit, že další řádek kódu by měla čekání na dokončení metody. Následující příklady kódu ukazují, jak provést dvě metody klienta postupně, jeden pomocí kód fungující v rozhraní .NET 4.5 a jeden pomocí kód fungující v rozhraní .NET 4.
+Asynchronně provede metodu, kterou je možné volat. Veškerý kód, který se dodává po volání metody do klienta se spustí okamžitě bez čekání na SignalR k dokončení přenosu dat do klientů, není-li určit, že následující řádky kódu by měla počkat na dokončení metody. Následující příklady kódu ukazují, jak provést dvě metody klienta postupně, ji pomocí kódu funkčnosti v rozhraní .NET 4.5 a ji pomocí kódu funkčnosti v rozhraní .NET 4.
 
 **Příklad rozhraní .NET 4.5**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample35.cs?highlight=1,3)]
 
-**Příklad .NET 4**
+**Příklad rozhraní .NET 4**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample36.cs?highlight=3-4)]
 
-Pokud používáte `await` nebo `ContinueWith` počkat, dokud nebude dokončeno metodu klientské před dalším řádku kódu, který nemusí znamenat, že klienti budou ve skutečnosti zobrazí se zpráva před dalším řádku kódu. "Dokončení" volání metody klienta pouze znamená, že SignalR provedla všechno potřebné k odeslání zprávy. Pokud potřebujete, aby klienti zobrazila zpráva ověření, budete muset tento mechanismus programu sami. Například může kód `MessageReceived` metodu v rozbočovači a v `addContosoChatMessageToPage` metody na straně klienta může volat `MessageReceived` potom činnost, kterou je potřeba udělat na straně klienta. V `MessageReceived` v centru můžete provést, ať pracovní závisí na příjem skutečné klienta a zpracování původní volání metody.
+Pokud používáte `await` nebo `ContinueWith` počkat, dokud se nedokončí metodu klienta předtím, než provede další řádek kódu, který nemusí znamenat, že klienti ve skutečnosti obdrží zprávu před provedením další řádek kódu. "Dokončení" volání metody klienta pouze znamená, že SignalR provedla vše potřebné k odeslání zprávy. Pokud potřebujete ověření, že klienti zobrazila zpráva, budete muset tento mechanismus program sami. Například může kód `MessageReceived` metodu v rozbočovači a v `addContosoChatMessageToPage` metody na straně klienta lze volat `MessageReceived` po provedení činnost, kterou je třeba provést na straně klienta. V `MessageReceived` v centru vám pomůžou práci závisí na skutečným klientem příjem a zpracování původní volání metody.
 
-### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Postup řetězec proměnnou použít jako název metody
+### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Použití proměnné řetězce jako názvu – metoda
 
-Pokud chcete vyvolat metodu klienta pomocí proměnné řetězec jako název metody, přetypovat `Clients.All` (nebo `Clients.Others`, `Clients.Caller`atd) k `IClientProxy` a pak zavolají [Invoke (methodName, argumentů...) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+Pokud chcete vyvolat metodu klienta s použitím proměnné řetězce jako názvu metody přetypování `Clients.All` (nebo `Clients.Others`, `Clients.Caller`atd) k `IClientProxy` a následně zavolat [Invoke (methodName, args...) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample37.cs)]
 
 <a id="groupsfromhub"></a>
 
-## <a name="how-to-manage-group-membership-from-the-hub-class"></a>Správa členství ve skupině z třídy rozbočovače
+## <a name="how-to-manage-group-membership-from-the-hub-class"></a>Správa členství ve skupině ze třídy rozbočovače
 
-Skupiny v systému SignalR poskytují metodu pro zprávy všesměrové vysílání pro zadaný podmnožiny připojených klientů. Skupina může mít libovolný počet klientů a klienta může být členem skupiny libovolný počet skupin.
+Skupinami v knihovně SignalR poskytuje metodu pro vysílání zpráv do zadaného podmnožiny připojených klientů. Skupina může mít libovolný počet klientů a klienta můžete mít libovolný počet skupin.
 
-Chcete-li spravovat členství ve skupinách, použijte [přidat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) a [odebrat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) metody poskytované `Groups` vlastnost třídy rozbočovače. Následující příklad ukazuje `Groups.Add` a `Groups.Remove` metody používané v metodách rozbočovače, které se nazývají kódem na straně klienta, za nímž následuje kód JavaScript klienta, který volá je.
+Chcete-li spravovat členství ve skupině, použijte [přidat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) a [odebrat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) metody poskytované objektem `Groups` vlastnosti třídy rozbočovače. Následující příklad ukazuje `Groups.Add` a `Groups.Remove` metod používaných v metodách rozbočovače, které jsou volány kódem na straně klienta, za nímž následuje klientský kód jazyka JavaScript, který je volá.
 
 **Server**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample38.cs?highlight=5,10)]
 
-**JavaScript klienta pomocí vygenerovaný proxy server**
+**JavaScript klienta s použitím vygenerovaný proxy server**
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample39.js)]
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample40.js)]
 
-Nemáte nemusel vytvářet skupiny. Platí skupina se automaticky vytvoří při prvním zadejte její název ve volání `Groups.Add`, a bude odstraněn, když odeberete poslední připojení z členství v ní.
+Není nutné explicitně vytvářet skupiny. V platnosti skupiny se automaticky vytvoří při prvním zadejte jeho název ve volání `Groups.Add`, a bude odstraněn, když odeberete poslední připojení z členství v ní.
 
-Neexistuje žádné rozhraní API pro získání seznamu členství ve skupinách nebo seznam skupin. SignalR odešle zprávy do klientů a skupin na základě [pub nebo sub modelu](http://en.wikipedia.org/wiki/Publish/subscribe), a server neumožňuje spravovat seznam skupin nebo členství ve skupinách. To pomáhá maximalizovat škálovatelnost, protože při každém přidání uzlu do webové farmy, nějaký stav, který udržuje SignalR musí být rozšířena do nového uzlu.
+Neexistuje žádné rozhraní API pro získání seznamu členství ve skupinách nebo seznam skupin. Funkce SignalR odesílá zprávy do klientů a skupin na základě [modelu pub/sub](http://en.wikipedia.org/wiki/Publish/subscribe), a server neumožňuje spravovat seznam skupin nebo členství ve skupinách. To pomáhá maximalizovat škálovatelnost, protože pokaždé, když přidáte uzel do webové farmy, jakýkoli stav, který udržuje SignalR musí být rozšířena na nový uzel.
 
 <a id="asyncgroupmethods"></a>
 
 ### <a name="asynchronous-execution-of-add-and-remove-methods"></a>Asynchronní provádění metody přidat a odebrat
 
-`Groups.Add` a `Groups.Remove` metody provedení asynchronně. Pokud chcete okamžitě odeslání zprávy do klienta pomocí skupiny a přidání klienta do skupiny, budete muset Ujistěte se, že `Groups.Add` metoda nejprve dokončí. Následující příklady kódu ukazují, jak to provést, jeden pomocí kódu, který funguje v rozhraní .NET 4.5 a jeden pomocí kódu, který funguje v rozhraní .NET 4
+`Groups.Add` a `Groups.Remove` metody spustit asynchronně. Pokud chcete přidat klienta do skupiny a okamžitě odešle zprávu do klienta pomocí skupiny, budete muset Ujistěte se, že `Groups.Add` metoda skončí jako první. Následující příklady kódu ukazují, jak to udělat, ji pomocí kódu, který funguje v rozhraní .NET 4.5 a pomocí kódu, který funguje v rozhraní .NET 4
 
 **Příklad rozhraní .NET 4.5**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample41.cs?highlight=1,3)]
 
-**Příklad .NET 4**
+**Příklad rozhraní .NET 4**
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample42.cs?highlight=3-4)]
 
@@ -402,32 +401,32 @@ Neexistuje žádné rozhraní API pro získání seznamu členství ve skupinác
 
 ### <a name="group-membership-persistence"></a>Trvalost členství ve skupině
 
-SignalR sleduje připojení, nikoli uživatelům, takže když chcete, aby uživatel být ve stejné skupině pokaždé, když uživatel naváže připojení, budete muset volat `Groups.Add` pokaždé, když uživatel vytvoří nové připojení.
+Sleduje připojení SignalR, ne s uživateli, takže když chcete uživateli být ve stejné skupině pokaždé, když uživatel vytváří připojení, je nutné volat `Groups.Add` pokaždé, když uživatel vytvoří nové připojení.
 
-Po k dočasné ztrátě připojení někdy SignalR můžete obnovit připojení automaticky. V takovém případě SignalR obnovuje stejné připojení, není vytvořeno nové připojení, a proto je členství ve skupině klienta automaticky obnoví. To lze provést i v případě, že dočasné přerušení je výsledek restartování serveru nebo selhání, protože stav připojení u jednotlivých klientů, včetně členství ve skupinách, je zpětné odbavení klientovi. Pokud se server přestane fungovat a je nahrazena nový server, než vyprší časový limit připojení, můžete klienta automaticky opětovně připojit k novému serveru a znovu zaregistrovat ve skupinách, které je členem skupiny.
+Po dočasné ztrátě připojení někdy SignalR můžete obnovit připojení automaticky. V takovém případě SignalR je obnovení stejného připojení není vytvoření nového připojení, a proto se členství ve skupině klienta automaticky obnoví. To je možné i v případě, že dočasné přerušení je restartování serveru nebo selhání, protože stav připojení pro každého klienta, včetně členství ve skupinách, je odbavovaná klientovi. Pokud server přestane fungovat a nahrazuje nový server, než vyprší časový limit připojení, může klient automaticky znovu připojit k novému serveru a znovu zaregistrovat ve skupinách, který je členem skupiny.
 
-Při připojení nelze obnovit automaticky po ztrátě připojení, nebo pokud vyprší časový limit připojení, nebo pokud se klient neodpojí (například pokud prohlížeč přejde na novou stránku), členství ve skupinách budou ztraceny. Při příštím připojení uživatele bude nové připojení. Chcete-li udržovat členství ve skupinách, pokud stejný uživatel vytvoří nové připojení, aplikace má sledovat přidružení mezi uživatelů a skupin a členství ve skupinách obnovení pokaždé, když uživatel vytvoří nové připojení.
+Pokud po ztrátě připojení, nelze automaticky obnovit připojení, nebo při připojení vyprší časový limit, nebo při odpojení klienta (například když prohlížeči přejde na novou stránku), členství ve skupinách budou ztraceny. Při příštím připojení uživatele bude nové připojení. Chcete-li udržovat členství ve skupinách, pokud se stejnému uživateli vytvoří nové připojení, sledování přidružení mezi uživatelů a skupin a členství ve skupinách obnovení pokaždé, když uživatel vytvoří nové připojení má vaše aplikace.
 
-Další informace o připojení a opětovná připojení najdete v tématu [zpracování událostí životnost připojení v třídy rozbočovače](#connectionlifetime) dál v tomto tématu.
+Další informace o připojení a opětovná připojení najdete v tématu [způsob zpracování událostí doby platnosti ve třídě centra](#connectionlifetime) dále v tomto tématu.
 
 <a id="singleusergroups"></a>
 
 ### <a name="single-user-groups"></a>Skupiny jednoho uživatele
 
-Aplikace, které používají SignalR obvykle mají ke sledování asociace mezi uživateli a připojení k vědět, který uživatel odeslal zprávu a které jiní uživatelé měli přijímání zprávy. Skupiny se používají v jednom ze dvou běžně používané vzorků pro učinit.
+Aplikace, které používají funkci SignalR obvykle nutné udržovat přehled o asociace mezi uživateli a připojení, pokud chcete zjistit, který uživatel odeslal zprávu a které uživatelé měli přijímání zprávy. Skupiny se používají v jednom ze dvou běžně používané vzory pro učinit.
 
 - Skupiny jednoho uživatele.
 
-    Můžete zadat uživatelské jméno jako je název skupiny a přidejte aktuální ID připojení ke skupině pokaždé, když se uživatel připojí nebo znovu připojí. K odeslání zprávy uživateli odeslat do skupiny. Nevýhody této metody je, že skupiny není poskytují způsob, jak zjistit, zda uživatel je online nebo offline.
-- Sledování přidružení mezi uživatelská jména a ID připojení.
+    Můžete zadat uživatelské jméno jako název skupiny a do skupiny přidat aktuální ID připojení, pokaždé, když uživatel připojí, nebo znovu připojí. K odeslání zprávy pro uživatele, které odesíláte do skupiny. Nevýhodou této metody je, že skupina nemá poskytují způsob, jak zjistit, zda uživatel je online nebo offline.
+- Sledujte přidružení mezi uživatelská jména a ID připojení.
 
-    Můžete ukládat přidružení mezi každé uživatelské jméno a jeden nebo více připojení ID slovník nebo databáze a aktualizovat uložená data pokaždé, když uživatel připojí nebo odpojí. Pokud chcete odesílat zprávy uživateli zadáte ID připojení. Nevýhody této metody je, že trvá více paměti.
+    Můžete ukládat přidružení mezi každé uživatelské jméno a ID jeden nebo více připojení ve slovníku nebo v databázi a aktualizace uložených dat pokaždé, když uživatel připojí nebo odpojí. K odeslání zprávy uživateli zadat ID připojení. Nevýhodou této metody je, že přijímá větší množství paměti.
 
 <a id="connectionlifetime"></a>
 
-## <a name="how-to-handle-connection-lifetime-events-in-the-hub-class"></a>Postupy: zpracování události životnost připojení v třídy rozbočovače
+## <a name="how-to-handle-connection-lifetime-events-in-the-hub-class"></a>Zpracování událostí doby platnosti ve třídě centra
 
-Typické důvody pro zpracování události životnost připojení jsou ke sledování zda je uživatel připojen nebo Ne a ke sledování přidružení mezi uživatelská jména a ID připojení. Chcete-li spustit vlastní kód, když klienti připojení nebo odpojení, přepište `OnConnected`, `OnDisconnected`, a `OnReconnected` třídy virtuální metody rozbočovače, jak je znázorněno v následujícím příkladu.
+Obvyklé důvody pro zpracování událostí doby platnosti jsou ke sledování, zda je uživatel připojen nebo Ne a mějte přehled o přidružení mezi uživatelská jména a ID připojení. Váš vlastní kód spustit, když klienti připojovat nebo odpojovat, přepsat `OnConnected`, `OnDisconnected`, a `OnReconnected` třídy virtuální metody rozbočovače, jak je znázorněno v následujícím příkladu.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample43.cs?highlight=3,14,22)]
 
@@ -435,151 +434,151 @@ Typické důvody pro zpracování události životnost připojení jsou ke sledo
 
 ### <a name="when-onconnected-ondisconnected-and-onreconnected-are-called"></a>Kdy jsou volány onconnected rozbočovače, ondisconnected rozbočovače a onreconnected rozbočovače
 
-Pokaždé, když prohlížeč přejde na novou stránku, nové připojení musí být zavedena, což znamená, že budou spuštěny SignalR `OnDisconnected` metoda následuje `OnConnected` metoda. SignalR vytvoří nové ID připojení vždy, když je vytvořeno nové připojení.
+Pokaždé, když prohlížeč přejde na novou stránku, nové připojení musí být zavedena, což znamená, že se spustí SignalR `OnDisconnected` následuje metoda `OnConnected` metoda. Funkce SignalR vždy vytvoří nové ID připojení, po vytvoření nového připojení.
 
-`OnReconnected` Metoda je volána, když bude zjištěna dočasné přerušení připojení SignalR automaticky obnovení v případě, například když kabelu dočasně odpojení a opětovném připojení, než vyprší časový limit připojení. `OnDisconnected` Metoda je volána, když je klient odpojen a SignalR nelze znovu připojit automaticky, například pokud prohlížeč přejde na novou stránku. Proto je možné pořadí událostí pro daného klienta `OnConnected`, `OnReconnected`, `OnDisconnected`; nebo `OnConnected`, `OnDisconnected`. Neuvidíte sekvenci `OnConnected`, `OnDisconnected`, `OnReconnected` pro dané připojení.
+`OnReconnected` Metoda je volána, když bude zjištěna dočasné přerušení připojení, které funkci SignalR může automaticky zotavit po, například když kabelu dočasně odpojení a opětovném připojení předtím, než vyprší časový limit připojení. `OnDisconnected` Metoda se volá, když je klient odpojen a SignalR nelze znovu připojit automaticky, například pokud prohlížeč přejde na novou stránku. Proto je možné pořadí událostí pro daného klienta `OnConnected`, `OnReconnected`, `OnDisconnected`; nebo `OnConnected`, `OnDisconnected`. Neuvidíte sekvence `OnConnected`, `OnDisconnected`, `OnReconnected` pro dané připojení.
 
-`OnDisconnected` Metoda nebude zavolána v některých případech, například když server ocitne mimo provoz nebo doména aplikace získá recykluje. Pokud jiný server obsahuje na řádku nebo doména aplikace dokončení jeho recyklace, může být někteří klienti moci znovu připojit a spusťte `OnReconnected` událostí.
+`OnDisconnected` Metoda nebude zavolána v některých případech, například když server ocitne mimo provoz nebo doména aplikace získá recyklován. Když jiný server je v řádku nebo doména aplikace dokončí jeho Koš, může být někteří klienti moci znovu připojit a aktivuje `OnReconnected` událostí.
 
-Další informace najdete v tématu [pochopení a zpracování události životnost připojení v systému SignalR](index.md).
+Další informace najdete v tématu [principy a zpracování událostí doby platnosti v knihovně SignalR](index.md).
 
 <a id="nocallerstate"></a>
 
-### <a name="caller-state-not-populated"></a>Stav volajícího není naplněno.
+### <a name="caller-state-not-populated"></a>Stav volajícího není naplněn.
 
-Metody obslužné rutiny události životnost připojení se nazývají ze serveru, což znamená, že žádný stav, který jste zadali v `state` objektu na straně klienta se nenaplní v `Caller` vlastnost na serveru. Informace o `state` objektu a `Caller` vlastnost, najdete v části [jak předat stavu mezi klienty a třídy rozbočovače](#passstate) dál v tomto tématu.
+Metody zpracování událostí životního cyklu připojení se nazývají ze serveru, což znamená, že jakýkoli stav, kam si ukládáte `state` objektu na straně klienta nebude dosazeny `Caller` vlastnost na serveru. Informace o `state` objektu a `Caller` vlastnost, naleznete v tématu [jak předat stavu mezi klienty a třídy rozbočovače](#passstate) dále v tomto tématu.
 
 <a id="contextproperty"></a>
 
-## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>Jak získat informace o klientovi z vlastností kontextu
+## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>Jak získat informace o klientovi z kontextové vlastnosti
 
-Chcete-li získat informace o klientovi, použijte `Context` vlastnost třídy rozbočovače. `Context` Vlastnost vrátí [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) objekt, který poskytuje přístup k následujícím informacím:
+Chcete-li získat informace o klientovi, použijte `Context` vlastnosti třídy rozbočovače. `Context` Vrátí vlastnost [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) objekt, který poskytuje přístup k následujícím informacím:
 
 - ID připojení volajícího klienta.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample44.cs?highlight=1)]
 
-    ID připojení je identifikátor GUID, který je přiřazen nástrojem SignalR (nelze zadat hodnotu v kódu). Neexistuje jeden ID připojení pro každé připojení a stejné připojení, které ID je využíváno všechny rozbočovače, pokud máte více Hubs v aplikaci.
+    ID připojení je identifikátor GUID, který je přiřazen nástrojem SignalR (hodnota nelze zadat ve svém vlastním kódu). Existuje jedno ID připojení pro každé připojení a stejného připojení ID se používá ve všech centrech, pokud máte více Center ve vaší aplikaci.
 - Data hlavičky protokolu HTTP.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample45.cs?highlight=1)]
 
-    Můžete také získat hlavičky protokolu HTTP z `Context.Headers`. Z důvodu pro několik odkazů na stejnou věc je, že `Context.Headers` byla vytvořena jako první, `Context.Request` vlastnost byla přidána novější, a `Context.Headers` se zachovává kvůli zpětné kompatibilitě.
+    Můžete také získat hlavičky protokolu HTTP z `Context.Headers`. Z důvodu více odkazů na stejnou věc je, že `Context.Headers` byla vytvořena jako první, `Context.Request` vlastnost byla přidána později, a `Context.Headers` se zachovává kvůli zpětné kompatibilitě.
 - Data řetězce dotazu.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample46.cs?highlight=1)]
 
     Můžete také získat data řetězce dotazu z `Context.QueryString`.
 
-    Řetězec dotazu, kterou můžete získat v této vlastnosti je ten, který byl použit s požadavkem HTTP, který vytvořili připojení SignalR. Konfigurace připojení, což je pohodlný způsob, jak předat data o klientovi z klienta na server, můžete přidat parametrů řetězce dotazu v klientovi. Následující příklad ukazuje jeden způsob, jak přidat řetězec dotazu v klientovi JavaScript, při použití vygenerovaný proxy server.
+    Řetězec dotazu, který dostanete v této vlastnosti je ten, který byl použit v požadavku HTTP, který navázalo se připojení SignalR. Můžete přidat parametry řetězce dotazu v klientovi nakonfigurováním připojení, které je pohodlný způsob, jak předat data o klientovi z klienta na server. Následující příklad ukazuje jeden způsob, jak přidat řetězec dotazu v jazyce JavaScript klienta při použití vygenerovaný proxy server.
 
     [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample47.js?highlight=1)]
 
-    Další informace o nastavení parametrů řetězce dotazu, najdete v části příručky rozhraní API pro [JavaScript](index.md) a [.NET](index.md) klientů.
+    Další informace o nastavení parametrů řetězce dotazu, naleznete v tématu příručky rozhraní API pro [JavaScript](index.md) a [.NET](index.md) klientů.
 
-    Můžete najít metodu přenosu používá pro připojení v data řetězce dotazu, společně s některé hodnoty, které používá interně SignalR:
+    Můžete najít metodu přenosu používá pro připojení v data řetězce dotazu spolu s některé jiné hodnoty používaná interně knihovnou SignalR:
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample48.cs)]
 
-    Hodnota `transportMethod` bude "Websocket", "serverSentEvents", "foreverFrame" nebo "longPolling". Všimněte si, že pokud změnami tuto hodnotu `OnConnected` obslužná rutina události, v některých scénářích může nejdřív získat hodnotu přenosu, která není metodu konečné vyjednané přenosu pro připojení. V takovém případě metoda vyvolá výjimku a bude volána později, po vytvoření metodu konečné přenosu.
+    Hodnota `transportMethod` bude "webSockets", "serverSentEvents", "foreverFrame" nebo "longPolling". Poznámka: Pokud tuto hodnotu zkontrolovat `OnConnected` metoda obslužné rutiny událostí, v některých scénářích může být zpočátku získat hodnotu přenosu, který není konečný vyjednávaný přenosu metodu připojení. V takovém případě metoda vyvolá výjimku a zavolá se později po vytvoření finální přepravy.
 - Soubory cookie.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample49.cs?highlight=1)]
 
-    Můžete získat také soubory cookie z `Context.RequestCookies`.
+    Můžete také získat soubory cookie z `Context.RequestCookies`.
 - Informace o uživateli.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample50.cs?highlight=1)]
-- Položka HttpContext objektu žádosti:
+- Objektu HttpContext žádosti:
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample51.cs?highlight=1)]
 
-    Tuto metodu použijte místo získávání `HttpContext.Current` získat `HttpContext` objekt pro připojení SignalR.
+    Tuto metodu použijte místo zobrazování `HttpContext.Current` zobrazíte `HttpContext` objektu pro připojení k systému SignalR.
 
 <a id="passstate"></a>
 
-## <a name="how-to-pass-state-between-clients-and-the-hub-class"></a>Jak předat stavu mezi klienty a třídy rozbočovače
+## <a name="how-to-pass-state-between-clients-and-the-hub-class"></a>Jak předávat stavu mezi klienty a třídy rozbočovače
 
-Poskytuje proxy serveru klienta `state` objektu, ve kterém můžete ukládat data, která chcete k přenosu na server s každou volání metody. Na serveru můžete přístup k těmto datům v `Clients.Caller` vlastnost v metodách rozbočovače, které se nazývají klienty. `Clients.Caller` Vlastnost není vyplněný pro metody obslužné rutiny události životnost připojení `OnConnected`, `OnDisconnected`, a `OnReconnected`.
+Poskytuje proxy serveru klienta `state` objektu, ve kterém můžete ukládat data, která chcete předávat na server se každé volání metody. Na serveru můžete přístup k těmto datům v `Clients.Caller` vlastnost v metodách rozbočovače, které jsou volány klienty. `Clients.Caller` Vlastnost není vyplněný pro metody zpracování událostí životního cyklu připojení `OnConnected`, `OnDisconnected`, a `OnReconnected`.
 
-Vytváření nebo aktualizaci dat v `state` objektu a `Clients.Caller` vlastnost funguje v obou směrech. Můžete aktualizovat hodnoty na serveru a je předán zpět do klienta.
+Vytváření nebo aktualizaci dat v `state` objektu a `Clients.Caller` vlastnost funguje v obou směrech. Hodnoty na serveru můžete aktualizovat a jsou předány zpět do klienta.
 
-Následující příklad ukazuje kód JavaScript klienta, která ukládá stav pro přenos na server s každé volání metody.
+Následující příklad ukazuje klientský kód jazyka JavaScript, který ukládá stav přenosu na server se každé volání metody.
 
 [!code-javascript[Main](signalr-1x-hubs-api-guide-server/samples/sample52.js?highlight=1-2)]
 
-Následující příklad ukazuje kód ekvivalent v rozhraní .NET klientovi.
+Následující příklad ukazuje odpovídající kód v .NET klienta.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample53.cs?highlight=1-2)]
 
-Ve třídě rozbočovače, můžete přístup k těmto datům v `Clients.Caller` vlastnost. Následující příklad ukazuje kód, který načte stav uvedené v předchozím příkladu.
+Ve třídě Hub, můžete přístup k těmto datům v `Clients.Caller` vlastnost. Následující příklad ukazuje kód, který načte stav uvedené v předchozím příkladu.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample54.cs?highlight=3-4)]
 
 > [!NOTE]
-> Tento mechanismus pro zachování stavu není určena pro velké objemy dat, protože všechno, co jste zadali v `state` nebo `Clients.Caller` vlastnost je zpětné odbavení s každé volání metody. Je vhodné pro menší položek, jako jsou uživatelská jména nebo čítače.
+> Tento mechanismus pro zachování stavu není určena pro velké objemy dat, od všechno, co vložíte do `state` nebo `Clients.Caller` vlastnost je odbavovaná se každé volání metody. Je vhodné pro menší položky, jako jsou uživatelská jména nebo čítače.
 
 
 <a id="handleErrors"></a>
 
-## <a name="how-to-handle-errors-in-the-hub-class"></a>Postupy: zpracování chyb v třídy rozbočovače
+## <a name="how-to-handle-errors-in-the-hub-class"></a>Zpracování chyb ve třídě centra
 
-Zpracování chyb, které nastat ve vaší metody třídy rozbočovače, používá jedno nebo obě z následujících metod:
+Zpracování chyb, ke kterým dochází ve vašich metodách rozbočovače třída, používá jedno nebo obě z následujících metod:
 
-- Zalomení metoda kódu v try-catch – bloky a protokolu objekt výjimky. Pro účely ladění můžete odeslat výjimka klienta, ale pro zabezpečení se nedoporučuje důvodů odesílání podrobné informace pro klienty v produkčním prostředí.
-- Vytvoření modulu kanálu rozbočovače, který zpracovává [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) metoda. Následující příklad ukazuje, kanálů modul, který protokoluje chyby, za nímž následuje kód v souboru Global.asax, který se vloží do kanálu rozbočovače modul.
+- Zabalit váš kód metody do bloků try-catch a protokolu objekt výjimky. Pro účely ladění může posílat výjimku do klienta, ale pro zabezpečení se nedoporučuje z důvodů odeslání podrobné informace pro klienty v produkčním prostředí.
+- Vytvoření modulu kanálu rozbočovače, který zpracovává [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) metody. Následující příklad ukazuje modulu kanálu, který protokoluje chyby, za nímž následuje kód v souboru Global.asax, který se vloží do kanálu rozbočovače modul.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample55.cs)]
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample56.cs?highlight=3)]
 
-Další informace o modulech kanálu rozbočovače najdete v tématu [postup přizpůsobení kanálu rozbočovače](#hubpipeline) dál v tomto tématu.
+Další informace o modulech kanálu rozbočovače, naleznete v tématu [přizpůsobení kanálu rozbočovače](#hubpipeline) dále v tomto tématu.
 
 <a id="tracing"></a>
 
-## <a name="how-to-enable-tracing"></a>Postup povolení trasování
+## <a name="how-to-enable-tracing"></a>Jak povolit trasování
 
-Povolení trasování na straně serveru, přidejte system.diagnostics element do souboru Web.config, jak je znázorněno v tomto příkladu:
+Povolení trasování na straně serveru, přidejte System.Diagnostics – element do souboru Web.config, jak je znázorněno v tomto příkladu:
 
 [!code-html[Main](signalr-1x-hubs-api-guide-server/samples/sample57.html?highlight=17-72)]
 
-Když spustíte aplikaci v sadě Visual Studio, můžete zobrazit protokoly v **výstup** okno.
+Když aplikaci spouštíte v sadě Visual Studio, můžete zobrazit v protokolech **výstup** okna.
 
 <a id="callfromoutsidehub"></a>
 
-## <a name="how-to-call-client-methods-and-manage-groups-from-outside-the-hub-class"></a>Tom, jak volat metody klienta a Správa skupin z mimo třídy rozbočovače
+## <a name="how-to-call-client-methods-and-manage-groups-from-outside-the-hub-class"></a>Jak volat metody klienta a spravovat skupiny mimo třídy rozbočovače
 
-Volání metod klienta z jiné třídy než vaší třídy rozbočovače, získat odkaz na objekt context SignalR pro rozbočovač a použijte ho k volání metody na straně klienta nebo spravovat skupiny.
+Volání metody klienta z jinou třídu než vaše třída rozbočovače, získejte odkaz na objekt kontextu SignalR pro rozbočovač a použijte ho k volání metody na straně klienta nebo spravovat skupiny.
 
-Následující ukázka `StockTicker` – třída získá objekt kontextu, uloží je v instanci třídy, ukládá instance třídy pomocí statické vlastnosti a používá kontext z instance třídy singleton k volání `updateStockPrice` na klienty, kteří jsou – metoda připojení k rozbočovači s názvem `StockTickerHub`.
+Následující ukázka `StockTicker` třídy získá objekt context, uloží je v instanci třídy, ukládá instance třídy ve statické vlastnosti a používá kontext z instance třídy singleton, aby volala `updateStockPrice` metodu na klienty, kteří jsou připojení k rozbočovači s názvem `StockTickerHub`.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample58.cs?highlight=8,24)]
 
-Pokud potřebujete použít více časy kontextu v dlohotrvající objektu, získat odkaz na jednou a uložit ji spíš než načítání opakovat. Získávání kontextu jednou zajistí, že SignalR odesílá zprávy klientům ve stejném pořadí, ve kterém zkontrolujte vaše metody rozbočovače klienta volání metod. Kurz, který ukazuje způsob použití kontext SignalR pro rozbočovač, najdete v části [Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET](index.md).
+Pokud budete muset použít kontext více a časy v objektu s dlouhým poločasem rozpadu, získat odkaz na jednou a uložte spíše získání ho znovu pokaždé, když. Po získání kontextu zajistí, že SignalR odesílá zprávy do klientů ve stejném pořadí, ve kterém zkontrolujte svoje metody rozbočovače klienta volání metod. Kurz ukazuje, jak používat objekt context SignalR pro rozbočovač, najdete v tématu [serverové vysílání s knihovnou ASP.NET SignalR](index.md).
 
 <a id="callingclientsoutsidehub"></a>
 
 ### <a name="calling-client-methods"></a>Volání metody klienta
 
-Můžete určit, kteří klienti dostanou vzdálené volání Procedur, ale máte méně možností než při volání z třídy rozbočovače. Důvodem je, že kontextu není spojen s konkrétní volání od klienta, proto všechny metody, které vyžadují znalosti systému aktuální ID připojení, jako `Clients.Others`, nebo `Clients.Caller`, nebo `Clients.OthersInGroup`, nejsou k dispozici. K dispozici jsou následující možnosti:
+Můžete určit, kteří klienti dostanou vzdáleného volání Procedur, ale máte k dispozici méně možností než při volání z třídy rozbočovače. Důvodem je, že kontextu není přidružen konkrétní volání z klienta, tak jakékoli metody, které vyžadují znalost aktuální ID připojení, například `Clients.Others`, nebo `Clients.Caller`, nebo `Clients.OthersInGroup`, nejsou k dispozici. Jsou k dispozici následující možnosti:
 
 - Všichni připojení klienti.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample59.cs)]
-- Konkrétním klientovi identifikovaný ID připojení.
+- Konkrétního klienta, které identifikují pomocí ID připojení.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample60.css)]
-- Všichni připojení klienti s výjimkou zadaných klientů, identifikovaný ID připojení.
+- Všichni připojení klienti s výjimkou určitých klientech identifikují pomocí ID připojení.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample61.cs)]
-- Všechny připojené klienty v zadané skupině.
+- Všichni připojení klienti do zadané skupiny.
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample62.css)]
-- Všechny připojené klienty v zadané skupině s výjimkou zadaných klientů, identifikovaný ID připojení.
+- Všechny připojené klienty v zadané skupině s výjimkou určitých klientech, identifikují pomocí ID připojení.
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample63.cs)]
 
-Při volání do vaší třídy jiný Hub z metod ve třídě rozbočovače, můžete předat aktuální ID připojení a použít s `Clients.Client`, `Clients.AllExcept`, nebo `Clients.Group` k simulaci `Clients.Caller`, `Clients.Others`, nebo `Clients.OthersInGroup`. V následujícím příkladu `MoveShapeHub` třída předá ID připojení, které `Broadcaster` – třída tak, aby `Broadcaster` třídy můžete simulovat `Clients.Others`.
+Při volání do vaší třídy bez centra z metody ve třídě centra, můžete předat ID aktuálního připojení a použít s `Clients.Client`, `Clients.AllExcept`, nebo `Clients.Group` pro simulaci `Clients.Caller`, `Clients.Others`, nebo `Clients.OthersInGroup`. V následujícím příkladu `MoveShapeHub` třídy předá ID připojení pro `Broadcaster` třídy tak, aby `Broadcaster` třídy můžete simulovat `Clients.Others`.
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample64.cs?highlight=12,36)]
 
@@ -587,25 +586,25 @@ Při volání do vaší třídy jiný Hub z metod ve třídě rozbočovače, mů
 
 ### <a name="managing-group-membership"></a>Správa členství ve skupině
 
-Pro správu skupin máte stejné možnosti jako v třídy rozbočovače.
+Pro správu skupin máte stejné možnosti jako třída rozbočovače.
 
 - Přidání klienta do skupiny
 
     [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample65.cs)]
-- Odebrání klienta ze skupiny
+- Odeberte klienta ze skupiny
 
     [!code-css[Main](signalr-1x-hubs-api-guide-server/samples/sample66.css)]
 
 <a id="hubpipeline"></a>
 
-## <a name="how-to-customize-the-hubs-pipeline"></a>Postup přizpůsobení kanálu rozbočovače
+## <a name="how-to-customize-the-hubs-pipeline"></a>Přizpůsobení kanálu rozbočovače
 
-SignalR umožňuje vložit do kanálu rozbočovače modul vlastní kód. Následující příklad ukazuje vlastní modul kanálu rozbočovače, který protokoluje každý příchozí volání metody dostali od klienta a odchozí volání metody vyvolání na straně klienta:
+Funkce SignalR umožňuje vložit vlastní kód do kanálu rozbočovače. Následující příklad ukazuje vlastní modul kanálu rozbočovače, který zaznamenává každou příchozí volání metody přijatých z klienta a odchozích volání metody vyvolat na straně klienta:
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample67.cs)]
 
-Následující kód na *Global.asax* souboru zaregistruje modul pro spuštění v kanálu rozbočovače modul:
+Následující kód na *Global.asax* souboru registruje modul pro spuštění v kanálu rozbočovače:
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-server/samples/sample68.cs?highlight=3)]
 
-Existuje mnoho různých způsobů, které můžete přepsat. Úplný seznam najdete v tématu [HubPipelineModule metody](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).
+Existuje celá řada různých metod, které můžete přepsat. Úplný seznam najdete v tématu [HubPipelineModule metody](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).

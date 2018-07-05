@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-cascading-style-sheets-in-visual-studio-2008
-title: '[Jak na:] Šablony stylů CSS v sadě Visual Studio 2008 | Microsoft Docs'
+title: '[Postup:] V sadě Visual Studio 2008 stylů CSS | Dokumentace Microsoftu'
 author: rick-anderson
-description: V tomto videu jsme zkontrolujete vylepšené nástroje pro vytváření externích kaskádových stylů. Šablon stylů CSS jsou zásadní pro všechny dobře navrženým webový server a Visual Studio 2...
+description: V tomto videu probereme vylepšené nástroje pro vytváření externích kaskádová šablona stylů. Šablony stylů CSS jsou důležité pro všechna dobře navrženého webového serveru a Visual Studio 2...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2008
 ms.topic: article
 ms.assetid: fa9c74b0-c692-4553-805c-b89f8bf2c4da
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-cascading-style-sheets-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: fceefad2221a8dfc751fb6e17f564021cc6e3627
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 19651964955c68b02e653379f938253d51e0280d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881438"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398887"
 ---
-<a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a>[Jak na:] Šablony stylů CSS v sadě Visual Studio 2008
+<a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a>[Postup:] V sadě Visual Studio 2008 stylů CSS
 ====================
 podle Asli Bilgin
 
-V tomto videu jsme zkontrolujete vylepšené nástroje pro vytváření externích kaskádových stylů. Jsou šablon stylů CSS potřeba žádné dobře navrženým webový server a Visual Studio 2008 poskytl arsenál nástrojů pro vytváření a správě šablon stylů CSS.
+V tomto videu probereme vylepšené nástroje pro vytváření externích kaskádová šablona stylů. Šablony stylů CSS jsou zásadní pro všechny dobře navrženého webového serveru a Visual Studio 2008 poskytuje arsenál nástroje pro vytváření a Správa šablon stylů CSS.
 
-[&#9654;Podívejte se na video (12 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cascading-style-sheets-in-visual-studio-2008)
+[&#9654;Podívejte se na video (12 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cascading-style-sheets-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-create-nested-master-page-in-visual-studio-2008.md)

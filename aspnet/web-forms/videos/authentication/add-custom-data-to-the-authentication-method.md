@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/authentication/add-custom-data-to-the-authentication-method
-title: Přidat vlastní Data na metody ověřování | Microsoft Docs
+title: Přidání vlastních dat do metody ověřování | Dokumentace Microsoftu
 author: JoeStagner
-description: Jan Stagner bude pokračovat zkoumání ověřování ASP.NET pomocí konfigurace metodu ověřování pro přidání vlastních dat pro lístek ověřování...
+description: Joe Stagner budou zkoumání ověřování ASP.NET pomocí konfigurací metodu ověřování pro přidání vlastních dat pro lístek ověřování...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2008
 ms.topic: article
 ms.assetid: 940bdecc-ae0f-448f-a189-405efa614049
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/add-custom-data-to-the-authentication-method
 msc.type: video
-ms.openlocfilehash: 1cc2328486da8d988271b5a609346b03b2d140d7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b86e3ef9d2fdf3b654ea41b175b4876d0ed65504
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881367"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37390702"
 ---
-<a name="add-custom-data-to-the-authentication-method"></a>Přidat vlastní Data na metody ověřování
+<a name="add-custom-data-to-the-authentication-method"></a>Přidání vlastních dat do metody ověřování
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Jan Stagner bude průzkum ověřování pomocí technologie ASP.NET tak, že nakonfigurujete metodu ověřování pro přidání vlastních dat pro lístek ověřování, který je použitý technologií ASP.NET. Další informace o tuto ukázku kurzu nachází [zde](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md).
+Joe Stagner bude dál zkoumání ověřování ASP.NET pomocí konfigurací metodu ověřování pro přidání vlastních dat pro lístek ověřování, který je použitý technologií ASP.NET. Další informace o této ukázce se nachází kurz [tady](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md).
 
 [&#9654;Podívejte se na video (14 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/add-custom-data-to-the-authentication-method)
 

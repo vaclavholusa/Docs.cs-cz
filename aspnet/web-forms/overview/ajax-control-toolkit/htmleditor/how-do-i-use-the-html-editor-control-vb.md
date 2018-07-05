@@ -1,116 +1,115 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
-title: Používání ovládacího prvku HTML Editor (VB) | Microsoft Docs
+title: Použití ovládací prvek editoru HTML (VB) | Dokumentace Microsoftu
 author: microsoft
-description: HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah HTML pomocí tlačítek na panelu nástrojů.
+description: HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah ve formátu HTML pomocí tlačítek na panelu nástrojů.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
 ms.topic: article
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4833949a54fa9ae12eaf7b596a5fe1ddfd1f7b7a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4b3882f631799eb99f3c63da89097daba1fca3ff
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873297"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401964"
 ---
-<a name="how-do-i-use-the-html-editor-control-vb"></a>Používání ovládacího prvku HTML Editor (VB)
+<a name="how-do-i-use-the-html-editor-control-vb"></a>Použití ovládací prvek editoru HTML (VB)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-> HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah HTML pomocí tlačítek na panelu nástrojů.
+> HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah ve formátu HTML pomocí tlačítek na panelu nástrojů.
 
 
-Cílem tohoto kurzu je poskytnout Přehled ovládacího prvku HTML Editor součástí Toolkitu AJAX. HTML Editor obsahuje možnosti pro změnu velikosti písma, výběr písmo, změna barvy pozadí, úprava barvu popředí přidávání odkazů, přidávání obrázků, Změna zarovnání textu a provádění operací vyjmutí, kopírování a vložení operací (viz obrázek 1).
+Cílem tohoto kurzu je poskytnout přehled o ovládací prvek editoru HTML, který je součástí sadou nástrojů AJAX Control Toolkit. HTML Editor obsahuje možnosti pro změnu velikosti písma, výběru písma, změna barvy pozadí, úprava barvu popředí přidávat odkazy, obrázky, přidání, Změna zarovnání textu a provádění vyjmutí, kopírování a vložení operace (viz obrázek 1).
 
 
 [![HTML Editor](how-do-i-use-the-html-editor-control-vb/_static/image1.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image1.png)
 
-**Obrázek 01**: editoru HTML ([Kliknutím zobrazit obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
+**Obrázek 01**: editoru HTML ([kliknutím ji zobrazíte obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image2.png))
 
 
-HTML editor můžete zadat obsah pomocí režimu návrhu nebo HTML můžete zadat přímo. Rovněž jsou k dispozici možnost zobrazte náhled vašeho obsahu HTML (viz obrázek 2).
+HTML editor umožňuje zadat obsah pomocí režimu návrhu nebo HTML můžete zadat přímo. Také k dispozici máte možnost zobrazit náhled vašeho obsahu HTML (viz obrázek 2).
 
 
-[![Návrh, HTML a náhled tlačítka](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
+[![Návrh, HTML a ve verzi Preview tlačítka](how-do-i-use-the-html-editor-control-vb/_static/image2.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image3.png)
 
-**Obrázek 02**: návrh, HTML a náhled tlačítka ([Kliknutím zobrazit obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
+**Obrázek 02**: tlačítka návrhu, HTML a ve verzi Preview ([kliknutím ji zobrazíte obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image4.png))
 
 
-V tomto kurzu zjistíte, jak zobrazit HTML Editor, postup přizpůsobení tlačítka panelu nástrojů, který se zobrazí v editoru HTML a jak se vyhnout skriptování útoků webů.
+V tomto kurzu se dozvíte, jak zobrazení editoru HTML, přizpůsobení tlačítek na panelu nástrojů, který se zobrazí v editoru jazyka HTML a jak se vyhnout, skriptování mezi weby útoků.
 
 ## <a name="displaying-the-html-editor"></a>Zobrazování editoru HTML
 
-Předtím, než můžete použít HTML Editor na stránce technologie ASP.NET, je nejprve nutno přidat ovládací prvek ScriptManager na stránku. Ovládací prvek ScriptManager se nachází pod kartě Rozšíření AJAX v sadě nástrojů Visual Studio nebo Visual Web Developer Express.
+Před použitím editoru jazyka HTML na stránce ASP.NET, musíte nejprve přidat ovládací prvek ScriptManager na stránku. Ovládací prvek ScriptManager se nachází pod na kartě Rozšíření AJAX v sadě nástrojů Visual Studio nebo Visual Web Developer Express.
 
-V horní části stránky před všechny ovládací prvky na stránce by měl umístěte ovládací prvek ScriptManager. Například můžete umístit ji okamžitě níže serverovou otevírání &lt;formuláře&gt; značky.
+V horní části stránky před všechny ovládací prvky na stránce by měl umístit ovládací prvek ScriptManager. Například je možné je umístit bezprostředně pod levou serverové &lt;formuláře&gt; značky.
 
-Ovládací prvek HTML Editor se nachází v sadě nástrojů se zbytkem prvky AJAX Control Toolkit. Je název ovládacího prvku Editor (viz obrázek 3).
-
-
-[![Ovládací prvek HTML Editor](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
-
-**Obrázek 03**: ovládací prvek editoru HTML ([Kliknutím zobrazit obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
+Ovládací prvek editoru HTML se nachází na panelu nástrojů se zbytkem ovládacích prvků AJAX Control Toolkit. Je název ovládací prvek editoru (viz obrázek 3).
 
 
-Po přetáhnete HTML Editor na stránce, můžete nastavit jeho vlastnosti v seznamu vlastností. Například chcete normálně nastavit vlastnosti Šířka a výška. Výpis 1 obsahuje daný zdroj pro stránku ASP.NET, který obsahuje HTML editor.
+[![Ovládací prvek editoru HTML](how-do-i-use-the-html-editor-control-vb/_static/image3.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image5.png)
+
+**Obrázek 03**: ovládací prvek editoru HTML ([kliknutím ji zobrazíte obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image6.png))
+
+
+Po přetažení editoru HTML na stránce můžete nastavit jeho vlastnosti v seznamu vlastností. Například chcete obvykle nastavení vlastností šířky a výšky. Výpis 1 obsahuje zdroj, který obsahuje HTML editor stránky ASP.NET.
 
 **Výpis 1 - SimpleEditor.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-vb/samples/sample1.aspx)]
 
-Stránka v výpis 1 obsahuje ovládací prvek HTML, ovládacího prvku tlačítko a prvku Literal control. Když kliknete na tlačítko, obsah HTML Editor se zobrazí v ovládacím prvku Literal control (viz obrázek 4).
+Na stránce v informacích 1 obsahuje ovládací prvek editoru HTML, ovládací prvek Button a prvku Literal control. Když kliknete na tlačítko, obsah editoru HTML se zobrazí v ovládacím prvku Literal control (viz obrázek 4).
 
 
-[![Odeslání formuláře se Editor HTML](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
+[![Odeslání formuláře pomocí editoru HTML](how-do-i-use-the-html-editor-control-vb/_static/image4.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image7.png)
 
-**Obrázek 04**: odeslání formuláře se Editor HTML ([Kliknutím zobrazit obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
+**Obrázek 04**: odeslání formuláře pomocí editoru HTML ([kliknutím ji zobrazíte obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image8.png))
 
 
-HTML Editor obsah vlastnost se používá k získání obsahu HTML zadali do editoru HTML. Upozorňujeme, že tento obsah HTML může obsahovat JavaScript. V další části probereme, jak můžete zabránit útokům vkládání JavaScript.
+HTML Editor obsah vlastnosti slouží k načtení HTML obsah, zadaný do editoru jazyka HTML. Mějte na paměti, že tento obsah ve formátu HTML může obsahovat jazyk JavaScript. V další části si popíšeme, jak můžete zabránit, útoky prostřednictvím injektáže skriptu JavaScript.
 
 ## <a name="customizing-the-html-editor-toolbar"></a>Přizpůsobení panelu nástrojů editoru HTML
 
-Můžete přizpůsobit přesně tlačítek, která se zobrazí v editoru. Například můžete chtít odebrat Karta HTML uživatelům zabránit v editoru HTML přepnout do režimu HTML. Nebo můžete chtít odebrat rozevíracího seznamu velikost písma uživatelům zabránit ve vytváření příliš velké textu ve fóru zprávy post (viz obrázek 5).
+Můžete přizpůsobit přesně tlačítek, která se zobrazí v editoru. Například můžete chtít odebrat kartu HTML uživatelům zabránit v editoru HTML přepnutí do režimu HTML. Nebo můžete chtít odebrat rozevíracího seznamu velikost písma zabránit uživatelům ve vytváření příliš velký text ve fóru po zprávy (viz obrázek 5).
 
 
 [![Vlastní Editor HTML](how-do-i-use-the-html-editor-control-vb/_static/image5.jpg)](how-do-i-use-the-html-editor-control-vb/_static/image9.png)
 
-**Obrázek 05**: A přizpůsobit HTML Editor ([Kliknutím zobrazit obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
+**Obrázek 05**: A přizpůsobit HTML Editor ([kliknutím ji zobrazíte obrázek v plné velikosti](how-do-i-use-the-html-editor-control-vb/_static/image10.png))
 
 
-Tlačítka panelu nástrojů můžete přizpůsobit odvozením nové Editor HTML ze základní třídy Editor. Například vlastní editor v výpis 2 obsahuje jenom tlačítka panelu nástrojů pro tučné písmo a kurzíva. Byly odebrány všechny další tlačítka panelu nástrojů. Kromě toho Karta HTML byla odebrána v dolní části editoru (ale karty návrh a Preview stále existují).
+Nový Editor HTML odvozené ze základní třídy Editor přizpůsobíte tlačítka panelu nástrojů. Například vlastní editor ve výpisu 2 obsahuje pouze tlačítka panelu nástrojů pro tučné písmo a kurzíva. Byly odebrány všechny další tlačítka panelu nástrojů. Kromě toho Karta HTML se odebral z dolního okraje editoru (ale karty návrh a Preview stále existují).
 
-**Výpis 2 – aplikace\_Code\CustomEditor.vb**
+**Výpis 2 - App\_Code\CustomEditor.vb**
 
 [!code-vb[Main](how-do-i-use-the-html-editor-control-vb/samples/sample2.vb)]
 
-Třída výpis 2 musíte přidat do vaší aplikace\_Code složky tak, aby se automaticky zkompiluje třídy. Pokud aplikace\_kód složka neexistuje ve vašem webu potom můžete jednoduše přidat složku.
+Třídy v informacích 2 musíte přidat do vaší aplikace\_kódu složku tak, aby se automaticky zkompiluje třídy. Pokud aplikace\_složky s kódem na vašem webu neexistuje. potom můžete jednoduše přidat složku.
 
-Po vytvoření vlastního editoru, můžete ho přidat do stránky ASP.NET stejným způsobem, jak přidat normální Editor HTML (viz seznam 3).
+Po vytvoření vlastního editoru přidáte ho na stránku ASP.NET stejně jako při přidávání normální editoru HTML (viz seznam 3).
 
-**Listing 3 - ShowCustomEditor.aspx**
+**Výpis 3 - ShowCustomEditor.aspx**
 
 [!code-aspx[Main](how-do-i-use-the-html-editor-control-vb/samples/sample3.aspx)]
 
-## <a name="avoiding-cross-site-scripting-xss-attacks"></a>Vyhněte útoky skriptování (XSS)
+## <a name="avoiding-cross-site-scripting-xss-attacks"></a>Nejkonkrétnější – vyhněte útoky skriptování napříč weby (XSS)
 
-Vždy, když přijímají vstup od uživatele a znovu zobrazit tento vstup na vašem webu, potenciálně otevřete webovou stránku webů Skriptování útoky. Teoreticky může kyberzločinci odeslat kód jazyka JavaScript, která se provede při vstupu se zobrazí znovu. Jazyk JavaScript může vám ukrást hesla uživatele a dalších citlivých údajů.
+Pokaždé, když se přijímají vstup od uživatele a znovu tento vstup na vašem webu, potenciálně otevřete webovou stránku s útoky skriptování napříč weby (XSS). Teoreticky může kyberzločinci odeslání kódu jazyka JavaScript, která se provede při vstupu se zobrazí znovu. JavaScript může používá ke krádeži uživatelských hesel a dalších citlivých údajů.
 
-Za normálních okolností vůbec nemělo útoky XSS pomocí kódování ať vstup načíst od uživatele před jejich zobrazením na webové stránce HTML. Však nebude pouze kódování HTML kódování výstup HTML Editor &lt;skriptu&gt; značky, by ho také kódování všechny značky HTML. Jinými slovy by přijdete o veškeré formátování například typ písma, velikosti písma a barvy pozadí.
+Za normálních okolností zhatila útoky XSS kódování libovolné vstup načíst od uživatele před jejich zobrazením na webové stránce HTML. Však nebude pouze použije kódování HTML. kódování výstupu HTML Editor &lt;skript&gt; značky, by také kódují všechny značky HTML. Jinými slovy přišli byste o všechny formátování, jako je například písmo, velikost písma a barvy pozadí.
 
-Pokud shromažďujete citlivé informace od uživatelů – třeba hesla, čísla platebních karet a čísel sociálního pojištění - nesmí zobrazit zrušení kódovaného obsah, který je načíst z uživatele s Editor HTML. HTML Editor používejte jenom v situacích, ve kterých nejsou opakované zobrazování obsah HTML nebo obsah HTML, který je odesílán na váš web důvěryhodná strana.
+Pokud shromažďujete citlivé informace od uživatelů – třeba hesla, čísla platebních karet a čísla sociálního pojištění - by neměl zobrazit zrušení kódovaného obsahu, která se načítají z uživatele pomocí editoru jazyka HTML. HTML Editor používejte jenom v situacích, ve kterých nejsou opětovné zobrazení HTML obsah nebo obsah HTML, který se právě odesílá na váš web důvěryhodná strana.
 
-Představte si například, že vytváříte aplikace blogu. V takovém případě má smysl pro použití editoru HTML při sestavování příspěvcích na blogu. Jsou pouze jeden, který odešle příspěvku na blogu a pravděpodobně z důvodu, můžete důvěřovat sami nechcete odeslat škodlivý JavaScript. Nedává však smysl pro použití editoru HTML při povolení anonymní uživatelé odeslat komentáře. Byste měli být opatrní hlavně v situacích, ve kterých uživatelé odesílat citlivé informace, jako jsou hesla. Uživatel se zlými úmysly může potenciálně, post komentář, který obsahuje správné JavaScript pro krádež hesla.
+Představte si například, že jsou tvorbou blogovací aplikace. V takovém případě je vhodné použít HTML Editor při vytváření blogové příspěvky. Jsou pouze jeden, který odešle blogový příspěvek a pravděpodobně sami nechcete odeslat škodlivý JavaScript můžete důvěřovat. Nicméně to nemá smysl použití editoru HTML při povolování publikovat komentáře anonymním uživatelům. Měli byste být opatrní hlavně v situacích, ve kterých uživatelé odeslat citlivé informace, jako jsou hesla. Potenciálně uživatel se zlými úmysly může zadat komentář, který obsahuje správný jazyka JavaScript pro krádež hesla.
 
 ## <a name="summary"></a>Souhrn
 
-V tomto kurzu byly poskytnuty s stručný přehled ovládacího prvku HTML Editor součástí Toolkitu AJAX. Jste zjistili, jak pomocí editoru HTML přijmout bohaté obsah od uživatele a odeslání obsahu na server. Také popsané, jak můžete přizpůsobit tlačítka panelu nástrojů, která se zobrazí HTML Editor. Nakonec jste zjistili, jak se vyhnout skriptování útoků webů při použití editoru HTML tak, aby přijímal potenciálně škodlivý vstup.
+V tomto kurzu byly poskytnuty s stručný přehled o ovládací prvek editoru HTML, který je součástí sadou nástrojů AJAX Control Toolkit. Jste zjistili, jak pomocí editoru jazyka HTML přijmout formátovaného obsahu od uživatele a odeslání obsahu na server. Také jsme zmínili, jak můžete přizpůsobit tlačítka panelu nástrojů, která se zobrazí v editoru jazyka HTML. Nakonec jste zjistili, jak se vyhnout při použití editoru HTML tak, aby přijímal potenciálně škodlivý vstup skriptování napříč weby útoků.
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-use-the-html-editor-control-cs.md)

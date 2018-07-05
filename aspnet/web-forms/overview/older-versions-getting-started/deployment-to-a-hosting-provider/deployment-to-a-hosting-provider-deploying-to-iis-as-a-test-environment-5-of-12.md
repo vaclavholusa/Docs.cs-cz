@@ -1,104 +1,103 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
-title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení pro službu IIS v testovacím prostředí - 5 12 | Microsoft Docs'
+title: 'Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení do služby IIS jako testovacího prostředí – 5 12 | Dokumentace Microsoftu'
 author: tdykstra
-description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného projektu webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
 ms.topic: article
 ms.assetid: 493b2a66-816c-485c-8315-952ed1085ccc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 16050455c161c8ced1f954bfce9c2d9a44c522b4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 70bc1b8e3c5d01470c2cebfbabd0c119e8f6d360
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30889667"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37394713"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení pro službu IIS v testovacím prostředí - 5 12
+<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení do služby IIS jako testovacího prostředí – 5 12
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
+[Stáhnout počáteční projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
-> Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web. Visual Studio 2010 můžete také použít při instalaci aktualizace Publikovat Web. Úvod do řady, najdete v části [z prvního kurzu řady](deployment-to-a-hosting-provider-introduction-1-of-12.md).
+> Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web. Můžete také použít Visual Studio 2010 při instalaci aktualizace Publikovat Web. Úvod do řady, naleznete v tématu [z prvního kurzu této série](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
-> Kurz, který ukazuje nasazení funkce zavedená po vydání sady Visual Studio 2012 RC, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit do Azure App Service Web Apps, naleznete v části [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
+> Kurz ukazuje nasazení funkce zavedená po verzi RC sady Visual Studio 2012, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit do Azure App Service Web Apps, najdete v tématu [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
 ## <a name="overview"></a>Přehled
 
 Tento kurz ukazuje, jak nasadit webovou aplikaci ASP.NET do služby IIS v místním počítači.
 
-Pokud vyvíjíte aplikaci, byste obecně otestovat spuštěním v sadě Visual Studio. Ve výchozím nastavení to znamená, že používáte Visual Studio Development Server (nazývaný též Cassini). Vývojový Server sady Visual Studio lze snadno testovat během vývoje v sadě Visual Studio, ale nebude fungovat úplně stejně jako služby IIS. V důsledku toho je možné, že aplikace bude správně spustit při testování v sadě Visual Studio, ale úspěšná, když je nasazena do služby IIS v hostitelském prostředí.
+Když vyvíjíte aplikaci, je obvykle otestovat spuštěním v sadě Visual Studio. Ve výchozím nastavení to znamená, že používáte Visual Studio vývojový Server (nazývaný též Cassini). Vývojový Server sady Visual Studio usnadňuje testování během vývoje v sadě Visual Studio, ale nebude fungovat stejně jako služby IIS. V důsledku toho je možné, že aplikace bude správně spustit při testování v sadě Visual Studio, ale selhat při nasazení do služby IIS v hostitelském prostředí.
 
-Aplikaci můžete otestovat spolehlivěji těmito způsoby:
+Aplikaci můžete otestovat spolehlivěji následujícími způsoby:
 
-1. Při testování v sadě Visual Studio během vývoje pomocí služby IIS Express nebo úplnou službu IIS místo vývojový Server sady Visual Studio. Tato metoda obecně emuluje přesněji způsob spuštění vaší lokality v rámci služby IIS. Tato metoda však není otestovat váš proces nasazení nebo ověřit, že výsledek procesu nasazení, bude fungovat správně.
-2. Nasaďte aplikaci do služby IIS na vývojovém počítači pomocí stejného postupu, který budete používat později ji nasadit do provozního prostředí. Tato metoda ověří váš proces nasazení kromě ověřování, které aplikace poběží správně v rámci služby IIS.
-3. Nasaďte aplikaci do testovacího prostředí, který je co nejblíže do provozního prostředí. Protože produkčního prostředí pro tyto kurzy poskytovatele hostitelských služeb třetích stran, ideální testovacího prostředí bude druhého účtu s poskytovateli hostitelských služeb. Tento druhý účet by používat pouze pro testování, ale je by ji nastavit stejným způsobem jako účet produkční.
+1. Pomocí služby IIS Express nebo úplný IIS místo vývojový Server sady Visual Studio při testování v sadě Visual Studio během vývoje. Tato metoda obvykle emuluje přesněji spouštění svůj web v rámci služby IIS. Tato metoda však není testovací proces nasazení nebo ověřit, že výsledek procesu nasazení bude pracovat správně.
+2. Nasaďte aplikaci do služby IIS na vašem vývojovém počítači s použitím stejného procesu, které použijete později k nasazení do produkčního prostředí. Tato metoda ověří proces nasazení kromě ověřuje, že vaše aplikace poběží správně v rámci služby IIS.
+3. Nasazení aplikace do testovacího prostředí, který je co nejblíže k produkčnímu prostředí. Protože je produkčním prostředí pro tyto kurzy poskytovatele hostitelských služeb třetích stran, ideální testovacího prostředí by druhého účtu u poskytovatele hostingu. Tento druhý účet byste použili pouze pro testování, ale byste nastavili stejným způsobem jako produkčního účtu.
 
-Tento kurz popisuje kroky pro možnost 2. Poskytuje pokyny pro možnost 3 na konci [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzu, a na konci tohoto kurzu jsou odkazy na zdroje informací pro možnost 1.
+Tento kurz ukazuje kroky 2. Poskytujeme pokyny pro možnost 3, na konci [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzu, a na konci tohoto kurzu jsou odkazy na zdroje informací pro možnost 1.
 
-Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [řešení potíží s stránky](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).
+Připomenutí: Pokud se zobrazí chybová zpráva nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [stránka o řešení problémů](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).
 
-## <a name="configuring-the-application-to-run-in-medium-trust"></a>Konfigurace aplikace pro spuštění ve středním vztahem důvěryhodnosti
+## <a name="configuring-the-application-to-run-in-medium-trust"></a>Konfigurace aplikace pro spuštění v úrovni Medium Trust
 
-Před instalací služby IIS a nasazení do ní, změníte nastavení souboru Web.config aby webu spuštění více jako proběhne v typické sdíleném hostitelském prostředí.
+Před instalací služby IIS a nasazení do ní, změníte nastavení souboru Web.config aby webu spuštění více jako způsobí v typické sdílené hostitelského prostředí.
 
-Poskytovatelé hostingu obvykle běží váš web z umístění *středním vztahem důvěryhodnosti*, což znamená, že některé kroky není možné provést. Například kód aplikace nelze získat přístup k registru systému Windows a nelze číst nebo zapisovat soubory, které jsou mimo hierarchii složek vaší aplikace. Ve výchozím nastavení se vaše aplikace běží *vysokým vztahem důvěryhodnosti* v místním počítači, což znamená, že aplikace je pravděpodobně moci provádět akce, které způsobí selhání při jeho nasazení do produkčního prostředí. Proto aby testovací prostředí, ve kterém více přesně odrážel provozním prostředí, nakonfigurujete aplikace na spouštění v úrovni medium trust.
+Poskytovatelé hostingu obvykle běží vaše webová stránka *úrovni medium trust*, což znamená, že není povoleno provést na několik věcí. Například kód aplikace nemůže získat přístup k registru Windows a nejde přečíst nebo zapisovat soubory, které se nachází mimo hierarchii složek vaší aplikace. Ve výchozím nastavení vaše aplikace spuštěná *vysokou důvěryhodností* v místním počítači, což znamená, že aplikace může být schopen provádět operace, které selže při nasazování do produkčního prostředí. Proto aby testovací prostředí, ve kterém více přesně vystihují produkčního prostředí, nakonfigurujete aplikaci, aby běžela v úrovni medium trust.
 
-V souboru Web.config aplikace, přidejte **důvěryhodnosti** element v **system.web** elementu, jak je znázorněno v tomto příkladu.
+V souboru Web.config aplikace přidejte **důvěryhodnosti** element v **system.web** elementu, jak je znázorněno v tomto příkladu.
 
 [!code-xml[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample1.xml?highlight=4)]
 
-Aplikace se teď spustí střední úroveň důvěryhodnosti ve službě IIS i v místním počítači. Toto nastavení umožňuje catch co nejdříve pokusy kód aplikace něco udělat, která by v provozu selhal.
+Aplikace se teď spustí v úrovni medium trust ve službě IIS i na svém místním počítači. Toto nastavení umožňuje zachytit co nejdříve všechny pokusy kód aplikace něco udělat, aby zabránil nezdařené v produkčním prostředí.
 
 > [!NOTE]
-> Pokud používáte migrace Code First Entity Framework, ujistěte se, že máte verze 5.0 nebo novější. Rozhraní Entity Framework verze 4.3 Migrace vyžaduje úplný vztah důvěryhodnosti za účelem aktualizace schématu databáze.
+> Pokud používáte migrace Entity Framework Code First, ujistěte se, že máte verze 5.0 nebo novější. V rozhraní Entity Framework verze 4.3 Migrace vyžaduje úplný vztah důvěryhodnosti za účelem aktualizace schématu databáze.
 
 
-## <a name="installing-iis-and-web-deploy"></a>Instalace služby IIS a Web nasazení
+## <a name="installing-iis-and-web-deploy"></a>Instalace služby IIS a webové nasazení
 
-K nasazení do služby IIS na vývojovém počítači, musí mít služby IIS a nainstalovat nasazení webu. Tyto nejsou zahrnuté ve výchozím nastavení systém Windows 7. Pokud jste již nainstalovali službu IIS a Web Deploy, přejděte k další části.
+K nasazení do služby IIS na vašem vývojovém počítači, musíte mít službu IIS a nasazení webu nainstalován. Ty nejsou zahrnuté ve výchozí konfiguraci Windows 7. Pokud jste již nainstalovali IIS a nasazení webu, přejděte k další části.
 
-Pomocí [instalačního programu webové platformy](https://www.microsoft.com/web/downloads/platform.aspx) je upřednostňovaný způsob, jak nainstalovat IIS a Web Deploy, protože instalace webové platformy nainstaluje doporučenou konfiguraci pro službu IIS a automaticky nainstaluje předpoklady pro službu IIS a Web Nasazení v případě potřeby.
+Použití [instalačního programu webové platformy](https://www.microsoft.com/web/downloads/platform.aspx) je preferovaný způsob, jak nainstalovat službu IIS a nasazení webu, protože instalačního programu webové platformy nainstaluje doporučenou konfiguraci pro službu IIS a automaticky instaluje nezbytné požadavky pro službu IIS a Web Nasazení v případě potřeby.
 
-Ke spuštění instalačního programu webové platformy nainstalovat službu IIS a Web Deploy, pomocí následujícího odkazu. Pokud jste již nainstalovali službu IIS, nástroje nasazení webu ani v žádné z jejich požadované součásti, instalace webové platformy nainstaluje pouze toho, co chybí.
+Ke spuštění instalačního programu webové platformy nainstalovat službu IIS a nasazení webu, použijte následující odkaz. Pokud jste již nainstalovali IIS, Web Deploy nebo některý z jejich požadované součásti, instalačního programu webové platformy nainstaluje jenom toho, co chybí.
 
-- [Instalace IIS a Web Deploy pomocí WebPI](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
+- [Instalace IIS a nasazení webu pomocí instalace webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
 
 ## <a name="setting-the-default-application-pool-to-net-4"></a>Nastavení výchozí fond aplikací na rozhraní .NET 4
 
-Po instalaci služby IIS, spusťte **Správce služby IIS** a ujistěte se, že rozhraní .NET Framework verze 4 je přiřazený výchozí fond aplikací.
+Po instalaci služby IIS, spusťte **Správce služby IIS** abyste měli jistotu, že rozhraní .NET Framework verze 4 je přiřazeno výchozí fond aplikací.
 
-Z Windows **spustit** nabídce vyberte možnost **spustit**, zadejte "inetmgr" a pak klikněte na tlačítko **OK**. (Pokud **spustit** příkaz se nenachází ve vaší **spustit** nabídky, můžete stisknout klávesu Windows a R, ho otevřete. Nebo klikněte pravým tlačítkem na hlavním panelu, klikněte na **vlastnosti**, vyberte **nabídce Start** , klikněte na **přizpůsobit**a vyberte **spusťte příkaz**.)
+Z Windows **Start** nabídce vyberte možnost **spustit**, zadejte "inetmgr" a potom klikněte na tlačítko **OK**. (Pokud **spustit** příkaz není v vaše **Start** nabídky, můžete stisknout klávesu Windows a jazyka R ho otevřete. Nebo klikněte pravým tlačítkem na hlavním panelu, klikněte na tlačítko **vlastnosti**, vyberte **nabídky Start** klikněte na tlačítko **vlastní**a vyberte **spusťte příkaz**.)
 
 V **připojení** podokně rozbalte uzel serveru a vyberte **fondy aplikací**. V **fondy aplikací** podokně, pokud **DefaultAppPool** je přiřazen k rozhraní .NET framework verze 4 jako na následujícím obrázku, přejděte k další části.
 
 [![Inetmgr_showing_4.0_app_pools](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image2.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image1.png)
 
-Pokud se zobrazí pouze dva fondů aplikací a jejich současné jsou nastaveny na rozhraní .NET Framework 2.0, je nutné nainstalovat technologii ASP.NET 4 ve službě IIS:
+Pokud se zobrazí pouze dva fondy aplikací a jejich jsou nastaveny na rozhraní .NET Framework 2.0, je nutné nainstalovat technologii ASP.NET 4 ve službě IIS:
 
-- Otevřete okno příkazového řádku kliknutím pravým tlačítkem na **příkazového řádku** v systému Windows **spustit** nabídky a výběrem **spustit jako správce**. Spusťte [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) nainstalovat technologii ASP.NET 4 ve službě IIS, použijte následující příkazy. (V 64bitových systémech, nahraďte "Framework" s "Framework64".)
+- Otevřete okno příkazového řádku kliknutím pravým tlačítkem myši **příkazového řádku** v Windows **Start** nabídky a vyberete **spustit jako správce**. Potom spusťte [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) instalace technologie ASP.NET 4 ve službě IIS, pomocí následujících příkazů. (V 64bitových systémech, nahraďte "Rozhraní" s "Framework64".)
 
     [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample2.cmd)]
 
     [![aspnet_regiis_installing_ASP.NET_4](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image4.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image3.png)
 
-    Tento příkaz vytvoří novou fondy aplikací pro rozhraní .NET Framework 4, ale výchozí fond aplikací bude stále nastaveno 2.0. Můžete budete nasazovat aplikace s cílem .NET 4 do tohoto fondu aplikací, takže budete muset změnit fond aplikací na rozhraní .NET 4.
+    Tento příkaz vytvoří nové fondy aplikací pro rozhraní .NET Framework 4, ale výchozí fond aplikací bude stále nastaven na 2.0. Je budete nasazovat aplikace, který cílí na rozhraní .NET 4 do tohoto fondu aplikací, je nutné změnit fond aplikací na rozhraní .NET 4.
 
-Pokud jste zavřeli **Správce služby IIS**, spusťte ji znovu, rozbalte uzel serveru a klikněte na tlačítko **fondy aplikací** zobrazíte **fondy aplikací** podokně znovu.
+Pokud jste zavřeli **Správce služby IIS**, znovu jej spusťte, rozbalte uzel serveru a klikněte na tlačítko **fondy aplikací** zobrazíte **fondy aplikací** podokně znovu.
 
-V **fondy aplikací** podokně klikněte na tlačítko **DefaultAppPool**a potom v **akce** podokně klikněte na tlačítko **základní nastavení**.
+V **fondy aplikací** podokně klikněte na tlačítko **DefaultAppPool**a potom v **akce** podokně **základní nastavení**.
 
 [![Inetmgr_selecting_Basic_Settings_for_app_pool](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image6.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image5.png)
 
-V **upravit fond aplikací** dialogové okno, změna **verze rozhraní .NET Framework** k **rozhraní .NET Framework v4.0.30319** a klikněte na tlačítko **OK**.
+V **upravit fond aplikací** dialogovém okně Změnit **verzi rozhraní .NET Framework** k **rozhraní .NET Framework v4.0.30319** a klikněte na tlačítko **OK**.
 
 [![Selecting_.NET_4_for_DefaultAppPool](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image8.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image7.png)
 
@@ -106,117 +105,117 @@ Nyní jste připraveni k publikování do služby IIS.
 
 ## <a name="publishing-to-iis"></a>Publikování do služby IIS
 
-Existuje několik způsobů, které můžete nasadit pomocí sady Visual Studio 2010 a nasazení webu:
+Existuje několik způsobů, jak můžete nasadit pomocí sady Visual Studio 2010 a nasazení webu:
 
 - Pomocí sady Visual Studio publikování jedním kliknutím.
-- Vytvoření *balíček pro nasazení* a nainstalujte ji pomocí uživatelského rozhraní Správce služby IIS. Balíček pro nasazení se skládá z *.zip* soubor, který obsahuje všechny soubory a metadata potřebná k instalaci lokality ve službě IIS.
-- Vytvořit balíček pro nasazení a nainstalujte ji pomocí příkazového řádku.
+- Vytvoření *balíček pro nasazení* a nainstalujte ho pomocí uživatelského rozhraní Správce služby IIS. Balíček pro nasazení se skládá z *ZIP* soubor, který obsahuje všechny soubory a metadata potřebná k instalaci lokality ve službě IIS.
+- Vytvořit balíček pro nasazení a nainstalovat pomocí příkazového řádku.
 
-Proces, který jste se v předchozí kurzů a sady Visual Studio k automatizaci úloh nasazení se vztahují na všechny tyto tři metody. V těchto kurzech použijete první z těchto metod. Informace o používání balíčky pro nasazení najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
+Proces, který jste provedli v předchozích kurzech k nastavení sady Visual Studio k automatizaci úloh nasazení se vztahuje na všechny tyto tři metody. V těchto kurzech použijete první z těchto metod. Informace o používání balíčků pro nasazení najdete v tématu [mapa obsahu nasazení ASP.NET](https://msdn.microsoft.com/library/bb386521.aspx).
 
-Před publikováním, ujistěte se, že používáte Visual Studio v režimu správce. (V systému Windows 7 **spustit** nabídky, klikněte pravým tlačítkem myši na ikonu pro verzi Visual Studia, kterou používáte a vyberte **spustit jako správce**.) Režim správce je vyžadována pro publikování, pouze když publikujete aplikaci do služby IIS v místním počítači.
+Před publikováním, ujistěte se, že používáte Visual Studio v režimu správce. (Ve Windows 7 **Start** nabídky, klikněte pravým tlačítkem na ikonu pro verzi sady Visual Studio, kterou používáte a vyberte **spustit jako správce**.) Režim správce je vyžadován pro publikování, jen pokud publikujete do služby IIS v místním počítači.
 
-V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt ContosoUniversity (nikoli projekt ContosoUniversity.DAL) a vyberte **publikovat**.
+V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ContosoUniversity (nikoli projekt ContosoUniversity.DAL) a vyberte **publikovat**.
 
-**Publikovat Web** zobrazí se průvodce.
+**Publikování webu** průvodce se zobrazí.
 
 ![Publish_Web_wizard_Profile_tab](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image9.png)
 
 V rozevíracím seznamu vyberte  **&lt;nový... &gt;**.
 
-V **nový profil** dialogové okno, zadejte "Test" a pak klikněte na tlačítko **OK**.
+V **nový profil** dialogové okno, zadejte "Test" a potom klikněte na tlačítko **OK**.
 
 ![New_Profile_dialog_box](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image10.png)
 
-Tento název je že stejný jako střední uzlu Web.Test.config transformace soubor, který jste vytvořili dříve. Tato korespondence je co způsobí, že transformace Web.Test.config má být použita při publikování pomocí tohoto profilu.
+Tento název je že stejný jako prostřední uzel Web.Test.config transformovat soubor, který jste vytvořili dříve. Tuto komunikaci se, co způsobí, že transformace Web.Test.config uplatňovat, když publikujete pomocí tohoto profilu.
 
-Průvodce automaticky přejde **připojení** kartě.
+Průvodce automaticky přejde **připojení** kartu.
 
 V **adresa URL služby** zadejte *localhost*.
 
-V **web nebo aplikaci** zadejte *Default Web Site/ContosoUniversity*.
+V **web/aplikace** zadejte *výchozí webový server/ContosoUniversity*.
 
-V **cílová adresa URL** zadejte `http://localhost/ContosoUniversity`.
+V **cílovou adresu URL** zadejte `http://localhost/ContosoUniversity`.
 
-**Cílová adresa URL** nastavení není povinné. Po dokončení nasazení aplikace Visual Studio automaticky otevře výchozí prohlížeč na tuto adresu URL. Pokud nechcete, aby prohlížeče otevřete automaticky po nasazení, nechte toto pole prázdné.
+**Cílovou adresu URL** nastavení není povinné. Po dokončení nasazení aplikace Visual Studio automaticky otevře výchozí prohlížeč a tuto adresu URL. Pokud nechcete, aby prohlížeč, aby po nasazení automaticky otevře, ponechte toto pole prázdné.
 
 ![Publish_Web_wizard_Connection_tab_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image11.png)
 
-Klikněte na tlačítko **ověřit připojení** k ověřte, zda jsou nastavení správná, a můžete připojit ke službě IIS v místním počítači.
+Klikněte na tlačítko **ověřit připojení** k ověření, že je nastavení správné a může připojit ke službě IIS na místním počítači.
 
-Zelená značka zaškrtnutí ověřuje, že je připojení úspěšné.
+Zelená značka zaškrtnutí ověří, zda je připojení úspěšné.
 
 ![Publish_Web_wizard_Connection_tab_validated](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image12.png)
 
-Klikněte na tlačítko **Další** pro přechod **nastavení** kartě.
+Klikněte na tlačítko **Další** pro přechod **nastavení** kartu.
 
-**Konfigurace** rozevíracího seznamu určuje konfiguraci sestavení a nasazení. Výchozí hodnota je verze, který je co chcete použít.
+**Konfigurace** rozevíracího seznamu určuje konfiguraci sestavení a nasadit. Výchozí hodnota je verze, která požadujete.
 
-Ponechte **odebrat další soubory v cílovém umístění** políčko nezaškrtnuté. Vzhledem k tomu, že je to první nasazení, nebude existovat všechny soubory v cílové složce ještě.
+Nechte **odebrat další soubory v cílovém umístění** políčko zaškrtnuto. Protože je to vaše první nasazení, nebude existovat všechny soubory v cílové složce ještě.
 
-V **databáze** zadejte následující hodnotu v poli připojovací řetězec pro **SchoolContext**:
+V **databází** části, zadejte následující hodnotu v poli připojovací řetězec pro **SchoolContext**:
 
 [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample3.cmd)]
 
-Proces nasazení bude put tento připojovací řetězec v nasazeném souboru Web.config, protože **použít tento připojovací řetězec za běhu** je vybrána.
+Proces nasazení se umístit tento připojovací řetězec v nasazeném souboru Web.config, protože **použít tento připojovací řetězec za běhu** zaškrtnuto.
 
-Také v části **SchoolContext**, vyberte **použít migrace Code First**. Tato možnost způsobí, že proces nasazení nakonfigurovat v nasazeném souboru Web.config zadejte `MigrateDatabaseToLatestVersion` inicializátor. Tato inicializátoru automaticky aktualizuje databázi na nejnovější verzi, když aplikace po nasazení poprvé získá přístup k databázi.
+Také v části **SchoolContext**vyberte **použít migrace Code First**. Tato možnost způsobí, že proces nasazení ke konfiguraci nasazeném souboru Web.config pro zadání `MigrateDatabaseToLatestVersion` inicializátor. Databáze tento inicializátor automaticky aktualizuje na nejnovější verzi, když aplikace poprvé po nasazení získá přístup k databázi.
 
 V poli připojovací řetězec pro **objekt DefaultConnection**, zadejte následující hodnotu:
 
 [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample4.cmd)]
 
-Nechte **aktualizace databáze** vymazán. Databáze členství nasadí tak, že zkopírujete soubor SDF v aplikaci\_dat a nechcete proces nasazení bezprostředně s tuto databázi.
+Ponechte **aktualizace databáze** vymazána. Nasadí se členství v databázi tak, že zkopírujete soubor SDF v aplikaci\_dat a nechcete, aby proces nasazení dělat nic dalšího pomocí této databáze.
 
 ![Publish_Web_wizard_Settings_tab_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image13.png)
 
-Klikněte na tlačítko **Další** pro přechod **Preview** kartě.
+Klikněte na tlačítko **Další** k přechodu na **ve verzi Preview** kartu.
 
-V **Preview** , klikněte na **spustit Náhled** zobrazíte seznam souborů, které budou zkopírovány.
+V **ve verzi Preview** klikněte na tlačítko **spustit Náhled** zobrazíte seznam souborů, které budou zkopírovány.
 
 ![Publish_Web_wizard_Preview_tab_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image14.png)
 
 ![Publish_Web_wizard_Preview_tab_Test_with_file_list](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image15.png)
 
-Klikněte na tlačítko **publikování**.
+Klikněte na tlačítko **publikovat**.
 
-Pokud Visual Studio není v režimu správce, může získat chybovou zprávu, která značí chybu oprávnění. V takovém případě zavřete Visual Studio, otevřete v režimu správce a zkuste to znovu publikovat.
+Pokud aplikace Visual Studio není v režimu správce, může získat chybovou zprávu, která označuje chybu oprávnění. V takovém případě ukončit sadu Visual Studio, otevřete v režimu správce a zkuste publikování znovu.
 
-Pokud Visual Studio je v režimu správce, **výstup** okno sestavy úspěšné sestavení a publikování.
+Pokud je v režimu správce, Visual Studio **výstup** okno sestavy úspěšné sestavení a publikování.
 
 ![Output_window_publish_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image16.png)
 
-Prohlížeči se otevře automaticky Contoso univerzity domovské stránce spuštěná ve službě IIS v místním počítači.
+Prohlížeč se automaticky otevře Contoso University domovskou stránku běží ve službě IIS na místním počítači.
 
 [![Home_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image18.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image17.png)
 
 ## <a name="testing-in-the-test-environment"></a>Testování v testovacím prostředí
 
-Všimněte si, že zobrazuje indikátor prostředí "(testovací)" místo "(vývoj)", který ukazuje, že *Web.config* transformaci pro prostředí indikátoru byla úspěšná.
+Všimněte si, že prostředí indikátor zobrazuje "(testovací)" místo "(vývoj)", který ukazuje, že *Web.config* transformace pro ukazatel prostředí bylo úspěšné.
 
 [![Home_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image20.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image19.png)
 
-Spustit **studenty** a ověřte, že nasazené databáze nemá žádné studenty. Po výběru této stránky může trvat několik minut, načíst, protože Code First vytvoří databázi a poté spustí `Seed` metoda. (Ho nebylo provádět, když jste byli na domovské stránce, protože při pokusu o přístup k databázi ještě nebylo v aplikaci.)
+Spustit **studenty** stránku a ověřte, zda má nasazené databáze se žádní studenti. Když vyberete tuto stránku může trvat několik minut, než načíst, protože Code First vytvoří databázi a pak spustí `Seed` metody. (To neprovedli, když jste byli na domovskou stránku, protože při pokusu o přístup k databázi ještě nebyl v aplikaci.)
 
 [![Students_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image22.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image21.png)
 
-Spustit **vyučující** a ověřte, že Code First nasadí databáze s lektorem dat:
+Spustit **Instruktoři** stránku a ověřte, že Code First naplnila databázi s instruktorem dat:
 
 [![Instructors_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image24.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image23.png)
 
-Vyberte **přidat studenty** z **studenty** nabídce Přidat student a zobrazte nový student v **studenty** a ověřte, že můžete úspěšně zapisovat do databáze :
+Vyberte **přidat studenty** z **studenty** přidat student nabídky a pak zobrazit nového objektu student do **studenty** stránku a ověřte, že můžete úspěšně zapisovat do databáze :
 
 [![Add_Students_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image26.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image25.png)
 
 [![Students_page_with_new_student_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image28.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image27.png)
 
-Z **kurzy** nabídce vyberte možnost **aktualizace kredity**. **Aktualizace kredity** stránka vyžaduje oprávnění správce, proto **protokolu v** zobrazí se stránka. Zadejte přihlašovací údaje účtu správce, který jste vytvořili starší ("admin" a "Pa$ w0rd"). **Aktualizace kredity** se zobrazí stránka, která ověřuje, že účet správce, který jste vytvořili v předchozí kurzu byla správně nasazena do testovacího prostředí.
+Z **kurzy** nabídce vyberte možnost **aktualizace kredity**. **Aktualizace kredity** stránka vyžaduje oprávnění správce, proto **přihlásit** zobrazí se stránka. Zadejte přihlašovací údaje účtu správce, které jste vytvořili dříve ("admin" a "Pa$ w0rd"). **Aktualizace kredity** se zobrazí stránka, která ověřuje, že účet správce, který jste vytvořili v předchozím kurzu byla správně nasazena do testovacího prostředí.
 
 [![Log_In_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image30.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image29.png)
 
 [![Update_Credits_page_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image32.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image31.png)
 
-Ověřte, že *Elmah* složka existuje souborem pouze zástupný symbol v ní.
+Ověřte, že *Elmah* složka existuje s zástupný soubor v ní.
 
 [![Elmah_folder_Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image34.png)](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image33.png)
 
@@ -224,32 +223,32 @@ Ověřte, že *Elmah* složka existuje souborem pouze zástupný symbol v ní.
 
 ## <a name="reviewing-the-automatic-webconfig-changes-for-code-first-migrations"></a>Kontrola změn automatické Web.config pro migrace Code First
 
-Otevřete *Web.config* souboru v nasazení aplikace na *C:\inetpub\wwwroot\ContosoUniversity* a uvidíte, kde proces nasazení nakonfigurované migrace Code First na automaticky aktualizace databáze na nejnovější verzi.
+Otevřít *Web.config* souboru v nasazení aplikace na *C:\inetpub\wwwroot\ContosoUniversity* a je vidět, kde proces nasazení automaticky nakonfigurované migrace Code First pro Aktualizujte databázi na nejnovější verzi.
 
 ![](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image35.png)
 
-Proces nasazení vytvoří taky nový připojovací řetězec pro migrace Code First používat výhradně pro aktualizace schématu databáze:
+Proces nasazení vytvoří taky nový připojovací řetězec pro migrace Code First používat výhradně pro aktualizaci schématu databáze:
 
 ![DatabasePublish_connection_string](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/_static/image36.png)
 
-Tento další připojovací řetězec můžete zadat jeden uživatelský účet pro aktualizace schématu databáze a jiného uživatelského účtu pro přístup k datům aplikací. Je třeba přiřadit databáze\_vlastníka role migrace Code First a db\_DataReader – a db\_datawriter rolí k aplikaci. Toto je běžný vzor obrany zabezpečení, který brání potenciálně škodlivého kódu v aplikaci ve změně schématu databáze. (Například k tomu může dojít v úspěšné útok prostřednictvím injektáže SQL.) Tyto kurzy nepoužívá tohoto vzoru. Nevztahuje na systém SQL Server Compact a nevztahuje se při migraci do systému SQL Server v novější kurzu této série. Web Cytanium nabízí právě jeden uživatelský účet pro přístup k databázi systému SQL Server, který vytvoříte v Cytanium. Pokud jste tento vzor implementovat ve vašem scénáři, můžete to provést pomocí následujících kroků:
+Tento další připojovací řetězec můžete zadat jeden uživatelský účet pro aktualizace schématu databáze a jiný uživatelský účet pro přístup k datům aplikace. Například můžete přiřadit databáze\_role vlastníka k migrace Code First a db\_datareader a db\_datawriter nesmí být role pro aplikaci. Toto je běžný vzor v obrany, který brání potenciálně škodlivý kód v aplikaci změny schématu databáze. (Například k tomu může dojít v úspěšném útoku prostřednictvím injektáže SQL.) Tento model není používán těchto kurzů. Nevztahuje se na SQL Server Compact a nevztahuje se při migraci na SQL Server v pozdějších kurzech v této sérii. Web Cytanium nabízí jen jeden uživatelský účet pro přístup k databázi serveru SQL Server, který vytvoříte v Cytanium. Pokud budete moct tento model implementovat ve vašem scénáři, můžete provést podle následujícího postupu:
 
-1. V **nastavení** kartě **Publikovat Web** průvodce, zadejte připojovací řetězec, který určuje uživatel s oprávněními aktualizovat schéma úplné databáze a vymazat **použít tento připojovací řetězec v době běhu** zaškrtávací políčko. V nasazeném souboru Web.config, to všechno bude `DatabasePublish` připojovací řetězec.
-2. Vytvoření souboru transformace Web.config pro připojovací řetězec, který má aplikace použít za běhu.
+1. V **nastavení** karty **Publikovat Web** průvodce, zadejte připojovací řetězec, který určuje uživatel s oprávněními aktualizovat schéma celé databáze a zrušte zaškrtnutí **použít tento připojovací řetězec za běhu** zaškrtávací políčko. V nasazeném souboru Web.config, toto řešení `DatabasePublish` připojovací řetězec.
+2. Vytvoření transformace souboru Web.config pro připojovací řetězec, který chcete, aby aplikace pro použití v době běhu.
 
-Teď můžete nasadit aplikace do služby IIS na vývojovém počítači a otestovat ho existuje. Tím ověříte, že procesu nasazení zkopírovat obsah aplikace do správného umístění (s výjimkou souborů, které nemají mít nasazení) a také nasazení webu služby IIS správně nakonfigurovaný během nasazení. V dalším kurzu, je potřeba spustit jeden další test, který vyhledá nasazení úlohu, která dosud nebylo provedeno: nastavení oprávnění ke složkám na *Elmah* složky.
+Nyní nasazení aplikace do služby IIS na vašem vývojovém počítači a testovat existuje. Ověří, že proces nasazení zkopíroval obsah aplikace na správné umístění (s výjimkou souborů, které jste nechtěli nasazení) a také nasazení webu služby IIS správně nakonfigurován během nasazení. V dalším kurzu spustíte jeden další test, který vyhledá úlohu nasazení, které nebylo dosud provedeno: nastavení oprávnění pro složky *Elmah* složky.
 
 ## <a name="more-information"></a>Další informace
 
-Informace o spuštění služby IIS nebo IIS Express v sadě Visual Studio najdete v následujících zdrojích informací:
+Informace o spuštění služby IIS nebo IIS Express v sadě Visual Studio naleznete na následujících odkazech:
 
 - [Přehled služby IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) na webu IIS.net.
-- [Představení služby IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) na blogu Scott Guthrie.
+- [Úvod do služby IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) v blogu Scotta Guthrie.
 - [Postupy: určení webového serveru pro webové projekty v sadě Visual Studio](https://msdn.microsoft.com/library/ms178108.aspx).
-- [Hlavní rozdíly mezi IIS a ASP.NET Development Server](../deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) na webu technologie ASP.NET.
-- [Testování ASP.NET MVC nebo aplikaci Web Forms ve službě IIS 7 30 sekund](https://blogs.msdn.com/b/rickandy/archive/2011/04/22/test-you-asp-net-mvc-or-webforms-application-on-iis-7-in-30-seconds.aspx) na blogu Ricka Andersona. Tato položka obsahuje příklady Proč není stejně spolehlivá jako testování v IIS Express testování pomocí vývojového serveru Visual Studio (Cassini) a proč není stejně spolehlivá jako testování ve službě IIS testování v IIS Express.
+- [Hlavní rozdíly mezi služby IIS a serveru ASP.NET Development Server](../deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) na webu ASP.NET.
+- [Testování aplikace webových formulářů ve službě IIS 7 nebo technologie ASP.NET MVC za 30 sekund](https://blogs.msdn.com/b/rickandy/archive/2011/04/22/test-you-asp-net-mvc-or-webforms-application-on-iis-7-in-30-seconds.aspx) na blogu Ricka Andersona. Tato položka obsahuje příklady, proč není stejně spolehlivá jako testování ve službě IIS Express testování pomocí vývojového serveru Visual Studio (Cassini) a proč není stejně spolehlivá jako testování ve službě IIS testování ve službě IIS Express.
 
-Informace o problémech, které mohou se vyskytnout při spuštění aplikace v úrovni medium trust, najdete v části [hostování aplikací ASP.NET ve střední důvěryhodnosti](http://www.4guysfromrolla.com/articles/100307-1.aspx) na 4 nepřetržitého z Rolla lokality.
+Informace o problémech, které mohou nastat při spuštění aplikace v úrovni medium trust, najdete v části [hostování aplikace ASP.NET ve střední důvěryhodnosti](http://www.4guysfromrolla.com/articles/100307-1.aspx) na 4 Guys Rolla webu.
 
 > [!div class="step-by-step"]
 > [Předchozí](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)

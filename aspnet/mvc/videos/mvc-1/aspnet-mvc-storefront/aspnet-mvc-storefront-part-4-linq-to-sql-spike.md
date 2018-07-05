@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-4-linq-to-sql-spike
-title: 'Storefront část rozhraní ASP.NET MVC 4: Technologie Linq To Sql Špička | Microsoft Docs'
+title: 'ASP.NET MVC prezentace – část 4: Technologie Linq To Sql | Dokumentace Microsoftu'
 author: robconery
-description: Rob vytvoří Špička - bit funkcí testování myšlenku nebo inspiraci – abyste měli jistotu, že Linq To Sql bude fungovat pro moje vzor přístupu data.
+description: Vytvoří Rob "zásobníku - bit funkce testovat, myšlenku nebo inspiraci – Ujistěte se, že Linq To Sql bude fungovat pro moje vzor přístupu k datům.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 990262a5-4c06-472a-8083-ed11e14f1e5a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-4-linq-to-sql-spike
 msc.type: video
-ms.openlocfilehash: 3f404156a8b801365a11539ffec578ec38ab624b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 723a10b056b3f031916c06dd72293a17b7ce2797
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871620"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401163"
 ---
-<a name="aspnet-mvc-storefront-part-4-linq-to-sql-spike"></a>Storefront část rozhraní ASP.NET MVC 4: Technologie Linq To Sql Špička
+<a name="aspnet-mvc-storefront-part-4-linq-to-sql-spike"></a>ASP.NET MVC prezentace – část 4: Technologie Linq To Sql
 ====================
-podle [ukrást Conery](https://github.com/robconery)
+podle [Rob Conery](https://github.com/robconery)
 
-Rob vytvoří "Špička" - bit funkcí testování myšlenku nebo inspiraci – abyste měli jistotu, že Linq To Sql bude fungovat pro moje vzor přístupu data.
+Vytvoří Rob "prudký nárůst" - bit funkce testovat, myšlenku nebo inspiraci – Ujistěte se, že Linq To Sql bude fungovat pro moje vzor přístupu k datům.
 
 [&#9654;Podívejte se na video (14 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-4-linq-to-sql-spike)
 

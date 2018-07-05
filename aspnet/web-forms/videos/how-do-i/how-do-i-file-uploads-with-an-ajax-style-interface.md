@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-file-uploads-with-an-ajax-style-interface
-title: '[Jak na:]  Soubor nahrávání s rozhraní ve stylu jazyka AJAX | Microsoft Docs'
+title: '[Postup:]  Soubor nahrávání pomocí rozhraní ve stylu AJAX | Dokumentace Microsoftu'
 author: JoeStagner
-description: V tomto videu I se ukazují, použití technologie ASP.NET, styl AJAX nahrávání souborů ze klientský počítač k serveru. Říci AJAX styl, protože není...
+description: V tomto videu můžu vám ukáže, pomocí technologie ASP.NET, stylu AJAX nahrávání souborů z klientského počítače k serveru. Řeknu stylu AJAX, protože není...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2008
 ms.topic: article
 ms.assetid: fef628a1-e86d-428f-a931-e3bbae53a878
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-file-uploads-with-an-ajax-style-interface
 msc.type: video
-ms.openlocfilehash: 04fb758c597d315b9f1814d0e366a509e8fe891d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2734faea6b04fc332e468f56057baec43c44b4c6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572167"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37372955"
 ---
-<a name="how-do-i--file-uploads-with-an-ajax-style-interface"></a>[Jak na:]  Nahrávání souborů s rozhraní ve stylu jazyka AJAX
+<a name="how-do-i--file-uploads-with-an-ajax-style-interface"></a>[Postup:]  Nahrávání souborů s rozhraním stylu AJAX
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-V tomto videu I se ukazují, použití technologie ASP.NET, styl AJAX nahrávání souborů ze klientský počítač k serveru. Styl AJAX říci, protože je ve skutečnosti problém pomocí rozhraní AJAX k nahrání souborů. Přehrávání videa se ukazují I znamenat.
+V tomto videu můžu vám ukáže, pomocí technologie ASP.NET, stylu AJAX nahrávání souborů z klientského počítače k serveru. Protože je ve skutečnosti nějaký problém, pokud chcete nahrát soubory pomocí rozhraní AJAX řeknu stylu AJAX. Video vám ukáže, co mám na mysli to.
 
-[&#9654; Podívejte se na video (27 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-file-uploads-with-an-ajax-style-interface)
+[&#9654;Podívejte se na video (27 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-file-uploads-with-an-ajax-style-interface)

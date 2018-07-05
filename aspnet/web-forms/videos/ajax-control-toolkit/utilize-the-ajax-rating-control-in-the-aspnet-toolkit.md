@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/utilize-the-ajax-rating-control-in-the-aspnet-toolkit
-title: Využívat AJAX hodnocení ovládací prvek v sadě nástrojů ASP.NET | Microsoft Docs
+title: Využívat AJAX ovládací prvek hodnocení v sadě ASP.NET Toolkit | Dokumentace Microsoftu
 author: JoeStagner
-description: Jan Stagner ukazuje, jak používat nástroj hodnocení, který se dodává s ASP.NET AJAX Toolkit.
+description: Joe Stagner ukazuje, jak se nástroj hodnocení, která je dodávána se sadou nástrojů AJAX technologie ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/10/2008
 ms.topic: article
 ms.assetid: da366876-06d8-4a5d-9bce-1f52530f04b0
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/utilize-the-ajax-rating-control-in-the-aspnet-toolkit
 msc.type: video
-ms.openlocfilehash: 04268e49bc296629649b51cb63893211ca06ff57
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 69cd995bd41b22b346254a327d08523e316f1b55
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885790"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398900"
 ---
-<a name="utilize-the-ajax-rating-control-in-the-aspnet-toolkit"></a>Využívat AJAX hodnocení ovládací prvek v sadě nástrojů ASP.NET
+<a name="utilize-the-ajax-rating-control-in-the-aspnet-toolkit"></a>Využívat AJAX ovládací prvek hodnocení v sadě ASP.NET Toolkit
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Jan Stagner ukazuje, jak používat nástroj hodnocení, který se dodává s ASP.NET AJAX Toolkit.
+Joe Stagner ukazuje, jak se nástroj hodnocení, která je dodávána se sadou nástrojů AJAX technologie ASP.NET.
 
 [&#9654;Podívejte se na video (20 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/utilize-the-ajax-rating-control-in-the-aspnet-toolkit)
 

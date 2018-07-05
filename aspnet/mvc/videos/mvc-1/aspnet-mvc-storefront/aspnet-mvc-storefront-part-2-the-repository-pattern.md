@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern
-title: 'ASP.NET MVC Storefront část 2: Použitému vzoru | Microsoft Docs'
+title: 'ASP.NET MVC prezentace – část 2: Použitému vzoru | Dokumentace Microsoftu'
 author: robconery
-description: Rob Conery provede implementace úložiště a zapíše se první hlavní sadu testů jednotek. Mu bude také struktury až metoda vrstvy počáteční služby...
+description: Rob Conery provede procesem implementace úložiště a zapíše první hlavní sada testů jednotek. Má také struktury nahoru vrstva metoda počáteční služby...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
 ms.topic: article
 ms.assetid: 94dd6eec-3685-4323-ac75-75a70a4f766a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern
 msc.type: video
-ms.openlocfilehash: 272a710d05e0d0dd2d358505f54d5fd595ffa41f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2daa77ffbed6a37f46bea6809f2cfd005e630ca5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874483"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399880"
 ---
-<a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a>ASP.NET MVC Storefront část 2: Použitému vzoru
+<a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a>ASP.NET MVC prezentace – část 2: Použitému vzoru
 ====================
-podle [ukrást Conery](https://github.com/robconery)
+podle [Rob Conery](https://github.com/robconery)
 
-Rob Conery provede implementace úložiště a zapíše se první hlavní sadu testů jednotek. Mu bude také struktury metody vrstvy počáteční služeb a rozhraní.
+Rob Conery provede procesem implementace úložiště a zapíše první hlavní sada testů jednotek. Má také struktury metody vrstvy počáteční služby a rozhraní.
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-2-the-repository-pattern)
 

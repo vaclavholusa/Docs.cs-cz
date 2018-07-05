@@ -1,275 +1,274 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
-title: AJAX stránky předlohy a ASP.NET (VB) | Microsoft Docs
+title: Stránky předlohy a ASP.NET AJAX (VB) | Dokumentace Microsoftu
 author: rick-anderson
-description: Popisuje možnosti pomocí prvku ASP.NET AJAX a stránky předlohy. Vypadá v použití třídy ScriptManagerProxy; Popisuje, jak jsou různé soubory JS načíst dependi...
+description: Tento článek popisuje možnosti použití technologie ASP.NET AJAX a stránky předlohy. Vyhledá v horizontálních oddílů pomocí třídy ScriptManagerProxy; Popisuje, jak různé soubory JS načtou dependi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
 ms.topic: article
 ms.assetid: 0ee9318c-29bb-4d58-b1dc-94e575b8ae10
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2c7d8477d6d9d235749d88d0b657d60454298e53
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 473a864730525d6dafd47680a587808b04574ff9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891136"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401815"
 ---
-<a name="master-pages-and-aspnet-ajax-vb"></a>AJAX stránky předlohy a ASP.NET (VB)
+<a name="master-pages-and-aspnet-ajax-vb"></a>Stránky předlohy a ASP.NET AJAX (VB)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si kód](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_08_VB.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_08_VB.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/1/8/4/184e24fa-fcc8-47fa-ac99-4b6a52d41e97/ASPNET_MasterPages_Tutorial_08_VB.zip) nebo [stahovat PDF](http://download.microsoft.com/download/e/b/4/eb4abb10-c416-4ba4-9899-32577715b1bd/ASPNET_MasterPages_Tutorial_08_VB.pdf)
 
-> Popisuje možnosti pomocí prvku ASP.NET AJAX a stránky předlohy. Vypadá v použití třídy ScriptManagerProxy; Popisuje, jak jsou různé soubory JS načíst v závislosti na tom, jestli se používá ScriptManager v hlavní stránky nebo stránky obsahu.
+> Tento článek popisuje možnosti použití technologie ASP.NET AJAX a stránky předlohy. Vyhledá v horizontálních oddílů pomocí třídy ScriptManagerProxy; Tento článek popisuje, jak různé soubory JS jsou načteny v závislosti na tom, zda prvek ScriptManager se používají v hlavní stránku nebo stránky obsahu.
 
 
 ## <a name="introduction"></a>Úvod
 
-V posledních několika letech mít byla více vývojářům tvorbu podporou AJAXU webových aplikací. Webu technologie AJAX používá počet související webové technologie nabízet rychleji reagující uživatelské prostředí. Vytvoření aplikace AJAX ASP.NET je amazingly snadno Děkujeme k rozhraní ASP.NET AJAX společnosti Microsoft. Technologie ASP.NET AJAX je integrovaná technologie ASP.NET 3.5 a Visual Studio 2008; je k dispozici jako samostatný soubor ke stažení pro aplikace ASP.NET 2.0.
+Během posledních několika let mají se více a více vývojářů vytváření s povoleným AJAX webových aplikací. Na webu s povoleným AJAX používá řadu související technologie nabízí a rychleji reagující uživatelské prostředí. Vytváření aplikací s povoleným AJAX technologie ASP.NET je neuvěřitelně jednoduché Děkujeme společnosti Microsoft ASP.NET AJAX Framework. ASP.NET 3.5 a Visual Studio 2008; je součástí technologie ASP.NET AJAX je také dostupné jako samostatný soubor ke stažení pro aplikace ASP.NET 2.0.
 
-Při vytváření technologie AJAX webové stránky s rozhraní ASP.NET AJAX, je nutné přidat přesně jeden ovládací prvek ScriptManager na každé stránce, která používá rozhraní. Jak již název napovídá, spravuje prvek ScriptManager klientský skript, který je používán podporou AJAXU webové stránky. Minimálně ScriptManager vysílá HTML, které dostane pokyn, aby stahování souborů JavaScript tento způsob vytvoření klientské knihovny ASP.NET AJAX. Je také lze registrovat vlastní soubory JavaScript, skript webovým službám a funkčnost služby vlastní aplikace.
+Při sestavování s povoleným AJAX webové stránky s použitím rozhraní ASP.NET AJAX framework, je nutné přidat přesně jeden ovládací prvek ScriptManager pro každou jednotlivou stránku, která používá rozhraní framework. Jak již název napovídá, spravuje ScriptManager skript na straně klienta používá v webové stránky s povoleným AJAX. Minimálně ScriptManager emituje kód HTML, který dává pokyn prohlížeče a stáhněte soubory jazyka JavaScript tuto strukturu Klientská knihovna ASP.NET AJAX. To lze také zaregistrovat vlastní soubory jazyka JavaScript povolen skript webových služeb, funkcí a vlastní aplikace služby.
 
-Pokud vaše lokality používá hlavní stránky (jako je), není nutné nutně přidat ovládací prvek ScriptManager do každé jediné obsahu stránce; Místo toho můžete přidat ovládací prvek ScriptManager na hlavní stránku. Tento kurz ukazuje, jak přidat ovládací prvek ScriptManager na hlavní stránku. Vypadá to také o tom, jak používat ovládací prvek ScriptManagerProxy zaregistrovat vlastní skripty a skriptu služby na konkrétní stránku obsahu.
+Pokud web používá hlavní stránky (jako je), nepotřebujete nutně přidání ovládacího prvku ScriptManager pro každou jednotlivou stránku obsahu; Místo toho můžete přidat ovládací prvek ScriptManager na stránce předlohy. Tento kurz ukazuje, jak přidat ovládací prvek ScriptManager na stránce předlohy. Dohlíží taky na tom, jak pomocí ovládacího prvku ScriptManagerProxy registrovat vlastní skripty a skript služby na konkrétní stránce obsahu.
 
 > [!NOTE]
-> V tomto kurzu není prozkoumejte návrhu nebo vytváření podporou AJAXU webových aplikací pomocí rozhraní ASP.NET AJAX. Další informace o použití AJAX naleznete videa technologie ASP.NET AJAX a kurzy, jakož i tyto prostředky uvedené v části Další čtení na konci tohoto kurzu.
+> V tomto kurzu není zkoumání, návrh nebo vytváření s povoleným AJAX webových aplikací pomocí ASP.NET AJAX framework. Další informace o použití jazyka AJAX najdete technologie ASP.NET AJAX videa a kurzy, jakož i tyto prostředky uvedené v části Další čtení na konci tohoto kurzu.
 
 
-## <a name="examining-the-markup-emitted-by-the-scriptmanager-control"></a>Zkoumání kódu vysílaných ovládací prvek ScriptManager
+## <a name="examining-the-markup-emitted-by-the-scriptmanager-control"></a>Zkoumání kódu, protože ho vygeneroval ovládací prvek správce skriptů
 
-Ovládací prvek ScriptManager vysílá značky, které dostane pokyn, aby stahování souborů JavaScript tento způsob vytvoření klientské knihovny ASP.NET AJAX. Také přidá kousek vložené JavaScript na stránku, která inicializuje této knihovny. Následující kód ukazuje obsah, který se přidá do výstupu vykreslené stránky, který obsahuje ovládací prvek ScriptManager:
+Ovládací prvek ScriptManager generuje kód, který dává pokyn prohlížeče a stáhněte soubory jazyka JavaScript tuto strukturu Klientská knihovna ASP.NET AJAX. Přidá také bit vložený kód JavaScript na stránce, která inicializuje tuto knihovnu. Následující kód zobrazí obsah, který je přidán do stránky, která obsahuje ovládací prvek ScriptManager vykresleného výstupu:
 
 
 [!code-html[Main](master-pages-and-asp-net-ajax-vb/samples/sample1.html)]
 
-`<script src="url"></script>` Značky pokyn ke stažení a spuštění souboru JavaScript v prohlížeči *url*. Prvek ScriptManager vysílá tři tyto značky; jeden odkazuje na soubor `WebResource.axd`, zatímco ostatní dva odkazu na soubor `ScriptResource.axd`. Tyto soubory neexistují ve skutečnosti jako soubory ve vašem webu. Místo toho pokud dorazí požadavek na jednu z těchto souborů na webovém serveru, modul ASP.NET zkoumá řetězec dotazu a vrátí příslušný obsah JavaScript. Skript poskytuje tyto tři soubory JavaScript externí tvoří Klientská knihovna pro rozhraní ASP.NET AJAX. Druhá `<script>` značky vysílaných prvek ScriptManager zahrnují vloženého skriptu, který inicializuje této knihovny.
+`<script src="url"></script>` Značky dáte pokyn, aby stahoval a spouštěl souboru jazyka JavaScript v prohlížeči *url*. Prvek ScriptManager vysílá tři tyto značky; jeden odkazuje na soubor `WebResource.axd`, ale další dvě jako odkaz na soubor `ScriptResource.axd`. Tyto soubory neexistují ve skutečnosti jako soubory ve vašem webu. Místo toho dorazí požadavek pro jednu z těchto souborů na webovém serveru modul ASP.NET zkontroluje řetězec dotazu a vrátí odpovídající Javascriptového obsahu. Skript poskytuje tyto tři externí soubory JavaScriptu představují Klientská knihovna ASP.NET AJAX framework. Druhý `<script>` značky, protože ho vygeneroval prvek ScriptManager zahrnout vloženého skriptu, který inicializuje tuto knihovnu.
 
-Odkazy na externí skripty a vloženého skriptu vysílaných prvek ScriptManager jsou nezbytné pro stránky, který používá rozhraní ASP.NET AJAX, ale není potřeba pro stránky, které nepoužívají rozhraní. Proto může důvodu, že je ideální pro tyto stránek, které používají rozhraní ASP.NET AJAX přidat pouze ovládací prvek ScriptManager. Toto je dostatečná, ale pokud máte mnoho stránek, které používají rozhraní zobrazí přidání ovládacího prvku ScriptManager na všechny stránky - opakovaných úloh, k vyslovení nejmenší. Alternativně můžete přidat ovládací prvek ScriptManager na hlavní stránku, který pak vloží tento nezbytné skript na všechny stránky obsahu. S tímto přístupem není potřeba nezapomeňte přidat ovládací prvek ScriptManager na novou stránku, který používá rozhraní ASP.NET AJAX, protože je již zahrnut stránky předlohy. Krok 1 nevystavíte slabé stránky zabezpečení provede přidáním ovládací prvek ScriptManager na hlavní stránku.
-
-> [!NOTE]
-> Pokud plánujete včetně funkci AJAX v rámci uživatelského rozhraní stránky předlohy, mít žádný výběr ve věci – je nutné zahrnout prvek ScriptManager stránky předlohy.
-
-
-Přidání prvek ScriptManager k hlavní stránce jeden nevýhodou je, že je skript výše vygenerované v *každých* stránky, bez ohledu na to, jestli se jeho potřebné. To jasně vede k nevyužité šířky pásma pro tyto stránek, které mají ScriptManager zahrnuté (prostřednictvím stránky předlohy) ještě nepoužívají žádné funkce rozhraní ASP.NET AJAX. Ale právě kolik je šířky pásma ke znehodnocení části?
-
-- Skutečný obsah vysílaných ScriptManager (viz výše) Celkový počet zpracovaných položek trochu více než 1KB.
-- Tři soubory externího skriptu odkazuje `<script>` elementu, ale tvoří zhruba 450 KB dat nekomprimovaným; na webu, který používá kompresi gzip, tato celková šířka pásma, se může snížit téměř 100 KB. Ale tyto soubory skriptů jsou uložená v mezipaměti v prohlížeči pro jeden rok, což znamená, že potřebují jenom se stahuje jenom jednou a pak můžete znovu použít v jiné stránky na webu.
-
-V případě nejlepší, pokud soubory skriptů jsou uložené v mezipaměti, celkové náklady na je 1KB, což je nepatrné. V nejhorším případě ale – tedy pokud nebyly soubory skriptů zatím staženy a webový server nepoužívá žádný formulář komprese – podle šířky pásma je přibližně 450 KB, které můžete přidat libovolné místo z druhý nebo dvě přes širokopásmové připojení k až několik minut pro  Uživatelé přes modemů. Dobrá zpráva je, že vzhledem k tomu, že soubory externích skriptů jsou uložené v mezipaměti v prohlížeči, nejhorší případu k této situaci dojde zřídka.
+Odkazy na externí skript a zpracování vloženého skriptu, protože ho vygeneroval ScriptManager jsou nezbytné pro stránku, která používá rozhraní ASP.NET AJAX framework, ale není potřeba pro stránky, které nepoužívají rozhraní framework. Proto může být důvod, že je ideální pro ovládací prvek ScriptManager přidat pouze na tyto stránky, které používají rozhraní ASP.NET AJAX framework. To je dostatečné, ale pokud máte mnoho stránek, které používají rozhraní budete mít nakonec přidání ovládacího prvku ScriptManager na všechny stránky – opakované úlohy, Řekněme, že nejméně. Alternativně můžete přidat ovládací prvek ScriptManager na hlavní stránku, která pak vloží tento nezbytné skript do všech obsahu stránek. Díky tomuto přístupu není potřeba nezapomeňte přidat ovládací prvek ScriptManager na novou stránku, která používá rozhraní ASP.NET AJAX framework, protože je již zahrnut na hlavní stránce. Krok 1 procházení prostřednictvím přidání ovládacího prvku ScriptManager na hlavní stránku.
 
 > [!NOTE]
-> Pokud jste stále podezřelé umístění ovládacího prvku ScriptManager na hlavní stránce, zvažte ve webovém formuláři ( `<form runat="server">` značek na hlavní stránce). Každé stránky ASP.NET, která používá postback model musí obsahovat přesně jeden webového formuláře. Přidání webového formuláře přidá další obsah: a počet skrytého pole `<form>` samostatně, značky a v případě potřeby funkci jazyka JavaScript za inicializaci zpětné volání ze skriptu. Tento kód není nutný pro stránky, které nejsou odeslat zpět. Tento kód nadbytečné může eliminovat odebráním webového formuláře ze stránky předlohy a ručně ho přidat do každé obsahu stránce, které je potřeba. Výhody použití webového formuláře na hlavní stránce však převáží nad nevýhody odpadne ho zbytečně přidány do určité obsahu stránky.
+> Pokud plánujete včetně funkcí AJAX v rámci uživatelského rozhraní stránky předlohy, můžete se v této věci – musí obsahovat prvek ScriptManager na stránce předlohy.
 
 
-## <a name="step-1-adding-a-scriptmanager-control-to-the-master-page"></a>Krok 1: Přidání ovládacího prvku ScriptManager na hlavní stránku
+Přidání ScriptManager na hlavní stránku jeden nevýhodou je, že skript výše je vygenerován v *každý* stránky, bez ohledu na to, jestli se jeho potřebné. To jasně vede k nevyužité šířku pásma pro stránky, které mají prvek ScriptManager zahrnout (prostřednictvím stránky předlohy), ale nepoužívejte žádné funkce rozhraní ASP.NET AJAX framework. Ale stejně množství nevyužité šířku pásma?
 
-Všechny webové stránky, který používá rozhraní ASP.NET AJAX musí obsahovat přesně jeden ovládací prvek ScriptManager. Kvůli tomuto požadavku většinou má smysl umístit jeden ovládací prvek ScriptManager na hlavní stránce tak, aby ovládací prvek ScriptManager automaticky zahrnuty všechny stránky obsahu. Kromě toho ScriptManager musí předcházet jakékoli prvku ASP.NET AJAX serveru ovládací prvky, jako je například ovládací prvky UpdatePanel a UpdateProgress. Proto je nejlepší umístit ScriptManager před všechny ovládací prvky ContentPlaceHolder ve webovém formuláři.
+- Skutečný obsah, protože ho vygeneroval ScriptManager (popsaný výš) Celkový počet zpracovaných položek trochu více než 1KB.
+- Tři soubory externího skriptu odkazovat `<script>` elementu, ale tvoří přibližně 450 KB dat, nekomprimovaný; na webu, který používá kompresi gzip, je možné snížit Tato celková šířka pásma téměř 100 KB. Ale tyto soubory skriptu jsou uložené v mezipaměti v prohlížeči dobu jednoho roku, což znamená, že potřebují pouze stahuje jenom jednou a potom je možné využít v ostatních v lokalitě.
 
-Otevřete `Site.master` hlavní stránky a přidat ovládací prvek ScriptManager na stránku ve webovém formuláři, ale předtím, než `<div id="topContent">` – element (viz obrázek 1). Pokud používáte Visual Web Developer 2008 nebo Visual Studio 2008, ovládací prvek ScriptManager se nachází v panelu nástrojů na kartě Rozšíření AJAX. Pokud používáte Visual Studio 2005, musíte nejprve nainstalovat rozhraní ASP.NET AJAX a přidání ovládacích prvků do sady nástrojů. Navštivte stránku ASP.NET AJAX stažení se získat rozhraní pro technologii ASP.NET 2.0.
+V nejlepším případě pak soubory skriptů jsou uložené v mezipaměti, celkové náklady při 1KB, tedy zanedbatelné. V nejhorším případě ale – tedy pokud soubory skriptů ještě nebyly staženy a webový server nepoužívá žádnou formu komprese - přístupů šířky pásma je přibližně 450 KB, které můžete přidat kamkoli z sekundy či dvou přes širokopásmové připojení k až minutu pro  Uživatelé přes modemem. Dobrou zprávou je, že vzhledem k tomu, že soubory externích skriptů jsou uložené v mezipaměti v prohlížeči, nejhorší případ k této situaci dochází zřídka.
 
-Po přidání prvek ScriptManager na stránku, změnit jeho `ID` z `ScriptManager1` k `MyManager`.
-
-
-[![Přidá prvek ScriptManager do hlavní stránky](master-pages-and-asp-net-ajax-vb/_static/image2.png)](master-pages-and-asp-net-ajax-vb/_static/image1.png)
-
-**Obrázek 01**: Přidat prvek ScriptManager na stránku předlohy ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image3.png))
+> [!NOTE]
+> Pokud jste pořád podezřelé umístění ovládacího prvku ScriptManager na stránce předlohy, vezměte v úvahu webový formulář ( `<form runat="server">` značky na stránce předlohy). Každé stránky ASP.NET, která používá postback model musí obsahovat přesně jeden webový formulář. Přidání webového formuláře přidá další obsah: číslo skrytého pole `<form>` označení, a v případě potřeby funkci jazyka JavaScript za inicializaci zpětné volání ze skriptu. Tento kód je zbytečné pro stránky, které nechcete odeslat zpět. Tento cizí kód by mohl být odstraněny odebráním webový formulář ze stránky předlohy a ručně ho přidat na každou stránku obsahu, které je potřeba. Ale o výhodách webového formuláře na stránce předlohy převažují nad nevýhody nemusíte ho zbytečně přidána do určité obsahu stránky.
 
 
-## <a name="step-2-using-the-aspnet-ajax-framework-from-a-content-page"></a>Krok 2: Pomocí rozhraní ASP.NET AJAX ze stránky obsahu
+## <a name="step-1-adding-a-scriptmanager-control-to-the-master-page"></a>Krok 1: Přidání ovládacího prvku ScriptManager na stránku předlohy
 
-Pomocí ovládacího prvku ScriptManager přidat k hlavní stránce jsme nyní můžete přidat funkce framework ASP.NET AJAX na všechny stránky obsahu. Umožňuje vytvořit novou stránku ASP.NET, která zobrazuje náhodně vybrané produktu z databáze Northwind. Rozhraní ASP.NET AJAX časovače řízení použijeme k aktualizaci této zobrazení každých 15 sekund zobrazující nového produktu.
+Každé webové stránky, která používá rozhraní ASP.NET AJAX framework musí obsahovat přesně jeden ovládací prvek ScriptManager. Kvůli tomuto požadavku je obvykle vhodné umístit jeden ovládací prvek ScriptManager na stránce předlohy tak, aby všechny stránky obsahu ovládacího prvku ScriptManager automaticky zahrnuty. Kromě toho ScriptManager musí předcházet všechny technologie ASP.NET AJAX serverové ovládací prvky, jako je například ovládací prvky UpdatePanel a UpdateProgress. Proto je vhodné umístit ScriptManager dříve než kterýkoli prvek ContentPlaceHolder v rámci webového formuláře.
 
-Začněte vytvořením novou stránku v kořenovém adresáři s názvem `ShowRandomProduct.aspx`. Nezapomeňte vytvořit vazbu této nové stránce `Site.master` stránky předlohy.
+Otevřít `Site.master` stránku předlohy a přidání ovládacího prvku ScriptManager na stránku v rámci webového formuláře, ale předtím, než `<div id="topContent">` – element (viz obrázek 1). Pokud používáte aplikaci Visual Web Developer 2008 nebo Visual Studio 2008, ovládací prvek ScriptManager se nachází na panelu nástrojů na kartě Rozšíření AJAX. Pokud používáte Visual Studio 2005, je potřeba nejprve nainstalujte rozhraní framework ASP.NET AJAX a přidání ovládacích prvků do panelu nástrojů. Na stránce technologie ASP.NET AJAX stahování se získat rozhraní pro technologii ASP.NET 2.0.
 
-
-[![Přidat novou stránku ASP.NET na web](master-pages-and-asp-net-ajax-vb/_static/image5.png)](master-pages-and-asp-net-ajax-vb/_static/image4.png)
-
-**Obrázek 02**: Přidat novou stránku ASP.NET na web ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image6.png))
+Po přidání ScriptManager na stránku, změnit její `ID` z `ScriptManager1` k `MyManager`.
 
 
-Odvolat, v zadání názvu, značky Meta a další záhlaví ve formátu HTML v tomto kurzu stránky předlohy [SKM1] jsme vytvořili vlastní základní stránky třídy s názvem `BasePage` který vygenerován nadpis stránky, pokud nebyl explicitně nastaven. Přejděte na `ShowRandomProduct.aspx` kódu stránky třídy a ji odvodit z `BasePage` (místo z `System.Web.UI.Page`).
+[![Přidat prvek ScriptManager na stránku předlohy](master-pages-and-asp-net-ajax-vb/_static/image2.png)](master-pages-and-asp-net-ajax-vb/_static/image1.png)
 
-Nakonec aktualizujte `Web.sitemap` souboru záznam pro tento účel. Přidejte následující kód pod `<siteMapNode>` pro hlavní server k obsahu stránce interakce lekce:
+**Obrázek 01**: prvek ScriptManager přidat na stránku předlohy ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image3.png))
+
+
+## <a name="step-2-using-the-aspnet-ajax-framework-from-a-content-page"></a>Krok 2: Použití technologie ASP.NET AJAX Framework z obsahu stránky
+
+Pomocí ovládacího prvku ScriptManager přidat na stránku předlohy jsme nyní můžete přidat funkce rozhraní framework ASP.NET AJAX na libovolnou stránku obsahu. Vytvoříme novou stránku ASP.NET, která zobrazuje namátkou vybraného produktu z databáze Northwind. Rozhraní ASP.NET AJAX – ovládací prvek časovače použijeme k aktualizaci zobrazení každých 15 sekund, zobrazuje nový produkt.
+
+Začněte tím, že vytvoříte novou stránku v kořenovém adresáři s názvem `ShowRandomProduct.aspx`. Nezapomeňte vytvořit vazbu na tuto novou stránku `Site.master` stránky předlohy.
+
+
+[![Přidejte novou stránku ASP.NET na web](master-pages-and-asp-net-ajax-vb/_static/image5.png)](master-pages-and-asp-net-ajax-vb/_static/image4.png)
+
+**Obrázek 02**: přidejte novou stránku ASP.NET na web ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image6.png))
+
+
+Vzpomeňte si, že v zadání názvu, metaznaček a ostatní hlaviček HTML v tomto kurzu stránky předlohy [SKM1] jsme vytvořili vlastní stránku základní třídu s názvem `BasePage` název stránky, který generuje, pokud není explicitně nastavena. Přejděte `ShowRandomProduct.aspx` kódu stránky třídy a nechat ji odvodit z `BasePage` (místo z `System.Web.UI.Page`).
+
+Nakonec aktualizujte `Web.sitemap` soubor zahrnout položku pro tento účel. Přidejte následující kód pod `<siteMapNode>` pro hlavní lekce interakce obsahu stránky:
 
 
 [!code-xml[Main](master-pages-and-asp-net-ajax-vb/samples/sample2.xml)]
 
-Přidání tohoto `<siteMapNode>` element se odrazí v poznatky seznamu (viz obrázek 5).
+Přidání tohoto `<siteMapNode>` element se projeví v lekcí seznamu (viz obrázek 5).
 
-### <a name="displaying-a-randomly-selected-product"></a>Zobrazení náhodně vybrané produktu
+### <a name="displaying-a-randomly-selected-product"></a>Zobrazení namátkou vybraného produktu
 
-Vraťte se do `ShowRandomProduct.aspx`. Z návrháře, přetáhněte z panelu nástrojů do ovládacího prvku UpdatePanel `MainContent` obsahu ovládacího prvku a nastavit jeho `ID` vlastnost, která má `ProductPanel`. UpdatePanel představuje oblast na obrazovce, která se dá asynchronně aktualizovat přes postback části stránky.
+Vraťte se na `ShowRandomProduct.aspx`. Z návrháře, přetáhněte z panelu nástrojů do ovládacího prvku UpdatePanel `MainContent` ovládacího prvku obsahu a nastavte jeho `ID` vlastnost `ProductPanel`. Prvku UpdatePanel představuje oblast na obrazovce, která je možné aktualizovat asynchronně prostřednictvím částečná stránka postback.
 
-Naše první úloha je pro zobrazení informací o náhodně vybrané produktů v rámci prvku UpdatePanel. Spustit tak, že přetáhnete ovládacího prvku DetailsView do prvku UpdatePanel. Nastavení ovládacího prvku DetailsView `ID` vlastnost `ProductInfo` a vymažte její `Height` a `Width` vlastnosti. Rozbalte DetailsView inteligentních značek a vyberte z rozevíracího seznamu vyberte zdroj dat pro vazbu DetailsView nový ovládací prvek SqlDataSource s názvem `RandomProductDataSource`.
-
-
-[![Vytvoření vazby DetailsView do ovládacího prvku nové SqlDataSource](master-pages-and-asp-net-ajax-vb/_static/image8.png)](master-pages-and-asp-net-ajax-vb/_static/image7.png)
-
-**Obrázek 03**: vazby DetailsView do ovládacího prvku nové SqlDataSource ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image9.png))
+Naše prvního úkolu je pro zobrazení informací o namátkou vybraného produktu v rámci prvku UpdatePanel. Začněte tím, že přetáhnete do prvku UpdatePanel ovládacího prvku DetailsView. Nastavení ovládacího prvku DetailsView `ID` vlastnost `ProductInfo` a vymažte její `Height` a `Width` vlastnosti. Rozbalte ovládacím prvku DetailsView inteligentních značek a z rozevíracího seznamu zvolit zdroj dat, vyberte možnost vytvoření vazby mezi ovládacím prvku DetailsView. nový ovládací prvek SqlDataSource s názvem `RandomProductDataSource`.
 
 
-Konfigurace pro připojení k databázi Northwind prostřednictvím ovládacího prvku SqlDataSource `NorthwindConnectionString` (které jsme vytvořili v práce se stránky předlohy ze stránky obsahu [SKM2] kurzu). Při konfiguraci příkaz select zvolit vlastní příkazu jazyka SQL a pak zadejte následující dotaz:
+[![Svázat s novou ovládacím prvkem SqlDataSource ovládacím prvku DetailsView.](master-pages-and-asp-net-ajax-vb/_static/image8.png)](master-pages-and-asp-net-ajax-vb/_static/image7.png)
+
+**Obrázek 03**: svázat ovládacím prvku DetailsView nové ovládacím prvkem SqlDataSource ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image9.png))
+
+
+Konfigurace pro připojení k databázi Northwind pomocí ovládacího prvku SqlDataSource `NorthwindConnectionString` (které jsme vytvořili v práce se stránkou předlohy z kurzu stránky obsahu [SKM2]). Při konfiguraci příkazu select vyberte vlastní příkaz jazyka SQL a pak zadejte následující dotaz:
 
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-vb/samples/sample3.sql)]
 
-`TOP 1` – Klíčové slovo v `SELECT` klauzule vrací pouze na první záznam vrácených dotazem. `NEWID()` Funkce generuje novou hodnotu globálně jedinečný identifikátor (GUID) a mohou být používány `ORDER BY` klauzuli, která vrátí záznamy v tabulce v náhodném pořadí.
+`TOP 1` – Klíčové slovo v `SELECT` klauzule vrátí jenom první záznam vrácených dotazem. `NEWID()` Funkce generuje novou hodnotu globálně jedinečný identifikátor (GUID) a je možné v `ORDER BY` klauzule vrátí v tabulce záznamy v náhodném pořadí.
 
 
-[![Konfigurace SqlDataSource vrátit záznam jeden, náhodně vybrané](master-pages-and-asp-net-ajax-vb/_static/image11.png)](master-pages-and-asp-net-ajax-vb/_static/image10.png)
+[![Konfigurace ve třídě SqlDataSource k vrácení jednoho, namátkou vybraného záznamu](master-pages-and-asp-net-ajax-vb/_static/image11.png)](master-pages-and-asp-net-ajax-vb/_static/image10.png)
 
-**Obrázek 04**: Konfigurace SqlDataSource vrátit jedinou náhodně vybrané záznamu ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image12.png))
+**Obrázek 04**: konfigurace ve třídě SqlDataSource k vrácení jednoho náhodně vybraný záznam ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image12.png))
 
 
-Po dokončení průvodce, Visual Studio vytvoří BoundField pro dva sloupce vrácený výše uvedeném dotazu. V tomto okamžiku vaší stránky deklarativní by měl vypadat takto:
+Po dokončení průvodce se sada Visual Studio vytvoří vlastnost BoundField pro dva sloupce vrácené dotazem výše. Na stránce deklarativní v tuto chvíli by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-vb/samples/sample4.aspx)]
 
-Obrázek 5 ukazuje `ShowRandomProduct.aspx` v případě, že zobrazit pomocí prohlížeče. Klikněte na tlačítko Aktualizovat v prohlížeči na znovu načíst stránku; měli byste vidět `ProductName` a `UnitPrice` hodnoty pro nový záznam náhodně vybrané.
+Obrázek 5 ukazuje, `ShowRandomProduct.aspx` stránce při prohlížení prostřednictvím prohlížeče. Klikněte na tlačítko Aktualizovat v prohlížeči k opětovnému načtení stránky. měli byste vidět `ProductName` a `UnitPrice` hodnoty nového namátkou vybraného záznamu.
 
 
-[![Se zobrazí název a cena náhodných produktu](master-pages-and-asp-net-ajax-vb/_static/image14.png)](master-pages-and-asp-net-ajax-vb/_static/image13.png)
+[![Zobrazí se název náhodných produktu a cena](master-pages-and-asp-net-ajax-vb/_static/image14.png)](master-pages-and-asp-net-ajax-vb/_static/image13.png)
 
-**Obrázek 05**: Zobrazí se název a cenu A náhodných produktu ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image15.png))
+**Obrázek 05**: Zobrazí se název a cenu A náhodné produktu ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image15.png))
 
 
 ### <a name="automatically-displaying-a-new-product-every-15-seconds"></a>Automaticky zobrazení nového produktu každých 15 sekund
 
-Rozhraní ASP.NET AJAX zahrnuje časovače ovládací prvek, který provede zpětné volání v určený čas; na odeslat zpět časovače `Tick` událost se vyvolá. Pokud se ovládací prvek časovače je umístit do ovládacího prvku UpdatePanel aktivuje částečná stránka zpětné volání, během které jsme můžete rebind data, která mají DetailsView zobrazíte nového produktu náhodně vybrané.
+ASP.NET AJAX framework obsahuje ovládací prvek časovače, který provede zpětné volání v určitou dobu; na odeslat zpět časovače `Tick` událost se vyvolá. Pokud je ovládací prvek časovače je umístěn v rámci ovládacího prvku UpdatePanel aktivuje částečná stránka zpětné volání, během kterého jsme obnovení vazby dat k ovládacím prvku DetailsView. pro zobrazení nového namátkou vybraného produktu.
 
-K tomu, přetáhněte časovač z panelu nástrojů a umístěte jej do prvku UpdatePanel. Změnit časovače `ID` z `Timer1` k `ProductTimer` a jeho `Interval` vlastnost z 60000 na 15 000. `Interval` Vlastnost udává počet milisekund, po mezi postback; jeho nastavení na 15 000 způsobí, že časovač k spustily částečná stránka každých 15 sekund. V tomto okamžiku časovače deklarativní by měl vypadat takto:
+K dosažení tohoto časovače přetáhněte z panelu nástrojů a umístěte jej do prvku UpdatePanel. Změnit časovače `ID` z `Timer1` k `ProductTimer` a jeho `Interval` vlastnost z 60000 na 15 000. `Interval` Vlastnost označuje počet milisekund mezi jednotlivými zpětnými odesláními; nastavení na 15 000 způsobí, že aby se časovač spustily částečná stránka každých 15 sekund. Deklarativní časovače v tomto okamžiku by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-vb/samples/sample5.aspx)]
 
-Vytvoření obslužné rutiny události pro časovače `Tick` událostí. V této obslužné rutiny události musíme rebind data, která mají DetailsView voláním prvku DetailsView `DataBind` metoda. Díky tomu dá pokyn DetailsView znovu načíst data z jeho prvek zdroje dat, který bude vybrat a zobrazit novou náhodně vybrané záznamu (stejně jako při opětovném načtení stránky kliknutím na tlačítko Aktualizovat v prohlížeči).
+Vytvořte obslužnou rutinu události pro časovače `Tick` událostí. V této obslužné rutiny události potřebujeme rebind data do ovládacího prvku DetailsView voláním ovládacím prvku DetailsView `DataBind` metody. To dává pokyn ovládacím prvku DetailsView znovu načíst data ze svých dat správy zdrojového kódu, který bude vybrat a zobrazit novou náhodně vybrali záznam (stejně jako při znovu načíst tuto stránku kliknutím na tlačítko pro aktualizaci prohlížeče).
 
 
 [!code-vb[Main](master-pages-and-asp-net-ajax-vb/samples/sample6.vb)]
 
-To je všechno je k němu! Otevírat stránku prostřednictvím prohlížeče. Standardně se zobrazují informace náhodných produktu. Pokud jste patiently podívejte se na obrazovce můžete si všimnout, že po 15 sekund, informace o novém produktu magically nahradí existující zobrazení.
+To je všechno je to! Otevírat stránku prostřednictvím prohlížeče. Na začátku se zobrazí informace o náhodných produktu. Pokud dokončení sledovat obrazovky můžete si všimnout, že po 15 sekundách, informace o nový produkt kouzelného nahradí stávající zobrazení.
 
-Pokud chcete lépe zjistit, co se děje v tomto poli, přidejme UpdatePanel, které se zobrazuje čas poslední aktualizace zobrazení ovládacího prvku popisek. Přidání ovládacího prvku popisek Web v rámci prvku UpdatePanel, nastavte jeho `ID` k `LastUpdateTime`a vymazat jeho `Text` vlastnost. Dále vytvořte obslužnou rutinu události pro prvku UpdatePanel `Load` události a zobrazení aktuální čas v popisku. (UpdatePanel `Load` událost je aktivována na každých postback celé nebo jeho část stránky.)
+Zobrazíte lépe čemu tady dochází, přidáme UpdatePanel, která zobrazuje čas, kdy došlo k poslední aktualizaci zobrazení ovládacího prvku popisku. Přidejte popisek webového ovládacího prvku UpdatePanel, nastavte jeho `ID` k `LastUpdateTime`a zrušte jeho `Text` vlastnost. Dále vytvořte obslužnou rutinu události pro prvku UpdatePanel `Load` událostí a zobrazit aktuální čas v popisku. (Prvku UpdatePanel `Load` událost se aktivuje při každém postbacku celé nebo jeho část stránky.)
 
 
 [!code-vb[Main](master-pages-and-asp-net-ajax-vb/samples/sample7.vb)]
 
-Díky této změně dokončení stránka obsahuje dobu, kterou aktuálně zobrazený produktu byla načtena. Obrázek 6 zobrazuje stránku, pokud nejprve prošli nový obsah. Obrázek 7 znázorňuje stránce po ovládacího prvku časovače má "zaškrtnuté" a zobrazení informací o novém produktu byl aktualizován UpdatePanel později 15 sekund.
+Díky této změně kompletní stránka obsahuje čas, kdy byl načten aktuálně zobrazený produkt. Obrázek 6 ukazuje na stránku, když první uživatel. Obrázek 7 znázorňuje stránky 15 sekund později po ovládacím prvku časovač má "zaškrtnuté" a prvku UpdatePanel byl aktualizován pro zobrazení informací o nový produkt.
 
 
-[![Náhodně vybrané produktu se zobrazí na načtení stránky](master-pages-and-asp-net-ajax-vb/_static/image17.png)](master-pages-and-asp-net-ajax-vb/_static/image16.png)
+[![Zobrazí se náhodně vybrané produktu při načtení stránky](master-pages-and-asp-net-ajax-vb/_static/image17.png)](master-pages-and-asp-net-ajax-vb/_static/image16.png)
 
-**Obrázek 06**: A náhodně vybrané produktu se zobrazí na načtení stránky ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image18.png))
-
-
-[![Každých 15 sekund, které se zobrazí nový náhodně vybrané produkt](master-pages-and-asp-net-ajax-vb/_static/image20.png)](master-pages-and-asp-net-ajax-vb/_static/image19.png)
-
-**Obrázek 07**: každých 15 sekund se zobrazí nový náhodně vybrané produkt ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image21.png))
+**Obrázek 06**: Zobrazí se A náhodně vybrané produktu při načtení stránky ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image18.png))
 
 
-## <a name="step-3-using-the-scriptmanagerproxy-control"></a>Krok 3: Použití ScriptManagerProxy ovládacího prvku
+[![Každých 15 sekund, které se zobrazí nový náhodně vybraný produkt](master-pages-and-asp-net-ajax-vb/_static/image20.png)](master-pages-and-asp-net-ajax-vb/_static/image19.png)
 
-Společně s včetně nezbytné skript pro rozhraní ASP.NET AJAX klientské knihovny, ScriptManager také zaregistrovat vlastní soubory JavaScript, odkazy na skript povolené webové služby a vlastní ověřování, autorizace a profilu služby. Tyto úpravy jsou obvykle specifické pro určité stránky. Ale pokud vlastní skript soubory, odkazy na webové služby, nebo ověřování, autorizaci nebo profilu služby se odkazuje v ScriptManager na hlavní stránce pak budou jsou součástí všechny stránky webu.
+**Obrázek 07**: každých 15 sekund se zobrazí nový náhodně vybraný produkt ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image21.png))
 
-Chcete-li přidat ScriptManager související přizpůsobení na základě po stránkách použít ovládací prvek ScriptManagerProxy. Můžete přidat ScriptManagerProxy na stránku obsahu a potom proveďte registraci vlastní soubor JavaScript, odkaz na webovou službu, nebo ověřování, autorizaci nebo profilu služby z ScriptManagerProxy; To má za následek registrace tyto služby pro konkrétní stránky obsahu.
+
+## <a name="step-3-using-the-scriptmanagerproxy-control"></a>Krok 3: Použití ovládacího prvku ScriptManagerProxy
+
+Spolu s nezbytné skript pro rozhraní ASP.NET AJAX framework klientskou knihovnu, včetně ScriptManager také zaregistrovat vlastní soubory jazyka JavaScript, odkazy na skript povolené webové služby a vlastní ověřování, autorizace a služby profilu. Obvykle tyto úpravy jsou specifické pro určitou stránku. Nicméně pokud soubory vlastního skriptu, odkazy na webové služby, nebo ověřování, autorizace nebo služby profilů jsou odkazovány v prvku ScriptManager na stránce předlohy pak budou obsaženy na všech stránkách na webu.
+
+Chcete-li přidat přizpůsobení vztahující se k ovládacímu prvku ScriptManager na základě stránku po stránce pomocí ovládacího prvku ScriptManagerProxy. Můžete přidat na stránku obsahu ScriptManagerProxy a zaregistrujte vlastní soubor jazyka JavaScript, odkaz na webovou službu, nebo ověřování, autorizaci nebo služby profilů z ScriptManagerProxy; To má vliv na registraci těchto služeb pro konkrétní stránky obsahu.
 
 > [!NOTE]
-> Stránky ASP.NET může mít pouze existuje více než jeden prvek ScriptManager. Ovládací prvek ScriptManager proto nemůžete přidat na stránku obsahu, pokud ovládací prvek ScriptManager již je definována v stránky předlohy. ScriptManagerProxy pouze za účelem je poskytnout způsob pro vývojáře k definování prvek ScriptManager na hlavní stránce, ale stále mít možnost Přidat přizpůsobení ScriptManager na základě po stránkách.
+> Stránky ASP.NET může mít pouze k dispozici více než jeden prvek ScriptManager. Proto nelze přidat ovládacího prvku ScriptManager na stránku obsahu, pokud ovládací prvek ScriptManager je již definován na hlavní stránce. Jediným účelem ScriptManagerProxy je umožňují vývojářům definovat ScriptManager na stránce předlohy, ale stále mít možnost přidávat vlastní nastavení ovládacímu prvku ScriptManager na základě stránku po stránce.
 
 
-Zobrazíte ScriptManagerProxy ovládacího prvku akce umožňuje posílení UpdatePanel v `ShowRandomProduct.aspx` zahrnout tlačítko, které používá klientský skript pozastavení nebo obnovení ovládacího prvku časovače. Ovládací prvek časovače má tři metody na straně klienta, které jsme můžete použít k dosažení této požadované funkce:
+Pokud chcete zobrazit ovládacího prvku ScriptManagerProxy v akci, můžeme rozšířit UpdatePanel v `ShowRandomProduct.aspx` zahrnout tlačítko, které používá skript na straně klienta pro pozastavení a pokračování v ovládacím prvku časovač. Ovládací prvek časovače má tři metody na straně klienta, které můžete použít k dosažení této požadované funkce:
 
-- `_startTimer()` -spustí časovač ovládací prvek
-- `_raiseTick()` -způsobí, že ovládacího prvku časovače pro "značek," a publikování zpět a vyvolá událost jeho značek na serveru
-- `_stopTimer()` -Zastaví ovládacího prvku časovače
+- `_startTimer()` -začne ovládací prvek časovače
+- `_raiseTick()` -způsobí, že ovládací prvek časovače "popisky", a tím zpětného odesílání a vyvolá událost impulzu spustit na serveru
+- `_stopTimer()` -ovládacím prvku časovač se zastaví
 
-Umožňuje vytvořit soubor JavaScript se proměnné s názvem `timerEnabled` a funkce s názvem `ToggleTimer`. `timerEnabled` Proměnná Určuje, zda je ovládací prvek časovače aktuálně povoleno nebo zakázáno; je standardně nastavena na hodnotu true. `ToggleTimer` Funkce přijímá dva vstupní parametry: odkaz na tlačítko pozastavit nebo obnovit a na straně klienta `id` hodnota časovače ovládacího prvku. Tato funkce přepíná hodnotu `timerEnabled`, získá odkaz na ovládací prvek časovače, spuštění nebo zastavení časovač (v závislosti na hodnotě `timerEnabled`) a aktualizuje na tlačítko zobrazovaný text na "Pozastavení" nebo "Pokračování". Tato funkce bude volána, když po kliknutí na tlačítko pozastavit nebo obnovit.
+Pojďme vytvořit soubor JavaScriptu s proměnnou s názvem `timerEnabled` a funkci s názvem `ToggleTimer`. `timerEnabled` Proměnná Určuje, zda ovládací prvek časovače je aktuálně povoleno nebo zakázáno; výchozí hodnota je true. `ToggleTimer` Funkce přijímá dva vstupní parametry: odkaz na tlačítko Pozastavit/pokračovat a na straně klienta `id` ovládacím prvku časovač. Tato funkce přepne hodnotu `timerEnabled`, získá odkaz na ovládacím prvku časovač, spuštění nebo zastavení časovače (v závislosti na hodnotě z `timerEnabled`) a aktualizuje zobrazení textu tlačítka "Pozastavení" nebo "Obnovit". Tato funkce bude volána pokaždé, když dojde ke kliknutí na tlačítko Pozastavit/Pokračovat.
 
-Začněte vytvořením novou složku na webu s názvem `Scripts`. Dál přidejte nový soubor do složky skriptů s názvem `TimerScript.js` typu JScript – soubor.
-
-
-[![Přidat nový soubor JavaScript do složky skriptů](master-pages-and-asp-net-ajax-vb/_static/image23.png)](master-pages-and-asp-net-ajax-vb/_static/image22.png)
-
-**Obrázek 08**: Přidat nový soubor JavaScript, který `Scripts` složky ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image24.png))
+Začněte tím, že vytvoříte novou složku na webu s názvem `Scripts`. V dalším kroku přidejte nový soubor do složky Scripts, s názvem `TimerScript.js` typu soubor JScript.
 
 
-[![Nový soubor JavaScript se přidal k webu](master-pages-and-asp-net-ajax-vb/_static/image26.png)](master-pages-and-asp-net-ajax-vb/_static/image25.png)
+[![Přidejte nový soubor JavaScript do složky skriptů](master-pages-and-asp-net-ajax-vb/_static/image23.png)](master-pages-and-asp-net-ajax-vb/_static/image22.png)
 
-**Obrázek 09**: nový soubor JavaScript A přidala na web ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image27.png))
+**Obrázek 08**: přidejte nový soubor JavaScript, aby `Scripts` složky ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image24.png))
 
 
-Dál přidejte následující skript k `TimerScript.js` souboru:
+[![Nový soubor JavaScript je přidaný na web](master-pages-and-asp-net-ajax-vb/_static/image26.png)](master-pages-and-asp-net-ajax-vb/_static/image25.png)
+
+**Obrázek 09**: nového souboru JavaScriptu se přidala na web ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image27.png))
+
+
+V dalším kroku přidejte následující skript k `TimerScript.js` souboru:
 
 
 [!code-csharp[Main](master-pages-and-asp-net-ajax-vb/samples/sample8.cs)]
 
-Nyní potřebujeme zaregistrovat tento vlastní soubor JavaScript v `ShowRandomProduct.aspx`. Vraťte se do `ShowRandomProduct.aspx` a přidání ScriptManagerProxy ovládacího prvku na stránku; nastavit jeho `ID` k `MyManagerProxy`. K registraci vlastní JavaScript soubor vyberte ovládací prvek ScriptManagerProxy v návrháři a potom přejděte do okna vlastností. Jedna z vlastností je s názvem skripty. Výběr této vlastnosti se zobrazí Editor kolekce ScriptReference vidět na obrázku 10. Kliknutím na tlačítko Přidat zahrnout odkaz na nový skript a pak zadejte cestu k souboru skriptu ve vlastnosti cesta: `~/Scripts/TimerScript.js`.
+Nyní potřebujeme k registraci tohoto vlastního souboru jazyka JavaScript v `ShowRandomProduct.aspx`. Vraťte se na `ShowRandomProduct.aspx` a přidání ovládacího prvku ScriptManagerProxy na stránce; nastavit jeho `ID` k `MyManagerProxy`. K registraci vlastního jazyka JavaScript souboru vyberte ovládacího prvku ScriptManagerProxy v návrháři a potom přejděte do okna Vlastnosti. Jedna z vlastností má název skripty. Tato vlastnost vyberete, zobrazí se Editor kolekce ScriptReference je znázorněno na obrázku 10. Kliknutím na tlačítko Přidat obsahovat nový odkaz na skript a pak zadejte cestu k souboru skriptu v vlastnost Path: `~/Scripts/TimerScript.js`.
 
 
 [![Přidání odkazu na skript do ovládacího prvku ScriptManagerProxy](master-pages-and-asp-net-ajax-vb/_static/image29.png)](master-pages-and-asp-net-ajax-vb/_static/image28.png)
 
-**Obrázek 10**: Přidání odkazu na skript do ovládacího prvku ScriptManagerProxy ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image30.png))
+**Obrázek 10**: Přidání odkazu na skript do ovládacího prvku ScriptManagerProxy ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image30.png))
 
 
-Po přidání odkazu na skript ovládacího prvku ScriptManagerProxy je deklarativní značek aktualizovala a obsahovala `<Scripts>` kolekce s jedním `ScriptReference` položky jako následující fragment kódu ukazuje:
+Po přidání odkazu na skript ovládacího prvku ScriptManagerProxy je deklarativní značek je aktualizováno, aby zahrnovalo `<Scripts>` kolekce s jedním `ScriptReference` položky, jako následující fragment kódu ukazuje:
 
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-vb/samples/sample9.aspx)]
 
-`ScriptReference` Položka obsahuje pokyny pro ScriptManagerProxy zahrnout odkaz na soubor JavaScript v jeho vykreslované značky. To znamená, když si zaregistrujete vlastní skript v ScriptManagerProxy `ShowRandomProduct.aspx` výstupu vykreslené stránky teď obsahuje jiný `<script src="url"></script>` značky: `<script src="Scripts/TimerScript.js" type="text/javascript"></script>`.
+`ScriptReference` Položka dává pokyn ScriptManagerProxy zahrnout odkaz na soubor jazyka JavaScript v jeho vykreslované značky. To znamená, když si zaregistrujete vlastní skript v ScriptManagerProxy `ShowRandomProduct.aspx` vykresleného výstupu stránky teď obsahuje jiný `<script src="url"></script>` značky: `<script src="Scripts/TimerScript.js" type="text/javascript"></script>`.
 
 Můžete teď říkáme `ToggleTimer` funkci definovanou v `TimerScript.js` z klientského skriptu v `ShowRandomProduct.aspx` stránky. Přidejte následující kód HTML v rámci prvku UpdatePanel:
 
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-vb/samples/sample10.aspx)]
 
-Zobrazí tlačítko s textem "Pozastavení". Vždy, když se po kliknutí na, funkce JavaScript, která `ToggleTimer` je volána, předávání v odkaz na tlačítko a `id` hodnota časovače ovládacího prvku (`ProductTimer`). Všimněte si syntaxe pro získání `id` hodnota časovače ovládacího prvku. `<%=ProductTimer.ClientID%>` vysílá hodnotu `ProductTimer` ovládacího prvku Timer `ClientID` vlastnost. V pojmenování řízení ID v kurzu stránky obsahu [SKM3] jsme probrali rozdíly mezi na straně serveru `ID` hodnota a výsledný na straně klienta `id` hodnotu a jak `ClientID` vrátí na straně klienta `id`.
+Zobrazí se tlačítko s textem "Pozastavení". Vždy, když se po kliknutí na funkce JavaScript, která `ToggleTimer` je volána při předávání v odkazu na tlačítko a `id` ovládacím prvku časovač (`ProductTimer`). Všimněte si, syntaxe pro získání `id` ovládacím prvku časovač. `<%=ProductTimer.ClientID%>` vysílá hodnotu `ProductTimer` ovládací prvek Timer `ClientID` vlastnost. Ovládací prvek ID názvů v kurzu stránky obsahu [SKM3] jsme probírali rozdíly mezi na straně serveru `ID` hodnotu a výsledné na straně klienta `id` hodnotu a jak `ClientID` vrátí na straně klienta `id`.
 
-Obrázek 11 ukazuje této stránce, když nejdřív navštívili prostřednictvím prohlížeče. Časovač běží v současné době a aktualizuje informace zobrazené produktu každých 15 sekund. Obrázek 12 znázorňuje obrazovky po bylo stisknuto tlačítko Pozastavit. Klepnutím na tlačítko Pozastavit zastaví časovač a aktualizuje na tlačítko text "Obnovit". Informace o produktu aktualizujte (a pokračovat v aktualizaci každých 15 sekund) po kliknutí na tlačítko Pokračovat.
+Obrázku 11 můžete vidět tuto stránku, když uživatel poprvé prostřednictvím prohlížeče. Časovač aktuálně běží a aktualizuje informace zobrazené produktu každých 15 sekund. Obrázek 12 se zobrazuje obrazovka po kliknutí na tlačítko Pozastavit. Kliknutím na tlačítko Pozastavit časovač se zastaví a aktualizuje text na tlačítko "Obnovit". Informace o produktu aktualizujte (a i nadále aktualizovat každých 15 sekund) po kliknutí na tlačítko Pokračovat.
 
 
-[![Klikněte na tlačítko Zastavit časovač ovládací prvek](master-pages-and-asp-net-ajax-vb/_static/image32.png)](master-pages-and-asp-net-ajax-vb/_static/image31.png)
+[![Kliknutím na tlačítko Zastavit ovládacím prvku časovač](master-pages-and-asp-net-ajax-vb/_static/image32.png)](master-pages-and-asp-net-ajax-vb/_static/image31.png)
 
-**Obrázek 11**: klikněte na tlačítko Zastavit časovač ovládací prvek ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image33.png))
+**Obrázek 11**: Kliknutím na tlačítko Zastavit na ovládací prvek Timer ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image33.png))
 
 
 [![Klikněte na tlačítko Obnovit restartovat časovač](master-pages-and-asp-net-ajax-vb/_static/image35.png)](master-pages-and-asp-net-ajax-vb/_static/image34.png)
 
-**Obrázek 12**: klikněte na tlačítko Obnovit restartovat časovač ([Kliknutím zobrazit obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image36.png))
+**Obrázek 12**: klikněte na tlačítko Obnovit restartovat časovač ([kliknutím ji zobrazíte obrázek v plné velikosti](master-pages-and-asp-net-ajax-vb/_static/image36.png))
 
 
 ## <a name="summary"></a>Souhrn
 
-Při vytváření technologie AJAX webových aplikací pomocí rozhraní ASP.NET AJAX, je nutné, aby každý technologie AJAX webová stránka obsahovat ovládací prvek ScriptManager. Pro usnadnění tohoto procesu, jsme stránky předlohy, namísto nutnosti nezapomeňte přidat ovládací prvek ScriptManager každé stránky obsahu přidat ovládací prvek ScriptManager. Krok 1 vám ukázal, jak přidat prvek ScriptManager k hlavní stránce při zvážení implementace funkci AJAX na obsahu stránce kroku 2.
+Při sestavování s povoleným AJAX webových aplikací pomocí ASP.NET AJAX framework je nutné, každé webové stránky s povoleným AJAX zahrnují ovládacího prvku ScriptManager. Abyste to mohli provést, jsme stránky předlohy a nemusíte pamatovat si pro každou jednotlivou stránku obsahu přidat ovládací prvek ScriptManager přidat ovládací prvek ScriptManager. Krok 1 jsme si ukázali, jak přidat prvek ScriptManager na stránce předlohy při kroku 2 zvažovali implementace funkcí AJAX na stránce obsahu.
 
-Pokud potřebujete přidat vlastní skripty, odkazy na skript povolené webové služby, nebo vlastní ověřování, autorizaci nebo profilu služby na konkrétní stránku obsahu, přidání ScriptManagerProxy ovládacího prvku na stránku obsahu a potom nakonfigurujte přizpůsobení existuje. Krok 3 zkontrolován postup použití ScriptManagerProxy zaregistrovat vlastní soubor JavaScript na konkrétní stránku obsahu.
+Pokud potřebujete přidat vlastní skripty, odkazy na skript povolené webové služby, nebo vlastní ověřování, autorizaci nebo služby profilů na konkrétní stránce obsahu, přidání ovládacího prvku ScriptManagerProxy na stránce obsahu a potom nakonfigurujte vlastní nastavení existuje. Krok 3 prověřit, jak používat ScriptManagerProxy zaregistrovat vlastní soubor jazyka JavaScript na konkrétní stránce obsahu.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ### <a name="further-reading"></a>Další čtení
 
-Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
+Další informace o tématech, které jsou popsané v tomto kurzu najdete na následujících odkazech:
 
-- [Rozhraní ASP.NET AJAX](../../../../ajax/index.md)
-- [Kurzy ASP.NET AJAX](../aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)
-- [Videa technologie ASP.NET AJAX](../../../videos/aspnet-ajax/index.md)
+- [ASP.NET AJAX Framework](../../../../ajax/index.md)
+- [Kurzy k ASP.NET AJAX](../aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax.md)
+- [Videa o ASP.NET AJAX](../../../videos/aspnet-ajax/index.md)
 - [Vytváření interaktivní uživatelské rozhraní pomocí technologie Microsoft ASP.NET AJAX](http://aspnet.4guysfromrolla.com/articles/101007-1.aspx)
 - [Pomocí NEWID náhodně řazení záznamů](http://www.sqlteam.com/article/using-newid-to-randomly-sort-records)
 - [Použití ovládacího prvku časovače](http://aspnet.4guysfromrolla.com/articles/061808-1.aspx)
 
 ### <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více knih ASP/ASP.NET a zakladatele 4GuysFromRolla.com, pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott lze dosáhnout za [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu v [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor více ASP/ASP.NET knih a Zakladatel 4GuysFromRolla.com pracuje s Microsoft webových technologií od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami technologie ASP.NET 3.5 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco). Scott může být dostupný na adrese [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím na svém blogu [ http://ScottOnWriting.NET ](http://scottonwriting.net/).
 
-### <a name="special-thanks-to"></a>Zvláštní poděkování
+### <a name="special-thanks-to"></a>Speciální k
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Předchozí](interacting-with-the-content-page-from-the-master-page-vb.md)

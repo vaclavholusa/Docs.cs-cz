@@ -1,28 +1,27 @@
 ---
 uid: aspnet/tutorials
-title: Kurzy ASP.NET | Microsoft Docs
+title: Kurzy k ASP.NET | Dokumentace Microsoftu
 author: tdykstra
-description: Seznam podrobné návody pro vývoj aplikací ASP.NET.
+description: Seznam podrobné pokyny pro vývoj aplikací ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.technology: ''
-ms.prod: .net-framework
-ms.openlocfilehash: 704285fe06e2ece0f6afdc117aedf98f6155ef87
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7929a06fd7857237c2529aca34d36564c2a89f82
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28036762"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389609"
 ---
-# <a name="aspnet-tutorials"></a>Kurzy ASP.NET
+# <a name="aspnet-tutorials"></a>Kurzy k ASP.NET
 
-Jsou k dispozici následující podrobné návody pro vývoj aplikací ASP.NET.
+Tyto podrobné návody pro vývoj aplikací ASP.NET jsou k dispozici.
 
 > [!NOTE]
-> Hledáte ASP.NET Core kurzy?  Kde je najít [zde](https://docs.microsoft.com/aspnet/core/tutorials/).
+> Hledáte kurzy k ASP.NET Core?  Vyhledat [tady](https://docs.microsoft.com/aspnet/core/tutorials/).
 
 ## <a name="web-forms"></a>webové formuláře
 
@@ -48,7 +47,7 @@ Jsou k dispozici následující podrobné návody pro vývoj aplikací ASP.NET.
 
 ## <a name="mvc"></a>MVC
 
-* [Začínáme s ASP.NET MVC 5](mvc/overview/getting-started/introduction/index.md)
+* [Začínáme s ASP.NET MVC 5 ](mvc/overview/getting-started/introduction/index.md)
 * [Začínáme s EF 6 pomocí MVC 5](mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md)
 * [EF Database First s ASP.NET MVC](mvc/overview/getting-started/database-first-development/index.md)
 * [Použití Page Inspectoru v ASP.NET MVC](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)

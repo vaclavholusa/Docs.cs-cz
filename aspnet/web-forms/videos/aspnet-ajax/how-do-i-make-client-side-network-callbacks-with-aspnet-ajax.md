@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-make-client-side-network-callbacks-with-aspnet-ajax
-title: '[Jak na:] Ujistěte se, zpětná volání na straně klienta pomocí prvku ASP.NET AJAX? | Microsoft Docs'
+title: '[Postup:] Ujistěte se, zpětná volání na straně klienta sítě pomocí technologie ASP.NET AJAX? | Dokumentace Microsoftu'
 author: JoeStagner
-description: V tomto videu vidíte, jak Microsoft ASP.NET AJAX pomáhá vývojářům webů, ujistěte se, zpětná volání sítě přímo z kódu klientský skript. Vidíme také jak technologie ASP.NET...
+description: V tomto videu vidíme, jak Microsoft ASP.NET AJAX pomáhá vývojářům webů, ujistěte se, síťová zpětná přímo v kódu skriptu na straně klienta. Vidíme také způsob, jakým technologie ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2007
 ms.topic: article
 ms.assetid: ea4211be-faf9-40a0-8a7b-63427218b947
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-make-client-side-network-callbacks-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 8f00b327f2742fc916d45c7b3a079c11f778e3b1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9351208ac5f1cc67b91028b8070e6eca7e52bdfd
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882985"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37386378"
 ---
-<a name="how-do-i-make-client-side-network-callbacks-with-aspnet-ajax"></a>[Jak na:] Ujistěte se, zpětná volání na straně klienta pomocí prvku ASP.NET AJAX?
+<a name="how-do-i-make-client-side-network-callbacks-with-aspnet-ajax"></a>[Postup:] Ujistěte se, zpětná volání na straně klienta sítě pomocí technologie ASP.NET AJAX?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-V tomto videu vidíte, jak Microsoft ASP.NET AJAX pomáhá vývojářům webů, ujistěte se, zpětná volání sítě přímo z kódu klientský skript. Vidíme také jak podporou technologie ASP.NET AJAX webové služby generuje JavaScript potřebných k volání webové služby.
+V tomto videu vidíme, jak Microsoft ASP.NET AJAX pomáhá vývojářům webů, ujistěte se, síťová zpětná přímo v kódu skriptu na straně klienta. Vidíme také jak podporou technologie ASP.NET AJAX webové služby generuje potřebné k volání webové služby jazyka JavaScript.
 
 [&#9654;Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-make-client-side-network-callbacks-with-aspnet-ajax)
 

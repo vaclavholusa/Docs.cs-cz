@@ -1,44 +1,43 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
-title: Implementace funkce základní CRUD s platformou Entity Framework v aplikaci ASP.NET MVC (2 10) | Microsoft Docs
+title: Implementace základních funkcí CRUD s rozhraním Entity Framework v aplikaci ASP.NET MVC (2 z 10) | Dokumentace Microsoftu
 author: tdykstra
-description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio...
+description: Contoso University ukázkovou webovou aplikaci ukazuje postup vytvoření aplikace ASP.NET MVC 4 pomocí Entity Framework 5 Code First a sady Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
 ms.topic: article
 ms.assetid: f7bace3f-b85a-47ff-b5fe-49e81441cdf9
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: acec5c9641b1de230956478c4396d1d541fcb0eb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7535a72afaa79260303e3094cbaf97f97132c1d5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30875318"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399257"
 ---
-<a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>Implementace funkce základní CRUD s platformou Entity Framework v aplikaci ASP.NET MVC (2 10)
+<a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>Implementace základních funkcí CRUD s rozhraním Entity Framework v aplikaci ASP.NET MVC (2 z 10)
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 4 s použitím Entity Framework 5 Code First a Visual Studio 2012. Informace o kurzu řady najdete v tématu [z prvního kurzu řady](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). Kurz řady můžete začít od začátku nebo [stáhnout počáteční projekt pro tato kapitola](building-the-ef5-mvc4-chapter-downloads.md) a začněte zde.
+> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 4 pomocí Entity Framework 5 Code First a Visual Studio 2012. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). Série kurzů můžete začít od začátku nebo [stáhnout počáteční projekt pro tuto kapitolu](building-the-ef5-mvc4-chapter-downloads.md) a začněte tady.
 > 
 > > [!NOTE] 
 > > 
-> > Pokud narazíte na problém nevyřešíte, [stáhnout dokončené kapitoly](building-the-ef5-mvc4-chapter-downloads.md) a pokuste se znovu provést váš problém. Řešení problému můžete získat obecně tak, že porovnáte svůj kód Dokončený kód. Pro některé běžné chyby a jak je vyřešit, najdete v části [chyby a řešení.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
+> > Pokud narazíte na problém nevyřešíte sami, [stáhnout dokončený kapitoly](building-the-ef5-mvc4-chapter-downloads.md) a zkuste problém reprodukovat. Porovnáním kód Dokončený kód v obecně najdete řešení problému. Některé běžné chyby a jejich řešení najdete v tématu [chyby a náhradní řešení.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
 
-V předchozích kurzu jste vytvořili aplikaci MVC, která uchovává a zobrazí data pomocí rozhraní Entity Framework a SQL Server LocalDB. V tomto kurzu budete zkontrolujte a přizpůsobit CRUD (vytvořit, číst, aktualizovat, odstraňovat) kód, který generování uživatelského rozhraní MVC pro vás automaticky vytvoří v kontrolery a zobrazení.
+V předchozím kurzu jste vytvořili aplikaci MVC, která ukládá a zobrazuje data pomocí rozhraní Entity Framework a SQL Server LocalDB. V tomto kurzu zkontrolujete a přizpůsobit CRUD (vytváření, čtení, aktualizace nebo odstranění) kód, který generování uživatelského rozhraní MVC se automaticky vytvoří za vás do kontrolerů a zobrazení.
 
 > [!NOTE]
-> Je běžnou praxí implementovat vzor úložiště před vytvořením vrstvu abstrakce mezi řadiči a vrstva přístupu k datům. Pro zjednodušení tyto kurzy, nebude implementovat úložiště až později kurzu této série.
+> Je běžnou praxí pro implementaci vzoru úložiště chcete-li vytvořit vrstvu HAL mezi řadiči a vrstva přístupu k datům. Pro zjednodušení tyto kurzy, nebude implementovat úložiště až do novější kurzu této série.
 
 
-V tomto kurzu vytvoříte následující webové stránky:
+V tomto kurzu vytvoříte následujících webových stránek:
 
 ![Student_Details_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image1.png)
 
@@ -48,37 +47,37 @@ V tomto kurzu vytvoříte následující webové stránky:
 
 ![Student_delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image4.png)
 
-## <a name="creating-a-details-page"></a>Stránce s podrobnostmi o vytváření
+## <a name="creating-a-details-page"></a>Vytváří se stránka s podrobnostmi
 
-Automaticky generovaný kód na studentů `Index` vynecháno stránky `Enrollments` vlastnost, protože tato vlastnost obsahuje kolekci. V `Details` stránku budete zobrazení obsahu kolekce do tabulky HTML.
+Automaticky generovaný kód pro studenty `Index` vynechali stránky `Enrollments` vlastnost, protože tato vlastnost obsahuje kolekci. V `Details` obsah kolekce bude zobrazen jako tabulku HTML stránky.
 
- V *Controllers\StudentController.cs*, metoda akce pro `Details` zobrazení používá `Find` metoda pro načtení jedné `Student` entity. 
+ V *Controllers\StudentController.cs*, metoda akce pro `Details` zobrazení používá `Find` metodu pro načtení jedné `Student` entity. 
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample1.cs)]
 
- Hodnota klíče je předaný metodě jako `id` parametr a pocházejí z dat trasy v **podrobnosti** hypertextový odkaz na indexovou stránku. 
+ Hodnota klíče, která se předá metodě jako `id` parametr a pochází z dat trasy v **podrobnosti** hypertextový odkaz na indexovou stránku. 
 
-1. Open *Views\Student\Details.cshtml*. Každé pole se zobrazí, použití `DisplayFor` pomocné rutiny, jak je znázorněno v následujícím příkladu: 
+1. Otevřít *Views\Student\Details.cshtml*. Každé pole je zobrazeno pomocí `DisplayFor` pomocné rutiny, jak je znázorněno v následujícím příkladu: 
 
     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample2.cshtml)]
-2. Po `EnrollmentDate` pole a bezprostředně před uzavírací `fieldset` značky, přidejte kód, který zobrazí seznam registrace, jak je znázorněno v následujícím příkladu:
+2. Po `EnrollmentDate` pole a bezprostředně před uzavírací `fieldset` značky, přidejte kód pro zobrazení seznamu registrací, jak je znázorněno v následujícím příkladu:
 
     [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample3.cshtml?highlight=4-22)]
 
-    Tento kód projde entity v `Enrollments` navigační vlastnost. Pro každou `Enrollment` entity ve vlastnosti, zobrazí název kurzu a úrovni. Název postupu načten z `Course` entity, která je uložená v `Course` vlastnost navigace `Enrollments` entity. Všechna tato data je načíst z databáze automaticky, když je to potřeba. (Jinými slovy, používáte opožděného načítání zde. Nezadali jste *přes načítání* pro `Courses` navigační vlastnost, aby při prvním pokusu o přístup k této vlastnosti, bude odeslán dotaz do databáze načíst data. Další informace o opožděného načítání a přes načítání v [čtení související Data](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) kurz později z této série.)
-3. Spuštění stránky tak, že vyberete **studenty** kartě a kliknutím na **podrobnosti** odkaz pro Alexander Carsonovy. Zobrazí seznam kurzů a tříd pro vybrané student:
+    Tento kód projde entity v `Enrollments` navigační vlastnost. Pro každou `Enrollment` entity ve vlastnosti, zobrazí název kurzu a na podnikové úrovni. Název kurzu je načten z `Course` entita, která je uložena v `Course` vlastnost navigace `Enrollments` entity. Všechna tato data se načtou z databáze automaticky když ho nepotřebují. (Jinými slovy, že používáte opožděné načtení tady. Nezadali jste *předběžné načítání* pro `Courses` vlastnost navigace, takže při prvním pokusu o přístup k této vlastnosti, bude odeslán dotaz do databáze načíst data. Další informace o opožděné načtení a nemůžou dočkat, až načítání v [čtení souvisejících dat](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) později v této sérii kurzů.)
+3. Spuštění stránky tak, že vyberete **studenty** kartu a kliknutím **podrobnosti** odkaz Alexander Carsonovy. Zobrazí seznam kurzů a známek pro vybrané studenta:
 
     ![Student_Details_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image5.png)
 
-## <a name="updating-the-create-page"></a>Stránka pro vytvoření aktualizace
+## <a name="updating-the-create-page"></a>Aktualizuje se stránka pro vytvoření
 
-1. V *Controllers\StudentController.cs*, nahraďte `HttpPost``Create` metodu akce pomocí následujícího kódu přidat `try-catch` bloku a [atribut vazby](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx) vygenerované metody: 
+1. V *Controllers\StudentController.cs*, nahraďte `HttpPost``Create` metodu akce pomocí následujícího kódu přidejte `try-catch` bloku a [atribut vazby](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx) vygenerované metody: 
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample4.cs?highlight=4,7-8,14-20)]
 
-    Tento kód přidá `Student` entity vytvořené vazač modelu ASP.NET MVC do `Students` entitu nastavení a pak uloží změny do databáze. (*Vazač modelu* odkazuje na funkci ASP.NET MVC, díky, což usnadňuje práci s data odeslaná formuláře; vazač modelu převede odeslání formuláře hodnot pro typy CLR a předává je na metodu akce v parametrech. In this Case, vytvoří instanci vazače modelu `Student` entity můžete pomocí vlastnosti hodnoty z `Form` kolekce.)
+    Tento kód přidá `Student` entita vytvořená pomocí vazače modelu ASP.NET MVC do `Students` entity nastavení a pak uloží změny do databáze. (*Modelu pořadače* odkazuje na funkci ASP.NET MVC, která provádí, což usnadňuje práci s data odeslaná formuláře; vazač modelu převádí publikování formuláře hodnoty pro typy CLR a předává je na metodu akce v parametrech. In this Case, vytvoří instanci vazače modelu `Student` entity pomocí vlastnosti hodnoty z `Form` kolekce.)
 
-    `ValidateAntiForgeryToken` Atribut pomáhá zabránit [padělání požadavku posílaného mezi weby](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) útoky.
+    `ValidateAntiForgeryToken` Atribut pomáhá zabránit [padělání žádosti více webů](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) útoky.
 
 <a id="overpost"></a>
 
@@ -106,7 +105,7 @@ Automaticky generovaný kód na studentů `Index` vynecháno stránky `Enrollmen
     *Create.chstml* also includes `@Html.AntiForgeryToken()`, which works with the `ValidateAntiForgeryToken` attribute in the controller to help prevent [cross-site request forgery](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md) attacks.
 
     No changes are required in *Create.cshtml*.
-2. Spuštění stránky tak, že vyberete **studenty** kartě a kliknutím na **vytvořit nový**.
+2. Spuštění stránky tak, že vyberete **studenty** kartu a kliknutím na **vytvořit nový**.
 
     ![Student_Create_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image7.png)
 
@@ -114,102 +113,102 @@ Automaticky generovaný kód na studentů `Index` vynecháno stránky `Enrollmen
 
     ![Students_Create_page_error_message](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image8.png)
 
-    Následující zvýrazněný kód ukazuje kontrolu ověření modelu.
+    Následující zvýrazněný kód ukazuje ověření modelu.
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample7.cs?highlight=5)]
 
-    Změňte na platnou hodnotu například 9/1/2005 na datum a klikněte na tlačítko **vytvořit** zobrazíte nové student se zobrazí v **Index** stránky.
+    Změňte na platnou hodnotu například 9/1/2005 datum a klikněte na tlačítko **vytvořit** zobrazíte nového objektu student joinkind **Index** stránky.
 
     ![Students_Index_page_with_new_student](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image9.png)
 
-## <a name="updating-the-edit-post-page"></a>Aktualizace stránky POST úpravy
+## <a name="updating-the-edit-post-page"></a>Aktualizace stránky pro úpravu příspěvku
 
-V *Controllers\StudentController.cs*, `HttpGet` `Edit` – metoda (, aniž byste `HttpPost` atribut) používá `Find` metoda pro načtení vybraný `Student` entity, jako jste viděli v `Details` metoda. Nemusíte tuto metodu změnit.
+V *Controllers\StudentController.cs*, `HttpGet` `Edit` – metoda (jeden bez `HttpPost` atribut) používá `Find` metodu pro načtení vybraných `Student` entity, jako jste viděli v `Details` metody. Nemusíte změnit tuto metodu.
 
-Však nahradit `HttpPost` `Edit` metodu akce pomocí následujícího kódu přidat `try-catch` bloku a [atribut vazby](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx):
+Ale nahradit `HttpPost` `Edit` metodu akce pomocí následujícího kódu přidejte `try-catch` bloku a [atribut vazby](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx):
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample8.cs)]
 
-Tento kód je podobná viděli v `HttpPost` `Create` metoda. Však místo přidávání entity vytvořené vazač modelu pro sadu entit, nastaví tento kód příznak u entity oznamující, že se změnil. Když [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) metoda je volána, [změněné](https://msdn.microsoft.com/library/system.data.entitystate.aspx) příznak způsobí, že rozhraní Entity Framework vytváření příkazů SQL k aktualizaci řádku databáze. Všechny sloupce řádku databáze bude aktualizován, včetně těch, které uživatel nebyl změnit, a je v konfliktu souběžnosti jsou ignorovány. (Určuje způsob zpracování souběžnosti novější kurzu této série získáte informace.)
+Tento kód se podobá viděli v `HttpPost` `Create` metody. Však místo přidání entity vytvořené vazač modelu pro sadu entit, tento kód nastaví příznak, který u entity oznamující, že se změnil. Když [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) metoda je volána, [změněné](https://msdn.microsoft.com/library/system.data.entitystate.aspx) příznak způsobí, že rozhraní Entity Framework pro vytváření příkazů SQL aktualizujte řádek databáze. Všechny sloupce v řádku databáze se aktualizuje, včetně těch, které uživatel nezměnil, a konfliktů souběžnosti se ignorují. (Dozvíte jak zpracovat souběžnosti v pozdějších kurzech v této sérii.)
 
 ### <a name="entity-states-and-the-attach-and-savechanges-methods"></a>Stavy entity a připojit a SaveChanges metody
 
-Uchovává informace o kontextu databáze, zda jsou synchronizována s jejich odpovídající řádky v databázi entity v paměti, a tyto informace Určuje, co se stane, když zavoláte `SaveChanges` metoda. Například když předat do nové entity [přidat](https://msdn.microsoft.com/library/system.data.entity.dbset.add(v=vs.103).aspx) metoda, která je nastavena do stavu entity `Added`. Potom při volání [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) metoda, vydá kontext databáze SQL `INSERT` příkaz.
+Uchovává informace o kontextu databáze, jestli jsou synchronizované s jejich odpovídajících řádků v databázi entity v paměti a těchto informací Určuje, co se stane při volání `SaveChanges` metody. Například při předání do nové entity [přidat](https://msdn.microsoft.com/library/system.data.entity.dbset.add(v=vs.103).aspx) metoda, která stav entity je nastavený na `Added`. Potom při volání [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) metoda, vydá kontext databáze SQL `INSERT` příkazu.
 
-Entita může být v jednom z[následující stavy](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
+Entity mohou být v jednom z[následující stavy](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
 
-- `Added`. Entita ještě neexistuje v databázi. `SaveChanges` Metoda musíte vydat `INSERT` příkaz.
-- `Unchanged`. Nic je nutné provést k této entitě pomocí `SaveChanges` metoda. Při čtení entity z databáze, entity začíná se tento stav.
-- `Modified`. Některé nebo všechny hodnoty vlastností entity byly upraveny. `SaveChanges` Metoda musíte vydat `UPDATE` příkaz.
-- `Deleted`. Entita byla označena pro odstranění. `SaveChanges` Musíte vydat metoda `DELETE` příkaz.
-- `Detached`. Entity není sledována aplikací kontext databáze.
+- `Added`. Entita ještě neexistuje v databázi. `SaveChanges` Metody musíte vydat `INSERT` příkazu.
+- `Unchanged`. Co je potřeba udělat s touto entitou podle `SaveChanges` metody. Při čtení entity z databáze entity je na začátku s tímto stavem.
+- `Modified`. Některé nebo všechny hodnoty vlastností entity byly změněny. `SaveChanges` Metody musíte vydat `UPDATE` příkazu.
+- `Deleted`. Entita byla označena k odstranění. `SaveChanges` Metody musíte vydat `DELETE` příkazu.
+- `Detached`. Entita není sledován správou kontext databáze.
 
-V aplikaci pracovní plochy změny stavu se obvykle nastavuje automaticky. V plochy typu aplikace přečtěte si entitou a změnit některé z jeho hodnot vlastností. To způsobí, že stav entity automaticky změnit tak, aby `Modified`. Potom při volání `SaveChanges`, rozhraní Entity Framework generuje SQL `UPDATE` příkaz, který aktualizuje jenom skutečné vlastnosti, které jste změnili.
+V desktopové aplikaci změny stavu se obvykle nastaví automaticky. V typu desktopové aplikace čtení entity a provést změny na některé z jeho hodnot vlastností. To způsobí, že jeho stav entity automaticky změnil na `Modified`. Potom při volání `SaveChanges`, Entity Framework generuje SQL `UPDATE` příkaz, který aktualizuje pouze skutečné vlastnosti, které jste změnili.
 
-Pro toto průběžné pořadí neumožňuje odpojené povaha webové aplikace. [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) , který čte entitu je zrušen po vykreslení stránky. Když `HttpPost` `Edit` akce metoda je volána, nové požadavku a máte novou instanci třídy [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx), takže budete muset ručně nastavit stav entity na `Modified.` pak při volání `SaveChanges`, rozhraní Entity Framework aktualizuje všechny sloupce řádku databáze, protože kontext nemá žádný způsob, jak zjistit vlastnosti, které jste změnili.
+Toto pořadí průběžné neumožňuje odpojené povaha služby web apps. [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) , která načte entity je uvolněn po vykreslení stránky. Když `HttpPost` `Edit` volání metody, vytvoří se nový požadavek a mít novou instanci třídy [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx), takže je nutné ručně nastavit stavu entity `Modified.` pak při volání `SaveChanges`, Entity Framework aktualizuje všechny sloupce řádek databáze, protože kontext nemá žádný způsob, jak zjistit vlastnosti, které jste změnili.
 
-Pokud chcete, aby SQL `Update` příkaz k aktualizaci pouze pole, která uživatel ve skutečnosti změnit, můžete uložit původní hodnoty nějakým způsobem (například skrytá pole), aby byly k dispozici při `HttpPost` `Edit` metoda je volána. Potom můžete vytvořit `Student` entitu pomocí původní hodnoty, volání `Attach` metoda tento původní verzi entity, aktualizujte hodnoty entity na nové hodnoty a pak zavolají `SaveChanges.` Další informace najdete v tématu [ Stavy entity a SaveChanges](https://msdn.microsoft.com/data/jj592676) a [místní Data](https://msdn.microsoft.com/data/jj592872) v Centru pro vývojáře MSDN Data.
+Pokud chcete, aby SQL `Update` . doje k aktualizaci pouze pole, která uživatel ve skutečnosti změní, můžete uložit původní hodnoty nějakým způsobem (třeba skrytá pole) tak, aby byly k dispozici při `HttpPost` `Edit` metoda je volána. Můžete vytvořit `Student` entity pomocí původní hodnoty, volání `Attach` metodu s původní verzi entitou, aktualizujte hodnoty entity na nové hodnoty a následně zavolat `SaveChanges.` Další informace najdete v tématu [ Stavy entity a SaveChanges](https://msdn.microsoft.com/data/jj592676) a [místních dat](https://msdn.microsoft.com/data/jj592872) v datovém centru pro vývojáře MSDN.
 
-Kód v *Views\Student\Edit.cshtml* je podobná viděli v *Create.cshtml*, a je nutné provést žádné změny.
+Kód v *Views\Student\Edit.cshtml* je podobný viděli v *Create.cshtml*, a nejsou potřeba žádné změny.
 
 Spuštění stránky tak, že vyberete **studenty** kartu a pak levým na **upravit** hypertextový odkaz.
 
 ![Student_Edit_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image10.png)
 
-Některé dat a klikněte na tlačítko Změnit **Uložit**. Zobrazí změněná data na stránce indexu.
+Některá data a klikněte na tlačítko Změnit **Uložit**. Zobrazí změněných dat v indexovou stránku.
 
 ![Students_Index_page_after_edit](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image11.png)
 
-## <a name="updating-the-delete-page"></a>Aktualizace stránky odstranění
+## <a name="updating-the-delete-page"></a>Aktualizace stránky Delete
 
-V *Controllers\StudentController.cs*, kód šablony pro `HttpGet` `Delete` metoda používá `Find` metoda pro načtení vybraný `Student` entity, jako jste viděli v `Details` a `Edit` metody. Ale implementovat vlastní chybová zpráva při volání `SaveChanges` selže, přidáte některé funkce pro tuto metodu a jeho odpovídající zobrazení.
+V *Controllers\StudentController.cs*, kód šablony pro `HttpGet` `Delete` metoda používá `Find` metodu pro načtení vybraných `Student` entity, jako jste viděli v `Details` a `Edit` metody. Však implementovat vlastní chybová zpráva při volání `SaveChanges` selže, přidáte některé funkce pro tuto metodu a jeho odpovídající zobrazení.
 
-Protože jste viděli pro aktualizaci a vytvoření operací, operacemi odstranění vyžadují dvě metody akce. Metoda, která je volána v odpovědi na požadavek GET zobrazí zobrazení, které umožňuje uživateli možnost schválit nebo zrušit operaci odstranění. Pokud uživatel schválí jeho, vytvoří se požadavek POST. Pokud k tomu dojde, `HttpPost` `Delete` metoda je volána, a pak dané metody ve skutečnosti provádí operaci odstranění.
+Už znáte aktualizace a operace vytvoření, odstranění operace vyžadují dvě metody akce. Metoda, která je volána v reakci na požadavek GET zobrazí zobrazení, které umožňuje uživateli možnost schválit nebo zrušit operaci odstranění zopakovat. Pokud uživatel ho buď schválí, vytvoří se požadavek POST. Pokud k tomu dojde, `HttpPost` `Delete` volání metody a pak tato metoda ve skutečnosti provádí operaci odstranění zopakovat.
 
-Přidáte `try-catch` zablokujte `HttpPost` `Delete` metodu ke zpracování všechny chyby, které mohou nastat při aktualizaci databáze. Pokud dojde k chybě, `HttpPost` `Delete` volání metod `HttpGet` `Delete` metoda, předání parametru, která určuje, že došlo k chybě. `HttpGet Delete` Metoda pak znovu zobrazí potvrzovací stránku spolu s chybovou zprávu, umožní uživateli možnost zrušit nebo akci opakujte.
+Přidáte `try-catch` bloku `HttpPost` `Delete` metodu ke zpracování všechny chyby, které mohou nastat při aktualizaci databáze. Pokud dojde k chybě `HttpPost` `Delete` volání metod `HttpGet` `Delete` metodu předáním parametru, která označuje, že došlo k chybě. `HttpGet Delete` Metoda pak znovu zobrazí na stránce potvrzení spolu s chybovou zprávu, poskytnou tak uživateli možnost zrušit, nebo to zkuste znovu.
 
-1. Nahraďte `HttpGet` `Delete` metody akce, která spravuje zasílání zpráv o chybách následujícím kódem: 
+1. Nahradit `HttpGet` `Delete` metody akce, která spravuje zpráv o chybách následujícím kódem: 
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample9.cs)]
 
-    Tento kód přijímá [volitelné](https://msdn.microsoft.com/library/dd264739.aspx) logického parametru, která určuje, zda byla volána po selhání uložte změny. Tento parametr je `false` při `HttpGet` `Delete` metoda je volána bez předchozí chybě. Když je volána metodou `HttpPost` `Delete` metoda v odpovědi na chybu aktualizace databáze, je parametr `true` a chybová zpráva je předána do zobrazení.
-2. Nahraďte `HttpPost` `Delete` metoda akce (s názvem `DeleteConfirmed`) s následujícím kódem, který provede operaci skutečného odstranění a zachytí všechny chyby aktualizace databáze.
+    Tento kód přijímá [volitelné](https://msdn.microsoft.com/library/dd264739.aspx) logický parametr, který označuje, zda byla volána po selhání, uložte změny. Tento parametr je `false` při `HttpGet` `Delete` metoda je volána bez předchozí chyby. Pokud je volán `HttpPost` `Delete` je parametr metody v reakci na chybě aktualizace databáze `true` a chybová zpráva je předána do zobrazení.
+2. Nahradit `HttpPost` `Delete` metody akce (s názvem `DeleteConfirmed`) následujícím kódem, který provádí operace odstranění skutečné a zachytí všechny chyby aktualizace databáze.
 
      [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs)]
 
-     Tento kód načte vybrané entity, pak zavolá [odebrat](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx) metodu a nastavit stav entity `Deleted`. Když `SaveChanges` nazývá SQL `DELETE` se vygeneruje příkaz. Také jste změnili název metody akce z `DeleteConfirmed` k `Delete`. Automaticky generovaný kód s názvem `HttpPost` `Delete` metoda `DeleteConfirmed` umožnit `HttpPost` metoda jedinečný podpis. (Modulu CLR vyžaduje přetížené metody, mít parametry jinou metodu.) Teď, když podpisy jsou jedinečné, můžete přilepit s konvence MVC a použít pro stejný název `HttpPost` a `HttpGet` odstranit metody.
+     Tento kód načte vybranou entitu, zavolá [odebrat](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx) metodu pro nastavení stavu entity `Deleted`. Když `SaveChanges` nazývá SQL `DELETE` příkaz je generován. Také jste změnili název metody akce z `DeleteConfirmed` k `Delete`. Automaticky generovaný kód s názvem `HttpPost` `Delete` metoda `DeleteConfirmed` poskytnout `HttpPost` metoda jedinečnou signaturu. (CLR vyžaduje přetížené metody s parametry jinou metodu.) Teď, když podpisy jsou jedinečné, můžete zůstat u konvence MVC a použijte stejný název pro `HttpPost` a `HttpGet` metody pro odstranění.
 
-     Pokud je zvýšení výkonu v aplikaci vysoký počet prioritu, se můžete vyhnout dotazu SQL nepotřebné načíst řádek nahrazením řádků kódu, které volají `Find` a `Remove` metody následujícím kódem, jak je znázorněno v žlutý Zvýrazněte:
+     Pokud je vylepšení výkonu v aplikaci s velkým objemem prioritu, se můžete vyhnout zbytečným jazyka SQL k načtení na řádku tak, že nahradíte řádků kódu, které volají `Find` a `Remove` metody následujícím kódem, jak je znázorněno v žlutá Zvýrazněte:
 
      [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample11.cs)]
 
-     Tento kód vytvoří `Student` entitu pomocí pouze hodnotu primárního klíče a poté nastaví stav entity na `Deleted`. To je všechno, která rozhraní Entity Framework potřebuje, aby odstranit entitu.
+     Tento kód vytvoří instanci `Student` entity pomocí pouze hodnotu primárního klíče a pak nastaví stav entity `Deleted`. To je vše, Entity Framework potřebuje, aby odstranit entitu.
 
-     Jak jsme uvedli, `HttpGet` `Delete` metoda neodstraní data. Provádění operace odstranění v reakci na příkaz GET požadavku (nebo k tomuto účelu, provádět všechny operace upravit vytvořit operaci, nebo jiná operace, která se mění data) vytvoří bezpečnostní riziko. Další informace najdete v tématu [46 Tip # aplikace ASP.NET MVC – nepoužívejte odkazy odstranit, protože uživatel vytvořit celistvosti](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx) na blogu Stephen Walther.
-3. V *Views\Student\Delete.cshtml*, přidejte chybovou zprávu mezi `h2` záhlaví a `h3` záhlaví, jak je znázorněno v následujícím příkladu:
+     Jak je uvedeno, `HttpGet` `Delete` metoda neodstraní data. Operace delete v reakci na příkaz GET žádosti (nebo pro tento účel, provedení libovolné operace úprav vytvořte operace nebo jiné operace, která se mění data) vytvoří ohrožení zabezpečení. Další informace najdete v tématu [46 Tip # aplikace ASP.NET MVC – nepoužívejte odstranit odkazy, protože uživatel vytvořit bezpečnostní díry](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx) na blogu Stephen Walther.
+3. V *Views\Student\Delete.cshtml*, přidejte mezi chybová zpráva `h2` záhlaví a `h3` záhlaví, jak je znázorněno v následujícím příkladu:
 
      [!code-cshtml[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample12.cshtml?highlight=2)]
 
-     Spuštění stránky tak, že vyberete **studenty** kartě a kliknutím na **odstranit** hypertextový odkaz:
+     Spuštění stránky tak, že vyberete **studenty** kartu a kliknutím **odstranit** hypertextový odkaz:
 
      ![Student_Delete_page](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image12.png)
-4. Klikněte na tlačítko **odstranit**. Bez odstraněné student se zobrazí stránka indexu. (Příklady kódu v akci v pro zpracování chyby najdete [zpracování souběžnosti](../../getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md) kurz později z této série.)
+4. Klikněte na tlačítko **odstranit**. Zobrazí se indexovou stránku bez odstraněné studentů. (Zobrazí se vám příklad kód v akci pro zpracování chyb [zpracování souběžnosti](../../getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md) později v této sérii kurzů.)
 
-## <a name="ensuring-that-database-connections-are-not-left-open"></a>Zajištění, že připojení databáze ponechány není otevřené
+## <a name="ensuring-that-database-connections-are-not-left-open"></a>Zajištění, že připojení k databázi není otevřená
 
-Abyste měli jistotu, že správně zavřeny připojení databáze a prostředky, které drží uvolněné nahoru, měli byste vidět k němu uvolnění má instance kontextu. To znamená, proč obsahuje automaticky generovaný kód [Dispose](https://msdn.microsoft.com/library/system.idisposable.dispose(v=vs.110).aspx) metoda na konci `StudentController` třídy v *StudentController.cs*, jak je znázorněno v následujícím příkladu:
+Abyste měli jistotu, že jsou správně uzavřeny připojení k databázi a prostředky, které drží uvolněné nahoru, byste měli vidět na to, že tato instance kontextu je uvolněn. To znamená, proč obsahuje automaticky generovaný kód [Dispose](https://msdn.microsoft.com/library/system.idisposable.dispose(v=vs.110).aspx) metoda na konci `StudentController` třídy v *StudentController.cs*, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample13.cs)]
 
-Základní `Controller` třídy již implementuje `IDisposable` rozhraní, takže tento kód jednoduše přidá přepsání pro `Dispose(bool)` metodu dispose explicitně instance kontextu.
+Základní `Controller` implementuje třída již `IDisposable` rozhraní, takže tento kód jednoduše přidá přepsání `Dispose(bool)` metoda explicitně uvolnit instance kontextu.
 
 ## <a name="summary"></a>Souhrn
 
-Nyní máte úplnou sadu stránek, které provádějí jednoduché operace CRUD pro `Student` entity. Pomocné rutiny MVC jste použili k vygenerování prvky uživatelského rozhraní pro datová pole. Další informace o pomocné rutiny MVC najdete v tématu [vykreslování HTML Pomocníci pomocí formuláře](https://msdn.microsoft.com/library/dd410596(v=VS.98).aspx) (stránka je pro MVC 3, ale je stále relevantní pro MVC 4).
+Teď máte úplnou sadu stránek, které provádějí jednoduché operace CRUD pro `Student` entity. Pomocné rutiny MVC jste použili k vygenerování prvky uživatelského rozhraní pro datová pole. Další informace o pomocné rutiny MVC najdete v tématu [vykreslení formuláři pomocí pomocných rutin HTML](https://msdn.microsoft.com/library/dd410596(v=VS.98).aspx) (stránka je pro MVC 3, ale je stále relevantní pro MVC 4).
 
-V dalším kurzu rozbalíte funkce indexovou stránku přidáním řazení a stránkování.
+V dalším kurzu rozšiřujete funkce indexovou stránku tak, že přidáte řazení a stránkování.
 
-Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k dat ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
+Odkazy na další zdroje Entity Framework najdete v [mapa obsahu přístupu k Data technologie ASP.NET](../../../../whitepapers/aspnet-data-access-content-map.md).
 
 > [!div class="step-by-step"]
 > [Předchozí](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)

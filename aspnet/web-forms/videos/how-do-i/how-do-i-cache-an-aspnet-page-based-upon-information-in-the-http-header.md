@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header
-title: '[Jak na:]  Mezipaměť stránky ASP.NET na základě informací v hlavičce HTTP | Microsoft Docs'
+title: '[Postup:]  Stránky technologie ASP.NET na základě informací v hlavičce protokolu HTTP mezipaměti | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan ukazuje, jak udržovat stránky ve výstupní mezipaměti technologie ASP.NET na základě informací v hlavičce protokolu HTTP na stránku. První, potenciální nadpisů HTTP...
+description: V toto video pixelů na Chris ukazuje, jak zachovat stránku do výstupní mezipaměti ASP.NET na základě informací v hlavičce HTTP, na stránce. První, potenciální nadpisů HTTP...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2009
 ms.topic: article
 ms.assetid: 0f8df1bd-080a-4eeb-980c-c2fbb05d30c2
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header
 msc.type: video
-ms.openlocfilehash: ce5ea10396d0fe31d72425e2431102a0cb0c3bd0
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3987e6ea1e5ea5575813bdf5598d0499ba37db20
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28882214"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395250"
 ---
-<a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a>[Jak na:]  Mezipaměť stránky ASP.NET na základě informací v hlavičce protokolu HTTP
+<a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a>[Postup:]  Mezipaměť stránky ASP.NET na základě informací v hlavičce protokolu HTTP
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan ukazuje, jak udržovat stránky ve výstupní mezipaměti technologie ASP.NET na základě informací v hlavičce protokolu HTTP na stránku. Nejprve jsou kontrolovány potenciální hodnoty hlavičky protokolu HTTP. Poté vytvoření ukázkové stránky a pak direktivy OutputCache používá s VaryByHeader atribut, který obsahuje hodnotu "přijmout jazyk", záhlaví HTTP, k řízení ukládání do mezipaměti podle jazyka prohlížeče uživatele. Ukázkové stránky je zobrazit v aplikaci Internet Explorer, který je nastaven na angličtinu a pak v FireFox, který je nastavený na použití francouzštinu. Nakonec je popsána možnost přesunout definici mezipaměti do CacheProfile v souboru web.config.
+V toto video pixelů na Chris ukazuje, jak zachovat stránku do výstupní mezipaměti ASP.NET na základě informací v hlavičce HTTP, na stránce. Nejprve jsou kontrolovány možných hodnot hlavičky protokolu HTTP. Potom vytvoří ukázkovou stránku a pak direktivy OutputCache se používá s atributem VaryByHeader, který obsahuje hodnotu "přijmout jazyka", hlavičky protokolu HTTP, k řízení ukládání do mezipaměti podle jazyka prohlížeče uživatele. Stránka s ukázkou je zobrazit v Internet Exploreru, která je nastavena na angličtina a pak ve Firefoxu, který je nastavený na použití francouzština. Nakonec jsou popsány možnost přesunout definici mezipaměti CacheProfile v souboru web.config.
 
-[&#9654; Podívejte se na video (12 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header)
+[&#9654;Podívejte se na video (12 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header)

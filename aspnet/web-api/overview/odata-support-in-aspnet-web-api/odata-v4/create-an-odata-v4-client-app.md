@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
-title: Vytvoření aplikace OData v4 klienta (C#) | Microsoft Docs
+title: Vytvoření klientské aplikace OData v4 (C#) | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,84 +9,83 @@ ms.date: 06/26/2014
 ms.topic: article
 ms.assetid: 47202362-3808-4add-9a69-c9d1f91d5e4e
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: 51a3c7b9c5b6525d6d82b9a45910f58b71268b7f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1ea6121db781c2d08bc8c76cd07be3c5a4f23f62
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28036697"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377389"
 ---
-<a name="create-an-odata-v4-client-app-c"></a>Vytvoření aplikace OData v4 klienta (C#)
+<a name="create-an-odata-v4-client-app-c"></a>Vytvoření klientské aplikace OData v4 (C#)
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-V předchozích kurzu vytvoříte základní služba OData, která podporuje operace CRUD. Nyní vytvoříme klienta pro službu.
+V předchozím kurzu jste vytvořili základní služby OData, který podporuje operace CRUD. Nyní Pojďme vytvořit klienta pro službu.
 
-Spusťte novou instanci sady Visual Studio a vytvořte nový projekt konzolové aplikace. V **nový projekt** dialogovém okně, vyberte **nainstalovaná** &gt; **šablony** &gt; **Visual C#** &gt; **Windows Desktop**a vyberte **konzolové aplikace** šablony. Název projektu &quot;ProductsApp&quot;.
+Spustit novou instanci sady Visual Studio a vytvořte nový projekt konzolové aplikace. V **nový projekt** dialogového okna, vyberte **nainstalováno** &gt; **šablony** &gt; **Visual C#** &gt; **Windows Desktop**a vyberte **konzolovou aplikaci** šablony. Pojmenujte projekt &quot;ProductsApp&quot;.
 
 ![](create-an-odata-v4-client-app/_static/image1.png)
 
 > [!NOTE]
-> Konzolové aplikace můžete také přidat do stejného řešení sady Visual Studio, který obsahuje službu OData.
+> Aplikace konzoly můžete také přidat do stejného řešení sady Visual Studio, která obsahuje službu OData.
 
 
-## <a name="install-the-odata-client-code-generator"></a>Nainstalujte klienta OData generátor kódu
+## <a name="install-the-odata-client-code-generator"></a>Instalace generátoru kódu klienta OData
 
-Z **nástroje** nabídce vyberte možnost **rozšíření a aktualizace**. Vyberte **Online** &gt; **Galerie sady Visual Studio**. Do vyhledávacího pole Hledat &quot;generátor kódu klienta OData&quot;. Klikněte na tlačítko **Stáhnout** k instalaci VSIX. Může se zobrazit výzva k restartování sady Visual Studio.
+Z **nástroje** nabídce vyberte možnost **rozšíření a aktualizace**. Vyberte **Online** &gt; **Galerie sady Visual Studio**. Do vyhledávacího pole vyhledejte &quot;generátor kódu klienta OData&quot;. Klikněte na tlačítko **Stáhnout** nainstalovat VSIX. Vám může zobrazit výzva k restartování sady Visual Studio.
 
 [![](create-an-odata-v4-client-app/_static/image3.png)](create-an-odata-v4-client-app/_static/image2.png)
 
-## <a name="run-the-odata-service-locally"></a>Spusťte službu OData místně
+## <a name="run-the-odata-service-locally"></a>Místní spuštění služby OData
 
-Spusťte projekt ProductService ze sady Visual Studio. Ve výchozím nastavení Visual Studio spustí prohlížeč na kořenový adresář aplikace. Poznámka: identifikátor URI; je nutné v dalším kroku. Nechte aplikaci spuštěnou.
+Spusťte projekt ProductService ze sady Visual Studio. Ve výchozím nastavení spustí aplikace Visual Studio prohlížeč na kořenový adresář aplikace. Poznámka: identifikátor URI; to budete potřebovat v dalším kroku. Nechte aplikaci spuštěnou.
 
 ![](create-an-odata-v4-client-app/_static/image4.png)
 
 > [!NOTE]
-> Když vložíte obou projektů ve stejném řešení, nezapomeňte spustit projekt ProductService bez ladění. V dalším kroku musíte udržovat služby běží, když upravíte projekt konzolové aplikace.
+> Když vložíte oba projekty ve stejném řešení, ujistěte se, že ke spuštění ProductService projektu bez ladění. V dalším kroku je potřeba udržet službu při úpravě projektu konzolové aplikace.
 
 
-## <a name="generate-the-service-proxy"></a>Generovat Proxy služby
+## <a name="generate-the-service-proxy"></a>Generování Proxy služby
 
-Proxy server služby je třída rozhraní .NET, která definuje metody pro přístup ke službě OData. Proxy server přeloží volání metod na požadavky HTTP. Vytvoří třídu proxy spuštěním [šablony T4](https://msdn.microsoft.com/library/bb126445.aspx).
+Proxy služby je třída rozhraní .NET, která definuje metody pro přístup ke službě OData. Proxy server překládá volání metod na požadavky HTTP. Vytvoří třídu proxy spuštěním [šablona T4](https://msdn.microsoft.com/library/bb126445.aspx).
 
-Klikněte pravým tlačítkem na projekt. Vyberte **přidat** &gt; **novou položku**.
+Klikněte pravým tlačítkem na projekt. Vyberte **přidat** &gt; **nová položka**.
 
 ![](create-an-odata-v4-client-app/_static/image5.png)
 
-V **přidat novou položku** dialogovém okně, vyberte **Visual C# položky** &gt; **kód** &gt; **klient OData**. Název šablony &quot;ProductClient.tt&quot;. Klikněte na tlačítko **přidat** a klikněte na tlačítko prostřednictvím upozornění zabezpečení.
+V **přidat novou položku** dialogového okna, vyberte **položky Visual C#** &gt; **kód** &gt; **klient OData**. Název šablony &quot;ProductClient.tt&quot;. Klikněte na tlačítko **přidat** proklikat upozornění zabezpečení.
 
 [![](create-an-odata-v4-client-app/_static/image7.png)](create-an-odata-v4-client-app/_static/image6.png)
 
-V tomto okamžiku budete dojde k chybě, která můžete ignorovat. Visual Studio automaticky spustí šablony, ale šablona potřebuje některá nastavení konfigurace první.
+V tomto okamžiku budete dojde k chybě, které můžete ignorovat. Visual Studio automaticky spustí šablony, ale šablona potřebuje některá nastavení konfigurace první.
 
 [![](create-an-odata-v4-client-app/_static/image9.png)](create-an-odata-v4-client-app/_static/image8.png)
 
-Otevřete soubor ProductClient.odata.config. V `Parameter` elementu, vložte identifikátor URI z projektu ProductService (předchozí krok). Příklad:
+Otevřete soubor ProductClient.odata.config. V `Parameter` elementu, vložením identifikátoru URI z projektu ProductService (předchozího kroku). Příklad:
 
 [!code-xml[Main](create-an-odata-v4-client-app/samples/sample1.xml)]
 
 [![](create-an-odata-v4-client-app/_static/image11.png)](create-an-odata-v4-client-app/_static/image10.png)
 
-Znovu spusťte šablonu. V Průzkumníku řešení klikněte pravým tlačítkem na soubor ProductClient.tt a vyberte **spustit nástroj pro vlastní**.
+Spusťte šablonu znovu. V Průzkumníku řešení klikněte pravým tlačítkem myši klikněte na soubor ProductClient.tt a vyberte **spustit vlastní nástroj**.
 
-Šablona vytvoří kód soubor s názvem ProductClient.cs, která definuje proxy serveru. Když budete vyvíjet aplikace, pokud změníte koncový bod OData, spusťte šablonu znovu k aktualizaci proxy serveru.
+Šablona vytvoří soubor kódu s názvem ProductClient.cs, který definuje proxy serveru. Při vývoji vaší aplikace, pokud změníte koncový bod OData, spusťte šablonu znovu a aktualizujte server proxy.
 
 ![](create-an-odata-v4-client-app/_static/image12.png)
 
-## <a name="use-the-service-proxy-to-call-the-odata-service"></a>Použít proxy server služby pro volání služby OData
+## <a name="use-the-service-proxy-to-call-the-odata-service"></a>Použít proxy server služby k volání služby OData
 
-Otevřete soubor Program.cs a nahradit následující často používaný kód.
+Otevřete soubor Program.cs a nahraďte často používaný kód následujícím kódem.
 
 [!code-csharp[Main](create-an-odata-v4-client-app/samples/sample2.cs)]
 
-Nahraďte hodnotu *serviceUri* s URI služby z dříve.
+Nahraďte hodnotu *serviceuri:* s URI služby ze dříve.
 
 [!code-csharp[Main](create-an-odata-v4-client-app/samples/sample3.cs)]
 
-Při spuštění aplikace by měla výstup následující:
+Při spuštění aplikace by měl výstup následující:
 
 [!code-console[Main](create-an-odata-v4-client-app/samples/sample4.cmd)]

@@ -1,37 +1,36 @@
 ---
 uid: web-pages/overview/releases/running-v1-and-v2-sites-side-by-side
-title: S různými verzemi technologie ASP.NET Web Pages (Razor) vedle sebe | Microsoft Docs
+title: Spuštění různých verzí webových stránek ASP.NET (Razor) vedle sebe | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento článek vysvětluje, jak spustit weby technologie ASP.NET Web Pages (Razor) na stejném počítači nebo serveru, když k webům, které jsou nakonfigurovány pro použití různých verzí...
+description: Tento článek vysvětluje, jak spustit websites webových stránek ASP.NET (Razor) na stejném počítači nebo serveru, když weby jsou nakonfigurovány pro použití různých verzí...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
 ms.topic: article
 ms.assetid: a861409b-4ae6-4868-9e09-87edfac3535f
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/running-v1-and-v2-sites-side-by-side
 msc.type: authoredcontent
-ms.openlocfilehash: 1729f3201013926b221afc92d23416b0081d8efb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aa2bf41054540cc67b7c0b4669e356e732fed8d1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898403"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402454"
 ---
-<a name="running-different-versions-of-aspnet-web-pages-razor-side-by-side"></a>S různými verzemi ASP.NET Web Pages (Razor) vedle sebe
+<a name="running-different-versions-of-aspnet-web-pages-razor-side-by-side"></a>Souběžné spuštění různých verzí webových stránek ASP.NET (Razor)
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek vysvětluje, jak spustit weby technologie ASP.NET Web Pages (Razor) na stejném počítači nebo serveru, když k webům, které jsou nakonfigurovány pro použití různých verzí z webové stránky ASP.NET.
+> Tento článek vysvětluje, jak spustit websites webových stránek ASP.NET (Razor) na stejném počítači nebo serveru, když weby jsou nakonfigurovány pro použití různých verzí z rozhraní ASP.NET Web Pages.
 > 
-> Získáte informace:
+> Co se dozvíte:
 > 
-> - Výchozí chování Novinky v technologii ASP.NET Pokud máte webů vytvořených pomocí technologie ASP.NET Web Pages.
-> - Postup konfigurace nové lokality ke spuštění ze starší verze z technologie ASP.NET Web Pages.
+> - Výchozí chování Novinky v technologii ASP.NET případě, že máte webů vytvořených s webovými stránkami ASP.NET.
+> - Jak konfigurovat novou lokalitu ke spuštění ve starší verzi z rozhraní ASP.NET Web Pages.
 >   
 > 
-> Toto je funkce technologie ASP.NET byla zavedená v článku:
+> Toto je funkce technologie ASP.NET zavedené v následujícím článku:
 > 
 > - `webPages:Version` Nastavení konfigurace.
 >   
@@ -39,25 +38,25 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 > ## <a name="software-versions"></a>Verze softwaru
 > 
 > 
-> - Rozhraní ASP.NET Web Pages (Razor) 3
+> - Webové stránky ASP.NET (Razor) 3
 >   
 > 
-> V tomto kurzu taky spolupracuje se službou ASP.NET Web Pages 2 a ASP.NET Web Pages 1.0.
+> V tomto kurzu se také pracuje s ASP.NET Web Pages 2 a ASP.NET Web Pages 1.0.
 
 
-ASP.NET – webové stránky podporuje možnost spouštění weby vedle sebe. Díky tomu můžete i nadále spouštět starší aplikace technologie ASP.NET Web Pages, vytvářet nové aplikace ASP.NET Web Pages a spustit všechny z nich na stejném počítači.
+ASP.NET Web Pages podporuje možnost spouštění websites vedle sebe. Tímto způsobem můžete i nadále spouštět starší aplikace ASP.NET Web Pages, vytvářet nové aplikace ASP.NET Web Pages a spustit všechny z nich na stejném počítači.
 
-Zde jsou některé věci pamatovat při instalaci webových stránek pomocí služby WebMatrix:
+Zde jsou některé kroky, nezapomeňte při instalaci webových stránek pomocí služby WebMatrix:
 
-- Ve výchozím nastavení bude existující webové stránky aplikace v počítači spustit jako na nejnovější verzi. (Sestavení jsou nainstalované v globální mezipaměti sestavení (GAC) a používají automaticky.)
-- Pokud chcete spustit lokalitě v jiné verzi z webových stránek ASP.NET, můžete nakonfigurovat k tomuto webu. Pokud váš web již nemá *web.config* souboru v kořenovém adresáři serveru, vytvořte novou a zkopírujte následující kód XML do ní, přepsání existujícího obsahu. Pokud lokalita již obsahuje *web.config* soubor, přidejte `<appSettings>` element stejný, jako je následující k `<configuration>` oddílu.
+- Ve výchozím nastavení bude existující aplikace Web Pages spustit jako na nejnovější verzi ve vašem počítači. (Sestavení jsou nainstalované v globální mezipaměti sestavení (GAC) a automaticky se používají.)
+- Pokud budete chtít spuštění webu v jiné verzi z webových stránek ASP.NET, weby k tomu můžete konfigurovat. Pokud váš web už nemá *web.config* souboru v kořenovém adresáři serveru, vytvořte novou a zkopírujte následující kód XML do něj, přepisování stávajícího obsahu. Pokud web již obsahuje *web.config* přidejte `<appSettings>` prvky jako následující ten, který má `<configuration>` oddílu.
 
     [!code-xml[Main](running-v1-and-v2-sites-side-by-side/samples/sample1.xml)]
-  ' – Pokud nezadáte verzi v *web.config* soubor, lokalitu je nasadit jako na nejnovější verzi. (Sestavení se zkopírují do *bin* složku v nasazené lokalitě.)
-- Nové aplikace, které vytvoříte pomocí šablony webů v matici webové zahrnují verze sestavení webové stránky na webu *bin* složky.
+  . – Pokud nezadáte verzi v *web.config* soubor lokality je nasazená jako na nejnovější verzi. (Sestavení se zkopírují do *bin* složky v nasazené lokality.)
+- Nové aplikace, které vytvoříte pomocí šablony webu v Web Matrix zahrnují budou sestavení verze webové stránky na webu *bin* složky.
 
-Obecně platí, můžete vždy řídit kterou verzi webové stránky pro použití s vaší lokality pomocí NuGet pro instalaci příslušné sestavení do lokality *bin* složky. Balíčky naleznete [NuGet.org](http://NuGet.org).
+Obecně platí, můžete vždy určit, kterou verzi webových stránek pomocí vašeho webu pomocí NuGet nainstalovat odpovídající sestavení na web *bin* složky. Balíčky, najdete v tématu [NuGet.org](http://NuGet.org).
 
 ## <a name="additional-resources"></a>Další prostředky
 
-[Hlavní funkce v rozhraní ASP.NET Web Pages 2](top-features-in-web-pages-2.md)
+[Hlavní funkce webových stránek v ASP.NET 2](top-features-in-web-pages-2.md)

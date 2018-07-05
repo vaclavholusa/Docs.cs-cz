@@ -1,187 +1,186 @@
 ---
 uid: whitepapers/what-is-new-in-aspnet-mvc
-title: Co je nového v architektuře ASP.NET MVC 2 | Microsoft Docs
+title: Co je nového v architektuře ASP.NET MVC 2 | Dokumentace Microsoftu
 author: rick-anderson
-description: Tento dokument popisuje nové funkce a vylepšení, která byla zavedená v ASP.NET MVC 2. Tento dokument je také k dispozici ke stažení.
+description: Tento dokument popisuje nové funkce a vylepšení v ASP.NET MVC 2. Tento dokument slouží také k dispozici ke stažení.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2010
 ms.topic: article
 ms.assetid: 69a8d6f8-4b10-4602-8822-2d6c05fc432b
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: 808f51b48b31e21848d76e7ded436ca1b17901d2
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 51349c9967890675b4e13a6710572c1cea7d9337
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28885229"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400428"
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>Co je nového v architektuře ASP.NET MVC 2
 ====================
-> Tento dokument popisuje nové funkce a vylepšení, která byla zavedená v ASP.NET MVC 2. Tento dokument je také k dispozici pro [stáhnout](https://download.microsoft.com/download/F/1/6/F16F9AF9-8EF4-4845-BC97-639791D5699C/WhatIsNewInMVC_2.pdf)
+> Tento dokument popisuje nové funkce a vylepšení v ASP.NET MVC 2. Tento dokument je také k dispozici pro [stáhnout](https://download.microsoft.com/download/F/1/6/F16F9AF9-8EF4-4845-BC97-639791D5699C/WhatIsNewInMVC_2.pdf)
 
 
 [Úvod](#_TOC1)   
-[Upgrade projektu ASP.NET MVC 1,0 do architektury ASP.NET MVC 2](#_TOC2)   
+[Aktualizace projektu ASP.NET MVC 1,0 do architektury ASP.NET MVC 2](#_TOC2)   
 [Nové funkce](#_TOC3)   
-[Objekty se šablonami za](#_TOC3_1)   
+[Pomocnými objekty](#_TOC3_1)   
 [Oblasti](#_TOC3_2)   
 [Podpora pro asynchronní řadiče](#_TOC3_3)   
 [Podpora pro DefaultValueAttribute – v parametrů metody akce](#_TOC3_4)   
-[Podpora pro vazbu s vazače modelů binární Data](#_TOC3_5)   
+[Podpora pro vazby binárních dat s Vazači modelu](#_TOC3_5)   
 [ModelMetadata a ModelMetadataProvider třídy](#_TOC3_6)   
-[Podpora pro DataAnnotations atributy](#_TOC3_7)   
+[Podpora pro atributy DataAnnotations](#_TOC3_7)   
 [Zprostředkovatele ověření modelu](#_TOC3_8)   
 [Ověřování na straně klienta](#_TOC3_9)   
 [Nové fragmenty kódu pro Visual Studio 2010](#_TOC3_10)   
 [Nový filtr akce RequireHttpsAttribute](#_TOC3_11)   
-[Přepsání příkaz metoda HTTP](#_TOC3_12)   
-[Nová třída HiddenInputAttribute pro objekty se šablonami za](#_TOC3_13)   
+[Přepsání metody HTTP akce](#_TOC3_12)   
+[Nová třída HiddenInputAttribute pro pomocnými objekty](#_TOC3_13)   
 [Metoda Html.ValidationSummary Helper můžete zobrazit chyby na úrovni modelu](#_TOC3_14)   
-[Šablony T4 v Visual Studio generování kódu, který se liší podle cílové verzi rozhraní .NET Framework](#_TOC3_15)[vylepšení rozhraní API](#_TOC4)  
-[Nejnovější změny](#_TOC5)  
+[Šablony T4 v aplikaci Visual Studio vygenerovat kód, který je specifické pro cílovou verzi rozhraní .NET Framework](#_TOC3_15)[vylepšení rozhraní API](#_TOC4)  
+[Rozbíjející změny v](#_TOC5)  
 [Právní omezení](#_TOC6)  
 
-## <a id="_TOC1"></a>Úvod
+## <a id="_TOC1"></a>  Úvod
 
-ASP.NET MVC 2 staví na ASP.NET MVC 1,0 a zavádí velké sady vylepšení a funkce, které jsou zaměřené na zvýšení produktivity. Tato verze je kompatibilní s ASP.NET MVC 1.0, takže všechny znalostní báze, znalosti, kód a rozšíření pro ASP.NET MVC 1,0 nadále platí.
+ASP.NET MVC 2 staví na ASP.NET MVC 1,0 a představuje velkou sadu vylepšení a funkcí, které jsou zaměřené na zvýšení produktivity. Tato verze je kompatibilní s ASP.NET MVC 1.0, takže všechny znalostní báze, dovednosti, kód a rozšíření pro ASP.NET MVC 1,0 pokračovat v používání.
 
-Další informace o architektuře ASP.NET MVC naleznete v následujících zdrojích informací:
+Další informace o architektuře ASP.NET MVC naleznete na následujících odkazech:
 
-- [ASP.NET MVC dokumentaci na webu MSDN](https://go.microsoft.com/fwlink/?LinkId=159758)
-- [Webu technologie ASP.NET MVC](https://asp.net/mvc/)
+- [Dokumentace k ASP.NET MVC na webu MSDN](https://go.microsoft.com/fwlink/?LinkId=159758)
+- [Na webu technologie ASP.NET MVC](https://asp.net/mvc/)
 - [Fóra ASP.NET MVC](https://forums.asp.net/1146.aspx)
 
-## <a id="_TOC2"></a>Upgrade projektu ASP.NET MVC 1,0 do architektury ASP.NET MVC 2
+## <a id="_TOC2"></a>  Aktualizace projektu ASP.NET MVC 1,0 do architektury ASP.NET MVC 2
 
-ASP.NET MVC 2 lze nainstalovat na stejný server, který poskytuje flexibilitu vývojáři aplikace při volbě, když chcete upgradovat aplikaci ASP.NET MVC 1,0 ASP.NET MVC 2 node souběžně s ASP.NET MVC 1,0. Informace o tom, jak upgradovat, naleznete v dokumentu [upgrade aplikace ASP.NET MVC 1,0 ASP.NET MVC 2](https://go.microsoft.com/fwlink/?LinkID=185459).
+ASP.NET MVC 2 je možné nainstalovat souběžně s ASP.NET MVC 1,0 na stejném serveru, která poskytuje aplikace vývojáři flexibilitu při výběru, kdy se má upgradovat aplikaci ASP.NET MVC 1,0 do ASP.NET MVC 2. Informace o tom, jak upgradovat, naleznete v dokumentu [upgrade aplikace ASP.NET MVC 1,0 ASP.NET MVC 2](https://go.microsoft.com/fwlink/?LinkID=185459).
 
-## <a id="_TOC3"></a>Nové funkce
+## <a id="_TOC3"></a>  Nové funkce
 
-Tato část popisuje funkce, které byly zavedeny v MVC 2 release.
+Tato část popisuje funkce, které se zavedly ve verzi 2 na MVC.
 
-### <a id="_TOC3_1"></a>Objekty se šablonami za
+### <a id="_TOC3_1"></a>  Pomocnými objekty
 
-Objekty se šablonami za umožňují automaticky přidružit elementů HTML pro úpravy a zobrazit s datovými typy. Například když data typu System.DateTime se zobrazí v zobrazení, prvku uživatelského rozhraní pro výběr data lze automaticky vykreslit. Toto je podobná jak fungují šablony polí v Dynamická Data technologie ASP.NET. Další informace najdete v tématu [pomocí objekty se šablonami za k datům zobrazení](https://go.microsoft.com/fwlink/?LinkId=159062) na webu MSDN.
+Pomocnými objekty se vám umožní automaticky přidružených elementů HTML pro úpravy a zobrazení s datovými typy. Například když v zobrazení se zobrazí data typu System.DateTime, prvku Výběr data uživatelského rozhraní lze automaticky vykreslit. To se podobá fungování šablony polí v dynamických dat ASP.NET. Další informace najdete v tématu [pomocí pomocnými objekty se k datům zobrazení](https://go.microsoft.com/fwlink/?LinkId=159062) na webové stránce MSDN.
 
-### <a id="_TOC3_2"></a>Oblasti
+### <a id="_TOC3_2"></a>  Oblasti
 
-Oblasti umožňují uspořádat velké projektu do více oddílů menší za účelem správy složitost velké webové aplikace. Každá část ("oblast") obvykle představuje samostatné části velké webové stránky a slouží k seskupení souvisejících sady kontrolery a zobrazení. Další informace najdete v tématu [návod: uspořádání aplikaci ASP.NET MVC v oblastech](https://go.microsoft.com/fwlink/?LinkId=158978) na webu MSDN.
+Oblasti umožňují organizovat velkého projektu do několika menších oddílů, aby bylo možné zvládnout složité velké webové aplikace. Každý oddíl ("oblasti") obvykle představuje samostatný oddíl velký webové stránky a slouží k seskupení souvisejících sad kontrolerů a zobrazení. Další informace najdete v tématu [návod: uspořádání aplikaci ASP.NET MVC v oblastech](https://go.microsoft.com/fwlink/?LinkId=158978) na webové stránce MSDN.
 
-Pokud chcete vytvořit novou oblast v Průzkumníku řešení, klikněte pravým tlačítkem na projekt, klikněte na tlačítko Přidat a pak klikněte na tlačítko oblasti. Zobrazí se dialogové okno s výzvou k zadání názvu oblasti. Když zadáte název oblasti, Visual Studio přidá do projektu do nové oblasti.
+Chcete-li vytvořit novou oblast, v Průzkumníku řešení klikněte pravým tlačítkem na projekt, klikněte na tlačítko Přidat a potom klikněte na oblast. Zobrazí se dialogové okno, které vás vyzve k zadání názvu oblasti. Po zadání názvu oblasti Visual Studio přidá do projektu novou oblast.
 
-Následující obrázek znázorňuje příklad rozvržení pro projekt se dvě oblasti, správce a blogů.
+Následující obrázek znázorňuje příklad rozvržení pro projekt se dvě oblasti, správu a blogy.
 
 ![](what-is-new-in-aspnet-mvc/_static/image1.png)
 
-Když vytvoříte oblast, Visual Studio přidá třídu odvozenou z AreaRegistration pro každou oblast. Tato třída je požadované pro registraci oblasti a jeho trasy, jak je znázorněno v následujícím příkladu:
+Když vytvoříte oblast, Visual Studio přidá třídu, která je odvozena z AreaRegistration do každé oblasti. Tato třída je požadované pro registraci oblasti a jeho cesty, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample1.cs)]
 
-Výchozí šablona projektu pro ASP.NET MVC 2 obsahuje volání metodě RegisterAllAreas v kódu na soubor Global.asax. Tato metoda registruje každou oblast v projektu vyhledávání pro všechny typy, které jsou odvozeny od třídy AreaRegistration, vytváření instancí instance typu a potom voláním metody RegisterArea v instanci. Následující příklad ukazuje, jak to provést.
+Výchozí šablona projektu pro ASP.NET MVC 2 obsahuje volání metodě RegisterAllAreas v kódu pro soubor Global.asax. Metoda registruje jednotlivých oblastí v projektu tak, že hledá všechny typy, které jsou odvozeny z třídy AreaRegistration, vytvoření instance typu a následným voláním metody RegisterArea na instanci. Následující příklad ukazuje, jak to lze provést.
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample2.cs)]
 
-Pokud nezadáte žádný obor názvů v metodě RegisterArea voláním kontextu. Ve výchozím nastavení se používá metoda Namespaces.Add, obor názvů registrace třídy.
+Pokud nezadáte oboru v metodě RegisterArea voláním kontextu. Metoda Namespaces.Add, obor názvů, třídy registrace se používá ve výchozím nastavení.
 
-### <a id="_TOC3_3"></a>Podpora pro asynchronní řadiče
+### <a id="_TOC3_3"></a>  Podpora pro asynchronní řadiče
 
-ASP.NET MVC 2 teď umožňuje řadiče k asynchronnímu zpracování požadavků. To může vést k větší zvýšení výkonu tím, že servery, které často místo toho volat neblokující svými protějšky volání blokování operací (jako jsou síťové požadavky). Další informace najdete v tématu [pomocí asynchronní kontroler v architektuře ASP.NET MVC](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx) tématu na webu MSDN.
+ASP.NET MVC 2 teď umožňuje řadiče k asynchronnímu zpracování požadavků. To může vést k zvýšení výkonu tím, že servery, které často vyžadují blokující operace (jako jsou síťové požadavky) místo toho volat neblokující protějšky. Další informace najdete v tématu [pomocí asynchronní kontroler v architektuře ASP.NET MVC](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx) tématu na webu MSDN.
 
-### <a id="_TOC3_4"></a>Podpora pro DefaultValueAttribute – v parametrů metody akce
+### <a id="_TOC3_4"></a>  Podpora pro DefaultValueAttribute – v parametrů metody akce
 
-Třída System.ComponentModel.DefaultValueAttribute umožňuje výchozí hodnota je nutné zadat pro parametr argument pro metodu akce. Předpokládejme například, že je definován následující výchozí trasu:
+Třída System.ComponentModel.DefaultValueAttribute umožňuje výchozí hodnota pro argument parametru pro metodu akce. Předpokládejme například, že je definována následující výchozí trasu:
 
 [!code-json[Main](what-is-new-in-aspnet-mvc/samples/sample3.json)]
 
-Také předpokládají, že je definován následující metodu kontroleru a akce:
+Taky se předpokládá, že je definována následující metoda kontroleru a akce:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample4.cs)]
 
-Některé z následujících požadavek adresy URL se vyvolání metody akce zobrazení, která je definována v předchozím příkladu.
+Některé z následujících požadavek adresy URL se vyvolá metoda akce zobrazení, která je definována v předchozím příkladu.
 
-- / Článek nebo zobrazení/123
-- / Článek nebo zobrazení/123? stránky = 1 (efektivně stejný jako předchozí požadavek)
-- / Článek nebo zobrazení/123? stránky = 2
+- / Článku/zobrazit/123
+- / Článku/zobrazit/123? stránky = 1 (efektivně stejný jako předchozí žádosti)
+- / Článku/zobrazit/123? stránky = 2
 
-Bez DefaultValueAttribute – atribut nebude fungovat první adresa URL z předchozího seznamu, protože stránka argument je typu hodnot neumožňující hodnotu Null, jehož hodnota nebyl zadán.
+Bez atributu DefaultValueAttribute – nebude fungovat první adresa URL z předchozího seznamu, protože stránka argument je typu hodnotu Null, jehož hodnota nebyla zadána.
 
-Pokud je váš kód napsaný ve Visual Basic 2010 a program Visual C# 2010, můžete použít volitelné parametry místo DefaultValueAttribute – atribut, jak je znázorněno v následujícím příkladu:
+Pokud váš kód je napsána v jazyce Visual Basic 2010 nebo Visual C# 2010, můžete použít nepovinné parametry místo atributu DefaultValueAttribute – jak je znázorněno v následujícím příkladu:
 
 [!code-vb[Main](what-is-new-in-aspnet-mvc/samples/sample5.vb)]
 
-### <a id="_TOC3_5"></a>Podpora pro vazbu s vazače modelů binární Data
+### <a id="_TOC3_5"></a>  Podpora pro vazby binárních dat s Vazači modelu
 
-Existují dva nové přetížení Html.Hidden pomocné rutiny, které kódování binární hodnoty jako řetězce s kódováním base-64:
+Existují dvě nová přetížení Html.Hidden pomocné rutiny, které kódování binární hodnoty jako řetězce s kódováním base-64:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample6.cs)]
 
-Typické použití je časové razítko pro objekt vložit do zobrazení. Aplikace může například obsahovat následující objekt produktu:
+Typické použití je časové razítko pro objekt vložit do zobrazení. Vaše aplikace může obsahovat například následující objekt produktu:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample7.cs)]
 
-Formuláře upravit může vykreslit vlastnost časového razítka v podobě, jak je znázorněno v následujícím příkladu:
+Formulář pro úpravy může mít za následek vlastnost časového razítka v podobě, jak je znázorněno v následujícím příkladu:
 
 [!code-aspx[Main](what-is-new-in-aspnet-mvc/samples/sample8.aspx)]
 
-Tento kód vykreslí ještě skrytý element input s hodnotou časového razítka jako řetězec s kódováním base-64 připomínající následující příklad:
+Tento kód vykreslí skrytý element input s hodnotou časové razítko jako řetězec kódování base-64, který vypadá podobně jako v následujícím příkladu:
 
 [!code-html[Main](what-is-new-in-aspnet-mvc/samples/sample9.html)]
 
-Tento formulář může být publikované na metodu akce, který má argument typu produktu, jak je znázorněno v následujícím příkladu:
+Tento formulář může odeslat na metodu akce, který má argument typu Product, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample10.cs)]
 
-V metodě akce je vlastnost časového razítka naplnit správně, protože odeslané kódováním base-64 řetězec je převést na bajtové pole.
+V metodě akce je vlastnost časového razítka naplnit správně, protože odeslaných kódování base-64 řetězec je převeden na bajtové pole.
 
-### <a id="_TOC3_6"></a>ModelMetadata a ModelMetadataProvider třídy
+### <a id="_TOC3_6"></a>  ModelMetadata a ModelMetadataProvider třídy
 
-Třída ModelMetadataProvider poskytuje abstrakci pro získání metadat pro model v rámci zobrazení. MVC 2 zahrnuje výchozího zprostředkovatele, který zpřístupní metadat, který je zveřejněný prostřednictvím atributy v oboru názvů System.ComponentModel.DataAnnotations. Je možné vytvořit zprostředkovatelé metadat, které poskytují metadata z jiným úložištím dat, například databáze nebo soubory XML.
+Třída ModelMetadataProvider poskytuje abstrakci pro získání metadat pro model v zobrazení. MVC 2 zahrnuje výchozího zprostředkovatele, který zpřístupňuje metadat, který je zveřejněný prostřednictvím atributů v oboru názvů System.ComponentModel.DataAnnotations. Je možné vytvořit zprostředkovatele metadat, které poskytují metadata z jiných úložišť dat, jako jsou databáze nebo soubory XML.
 
-Třída objektu ViewDataDictionary zpřístupňuje objekt ModelMetadata, který obsahuje metadata, která je v třídě ModelMetadataProvider extrahovat z modelu. To umožňuje objekty se šablonami za využívání těchto metadat a odpovídajícím způsobem upravit jejich výstup.
+Třída objektu ViewDataDictionary zveřejňuje objekt ModelMetadata, který obsahuje metadata, která se extrahují z modelu třídou ModelMetadataProvider. To umožňuje pomocnými objekty využívají tato metadata a odpovídajícím způsobem upravit svůj výstup.
 
-Další informace najdete v dokumentaci pro [ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) a [ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) třídy.
+Další informace najdete v tématu v dokumentaci [ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) a [ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) třídy.
 
-### <a id="_TOC3_7"></a>Podpora pro DataAnnotations atributy
+### <a id="_TOC3_7"></a>  Podpora pro atributy DataAnnotations
 
-ASP.NET MVC 2 podporuje používání atributů ověření RangeAttribute, RequiredAttribute, StringLengthAttribute a RegexAttribute (definovanou v oboru názvů System.ComponentModel.DataAnnotations) při vázat k modelu k poskytnutí vstupu ověření.
+ASP.NET MVC 2 podporuje používání atributů ověření RangeAttribute, RequiredAttribute, StringLengthAttribute a RegexAttribute (definovaný v oboru názvů System.ComponentModel.DataAnnotations) při vázat k modelu k poskytnutí vstupu ověření.
 
-Další informace najdete v tématu [postupy: ověření modelu dat pomocí DataAnnotations atributy](https://go.microsoft.com/fwlink/?LinkId=159063) na webu MSDN. Ukázkový projekt, který znázorňuje použití těchto atributů je k dispozici ke stažení na [https://go.microsoft.com/fwlink/?LinkId=157753](https://go.microsoft.com/fwlink/?LinkId=157753).
+Další informace najdete v tématu [postupy: ověření modelu dat pomocí DataAnnotations atributy](https://go.microsoft.com/fwlink/?LinkId=159063) na webové stránce MSDN. Ukázkový projekt, který ukazuje použití těchto atributů je k dispozici ke stažení na [ https://go.microsoft.com/fwlink/?LinkId=157753 ](https://go.microsoft.com/fwlink/?LinkId=157753).
 
-### <a id="_TOC3_8"></a>Zprostředkovatele ověření modelu
+### <a id="_TOC3_8"></a>  Zprostředkovatele ověření modelu
 
-Třída zprostředkovatele ověření modelu představuje abstrakci, která poskytuje logiku ověření pro model. ASP.NET MVC zahrnuje výchozí poskytovatel na základě atributů ověření, které jsou zahrnuty v oboru názvů System.ComponentModel.DataAnnotations. Můžete také vytvořit vlastní zprostředkovatele ověřování, které definují vlastní pravidla ověřování a mapování vlastních ověřovacích pravidel do modelu. Další informace najdete v dokumentaci pro [ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) třídy.
+Třída zprostředkovatele ověření modelu představuje abstrakci, který poskytuje logiku ověření pro model. ASP.NET MVC zahrnuje na základě atributů ověření, které jsou zahrnuty v oboru názvů System.ComponentModel.DataAnnotations výchozího zprostředkovatele. Můžete také vytvořit vlastní zprostředkovatele ověřování, definující vlastní ověřovací pravidla a vlastní mapování pravidla ověření do modelu. Další informace najdete v tématu v dokumentaci [ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) třídy.
 
-### <a id="_TOC3_9"></a>Ověřování na straně klienta
+### <a id="_TOC3_9"></a>  Ověřování na straně klienta
 
-Třída zprostředkovatele ověření modelu zveřejňuje metadata ověření v prohlížeči ve formě serializací JSON data, která mohou být spotřebovávána knihovnu ověřování na straně klienta. ASP.NET MVC 2 zahrnuje klientské knihovny pro ověřování a adaptér, který podporuje atributy ověření obor názvů DataAnnotations si předtím poznamenali. Třída zprostředkovatele také umožňuje používat další knihovny ověřování klienta napsáním adaptér, který zpracovává JSON data a volání do alternativní knihovny.
+Třída zprostředkovatele ověření modelu zveřejňuje metadata ověření do prohlížeče ve formátu JSON serializovat data, která mohou být spotřebovány knihovnu ověřování na straně klienta. ASP.NET MVC 2 obsahuje klientské knihovny pro ověřování a adaptér, který podporuje atributů ověření obor názvů DataAnnotations jste si předtím poznamenali. Třída zprostředkovatele také umožňuje používat další knihovny ověřování na straně klienta napsáním adaptér, který zpracovává JSON data a volání do alternativní knihovny.
 
-### <a id="_TOC3_10"></a>Nové fragmenty kódu pro Visual Studio 2010
+### <a id="_TOC3_10"></a>  Nové fragmenty kódu pro Visual Studio 2010
 
-Pomocí sady Visual Studio 2010 je nainstalována sada fragmenty kódu HTML pro ASP.NET MVC 2. Chcete-li zobrazit seznam tyto fragmenty kódu v nabídce Nástroje, vyberte Správce fragmentů kódu. Pro daný jazyk vyberte HTML a k umístění, vyberte ASP.NET MVC 2. Další informace o tom, jak používat fragmenty kódu najdete v dokumentaci k sadě Visual Studio.
+Pomocí sady Visual Studio 2010 je nainstalována sada fragmentů kódu HTML pro technologii ASP.NET MVC 2. Chcete-li zobrazit seznam tyto fragmenty kódu v nabídce Nástroje, vyberte Správce fragmentů kódů. Pro jazyk vyberte ve formátu HTML a jako umístění, ASP.NET MVC 2. Další informace o tom, jak používat fragmenty kódu, naleznete v dokumentaci k sadě Visual Studio.
 
-### <a id="_TOC3_11"></a>Nový filtr akce RequireHttpsAttribute
+### <a id="_TOC3_11"></a>  Nový filtr akce RequireHttpsAttribute
 
-ASP.NET MVC 2 zahrnuje novou třídu RequireHttpsAttribute, který lze použít metody akce a řadičů. Ve výchozím nastavení filtr přesměruje žádost než SSL HTTP na ekvivalentní povolen protokol SSL (HTTPS).
+ASP.NET MVC 2 zahrnuje novou RequireHttpsAttribute třídu, která lze použít u metody akce a kontrolery. Ve výchozím nastavení filtr přesměruje žádost než SSL HTTP na ekvivalentní s podporou protokolu SSL (HTTPS).
 
-### <a id="_TOC3_12"></a>Přepsání příkaz metoda HTTP
+### <a id="_TOC3_12"></a>  Přepsání metody HTTP akce
 
-Když vytvoříte webovou stránku pomocí styl architektury REST, příkaz HTTP se používají k určení jakou akci chcete provést pro prostředek. REST vyžaduje, které aplikace podporují celou řadu běžných příkazů HTTP, včetně GET, PUT, POST a odstranění.
+Při vytváření webu pomocí styl architektury REST příkazy HTTP slouží k určení jakou akci chcete provést pro prostředek. Vyžaduje REST, které aplikace podporují celou škálu běžné příkazy HTTP, včetně GET, PUT, POST a odstranění.
 
-ASP.NET MVC 2 zahrnuje nové atributy, které můžete použít pro tuto syntaxi compact funkce a metody akce. Tyto atributy povolte ASP.NET MVC a vyberte metodu akce založené na příkazu HTTP. V následujícím příkladu požadavek POST bude volat první metody akce a požadavek PUT zavolá druhé metody akce.
+ASP.NET MVC 2 zahrnuje nové atributy, které můžete použít u metody akce a kompaktní syntaxe funkce. Tyto atributy umožňují ASP.NET MVC a vyberte metodu akce založené na příkazu HTTP. V následujícím příkladu požadavek POST bude volat metodu první akci a požadavek PUT bude volat druhou metodu akce.
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample11.cs)]
 
-V dřívějších verzích rozhraní ASP.NET MVC tyto metody akce vyžaduje více podrobná syntaxe, jak je znázorněno v následujícím příkladu:
+V dřívějších verzích rozhraní ASP.NET MVC tyto metody akce vyžaduje podrobnější syntaxe, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample12.cs)]
 
-Prohlížeče podporují jenom operace GET a POST protokolu HTTP, není možné k vystavování příspěvků na akce, která vyžaduje jinou operaci. Proto není možné tak, aby podporovaly všech RESTful požadavků.
+Prohlížeče podporují jenom operace GET a POST protokolu HTTP, není možné publikovat na akci, která vyžaduje jinou operací. Proto není možné nativně podporují všechny požadavky rozhraní RESTful.
 
-Pro podporu dosáhl standardu RESTful však požadavky během operací POST, ASP.NET MVC 2 představuje nový způsob pomocné rutiny HttpMethodOverride HTML. Tato metoda vykreslí ještě skrytý element input, který způsobí, že formulář emulují efektivně libovolné metody HTTP. Například můžete pomocí metody pomocné rutiny HttpMethodOverride HTML mít odeslání formuláře, zobrazí se požadavek PUT nebo odstranit. Chování HttpMethodOverride ovlivňuje následující atributy:
+Ale pro podporu RESTful požadavků během operací POST, ASP.NET MVC 2 představuje nový způsob pomocné rutiny HttpMethodOverride HTML. Tato metoda vykreslí ještě skrytý element input, který způsobí, že formulář efektivně emulovat jakoukoli metodu HTTP. Například můžete pomocí metody pomocné rutiny HttpMethodOverride HTML mít odeslání formuláře se zobrazí být požadavek PUT nebo DELETE. Chování HttpMethodOverride má vliv na následující atributy:
 
 - HttpPostAttribute
 - HttpPutAttribute
@@ -189,123 +188,123 @@ Pro podporu dosáhl standardu RESTful však požadavky během operací POST, ASP
 - HttpDeleteAttribute
 - AcceptVerbsAttribute
 
-Skrytý element input má jeho název X-HTTP-Method-Override a jeho hodnotu nastavte na příkazu HTTP emulovat. Hodnotu přepsání můžete také uvést v hlavičce protokolu HTTP nebo hodnotu řetězce dotazu jako dvojici název/hodnota.
+Skrytý element input má jeho název X-HTTP-Method-Override a jeho hodnotu nastavte na příkazu HTTP pro emulaci. Hodnotu přepsání můžete také zadat v hlavičce protokolu HTTP nebo hodnotu řetězce dotazu jako dvojice název/hodnota.
 
-Přepsání lze použít pouze v případě skutečné požadavek má požadavek POST. Pro požadavky, které používají jiné akce HTTP, bude hodnota přepsání ignorována.
+Přepsání jde použít jenom při skutečné požadavek není požadavek POST. Hodnota přepsání bude ignorována pro požadavky, které používají jiné příkaz protokolu HTTP.
 
-### <a id="_TOC3_13"></a>Nová třída HiddenInputAttribute pro objekty se šablonami za
+### <a id="_TOC3_13"></a>  Nová třída HiddenInputAttribute pro pomocnými objekty
 
-Nový atribut HiddenInputAttribute můžete použít s vlastností modelu k označení, zda má být vykreslen skrytý element input při zobrazení modelu v šabloně editor. (Atribut nastaví má implicitní UIHint hodnotu HiddenInput). Vlastnost atributu položky DisplayValue umožňuje určit, jestli je hodnota zobrazí v editoru a režimy zobrazení. Pokud položky DisplayValue je nastavená na hodnotu false, nezobrazí se žádná hodnota, není i jazyka HTML, který obvykle obklopuje pole. Výchozí hodnota pro položky DisplayValue je true.
+Nový atribut HiddenInputAttribute můžete použít s vlastností modelu k označení, zda má být vykreslen skrytý element input při zobrazení modelu v šabloně editoru. (Atribut nastaví hodnotu implicitní UIHint HiddenInput). Vlastnost atributu položky DisplayValue umožňuje určit, zda hodnota se zobrazí v editoru a režimů zobrazení. Když položky DisplayValue je nastavené na false, nezobrazí se, ne v případě značka jazyka HTML, který se normálně zobrazí se kolem pole. Výchozí hodnota pro položky DisplayValue je true.
 
 Atribut HiddenInputAttribute můžete použít v následujících scénářích:
 
-- Při zobrazení umožňuje uživatelům upravit Identifikátor objektu a je nutné zobrazit hodnotu a aby poskytovala skrytý element input, který obsahuje staré ID tak, aby mohla být předána zpět k řadiči.
-- Při zobrazení mohou uživatelé upravovat binární vlastnost, která se nikdy mají zobrazovat, jako je například vlastnost časového razítka. V takovém případě se nezobrazují hodnotu a okolního značky HTML (například popis a hodnotu).
+- Při zobrazení umožňuje uživatelům upravit ID objektu a je nutné k zobrazení hodnoty a aby poskytovala skrytý element input, který obsahuje původní ID tak, aby může být předán zpět do kontroleru.
+- Při zobrazení umožňuje uživatelům upravovat binární vlastnost, která by nikdy nezobrazí, jako je například vlastnost časového razítka. V takovém případě se nezobrazují hodnotu a okolního značky HTML (třeba popisek a hodnota).
 
 Následující příklad ukazuje způsob použití třídy HiddenInputAttribute.
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample13.cs)]
 
-Pokud je atribut nastaven na hodnotu true (nebo je zadaný žádný parametr), dojde k následujícímu:
+Když je atribut nastaven na hodnotu true (nebo není zadán žádný parametr), dojde k následujícímu:
 
-- V zobrazení šablony je vykreslen štítek a hodnota se zobrazí uživateli.
-- V editoru šablony je vykreslen štítek a hodnota je vykreslen ve skrytém elementu input.
+- V zobrazení šablony popisek se vykreslí a hodnota se zobrazí uživateli.
+- V editoru šablon popisek se vykreslí a hodnota je vykreslen ve skrytém elementu input.
 
-Pokud je atribut nastaven na hodnotu false, dojde k následujícímu:
+Když je atribut nastaven na hodnotu false, dojde k následujícímu:
 
-- V zobrazení šablony nic je vykreslen pro toto pole.
-- V editoru šablony je vykreslen žádný štítek a hodnota je vykreslen ve skrytém elementu input.
+- V zobrazení šablony nic se vykreslí pro toto pole.
+- V editoru šablon je vykreslen žádný popisek a hodnota je vykreslen ve skrytém elementu input.
 
-### <a id="_TOC3_14"></a>Metoda Html.ValidationSummary Helper můžete zobrazit chyby na úrovni modelu
+### <a id="_TOC3_14"></a>  Metoda Html.ValidationSummary Helper můžete zobrazit chyby na úrovni modelu
 
-Místo zobrazení vždy všechny chyby ověřování, obsahuje pomocnou metodu Html.ValidationSummary nové možnosti se zobrazí pouze chyby na úrovni modelu. To umožňuje chyby na úrovni modelu, který se má zobrazit v souhrnu ověření a pole konkrétních chyb, který se má zobrazit vedle každého pole.
+Ne vždy zobrazuje všechny chyby ověření, má metodu helper Html.ValidationSummary novou možnost, chcete-li zobrazit pouze chyby na úrovni modelu. Díky tomu chyb na úrovni modelu zobrazený v souhrnu ověření a pole konkrétních chyb, který se má zobrazit vedle jednotlivých polí.
 
-### <a id="_TOC3_15"></a>Šablony T4 v Visual Studio generování kódu, který se liší podle cílové verzi rozhraní .NET Framework
+### <a id="_TOC3_15"></a>  Šablony T4 v aplikaci Visual Studio vygenerovat kód, který je specifické pro cílovou verzi rozhraní .NET Framework
 
-Novou vlastnost je k dispozici pro soubory T4 v ASP.NET MVC T4 hostitele, který určuje verzi rozhraní .NET Framework, který se používá v aplikaci. To umožňuje šablon T4 pro generování kódu a značky, které jsou specifické pro verzi rozhraní .NET Framework. V sadě Visual Studio 2008 hodnota je vždy rozhraní .NET 3.5. V sadě Visual Studio 2010 hodnota je rozhraní .NET 3.5 nebo .NET 4.
+Nové vlastnosti je k dispozici k souborům T4 z hostitele technologie ASP.NET MVC T4, která určuje verzi rozhraní .NET Framework, který používá aplikace. To umožňuje šablon T4 pro generování kódu a kód, který je specifický pro verzi rozhraní .NET Framework. V sadě Visual Studio 2008 hodnota je vždy .NET 3.5. V sadě Visual Studio 2010 hodnota je rozhraní .NET 3.5 nebo .NET 4.
 
-## <a id="_TOC4"></a>Vylepšení rozhraní API
+## <a id="_TOC4"></a>  Vylepšení rozhraní API
 
-Tato část popisuje změny existující ASP.NET MVC typy a členy.
+Tato část popisuje změny na stávající technologie ASP.NET MVC typy a členy.
 
-- Přidaná chráněné virtuální CreateActionInvoker metodu do třídy Kontroleru. Tato metoda je volána vlastností ActionInvoker řadiče a umožňuje opožděné konkretizaci původce Pokud žádné původce volání je již nastaven.
-- Přidat chráněné virtuální HandleUnauthorizedRequest metody ve třídě třídy AuthorizeAttribute. To umožňuje filtry, které jsou odvozeny od třídy AuthorizeAttribute, které řídí chování, když se nezdaří autorizace.
-- Ve třídě ValueProviderDictionary přidat metodu Add (řetězce klíčů, hodnota objektu). To umožňuje pomocí syntaxe inicializátoru slovník pro ValueProviderDictionary, jako v následujícím příkladu:
+- Přidat chráněnou virtuální metodu CreateActionInvoker ve třídě Controller. Tato metoda vyvolá vlastnost ActionInvoker řadiče a umožňuje opožděné instanciace původce Pokud žádná původce volání je již nastaven.
+- Přidat chráněnou virtuální metodu HandleUnauthorizedRequest ve třídě třídy AuthorizeAttribute. To umožňuje filtry, které jsou odvozeny od třídy AuthorizeAttribute pro řízení chování, když se nezdaří autorizace.
+- Přidat metodu Add (řetězce klíčů, hodnota objektu) ve třídě ValueProviderDictionary. Díky tomu budete moci použít syntaxi inicializátoru slovníku pro ValueProviderDictionary, jako v následujícím příkladu:
 
 [!code-csharp[Main](what-is-new-in-aspnet-mvc/samples/sample14.cs)]
 
-- Přidat get\_objektu metodu v třídě Sys.Mvc.AjaxContext. Toto je metoda JavaScript, která je podobná get\_metoda data, ale pokud typ obsahu odpovědi je application/json, získat\_objekt vrací objekt JSON.
-- Přidat ActionDescriptor vlastnost ve třídě kontext ověřování.
-- Přidat UrlParameter.Optional token, který lze vyřešit problémy při vytváření vazby pro model, který obsahoval vlastnost ID, když je vlastnost chybí v příspěvku na formuláři. Další podrobnosti naleznete v příspěvku [ASP.NET MVC 2 volitelné parametry adresy URL](http://haacked.com/archive/2010/02/12/asp-net-mvc-2-optional-url-parameters.aspx) na blogu Phila Haacka.
+- Přidání get\_objekt metody ve třídě Sys.Mvc.AjaxContext. Toto je metoda jazyka JavaScript, který je podobný get\_metoda dat, ale pokud typ obsahu odpovědi je application/json, získejte\_objekt vrátí objekt JSON.
+- Přidat vlastnost ActionDescriptor ve třídě AuthorizationContext měl obsahovat.
+- Přidání UrlParameter.Optional token, který je možné obejít potíže při vytváření vazby modelu, který obsahoval vlastnost ID, když je vlastnost chybí v odeslaného formuláře. Další podrobnosti naleznete v příspěvku [ASP.NET MVC 2 volitelné parametry adresy URL](http://haacked.com/archive/2010/02/12/asp-net-mvc-2-optional-url-parameters.aspx) v blogu phila Haacka.
 
-## <a id="_TOC5"></a>Nejnovější změny
+## <a id="_TOC5"></a>  Rozbíjející změny v
 
-Následující změny může způsobit chyby v existujících aplikací ASP.NET MVC 1,0.
+Následující změny může způsobit chyby v existujících aplikacích ASP.NET MVC 1,0.
 
-#### <a name="change-in-property-validation-behavior-for-classes-that-implement-idataerrorinfo"></a>Změna v chování při ověřování pro třídy, které implementují idataerrorinfo – vlastnost
+#### <a name="change-in-property-validation-behavior-for-classes-that-implement-idataerrorinfo"></a>Změna v chování ověřování vlastnost třídy, které implementují IDataErrorInfo
 
-Pro objekty modelu, které používají idataerrorinfo – provést ověření je ověřen všech vlastností, bez ohledu na to, zda byla nastavena novou hodnotu. V technologii ASP.NET MVC 1.0 byly ověřeny pouze vlastnosti, které měl nastavte nové hodnoty. V ASP.NET MVC 2 Chyba vlastnost idataerrorinfo – nazývá jenom v případě, že všechny validátory vlastnost byla úspěšná.
+Pro objekty modelu, které používají IDataErrorInfo provést ověření se ověří každý vlastnost bez ohledu na to, zda byla nastavena nová hodnota. V technologii ASP.NET MVC 1.0 byly ověřeny pouze vlastnosti, které měly nastavte nové hodnoty. V ASP.NET MVC 2 se nazývá vlastnost chybového IDataErrorInfo pouze v případě, že všechny validátory vlastnost proběhly úspěšně.
 
 #### <a name="iis-script-mapping-script-is-no-longer-available-in-the-installer"></a>Skript mapování skriptů služby IIS již není k dispozici v instalačním programu
 
-Skript mapování skriptů služby IIS je skript příkazového řádku, který slouží ke konfiguraci mapy skriptů pro služby IIS 6 a IIS 7 v klasickém režimu. Skript mapování skriptu není potřeba, pokud používáte vývojový Server sady Visual Studio, nebo pokud používáte službu IIS 7 v integrovaném režimu. Skripty, které jsou k dispozici jako samostatné nepodporované stáhnout na [skvělá webová sada ASP.NET](https://github.com/aspnet/AspNetWebStack).
+Skript pro mapování skriptů služby IIS je skript příkazového řádku, který se používá ke konfiguraci služby IIS 6 a IIS 7 mapy skriptů v klasickém režimu. Pokud používáte vývojový Server sady Visual Studio, nebo pokud používáte IIS 7 v integrovaném režimu, není nutná skriptu mapování skriptů. Tyto skripty jsou k dispozici jako samostatné nepodporované ke stažení na [skvělá webová sada ASP.NET](https://github.com/aspnet/AspNetWebStack).
 
-#### <a name="the-htmlsubstitute-helper-method-in-mvc-futures-is-no-longer-available"></a>Pomocná metoda Html.Substitute v MVC Futures již není k dispozici
+#### <a name="the-htmlsubstitute-helper-method-in-mvc-futures-is-no-longer-available"></a>Pomocná metoda Html.Substitute v termínu MVC již není k dispozici
 
-Z důvodu změn v chování vykreslování modulů zobrazení MVC pomocnou metodu Html.Substitute nefunguje a byla odebrána.
+Z důvodu změn v chování vykreslování pro moduly zobrazení MVC Pomocná metoda Html.Substitute nefunguje, byla odebrána.
 
-#### <a name="the-ivalueprovider-interface-replaces-all-uses-of-idictionary"></a>Rozhraní IValueProvider nahradí všechny používá IDictionary
+#### <a name="the-ivalueprovider-interface-replaces-all-uses-of-idictionary"></a>Rozhraní IValueProvider nahradí všechny výskyty IDictionary
 
-Každé vlastnosti nebo metody argument, který teď přijata IDictionary v MVC 1,0 přijme IValueProvider. Tato změna ovlivní pouze aplikace, které zahrnují vlastní hodnotu zprostředkovatelé nebo vazače modelů vlastní. Mezi vlastností a metod, které jsou ovlivněné tuto změnu, patří:
+Každé vlastnosti nebo metody argument, který přijato IDictionary v MVC 1.0 nyní přijímá IValueProvider. Tato změna ovlivní pouze aplikace, které zahrnují poskytovatelé vlastní hodnotu nebo vlastního modelu vazače. Příklady vlastností a metod, které jsou ovlivněny této změny patří:
 
-- Vlastnost ValueProvider ControllerBase a ModelBindingContext tříd.
-- Metody TryUpdateModel třídy Controller.
+- Vlastnost položku ValueProvider ControllerBase a ModelBindingContext tříd.
+- TryUpdateModel metody třídy Kontroleru.
 
-#### <a name="new-css-classes-were-added-in-the-sitecss-file"></a>V souboru Site.css byly přidány nové třídy CSS
+#### <a name="new-css-classes-were-added-in-the-sitecss-file"></a>V souboru Site.css byly přidány nové třídy šablony stylů CSS
 
-Zahrnout nové styly použít funkci ověřování a objekty se šablonami za byla aktualizována souboru Site.css v šablon projektu ASP.NET MVC.
+Aktualizovali jsme soubor Site.css v šablonách projektů ASP.NET MVC zahrnout nové styly používané funkce ověřování a pomocnými objekty.
 
-#### <a name="helpers-now-return-an-mvchtmlstring-object"></a>Pomocné rutiny se teď vrátit objekt MvcHtmlString
+#### <a name="helpers-now-return-an-mvchtmlstring-object"></a>Pomocné rutiny teď vrátit objekt MvcHtmlString
 
-Aby bylo možné využívat nové syntaxe výrazu kódování HTML v technologii ASP.NET 4, návratový typ pro pomocné objekty HTML je nyní MvcHtmlString místo řetězec. Pokud používáte ASP.NET MVC 2 a nové pomocníky na technologii ASP.NET 3.5, nebudete moct využít kódování HTML syntaxe; nové syntaxe je k dispozici jenom v případě, že spustíte ASP.NET MVC 2 na technologii ASP.NET 4.
+Abyste mohli využívat nové syntaxe výrazu kódování HTML v technologii ASP.NET 4, návratový typ pro pomocných rutin HTML je teď MvcHtmlString namísto řetězce. Pokud používáte ASP.NET MVC 2 a nové pomocné rutiny na technologii ASP.NET 3.5, nebudete moci využít výhod kódování HTML syntaxe; Nová syntaxe je k dispozici pouze v případě spuštění ASP.NET MVC 2 na ASP.NET 4.
 
 #### <a name="jsonresult-now-responds-only-to-http-post-requests"></a>JsonResult nyní odpovídá pouze na požadavky HTTP POST
 
-S cílem zmírnit JSON útokům, které by mohly pro přístup k informacím, ve výchozím nastavení, třída JsonResult nyní reagovat jenom na požadavky HTTP POST. ZÍSKAT AJAX volání do metody akce, které vracejí objekt JsonResult by mělo být změněno místo toho použít POST. V případě potřeby můžete přepsat toto chování nastavením novou vlastnost JsonRequestBehavior JsonResult. Další informace o potenciální zneužití, naleznete v příspěvku blogu [JSON napadení](http://haacked.com/archive/2009/06/25/json-hijacking.aspx) na blogu Phila Haacka.
+Aby se zmírnilo JSON útokům, které mají potenciál pro zpřístupnění informací, ve výchozím nastavení, třída JsonResult nyní odpovídá pouze na požadavky HTTP POST. ZÍSKAT AJAX volání metody akce, které vracejí objekt JsonResult, měli byste místo místo toho použijte příspěvku. V případě potřeby toto chování můžete přepsat tak, že nastavíte vlastnost nové JsonRequestBehavior JsonResult. Další informace o potenciální zneužití, naleznete v příspěvku blogu [JSON zneužitím](http://haacked.com/archive/2009/06/25/json-hijacking.aspx) v blogu phila Haacka.
 
 #### <a name="model-and-modeltype-property-setters-on-modelbindingcontext-are-obsolete"></a>Model a nastavením vlastností ModelType na ModelBindingContext jsou zastaralé
 
-Nové nastavit vlastnost ModelMetadata byla přidána k třídě ModelBindingContext. Nové vlastnosti zapouzdří ModelType vlastností a modelu. I když jsou vlastnosti modelu a ModelType zastaralé, z důvodu zpětné kompatibility mechanismy získání vlastnost i nadále fungovat; budou delegovat na vlastnost ModelMetadata k načtení hodnoty.
+Do třídy ModelBindingContext se přidala nová nastavitelnou vlastnost ModelMetadata. Nové vlastnosti zapouzdřuje ModelType vlastností a modelu. I když jsou zastaralé vlastnosti modelu a ModelType, z důvodu zpětné kompatibility gettery vlastností fungují. k načtení hodnoty delegují vlastnost ModelMetadata.
 
-#### <a name="changes-to-the-defaultcontrollerfactory-class-break-custom-controller-factories-that-derive-from-it"></a>Objekty Factory vlastní zařízení, které jsou odvozeny od jeho rozdělit změny DefaultControllerFactory – třída
+#### <a name="changes-to-the-defaultcontrollerfactory-class-break-custom-controller-factories-that-derive-from-it"></a>Změny třídy DefaultControllerFactory přerušit vlastní objekty Factory, které jsou odvozeny z něj
 
-Třída DefaultControllerFactory byl opraven odebrat vlastnost kontext požadavku. Místo tuto vlastnost instance kontextu požadavku předaný chráněné virtuální GetControllerInstance a GetControllerType metody. Tato změna ovlivňuje objekty Factory vlastní zařízení, které jsou odvozeny od DefaultControllerFactory.
+Třída DefaultControllerFactory šlo vyřešit tak, že odeberete vlastnost kontext požadavku. Namísto této vlastnosti je předána instance kontextu požadavku chráněné virtuální metody GetControllerInstance a GetControllerType. Tato změna ovlivní vlastní objekty Factory, které jsou odvozeny z DefaultControllerFactory.
 
-Vlastní objekty Factory se často používají k aplikacím poskytnout vkládání závislostí pro architekturu ASP.NET MVC. Aktualizace vlastní objekty Factory pro podporu ASP.NET MVC 2, změňte podpis metody nebo podpisy tak, aby odpovídala nové podpisů a použijte parametr kontextu požadavku místo vlastnost.
+Vlastní objekty Factory se často používají k zajištění injektáž závislostí pro architekturu ASP.NET MVC aplikace. Aktualizovat vlastní kontrolerů pro podporu technologie ASP.NET MVC 2, změna podpisu metody nebo signatury tak, aby odpovídala nové podpisy a místo vlastnost použít parametr kontextu požadavku.
 
-#### <a name="area-is-a-now-a-reserved-route-value-key"></a>"Plocha" je teď klíč vyhrazené hodnota trasy
+#### <a name="area-is-a-now-a-reserved-route-value-key"></a>"Oblasti", je teď klíč vyhrazené hodnota trasy
 
-Řetězec "oblasti" v hodnoty trasy teď má zvláštní význam v architektuře ASP.NET MVC stejným způsobem, který "controller" a "action". Jeden vyplývá je, že pokud se hodnota trasy slovník obsahující "plocha" jsou zadány pomocné rutiny HTML, pomocníky už připojí "plocha" v řetězci dotazu.
+Řetězec "oblasti" v hodnoty trasy nyní stejným způsobem, který "controller" a "action" má zvláštní význam v architektuře ASP.NET MVC. Jeden důsledkem je, že pokud pomocných rutin HTML se dodávají s nástrojem hodnota trasy slovník obsahující "oblasti", pomocné rutiny už připojí "oblasti" v řetězci dotazu.
 
-Pokud používáte funkci oblastí, ujistěte se, zda je nepoužívat {oblasti} v rámci adresy URL trasy.
+Pokud používáte funkci oblastí, ujistěte se, že nechcete použít {oblasti} jako část adresy URL trasy.
 
 
-## <a id="_TOC6"></a>Právní omezení
+## <a id="_TOC6"></a>  Právní omezení
 
-Toto je předběžná dokument a mohou být změněny podstatně uvedením produktu softwaru popsaných v tomto dokumentu.
+Toto je předběžná dokumentu a může podstatně změnit před finální komerční verzi softwaru, které jsou popsány zde.
 
-Informace obsažené v tomto dokumentu představují aktuální pohled společnosti Microsoft Corporation na uvedené problémy k datu publikování. Protože společnost Microsoft musí reagovat na měnící se podmínky na trhu, by neměl být interpretovat jako závazek společnosti Microsoft a společnost Microsoft nemůže zaručit přesnost informací jsou prezentovány po provedení datu publikování.
+Informace obsažené v tomto dokumentu představují aktuální pohled společnosti Microsoft Corporation na tyto problémy k datu publikování. Protože Microsoft reagovat na měnící se podmínky na trhu, neměly by být vykládány jako závazek Microsoftu a společnost Microsoft nemůže zaručit přesnost jakýchkoli informací, které jsou prezentovány po provedení datu publikování.
 
-Tento dokument White Paper je pouze informativní charakter. MICROSOFT NEPOSKYTUJE ŽÁDNÉ ZÁRUKY, VÝSLOVNÉ, PŘEDPOKLÁDANÉ NEBO STATUTÁRNÍ INFORMACE V TOMTO DOKUMENTU.
+Tento dokument White Paper se pouze k informačním účelům. MICROSOFT NEPOSKYTUJE ŽÁDNÉ ZÁRUKY, VÝSLOVNÝCH, ODVOZENÝCH NEBO ZÁKONNÝCH, INFORMACE V TOMTO DOKUMENTU.
 
-Dodržovat všechny platné zákony o autorských právech zodpovídá uživatele. Bez omezení autorských práv, tento dokument může být opakuje, uložené v systému načtení nebo přenést jakýmkoli způsobem (ať už elektronicky, mechanických, včetně kopírování nebo) nebo pro jakýkoli účel bez předchozího písemného svolení společnosti Microsoft Corporation.
+V souladu s příslušnými zákony o autorských právech je zodpovědný uživatel. Bez omezení autorská práva, žádná část tohoto dokumentu může být reprodukovat, uložené v zavedené rozšiřován nebo jakýmkoli způsobem (electronic, mechanickým, mechanicky, záznam nebo jinak) nebo pro libovolný účel, bez výslovného písemného povolení společnosti Microsoft Corporation.
 
-Společnost Microsoft může být patentů, patentová aplikací, ochranné známky, autorská práva nebo jiná duševní vlastnictví předmět uvedený v tomto dokumentu. Výslovně uvedeno v licenční smlouvě společnost Microsoft neposkytuje tento dokument žádnou licenci na tyto patenty, ochranné známky, autorská práva nebo jiné duševní vlastnictví.
+Společnost Microsoft může vlastnit patenty, patentové přihlášky, ochranné známky, autorská práva nebo další práva na duševní vlastnictví přihlášky v tomto dokumentu. Výslovně uvedeno v písemné licenční smlouvě se společností Microsoft, poskytnutím tohoto dokumentu vám není udělena licence k těmto patentům, ochranné známky, autorská práva nebo jinému duševnímu vlastnictví.
 
-Pokud není uvedeno jinak, příklady společností, organizací, produktů, názvů domén, e-mailové adresy, loga, osob, míst a událostí použité v ukázkách jsou smyšlené a spojení se žádné skutečnou společností, organizace, produktu, název domény, e-mailu adresu, logem, osoba, místní nebo událostí je určený nebo událostmi.
+Pokud není uvedeno jinak, společnosti, organizace, produkty, názvy domén, e-mailové adresy, loga, osoby, místa a události použité v ukázkách jsou smyšlené. proto žádné jejich spojení se žádné skutečnou společností, organizací, produktu, název domény, e-mailu adresy, loga, osoby, místa nebo událostí je určena ji vyvozovat.
 
-© 2010 Microsoft Corporation. Všechna práva vyhrazena.
+© Microsoft 2010 Corporation. Všechna práva vyhrazena.
 
-Microsoft a Windows jsou registrované ochranné známky nebo ochranné známky společnosti Microsoft Corporation ve Spojených státech a dalších zemích.
+Microsoft a Windows jsou registrované ochranné známky nebo ochranné známky společnosti Microsoft Corporation ve Spojených státech amerických a dalších zemích.
 
-Názvy společností a produktů může být ochranné známky příslušných vlastníků.
+Názvy skutečných společností a produktů mohou být ochrannými známkami příslušných vlastníků.

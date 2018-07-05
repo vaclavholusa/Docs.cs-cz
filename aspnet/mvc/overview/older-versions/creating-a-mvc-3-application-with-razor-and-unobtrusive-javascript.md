@@ -1,52 +1,51 @@
 ---
 uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
-title: Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript | Microsoft Docs
+title: Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript | Dokumentace Microsoftu
 author: microsoft
-description: Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak jednoduché je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Aplikace s ukázka...
+description: Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak snadné je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Ukázková aplikace s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/01/2010
 ms.topic: article
 ms.assetid: 658b149b-d770-46bf-8b4b-4e47cca242f3
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 9b273f6827cad2078b581d6da7b127198dfddaa5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 39ed35c1b7d5c702ffea6908daeac5ca12f1693e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
-ms.locfileid: "30874691"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398010"
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Vytváření MVC 3 aplikace s Razor a Nerušivý JavaScript
 ====================
-by [Microsoft](https://github.com/microsoft)
+podle [Microsoft](https://github.com/microsoft)
 
-> Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak jednoduché je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Ukázkovou aplikaci ukazuje, jak používat nový zobrazovací modul Razor s architekturou ASP.NET MVC verze 3 a Visual Studio 2010 k vytvoření fiktivních webu seznam uživatelů, která zahrnuje funkce, jako je vytváření, zobrazení, úpravy a odstraňování uživatelů.
+> Seznam uživatelů ukázkovou webovou aplikaci ukazuje, jak snadné je vytvoření aplikace ASP.NET MVC 3 pomocí zobrazovací modul Razor. Ukázková aplikace ukazuje, jak nový zobrazovací modul Razor s architekturou ASP.NET MVC verze 3 a Visual Studio 2010 použít k vytvoření fiktivní web seznamu uživatelů, který obsahuje funkce, jako je vytváření, zobrazení, úpravy a odstraňování uživatelů.
 > 
-> Tento kurz popisuje kroky, které byly provedeny k vytvoření ukázkové aplikace ASP.NET MVC 3 seznam uživatelů. Projekt sady Visual Studio se zdrojovým kódem C# a VB je k dispozici v tomto tématu: [Stáhnout](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114). Pokud máte dotazy týkající se tohoto kurzu, prosím, aby post [mvcforum](https://forums.asp.net/1146.aspx).
+> Tento kurz popisuje kroky, které byly provedeny, aby bylo možné vytvořit seznam uživatelů ukázkovou aplikaci ASP.NET MVC 3. Projekt sady Visual Studio se zdrojovým kódem jazyka C# a VB je k dispozici v tomto tématu: [Stáhnout](https://code.msdn.microsoft.com/aspnetmvcsamples/Release/ProjectReleases.aspx?ReleaseId=5114). Pokud máte dotazy týkající se v tomto kurzu, zveřejněte je [mvcforum](https://forums.asp.net/1146.aspx).
 
 
 ## <a name="overview"></a>Přehled
 
-Aplikace, kterou budete sestavení je web seznamu jednoduché uživatele. Uživatele můžete zadat, zobrazit a aktualizovat informace o uživateli.
+Aplikace, kterou budete vytvářet je jednoduché uživatelské web seznamu. Uživatelům můžete zadat, zobrazit a aktualizovat informace o uživateli.
 
-![Ukázka lokality](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image1.png)
+![Ukázkový web](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image1.png)
 
-Stáhnete dokončený projekt jazyka Visual Basic a C# [zde](https://code.msdn.microsoft.com/Creating-a-MVC-3-28883c0f).
+Můžete si stáhnout dokončený projekt jazyka Visual Basic a C# [tady](https://code.msdn.microsoft.com/Creating-a-MVC-3-28883c0f).
 
-## <a name="creating-the-web-application"></a>Vytváření webové aplikace
+## <a name="creating-the-web-application"></a>Vytvoření webové aplikace
 
-Pokud chcete spustit tento kurz, otevřete Visual Studio 2010 a vytvořte nový projekt pomocí *webové aplikace ASP.NET MVC 3* šablony. Název aplikace &quot;Mvc3Razor&quot;.
+Chcete-li zahájit kurz, otevřete Visual Studio 2010 a vytvořte nový projekt pomocí *webové aplikace ASP.NET MVC 3* šablony. Pojmenujte aplikaci &quot;Mvc3Razor&quot;.
 
 [![Nový projekt MVC 3](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image3.png)](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image2.png)
 
-V **nový ASP.NET MVC 3 projekt** dialogovém okně, vyberte **Internetové aplikace**vyberte zobrazovací modul Razor a pak klikněte na tlačítko **OK**.
+V **nového projektu ASP.NET MVC 3** dialogového okna, vyberte **internetovou aplikaci**vyberte zobrazovací modul Razor a potom klikněte na tlačítko **OK**.
 
-![Dialogové okno Nový projekt ASP.NET MVC 3](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image4.png)
+![Dialogové okno nového projektu ASP.NET MVC 3](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image4.png)
 
-V tomto kurzu nebudete používat poskytovatele členství prostředí ASP.NET, takže můžete odstranit všechny soubory přidružené k přihlášení a členství. V **Průzkumníku**, odeberte tyto soubory a adresáře:
+V tomto kurzu nebudete používat poskytovatele členství prostředí ASP.NET, takže můžete odstranit všechny soubory přidružené k přihlášení a s členstvím. V **Průzkumníka řešení**, odebrat následující soubory a adresáře:
 
 - *Controllers\AccountController*
 - *Models\AccountModels*
@@ -55,59 +54,59 @@ V tomto kurzu nebudete používat poskytovatele členství prostředí ASP.NET, 
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
 
-Upravit  <em>\_Layout.cshtml</em> souboru a nahraďte kód uvnitř `<div>` element s názvem `logindisplay` se zprávou <em>&quot;</em>zakázáno přihlášení&quot;. Následující příklad ukazuje kód nové:
+Upravit  <em>\_Layout.cshtml</em> souboru a nahraďte kód uvnitř `<div>` element s názvem `logindisplay` zprávou <em>&quot;</em>přihlašovací jméno zakázané&quot;. Následující příklad ukazuje novou značku:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample1.cshtml)]
 
 ## <a name="adding-the-model"></a>Přidání modelu
 
-V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *modely* složky, vyberte **přidat**a potom klikněte na **– třída**.
+V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *modely* složky, vyberte **přidat**a potom klikněte na **třídy**.
 
-![Nový uživatel Mdl – třída](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image6.png)
+![Nová třída Mdl uživatele](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image6.png)
 
-Název třídy `UserModel`. Nahraďte obsah *UserModel* soubor s následujícím kódem:
+Název třídy `UserModel`. Nahraďte obsah *UserModel* souboru následujícím kódem:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-`UserModel` Třída reprezentuje uživatele. Každý člen třídy je opatřen poznámkou [požadované](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atribut z [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) oboru názvů. Atributy v [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů ověřování automatické a server straně klienta pro webové aplikace.
+`UserModel` Třída reprezentuje uživatele. Každý člen třídy, je opatřen poznámkou [vyžaduje](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atribut z [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) oboru názvů. Atributy v [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů ověřování automatické a server straně klienta pro webové aplikace.
 
-Otevřete `HomeController` třídu a přidejte `using` direktivy, takže může získat přístup `UserModel` a `Users` třídy:
+Otevřít `HomeController` třídu a přidejte `using` direktiv, aby měli přístup ke `UserModel` a `Users` třídy:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample3.cs)]
 
-Právě po `HomeController` deklarace, přidejte následující komentář a odkaz na `Users` třídy:
+Hned za `HomeController` prohlášení, přidejte následující komentář a odkaz na `Users` třídy:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample4.cs)]
 
-`Users` Třída je jednodušší, v paměti datové úložiště, které budete používat v tomto kurzu. V reálné aplikaci byste použili databázi k uložit informace o uživateli. Několik prvních řádků `HomeController` souboru jsou uvedeny v následujícím příkladu:
+`Users` Třída je úložiště dat zjednodušené, v paměti, které budete používat v tomto kurzu. V reálné aplikaci byste použili databázi k ukládání informací o uživateli. Několik prvních řádků tohoto `HomeController` souboru jsou uvedeny v následujícím příkladu:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample5.cs)]
 
-Sestavení aplikace tak, aby uživatelského modelu se bude k dispozici pro Průvodce generováním uživatelského rozhraní v dalším kroku.
+Sestavte aplikaci tak, aby model uživatelů budou mít k dispozici Průvodce generování uživatelského rozhraní v dalším kroku.
 
-## <a name="creating-the-default-view"></a>Vytváření výchozí zobrazení
+## <a name="creating-the-default-view"></a>Vytváří se výchozí zobrazení
 
-Dalším krokem je přidat metodu akce a zobrazení uživatelů.
+Dalším krokem je přidání metody akce a zobrazení tak, aby uživatelé služby.
 
-Odstraňte existující *Views\Home\Index* souboru. Vytvoří nový *Index* soubor k zobrazení uživatelů.
+Odstranit existující *Views\Home\Index* souboru. Vytvoří nový *Index* soubor k zobrazení uživatelů.
 
-V `HomeController` třídy, nahraďte obsah `Index` metoda následujícím kódem:
+V `HomeController` třídy, nahraďte obsah `Index` metodu s následujícím kódem:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample6.cs)]
 
-Klepněte pravým tlačítkem myši `Index` metoda a pak klikněte na tlačítko **přidat zobrazení**.
+Klepněte pravým tlačítkem myši `Index` metody a pak klikněte na tlačítko **přidat zobrazení**.
 
 ![Přidání zobrazení](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image7.png)
 
-Vyberte **vytvořit zobrazení silného typu** možnost. Pro **zobrazit třída dat**, vyberte **Mvc3Razor.Models.UserModel**. (Pokud nevidíte **Mvc3Razor.Models.UserModel** v **zobrazit třída dat** pole, které potřebujete k vytvoření projektu.) Ujistěte se, že bude zobrazovací modul je nastavená na **Razor**. Nastavit **zobrazit obsah** k **seznamu** a pak klikněte na **přidat**.
+Vyberte **vytvoření zobrazení se silnými typy** možnost. Pro **zobrazení dat třídy**vyberte **Mvc3Razor.Models.UserModel**. (Pokud se nezobrazí **Mvc3Razor.Models.UserModel** v **zobrazení dat třídy** pole, budete muset sestavit projekt.) Ujistěte se, že modul zobrazení nastavený na **Razor**. Nastavte **zobrazit obsah** k **seznamu** a potom klikněte na tlačítko **přidat**.
 
-![Přidání zobrazení indexu](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image8.png)
+![Přidání zobrazení Index](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image8.png)
 
-Nové zobrazení automaticky scaffolds uživatelská data, která je předána `Index` zobrazení. Zkontrolujte nově vygenerovaný *Views\Home\Index* souboru. **Vytvořit nový**, **upravit**, **podrobnosti**, a **odstranit** nefungují odkazy, ale zbývající části stránky je funkční. Spuštění stránky. Zobrazí seznam uživatelů.
+Nové zobrazení vygeneruje uživatelské automaticky rozhraní uživatelská data, která je předána `Index` zobrazení. Prozkoumejte nově vygenerovaný *Views\Home\Index* souboru. **Vytvořit nový**, **upravit**, **podrobnosti**, a **odstranit** odkazy nefungují, ale zbývající části stránky je funkční. Spuštění stránky. Zobrazí seznam uživatelů.
 
-![Index stránky](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image9.png)
+![Indexová stránka](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image9.png)
 
-Otevřete *Index.cshtml* souboru a nahraďte `ActionLink` kód pro **upravit**, **podrobnosti**, a **odstranit** následujícím kódem :
+Otevřít *Index.cshtml* soubor a nahradit `ActionLink` kód pro **upravit**, **podrobnosti**, a **odstranit** následujícím kódem :
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample7.cshtml)]
 
@@ -115,85 +114,85 @@ Uživatelské jméno se používá jako ID najít vybraný záznam v **upravit**
 
 ## <a name="creating-the-details-view"></a>Vytváření zobrazení podrobností
 
-Dalším krokem je přidání `Details` metody akce a zobrazení, aby bylo možné zobrazit podrobné informace o uživateli.
+Dalším krokem je přidání `Details` metody akce a zobrazení, aby bylo možné zobrazit podrobnosti o uživateli.
 
 ![Podrobnosti](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image10.png)
 
-Přidejte následující `Details` metoda domácí řadiče:
+Přidejte následující `Details` metodu pro kontroler home:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-Klepněte pravým tlačítkem myši `Details` metoda a potom vyberte <strong>přidat zobrazení</strong>. Ověřte, zda <strong>zobrazit třída dat</strong> obsahuje pole <strong>Mvc3Razor.Models.UserModel</strong><em>.</em> Nastavit <strong>zobrazit obsah</strong> k <strong>podrobnosti</strong> a pak klikněte na <strong>přidat</strong>.
+Klepněte pravým tlačítkem myši `Details` metody a pak vyberte <strong>přidat zobrazení</strong>. Ověřte, že <strong>zobrazení dat třídy</strong> pole obsahuje <strong>Mvc3Razor.Models.UserModel</strong><em>.</em> Nastavte <strong>zobrazit obsah</strong> k <strong>podrobnosti</strong> a potom klikněte na tlačítko <strong>přidat</strong>.
 
-![Přidání zobrazení podrobností](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
+![Přidat zobrazení podrobností](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 
-Spusťte aplikaci a vyberte podrobnosti odkaz. Automatické generování uživatelského rozhraní zobrazuje každou vlastnost v modelu.
+Spusťte aplikaci a vyberte odkaz podrobnosti. Automatické generování uživatelského rozhraní zobrazuje každou vlastnost v modelu.
 
 ![Podrobnosti](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image12.png)
 
 ## <a name="creating-the-edit-view"></a>Vytvoření zobrazení pro úpravy
 
-Přidejte následující `Edit` metoda domácí řadiče.
+Přidejte následující `Edit` metodu pro kontroler home.
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample9.cs)]
 
 Přidání zobrazení jako v předchozích krocích, ale nastavit **zobrazit obsah** k **upravit**.
 
-![Přidání zobrazení upravit](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image13.png)
+![Přidání zobrazení pro úpravy](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image13.png)
 
-Spusťte aplikaci a upravit první a poslední název jednoho uživatele. Pokud jste porušují `DataAnnotation` omezení, které se aplikovaly `UserModel` třída, při odeslání formuláře, zobrazí se chyby ověření, které jsou vytvářeny v serverovém kódu. Například, pokud změníte jméno &quot;Ann&quot; k &quot;A&quot;, že při odeslání formuláře, na formuláři se zobrazí následující chyba:
+Spusťte aplikaci a upravte první a poslední název jednoho z uživatelů. Pokud jste porušují `DataAnnotation` omezení, které se použily `UserModel` třídy, při odeslání formuláře, zobrazí se chyby ověření, které jsou vytvářeny v kódu serveru. Například, pokud změníte křestní jméno &quot;Ann&quot; k &quot;A&quot;při odeslání formuláře, ve formuláři se zobrazí následující chyba:
 
 `The field First Name must be a string with a minimum length of 3 and a maximum length of 8.`
 
-V tomto kurzu jste považuje uživatelské jméno jako primární klíč. Proto nelze změnit vlastnost název uživatele. V *Edit.cshtml* souboru, hned za `Html.BeginForm` příkazu nastavte uživatelské jméno jako skryté políčko. To způsobí, že vlastnost, která má být předán v modelu. Následující fragment kódu ukazuje umístění `Hidden` příkaz:
+V tomto kurzu se zpracuje uživatelské jméno jako primární klíč. Proto nelze změnit název vlastnosti uživatele. V *Edit.cshtml* souboru hned za `Html.BeginForm` prohlášení, nastavte uživatelské jméno jako skryté pole. To způsobí, že vlastnost, která má být předán v modelu. Následující fragment kódu ukazuje umístění `Hidden` – příkaz:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample10.cshtml)]
 
-Nahraďte `TextBoxFor` a `ValidationMessageFor` značek pro uživatelské jméno, `DisplayFor` volání. `DisplayFor` Metoda zobrazí vlastnost jako element jen pro čtení. Následující příklad ukazuje kód dokončené. Původní `TextBoxFor` a `ValidationMessageFor` volání jsou vloženy do komentáře syntaxe Razor začít komentáře a end komentář znaků (`@* *@`)
+Nahradit `TextBoxFor` a `ValidationMessageFor` značek pro uživatelské jméno `DisplayFor` volání. `DisplayFor` Metoda zobrazí vlastnosti jako prvek jen pro čtení. Následující příklad ukazuje dokončené značky. Původní `TextBoxFor` a `ValidationMessageFor` volání, jsou zakomentované znaky začít komentář a konec komentáře syntaxe Razor (`@* *@`)
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample11.cshtml)]
 
 ## <a name="enabling-client-side-validation"></a>Povolení ověřování na straně klienta
 
-Pokud chcete povolit ověřování na straně klienta v architektuře ASP.NET MVC 3, je nutné nastavit dvěma příznaky a musí obsahovat tři soubory JavaScript.
+Pokud chcete povolit ověřování na straně klienta v architektuře ASP.NET MVC 3, je nutné nastavit dva příznaky a musí obsahovat tři soubory jazyka JavaScript.
 
-Otevřít aplikaci *Web.config* souboru. Ověřte `that ClientValidationEnabled` a `UnobtrusiveJavaScriptEnabled` jsou nastaveny na hodnotu true v nastavení aplikace. Následující fragment z kořenového adresáře *Web.config* souboru zobrazuje správné nastavení:
+Otevřete aplikaci prvku *Web.config* souboru. Ověřte `that ClientValidationEnabled` a `UnobtrusiveJavaScriptEnabled` jsou nastaveny na hodnotu true v nastavení aplikace. Následující fragment z kořenového adresáře *Web.config* souboru zobrazuje správné nastavení:
 
 [!code-xml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample12.xml)]
 
-Nastavení `UnobtrusiveJavaScriptEnabled` na hodnotu true, umožňuje nerušivý Ajax a ověření nerušivého klienta. Použijete-li nerušivý ověřování, jsou pravidla ověřování převedena na atributy HTML5. Názvy atributů jazyka HTML5 se může skládat jenom malá písmena, čísla a pomlčky.
+Nastavení `UnobtrusiveJavaScriptEnabled` na hodnotu true umožňuje nerušivý Ajax a ověření nerušivého klienta. Použijete-li nerušivý ověření, ověřovacích pravidel jsou převedena na atributy HTML5. Názvy atributů HTML5 může být tvořen pouze malá písmena, číslice a spojovníky.
 
-Nastavení `ClientValidationEnabled` k ověřování na straně klienta true povoluje. Nastavením těchto klíčů v aplikaci *Web.config* souboru, povolení ověření klienta a nerušivý JavaScript pro celou aplikaci. Můžete také povolit nebo zakázat tato nastavení v jednotlivých zobrazeních nebo metody kontroleru pomocí následujícího kódu:
+Nastavení `ClientValidationEnabled` na hodnotu true umožňuje ověřování na straně klienta. Nastavením těchto klíčů v aplikaci *Web.config* souboru jste povolili ověřování na straně klienta a nerušivý JavaScript pro celou aplikaci. Můžete také povolit nebo zakázat tato nastavení v jednotlivých zobrazeních nebo v metodách kontroleru pomocí následujícího kódu:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample13.cs)]
 
-Musíte taky zahrnout několik souborů JavaScript ve vykresleném zobrazení. Snadný způsob, jak zahrnout všechna zobrazení jazyka JavaScript je pro jejich přidávání k *Views\Shared\\_Layout.cshtml* souboru. Nahraďte `<head>` element  *\_Layout.cshtml* soubor s následujícím kódem:
+Také musíte zahrnout několik souborů JavaScriptu vykreslené zobrazení. Snadný způsob, jak ve všech zobrazeních přidejte kód JavaScript je pro jejich přidání do *Views\Shared\\_Layout.cshtml* souboru. Nahradit `<head>` elementu  *\_Layout.cshtml* souboru následujícím kódem:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample14.cshtml)]
 
-První dva skripty jQuery jsou hostované pomocí Microsoft Ajax Content Delivery Network (CDN). Využitím Microsoft Ajax CDN, může výrazně zlepšit výkon první podle aplikací.
+První dva skripty jQuery jsou hostované ve Microsoft Ajax Content Delivery Network (CDN). S využitím Microsoft Ajax CDN může výrazně zlepšit výkon stiskněte první aplikací.
 
-Spusťte aplikaci a klikněte na odkaz pro úpravy. Zobrazení zdrojového kódu stránky v prohlížeči. Zdroj prohlížeče ukazuje počet atributů formuláře `data-val` (pro ověření dat). Pokud je povoleno ověření klienta a nerušivý JavaScript, obsahovat vstupní pole s pravidlem ověření klienta `data-val="true"` atributů ověření nerušivého klienta aktivovat. Například `City` pole v modelu byla označených pomocí [požadované](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atributů, což vede k HTML vidět v následujícím příkladu:
+Spusťte aplikaci a klikněte na odkaz pro úpravy. Zobrazte zdroj stránky v prohlížeči. Zdrojového kódu prohlížeče ukazuje mnoho atributů ve formátu `data-val` (pro ověření dat). Pokud je povoleno ověřování na straně klienta a nerušivý JavaScript, obsahovat vstupní pole pomocí pravidla ověřování na straně klienta `data-val="true"` atribut k aktivaci ověření nerušivého klienta. Například `City` byl doplněn pole v modelu [vyžaduje](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) atributů, což vede k HTML je znázorněno v následujícím příkladu:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
-Pro každé pravidlo ověření klienta se přidá atribut, který má formulář `data-val-rulename="message"`. Pomocí `City` pole příkladu výše, vyžaduje ověření klienta pravidlo generuje `data-val-required` atribut a zpráva &quot;The města pole je povinné&quot;. Spusťte aplikaci a úpravě jeden z uživatelů, zrušte `City` pole. Kartě mimo pole zobrazí chybovou zprávu ověření na straně klienta.
+Pro každé pravidlo ověřování na straně klienta se přidá atribut, který má tvar `data-val-rulename="message"`. Pomocí `City` pole uvedená výše, generuje pravidlo vyžaduje ověřování na straně klienta, například `data-val-required` atribut a zpráva &quot;je povinné pole Město&quot;. Spusťte aplikaci a úpravě jednoho z uživatelů, zrušte `City` pole. Když kartě mimo pole se zobrazí chybovou zprávu ověření na straně klienta.
 
-![Požadované města](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
+![Město vyžaduje](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-Podobně, pro každý parametr v pravidle ověření klienta, přidání atributu má formuláře `data-val-rulename-paramname=paramvalue`. Například `FirstName` vlastnost je opatřen poznámkou [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut a určuje minimální délku 3 a maximální délku 8. Pravidlo ověření dat s názvem `length` má název parametru `max` a hodnota parametru 8. Následující příklad zobrazuje HTML, který se vygeneruje pro `FirstName` pole při úpravách jeden z uživatelů:
+Podobně pro každý parametr pravidla ověřování na straně klienta, přidání atributu, který má tvar `data-val-rulename-paramname=paramvalue`. Například `FirstName` vlastnost je opatřen poznámkou [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) atribut a určuje minimální délku 3 a maximální délce 8. Pravidlo ověřování dat s názvem `length` má název parametru `max` a hodnota parametru 8. Následující příklad zobrazuje kód HTML, který je generován pro `FirstName` pole při úpravě jednoho z uživatelů:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 
-Další informace o ověření nerušivého klienta, naleznete v příspěvku [Nerušivý ověření klienta v architektuře ASP.NET MVC 3](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html) v blogu Brada Wilsona.
+Další informace o ověření nerušivého klienta naleznete v příspěvku [Nerušivý ověření klienta v architektuře ASP.NET MVC 3](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html) v blogu Brada Wilsona.
 
 > [!NOTE]
-> V ASP.NET MVC 3 Beta budete muset někdy formulář odeslat, aby bylo možné spustit ověřování na straně klienta. To může být změněn pro finální verzi.
+> V ASP.NET MVC 3 Beta musíte někdy odesláním formuláře, aby bylo možné spustit ověřování na straně klienta. To může být změněn ve finální verzi.
 
 
 ## <a name="creating-the-create-view"></a>Vytvoření zobrazení pro vytváření
 
-Dalším krokem je přidání `Create` metody akce a zobrazení, aby bylo možné zajistit, aby uživatel k vytvoření nového uživatele. Přidejte následující `Create` metoda domácí řadiče:
+Dalším krokem je přidání `Create` metody akce a zobrazení, chcete-li povolit uživatelům vytvoření nového uživatele. Přidejte následující `Create` metodu pro kontroler home:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample17.cs)]
 
@@ -201,16 +200,16 @@ Přidání zobrazení jako v předchozích krocích, ale nastavit **zobrazit obs
 
 ![Vytvoření zobrazení](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image15.png)
 
-Spusťte aplikaci, vyberte **vytvořit** propojit, a přidání nového uživatele. `Create` Metoda automaticky využívá výhod ověření na straně klienta a na straně serveru. Zkuste zadat uživatelské jméno, které obsahuje prázdné znaky, jako například &quot;Ben X&quot;. Když kartě mimo pole uživatelského jména, chyba ověřování na straně klienta (`White space is not allowed`) se zobrazí.
+Spusťte aplikaci, vyberte **vytvořit** propojit, a přidejte nového uživatele. `Create` Metoda automaticky využívá výhod ověření na straně klienta i stranu serveru. Zkuste zadat uživatelské jméno, který obsahuje prázdné znaky, jako například &quot;Ben X&quot;. Pokud kartu mimo pole uživatelské jméno na chybu ověřování na straně klienta (`White space is not allowed`) se zobrazí.
 
-## <a name="add-the-delete-method"></a>Přidejte metodu Delete
+## <a name="add-the-delete-method"></a>Přidání metody odstranění
 
-K dokončení tohoto kurzu, přidejte následující `Delete` metoda domácí řadiče:
+Pro absolvování tohoto kurzu, přidejte následující `Delete` metodu pro kontroler home:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample18.cs)]
 
-Přidat `Delete` zobrazení jako v předchozích krocích nastavení **zobrazit obsah** k **odstranit**.
+Přidat `Delete` zobrazení jako v předchozích krocích, nastavení **zobrazit obsah** k **odstranit**.
 
 ![Odstranit zobrazení](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image16.png)
 
-Nyní máte jednoduchý, ale plně funkční aplikaci ASP.NET MVC 3 s ověřování.
+Nyní máte jednoduchý, ale plně funkční aplikaci ASP.NET MVC 3 s ověřením.

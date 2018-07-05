@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/web-deployment-projects
-title: Webové projekty nasazení | Microsoft Docs
+title: Webové projekty nasazení | Dokumentace Microsoftu
 author: BradleyBartz
-description: Bradleyové Bartz a Richard Ersek ukazují, jak webové projekty nasazení poskytují další funkce pro vytváření a vytvořit nasazení aplikace na webovém serveru...
+description: Bradley Bartz a Richard Ersek ukazují, jak poskytnout projekty nasazení webu další funkce pro vytváření a vytvořte nasazení webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/21/2006
 ms.topic: article
 ms.assetid: eca1b75a-2f32-4004-842e-aa555175a3ea
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/web-deployment-projects
 msc.type: video
-ms.openlocfilehash: 7a5cf69ec45f3bd1b1662a604bf6615feb5a35f0
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 14320f98c17e741c6e6dab1299102ce3e48fedb0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30894285"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382004"
 ---
-<a name="web-deployment-projects"></a>Webové projekty nasazení
+<a name="web-deployment-projects"></a>Projekty nasazení webu
 ====================
-podle [Bartz Bradleyové](https://github.com/BradleyBartz)
+podle [Bradley Bartz](https://github.com/BradleyBartz)
 
-Bradleyové Bartz a Richard Ersek ukazují, jak webové projekty nasazení poskytují další funkce pro vytváření a nasazování webu aplikace vytvořené v sadě Visual Studio 2005.
+Bradley Bartz a Richard Ersek ukazují, jak poskytnout projekty nasazení webu další funkce pro vytváření a nasazování webové aplikace vytvořené v sadě Visual Studio 2005.
 
 [&#9654;Podívejte se na video (65 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/web-deployment-projects)
 

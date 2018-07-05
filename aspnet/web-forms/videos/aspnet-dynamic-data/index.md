@@ -1,43 +1,42 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/index
-title: Dynamická Data technologie ASP.NET | Microsoft Docs
+title: Dynamická Data technologie ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
-description: Jak používat Dynamická Data technologie ASP.NET pro vytvoření automaticky generovaný aplikací, které automaticky vědět, jak provádí přístup k datům.
+description: Jak vytvořit automaticky generovaný aplikací, které automaticky vědět, jak se přístup k datům pomocí dynamických dat ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
 ms.topic: article
 ms.assetid: cd51e6c4-6ff9-419d-8ac8-a39b79d63c78
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
-ms.openlocfilehash: a2fc937d18572ac2e1bc41cd28b98569a2490a61
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 41af0473822efb6cdde5087df317b30126dc0bc8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26571057"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374789"
 ---
 <a name="aspnet-dynamic-data"></a>Dynamická Data technologie ASP.NET
 ====================
-> Jak používat Dynamická Data technologie ASP.NET pro vytvoření automaticky generovaný aplikací, které automaticky vědět, jak provádí přístup k datům.
+> Jak vytvořit automaticky generovaný aplikací, které automaticky vědět, jak se přístup k datům pomocí dynamických dat ASP.NET.
 
 
-- [Vaše první vygenerované uživatelské rozhraní a co je dynamická Data](your-first-scaffold-and-what-is-dynamic-data.md)
-- [Povolit úpravy GridView vložené](how-do-i-enable-inline-gridview-editing.md)
-- [Změnit způsob vykreslení Moje pole](how-do-i-change-how-my-fields-render.md)
-- [Zpracování výjimek obchodní logiky](how-do-i-handle-business-logic-exceptions.md)
-- [Zkontrolujte vlastní stránky](how-do-i-make-custom-pages.md)
-- [Zobrazit neznámé datové typy](how-do-i-display-unknown-datatypes.md)
-- [Použít DynamicControl v DetailsView prvky ListView a](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
+- [První vygenerované uživatelské rozhraní a vysvětlení dynamických dat](your-first-scaffold-and-what-is-dynamic-data.md)
+- [Povolení řádkových úprav v ovládacím prvku GridView](how-do-i-enable-inline-gridview-editing.md)
+- [Změna způsobu vykreslování polí](how-do-i-change-how-my-fields-render.md)
+- [Ošetření výjimek z obchodní logiky](how-do-i-handle-business-logic-exceptions.md)
+- [Vytváření vlastních stránek](how-do-i-make-custom-pages.md)
+- [Zobrazení neznámých datových typů](how-do-i-display-unknown-datatypes.md)
+- [Použití objektu DynamicControl v ovládacích prvcích ListView a DetailsView](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
 - [Začínáme s dynamickými daty](getting-started-with-dynamic-data.md)
-- [Zahájit úpravy šablon v aplikacích ASP.NET dynamické dat](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
-- [Začít upravovat Dynamická Data aplikací pomocí směrování adres URL](begin-modifying-dynamic-data-applications-with-url-routing.md)
-- [Povolit úpravy v řádku v aplikacích ASP.NET dynamické dat](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)
-- [Povolit konkrétní směrování tabulky v dynamické datových aplikací](how-to-enable-table-specific-routing-in-dynamic-data-applications.md)
-- [Použití atributů ověření v aplikacích ASP.NET dynamické dat](how-to-use-attribute-validation-in-aspnet-dynamic-data-applications.md)
-- [Implementace vlastních polí ověření s imperativní logiku v jazyce Visual Basic nebo C#](how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c.md)
-- [Sloupce odebrat z vaší DynamicData datové mřížky](how-to-remove-columns-from-your-dynamicdata-data-grids.md)
-- [Vytvoření tabulky konkrétní vlastní formuláře v aplikaci ASP.NET dynamické dat](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)
-- [Dynamické ASP.NET dat vlastní formulář formátování](aspnet-dynamic-data-custom-form-formatting.md)
+- [Začínáme upravovat šablony aplikací ASP.NET s dynamickými daty](begin-editing-the-templates-in-aspnet-dynamic-data-applications.md)
+- [Začínáme měnit aplikace s dynamickými daty směrováním URL](begin-modifying-dynamic-data-applications-with-url-routing.md)
+- [Povolení řádkových úprav aplikací ASP.NET s dynamickými daty](enable-in-line-editing-in-aspnet-dynamic-data-applications.md)
+- [Povolení přesměrování na určitou tabulku v aplikacích s dynamickými daty](how-to-enable-table-specific-routing-in-dynamic-data-applications.md)
+- [Použití atributu Validation v aplikacích ASP.NET s dynamickými daty](how-to-use-attribute-validation-in-aspnet-dynamic-data-applications.md)
+- [Implementace vlastního ověření pole imperativní logikou ve VB nebo C#](how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c.md)
+- [Odebrání sloupců z datových mřížek DynamicData](how-to-remove-columns-from-your-dynamicdata-data-grids.md)
+- [Vytvoření vlastních formulářů pro určitou tabulku v aplikaci ASP.NET s dynamickými daty](how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application.md)
+- [Formátování vlastního formuláře aplikace ASP.NET s dynamickými daty](aspnet-dynamic-data-custom-form-formatting.md)

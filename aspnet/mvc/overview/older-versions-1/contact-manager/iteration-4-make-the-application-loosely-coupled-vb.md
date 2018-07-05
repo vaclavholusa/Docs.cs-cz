@@ -1,179 +1,178 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
-title: 'Iterace #4 – zpřístupnění aplikace volně vázány (VB) | Microsoft Docs'
+title: 'Iterace #4 – vytvoření volně spárované aplikace (VB) | Dokumentace Microsoftu'
 author: microsoft
-description: V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Pro...
+description: V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Pro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
 ms.topic: article
 ms.assetid: 92c70297-4430-4e4e-919a-9c2333a8d09a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d953a1b786c802c070619e553e27d88f2ded149c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 37aef9b3bb1221902c1eb84bd4218a30c758b81a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873937"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401234"
 ---
-<a name="iteration-4--make-the-application-loosely-coupled-vb"></a>Iterace #4 – zpřístupnění aplikace volně vázány (VB)
+<a name="iteration-4--make-the-application-loosely-coupled-vb"></a>Iterace #4 – vytvoření volně spárované aplikace (VB)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-[Stáhněte si kód](iteration-4-make-the-application-loosely-coupled-vb/_static/contactmanager_4_vb1.zip)
+[Stáhnout kód](iteration-4-make-the-application-loosely-coupled-vb/_static/contactmanager_4_vb1.zip)
 
-> V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Například můžeme Refaktorovat naše aplikace pro použití vzoru úložiště a vzoru vkládání závislostí.
-
-
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Vytvoření aplikace ASP.NET MVC správy kontaktů (VB)
-
-Z této série kurzů využijeme celou aplikaci obraťte se na správu od začátku ukončíte. Obraťte se na správce aplikace umožňuje ukládat kontaktní údaje - názvy, telefonní čísla a e-mailové adresy – seznam osob.
-
-Přes několikrát jsme sestavení aplikace. S každé iteraci jsme postupně zlepšení aplikace. Cílem tohoto více iterace přístupu je vám umožní pochopit důvod pro každé změně.
-
-- Iterace #1 – Vytvoření aplikace. V první iteraci vytvoříme obraťte se na správce v nejjednodušší způsob, jak to možné. Nemůžeme přidat podporu pro základní databázových operací: vytvořit, číst, aktualizovat a odstranit (CRUD).
-
-- Iterace #2 – zpřístupnění aplikace vypadat dobrý. V této iteraci můžeme vylepšit vzhled aplikace Úprava výchozí stránky předlohy zobrazení ASP.NET MVC a stylů CSS.
-
-- Iterace #3 – přidání ověřování formuláře. V třetím iteraci přidáme ověření základní formulář. Jsme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Můžeme také ověřit e-mailových adres a telefonních čísel.
-
-- Iterace #4 - li aplikaci volně vázány. V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Například můžeme Refaktorovat naše aplikace pro použití vzoru úložiště a vzoru vkládání závislostí.
-
-- Iterace #5 – vytvoření testování částí. V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro naše řadiče a logiku ověření.
-
-- Iterace #6 - použití vývoje řízeného testováním. V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci přidáme kontaktní skupiny.
-
-- Iterace #7 – přidání funkci Ajax. V sedmého iteraci jsme přidáním podpory pro Ajax zvýšit rychlost reakce a výkon aplikace.
-
-## <a name="this-iteration"></a>Tato iterace
-
-V této čtvrté iteraci aplikace, obraťte se na správce jsme Refaktorovat aplikace zpřístupnění aplikace více volně vázány. Pokud aplikace je volně vázány, můžete upravit kód v jedné části aplikace bez nutnosti upravovat kód v dalších částí aplikace. Volně párované aplikace jsou odolnější vůči změnit.
-
-Všechna data přístupu a ověřování logiky, která používá obraťte se na správce aplikace v současné době je obsažený ve třídách. To je vhodné. Vždy, když budete muset upravit část aplikace, riskujete představení chyby do jiné části vaší aplikace. Například pokud upravíte logika ověřování, riskujete Představujeme nové chyby do logika přístupu nebo řadič data.
-
-> [!NOTE] 
-> 
-> (SRP), třída by měla mít nikdy více než jeden důvod, chcete-li změnit. Kombinování řadiče, ověřování a logiku databáze je masivní narušení jednu zásadu zodpovědnost.
+> V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
 
 
-Tady je několik důvodů, které možná budete muset upravit vaší aplikace. Možná budete muset přidat nové funkce do vaší aplikace, možná budete muset oprava chyby v aplikaci nebo možná budete muset upravit způsob implementace funkce vaší aplikace. Aplikace jsou zřídka statické. Budou většinou růst a mutovat v čase.
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Vytvoření aplikace pro správu kontaktů ASP.NET MVC (VB)
 
-Představte si třeba, abyste se rozhodli změnit, jak implementovat vaše vrstvou. Pravé nyní, obraťte se na správce aplikace používá Microsoft Entity Framework pro přístup k databázi. Ale můžete rozhodnout k migraci technologií pro přístup k nové nebo alternativní data, jako je například ADO.NET Data Services nebo NHibernate. Ale protože přístupového kódu dat není izolovaná od kód ověřování a řadiče, neexistuje žádný způsob, jak upravit kód přístup dat ve vaší aplikaci bez úpravy jiný kód, který přímo nesouvisí se přístup k datům.
+V této sérii kurzů jsme integrovali celou aplikaci kontakt správy od začátku na dokončení. Obraťte se na správce aplikace umožňuje ukládat kontaktní údaje - jména, telefonní čísla a e-mailové adresy – seznam lidí.
 
-Pokud aplikace je volně vázány, na druhé straně může provedete změny jednu část aplikace, bez zásahu do dalších částí aplikace. Například můžete přepnout technologie pro přístup k datům beze změny logika ověřování nebo kontroleru.
+Vytváříme aplikaci přes více iterací. S každou iterací zvyšujeme postupně aplikace. Cílem tohoto přístupu s více iterace je vám pomohl pochopit důvod pro každou změnu.
 
-V této iteraci jsme využít několik vzory návrhu softwaru, které nám Refaktorovat obraťte se na správce aplikace do více volného párované aplikace. Když jsme se provádějí, obraťte se na správce, won t udělat nic je dodán t provést před. Ale jsme budete moci změnit aplikace snadněji v budoucnu.
+- Iterace #1 – Vytvoření aplikace. V první iteraci vytvoříme Správce kontaktů v Nejjednodušším způsobem, jak je to možné. Přidáváme podporu pro základní databázových operací: vytváření, čtení, aktualizace a odstranění (CRUD).
+
+- Ujistěte se, iterace #2 – vylepšení vzhledu aplikace. V této iterace můžeme zlepšit vzhled aplikace tak, že změna výchozích hlavní stránka zobrazení ASP.NET MVC a stylů CSS.
+
+- Iterace #3 – Přidání ověřovacího formuláře. Ve třetí iterace přidáme ověření základní formulář. Můžeme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také ověření e-mailových adres a telefonních čísel.
+
+- Iterace #4 – vytvoření volně spárované aplikace. V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
+
+- Iterace #5 – vytvoření testů jednotek. V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro naše řadiče a logiku ověřování.
+
+- Iterace #6 – použití vývoje řízeného testováním. V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace můžeme přidat skupiny kontaktů.
+
+- Iterace #7 – přidání funkcí Ajax. V sedmé iteraci můžeme zlepšit rychlost reakce a výkon naší aplikace tak, že přidáte podporu pro Ajax.
+
+## <a name="this-iteration"></a>Tuto iteraci
+
+V tomto čtvrtý iteraci kontaktujte správce aplikace jsme Refaktorovat aplikace, aby byla více volně spárované aplikace. Když je volně spárované aplikace, můžete upravit kód v jedné části aplikace bez nutnosti upravovat kód v ostatních částech aplikace. Volně propojených aplikací jsou odolnější vůči změnit.
+
+V současné době všechny dat přístup a ověřování logikou používanou aplikací správce kontaktů je součástí třídy kontroleru. To není dobrý nápad. Pokaždé, když se budete muset upravit jedné části vaší aplikace, riskujete zavádění chyb do jiné části aplikace. Například při úpravě svoji logiku ověřování, riskujete zavedení nových chyb do logiky data access nebo kontroleru.
 
 > [!NOTE] 
 > 
-> Refaktoring je proces přepisování aplikace tak, že není ztratit všechny stávající funkce.
+> (SRP), třída by měla mít nikdy více než jedním z důvodů, chcete-li změnit. Kombinování řadič, ověřování a logiku databáze je obrovská porušení principu jednu zodpovědnost.
+
+
+Tady je několik důvodů, které možná budete muset upravit svou aplikaci. Možná budete muset přidat nové funkce do vaší aplikace, možná budete muset opravit chybu v aplikaci nebo možná budete muset upravit, jak je implementovaná funkce vaší aplikace. Aplikace jsou zřídka statické. Mají tendenci k růstu a mutovat v čase.
+
+Představte si třeba, abyste se rozhodli změnit, jak implementovat vaše vrstvy přístupu k datům. Pravé teď, kontaktujte správce aplikace používá Microsoft Entity Framework pro přístup k databázi. Ale můžete se rozhodnout migrovat do nového nebo alternativní datový přístup technologie, jako je služeb ADO.NET Data Services nebo NHibernate. Ale protože kód přístupu k datům není izolovaná od kód ověřování a kontroler, neexistuje žádný způsob, jak upravit kód přístupu k datům ve vaší aplikaci bez změny jiný kód, který nesouvisí se přímo k přístupu k datům.
+
+Pokud aplikace je volně propojené a na druhé straně můžete provádět změny jedné části aplikace bez zásahu do jiných částí aplikace. Například můžete přepnout technologií přístupu k datům beze změny svoji logiku ověřování nebo kontroleru.
+
+V této iterace můžeme využít několik způsobů návrhu softwaru, které pomáhají k refaktorování naši Správce kontaktů aplikaci do více volně spárované aplikace. Když jsme se vším hotovi, kontaktujte správce vyhráli t dělat nic., který ho nefungoval t proveďte před. Ale budeme moct aplikaci mnohem snazší v budoucnu změnit.
+
+> [!NOTE] 
+> 
+> Refaktoring je proces přepsání aplikace tak, že neztratí všechny existující funkce.
 
 
 ## <a name="using-the-repository-software-design-pattern"></a>Pomocí vzoru návrhu úložiště softwaru
 
-Naše první změna je využít výhod softwaru návrhový vzor, který volá použitému vzoru. Použijeme použitému vzoru izolovat naše data přístupového kódu od zbytku naší aplikace.
+Naše první změna je využít softwaru návrhový vzor, který volá použitému vzoru. Použijeme vzor úložiště k izolaci náš kód přístupu k datům od zbytku naši aplikaci.
 
-Implementace vzoru úložiště vyžaduje, abychom mohli dokončit následující dva kroky:
+Implementace vzoru úložiště vyžaduje, abychom dokončete následující kroky:
 
-1. Vytvořit rozhraní
-2. Vytvořte konkrétní třídu, která implementuje rozhraní
+1. Vytvoření rozhraní
+2. Vytvořit konkrétní třída, která implementuje rozhraní
 
-Nejprve musíme vytvořit rozhraní, které popisuje všechny metody přístupu dat, které je potřeba provést. Rozhraní IContactManagerRepository je obsažený v výpis 1. Toto rozhraní popisuje pět metody: CreateContact(), DeleteContact(), EditContact(), GetContact a ListContacts().
+Nejprve musíme vytvořit rozhraní, které popisuje všechny metody přístupu data, která potřebujeme k provedení. Rozhraní IContactManagerRepository je obsažen v informacích 1. Popisuje pět metod, toto rozhraní: CreateContact() DeleteContact(), EditContact(), GetContact a ListContacts().
 
 **Výpis 1 - Models\IContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample1.vb)]
 
-Dále je potřeba vytvořit konkrétní třídu, která implementuje rozhraní IContactManagerRepository. Protože Microsoft Entity Framework se používá pro přístup k databázi, vytvoříme novou třídu s názvem EntityContactManagerRepository. Tato třída je obsažený v výpis 2.
+V dalším kroku budeme muset vytvořit konkrétní třída, která implementuje rozhraní IContactManagerRepository. Protože používáme Microsoft Entity Framework pro přístup k databázi, vytvoříme novou třídu s názvem EntityContactManagerRepository. Tato třída je obsažen v informacích 2.
 
 **Výpis 2 - Models\EntityContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample2.vb)]
 
-Všimněte si, že EntityContactManagerRepository třída implementuje rozhraní IContactManagerRepository. Třída implementuje všechny pět z metod popsaných v tomto rozhraní.
+Všimněte si, že EntityContactManagerRepository třída implementuje rozhraní IContactManagerRepository. Třída implementuje všech pět z metod popsaných v tomto rozhraní.
 
-Může vás zajímat, proč je potřeba zabývat rozhraní. Proč je potřeba vytvořit rozhraní a třídy, která se implementuje?
+Může vás zajímat, proč musíme zabývat rozhraní. Proč potřebujeme vytvořit rozhraní a třídy, která ho implementuje?
 
-S jednou výjimkou zbytek naše aplikace budou používat rozhraní a ne na konkrétní třídu. Namísto volání metody vystavené třídě EntityContactManagerRepository, zavoláme vám metody vystavené IContactManagerRepository rozhraní.
+S jednou výjimkou zbývající část naší aplikace budou používat rozhraní a ne na konkrétní třídu. Namísto volání metody vystavené objektem třídy EntityContactManagerRepository, zavoláme vám metody vystavené objektem IContactManagerRepository rozhraní.
 
-Tímto způsobem, můžeme implementovat rozhraní s novou třídu bez nutnosti upravit zbývající část naší aplikace. Například v některé budoucí datum, budeme chtít implementovat třídu DataServicesContactManagerRepository, která implementuje rozhraní IContactManagerRepository. Třída DataServicesContactManagerRepository může použít ADO.NET Data Services pro přístup k databázi místo Microsoft Entity Framework.
+Tímto způsobem můžeme implementovat rozhraní s novou třídu aniž byste museli upravovat zbytek naši aplikaci. Například v některé budoucí datum, budeme chtít implementovat DataServicesContactManagerRepository třídu, která implementuje rozhraní IContactManagerRepository. Třída DataServicesContactManagerRepository může použít datových služeb ADO.NET pro přístup k databázi namísto Microsoft Entity Framework.
 
-V případě, že naše kód aplikace je naprogramovaný tak proti rozhraní IContactManagerRepository místo konkrétní třída EntityContactManagerRepository jsme beze změny všechny zbývající části kódu přepínat konkrétní třídy. Například jsme můžete přepnout ze třídy EntityContactManagerRepository třídě DataServicesContactManagerRepository beze změny dat logiku ověření nebo přístupu.
+Pokud je náš kód aplikace programovat proti rozhraní IContactManagerRepository místo konkrétní třída EntityContactManagerRepository jsme beze změny všechny zbývající část našeho kódu přepnout konkrétní třídy. Například můžeme přepnout ze třídy EntityContactManagerRepository na třídu DataServicesContactManagerRepository beze změny našich dat přístup nebo ověřovací logiku.
 
-Programování s rozhraní (abstrakce) namísto konkrétní třídy způsobí naše aplikace odolnější vůči změnit.
+Programování v rozhraní (abstrakce) místo konkrétních tříd díky naší aplikace odolnější vůči změnit.
 
 > [!NOTE] 
 > 
-> Výběrem možnosti nabídky Refaktorovat, extrahování rozhraní můžete rychle vytvořit rozhraní z konkrétní třídy v sadě Visual Studio. Můžete například nejprve vytvořit třídu EntityContactManagerRepository a pak použijte extrahování rozhraní má automaticky generovat rozhraní IContactManagerRepository.
+> Můžete rychle vytvořit rozhraní z konkrétní třídy v sadě Visual Studio tak, že vyberete možnost nabídky Refaktorujte, extrahování rozhraní. Můžete například nejprve vytvořit třídu EntityContactManagerRepository a pak použijte extrahování rozhraní k automatickému vygenerování IContactManagerRepository rozhraní.
 
 
-## <a name="using-the-dependency-injection-software-design-pattern"></a>Pomocí vzoru návrhu softwaru vkládání závislostí
+## <a name="using-the-dependency-injection-software-design-pattern"></a>Pomocí vzoru návrhu softwaru injektáž závislostí
 
-Teď, když jsme naše data přístupového kódu migraci do samostatné třídy úložiště, je potřeba upravit obraťte se na kontroleru k použití této třídy. Jsme bude využívat softwaru návrhový vzor, který volá vkládání závislostí pro použití třídy úložiště v kontroleru.
+Teď, když náš kód přístupu k datům jsme migrovali do samostatné třídy úložiště, musíme upravit kontakt kontroleru k použití této třídy. My podnikneme výhod softwaru návrhový vzor, který volá injektáž závislostí pomocí třídy úložiště v kontroleru.
 
-Upravené obraťte se na řadič, je součástí výpis 3.
+Upravené kontakt kontroleru je součástí výpis 3.
 
 **Výpis 3 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample3.vb)]
 
-Všimněte si, že obraťte se na zařízení v výpis 3 má dva konstruktory. První konstruktoru předá konkrétní instanci rozhraní IContactManagerRepository druhý konstruktor. Použití třídy obraťte se na řadič *vkládání závislostí konstruktor*.
+Všimněte si, že kontroler kontakt v informacích 3 má dva konstruktory. První konstruktor předá konkrétní instance objektu rozhraní IContactManagerRepository druhý konstruktor. Kontaktujte řadič třídě používá *injektáž závislostí konstruktor*.
 
-Ten a pouze místní, jestli se používá třída EntityContactManagerRepository je v první konstruktoru. Zbývající část třídu používá rozhraní IContactManagerRepository místo konkrétní EntityContactManagerRepository třída.
+Jeden a pouze místo, že se používá třída EntityContactManagerRepository je v první konstruktor. Zbývající část třídy používá rozhraní IContactManagerRepository místo konkrétní třída EntityContactManagerRepository.
 
-To usnadňuje přepínač implementace třídy IContactManagerRepository v budoucnu. Pokud chcete použít třídu DataServicesContactRepository místo třídě EntityContactManagerRepository, stačí upravte první konstruktor.
+To umožňuje snadno přepínat implementace třídy IContactManagerRepository v budoucnu. Pokud chcete používat třídu DataServicesContactRepository namísto třídy EntityContactManagerRepository, stačí upravte první konstruktor.
 
-Vkládání závislostí konstruktor také díky třídy kontroleru obraťte se na velmi možností intenzivního testování. V testů jednotek můžete vytvořit instanci kontaktujte řadič předáním imitovanou implementaci třídy IContactManagerRepository. Tato funkce vkládání závislostí bude velmi důležité, abyste nám v další iterace, když jsme vytvářet testy částí pro aplikace obraťte se na správce.
+Injektáž závislostí konstruktor také díky třídy kontroleru kontakt velmi testovatelné. V testování částí lze vytvořit instanci kontroleru kontakt předáním imitované implementace třídy IContactManagerRepository. Při sestavování testů jednotek pro aplikace Správce kontaktů, bude tato funkce vkládání závislostí pro nás velmi důležité při příští iteraci.
 
 > [!NOTE] 
 > 
-> Pokud chcete zcela oddělit třídy kontroleru kontakt z konkrétní implementace rozhraní IContactManagerRepository pak můžete využít výhod Framework, která podporuje vkládání závislostí například StructureMap nebo Microsoft Rozhraní Entity Framework (MEF). Využitím vkládání závislostí Framework, budete muset nikdy odkazovat na konkrétní třídy v kódu.
+> Pokud chcete úplně oddělit třídy kontroleru kontaktu z konkrétní implementace rozhraní IContactManagerRepository pak můžete využít rozhraní Framework, která podporuje vkládání závislostí, jako je například StructureMap nebo Microsoftu Entity Framework (MEF). S využitím vkládání závislostí framework nikdy musí odkazovat na konkrétní třídy v kódu.
 
 
 ## <a name="creating-a-service-layer"></a>Vytvoření vrstvy služby
 
-Možná jste si všimli, že ověřovací logiku stále smíšený s logiku řadiče ve třídě upravené řadiče v výpis 3. Ze stejného důvodu je vhodné izolovat data logiku přístup je vhodné izolovat ověřovací logiku.
+Jste si možná všimli, že naše logiku ověřování stále zkombinovaný s naší logice kontroleru ve třídě upravené kontroleru v zobrazení 3. Ze stejného důvodu, že je vhodné izolovat naše logikou přístupu k datům je vhodné izolovat naše logiku ověřování.
 
-Chcete-li tento problém vyřešit, můžeme vytvořit samostatné [vrstvy služby](http://martinfowler.com/eaaCatalog/serviceLayer.html). Vrstva, služby, je do samostatné vrstvy, který jsme můžete vložit mezi naše kontroleru a třídy úložiště. Vrstva služby obsahuje naše obchodní logiky, včetně všech objektů ověřovací logiku.
+Chcete-li vyřešit tento problém, můžeme vytvořit samostatné [vrstva služby](http://martinfowler.com/eaaCatalog/serviceLayer.html). Vrstva služby je samostatné vrstvy, který jsme může vložit mezi naše kontroleru a třídy úložiště. Vrstva služby obsahuje naše obchodní logiku, včetně všech našich logiku ověřování.
 
-ContactManagerService je obsažený v výpis 4. Obsahuje logiku ověření od třídy controller kontaktu.
+Výpis 4 je součástí ContactManagerService. Obsahuje logiku ověřování od třídy controller, kontaktu.
 
-**Výpis 4 - Models\ContactManagerService.vb**
+**Část 4 – Models\ContactManagerService.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample4.vb)]
 
-Všimněte si, že v konstruktoru pro ContactManagerService vyžaduje ValidationDictionary. Komunikuje se službou vrstvě řadiče prostřednictvím této ValidationDictionary vrstvě služby. ValidationDictionary v následující části podrobně probereme při probereme Dekoratéra vzor.
+Všimněte si, že konstruktor pro ContactManagerService vyžaduje ValidationDictionary. Vrstva služby komunikuje s vrstvou řadič prostřednictvím této ValidationDictionary. Když si popíšeme vzor Dekoratér probereme ValidationDictionary podrobně v následující části.
 
-Všimněte si kromě toho, že ContactManagerService implementuje rozhraní IContactManagerService. Vždycky měli snažit programu proti rozhraní místo konkrétní třídy. Jiné třídy v aplikaci obraťte se na správce s třídou ContactManagerService není komunikovat přímo. Místo toho s jedinou výjimkou je zbývající aplikace, obraťte se na správce programovat proti IContactManagerService rozhraní.
+Všimněte si kromě toho, že ContactManagerService implementuje rozhraní IContactManagerService. Je nutné vždy snažit se programovat proti konkrétní třídy, ale rozhraní. Další třídy v aplikaci Správce kontaktů nemají možnost zasahovat ContactManagerService třídy přímo. Místo toho s jedinou výjimkou je zbytek kontaktujte správce aplikace programovat proti IContactManagerService rozhraní.
 
-Rozhraní IContactManagerService je obsažený v výpis 5.
+Rozhraní IContactManagerService je obsažen v informacích 5.
 
 **Výpis 5 - Models\IContactManagerService.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample5.vb)]
 
-Upravené třídy kontroleru kontakt je součástí výpis 6. Všimněte si, že obraťte se na řadič už komunikuje s úložištěm ContactManager. Místo toho obraťte se na řadič komunikuje se službou ContactManager. Jednotlivé úrovně je izolovaná co nejvíce z jiných vrstev.
+Upravené třídy kontroleru kontakt je obsažen v informacích 6. Všimněte si, že kontroler kontakt už komunikuje s úložišti ContactManager. Místo toho řadiče kontakt komunikuje ContactManager služby. Každá vrstva je izolovaný co nejvíc z jiných vrstev.
 
 **Výpis 6 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample6.vb)]
 
-Naše aplikace už běží afoul o jeden odpovědnost princip (SRP). Obraťte se na řadič v výpis 6 bylo provedeno oříznutí každých zodpovědnosti než řízení toku provádění aplikací. Veškerou logiku ověření bylo odstraněno z řadiče kontaktu a nabídnutých do vrstvy služby. Veškerou logiku databáze bylo posunuto do vrstvy úložiště.
+Naše aplikace už běží afoul o jedné zásadě odpovědnost (SRP). Každý zodpovědnosti než řízení toku provádění aplikace bylo provedeno oříznutí řadič kontakt v 6 výpis. Veškerou logiku ověření byl odebrán z kontroleru kontakt a vloženy do vrstvy služeb. Veškerou logiku databáze bylo vloženo do vrstvy úložiště.
 
-## <a name="using-the-decorator-pattern"></a>Použití vzoru Dekoratéra
+## <a name="using-the-decorator-pattern"></a>Použití vzoru Dekoratéru
 
-Chceme mít možnost zcela oddělit naše vrstvy služby z našich vrstvy řadiče. V zásadě jsme byste měli mít zkompilovat naše vrstvy služby v samostatném sestavení z našich řadiče vrstvy bez nutnosti se přidat odkaz na naše aplikace MVC.
+Chcete být schopni zcela oddělit naše vrstva služby z našich vrstvy kontroleru. V zásadě jsme měli ke zkompilování naše služby vrstvy v samostatné sestavení z našich vrstvy řadič, aniž by bylo nutné přidat odkaz na naši aplikaci MVC.
 
-Naše vrstvy služby však musí být schopni projít ověřením chybové zprávy zpět na vrstvě řadiče. Jak jsme povolit vrstvy služby pro komunikaci chybových zpráv ověření bez spojovacích řadiče a vrstva služby? Jsme můžete využít výhod vzor návrhu softwaru s názvem [Dekoratéra vzor](http://en.wikipedia.org/wiki/Decorator_pattern).
+Naše vrstva služby však musí být moct projít ověřením chybové zprávy zpět do kontroleru vrstvy. Jak jsme povolit vrstvy služby pro komunikaci chybových zpráv ověření bez párování kontroleru a vrstva služby? Můžeme využít návrhový vzor softwaru s názvem [Dekoratér vzor](http://en.wikipedia.org/wiki/Decorator_pattern).
 
-Řadič ModelStateDictionary, s názvem ModelState používá k reprezentaci chyby ověření. Proto může být tendenci předat ModelState z vrstvy řadiče vrstvě služby. Však pomocí ModelState ve vrstvě služby by provést vrstvě služby závisí na funkci aplikace rozhraní ASP.NET MVC. To může být chybná, protože jednou budete, můžete chtít použít vrstvě služby s aplikací WPF namísto aplikace ASP.NET MVC. V takovém případě wouldn t chcete odkazovat na rozhraní ASP.NET MVC pro použití třídy ModelStateDictionary.
+Kontroler ModelStateDictionary s názvem ModelState používá k reprezentaci chyby ověření. Proto můžete mít tendenci k předání ModelState z vrstvy kontroleru k vrstvě služby. Nicméně pomocí ModelState ve vrstvě služby s žádným vrstvě služby závisí na funkce rozhraní ASP.NET MVC. To může být chybná, protože někdy, můžete chtít použít vrstvě služby s WPF aplikace namísto aplikace ASP.NET MVC. V takovém případě wouldn t chcete odkazovat na rozhraní ASP.NET MVC pomocí třídy ModelStateDictionary.
 
-Vzor Dekoratéra umožňuje zalomení existující třídy v novou třídu kvůli implementaci rozhraní. Naše obraťte se na správce projekt obsahuje třídu ModelStateWrapper obsažené v výpis 7. Třída ModelStateWrapper implementuje rozhraní výpis 8.
+Vzor Dekoratér umožňuje zabalit existující třídy v nové třídy kvůli implementaci rozhraní. Kontaktujte správce projektu obsahuje třídu ModelStateWrapper součástí výpis 7. ModelStateWrapper třída implementuje rozhraní ve výpisu 8.
 
-**Listing 7 - Models\Validation\ModelStateWrapper.vb**
+**Výpis 7 - Models\Validation\ModelStateWrapper.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample7.vb)]
 
@@ -181,21 +180,21 @@ Vzor Dekoratéra umožňuje zalomení existující třídy v novou třídu kvůl
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample8.vb)]
 
-Pokud trvat zblízka na výpis 5 zobrazí se, že vrstvy služby ContactManager používá rozhraní IValidationDictionary výhradně. Služba ContactManager není závislá na třídě ModelStateDictionary. Obraťte se na řadič vytvoří službu ContactManager, řadičem zabalí jeho ModelState takto:
+Pokud nepodniknete pořádně prohlédněte výpis 5 pak uvidíte, že vrstva služby ContactManager používá výhradně IValidationDictionary rozhraní. Služba ContactManager není závislá na třídu ModelStateDictionary. Kontaktujte řadič vytvoří službu ContactManager, zabalí kontroleru jeho ModelState takto:
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample9.vb)]
 
 ## <a name="summary"></a>Souhrn
 
-V této iteraci jsme nepřidali žádné nové funkce do aplikace obraťte se na správce. Cílem této iterace bylo Refaktorovat obraťte se na správce aplikace tak, že se snadněji spravovat a upravovat.
+V této iterace jsme nepřidali žádné nové funkce do aplikace Správce kontaktů. Cílem této iterace bylo Refaktorovat Správce kontaktů aplikaci tak, že se snadněji spravovat a upravovat.
 
-Implementovali jsme nejprve vzor návrhu úložiště softwaru. Jsme migrovaly všechny přístupového kódu data do samostatné třídy ContactManager úložiště.
+Nejprve implementovali jsme vzor návrhu úložiště softwaru. Jsme migrovali všechny kód přístupu k datům do samostatné třídy ContactManager úložiště.
 
-Také jsme ověřovací logiku oddělený od řadiče logiku. Jsme vytvořili samostatné služby vrstva, která obsahuje všechny naše ověřovacího kódu. Vrstva řadiče komunikuje s vrstvě služby a vrstvy služby komunikuje s vrstvy úložiště.
+Také jsme naše logiku ověřování izolovaně od našich logice kontroleru. Vytvořili jsme vrstvu samostatnou službu, která obsahuje všechny naše kód pro ověření. Kontroler vrstvy komunikuje se vrstva služby a vrstva služby komunikuje s vrstvou úložiště.
 
-Pokud jsme vytvořili vrstvy služby, vzali jsme výhod vzoru Dekoratéra izolovat ModelState z našich vrstvy služby. V našem vrstvě služby jsme naprogramovaný tak proti rozhraní IValidationDictionary místo ModelState.
+Když jsme vytvořili vrstva služby, jsme využil vzor Dekoratér izolovat ModelState z našich vrstvy služby. V našem vrstvě služby jsme programovat proti rozhraní IValidationDictionary místo ModelState.
 
-Nakonec vzali jsme výhod vzor návrhu softwaru s názvem vzoru vkládání závislostí. Tento vzor umožňuje nám programu proti rozhraní (abstrakce) namísto konkrétní třídy. Implementace vzoru návrhu vkládání závislostí také díky kódu více možností intenzivního testování. V další iterace přidáme na našem projekt testování částí.
+Nakonec jsme využil návrhový vzor softwaru s názvem vzorek vkládání závislostí. Tento model umožňuje programovat proti konkrétní třídy, ale rozhraní (abstrakce). Implementace vzoru návrhu injektáž závislostí také díky našeho kódu více možností intenzivního testování. V další iteraci přidáme do našich projektu testování částí.
 
 > [!div class="step-by-step"]
 > [Předchozí](iteration-3-add-form-validation-vb.md)

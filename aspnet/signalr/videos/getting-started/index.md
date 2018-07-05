@@ -1,27 +1,26 @@
 ---
 uid: signalr/videos/getting-started/index
-title: Funkce SignalR technologie ASP.NET videa | Microsoft Docs
+title: Videa o ASP.NET SignalR | Dokumentace Microsoftu
 author: rick-anderson
-description: Tyto udělení videa, které jste na pozadí a příklady aplikace pro přidání v reálném čase funkce do webových aplikací pomocí funkce SignalR.
+description: Tyto získáte videa vás na pozadí a příklady aplikací pomocí nástroje SignalR, přidání funkcí v reálném čase do webové aplikace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012
 ms.topic: article
 ms.assetid: d8d03cc9-13bc-4921-9aca-3dfbda53660d
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/videos/getting-started
 msc.type: chapter
-ms.openlocfilehash: 509d5475650e758960da3116b53cd21c0b628edf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b2ec0a16bd3635aa2252ca0506fa482ab18e6275
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26565990"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400976"
 ---
-<a name="aspnet-signalr-videos"></a>Funkce SignalR technologie ASP.NET videa
+<a name="aspnet-signalr-videos"></a>Videa o ASP.NET SignalR
 ====================
-> Tyto udělení videa, které jste na pozadí a příklady aplikace pro přidání v reálném čase funkce do webových aplikací pomocí funkce SignalR.
+> Tyto získáte videa vás na pozadí a příklady aplikací pomocí nástroje SignalR, přidání funkcí v reálném čase do webové aplikace.
 
 
 - [SignalR a webové sokety](signalr-and-web-sockets.md)

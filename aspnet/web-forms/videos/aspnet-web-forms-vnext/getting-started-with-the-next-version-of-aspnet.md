@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/getting-started-with-the-next-version-of-aspnet
-title: Začínáme s další verzi technologie ASP.NET | Microsoft Docs
+title: Začínáme s další verzí ASP.NET | Dokumentace Microsoftu
 author: shanselman
 description: Scott Hanselman vás seznámí s chystaných funkcí v příští verzi technologie ASP.NET.
 ms.author: aspnetcontent
@@ -9,17 +9,16 @@ ms.date: 11/18/2011
 ms.topic: article
 ms.assetid: ebe337ae-9646-49f4-bb38-e6d3138b39fd
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/getting-started-with-the-next-version-of-aspnet
 msc.type: video
-ms.openlocfilehash: 8a5b972741a0e524fff4d2d8ecf908cffc894c58
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 04ad10b250c3d4aea0d4af85f437c863bc6ade31
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885661"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396094"
 ---
-<a name="getting-started-with-the-next-version-of-aspnet"></a>Začínáme s další verzi technologie ASP.NET
+<a name="getting-started-with-the-next-version-of-aspnet"></a>Začínáme s další verzí ASP.NET
 ====================
 podle [Scott Hanselman](https://github.com/shanselman)
 

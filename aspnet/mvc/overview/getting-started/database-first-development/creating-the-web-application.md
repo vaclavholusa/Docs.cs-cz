@@ -1,82 +1,81 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
-title: 'Databázi EF nejprve s architekturou ASP.NET MVC: vytvoření webové aplikace a datové modely | Microsoft Docs'
+title: 'EF Database First s ASP.NET MVC: vytvoření webové aplikace a datových modelů | Dokumentace Microsoftu'
 author: tfitzmac
-description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
 ms.topic: article
 ms.assetid: bc8f2bd5-ff57-4dcd-8418-a5bd517d8953
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 04ccc00fa48702608fdc7b5b00d73778985852f9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a1c4e3365d320ee54d378de33a77666558a854d2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878773"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398242"
 ---
-<a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>Databázi EF nejprve s architekturou ASP.NET MVC: vytvoření webové aplikace a datové modely
+<a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>EF Database First s ASP.NET MVC: vytvoření webové aplikace a datových modelů
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tato řada kurzu se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořte a odstraňovat data, která se nachází v tabulce databáze. Generovaný kód odpovídá sloupců v tabulce databáze.
+> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. V této sérii kurzů se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořit a odstranit data, která se nachází v databázové tabulce. Generovaný kód odpovídá sloupců v tabulce databáze.
 > 
-> Tato část řady se zaměřuje na vytvoření webové aplikace a generování modelů dat podle databázových tabulek.
+> Tato části této série se zaměřuje na vytvoření webové aplikace a generování datové modely založené na databázových tabulek.
 
 
-## <a name="create-a-new-aspnet-web-application"></a>Vytvoření nové webové aplikace ASP.NET
+## <a name="create-a-new-aspnet-web-application"></a>Vytvořit novou webovou aplikaci ASP.NET
 
-V nové řešení nebo do stejného řešení jako projekt databáze, vytvořte nový projekt v sadě Visual Studio a vyberte **webové aplikace ASP.NET** šablony. Název projektu **ContosoSite**.
+V nové řešení nebo do stejného řešení jako databázového projektu vytvořte nový projekt v sadě Visual Studio a vyberte **webová aplikace ASP.NET** šablony. Pojmenujte projekt **ContosoSite**.
 
 ![Vytvoření projektu](creating-the-web-application/_static/image1.png)
 
-Click **OK**.
+Klikněte na tlačítko **OK**.
 
-V okně Nový projekt ASP.NET, vyberte **MVC** šablony. Můžete vymazat **hostitel v cloudu** možnost prozatím, protože se nasazení aplikace do cloudu později. Klikněte na tlačítko **OK** k vytvoření aplikace.
+V okně Nový projekt ASP.NET, vyberte **MVC** šablony. Můžete vymazat **hostovat v cloudu** možnost prozatím, protože budete nasazovat aplikaci do cloudu později. Klikněte na tlačítko **OK** k vytvoření aplikace.
 
 ![Vyberte šablonu mvc](creating-the-web-application/_static/image2.png)
 
-Vytvoření projektu s výchozí soubory a složky.
+Projekt je vytvořen s výchozí soubory a složky.
 
-V tomto kurzu použijete Entity Framework 6. Ve vašem projektu prostřednictvím okno Spravovat balíčky NuGet můžete zkontrolujte verzi rozhraní Entity Framework. V případě potřeby aktualizujte svou verzi rozhraní Entity Framework.
+V tomto kurzu budete používat Entity Framework 6. Verze rozhraní Entity Framework můžete zkontrolovat ve vašem projektu prostřednictvím okna spravovat balíčky NuGet. V případě potřeby aktualizujte na verzi rozhraní Entity Framework.
 
 ![Zobrazit verze](creating-the-web-application/_static/image3.png)
 
-## <a name="generate-the-models"></a>Generování modelů
+## <a name="generate-the-models"></a>Generovat modelů
 
-Rozhraní Entity Framework modely nyní vytvoří z tabulky databáze. Tyto modely jsou třídy, které budete používat pro práci s daty. Každý model zrcadlí tabulky v databázi a obsahuje vlastnosti, které odpovídají sloupců v tabulce.
+Modely Entity Framework teď vytvoříte z databázových tabulek. Tyto modely jsou třídy, které budete používat pro práci s daty. Každý model zrcadlí tabulky v databázi a obsahuje vlastnosti, které odpovídají sloupcům v tabulce.
 
-Klikněte pravým tlačítkem myši **modely** složky a vyberte **přidat** a **novou položku**.
+Klikněte pravým tlačítkem myši **modely** a pak zvolte položku **přidat** a **nová položka**.
 
 ![Přidat novou položku](creating-the-web-application/_static/image4.png)
 
-V okně Přidat novou položku, vyberte **Data** v levém podokně a **ADO.NET Entity Data Model** z možností v prostředním podokně. Název nového souboru modelu **ContosoModel**.
+V okně Přidat novou položku vyberte **Data** v levém podokně a **datový Model Entity ADO.NET** z možností v prostředním podokně. Pojmenujte nový soubor modelu **ContosoModel**.
 
 ![Vytvoření modelu](creating-the-web-application/_static/image5.png)
 
 Klikněte na tlačítko **přidat**.
 
-V průvodci Entity Data Model vyberte **EF Designer z databáze**.
+V Průvodci modelem Entity Data vyberte **EF designeru z databáze**.
 
-![generování z databáze](creating-the-web-application/_static/image6.png)
+![Generovat z databáze](creating-the-web-application/_static/image6.png)
 
 Klikněte na tlačítko **Další**.
 
-Pokud máte připojení databáze, které jsou definované v rámci vývojového prostředí, může najdete v jednom z těchto připojení předem vybraná. Chcete vytvořit nové připojení k databázi, kterou jste vytvořili v první části tohoto kurzu. Klikněte **nové připojení** tlačítko.
+Pokud máte připojení k databázi definována v rámci vývojového prostředí, může se zobrazit jeden z těchto připojení předem vybraná. Chcete vytvořit nové připojení k databázi, kterou jste vytvořili v první části tohoto kurzu. Klikněte na tlačítko **nové připojení** tlačítko.
 
 ![připojení k databázi](creating-the-web-application/_static/image7.png)
 
 V okně Vlastnosti připojení zadat název místního serveru, kde byla vytvořena databáze (v tomto případě **(localdb) \ProjectsV12**). Po zadání názvu serveru, vyberte z dostupných databází ContosoUniversityData.
 
-![Nastavte vlastnosti připojení](creating-the-web-application/_static/image8.png)
+![nastavit vlastnosti připojení](creating-the-web-application/_static/image8.png)
 
-Click **OK**.
+Klikněte na tlačítko **OK**.
 
-Nyní se zobrazí vlastnosti správné připojení. Můžete použít výchozí název pro připojení v souboru Web.Config
+Vlastnosti správné připojení se teď zobrazují. Můžete použít výchozí název připojení v souboru Web.Config
 
 ![nastavení připojení](creating-the-web-application/_static/image9.png)
 
@@ -84,23 +83,23 @@ Klikněte na tlačítko **Další**.
 
 Vyberte **tabulky** ke generování modely pro všechny tři tabulky.
 
-![Vyberte tabulky](creating-the-web-application/_static/image10.png)
+![Vybrat tabulky](creating-the-web-application/_static/image10.png)
 
 Klikněte na tlačítko **Dokončit**.
 
-Pokud se zobrazí upozornění zabezpečení, vyberte **OK** pokračovat v provozu šablony.
+Pokud se zobrazí upozornění zabezpečení, vyberte **OK** pokračoval šablony.
 
-Z tabulky databáze, které se generují modely a zobrazená diagram znázorňuje vlastnosti a vztahy mezi tabulkami.
+Modely se generují z databázové tabulky a diagramu se zobrazí, který ukazuje vlastnosti a vztahy mezi tabulkami.
 
 ![Diagram modelu](creating-the-web-application/_static/image11.png)
 
-Složku modely nyní zahrnuje mnoho nové soubory související s modely, které byly vygenerovány z databáze.
+Složku modely nyní obsahuje mnoho nových souborů související s modely, které byly generovány z databáze.
 
 ![Zobrazit nové soubory modelu](creating-the-web-application/_static/image12.png)
 
-**ContosoModel.Context.cs** soubor obsahuje třídu odvozenou od **DbContext** třídy a poskytuje vlastnosti pro každou třídu modelu, která odpovídá do databázové tabulky. **Course.cs**, **Enrollment.cs**, a **Student.cs** soubory obsahují třídy modelu, které představují tabulky databáze. Třídy kontextu a třídy modelu použije při práci s generování uživatelského rozhraní.
+**ContosoModel.Context.cs** soubor obsahuje třídu, která je odvozena z **DbContext** třídy a poskytuje vlastnosti pro každou třídu modelu, odpovídající do databázové tabulky. **Course.cs**, **Enrollment.cs**, a **Student.cs** soubory obsahují, které představují tabulky databáze třídy modelu. Třídy kontextu a tříd modelu bude používat při práci s generování uživatelského rozhraní.
 
-Než budete pokračovat v tomto kurzu, sestavte projekt. V další části bude generovat kód podle datové modely, ale tento oddíl nebude fungovat, pokud nebyl sestaven projektu.
+Než budete pokračovat s tímto kurzem, sestavte projekt. V další části bude generovat kód založený na datové modely, ale, že část nebude fungovat, pokud projekt nebyl sestaven.
 
 > [!div class="step-by-step"]
 > [Předchozí](setting-up-database.md)

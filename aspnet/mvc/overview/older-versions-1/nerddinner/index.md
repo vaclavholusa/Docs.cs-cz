@@ -1,40 +1,39 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/index
-title: NerdDinner | Microsoft Docs
+title: NerdDinner | Dokumentace Microsoftu
 author: rick-anderson
-description: Postup vytvoření webu NerdDinner.com pomocí ASP.NET MVC 1. Pro verzi ASP.NET MVC 3 navštivte nerddinner na Githubu.
+description: Postup vytvoření aplikace NerdDinner.com webu pomocí technologie ASP.NET MVC 1. Verze technologie ASP.NET MVC 3 najdete na adrese nerddinner na Githubu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
 ms.topic: article
 ms.assetid: 6edfe14c-415a-4281-b6fa-69e9b38a82c8
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner
 msc.type: chapter
-ms.openlocfilehash: e4791f1fa7d5a23fdd688c294836971735070afc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a0f67178745b6239d759ebcd486ed3942b19a0eb
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26564529"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388442"
 ---
 <a name="nerddinner"></a>NerdDinner
 ====================
-> Postup vytvoření webu NerdDinner.com pomocí ASP.NET MVC 1. Verze ASP.NET MVC naleznete na adrese [NerdDinner na Githubu](https://github.com/AspNetMVPSamples/NerdDinner).
+> Postup vytvoření aplikace NerdDinner.com webu pomocí technologie ASP.NET MVC 1. Verze technologie ASP.NET MVC najdete [NerdDinner na Githubu](https://github.com/AspNetMVPSamples/NerdDinner).
 
 
-- [Představujeme v kurzu NerdDinner](introducing-the-nerddinner-tutorial.md)
+- [Úvod do kurzu NerdDinner](introducing-the-nerddinner-tutorial.md)
 - [Vytvoření nového projektu ASP.NET MVC](create-a-new-aspnet-mvc-project.md)
 - [Vytvoření databáze](create-a-database.md)
-- [Vytvoření modelu s obchodní pravidlo ověření](build-a-model-with-business-rule-validations.md)
-- [Implementace výpis/podrobnosti uživatelského rozhraní pomocí řadiče a zobrazení](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-- [Zadejte CRUD (vytvořit, číst, aktualizovat, odstraňovat) Data tvoří položka podpory](provide-crud-create-read-update-delete-data-form-entry-support.md)
-- [Použití ViewData a implementujte ViewModel třídy](use-viewdata-and-implement-viewmodel-classes.md)
-- [Znovu použijte uživatelské rozhraní pomocí stránky předlohy a částečné.](re-use-ui-using-master-pages-and-partials.md)
-- [Implementaci stránkování efektivní dat](implement-efficient-data-paging.md)
-- [Zabezpečení aplikací s použitím ověřování a autorizace](secure-applications-using-authentication-and-authorization.md)
-- [Používat k poskytování dynamické aktualizace AJAX](use-ajax-to-deliver-dynamic-updates.md)
-- [Implementace mapování scénáře pomocí rozhraní AJAX](use-ajax-to-implement-mapping-scenarios.md)
-- [Povolit automatické testování částí](enable-automated-unit-testing.md)
-- [Wrap NerdDinner nahoru](nerddinner-wrap-up.md)
+- [Vytvoření modelu s ověřením obchodních pravidel](build-a-model-with-business-rule-validations.md)
+- [Použití kontrolerů a zobrazení k implementaci uživatelského rozhraní seznamu a podrobností](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+- [Zajištění akcí CRUD (Create, Read, Update, Delete) podporujících zápis dat do formuláře](provide-crud-create-read-update-delete-data-form-entry-support.md)
+- [Použití slovníku ViewData a implementace tříd ViewModel](use-viewdata-and-implement-viewmodel-classes.md)
+- [Opakované použití uživatelského rozhraní pomocí stránek předloh a částečných zobrazení](re-use-ui-using-master-pages-and-partials.md)
+- [Implementace efektivního stránkování dat](implement-efficient-data-paging.md)
+- [Zabezpečení aplikací ověřováním a autorizací](secure-applications-using-authentication-and-authorization.md)
+- [Použití jazyka AJAX k dynamickým aktualizacím](use-ajax-to-deliver-dynamic-updates.md)
+- [Použití jazyka AJAX k implementaci scénářů mapování](use-ajax-to-implement-mapping-scenarios.md)
+- [Povolení automatického testování jednotek](enable-automated-unit-testing.md)
+- [Zabalení aplikace NerdDinner](nerddinner-wrap-up.md)

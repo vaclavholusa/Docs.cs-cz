@@ -1,125 +1,124 @@
 ---
 uid: web-api/overview/security/authentication-filters
-title: Filtry ověřování v rozhraní ASP.NET Web API 2 | Microsoft Docs
+title: Filtry ověřování v rozhraní ASP.NET Web API 2 | Dokumentace Microsoftu
 author: MikeWasson
-description: Filtr ověřování je komponenta, která ověřuje požadavek HTTP. Rozhraní Web API 2 i MVC 5 podporovaly filtry ověřování, ale se mírně liší...
+description: Filtr ověřování je komponenta, která ověřuje požadavek HTTP. Rozhraní Web API 2 a MVC 5 obě podporují filtry ověřování, ale mírně se liší...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/25/2014
 ms.topic: article
 ms.assetid: b9882e53-b3ca-4def-89b0-322846973ccb
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 16e451f52799625983368bc938091eff47019b52
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: be2dcb246597f90ed7f00b2cf647b92e44aa254c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29153515"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385674"
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>Filtry ověřování v rozhraní ASP.NET Web API 2
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-> Filtr ověřování je komponenta, která ověřuje požadavek HTTP. Rozhraní Web API 2 i MVC 5 podporovaly filtry ověřování, ale liší mírně, většinou se zásady vytváření názvů pro rozhraní filtru. Toto téma popisuje filtry ověřování webového rozhraní API.
+> Filtr ověřování je komponenta, která ověřuje požadavek HTTP. Rozhraní Web API 2 a MVC 5 podporovaly filtry ověřování, ale mírně se liší především v zásady vytváření názvů pro rozhraní filtru. Toto téma popisuje filtry ověřování webové rozhraní API.
 
 
-Filtry ověřování umožňují nastavit příslušné schéma ověřování pro jednotlivé řadiče nebo akce. Tímto způsobem, vaše aplikace může podporovat různé ověřovací mechanismy, které pro různé prostředky HTTP.
+Filtry ověřování můžete tak nastavit schéma ověřování pro individuální řadiče nebo akce. Tímto způsobem, vaše aplikace může podporovat různých ověřovacích mechanismů pro různé zdroje HTTP.
 
-V tomto článku budete zobrazit kód z [základní ověřování](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt) ukázku na [http://aspnet.codeplex.com](http://aspnet.codeplex.com). Ukázka zobrazuje filtr ověřování, který implementuje schéma základní ověřování přístupu k protokolu HTTP (RFC 2617). Filtr je implementována do třídy s názvem `IdentityBasicAuthenticationAttribute`. Nezobrazí I všechny kód z ukázce právě části, které ukazují, jak zapsat filtr ověřování.
+V tomto článku ukážeme si kód z [základní ověřování](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt) ukázku [ http://aspnet.codeplex.com ](http://aspnet.codeplex.com). Tato ukázka vysvětluje filtr ověřování, která implementuje schéma HTTP Basic Authentication přístup (RFC 2617). Tento filtr je implementována ve třídě s názvem `IdentityBasicAuthenticationAttribute`. Můžu se nezobrazí veškerý kód ze vzorku, pouze ty části, které ukazují, jak napsat filtr ověřování.
 
 ## <a name="setting-an-authentication-filter"></a>Nastavení filtr ověřování
 
-Podobně jako ostatní filtry může být filtry ověřování použité na řadič, -action nebo globálně na všechny řadiče webového rozhraní API.
+Stejně jako ostatní filtry může být filtry ověřování použité na řadič, na akci nebo globálně pro všechny kontrolery rozhraní Web API.
 
-Pokud chcete použít filtr ověřování na řadič, uspořádání třídy kontroleru s atributem filtru. Následující kód nastaví `[IdentityBasicAuthentication]` filtru na řadič třídy, která umožňuje základní ověřování pro všechny akce kontroleru.
+Použít filtr ověřování pro kontroler, uspořádání třídy kontroleru pomocí atributu filtru. Následující kód nastaví `[IdentityBasicAuthentication]` filtr na třídu kontroleru, který umožňuje základní ověřování pro všechny akce kontroleru.
 
 [!code-csharp[Main](authentication-filters/samples/sample1.cs)]
 
-Pokud chcete použít filtr jednu akci, uspořádání s filtrem akce. Následující kód nastaví `[IdentityBasicAuthentication]` filtru na kontroleru `Post` metoda.
+Použít filtr pro jednu akci, uspořádání s filtrem akce. Následující kód nastaví `[IdentityBasicAuthentication]` filtr na kontroleru `Post` metody.
 
 [!code-csharp[Main](authentication-filters/samples/sample2.cs)]
 
-Chcete-li filtr použít na všechny řadiče webového rozhraní API, přidejte ho do **GlobalConfiguration.Filters**.
+Chcete-li použít filtr na všechny řadiče webové rozhraní API, přidejte ho do **GlobalConfiguration.Filters**.
 
 [!code-csharp[Main](authentication-filters/samples/sample3.cs)]
 
-## <a name="implementing-a-web-api-authentication-filter"></a>Implementace filtru webové rozhraní API ověřování
+## <a name="implementing-a-web-api-authentication-filter"></a>Implementace filtru ověřování webové rozhraní API
 
-V rozhraní Web API implementovat filtry ověřování [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) rozhraní. Také musí dědit z **System.Attribute**, aby bylo možné použít jako atributy.
+V rozhraní Web API implementovat filtry ověřování [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) rozhraní. Také by měla dědit z **System.Attribute**, aby bylo možné použít jako atributy.
 
 **IAuthenticationFilter** rozhraní má dvě metody:
 
-- **AuthenticateAsync** ověří žádost tím, že ověří přihlašovací údaje v požadavku, pokud je k dispozici.
-- **ChallengeAsync** přidá výzvu ověřování odpovědi HTTP, v případě potřeby.
+- **AuthenticateAsync** ověří se tato žádost ověřením pověření v požadavku, pokud jsou k dispozici.
+- **ChallengeAsync** v případě potřeby přidá výzvu ověřování odpovědi HTTP.
 
-Tyto metody odpovídají tok ověřování definované v [RFC 2612](http://tools.ietf.org/html/rfc2616) a [RFC 2617](http://tools.ietf.org/html/rfc2617):
+Tyto metody, které odpovídají na tok ověřování definované v [RFC 2612](http://tools.ietf.org/html/rfc2616) a [RFC 2617](http://tools.ietf.org/html/rfc2617):
 
-1. Klient odešle přihlašovací údaje v hlavičce autorizace. K tomu obvykle dochází, když klient obdrží odpověď na 401 (Neautorizováno) ze serveru. Klient však může odesílat přihlašovací údaje s žádnou žádostí, ne jenom po získání 401.
-2. Pokud server nepřijímá přihlašovací údaje, vrátí odpověď na 401 (Neautorizováno). Odpověď obsahuje hlavičku Www-Authenticate, která obsahuje jeden nebo více výzev. Každý výzvy určuje příslušné schéma ověřování rozpoznáno serverem.
+1. Klient odešle přihlašovací údaje v autorizační hlavičce. To obvykle proběhne, když klient obdrží odpověď 401 (Neautorizováno) ze serveru. Klient však můžete odesílat přihlašovací údaje s žádnou žádostí nejen po získání zobrazuje chyba 401.
+2. Pokud server nepřijímá přihlašovací údaje, vrátí odpověď 401 (Neautorizováno). Odpověď obsahuje hlavičku Www-Authenticate, který obsahuje jeden nebo více výzev. Každé výzvy Určuje schéma ověřování rozpoznána serverem.
 
-Server může také vracet 401 z anonymní žádosti. Ve skutečnosti, který je obvykle jak spustil proces ověřování:
+Server můžete také vrátit 401 z anonymní žádosti. Ve skutečnosti je to obvykle jak zahájit proces ověřování:
 
-1. Klient odešle žádost o anonymní.
-2. Server vrátí 401.
-3. Klienti znovu odešle žádost s přihlašovacími údaji.
+1. Klient odešle anonymní žádosti.
+2. Server vrací 401.
+3. Klienti odešle požadavek s přihlašovacími údaji znovu.
 
-Tento tok zahrnuje obě *ověřování* a *autorizace* kroky.
+Tento tok obsahuje *ověřování* a *autorizace* kroky.
 
-- Ověřování prokáže identitu klienta.
-- Autorizace určuje, zda má klient přístup k určitému prostředku.
+- Ověřování prokáže identity klienta.
+- Autorizace následně určí, zda má klient přístup k určitému prostředku.
 
-Filtry ověřování v rozhraní Web API zpracovávat ověřování, ale není autorizace. Autorizace je potřeba filtr autorizace nebo uvnitř akce kontroleru.
+Filtry ověřování v rozhraní Web API zpracovávat ověřování, ale ne autorizaci. Autorizace se má počítat filtr autorizace nebo uvnitř akce kontroleru.
 
-Tady je postup v kanálu webovém rozhraní API 2:
+Tady je tok v kanálu Web API 2:
 
-1. Před vyvoláním akce, webového rozhraní API vytvoří seznam filtrů ověřování pro tuto akci. To zahrnuje filtry se akce obor, řadiče oboru a globální obor.
-2. Volání rozhraní API webové **AuthenticateAsync** na každý filtru v seznamu. Každého filtru lze ověřit přihlašovací údaje v požadavku. Pokud se libovolný filtr úspěšně ověří přihlašovací údaje, filtr vytvoří **IPrincipal** a připojí k požadavku. Filtr lze také spustit chybu v tomto okamžiku. Pokud ano, zbytek kanálu nelze spustit.
-3. Za předpokladu, že se nezobrazí žádná chyba, žádost toky prostřednictvím rest kanálu.
-4. Nakonec webového rozhraní API volá každé ověřování filtru **ChallengeAsync** metoda. Filtry tuto metodu použijte v případě potřeby přidat výzvu do odpovědi. Obvykle (ale ne vždy), by dojít v odpovědi na 401 chyba.
+1. Webové rozhraní API před vyvoláním akci, vytvoří seznam filtrů ověřování pro danou akci. To zahrnuje filtry s rozsahem akci, kontroler oboru a globální obor.
+2. Webové rozhraní API volá **AuthenticateAsync** na každý filtr v seznamu. Každého filtru lze ověřit přihlašovací údaje v požadavku. Pokud libovolný filtr úspěšně ověří přihlašovací údaje, filtr vytvoří **IPrincipal** a připojí ho k požadavku. Filtr můžete také aktivovat chybu v tomto okamžiku. Pokud ano, zbývající kanál se nespustí.
+3. Za předpokladu, že se nezobrazí žádná chyba, požadavek prochází přes rest z kanálu.
+4. Nakonec webového rozhraní API volá každý filtr ověřování **ChallengeAsync** metody. Filtry tuto metodu použijte v případě potřeby přidat výzvu v odpovědi. Obvykle (ale ne vždy), který bude možné v reakci na chybu 401.
 
 Následující diagramy znázorňují dva možné případy. V první filtr ověřování úspěšně ověří žádost, filtr autorizace ověří požadavek a akce kontroleru vrátí hodnotu 200 (OK).
 
 ![](authentication-filters/_static/image1.png)
 
-V druhém příkladu filtr ověřování ověří žádost, ale filtr autorizace vrátí 401 (Neautorizováno). V takovém případě není vyvolána akce kontroleru. Ověřování filtr přidá do odpovědi hlavičku Www-Authenticate.
+V druhém příkladu požadavek ověří filtr ověřování, ale filtr autorizace vrátí 401 (Neautorizováno). V takovém případě není vyvolána akce kontroleru. Ověření filtru přidá do odpovědi hlavičku Www-Authenticate.
 
 ![](authentication-filters/_static/image2.png)
 
-Je možné, jiné kombinace&mdash;například pokud akce kontroleru umožňuje anonymních požadavků, může být filtr ověřování, ale žádné oprávnění.
+Jiné kombinace jsou možné&mdash;například, pokud akce kontroleru umožňuje anonymní požadavky, bude pravděpodobně filtr ověřování, ale bez autorizace.
 
 ## <a name="implementing-the-authenticateasync-method"></a>Implementace metody AuthenticateAsync
 
-**AuthenticateAsync** metoda se pokusí o ověření požadavku. Tady je podpis metody:
+**AuthenticateAsync** metoda se pokusí ověřit žádost. Následuje podpis metody:
 
 [!code-csharp[Main](authentication-filters/samples/sample4.cs)]
 
-**AuthenticateAsync** metoda musíte udělat jednu z následujících akcí:
+**AuthenticateAsync** metody musíte udělat jednu z následujících akcí:
 
 1. Nothing (no-op).
-2. Vytvoření **IPrincipal** a nastavte ji na žádosti.
+2. Vytvoření **IPrincipal** a nastavte ho na požadavek.
 3. Nastavte chybného výsledku.
 
-Možnost (1) znamená požadavek neměl žádné přihlašovací údaje, které rozpozná filtru. Možnost (2) znamená filtr úspěšně ověřit žádost. Možnost (3) znamená žádost měla neplatné přihlašovací údaje (například chybné heslo), která aktivuje chybnou odpověď.
+Možnost (1) znamená, že požadavek neobsahoval žádné přihlašovací údaje, které rozumí filtr. Možnost (2) znamená, že filtr úspěšně ověřit žádost. Možnost (3) znamená, že žádost má neplatné přihlašovací údaje (například chybné heslo), aktivuje se reakce na chybu.
 
 Tady je obecný postup pro implementaci **AuthenticateAsync**.
 
-1. Podívejte se na přihlašovací údaje v požadavku.
-2. Pokud neexistují žádné přihlašovací údaje, Neprovádět žádnou akci a vrátí (no-op).
-3. Pokud jsou přihlašovací údaje, ale filtru nebyl rozpoznán schéma ověřování, Neprovádět žádnou akci a vrátí (no-op). Jiné filtru v kanálu může pochopit schéma.
-4. Pokud jsou přihlašovací údaje, které rozumí filtr, opakujte pokus o ověření je.
+1. Vyhledejte přihlašovací údaje v požadavku.
+2. Pokud neexistují žádné přihlašovací údaje, neprovádějte žádnou akci a vrátí (no-op).
+3. Pokud jsou přihlašovací údaje, ale filtr nerozpozná schéma ověřování, neprovádějte žádnou akci a vrátí (no-op). Schéma může pochopit jiný filtr v kanálu.
+4. Pokud jsou přihlašovací údaje, které rozumí filtr, pokusí se jejich ověření.
 5. Pokud přihlašovací údaje jsou chybná, vrátí 401 nastavením `context.ErrorResult`.
 6. Pokud jsou pověření platná, vytvořte **IPrincipal** a nastavte `context.Principal`.
 
-Zobrazí kód postupujte podle kroků **AuthenticateAsync** metoda z [základní ověřování](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt) ukázka. Komentáře znamenat každý krok. Kód ukazuje několik typů Chyba: autorizační hlavičky bez přihlašovacích údajů, poškozený přihlašovací údaje a chybné uživatelské jméno a heslo.
+Ukazuje následující kód **AuthenticateAsync** metodu z [základní ověřování](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/BasicAuthentication/ReadMe.txt) vzorku. Komentáře označte každý krok. Kód ukazuje několik typů Chyba: autorizační hlavičky bez přihlašovacích údajů, poškozený přihlašovací údaje a chybné uživatelské jméno a heslo.
 
 [!code-csharp[Main](authentication-filters/samples/sample5.cs)]
 
 ## <a name="setting-an-error-result"></a>Nastavení chybného výsledku
 
-Pokud přihlašovací údaje jsou neplatné, musíte nastavit filtr `context.ErrorResult` k **IHttpActionResult** vytvářející chybnou odpověď. Další informace o **IHttpActionResult**, najdete v části [výsledky akce ve webovém rozhraní API 2](../getting-started-with-aspnet-web-api/action-results.md).
+Pokud přihlašovací údaje jsou neplatné, musíte nastavit filtr `context.ErrorResult` do **IHttpActionResult** , který vytváří reakce na chybu. Další informace o **IHttpActionResult**, naleznete v tématu [výsledky akcí ve webovém rozhraní API 2](../getting-started-with-aspnet-web-api/action-results.md).
 
 Ukázka základní ověřování zahrnuje `AuthenticationFailureResult` třídu, která je vhodná pro tento účel.
 
@@ -127,46 +126,46 @@ Ukázka základní ověřování zahrnuje `AuthenticationFailureResult` třídu,
 
 ## <a name="implementing-challengeasync"></a>Implementace ChallengeAsync
 
-Účelem **ChallengeAsync** metodou je přidání výzev ověřování pro odpověď, a to v případě potřeby. Tady je podpis metody:
+Účelem **ChallengeAsync** metodou je přidat výzev ověřování pro odpověď, a to v případě potřeby. Následuje podpis metody:
 
 [!code-csharp[Main](authentication-filters/samples/sample7.cs)]
 
-Na každé ověřování filtru v kanálu požadavku je volání metody.
+Metoda je volána v každé ověřování filtr v kanálu požadavku.
 
-Je důležité pochopit, že **ChallengeAsync** nazývá *před* odpověď HTTP je vytvořený a případně i před spuštěním akce kontroleru. Když **ChallengeAsync** je volána, `context.Result` obsahuje **IHttpActionResult**, které se později používá k vytvoření odpovědi HTTP. Takže když **ChallengeAsync** je volána, bez znalosti o odpověď HTTP ještě. **ChallengeAsync** metoda by měla nahradit původní hodnotu `context.Result` s novou **IHttpActionResult**. To **IHttpActionResult** musíte zabalit původní `context.Result`.
+Je důležité si uvědomit, že **ChallengeAsync** nazývá *před* odpověď HTTP, která je vytvořená a případně i před spuštěním akce kontroleru. Když **ChallengeAsync** se nazývá `context.Result` obsahuje **IHttpActionResult**, které se později používá k vytvoření odpovědi HTTP. Takže když **ChallengeAsync** je volána, nic o odpovědi HTTP ještě neznáte. **ChallengeAsync** metody by měly nahradit původní hodnoty `context.Result` s novou **IHttpActionResult**. To **IHttpActionResult** musíte zabalit původní `context.Result`.
 
 ![](authentication-filters/_static/image3.png)
 
-Můžu budete volat původní **IHttpActionResult** *vnitřní výsledek*a nové **IHttpActionResult** *vnější výsledek*. Vnější výsledek postupujte takto:
+Já ho nazvu třeba původní **IHttpActionResult** *vnitřní výsledek*a nové **IHttpActionResult** *vnější výsledek*. Vnější výsledek musíte udělat toto:
 
-1. Vyvolání vnitřní výsledek, který má vytvořit odpověď HTTP.
+1. Vyvolá vnitřní výsledek pro vytvoření odpovědi HTTP.
 2. Zkontrolujte odpovědi.
-3. Přidáte výzvu ověřování odpovědi, v případě potřeby.
+3. V případě potřeby přidáte výzvu ověřování k odpovědi.
 
-Následující příklad je převzat ze ukázka základní ověřování. Definuje, **IHttpActionResult** pro vnější výsledek.
+V následujícím příkladu je převzat z ukázky základní ověřování. Definuje **IHttpActionResult** pro vnější výsledek.
 
 [!code-csharp[Main](authentication-filters/samples/sample8.cs)]
 
-`InnerResult` Vlastnost obsahuje vnitřní **IHttpActionResult**. `Challenge` Vlastnost představuje hlavičku Www-ověřování. Všimněte si, že **ExecuteAsync** nejprve volá `InnerResult.ExecuteAsync` vytvořit odpověď HTTP a potom přidá výzvy v případě potřeby.
+`InnerResult` Vlastnost obsahuje vnitřní **IHttpActionResult**. `Challenge` Vlastnost představuje hlavičky Www-ověřování. Všimněte si, že **ExecuteAsync** nejprve volá `InnerResult.ExecuteAsync` k vytvoření odpovědi HTTP a pak přidá před obrovskou výzvou – v případě potřeby.
 
-Před přidáním výzvy ověřil kód odpovědi. Většina schémat ověřování přidat výzvu pouze pokud je odpověď na 401, jak je vidět tady. Ale některé schémat ověřování přidat výzvu úspěšná odpověď. Například v tématu [Negotiate](http://tools.ietf.org/html/rfc4559#section-5) (RFC 4559).
+Před přidáním před obrovskou výzvou – zkontrolujte kód odpovědi. Většina schémat ověřování pouze přidat výzvu Pokud odpověď 401, jak je znázorněno zde. Ale určitá schémata ověřování přidat výzvu úspěšná odpověď. Viz například [Negotiate](http://tools.ietf.org/html/rfc4559#section-5) (RFC 4559).
 
-Zadané `AddChallengeOnUnauthorizedResult` třídy, skutečný kód v **ChallengeAsync** je jednoduchá. Právě vytvoření výsledku a připojte ji k `context.Result`.
+Zadaný `AddChallengeOnUnauthorizedResult` třídy, skutečný kód **ChallengeAsync** je jednoduché. Stačí vytvořit výsledek a připojte ji k `context.Result`.
 
 [!code-csharp[Main](authentication-filters/samples/sample9.cs)]
 
-Poznámka: Ukázkové základní ověřování abstrahuje této logiky trochu, umístění v metody rozšíření.
+Poznámka: Ukázkové základní ověřování abstrahuje tuto logiku trochu, tak, že v metodě rozšíření.
 
 ## <a name="combining-authentication-filters-with-host-level-authentication"></a>Kombinování filtry ověřování s ověřováním na úrovni hostitele
 
-"Ověřování na úrovni hostitele" ověřování prováděné tímto hostitelem (například IIS), je před framework dosáhnou webového rozhraní API žádosti.
+"Ověřování na úrovni hostitele" je ověřování prováděné tímto hostitelem (například služby IIS), než rozhraní požadavek dosáhne webového rozhraní API.
 
-Často můžete chtít povolit ověřování na úrovni hostitele pro zbytek vaší aplikace, ale zakázat pro řadičů webového rozhraní API. Typický scénář je třeba povolit ověřování pomocí formulářů na úrovni hostitele, ale používat ověřování na základě tokenu pro rozhraní Web API.
+Často můžete povolit ověření na úrovni hostitele pro ostatní aplikace, ale zakázat pro kontrolerům rozhraní Web API. Typický scénář je třeba povolit ověřování pomocí formulářů na úrovni hostitele, ale používat ověřování založené na tokenech pro webové rozhraní API.
 
-Chcete-li zakázat ověřování na úrovni hostitele uvnitř kanál rozhraní Web API, volejte `config.SuppressHostPrincipal()` ve vaší konfiguraci. To způsobí, že webového rozhraní API k odebrání **IPrincipal** z jakékoli požadavky, které zadá kanál rozhraní Web API. Prakticky ho &quot;zrušení-ověřuje&quot; žádosti.
+Chcete-li zakázat ověřování na úrovni hostitele do kanálu webové rozhraní API, zavolejte `config.SuppressHostPrincipal()` ve vaší konfiguraci. To způsobí, že webové rozhraní API k odebrání **IPrincipal** z všechny požadavky, které přejde do kanálu webové rozhraní API. Efektivně, ho &quot;zrušení-ověřuje&quot; požadavku.
 
 [!code-csharp[Main](authentication-filters/samples/sample10.cs)]
 
 ## <a name="additional-resources"></a>Další prostředky
 
-[Filtry zabezpečení rozhraní ASP.NET Web API](https://msdn.microsoft.com/magazine/dn781361.aspx) (Časopis MSDN)
+[Filtry zabezpečení rozhraní ASP.NET Web API](https://msdn.microsoft.com/magazine/dn781361.aspx) (Zpravodaj MSDN Magazine)

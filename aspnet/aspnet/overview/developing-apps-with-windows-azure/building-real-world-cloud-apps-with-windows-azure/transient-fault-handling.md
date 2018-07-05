@@ -1,87 +1,86 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
-title: Přechodná chyba zpracování (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Přechodná chyba zpracování (sestavování skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/03/2015
 ms.topic: article
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 86bd67b04931ae2452f6e063e6475a434a0125bc
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 13ed8c2373c22070d21519bc495161e956b0ac4d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873076"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398411"
 ---
-<a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Přechodná chyba zpracování (vytváření reálných cloudových aplikací s Azure)
+<a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>(Vytváření skutečných cloudových aplikací s Azure) zpracování přechodných chyb
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Informace o elektronická kniha najdete v tématu [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Při návrhu cloudové aplikace skutečných, jednou z věcí, které je třeba myslet je způsob zpracování přerušení dočasné služeb. Tento problém je jednoznačně důležité pro cloudové aplikace, protože jste tak závislá na připojení k síti a externích služeb. Často můžete získat moc chyb, které jsou obvykle samoopravení, a pokud nejste připravené k jejich zpracování inteligentně, budete vést chybný přihlašování pro vaše zákazníky.
+Při navrhování reálného světa cloudové aplikace, jednou z věcí, které musíte zamyslet se zpracování přerušení dočasné služeb. Tento problém je jednoznačně důležité v cloudových aplikacích, protože jste tak závislá na připojení k síti a externí služby. Často můžete získat trochu potížím s vykreslováním, které jsou obvykle opravy, a pokud nejste připraveni je inteligentně, budete mít ve špatné pro vaše zákazníky.
 
-## <a name="causes-of-transient-failures"></a>Příčiny přechodných chyb
+## <a name="causes-of-transient-failures"></a>Způsobí, že přechodných selhání
 
-V prostředí cloudu, které zjistíte, se nezdařilo a přerušení připojení databáze dojít pravidelně. Který je částečně, protože jste průchodu přes další nástroje pro vyrovnávání zatížení, které jsou ve srovnání s místním prostředí, kde webový server a databázový server obsahovat přímé připojení k fyzické. Také v případech, kdy jste závisí na víceklientské služby se zobrazí volání get service pomalejší nebo vypršení časového limitu protože někdo jiný, který používá službu je výraznou stiskne. V jiných případech může být uživatel, který je příliš často stiskne službu a službu úmyslně omezí generovaný můžete – odmítne připojení – aby se zabránilo nepříznivě ovlivňuje ostatních klientů služby.
+V prostředí cloud, ve kterém zjistíte, která se nezdařila a vyřadit připojení k databázi dojít pravidelně. To je částečně proto, že se vám bude prostřednictvím další nástroje pro vyrovnávání zatížení, které jsou ve srovnání s místním prostředím kdy webový server a databázový server mají přímé fyzické připojení. Také někdy po závisí na víceklientské služby zobrazí volání služby získat pomalejší nebo vypršení časového limitu protože někdo jiný, který používá službu je silně narazili. V jiných případech může být uživatel, který příliš často dosahuje služba a služba záměrně omezit aby se zabránilo nepříznivě ovlivňují ostatní tenanty služby můžete – odepře připojení –.
 
-## <a name="use-smart-retryback-off-logic-to-mitigate-the-effect-of-transient-failures"></a>Použití inteligentního logiku opakování nebo back vypnout zmírnit účinku přechodných chyb
+## <a name="use-smart-retryback-off-logic-to-mitigate-the-effect-of-transient-failures"></a>Použijte inteligentní opakování/regresní logiku ke zmírnění efektu přechodných chyb
 
-Místo vyvolání výjimky a zobrazení stránky není k dispozici nebo Chyba zákazníkovi, poznáte chyb, které jsou nejčastěji přechodné a automaticky opakujte operaci, který způsobil chybu, v doufá, který před dlouho budete úspěšné. Ve většině případů operace proběhne úspěšně na druhý pokus a budete zotavit z chyby bez zákazníka, které byly někdy vědět, že došlo k potížím.
+Namísto vyvolání výjimky a zobrazení stránky není k dispozici nebo chyby pro vaše zákazníky, dokáže rozpoznat chyby, které jsou nejčastěji přechodné a automaticky opakovat operaci, která způsobila chybu, v doufá, který předtím, než dlouho budete mít úspěšné. Ve většině případů operace proběhne úspěšně na druhý pokus a budete moci obnovit z chyby bez zákazníků s byl někdy vědět, že došlo k potížím.
 
-Můžete implementovat logiku opakovaných pokusů inteligentní několika způsoby.
+Existuje několik způsobů, jak můžete implementovat logiku inteligentní opakování.
 
-- Microsoft Patterns &amp; má skupina postupy [přechodné chyby zpracování bloku aplikace](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx) který provádí všechno, co pro vás Pokud používáte pro přístup k databázi SQL (ne přes rozhraní Entity Framework) ADO.NET. Stačí nastavit zásady pro opakování – jak často má opakování dotazu nebo příkaz a jak dlouho chcete čekat mezi pokusů – a wrap vaše SQL code v *pomocí* bloku.
+- Microsoft Patterns &amp; má skupina postupy [přechodné Fault Handling Application Block](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx) , který provádí všechno, co pro vás Pokud používáte ADO.NET pro přístup k SQL Database (ne přes rozhraní Entity Framework). Stačí nastavit zásady opakování – jak často má opakování dotazu nebo příkaz a jak dlouho se má čekat mezi pokusy – a zabalte SQL kódu v *pomocí* bloku.
 
     [!code-csharp[Main](transient-fault-handling/samples/sample1.cs)]
 
-    Také podporuje TFH [mezipaměť hostovaná v instanci Role Azure](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx) a [Service Bus](https://azure.microsoft.com/services/service-bus/).
-- Při použití rozhraní Entity Framework obvykle přímo s nepracujete připojení SQL, proto nemůžete použít tento balíček Patterns and Practices, ale Entity Framework 6 vytvoří tento druh logika opakovaných pokusů přímo do rozhraní. Podobným způsobem můžete zadat strategie opakování, a potom EF pomocí této strategie vždy, když přistupuje k databázi.
+    Také podporuje TFH [mezipaměť In-Role Azure](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx) a [služby Service Bus](https://azure.microsoft.com/services/service-bus/).
+- Při použití rozhraní Entity Framework obvykle nepracujete přímo s připojení SQL, proto nelze použít tento balíček vzory a postupy, ale Entity Framework 6 vytvoří tento druh logiku opakování přímo do rozhraní. Podobným způsobem je zadat strategie opakování, a potom pomocí EF strategie je, že pokaždé, když přistupuje k databázi.
 
-    Chcete-li použít tuto funkci v aplikaci opravit, všechny budeme muset udělat je přidat třídu, která je odvozena z *DbConfiguration* a zapněte logika opakovaných pokusů.
+    Tuto funkci lze použít v aplikaci opravit, vše musíme udělat, je přidat třídu, která je odvozena z *DbConfiguration* a zapněte logika opakovaných pokusů.
 
     [!code-csharp[Main](transient-fault-handling/samples/sample2.cs)]
 
-    Výjimky databáze SQL, které rozhraní identifikuje jako obvykle přechodné chyby uvedeném kódu dá pokyn EF operaci opakujte až 3 x, s exponenciální back vypnout prodlevu mezi opakování a Maximální zpoždění 5 sekund. Exponenciální back vypnout znamená, že po každém opakování se nezdařila se bude čekat delší dobu, než to zkusíte znovu. Pokud jsou selhání tři pokusů v řádku, vyvolá výjimku. V následující části o moduly okruh dělení vysvětluje, proč chcete exponenciální back vypnout a omezený počet opakování.
+    Pro SQL Database výjimky, které rozhraní identifikuje jako nejčastěji přechodné chyby kód zobrazený dává pokyn EF a zkuste operaci zopakovat, až 3krát s exponenciální regresní prodlevu mezi opakovanými pokusy a Maximální zpoždění 5 sekund. Exponenciální regrese znamená, že po každé neúspěšné opakování se bude čekat delší dobu, než to zkusíte znovu. Pokud selžou i tři pokusy po sobě, vyvolají výjimku. Následující část o jističe vysvětluje, proč chcete exponenciální regresní a omezený počet opakovaných pokusů.
 
-    Pokud používáte službu Azure Storage, opravte ji aplikace nepodporuje pro objekty BLOB a rozhraní API klienta úložiště .NET již implementuje stejný druh logiku, může mít podobné problémy. Stačí zadat zásady opakovaných pokusů, nebo i nemáte k tomu, pokud budete spokojeni s výchozím nastavením.
+    Obdobným problémům může mít, pokud používáte službu Azure Storage jako aplikace Fix It pro objekty BLOB, a rozhraní .NET API klienta úložiště už implementuje stejný druh logiku. Stačí zadat zásady opakovaných pokusů, nebo ještě nemáte to provést, pokud budete spokojeni s výchozím nastavením.
 
 <a id="circuitbreakers"></a>
-## <a name="circuit-breakers"></a>Moduly okruh dělení
+## <a name="circuit-breakers"></a>Jističe
 
-Tady je několik důvodů, proč nechcete opakujte příliš mnohokrát za příliš dlouho období:
+Tady je několik důvodů, proč není nutné opakovat příliš mnohokrát po příliš dlouhou dobu:
 
-- Příliš mnoho uživatelů trvale opakováním neúspěšných požadavků může poklesnout prostředí jiných uživatelů. Pokud miliony lidí, že všechny provedení opakované opakujte požadavků můžete může třeba zadávat fronty odesílání služby IIS a brání obsluhy požadavků, které je jinak může zpracovat úspěšně vaší aplikace.
-- Pokud všichni opakuje z důvodu chyby služby, že může být mnoho požadavků zařazen do fronty, získá službu přenášeny po jeho spuštění obnovení.
-- Pokud chyba z důvodu omezení a je okno čas služba používá pro omezení, může nepřetržitý opakování přesunutí tohoto okna a způsobit, že omezení pokračujte.
-- Můžete mít uživatel čekání na webové stránky k vykreslení. Počkejte osoby provádění příliš dlouho může být více obtěžování této poměrně rychle radí je a zkuste to znovu později.
+- Příliš mnoho uživatelů trvale opakování neúspěšných žádostí může poklesnout zkušeností jiných uživatelů. Pokud jsou miliony lidí, že všechny provedení opakované opakovat pokusy o můžete může obsadit fronty pro odeslání služby IIS a brání obsluhu požadavků, které je jinak může zpracovat úspěšně vaší aplikace.
+- Pokud všem uživatelům se opakovaně pokouší o z důvodu selhání služby, existuje může být mnoho požadavků ve frontě, která získá službu zahlcenou po jeho spuštění k obnovení.
+- Pokud je chyba z důvodu omezení šířky pásma a je na služba používá pro omezení časové okno, trvalé opakování může přesunout okno navýšení kapacity a způsobit, že omezení pokračujte.
+- Můžete mít uživatelem čekajícím webové stránky k vykreslení. Provádění lidé čekání příliš dlouhý může být více obtěžující této poměrně rychle předobjednávky je a zkuste to znovu později.
 
-Exponenciální back vypnout řeší některé z těchto problém omezením frekvenci opakování, které služby můžete získat z vaší aplikace. Ale je také potřeba mít *moduly okruh dělení*: to znamená, že na určitou opakujte prahová hodnota aplikace přestane opakování a trvá některých jiných akcí, jako je například jeden z následujících:
+Exponenciální regrese řeší některé z těchto problém omezením počtu opakovaných pokusů, které služba můžete získat z vaší aplikace. Ale musíte také mít *jističe*: to znamená, že na určitou opakujte prahová hodnota aplikace přestane opakování a přijímá nějaká jiná akce, jako je například jeden z následujících akcí:
 
-- Vlastní záložní. Pokud uložených cena nelze získat z Reuters, možná můžete ho získat z Bloomberg; nebo pokud nelze získat data z databáze, možná můžete ho získat z mezipaměti.
-- Selhání tichou. Pokud potřebujete ze služby není vše nebo nic pro vaši aplikaci, právě vraťte hodnotu null. nelze získat data. Pokud zobrazujete úlohu opravte ji a neodpovídá služby objektů Blob, můžete zobrazit podrobnosti úlohy bez bitovou kopii.
-- Rychle se nezdaří. Chybu uživatele, aby nedošlo k zaplavení službu s opakujte požadavků, které by mohly způsobit přerušení služby pro ostatní uživatele nebo rozšířit omezovací okno. Můžete zobrazit přátelskou zprávou "opakujte akci později".
+- Vlastní použití náhradní lokality. Pokud nelze získat minimální cenu akcie z Reuters, možná můžete ho získat z Bloomberg; nebo pokud nemůže získat data z databáze, možná můžete ho získat z mezipaměti.
+- Selhání pasivní. Pokud potřebujete ze služby není rigidní pro vaši aplikaci, stačí vrátíte hodnotu null při nemůže získat data. Pokud chcete zobrazit úlohu Fix It a neodpovídá služby Blob service, můžete zobrazit podrobnosti úlohy bez bitovou kopii.
+- Selhání. Chyba uživatele mají předejít zahlcení služby s požadavky, které by mohly způsobit přerušení služeb pro ostatní uživatele nebo rozšířit omezovací okno zkuste to znovu. Můžete zobrazit přátelskou zprávou "zkuste to znovu později.".
 
-Neexistuje žádné zásady opakovaných pokusů univerzálně. Můžete opakovat vícekrát a ve pracovní proces pozadí asynchronní čekat déle, než byste v synchronní webové aplikace, kde je uživatel čekání na odpověď. Můžete počkat nebudou mezi jednotlivými pokusy o služba relační databáze než byste pro službu mezipaměti. Tady jsou některé ukázkové doporučená opakujte zásady, které můžete získat představu o tom, jak mohou lišit čísla. ("Rychlé první" znamená žádné zpoždění před první opakování.
+Neexistuje žádné zásady opakovaných pokusů univerzální. Můžete opakovat je víckrát a počkat déle v procesu pracovního procesu na pozadí asynchronní než byste to udělali v synchronním webové aplikace, kde uživatel je čekání na odpověď. Můžete počkat déle mezi jednotlivými pokusy o služba relačních databází než byste to udělali pro službu cache service. Tady jsou některé ukázkové doporučené zásady získáte představu o tom, jak se může lišit čísla opakování. ("Rychlé první" znamená, že žádné zpoždění před prvním opakováním.
 
 ![Ukázkové zásady opakování](transient-fault-handling/_static/image1.png)
 
-Databáze SQL opakování zásad pokyny najdete v tématu [řešení přechodných potíží a chyb připojení k databázi SQL](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/).
+Pokyny zásady opakování SQL Database najdete v tématu [řešení přechodných chyb a chyb připojení ke službě SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/).
 
 ## <a name="summary"></a>Souhrn
 
-Strategie opakování nebo back vypnout může pomoci zajistit dočasné chyby neviditelná zákazník ve většině případů a společnost Microsoft poskytuje rozhraní, které vám pomůže minimalizovat práci implementace strategie, zda používáte ADO.NET Entity Framework a Azure Služba úložiště.
+Opakování/regresní strategie může pomoct skrytí dočasné chyby zákazníkovi ve většině případů a společnost Microsoft poskytuje rozhraní, které vám umožní minimalizovat práci implementace strategii, ať už používáte Azure, ADO.NET nebo Entity Framework Služba úložiště.
 
-V [další kapitoly](distributed-caching.md), podíváme jak zvýšit výkon a spolehlivost pomocí distribuované ukládání do mezipaměti.
+V [další kapitolu](distributed-caching.md), se podíváme na to, jak ke zlepšení výkonu a spolehlivosti pomocí distribuované ukládání do mezipaměti.
 
 ## <a name="resources"></a>Prostředky
 
@@ -89,21 +88,21 @@ Další informace naleznete v následujících materiálech:
 
 Dokumentace
 
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy. Podobně jako u řady bezporuchový ale přejde do další postupy podrobnosti. Najdete v části Telemetrie a Diagnostika.
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). V tématu opakování vzor, vzor Scheduler agenta nadřízeného.
-- [Odolnost proti chybám v Azure SQL Database](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx). Příspěvek blogu podle Petrossian ADAM.
-- [Rozhraní Entity Framework - odolnost připojení / logika opakovaných pokusů](https://msdn.microsoft.com/data/dn456835). Jak používat a přizpůsobit přechodná chyba zpracování funkce Entity Framework 6.
-- [Odolnost připojení a zachycením příkaz s použitím Entity Framework v aplikaci ASP.NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md). Čtvrtý v kurzu řadu devět část ukazuje, jak nastavit funkci odolnost připojení EF 6 pro databázi SQL.
+- [Osvědčené postupy pro navrhování rozsáhlých služeb v Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper Mark Simms a Michael Thomassy. Podobně jako řady bezporuchový ale přejde do další postupy podrobnosti. V části telemetrických dat a diagnostiky.
+- [Bezporuchový: Pokyny, odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper Marc Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze bezporuchový videu z řady.
+- [Microsoft Vzory a postupy – doprovodné materiály k Azure](https://msdn.microsoft.com/library/dn568099.aspx). Zobrazit opakování vzor, model Plánovač-Agent-správce.
+- [Odolnost proti chybám ve službě Azure SQL Database](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx). Příspěvek na blogu od Tony Petrossian.
+- [Entity Framework – odolnost připojení / Logika opakování](https://msdn.microsoft.com/data/dn456835). Jak používat a přizpůsobit zpracování funkce Entity Framework 6 přechodných chyb.
+- [Odolnost připojení a zachycení příkazů s Entity Framework v aplikaci ASP.NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md). Čtvrtý z devět částí série, ukazuje, jak vytvořit funkci odolnost připojení EF 6 pro službu SQL Database.
 
 Videa
 
-- [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Řada devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Uvede základními koncepty a architektury zásady způsobem, velmi přístupné a zajímavé, s scénářů čerpají z prostředí Microsoft zákazníka poradní tým (CAT) s skutečným zákazníkům. Přečtěte si diskuzi o moduly dělení na okruh v díl 3 počínaje 40:55.
-- [Vytváření Big: Poučení vyplývající z Azure zákazníků – část II](https://channel9.msdn.com/Events/Build/2012/3-030). Moduly SIMM označit hovoří o návrhu pro selhání přechodný poruch zpracování a instrumentace vše.
+- [Bezporuchový: Sestavování škálovatelných, odolných cloudových služeb](https://channel9.msdn.com/Series/FailSafe). Ulrich Homann, Marc Mercuri a Mark Simms devět částí série. Nabídne základními koncepty a Principy architektury tak vysoce dostupné a zajímavé příběhy z prostředí Microsoft zákazníka poradní tým (CAT) se skutečným zákazníkům. Přečtěte si diskuzi o jističe v epizodě 3 počínaje 40:55.
+- [Vytváření Big: Získané od zákazníků Azure – část II](https://channel9.msdn.com/Events/Build/2012/3-030). Mark Simms hovoří o návrh pro případ selhání přechodné selhání zpracování a všechno, co instrumentace.
 
 Ukázka kódu
 
-- [Základy služby ve službě Azure Cloud](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ukázková aplikace, které jsou vytvořené Azure poradní tým Microsoftu které ukazuje, jak používat [Enterprise knihovny přechodné chyby zpracování bloku](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) (TFH). Další informace najdete v tématu [cloudové služby základy Data Access Layer – přechodných chyb](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx). TFH se doporučuje pro přístup k databázi pomocí ADO.NET přímo (bez použití rozhraní Entity Framework).
+- [Cloud Service Fundamentals v Azure](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ukázková aplikace vytvořené Microsoft zákaznického poradního týmu Azure, který ukazuje, jak používat [Enterprise přechodné selhání zpracování bloku knihovny](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) (TFH). Další informace najdete v tématu [cloudové služby Data vrstva přístupu k Fundamentals – zpracování přechodných chyb](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx). TFH se doporučuje pro přístup k databázi pomocí ADO.NET přímo (bez použití rozhraní Entity Framework).
 
 > [!div class="step-by-step"]
 > [Předchozí](monitoring-and-telemetry.md)

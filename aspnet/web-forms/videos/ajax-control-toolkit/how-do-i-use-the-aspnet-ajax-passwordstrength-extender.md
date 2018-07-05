@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-passwordstrength-extender
-title: '[Jak na:] Použití rozšíření PasswordStrength ASP.NET AJAX? | Microsoft Docs'
+title: '[Postup:] Použít technologie ASP.NET AJAX – Extender PasswordStrength? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Zjistěte, jak ovládacího prvku rozšiřujícího objektu PasswordStrength poskytují okamžité a dynamické zpětnou vazbu pro uživatele na sílu hesel vybrané. C zpětné vazby...
+description: Zjistěte, jak ovládací prvek zařízení extender PasswordStrength poskytuje okamžitý a dynamické zpětné vazby uživatelů o sílu hesla zvolená. Zpětnou vazbu c...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/01/2007
 ms.topic: article
 ms.assetid: 4acc8d48-845f-4451-8a83-0d6d935c4564
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-passwordstrength-extender
 msc.type: video
-ms.openlocfilehash: af5b7717d51d95daadad8d758f9c438dac6fb9a5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 22fde8a5587b8ead669dcf8e8ea04e92f79bd6cf
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885920"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401831"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[Jak na:] Použití rozšíření PasswordStrength ASP.NET AJAX?
+<a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[Postup:] Použít technologie ASP.NET AJAX – Extender PasswordStrength?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Zjistěte, jak ovládacího prvku rozšiřujícího objektu PasswordStrength poskytují okamžité a dynamické zpětnou vazbu pro uživatele na sílu hesel vybrané. Zpětné vazby může být text oznámení, grafické panelu indikátor nebo obojí.
+Zjistěte, jak ovládací prvek zařízení extender PasswordStrength poskytuje okamžitý a dynamické zpětné vazby uživatelů o sílu hesla zvolená. Zpětná vazba může být text oznámení, grafické panelu ukazatel nebo kombinaci obojího.
 
 [&#9654;Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-passwordstrength-extender)
 

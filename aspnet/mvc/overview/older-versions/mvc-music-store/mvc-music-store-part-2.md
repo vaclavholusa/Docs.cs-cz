@@ -1,131 +1,130 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
-title: 'Část 2: Řadiče | Microsoft Docs'
+title: '2. část: Kontrolery | Dokumentace Microsoftu'
 author: jongalloway
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 2 popisuje řadiče.
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 2. část se věnuje řadiče.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
 ms.topic: article
 ms.assetid: 998ce4e1-9d72-435b-8f1c-399a10ae4360
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 680cdea388d9b01961bd626643c0fd91c9205ed7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a854feff675cae302b9927d209808257b7d087cb
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878695"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381800"
 ---
-<a name="part-2-controllers"></a>Část 2: řadiče
+<a name="part-2-controllers"></a>2. část: Kontrolery
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje krok za krokem, jak používat rozhraní ASP.NET MVC a Visual Studio pro vývoj webů.  
+> MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a sady Visual Studio.  
 >   
-> Úložiště Hudba MVC je implementace úložiště lightweight ukázkové, který prodává hudebních alb online a implementuje základní Správa serveru, přihlášení uživatele a nákupního košíku funkce.  
+> Music Store MVC je jednoduché ukázku implementace úložiště prodává hudebních alb online, který implementuje správu základního webu, přihlášení uživatele a nákupního košíku funkce.  
 >   
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 2 popisuje řadiče.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 2. část se věnuje řadiče.
 
 
-Tradiční webové rozhraní jsou příchozí adresy URL obvykle mapovány na soubory na disku. Příklad: žádost o adresu URL, například "/ Products.aspx" nebo "/ Products.php" může zpracovat soubor "Products.aspx" nebo "Products.php".
+Příchozí adresy URL se s tradičními webovými rozhraními obvykle mapují na soubory na disku. Příklad: požadavek na adresu URL, jako je "/ Products.aspx" nebo "/ Products.php" může být zpracována "Products.aspx" nebo "Products.php" soubor.
 
-Webové rozhraní MVC mapování adres URL na serverový kód mírně jiným způsobem. Místo mapování příchozí adresy URL k souborům, mapují místo adresy URL pro metody na třídách. Tyto třídy, se nazývají "Řadiče" a jsou zodpovědná za zpracování příchozí požadavky protokolu HTTP a zpracování uživatelského vstupu, načítání a ukládání dat a určení odpověď k odeslání zpět do klienta (zobrazení HTML, stažení souboru, přesměrování na jiný Adresa URL atd.).
+Webové rozhraní MVC mapování adres URL do kódu serveru mírně odlišným způsobem. Místo souborů mapování příchozích adres URL, že místo toho mapování adres URL na metody třídy. Tyto třídy se nazývají "Řadiče" a zodpovídají za zpracování příchozích požadavků HTTP, zpracování uživatelského vstupu, načítání a ukládání dat a určení odpověď k odeslání zpátky do klienta (zobrazení HTML, stáhněte si soubor, přesměrovat na jinou Adresa URL atd.).
 
 ## <a name="adding-a-homecontroller"></a>Přidání HomeController
 
-Začneme budete naše aplikace MVC Hudba úložiště přidáním řadiče třídu, která bude zpracovávat adresy URL na domovskou stránku tohoto webu. Jsme budete postupovat podle výchozí zásady vytváření názvů rozhraní ASP.NET MVC a volání HomeController.
+Brzy jsme naše aplikace MVC Music Store tak, že přidáte třídu Kontroleru, který bude zpracovávat adresy URL na domovskou stránku našeho webu. Vytvoříme dodržují konvence pojmenování výchozí rozhraní ASP.NET MVC a jeho volání HomeController.
 
-"Řadiče" složky v Průzkumníku řešení klikněte pravým tlačítkem a vyberte "Přidat" a "Řadiče..." příkaz:
+Klikněte pravým tlačítkem na složku "Řadiče" v Průzkumníkovi řešení a vyberte "Add" a "Kontroleru..." příkaz:
 
 ![](mvc-music-store-part-2/_static/image1.jpg)
 
-Otevře se dialog "Přidat kontroler". Název kontroleru "HomeController" a klikněte na tlačítko Přidat.
+Tím se otevře dialogové okno "Přidat kontroler". Název kontroleru "HomeController" a stiskněte tlačítko Přidat.
 
 ![](mvc-music-store-part-2/_static/image1.png)
 
-Tím se vytvoří nový soubor, HomeController.cs, s následujícím kódem:
+Tím se vytvoří nový soubor, HomeController.cs, následujícím kódem:
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample1.cs)]
 
-Pokud chcete spustit co nejsnáze, můžeme nahraďte metodu Index jednoduché metodu, která právě vrátí řetězec. Vytočit dvě změny:
+Spustit co nejsnáze, podíváme nahradit Index – metoda s jednoduchý způsob, který právě vrátí hodnotu typu string. Teď uděláme dvě změny:
 
-- Změnit metodu vrátit řetězec místo třídu ActionResult
-- Změnit návratový vrátit "Hello z Domů"
+- Změnit metodu k vrácení řetězce, místo třídu ActionResult
+- Změnit návratový příkaz návrat "Hello z"
 
-Metoda by měl nyní vypadat takto:
+Metoda by teď měl vypadat takto:
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample2.cs)]
 
 ## <a name="running-the-application"></a>Spuštění aplikace
 
-Teď umožňuje spuštění tohoto webu. Můžeme spustí naše webový server a vyzkoušejte webu pomocí kteréhokoli z následujících::
+Teď spustíme webu. Jsme start náš webový server a vyzkoušejte si web pomocí kteréhokoli z následujících akcí:
 
-- Zvolte ladění ⇨ spustit ladění položku nabídky
-- Klikněte na tlačítko zelenou šipku na panelu nástrojů ![](mvc-music-store-part-2/_static/image2.jpg)
+- Vyberte položku nabídky spustit ladění ladění ⇨
+- Klikněte na zelenou šipku tlačítko na panelu nástrojů ![](mvc-music-store-part-2/_static/image2.jpg)
 - Použijte klávesovou zkratku, F5.
 
-Pomocí kterékoli z výše uvedené kroky budou kompilaci naše projektu a potom způsobit, že je ASP.NET Development Server, který je integrovaný do aplikace Visual Web Developer spustit. Oznámení se zobrazí v dolním rohu obrazovky indikující, že je ASP.NET Development Server byla spuštěna a zobrazí číslo portu, zda je spuštěna pod.
+Některou z výše uvedených kroků se kompilace projektu a poté způsobí serveru ASP.NET Development Server, která je integrovaná do aplikace Visual Web Developer spustit. Oznámení se zobrazí v dolním rohu obrazovky, chcete-li určit, že má spuštění serveru ASP.NET Development Server a zobrazí číslo portu, že je spuštěný pod.
 
 ![](mvc-music-store-part-2/_static/image2.png)
 
-Visual Web Developer se pak automaticky otevře okno prohlížeče, jejichž adresa URL odkazuje na našem webu. To vám umožní nám pro rychlé vyzkoušení naše webové aplikace:
+Visual Web Developer se pak automaticky otevře okno prohlížeče, jehož adresa URL odkazuje na našem webovém serveru. Umožní vám to rychle vyzkoušet naši webovou aplikaci:
 
 ![](mvc-music-store-part-2/_static/image3.png)
 
-V pořádku, který byl poměrně rychle – jsme vytvořili nový web, přidat tři vložených funkcí a My jsme text v prohlížeči. Není Atomový vědecké účely, ale je spuštění.
+Dobře, to bylo poměrně rychlé – jsme vytvořili nový web, přidány tři vložených funkcí a máme text v prohlížeči. Není Atomový vědy, ale je spuštění.
 
-*Poznámka: Visual Web Developer obsahuje vývojový Server ASP.NET, který se spustí vašeho webu na číslo volné náhodných "portu". Na snímku obrazovky výše, lokality se spouští ve `http://localhost:26641/`, takže používá port 26641. Vaše číslo portu se liší. Když v souvislosti se například /Store/Browse adresy URL v tomto kurzu, který přejde po číslo portu. Za předpokladu, že číslo portu 26641, procházení/úložiště / procházení bude znamenat, že procházení k `http://localhost:26641/Store/Browse`.*
+*Poznámka: Visual Web Developer zahrnuje serveru ASP.NET Development Server, který se spustí váš web na číslo náhodný volný "portu". Na snímku obrazovky výše je web spuštěný v `http://localhost:26641/`, takže se používá port 26641. Vaše číslo portu se liší. Když mluvíme o like /Store/Browse adresy URL v tomto kurzu, který přejde po číslo portu. Za předpokladu, že číslo portu 26641, přejdete do/Store/procházet bude znamenat, že přejdete na adresu `http://localhost:26641/Store/Browse`.*
 
 ## <a name="adding-a-storecontroller"></a>Přidání StoreController
 
-Jsme přidali jednoduché HomeController, který implementuje domovské stránce tohoto webu. Nyní Pojďme přidat jiného řadiče, který použijeme k implementaci funkci procházení naše Hudba úložiště. Naše řadič úložiště bude podporovat tři scénáře:
+Přidali jsme jednoduché HomeController, který implementuje domovské stránce našeho webu. Teď přidáme jiný kontroler, který použijeme k implementaci funkcionality procházení našeho music úložiště. Kontroleru úložiště bude podporovat tři scénáře:
 
-- Stránka výpis žánry Hudba v našem úložišti Hudba
-- Procházet stránky, který se zobrazí seznam všech hudebních alb v konkrétní genre
-- Stránka Podrobnosti, která se zobrazují informace o konkrétní Hudba album
+- Stránce žánrů Hudba v našich music store
+- Procházet stránku, která obsahuje seznam všech hudebních alb v konkrétní žánr
+- Stránka s podrobnostmi s informacemi o alba konkrétní Hudba
 
-Začneme přidáním nové třídy StoreController... Pokud jste to ještě neudělali, zastaví aplikace buď zavření prohlížeče nebo výběrem položky nabídky Zastavte ladění ladění ⇨.
+Začneme tak, že přidáte novou třídu StoreController... Pokud jste tak dosud neučinili, zastaví aplikace tak, že zavření prohlížeče nebo jeho výběru položky nabídky ladění Zastavit ladění ⇨.
 
-Nyní přidejte nové StoreController. Stejně jako jsme to udělali s HomeController, provedeme to pravým tlačítkem na složku "Řadiče" v Průzkumníku řešení a zvolením Add -&gt;řadiče položky nabídky
+Nyní přidejte nové StoreController. Stejným způsobem, jako jsme to udělali s HomeController, Uděláme to tak, že pravým tlačítkem na složku "Řadiče" v Průzkumníkovi řešení a zvolíte Add -&gt;řadič položky nabídky
 
 ![](mvc-music-store-part-2/_static/image4.png)
 
-Naše nové StoreController již metodu "Index". Tato metoda "Index" použijeme k implementaci na naší stránce výpis, který obsahuje seznam všech žánry v našem úložišti Hudba. Přidáme také dva další metody k implementaci dva scénáře chceme, aby naše StoreController pro zpracování: procházení a podrobnosti.
+Naše nové StoreController již má metodu "Index". Tato metoda "Index" použijeme k implementaci naší stránce, která obsahuje seznam všech žánry v našich music store. Přidáme také další dvě metody k implementaci těchto dvou dalších scénářích chceme, aby naše StoreController ke zpracování: procházení a podrobnosti.
 
-Tyto metody (Index, procházet a podrobnosti) v rámci Kontroleru se používá označení "Akce Kontroleru" a jak jste už viděli s metodou akce HomeController.Index (), jejich úlohy je a reagovat na požadavky na adresu URL (obecně) určit, který obsah by měly být odeslány zpět do prohlížeče nebo uživatele, který volá adresu URL.
+Tyto metody (Index, procházet a podrobnosti) v rámci Kontroleru se používá označení "Akce Kontroleru" a jak pomocí metody akce () HomeController.Index již víte, své práce je a reagovat na žádosti o adresy URL (obecně) určit, jaký obsah by měly být odeslány zpět do prohlížeče nebo uživatel, který vyvolal adresu URL.
 
-Začneme naše implementace StoreController změnou theIndex() metoda vrátí řetězec "Hello z Store.Index()" a přidáme podobné metody pro Browse() a Details():
+Začneme tak, že změníte theIndex() metoda vrátí řetězec "Hello z Store.Index()" naše implementace StoreController a přidáme Browse() a Details() podobné metody:
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample3.cs)]
 
 Spusťte projekt znovu a přejděte na následující adresy URL:
 
-- / Úložiště
-- / Úložiště nebo procházení
-- / / Podrobnosti úložiště
+- / Store
+- / Store/procházení
+- / Store/podrobností
 
-Přístup k tyto adresy URL vyvolání metod akce v rámci Kontroleru a vrátí řetězec odpovědí:
+Přístup k těmto adresám URL vyvolání metod akce v Kontroleru a vrátí řetězec odpovědi:
 
 ![](mvc-music-store-part-2/_static/image5.png)
 
-To je výborné, ale jedná se o řetězce pouze konstantní. Umožňuje převést na dynamický, tak, aby se trvat informace z adresy URL a zobrazit ji ve výstupu stránky.
+To je skvělé, ale jedná se pouze konstantní řetězce. Vytvoříme je dynamická, takže využít informace z adresy URL a zobrazit je výstup stránky.
 
-Nejprve Změníme metody akce procházet načíst hodnotu řetězce dotazu z adresy URL. Jsme to můžete provést tak, že přidáte parametr "genre" na našem metodu akce. Když jsme to ASP.NET MVC automaticky předat žádné parametry post řetězci dotazu nebo formuláře při vyvolání s názvem "genre" na našem metodu akce.
+Nejprve Změníme metody akce procházení k načtení hodnoty řetězce dotazu z adresy URL. Můžeme to udělat tak, že přidáte "žánr" parametru k metodě akce. Když to uděláme ASP.NET MVC předá automaticky všechny řetězce dotazu nebo parametry formuláře post s názvem "žánr" k metodě akce, při jeho vyvolání.
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*Poznámka: Používáme metodu HttpUtility.HtmlEncode nástroj pro úpravu vstup uživatele. To zabrání uživatelům vložení Javascript do našich zobrazení s odkazem jako /Store/Browse? Genre =&lt;skriptu&gt;window.location='http://hackersite.com'&lt;/script&gt;.*
+*Poznámka: Pomocí metody nástrojů HttpUtility.HtmlEncode kterého neupravují uživatelský vstup. To zabrání uživatelům v vkládání jazyka Javascript do našich zobrazení s odkazem jako /Store/Browse? Rozšířením podle tematických =&lt;skript&gt;window.location= "http://hackersite.com"&lt;/script&gt;.*
 
-Teď umožňuje procházet/úložiště / Procházet? Genre = Disco
+Nyní Pojďme procházet/Store/Procházet? Rozšířením podle tematických = Roz
 
 ![](mvc-music-store-part-2/_static/image6.png)
 
-Změňte další akce ke čtení a zobrazení vstupní parametr s názvem ID. Na rozdíl od našich předchozí metoda jsme nebude vložení hodnota ID jako parametr řetězce dotazu. Místo toho jsme budete vložte přímo v rámci adresy URL samotné. Příklad: /Store/Details/5.
+Dále Změníme podrobnosti akce ke čtení a zobrazení vstupní parametr s názvem ID. Na rozdíl od našich předchozí metoda jsme nebude vkládání hodnotu ID jako parametr řetězce dotazu. Místo toho vložíme ho přímo v rámci URL samotného. Příklad: /Store/Details/5.
 
-ASP.NET MVC umožňuje nám snadno to provést bez nutnosti měnit žádnou konfiguraci. ASP.NET MVC výchozí konvenci směrování se zachází segment adresy URL jako parametr s názvem "ID" po název metody akce. Pokud má parametr s názvem ID své metodě akce, poté ASP.NET MVC automaticky předá segment adresy URL je jako parametr.
+ASP.NET MVC umožňuje nám to snadno provést nemusíte nic konfigurovat. ASP.NET MVC výchozí konvenci směrování se zachází segment adresy URL po názvu metody akce, jako parametr s názvem "ID". Pokud vaše metoda akce má parametr ID ASP.NET MVC se automaticky předat segment adresy URL pro vás jako parametr.
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample5.cs)]
 
@@ -133,13 +132,13 @@ Spusťte aplikaci a přejděte do /Store/Details/5:
 
 ![](mvc-music-store-part-2/_static/image7.png)
 
-Pojďme recap, co máme jste Hotovo, pokud:
+Pojďme rekapitulace, co jsme dosud provedli:
 
-- Vytvořili jsme nový projekt ASP.NET MVC v aplikaci Visual Web Developer
-- Jsme probrali struktura složek základní architektury ASP.NET MVC
-- Jsme jste se naučili spuštění naše webu pomocí vývojový Server ASP.NET
-- Vytvořili jsme dvě třídy Controller: HomeController a StoreController
-- Přidali jsme metody akce na našem řadiče, které reagují na požadavky na adresu URL a vrací text do prohlížeče
+- Jsme vytvořili nový projekt ASP.NET MVC v aplikaci Visual Web Developer
+- Výše strukturu složek základní aplikaci ASP.NET MVC
+- Jsme jste zjistili, jak spustit našeho webu pomocí serveru ASP.NET Development Server
+- Vytvořili jsme dvě třídy Kontroleru: HomeController a StoreController
+- Přidali jsme metody akce k naší řadiče, které reagují na požadavky na adresu URL a vrací text do prohlížeče
 
 
 > [!div class="step-by-step"]

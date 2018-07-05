@@ -1,67 +1,66 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
-title: Zpracování postback z ModalPopup (C#) | Microsoft Docs
+title: Zpracování postbacků z ovládacího prvku ModalPopup (C#) | Dokumentace Microsoftu
 author: wenz
-description: ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Zvláštní pozornost musí být provedeny, když pos...
+description: Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Zvláštní pozornost musí být provedeny, když pos...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 7963890b-4ea3-4a1c-b65d-6098a3d56f62
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 183725db62ba8b4037f368ed9d87d5059e3f1bcb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2c5c3b573b62d779ab09caad22b0c0e3a6995634
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873729"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399065"
 ---
-<a name="handling-postbacks-from-a-modalpopup-c"></a>Zpracování postback z ModalPopup (C#)
+<a name="handling-postbacks-from-a-modalpopup-c"></a>Zpracování postbacků z ovládacího prvku ModalPopup (C#)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.cs.zip) nebo [stahovat PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3CS.pdf)
 
-> ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Musí dát zvláštní pozor při zpětné volání z v místní nabídce.
+> Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Při zpětném odeslání z rozbalené, musí být přijata zvláštní pozornost.
 
 
 ## <a name="overview"></a>Přehled
 
-ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Musí dát zvláštní pozor při zpětné volání z v místní nabídce.
+Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Při zpětném odeslání z rozbalené, musí být přijata zvláštní pozornost.
 
 ## <a name="steps"></a>Kroky
 
-Chcete aktivovat funkce ASP.NET AJAX a sady nástrojů ovládacího prvku `ScriptManager` řízení musíte umístit kdekoli na stránce (ale uvnitř `<form>` element):
+K aktivaci funkce technologie ASP.NET AJAX a Control Toolkit `ScriptManager` ovládací prvek je třeba umístit kdekoli na stránce (ale v rámci `<form>` element):
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample1.aspx)]
 
-Dál přidejte panel, který slouží jako modální místní. Existuje může uživatel zadat název a e-mailovou adresu. Tlačítko se používá automaticky otevřeném okně zavřete a uložte informace. Všimněte si, že `OnClick` atribut je nastaven tak, aby zpětné volání nastane, když po kliknutí na toto tlačítko:
+V dalším kroku přidáte panel, který slouží jako modální místní nabídky. Uživatel může existuje, zadejte název a e-mailovou adresu. Tlačítko slouží k automaticky otevírané okno zavřete a uložte informace. Všimněte si, `OnClick` atribut je nastaven tak, aby zpětné odeslání vyvolá se při kliknutí na toto tlačítko:
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample2.aspx)]
 
-Vlastní stránky se skládá ze dvou popisky přesně stejné informace: jméno a e-mailovou adresu. Tlačítko se používá k aktivaci Modální překryvné okno:
+Samotná stránka se skládá ze dvou popisků stejné informace: jméno a e-mailovou adresu. Tlačítko se používá k aktivaci Modální místní nabídky:
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample3.aspx)]
 
-Aby bylo možné automaticky otevřeném okně se zobrazí, přidejte `ModalPopupExtender` ovládacího prvku. Nastavte `PopupControlID` atribut ID panelu a `TargetControlID` ID tlačítka:
+Aby bylo možné automaticky otevírané okno se zobrazí, přidejte `ModalPopupExtender` ovládacího prvku. Nastavte `PopupControlID` atribut ID v panelu a `TargetControlID` ID tlačítka:
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample4.aspx)]
 
-Nyní vždy, když `Save` v překryvném okně modální po kliknutí na tlačítko, na straně serveru `SaveData()` metoda spuštěna. Zde můžete uložit zadané údaje v úložišti. Z důvodu zjednodušení je nová data právě výstup v popisku:
+Nyní pokaždé, když `Save` je stisknuto tlačítko Modální místní nabídky, server-side `SaveData()` provedení metody. V úložišti dat, můžete ušetřit zadané údaje. Z důvodu zjednodušení nová data jenom výstup v popisku:
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample5.cs)]
 
-Ovládacích prvcích textbox v překryvném okně modální by měl být navíc vyplněn aktuální název a e-mailu. Ale to je nutné pouze v případě žádný postback. Pokud je zpětné volání, funkci ASP.NET viewstate automaticky vyplní textových polí s příslušnými hodnotami.
+TextBox – ovládací prvky v rámci Modální místní nabídky by měl být také, zaplněny aktuální jméno a e-mailu. Ale to je nutné pouze dojde bez zpětného odeslání. Pokud je zpětné volání, funkce stav zobrazení ASP.NET automaticky vyplnit textová pole s příslušnými hodnotami.
 
 [!code-csharp[Main](handling-postbacks-from-a-modalpopup-cs/samples/sample6.cs)]
 
 
-[![Modální místní způsobí, že zpětné volání](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
+[![Vyvolá Modální místní nabídky zpětné volání](handling-postbacks-from-a-modalpopup-cs/_static/image2.png)](handling-postbacks-from-a-modalpopup-cs/_static/image1.png)
 
-Modální místní způsobí postback ([Kliknutím zobrazit obrázek v plné velikosti](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))
+Vyvolá Modální místní nabídky zpětné volání ([kliknutím ji zobrazíte obrázek v plné velikosti](handling-postbacks-from-a-modalpopup-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](using-modalpopup-with-a-repeater-control-cs.md)

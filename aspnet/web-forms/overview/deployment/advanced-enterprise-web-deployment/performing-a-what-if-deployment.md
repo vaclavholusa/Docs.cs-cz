@@ -1,149 +1,148 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
-title: Provádění a jaké Pokud nasazení | Microsoft Docs
+title: Co provádění, pokud nasazení | Dokumentace Microsoftu
 author: jrjlee
-description: Toto téma popisuje, co když' provádění (nebo simulated) pomocí nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) a V nasazení...
+description: Toto téma popisuje, jak provést "Co když" (nebo simulovaných) pomocí nástroje nasazení webu Internetové informační služby (IIS) (nasazení webu) a V nasazení...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: c711b453-01ac-4e65-a48c-93d99bf22e58
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c1a13f38c8e629bcd615190b00104109e25fb289
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f50053c3b231a1d174df51ce7aa4c6013192bca8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879982"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378096"
 ---
-<a name="performing-a-what-if-deployment"></a>Provádění nasazení "Co když"
+<a name="performing-a-what-if-deployment"></a>Provádění nasazení "What If"
 ====================
 podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Toto téma popisuje, jak provést "Co když" (nebo simulated) pomocí nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) a VSDBCMD nasazení. Díky tomu můžete určit důsledky logika nasazení v prostředí s konkrétní cílový před svou aplikaci nasazujete ve skutečnosti.
+> Toto téma popisuje, jak provést "what if" (nebo simulovaných) pomocí nástroje nasazení webu Internetové informační služby (IIS) (nasazení webu) a VSDBCMD nasazení. To umožňuje zjistit dopady logiky nasazení na konkrétní cílové prostředí před při skutečném nasazení vaší aplikace.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
+Toto téma je součástí série kurzů podle požadavků na nasazení enterprise fiktivní společnosti s názvem společnosti Fabrikam, Inc. V této sérii kurzů používá ukázkové řešení&#x2014; [řešení Správce kontaktů](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s realistické úroveň složitosti, včetně aplikace ASP.NET MVC 3, komunikace Windows Služba Foundation (WCF) a databázový projekt.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metody nasazení v srdci těchto kurzů je založen na rozdělení přístupu soubor projektu je popsáno v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahuje pokyny pro sestavení, které platí pro všechny cílové prostředí a jeden obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu specifických pro prostředí se sloučí do souboru projektu bez ohledu na prostředí a vytvoří kompletní sadu pokynů sestavení.
 
-## <a name="performing-a-what-if-deployment-for-web-packages"></a>Provádění pro balíčky webového nasazení "Co když"
+## <a name="performing-a-what-if-deployment-for-web-packages"></a>Probíhá nasazení "What If" webových balíčků
 
-Nasazení webu obsahuje funkce, které umožňuje provádění nasazení v "Co když" (nebo zkušební verze) režimu. Když nasadíte artefakty v režimu "Co když", Web Deploy vygeneruje soubor protokolu, jako kdyby měl provést nasazení, ale se nic nezmění. ve skutečnosti na cílovém serveru. Kontrola souboru protokolu vám můžou pomoct pochopit, jaký dopad bude mít vaše nasazení na cílovém serveru, zejména:
+Nástroj nasazení webu obsahuje funkce, které umožňuje provádět nasazení v "what if" (nebo zkušební verze) režimu. Při nasazování artefaktů v režimu "what if" Webdeploy vygeneruje soubor protokolu, jako kdyby jste provedli nasazení, ale nic se nezmění ve skutečnosti na cílovém serveru. Kontrola souboru protokolu vám můžou pomoct pochopit, jaký vliv budou mít vaše nasazení na cílovém serveru, zejména:
 
-- Co se se přidají.
-- Co se aktualizovat.
+- Co se přidají.
+- Co bude aktualizován.
 - Co bude odstraněn.
 
-Protože je nasazení "Co když" nic nezmění. ve skutečnosti na cílovém serveru se nemůže vždy provádět předpovědi, zda bude úspěšné nasazení.
+Protože nasazení "what if" ve skutečnosti nic nezmění na cílovém serveru, se nemůže vždy proveďte je Předvídejte, jestli nasazení proběhne úspěšně.
 
-Jak je popsáno v [nasazení webových balíčků](../web-deployment-in-the-enterprise/deploying-web-packages.md), bude možné nasadit balíčky webového pomocí nástroje nasazení webu dvěma způsoby&#x2014;pomocí nástroje příkazového řádku MSDeploy.exe přímo nebo spuštěním *. deploy.cmd* souboru aby generuje procesu sestavení.
+Jak je popsáno v [nasazení webových balíčků](../web-deployment-in-the-enterprise/deploying-web-packages.md), můžete nasadit pomocí nasazení webu dvěma způsoby webových balíčků&#x2014;pomocí nástroje pro příkazový řádek MSDeploy.exe přímo nebo spuštěním *. deploy.cmd* souboru který generuje procesu sestavení.
 
-Pokud používáte MSDeploy.exe přímo, můžete spustit nasazení "Co když" tak, že přidáte **– whatif** příznak do příkazu. Například k vyhodnocení, co by mohlo dojít, pokud jste nasadili balíček ContactManager.Mvc.zip pracovní prostředí, příkaz MSDeploy by měl vypadat přibližně takto:
+Pokud používáte MSDeploy.exe přímo, můžete spustit nasazení "what if" tak, že přidáte **– whatif** příznak do svých rukou. Například k vyhodnocení, co by mohlo dojít, pokud jste nasadili ContactManager.Mvc.zip balíček do přípravného prostředí, příkaz MSDeploy by měl vypadat takto:
 
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample1.cmd)]
 
 
-Až budete spokojeni s výsledky nasazení "Co když", můžete odebrat **– whatif** příznak pro spuštění nasazení za provozu.
+Jakmile budete spokojeni s výsledky nasazení "what if", můžete odebrat **– whatif** příznak pro spuštění nasazení za provozu.
 
 > [!NOTE]
-> Další informace o parametrech příkazového řádku pro MSDeploy.exe najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
+> Další informace o možnostech příkazového řádku pro MSDeploy.exe najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 
-Pokud používáte *. deploy.cmd* souboru, můžete spustit nasazení "Co když" zahrnutím **/t** příznak příznak (zkušební režim) místo **/y** příznak ("Ano" nebo režim aktualizace) v váš příkaz. Například k vyhodnocení, co by mohlo dojít, pokud jste nasadili balíček ContactManager.Mvc.zip spuštěním *. deploy.cmd* souboru příkazu by měl vypadat takto:
+Pokud používáte *. deploy.cmd* soubor, můžete spustit nasazení "what if" zahrnutím **/t** příznak příznak (zkušební režim) místo **/y** příznak ("Ano", nebo režim aktualizace) v příkaz. Například chcete vyhodnotit, co by mohlo dojít, pokud jste nasadili balíček ContactManager.Mvc.zip spuštěním *. deploy.cmd* souboru příkazu by měl vypadat takto:
 
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample2.cmd)]
 
 
-Až budete spokojeni s výsledky nasazení "zkušební režim", můžete nahradit **/t** příznak s **/y** příznak pro spuštění nasazení za provozu:
+Jakmile budete spokojeni s výsledky nasazení "zkušební režim", můžete nahradit **/t** s příznakem **/y** příznak pro spuštění nasazení za provozu:
 
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample3.cmd)]
 
 
 > [!NOTE]
-> Další informace o parametrech příkazového řádku pro *. deploy.cmd* soubory, najdete v části [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pokud spustíte *. deploy.cmd* souboru bez zadání žádné příznaky, příkazovém řádku se zobrazí seznam dostupných příznaků.
+> Další informace o možnostech příkazového řádku pro *. deploy.cmd* soubory, naleznete v tématu [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pokud spustíte *. deploy.cmd* souboru bez zadání jakékoli příznaky příkazového řádku se zobrazí seznam dostupných příznaků.
 
 
-## <a name="performing-a-what-if-deployment-for-databases"></a>Provádění nasazení "Co když" pro databáze
+## <a name="performing-a-what-if-deployment-for-databases"></a>Probíhá nasazení "What If" pro databáze
 
-V této části se předpokládá, že používáte nástroj VSDBCMD k provedení nasazení přírůstkové, na základě schématu databáze. Tento postup je popsán v podrobněji [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md). Doporučujeme vám, že je seznámit s tímto tématem před použitím konceptů popsaných v tomto poli.
+V této části se předpokládá, že používáte nástroj VSDBCMD provádět nasazení přírůstkové, založené na schématu databáze. Tento přístup je popsána podrobněji [nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md). Doporučujeme, aby měli seznámit s tímto tématem před použitím koncepty popsané tady.
 
-Při použití VSDBCMD v **nasadit** režimu, můžete použít **/dd** (nebo **/DeployToDatabase**) příznak pro ovládací prvek, ať už VSDBCMD ve skutečnosti nasadí databázi nebo právě generuje skript nasazení. Pokud nasazujete soubor .dbschema, jedná se o chování:
+Při použití VSDBCMD v **nasadit** režimu, můžete použít **/dd** (nebo **/DeployToDatabase**) příznak, který ovládací prvek, zda VSDBCMD provede samotné nasazení databáze nebo právě generuje skript nasazení. Pokud nasazujete .dbschema souboru, toto chování je:
 
 - Pokud zadáte **/dd+** nebo **/dd**, VSDBCMD vygenerovat skript nasazení a nasazení databáze.
-- Pokud zadáte **/dd-** nebo vynechejte přepínač, VSDBCMD vydá skript nasazení.
+- Pokud zadáte **/dd-** nebo vynechejte přepínač, VSDBCMD vygeneruje jenom skript nasazení.
 
 > [!NOTE]
-> Pokud nasazujete souboru .deploymanifest místo soubor .dbschema chování **/dd** přepínač je mnohem složitější. V podstatě VSDBCMD bude ignorovat hodnotu **/dd** přepínače, pokud soubor .deploymanifest obsahuje **DeployToDatabase** element s hodnotou **True**. [Nasazení databázové projekty](../web-deployment-in-the-enterprise/deploying-database-projects.md) popisuje toto chování v plném znění.
+> Pokud nasazujete .deploymanifest souboru spíše než soubor .dbschema, chování **/dd** přepínač je mnohem složitější. V podstatě VSDBCMD bude ignorovat hodnoty **/dd** Pokud .deploymanifest soubor obsahuje, přejděte **DeployToDatabase** element s hodnotou **True**. [Nasazení projektu databáze](../web-deployment-in-the-enterprise/deploying-database-projects.md) popisuje toto chování v plném rozsahu.
 
 
-Například pro generování skriptu pro nasazení **ContactManager** databáze bez ve skutečnosti nasazení databáze, VSDBCMD příkazu by měl vypadat takto:
+Například chcete vygenerovat skript pro nasazení **ContactManager** databáze bez skutečného nasazení databáze VSDBCMD příkazu by měl vypadat takto:
 
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample4.cmd)]
 
 
-VSDBCMD je nástroj pro nasazení rozdílové databáze a jako takový se dynamicky vygeneruje skript nasazení tak, aby obsahovala všechny příkazy SQL potřebnými k aktualizaci aktuální databázi, pokud existuje, zadaný schématu. Kontrola skript nasazení je užitečný způsob, jak určit, jaký vliv má vaše nasazení bude mít na aktuální databázi a data, která obsahuje. Například můžete chtít zjistit:
+VSDBCMD je nástroj pro nasazení rozdílovými a jako takový nasazovací skript generuje dynamicky tak, aby obsahovala všechny příkazy SQL potřebnými k aktualizaci aktuální databázi, pokud existuje, zadané schéma. Kontrola skriptu nasazení je užitečný způsob, jak určit, jaký vliv má vaše nasazení bude mít v aktuální databázi a data, která ho obsahuje. Můžete například chtít určit:
 
-- Určuje, zda bude odebrána veškeré stávající tabulky a jestli, dojde ke ztrátě dat.
-- Jestli pořadí operací s sebou nese riziko ztráty dat, například pokud jste rozdělení nebo sloučení tabulky.
+- Určuje, zda se odeberou veškeré stávající tabulky a určuje, zda povede ke ztrátě dat.
+- Určuje, zda pořadí operací s sebou nese riziko ztráty dat, například pokud rozdělení nebo sloučení tabulky.
 
-Pokud budete spokojeni s skript nasazení, můžete opakovat VSDBCMD s **/dd+** příznak provést změny. Alternativně můžete upravit skript nasazení k plnění požadavků a pak ji ručně spustit na serveru databáze.
+Pokud jste spokojení s skript nasazení, můžete opakovat VSDBCMD s **/dd+** příznak provést změny. Případně můžete upravit skript nasazení podle svých požadavků a pak ji spustit ručně na databázovém serveru.
 
-## <a name="integrating-what-if-functionality-into-custom-project-files"></a>Integrace funkce "Co když" do vlastních projektů souborů
+## <a name="integrating-what-if-functionality-into-custom-project-files"></a>Integrace "What If" funkce do vlastní projektových souborů
 
-Ve složitějších scénářích nasazení, budete chtít použít vlastní soubor projektu Microsoft Build Engine (MSBuild) k zapouzdření logika sestavení a nasazení, jak je popsáno v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Například v [obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) ukázkové řešení, *Publish.proj* souboru:
+Ve složitějších scénářích nasazení, budete chtít použít vlastní soubor projektu Microsoft Build Engine (MSBuild) k zapouzdření svoji logiku sestavení a nasazení, jak je popsáno v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Například v [Správce kontaktů](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) ukázkové řešení, *Publish.proj* souboru:
 
 - Sestavení řešení.
-- Zabalení a nasazení aplikace ContactManager.Mvc používá nasazení webu.
-- Zabalení a nasazení aplikace ContactManager.Service používá nasazení webu.
+- Balení a nasazení aplikace ContactManager.Mvc pomocí nasazení webu.
+- Balení a nasazení aplikace ContactManager.Service pomocí nasazení webu.
 - Nasadí **ContactManager** databáze.
 
-Při integraci nasazení více webových balíčků nebo databáze do procesu krokování tímto způsobem, můžete také možnost provedení celé nasazení v režimu "Co když".
+Při integraci nasazení více webových balíčků a/nebo databází do procesu krokování tímto způsobem můžete také možnost provedení celé nasazení v režimu "what if".
 
-*Publish.proj* souboru ukazuje, jak můžete to provést. Nejprve musíte vytvořit vlastnost pro uložení hodnotu "Co když":
+*Publish.proj* soubor ukazuje, jak to udělat. Nejprve je potřeba vytvořit vlastnost pro uložení hodnoty "what if":
 
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample5.xml)]
 
 
-V takovém případě jste vytvořili vlastnost s názvem **WhatIf** s výchozí hodnotou **false**. Uživatelé mohou tuto hodnotu přepsat nastavením vlastnosti **true** parametr příkazového řádku, jako je zobrazí za chvíli.
+V tomto případě vytvoříte vlastnost s názvem **WhatIf** s výchozí hodnotou **false**. Uživatelé mohou přepsat tuto hodnotu tak, že nastavíte vlastnost **true** v parametr příkazového řádku, jako je ukážeme za chvíli.
 
-Další fáze je o parametrizaci nasazení webu a VSDBCMD příkazů tak, aby odrážela příznaků **WhatIf** hodnotu vlastnosti. Například Další cíl (převzaty z *Publish.proj* souborů a zjednodušená) běží *. deploy.cmd* souboru k nasazení webového balíčku. Ve výchozím nastavení, příkaz obsahuje **/Y** přepínače ("Ano" nebo režim aktualizace). Pokud **WhatIf** je nastaven na **true**, to je nahrazena **/T** přepínače (zkušební verze nebo režim "Co když").
+Další fází je parametrizovat Web Deploy a VSDBCMD příkazy, aby odrážely příznaků **WhatIf** hodnotu vlastnosti. Například další cíle (na základě *Publish.proj* souboru a zjednodušená čínština) běží *. deploy.cmd* uvést pro nasazení webového balíčku. Ve výchozím nastavení, příkaz zahrnuje **/Y** přepínače ("Ano" nebo režim aktualizace). Pokud **WhatIf** je nastavena na **true**, to je nahrazena **/T** přepínače (zkušební verze nebo režim "what if").
 
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample6.xml)]
 
 
-Podobně Další cíl používá nástroj VSDBCMD nasazení databáze. Ve výchozím nastavení **/dd** přepínač není zahrnutý. To znamená, že VSDBCMD vygeneruje skript nasazení, ale nebude nasazení databáze&#x2014;jinými slovy, "Co když" scénáři. Pokud **WhatIf** vlastnost není nastavena na **true**, **/dd** přidán přepínač a VSDBCMD se nasazení databáze.
+Další cílový obdobně, používá nástroj VSDBCMD nasazení databáze. Ve výchozím nastavení **/dd** přepínač není zahrnutý. To znamená, že VSDBCMD bude generovat skript nasazení, ale nenasadí databáze&#x2014;jinými slovy, "what if" scénáři. Pokud **WhatIf** vlastnost není nastavena na **true**, **/dd** přidán přepínač a VSDBCMD se nasazení databáze.
 
 
 [!code-xml[Main](performing-a-what-if-deployment/samples/sample7.xml)]
 
 
-Můžete použít stejný způsob o parametrizaci všechny relevantní příkazy v souboru projektu. Pokud chcete spustit nasazení "Co když", můžete pak stačí zadat **WhatIf** hodnotu vlastnosti z příkazového řádku:
+Můžete použít stejný přístup k parametrizaci všechny relevantní příkazy v souboru projektu. Pokud chcete spustit nasazení "what if", můžete pak stačí zadat **WhatIf** hodnota vlastnosti z příkazového řádku:
 
 
 [!code-console[Main](performing-a-what-if-deployment/samples/sample8.cmd)]
 
 
-Tímto způsobem můžete spustit "Co když" nasazení všech součástí projektu v jediném kroku.
+Tímto způsobem můžete spustit nasazení "what if" pro všechny součásti projektu v jediném kroku.
 
 ## <a name="conclusion"></a>Závěr
 
-Toto téma popisuje postup spouštět "Co když" nasazení pomocí nástroje nasazení webu, VSDBCMD a MSBuild. Nasazení "Co když" umožňuje hodnotit dopad navrhované nasazení před provedením jakýchkoli změn ve skutečnosti na cílovém prostředí.
+Toto téma popisuje, jak spustit "what if" nasazení pomocí nasazení webu, VSDBCMD a MSBuild. Nasazení "what if" umožňuje vyhodnotit její dopad navrhované nasazení před provedením jakýchkoli změn ve skutečnosti na cílovém prostředí.
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o nasazení webu syntaxe příkazového řádku najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Pokyny k možnosti příkazového řádku při použití *. deploy.cmd* souborů najdete v tématu [postup: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pokyny v VSDBCMD syntaxe příkazového řádku najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx).
+Další informace o nasazení webu syntaxe příkazového řádku najdete v tématu [nastavení operace nasazení webu](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Informace o možnostech příkazového řádku při použití *. deploy.cmd* souborů naleznete v tématu [postupy: instalace nasazení balíčku pomocí souboru deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Informace o syntaxi příkazového řádku VSDBCMD najdete v tématu [Reference k příkazovému řádku pro VSDBCMD. Soubor EXE (nasazení a Import schématu)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](advanced-enterprise-web-deployment.md)

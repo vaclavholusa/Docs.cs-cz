@@ -1,37 +1,36 @@
 ---
 uid: mobile/device-simulators
-title: Simulovat oblíbených mobilních zařízení testování | Microsoft Docs
+title: Simulace oblíbených mobilních zařízení testování | Dokumentace Microsoftu
 author: rick-anderson
-description: Podle těchto odkazů si můžete stáhnout emulátorů oblíbených mobilních zařízení a prohlížeče
+description: Emulátory pro oblíbených mobilních zařízení a prohlížečů si můžete stáhnout pomocí těchto odkazů
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2011
 ms.topic: article
 ms.assetid: bfb5612e-c3ec-4f28-b43b-63d781aa2272
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /mobile/device-simulators
 msc.type: content
-ms.openlocfilehash: a8293a5bff9ed73f177be2d9928d8d686c4f311d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b3dbb4dc83b602cd1aa374d3aa05c1b09a5dfe64
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28043808"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396081"
 ---
-<a name="simulate-popular-mobile-devices-for-testing"></a>Simulovat oblíbených mobilních zařízení pro testování
+<a name="simulate-popular-mobile-devices-for-testing"></a>Simulace oblíbených mobilních zařízení pro účely testování
 ====================
-> Podle těchto odkazů si můžete stáhnout emulátorů oblíbených mobilních zařízení a prohlížeče
+> Emulátory pro oblíbených mobilních zařízení a prohlížečů si můžete stáhnout pomocí těchto odkazů
 
 
-| Zařízení nebo prohlížeče | Emulátoru / simulátoru |
+| Prohlížeč nebo zařízení | Emulátoru / simulátoru |
 | --- | --- |
-| BrowserStack hostované prohlížeče virtualizace ![BrowserStack hostované prohlížeče virtualizace](device-simulators/_static/image1.png) | [Virtualizace prohlížeče hostované BrowserStack](http://browserstack.com) testování místní nebo produkční prostředí v libovolného prohlížeče na jakékoli platformě. Tunelové propojení mezi počítači a BrowserStack sítí můžete vytvořit vlastní hostovaný virtuální počítač. Ujistěte se, získat [BrowserStack rozšíření sady Visual Studio](https://visualstudiogallery.msdn.microsoft.com/2dfa32b1-3c47-439d-b1c5-9e28be18b81c) i více bezproblémové prostředí. |
-| Windows Phone | [Windows Phone SDK stáhne](https://dev.windowsphone.com/downloadsdk) Windows Phone Software Development Kit (SDK) obsahuje všechny funkce nástroje, které potřebujete k vývoji aplikace a hry pro Windows Phone |
-| zařízení iPhone nebo iPod nebo iPad | [Electric Plum](http://www.electricplum.com/studio.aspx) iPhone a iPad simulátorů pro systém Windows a také Responsive návrh nástroj. Můžete integrovat s možností "Vyhledat s.." VS 2012. |
-| Android | [Android SDK domovské stránky](https://developer.android.com/sdk) |
-| Prohlížeči Opera Mobile / Opera malé | Nejnovější verze: [Opera Developer Tools domácí](http://www.opera.com/developer/tools/) Opera malé 4.2: [simulátoru založené na jazyce Java Online](http://www.opera.com/mobile/demo/?ver=4) |
-| Windows Mobile 6.5.3 | [Sady nástrojů pro vývojáře systému Windows Mobile 6.5.3](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=c0213f68-2e01-4e5c-a8b2-35e081dcf1ca&amp;displaylang=en) Všimněte si, že udělit přístup k síti phone, musíte taky VPC síťového adaptéru, která je součástí [Virtual PC 2007](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=04d26402-3199-48a3-afa2-2dc0b40a73b6&amp;DisplayLang=en). Připojení aplikace Internet Explorer na telefonu váš vývojový server sady Visual Studio, najdete v části [Kiran Patil příspěvku na blogu](http://kiranpatils.wordpress.com/2009/11/19/access-internetlocal-website-from-your-windows-mobile-device-emulators/). |
-| Windows Mobile 6.1 | [Emulátor bitové kopie pro Visual Studio 2005/2008](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=3d6f581e-c093-4b15-ab0c-a2ce5bffdb47) |
+| Browserstackem hostované prohlížečem virtualizace ![Browserstackem hostované prohlížečem virtualizace](device-simulators/_static/image1.png) | [Virtualizace prohlížeče hostované Browserstackem](http://browserstack.com) testování místní nebo produkčního prostředí v jakémkoli prohlížeči na libovolné platformě. Můžete vytvořit tunelové propojení mezi počítači a sítí Browserstackem ve vlastní hostované virtuální počítač. Ujistěte se, že zobrazíte [rozšíření sady Visual Studio Browserstackem](https://visualstudiogallery.msdn.microsoft.com/2dfa32b1-3c47-439d-b1c5-9e28be18b81c) pro ještě větší bezproblémové prostředí. |
+| Windows Phone | [Windows Phone SDK stáhne](https://dev.windowsphone.com/downloadsdk) The Windows Phone Software Development Kit (SDK) zahrnuje všechny nástroje, které potřebujete k vývoji aplikací a her pro Windows Phone |
+| zařízení iPhone / iPod / iPad | [Electric Plum](http://www.electricplum.com/studio.aspx) iPhone a iPad simulátory pro Windows, stejně jako Responzivní návrh nástroje. Můžete integrovat s možností "Procházet s.." sadu VS 2012. |
+| Android | [Domovská stránka Android SDK](https://developer.android.com/sdk) |
+| Prohlížeči Opera Mobile / Opera Mini | Nejnovější verze: [Opera vývojářské nástroje domácí](http://www.opera.com/developer/tools/) Opera Mini 4.2: [založené na jazyce Java Online simulátoru](http://www.opera.com/mobile/demo/?ver=4) |
+| Windows Mobile 6.5.3 | [Sadu nástrojů pro vývojáře pro Windows Mobile 6.5.3](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=c0213f68-2e01-4e5c-a8b2-35e081dcf1ca&amp;displaylang=en) mějte na paměti, že pokud chcete dát přístup k síti telefon, musíte také síťový adaptér VPC součástí [Virtual PC 2007](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=04d26402-3199-48a3-afa2-2dc0b40a73b6&amp;DisplayLang=en). Připojení aplikace Internet Explorer v telefonu pro váš vývojový server sady Visual Studio, naleznete v tématu [Kiran Patil blogový příspěvek](http://kiranpatils.wordpress.com/2009/11/19/access-internetlocal-website-from-your-windows-mobile-device-emulators/). |
+| Windows Mobile 6.1 | [– Image emulátorů pro Visual Studio 2005/2008](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=3d6f581e-c093-4b15-ab0c-a2ce5bffdb47) |
 
-Poznámka: Pokud chcete zobrazit aplikace na skutečném mobilních zařízení (což je jedinou možností pro plně testování iPhone nebo iPad, protože neexistuje žádná hodnota true, emulátor pro Windows) budete muset hostování vaší aplikace v IIS nebo IIS Express. Nemůžete použít snadno Visual Studio integrovaný webový server pro to, protože nebude odpovídat na požadavky z jiných počítačů.
+Všimněte si, že pokud chcete zobrazit aplikace na skutečném mobilního zařízení (což je jedinou možností pro plně testování iPhone nebo iPad, protože neexistuje žádný true emulátor pro Windows), musíte k hostování vaší aplikace v IIS nebo IIS Express. Nelze použít snadno integrovaný webový server sady Visual Studio pro tento, protože nebude odpovídat na požadavky z jiných počítačů.

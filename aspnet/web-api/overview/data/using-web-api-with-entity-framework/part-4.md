@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-4
-title: Zpracování vztahy entit | Microsoft Docs
+title: Zpracování relací prvků | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,109 +9,108 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: d2f5710c-23c7-40a5-9cd9-5d0516570cba
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 3c82724739b8ccb7c6b13788a5420af1e61c990b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7759b828068d99f9975d56671e427ccf6e94aef6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872686"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400950"
 ---
-<a name="handling-entity-relations"></a>Vztahy entit zpracování
+<a name="handling-entity-relations"></a>Ošetření relací prvků
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
+[Stáhnout dokončený projekt](https://github.com/MikeWasson/BookService)
 
-Tato část popisuje některé podrobnosti o tom, jak EF načte entit v relaci a jak bude zpracováván cyklické navigační vlastnosti ve třídách modelu. (Tato část poskytuje pozadí znalostní báze a není nutné k dokončení tohoto kurzu. Pokud dáváte přednost, přejděte k [část 5.](part-5.md).)
+Tato část popisuje některé podrobnosti jak EF načte související entity, a jak zpracovávat kruhový navigačních vlastností ve třídách modelu. (Tato část obsahuje základní znalosti a není nutné k dokončení tohoto kurzu. Pokud dáváte přednost, přejděte k [části 5.](part-5.md).)
 
-## <a name="eager-loading-versus-lazy-loading"></a>Eager načítání versus opožděného načítání
+## <a name="eager-loading-versus-lazy-loading"></a>Eager načítání a opožděné načtení
 
-Při použití EF s relační databázi, je důležité pochopit, jak EF načte související data.
+Pokud používáte EF relační databáze, je důležité pochopit, jak EF načte související data.
 
-Je také užitečné k zobrazení dotazů SQL, které generuje EF. Trasování SQL, přidejte následující řádek kódu `BookServiceContext` konstruktor:
+Je také užitečné prohlédnout si SQL dotazy, které EF generuje. Trasování SQL, přidejte následující řádek kódu, který `BookServiceContext` konstruktor:
 
 [!code-csharp[Main](part-4/samples/sample1.cs)]
 
-Pokud odešlete požadavek GET /api/books, vrátí JSON takto:
+Pokud odešlete požadavek GET /api/books, vrátí JSON podobný tomuto:
 
 [!code-console[Main](part-4/samples/sample2.cmd)]
 
-Uvidíte, že vlastnost Autor má hodnotu null, i když kniha obsahuje platnou hodnotu AuthorId. Je to způsobeno EF není načítání související entity autora. Protokol trasování příkazu jazyka SQL potvrdí toto:
+Uvidíte, že vlastnost Autor má hodnotu null, i když knihu obsahuje platné AuthorId. Důvodem je, EF načítání souvisejících entit Autor. Protokol trasování jazyka SQL potvrdí toto:
 
 [!code-console[Main](part-4/samples/sample3.sql)]
 
-Příkaz SELECT přebírá z tabulky knihy a neodkazuje na autora tabulky.
+Příkaz SELECT přebírá z tabulky knihy a neodkazuje na tabulce Autor.
 
-Pro referenci tady je metoda v `BooksController` třídu, která vrátí seznam knih.
+Pro informaci je zde metoda `BooksController` třídu, která vrátí seznam seznamů.
 
 [!code-csharp[Main](part-4/samples/sample4.cs)]
 
-Podívejme se, jak se vrací Autor jako součást JSON data. Existují tři způsoby, jak načíst související data v Entity Framework: přes načítání, opožděného načítání a explicitní načítání. Existují kompromis s každou techniku, proto je důležité pochopit, jak pracují.
+Podívejme se, jakým způsobem jsme vrátit Autor jako součást JSON data. Existují tři způsoby, jak načíst souvisejících dat v Entity Framework: předběžné načítání, opožděné načtení a explicitní načtení. Existují kompromisy s každou technikou, takže je důležité pochopit, jak fungují.
 
-### <a name="eager-loading"></a>Přes načítání
+### <a name="eager-loading"></a>Předběžné načítání
 
-S *přes načítání*, EF načte entit v relaci jako součást počáteční databázového dotazu. Pokud chcete provést přes načítání, použijte **System.Data.Entity.Include** metoda rozšíření.
+S *předběžné načítání*, EF načtení souvisejících entit jako součást počáteční databázového dotazu. Předběžné načítání, použijte **System.Data.Entity.Include** – metoda rozšíření.
 
 [!code-csharp[Main](part-4/samples/sample5.cs)]
 
-Tato hodnota informuje EF zahrnutí dat Autor v dotazu. Pokud jste tuto změnu provést a spusťte aplikaci, nyní JSON data vypadá takto:
+To říká EF zahrnout Autor data v dotazu. Pokud jste tuto změnu a spuštění aplikace, nyní JSON data vypadá takto:
 
 [!code-console[Main](part-4/samples/sample6.cmd)]
 
-Protokol trasování ukazuje, že EF provést na tabulky adresáře a vytvořit spojení.
+Protokol trasování ukazuje, že EF pracoval spojení na tabulky adresáře a Autor.
 
 [!code-console[Main](part-4/samples/sample7.cmd)]
 
-### <a name="lazy-loading"></a>Opožděného načítání
+### <a name="lazy-loading"></a>Opožděné načtení
 
-S opožděného načítání EF automaticky načte související entity, když je přímo odkázat navigační vlastnost pro dané entity. Chcete-li povolit opožděného načítání, proveďte navigační vlastnost virtuální. Například ve třídě adresáře:
+Pomocí opožděné načtení EF automaticky načte související entity při dereferenci navigační vlastnost pro danou entitu. Pokud chcete povolit opožděné načtení, ujistěte se, navigační vlastnost virtuální. Například ve třídě kniha:
 
 [!code-csharp[Main](part-4/samples/sample8.cs?highlight=6)]
 
-Nyní zvažte následující kód:
+Teď se podíváme následující kód:
 
 [!code-csharp[Main](part-4/samples/sample9.cs)]
 
-Pokud opožděného načítání je povoleno, přístup k `Author` vlastnost `books[0]` způsobí, že EF pro dotazování databáze od autora.
+Pokud je povoleno opožděné načtení, přístup k `Author` vlastnost `books[0]` způsobí, že EF dáte dotaz na databázi pro autora.
 
-Opožděného načítání vyžaduje opakované cesty databáze, protože EF odešle dotaz pokaždé, když ho načte související entity. Obecně platí budete chtít opožděného načítání pro objekty, které můžete serializovat zakázáno. Serializátoru, který se má číst všechny vlastnosti v modelu, který aktivuje načítání související entity. Tady jsou například dotazy SQL při EF serializuje seznamu knih s opožděného načítání povolena. Uvidíte, že EF usnadňuje tři autoři tři samostatné dotazy.
+Opožděné načtení vyžaduje více cest databáze, protože EF odešle dotaz pokaždé, když se načte související entity. Obecně byste měli opožděné načítání je zakázáno pro objekty, které jste serializovat. Serializátoru, který se má číst všechny vlastnosti v modelu, který aktivuje načtení souvisejících entit. Tady jsou například dotazy SQL při EF serializuje seznamu knih pomocí opožděné načtení povoleno. Uvidíte, že EF provede tři samostatné dotazy pro tři autory.
 
 [!code-console[Main](part-4/samples/sample10.sql)]
 
-Jsou stále časy, kdy můžete chtít použít opožděného načítání. Přes načítání může způsobit EF generovat velmi složité spojení. Nebo možná budete muset entit v relaci pro malou podmnožinu dat a opožděného načítání by být efektivnější.
+Stále existují situace, kdy můžete chtít použít opožděné načtení. Předběžné načítání může způsobit EF generovat velmi složité spojení. Nebo může být nutné související entity pro malou podmnožinu dat a opožděné načtení by být mnohem efektivnější.
 
-Jedním ze způsobů, aby nedocházelo k problémům serializace je serializovat objekty přenos dat (DTOs) namísto objekty entity. Tento přístup vám zobrazit později v článku.
+Jedním ze způsobů, aby nedocházelo k problémům serializace je určená k serializaci objektů pro přenos dat (DTO) namísto objekty entity. Ukážeme si tento přístup později v tomto článku.
 
-### <a name="explicit-loading"></a>Explicitní načítání
+### <a name="explicit-loading"></a>Explicitní načtení
 
-Explicitní načítání je podobný opožděného načítání, s tím rozdílem, že explicitně získat související data v kódu; není provedena automaticky při přístupu k navigační vlastnosti. Explicitní načítání vám dává větší kontrolu nad tím, kdy se načíst související data, ale vyžaduje další kód. Další informace o explicitní načítání, najdete v části [načítání entit v relaci](https://msdn.microsoft.com/data/jj574232#explicit).
+Explicitní načtení je podobný opožděné načtení, s tím rozdílem, že explicitně v kódu; získat související data je tomu tak není automaticky při přístupu k vlastnosti navigace. Explicitní načtení vám dává větší kontrolu nad tím, kdy se načíst související data, ale vyžaduje další kód. Další informace o explicitní načtení najdete v tématu [načtení souvisejících entit](https://msdn.microsoft.com/data/jj574232#explicit).
 
-## <a name="navigation-properties-and-circular-references"></a>Navigační vlastnosti a cyklické odkazy
+## <a name="navigation-properties-and-circular-references"></a>Vlastnosti navigace a cyklické odkazy
 
-Když I definovaná adresáře a vytvořit modely, I na definován navigační vlastnost `Book` třídu pro autor knihy relace, ale I nedefinuje navigační vlastnost opačným směrem.
+Když mám definován modely knihy a Autor, můžu definované vlastnost navigace na `Book` třída vztahu autor knihy, ale I v opačném směru nedefinovala navigační vlastnost.
 
-Co se stane, když přidáte odpovídající navigační vlastnost pro `Author` třída?
+Co se stane, pokud chcete přidat odpovídající navigační vlastnost pro `Author` třídy?
 
 [!code-csharp[Main](part-4/samples/sample11.cs?highlight=7)]
 
-Bohužel se tím se vytvoří problém při serializaci modely. Při načítání související data, vytvoří cyklická objekt grafu.
+Bohužel tím se vytvoří problém při serializaci modely. Pokud načítáte související data, vytvoří cyklický objekt grafu.
 
 ![](part-4/_static/image1.png)
 
-Když se pokusí formátovací modul XML nebo JSON k serializaci grafu, vyvolá výjimku. Dva formátovací moduly throw různé výjimky zprávy. Tady je příklad pro formátování JSON:
+Formátovací modul XML nebo JSON se pokusí k serializaci grafu, vyvolají výjimku. Dva formátovací moduly vyvolat zprávy jinou výjimku. Tady je příklad pro formátování JSON:
 
 [!code-console[Main](part-4/samples/sample12.cmd)]
 
-Tady je formátovací modul XML:
+Toto je formátovací modul XML:
 
 [!code-xml[Main](part-4/samples/sample13.xml)]
 
-Jeden řešením je použití DTOs, které popisují, v další části. Alternativně můžete nakonfigurovat JSON a XML formátovacích modulů pro zpracování cyklů grafu. Další informace najdete v tématu [zpracování cyklické odkazy objekt](../../formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references).
+Jedním řešením je použití DTO, které popisují, v další části. Alternativně můžete nakonfigurovat JSON a XML formátovacích modulů pro zpracování cykly grafu. Další informace najdete v tématu [zpracování cyklické odkazy objektu](../../formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references).
 
-V tomto kurzu není nutné `Author.Book` navigační vlastnost, takže ho můžete nechat.
+Pro účely tohoto kurzu není nutné `Author.Book` vlastnost navigace, takže ho můžete nechat navýšení kapacity.
 
 > [!div class="step-by-step"]
 > [Předchozí](part-3.md)

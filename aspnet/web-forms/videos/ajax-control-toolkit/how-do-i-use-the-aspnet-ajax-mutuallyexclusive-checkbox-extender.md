@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender
-title: '[Jak na:] Použití ASP.NET AJAX MutuallyExclusive políčko rozšíření? | Microsoft Docs'
+title: '[Postup:] Použití extenderu ASP.NET AJAX zaškrtávací políčko MutuallyExclusive? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Ovládací prvek MutuallyExclusive z ovládacího prvku ASP.NET AJAX Toolkit umožňuje vývojářům nastavit počet zaškrtávací políčka jako vzájemně vylučují, které e...
+description: Ovládací prvek MutuallyExclusive z technologie ASP.NET AJAX Control Toolkit umožňuje vývojářům konfigurovat více zaškrtávacích políček jako vzájemně exkluzivní, s kterou e...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2007
 ms.topic: article
 ms.assetid: 808a89d3-4a98-4abe-83b5-0aa01f749048
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender
 msc.type: video
-ms.openlocfilehash: 8de022c371949b5c107d524d9c2b0050e5253557
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 29b07af7e09bd72227e2ca8893f7bd4d424e32aa
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882004"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392494"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender"></a>[Jak na:] Použití ASP.NET AJAX MutuallyExclusive políčko rozšíření?
+<a name="how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender"></a>[Postup:] Použití extenderu ASP.NET AJAX zaškrtávací políčko MutuallyExclusive?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Ovládací prvek MutuallyExclusive z ovládacího prvku ASP.NET AJAX Toolkit umožňuje vývojářům nastavit počet zaškrtávací políčka jako vzájemně vylučují, což zajistí, že uživatel může vrátit pouze jednu možnost. Zatímco seznam přepínač poskytuje podobné chování, potřebu zaškrtnutím políčka kliknout uživatelem usnadňuje řízení MutuallyExclusive ideální pro příjem potvrzení od uživatele, jako je příjem nebo nepřijímají podmínky použití.
+Ovládací prvek MutuallyExclusive z technologie ASP.NET AJAX Control Toolkit umožňuje vývojářům nakonfigurovat několik zaškrtávacích políček jako vylučují, což zajistí, že uživatel může vrátit pouze jednu možnost. Seznam přepínač poskytuje podobné chování, potřebu zaškrtávací políčko, chcete-li být uživatel klikne na nastaven ovládací prvek MutuallyExclusive ideální pro příjem potvrzení od uživatele, jako je například přijetí nebo nepřijímají podmínky použití.
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-mutuallyexclusive-checkbox-extender)
 

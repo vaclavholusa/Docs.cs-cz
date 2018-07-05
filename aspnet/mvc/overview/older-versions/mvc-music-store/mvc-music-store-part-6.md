@@ -1,83 +1,82 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: 'Část 6: Pomocí datových poznámek pro ověření modelu | Microsoft Docs'
+title: '6. část: Používání datových poznámek k ověření modelu | Dokumentace Microsoftu'
 author: jongalloway
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 6 obsahuje pomocí datových poznámek pro Model V...
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 6. část se věnuje anotacemi dat pro Model V...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
 ms.topic: article
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 328eccb4324bb10a7e8dec819a70129fc14c42c4
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ca0ac2ca909f838f1c91e6cc01b8aafa90c0b193
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872413"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397650"
 ---
-<a name="part-6-using-data-annotations-for-model-validation"></a>Část 6: Pomocí datových poznámek pro ověření modelu
+<a name="part-6-using-data-annotations-for-model-validation"></a>6. část: Používání datových poznámek k ověření modelu
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje krok za krokem, jak používat rozhraní ASP.NET MVC a Visual Studio pro vývoj webů.  
+> MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a sady Visual Studio.  
 >   
-> Úložiště Hudba MVC je implementace úložiště lightweight ukázkové, který prodává hudebních alb online a implementuje základní Správa serveru, přihlášení uživatele a nákupního košíku funkce.  
+> Music Store MVC je jednoduché ukázku implementace úložiště prodává hudebních alb online, který implementuje správu základního webu, přihlášení uživatele a nákupního košíku funkce.  
 >   
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 6 obsahuje pomocí datových poznámek pro ověření modelu.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 6. část se věnuje datových poznámek k ověření modelu.
 
 
-Máme závažný problém s formuláři naše vytvořit a upravit: jejich nejsou probíhá žádné ověření. Provedeme akce, jako je ponechat typ písmena a povinná pole prázdné pole Cena a první chyba, kterou jsme zobrazí je z databáze.
+Máme závažný problém s naší vytvořit a upravit formuláři: Nejedná se žádné ověření. Můžeme udělat kroky, jako je nechat prázdné povinná pole nebo typ písmena v poli pro cenu a první chyba, kterou uvidíme se z databáze.
 
-Můžete snadno přidáme ověření k naší aplikaci přidáním datových poznámek k naší třídy modelu. Nám pro popis pravidla, která má být u naše vlastnosti modelu umožňují datových poznámek a ASP.NET MVC se postará o jejich vynucením a zobrazení příslušné zprávy pro naše uživatele.
+Jsme můžete snadno přidat ověření pro naši aplikaci tak, že přidáte datových poznámek k naší tříd modelu. Datové poznámky umožňují nám pro popis pravidla, která chceme, aby u našich vlastnosti modelu a ASP.NET MVC se postará o vynucení a zobrazení příslušné zprávy pro naše uživatele.
 
-## <a name="adding-validation-to-our-album-forms"></a>Přidání ověřování do našich Album formulářů
+## <a name="adding-validation-to-our-album-forms"></a>Přidání ověřování do našich alba formulářů
 
-Použijeme následující atributy datové poznámky:
+Použijeme následující atributy dat. Poznámka:
 
 - **Požadované** – označuje, že vlastnost je povinné pole.
-- **DisplayName** – definuje text chceme použité na pole formuláře a ověřovacích zpráv
+- **DisplayName** – definuje text jsme má být použit na pole formuláře a ověřovacích zpráv
 - **StringLength** – definuje maximální délku pole řetězce
-- **Rozsah** – poskytuje maximální a minimální hodnotu pro číselné pole
-- **Vytvoření vazby** – obsahuje seznam polí pro vyloučení nebo zahrnutí při vytváření vazby parametru nebo formuláře hodnoty pro vlastnosti modelu
-- **ScaffoldColumn** – umožňuje skrytí pole z editoru formulářů
+- **Rozsah** – poskytuje maximální a minimální hodnoty pro číselné pole
+- **Vytvoření vazby** – obsahuje pole, které chcete vyloučit nebo zahrnout při vytváření vazby hodnoty parametru nebo formuláře na vlastnosti modelu
+- **ScaffoldColumn** – umožňuje skrýt pole z editoru formuláře
 
-*Poznámka: Další informace o ověření modelu pomocí datové poznámky atributů najdete v dokumentaci k webu MSDN na*[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
+*Poznámka: Další informace o ověření modelu pomocí atributů dat poznámky, najdete v dokumentaci MSDN na*[`https://go.microsoft.com/fwlink/?LinkId=159063`](https://go.microsoft.com/fwlink/?LinkId=159063)
 
-Otevřete Album třídu a přidejte následující *pomocí* příkazů do horní části.
+Otevřete třídu alba a přidejte následující *pomocí* příkazy.
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample1.cs)]
 
-Potom aktualizujte vlastnosti, které chcete přidat atributy zobrazení a ověření, jak je uvedeno níže.
+Dále aktualizujte vlastnosti, které chcete přidat atributy zobrazení a ověření, jak je znázorněno níže.
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample2.cs)]
 
-Když jsme existuje, jsme vám také změnili Genre a umělcem virtuální vlastnosti. To umožňuje rozhraní Entity Framework opožděné zatížení je podle potřeby.
+Když jsme už máte, jste změnili jsme taky žánr a interpreta virtuálních vlastností. Díky rozhraní Entity Framework pro opožděné načtení je podle potřeby.
 
 [!code-csharp[Main](mvc-music-store-part-6/samples/sample3.cs)]
 
-Po tyto atributy s přidá do našich modelu alb, naše vytvořit a upravit obrazovky okamžitě začne ověřování pole a pomocí zobrazované názvy jsme jste vybrali (například Album obrázky Url místo AlbumArtUrl). Spusťte aplikaci a přejděte do /StoreManager/Create.
+Po těchto atributů s přidá náš model alb, naše vytvořit a Upravit obrazovku okamžitě začne ověřování polí a pomocí zobrazované názvy jsme zvolili (například alba obrázky místo adresu Url AlbumArtUrl). Spusťte aplikaci a přejděte do /StoreManager/Create.
 
 ![](mvc-music-store-part-6/_static/image1.png)
 
-Dále budete jsme rozdělit některá pravidla ověřování. Zadejte cena 0 a ponechejte pole název prázdné. Když jsme klikněte na tlačítko pro vytvoření, vidíte formuláře, zobrazí se chybové zprávy ověření zobrazující pole, která nesplňuje pravidla ověření, že jsme definovali.
+V dalším kroku budete věcí některé ověřovací pravidla. Zadejte cenu 0 a nechte prázdný název. Když klikneme na tlačítka pro vytvoření, uvidíme formuláře, zobrazí se chybové zprávy ověření na zobrazení, která pole nevyhovuje ověřovacích pravidel, že jsme definovali.
 
 ![](mvc-music-store-part-6/_static/image2.png)
 
-## <a name="testing-the-client-side-validation"></a>Testování ověřování straně klienta
+## <a name="testing-the-client-side-validation"></a>Testování ověřování na straně klienta
 
-Ověřování na straně serveru je velmi důležité z perspektivy aplikaci, protože uživatelé mohou obejít ověřování na straně klienta. Webová stránka formulářů, implementující pouze ověření na straně serveru však vykazovat tři významné problémy.
+Ověřování na straně serveru je velmi důležité z pohledu aplikace, protože uživatelé mohou obejít ověřování na straně klienta. Webové formuláře, implementující pouze ověření na straně serveru ale vykazuje tři významné problémy.
 
-1. Uživatel má počkat pro daný formulář, který se má odeslat, ověřit na serveru a pro odpověď k odeslání do svého prohlížeče.
-2. Uživatel nemá získat okamžitou zpětnou vazbu, při jejich opravte pole tak, aby ho teď předá ověřovacích pravidel.
-3. Nemůžeme se plýtvání prostředky serveru k provedení logiku ověření místo využívání prohlížeče uživatele.
+1. Uživatel má počkat pro formulář k publikování, ověřit na serveru a pro odpověď k odeslání do svého prohlížeče.
+2. Uživatel nezíská okamžitou zpětnou vazbu, když neopraví pole tak, aby teď projde ověřovacím pravidlům.
+3. Můžeme se plýtvání prostředky serveru k provedení ověření logic namísto využití webového prohlížeče.
 
-Naštěstí šablony vygenerované uživatelské rozhraní ASP.NET MVC 3 mají ověřování na straně klienta integrovanou, vyžadování jakkoli další práci.
+Naštěstí šablony vygenerované uživatelské rozhraní ASP.NET MVC 3 mají na straně klienta ověření integrované vyžadující žádné další kroky, které jsou jakýmkoli způsobem.
 
-Zadáním jednoho písmeno v poli s názvem splňuje požadavky na ověření, zobrazí se zpráva ověření se okamžitě odebere.
+Zadáte jedno písmeno v poli s názvem splňuje požadavky ověřování, tak ověření zprávy se okamžitě odebere.
 
 ![](mvc-music-store-part-6/_static/image3.png)
 

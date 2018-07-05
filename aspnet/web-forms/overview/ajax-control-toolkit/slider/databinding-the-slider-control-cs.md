@@ -1,57 +1,56 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
-title: Datové vazby v ovládacím prvku posuvník (C#) | Microsoft Docs
+title: Datová vazba ovládacího prvku jezdec (C#) | Dokumentace Microsoftu
 author: wenz
-description: Ovládacího prvku posuvník Toolkitu AJAX poskytuje grafické jezdce, která se dá řídit pomocí myši. Je možné svázat aktuální pozice...
+description: Ovládací prvek posuvník v sadou nástrojů AJAX Control Toolkit poskytuje grafické posuvníku, která se dá řídit pomocí myši. Je možné vytvořit vazbu aktuální pozice...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: b7f77869-aa1d-4025-924f-622c57112db6
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7644c991cd88868235511ba372be1f5b47c68fea
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: cbb53309ccde9ed6be67a977a56cf2942bbe7f8c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870580"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400652"
 ---
-<a name="databinding-the-slider-control-c"></a>Datové vazby v ovládacím prvku posuvník (C#)
+<a name="databinding-the-slider-control-c"></a>Datová vazba ovládacího prvku jezdec (C#)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider0.cs.zip) nebo [stahovat PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/slider0CS.pdf)
 
-> Ovládacího prvku posuvník Toolkitu AJAX poskytuje grafické jezdce, která se dá řídit pomocí myši. Je možné k vytvoření vazby aktuální pozici jezdec na další ovládací prvek ASP.NET.
+> Ovládací prvek posuvník v sadou nástrojů AJAX Control Toolkit poskytuje grafické posuvníku, která se dá řídit pomocí myši. Je možné vytvořit vazbu aktuální pozice posuvníku na jiný ovládací prvek technologie ASP.NET.
 
 
 ## <a name="overview"></a>Přehled
 
-Ovládacího prvku posuvník Toolkitu AJAX poskytuje grafické jezdce, která se dá řídit pomocí myši. Je možné k vytvoření vazby aktuální pozici jezdec na další ovládací prvek ASP.NET.
+Ovládací prvek posuvník v sadou nástrojů AJAX Control Toolkit poskytuje grafické posuvníku, která se dá řídit pomocí myši. Je možné vytvořit vazbu aktuální pozice posuvníku na jiný ovládací prvek technologie ASP.NET.
 
 ## <a name="steps"></a>Kroky
 
-Chcete aktivovat funkce ASP.NET AJAX a sady nástrojů ovládacího prvku `ScriptManager` řízení musíte umístit kdekoli na stránce (ale uvnitř `<form>` element):
+K aktivaci funkce technologie ASP.NET AJAX a Control Toolkit `ScriptManager` ovládací prvek je třeba umístit kdekoli na stránce (ale v rámci `<form>` element):
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample1.aspx)]
 
-Dál přidejte dva `TextBox` ovládací prvky na stránku. Jeden se převede na grafické jezdce a dalších jedna bude obsahovat pozice posuvníku.
+V dalším kroku přidejte dva `TextBox` ovládacích prvků na stránce. Jedna se transformuje na grafické posuvník a druhá bude obsahovat pozice posuvníku.
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample2.aspx)]
 
-Dalším krokem je již v posledním kroku. `SliderExtender` Řízení z ovládacího prvku ASP.NET AJAX Toolkit díky jezdce mimo první textového pole a automaticky aktualizuje druhého textového pole, když posuvník umístit změny. V pořadí, pro který chcete pracovat `SliderExtender`na `TargetControlID` musí být nastaven na ID první textového pole; `BoundControlID` musí být nastaven na ID druhého textového pole.
+Dalším krokem je již v posledním kroku. `SliderExtender` Ovládacího prvku z technologie ASP.NET AJAX Control Toolkit umožňuje posuvníku z prvního textového pole a automaticky aktualizuje do druhého textového pole, když změny pozice posuvníku. Který chcete, aby `SliderExtender`společnosti `TargetControlID` atribut musí být nastaven na ID prvního textového pole; `BoundControlID` atribut musí být nastaven na ID do druhého textového pole.
 
 [!code-aspx[Main](databinding-the-slider-control-cs/samples/sample3.aspx)]
 
-Jak vidíte v prohlížeči, datové vazby funguje v obou směrech: zadáním nové hodnoty v textovém poli aktualizace pozici posuvníku. Pokud provedete druhé textové pole jen pro čtení, můžete přidat slabé ochrany pro textové pole tak, aby se pro uživatele ručně aktualizovat hodnotu zde složitější.
+Jak je vidět v prohlížeči, datové vazby funguje v obou směrech: zadáte novou hodnotu v textovém poli aktualizuje pozice posuvníku. Pokud provedete do druhého textového pole jen pro čtení, můžete přidat slabé ochranu do textového pole tak, aby se pro uživatele k ruční aktualizaci hodnoty tady složitější.
 
 
-[![Posuvník a textové pole, které jsou synchronizované](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
+[![Posuvníku a textového pole, které jsou synchronizované](databinding-the-slider-control-cs/_static/image2.png)](databinding-the-slider-control-cs/_static/image1.png)
 
-Posuvník a textové pole, které jsou synchronizované ([Kliknutím zobrazit obrázek v plné velikosti](databinding-the-slider-control-cs/_static/image3.png))
+Posuvníku a textového pole, které jsou synchronizované ([kliknutím ji zobrazíte obrázek v plné velikosti](databinding-the-slider-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](using-the-slider-control-with-auto-postback-cs.md)

@@ -1,77 +1,76 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
-title: Přidání ověřování do modelu | Microsoft Docs
+title: Přidání ověření do modelu | Dokumentace Microsoftu
 author: shanselman
-description: Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoření jednoduché webové aplikace, která čte a zapisuje z databáze.
+description: Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvořte jednoduchou webovou aplikaci, která čte a zapisuje z databáze.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
 ms.topic: article
 ms.assetid: aa7b3e8e-e23d-49f1-b160-f99a7f2982bd
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part7
 msc.type: authoredcontent
-ms.openlocfilehash: 78dd6bdd81fcb51a3a21a8f1ee12b4b2bfc37db5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1a8c186d5a6b00aaf1061bb4025f4f062203a7df
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871945"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402977"
 ---
-<a name="adding-validation-to-the-model"></a>Přidání ověřování do modelu
+<a name="adding-validation-to-the-model"></a>Přidání ověření do modelu
 ====================
 podle [Scott Hanselman](https://github.com/shanselman)
 
-> Je toto Začátečník kurz, který představuje základní informace o architektuře ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze. Přejděte [výukové centrum pro rozhraní ASP.NET MVC](../../../index.md) kurzy a ukázky najdete další ASP.NET MVC.
+> Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvoříte jednoduchou webovou aplikaci, která čte a zapisuje z databáze. Přejděte [výukové centrum pro ASP.NET MVC](../../../index.md) najít další technologie ASP.NET MVC, kurzů a ukázek.
 
 
-V této části přidáme implementovat podporu nutná pro povolení ověření vstupu v naší aplikaci. Jsme budete zajistěte, aby náš obsah databáze je vždy správný a koncovým uživatelům poskytovat užitečné chybové zprávy, když se nepovede, zadejte film data, která není platná. Začneme budete přidáním trochu logiku ověření pro třídu film.
+V této části budeme implementovat podporu nutná pro povolení ověření vstupu v rámci naší aplikace. Budete zajišťujeme, že náš obsah databáze je vždy správná a koncovým uživatelům poskytovat užitečné chybové zprávy, když se pokusí a zadejte data o filmech, která není platná. Začneme budete přidáním trochu ověřovací logiku do třídy Video.
 
-Klikněte pravým tlačítkem na složku, Model a vyberte Přidat třídu. Název vaší třídy film.
+Klikněte pravým tlačítkem myši klikněte na složku, Model a vyberte Přidat třídu. Zadejte název vaší třídy Video.
 
-Pokud jsme vytvořili Model Entity film předtím rozhraní IDE vytvořit třídu film. Ve skutečnosti součástí třídy film může být v jednom souboru a část v jiném. Tomu se říká konkrétní třídu. Vytvoříme rozšíření třídy film z jiného souboru.
+Jsme dříve při vytváření modelu Entity filmů, integrovaného vývojového prostředí vytvořit třídu video. Ve skutečnosti součástí film třídy může být v jednom souboru a v další části. Tomu se říká částečnou třídu. Teď ještě chvíli Zůstaneme rozšíření třídy Video z jiného souboru.
 
-Vytvoříme třídu částečné film který odkazuje na třídu"kamarád" s některé atributy, které se mu dávat pokyny ověření do systému. Jsme budete označit nadpis a cenu podle požadavku a taky trvat, být do určitého rozsahu. Klikněte pravým tlačítkem na složku modely a vyberte Přidat třídu. Název vaší třídy film a klikněte na tlačítko OK. Zde je co naše částečné třídy vypadá film jako.
+Vytvoříme film částečné třídy, na kterou odkazuje na třídu"kamarádské" některé atributy, které se mu ověření systému. Vytvoříme označení názvu a cena podle potřeby a taky trvat, se cena v určitém rozsahu. Klikněte pravým tlačítkem na složku modely a vyberte Přidat třídu. Název vaší třídy filmů a klikněte na tlačítko OK. Zde je, co naše částečné film třídy ve tvaru.
 
 [!code-csharp[Main](getting-started-with-mvc-part7/samples/sample1.cs)]
 
-Znovu spusťte aplikaci a zkuste zadejte film s cenou více než 100. Poté, co jste odeslání formuláře budete dojde k chybě. Chyba je zachycena na straně serveru a vyskytne se po odeslání formuláře. Všimněte si, jak byly ASP.NET MVC předdefinované pomocné rutiny HTML dostatečně inteligentní, zobrazí se chybová zpráva a Udržovat hodnoty pro nám v rámci prvků textového pole:
+Znovu spusťte aplikaci a zkuste zadat videa s cenou více než 100. Poté, co jste odeslání formuláře budete dojde k chybě. Tato chyba je zachycena na straně serveru a vyvolá se po odeslání formuláře. Všimněte si, jak byly dostatečně inteligentní, aby zobrazení chybové zprávy a Udržovat hodnoty pro nás v rámci textového pole prvků technologie ASP.NET MVC integrovaných pomocných rutin HTML:
 
 [![CreateMovieWithValidation](getting-started-with-mvc-part7/_static/image2.png)](getting-started-with-mvc-part7/_static/image1.png)
 
-To vyhovující postup, ale bude dobrý, jsme může informace pro uživatele na straně klienta, hned, než získá podílejí na server.
+To spolupráce, ale bylo by dobré Pokud jsme mohli říct uživatelům, na straně klienta, hned, předtím, než získá podílejí na serveru.
 
-Umožňuje povolit některé ověřování na straně klienta v jazyce JavaScript.
+Umožňuje povolit některé ověřování na straně klienta s použitím jazyka JavaScript.
 
 ## <a name="adding-client-side-validation"></a>Přidání ověřování na straně klienta
 
-Vzhledem k tomu, že naše třída film již některých atributů ověření, budete potřebujeme přidejte několik souborů JavaScript pro naše Create.aspx zobrazit šablonu a přidejte řádek kódu povolit ověřování na straně klienta proběhla.
+Vzhledem k tomu, že naše třída Video už má několik atributů ověření, budete potřebujeme přidat několik souborů JavaScriptu do našich Create.aspx zobrazit šablonu a přidejte řádek kódu, které umožňují ověřování na straně klienta, aby proběhla.
 
-Z přejděte v rámci VWD naše složky zobrazení/film a otevře Create.aspx.
+V rámci VWD naše zobrazení/video složka go a otevřete Create.aspx.
 
-Otevře složky skriptů v Průzkumníku řešení a přetáhněte ji následující tři skriptů v rámci &lt;head&gt; značky.
+Otevření složky skriptů v Průzkumníku řešení a přetáhněte následující tři skripty pro v rámci &lt;head&gt; značky.
 
 - MicrosoftAjax.js
 - MicrosoftMvcValidation.js
 
-Chcete tyto soubory skriptu, než se objeví v tomto pořadí.
+Chcete tyto soubory skriptu se zobrazí v tomto pořadí.
 
 [!code-html[Main](getting-started-with-mvc-part7/samples/sample2.html)]
 
-Navíc přidejte tento jeden řádek výše Html.BeginForm:
+Přidejte také tento jeden řádek výše Html.BeginForm:
 
 [!code-aspx[Main](getting-started-with-mvc-part7/samples/sample3.aspx)]
 
-Tady je kód uvedené v rámci rozhraní IDE.
+Tady je kód zobrazený v rámci rozhraní IDE.
 
-[![Filmy - sadu Microsoft Visual Web Developer 2010 Express (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
+[![Videa – Microsoft Visual Web Developer Express 2010 (10)](getting-started-with-mvc-part7/_static/image4.png)](getting-started-with-mvc-part7/_static/image3.png)
 
-Spusťte aplikaci a znovu přejděte /Movies/Create a klikněte na tlačítko vytvořit bez nutnosti zadávat žádná data. Chybové zprávy, které se zobrazí okamžitě bez stránce flash, že jsme přidružit k odesílání dat všechny způsob zpět na server. Toto je, protože rozhraní ASP.NET MVC je nyní ověření vstupu na obou klienta (pomocí jazyka JavaScript) a na serveru.
+Spusťte aplikaci a znovu navštívit /Movies/Create a klikněte na tlačítko vytvořit bez nutnosti zadávat žádná data. Chybové zprávy se zobrazí okamžitě bez flash, přidružené k odesílání dat na stránce všechny způsob, jakým zpět na server. Toto je vzhledem k tomu, že technologie ASP.NET MVC je nyní ověření vstupu u obou klienta (pomocí JavaScriptu) a na serveru.
 
 [![Vytvoření – Windows Internet Explorer](getting-started-with-mvc-part7/_static/image6.png)](getting-started-with-mvc-part7/_static/image5.png)
 
-To je vyhledávání dobrý! Přidejme jeden další sloupec teď do databáze.
+To je v pořádku. Pojďme nyní přidat jeden další sloupec databáze.
 
 > [!div class="step-by-step"]
 > [Předchozí](getting-started-with-mvc-part6.md)

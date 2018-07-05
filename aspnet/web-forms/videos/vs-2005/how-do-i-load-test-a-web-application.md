@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
-title: '[Jak na:] Zátěžový Test webové aplikace? | Microsoft Docs'
+title: '[Postup:] Zátěžový Test webové aplikace? | Dokumentace Microsoftu'
 author: rick-anderson
-description: Toto video vás provede procesem záznam webového testu a pak ho přehrání jako zátěžový Test, který simuluje více uživatelů. Vidíte, jak Visual Studio...
+description: Toto video vás provede procesem záznamu testu webu a pak ho přehráním jako zátěžový Test, který simuluje více uživatelů. Vidíme způsobu, jakým Visual Studio...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2007
 ms.topic: article
 ms.assetid: 2b0649d3-d072-446a-9918-b2648de26472
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
 msc.type: video
-ms.openlocfilehash: 582c0f2feef6d1086aba8c443309516043bff7e8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2efe8beddbe369f047e1e81467f4d48b5bcde333
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893996"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393797"
 ---
-<a name="how-do-i-load-test-a-web-application"></a>[Jak na:] Zátěžový Test webové aplikace?
+<a name="how-do-i-load-test-a-web-application"></a>[Postup:] Zátěžový Test webové aplikace?
 ====================
-podle [Menegay Jan](https://twitter.com/CMenegay)
+podle [Chris Menegay](https://twitter.com/CMenegay)
 
-Toto video vás provede procesem záznam webového testu a pak ho přehrání jako zátěžový Test, který simuluje více uživatelů. Vidíte, jak Visual Studio Team System umožňuje nastavit upozornění a kritickou mezní hodnoty využití prostředků serveru, který definuje, zda webová aplikace bude provedeno úspěšně, nebo selže zátěžový test.
+Toto video vás provede procesem záznamu testu webu a pak ho přehráním jako zátěžový Test, který simuluje více uživatelů. Vidíme, jak Visual Studio Team System vám umožní nastavit upozornění a kritickou mezní hodnoty využití prostředků serveru, která definuje, zda webová aplikace projde nebo selže zátěžového testu.
 
-[&#9654;Podívejte se na video (8 minutách)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-load-test-a-web-application)
+[&#9654;Podívejte se na video (8 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-load-test-a-web-application)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-practice-test-driven-development.md)

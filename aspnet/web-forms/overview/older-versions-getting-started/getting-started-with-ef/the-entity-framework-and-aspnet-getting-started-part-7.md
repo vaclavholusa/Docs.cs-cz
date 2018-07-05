@@ -1,144 +1,143 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
-title: Začínáme s databáze Entity Framework 4.0 nejprve a ASP.NET 4 webové formuláře – část 7 | Microsoft Docs
+title: Začínáme s Entity Framework 4.0 Database First a technologie ASP.NET 4 webových formulářů – 7. část | Dokumentace Microsoftu
 author: tdykstra
-description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET používající rozhraní Entity Framework. Vzorová aplikace je...
+description: Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvořit aplikace webových formulářů ASP.NET pomocí Entity Frameworku. Ukázková aplikace je...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
 ms.topic: article
 ms.assetid: f8afb245-b705-419c-8790-0b295e90d5e2
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: cb84f4f3e130fedb3e2f1a17d630767ff65bfa05
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 14ec7a22e9e00ac793fa5a278243e6406a212903
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886976"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401802"
 ---
-<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Začínáme s databáze Entity Framework 4.0 nejprve a 4 webových formulářů ASP.NET - část 7
+<a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Začínáme s Entity Framework 4.0 Database First a 4 webových formulářů ASP.NET – 7. část
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-> Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace webových formulářů ASP.NET pomocí sady Visual Studio 2010 a Entity Framework 4.0. Informace o kurzu řady najdete v tématu [první kurz v řadě](the-entity-framework-and-aspnet-getting-started-part-1.md)
+> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvořit aplikace webových formulářů ASP.NET pomocí Entity Framework 4.0 a Visual Studio 2010. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](the-entity-framework-and-aspnet-getting-started-part-1.md)
 
 
 ## <a name="using-stored-procedures"></a>Použití uložených procedur
 
-V tomto kurzu předchozí implementována vzor tabulky na hierarchii dědičnosti. Tento kurz vám ukáže, jak získat lepší kontrolu nad přístup k databázi pomocí uložené procedury.
+V předchozím kurzu jste implementovali vzoru pro tabulky na hierarchii dědičnosti. Tomto kurzu se dozvíte, jak získat lepší kontrolu nad přístup k databázi pomocí uložené procedury.
 
-Rozhraní Entity Framework umožňuje určit, že se mají používat uložené procedury pro přístup k databázi. Pro jakýkoli typ entity můžete používat k vytváření, aktualizaci a odstraňování entity typu uložené procedury. Potom v datovém modelu přidáte odkazy na uložené procedury, které můžete použít k provádění úloh, jako je například načítání sady entit.
+Entity Framework umožňuje určit, že ji by měl používat uložené procedury pro přístup k databázi. Pro každý typ entity můžete zadat uloženou proceduru pro vytvoření, aktualizace nebo odstranění entity daného typu. Potom v datovém modelu můžete přidat odkazy na uložené procedury, které můžete použít k provedení úlohy, třeba načítání sady entit.
 
-Použití uložených procedur je běžné požadavek pro přístup k databázi. V některých případech může správce databáze vyžadovat, aby veškerý přístup databáze projít uložené procedury z bezpečnostních důvodů. V ostatních případech můžete chtít obchodní logiky sestavení do některé z procesů, které rozhraní Entity Framework se používá při aktualizaci databáze. Vždy, když se odstraní entitu můžete chtít zkopírujte jej do archivu databáze. Nebo při každé aktualizaci řádku můžete chtít zapsat řádek do tabulky protokolování této záznamy, kteří provedli změny. Tyto druhy úloh můžete provádět v uložené procedury, která je volána, když rozhraní Entity Framework odstraní entitu nebo aktualizuje entitu.
+Použití uložených procedur je běžné požadavky pro přístup k databázi. V některých případech správce databáze může vyžadovat, aby všechny přístup k databázi projít uložené procedury z bezpečnostních důvodů. V ostatních případech můžete chtít vytvořit obchodní logiky na některé procesy, které používá Entity Framework při aktualizaci databáze. Například pokaždé, když se odstranění entity můžete zkopírovat do archivu databáze. Nebo pokaždé, když se aktualizuje řádek můžete zapsat řádek do tabulky protokolování, která zaznamenává, kteří provedli změnu. Tyto druhy úloh můžete provádět v uloženou proceduru, která je volána pokaždé, když se odstraní entitu rozhraní Entity Framework nebo aktualizuje entitu.
 
-Jako v předchozích kurzu vytvoříte nejsou žádné nové stránky. Místo toho změníte způsob rozhraní Entity Framework přistupovat k databázi pro některý ze stránek, které jste už vytvořili.
+Stejně jako v předchozím kurzu vytvoříte nejsou žádné nové stránky. Místo toho změníte způsob, jak Entity Framework připojí se k databázi pro některý ze stránky, které jste už vytvořili.
 
-V tomto kurzu vytvoříte uložené procedury v databázi pro vkládání `Student` a `Instructor` entity. Je přidáte do datového modelu, a specifikujete, že rozhraní Entity Framework by měl použít pro přidání `Student` a `Instructor` entity do databáze. Také vytvoříte uložené procedury, která můžete použít k načtení `Course` entity.
+V tomto kurzu vytvoříte uložené procedury v databázi pro vkládání `Student` a `Instructor` entity. Přidejte je do datového modelu, a specifikujete, že rozhraní Entity Framework by měl použít pro přidání `Student` a `Instructor` entity do databáze. Také vytvoříte uloženou proceduru, která slouží k načtení `Course` entity.
 
-## <a name="creating-stored-procedures-in-the-database"></a>Vytváření uložené procedury v databázi
+## <a name="creating-stored-procedures-in-the-database"></a>Vytvoření uložené procedury v databázi
 
-(Pokud používáte *School.mdf* souboru z projektu, které jsou k dispozici ke stažení v tomto kurzu, můžete přeskočit v této části, protože již existuje uložené procedury.)
+(Pokud používáte *School.mdf* soubor z projektu, které jsou k dispozici ke stažení v tomto kurzu, můžete tuto část přeskočit protože úložné procedury již neexistují.)
 
-V **Průzkumníka serveru**, rozbalte položku *School.mdf*, klikněte pravým tlačítkem na **uložené procedury**a vyberte **přidat novou uloženou proceduru**.
+V **Průzkumníka serveru**, rozbalte *School.mdf*, klikněte pravým tlačítkem na **uložené procedury**a vyberte **přidat novou uloženou proceduru**.
 
 [![image15](the-entity-framework-and-aspnet-getting-started-part-7/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image1.png)
 
-Zkopírujte následující příkazy SQL a vložte je do okna uložené procedury nahrazení kostru uložené procedury.
+Zkopírujte následující příkazy SQL a vložte je do okna uloženou proceduru nahrazení kostru uloženou proceduru.
 
 [!code-sql[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample1.sql)]
 
 [![image14](the-entity-framework-and-aspnet-getting-started-part-7/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image3.png)
 
-`Student` entit obsahuje čtyři vlastnosti: `PersonID`, `LastName`, `FirstName`, a `EnrollmentDate`. Databáze automaticky generuje hodnotu ID a uložené procedury přijímá parametry pro další tři. Uložená procedura vrací hodnoty klíče záznamu pro nový řádek tak, aby rozhraní Entity Framework můžete sledovat určité, ve verzi entity, který udržuje v paměti.
+`Student` entity nemají čtyři vlastnosti: `PersonID`, `LastName`, `FirstName`, a `EnrollmentDate`. Databáze automaticky generuje hodnotu ID a uložené procedury přijímá parametry pro další tři. Bude procedura vracet hodnoty klíče záznamu nový řádek tak, aby rozhraní Entity Framework můžete udržovat přehled o, který ve verzi entity, který udržuje v paměti.
 
-Uložte a zavřete okno uložené procedury.
+Uložte a zavřete okno uloženou proceduru.
 
-Vytvoření `InsertInstructor` uložené procedury stejným způsobem, pomocí následujících příkazů SQL:
+Vytvoření `InsertInstructor` uloženou proceduru stejným způsobem, pomocí následujících příkazů SQL:
 
 [!code-sql[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample2.sql)]
 
-Vytvoření `Update` uložené procedury pro `Student` a `Instructor` entity také. (Databáze již obsahuje `DeletePerson` uložené procedury, která bude funkční pro oba `Instructor` a `Student` entity.)
+Vytvoření `Update` uložené procedury pro `Student` a `Instructor` entity také. (Databáze již obsahuje `DeletePerson` uloženou proceduru, která bude fungovat pro obě `Instructor` a `Student` entity.)
 
 [!code-sql[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample3.sql)]
 
 [!code-sql[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample4.sql)]
 
-V tomto kurzu budete mapovat všechny tři funkce – insert, update a delete – ke každému typu entity. Rozhraní Entity Framework verze 4 umožňuje mapovat pouze jeden nebo dva z těchto funkcí k uloženým procedurám bez mapování ostatní, s jednou výjimkou: Pokud namapujete funkce aktualizace, ale není funkce odstranění, rozhraní Entity Framework vyvolá výjimku při můžete došlo k pokusu o odstranění entity. V rozhraní Entity Framework verze 3.5 neměl tolik flexibilitu při mapování uložené procedury: Pokud jste namapovali jednu funkci jste potřeba mapovat všechny tři.
+V tomto kurzu namapujete všechny tři funkce--insert, update a delete – pro každý typ entity. Rozhraní Entity Framework verze 4 umožňuje namapovat pouze jednu nebo dvě z nich fungovat tak, aby uložené procedury bez mapování jiné, s jednou výjimkou: Pokud namapujete funkce aktualizace, ale ne funkci odstranit, Entity Framework vyvolá výjimku při vám Pokus o odstranění entity. V rozhraní Entity Framework verze 3.5, neměl tolik flexibilitu při mapování uložené procedury: Pokud jste namapovali jednu funkci bylo nutné namapovat všechny tři.
 
-Pokud chcete vytvořit uložené procedury, která čte než aktualizuje data, vytvořte ten, který vybere všechny `Course` entity, pomocí následujících příkazů SQL:
+Vytvořit uloženou proceduru, která čte spíše než aktualizuje data, vytvořte ten, který vybere všechny `Course` entity, pomocí následujících příkazů SQL:
 
 [!code-sql[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample5.sql)]
 
-## <a name="adding-the-stored-procedures-to-the-data-model"></a>Přidávání do datového modelu uložené procedury
+## <a name="adding-the-stored-procedures-to-the-data-model"></a>Přidání uložených procedur do datového modelu
 
-Uložené procedury jsou nyní definována v databázi, ale je nutné je přidat do datového modelu, aby byly dostupné Entity Framework. Otevřete *SchoolModel.edmx*, klikněte pravým tlačítkem na návrhovou plochu a vyberte **aktualizovat Model z databáze**. V **přidat** kartě **zvolte si databázové objekty** dialogové okno, rozbalte seznam **uložené procedury**, vyberte nově vytvořenou uložené procedury a `DeletePerson` uložené procedury a potom klikněte na **Dokončit**.
+Uložené procedury je nyní definována v databázi, ale musí být přidán do datového modelu, aby byly dostupné pro Entity Framework. Otevřít *SchoolModel.edmx*, klikněte pravým tlačítkem na návrhové ploše a vyberte **aktualizace modelů z databáze**. V **přidat** karty **zvolte vaše databázové objekty** dialogového okna rozbalte **uložené procedury**, vyberte nově vytvořený uložených procedur a `DeletePerson` uložené procedury a potom klikněte na tlačítko **Dokončit**.
 
 [![image20](the-entity-framework-and-aspnet-getting-started-part-7/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image5.png)
 
 ## <a name="mapping-the-stored-procedures"></a>Mapování uložené procedury
 
-V Návrháři modelu dat, klikněte pravým tlačítkem myši `Student` entity a vyberte **uložené procedury mapování**.
+V Návrháři modelů dat, klikněte pravým tlačítkem myši `Student` entity a vyberte **mapování uložené procedury**.
 
 [![image21](the-entity-framework-and-aspnet-getting-started-part-7/_static/image8.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image7.png)
 
-**Podrobnosti mapování** zobrazí se okno, ve kterém můžete zadat uložené procedury, které by měl používat rozhraní Entity Framework pro vložení, aktualizaci a odstraňování entit tohoto typu.
+**Podrobnosti mapování** zobrazí se okno, ve kterém můžete zadat uložené procedury, které by měl používat Entity Framework pro vkládání, aktualizaci a odstraňování entit tohoto typu.
 
 [![image22](the-entity-framework-and-aspnet-getting-started-part-7/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image9.png)
 
-Nastavte **vložit** funkci, aby se **InsertStudent**. Okno zobrazuje seznam parametrů uložené procedury, každý z nich musí být namapovaný na vlastnost entity. Dvě z nich jsou mapovány automaticky protože názvy jsou stejné. Neexistuje vlastnost s názvem entity `FirstName`, takže musíte ručně vybrat `FirstMidName` z rozevíracího seznamu, která se zobrazují vlastnosti dostupné entity. (Je to proto, že jste změnili název `FirstName` vlastnost `FirstMidName` z prvního kurzu.)
+Nastavte **vložit** funkce **InsertStudent**. V okně se seznamem parametrů uložené procedury, z nichž každý musí být namapována na vlastnost entity. Automaticky dvě z nich jsou mapovány názvy jsou stejné. Není žádná vlastnost entity s názvem `FirstName`, proto musíte ručně vybrat `FirstMidName` z rozevíracího seznamu, který zobrazuje vlastnosti dostupné entity. (Je to proto, že jste změnili název `FirstName` vlastnost `FirstMidName` v první kurz.)
 
 [![image23](the-entity-framework-and-aspnet-getting-started-part-7/_static/image12.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image11.png)
 
-Ve stejném **podrobnosti mapování** okno, mapy `Update` funkci, aby se `UpdateStudent` uložené procedury (je nutné zadat `FirstMidName` jako hodnota parametru pro `FirstName`, stejně jako u `Insert` uložené procedury) a `Delete` funkci, aby se `DeletePerson` uložené procedury.
+Ve stejném **podrobnosti mapování** okna, mapování `Update` funkce `UpdateStudent` uložené procedury (ujistěte se, že zadáte `FirstMidName` jako hodnota parametru pro `FirstName`, jako jste to udělali `Insert` uložená procedura) a `Delete` funkce `DeletePerson` uložené procedury.
 
 [![image01](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
 
-Použijte stejný postup mapování insert, update a delete uložené procedury pro vyučující k `Instructor` entity.
+Použijte stejný postup k mapování insert, update a delete Instruktoři do uložených procedur `Instructor` entity.
 
 [![image02](the-entity-framework-and-aspnet-getting-started-part-7/_static/image16.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image15.png)
 
-Pro uložené procedury, které čtou místo aktualizace dat, můžete použít **prohlížeče modelu** okno Mapovat uloženou proceduru v entitě typu vrátí. V Návrháři modelu dat, klikněte pravým tlačítkem na návrhové plochy a vyberte možnost **prohlížeče modelu**. Otevřete **SchoolModel.Store** uzel a potom otevřete **uložené procedury** uzlu. Klikněte pravým tlačítkem `GetCourses` uložené procedury a vyberte **přidat importu funkce**.
+Pro uložené procedury, které čtou místo aktualizace dat, je použít **prohlížeč modelu** okna pro mapování na entitu uloženou proceduru zadejte jej vrátí. V Návrháři modelů dat, klikněte pravým tlačítkem na návrhové ploše a vyberte **prohlížeč modelu**. Otevřete **SchoolModel.Store** uzlu a pak otevřete **uložené procedury** uzlu. Klepněte pravým tlačítkem myši `GetCourses` uložené procedury a vyberte **přidání importované funkce**.
 
 [![image24](the-entity-framework-and-aspnet-getting-started-part-7/_static/image18.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image17.png)
 
-V **přidat importu funkce** dialogovém **vrátí kolekce z** vyberte **entity**a potom vyberte `Course` vrácena jako typ entity. Když jste hotovi, klikněte na tlačítko **OK**. Uložte a zavřete *.edmx* souboru.
+V **přidání importované funkce** dialogovém okně **vrátí kolekce z** vyberte **entity**a pak vyberte `Course` vrácena jako typ entity. Jakmile budete hotovi, klikněte na tlačítko **OK**. Uložte a zavřete *edmx* souboru.
 
 [![image25](the-entity-framework-and-aspnet-getting-started-part-7/_static/image20.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image19.png)
 
-## <a name="using-insert-update-and-delete-stored-procedures"></a>Pomocí vložit, aktualizovat a odstraňovat uložené procedury
+## <a name="using-insert-update-and-delete-stored-procedures"></a>Pomocí vložení, aktualizace a odstranění uložených procedur
 
-Uložené procedury chcete vložit, aktualizovat a odstraňovat data jsou používány rozhraní Entity Framework automaticky po jejich přidání do datového modelu a mapovat je na odpovídající entity. Teď můžete spustit *StudentsAdd.aspx* stránky, a pokaždé, když vytvoříte nový student, bude používat rozhraní Entity Framework `InsertStudent` uložené procedury, chcete-li přidat nový řádek, abyste `Student` tabulky.
+Uložené procedury pro vložení, aktualizace a odstranění dat se používají rozhraním Entity Framework automaticky po přidání do datového modelu a namapované na odpovídající entity. Teď můžete spustit *StudentsAdd.aspx* stránky, a při každém vytvoření nového objektu student používá Entity Framework `InsertStudent` uložené procedury, chcete-li přidat nový řádek `Student` tabulky.
 
 [![image03](the-entity-framework-and-aspnet-getting-started-part-7/_static/image22.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image21.png)
 
-Spustit *Students.aspx* stránky a Nový student se zobrazí v seznamu.
+Spustit *Students.aspx* stránky a nového objektu student se zobrazí v seznamu.
 
 [![image04](the-entity-framework-and-aspnet-getting-started-part-7/_static/image24.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image23.png)
 
-Změňte název ověřte, že funkce aktualizace funguje a pak odstraňte studenty do ověřte, že funkce Odstranit funguje.
+Změnit název, který chcete ověřit, že aktualizace funkce funguje a pak odstraňte studenta ověřit fungování funkce odstranit.
 
 [![image05](the-entity-framework-and-aspnet-getting-started-part-7/_static/image26.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image25.png)
 
-## <a name="using-select-stored-procedures"></a>Použití vyberte uložených procedur
+## <a name="using-select-stored-procedures"></a>Použití uložených procedur Select
 
-Rozhraní Entity Framework nespustí automaticky uložené procedury, jako `GetCourses`, a nebude možné použít s `EntityDataSource` ovládacího prvku. Jejich použití, můžete je volat z kódu.
+Entity Framework nespustí automaticky uložené procedury jako `GetCourses`, a nelze je použít `EntityDataSource` ovládacího prvku. K jejich použití, můžete je volat z kódu.
 
-Otevřete *InstructorsCourses.aspx.cs* souboru. `PopulateDropDownLists` Metoda používá k načtení všech entit kurzu tak, aby můžete projít v seznamu a zjistit, které z nich je přiřazen lektorem a ty, které nepřiřazené dotaz LINQ entity:
+Otevřít *InstructorsCourses.aspx.cs* souboru. `PopulateDropDownLists` Metoda používá dotaz LINQ entity k načtení všech entit kurzu tak, aby můžete projít seznam a určit ty, které je přiřazeno instruktorem a ty, které nepřiřazené:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample6.cs)]
 
-Nahraďte ho následujícím kódem:
+Nahraďte následujícím kódem:
 
 [!code-csharp[Main](the-entity-framework-and-aspnet-getting-started-part-7/samples/sample7.cs)]
 
-Stránka teď používá `GetCourses` uložené procedury načíst seznam všech kurzů. Spusťte stránku a ověřte, že funguje jako předtím.
+Na stránce teď používá `GetCourses` uložené procedury k získání seznamu všech kurzů. Spuštění stránky a zkontrolujte, jestli funguje stejně jako dříve.
 
-(Vlastnosti navigace entit získaných pomocí uložené procedury nemusí být automaticky naplněna data související s těmito entitami, v závislosti na `ObjectContext` výchozí nastavení. Další informace najdete v tématu [načítání související objekty](https://msdn.microsoft.com/library/bb896272.aspx) v knihovně MSDN.)
+(Vlastnosti navigace entit pomocí uložené procedury nemusí být automaticky vyplní data související s těmito entitami, v závislosti na `ObjectContext` výchozí nastavení. Další informace najdete v tématu [načítání související objekty](https://msdn.microsoft.com/library/bb896272.aspx) v knihovně MSDN.)
 
-V dalším kurzu dozvíte, jak bylo snazší program a testování pravidla formátování a ověření dat pomocí funkce Dynamická Data. Místo zadání na každý pravidla webové stránky, jako jsou třeba řetězce formátu data a zda pole je požadováno, tato pravidla můžete zadat v metadatech datového modelu a automaticky se použijí na každé stránce.
+V dalším kurzu se naučíte jak usnadňují programu a test pravidla formátování i ověřování dat pomocí funkce Dynamická Data. Místo zadání na každé webové stránky pravidla, jako jsou třeba řetězce formátu data a určuje, jestli pole je povinné, tato pravidla můžete zadat v metadatech datového modelu a automaticky se použijí na každé stránce.
 
 > [!div class="step-by-step"]
 > [Předchozí](the-entity-framework-and-aspnet-getting-started-part-6.md)

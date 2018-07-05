@@ -1,123 +1,122 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
-title: Vytváření a spouštění nasazení příkaz Soubor | Microsoft Docs
+title: Soubor příkazů pro vytvoření a spuštění nasazení | Dokumentace Microsoftu
 author: jrjlee
-description: Toto téma popisuje, jak vytvořit soubor příkazů, které vám umožní spustit nasazení, které využívá soubory projektu Microsoft Build Engine (MSBuild) jako jeden krok, znovu...
+description: Toto téma popisuje, jak vytvořit soubor příkazů, který vám umožní spustit nasazení, které využívá Microsoft Build Engine (MSBuild) souborů projektu jako jeden krok, re...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: c61560e9-9f6c-4985-834a-08a3eabf9c3c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: e5fb034a67bc9f2ea549af269eae51a49acc4d98
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fc59920feb5eb48bc8150606b58a1ed4ba60ee92
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891175"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395370"
 ---
-<a name="creating-and-running-a-deployment-command-file"></a>Vytváření a spouštění soubor příkazů nasazení
+<a name="creating-and-running-a-deployment-command-file"></a>Vytvoření a spuštění souboru příkazů k nasazení
 ====================
 podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Toto téma popisuje, jak vytvořit soubor příkazů, které vám umožní spuštění pomocí souborů projektu Microsoft Build Engine (MSBuild) jako jeden krok, opakovatelných procesu nasazení.
+> Toto téma popisuje, jak vytvořit soubor příkazů, který vám umožní spustit nasazení, které využívá Microsoft Build Engine (MSBuild) souborů projektu jako krokování a opakovatelného procesu.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [obraťte se na správce](the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
+Toto téma je součástí série kurzů podle požadavků na nasazení enterprise fiktivní společnosti s názvem společnosti Fabrikam, Inc. V této sérii kurzů používá ukázkové řešení&#x2014; [Správce kontaktů](the-contact-manager-solution.md) řešení&#x2014;představující webovou aplikaci s realistické úroveň složitosti, včetně aplikace ASP.NET MVC 3, komunikace Windows Služba Foundation (WCF) a databázový projekt.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [Principy procesu sestavení](understanding-the-build-process.md), ve které je řízené procesu sestavení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metody nasazení v srdci těchto kurzů je založen na rozdělení přístupu soubor projektu je popsáno v [Principy procesu sestavení](understanding-the-build-process.md), ve které je řízena procesem sestavení dva soubory projektu&#x2014;jeden obsahující pokyny, které platí pro všechny cílové prostředí a jeden obsahuje nastavení pro konkrétní prostředí sestavení a nasazení pro sestavení. V okamžiku sestavení souboru projektu specifických pro prostředí se sloučí do souboru projektu bez ohledu na prostředí a vytvoří kompletní sadu pokynů sestavení.
 
 ## <a name="process-overview"></a>Přehled procesu
 
-V tomto tématu se dozvíte, jak vytvořit a spustit soubor příkazů, který používá tyto soubory projektu pro provedení opakované nasazení do cílového prostředí. V podstatě příkazového řádku jednoduše tak, aby obsahovala příkaz MSBuild který:
+V tomto tématu se dozvíte, jak vytvořit a spustit příkaz soubor, který používá tyto soubory projektu nasazení opakovatelným na vaše cílové prostředí. V podstatě souboru příkazů jednoduše musí obsahovat příkaz MSBuild, který:
 
-- Informuje MSBuild provést v prostředí bez ohledu na *Publish.proj* souboru.
-- Informuje *Publish.proj* souboru, soubor, který obsahuje nastavení projektu konkrétní prostředí a kde najít ho.
+- Dává pokyn ke spuštění prostředí bez ohledu na MSBuild *Publish.proj* souboru.
+- Říká *Publish.proj* souboru, soubor, který obsahuje nastavení projektu pro konkrétní prostředí a kde ho najít.
 
-## <a name="create-an-msbuild-command"></a>Vytvořit příkaz nástroje MSBuild
+## <a name="create-an-msbuild-command"></a>Vytvoření příkazu MSBuild
 
-Jak je popsáno v [Principy procesu sestavení](understanding-the-build-process.md), soubor projektu konkrétní prostředí&#x2014;například *Env Dev.proj*&#x2014;slouží k importu do prostředí na úlohách *Publish.proj* souboru v čase vytvoření buildu. Společně poskytují tyto dva soubory kompletní sada pokynů, které informují MSBuild, jak vytvořit a nasadit řešení.
+Jak je popsáno v [Principy procesu sestavení](understanding-the-build-process.md), soubor projektu specifických pro prostředí&#x2014;například *Env Dev.proj*&#x2014;slouží k importu do prostředí nezávislá *Publish.proj* soubor v okamžiku sestavení. Tyto dva soubory společně poskytují kompletní sadu pokynů, které informují MSBuild, jak sestavit a nasadit řešení.
 
-*Publish.proj* soubor používá **importovat** elementu, který chcete importovat soubor projektu konkrétní prostředí.
+*Publish.proj* soubor používá **importovat** – element pro import souboru projektu pro konkrétní prostředí.
 
 
 [!code-xml[Main](creating-and-running-a-deployment-command-file/samples/sample1.xml)]
 
 
-Jako takový když použijete MSBuild.exe sestavení a nasazení řešení. Obraťte se na správce, budete muset:
+V důsledku toho použijete-li vytvářet a nasazovat řešení Správce kontaktů MSBuild.exe, musíte:
 
-- Spustit MSBuild.exe na *Publish.proj* souboru.
-- Zadejte umístění souboru projektu konkrétní prostředí zadáním příkazového řádku parametr s názvem **TargetEnvPropsFile**.
+- Spouštět MSBuild.exe *Publish.proj* souboru.
+- Zadejte umístění souboru projektu pro konkrétní prostředí zadáním příkazového řádku parametr s názvem **TargetEnvPropsFile**.
 
-K tomuto účelu MSBuild příkazu by měl vypadat přibližně takto:
+K tomuto účelu nástroj MSBuild příkazu by měl vypadat takto:
 
 
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample2.cmd)]
 
 
-Tady je jednoduchý kroku a přesunu do opakovatelné a krokování nasazení. Všechny, které musíte udělat je přidání příkazu MSBuild do souboru CMD. V řešení obraťte se na správce, publikovat složky obsahuje soubor s názvem *publikovat Dev.cmd* který přesně to provádí.
+Tady je jednoduchý kroku a přesunu do nasazení opakovatelným a krokování. Všechno, co musíte udělat, je přidání příkazu MSBuild do souboru .cmd. V řešení Správce kontaktů publikovat složka obsahuje soubor s názvem *publikovat Dev.cmd* , který přesně to dělá.
 
 
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample3.cmd)]
 
 
 > [!NOTE]
-> **/Fl** přepínač dá pokyn MSBuild vytvořit soubor protokolu s názvem *msbuild.log* v pracovním adresáři, ve kterém byl vyvolán MSBuild.exe.
+> **/Fl** přepínač nastaví nástroj MSBuild vytvoří soubor protokolu s názvem *msbuild.log* v pracovním adresáři, ve kterém se vyvolala MSBuild.exe.
 
 
-Nasazení nebo znovu nasadit řešení obraťte se na správce, stačí provést spuštění *publikovat Dev.cmd* souboru. Při spuštění souboru, bude MSBuild:
+Nasazení nebo znovu nasadit řešení Správce kontaktů, stačí provést spuštění *publikovat Dev.cmd* souboru. Když spustíte tento soubor, bude nástroj MSBuild:
 
-- Vytvořte všechny projekty v řešení.
-- Generovat nasadit webových balíčků pro projekty webových aplikací.
+- Sestavte všechny projekty v řešení.
+- Generovat nasaditelný webových balíčků pro projekty webových aplikací.
 - Generovat .dbschema a .deploymanifest souborů pro databázové projekty.
-- Balíčky webového nasazení na webový server.
-- K databázovému serveru nasazení databáze.
+- Nasazení webových balíčků na webový server.
+- Nasazení databáze na serveru databáze.
 
 ## <a name="run-the-deployment"></a>Spustit nasazení
 
-Když vytvoříte soubor příkazů pro cílové prostředí byste měli mít k dokončení celého nasazení jednoduše spuštěním souboru.
+Když vytvoříte soubor příkazů pro cílové prostředí byste měli dokončit celé nasazení jednoduše spuštěním souboru.
 
-**K nasazení řešení. Obraťte se na správce vašeho testovacího prostředí**
+**K nasazení řešení Správce kontaktů na vašem testovacím prostředí**
 
-1. Na pracovní stanici developer, otevřete Průzkumníka Windows a pak přejděte do umístění *publikovat Dev.cmd* souboru.
-2. Poklikejte na soubor ji spustit.
-3. Pokud **otevření souboru – upozornění zabezpečení** se zobrazí dialogové okno, klikněte na tlačítko **spustit**.
-4. Pokud je nastaven nastavení konfigurace a testovací servery správně, okna příkazového řádku se zobrazí **sestavení bylo úspěšné** zprávu po dokončení zpracování souborů projektu nástroje MSBuild.
+1. Na vaši vývojářskou pracovní stanici, otevřete Průzkumníka Windows a pak přejděte do umístění *publikovat Dev.cmd* souboru.
+2. Poklikejte na soubor a spustíme ji.
+3. Pokud **otevření souboru – upozornění zabezpečení** dialogové okno se zobrazí, klikněte na tlačítko **spustit**.
+4. Pokud nastavení konfigurace a testovací servery jsou nastaveny správně, okna příkazového řádku se zobrazí **úspěšnými Buildy** zprávu po dokončení zpracování souborů projektu MSBuild.
 
     ![](creating-and-running-a-deployment-command-file/_static/image1.png)
-5. Pokud je při prvním nasazení řešení do prostředí tohoto nástroje, budete muset přidat účet počítače serveru webového testu k **db\_datawriter** a **db\_DataReader –** rolí na **ContactManager** databáze. Tento postup je popsaný v [konfigurace databáze serveru pro webové nasazení publikování](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md).
+5. Pokud to je poprvé, kdy jste nasadili řešení do tohoto prostředí, budete muset přidat účet počítače serveru webového testu k **db\_datawriter nesmí být** a **db\_datareader**role na **ContactManager** databáze. Tento postup je popsaný v [konfigurace databázového serveru pro publikování nasazení na webu](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md).
 
     > [!NOTE]
-    > Potřebujete tato oprávnění přiřadit, když vytvoříte databázi. Ve výchozím nastavení, procesu sestavení nebude znovu vytvořit databázi na každé nasazení&#x2014;místo toho porovná existující databázi a schéma nejnovější a proveďte pouze požadované změny. V důsledku toho by měla pouze potřebujete namapovat tyto databázové role při prvním nasazení řešení.
-6. Otevřete Internet Explorer a přejděte na adresu URL aplikace, obraťte se na správce (například `http://testweb1:85/ContactManager/`).
-7. Ověřte, že aplikace funguje podle očekávání a vy budete moci přidat kontakty.
+    > Potřebujete pouze přiřadit tato oprávnění, když vytvoříte databázi. Ve výchozím nastavení, proces sestavení nebude znovu vytvořit databázi na každé nasazení&#x2014;místo toho se porovnat existující databázi a nejnovější schéma a provádět pouze změny, které vyžaduje. V důsledku toho by měla pouze potřeba namapovat tyto databázové role při prvním nasazení řešení.
+6. Spusťte aplikaci Internet Explorer a přejděte na adresu URL aplikace Správce kontaktů (například `http://testweb1:85/ContactManager/`).
+7. Ověřte, že aplikace funguje podle očekávání a budete moct přidat kontakty.
 
     ![](creating-and-running-a-deployment-command-file/_static/image2.png)
 
 ## <a name="conclusion"></a>Závěr
 
-Vytvoření souboru příkaz, který obsahuje vaše pokyny MSBuild nabízí rychlý a snadný způsob vytváření a nasazování řešení vícenásobného projektu v určitém cílovém prostředí. Pokud potřebujete opakovaně nasadit řešení v prostředí s více cílové, můžete vytvořit více příkazové soubory. Do každého souboru příkaz příkaz MSBuild budete stavět stejný soubor universal projektu, ale specifikujete soubor jiný projekt konkrétní prostředí. Soubor příkazů publikování do vývojář nebo testovacím prostředí, může například obsahovat tento příkaz nástroje MSBuild:
+Vytváření souboru příkazů obsahující pokyny k MSBuild poskytuje rychlý a snadný způsob sestavování a nasazování řešení vícenásobného projektu pro konkrétní cílové prostředí. Pokud je potřeba opakované nasazení svého řešení do cílového prostředí s více, můžete vytvořit více souborů příkazů. V každém souboru příkaz příkaz MSBuild se sestaví stejný soubor projektu univerzální, ale určí soubor jiného projektu pro konkrétní prostředí. Soubor příkazů publikovat vývojáři nebo testovací prostředí může obsahovat například tento příkaz MSBuild:
 
 
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample4.cmd)]
 
 
-Tento příkaz nástroje MSBuild může obsahovat soubor příkazů pro publikování do pracovní prostředí:
+Soubor příkazů k publikování do přípravného prostředí může obsahovat tento příkaz MSBuild:
 
 
 [!code-console[Main](creating-and-running-a-deployment-command-file/samples/sample5.cmd)]
 
 
 > [!NOTE]
-> Pokyny k přizpůsobení souborů projektu specifický pro vaše vlastní prostředí serveru najdete v tématu [nakonfigurovat vlastnosti nasazení pro cílové prostředí](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
+> Pokyny k přizpůsobení souborů projektu specifických pro prostředí pro prostředí serveru, naleznete v tématu [nakonfigurovat vlastnosti nasazení pro cílové prostředí](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md).
 
 
-Přepsání vlastností nebo nastavení různé další přepínače v příkazu MSBuild můžete také upravit procesu sestavení pro každé prostředí. Další informace najdete v tématu [příkazového řádku MSBuild – Reference](https://msdn.microsoft.com/library/ms164311.aspx).
+Můžete také přizpůsobit proces sestavení pro jednotlivá prostředí přepsání vlastností nebo nastavením různé jinými přepínači ve svých rukou nástroje MSBuild. Další informace najdete v tématu [MSBuild Command Line Reference](https://msdn.microsoft.com/library/ms164311.aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](deploying-database-projects.md)

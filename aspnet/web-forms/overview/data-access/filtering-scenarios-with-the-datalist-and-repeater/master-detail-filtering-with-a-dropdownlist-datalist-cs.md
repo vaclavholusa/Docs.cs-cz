@@ -1,42 +1,41 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
-title: Filtrování s rozevírací seznam (C#) podrobností | Microsoft Docs
+title: Ovládacím prvkem DropDownList (C#) filtrování záznamů Master/Detail | Dokumentace Microsoftu
 author: rick-anderson
-description: V tomto kurzu jsme zjistit, jak zobrazit sestavy a podrobností v jednu webovou stránku zobrazit "hlavní" záznamy a DataList s upozorněním pomocí DropDownLists...
+description: V tomto kurzu jsme zjistit, jak zobrazení záznamů master/detail sestav v jedné webové stránky s využitím DropDownLists zobrazíte "hlavní" záznamy a a v prvku DataList s upozorněním...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
 ms.topic: article
 ms.assetid: 07fa47ae-e491-4a2f-b265-d342b9ddef46
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c84902ccf028c976246380abfaebb6a76c573603
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8af99dec92050f6d3b64919d06e7bc0ddc19e083
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880671"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389671"
 ---
-<a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Seznam podrobnosti filtrování s rozevírací seznam (C#)
+<a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Ovládacím prvkem DropDownList (C#) filtrování záznamů Master/Detail
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_33_CS.exe) nebo [stáhnout PDF](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/datatutorial33cs1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_33_CS.exe) nebo [stahovat PDF](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/datatutorial33cs1.pdf)
 
-> V tomto kurzu jsme naleznete v části zobrazit sestavy a podrobností v jedné webové stránce pomocí DropDownLists zobrazíte "hlavní" záznamů a DataList zobrazit podrobnosti "o".
+> V tomto kurzu jsme naleznete v části zobrazení sestav záznamů master/detail v jedné webové stránky s využitím DropDownLists zobrazíte DataList zobrazíte "details" a "hlavní" záznamů.
 
 
 ## <a name="introduction"></a>Úvod
 
-A podrobností zprávu, která nejprve vytvořené pomocí GridView v dříve [a podrobností filtrování s rozevírací seznam](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) kurzu začne tím, že zobrazuje některé sady záznamů "hlavní". Uživatele můžete pak rozbalit soubor jeden hlavní záznamy, a tím zobrazení daného záznamu hlavní "podrobností." Sestavy a podrobností jsou se ideálním řešením pro vizualizaci na více relací a zobrazení podrobných informací z zvlášť "širokou" tabulky (ta, která mají mnoho sloupců). Jsme jste prozkoumali implementaci použití ovládacích prvků GridView a DetailsView v předchozí kurzy sestavy a podrobností. V tomto kurzu a další dvě budete nám prozkoumat tyto koncepty, ale soustředí na pomocí DataList a místo toho řídí opakovače.
+Sestava hlavních záznamů/podrobností, která nejprve vytvořené pomocí GridView v předchozím [filtrování záznamů Master/Detail s DropDownList](../masterdetail/master-detail-filtering-with-a-dropdownlist-cs.md) kurzu začíná tím, že zobrazuje některé sady záznamů "hlavní". Uživatel pak přejít ke jeden z hlavních záznamů, a tím zobrazení hlavního záznamu "podrobností." Záznamů master/detail sestavy jsou ideálním řešením pro vizualizaci vztahů 1 n a pro zobrazení podrobných informací z zejména "širokých" tabulek (těch, které mají velký počet sloupců). Jak implementovat záznamů master/detail sestavy, které používají ovládací prvky GridView a DetailsView v předchozích kurzech jste Prozkoumali jsme. V tomto kurzu a další dva bude nám prozkoumat tyto koncepty, ale zaměření na používání ovládacích prvků DataList a Repeater řídí místo toho.
 
-V tomto kurzu budeme zabývat pomocí rozevírací seznam obsahuje záznamy "hlavní", "Podrobnosti" záznamy zobrazeny v DataList.
+V tomto kurzu se podíváme na použití DropDownList obsahuje záznamy "hlavní", "Podrobnosti" záznamy zobrazeny v a v prvku DataList.
 
-## <a name="step-1-adding-the-masterdetail-tutorial-web-pages"></a>Krok 1: Přidání a podrobností kurz webové stránky
+## <a name="step-1-adding-the-masterdetail-tutorial-web-pages"></a>Krok 1: Přidání záznamů Master/Detail kurz webových stránek
 
-Než začneme v tomto kurzu, můžeme nejdřív za chvíli přidat složky a stránek ASP.NET, které budeme potřebovat pro tento kurz a další dva týkajících se použití ovládacích prvků DataList a opakovače sestavy a podrobností. Začněte vytvořením novou složku v projektu s názvem `DataListRepeaterFiltering`. Dál přidejte následující pět stránek ASP.NET do této složky rozmístit nakonfigurované na používání stránky předlohy `Site.master`:
+Než začneme v tomto kurzu, nejprve věnujte chvíli přidat složky a stránek ASP.NET, kterou potřebujeme pro tento kurz a další dva pracující se sestavami záznamů master/detail pomocí ovládacích prvků DataList a Repeater. Začněte tím, že vytvoříte novou složku v projektu s názvem `DataListRepeaterFiltering`. Dále přidejte následující pět stránek ASP.NET do této složky s všechny z nich nakonfigurovat tak, aby na hlavní stránce `Site.master`:
 
 - `Default.aspx`
 - `FilterByDropDownList.aspx`
@@ -45,20 +44,20 @@ Než začneme v tomto kurzu, můžeme nejdřív za chvíli přidat složky a str
 - `CategoriesAndProducts.aspx`
 
 
-![Vytvořte složku DataListRepeaterFiltering a přidání stránky kurz ASP.NET](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image1.png)
+![Vytvořte složku DataListRepeaterFiltering a přidávání stránek kurz ASP.NET](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image1.png)
 
-**Obrázek 1**: vytvoření `DataListRepeaterFiltering` složky a přidat stránky kurz ASP.NET
-
-
-Dále otevřete `Default.aspx` stránky a přetáhněte ji `SectionLevelTutorialListing.ascx` uživatelský ovládací prvek z `UserControls` složky na návrhovou plochu. Tento uživatelský ovládací prvek, který jsme vytvořili v [hlavní stránky a webové navigace](../introduction/master-pages-and-site-navigation-cs.md) kurzu mapy webu a zobrazí výčet kurzů k z aktuálního oddílu v seznamu s odrážkami.
+**Obrázek 1**: vytvoření `DataListRepeaterFiltering` složky a přidávání stránek kurz ASP.NET
 
 
-[![Přidání SectionLevelTutorialListing.ascx uživatelského ovládacího prvku do Default.aspx](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image2.png)
-
-**Obrázek 2**: Přidat `SectionLevelTutorialListing.ascx` uživatelského ovládacího prvku na `Default.aspx` ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image4.png))
+Dále otevřete `Default.aspx` stránku a přetáhněte ji `SectionLevelTutorialListing.ascx` uživatelského ovládacího prvku od `UserControls` složky na návrhovou plochu. Tento uživatelský ovládací prvek, který jsme vytvořili v [stránky předlohy a navigace na webu](../introduction/master-pages-and-site-navigation-cs.md) kurzu mapy webu a zobrazí výčet kurzy z aktuálního oddílu v seznamu s odrážkami.
 
 
-Pokud chcete mít v zobrazení seznamu s odrážkami kurzy a podrobností, které jsme budete vytvářet, je třeba je přidáte do mapy webu. Otevřete `Web.sitemap` souboru a přidejte následující kód po značku "Zobrazení dat pomocí DataList a opakovače" mapy webu uzlu:
+[![Přidat na stránku Default.aspx SectionLevelTutorialListing.ascx uživatelského ovládacího prvku](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image3.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image2.png)
+
+**Obrázek 2**: Přidejte `SectionLevelTutorialListing.ascx` uživatelský ovládací prvek `Default.aspx` ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image4.png))
+
+
+Pokud chcete zobrazit seznam s odrážkami záznamů master/detail kurzy, které nám budete vytvářet, potřebujeme přidat je do mapy webu. Otevřít `Web.sitemap` a přidejte následující kód za kód uzel mapy webu "Zobrazení dat s ovládacích prvcích DataList a Repeater":
 
 [!code-xml[Main](master-detail-filtering-with-a-dropdownlist-datalist-cs/samples/sample1.xml)]
 
@@ -68,120 +67,120 @@ Pokud chcete mít v zobrazení seznamu s odrážkami kurzy a podrobností, kter�
 **Obrázek 3**: aktualizace mapy webu zahrnout nové stránky ASP.NET
 
 
-## <a name="step-2-displaying-the-categories-in-a-dropdownlist"></a>Krok 2: Zobrazení kategorií v rozevírací seznam
+## <a name="step-2-displaying-the-categories-in-a-dropdownlist"></a>Krok 2: Zobrazení kategorií v DropDownList
 
-Naše a podrobností sestava zobrazí seznam kategorií v rozevírací seznam, s produkty položce vybrané seznamu zobrazí další dolů na stránce v DataList. První úlohou před nám, se pak se zobrazí v rozevírací seznam kategorií. Začněte otevřením `FilterByDropDownList.aspx` stránku `DataListRepeaterFiltering` složku a přetáhněte rozevírací seznam z panelu nástrojů na stránky návrháře. Dále nastavte rozevírací seznam `ID` vlastnost `Categories`. Klikněte na odkaz zvolit zdroj dat z inteligentních značek rozevírací seznam a vytvořit nové ObjectDataSource s názvem `CategoriesDataSource`.
-
-
-[![Přidat nové ObjectDataSource s názvem CategoriesDataSource](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image6.png)
-
-**Obrázek 4**: Přidání nové ObjectDataSource s názvem `CategoriesDataSource` ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image8.png))
+Naší sestavy záznamů master/detail zobrazí seznam kategorií v DropDownList, s produkty položku vybraného seznamu zobrazí další dolů na stránce v a v prvku DataList. První úkol náskok před nám, pak je kategorie zobrazuje v DropDownList. Začněte otevřením `FilterByDropDownList.aspx` stránku `DataListRepeaterFiltering` složky a DropDownList přetáhněte z panelu nástrojů do návrháře na stránce. Dále nastavte DropDownList `ID` vlastnost `Categories`. Klikněte na odkaz zvolit zdroj dat z inteligentních značek DropDownList a vytvoření nového prvku ObjectDataSource s názvem `CategoriesDataSource`.
 
 
-Konfigurace nového ObjectDataSource tak, aby vyvolá `CategoriesBLL` třídy `GetCategories()` metoda. Po dokončení konfigurace ObjectDataSource musíme určit, jaké pole datového zdroje, které mají být zobrazeny v rozevírací seznam a které jeden by měly být přidruženy jako hodnota pro každou položku seznamu. Máte `CategoryName` pole jako zobrazení a `CategoryID` jako hodnota pro každou položku seznamu.
+[![Přidat nový prvek ObjectDataSource s názvem CategoriesDataSource](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image7.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image6.png)
+
+**Obrázek 4**: přidejte nový prvek ObjectDataSource s názvem `CategoriesDataSource` ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image8.png))
 
 
-[![Mají zobrazení rozevírací seznam CategoryName pole a použití CategoryID jako hodnota](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image9.png)
-
-**Obrázek 5**: mít zobrazení rozevírací seznam `CategoryName` pole a použití `CategoryID` jako hodnotu ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image11.png))
+Konfigurace nového prvku ObjectDataSource tak, že ji vyvolá `CategoriesBLL` třídy `GetCategories()` metody. Po dokončení konfigurace prvek ObjectDataSource, musíme určit, jaké pole zdroje dat mají být zobrazeny v DropDownList a které jedna by měla být přiřazen jako hodnota pro každou položku seznamu. Máte `CategoryName` pole jako zobrazení a `CategoryID` jako hodnotu pro každou položku seznamu.
 
 
-V tomto okamžiku máme ovládací prvek rozevírací seznam, který se zobrazí v záznamy ze `Categories` tabulky (všechny dosáhnout přibližně šest sekund). Obrázek 6 zobrazuje naše průběh doposud, když zobrazit pomocí prohlížeče.
+[![Mít zobrazení DropDownList CategoryName pole a CategoryID použijte jako hodnotu](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image10.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image9.png)
+
+**Obrázek 5**: Zobrazit DropDownList `CategoryName` pole a použití `CategoryID` jako hodnotu ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image11.png))
 
 
-[![Rozevírací seznamy aktuální kategorií](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image12.png)
-
-**Obrázek 6**: rozevírací seznamy A aktuální kategorie ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image14.png))
+V tuto chvíli máme, který je naplněn záznamy z ovládací prvek DropDownList `Categories` tabulky (vše lze provést během přibližně šest sekund). Obrázek 6 doposud zobrazuje náš postup při prohlížení prostřednictvím prohlížeče.
 
 
-## <a name="step-2-adding-the-products-datalist"></a>Krok 2: Přidání DataList produkty
+[![Rozevírací seznam aktuálních kategorií](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image13.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image12.png)
 
-Posledním krokem v naší a podrobností sestavy je seznam produkty spojené s vybranou kategorii. K tomu, přidejte na stránku DataList a vytvořit nové ObjectDataSource s názvem `ProductsByCategoryDataSource`. Mít `ProductsByCategoryDataSource` načíst data z ovládacího prvku `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda. Vzhledem k tomu, že tuto sestavu a podrobností je jen pro čtení, zvolte možnost (žádná) na kartách INSERT, UPDATE a DELETE.
+**Obrázek 6**: A rozevírací seznam aktuálních kategorií ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image14.png))
+
+
+## <a name="step-2-adding-the-products-datalist"></a>Krok 2: Přidání ovládacích prvků DataList produkty
+
+Posledním krokem v naší sestavy záznamů master/detail je seznam produktů spojené s vybranou kategorii. K tomu přidat na stránku a v prvku DataList a vytvoření nového prvku ObjectDataSource s názvem `ProductsByCategoryDataSource`. Máte `ProductsByCategoryDataSource` načítat data z ovládacího prvku `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda. Tato sestava hlavních záznamů/podrobností je jen pro čtení, zvolte možnost (žádná) na kartách INSERT, UPDATE a DELETE.
 
 
 [![Vyberte metodu GetProductsByCategoryID(categoryID)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image16.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image15.png)
 
-**Obrázek 7**: vyberte `GetProductsByCategoryID(categoryID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
+**Obrázek 7**: vyberte `GetProductsByCategoryID(categoryID)` – metoda ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image17.png))
 
 
-Po kliknutí na tlačítko Další, Průvodce ObjectDataSource k zadání nám zdroj hodnota `GetProductsByCategoryID(categoryID)` metody *`categoryID`* parametr. Chcete použít hodnotu vybrané `categories` rozevírací seznam položky nastavit parametr Zdroj ovládacího prvku a ControlID k `Categories`.
+Po kliknutí na tlačítko Další, Průvodce ObjectDataSource nám vyzve k zadání hodnoty pro zdroj `GetProductsByCategoryID(categoryID)` metody *`categoryID`* parametru. Chcete použít hodnotu vybraného `categories` DropDownList položka nastavena na ovládací prvek a ControlID na zdroji parametru `Categories`.
 
 
-[![Nastaví categoryID parametr na hodnotu rozevírací seznam kategorií](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
+[![Nastavit ID kategorie parametr na hodnotu DropDownList kategorie](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image18.png)
 
-**Obrázek 8**: nastavte *`categoryID`* parametr na hodnotu `Categories` rozevírací seznam ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
+**Obrázek 8**: nastavte *`categoryID`* parametr na hodnotu `Categories` DropDownList ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image20.png))
 
 
-Po dokončení průvodce Konfigurace zdroje dat, bude automaticky generovat Visual Studio `ItemTemplate` pro DataList, který zobrazí název a hodnotu každé datové pole. Umožňuje zvýšit DataList místo toho použít `ItemTemplate` který zobrazí pouze název produktu, kategorie, dodavatele, množství jednotce a ceníku spolu s `SeparatorTemplate` , vloží `<hr>` element mezi každou položku. Přechod do použít `ItemTemplate` z příklad v [zobrazení dat s ovládacími prvky opakovače a DataList](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md) kurzu, ale můžete použít libovolnou šablonu značek zjistíte nejvíce přitažlivé chování.
+Po dokončení průvodce bude konfigurace zdroje dat, bude automaticky generovat sady Visual Studio `ItemTemplate` pro DataList, která zobrazuje název a hodnotu každé datové pole. Můžeme vylepšit DataList místo toho použít `ItemTemplate` , která zobrazuje pouze název produktu, kategorie, Dodavatel, množství na jednotku a cena spolu s `SeparatorTemplate` , který vkládá `<hr>` element mezi jednotlivými položkami. Teď budu používat `ItemTemplate` z příkladu v [zobrazení dat ovládacími prvky DataList a Repeater ovládací prvky](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs.md) kurzu, ale teď můžete použít jakýkoli kód šablony najdete nejvíce vizuálně přitažlivé.
 
-Po provedení těchto změn, vaše DataList a jeho ObjectDataSource značek by měl vypadat takto:
+Po provedení těchto změn, by měla vypadat podobně jako následující třídy DataList a jeho ObjectDataSource značky:
 
 [!code-aspx[Main](master-detail-filtering-with-a-dropdownlist-datalist-cs/samples/sample2.aspx)]
 
-Podívejte se na naše průběh v prohlížeči chvíli trvat. Při první návštěvě stránky, tyto produkty, které patří do vybrané kategorie (nápoje) se zobrazí (jak je znázorněno na obrázku 9), ale změna rozevírací seznam neaktualizuje data. To je proto zpětné volání, musí dojít k DataList aktualizovat. Chcete-li tomu můžeme buď nastavte rozevírací seznam `AutoPostBack` vlastnost `true` nebo přidání ovládacího prvku tlačítko na stránku. V tomto kurzu I jste se rozhodli nastavit rozevírací seznam `AutoPostBack` vlastnost `true`.
+Podívejte se na náš postup v prohlížeči chvíli trvat. Při první návštěvě stránky, tyto produkty, které patří do vybrané kategorie (nápoje) se zobrazí (jak je znázorněno na obrázku 9), ale změna DropDownList neaktualizuje data. Je to proto zpětné volání, musí dojít k prvku DataList aktualizovat. K tomu můžeme buď nastavte DropDownList `AutoPostBack` vlastnost `true` nebo přidání ovládacího prvku tlačítko Web na stránku. Pro účely tohoto kurzu, můžu nastavit DropDownList nepřejete `AutoPostBack` vlastnost `true`.
 
-Následující obrázky 9 a 10 znázorňují, sestavy a podrobností v akci.
-
-
-[![Při první návštěvě stránky, se zobrazí produkty nápoj](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image21.png)
-
-**Obrázek 9**: při první návštěvě stránky, se zobrazí produkty nápoj ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image23.png))
+Obrázky 9 a 10 ukazují sestavu záznamů master/detail v akci.
 
 
-[![Výběr nového produktu (produktu) automaticky vyvolá PostBack, aktualizaci prvku DataList](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image24.png)
+[![Při první návštěvě stránky, se zobrazují produkty nápoje](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image22.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image21.png)
 
-**Obrázek 10**: Výběr nového produktu (produktu) automaticky vyvolá PostBack, aktualizaci prvku DataList ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image26.png))
+**Obrázek 9**: při první návštěvě stránky, produkty nápoje zobrazují ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image23.png))
 
 
-## <a name="adding-a----choose-a-category----list-item"></a>Přidání položky seznamu "– Vyberte kategorii –"
+[![Výběr nového produktu (produkty) automaticky vyvolá zpětné volání, aktualizace prvku DataList](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image25.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image24.png)
 
-Při první návštěvě `FilterByDropDownList.aspx` stránky kategorie, které rozevírací seznam pro první položku seznamu (nápoje) je ve výchozím nastavení zobrazující nápoj produkty v prvku DataList. V *a podrobností filtrování s rozevírací seznam* kurzu jsme přidali možnost "– Vyberte kategorii –" na rozevírací seznam, který se ve výchozím nastavení vybrané a při výběru, zobrazí *všechny* z produkty v databázi. Tento postup se spravovat při výpisu produkty v GridView, jak každý řádek produktu trvalo až malé množství nemovitosti obrazovky. S DataList ale každý produkt informace využívá mnohem větší bloku na obrazovce. Stále umožňuje přidat možnost "– Vyberte kategorii –" a mít je standardně vybraná, ale místo nutnosti ho zobrazit všechny produkty, pokud vybraná, umožňuje nakonfigurovat, aby zobrazuje žádné produkty.
+**Obrázek 10**: Výběr nového produktu (produkty) automaticky vyvolá zpětné volání, aktualizace prvku DataList ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image26.png))
 
-Chcete-li přidat novou položku seznamu do rozevírací seznam, přejít do okna vlastností a klikněte na symbol tří teček v `Items` vlastnost. Přidat novou položku seznamu s `Text` "--Vyberte kategorii –" a `Value` `0`.
+
+## <a name="adding-a----choose-a-category----list-item"></a>Přidání položky seznamu "--zvolit některou kategorii--"
+
+Při první návštěvě `FilterByDropDownList.aspx` stránce kategorie DropDownList od první položky seznamu (nápoje) je vybraný ve výchozím nastavení zobrazuje nápoje produktů v ovládacím prvku DataList. V *filtrování záznamů Master/Detail s DropDownList* kurzu jsme přidali možnost "--zvolit některou kategorii--" k DropDownList, který byl vybrán ve výchozím nastavení a pokud je vybráno, zobrazí *všechny* z produkty v databázi. Takový přístup byl spravovatelné při výpisu produkty v prvku GridView, protože každý řádek produktu zabíral příliš malé množství plochy obrazovky. Pomocí prvku DataList ale informace o jednotlivých produktech využívá mnohem větší blok na obrazovce. Stále umožňuje přidáte možnost "--zvolit některou kategorii--" a jeho ve výchozím nastavení vybrané, ale namísto toho jej zobrazit všechny produkty při výběru nakonfigurujeme ho tak, aby zobrazí žádné produkty.
+
+Chcete-li přidat novou položku seznamu do DropDownList, přejděte do okna Vlastnosti a klikněte na symbol tří teček v `Items` vlastnost. Přidat novou položku seznamu s `Text` "--zvolit některou kategorii--" a `Value` `0`.
 
 
 ![Přidat](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image27.png)
 
-**Obrázek 11**: Přidání položky seznamu "– Vyberte kategorii –"
+**Obrázek 11**: Přidání položky seznamu "--zvolit některou kategorii--"
 
 
-Alternativně můžete přidat položku seznamu přidáním následující kód do rozevírací seznam:
+Alternativně můžete přidat položku seznamu tak, že přidáte následující kód k DropDownList:
 
 [!code-aspx[Main](master-detail-filtering-with-a-dropdownlist-datalist-cs/samples/sample3.aspx)]
 
-Kromě toho je potřeba nastavit ovládací prvek rozevírací seznam `AppendDataBoundItems` k `true` vzhledem k tomu, pokud je nastaven na hodnotu `false` (výchozí), pokud kategorie je vázána na rozevírací seznam z ObjectDataSource se budete přepsat žádný seznam ručně přidat položky.
+Dále musíme nastavit ovládací prvek DropDownList `AppendDataBoundItems` k `true` vzhledem k tomu, pokud je nastavena na `false` (výchozí), když kategorií jsou svázány s DropDownList z ObjectDataSource, budete přepsat všechny ručně přidané seznamy položky.
 
 
-![Nastavte vlastnost AppendDataBoundItems vlastnost na hodnotu True](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image28.png)
+![Nastavte vlastnost AppendDataBoundItems na hodnotu True](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image28.png)
 
 **Obrázek 12**: nastavte `AppendDataBoundItems` vlastnost na hodnotu True
 
 
-Z důvodu jsme zvolili hodnota `0` seznamu "– Vyberte kategorii –" položka je, protože nejsou k dispozici žádné kategorie v systému s hodnotou `0`, proto se žádné záznamy produktu vrátí, pokud je vybrána položka seznamu "– Vyberte kategorii –". Potvrďte to za chvíli navštívit stránku prostřednictvím prohlížeče. Jak ukazuje obrázek 13, při počátečním prohlížení stránky, je vybrána položka seznamu "– Vyberte kategorii –" a jsou zobrazeny žádné produkty.
+Z důvodu jsme zvolili hodnota `0` seznamu "--zvolit některou kategorii--" položka je vzhledem k tomu, že nejsou žádné kategorie v systém hodnotou `0`, proto žádné záznamy produktu nevrátí se při výběru položky seznamu "--zvolit některou kategorii--". Pokud to pokud chcete potvrdit, věnujte chvíli najdete na stránce prostřednictvím prohlížeče. Jak ukazuje obrázek 13, při počátečním zobrazení stránky je vybrána položka seznamu "--zvolit některou kategorii--" a jsou zobrazeny žádné produkty.
 
 
 [![Když](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image30.png)](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image29.png)
 
-**Obrázek 13**: Pokud je vybrána položka seznamu "– Vyberte kategorii –", jsou zobrazeny žádné produkty ([Kliknutím zobrazit obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
+**Obrázek 13**: Pokud je vybraná položka seznamu "--zvolit některou kategorii--", jsou zobrazeny žádné produkty ([kliknutím ji zobrazíte obrázek v plné velikosti](master-detail-filtering-with-a-dropdownlist-datalist-cs/_static/image31.png))
 
 
-Pokud byste místo zobrazení *všechny* produkty Pokud je vybraná možnost "– Vyberte kategorii –", použijte hodnotu `-1` místo. Astute čtečky připomíná, že zpět v *a podrobností filtrování s rozevírací seznam* kurzu aktualizovali jsme `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metoda tak, aby pokud *`categoryID`* Hodnota `-1` byl předán v všechny produktu, záznamů byly vráceny.
+Pokud byste raději zobrazíte *všechny* produktů Pokud je vybraná možnost "--zvolit některou kategorii--", použijte hodnotu `-1` místo. Bystří čtenáři budou odvolat tento znovu v *filtrování záznamů Master/Detail s DropDownList* kurzu jsme aktualizovali `ProductsBLL` třídy `GetProductsByCategoryID(categoryID)` metodu tak, aby pokud *`categoryID`* Hodnota `-1` bylo předáno do všech produktů vrácených záznamů.
 
 ## <a name="summary"></a>Souhrn
 
-Při zobrazení hierarchicky související data, je dobré často se data pomocí sestav a podrobností, ze kterých uživatel můžete spustit perusing data od nejvyšší úrovně v hierarchii a podrobnostem podrobnosti k dispozici. V tomto kurzu jsme se zaměřili na vytváření jednoduché a podrobností sestavy zobrazující vybrané kategorie produktů. Bylo to provést pomocí rozevírací seznam pro seznam kategorií a DataList pro produkty, které patří do vybrané kategorie.
+Při zobrazení hierarchicky související data, často pomůže prezentovat data pomocí záznamů master/detail sestavy, ze kterých uživatel mohl spustit perusing data z nejvyšší úrovni hierarchie a přejít na podrobnosti. V tomto kurzu jsme se zaměřili na vytváření jednoduchých záznamů master/detail sestavu zobrazující vybranou kategorii produktů. To se provádí pomocí DropDownList seznam kategorií a DataList pro produkty, které patří do vybrané kategorie.
 
-V dalším kurzu podíváme oddělení mezi dvěma stránkami záznamy seznamu a podrobností. Na první stránce seznam záznamů "hlavní" se zobrazí, s odkazem k zobrazení podrobností. Kliknutím na odkaz bude whisk uživatele na druhou stránku, která se zobrazí podrobnosti pro vybraný záznam hlavní.
+V dalším kurzu podíváme na oddělení záznamy seznamu a podrobností na dvou stránkách. Na první stránce bude se zobrazí seznam "hlavní" záznamy s odkazem k zobrazení podrobností. Kliknutím na odkaz bude whisk uživateli na druhé stránce, která se zobrazí podrobnosti pro hlavní vybraný záznam.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Zvláštní poděkování...
+## <a name="special-thanks-to"></a>Speciální k...
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Randy Schmidt. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Vedoucí kontrolor pro účely tohoto kurzu byla Randym Schmidt. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Next](master-detail-filtering-acess-two-pages-datalist-cs.md)

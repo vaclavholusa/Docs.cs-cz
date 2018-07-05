@@ -1,175 +1,174 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
-title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace databáze | Microsoft Docs'
+title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace databáze | Dokumentace Microsoftu'
 author: tdykstra
-description: Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo do hostujícího zprostředkovatele třetí strany podle usin...
+description: V této sérii kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo k poskytovateli hostingu třetích stran, podle usin...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
 ms.topic: article
 ms.assetid: 9cad0833-486a-4474-a7f3-7715542ec4ce
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 3020cfa19bf12f21c6d42a77ed257595431b4e86
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 37b996452dfa619ba1276a1aba562ed7efc579b5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892618"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389186"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení aktualizace databáze
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhněte si úvodní projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
+[Stáhnout počáteční projekt](http://go.microsoft.com/fwlink/p/?LinkId=282627)
 
-> Tato řada kurzu se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo k poskytovateli hostingu třetích stran, pomocí sady Visual Studio 2012 nebo Visual Studio 2010. Informace o řadě najdete v tématu [z prvního kurzu řady](introduction.md).
+> V této sérii kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo k poskytovateli hostingu třetích stran, s použitím sady Visual Studio 2012 nebo Visual Studio 2010. Informace o této sérii, naleznete v tématu [z prvního kurzu této série](introduction.md).
 
 
 ## <a name="overview"></a>Přehled
 
-V tomto kurzu provedete změnu databáze a změny související kódu, testovat změny v sadě Visual Studio a pak nasadit aktualizace do prostředí testovací, přípravné nebo produkční prostředí.
+V tomto kurzu provedete změnu databáze a změny související kód, otestovat změny v sadě Visual Studio a pak Nasaďte aktualizaci do prostředí test, přípravném nebo produkčním prostředí.
 
-Kurz nejprve ukazuje, jak aktualizovat databázi, která spravuje migrace Code First, a pak později ukazuje, jak aktualizace databáze pomocí zprostředkovatele dbDacFx.
+Tento kurz nejprve ukazuje, jak aktualizovat databázi, kterou spravuje migrace Code First a pak později ukazuje, jak pomocí poskytovatele dbDacFx aktualizace databáze.
 
-Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [řešení potíží s stránky](troubleshooting.md).
+Připomenutí: Pokud se zobrazí chybová zpráva nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [stránka o řešení problémů](troubleshooting.md).
 
 ## <a name="deploy-a-database-update-by-using-code-first-migrations"></a>Nasazení aktualizace databáze pomocí migrace Code First
 
-V této části můžete přidat sloupec Datum narození `Person` základní třídu pro `Student` a `Instructor` entity. Potom je aktualizovat stránky, která zobrazuje data lektorem tak, aby se zobrazí nový sloupec. Nakonec můžete nasadit změny pro testovací, přípravné nebo produkční prostředí.
+V této části přidáte sloupec Datum narození `Person` základní třída pro `Student` a `Instructor` entity. Potom aktualizujte stránku, která zobrazuje data kurzů vedených tak, aby zobrazil nový sloupec. Nakonec nasadíte změny do testu, přípravném nebo produkčním prostředí.
 
-### <a name="add-a-column-to-a-table-in-the-application-database"></a>Přidat sloupce do tabulky v databázi aplikace
+### <a name="add-a-column-to-a-table-in-the-application-database"></a>Přidání sloupce do tabulky v databázi aplikace
 
-1. V *ContosoUniversity.DAL* projekt, otevřete *Person.cs* a přidejte následující vlastnost na konci `Person` – třída (měla by existovat dvě zavřením složené závorky následující ji):
+1. V *ContosoUniversity.DAL* projekt, otevřete *Person.cs* a přidejte následující vlastnost na konci `Person` třídy (měl by existovat dva pravou složenou závorkou následující):
 
     [!code-csharp[Main](deploying-a-database-update/samples/sample1.cs)]
 
-    Potom aktualizujte `Seed` metoda, kterou it přináší hodnotu pro nový sloupec. Otevřete *Migrations\Configuration.cs* a nahraďte bloku kódu, který začíná `var instructors = new List<Instructor>` s následující blok kódu, který obsahuje informace o datu narození:
+    Dále, aktualizujte `Seed` metodu tak, že poskytuje hodnoty pro nový sloupec. Otevřít *Migrations\Configuration.cs* a nahraďte blok kódu, který začíná `var instructors = new List<Instructor>` s následující blok kódu, který obsahuje informace o datu narození:
 
     [!code-csharp[Main](deploying-a-database-update/samples/sample2.cs)]
-2. Sestavte řešení a pak otevřete **Konzola správce balíčků** okno. Ujistěte se, že je stále ContosoUniversity.DAL vybrán jako **výchozí projekt**.
-3. V **Konzola správce balíčků** vyberte **ContosoUniversity.DAL** jako **výchozí projekt**a potom zadejte následující příkaz:
+2. Sestavte řešení a pak otevřete **Konzola správce balíčků** okna. Ujistěte se, že ContosoUniversity.DAL je stále vybrán jako **výchozí projekt**.
+3. V **Konzola správce balíčků** okně **ContosoUniversity.DAL** jako **výchozí projekt**a potom zadejte následující příkaz:
 
     [!code-powershell[Main](deploying-a-database-update/samples/sample3.ps1)]
 
-    Po dokončení tohoto příkazu Visual Studio otevře soubor třídy, který definuje nový `DbMIgration` třída a v `Up` metoda vidíte kód, který vytvoří nový sloupec. `Up` Metoda vytvoří sloupec při implementaci změny a `Down` metoda odstraní sloupec při vrácení zpět změny.
+    Po dokončení tohoto příkazu, Visual Studio otevře soubor třídy, která definuje nový `DbMIgration` třídy a `Up` metoda se zobrazí kód, který vytvoří nový sloupec. `Up` Metoda vytvoří sloupec při implementaci této změny a `Down` metoda odstraní sloupec při vrácení zpět změnu.
 
     ![AddBirthDate_migration_code](deploying-a-database-update/_static/image1.png)
-4. Sestavte řešení a potom zadejte následující příkaz v **Konzola správce balíčků** okno (musí být vybrána projektu ContosoUniversity.DAL stále):
+4. Sestavte řešení a potom zadejte následující příkaz v **Konzola správce balíčků** okno (ujistěte se, že je stále vybrán projekt ContosoUniversity.DAL):
 
     [!code-powershell[Main](deploying-a-database-update/samples/sample4.ps1)]
 
-    Rozhraní Entity Framework běží `Up` metoda a poté spustí `Seed` metoda.
+    Entity Framework běží `Up` metody a poté ji spustí `Seed` metoda.
 
-### <a name="display-the-new-column-in-the-instructors-page"></a>Zobrazit nového sloupce na stránce vyučující
+### <a name="display-the-new-column-in-the-instructors-page"></a>Na stránce Instruktoři zobrazit nový sloupec
 
-1. Otevřete v projektu ContosoUniversity *Instructors.aspx* a přidejte nové šablony pole, které chcete zobrazit datum narození. Přidáte mezi těm, které jsou pro přiřazení přijetím datum a office:
+1. Otevřete v projektu ContosoUniversity *Instructors.aspx* a přidat nové pole šablony se zobrazí datum narození. Přidáte mezi pro zařazení data a office přiřazení:
 
     [!code-aspx[Main](deploying-a-database-update/samples/sample5.aspx?highlight=9-17)]
 
-    (Pokud odsazení kód získá synchronizován, můžete stisknout CTRL-K a pak CTRL-D automaticky přeformátuje souboru.)
-2. Spusťte aplikaci a klikněte na **vyučující** odkaz.
+    (Pokud odsazení kódu získá synchronizovaný, můžete stisknutím CTRL-K a pak na kombinaci kláves CTRL + D automaticky přeformátovat soubor.)
+2. Spusťte aplikaci a klikněte na tlačítko **Instruktoři** odkaz.
 
-    Při načtení stránky uvidíte, že má nové pole pro datum narození.
+    Když se stránka načte, uvidíte, že na něm nové pole pro datum narození.
 
-    ![Stránka vyučující s datum narození](deploying-a-database-update/_static/image2.png)
+    ![Stránka Instruktoři s datum narození](deploying-a-database-update/_static/image2.png)
 3. Zavřete prohlížeč.
 
-### <a name="deploy-the-database-update"></a>Nasaďte aktualizaci databáze
+### <a name="deploy-the-database-update"></a>Nasazení aktualizace databáze
 
-1. V **Průzkumníku řešení** vyberte ContosoUniversity projekt.
-2. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **Test** profil publikování a potom klikněte na **Publikovat Web**. (Pokud je zakázána panelu nástrojů, vyberte projekt ContosoUniversity v **Průzkumníku řešení**.)
+1. V **Průzkumníka řešení** vyberte ContosoUniversity projekt.
+2. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **testovací** profil publikování a potom klikněte na tlačítko **Publikovat Web**. (Pokud panelu nástrojů je zakázaná, vyberte projekt ContosoUniversity v **Průzkumníka řešení**.)
 
-    Visual Studio nasadí aktualizovanou aplikaci a prohlížeči se otevře na domovskou stránku.
-3. Spustit **vyučující** a ověřte, že aktualizace byla úspěšně nasazena.
+    Visual Studio nasadí aktualizované aplikace a prohlížeč otevře domovskou stránku.
+3. Spustit **Instruktoři** stránku a ověřte, že se aktualizace úspěšně nasadilo.
 
-    Když se aplikace pokusí o přístup k databázi pro tuto stránku, Code First aktualizace schématu databáze a spustí `Seed` metoda. Při zobrazení stránky, uvidíte očekávané **datum narození** sloupce s daty v ní.
-4. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **pracovní** profil publikování a potom klikněte na **Publikovat Web**.
-5. Spustit **vyučující** stránky v pracovní k ověření, že aktualizace byla úspěšně nasazena.
-6. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **produkční** profil publikování a potom klikněte na **Publikovat Web**.
-7. Spustit **vyučující** stránky v produkčním prostředí, chcete-li ověřit, že aktualizace byla úspěšně nasazena.
+    Když se aplikace pokusí o přístup k databázi pro tuto stránku, Code First aktualizuje schéma databáze a spustí `Seed` metody. Jakmile se zobrazí na stránce se zobrazí očekávané **datum narození** sloupce s datem, v ní.
+4. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **pracovní** profil publikování a potom klikněte na tlačítko **Publikovat Web**.
+5. Spustit **Instruktoři** stránky v přípravě, chcete-li ověřit, že se aktualizace úspěšně nasadilo.
+6. V **publikování webu jedním kliknutím** nástrojů, klikněte na tlačítko **produkční** profil publikování a potom klikněte na tlačítko **Publikovat Web**.
+7. Spustit **Instruktoři** stránky v produkčním prostředí k ověření, že se aktualizace úspěšně nasadilo.
 
-    Pro aktualizaci skutečné produkční aplikace, která zahrnuje změnu databáze by také běžně využít aplikace do režimu offline během nasazení pomocí *aplikace\_offline.htm*, jak jste viděli v předchozí kurzu.
+    Pro skutečné produkční aktualizaci aplikace, která zahrnuje změnu databáze by také běžně nastavit aplikaci offline během nasazení s použitím *aplikace\_offline.htm*, jak jste viděli v předchozím kurzu.
 
-## <a name="deploy-a-database-update-by-using-the-dbdacfx-provider"></a>Nasazení aktualizace databáze pomocí poskytovatele dbDacFx
+## <a name="deploy-a-database-update-by-using-the-dbdacfx-provider"></a>Nasazení aktualizace databáze s použitím dbDacFx poskytovatele
 
-V této části přidáte *komentáře* sloupec, který se *uživatele* tabulky v databázi členství a vytvořte stránku, která vám umožní zobrazit a upravit komentáře pro každého uživatele. Pak můžete nasadit změny pro testovací, přípravné nebo produkční prostředí.
+V této části přidáte *komentáře* sloupec, který se *uživatele* tabulky v databázi členství a vytvořit stránku, která vám umožní zobrazit a upravit komentáře pro každého uživatele. Pak můžete nasadit změny pro test, přípravném nebo produkčním prostředí.
 
-### <a name="add-a-column-to-a-table-in-the-membership-database"></a>Přidat sloupce do tabulky v databázi členství
+### <a name="add-a-column-to-a-table-in-the-membership-database"></a>Přidání sloupce do tabulky v databázi členství
 
-1. V sadě Visual Studio otevřete **Průzkumník objektů systému SQL Server**.
-2. Rozbalte položku **(localdb) \v11.0**, rozbalte položku **databáze**, rozbalte položku **aspnet ContosoUniversity** (ne **aspnet. ContosoUniversity produkčnímu**) a potom rozbalte **tabulky**.
+1. V sadě Visual Studio, otevřete **Průzkumník objektů systému SQL Server**.
+2. Rozbalte **(localdb) \v11.0**, rozbalte **databází**, rozbalte **aspnet ContosoUniversity** (ne **aspnet. ContosoUniversity Prod**) a potom rozbalte **tabulky**.
 
-    Pokud nevidíte **(localdb) \v11.0** v části **systému SQL Server** uzel, klikněte pravým tlačítkem myši **systému SQL Server** uzel a klikněte na tlačítko **přidat SQL Server**. V **připojit k serveru** dialogové okno zadejte *(localdb) \v11.0* jako **název serveru**a potom klikněte na **Connect**.
+    Pokud nevidíte **(localdb) \v11.0** pod **systému SQL Server** uzel, klikněte pravým tlačítkem na **systému SQL Server** uzel a klikněte na tlačítko **přidat SQL Server**. V **připojit k serveru** dialogového okna zadejte *(localdb) \v11.0* jako **název serveru**a potom klikněte na tlačítko **připojit**.
 
-    Pokud nevidíte **aspnet ContosoUniversity**, spusťte projekt a přihlaste se pomocí *správce* přihlašovací údaje (heslo je *devpwd*) a potom aktualizujte  **Průzkumník objektů systému SQL Server** okno.
-3. Klikněte pravým tlačítkem myši **uživatelé** tabulky a potom klikněte na **Návrhář zobrazení**.
+    Pokud nevidíte **aspnet ContosoUniversity**, spusťte projekt a přihlaste se pomocí *správce* přihlašovací údaje (heslo je *devpwd*) a potom aktualizovat  **Průzkumník objektů systému SQL Server** okna.
+3. Klikněte pravým tlačítkem myši **uživatelé** tabulku a pak klikněte na **Návrhář zobrazení**.
 
-    ![Návrhář SSOX zobrazení](deploying-a-database-update/_static/image3.png)
-4. V návrháři, přidejte *komentáře* sloupce a nastavit jej jako *nvarchar(128)* a s povolenou hodnotou Null a potom klikněte na **aktualizace**.
+    ![Návrhář zobrazení SSOX](deploying-a-database-update/_static/image3.png)
+4. V návrháři, přidejte *komentáře* sloupec a nastavte ji *nvarchar(128)* a s povolenou hodnotou Null a potom klikněte na tlačítko **aktualizace**.
 
-    ![Přidáním sloupce komentáře](deploying-a-database-update/_static/image4.png)
-5. V **aktualizace databáze Preview** pole, klikněte na tlačítko **aktualizace databáze**.
+    ![Přidání sloupce komentáře](deploying-a-database-update/_static/image4.png)
+5. V **náhled aktualizací databáze** klikněte **aktualizace databáze**.
 
-    ![Aktualizace databáze Preview](deploying-a-database-update/_static/image5.png)
+    ![Náhled aktualizací databáze](deploying-a-database-update/_static/image5.png)
 
-### <a name="create-a-page-to-display-and-edit-the-new-column"></a>Vytvořte stránku k zobrazení a úpravě nového sloupce
+### <a name="create-a-page-to-display-and-edit-the-new-column"></a>Vytvoření stránky můžete zobrazit a upravit nový sloupec
 
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **účet** složky ContosoUniversity projektu, klikněte na tlačítko **přidat**a potom klikněte na **nová položka** .
-2. Vytvořte novou **webové formuláře pomocí stránka předlohy** a pojmenujte ji *UserInfo.aspx*. Přijměte výchozí nastavení *Site.Master* souboru stránky předlohy.
-3. Zkopírujte následující kód do `MainContent` `Content` – element (posledních 3 `Content` prvky):
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **účet** klikněte na tlačítko složky v projektu ContosoUniversity **přidat**a potom klikněte na tlačítko **novou položku** .
+2. Vytvořte nový **webové formuláře pomocí stránka předlohy** a pojmenujte ho *UserInfo.aspx*. Přijměte výchozí nastavení *Site.Master* souboru stránky předlohy.
+3. Zkopírujte následující kód do `MainContent` `Content` – element (poslední 3 `Content` prvky):
 
     [!code-aspx[Main](deploying-a-database-update/samples/sample6.aspx)]
-4. Klikněte pravým tlačítkem myši *UserInfo.aspx* a klikněte na tlačítko **zobrazit v prohlížeči**.
-5. Přihlaste se pomocí vaší *správce* přihlašovací údaje uživatele (heslo je *devpwd*) a přidejte některé komentáře pro uživatele k ověření, že stránka funguje správně.
+4. Klikněte pravým tlačítkem myši *UserInfo.aspx* stránky a klikněte na tlačítko **zobrazit v prohlížeči**.
+5. Přihlášení vaše *správce* přihlašovací údaje uživatele (heslo je *devpwd*) a přidat nějaké komentáře k uživateli a ověřte, že na stránce funguje správně.
 
     ![Stránka informací o uživateli](deploying-a-database-update/_static/image6.png)
 6. Zavřete prohlížeč.
 
-## <a name="deploy-the-database-update"></a>Nasaďte aktualizaci databáze
+## <a name="deploy-the-database-update"></a>Nasazení aktualizace databáze
 
-Nasazení pomocí poskytovatele dbDacFx, stačí vybrat **aktualizace databáze** možnost v profilu publikování. Však pro počáteční nasazení při použití této možnosti můžete také nakonfigurovat spuštění některých dalších skriptů SQL: těch, které jsou stále v profilu a budete se muset zabránit znovu spustit.
+Pokud chcete nasadit s použitím poskytovatele dbDacFx, stačí vybrat **aktualizace databáze** možnost v profilu publikování. Ale pro počáteční nasazení při použití této možnosti můžete také nakonfigurovat některé další skripty SQL ke spuštění: to jsou stále v profilu a budete mít tak tomu, aby znovu.
 
-1. Otevřete **Publikovat Web** Průvodce pravým tlačítkem na projekt ContosoUniversity a kliknutím na **publikovat**.
+1. Otevřít **Publikovat Web** Průvodce pravým tlačítkem myši projekt ContosoUniversity a kliknutím na **publikovat**.
 2. Vyberte **Test** profilu.
-3. Klikněte **nastavení** kartě.
-4. V části **objekt DefaultConnection**, vyberte **aktualizace databáze**.
-5. Zakažte další skripty, které jste nakonfigurovali pro počáteční nasazení:
+3. Klikněte na tlačítko **nastavení** kartu.
+4. V části **objekt DefaultConnection**vyberte **aktualizace databáze**.
+5. Zakažte další skripty, které jste nakonfigurovali spuštění pro počáteční nasazení:
 
     1. Klikněte na tlačítko **konfigurovat aktualizace databáze**.
-    2. V **konfigurovat aktualizace databáze** dialogové okno, zrušte políček vedle *Grant.sql* a *aspnet. data dev.sql*.
+    2. V **konfigurace aktualizací databáze** dialogové okno, zrušte zaškrtnutí políček vedle *Grant.sql* a *aspnet-data-dev.sql*.
     3. Klikněte na tlačítko **Zavřít**.
-6. Klikněte **Preview** kartě.
-7. V části **databáze** a napravo od **objekt DefaultConnection**, klikněte na tlačítko **Preview databáze** odkaz.
+6. Klikněte na tlačítko **ve verzi Preview** kartu.
+7. V části **databází** a napravo od **objekt DefaultConnection**, klikněte na tlačítko **databáze ve verzi Preview** odkaz.
 
-    ![K náhledu databáze](deploying-a-database-update/_static/image7.png)
+    ![Database ve verzi Preview](deploying-a-database-update/_static/image7.png)
 
-    Okno náhledu zobrazí skript, který se spustí v cílové databázi, aby schéma této databáze odpovídat schématu zdrojové databáze. Tento skript obsahuje příkaz ALTER TABLE, který přidá nový sloupec.
-8. Zavřít **náhledu databáze** dialogové okno a pak klikněte na tlačítko **publikovat**.
+    V okně verze preview se zobrazí skript, který se spustí v cílové databázi, aby toto schéma databáze podle schématu zdrojové databáze. Skript obsahuje pomocí příkazu ALTER TABLE, který přidá nový sloupec.
+8. Zavřít **Database ve verzi Preview** dialogové okno a potom klikněte na **publikovat**.
 
-    Visual Studio nasadí aktualizovanou aplikaci a prohlížeči se otevře na domovskou stránku.
-9. Spuštění stránky informací o uživateli (Přidat *Account/UserInfo.aspx* na adresu URL domovské stránce) Chcete-li ověřit, že aktualizace byla úspěšně nasazena. Budete se muset přihlásit zadáním *správce* a *devpwd*.
+    Visual Studio nasadí aktualizované aplikace a prohlížeč otevře domovskou stránku.
+9. Stránka informací o uživateli spustit (Přidat *Account/UserInfo.aspx* na adresu URL domovské stránky) Chcete-li ověřit, že se aktualizace úspěšně nasadilo. Budete se muset přihlásit tak, že zadáte *správce* a *devpwd*.
 
-    Data v tabulkách není nasazený ve výchozím nastavení a nenakonfigurovali skript nasazení do dat spustit, takže nebude možné najít komentář, který jste přidali v vývoj. Teď můžete přidat komentář, nové v pracovním pro ověření, že tato změna byla nasazena do databáze a stránka funguje správně.
-10. Postupujte stejným způsobem, k nasazení pro pracovní a provozní.
+    Ve výchozím nastavení není nasazený data v tabulkách a nenakonfigurovala skriptu nasazení dat. Pokud chcete spustit, nebude najdou komentář, který jste přidali ve vývoji. Nyní můžete přidat nový komentář v přípravě, chcete-li ověřit, že tato změna byla nasazena do databáze a na stránce funguje správně.
+10. Postupujte stejným způsobem pro nasazení do pracovního a produkčního prostředí.
 
-    Nezapomeňte si zakázat další skripty. Ve srovnání s profilem testovací jediným rozdílem je, že zakážete pouze jeden skript staging a produkční profily, protože byly nakonfigurované ke spuštění pouze *aspnet. produkčnímu data.sql*.
+    Nezapomeňte vypnout další skripty. Ve srovnání s testovacího profilu jediným rozdílem je, že zakážete pouze jeden skript do pracovního a produkčního prostředí profily, protože byly nakonfigurované ke spuštění pouze *aspnet-prod-data.sql*.
 
-    Správce a prodpwd jsou pověření pro pracovní a provozní.
+    Přihlašovací údaje pro pracovního a produkčního prostředí jsou správce a prodpwd.
 
-    Pro aktualizaci skutečné produkční aplikace, která zahrnuje změnu databáze by také běžně trvat aplikace do režimu offline během nasazení tím, že nahrajete *aplikace\_offline.htm* před publikováním a odstranění následně, jako jste viděli v [předchozí kurzu](deploying-a-code-update.md).
+    Pro skutečné produkční aktualizaci aplikace, která zahrnuje změnu databáze by také běžně nastavit aplikaci offline během nasazení tak, že nahrajete *aplikace\_offline.htm* před publikováním a jeho odstranění následně, protože jste viděli v [předchozí kurz o službě](deploying-a-code-update.md).
 
 ## <a name="summary"></a>Souhrn
 
-Nyní jste nasadili aktualizaci aplikace, která zahrnuté změnu databáze pomocí migrace Code First a poskytovatele dbDacFx.
+Nasadili jste nyní zahrnující Změna databáze pomocí migrace Code First a poskytovateli dbDacFx aktualizace aplikace.
 
-![Stránka vyučující s datum narození](deploying-a-database-update/_static/image8.png)
+![Stránka Instruktoři s datum narození](deploying-a-database-update/_static/image8.png)
 
 ![Stránka informací o uživateli](deploying-a-database-update/_static/image9.png)
 
-V dalším kurzu se dozvíte, jak provést nasazení pomocí příkazového řádku.
+V dalším kurzu se dozvíte, jak spustit nasazení pomocí příkazového řádku.
 
 > [!div class="step-by-step"]
 > [Předchozí](deploying-a-code-update.md)

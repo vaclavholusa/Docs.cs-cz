@@ -1,23 +1,22 @@
 ---
 uid: whitepapers/index
-title: Dokumenty White Paper | Microsoft Docs
+title: Dokumenty White Paper | Dokumentace Microsoftu
 author: rick-anderson
-description: Na této stránce najdete dokumenty White Paper můžete nainstalovat a nakonfigurovat ASP.NET a při pro psaní zabezpečené, rychlé a flexibilní aplikací ASP.NET.
+description: Na této stránce najdete dokumenty White Paper umožňují nainstalovat a nakonfigurovat prostředí ASP.NET a vám pomůžou při psaní zabezpečené, rychlé a flexibilní aplikací ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2011
 ms.topic: article
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5d335017a28f3dcbb8332b5361a2b068bddd2cce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: db062863588f49771636f345b9e19b3bf6099736
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28883800"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401212"
 ---
 <a name="whitepapers"></a>Dokumenty white paper
 ====================
@@ -28,7 +27,7 @@ ms.locfileid: "28883800"
     - [ASP.NET 4 – nejnovější změny](aspnet4/breaking-changes.md)
 - [Upgrade aplikace ASP.NET MVC 1.0 na ASP.NET MVC 2](aspnet-mvc2-upgrade-notes.md)
 - [Aplikace ASP.NET zamítla přístup k adresářům služby IIS](denied-access-to-iis-directories.md)
-- [Co je nového v architektuře ASP.NET MVC 2](what-is-new-in-aspnet-mvc.md)
+- [Novinky v ASP.NET MVC 2](what-is-new-in-aspnet-mvc.md)
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [Spuštění ASP.NET 1.1 se službou IIS 6.0](aspnet-and-iis6.md)

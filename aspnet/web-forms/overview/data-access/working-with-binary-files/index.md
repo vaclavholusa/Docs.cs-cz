@@ -1,34 +1,33 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/index
-title: Práce se binární soubory | Microsoft Docs
+title: Práce s binárními soubory | Dokumentace Microsoftu
 author: rick-anderson
-description: Tyto kurzy ukazují, jak umožnit uživatelům nahrát binárních souborů (například dokumenty aplikace Word nebo PDF) na server, kde se mohou být uložené ve složkách nebo v databázi.
+description: Tyto kurzy vám ukážou, jak umožnit uživatelům nahrát na server, kde se mohou být uloženy ve složkách nebo v databázi binárních souborů (jako jsou dokumenty aplikace Word nebo PDF).
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
 ms.topic: article
 ms.assetid: 2d08658a-16c4-4877-9f43-c6503adda7bf
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files
 msc.type: chapter
-ms.openlocfilehash: 025abf4399775f76eca866f0387c1dc2ad6bd86a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5454edc52c1947df2e076593cf9cacc66daa8a80
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26568846"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401851"
 ---
-<a name="working-with-binary-files"></a>Práce se binární soubory
+<a name="working-with-binary-files"></a>Práce s binárními soubory
 ====================
-> Tyto kurzy ukazují, jak umožnit uživatelům nahrát binárních souborů (například dokumenty aplikace Word nebo PDF) na server, kde se mohou být uložené ve složkách nebo v databázi.
+> Tyto kurzy vám ukážou, jak umožnit uživatelům nahrát na server, kde se mohou být uloženy ve složkách nebo v databázi binárních souborů (jako jsou dokumenty aplikace Word nebo PDF).
 
 
 - [Nahrávání souborů (C#)](uploading-files-cs.md)
-- [Zobrazení binární Data v ovládací prvky webového dat (C#)](displaying-binary-data-in-the-data-web-controls-cs.md)
-- [Včetně řešením nahrávání souboru při přidávání nového záznamu (C#)](including-a-file-upload-option-when-adding-a-new-record-cs.md)
-- [Aktualizace a odstranění existující binární Data (C#)](updating-and-deleting-existing-binary-data-cs.md)
+- [Zobrazení binárních dat ve webových ovládacích prvcích dat (C#)](displaying-binary-data-in-the-data-web-controls-cs.md)
+- [Zahrnutí možnosti nahrání souboru při přidání nového záznamu (C#)](including-a-file-upload-option-when-adding-a-new-record-cs.md)
+- [Aktualizace a odstranění stávajících binárních dat (C#)](updating-and-deleting-existing-binary-data-cs.md)
 - [Nahrávání souborů (VB)](uploading-files-vb.md)
-- [Zobrazení binární Data v ovládacích prvcích webové dat (VB)](displaying-binary-data-in-the-data-web-controls-vb.md)
-- [Při přidávání nového záznamu (VB) včetně řešením nahrávání souborů](including-a-file-upload-option-when-adding-a-new-record-vb.md)
-- [Aktualizace a odstranění existující binární Data (VB)](updating-and-deleting-existing-binary-data-vb.md)
+- [Zobrazení binárních dat ve webových ovládacích prvcích dat (VB)](displaying-binary-data-in-the-data-web-controls-vb.md)
+- [Zahrnutí možnosti nahrání souboru při přidání nového záznamu (VB)](including-a-file-upload-option-when-adding-a-new-record-vb.md)
+- [Aktualizace a odstranění stávajících binárních dat (VB)](updating-and-deleting-existing-binary-data-vb.md)

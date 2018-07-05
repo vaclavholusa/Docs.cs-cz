@@ -1,324 +1,323 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
-title: Nákupní košík | Microsoft Docs
+title: Nákupní košík | Dokumentace Microsoftu
 author: Erikre
-description: Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro jsme...
+description: V této sérii kurzů se seznámíte se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a službu Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
 ms.topic: article
 ms.assetid: 6898c601-6c31-432f-8388-e6843f8a17cb
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: a8e96da7737cdf649575711a464c4f7726cb6ded
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 22253b8708efd9ce505c9fbeb9cb2e942588b37d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30890717"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375775"
 ---
 <a name="shopping-cart"></a>Nákupní košík
 ====================
-Podle [Erik Reitan](https://github.com/Erikre)
+podle [Erik Reitan](https://github.com/Erikre)
 
-[Stáhnout adresář Wingtip Toys ukázkového projektu (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) nebo [stáhnout elektronická kniha (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
+[Stáhněte si ukázkový projekt Wingtip Toys (C#)](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) nebo [stáhnout elektronickou knihu (PDF)](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
-> Tento kurz řady naučit se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a Microsoft Visual Studio Express 2013 pro Web. Visual Studio 2013 [projekt pomocí zdrojového kódu C#](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) dispozici je pro tento kurz řady.
+> V této sérii kurzů se seznámíte se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a službu Microsoft Visual Studio Express 2013 for Web. Visual Studio 2013 [projektu se zdrojovým kódem jazyka C#](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) je k dispozici v této sérii kurzů.
 
 
-Tento kurz popisuje obchodní logiky potřebné k přidání nákupní košík na adresář Wingtip Toys ukázkovou aplikaci webových formulářů ASP.NET. V tomto kurzu vychází předchozí kurzu "Zobrazení dat položky a podrobnosti" a je součástí řady kurz Wingtip hračka úložiště. Po dokončení tohoto kurzu, nebudou uživatelé ukázkové aplikace k přidání, odebrání a změna produkty v jejich nákupní košík.
+Tento kurz popisuje obchodní logiku potřebnou k přidání do nákupního košíku do webových formulářů ASP.NET ukázkové aplikace Wingtip Toys. V tomto kurzu vychází z předchozí kurz o "Zobrazení dat a podrobnosti o položkách" a je součástí série kurzů Wingtip Slonovi Store. Po dokončení tohoto kurzu, budou uživatelé ukázkovou aplikaci přidat, odebrat nebo změnit produkty v jejich nákupního košíku.
 
-## <a name="what-youll-learn"></a>Získáte informace:
+## <a name="what-youll-learn"></a>Co se dozvíte:
 
-1. Jak vytvořit nákupní košík pro webovou aplikaci.
-2. Postup povolení uživatelům k přidávání položek do nákupního košíku.
-3. Postup přidání [GridView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview(v=vs.110).aspx#introduction) řízení zobrazit podrobnosti o nákupní košík.
-4. Postup výpočtu a zobrazení celkové pořadí.
-5. Postup odstranění a aktualizace položek v nákupní košík.
-6. Jak se zahrnuje nákupní košík čítače.
+1. Postup vytvoření nákupního košíku pro webovou aplikaci.
+2. Jak povolit uživatelům přidávat položky do nákupního košíku.
+3. Postup přidání [GridView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview(v=vs.110).aspx#introduction) ovládací prvek pro zobrazení podrobností nákupního košíku.
+4. Jak vypočítat a zobrazit ordinálního součtu.
+5. Postup odstranění a aktualizovat položky v nákupním košíku.
+6. Postup zahrnutí nákupního košíku čítače.
 
-## <a name="code-features-in-this-tutorial"></a>Funkce kód v tomto kurzu:
+## <a name="code-features-in-this-tutorial"></a>Funkce kódu v tomto kurzu:
 
-1. Rozhraní Entity Framework Code First
-2. Datových poznámek
-3. Ovládací prvky datových silného typu
+1. Entity Framework Code First
+2. Datové poznámky
+3. Ovládací prvky dat silného typu
 4. Vazby modelu
 
-## <a name="creating-a-shopping-cart"></a>Vytváření nákupní košík
+## <a name="creating-a-shopping-cart"></a>Vytvoření nákupního košíku
 
-Dříve v této série kurzu jste přidali stránky a kód pro zobrazení dat produktu z databáze. V tomto kurzu vytvoříte nákupní košík ke správě produktů, že jsou uživatelé zájem o nákupu. Uživatelé můžou Procházet a přidání položek do nákupního košíku, i když nejsou registrované nebo přihlášení. Ke správě přístupu nákupní košík, přiřadíte uživatelům jedinečný `ID` pomocí globálně jedinečný identifikátor (GUID), když uživatel získá přístup k nákupního košíku poprvé. Budete uložit tento `ID` pomocí stavu relace ASP.NET.
+Dříve v této řadě kurzů jste přidali stránky a kód, chcete-li zobrazit data produktů z databáze. V tomto kurzu vytvoříte nákupního košíku pro správu produktů, že jsou uživatelé zájem o nákup. Uživatelé budou moct Procházet a přidat položky do nákupního košíku, i když nejsou zaregistrované nebo přihlášení. Ke správě přístupu nákupního košíku, kterého přiřadíte uživatelům jedinečný `ID` pomocí globálně jedinečný identifikátor (GUID), když uživatel přistupuje k nákupního košíku poprvé. Toto úložiště `ID` používání stavu relace ASP.NET.
 
 > [!NOTE] 
 > 
-> Stavu relace ASP.NET je vhodné místo k uložení informace specifické pro uživatele, který vyprší po uživatel odejde webu. Při zneužití stav relace může mít vliv na výkon na větší lokalit, light použití relace stavu funguje dobře pro demonstrační účely. Ukázkový projekt adresář Wingtip Toys ukazuje, jak se používání stavu relace bez externího poskytovatele, kde je stav relace uložené v procesu na webovém serveru hostícím webu. Pro větší weby, které poskytují více instancí aplikace nebo lokalit, které používají více instancí aplikace na různé servery, zvažte použití **služba systému Windows Azure mezipaměti**. Tato služba mezipaměti poskytuje Distribuovaná služba ukládání do mezipaměti, která je externí k webu a řeší problém použití stavu relace v procesu. Další informace najdete v tématu [postup používání stavu relace ASP.NET s weby systému Windows Azure](https://docs.microsoft.com/azure/redis-cache/cache-aspnet-session-state-provider).
+> Stav relace technologie ASP.NET je vhodné místo pro ukládání informací specifických pro uživatele, jejíž platnost vyprší po opuštění webu. Zatímco zneužití stav relace může mít vliv na výkon na větších serverech, světle užívání relace stavu funguje dobře pro demonstrační účely. Ukázkový projekt na adresář Wingtip Toys ukazuje způsob použití stavu relace bez externího poskytovatele, kde stavu relace je uložené v procesu na webovém serveru hostujícím webu. Pro větší serverů, které poskytují více instancí aplikace nebo weby, na kterých běží více instancí aplikace na různých serverech, zvažte použití **služby Windows Azure Cache Service**. Tato služba mezipaměti umožňuje distribuované ukládání do mezipaměti služba, která je externí webový server a řeší problém používání stavu relace v procesu. Další informace najdete v tématu [postupy používání stavu relace ASP.NET pomocí modelu weby Windows Azure](https://docs.microsoft.com/azure/redis-cache/cache-aspnet-session-state-provider).
 
 
 ### <a name="add-cartitem-as-a-model-class"></a>Přidat CartItem jako třídu modelu
 
-Dříve v této série kurz definované schéma pro data kategorie a produktu vytvořením `Category` a `Product` třídy v *modely* složky. Nyní přidejte novou třídu definovat schéma pro nákupní košík. Později v tomto kurzu budete přidávat třídy pro zpracování přístupu k datům `CartItem` tabulky. Tato třída bude poskytovat obchodní logiky k přidání, odebrání a aktualizovat položky v nákupní košík.
+Dříve v této řadě kurzů definované schéma pro data kategorií a produktu tím, že vytvoříte `Category` a `Product` tříd v *modely* složky. Teď přidejte novou třídu definovat schéma pro nákupní košík. Později v tomto kurzu přidáte třídy ke zpracování přístupu k datům `CartItem` tabulky. Tato třída bude poskytovat obchodní logiky k přidání, odebrání a aktualizovat položky v nákupním košíku.
 
-1. Klikněte pravým tlačítkem myši *modely* složky a vyberte **přidat**  - &gt; **novou položku**. 
+1. Klikněte pravým tlačítkem myši *modely* a pak zvolte položku **přidat**  - &gt; **nová položka**. 
 
     ![Nákupní košík – nová položka](shopping-cart/_static/image1.png)
-2. **Přidat novou položku** se zobrazí dialogové okno. Vyberte **kód**a potom vyberte **třída**. 
+2. **Přidat novou položku** se zobrazí dialogové okno. Vyberte **kód**a pak vyberte **třídy**. 
 
     ![Nákupní košík - přidat novou položku – dialogové okno](shopping-cart/_static/image2.png)
-3. Název tato nová třída *CartItem.cs*.
+3. Název této nové třídy *CartItem.cs*.
 4. Klikněte na tlačítko **přidat**.  
    Nový soubor třídy se zobrazí v editoru.
-5. Ve výchozím kódu nahraďte následujícím kódem:   
+5. Nahraďte kód následujícím kódem:   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
 
-`CartItem` Třída obsahuje schéma, které definují jednotlivé produkty uživatel přidá do nákupního košíku. Tato třída je podobná jiné třídy schématu, které jste vytvořili dříve v této série kurzu. Podle konvence Entity Framework Code First očekává, primární klíč pro `CartItem` tabulka bude buď `CartItemId` nebo `ID`. Ale kód přepisuje výchozí chování pomocí datové poznámky `[Key]` atribut. `Key` Atribut ItemId vlastnost určuje, že `ItemID` vlastnost je primární klíč.
+`CartItem` Třída obsahuje schéma, které bude definovat každý produkt uživatel přidá do nákupního košíku. Tato třída je podobně jako jiné třídy schématu, kterou jste vytvořili dříve v této sérii kurzů. Podle konvence platformy Entity Framework Code First očekává, primární klíč pro `CartItem` tabulka může mít hodnotu `CartItemId` nebo `ID`. Kód však přepisuje výchozí chování s použitím anotace data `[Key]` atribut. `Key` Atribut ItemId vlastnost určuje, že `ItemID` vlastnost představuje primární klíč.
 
-`CartId` Určuje vlastnost `ID` uživatele, který je přidružená k položce k nákupu. Přidáte kód k vytvoření tohoto uživatele `ID` když uživatel přistupuje k nákupní košík. To `ID` také se uloží jako na proměnnou relace ASP.NET.
+`CartId` Vlastnost určuje, `ID` uživatele, který je přidružený k položce k nákupu. Přidáte kód k vytvoření tohoto uživatele `ID` když uživatel přistupuje k nákupního košíku. To `ID` se uloží také jako proměnnou relace technologie ASP.NET.
 
 ### <a name="update-the-product-context"></a>Aktualizace produktu kontextu
 
-Kromě přidání `CartItem` třída, budete muset aktualizovat třídy kontextu databáze, která spravuje tříd entit, který poskytuje přístup k datům do databáze. K tomu budete přidávat nově vytvořený `CartItem` třída na modelu `ProductContext` třídy.
+Kromě přidání `CartItem` třídy, budete muset aktualizovat třídy kontextu databáze, která spravuje tříd entit, který poskytuje přístup k datům v databázi. Chcete-li to provést, přidejte nově vytvořený `CartItem` třída do modelu `ProductContext` třídy.
 
-1. V **Průzkumníku řešení**, najít a otevřít *ProductContext.cs* v soubor *modely* složky.
-2. Přidejte zvýrazněný kód, který *ProductContext.cs* následujícím způsobem:  
+1. V **Průzkumníka řešení**, najít a otevřít *ProductContext.cs* soubor *modely* složky.
+2. Přidejte zvýrazněný kód, který *ProductContext.cs* to následujícím způsobem:  
 
     [!code-csharp[Main](shopping-cart/samples/sample2.cs?highlight=14)]
 
-Jak je uvedeno nahoře v kurzu této série, kód v *ProductContext.cs* přidá soubor `System.Data.Entity` obor názvů tak, aby měli přístup k základním funkcím Entity Framework. Tato funkce zahrnuje schopnost dotazovat, vložit, aktualizovat a odstranit data ve spolupráci s objektů se silným typem. `ProductContext` Třída přidává přístup k nově přidaný `CartItem` třída modelu.
+Jak už bylo zmíněno dříve v této řadě kurzů, kód v *ProductContext.cs* přidá soubor `System.Data.Entity` obor názvů, abyste měli přístup ke všem funkcím základní rozhraní Entity Framework. Tato funkce zahrnuje možnost pro dotazování, vložení, aktualizace a odstranění dat při práci s objektů se silným typem. `ProductContext` Třídy přidá přístup do nově přidaný `CartItem` třída modelu.
 
-### <a name="managing-the-shopping-cart-business-logic"></a>Správa nákupní košík obchodní logiky
+### <a name="managing-the-shopping-cart-business-logic"></a>Správa nákupního košíku obchodní logiky
 
-V dalším kroku vytvoříte `ShoppingCart` – třída v nové *logiku* složky. `ShoppingCart` Třída zpracovává přístupu k datům `CartItem` tabulky. Třída bude také obsahovat obchodní logiku pro přidání, odebrání a aktualizovat položky v nákupní košík.
+V dalším kroku vytvoříte `ShoppingCart` tříd v novém *logiky* složky. `ShoppingCart` Třída zpracovává při přístupu k datům `CartItem` tabulky. Třída bude také obsahovat obchodní logiky k přidání, odebrání a aktualizovat položky v nákupním košíku.
 
-Nákupní košík logiky, která přidáte bude obsahovat funkci ke správě následující akce:
+Nákupní košík logiku, která přidáte bude obsahovat funkce pro správu následující akce:
 
 1. Přidávání položek do nákupního košíku
-2. Odebírání položek z nákupní košík
-3. Získání ID nákupní košík
-4. Načítání položek ze nákupní košík
-5. Součtem množství všechny nákupní košík položky
-6. Aktualizace dat nákupní košík
+2. Odebrání položek z nákupního košíku
+3. Získání ID nákupního košíku
+4. Načítání položek z nákupního košíku
+5. Součet množství všechny nákupního košíku položky
+6. Aktualizace dat nákupního košíku
 
-Na stránce nákupní košík (*ShoppingCart.aspx*) a třídu nákupního košíku se bude používat pro přístup k datům nákupní košík společně. Nákupní košík stránce se zobrazí všechny položky, které uživatel přidá do nákupního košíku. Kromě nákupního košíku stránky a třídy, vytvoříte stránky (*AddToCart.aspx*) přidejte produkty nákupní košík. Přidejte také kód pro *ProductList.aspx* stránky a *ProductDetails.aspx* stránky, která bude obsahovat odkaz na *AddToCart.aspx* stránky, takže uživatel může přidávat produkty do nákupního košíku.
+Na stránce nákupní košík (*ShoppingCart.aspx*) a třídu nákupního košíku se použije společně pro přístup k datům nákupního košíku. Na stránce nákupní košík se zobrazí všechny položky, které uživatel přidá do nákupního košíku. Kromě nákupního košíku stránky a třídy, vytvoříte stránku (*AddToCart.aspx*) přidejte produkty do nákupního košíku. Bude také přidat kód do *ProductList.aspx* stránky a *ProductDetails.aspx* stránka, která bude obsahovat odkaz na *AddToCart.aspx* stránky, takže uživatel může přidávat produkty do nákupního košíku.
 
-Následující diagram znázorňuje základní proces, který nastane, když uživatel přidá do nákupního košíku produkt.
+Následující diagram znázorňuje základní proces, ke které dochází, když uživatel přidá produktu do nákupního košíku.
 
-![Nákupní košík – přidání do nákupní košík](shopping-cart/_static/image3.png)
+![Nákupní košík – přidání do nákupního košíku](shopping-cart/_static/image3.png)
 
-Když uživatel klikne **přidat do košíku** odkaz na buď *ProductList.aspx* stránky nebo *ProductDetails.aspx* stránky, aplikace bude přejděte do *AddToCart.aspx* stránky a potom automaticky na *ShoppingCart.aspx* stránky. *AddToCart.aspx* stránky voláním metody ve třídě ShoppingCart přidá vyberte produkt do nákupního košíku. *ShoppingCart.aspx* stránky se zobrazí produkty, které byly přidány do nákupního košíku.
+Pokud uživatel klikne **přidat do košíku** odkazu na buď *ProductList.aspx* stránky nebo *ProductDetails.aspx* stránce aplikace přejde *AddToCart.aspx* stránky a pak automaticky do *ShoppingCart.aspx* stránky. *AddToCart.aspx* voláním metody ve třídě ShoppingCart stránku přidá vyberte produktu do nákupního košíku. *ShoppingCart.aspx* stránce se zobrazí produkty, které byly přidány do nákupního košíku.
 
-#### <a name="creating-the-shopping-cart-class"></a>Vytvoření třídy nákupní košík
+#### <a name="creating-the-shopping-cart-class"></a>Vytvoření třídy nákupního košíku
 
-`ShoppingCart` Třída přidána do samostatné složky v aplikaci tak, že bude jasně odlišit modelu (složku modely), na stránkách (do kořenové složky) a logiku (logiku složky).
+`ShoppingCart` Třídy se přidají do samostatné složky v aplikaci tak, že bude jasně odlišit modelu (složka modelů), na stránkách (do kořenové složky) a logiku (logiku složky).
 
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Northwind**projektu a vyberte **přidat**-&gt;**novou složku**. Název nové složky *logiku*.
-2. Klikněte pravým tlačítkem myši *logiku* složku a potom vyberte **přidat**  - &gt; **novou položku**.
-3. Přidat nový soubor třídy s názvem *ShoppingCartActions.cs*.
-4. Ve výchozím kódu nahraďte následujícím kódem:   
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **Northwind**projektu a vyberte **přidat**-&gt;**novou složku**. Název nové složky *logiky*.
+2. Klikněte pravým tlačítkem myši *logiky* složku a pak vyberte **přidat**  - &gt; **nová položka**.
+3. Přidejte nový soubor třídy s názvem *ShoppingCartActions.cs*.
+4. Nahraďte kód následujícím kódem:   
 
     [!code-csharp[Main](shopping-cart/samples/sample3.cs)]
 
-`AddToCart` Metoda umožňuje jednotlivé produkty, které mají být zahrnuty do nákupního košíku na základě produktu `ID`. Produkt je přidat do košíku nebo pokud košíku již obsahuje položku pro daný produkt, se zvyšuje množství.
+`AddToCart` Metoda umožňuje jednotlivé produkty, které mají být zahrnuty do nákupního košíku podle produktu `ID`. Produkt se přidá do košíku, nebo pokud košíku již obsahuje položku pro tento produkt, se zvýší množství.
 
-`GetCartId` Metoda vrátí košíku `ID` pro uživatele. Košíku `ID` slouží ke sledování položky, které má uživatel v jejich nákupní košík. Pokud uživatel nemá stávající košíku `ID`, nové košíku `ID` je pro ně byly vytvořeny. Pokud je uživatel přihlášený jako registrovaný uživatel košíku `ID` nastavena na své uživatelské jméno. Ale pokud uživatel není přihlášený v košíku `ID` je nastavená na hodnotu jedinečný (GUID). Identifikátor GUID zajišťuje, že pouze jeden košíku se vytvoří pro každého uživatele, založené na relaci.
+`GetCartId` Metoda vrátí košíku `ID` pro daného uživatele. Košíku `ID` se používá ke sledování položky, které má uživatel v jejich nákupního košíku. Pokud uživatel nemá existující košíku `ID`, nové nákupní seznam `ID` je pro ně vytvořili. Pokud je uživatel přihlášený jako registrovaný uživatel košíku `ID` je nastavena na jejich uživatelskému jménu. Nicméně pokud uživatel není přihlášený v košíku `ID` je nastavena na jedinečnou hodnotu (GUID). Identifikátor GUID zajišťuje, že pouze jeden košíku se vytvoří pro každého uživatele, založené na relaci.
 
-`GetCartItems` Metoda vrátí seznam hodnot nákupního košíku položky pro uživatele. Později v tomto kurzu, uvidíte, že vazby modelu se používá k zobrazení košíku položek do nákupního košíku pomocí `GetCartItems` metoda.
+`GetCartItems` Metoda vrátí seznam hodnot položky v nákupním košíku pro daného uživatele. Později v tomto kurzu, zobrazí se, že vazba modelu se používá k zobrazení košíku položky do nákupního košíku pomocí `GetCartItems` metody.
 
-### <a name="creating-the-add-to-cart-functionality"></a>Vytváření funkci přidat do košíku
+### <a name="creating-the-add-to-cart-functionality"></a>Vytvoření funkce přidat do košíku
 
-Jak už bylo zmíněno dříve, vytvoříte zpracování stránky s názvem *AddToCart.aspx* který se použije pro přidání nové produkty do nákupního košíku uživatele. Tato stránka vám zavoláme `AddToCart` metoda v `ShoppingCart` třídy, kterou jste právě vytvořili. *AddToCart.aspx* stránky se očekávat, který produkt `ID` je do ní předán. Tento produkt `ID` se použije při volání metody `AddToCart` metoda v `ShoppingCart` třídy.
+Jak už bylo zmíněno dříve, vytvoříte zpracování stránky s názvem *AddToCart.aspx* , který se použije k přidání do nákupního košíku uživatele nové produkty. Tato stránka bude volat `AddToCart` metodu `ShoppingCart` třídu, která jste právě vytvořili. *AddToCart.aspx* stránky bude očekávat, že produkt `ID` je předán. Tento produkt `ID` se použije při volání `AddToCart` metodu `ShoppingCart` třídy.
 
 > [!NOTE] 
 > 
-> Chystáte se změnit modelu code-behind (*AddToCart.aspx.cs*) pro tuto stránku není stránka uživatelského rozhraní (*AddToCart.aspx*).
+> Bude změna modelu code-behind (*AddToCart.aspx.cs*) pro tuto stránku, není na stránce uživatelského rozhraní (*AddToCart.aspx*).
 
 
 #### <a name="to-create-the-add-to-cart-functionality"></a>Chcete-li vytvořit přidat do košíku funkce:
 
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Northwind**projektu, klikněte na tlačítko **přidat**  - &gt; **novou položku**.  
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Northwind**projektu, klikněte na tlačítko **přidat**  - &gt; **nová položka**.  
    **Přidat novou položku** se zobrazí dialogové okno.
-2. Přidat standardní novou stránku (webového formuláře) pro aplikaci s názvem *AddToCart.aspx*. 
+2. Přidejte novou stránku standardní (webové formuláře) pro aplikaci s názvem *AddToCart.aspx*. 
 
-    ![Nákupní košík – přidání webového formuláře](shopping-cart/_static/image4.png)
-3. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *AddToCart.aspx* a pak klikněte na tlačítko **kód zobrazení**. *AddToCart.aspx.cs* otevření souboru kódu v editoru.
-4. Nahraďte stávající kód v *AddToCart.aspx.cs* kódu následujícím kódem:   
+    ![Nákupní košík – přidejte webový formulář](shopping-cart/_static/image4.png)
+3. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *AddToCart.aspx* stránce a potom klikněte na tlačítko **zobrazit kód**. *AddToCart.aspx.cs* použití modelu code-behind soubor je otevřen v editoru.
+4. Nahraďte existující kód ve třídě *AddToCart.aspx.cs* modelu code-behind následujícím kódem:   
 
     [!code-csharp[Main](shopping-cart/samples/sample4.cs)]
 
-Když *AddToCart.aspx* načtení stránky produktu `ID` se načítají z řetězce dotazu. V dalším kroku instance třídy nákupního košíku se vytvoří a používá k volání `AddToCart` metoda, kterou jste přidali dříve v tomto kurzu. `AddToCart` Metody, které jsou součástí *ShoppingCartActions.cs* souboru, obsahuje logiku pro přidání vybrané produktu do nákupního košíku nebo zvýšit množství produktu vybrané produktu. Pokud produkt nebyl přidán do nákupního košíku, je produkt přidán do `CartItem` tabulky databáze. Pokud uživatel přidá další položku stejného produktu produktu již byla přidána do nákupního košíku, objemu produktu se zvýší v `CartItem` tabulky. Nakonec stránce přesměruje zpět *ShoppingCart.aspx* stránky, která přidáte v dalším kroku, kde uživateli se zobrazí aktualizovaný seznam položky v košíku.
+Když *AddToCart.aspx* načtení stránky, produkt `ID` je načten z řetězce dotazu. V dalším kroku je instance třídy nákupního košíku vytvořit a použít k volání `AddToCart` metodu, která jste přidali dříve v tomto kurzu. `AddToCart` Metoda součástí *ShoppingCartActions.cs* souboru, obsahuje logiku pro přidání vybraného produktu do nákupního košíku nebo zvýšení množství produktů vybranému produktu. Pokud produkt nebyl přidán do nákupního košíku, produktu je přidána do `CartItem` tabulky databáze. Pokud uživatel přidá další položka stejný produkt produktu se už přidala do nákupního košíku, se v zvýší množství produktu `CartItem` tabulky. Nakonec přesměruje na stránku zpět *ShoppingCart.aspx* stránka, která přidáte v dalším kroku, ve kterém se uživateli zobrazí aktualizovaný seznam položek v košíku.
 
-Jak už jsme zmínili, uživatel `ID` slouží k identifikaci produkty, které jsou spojeny s konkrétním uživatelem. To `ID` se přidá řádek v `CartItem` tabulky pokaždé, když uživatel přidá do nákupního košíku produkt.
+Jak už jsme zmínili, uživatel `ID` slouží k identifikaci produkty, které jsou spojeny s konkrétním uživatelem. To `ID` se přidá na řádek v `CartItem` tabulky pokaždé, když uživatel přidá produktu do nákupního košíku.
 
-### <a name="creating-the-shopping-cart-ui"></a>Vytváření nákupní košík uživatelského rozhraní
+### <a name="creating-the-shopping-cart-ui"></a>Vytvoření nákupního košíku uživatelského rozhraní
 
-*ShoppingCart.aspx* stránky se zobrazí produkty, které uživatel přidal do jejich nákupní košík. Také zajistí možnost přidat, odebrat a aktualizaci položky v nákupní košík.
+*ShoppingCart.aspx* stránce se zobrazí produkty, které uživatel přidal do svého nákupního košíku. Také bude poskytovat možnost přidávat, odebírat a aktualizovat položky v nákupním košíku.
 
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem na **Northwind**, klikněte na tlačítko **přidat**  - &gt; **novou položku**.  
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na **Northwind**, klikněte na tlačítko **přidat**  - &gt; **nová položka**.  
    **Přidat novou položku** se zobrazí dialogové okno.
-2. Přidat novou stránku (webového formuláře) zahrnující hlavní stránky tak, že vyberete **webového formuláře pomocí stránky předlohy**. Zadejte název nové stránky *ShoppingCart.aspx*.
-3. Vyberte **Site.Master** připojit stránky předlohy pro nově vytvořený *.aspx* stránky.
-4. V *ShoppingCart.aspx* stránky, nahraďte existující kód následující kód:   
+2. Přidejte novou stránku (webové formuláře), která obsahuje stránku předlohy tak, že vyberete **webový formulář používající stránku předlohy**. Zadejte název nové stránky *ShoppingCart.aspx*.
+3. Vyberte **Site.Master** připojení na nově vytvořený na hlavní stránce *.aspx* stránky.
+4. V *ShoppingCart.aspx* stránka, nahraďte existující kód následujícím kódem:   
 
     [!code-aspx[Main](shopping-cart/samples/sample5.aspx)]
 
-*ShoppingCart.aspx* stránka obsahuje **GridView** ovládací prvek s názvem `CartList`. Tento ovládací prvek pro vazbu nákupní košík data z databáze, která se používá vazby modelu **GridView** ovládacího prvku. Když nastavíte `ItemType` vlastnost **GridView** řídit, vazby dat výraz `Item` je k dispozici v kódu ovládacího prvku a řízení se stane silného typu. Jak je uvedeno výše v této série kurz, můžete vybrat podrobnosti `Item` pomocí IntelliSense. Pokud chcete konfigurovat ovládací prvek dat pomocí vazby modelu vyberte data, můžete nastavit `SelectMethod` vlastností ovládacího prvku. Ve výše uvedené značky, nastavíte `SelectMethod` lze pomocí této metody GetShoppingCartItems, který vrátí seznam hodnot `CartItem` objekty. **GridView** ovládací prvek pro datové volá metodu v příslušnou dobu v životním cyklu stránky a automaticky vytvoří vazbu vrácená data. `GetShoppingCartItems` Metoda musí být přidán.
+*ShoppingCart.aspx* stránka obsahuje **GridView** ovládací prvek s názvem `CartList`. Tento ovládací prvek používá vazbu modelu z databáze, kterou chcete vytvořit vazbu dat nákupního košíku **GridView** ovládacího prvku. Při nastavení `ItemType` vlastnost **GridView** řídit vazbový výraz `Item` je k dispozici v značky ovládacího prvku a ovládací prvek stane silného typu. Jak je uvedeno výše v této sérii kurzů, můžete vybrat podrobnosti `Item` pomocí technologie IntelliSense. Chcete-li nakonfigurovat ovládací prvek data pomocí vazby modelu vyberte data, nastavte `SelectMethod` vlastnost ovládacího prvku. Ve výše uvedené značky, můžete nastavit `SelectMethod` GetShoppingCartItems metody, které vrací seznam `CartItem` objekty. **GridView** ovládací prvek dat volá metodu v příslušnou dobu v životním cyklu stránky a automaticky sváže s vrácenými daty. `GetShoppingCartItems` – Metoda musí být přidána.
 
-#### <a name="retrieving-the-shopping-cart-items"></a>Načítání položek nákupní košík
+#### <a name="retrieving-the-shopping-cart-items"></a>Načítání položek nákupního košíku
 
-Dále přidáte kód, který *ShoppingCart.aspx.cs* kódu k načtení a naplnit rozhraní nákupního košíku.
+V dalším kroku přidáte kód, který *ShoppingCart.aspx.cs* modelu code-behind načíst a naplňte jimi rozhraní nákupního košíku.
 
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *ShoppingCart.aspx* a pak klikněte na tlačítko **kód zobrazení**. *ShoppingCart.aspx.cs* otevření souboru kódu v editoru.
-2. Nahraďte stávající kód s následujícími službami:  
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *ShoppingCart.aspx* stránce a potom klikněte na tlačítko **zobrazit kód**. *ShoppingCart.aspx.cs* použití modelu code-behind soubor je otevřen v editoru.
+2. Nahraďte stávající kód následujícím kódem:  
 
     [!code-csharp[Main](shopping-cart/samples/sample6.cs)]
 
-Jak je uvedeno nahoře, `GridView` data řízení volání `GetShoppingCartItems` metoda v příslušnou dobu v stránky životní cyklus a automaticky váže vrácená data. `GetShoppingCartItems` Metoda vytvoří instanci `ShoppingCartActions` objektu. Potom kód používá tuto instanci k vrácení položky v košíku voláním `GetCartItems` metoda.
+Jak je uvedeno výše, `GridView` dat řídit volání `GetShoppingCartItems` metoda v příslušnou dobu života stránky cyklu a automaticky vytvoří vazbu vrácená data. `GetShoppingCartItems` Metoda vytvoří instanci `ShoppingCartActions` objektu. Potom kód použije tuto instanci k vrácení položek v košíku voláním `GetCartItems` metody.
 
-### <a name="adding-products-to-the-shopping-cart"></a>Přidání produktů do nákupní košík
+### <a name="adding-products-to-the-shopping-cart"></a>Přidání produktů do nákupního košíku
 
-Když buď *ProductList.aspx* nebo *ProductDetails.aspx* zobrazí se stránka, uživatel bude moct přidat produktu nákupního košíku pomocí odkazu. Po kliknutí na odkaz, aplikace přejde na stránku zpracování s názvem *AddToCart.aspx*. *AddToCart.aspx* stránky zavolá `AddToCart` metoda v `ShoppingCart` třídu, která jste přidali dříve v tomto kurzu.
+Když buď *ProductList.aspx* nebo *ProductDetails.aspx* se zobrazí stránka, uživatel bude moct přidat produktu do nákupního košíku pomocí odkazu. Po kliknutí na odkaz, aplikace přejde na stránku zpracování s názvem *AddToCart.aspx*. *AddToCart.aspx* stránky bude volat `AddToCart` metodu `ShoppingCart` třídu, která jste přidali dříve v tomto kurzu.
 
-Nyní přidáte **přidat do košíku** odkaz na obě *ProductList.aspx* stránky a *ProductDetails.aspx* stránky. Tento odkaz bude obsahovat produktu `ID` , je načtena z databáze.
+Nyní, přidáte **přidat do košíku** odkaz na obě *ProductList.aspx* stránky a *ProductDetails.aspx* stránky. Tento odkaz bude obsahovat produktu `ID` , který je načten z databáze.
 
-1. V **Průzkumníku řešení**, najít a otevřít stránku s názvem *ProductList.aspx*.
-2. Přidání značek zvýrazněných v žlutý k *ProductList.aspx* stránky tak, aby se celá stránka vypadat takto:  
+1. V **Průzkumníka řešení**, najít a otevřít stránku s názvem *ProductList.aspx*.
+2. Přidejte značky zvýrazněné žlutou barvou na *ProductList.aspx* stránce tak, aby celé stránky se zobrazí takto:  
 
     [!code-aspx[Main](shopping-cart/samples/sample7.aspx?highlight=50-54)]
 
-### <a name="testing-the-shopping-cart"></a>Testování nákupní košík
+### <a name="testing-the-shopping-cart"></a>Testování nákupního košíku
 
-Spuštění aplikace, abyste viděli, jak přidat produkty do nákupního košíku.
+Spusťte aplikaci, abyste viděli, jak přidat produkty do nákupního košíku.
 
-1. Stiskněte klávesu **F5** ke spuštění aplikace.  
- Po projekt znovu vytvoří databázi, bude v prohlížeči otevřít a zobrazit *Default.aspx* stránky.
-2. Vyberte **aut** v navigační nabídce kategorie.  
- *ProductList.aspx* se zobrazí stránka zobrazuje jenom produkty, které jsou zahrnuty v kategorii "Aut". 
+1. Stisknutím klávesy **F5** ke spuštění aplikace.  
+ Po projekt znovu vytvoří databázi, v prohlížeči se otevře a zobrazí *Default.aspx* stránky.
+2. Vyberte **auta** navigační nabídce kategorie.  
+ *ProductList.aspx* se zobrazí stránka zobrazující pouze produkty, které jsou zahrnuté v kategorii cars (auta). 
 
     ![Nákupní košík - automobilů](shopping-cart/_static/image5.png)
-3. Klikněte **přidat do košíku** odkaz vedle první produktu uvedené (převést car).   
- *ShoppingCart.aspx* se zobrazí stránka zobrazující výběr v nákupního košíku. 
+3. Klikněte na tlačítko **přidat do košíku** uvedený odkaz vedle první produktu (převoditelné auta).   
+ *ShoppingCart.aspx* se zobrazí stránka zobrazující výběr v nákupním košíku. 
 
     ![Nákupní košík - košíku](shopping-cart/_static/image6.png)
-4. Zobrazit další produkty výběrem **roviny** v navigační nabídce kategorie.
-5. Klikněte **přidat do košíku** odkaz vedle první produktu uvedené.  
- *ShoppingCart.aspx* se zobrazí stránka s další položky.
+4. Zobrazit další produkty tak, že vyberete **rovin** navigační nabídce kategorie.
+5. Klikněte na tlačítko **přidat do košíku** odkaz vedle první produktu uvedené.  
+ *ShoppingCart.aspx* zobrazí se stránka s další položky.
 6. Zavřete prohlížeč.
 
-### <a name="calculating-and-displaying-the-order-total"></a>Výpočet a zobrazení celkové pořadí
+### <a name="calculating-and-displaying-the-order-total"></a>Výpočet a zobrazování ordinálního součtu
 
-Kromě přidání produktů do nákupního košíku, přidáte `GetTotal` metodu `ShoppingCart` třídy a zobrazit velikost celkové pořadí na stránce nákupní košík.
+Kromě přidání do nákupního košíku produkty, které přidáte `GetTotal` metodu `ShoppingCart` třídy a zobrazí celková částka objednávky na stránce nákupní košík.
 
-1. V **Průzkumníku řešení**, otevřete *ShoppingCartActions.cs* v soubor *logiku* složky.
-2. Přidejte následující `GetTotal` metoda zvýrazněných v žlutý k `ShoppingCart` třídy, tak, aby třída vypadat takto:   
+1. V **Průzkumníku řešení**, otevřete *ShoppingCartActions.cs* soubor *logiky* složky.
+2. Přidejte následující `GetTotal` metoda zvýrazněné žlutou barvou na `ShoppingCart` třídy tak, aby třída se zobrazí takto:   
 
     [!code-csharp[Main](shopping-cart/samples/sample8.cs?highlight=85-97)]
 
-Nejdřív `GetTotal` metoda získá ID nákupní košík pro daného uživatele. Potom metoda získá košíku celkový vynásobením cena produktu množství produktu pro každý produkt uvedený v košíku.
+Nejprve je potřeba `GetTotal` metoda získá ID nákupního košíku pro daného uživatele. Potom metoda získá košíku celkový vynásobením cena produktu množství produktu pro jednotlivé produkty uvedené v košíku.
 
 > [!NOTE] 
 > 
-> Výše uvedený kód používá typ s možnou hodnotou Null "`int?`". Typy s možnou hodnotou Null může představovat všechny hodnoty základní typ a také jako hodnotu null. Další informace najdete v tématu [pomocí typy s možnou hodnotou Null](https://msdn.microsoft.com/library/2cf62fcy(v=vs.110).aspx).
+> Výše uvedený kód používá typ s možnou hodnotou Null "`int?`". Typy připouštějící hodnotu Null, může představovat všechny hodnoty z nadřazeného typu a také jako hodnotu null. Další informace najdete v tématu [typy připouštějící hodnotu Null pomocí](https://msdn.microsoft.com/library/2cf62fcy(v=vs.110).aspx).
 
 
-### <a name="modify-the-shopping-cart-display"></a>Upravit zobrazení nákupní košík
+### <a name="modify-the-shopping-cart-display"></a>Upravit zobrazení nákupního košíku
 
-Dále budete upravovat kód pro *ShoppingCart.aspx* stránky k volání `GetTotal` metoda a zobrazení, které na celkový počet *ShoppingCart.aspx* stránka při načtení stránky.
+Dále upravíte kód *ShoppingCart.aspx* stránku pro volání `GetTotal` metody a zobrazení, které celkem *ShoppingCart.aspx* stránce při načtení stránky.
 
-1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *ShoppingCart.aspx* a vyberte **kód zobrazení**.
-2. V *ShoppingCart.aspx.cs* souboru, aktualizovat `Page_Load` obslužná rutina přidáním následujícího kódu zvýrazněných v žlutý:   
+1. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *ShoppingCart.aspx* stránku a vybrat **zobrazit kód**.
+2. V *ShoppingCart.aspx.cs* soubor, aktualizovat `Page_Load` obslužná rutina přidáním následujícího kódu zvýrazněné žlutou barvou:   
 
     [!code-csharp[Main](shopping-cart/samples/sample9.cs?highlight=16-31)]
 
-Když *ShoppingCart.aspx* stránka načte, načte nákupní košík objekt a potom načte nákupní košík celkem voláním `GetTotal` metodu `ShoppingCart` – třída. Pokud je prázdný nákupní košík, se zobrazí za tímto účelem zprávu.
+Když *ShoppingCart.aspx* stránka načte, načte objekt nákupního košíku a pak načte nákupního košíku celkem voláním `GetTotal` metodu `ShoppingCart` třídy. Pokud nákupní košík je prázdný, se zobrazí příslušná zpráva.
 
-### <a name="testing-the-shopping-cart-total"></a>Testování nákupní košík celkem
+### <a name="testing-the-shopping-cart-total"></a>Testování nákupního košíku celkem
 
-Spusťte aplikaci teď chcete zobrazit, jak nelze pouze přidat produkt do nákupního košíku, ale zobrazí celkový počet nákupní košík.
+Spusťte aplikaci teď zobrazíte, jak nelze pouze přidání produktu do nákupního košíku, ale můžete zobrazit celkový počet nákupního košíku.
 
-1. Stiskněte klávesu **F5** ke spuštění aplikace.  
- Prohlížeč a zobrazit *Default.aspx* stránky.
-2. Vyberte **aut** v navigační nabídce kategorie.
-3. Klikněte **přidat do košíku** odkaz vedle první produktu.   
- *ShoppingCart.aspx* se zobrazí stránka s celkem pořadí. 
+1. Stisknutím klávesy **F5** ke spuštění aplikace.  
+ V prohlížeči se otevře a zobrazí *Default.aspx* stránky.
+2. Vyberte **auta** navigační nabídce kategorie.
+3. Klikněte na tlačítko **přidat do košíku** odkaz vedle první produktu.   
+ *ShoppingCart.aspx* zobrazí se stránka s ordinálního součtu. 
 
-    ![Nákupní košík - celkový počet košíku](shopping-cart/_static/image7.png)
-4. Některé jiné produkty (například roviny) přidáte do košíku.
-5. *ShoppingCart.aspx* se zobrazí stránka s aktualizovaný součet pro všechny produkty, které jste přidali. 
+    ![Nákupní košík - celkem košíku](shopping-cart/_static/image7.png)
+4. Některé produkty (například roviny) přidáte do košíku.
+5. *ShoppingCart.aspx* zobrazí se stránka s aktualizovanou celkový součet pro všechny produkty, které jste přidali. 
 
     ![Nákupní košík - více produktů](shopping-cart/_static/image8.png)
-6. Zastavte spuštěné aplikaci ukončením okna prohlížeče.
+6. Zavření okna prohlížeče zastavte spuštěnou aplikaci.
 
-### <a name="adding-update-and-checkout-buttons-to-the-shopping-cart"></a>Přidání tlačítka najdete v článku věnovaném a aktualizace do nákupní košík
+### <a name="adding-update-and-checkout-buttons-to-the-shopping-cart"></a>Přidání tlačítka rezervovat a aktualizace do nákupního košíku
 
-Povolit uživatelům změnit nákupní košík, přidáte **aktualizace** tlačítko a **najdete v článku věnovaném** tlačítko na stránku nákupní košík. **Najdete v článku věnovaném** tlačítko nepoužívá až později z této série kurzu.
+Povolit uživatelům změnit nákupního košíku, přidáte **aktualizace** tlačítko a **Checkout** tlačítko na stránku nákupní košík. **Checkout** tlačítko nepoužívá až později v této sérii kurzů.
 
-1. V **Průzkumníku řešení**, otevřete *ShoppingCart.aspx* stránky v kořenu projektu webové aplikace.
-2. Chcete-li přidat **aktualizace** tlačítko a **najdete v článku věnovaném** tlačítko k *ShoppingCart.aspx* přidejte značku zvýrazněných v žlutý na existující značky, jak je znázorněno v Následující kód:   
+1. V **Průzkumníka řešení**, otevřete *ShoppingCart.aspx* stránky v kořenovém adresáři projektu webové aplikace.
+2. Přidat **aktualizace** tlačítko a **Checkout** tlačítko *ShoppingCart.aspx* stránce, přidání značek zvýrazněné žlutou barvou na existující značky, jak je znázorněno Následující kód:   
 
     [!code-aspx[Main](shopping-cart/samples/sample10.aspx?highlight=36-45)]
 
-Když uživatel klikne **aktualizace** tlačítko `UpdateBtn_Click` bude volána obslužná rutina události. Této obslužné rutiny události bude volat kód, který přidáte v dalším kroku.
+Pokud uživatel klikne **aktualizace** tlačítko, `UpdateBtn_Click` obslužná rutina události zavolá se. Tato obslužná rutina události zavolá kód, který přidáte v dalším kroku.
 
-Dále můžete aktualizovat kód součástí *ShoppingCart.aspx.cs* souboru můžete procházet košíku položky a volání `RemoveItem` a `UpdateItem` metody.
+V dalším kroku můžete aktualizovat kód obsažený v *ShoppingCart.aspx.cs* souboru pro cyklický průchod položky nákupního košíku a volání `RemoveItem` a `UpdateItem` metody.
 
-1. V **Průzkumníku řešení**, otevřete *ShoppingCart.aspx.cs* soubor v kořenu projektu webové aplikace.
-2. Přidejte následující kód části zvýrazněných v žlutý k *ShoppingCart.aspx.cs* souboru:   
+1. V **Průzkumníka řešení**, otevřete *ShoppingCart.aspx.cs* soubor v kořenové složce projektu webové aplikace.
+2. Následující oddíly kódu zvýrazněné žlutou barvou, které chcete přidat *ShoppingCart.aspx.cs* souboru:   
 
     [!code-csharp[Main](shopping-cart/samples/sample11.cs?highlight=9-11,33,44-89)]
 
-Když uživatel klikne **aktualizace** tlačítko *ShoppingCart.aspx* stránky, je volána metoda UpdateCartItems. Metoda UpdateCartItems získá aktualizovanými hodnotami pro každou položku v nákupní košík. Pak zavolá metodu UpdateCartItems `UpdateShoppingCartDatabase` – metoda (Přidat a vysvětlené v dalším kroku) můžete přidat nebo odebrat položky z nákupního košíku. Jakmile databáze je aktualizovaná tak, aby odrážela aktualizace nákupní košík **GridView** řízení se aktualizuje na stránce nákupní košík voláním `DataBind` metodu pro **rutina GridView**. Velikost celkové pořadí na stránce nákupní košík je také aktualizovat tak, aby odrážela aktualizovaný seznam položek.
+Pokud uživatel klikne **aktualizace** tlačítko *ShoppingCart.aspx* stránky, je volána metoda UpdateCartItems. Metoda UpdateCartItems získá aktualizovanými hodnotami pro každé položky v nákupním košíku. Potom volá metodu UpdateCartItems `UpdateShoppingCartDatabase` – metoda (přidání a je vysvětleno v dalším kroku) Chcete-li přidat nebo odebrat položky z nákupního košíku. Po databázi byl aktualizován tak, aby odrážely aktualizace do nákupního košíku **GridView** ovládací prvek se aktualizuje na stránce nákupní košík voláním `DataBind` metodu **GridView**. Celková částka objednávky na stránce nákupní košík je také aktualizovat tak, aby odrážely aktualizovaný seznam položek.
 
-### <a name="updating-and-removing-shopping-cart-items"></a>Aktualizace a odstranění nákupního košíku položky
+### <a name="updating-and-removing-shopping-cart-items"></a>Aktualizace a odebrání položky v nákupním košíku
 
-Na *ShoppingCart.aspx* stránce se zobrazí ovládací prvky byly přidány pro aktualizace množství položky a odebrání položky. Nyní přidáte kód, který bude tyto ovládací prvky fungovat.
+Na *ShoppingCart.aspx* stránce se zobrazí ovládací prvky byly přidány pro aktualizaci množství položku nebo odebráním položky. Teď přidejte kód, který provede tyto ovládací prvky fungují.
 
-1. V **Průzkumníku řešení**, otevřete *ShoppingCartActions.cs* v soubor *logiku* složky.
-2. Přidejte následující kód zvýrazněných v žlutý k *ShoppingCartActions.cs* soubor třídy:   
+1. V **Průzkumníku řešení**, otevřete *ShoppingCartActions.cs* soubor *logiky* složky.
+2. Přidejte následující kód zvýrazněné žlutou barvou na *ShoppingCartActions.cs* soubor třídy:   
 
     [!code-csharp[Main](shopping-cart/samples/sample12.cs?highlight=99-213)]
 
-`UpdateShoppingCartDatabase` Metody volat z `UpdateCartItems` metodu *ShoppingCart.aspx.cs* stránky, obsahuje logiku pro aktualizace nebo odebrání položek z nákupního košíku. `UpdateShoppingCartDatabase` Metoda prochází všechny řádky v seznamu nákupní košík. Pokud položku nákupního košíku byla označena k odebrání nebo množství je nižší než jednou, `RemoveItem` metoda je volána. Jinak se kontroluje nákupní košík položky na aktualizace, když `UpdateItem` metoda je volána. Po položce nákupní košík byl odebrán nebo aktualizovat, ukládají se změny databáze.
+`UpdateShoppingCartDatabase` Metoda volána z `UpdateCartItems` metodu *ShoppingCart.aspx.cs* stránce, obsahuje logiku pro aktualizaci nebo odebrání položek z nákupního košíku. `UpdateShoppingCartDatabase` Metoda Iteruje přes všechny řádky v rámci seznamu nákupního košíku. Pokud byl označen položku nákupního košíku odebrat, nebo je množství menší než jedna `RemoveItem` metoda je volána. V opačném případě položce nákupního košíku se kontroluje u aktualizuje, když `UpdateItem` metoda je volána. Po odebrání nákupního košíku položku nebo aktualizovat, databáze změny se uložily.
 
-`ShoppingCartUpdates` Struktura se používá k ukládání všech nákupní košík položky. `UpdateShoppingCartDatabase` Používá metoda `ShoppingCartUpdates` struktura k určení, pokud některou z položek muset aktualizovat nebo odebrat.
+`ShoppingCartUpdates` Struktura se používá pro uložení všech nákupního košíku položek. `UpdateShoppingCartDatabase` Metoda používá `ShoppingCartUpdates` struktura určit, pokud některá z položek muset aktualizovat nebo odebrat.
 
-V dalším kurzu budete používat `EmptyCart` metoda zrušte nákupního košíku po zakoupení produkty. Ale prozatím se bude používat `GetCount` metoda, kterou jste právě přidali *ShoppingCartActions.cs* soubor k určení, kolik položek jsou v nákupní košík.
+V dalším kurzu, budete používat `EmptyCart` metoda zrušte nákupního košíku po zakoupení produkty. Ale prozatím budete používat `GetCount` metodu, která jste právě přidali *ShoppingCartActions.cs* soubor k určení, kolik položek jsou v nákupním košíku.
 
-### <a name="adding-a-shopping-cart-counter"></a>Přidání nákupní košík čítače
+### <a name="adding-a-shopping-cart-counter"></a>Přidání nákupního košíku čítače
 
-Povolit uživatelům zobrazit celkový počet položek v nákupní košík, přidáte čítače k *Site.Master* stránky. Tento čítač se slouží také jako odkaz na nákupní košík.
+Chcete-li povolit uživatelům zobrazit celkový počet položek v nákupním košíku, přidáte čítače, který chcete *Site.Master* stránky. Tento čítač se chovat i jako odkaz do nákupního košíku.
 
-1. V **Průzkumníku řešení**, otevřete *Site.Master* stránky.
-2. Upravte kód tak, že přidáte odkaz čítač nákupní košík, jak je znázorněno v žlutý do části navigace, zobrazí se následující:  
+1. V **Průzkumníka řešení**, otevřete *Site.Master* stránky.
+2. Upravte kód tak, že přidáte odkaz čítač nákupního košíku, jak je znázorněno v žlutá do části navigace, zobrazí se takto:  
 
     [!code-html[Main](shopping-cart/samples/sample13.html?highlight=6)]
-3. Potom aktualizujte kódu z *Site.Master.cs* souboru tak, že přidáte kód zvýrazněných v žlutý následujícím způsobem:  
+3. V dalším kroku aktualizace kódu ze *Site.Master.cs* soubor přidáním kódu zvýrazněné žlutou barvou následujícím způsobem:  
 
     [!code-csharp[Main](shopping-cart/samples/sample14.cs?highlight=11,77-84)]
 
-Předtím, než ve formátu HTML, vykreslení stránky `Page_PreRender` událost se vyvolá. V `Page_PreRender` obslužnou rutinu, celkový počet nákupní košík je dáno volání `GetCount` metoda. Vrácená hodnota se přidá na `cartCount` rozpětí součástí z kódu *Site.Master* stránky. `<span>` Značky umožňuje vnitřní prvky, které mají být vykreslen správně. Při zobrazení stránky pro všechny lokality, se zobrazí celkový počet nákupní košík. Uživatele můžete také kliknout na nákupní košík celkem zobrazíte nákupní košík.
+Před vykreslením stránky ve formátu HTML, `Page_PreRender` událost se vyvolá. V `Page_PreRender` obslužnou rutinu, celkový počet nákupní košík je určit pomocí volání `GetCount` metody. Vrácená hodnota je přidána do `cartCount` rozpětí součástí z kódu *Site.Master* stránky. `<span>` Značky umožňuje vnitřní prvky, které mají být vykresleny správně. Když se zobrazí všechny stránky webu, celkem nákupního košíku se zobrazí. Uživatele můžete také kliknout na nákupního košíku celkové zobrazení nákupního košíku.
 
-## <a name="testing-the-completed-shopping-cart"></a>Testování dokončené nákupní košík
+## <a name="testing-the-completed-shopping-cart"></a>Testování dokončené nákupního košíku
 
-Můžete spustit nyní aplikaci zobrazíte přidání, odstranění a aktualizace položek v nákupní košík. Celkový počet nákupního košíku se projeví celkové náklady na všechny položky v nákupní košík.
+Můžete spustit nyní aplikaci chcete zobrazit, jak můžete přidat, odstranit a aktualizovat položky v nákupním košíku. Nákupní košík celkem bude odrážet celkové náklady na všechny položky v nákupním košíku.
 
-1. Stiskněte klávesu **F5** ke spuštění aplikace.  
- Otevře se prohlížeč a ukazuje *Default.aspx* stránky.
-2. Vyberte **aut** v navigační nabídce kategorie.
-3. Klikněte **přidat do košíku** odkaz vedle první produktu.   
- *ShoppingCart.aspx* se zobrazí stránka s celkem pořadí.
-4. Vyberte **roviny** v navigační nabídce kategorie.
-5. Klikněte **přidat do košíku** odkaz vedle první produktu.
-6. Nastavit množství první položky v nákupní košík na 3 a vyberte **odebrat položky** políčko druhý položky.<a id="a"></a>
-7. Klikněte **aktualizovat** tlačítko Aktualizovat stránku nákupní košík a zobrazí nový celkový pořadí. 
+1. Stisknutím klávesy **F5** ke spuštění aplikace.  
+ V prohlížeči se otevře a zobrazí *Default.aspx* stránky.
+2. Vyberte **auta** navigační nabídce kategorie.
+3. Klikněte na tlačítko **přidat do košíku** odkaz vedle první produktu.   
+ *ShoppingCart.aspx* zobrazí se stránka s ordinálního součtu.
+4. Vyberte **rovin** navigační nabídce kategorie.
+5. Klikněte na tlačítko **přidat do košíku** odkaz vedle první produktu.
+6. Nastavte počet první položky v nákupním košíku na 3 a vyberte **odebrat položku** zaškrtávací políčko druhé položky.<a id="a"></a>
+7. Klikněte na tlačítko **aktualizovat** tlačítka Aktualizovat na stránce nákupní košík a zobrazovat nové ordinálního součtu. 
 
-    ![Nákupní košík - košíku aktualizace](shopping-cart/_static/image9.png)
+    ![Nákupní košík – aktualizace nákupního košíku](shopping-cart/_static/image9.png)
 
 ## <a name="summary"></a>Souhrn
 
-V tomto kurzu jste vytvořili nákupní košík pro ukázkovou aplikaci Wingtip Toys webových formulářů. Při tomto kurzu jste už použili Entity Framework Code First, datových poznámek, ovládací prvky silného typu dat a vazby modelu.
+V tomto kurzu jste vytvořili pro ukázkovou aplikaci Wingtip Toys webových formulářů nákupního košíku. Během tohoto kurzu používáte Entity Framework Code First, anotacemi dat, ovládací prvky dat silného typu a vazby modelu.
 
-Nákupní košík podporuje přidávání, odstraňování a aktualizaci položky, které uživatel vybral zakoupit. Kromě implementace funkci nákupní košík, jste se naučili nákupní košík položky v zobrazení **GridView** řízení a vypočítat celkové pořadí.
+Nákupní košík podporuje přidávání, odstraňování a aktualizace položek, které uživatel vybral pro nákup. Kromě provádění funkci nákupního košíku, jste se naučili, jak zobrazení nákupního košíku položek v **GridView** řídit a výpočet ordinálního součtu.
 
 ## <a name="addition-information"></a>Další informace
 

@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities
-title: '[Jak na:] Použití nástroje MSBuild k automatizaci kompilátoru technologie ASP.NET a slučování nástroje | Microsoft Docs'
+title: '[Postup:] Použití nástroje MSBuild k automatizaci ASP.NET Compiler a Merge nástroje | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan ukazuje postup vytvoření projektu MSBuild, které orchestrují spuštění Nástroje aspnet_compiler a aspnet_merge pro webovou stránku ASP.NET...
+description: V toto video pixelů na Chris ukazuje, jak vytvořit projekt MSBuild, který si nastavíte spouštění aspnet_compiler a aspnet_merge nástroje pro ASP...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
 ms.topic: article
 ms.assetid: 14f2b333-59f5-4ae4-88db-2a78f809cef3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities
 msc.type: video
-ms.openlocfilehash: 50c72bfb6e9646c31b3bd99be3c0393309f2a677
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b2803bbd9d63cb5e79ced227719e762eaf697aa6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885524"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392107"
 ---
-<a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a>[Jak na:] Použití nástroje MSBuild k automatizaci kompilátoru technologie ASP.NET a nástroje pro sloučení
+<a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a>[Postup:] Použití nástroje MSBuild k automatizaci ASP.NET Compiler a Merge nástroje
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V tomto videu Jan PEL ukazuje postup vytvoření projektu MSBuild, které orchestrují provádění aspnet\_kompilátoru a aspnet\_sloučení nástroje pro webovou stránku ASP.NET. Nejdřív zjistěte základní informace o procesu kompilace pro webovou stránku ASP.NET a roli nástroje dvě příkazového řádku. V dalším kroku naleznete v části Vytvoření souboru projektu nástroje MSBuild a primární prvky, jako jsou například PropertyGroup a cíle. Potom další podrobnosti o tom, jak provést aspnet\_kompilátoru a aspnet\_sloučení nástroje z projektu nástroje MSBuild. Nakonec jsou popsané několik potenciální rozšiřuje základní koncepty.
+V tomto videu pixelů na Chris ukazuje, jak vytvořit projekt MSBuild, který si nastavíte spouštění aspnet\_kompilátoru a aspnet\_sloučit nástroje pro ASP.NET Web. Nejdřív zjistěte, základní informace o procesu kompilace pro ASP.NET Web a role nástroje dvě příkazového řádku. V dalším kroku najdete v článku o vytváření souboru projektu MSBuild a primární prvky, jako jsou PropertyGroup a cíl. Dozvíte se podrobnosti o tom, jak spustit aspnet\_kompilátoru a aspnet\_sloučit nástroje z projektu nástroje MSBuild. A konečně jsou popsány několik potenciálních rozšíření základních konceptů.
 
 [&#9654;Podívejte se na video (31 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities)
 

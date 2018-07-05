@@ -1,25 +1,24 @@
 ---
 uid: web-pages/readme/index
-title: Služba WebMatrix Readme | Microsoft Docs
+title: WebMatrix – soubor Readme | Dokumentace Microsoftu
 author: rick-anderson
-description: Služba WebMatrix a ASP.NET Web Pages (Razor) verzi 1.0 – soubor Readme
+description: Služba WebMatrix a ASP.NET Web Pages (Razor) verze 1.0 – soubor Readme
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2011
 ms.topic: article
 ms.assetid: 9ded2fdb-ac4c-448f-9774-10bff657514c
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 1ca87090d6dc8f4050e8a017777edb530533218a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12d22b4c064c210c75999931e0a00e300bf37401
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26573196"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381074"
 ---
-<a name="webmatrix-readme"></a>Soubor Readme pro službu WebMatrix
+<a name="webmatrix-readme"></a>WebMatrix – soubor Readme
 ====================
-- [Soubor Readme pro službu WebMatrix](overview.md)
-- [Web Matrix a rozhraní ASP.NET Web Pages (Razor) Beta 3 verze Readme](beta3.md)
+- [WebMatrix – soubor Readme](overview.md)
+- [Soubor Readme o nástroji WebMatrix a webových stránkách ASP.NET (Razor) verze Beta 3](beta3.md)

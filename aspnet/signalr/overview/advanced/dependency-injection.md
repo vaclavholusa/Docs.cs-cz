@@ -1,173 +1,172 @@
 ---
 uid: signalr/overview/advanced/dependency-injection
-title: Vkládání závislostí v systému SignalR | Microsoft Docs
+title: Injektáž závislostí v knihovně SignalR | Dokumentace Microsoftu
 author: MikeWasson
-description: Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR verze 2 předchozí verze tohoto tématu informace o předchozích verzí aplikace...
+description: Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR 2 předchozí verze tohoto tématu informace o předchozích verzích...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
 ms.topic: article
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 3732b5d0ea6de841a6c402bfd5ef4dfb7b7a9162
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b4276d25c999c2a78864a856f7f3de233c9ac87
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26565558"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397756"
 ---
-<a name="dependency-injection-in-signalr"></a>Vkládání závislostí v systému SignalR
+<a name="dependency-injection-in-signalr"></a>Injektáž závislostí v knihovně SignalR
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Patrik Fletcher](https://github.com/pfletcher)
+podle [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - .NET 4.5
-> - SignalR verze 2
+> - Funkce SignalR verze 2
 >   
 > 
 > 
-> ## <a name="previous-versions-of-this-topic"></a>Předchozí verze tohoto tématu
+> ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
 > 
-> Informace o předchozích verzích SignalR najdete v tématu [starší verze funkce SignalR](../older-versions/index.md).
+> Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
 > 
-> ## <a name="questions-and-comments"></a>Dotazy a připomínky
+> ## <a name="questions-and-comments"></a>Otázky a komentáře
 > 
-> Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit v komentářích v dolní části stránky. Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [fórum pro ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
+> Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
-Vkládání závislostí je způsob, jak odebrat pevně zakódované závislosti mezi objekty, usnadnit nahradit objektu závislosti, buď pro testování (pomocí mock objektů), nebo chcete změnit chování. Tento kurz ukazuje, jak provádět vkládání závislostí na rozbočovače SignalR. Také ukazuje, jak používat technologie IoC kontejnery s SignalR. Kontejner IoC je obecné rozhraní pro vkládání závislostí.
+Injektáž závislostí je způsob, jak odebrat pevně zakódované závislosti mezi objekty usnadnit k nahrazení objektu závislosti, buď pro testování (pomocí mock objektů), nebo chcete změnit chování za běhu. Tento kurz ukazuje, jak provádět injektáž závislostí v centrech SignalR. Také ukazuje, jak používat technologie IoC kontejnery s knihovnou SignalR. Kontejner IoC je obecné rozhraní pro vkládání závislostí.
 
-## <a name="what-is-dependency-injection"></a>Co je vkládání závislostí?
+## <a name="what-is-dependency-injection"></a>Co je injektáž závislostí?
 
-Tuto část přeskočte, pokud jste již obeznámeni s vkládání závislostí.
+Tuto část přeskočte, pokud jste už obeznámení s vkládání závislostí.
 
-*Vkládání závislostí* (DI) je vzor, kde objekty nejsou zodpovědný za vytváření vlastní závislosti. Zde je jednoduchý příklad ke DI. Předpokládejme, že máte objekt, který potřebuje k protokolování zpráv. Můžete třeba definovat rozhraní protokolování:
+*Injektáž závislostí* (DI) je vzor, ve kterém jsou objekty není zodpovědný za vytváření vlastní závislosti. Tady je jednoduchý příklad ke DI. Předpokládejme, že budete mít objekt, který je potřeba protokolování zpráv. Můžete třeba definovat rozhraní protokolování:
 
 [!code-csharp[Main](dependency-injection/samples/sample1.cs)]
 
-V objektu, můžete vytvořit `ILogger` k protokolování zpráv:
+V objektu, můžete vytvořit `ILogger` protokolování zpráv:
 
 [!code-csharp[Main](dependency-injection/samples/sample2.cs)]
 
-Tento postup funguje, ale není optimální. Pokud chcete nahradit `FileLogger` s jinou `ILogger` implementace, budete muset upravit `SomeComponent`. Předpokládající, že mnoho dalších objektů pomocí `FileLogger`, budete muset změnit všechny z nich. Nebo pokud se rozhodnete, aby `FileLogger` typu singleton, budete také muset provést změny v celé aplikaci.
+Tento postup funguje, ale není optimální. Pokud budete chtít nahradit `FileLogger` sebou `ILogger` implementace, budete muset upravit `SomeComponent`. Domnívat, že mnoho dalších objektů použijte `FileLogger`, budete muset změnit všechny z nich. Nebo pokud se rozhodnete provést `FileLogger` typu singleton, budete také muset provést změny v celé aplikaci.
 
-Lepším řešením je "Vložit" `ILogger` do objektu – například pomocí argument konstruktoru:
+Lepším řešením je "Vložit" `ILogger` do objektu, například pomocí argumentu konstruktoru:
 
 [!code-csharp[Main](dependency-injection/samples/sample3.cs)]
 
-Teď objekt není zodpovědná za vybrat, které `ILogger` používat. Můžete swich `ILogger` implementace, aniž byste museli měnit objekty, které jsou na ní závislé.
+Nyní na objekt neodpovídá pro výběr, který `ILogger` používat. Je možné swich `ILogger` implementace beze změny, které jsou na ní závislé objekty.
 
 [!code-csharp[Main](dependency-injection/samples/sample4.cs)]
 
-Tento vzor nazývá [konstruktor vkládání](http://www.martinfowler.com/articles/injection.html#FormsOfDependencyInjection). Jiné vzor je setter vkládání, kde můžete nastavit závislost prostřednictvím setter metody nebo vlastnosti.
+Tento model se nazývá [konstruktor vkládání](http://www.martinfowler.com/articles/injection.html#FormsOfDependencyInjection). Jiné vzor je vkládání setter, kde nastavujete závislost prostřednictvím metody setter nebo vlastnosti.
 
-## <a name="simple-dependency-injection-in-signalr"></a>Vkládání jednoduché závislostí v systému SignalR
+## <a name="simple-dependency-injection-in-signalr"></a>Injektáž závislostí jednoduché v knihovně SignalR
 
-Vezměte v úvahu chatovací aplikace z tohoto kurzu [Začínáme s SignalR](../getting-started/tutorial-getting-started-with-signalr.md). Tady je třídy rozbočovače z této aplikace:
+Vezměte v úvahu chatovací aplikaci z kurzu [Začínáme s knihovnou SignalR](../getting-started/tutorial-getting-started-with-signalr.md). Tady je třída rozbočovače z této aplikace:
 
 [!code-csharp[Main](dependency-injection/samples/sample5.cs)]
 
-Předpokládejme, že chcete ukládat chatovací zprávy na serveru před jejich odesláním. Můžete například definovat rozhraní, které abstrahuje tuto funkci a pomocí DI vložení do rozhraní `ChatHub` třídy.
+Předpokládejme, že chcete ukládat zprávy chatu na serveru před jejich odesláním. Může definovat rozhraní, který získává tuto funkci a použít DI vkládat rozhraní portálu `ChatHub` třídy.
 
 [!code-csharp[Main](dependency-injection/samples/sample6.cs)]
 
-Jediným problémem je, že aplikace SignalR přímo nevytvoří centra; SignalR je automaticky vytvoří. Ve výchozím nastavení očekává SignalR třídy rozbočovače mít konstruktor bez parametrů. Však můžete snadno zaregistrovat funkci pro vytvoření instance hub a tuto funkci můžete používat k provedení DI. Zaregistrovat funkci voláním **GlobalHost.DependencyResolver.Register**.
+Jediným problémem je, že aplikace SignalR přímo nevytváří hubs; SignalR je pro vás vytvoří. Ve výchozím nastavení SignalR očekává, že třída rozbočovače mít konstruktor bez parametrů. Však můžete snadno zaregistrovat funkci pro vytvoření instancí rozbočovače a tuto funkci použít k provedení DI. Registraci funkci voláním **GlobalHost.DependencyResolver.Register**.
 
 [!code-csharp[Main](dependency-injection/samples/sample7.cs)]
 
-Teď SignalR bude volat tuto funkci anonymní, kdykoli bude potřeba vytvořit `ChatHub` instance.
+Nyní SignalR vyvolá tuto anonymní funkci pokaždé, když je potřeba vytvořit `ChatHub` instance.
 
 ## <a name="ioc-containers"></a>Technologie IoC kontejnery
 
-Předchozí kód je vhodná pro jednoduché případy. Ale stále museli zapsat toto:
+Předchozí kód je v pořádku pro jednoduché případy. Ale máte stále zapisovat:
 
 [!code-csharp[Main](dependency-injection/samples/sample8.cs)]
 
-V komplexní aplikace s velký počet závislostí může být nutné zapsat spoustu tento kód "kabeláž". Tento kód může být obtížné spravovat, zejména v případě, že jsou vnořeny závislosti. Také je obtížné testování částí.
+V komplexní aplikace s velký počet závislostí potřebujete napsat velké množství tento kód "propojení". Tento kód může být obtížné spravovat, zejména v případě, že jsou vnořené závislosti. Je taky obtížné testování částí.
 
-Jeden řešením je použití kontejner IoC. Kontejner IoC je softwarová součást, která je zodpovědná za správu závislosti. Zaregistrujte typy s kontejner a poté použít k vytvoření objektů kontejneru. Kontejner se automaticky hodnoty se vztahy závislostí. Mnoho IoC kontejnery umožňují řídit třeba životní cyklus objektů a oboru.
+Jedním řešením je použití kontejner IoC. Kontejner IoC je softwarová součást, která zodpovídá za správu závislostí. Registrace typů s kontejnerem a následné použití k vytvoření objektů kontejneru. Kontejner automaticky zjistí vztahy závislostí. Spousta kontejnerů IoC také umožňují řídit věci, jako je životní cyklus objektů a obor.
 
 > [!NOTE]
-> "IoC" znamená "inverzi řízení", což je obecný vzor, kde rozhraní volání do kódu aplikace. Kontejner IoC vytvoří vašich objektů, které "Invertuje" obvyklý tok řízení.
+> "IoC" znamená "inverzi ovládacího prvku", což je obecný vzor, pokud rámec volání do kódu aplikace. Kontejner IoC vytvoří objekty, které "Invertuje" obvyklý tok řízení.
 
 
-## <a name="using-ioc-containers-in-signalr"></a>Použití technologie IoC kontejnerů v systému SignalR
+## <a name="using-ioc-containers-in-signalr"></a>Použití technologie IoC kontejnerů v knihovně SignalR
 
-Chatovací aplikace je pravděpodobně příliš jednoduchý, abyste mohli využívat výhod kontejner IoC. Místo toho Podíváme se na [StockTicker](http://nuget.org/packages/microsoft.aspnet.signalr.sample) ukázka.
+Chatovací aplikaci je pravděpodobně příliš jednoduché, abyste využili výhod kontejner IoC. Místo toho, Podívejme se [StockTicker](http://nuget.org/packages/microsoft.aspnet.signalr.sample) vzorku.
 
-Ukázka StockTicker definuje dvě hlavní třídy:
+Ukázka StockTicker definuje dva hlavní třídy:
 
-- `StockTickerHub`Třída: rozbočovače, která spravuje připojení klientů.
-- `StockTicker`: Typu singleton, která obsahuje uložených ceny a je pravidelně aktualizuje.
+- `StockTickerHub`: Třídy rozbočovače, který spravuje připojení klientů.
+- `StockTicker`: Jednotlivý prvek, který obsahuje ceny akcií a je pravidelně aktualizuje.
 
-`StockTickerHub`obsahuje odkaz na `StockTicker` typu singleton, zatímco `StockTicker` obsahuje odkaz na **IHubConnectionContext** pro `StockTickerHub`. Toto rozhraní se používá ke komunikaci s `StockTickerHub` instance. (Další informace najdete v tématu [Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET](../getting-started/tutorial-server-broadcast-with-signalr.md).)
+`StockTickerHub` obsahuje odkaz na `StockTicker` singleton, zatímco `StockTicker` obsahuje odkaz na **IHubConnectionContext** pro `StockTickerHub`. Toto rozhraní se používá ke komunikaci s `StockTickerHub` instancí. (Další informace najdete v tématu [serverové vysílání s knihovnou ASP.NET SignalR](../getting-started/tutorial-server-broadcast-with-signalr.md).)
 
-Kontejner IoC jsme vám pomůže trochu untangle tyto závislosti. Nejprve umožňuje zjednodušit `StockTickerHub` a `StockTicker` třídy. V následujícím kódu I jste komentované části jsme nepotřebujete.
+K trochu rozplétání těchto závislostí můžeme použít kontejner IoC. Nejprve můžeme zjednodušit `StockTickerHub` a `StockTicker` třídy. V následujícím kódu můžu jste zakomentované části, že nebudeme potřebovat.
 
-Odebrat konstruktor bez parametrů z `StockTickerHub`. Místo toho jsme vždy použije DI k vytvoření rozbočovače.
+Odebrat konstruktor bez parametrů z `StockTickerHub`. Místo toho vždy použije DI centrum vytvořit.
 
 [!code-csharp[Main](dependency-injection/samples/sample9.cs)]
 
-U StockTicker odeberte instanci typu singleton. Později použijeme kontejner IoC k řízení životního cyklu StockTicker. Také zveřejněte konstruktoru.
+StockTicker odeberte instanci typu singleton. Později řízení životnosti StockTicker použijeme kontejner IoC. Navíc musí být konstruktor public.
 
 [!code-csharp[Main](dependency-injection/samples/sample10.cs?highlight=7)]
 
-V dalším kroku jsme Refaktorovat kód tak, že vytvoříte rozhraní pro `StockTicker`. Toto rozhraní použijeme oddělit `StockTickerHub` z `StockTicker` třídy.
+Dále jsme Refaktorovat kód tak, že vytvoříte rozhraní pro `StockTicker`. Použijeme oddělit toto rozhraní `StockTickerHub` z `StockTicker` třídy.
 
-Sada Visual Studio provádí tento druh refaktoringu easy přístup. Otevřete soubor StockTicker.cs, klikněte pravým tlačítkem na `StockTicker` deklarace třídy a vyberte **Refaktorovat** ... **Extrahování rozhraní**.
+Vytvoří malou Visual Studio tento druh refaktoringu snadné. Otevřete soubor StockTicker.cs, klikněte pravým tlačítkem na `StockTicker` deklarace třídy a vyberte **Refaktorovat** ... **Extrahování rozhraní**.
 
 ![](dependency-injection/_static/image1.png)
 
-V **extrahování rozhraní** dialogové okno, klikněte na tlačítko **Vybrat vše**. Nechte ostatní výchozí hodnoty. Click **OK**.
+V **extrahování rozhraní** dialogového okna, klikněte na tlačítko **Vybrat vše**. Nechte ostatní výchozí hodnoty. Klikněte na tlačítko **OK**.
 
 ![](dependency-injection/_static/image2.png)
 
-Visual Studio vytvoří nové rozhraní s názvem `IStockTicker`a také změní `StockTicker` k odvozování z `IStockTicker`.
+Visual Studio vytvoří nové rozhraní s názvem `IStockTicker`a taky změní `StockTicker` odvodit z `IStockTicker`.
 
 Otevřete soubor IStockTicker.cs a změňte rozhraní **veřejné**.
 
 [!code-csharp[Main](dependency-injection/samples/sample11.cs?highlight=1)]
 
-V `StockTickerHub` třídy, změňte dvě instance `StockTicker` k `IStockTicker`:
+V `StockTickerHub` třídy, dvě instance změnit `StockTicker` k `IStockTicker`:
 
 [!code-csharp[Main](dependency-injection/samples/sample12.cs?highlight=4,6)]
 
-Vytvoření `IStockTicker` rozhraní není nezbytně nutné, ale vy jste chtěli zobrazit, jak DI může přispět ke snížení párování mezi komponentami ve vaší aplikaci.
+Vytvoření `IStockTicker` rozhraní není nezbytně nutné, ale já bych chtěl ukazují, jak DI vám může pomoct snížit párování mezi komponentami vaší aplikace.
 
 ## <a name="add-the-ninject-library"></a>Přidání knihovny Ninject
 
-Existuje mnoho kontejnerů IoC open source pro .NET. V tomto kurzu budete použít [Ninject](http://www.ninject.org/). (Zahrnout další oblíbené knihovny [rošády Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Unity](https://github.com/unitycontainer/unity), a [StructureMap ](http://docs.structuremap.net).)
+Existuje spousta open source technologie IoC kontejnerů pro .NET. Pro účely tohoto kurzu použiju [Ninject](http://www.ninject.org/). (Zahrnout další oblíbené knihovny [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Unity](https://github.com/unitycontainer/unity), a [StructureMap ](http://docs.structuremap.net).)
 
 Použití Správce balíčků NuGet k instalaci [Ninject knihovny](https://nuget.org/packages/Ninject/3.0.1.10). V sadě Visual Studio z **nástroje** nabídky vyberte možnost **Správce balíčků knihoven** | **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-powershell[Main](dependency-injection/samples/sample13.ps1)]
 
-## <a name="replace-the-signalr-dependency-resolver"></a>Nahraďte překladač závislostí pro SignalR
+## <a name="replace-the-signalr-dependency-resolver"></a>Nahraďte překladač závislostí SignalR
 
 Pokud chcete použít Ninject v rámci SignalR, vytvořte třídu, která je odvozena z **DefaultDependencyResolver**.
 
 [!code-csharp[Main](dependency-injection/samples/sample14.cs)]
 
-Tato třída přepsání **metody GetService** a **metodu GetServices** metody **DefaultDependencyResolver**. SignalR volá tyto metody vytvořit různé objekty za běhu, včetně instance hub, jakož i různé služby, které se používá interně SignalR.
+Tato třída přepíše **GetService** a **GetServices** metody **DefaultDependencyResolver**. Funkce SignalR volá tyto metody k vytvoření různých objektů za běhu, včetně instancí rozbočovače, jakož i různé služby používaná interně knihovnou SignalR.
 
-- **Metody GetService** metoda vytvoří jednu instanci typu. Potlačí tuto metodu volat jádra Ninject **TryGet** metoda. Pokud tato metoda vrátí hodnotu null, přejít k výchozí překladač.
-- **Metodu GetServices** metoda vytvoří kolekci objektů zadaného typu. Potlačí tuto metodu ke zřetězení výsledků Ninject s výsledky z výchozí překladač.
+- **GetService** metoda vytvoří jednu instanci typu. Potlačí tuto metodu volat Ninject jádra **TryGet** metody. Pokud tato metoda vrátí hodnotu null, vrátit k výchozí překladač.
+- **GetServices** metoda vytvoří kolekci objektů zadaného typu. Potlačí tuto metodu ke zřetězení výsledky z Ninject s výsledky z výchozí překladač.
 
-## <a name="configure-ninject-bindings"></a>Konfigurovat Ninject vazby
+## <a name="configure-ninject-bindings"></a>Nakonfigurujte Ninject vazby
 
 Nyní použijeme Ninject deklarovat typ vazby.
 
-Otevřete třídy Startup.cs vaší aplikace (které jste buď vytvořili ručně podle pokynů balíčku v `readme.txt`, nebo který byl vytvořen přidání ověřování do projektu). V `Startup.Configuration` metoda, vytvoření kontejneru Ninject, který volá Ninject *jádra*.
+Otevřete třídu Startup.cs vaší aplikace (buď vytvořené ručně podle pokynů balíček `readme.txt`, nebo který byl vytvořen tak, že přidáte do projektu ověřování). V `Startup.Configuration` metoda, vytvoření kontejneru Ninject, která volá Ninject *jádra*.
 
 [!code-csharp[Main](dependency-injection/samples/sample15.cs)]
 
-Vytvoření instance překladače naše vlastní závislosti:
+Vytvoření instance překladače naše vlastní závislost:
 
 [!code-csharp[Main](dependency-injection/samples/sample16.cs)]
 
@@ -175,30 +174,30 @@ Vytvoření vazby pro `IStockTicker` následujícím způsobem:
 
 [!code-csharp[Main](dependency-injection/samples/sample17.cs)]
 
-Tento kód vlastně říká dvě věci. První, vždy, když aplikace potřebuje `IStockTicker`, jádra by měl vytvořit instanci `StockTicker`. Druhý, `StockTicker` třída by měla být vytvořená jako objekt typu singleton. Ninject vytvoří jednu instanci objektu a vrátit stejnou instanci pro každý požadavek.
+Tento kód říká dvě věci. První, pokaždé, když aplikace potřebuje `IStockTicker`, jádra by měl vytvořit instanci `StockTicker`. Druhý, `StockTicker` by měl být třída vytvořená jako objekt typu singleton. Ninject vytvoří jednu instanci objektu a vrátí stejnou instanci pro každý požadavek.
 
 Vytvoření vazby pro **IHubConnectionContext** následujícím způsobem:
 
 [!code-csharp[Main](dependency-injection/samples/sample18.cs)]
 
-Tento kód creatres anonymní funkce, která vrací **IHubConnection**. **WhenInjectedInto** metoda informuje Ninject tuto funkci použít, pouze při vytváření `IStockTicker` instance. Důvodem je skutečnost, že se vytvoří SignalR **IHubConnectionContext** instance interně, a nechceme přepsat, jak je vytvořila SignalR. Tato funkce se vztahuje pouze na našem `StockTicker` třídy.
+Tento kód creatres anonymní funkce, která se vrátí **IHubConnection**. **WhenInjectedInto** metoda říká Ninject tuto funkci použít, pouze při vytváření `IStockTicker` instancí. Důvodem je, že vytvoří SignalR **IHubConnectionContext** instance interně, a nechceme přepsat, jak je vytvořila SignalR. Tato funkce platí jenom pro naše `StockTicker` třídy.
 
-Předat do překladače závislostí **MapSignalR** metoda přidáním konfiguraci rozbočovače:
+Předat do překladače závislostí **MapSignalR** metodu tak, že přidáte Centrum konfigurací:
 
 [!code-csharp[Main](dependency-injection/samples/sample19.cs)]
 
-Aktualizujte metodu Startup.ConfigureSignalR v třída při spuštění tohoto příkladu nový parametr:
+Aktualizujte metodu Startup.ConfigureSignalR ve třídě po spuštění tohoto příkladu nový parametr:
 
 [!code-csharp[Main](dependency-injection/samples/sample20.cs)]
 
-Teď SignalR použije překladač zadaný v **MapSignalR**, namísto výchozí překladač.
+Nyní SignalR použije překladač podle **MapSignalR**, namísto výchozí překladač.
 
-Zde je kód úplný výpis pro `Startup.Configuration`.
+Tady je úplný výpis pro kódu `Startup.Configuration`.
 
 [!code-csharp[Main](dependency-injection/samples/sample21.cs)]
 
-Ke spuštění aplikace StockTicker v sadě Visual Studio, stisknutím klávesy F5. V okně prohlížeče, přejděte na `http://localhost:*port*/SignalR.Sample/StockTicker.html`.
+Ke spuštění aplikace StockTicker v sadě Visual Studio, stiskněte klávesu F5. V okně prohlížeče přejděte na `http://localhost:*port*/SignalR.Sample/StockTicker.html`.
 
 ![](dependency-injection/_static/image3.png)
 
-Aplikace má přesně stejné funkce jako před. (Popis najdete v tématu [Server všesměrového vysílání pomocí funkce SignalR technologie ASP.NET](../getting-started/tutorial-server-broadcast-with-signalr.md).) Jsme nedošlo ke změně chování; právě snazší kód pro testování, údržbu a momentální.
+Aplikace má přesně stejnou funkci jako před. (Popis najdete v tématu [serverové vysílání s knihovnou ASP.NET SignalR](../getting-started/tutorial-server-broadcast-with-signalr.md).) Jsme nedošlo ke změně chování; usnadňuje testování, údržbu a rozvíjet říkám kód.

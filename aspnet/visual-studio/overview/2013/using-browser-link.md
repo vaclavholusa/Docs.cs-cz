@@ -1,6 +1,6 @@
 ---
 uid: visual-studio/overview/2013/using-browser-link
-title: Pomocí odkazů prohlížeče v sadě Visual Studio 2013 | Microsoft Docs
+title: Použití funkce Browser Link v sadě Visual Studio 2013 | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,90 +9,89 @@ ms.date: 10/04/2013
 ms.topic: article
 ms.assetid: 46cbfe20-b4dc-449b-9016-80657dd44fbe
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/using-browser-link
 msc.type: authoredcontent
-ms.openlocfilehash: e5a13405a303580ec8c1d4cdacafc26c6f8ff34a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 96add0de1c1e4366353137898f1ba102aec7f754
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28044107"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399318"
 ---
-<a name="using-browser-link-in-visual-studio-2013"></a>Pomocí odkazů prohlížeče v sadě Visual Studio 2013
+<a name="using-browser-link-in-visual-studio-2013"></a>Použití funkce Browser Link v sadě Visual Studio 2013
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-Browser Link je nová funkce v sadě Visual Studio 2013 vytvářející komunikační kanál mezi vývojového prostředí a jeden nebo více webových prohlížečů. Můžete použít Browser Link aktualizujte svoji webovou aplikaci v několika prohlížeče najednou, což je užitečné pro testování různých prohlížečích.
+Browser Link je nová funkce v sadě Visual Studio 2013, která vytvoří komunikační kanál mezi vývojové prostředí a jeden nebo více webových prohlížečů. Můžete použít odkaz prohlížeče pro aktualizaci webové aplikace v několika prohlížečích najednou, což je užitečné pro testování prohlížečů.
 
-- [Obnovit v prohlížeči](#browser-refresh)
+- [Prohlížeč-obnovit](#browser-refresh)
 - [Zobrazení řídicím panelu odkazů prohlížeče](#dashboard)
-- [Povolení odkazů prohlížeče pro soubory statické HTML](#static-html)
+- [Povolení Browser Link pro soubory statický kód HTML](#static-html)
 - [Zakázání Browser Link](#disabling)
 - [Jak to funguje?](#how-it-works)
 
 <a id="browser-refresh"></a>
-## <a name="browser-refresh"></a>Obnovit v prohlížeči
+## <a name="browser-refresh"></a>Prohlížeč-obnovit
 
-Pomocí prohlížeče aktualizovat můžete obnovit více prohlížečů, které jsou připojené k sadě Visual Studio prostřednictvím odkazů prohlížeče.
+S aktualizovat prohlížeč můžete aktualizovat více prohlížečů, které jsou připojené ke službě Visual Studio prostřednictvím odkazů prohlížeče.
 
-Pokud chcete použít, aktualizujte prohlížeč, nejprve vytvořte aplikace ASP.NET pomocí kteréhokoli z šablon projektu. Ladění aplikace stisknutím klávesy F5 nebo kliknutím na ikonu šipky v panelu nástrojů:
+Pokud chcete použít, aktualizujte prohlížeč, nejprve vytvořte aplikaci ASP.NET pomocí kteréhokoli z šablony projektu. Ladění aplikace pomocí klávesy F5 nebo kliknutím na ikonu šipky v panelu nástrojů:
 
 ![](using-browser-link/_static/image1.png)
 
-Můžete taky rozevíracího seznamu vyberte konkrétní prohlížeč pro ladění.
+Můžete také použijete rozevírací seznam pro výběr určitého webového prohlížeče pro ladění.
 
 ![](using-browser-link/_static/image2.png)
 
-Chcete-li ladit s více prohlížečů, vyberte **procházet s**. V **procházet s** dialogové okno, podržíte stisknutou klávesu CTRL k výběru více než jeden prohlížeč. Klikněte na tlačítko **Procházet** k ladění u vybrané prohlížečů. Browser Link lze použít také v případě spusťte prohlížeč mimo aplikaci Visual Studio a přejděte na adresu URL aplikace.
+Chcete-li ladit s více prohlížečů, vyberte **procházet s**. V **procházet s** dialogového okna, podržte stisknutou klávesu CTRL k výběru více než jeden prohlížeč. Klikněte na tlačítko **Procházet** ladění vybrané prohlížeče. Browser Link funguje také v případě spusťte prohlížeč mimo aplikaci Visual Studio a přejděte na adresu URL aplikace.
 
 ![](using-browser-link/_static/image3.png)
 
-Ovládací prvky Browser Link jsou umístěny v rozevírací nabídce s ikonou cyklické šipku. Je na ikonu šipky **aktualizovat** tlačítko.
+Browser Link ovládací prvky jsou umístěny v rozevírací nabídce se na ikonu Kruhové šipky. Ikona šipky je **aktualizovat** tlačítko.
 
 ![](using-browser-link/_static/image4.png)
 
-Pokud chcete zjistit, které prohlížeče jsou připojeny, najeďte myší **aktualizovat** tlačítko při ladění. Připojené prohlížeče se zobrazí v okně popisu.
+Pokud chcete zobrazit, které prohlížeče jsou připojené, najeďte myší **aktualizovat** tlačítko během ladění. Propojených prohlížečů jsou zobrazeny v okně popisek.
 
 ![](using-browser-link/_static/image5.png)
 
-Chcete-li aktualizovat připojené prohlížeče, klikněte na tlačítko **aktualizovat** tlačítko nebo stiskněte klávesu CTRL + ALT + ENTER. Například následující snímek obrazovky ukazuje projekt ASP.NET, který byl vytvořen pomocí šablony projektu MVC 5. Zobrazí se aplikace spuštěné v prohlížečích dvě v horní části. V dolní části je projekt otevřete v sadě Visual Studio.
+Chcete-li aktualizovat propojené prohlížeče, klikněte na tlačítko **aktualizovat** tlačítko nebo stiskněte kombinaci kláves CTRL + ALT + ENTER. Například následující snímek obrazovky ukazuje projekt ASP.NET, který jsem vytvořil pomocí projektu šablony MVC 5. Můžete zobrazit aplikace spuštěná v prohlížečů v horní části. V dolní části je projekt otevřít v sadě Visual Studio.
 
 ![](using-browser-link/_static/image6.png)
 
-V sadě Visual Studio, bylo změněno &lt;h1&gt; záhlaví pro domovskou stránku:
+V sadě Visual Studio po změně &lt;h1&gt; nadpisu na domovské stránce:
 
 ![](using-browser-link/_static/image7.png)
 
-Když po klepnutí **aktualizovat** tlačítko, změna se objevil v systémech windows prohlížeče:
+Když jsem kliknul / a **aktualizovat** tlačítko, změny se objevil v obě okna prohlížeče:
 
 ![](using-browser-link/_static/image8.png)
 
 **Poznámky**
 
-- Chcete-li povolit Browser Link, nastavte `debug=true` v [ &lt;kompilace&gt; ](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx) element v souboru Web.config projektu.
-- Aplikace musí být spuštěn na místním hostiteli.
-- Aplikace musí mít jako cíl rozhraní .NET 4.0 nebo novější.
+- Chcete-li povolit Browser Link, nastavte `debug=true` v [ &lt;kompilace&gt; ](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx) element v souboru Web.config v projektu.
+- Aplikace musí být spuštěná v místním hostiteli.
+- Aplikace musí cílit na .NET 4.0 nebo novější.
 
 <a id="dashboard"></a>
 ## <a name="viewing-the-browser-link-dashboard"></a>Zobrazení řídicím panelu odkazů prohlížeče
 
-Řídicím panelu odkazů prohlížeče zobrazují informace o připojení odkazů prohlížeče. Chcete-li zobrazit řídicí panel, vyberte v rozevírací nabídce Browser Link (na malou šipku vedle položky **aktualizovat** tlačítko). Pak klikněte na tlačítko **řídicím odkazů prohlížeče**.
+Browser Link řídicí panel s informacemi o připojení odkazů prohlížeče. Chcete-li zobrazit řídicí panel, vyberte rozevírací nabídce Browser Link (na malou šipku vedle položky **aktualizovat** tlačítko). Pak klikněte na tlačítko **řídicím odkazů prohlížeče**.
 
 ![](using-browser-link/_static/image9.png)
 
-Řídicí panel uvádí připojené prohlížeči a adresu URL, na kterou má přešli každým prohlížečem.
+Řídicí panel obsahuje seznam propojených prohlížečů a adresu URL, na kterou má přešli každým prohlížečem.
 
 ![](using-browser-link/_static/image10.png)
 
-**Požadavky** části se zobrazují všechny kroky potřebnými k povolení Browser Link pro tento projekt. Například následující snímek obrazovky ukazuje projektu, kde "ladění" je nastaven na hodnotu false v souboru Web.config.
+**Požadavky** část ukazuje všechny kroky potřebnými k povolení Browser Link pro daný projekt. Například následující snímek obrazovky ukazuje projektu, kde "debug" je nastavena na hodnotu false v souboru Web.config.
 
 ![](using-browser-link/_static/image11.png)
 
 <a id="static-html"></a>
-## <a name="enabling-browser-link-for-static-html-files"></a>Povolení odkazů prohlížeče pro soubory statické HTML
+## <a name="enabling-browser-link-for-static-html-files"></a>Povolení Browser Link pro soubory statický kód HTML
 
-Chcete-li povolit Browser Link pro statické soubory HTML, přidejte následující do souboru Web.config.
+Chcete-li povolit Browser Link pro statické soubory HTML, přidejte do souboru Web.config následující.
 
 [!code-xml[Main](using-browser-link/samples/sample1.xml)]
 
@@ -101,25 +100,25 @@ Z důvodů výkonu odeberte toto nastavení při publikování projektu.
 <a id="disabling"></a>
 ## <a name="disabling-browser-link"></a>Zakázání Browser Link
 
-Browser Link je ve výchozím nastavení povolené. Zakázat několika způsoby:
+Browser Link je standardně povolená. Existuje několik způsobů, jak zakázat:
 
-- V rozevírací nabídce Browser Link, zrušte zaškrtnutí políčka **povolit Browser Link**. 
+- V rozevírací nabídce Browser Link, zrušte zaškrtnutí políčka **Povolit odkaz prohlížeče**. 
 
     ![](using-browser-link/_static/image12.png)
-- V souboru Web.config přidejte klíč s názvem "vs: EnableBrowserLink" s hodnotou "false" v části appSettings. 
+- V souboru Web.config přidejte klíč s názvem "vs: EnableBrowserLink" s hodnotou "false" v sekci appSettings. 
 
     [!code-xml[Main](using-browser-link/samples/sample2.xml)]
-- V souboru Web.config nastaven na hodnotu false ladění. 
+- V souboru Web.config nastavte ladění na hodnotu false. 
 
     [!code-xml[Main](using-browser-link/samples/sample3.xml)]
 
 <a id="how-it-works"></a>
 ## <a name="how-does-it-work"></a>Jak to funguje?
 
-Browser Link používá [SignalR](../../../signalr/index.md) vytvořit komunikační kanál mezi Visual Studio a prohlížeči. Pokud je povoleno Browser Link, Visual Studio funguje jako server SignalR, více klientů (prohlížeče) mohou připojit. Browser Link také zaregistruje modul HTTP s technologií ASP.NET. Tento modul Vloží speciální &lt;skriptu&gt; odkazy na každý požadavek na stránku ze serveru. Uvidíte odkazům na skript tak, že vyberete "Zdroj zobrazení" v prohlížeči.
+Browser Link používá [SignalR](../../../signalr/index.md) vytvořit komunikační kanál mezi Visual Studio a prohlížečem. Když je povolené Browser Link, Visual Studio funguje jako více klientů (prohlížečů) můžete připojit k serveru funkce SignalR. Browser Link také zaregistruje modul HTTP pomocí technologie ASP.NET. Tento modul Vloží speciální &lt;skript&gt; odkazy do každého požadavku stránky ze serveru. Zobrazí se odkazy na skript tak, že vyberete "Zdroj zobrazení" v prohlížeči.
 
 ![](using-browser-link/_static/image13.png)
 
-Zdrojové soubory vašeho se nemění. Modul HTTP vloží odkazům na skript dynamicky.
+Zdrojové soubory se nemění. Modul HTTP dynamicky vkládá skriptových odkazů.
 
-Protože kód prohlížeče na straně je všechny JavaScript, funguje u všech prohlížečů, [SignalR podporuje](../../../signalr/overview/getting-started/supported-platforms.md), bez nutnosti jakékoli modul plug-in prohlížeče.
+Protože kód prohlížeče straně je všechny JavaScript, funguje ve všech prohlížečích, které [podporuje SignalR](../../../signalr/overview/getting-started/supported-platforms.md), bez nutnosti jakékoli modul plug-in prohlížeče.

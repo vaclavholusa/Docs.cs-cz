@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel
-title: '[Jak na:] Slouží k aktualizaci prvku ASP.NET AJAX UpdatePanel JavaScript? | Microsoft Docs'
+title: '[Postup:] Použití JavaScriptu k aktualizaci prvku UpdatePanel technologie ASP.NET AJAX? | Dokumentace Microsoftu'
 author: JoeStagner
-description: V tomto videu jsme informace dvěma různými způsoby použití aktualizace obsahu ovládacího prvku ASP.NET AJAX UpdatePanel logiky JavaScript. První způsob je přidat...
+description: V tomto videu jsme dozvíte dvěma různými způsoby použití logiky JavaScript aktualizace obsahu ovládacího prvku UpdatePanel technologie ASP.NET AJAX. První způsob je přidat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/25/2007
 ms.topic: article
 ms.assetid: b4d5b7ce-c322-4313-985d-455df98d619a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 7c07085ce7ef8f0a5856cac5d4cd2d2b102fa106
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: c18f359fd0350dc9dafdb744462208e2ef41acab
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885146"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395341"
 ---
-<a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[Jak na:] Slouží k aktualizaci prvku ASP.NET AJAX UpdatePanel JavaScript?
+<a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[Postup:] Použití JavaScriptu k aktualizaci prvku UpdatePanel technologie ASP.NET AJAX?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-V tomto videu jsme informace dvěma různými způsoby použití aktualizace obsahu ovládacího prvku ASP.NET AJAX UpdatePanel logiky JavaScript. První způsob je přidání ovládacího prvku tlačítko – typ serveru na UpdatePanel a aktivovat asynchronní postback a 'předstírají, že' zpětné volání bylo způsobeno serveru ovládací prvek v rámci prvku UpdatePanel pomocí jazyka JavaScript. Druhý způsob nevyžaduje, aby všechny serverové ovládací prvky typu tlačítko pro přidání do UpdatePanel, ale stále budeme tak moct používat logiky Javascriptové aktualizace obsahu UpdatePanel. (Druhý způsob spočívá byla navrhovaná službou Dave Warda a si můžete přečíst více v jeho Weblogu, položka "snadno aktualizovat UpdatePanel pomocí jazyka JavaScript".)
+V tomto videu jsme dozvíte dvěma různými způsoby použití logiky JavaScript aktualizace obsahu ovládacího prvku UpdatePanel technologie ASP.NET AJAX. Prvním způsobem je přidat typ tlačítka serverový ovládací prvek UpdatePanel a pomocí JavaScriptu můžete aktivovat asynchronního postbacku a "předstírají, že" zpětné volání bylo způsobeno serverový ovládací prvek uvnitř prvku UpdatePanel. Druhý způsob nevyžaduje, aby všechny typ tlačítka serverové ovládací prvky mají být přidány do prvku UpdatePanel, ale stále umožňuje použití logiky JavaScript aktualizovat obsah prvku UpdatePanel. (Druhý postup byl navrhl Dave dál a si můžete přečíst víc na jeho blogu položku "snadno aktualizovat ovládacího prvku UpdatePanel, a to pomocí jazyka JavaScript".)
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel)
 

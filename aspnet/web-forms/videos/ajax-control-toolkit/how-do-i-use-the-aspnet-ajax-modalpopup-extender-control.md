@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control
-title: '[Jak na:] Pomocí prvku ASP.NET AJAX ModalPopup rozšiřujícího objektu? | Microsoft Docs'
+title: '[Postup:] Pomocí ovládacího prvku ASP.NET AJAX ovládacího prvku ModalPopup rozšiřujícího objektu? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Naučte se používat ovládací prvek ASP.NET AJAX ModalPopup rozšiřujícího objektu, který se dodává s Toolkitu ASP.NET AJAX. V tomto videu ModalPopup se používá rozšiřujícího objektu...
+description: Další informace o použití ovládací prvek ASP.NET AJAX ovládacího prvku ModalPopup rozšiřujícího objektu, který je součástí technologie ASP.NET AJAX Control Toolkit. V tomto videu ovládacího prvku ModalPopup se používá rozšíření...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2007
 ms.topic: article
 ms.assetid: 37c50e6c-e34d-4fd0-b272-01950ada7667
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control
 msc.type: video
-ms.openlocfilehash: f33b48f3f852ef66ca8ea086b25e58f9b0060a7e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ddd8a1c00343b75ebbf2112a5b1589bfe69fbc6d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884331"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401763"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[Jak na:] Pomocí prvku ASP.NET AJAX ModalPopup rozšiřujícího objektu?
+<a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[Postup:] Pomocí ovládacího prvku ASP.NET AJAX ovládacího prvku ModalPopup rozšiřujícího objektu?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Naučte se používat ovládací prvek ASP.NET AJAX ModalPopup rozšiřujícího objektu, který se dodává s Toolkitu ASP.NET AJAX. V tomto videu ModalPopup rozšiřujícího objektu se používá k pop otevřete standardní panely ASP.NET řídit jako modální dialogové okno.
+Další informace o použití ovládací prvek ASP.NET AJAX ovládacího prvku ModalPopup rozšiřujícího objektu, který je součástí technologie ASP.NET AJAX Control Toolkit. V tomto videu zařízení extender ovládacího prvku ModalPopup se používá k pop otevřené řízení standardní Panel ASP.NET jako modální dialogové okno.
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control)
 

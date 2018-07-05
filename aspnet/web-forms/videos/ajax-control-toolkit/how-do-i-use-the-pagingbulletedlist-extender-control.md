@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-pagingbulletedlist-extender-control
-title: '[Jak na:] Použití ovládacího prvku rozšiřujícího objektu PagingBulletedList? | Microsoft Docs'
+title: '[Postup:] Použít prvku Pagingbulletedlist? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Toto video ukazuje použití ovládacího prvku rozšiřujícího objektu PagingBulletedList z ovládacího prvku ASP.NET AJAX Toolkit. Jsme zjistěte, jak PagingBulletedList extende...
+description: Toto video ukazuje použití prvku pagingbulletedlist z technologie ASP.NET AJAX Control Toolkit. Učíme jak PagingBulletedList extende...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2007
 ms.topic: article
 ms.assetid: 7f2231f1-c105-499e-b980-c24824bed56a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-pagingbulletedlist-extender-control
 msc.type: video
-ms.openlocfilehash: 9b5e60f9bfe6474832c8bdc2f60177bf557c42bb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 394ba543245d97a1925f81ef369a95b944984722
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884168"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392402"
 ---
-<a name="how-do-i-use-the-pagingbulletedlist-extender-control"></a>[Jak na:] Použití ovládacího prvku rozšiřujícího objektu PagingBulletedList?
+<a name="how-do-i-use-the-pagingbulletedlist-extender-control"></a>[Postup:] Použít prvku Pagingbulletedlist?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Toto video ukazuje použití ovládacího prvku rozšiřujícího objektu PagingBulletedList z ovládacího prvku ASP.NET AJAX Toolkit. Jsme zjistěte, jak rozšiřujícího objektu PagingBulletedList přidá klienta stránkování a řazení na standardní ovládací prvek ASP.NET BulletedList, což výrazně usnadňuje práci uživatele během zobrazení rozsáhlého seznamu položek. Také vidí jak jsme můžete definovat vlastní JavaScript a CSS plně spravovat uživatele.
+Toto video ukazuje použití prvku pagingbulletedlist z technologie ASP.NET AJAX Control Toolkit. Učíme se, jak zařízení extender PagingBulletedList přidá na straně klienta, stránkování a řazení standardního ovládacího prvku BulletedList technologie ASP.NET, která výrazně zlepšuje činnost koncového uživatele při zobrazení rozsáhlý seznam položek. Také uvidíme, jak jsme můžete definovat vlastní JavaScript a CSS, abyste mohli plně spravovat uživatele vyzkoušet.
 
-[&#9654;Podívejte se na video (25 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-pagingbulletedlist-extender-control)
+[&#9654;Podívejte se na video (25 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-pagingbulletedlist-extender-control)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-use-the-aspnet-ajax-listsearch-extender.md)

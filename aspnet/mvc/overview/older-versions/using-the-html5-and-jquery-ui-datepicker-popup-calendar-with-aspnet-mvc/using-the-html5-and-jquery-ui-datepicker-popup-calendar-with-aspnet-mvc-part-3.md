@@ -1,104 +1,103 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
-title: Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 3 | Microsoft Docs
+title: Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 3 | Dokumentace Microsoftu
 author: Rick-Anderson
-description: V tomto kurzu naučit základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v MV ASP.NET...
+description: V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, šablony zobrazení a kalendářem jQuery uživatelského rozhraní prvkem datepicker v MV ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
 ms.topic: article
 ms.assetid: 8f5f91ae-12d7-4cf3-ac09-4bb53d07ee60
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: fd1ae746f4f134b779c7eee50cf6c840bbb7068e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 11f9e0a8602e9ee1feda9d0e7d0d319add7c440c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869462"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400768"
 ---
-<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 3
+<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 3
 ====================
-podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> V tomto kurzu naučit základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v aplikaci ASP.NET MVC Web.
+> V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, šablony zobrazení a kalendářem jQuery UI datepicker v aplikaci MVC rozhraní ASP.NET Web.
 
 
 ## <a name="working-with-complex-types"></a>Práce s komplexní typy
 
-V této části vytvoříte třídu adresu a zjistěte, jak vytvořit šablonu, můžete ho zobrazit.
+V této části vytvoříte třídu adresu a zjistěte, jak vytvořit šablonu, která ho zobrazit.
 
-V *modely* složky, vytvořte nový soubor třídy s názvem *Person.cs* kam budete umísťovat dva typy: `Person` – třída a `Address` třídy. `Person` Třída bude obsahovat vlastnosti, která je zadán jako `Address`. `Address` Typ je komplexního typu, což znamená, není jeden z předdefinovaných typů jako `int`, `string`, nebo `double`. Místo toho má několik vlastností. Kód pro nové třídy vypadá takto:
+V *modely* složku, vytvořte nový soubor třídy *Person.cs* místo, kam budete dáte dva typy: `Person` třídy a `Address` třídy. `Person` Třídy bude obsahovat vlastnosti, která je zadána jako `Address`. `Address` Typ je komplexní typ, což znamená není jeden z předdefinovaných typů, jako je `int`, `string`, nebo `double`. Místo toho má několik vlastností. Kód pro nové třídy vypadá takto:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample1.cs)]
 
-V `Movie` řadiče, přidejte následující `PersonDetail` akce k zobrazení instance osoby:
+V `Movie` kontroleru, přidejte následující `PersonDetail` akce k zobrazení instance osoby:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample2.cs)]
 
-Pak přidejte následující kód, který `Movie` řadiče k naplnění `Person` modelu s ukázková data:
+Pak přidejte následující kód, který `Movie` kontroleru k naplnění `Person` modelů s ukázkovými daty:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample3.cs)]
 
-Otevřete *Views\Movies\PersonDetail.cshtml* souboru a přidejte následující kód pro `PersonDetail` zobrazení.
+Otevřít *Views\Movies\PersonDetail.cshtml* a přidejte následující kód pro `PersonDetail` zobrazení.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample4.cshtml)]
 
-Stiskněte klávesu Ctrl + F5 a spusťte aplikaci a přejděte do *filmy nebo PersonDetail*.
+Stisknutím kláves Ctrl + F5 spusťte aplikaci a přejděte do *filmy/PersonDetail*.
 
-`PersonDetail` Zobrazení neobsahuje `Address` komplexního typu, jako je můžete zobrazit na tomto snímku obrazovky. (Žádná adresa se zobrazí.)
+`PersonDetail` Zobrazení neobsahuje `Address` komplexní typ, jako je vidět na tomto snímku obrazovky. (Žádná adresa se zobrazí.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image1.png)
 
-`Address` Data modelu není zobrazena, protože je komplexního typu. Chcete-li zobrazit informace o adrese, otevřete *Views\Movies\PersonDetail.cshtml* znovu a přidejte následující kód.
+`Address` Datového modelu se nezobrazí, protože se jedná o komplexní typ. Chcete-li zobrazit informace o adrese, otevřete *Views\Movies\PersonDetail.cshtml* znovu a přidejte následující kód.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample5.cshtml)]
 
-Kód dokončení pro `PersonDetail` teď zobrazení vypadá takto:
+Kompletní kód pro `PersonDetail` teď zobrazení vypadá takto:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample6.cshtml)]
 
-Spusťte aplikaci znovu a zobrazit `PersonDetail` zobrazení. Informace o adrese se nyní zobrazí:
+Spusťte aplikaci znovu spustit a zobrazit `PersonDetail` zobrazení. Informace o adrese se nyní zobrazí:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image2.png)
 
 ### <a name="creating-a-template-for-a-complex-type"></a>Vytvoření šablony pro komplexní typ.
 
-V této části vytvoříte šablonu, která se použije k vykreslení `Address` komplexního typu. Když vytvoříte šablonu pro `Address` typu, ASP.NET MVC mohou automaticky používat ji k formátování model adresu kdekoli v aplikaci. To vám umožňuje řídit vykreslování `Address` typu z jenom jednom místě v aplikaci.
+V této části vytvoříte šablonu, která se použije k vykreslení `Address` komplexního typu. Když vytvoříte šablonu pro `Address` typ, ASP.NET MVC automaticky slouží k formátování modelu adresu kdekoli v aplikaci. To vám umožňuje řídit vykreslování `Address` typ z jediného místa v aplikaci.
 
-V *Views\Shared\DisplayTemplates* složky, vytvoření částečné zobrazení silného typu, s názvem **adresu**:
+V *views\shared\displaytemplates za účelem nalezení* složku vytvořit částečné zobrazení silného typu, s názvem **adresu**:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image3.png)
 
-Klikněte na tlačítko **přidat**a pak otevřete nový *Views\Shared\DisplayTemplates\Address.cshtml* souboru. Nové zobrazení obsahuje následující generovaný kód:
+Klikněte na tlačítko **přidat**a pak otevřete nový *Views\Shared\DisplayTemplates\Address.cshtml* souboru. Nové zobrazení obsahuje následující vygenerované značky:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample7.cshtml)]
 
-Spusťte aplikaci a zobrazit `PersonDetail` zobrazení. Tentokrát `Address` šablonu, kterou jste právě vytvořili, se používá k zobrazení `Address` komplexní typ, takže zobrazení vypadá takto:
+Spusťte aplikaci a zobrazit `PersonDetail` zobrazení. Tentokrát `Address` šablonu, kterou jste právě vytvořili, se používá k zobrazení `Address` komplexní typ, tak zobrazení vypadá takto:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/_static/image4.png)
 
-### <a name="summary-ways-to-specify-the-model-display-format-and-template"></a>Souhrn: Způsobů určení modelu formát zobrazení a šablony
+### <a name="summary-ways-to-specify-the-model-display-format-and-template"></a>Shrnutí: Způsoby, jak určit formát zobrazení modelu a šablony
 
-Už víte, že je možné zadat formát nebo šablonu pro vlastnosti modelu pomocí následujících postupů:
+Už víte, že můžete určit formát nebo šablonu pro vlastnosti modelu pomocí následujících postupů:
 
-- Použití `DisplayFormat` atribut na vlastnost v modelu. Například následující kód způsobí, že data budou zobrazeny bez čas:
+- Použití `DisplayFormat` atribut na vlastnost v modelu. Například následující kód způsobí, že data budou zobrazeny bez času:
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- Použití [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) na vlastnost v modelu a zadání datový typ atributu. Například následující kód způsobí, že data budou zobrazeny bez čas.
+- Použití [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut na vlastnost v modelu a určení datového typu. Například následující kód způsobí, že data budou zobrazeny bez času.
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
-    Pokud aplikace obsahuje *date.cshtml* šablonu *Views\Shared\DisplayTemplates* složky nebo *Views\Movies\DisplayTemplates* složku, že šablona slouží k vykreslení `DateTime` vlastnost. V opačném případě předdefinovaného systémového ukázka ASP.NET zobrazí vlastnost jako datum.
-- Vytvoření šablony v zobrazení *Views\Shared\DisplayTemplates* složku nebo *Views\Movies\DisplayTemplates* složku, jejíž název odpovídá typu dat, který chcete formátovat. Například, který jste viděli *Views\Shared\DisplayTemplates\DateTime.cshtml* byla použita k vykreslení `DateTime` vlastnosti v modelu, bez přidání atributu do modelu a bez přidání jakékoli značek k zobrazení.
-- Pomocí [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atributů v modelu, který má zadejte šablonu, kterou chcete zobrazit vlastnosti modelu.
-- Přidání explicitně zobrazovaný název šablony na [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) volání v zobrazení.
+    Pokud aplikace obsahuje soubor *date.cshtml* šablony v *views\shared\displaytemplates za účelem nalezení* složky nebo *Views\Movies\DisplayTemplates* složky, tato šablona se použije k vykreslení `DateTime` vlastnost. Integrované systémové šablon ASP.NET jinak zobrazí vlastnost jako datum.
+- Vytvoření šablony v zobrazení *views\shared\displaytemplates za účelem nalezení* složky nebo *Views\Movies\DisplayTemplates* složku, jejíž název odpovídá datový typ, který má být zformátován. Například jste si všimli, že *Views\Shared\DisplayTemplates\DateTime.cshtml* byla použita k vykreslení `DateTime` vlastnosti v modelu, bez přidání atributu do modelu a bez nutnosti přidávat žádné značky k zobrazení.
+- Použití [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) atribut v modelu, který má zadat šablonu, kterou chcete zobrazit vlastnosti modelu.
+- Explicitním přidáním zobrazovaný název šablony, čímž [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) volání v zobrazení.
 
-Přístupů, které použijete, závisí na co musíte udělat v aplikaci. Není kombinovat tyto přístupy k získání přesně druh formátování, které potřebujete.
+Přístup, který použijete, závisí na co je potřeba udělat v aplikaci. Není například neobvyklé kombinovat těchto přístupů, jaká formátování, které potřebujete získat.
 
-V další části přepínat trochu zařízením a přesunout z přizpůsobení zobrazení dat k přizpůsobení, jak je zadána. Budete spojit ovládací prvek datepicker jQuery k zobrazení upravit v aplikaci, aby bylo možné poskytnout slick způsob, jak zadat data.
+V další části, bude přepnout trochu zařízením a přesouvat přizpůsobení zobrazení dat k přizpůsobení, jak se zadají. Budete připojení datepicker jQuery na úpravy zobrazení v aplikaci, abyste uhlazený způsob, jak zadat data.
 
 > [!div class="step-by-step"]
 > [Předchozí](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

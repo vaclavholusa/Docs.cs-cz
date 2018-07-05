@@ -1,124 +1,123 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
-title: Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (C#) | Microsoft Docs
+title: Zobrazení více záznamů na řádku ovládacím prvkem DataList (C#) | Dokumentace Microsoftu
 author: rick-anderson
-description: V tomto kurzu krátké jsme budete prozkoumejte postup přizpůsobení DataList rozložení pomocí jeho RepeatColumns a RepeatDirection vlastnosti.
+description: V tomto krátkém kurzu podíváme, jak přizpůsobit rozložení prvku DataList prostřednictvím její vlastnosti RepeatColumns a RepeatDirection.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
 ms.topic: article
 ms.assetid: cf5acaf5-d4f6-4957-badc-b89956b285f3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 308427836c1fef05e66d1f5348c6bd9e80290f9b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2655cceb799f70ae88fd84d96a2c1dc783768de9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891214"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402766"
 ---
-<a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Zobrazení více záznamů na řádek pomocí ovládacího prvku DataList (C#)
+<a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Zobrazení více záznamů na řádku ovládacím prvkem DataList (C#)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_31_CS.exe) nebo [stáhnout PDF](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/datatutorial31cs1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_31_CS.exe) nebo [stahovat PDF](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/datatutorial31cs1.pdf)
 
-> V tomto kurzu krátké jsme budete prozkoumejte postup přizpůsobení DataList rozložení pomocí jeho RepeatColumns a RepeatDirection vlastnosti.
+> V tomto krátkém kurzu podíváme, jak přizpůsobit rozložení prvku DataList prostřednictvím její vlastnosti RepeatColumns a RepeatDirection.
 
 
 ## <a name="introduction"></a>Úvod
 
-Příklady DataList jsme jste viděli v posledních dvou kurzech mít vykresluje každý záznam od zdroje dat jako řádek ve formátu HTML jednoho sloupce `<table>`. Přestože se výchozí chování DataList, je velmi snadné pro přizpůsobení zobrazení DataList tak, že položky zdroje dat jsou rozloženy vícesloupcového, více řádků tabulky. Kromě toho je možné, že všechna data s zdroje položky zobrazené v DataList jednoho řádku s více sloupci.
+Příklady ovládacích prvků DataList jsme viděli v posledních dvou kurzech ve mít každý záznam z jeho zdroje dat takto řádků ve formátu HTML jedním sloupcem `<table>`. Když je výchozí chování DataList, je velmi snadné přizpůsobení zobrazení v prvku DataList tak, aby položky zdroje dat jsou rozděleny mezi více sloupci, více řádky tabulky. Kromě toho je možné mít všechna data s zdroje položky zobrazené v a jednoho řádku s více sloupci v prvku DataList.
 
-Jsme rozložení DataList s prostřednictvím upravit jeho `RepeatColumns` a `RepeatDirection` vlastnosti, které v uvedeném pořadí, označují jsou vykreslovány v tom, kolik sloupců a zda tyto položky jsou nastíněny vodorovně nebo svisle. Obrázek 1 zobrazuje DataList, který obsahuje informace o produktu v tabulce s tři sloupce.
-
-
-[![DataList zobrazí tři produkty, na řádek](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image1.png)
-
-**Obrázek 1**: DataList ukazuje tři produkty na řádek ([Kliknutím zobrazit obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image3.png))
+Můžeme přizpůsobit rozložení ovládacích prvků DataList s prostřednictvím jeho `RepeatColumns` a `RepeatDirection` vlastnosti, které, označuje, kolik sloupců jsou generovány a zda tyto položky jsou rozloženy vodorovně nebo svisle. Obrázek 1 příkladem DataList, která zobrazí informace o produktech v tabulce se třemi sloupci.
 
 
-Zobrazením více položky zdroje dat na řádek DataList efektivněji využívat místo vodorovné obrazovky. V tomto kurzu krátké budete nám prozkoumat tyto dvě vlastnosti DataList.
+[![Prvku DataList zobrazovala tři produkty na každém řádku](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image2.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image1.png)
 
-## <a name="step-1-displaying-product-information-in-a-datalist"></a>Krok 1: Zobrazení informací o produktu v DataList
+**Obrázek 1**: ovládacích prvcích DataList ukazuje tři produkty na každém řádku ([kliknutím ji zobrazíte obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image3.png))
 
-Před jsme zkontrolujte `RepeatColumns` a `RepeatDirection` vlastností, umožňují s nejprve vytvořit DataList na naší stránce, které jsou uvedeny informace o produktu pomocí rozložení standardní jednoho sloupce, více řádků tabulky. V tomto příkladu umožní s zobrazení s název produktu, kategorie a ceny pomocí následující kód:
+
+Zobrazením více zdrojové položky dat na každém řádku prvku DataList efektivněji využívat místo na obrazovce vodorovné. V tomto krátkém kurzu se podíváme tyto dvě vlastnosti ovládacích prvků DataList.
+
+## <a name="step-1-displaying-product-information-in-a-datalist"></a>Krok 1: Zobrazení informací o produktu v a v prvku DataList
+
+Předtím, než se Zaměřujeme `RepeatColumns` a `RepeatDirection` vlastností, let s nejprve vytvořit a v prvku DataList na naší stránce s informacemi o produktu pomocí rozložení standardní jedním sloupcem, více řádky tabulky. V tomto příkladu umožní s zobrazení s názvem produktu, kategorie a ceny pomocí následující kód:
 
 
 [!code-html[Main](showing-multiple-records-per-row-with-the-datalist-control-cs/samples/sample1.html)]
 
-Jsme jste se seznámili s postupem k vytvoření vazby dat DataList v předchozích příkladech, tak I budete rychle přesouvat pomocí těchto kroků. Začněte otevřením `RepeatColumnAndDirection.aspx` stránku `DataListRepeaterBasics` složku a přetáhněte DataList z panelu nástrojů na návrháře. Z inteligentních značek DataList s opt vytvořit nové ObjectDataSource a nakonfigurovat ho načítat data z `ProductsBLL` třídu s `GetProducts` metody výběru (None) možnost z průvodce s příkazy INSERT, UPDATE a odstranit karty.
+Jsme ve viděli, jak svázat data s DataList v předchozích příkladech, takže pomocí těchto kroků budete přesunu rychle. Začněte otevřením `RepeatColumnAndDirection.aspx` stránku `DataListRepeaterBasics` složky a a v prvku DataList přetáhněte z panelu nástrojů do návrháře. Z inteligentních značek v prvku DataList s rozhodnout vytvořit nového prvku ObjectDataSource a nakonfigurovat, aby vyžádat data z `ProductsBLL` třída s `GetProducts` metoda výběru (žádný) možnost z průvodce s INSERT, UPDATE a odstranit záložky.
 
-Po vytvoření a vytvoření vazby nové ObjectDataSource prvku DataList, vytvoří sada Visual Studio automaticky `ItemTemplate` který zobrazí název a hodnota pro každé pole data produktu. Upravit `ItemTemplate` buď přímo prostřednictvím deklarativní nebo ze šablon upravit možnost DataList s inteligentním tak, aby používala uvedené výše, nahraďte kód *název produktu*, *název kategorie* , a *cena* textu s ovládacími prvky popisek, které používají syntaxi příslušné datové vazby k přiřazení hodnoty k jejich `Text` vlastnosti. Po aktualizaci `ItemTemplate`, stránku s deklarativní by měl vypadat podobně jako následující:
+Po vytvoření a připojení nového prvku ObjectDataSource k prvku DataList, vytvoří Visual Studio automaticky `ItemTemplate` , který zobrazí název a hodnotu pro každé pole data produktu. Upravit `ItemTemplate` buď přímo prostřednictvím deklarativní, nebo upravit šablony v prvku DataList s inteligentním možnost tak, aby používala vidíte výše, nahraďte kód *název produktu*, *název kategorie* , a *cena* text pomocí ovládacích prvků popisků, které používají syntaxi příslušné datové vazby k přiřazení hodnot k jejich `Text` vlastnosti. Po aktualizaci `ItemTemplate`, stránka s deklarativní by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](showing-multiple-records-per-row-with-the-datalist-control-cs/samples/sample2.aspx)]
 
-Všimněte si zadá sunout zahrnuté specifikace formátu v `Eval` Syntaxe datové vazby `UnitPrice`, formátování vrácené hodnoty jako měnu - `Eval("UnitPrice", "{0:C}").`
+Všimněte si, že, které jsem zahrnutý ve specifikátoru formátu v `Eval` syntaxe vázání dat `UnitPrice`, formátování vrácené hodnoty jako měnu - `Eval("UnitPrice", "{0:C}").`
 
-Za chvíli navštivte stránku v prohlížeči. Jak je vidět na obrázku 2, DataList vykreslí jako jeden sloupec, více řádků tabulky produktů.
-
-
-[![Ve výchozím nastavení, vykreslí DataList jako jeden sloupec, více řádků tabulky](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image4.png)
-
-**Obrázek 2**: ve výchozím nastavení, DataList vykreslí jako jednoho sloupce, více řádků tabulky ([Kliknutím zobrazit obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image6.png))
+Za chvíli navštivte stránku v prohlížeči. Jak znázorňuje obrázek 2 prvku DataList vykreslí jako jedním sloupcem, více řádky tabulky produktů.
 
 
-## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Krok 2: Změna směru DataList s rozložení
+[![Ve výchozím nastavení, vykreslení ovládacích prvků DataList jako jedním sloupcem, více řádky tabulky](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image5.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image4.png)
 
-Při výchozí chování pro prvku DataList je pro rozložení jeho položky svisle v tabulce jednoho sloupce, více řádků, toto chování lze snadno změnit prostřednictvím DataList s [ `RepeatDirection` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). `RepeatDirection` Vlastnost může přijmout jeden dvě možné hodnoty: `Horizontal` nebo `Vertical` (výchozí).
-
-Změnou `RepeatDirection` vlastnost z `Vertical` k `Horizontal`, prvku DataList vykreslí jeho záznamů do jednoho řádku vytváření za Zdrojová položka dat jeden sloupec. Pro ilustraci tohoto efektu, klikněte na DataList v návrháři a potom v okně vlastností změňte `RepeatDirection` vlastnost z `Vertical` k `Horiztonal`. Okamžitě po to uděláte, návrháře upraví rozložení DataList s vytváření rozhraní jednoho řádku s více sloupci (viz obrázek 3).
+**Obrázek 2**: ve výchozím nastavení, v prvku DataList vykreslí jako jedním sloupcem, více řádky tabulky ([kliknutím ji zobrazíte obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image6.png))
 
 
-[![Položky RepeatDirection vlastnost stanoví, jak směr DataList s jsou umístěné na](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image7.png)
+## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Krok 2: Změna směr rozložení ovládacích prvků DataList s
 
-**Obrázek 3**: `RepeatDirection` vlastnost určuje, jak položky směr DataList s jsou umístěné na ([Kliknutím zobrazit obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image9.png))
+Při výchozí chování pro prvku DataList, je rozložení jeho položek svisle v jedním sloupcem, více řádky tabulky, toto chování lze snadno změnit prostřednictvím datového prvku DataList s [ `RepeatDirection` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). `RepeatDirection` Vlastnost může přijmout jednu ze dvou možných hodnot: `Horizontal` nebo `Vertical` (výchozí).
 
-
-Při zobrazení malé množství dat, jeden řádek, může být více sloupci tabulky nevhodnější způsob maximalizovat nemovitosti obrazovky. Pro větší objemy dat ale jeden řádek bude vyžadovat větší počet sloupců, které nabízených oznámení ty položky tohoto t může přizpůsobit na obrazovce vypnout vpravo. Obrázek 4 ukazuje produkty při vykreslení v DataList jeden řádek. Vzhledem k tomu, že jsou mnoho produkty (více než 80), uživatel bude muset daleko posuňte doprava k zobrazení informací o jednotlivých produktů.
-
-
-[![Pro dostatečně velké datové zdroje bude vyžadovat jeden sloupec DataList vodorovného posouvání](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image10.png)
-
-**Obrázek 4**: pro dostatečně velké zdroje dat, jeden sloupec DataList bude vyžadovat vodorovného posouvání ([Kliknutím zobrazit obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image12.png))
+Změnou `RepeatDirection` vlastnost z `Vertical` k `Horizontal`, prvku DataList vykreslí své záznamy v jediném řádku, vytváření jeden sloupec na zdrojové položky dat. Pro ilustraci tohoto efektu, klikněte na ovládacím prvku DataList v návrháři a potom v okně Vlastnosti změňte `RepeatDirection` vlastnost z `Vertical` k `Horiztonal`. Okamžitě po tak učiníte, návrháře upraví rozložení ovládacích prvků DataList s vytvořením jednoho řádku s více sloupci rozhraní (viz obrázek 3).
 
 
-## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Krok 3: Zobrazení dat v tabulce vícesloupcového, více řádků
+[![Jsou položky RepeatDirection vlastnost určuje, jak the směr DataList s rozložením navýšení kapacity](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image8.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image7.png)
 
-K vytvoření DataList vícesloupcového, více řádků, je potřeba nastavit [ `RepeatColumns` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) počtu sloupce k zobrazení. Ve výchozím nastavení `RepeatColumns` je nastavena na 0, což způsobí DataList zobrazíte všechny jeho položky v jeden řádek nebo sloupec (v závislosti na hodnotě `RepeatDirection` vlastnost).
-
-Pro náš příklad umožní s zobrazit tři produkty každý řádek tabulky. Proto nastavit `RepeatColumns` vlastnost 3. Po provedení této změny, pozorně zobrazte výsledky v prohlížeči. Jak je vidět na obrázku 5, jsou nyní uvedeny produkty v tabulce tři sloupce, více řádků.
+**Obrázek 3**: `RepeatDirection` vlastnost určuje, jak jsou položky směr DataList s rozložením Out ([kliknutím ji zobrazíte obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image9.png))
 
 
-[![Tři produkty se zobrazují na řádek](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image13.png)
-
-**Obrázek 5**: tři produkty se zobrazují na řádek ([Kliknutím zobrazit obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image15.png))
+Při zobrazení malého množství dat, jednoho řádku vícesloupcové tabulky může být ideální způsob, jak maximalizovat plochy obrazovky. Pro větší objemy dat ale jeden řádek budou vyžadovat mnoho sloupců, které nabízených oznámení ty položky tohoto t můžete přizpůsobit na obrazovce vypnout na pravé straně. Obrázek 4 ukazuje produkty při vykreslení v a jednoho řádku v prvku DataList. Protože je mnoho produktů (více než 80), uživatel bude mít přejděte úplně doprava, abyste viděli informace o jednotlivých produktů.
 
 
-`RepeatDirection` Vlastnost ovlivňuje, jak jsou rozloženy položky v prvku DataList. Obrázek 5 ukazuje výsledky s `RepeatDirection` vlastnost nastavena na hodnotu `Horizontal`. Všimněte si, že první tři produkty Chai, změn a anýzového sirupu jsou nastíněny zleva doprava, shora dolů. V řádku pod první tři se zobrazí následující tři produkty (počínaje Chef Anton s Cajun Seasoning). Změna `RepeatDirection` vlastnost zpět do `Vertical`, ale rozložen tyto produkty shora dolů, zleva doprava, jak ukazuje obrázek 6.
+[![Zdroje dat dostatečně velký a jeden sloupec v prvku DataList bude vyžadovat, aby se vodorovného posouvání](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image11.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image10.png)
+
+**Obrázek 4**: pro dostatečně velké zdrojů dat, jeden sloupec v prvku DataList bude vyžadovat vodorovného posouvání ([kliknutím ji zobrazíte obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image12.png))
 
 
-[![Zde tyto produkty jsou umístěné na svisle](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image16.png)
+## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Krok 3: Zobrazení dat v tabulce více sloupci, více řádky
 
-**Obrázek 6**: zde tyto produkty jsou umístěné na svisle ([Kliknutím zobrazit obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image18.png))
+K vytvoření a více sloupci, více řádků v prvku DataList, musíme nastavit [ `RepeatColumns` vlastnost](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) počet zobrazovaných sloupců. Ve výchozím nastavení `RepeatColumns` je nastavena na 0, což způsobí, že DataList zobrazíte všechny položky v jediném řádku nebo sloupce (v závislosti na hodnotu `RepeatDirection` vlastnost).
+
+V našem příkladu umožní s zobrazit tři produkty každý řádek tabulky. Proto nastavte `RepeatColumns` vlastnost na 3. Po provedení této změny, věnujte chvíli zobrazení výsledků v prohlížeči. Jak je vidět na obrázku 5, produkty jsou teď uvedené v tři sloupce, více řádky tabulky.
 
 
-Počet řádků v tabulce zobrazí závisí na počtu celkový počet záznamů vázána DataList. Přesněji řečeno ho s dělený se mezní hodnota pro celkový počet položky zdroje dat `RepeatColumns` hodnotu vlastnosti. Vzhledem k tomu `Products` tabulka aktuálně má 84 produkty, které je dělitelná 3, je 28 řádků. Pokud počet položek ve zdroji dat a `RepeatColumns` hodnotu vlastnosti nejsou dělitelná, pak poslední řádek nebo sloupce budou mít prázdné buňky. Pokud `RepeatDirection` je nastaven na `Vertical`, pak posledního sloupce budou mít prázdné buňky; Pokud `RepeatDirection` je `Horizontal`, pak poslední řádek bude mít u prázdných buněk.
+[![Na každém řádku se zobrazí tři produkty](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image14.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image13.png)
+
+**Obrázek 5**: tři produkty jsou zobrazeny na každém řádku ([kliknutím ji zobrazíte obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image15.png))
+
+
+`RepeatDirection` Vlastnost ovlivňuje, jak jsou rozloženy položky v ovládacím prvku DataList. Obrázek 5 ukazuje výsledky s `RepeatDirection` nastavenou na `Horizontal`. Všimněte si, že první tři produkty Chai Chang a anýzového sirupu jsou rozloženy zleva doprava a shora dolů. Následující tři produkty (začíná s Chef Anton Cajun Seasoning) se zobrazí pod první tři po sobě. Změna `RepeatDirection` vlastnost zpět do `Vertical`, ale rozložen tyto produkty shora dolů, zleva doprava, jak znázorňuje obrázek 6.
+
+
+[![Tady jsou produkty podle si svisle](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image17.png)](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image16.png)
+
+**Obrázek 6**: tady, jsou produkty podle si svisle ([kliknutím ji zobrazíte obrázek v plné velikosti](showing-multiple-records-per-row-with-the-datalist-control-cs/_static/image18.png))
+
+
+Počet řádků zobrazených ve výsledné tabulce závisí na počtu celkový počet záznamů, které jsou vázány na ovládacím prvku DataList. Přesněji řečeno ji s horní mez celkový počet položek datového zdroje dělený `RepeatColumns` hodnotu vlastnosti. Vzhledem k tomu, `Products` tabulka aktuálně má 84 produkty, což je dělitelná 3, je 28 řádků. Pokud počet položek ve zdroji dat a `RepeatColumns` hodnota vlastnosti nejsou dělitelné a poslední řádek nebo sloupec bude mít prázdné buňky. Pokud `RepeatDirection` je nastavena na `Vertical`, pak posledního sloupce budou mít u prázdných buněk; pokud `RepeatDirection` je `Horizontal`, poslední řádek bude mít prázdné buňky.
 
 ## <a name="summary"></a>Souhrn
 
-DataList, ve výchozím nastavení, jsou jeho položky v jednoho sloupce, řádku více tabulku, která napodobuje rozložení GridView s TemplateField jeden. Když toto výchozí rozložení je přijatelné, jsme maximalizovat obrazovky nemovitosti zobrazením více položky zdroje dat na řádek. Způsoby se pouze nastavení DataList s `RepeatColumns` vlastnost počet sloupců pro zobrazení na řádek. Kromě toho DataList s `RepeatDirection` vlastnost lze použít k označení, zda obsah vícesloupcového, více řádků tabulky by měl být nastíněny vodorovně zleva doprava, shora dolů nebo svisle shora dolů, zleva doprava.
+DataList, ve výchozím nastavení, uvádí jeho položky v tabulce jedním sloupcem, více řádky, která napodobuje rozložení prvek GridView s TemplateField jeden. Tento výchozí rozložení je přijatelné, jsme zobrazením více zdrojové položky dat na každém řádku maximalizovat plochy obrazovky. Provádění to stačí nastavit DataList s `RepeatColumns` na počet sloupců zobrazených na řádek. Kromě toho DataList s `RepeatDirection` vlastnost lze použít k označení, zda obsah více sloupci, více řádky tabulky by měl rozloží vodorovně zleva doprava a shora dolů nebo svisle shora dolů, zleva doprava.
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Zvláštní poděkování
+## <a name="special-thanks-to"></a>Speciální k
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl Suru Jan. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Vedoucí kontrolor pro účely tohoto kurzu byla Suru Jan. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Předchozí](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

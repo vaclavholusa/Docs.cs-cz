@@ -1,35 +1,34 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/index
-title: Představení technologie ASP.NET Web Pages | Microsoft Docs
+title: Představení rozhraní ASP.NET Web Pages | Dokumentace Microsoftu
 author: rick-anderson
-description: Představení technologie ASP.NET Web Pages 2
+description: Představujeme ASP.NET Web Pages 2
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
 ms.topic: article
 ms.assetid: ef969007-9e27-431c-b2f7-e1772af7a0b6
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2
 msc.type: chapter
-ms.openlocfilehash: 03dd1be4651b95c8f7a496378af33e371cead64f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ea3152dc90a54e6282fec0c1c6bad2390b75a4f6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572872"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37390317"
 ---
-<a name="introducing-aspnet-web-pages"></a>Představení ASP.NET – webové stránky
+<a name="introducing-aspnet-web-pages"></a>Úvod do ASP.NET Web Pages
 ====================
-> Představení technologie ASP.NET Web Pages 2
+> Představujeme ASP.NET Web Pages 2
 
 
 - [Začínáme](getting-started.md)
 - [Základy programování](intro-to-web-pages-programming.md)
 - [Zobrazení dat](displaying-data.md)
-- [Základy formuláře HTML](form-basics.md)
-- [Zadávání dat databáze pomocí formulářů](entering-data.md)
-- [Aktualizace dat databáze](updating-data.md)
-- [Odstranění dat z databáze](deleting-data.md)
-- [Vytváření konzistentního rozložení](layouts.md)
-- [Publikování webu pomocí služby WebMatrix](publishing.md)
+- [Základy formulářů HTML](form-basics.md)
+- [Zadávání dat do databáze pomocí formulářů](entering-data.md)
+- [Aktualizace databázových dat](updating-data.md)
+- [Odstranění databázových dat](deleting-data.md)
+- [Vytvoření konzistentního rozložení](layouts.md)
+- [Publikování webu ve službě WebMatrix](publishing.md)

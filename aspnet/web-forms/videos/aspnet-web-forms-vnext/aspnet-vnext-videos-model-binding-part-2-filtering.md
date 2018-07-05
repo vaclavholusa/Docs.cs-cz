@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-2-filtering
-title: 'ASP.NET vNext videa: Model vazby část 2 - filtrování | Microsoft Docs'
+title: 'Videa o ASP.NET vNext: Model vazby část 2 – filtrování | Dokumentace Microsoftu'
 author: DamianEdwards
-description: V tomto videu se dál Damianu Edwards ukázky vazby modelu tím, že vysvětlí filtrování.
+description: V tomto videu Damianem Edwardsem pokračuje ukázku vazby modelu a popsat, filtrování.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/12/2011
 ms.topic: article
 ms.assetid: b1d73fae-57c9-4b06-b5df-d68dc3b3cf5e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-2-filtering
 msc.type: video
-ms.openlocfilehash: 1eac6de4280c439d4c5c637e927af92c2f938b7f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9e9ce6d2a3d2347a02a857172c75f241af760401
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884386"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393899"
 ---
-<a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a>ASP.NET vNext videa: Model vazby část 2 - filtrování
+<a name="aspnet-vnext-videos-model-binding-part-2---filtering"></a>Videa o ASP.NET vNext: Model vazby část 2 – filtrování
 ====================
-podle [Damianu Edwards](https://github.com/DamianEdwards)
+podle [Damianem Edwardsem](https://github.com/DamianEdwards)
 
-V tomto videu se dál Damianu Edwards ukázky vazby modelu tím, že vysvětlí filtrování.
+V tomto videu Damianem Edwardsem pokračuje ukázku vazby modelu a popsat, filtrování.
 
 [&#9654;Podívejte se na video (1 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-vnext-videos-model-binding-part-2-filtering)
 

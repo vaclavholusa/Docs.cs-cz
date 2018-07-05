@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
-title: Vytvoření týmového projektu v sadě TFS | Microsoft Docs
+title: Vytvoření týmového projektu v TFS | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma popisuje postup vytvoření nového týmového projektu v Team Foundation Server (TFS) 2010.
 ms.author: aspnetcontent
@@ -9,15 +9,14 @@ ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 96e0ee5fd0b74e7b22b8e346aa8462f7558a3ddc
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 2c3b30cac408f47d7d15ae7456f0744219506c85
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36960691"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397558"
 ---
 <a name="creating-a-team-project-in-tfs"></a>Vytvoření týmového projektu v sadě TFS
 ====================
@@ -28,179 +27,179 @@ podle [Jason Lee](https://github.com/jrjlee)
 > Toto téma popisuje postup vytvoření nového týmového projektu v Team Foundation Server (TFS) 2010.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
+Toto téma je součástí série kurzů podle požadavků na nasazení enterprise fiktivní společnosti s názvem společnosti Fabrikam, Inc. V této sérii kurzů používá ukázkové řešení&#x2014; [řešení Správce kontaktů](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s realistické úroveň složitosti, včetně aplikace ASP.NET MVC 3, komunikace Windows Služba Foundation (WCF) a databázový projekt.
 
 ## <a name="task-overview"></a>Přehled úloh
 
-Zřídit a použití nového týmového projektu v sadě TFS, budete potřebovat k dokončení těchto kroků:
+Zřízení a použití nového týmového projektu v TFS, budete potřebovat k dokončení těchto kroků:
 
 - Udělení oprávnění pro uživatele, který se vytvoří nový týmový projekt.
-- Vytvoření týmového projektu.
-- Udělení oprávnění pro členy týmu, kteří budou pracovat na projekt.
-- Zkontrolujte, že v některých obsahu.
+- Vytvořte týmový projekt.
+- Udělení oprávnění členům týmu, kteří budou pracovat na projektu.
+- Vrátit se změnami nějaký obsah.
 
-Toto téma vám ukáže, jak k provedení těchto postupů, a určí uživatele a role úlohy, které by mohly být zodpovědná za každý postup. Mějte na paměti, že v závislosti na struktuře vaší organizace, každý z těchto úloh může být jiné osoba.
+V tomto tématu ukazují, jak provést tyto postupy, a určí uživatele a úlohy, které by mohly být zodpovědný za každý postup. Mějte na paměti, že v závislosti na struktuře vaší organizace, každá z těchto úloh může být odpovědnost na jinou osobu.
 
-Úlohy a postupy v tomto tématu předpokládá, že jste nainstalován a nakonfigurován sady TFS a že jste vytvořili kolekci týmových projektů jako součást procesu konfigurace. Další informace o těchto domněnek a pro obecné informace na scénáři, najdete v části [konfigurace serveru TFS sestavení pro nasazení webu](configuring-a-tfs-build-server-for-web-deployment.md).
+Úlohy a názorné postupy v tomto tématu se předpokládá, že je nainstalujete a nakonfigurujete TFS, a že jste vytvořili kolekci týmového projektu jako součást procesu konfigurace. Další informace o těchto domněnek a obecné informace na scénáři, najdete v části [nakonfigurovat Server sestavení TFS pro nasazení webu](configuring-a-tfs-build-server-for-web-deployment.md).
 
-## <a name="grant-permissions-to-the-team-project-creator"></a>Udělení oprávnění pro tvůrce týmového projektu
+## <a name="grant-permissions-to-the-team-project-creator"></a>Udělení oprávnění pro autora týmového projektu
 
-Chcete-li vytvořit nového týmového projektu, potřebujete tato oprávnění:
+Chcete-li vytvořit nový týmový projekt, je třeba tato oprávnění:
 
-- Musíte mít **vytvořit nové projekty** oprávnění v aplikační vrstvě TFS. Toto oprávnění přidáním uživatelům udělíte obvykle **správci kolekcí projektů** skupiny sady TFS. **Team Foundation správci** toto oprávnění zahrnuje globální skupinu.
-- Musíte mít oprávnění k vytvoření nové týmové weby v rámci kolekce webů služby SharePoint, která odpovídá kolekci týmového projektu sady TFS. Toto oprávnění přidáním uživatele do skupiny služby SharePoint s udělíte obvykle **úplné řízení** kolekce webů oprávnění na webu služby SharePoint.
-- Pokud používáte funkce SQL Server Reporting Services, musíte být členem skupiny **Team Foundation Content Manager** role ve službě Reporting Services.
+- Musíte mít **vytvořit nové projekty** oprávnění na aplikační vrstvu TFS. Obvykle tak, že přidáte uživatelům udělit toto oprávnění **Project Collection Administrators** skupinu TFS. **Správci serveru Team Foundation** toto oprávnění zahrnuje globální skupina.
+- Musíte mít oprávnění k vytvoření nových lokalit týmu v rámci kolekce webů služby SharePoint, která odpovídá kolekci týmových projektů TFS. Obvykle udělit tato oprávnění tak, že přidáte uživatele do skupiny SharePoint s **úplné řízení** kolekce webů oprávnění služby SharePoint.
+- Pokud používáte funkce SQL Server Reporting Services, musíte být členem skupiny **správce obsahu Team Foundation** role ve službě Reporting Services.
 
 ### <a name="who-performs-these-procedures"></a>Kdo provádí tyto postupy?
 
-Obvykle osoba nebo skupina, který spravuje nasazení TFS také provede tyto postupy.
+Obvykle osoba nebo skupina, která spravuje nasazení TFS také provádí tyto postupy.
 
-Protože to je vysoce privilegované sadu oprávnění, nové týmové projekty obvykle vytvářejí malou podmnožinu uživatelů s zodpovědnost za správu nasazení sady TFS. Vývojáři obvykle neposkytne oprávnění potřebná k vytvoření nového týmového projektu.
+Protože se jedná s vysokou úrovní oprávnění sadu oprávnění, nové týmové projekty jsou obvykle vytvořené malou podmnožinu uživatelů s zodpovědnost za správu nasazení TFS. Vývojáři obvykle neposkytne oprávnění požadovaná k vytvoření nových týmových projektů.
 
-### <a name="grant-permissions-in-tfs"></a>Udělení oprávnění v sadě TFS
+### <a name="grant-permissions-in-tfs"></a>Udělení oprávnění v TFS
 
-Pokud chcete povolit uživateli vytvoření nového týmového projektu, první úloh vysoké úrovně je přidání uživateli **správci kolekcí projektů** pro kolekci týmových projektů.
+Pokud chcete povolit tak uživateli vytvářet nové týmové projekty, prvního úkolu vysoké úrovně je přidání uživatele do **Project Collection Administrators** pro kolekci týmového projektu.
 
-**Přidání uživatele do skupiny Administrators kolekci projektu**
+**K přidání uživatele do skupiny Správci kolekcí projektů**
 
-1. Na serveru TFS na **spustit** nabídky, přejděte na příkaz **všechny programy**, klikněte na tlačítko **Microsoft Team Foundation Server 2010**a potom klikněte na **Team Foundation Konzole pro správu**.
-2. Ve stromovém zobrazení navigace, rozbalte položku **aplikační vrstvě**a potom klikněte na **kolekcemi týmových projektů**.
+1. Na serveru TFS na **Start** nabídky, přejděte k **všechny programy**, klikněte na tlačítko **Microsoft Team Foundation Server 2010**a potom klikněte na tlačítko **Team Foundation Konzola pro správu**.
+2. Ve stromovém zobrazení navigace, rozbalte **aplikační vrstva**a potom klikněte na tlačítko **kolekce týmových projektů**.
 
     ![](creating-a-team-project-in-tfs/_static/image1.png)
-3. V **kolekcemi týmových projektů** podokně, vyberte tým projektu kolekce, kterou chcete spravovat.
+3. V **kolekce týmových projektů** podokně, vyberte je vhodné spravovat kolekce týmových projektů.
 
     ![](creating-a-team-project-in-tfs/_static/image2.png)
-4. Na **Obecné** , klikněte na **členství ve skupině**.
+4. Na **Obecné** klikněte na tlačítko **členství ve skupině**.
 
     ![](creating-a-team-project-in-tfs/_static/image3.png)
-5. V **globální skupiny** dialogové okno, vyberte **správci kolekcí projektů** skupiny a pak klikněte na tlačítko **vlastnosti**.
-6. V **vlastnosti Team Foundation Server skupiny** dialogové okno, vyberte **Windows uživatele nebo skupinu**a potom klikněte na **přidat**.
+5. V **globální skupiny** dialogové okno, vyberte **Project Collection Administrators** skupiny a potom klikněte na tlačítko **vlastnosti**.
+6. V **vlastnosti skupiny serveru Team Foundation** dialogu **Windows uživatele nebo skupinu**a potom klikněte na tlačítko **přidat**.
 
     ![](creating-a-team-project-in-tfs/_static/image4.png)
-7. V **vybrat uživatele, počítače nebo skupiny** dialogové okno, zadejte uživatelské jméno uživatele, kterou chcete k vytvoření nového týmového projektu, klikněte na **Kontrola názvů**a potom klikněte na **OK** .
+7. V **vybrat uživatele, počítače nebo skupiny** dialogové okno, zadejte uživatelské jméno uživatele, který chcete vytvořit nové týmové projekty, klikněte na **Kontrola názvů**a potom klikněte na tlačítko **OK** .
 
     ![](creating-a-team-project-in-tfs/_static/image5.png)
-8. V **vlastnosti Team Foundation Server skupiny** dialogové okno, klikněte na tlačítko **OK**.
+8. V **vlastnosti skupiny serveru Team Foundation** dialogové okno, klikněte na tlačítko **OK**.
 9. V **globální skupiny** dialogové okno, klikněte na tlačítko **Zavřít**.
 
 ### <a name="grant-permissions-in-sharepoint-services"></a>Udělení oprávnění ve službě SharePoint Services
 
-Dále musíte poskytnout oprávnění uživatele k vytvoření nových lokalit týmu v kolekce webů služby SharePoint, která odpovídá vaší kolekce týmového projektu sady TFS.
+Dále je třeba udělit oprávnění uživatele k vytvoření nové týmové weby v kolekci webů služby SharePoint, která odpovídá vaší kolekci týmových projektů TFS.
 
-**Udělit oprávnění k úplnému řízení na kolekce webů služby SharePoint**
+**Udělení oprávnění k úplnému řízení na kolekce webů služby SharePoint**
 
-1. V konzole správy pro Team Foundation Server na **kolekcemi týmových projektů** vyberte kolekce týmových projektů, které chcete spravovat.
-2. Na **web služby SharePoint** kartě, poznamenejte si hodnotu **aktuální výchozí umístění lokality** adresy URL.
+1. V Team Foundation Server Administration Console na **kolekce týmových projektů** vyberte kolekci týmových projektů, kterou chcete spravovat.
+2. Na **webu služby SharePoint** kartu, poznamenejte si hodnotu **aktuální výchozí umístění webu** adresy URL.
 
     ![](creating-a-team-project-in-tfs/_static/image6.png)
-3. Otevřete Internet Explorer a přejděte na adresu URL, které jste si poznamenali v kroku 2.
+3. Spusťte aplikaci Internet Explorer a přejděte na adresu URL, kterou jste si poznamenali v kroku 2.
 
     > [!NOTE]
-    > Pokud nejste přihlášení k systému Windows jako uživatel, který vytvořil kolekce týmového projektu, budete muset přihlásit do služby SharePoint jako tento uživatel aby bylo možné pokračovat.
-4. Na **Akce webu** nabídky, klikněte na tlačítko **nastavení lokality**.
+    > Pokud nejste přihlášení k Windows jako uživatel, který vytvořil kolekci týmových projektů, budete potřebovat k přihlášení do služby SharePoint jako tento uživatel aby bylo možné pokračovat.
+4. Na **Akce webu** nabídky, klikněte na tlačítko **nastavení webu**.
 
     ![](creating-a-team-project-in-tfs/_static/image7.png)
-5. Na **nastavení lokality** v části **uživatele a oprávnění**, klikněte na tlačítko **lidé a skupiny**.
+5. Na **nastavení webu** stránce v části **uživatelů a oprávnění**, klikněte na tlačítko **osoby a skupiny**.
 6. V levém navigačním panelu klikněte na tlačítko **skupiny**.
 
     ![](creating-a-team-project-in-tfs/_static/image8.png)
-7. Na **lidé a skupiny: všechny skupiny** klikněte na tlačítko **nastavit skupiny pro tento web**.
+7. Na **osoby a skupiny: všechny skupiny** klikněte na **nastavení skupin pro tuto lokalitu**.
 
     ![](creating-a-team-project-in-tfs/_static/image9.png)
 
    > [!NOTE]
-   > Může se zobrazit <strong>HTTP 404 nebyl nalezen</strong> chyba z důvodu dvojité kódování chyb HTTP. Pokud k tomu dojde, nahraďte adresu URL s tímto:   
-   > `[site_collection_URL]/_layouts/permsetup.aspx` Například:  
+   > Může se zobrazit <strong>HTTP 404 Nenalezeno</strong> chyba z důvodu double kódování chyby protokolu HTTP. Pokud k tomu dojde, nahraďte adresu URL s tímto:   
+   > `[site_collection_URL]/_layouts/permsetup.aspx` Příklad:  
    > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
-8. Na **nastavit skupiny pro tento web** přidejte uživatele, který vytvoří týmové projekty k **vlastníky** skupiny a pak klikněte na tlačítko **OK**.
+8. Na **nastavení skupin pro tuto lokalitu** stránce, přidejte uživatele, který bude vytvářet týmové projekty do **vlastníky** skupiny a potom klikněte na tlačítko **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
 
-Další informace o povolení uživatelům vytvářet nové týmové projekty v rámci kolekce týmového projektu, najdete v části [nastavit oprávnění správce pro kolekce týmových projektů](https://msdn.microsoft.com/library/dd547204.aspx).
+Další informace o povolení uživatelům vytvářet nové týmové projekty v kolekci týmových projektů, naleznete v tématu [Set Administrator Permissions for Team Project Collections](https://msdn.microsoft.com/library/dd547204.aspx).
 
 ## <a name="create-a-new-team-project-and-add-users"></a>Vytvoření nového týmového projektu a přidání uživatelů
 
-Jakmile máte potřebná oprávnění, můžete použít **Team Explorer** oken v sadě Visual Studio 2010 pro vytvoření nového týmového projektu. Tento přístup poskytuje průvodce, který shromažďuje všechny požadované informace a provede nezbytných úloh v sadě TFS, SharePoint a SQL Server Reporting Services. Musíte také udělit oprávnění pro nový týmový projekt na členy týmu pro vývojáře, aby se mohly přidávat a upravovat obsah.
+Jakmile máte potřebná oprávnění, můžete použít **Team Exploreru** okna v sadě Visual Studio 2010 k vytvoření nového týmového projektu. Tento přístup poskytuje průvodce, který shromažďuje všechny požadované informace a provádí potřebné úkoly v TFS, SharePoint a SQL Server Reporting Services. Také budete muset udělit oprávnění pro nový týmový projekt na členy týmu pro vývojáře, aby mohli přidávat a upravovat obsah.
 
 ### <a name="who-performs-these-procedures"></a>Kdo provádí tyto postupy?
 
-Obvykle správce sady TFS nebo vedoucí týmu vývojáře provede tyto postupy.
+Tyto postupy provádí obvykle správcem serveru TFS nebo vedoucí týmu pro vývojáře.
 
-### <a name="create-a-new-team-project"></a>Vytvoření nového týmového projektu
+### <a name="create-a-new-team-project"></a>Vytvořte nový týmový projekt
 
-Následující postup popisuje vytvoření nového týmového projektu v sadě TFS 2010.
+Následující postup popisuje, jak vytvořit nový týmový projekt v TFS 2010.
 
-**K vytvoření nového týmového projektu**
+**Chcete-li vytvořit nový týmový projekt**
 
-1. Na **spustit** nabídky, přejděte na příkaz **všechny programy**, klikněte na tlačítko **Microsoft Visual Studio 2010**, klikněte pravým tlačítkem na **Microsoft Visual Studio 2010**, a pak klikněte na **spustit jako správce**.
-
-    > [!NOTE]
-    > Pokud sadu Visual Studio 2010 není spustit jako správce, Průvodce novým týmovým projektem na poslední krok selžou.
-2. Pokud **řízení uživatelských účtů** se zobrazí dialogové okno, klikněte na tlačítko **Ano**.
-3. V sadě Visual Studio na **Team** nabídky, klikněte na tlačítko **připojit k serveru Team Foundation Server**.
+1. Na **Start** nabídky, přejděte k **všechny programy**, klikněte na tlačítko **sadu Microsoft Visual Studio 2010**, klikněte pravým tlačítkem na **sadu Microsoft Visual Studio 2010**, a pak klikněte na tlačítko **spustit jako správce**.
 
     > [!NOTE]
-    > Pokud jste již nakonfigurovali připojení k serveru TFS, můžete vynechat kroky 4 až 7.
+    > Při spuštění sady Visual Studio 2010 jako správce, Průvodce novým týmovým projektem se nezdaří v posledním kroku.
+2. Pokud **řízení uživatelských účtů** dialogové okno se zobrazí, klikněte na tlačítko **Ano**.
+3. V sadě Visual Studio na **týmu** nabídky, klikněte na tlačítko **připojit k Team Foundation Server**.
+
+    > [!NOTE]
+    > Pokud jste už nakonfigurovali připojení k serveru TFS, můžete vynechat kroky 4 až 7.
 4. V **připojení k týmovému projektu** dialogové okno, klikněte na tlačítko **servery**.
 5. V **přidat nebo odebrat Team Foundation Server** dialogové okno, klikněte na tlačítko **přidat**.
-6. V **přidat Team Foundation Server** dialogové okno, zadejte podrobnosti o instanci sady TFS a pak klikněte na tlačítko **OK**.
+6. V **přidat Team Foundation Server** dialogové okno, zadejte podrobnosti o instanci TFS a potom klikněte na tlačítko **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image11.png)
 7. V **přidat nebo odebrat Team Foundation Server** dialogové okno, klikněte na tlačítko **Zavřít**.
-8. V **připojení k týmovému projektu** dialogové okno, vyberte kolekce, které chcete přidat a pak klikněte na projekt sady TFS instanci chcete připojit, vyberte tým **Connect**.
+8. V **připojit k týmovému projektu** dialogové okno, vyberte instanci TFS, kterou chcete připojit, vyberte tým projektu kolekce, kterou chcete přidat a potom klikněte na **připojit**.
 
     ![](creating-a-team-project-in-tfs/_static/image12.png)
-9. V **Team Explorer** okna, klikněte pravým tlačítkem do týmového projektu kolekce a potom klikněte na **nového týmového projektu**.
+9. V **Team Exploreru** okna, klikněte pravým tlačítkem na kolekci projektu týmu a potom klikněte na **novým týmovým projektem**.
 
     ![](creating-a-team-project-in-tfs/_static/image13.png)
-10. V **nového týmového projektu** dialogové okno, zadejte název a popis pro týmový projekt a pak klikněte na tlačítko **Další**.
+10. V **novým týmovým projektem** dialogové okno, zadejte název a popis pro týmový projekt a potom klikněte na tlačítko **Další**.
 
     > [!NOTE]
-    > Pokud váš týmový projekt obsahuje mezery, může mít některé potíže, když dojdete ke použít nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) nasazení balíčků z výstupní cesta. Mezery v cestě může být mnohem obtížnější ke spuštění příkazů nasazení webu.
+    > Pokud váš týmový projekt obsahuje mezery, které mohou nastat některé problémy, když přejdete na použijte nástroj pro nasazení Internetové informační služby (IIS) webu (nasazení webu) nasadit balíčky z výstupní cesta. Mezery v cestě může ztížit mnohem více ke spuštění příkazů pro nasazení webu.
 
     ![](creating-a-team-project-in-tfs/_static/image14.png)
-11. Na **vyberte šablonu procesu** vyberte šablonu procesu, který chcete použít ke správě procesu vývoje a pak klikněte na tlačítko **Další**.
+11. Na **vyberte šablonu procesu** vyberte šablonu procesu, kterou chcete použít ke správě procesu vývoje a potom klikněte na tlačítko **Další**.
 
     > [!NOTE]
-    > Další informace o šablony procesů pro TFS najdete v tématu [nástroje a šablony procesů](https://msdn.microsoft.com/vstudio/aa718795).
-12. Na **nastavení lokality Team** stránky, ponechejte výchozí nastavení beze změny a pak klikněte na tlačítko **Další**.
-13. Toto nastavení se vytvoří nebo identifikuje, team Web služby SharePoint, který je přidružen týmového projektu sady TFS. Váš vývojový tým mohou používat tuto lokalitu pro správu dokumentaci, účastnit diskuse, vytvářet wiki stránky a provádět různé úlohy, které nejsou v relaci ke kódu. Další informace najdete v tématu [interakce mezi produkty SharePoint a serveru Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx).
-14. Na **zadejte nastavení řízení zdroje** stránky, ponechejte výchozí nastavení beze změny a pak klikněte na tlačítko **Další**.
-15. Toto nastavení určuje, nebo vytvoří umístění v hierarchii složek sady TFS, který bude fungovat jako kořenová složka pro obsah.
-16. Na **potvrďte nastavení týmového projektu** klikněte na tlačítko **Dokončit**.
-17. Pokud nový týmový projekt je úspěšně vytvořen, na **vytvoření týmového projektu** klikněte na tlačítko **Zavřít**.
+    > Další informace o šablonách procesu TFS naleznete v tématu [nástroje a šablony procesů](https://msdn.microsoft.com/vstudio/aa718795).
+12. Na **nastavení týmového webu** stránce, ponechejte výchozí nastavení pro beze změny a pak klikněte na tlačítko **Další**.
+13. Toto nastavení se vytvoří nebo identifikuje týmový web Sharepointu, který je spojen s týmovým projektem TFS. Váš vývojový tým mohou používat tuto lokalitu ke správě dokumentaci, účastnit diskusní vlákna, vytvořit wiki stránek a provádění různých úloh, které nesouvisejí se kód. Další informace najdete v tématu [interakce mezi produkty SharePoint a serveru Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx).
+14. Na **zadejte nastavení správy zdrojových kódů** stránce, ponechejte výchozí nastavení pro beze změny a pak klikněte na tlačítko **Další**.
+15. Toto nastavení určuje, nebo vytvoří umístění v hierarchii složek serveru TFS, který bude sloužit jako kořenová složka pro obsah.
+16. Na **potvrzení nastavení týmového projektu** klikněte na **Dokončit**.
+17. Pokud nový týmový projekt je úspěšně vytvořen, na **týmový projekt vytvořen** klikněte na **Zavřít**.
 
 ### <a name="add-users-to-a-team-project"></a>Přidání uživatelů do týmového projektu
 
-Teď, když jste vytvořili nový týmový projekt, můžete udělit oprávnění uživatelům, aby se mohly spustit přidávání a spolupráce na obsah.
+Teď, když jste vytvořili nový týmový projekt, můžete udělit oprávnění uživatelům, aby se mohly spustit přidávání a spolupráci nad obsahem.
 
-**K přidání uživatele do týmového projektu**
+**Přidání uživatelů do týmového projektu**
 
-1. V sadě Visual Studio 2010 v **Team Explorer** okna, klikněte pravým tlačítkem na týmový projekt, přejděte na **nastavení projektu Team**a potom klikněte na **členství ve skupině**.
+1. V sadě Visual Studio 2010 v **Team Exploreru** okna, klikněte pravým tlačítkem na týmový projekt, přejděte na **nastavení týmového projektu**a potom klikněte na tlačítko **členství ve skupině**.
 
     ![](creating-a-team-project-in-tfs/_static/image15.png)
-2. Pokud chcete povolit uživatelům přidávat, upravovat a odebírat ve správě zdrojového kódu, je nutné přidat ji do **přispěvatelé** skupiny.
-3. V **projektu skupiny** dialogové okno, vyberte **přispěvatelé** skupiny a pak klikněte na tlačítko **vlastnosti**.
+2. A povolit tak uživateli přidávat, upravovat a odebírat kód pod správou zdrojových kódů, je třeba přidat ji do **přispěvatelé** skupiny.
+3. V **skupiny projektu** dialogové okno, vyberte **přispěvatelé** skupiny a potom klikněte na tlačítko **vlastnosti**.
 
     ![](creating-a-team-project-in-tfs/_static/image16.png)
-4. V **vlastnosti Team Foundation Server skupiny** dialogové okno, vyberte **Windows uživatele nebo skupinu**a potom klikněte na **přidat**.
+4. V **vlastnosti skupiny serveru Team Foundation** dialogu **Windows uživatele nebo skupinu**a potom klikněte na tlačítko **přidat**.
 
     ![](creating-a-team-project-in-tfs/_static/image17.png)
-5. V **vybrat uživatele, počítače nebo skupiny** dialogové okno, zadejte uživatelské jméno uživatele, které chcete přidat do týmového projektu, klikněte na **Kontrola názvů**a potom klikněte na **OK**.
+5. V **vybrat uživatele, počítače nebo skupiny** dialogové okno, zadejte uživatelské jméno uživatele, které chcete přidat do týmového projektu, klikněte na **Kontrola názvů**a potom klikněte na tlačítko **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image18.png)
-6. V **vlastnosti Team Foundation Server skupiny** dialogové okno, klikněte na tlačítko **OK**.
-7. V **projektu skupiny** dialogové okno, klikněte na tlačítko **Zavřít**.
+6. V **vlastnosti skupiny serveru Team Foundation** dialogové okno, klikněte na tlačítko **OK**.
+7. V **skupiny projektu** dialogové okno, klikněte na tlačítko **Zavřít**.
 
 ## <a name="conclusion"></a>Závěr
 
-V tomto okamžiku je připravený k použití nového týmového projektu a váš tým vývojáře můžete spustit přidávání obsahu a spolupráce v procesu vývoje.
+V tomto okamžiku je připravený k použití nového týmového projektu, a tým vývojářů může začít přidávání obsahu a spolupráci na proces vývoje.
 
-Dalším tématu [přidávání obsahu do správy zdrojového kódu](adding-content-to-source-control.md), popisuje postup přidání obsahu do správy zdrojového kódu.
+Dalším tématu s názvem [přidávání obsahu do správy zdrojových kódů](adding-content-to-source-control.md), popisuje, jak přidat obsah do správy zdrojového kódu.
 
 ## <a name="further-reading"></a>Další čtení
 
-Širší pokyny týkající se vytváření týmových projektů sady TFS najdete v tématu [vytvoření týmového projektu](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx). Další informace o povolení uživatelům vytvářet nové týmové projekty v rámci kolekce týmového projektu, najdete v části [nastavit oprávnění správce pro kolekce týmových projektů](https://msdn.microsoft.com/library/dd547204.aspx). Další informace o přidávání uživatelů do týmových projektů najdete v tématu [přidání uživatelů do týmových projektů](https://msdn.microsoft.com/library/bb558971.aspx).
+Širší pokyny k vytvoření týmových projektů v TFS najdete v tématu [vytvořit týmový projekt](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx). Další informace o povolení uživatelům vytvářet nové týmové projekty v kolekci týmových projektů, naleznete v tématu [Set Administrator Permissions for Team Project Collections](https://msdn.microsoft.com/library/dd547204.aspx). Další informace o přidávání uživatelů do týmových projektů, naleznete v tématu [Add Users to Team Projects](https://msdn.microsoft.com/library/bb558971.aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](configuring-team-foundation-server-for-web-deployment.md)

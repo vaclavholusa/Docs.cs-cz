@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
-title: '[Jak na:] Nasazení webu pomocí nástroje Kopírovat web | Microsoft Docs'
+title: '[Postup:] Nasazení webu pomocí nástroje pro kopírování webu | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan zobrazí postup nasazení webu pomocí nástroje Kopírovat web v sadě Visual Studio. Nejprve zjistit, jak se připojit k vzdálený webový server a...
+description: V toto video pixelů na Chris vám ukáže jak nasazení webu pomocí nástroje kopírování webu v sadě Visual Studio. Nejdřív zjistěte, jak připojit na vzdálený web a...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2008
 ms.topic: article
 ms.assetid: 4926a73c-fa70-4f47-b57d-b33556447377
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
 msc.type: video
-ms.openlocfilehash: cf8dfddd63332bf4e0c80a7b36584425779156cb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cac0323682b2b4830b49bdb16c702cc13ad51015
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572005"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391942"
 ---
-<a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[Jak na:] Nasazení webu pomocí nástroje Kopírovat web
+<a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[Postup:] Nasazení webu pomocí nástroje pro kopírování webu
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan zobrazí postup nasazení webu pomocí nástroje Kopírovat web v sadě Visual Studio. Nejprve najdete v části Jak se připojit k vzdálený webový server a nasadit celý web do cílového umístění. V dalším kroku zjistěte, jak synchronizovat celou zdrojové a cílové webové stránky. Kromě toho najdete v části Jak kopírovat a synchronizovat jednotlivcům nebo skupiny souborů, včetně toho, jak nástroj Kopírovat webový server poskytuje indikátory stavu rozdílů mezi soubory. Jako součást tohoto procesu v tématu jak tento nástroj nabízí možnosti na základě soubor po souboru pro rozhodovací po rozdíly ve stavu mezi dva nebo více souborů.
+V toto video pixelů na Chris vám ukáže jak nasazení webu pomocí nástroje kopírování webu v sadě Visual Studio. Nejprve zjistit, jak se připojit na vzdálený web a nasadit celý web do cílového umístění. Dále se naučíte synchronizovat celého webu zdroj a cíl. Kromě toho zjistit, jak kopírovat a synchronizovat jednotlivce nebo skupiny souborů, včetně toho, jak nástroj Kopírovat web poskytuje indikátory stavu rozdílů mezi soubory. Jako součást tohoto procesu naleznete v tématu Jak nástroj poskytuje možnosti na základě souboru po souboru pro rozhodovací když existují rozdíly ve stavu mezi dva nebo více souborů.
 
-[&#9654; Podívejte se na video (17 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool)
+[&#9654;Podívejte se na video (17 min)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool)

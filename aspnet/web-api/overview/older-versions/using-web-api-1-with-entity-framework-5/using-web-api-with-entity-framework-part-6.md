@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
-title: 'Část 6: Vytvoření produktu a pořadí řadiče | Microsoft Docs'
+title: 'Část 6: Vytvoření Kontrolerů produktů a objednávek | Dokumentace Microsoftu'
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,37 +9,36 @@ ms.date: 07/04/2012
 ms.topic: article
 ms.assetid: 91ee29ee-0689-40ee-914a-e7dd733b6622
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 6bd485d29821af12b9ebe31b2d04a2d9ab826731
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 08abc66624526f4b1931231d114158afe8b63247
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869384"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382845"
 ---
-<a name="part-6-creating-product-and-order-controllers"></a>Část 6: Vytvoření produktu a pořadí řadiče
+<a name="part-6-creating-product-and-order-controllers"></a>Část 6: Vytvoření Kontrolerů produktů a objednávek
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASP-NET-Web-API-with-afa30545)
 
-## <a name="add-a-products-controller"></a>Přidat řadič produkty
+## <a name="add-a-products-controller"></a>Přidání Kontroleru produkty
 
-Správce řadiče je pro uživatele, kteří mají oprávnění správce. Zákazníci, na druhé straně, můžete zobrazit produkty, ale nelze vytvořit, aktualizovat nebo je odstranit.
+Kontroleru pro správce je pro uživatele, kteří mají oprávnění správce. Zákazníci, na druhé straně může zobrazit produkty, ale nejde vytvořit, aktualizovat nebo je odstranit.
 
-Jsme můžete snadno omezit přístup pro metodu Post, Put a Delete a nechat otevřené metody Get. Ale podívejte se na data, která je vrácena produktu:
+Jsme můžete snadno omezit přístup na metody Post, Put a Delete a ponechání otevřít metody Get. Ale podívejte se na data, která je vrácena pro produkt:
 
 [!code-json[Main](using-web-api-with-entity-framework-part-6/samples/sample1.json?highlight=1)]
 
-`ActualCost` Vlastnosti by neměly být viditelné zákazníkům! Řešení je k definování *objekt pro přenos dat* (DTO), který obsahuje podmnožinu vlastností, které by měly být viditelné pro zákazníky. Použijeme k projektu LINQ `Product` instance k `ProductDTO` instance.
+`ActualCost` Vlastnosti by neměly být viditelné pro zákazníky! Toto řešení je k definování *objekt pro přenos dat* (DTO), který obsahuje podmnožinu vlastností, které by měly být viditelné pro zákazníky. Použijeme k projektu LINQ `Product` instance na `ProductDTO` instancí.
 
-Přidejte třídu s názvem `ProductDTO` ke složce modelů.
+Přidejte třídu pojmenovanou `ProductDTO` ke složce modely.
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample2.cs)]
 
-Nyní přidejte kontroleru. V Průzkumníku řešení klikněte pravým tlačítkem na složku řadiče. Vyberte **přidat**, pak vyberte **řadič**. V **přidat kontroler** dialogové okno, názvu kontroleru &quot;ProductsController&quot;. V části **šablony**, vyberte **kontroler API prázdný**.
+Nyní přidejte kontroler. V Průzkumníku řešení klikněte pravým tlačítkem myši na složku řadiče. Vyberte **přidat**a pak vyberte **řadič**. V **přidat kontroler** dialogového okna, názvu kontroleru &quot;ProductsController&quot;. V části **šablony**vyberte **kontroler API s prázdnou**.
 
 ![](using-web-api-with-entity-framework-part-6/_static/image1.png)
 
@@ -47,76 +46,76 @@ Všechno, co ve zdrojovém souboru nahraďte následujícím kódem:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample3.cs)]
 
-Řadičem stále používá `OrdersContext` dotazu databázi. Ale namísto vrácení `Product` instance přímo, říkáme `MapProducts` do projektu je do `ProductDTO` instancí:
+Kontroler stále používá `OrdersContext` dáte dotaz na databázi. Ale místo vrácení `Product` instance přímo, říkáme `MapProducts` do projektu je na `ProductDTO` instancí:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample4.cs?highlight=1)]
 
-`MapProducts` Metoda vrátí **IQueryable**, takže jsme můžete vytvořit výsledek s jinými parametry. Zobrazí se v `GetProduct` metodu, která přidá **kde** klauzule dotazu:
+`MapProducts` Vrátí metoda **IQueryable**, takže jsme tvoří výsledek s další parametry dotazu. Vidíte to `GetProduct` metodu, která přidá **kde** klauzule dotazu:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample5.cs?highlight=2)]
 
-## <a name="add-an-orders-controller"></a>Přidat řadič objednávky
+## <a name="add-an-orders-controller"></a>Přidat kontroler Orders
 
-V dalším kroku přidáte kontroler, který umožňuje uživatelům vytvářet a prohlížet objednávky.
+V dalším kroku přidáte kontroler, který umožňuje uživatelům vytvořit a zobrazit příkazy.
 
-Začneme s jinou DTO. V Průzkumníku řešení klikněte pravým tlačítkem na složku modely a přidejte třídu s názvem `OrderDTO` použijte následující implementace:
+Začneme jiný objekt DTO. V Průzkumníku řešení klikněte pravým tlačítkem na složku modely a přidejte třídu pojmenovanou `OrderDTO` použijte následující implementaci:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample6.cs)]
 
-Nyní přidejte kontroleru. V Průzkumníku řešení klikněte pravým tlačítkem na složku řadiče. Vyberte **přidat**, pak vyberte **řadič**. V **přidat kontroler** dialogové okno, nastavte následující možnosti:
+Nyní přidejte kontroler. V Průzkumníku řešení klikněte pravým tlačítkem myši na složku řadiče. Vyberte **přidat**a pak vyberte **řadič**. V **přidat kontroler** dialogové okno, nastavte následující možnosti:
 
 - V části **názvu Kontroleru**, zadejte "OrdersController".
-- V části **šablony**, vyberte možnost "Kontroler API s akcemi čtení/zápisu používající rozhraní Entity Framework".
-- V části **třída modelu**, vyberte &quot;pořadí (ProductStore.Models)&quot;.
-- V části **třída kontextu dat**, vyberte &quot;OrdersContext (ProductStore.Models)&quot;.
+- V části **šablony**vyberte "Kontroler API s akcemi čtení/zápisu, používá nástroj Entity Framework".
+- V části **třída modelu**vyberte &quot;pořadí (ProductStore.Models)&quot;.
+- V části **třída kontextu dat**vyberte &quot;OrdersContext (ProductStore.Models)&quot;.
 
 ![](using-web-api-with-entity-framework-part-6/_static/image2.png)
 
-Klikněte na tlačítko **přidat**. Tento postup přidá soubor s názvem OrdersController.cs. Dále je potřeba upravit výchozí implementaci třídy kontroleru.
+Klikněte na tlačítko **přidat**. Tím se přidá soubor s názvem OrdersController.cs. Dále musíme upravit výchozí implementace kontroleru.
 
-Nejprve odstraňte `PutOrder` a `DeleteOrder` metody. Tato ukázka zákazníci nelze upravit nebo odstranit existující objednávky. V reálné aplikaci bude třeba velké množství logiku back-end pro tyto případy zpracují. (Například byl pořadí již dodán?)
+Nejprve odstraňte `PutOrder` a `DeleteOrder` metody. V tomto příkladu zákazníkům nemůžete upravovat ani odstranit existující objednávky. V reálné aplikaci je třeba velké množství back-end logiku pro tyto případy zpracují. (Například byl pořadí již dodán?)
 
-Změna `GetOrders` metoda vrátí objednávky, které patří uživateli:
+Změnit `GetOrders` metoda vrátí objednávky, které patří uživateli:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample7.cs)]
 
-Změna `GetOrder` metoda následujícím způsobem:
+Změnit `GetOrder` metodu následujícím způsobem:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample8.cs)]
 
-Zde jsou změny, které jsme provedli metody:
+Tady jsou změny, které jsme provedli metodu:
 
 - Vrácená hodnota je `OrderDTO` instance, místo `Order`.
-- Když jsme dotazování databáze pro pořadí, používáme [DbQuery.Include](https://msdn.microsoft.com/library/gg696395) metoda načíst související `OrderDetail` a `Product` entity.
-- Výsledek jsme vyrovnání pomocí projekce.
+- Když zadáme dotaz databázi pro objednávku, používáme [DbQuery.Include](https://msdn.microsoft.com/library/gg696395) metoda načíst související `OrderDetail` a `Product` entity.
+- Můžeme sloučit výsledek pomocí projekce.
 
-Odpověď HTTP bude obsahovat pole produkty s počty:
+Odpověď HTTP bude obsahovat pole s množství produktů:
 
 [!code-json[Main](using-web-api-with-entity-framework-part-6/samples/sample9.json)]
 
-Tento formát je jednodušší, aby klienti mohli využívat než původní grafu objektu, která obsahuje vnořené entity (pořadí, podrobnosti a produkty).
+Tento formát je jednodušší klienti využívat než původní graf objektu, který obsahuje vnořené entity (pořadí, podrobnosti a produkty).
 
-Poslední metoda ji zvažovat `PostOrder`. Teď, tato metoda přebírá `Order` instance. Ale zvažte, co se stane, pokud klient pošle obsah žádosti takto:
+Poslední metody, která považuje za `PostOrder`. V tuto chvíli, tato metoda přebírá `Order` instance. Ale zvažte, co se stane, pokud klient odešle textu žádosti podobně jako toto:
 
 [!code-json[Main](using-web-api-with-entity-framework-part-6/samples/sample10.json)]
 
-Toto je dobře strukturovaných zakázky a Entity Framework se brouka vložit do databáze. Ale obsahuje entity produktu, který dříve neexistoval. Klient právě vytvořili nového produktu v naší databázi! Bude jím neočekávaném pořadí jsou oddělení, když se jim pořadí pro medvídek nese. Je ponaučení, skutečně opatrně data, která je přijmout v požadavku POST nebo PUT.
+Toto je dobře strukturovaných pořadí a Entity Framework se využívá elastic vložit do databáze. Ale obsahuje entitu produktů, které dříve neexistoval. Klient právě vytvořili nového produktu v databázi! Bude jím neočekávaném pořadí jsou oddělení, když se jim objednávku medvídek nese. Je ponaučení, buďte velmi opatrní při data, která můžete přijmout v požadavku POST a PUT.
 
-Chcete-li se tomuto problému vyhnout, změňte `PostOrder` metoda provést `OrderDTO` instance. Použití `OrderDTO` vytvořit `Order`.
+Chcete-li tomuto problému vyhnout, změňte `PostOrder` metoda provést `OrderDTO` instance. Použití `OrderDTO` vytvořit `Order`.
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample11.cs)]
 
-Všimněte si, že používáme `ProductID` a `Quantity` vlastnosti a My ignorujte všechny hodnoty, které klient zaslal pro název produktu nebo cena. Pokud není platné ID produktu, nesplňují omezení cizího klíče v databázi a úlohy insert se nezdaří, jako by měl.
+Všimněte si, že používáme `ProductID` a `Quantity` vlastnosti a My ignorovat všechny hodnoty, které klient zaslal pro název produktu nebo cenu. Pokud ID produktu není platná, ji budou porušovat omezení cizího klíče v databázi a insert se nezdaří, jak by mělo.
 
-Tady je kompletní `PostOrder` metoda:
+Tady je úplný `PostOrder` metody:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample12.cs)]
 
-Nakonec přidejte **Autorizovat** atribut kontroleru:
+Nakonec přidejte **Authorize** atribut kontroleru:
 
 [!code-csharp[Main](using-web-api-with-entity-framework-part-6/samples/sample13.cs)]
 
-Jenom registrovaní uživatelé nyní můžete vytvořit nebo zobrazit objednávky.
+Jenom registrovaní uživatelé nyní můžete vytvořit nebo zobrazení objednávek.
 
 > [!div class="step-by-step"]
 > [Předchozí](using-web-api-with-entity-framework-part-5.md)

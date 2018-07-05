@@ -1,146 +1,145 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
-title: Podrobnosti o chybě protokolování s ELMAH (C#) | Microsoft Docs
+title: Protokolování podrobností o chybách pomocí knihovny ELMAH (C#) | Dokumentace Microsoftu
 author: rick-anderson
-description: Chyba protokolování moduly a obslužné rutiny (ELMAH) nabízí další způsob, jak protokolování chyby za běhu v produkčním prostředí. ELMAH je bezplatný chyba...
+description: Chyba protokolování moduly a obslužné rutiny (ELMAH) nabízí jiný přístup k protokolování chyb za běhu v produkčním prostředí. ELMAH je bezplatná open source chybě...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
 ms.topic: article
 ms.assetid: 11f6fe44-64ef-4a38-a3b4-35c7bb992352
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cd91c745624f09d01a326a445bea2bb756576688
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0b9b91b54f50ddd86e102fea3b0dfd5505e3f594
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
-ms.locfileid: "30890616"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388474"
 ---
-<a name="logging-error-details-with-elmah-c"></a>Podrobnosti o chybě protokolování s ELMAH (C#)
+<a name="logging-error-details-with-elmah-c"></a>Protokolování podrobností o chybách pomocí knihovny ELMAH (C#)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si kód](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_CS.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_cs.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_14_CS.zip) nebo [stahovat PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial14_ELMAH_cs.pdf)
 
-> Chyba protokolování moduly a obslužné rutiny (ELMAH) nabízí další způsob, jak protokolování chyby za běhu v produkčním prostředí. ELMAH je bezplatný Chyba protokolování knihovny a obsahuje funkce, jako je filtrování chyb a možnost chcete zobrazit v protokolu chyb z webové stránky, jako informačního kanálu RSS, nebo ho stáhnout jako soubor s položkami oddělenými čárkou. Tento kurz vás provede stahování a konfigurace ELMAH.
+> Chyba protokolování moduly a obslužné rutiny (ELMAH) nabízí jiný přístup k protokolování chyb za běhu v produkčním prostředí. ELMAH je bezplatný open source Chyba knihovny protokolování, který obsahuje funkce, jako je filtrování chyb a možnost, chcete-li zobrazit v protokolu chyb z webové stránky, jako kanál RSS, nebo ho můžete stáhnout jako soubor CSV. Tento kurz vás provede stažením a konfigurace ELMAH.
 
 
 ## <a name="introduction"></a>Úvod
 
-[Předchozí kurzu](logging-error-details-with-asp-net-health-monitoring-cs.md) zkontrolován ASP. NET na stav systému, který nabízí out of knihovně pole pro záznam širokou škálu webové události pro monitorování. Celá řada vývojářů pomocí protokolu a e-mailových podrobnosti o neošetřených výjimek sledování stavu. Existuje však několik problémové body s tímto systémem. Především je nedostatek žádné řazení uživatelské rozhraní pro zobrazení informací o protokolu událostí. Pokud chcete zobrazit souhrn 10 poslední chyby, nebo zobrazení podrobností o chybu, která se stalo poslední týden, musíte buď vkládat informace prostřednictvím databáze, kontrola prostřednictvím e-mailu doručené pošty nebo vytvořit webovou stránku, která se zobrazují informace z `aspnet_WebEvent_Events` tabulky.
+[Předchozím kurzu](logging-error-details-with-asp-net-health-monitoring-cs.md) prozkoumat ASP. Monitorování systému, která nabízí výstupního pole knihovny pro nahrávání širokou škálu webové události stavu vaší sítě. Mnoho vývojářů pomocí stav monitorování, protokolování a e-mailu podrobnosti o neošetřených výjimek. Existuje však několik problémové body s tímto systémem. Nejprve je nedostatek jakýkoli druh uživatelského rozhraní pro zobrazení informací o protokolovaných událostech. Pokud chcete prohlédnout souhrnné informace o 10 poslední chyby, nebo zobrazit podrobnosti o chybě, která se stalo minulý týden, musíte buď modifikovat prostřednictvím databáze, procházet složky Doručená pošta e-mailu nebo vytvořit webovou stránku, která se zobrazují informace z `aspnet_WebEvent_Events` tabulky.
 
-Jiný bod problémové soustředí kolem složitost stavu monitorování. Protože sledování stavu je možné použít k zaznamenání nadbytku různé událostí a protože nejsou k dispozici různé možnosti pro instruující, jak a kdy se protokolují události, správně konfigurace sledování systému stavu může být obtížné úloh. Nakonec jsou problémy s kompatibilitou. Sledování stavu byl přidán první rozhraní .NET Framework verze 2.0, není k dispozici pro starší webové aplikace vyvíjené v technologii ASP.NET verze 1.x. Kromě toho `SqlWebEventProvider` třídy, která jsme použili v předchozí kurzu na podrobnosti o chybě protokoly na databázi, pracuje pouze s databází systému Microsoft SQL Server. Musíte pro vytvoření třídy zprostředkovatele vlastního protokolu, bude nutné protokolovat chyby k úložišti alternativní dat, například soubor XML nebo databáze Oracle.
+Další z bolavých míst se soustředí kolem složitost stavu monitorování. Protože monitorování stavu slouží k zaznamenání množství různých událostí, a protože existují širokou škálu možností pro pokyny, jak a kdy se protokolují události, správné konfiguraci systému monitorování stavu může být obtížné úkol. Nakonec jsou problémy s kompatibilitou. Vzhledem k tomu sledování stavu se nejprve přidány ve verzi 2.0 rozhraní .NET Framework, není k dispozici pro starší webové aplikace vytvořené pomocí ASP.NET verzi 1.x. Kromě toho `SqlWebEventProvider` třídy, které jsme použili v předchozím kurzu a podrobnosti o chybě protokoly na databázi, pracuje pouze s databází systému Microsoft SQL Server. Je potřeba vytvořit třídu zprostředkovatele vlastního protokolu, budete chtít protokolování chyb nebo alternativní datové úložiště, například soubor XML nebo Oracle database.
 
-Alternativu ke stavu systému pro monitorování je chyba protokolování moduly a obslužné rutiny (ELMAH), volné, open-source Chyba protokolování systému vytvořených [Atif Aziz](http://www.raboof.com/). Nejdůležitější rozdíl mezi těmito dvěma systémy je ELAMH na možnost zobrazit seznam chyb a podrobnosti o konkrétní chybě z webové stránky a jako informačního kanálu RSS. ELMAH je jednodušší než sledování stavu, protože jenom protokoluje chyby konfigurace. Kromě toho ELMAH zahrnuje podporu pro ASP.NET 1.x aplikací ASP.NET 2.0 a technologii ASP.NET 3.5 a se dodává s řadou zprostředkovatele protokolu zdrojů.
+Alternativa k monitorování systému stavu je chyba protokolování moduly a obslužné rutiny (ELMAH), protokolování chyb zdarma, open source systém vytvořil [Atif Aziz](http://www.raboof.com/). Nejdůležitější rozdíl mezi těmito dvěma systémy je schopnost ELAMH pro zobrazení seznamu chyb a podrobnosti o konkrétní chybě z webové stránky a jako informačního kanálu RSS. ELMAH je snazší než monitorování stavu, protože pouze protokoluje chyby konfigurace. Kromě toho ELMAH zahrnuje podporu pro ASP.NET 1.x aplikací ASP.NET 2.0 a technologii ASP.NET 3.5 a dodává s širokou škálu zprostředkovatelů zdroj protokolu.
 
-Tento kurz vás provede jednotlivými kroky při přidávání ELMAH do aplikace ASP.NET. Můžeme začít!
+Tento kurz vás provede jednotlivými kroky při přidávání ELMAH do aplikace ASP.NET. Pusťme se do práce!
 
 > [!NOTE]
-> Stav monitorování systému a ELMAH mají své vlastní sady výhody a nevýhody. I doporučujeme, abyste zkuste obou systémů a rozhodnout, jaké jeden nejlépe vyhovuje vašim potřebám.
+> Stav monitorování systému a ELMAH mají své vlastní sady výhody a nevýhody. Neváhejte se zkuste obou systémů a rozhodnout, jaké jeden nejlépe vyhovuje vašim potřebám.
 
 
-## <a name="adding-elmah-to-an-aspnet-web-application"></a>Přidání ELMAH do webové aplikace ASP.NET
+## <a name="adding-elmah-to-an-aspnet-web-application"></a>Přidání knihovny ELMAH do webové aplikace ASP.NET
 
-Integrace ELMAH do nové nebo existující aplikace ASP.NET je proces snadno a přehledné, který trvá v části pět minut. Stručně řečeno zahrnuje čtyři jednoduchých kroků:
+Integrace ELMAH do nové nebo existující aplikace v ASP.NET je jednoduché a přímočaré proces, který trvá méně než pět minut. Řečeno v kostce zahrnuje čtyři jednoduché kroky:
 
-1. Stáhnout ELMAH a přidat `Elmah.dll` sestavení do vaší webové aplikace
-2. Registrovat ELMAH na vytváření modulů HTTP a obslužné rutiny v `Web.config`,
+1. Stáhněte si ELMAH a přidejte `Elmah.dll` sestavení do vaší webové aplikace
+2. Registrace na ELMAH z modulů HTTP a obslužné rutiny v `Web.config`,
 3. Zadejte možnosti konfigurace pro ELMAH, a
-4. Chyba protokolu zdrojové infrastruktuře, vytvořte v případě potřeby.
+4. V případě potřeby vytvořte zdrojové infrastruktuře protokolu chyb.
 
-Projděme každý z těchto čtyř kroků, po jednom.
+Projděme si každý z těchto čtyř kroků, postupně po jednom.
 
-### <a name="step-1-downloading-the-elmah-project-files-and-addingelmahdllto-your-web-application"></a>Krok 1: Stahování souborů projektu ELMAH a přidání`Elmah.dll`k vaší webové aplikaci
+### <a name="step-1-downloading-the-elmah-project-files-and-addingelmahdllto-your-web-application"></a>Krok 1: Stažení ELMAH soubory projektu a přidání`Elmah.dll`do vaší webové aplikace
 
-ELMAH 1.0 BETA 3 (sestavení 10617), poslední verze v době psaní, je součástí ke stažení, které jsou k dispozici v tomto kurzu. Případně můžete navštívit [ELMAH webu](https://code.google.com/p/elmah/) získat nejnovější verzi nebo ke stažení ve zdrojovém kódu. Extrahování ELMAH stahování do složky na pracovní ploše a vyhledejte soubor sestavení ELMAH (`Elmah.dll`).
-
-> [!NOTE]
-> `Elmah.dll` Soubor je umístěný ve ke stažení `Bin` složky, která obsahuje podsložky pro různé verze rozhraní .NET Framework a pro verzi a ladění sestavení. Použijte sestavení pro vydání pro příslušnou verzi. Například pokud vytváříte webovou aplikaci ASP.NET 3.5, zkopírujte `Elmah.dll` souboru z `Bin\net-3.5\Release` složky.
-
-
-Dále otevřete Visual Studio a sestavení do projektu přidejte kliknutím pravým tlačítkem na název webu v Průzkumníku řešení a výběrem možnosti Přidat odkaz v místní nabídce. Otevře dialogové okno Přidat odkaz. Přejděte na kartu Procházet a vyberte `Elmah.dll` souboru. Tato akce přidá `Elmah.dll` souboru k webové aplikaci `Bin` složky.
+ELMAH 1.0 BETA 3 (sestavení 10617), nejnovější verze v době psaní, je součástí ke stažení v tomto kurzu. Případně můžete navštívit [ELMAH webu](https://code.google.com/p/elmah/) získat nejnovější verzi nebo stáhněte si zdrojový kód. Extrahovat ELMAH stažení do složky na vaší ploše a vyhledejte soubor sestavení knihovny ELMAH (`Elmah.dll`).
 
 > [!NOTE]
-> Typ projektu webové aplikace (WAP) nejsou zobrazeny `Bin` složky v Průzkumníku řešení. Místo toho uvádí tyto položky ve složce odkazy.
+> `Elmah.dll` Soubor se nachází v souboru pro stažení `Bin` složky, která obsahuje podsložky pro různé verze rozhraní .NET Framework a sestavení pro vydání a ladění. Pro verzi rozhraní framework vhodné používejte sestavení pro vydání. Například, pokud vytváříte webovou aplikaci ASP.NET 3.5, zkopírujte `Elmah.dll` soubor `Bin\net-3.5\Release` složky.
 
 
-`Elmah.dll` Sestavení obsahuje třídy používané systémem ELMAH. Tyto třídy spadají do tří kategorií:
+V dalším kroku spuštění sady Visual Studio a přidejte sestavení do projektu kliknutím pravým tlačítkem na název webu v Průzkumníku řešení a zvolíte možnost Přidat odkaz v místní nabídce. Tím se zobrazí dialogové okno Přidat odkaz. Přejděte na kartu Procházet a zvolte `Elmah.dll` souboru. Tato akce přidá `Elmah.dll` souborů do webové aplikace `Bin` složky.
 
-- **Vytváření modulů HTTP v** -modulu HTTP je třída, která definuje obslužné rutiny události pro `HttpApplication` události, například `Error` událostí. ELMAH obsahuje více modulů HTTP, tři nejvíce podstatný ty, které se: 
+> [!NOTE]
+> Typ projektu webových aplikací (WAP) se nezobrazují `Bin` složku v Průzkumníku řešení. Místo toho uvádí seznam těchto položek ve složce odkazy.
 
-    - `ErrorLogModule` -Zdroj protokolu v protokolech neošetřených výjimek.
+
+`Elmah.dll` Sestavení zahrnuje třídy, které využívá systém ELMAH. Tyto třídy se dělí do tři kategorií:
+
+- **Z modulů HTTP** – modul HTTP je třída, která definuje obslužné rutiny událostí pro `HttpApplication` události, například `Error` událostí. ELMAH zahrnuje více modulů HTTP, ta největší podstatný tři se: 
+
+    - `ErrorLogModule` -zaznamená do protokolu zdroje neošetřených výjimek.
     - `ErrorMailModule` -odešle podrobnosti k neošetřené výjimce v e-mailovou zprávu.
-    - `ErrorFilterModule` -vztahuje zadaný vývojáře filtrů určit, jaké výjimky jsou protokolovány a co ty, které jsou ignorovány.
-- **Obslužné rutiny HTTP** – obslužné rutiny HTTP je třída, která je zodpovědná za generování kódu pro konkrétní typ požadavku. ELMAH zahrnuje obslužné rutiny HTTP, která vykreslit podrobnosti o chybě jako webovou stránku, jako informačního kanálu RSS nebo jako soubor s oddělovači (CSV).
-- **Chyba protokolu zdroje** – předinstalované ELMAH můžete protokolovat chyby do paměti, do databáze Microsoft SQL Server, k databázi Microsoft Access k databázi Oracle do souboru XML, databáze SQLite, nebo do databáze Vista DB. Architektura ELMAH na jako je stav monitorování systému, bylo vytvořeno pomocí zprostředkovatele modelu, což znamená, že můžete vytvořit a v případě potřeby se hladce integrují zdroj vlastní vlastní protokol zprostředkovatele.
+    - `ErrorFilterModule` -vztahuje filtrů určených pro vývojáře k určení, jaké výjimky jsou protokolovány a co těch, které jsou ignorovány.
+- **Obslužné rutiny HTTP** – obslužné rutiny HTTP je třída, která je zodpovědná za generování značky pro konkrétní typ požadavku. ELMAH obsahuje obslužné rutiny HTTP, která vykreslit podrobnosti o chybě jako webovou stránku, jako kanál RSS nebo jako soubor s oddělovači (CSV).
+- **Zdroje chyb protokolu** – okamžité ELMAH můžete protokolovat chyby do paměti k databázi serveru Microsoft SQL Server pro databázi aplikace Microsoft Access k databázi Oracle do souboru XML, databázi SQLite, nebo do databáze Vista DB. Jako je stav monitorování systému bylo vytvořeno ELMAH vaší architektury prostřednictvím podle modelu poskytovatele, což znamená, že můžete vytvořit a bezproblémově integrovat vlastní zprostředkovatele zdroje vlastního protokolu v případě potřeby.
 
-### <a name="step-2-registering-elmahs-http-module-and-handler"></a>Krok 2: Registrace modulu HTTP a obslužné rutiny na ELMAH
+### <a name="step-2-registering-elmahs-http-module-and-handler"></a>Krok 2: Registrace modulu HTTP služby a obslužné rutiny ELMAH.
 
-Když `Elmah.dll` soubor obsahuje modulů HTTP a obslužné rutiny potřebné k protokolování neošetřených výjimek automaticky a zobrazit podrobnosti o chybě z webové stránky, je nutné je explicitně zaregistrovat v konfiguraci webové aplikace. `ErrorLogModule` Přihlásí k odběru modulu HTTP, po registraci `HttpApplication`na `Error` událostí. Vždy, když se tato událost je aktivována `ErrorLogModule` protokoly podrobnosti výjimky a zdroj zadaného protokolu. Ukážeme, jak definovat poskytovatele správy zdrojového protokolu v další části "Konfigurace ELMAH." `ErrorLogPageFactory` Pro vytváření obslužných rutin HTTP je zodpovědný za generování kód při zobrazení v protokolu chyb z webové stránky.
+Zatímco `Elmah.dll` soubor obsahuje moduly protokolu HTTP a obslužná rutina potřebné k protokolování neošetřených výjimek automaticky a chcete-li zobrazit podrobnosti o chybě z webové stránky, je nutné je explicitně zaregistrovat v konfiguraci webové aplikace. `ErrorLogModule` Modulu HTTP, po registraci se přihlásí k odběru `HttpApplication`společnosti `Error` událostí. Vždy, když se tato událost je aktivována `ErrorLogModule` zaznamená do zadané zdrojové podrobnosti o výjimce. Uvidíme, jak definovat poskytovatel správy zdrojových protokolu v další části "Konfigurace ELMAH." `ErrorLogPageFactory` Pro vytváření obslužných rutin HTTP je zodpovědný za generování kódu při prohlížení v protokolu chyb z webové stránky.
 
-Specifickou syntaxi pro registraci modulů HTTP a obslužné rutiny závisí na webový server, který je pohánějící webu. Pro vývojový Server ASP.NET a společnosti Microsoft IIS verze 6.0 a starší, jsou v zaregistrované modulů HTTP a obslužné rutiny `<httpModules>` a `<httpHandlers>` oddíly, které se zobrazí v rámci `<system.web>` elementu. Pokud používáte službu IIS 7.0, pak budou muset být zaregistrovaná v `<system.webServer>` elementu `<modules>` a `<handlers>` oddíly. Naštěstí můžete definovat modulů HTTP a obslužné rutiny v *i* umístí bez ohledu na webový server používá. Tato možnost je většina přenosných jeden jako umožňuje, aby se stejnou konfigurací, který se má použít v vývoj a produkční prostředích bez ohledu na webový server používá.
+Syntaxe specifické pro registraci modulů HTTP a obslužné rutiny, závisí na webový server, který je dostupné webu. Pro vývojový Server ASP.NET a společnosti Microsoft IIS 6.0 a starší verze modulů HTTP a obslužné rutiny jsou registrovány v `<httpModules>` a `<httpHandlers>` oddíly, které se zobrazí v rámci `<system.web>` elementu. Pokud používáte IIS 7.0, musí být zaregistrovaný ve `<system.webServer>` elementu `<modules>` a `<handlers>` oddíly. Naštěstí můžete definovat HTTP moduly a obslužné rutiny v *obě* umístí bez ohledu na webový server používá. Tato možnost je většina přenosných jako umožňuje stejnou konfiguraci pro použití ve vývojovém a produkčním prostředí bez ohledu na webový server používá.
 
-Začněte tím, že registrace `ErrorLogModule` modulu HTTP a `ErrorLogPageFactory` obslužná rutina HTTP v `<httpModules>` a `<httpHandlers>` kapitoly `<system.web>`. Pokud vaše konfigurace již definuje tyto dva prvky pak jednoduše zahrnout `<add>` element pro modul HTTP a obslužné rutiny na ELMAH.
+Začněte tím, že registrace `ErrorLogModule` modulu HTTP služby a `ErrorLogPageFactory` obslužná rutina HTTP v `<httpModules>` a `<httpHandlers>` tématu `<system.web>`. Pokud vaše konfigurace už definuje tyto dva prvky pak jednoduše zahrnout `<add>` – element pro modul HTTP služby a obslužné rutiny na ELMAH.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample1.xml)]
 
-V dalším kroku registrovat modul HTTP a obslužné rutiny v ELMAH na `<system.webServer>` elementu. Jako dříve Pokud tento prvek se již nenachází ve vaší konfiguraci přidejte ji.
+V dalším kroku registrovat modul HTTP služby a obslužné rutiny v ELMAH společnosti `<system.webServer>` elementu. Stejně jako dříve Pokud tento prvek již není k dispozici v konfiguraci pak ho přidáte.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample2.xml)]
 
-Ve výchozím nastavení, IIS 7 complains, pokud jsou v registrované moduly HTTP a obslužné rutiny `<system.web>` oddílu. `validateIntegratedModeConfiguration` Atribut `<validation>` element dá pokyn IIS 7 k potlačení takové chybové zprávy.
+Ve výchozím nastavení, služby IIS 7 si bude stěžovat na Pokud HTTP moduly a obslužné rutiny jsou registrovány v `<system.web>` oddílu. `validateIntegratedModeConfiguration` Atribut `<validation>` element dává pokyn IIS 7 můžete potlačit tyto chybové zprávy.
 
-Všimněte si, že syntaxe pro registraci `ErrorLogPageFactory` zahrnuje obslužná rutina HTTP `path` atribut, který je nastaven na `elmah.axd`. Tento atribut informuje webové aplikace, že pokud dorazí požadavek pro stránku s názvem `elmah.axd` pak by měl zpracovat požadavek `ErrorLogPageFactory` obslužnou rutinu HTTP. Ukážeme `ErrorLogPageFactory` obslužná rutina HTTP v akci později v tomto kurzu.
+Všimněte si, že syntaxe pro registraci `ErrorLogPageFactory` obsahuje obslužné rutiny HTTP `path` atribut, který je nastaven na `elmah.axd`. Tento atribut informuje webovou aplikaci, že pokud dorazí požadavek na stránku s názvem `elmah.axd` pak by měl zpracovat požadavek `ErrorLogPageFactory` obslužná rutina HTTP. Uvidíme, `ErrorLogPageFactory` obslužná rutina HTTP v akci později v tomto kurzu.
 
 ### <a name="step-3-configuring-elmah"></a>Krok 3: Konfigurace ELMAH
 
-ELMAH hledá jeho možnosti konfigurace na webu `Web.config` souborů v části vlastní konfigurace s názvem `<elmah>`. Chcete-li použít vlastní oddíl v `Web.config` ji nejprve musí být definován v `<configSections>` elementu. Otevřete `Web.config` souboru a přidejte následující kód do `<configSections>`:
+ELMAH vypadá jeho možnosti konfigurace na webu `Web.config` soubor s názvem vlastního konfiguračního oddílu `<elmah>`. Chcete-li použít vlastní části v `Web.config` jej nejprve musí být definován v `<configSections>` elementu. Otevřít `Web.config` a přidejte následující kód k `<configSections>`:
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample3.xml)]
 
 > [!NOTE]
-> Pokud konfigurujete ELMAH pro aplikaci ASP.NET 1.x, odeberte `requirePermission="false"` atribut z `<section>` prvků uvedených výše.
+> Pokud konfigurujete ELMAH pro aplikaci ASP.NET 1.x odeberte `requirePermission="false"` atribut z `<section>` prvků uvedených výše.
 
 
-Výše uvedené syntaxe zaregistruje vlastní `<elmah>` části a jeho pododdíly: `<security>`, `<errorLog>`, `<errorMail>`, a `<errorFilter>`.
+Výše uvedené syntaxi zaregistruje vlastní `<elmah>` oddíl a všechny dílčí oddíly: `<security>`, `<errorLog>`, `<errorMail>`, a `<errorFilter>`.
 
-Dál přidejte `<elmah>` části k `Web.config`. V této části se zobrazí na stejné úrovni jako `<system.web>` elementu. Uvnitř `<elmah>` přidejte část `<security>` a `<errorLog>` části takto:
+V dalším kroku přidejte `<elmah>` části `Web.config`. V této části by se měla objevit na stejné úrovni jako `<system.web>` elementu. Uvnitř `<elmah>` přidat oddíl `<security>` a `<errorLog>` oddíly takto:
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample4.xml)]
 
-`<security>` Oddílu `allowRemoteAccess` atribut uvádí, zda je povolen vzdálený přístup. Pokud tato hodnota nastavena na hodnotu 0, pak Chyba protokolu webové stránky lze zobrazit pouze místně. Pokud tento atribut je nastaven na hodnotu 1 je povoleno Chyba protokolu webové stránky pro místní i vzdálené návštěvníky. Nyní umožňuje zakázat Chyba protokolu webové stránky pro vzdálené návštěvníky. Vzdálený přístup jsme budete povolit později po máme příležitost popisují zabezpečení se to udělat.
+`<security>` Oddílu `allowRemoteAccess` atribut označuje, zda je povolen vzdálený přístup. Pokud tato hodnota nastavena na hodnotu 0, pak Chyba protokolu webové stránky lze zobrazit pouze místně. Pokud tento atribut je nastaven na hodnotu 1 je povoleno Chyba protokolu webové stránky pro vzdálené a místní uživatelé. Teď můžeme zakázat webová stránka Chyba protokolu pro vzdálené návštěvníků. Jsme vám umožňují vzdálený přístup vyšší Jakmile budeme mít příležitost k zajištění zabezpečení tohoto postupu.
 
-`<errorLog>` Oddíl definuje zdroj protokolu chyb, které určují, kde se zaznamenávají podrobnosti o chybě; je podobná `<providers>` oddíl ve stavu systému pro monitorování. Určuje výše uvedené syntaxe `SqlErrorLog` třída jako zdroj protokolu chyb, které protokoly chyb pro Microsoft SQL serveru databáze určené parametrem `connectionStringName` hodnota atributu.
+`<errorLog>` Oddíl definuje zdroj protokolu chyb, které určují, kde se zaznamenávají podrobnosti o chybě; je podobný `<providers>` oddíl ve stavu systému sledování. Určuje výše uvedené syntaxi `SqlErrorLog` třídu jako zdroj protokolu chyb, která protokoluje chyby do databáze Microsoft SQL Server určeném `connectionStringName` hodnotu atributu.
 
 > [!NOTE]
-> ELMAH se dodává s další chybové zprostředkovatelů protokolu, které lze použít k protokolování chyb do souboru XML, databázi aplikace Microsoft Access, databáze Oracle a jiných úložišť dat. Odkazovat na ukázku `Web.config` soubor, který je součástí stahování ELMAH informace o tom, jak tyto alternativní chyba zprostředkovatele protokolu použít.
+> ELMAH se dodává s poskytovateli další chybové protokolu, které slouží k protokolování chyb do souboru XML, databáze Microsoft Access, Oracle database a dalšími datovými úložišti. Odkazovat na ukázku `Web.config` soubor, který je součástí knihovny ELMAH stažení informace o tom, jak používat tyto alternativní chyba zprostředkovatele protokolu.
 
 
-### <a name="step-4-creating-the-error-log-source-infrastructure"></a>Krok 4: Vytvoření zdrojové infrastruktuře protokolu chyb
+### <a name="step-4-creating-the-error-log-source-infrastructure"></a>Krok 4: Vytvoření zdrojové infrastruktuře protokolu chyba
 
-Na ELMAH `SqlErrorLog` zprostředkovatele v protokolech podrobnosti o chybě zadaná databáze serveru Microsoft SQL Server. `SqlErrorLog` Zprostředkovatele očekává tato databáze obsahuje tabulku s názvem `ELMAH_Error` a tři uložené procedury: `ELMAH_GetErrorsXml`, `ELMAH_GetErrorXml`, a `ELMAH_LogError`. Stahování ELMAH obsahuje soubor s názvem `SQLServer.sql` v `db` složku, která obsahuje T-SQL pro vytvoření této tabulky a tyto uložené procedury. Budete potřebovat ke spuštění těchto příkazů na vaše databáze pro použití `SqlErrorLog` zprostředkovatele.
+Společnosti ELMAH `SqlErrorLog` poskytovatele protokoluje podrobné informace o chybě k zadané databázi serveru Microsoft SQL Server. `SqlErrorLog` Poskytovatele očekává, že tato databáze obsahuje tabulku s názvem `ELMAH_Error` a tři uložených procedur komponentami TableAdapter: `ELMAH_GetErrorsXml`, `ELMAH_GetErrorXml`, a `ELMAH_LogError`. Stažení ELMAH obsahuje soubor s názvem `SQLServer.sql` v `db` složku, která obsahuje T-SQL pro vytvoření této tabulky a tyto uložené procedury. Budete potřebovat ke spuštění těchto příkazů na databázi použít `SqlErrorLog` zprostředkovatele.
 
-**Obrázky 1** a **2** zobrazení Průzkumníka databáze v sadě Visual Studio po databázové objekty, které vyžaduje `SqlErrorLog` byly přidány zprostředkovatele.
+**Obrázek 1** a **2** zobrazení Průzkumníka databáze v sadě Visual Studio po databázové objekty vyžadované `SqlErrorLog` byly přidány zprostředkovatele.
 
 [![](logging-error-details-with-elmah-cs/_static/image2.png)](logging-error-details-with-elmah-cs/_static/image1.png)
 
-**Obrázek 1**: `SqlErrorLog` zprostředkovatele chyby do protokolu `ELMAH_Error` tabulky
+**Obrázek 1**: `SqlErrorLog` poskytovatele protokoluje chyby do `ELMAH_Error` tabulky
 
 [![](logging-error-details-with-elmah-cs/_static/image4.png)](logging-error-details-with-elmah-cs/_static/image3.png)
 
-**Obrázek 2**: `SqlErrorLog` poskytovatele používá tři uložené procedury
+**Obrázek 2**: `SqlErrorLog` poskytovatel použije tři uložených procedur
 
 ## <a name="elmah-in-action"></a>ELMAH v akci
 
-V tuto chvíli jsme přidali ELMAH k webové aplikaci, zaregistrovaný `ErrorLogModule` modulu HTTP a `ErrorLogPageFactory` obslužnou rutinu HTTP, zadaný pro ELMAH možnosti konfigurace v `Web.config`a potřebné databázové objekty pro přidání `SqlErrorLog` Zprostředkovatel protokolu chyb. Nyní připraveni najdete v části ELMAH v akci! Navštivte web knihy recenze a najdete na stránce, který generuje chyba za běhu, jako například `Genre.aspx?ID=foo`, nebo neexistující stránky, jako například `NoSuchPage.aspx`. Co se zobrazí při návštěvě tyto stránek závisí na `<customErrors>` konfigurace a právě navštíveného místně nebo vzdáleně. (Odkazovat zpět [ *zobrazení vlastní chybovou stránku* kurzu](displaying-a-custom-error-page-cs.md) pro aktualizační program v tomto tématu.)
+V tuto chvíli jsme přidali ELMAH do webové aplikace zaregistrované `ErrorLogModule` modulu HTTP služby a `ErrorLogPageFactory` obslužnou rutinu HTTP, možností ELMAH vaší konfigurace v `Web.config`a přidá potřebné databázových objektů pro `SqlErrorLog` Zprostředkovatel protokolu chyb. Nyní jsme připraveni v akci najdete v článku ELMAH! Navštivte web knihy recenze a přejděte na stránku, která vygeneruje chybu modulu runtime, jako například `Genre.aspx?ID=foo`, nebo neexistující stránku, jako například `NoSuchPage.aspx`. Co se zobrazí při návštěvě těchto stránek závisí `<customErrors>` konfigurace a zda navštívený místně nebo vzdáleně. (Vrátit zpět k [ *zobrazení vlastní chybové stránky* kurzu](displaying-a-custom-error-page-cs.md) pro aktualizační program v tomto tématu.)
 
-ELMAH nemá vliv, který obsah se zobrazí uživateli, když dojde k neošetřené výjimce; zaznamená pouze její podrobnosti. Tato chyba protokolu je přístupný z webové stránky `elmah.axd` z kořene webu, jako například `http://localhost/BookReviews/elmah.axd`. (Tento soubor neexistuje fyzicky ve vašem projektu, ale když přijde žádost pro `elmah.axd` modulu runtime odešle zprávu, aby `ErrorLogPageFactory` obslužná rutina HTTP, která generuje kód odeslána zpět do prohlížeče.)
+ELMAH nemá vliv, jaký obsah se zobrazí uživateli, když dojde k neošetřené výjimce; zaznamená pouze jeho podrobnosti. Tento protokol chyb je přístupný z webové stránky `elmah.axd` z kořenového adresáře vašeho webu, jako například `http://localhost/BookReviews/elmah.axd`. (Tento soubor neexistuje fyzicky ve vašem projektu, ale v případě, že žádost je k dispozici ve pro `elmah.axd` ji odešle modul runtime `ErrorLogPageFactory` obslužnou rutinu HTTP, který generuje kód odesílaných zpět do prohlížeče.)
 
 > [!NOTE]
-> Můžete také `elmah.axd` stránky dáte pokyn, aby ELMAH ke generování Chyba testu. Návštěvou `elmah.axd/test` (jako v `http://localhost/BookReviews/elmah.axd/test`) způsobí, že má být vyvolána výjimka typu ELMAH `Elmah.TestException`, na kterém je chybová zpráva: "Toto je test výjimka, která můžete bezpečně ignorovat."
+> Můžete také použít `elmah.axd` stránky dáte pokyn, aby ELMAH generovat chybu testu. Navštívit `elmah.axd/test` (jako v `http://localhost/BookReviews/elmah.axd/test`) způsobí, že ELMAH výjimku typu `Elmah.TestException`, který má chybová zpráva: "Toto je test výjimky, která můžete bezpečně ignorovat."
 
 
 **Obrázek 3** zobrazuje v protokolu chyb při návštěvě `elmah.axd` z vývojového prostředí.
@@ -148,114 +147,114 @@ ELMAH nemá vliv, který obsah se zobrazí uživateli, když dojde k neošetřen
 [![](logging-error-details-with-elmah-cs/_static/image6.png)](logging-error-details-with-elmah-cs/_static/image5.png)
 
 **Obrázek 3**: `Elmah.axd` zobrazí v protokolu chyb z webové stránky  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image7.png))
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image7.png))
 
-V protokolu chyb **obrázek 3** obsahuje šest chyba položky. Každá položka obsahuje stavový kód HTTP (404 nebo 500 pro tyto chyby), typ, popis, jméno přihlášeného uživatele při chybě a datum a čas. Kliknutím na odkaz Podrobnosti zobrazí stránku, která zahrnuje ke stejné chybové zprávě ukazuje chybu podrobnosti žlutý obrazovka smrti (najdete v části **obrázek 4**) společně s hodnoty proměnných serveru v době chyby (najdete v části  **Obrázek 5**). Můžete také zobrazit nezpracované XML ve kterém jsou uloženy podrobnosti o chybě, který obsahuje další informace, jako je například hodnoty v hlavičce HTTP POST.
+Chyba přihlášení **obrázek 3** obsahuje šest položky chyby. Každá položka obsahuje stavový kód HTTP (404 nebo 500 pro tyto chyby), typ, popis, jméno přihlášeného uživatele, když došlo k chybě a datum a čas. Kliknutím na odkaz Podrobnosti se zobrazí stránka, která obsahuje stejnou chybovou zprávu zobrazenou v chybě podrobnosti žlutý obrazovky z smrti (naleznete v tématu **obrázek 4**) společně s hodnotami serverových proměnných v době chyby (viz  **Obrázek 5**). Můžete také zobrazit nezpracovaném kódu XML ve kterém jsou uloženy podrobnosti o chybě, který obsahuje další informace, jako jsou hodnoty v hlavičce HTTP POST.
 
 [![](logging-error-details-with-elmah-cs/_static/image9.png)](logging-error-details-with-elmah-cs/_static/image8.png)
 
 **Obrázek 4**: Zobrazit podrobnosti o chybě YSOD  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image10.png))
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image10.png))
 
 [![](logging-error-details-with-elmah-cs/_static/image12.png)](logging-error-details-with-elmah-cs/_static/image11.png)
 
-**Obrázek 5**: prozkoumat hodnoty kolekce proměnných serveru v době chyby  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image13.png))
+**Obrázek 5**: zkoumat hodnoty proměnné kolekce serveru v době chyby  
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image13.png))
 
-Nasazení do provozního webu ELMAH zahrnuje:
+Nasazení do produkčního webu ELMAH zahrnuje:
 
 - Kopírování `Elmah.dll` do souboru `Bin` složky v produkčním prostředí
-- Kopírování specifických ELMAH nastavení konfigurace, aby `Web.config` soubor použitý v produkčním prostředí a
-- Chyba protokolu zdrojové infrastruktuře přidání do provozní databáze.
+- Kopírování nastavení konfigurace specifické pro ELMAH `Web.config` soubor používat v produkčním prostředí a
+- Chyba protokolu zdrojové infrastruktuře přidává do provozní databáze.
 
-Jsme jste prozkoumali techniky pro kopírování souborů z vývojového do produkčního prostředí v předchozí kurzy. Možná je nejjednodušší způsob, jak získat zdrojové infrastruktuře protokolu chyb na provozní databáze použít SQL Server Management Studio k připojení k provozní databázi a potom spusťte `SqlServer.sql` souboru skriptu, který vytvoří potřebné tabulky a uložené postupy.
+Prozkoumali jsme techniky pro kopírování souborů z vývojového do produkčního prostředí v předchozích kurzech. Možná je nejjednodušší způsob, jak získat zdrojové infrastruktuře protokolu chyb na provozní databáze použít SQL Server Management Studio k připojení k produkční databázi a následné provádění `SqlServer.sql` souboru skriptu, který vytvoří potřebné tabulky a uložené postupy.
 
-### <a name="viewing-the-error-details-page-on-production"></a>Prohlížení stránky, podrobnosti o chybě u produkčních
+### <a name="viewing-the-error-details-page-on-production"></a>Zobrazení podrobností chybové stránky v produkčním prostředí
 
-Po nasazení webu do produkčního prostředí, navštivte web produkční a generovat k neošetřené výjimce. Jako vývojové prostředí ELMAH nemá žádný vliv na chybová stránka zobrazí, když dojde k neošetřené výjimce; Místo toho jenom zaznamená chybu. Pokud se pokusíte navštívit stránku Chyba protokolu (`elmah.axd`) z provozní prostředí, se zobrazí s zakázáno stránka zobrazená v **obrázek 6**.
+Po nasazení webu do produkčního prostředí, přejděte na produkčního webovou stránku a generovat neošetřenou výjimku. Jako vývojové prostředí ELMAH nemá žádný vliv na stránce chyba zobrazí, když dojde k neošetřené výjimce; Místo toho pouze zaznamená chybu. Při pokusu o návštěvu chybovou stránku protokolu (`elmah.axd`) z produkčního prostředí vám bude se vám stránka zakázáno v **obrázek 6**.
 
 [![](logging-error-details-with-elmah-cs/_static/image15.png)](logging-error-details-with-elmah-cs/_static/image14.png)
 
-**Obrázek 6**: ve výchozím nastavení, vzdálené návštěvníky nelze zobrazit chyba protokolu webové stránky  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image16.png))
+**Obrázek 6**: ve výchozím nastavení, nelze zobrazit vzdálené návštěvníků webové stránky chyba protokolu  
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image16.png))
 
-Odvolat, v konfiguraci ELMAH `<security>` části nastaví `allowRemoteAccess` atributu na hodnotu 0, která zabraňuje zobrazování v protokolu chyb vzdálené uživatele. Je důležité zakázat anonymní návštěvníky ze zobrazení v protokolu chyb jako podrobnosti o chybě může odhalit ohrožení zabezpečení nebo jiných citlivých informací. Pokud se rozhodnete tento atribut nastavený na hodnotu 1 a povolte tak vzdálený přístup v protokolu chyb, pak je potřeba zámku `elmah.axd` cestu, která návštěvníky pouze oprávnění k němu přístup. Toho lze dosáhnout přidáním `<location>` elementu, který chcete `Web.config` souboru.
+Vzpomeňte si, že v konfiguraci ELMAH `<security>` části jsme nastavili `allowRemoteAccess` atribut na hodnotu 0, která vzdáleným uživatelům zabrání v prohlížení v protokolu chyb. Je třeba zakázat anonymní uživatelé zobrazit v protokolu chyb jako podrobnosti o chybě může odhalit slabá místa zabezpečení nebo jiné citlivé informace. Pokud se rozhodnete tento atribut nastavte na hodnotu 1 a povolte vzdálený přístup v protokolu chyb, je potřeba uzamknutí `elmah.axd` cestu tak, který pouze oprávnění uživatelé k němu máte přístup. Toho lze dosáhnout tak, že přidáte `<location>` elementu `Web.config` souboru.
 
-Následující konfigurace umožňuje jenom uživatelé v roli správce pro přístup k webové stránce chyba protokolu:
+Následující Konfigurace povoluje jenom uživatelé v roli správce pro přístup k webové stránce chyba protokolu:
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample5.xml)]
 
 > [!NOTE]
-> Role správce a tři uživatelé v systému - Scott, Jisun a Alice - byly přidány v [ *konfigurace na web, používá aplikace služby* kurzu](configuring-a-website-that-uses-application-services-cs.md). Scott uživatelů a Jisun jsou členy role správce. Další informace o ověřování a autorizaci, najdete v části Moje [kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
+> Přidání role správce a tři uživatele v systému – Scott, Jisun a Alice - v [ *konfigurace na webu, že používá aplikační služby* kurzu](configuring-a-website-that-uses-application-services-cs.md). Scott uživatelů a Jisun jsou členové s rolí správce. Další informace o ověřování a autorizace, najdete v mé [kurzy o zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
 
 
-V protokolu chyb v provozním prostředí můžete nyní zobrazit vzdálení uživatelé; odkazovat zpět **obrázky 3**, **4**, a **5** snímky obrazovky Chyba protokolu webové stránky. Ale pokud anonymní nebo bez oprávnění správce. uživatel se pokusí zobrazit chybovou stránku protokolu je automaticky přesměrován na přihlašovací stránku (`Login.aspx`), jako **na obrázku 7** zobrazuje.
+V protokolu chyb v produkčním prostředí můžete nyní zobrazit vzdálení uživatelé; Vraťte se do **obrázky 3**, **4**, a **5** snímky obrazovky chybové stránky webových protokolů. Ale pokud anonymní nebo bez oprávnění správce. uživatel se pokusí zobrazit chybovou stránku protokolu je automaticky přesměrován na stránku pro přihlášení (`Login.aspx`), jako **obrázek 7** ukazuje.
 
 [![](logging-error-details-with-elmah-cs/_static/image18.png)](logging-error-details-with-elmah-cs/_static/image17.png)
 
 **Obrázek 7**: neoprávnění uživatelé jsou automaticky přesměrováni na stránku pro přihlášení  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image19.png))
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image19.png))
 
-### <a name="programmatically-logging-errors"></a>Prostřednictvím kódu programu protokolování chyb
+### <a name="programmatically-logging-errors"></a>Protokolování chyb prostřednictvím kódu programu
 
-Na ELMAH `ErrorLogModule` modulu HTTP automaticky protokoluje neošetřených výjimek ke zdroji zadaného protokolu. Alternativně může přihlásit k chybě bez nutnosti zvýšení k neošetřené výjimce pomocí `ErrorSignal` třídy a jeho `Raise` metoda. `Raise` Metodě se předává `Exception` objektu a do protokolu zaznamená, jako by měl nebyly vytvořeny této výjimky a dosahoval modulem runtime ASP.NET bez zpracování. Rozdíl, je ale, že žádost pokračuje v provádění obvykle po `Raise` byla volána metoda, zatímco výjimce dojde, neošetřené výjimky přerušení normální spuštění žádosti a způsobí, že modulem runtime ASP.NET zobrazíte nakonfigurované chybové stránky.
+Společnosti ELMAH `ErrorLogModule` modulu HTTP služby automaticky zaznamenává neošetřené výjimky do zdroje zadaného protokolu. Alternativně můžete zaznamenat chybu bez nutnosti, aby se vyvolala nezpracovanou výjimku pomocí `ErrorSignal` třídy a jeho `Raise` metoda. `Raise` Metodě je předána `Exception` objektu a přihlásí jej jako by měl byla vyvolána tuto výjimku a bylo dosaženo modul runtime ASP.NET bez zpracování. Rozdíl je ale, že žádost pokračuje v provádění po obvykle `Raise` byla volána metoda, že k této výjimce dojde, neošetřené výjimky přerušení běžného provedení žádosti a způsobí, že modul runtime ASP.NET zobrazíte nakonfigurované chybová stránka.
 
-`ErrorSignal` Třída je užitečné v situacích, kde je některé akce, která může selhat, ale jeho selhání není závažné celkové operace provádí. Například web může obsahovat formulář, který přijímá vstup uživatele, uloží je v databázi a pak odešle uživateli e-mailu informací, že se informace byla zpracována. Které dojde, pokud informace se ukládají do databáze úspěšně, ale dojde k chybě při odesílání e-mailové zprávě? Jednou z možností je vyvolána výjimka a uživateli odeslat chybovou stránku. Ale to může zmást uživatele do přemýšlení, který informace, které zadal nebyla uložena. Jiná možnost by mohla být protokolu chyby související s e-mailu, ale není činnost koncového uživatele nijak změnit. To je, kdy `ErrorSignal` třída je užitečná.
+`ErrorSignal` Třída je užitečná v situacích, kdy se některé akce, který může selhat, ale není katastrofickými celé operace právě probíhá jeho selhání. Například web může obsahovat formulář, který přijímá vstup uživatele, uloží je v databázi a pak pošle uživateli e-mailu informuje o tom, že informace zpracovala. Co se stane při splnění informace byla úspěšně uložena do databáze, ale dojde k chybě při odesílání e-mailové zprávě? Jednou z možností je vytvořit výjimku a uživatele poslat na chybovou stránku. Však to může být matoucí uživatele do myšlení, který nebyl uložen, informace, které zadal. Další možností je protokolovat chyby související s e-mailu, ale nezmění uživatelské prostředí žádným způsobem. Tady `ErrorSignal` třída je užitečná.
 
 [!code-csharp[Main](logging-error-details-with-elmah-cs/samples/sample6.cs)]
 
 ## <a name="error-notification-via-email"></a>Oznámení o chybě e-mailem
 
-Společně s protokolování chyb do databáze může být ELMAH nakonfigurovat taky k zadané příjemce e-mailem poslat podrobnosti o chybě. Tato funkce poskytuje `ErrorMailModule` modulu HTTP; proto je nutné zaregistrovat tento modul HTTP v `Web.config` aby bylo možné odesílat podrobnosti o chybě e-mailem.
+Spolu s protokolování chyb do databáze ELMAH lze také nastavit pro zadaného příjemce e-mailem poslat podrobnosti o chybě. Tato funkce je poskytována `ErrorMailModule` modulu HTTP služby; proto je nutné zaregistrovat tento modul HTTP v `Web.config` aby bylo možné odesílat podrobnosti o chybě e-mailem.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample7.xml)]
 
-Potom zadejte informace o chybě e-mailu v `<elmah>` elementu `<errorMail>` části znamenající odesílatele a příjemce, předmět, k e-mailu a zda e-mail je odeslán asynchronně.
+V dalším kroku zadejte informace o chybě e-mailu v `<elmah>` elementu `<errorMail>` části označující, odesílatel a příjemce, předmět, v e-mailu a určuje, zda e-mail je odeslán asynchronně.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample8.xml)]
 
-Výše uvedené nastavení na místě a vždy, když chyba za běhu dochází ELMAH odešle e-mail s support@example.com s podrobnosti o chybě. E-mailu chyba na ELMAH zahrnuje stejné informace zobrazené v chybě podrobnosti o webové stránky, a to chybovou zprávu, trasování zásobníku a proměnných serveru (odkazuje zpět na **obrázky 4** a **5**). E-mailu, chyba také zahrnuje obsah výjimky podrobnosti žlutý obrazovka smrti jako přílohu (`YSOD.html`).
+Pomocí výše uvedených nastavení na místě, vždy, když chyba za běhu vyvolá ELMAH odešle e-mailu support@example.com se podrobnosti o chybě. E-mailu společnosti ELMAH chyba obsahuje stejné informace zobrazené v chybě podrobnosti webové stránky, konkrétně chybové zprávy, trasování zásobníku a proměnných serveru (vrátit zpět k **4 obrázky** a **5**). Chyba e-mailu také zahrnuje obsah výjimky podrobnosti žlutý obrazovka smrti jako přílohu (`YSOD.html`).
 
-**Obrázek 8** zobrazuje e-mailu chyba na ELMAH generované navštívíte `Genre.aspx?ID=foo`. Při **obrázek 8** zobrazuje pouze chyby zásobníku a zpráva trasování, proměnné serveru jsou zahrnuty další dolů v obsahu e-mailu.
+**Obrázek 8** ukazuje na ELMAH chyba e-mail vytvořené návštěvou `Genre.aspx?ID=foo`. Zatímco **obrázek 8** zobrazuje pouze chybová zpráva nebo trasování zásobníku, serverových proměnných jsou uvedeny dále v textu v e-mailu.
 
 [![](logging-error-details-with-elmah-cs/_static/image21.png)](logging-error-details-with-elmah-cs/_static/image20.png)
 
-**Obrázek 8**: můžete nakonfigurovat ELMAH Odeslat podrobnosti o chybě e-mailem  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image22.png))
+**Obrázek 8**: můžete nakonfigurovat ELMAH odesílat podrobnosti o chybě e-mailem  
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-elmah-cs/_static/image22.png))
 
 ## <a name="only-logging-errors-of-interest"></a>Jenom protokolování chyb, které vás zajímají
 
-Ve výchozím nastavení zaznamená ELMAH podrobnosti o každé neošetřená výjimka, včetně 404 a dalších chyb HTTP. Můžete určit, aby ELMAH ignorovat tyto nebo jiné typy chyb pomocí filtrování chyb. Filtrování logika je realizována vytvořením na ELMAH `ErrorFilterModule` modulu HTTP, které budete muset zaregistrovat v `Web.config` Chcete-li použít filtrování logiku. Pravidla pro filtrování jsou určené v `<errorFilter>` oddílu.
+Ve výchozím nastavení protokoly ELMAH podrobnosti o každé neošetřená výjimka, včetně 404 a další chyby protokolu HTTP. Můžete dát pokyn ELMAH ignorovat tyto nebo jiných druhů chyb pomocí filtrování chyb. Logiku filtrování se provádí pomocí knihovny ELMAH společnosti `ErrorFilterModule` modulu HTTP, které budete muset zaregistrovat v `Web.config` Chcete-li použít logiku filtrování. Pravidla pro filtrování jsou určené v `<errorFilter>` oddílu.
 
-Následující kód dá pokyn ELMAH do protokolu chyb 404.
+Následující kód nastaví ELMAH protokolu chyby 404.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample9.xml)]
 
 > [!NOTE]
-> Nezapomeňte, aby bylo možné používat, je nutné zaregistrovat filtrování chyb `ErrorFilterModule` modulu HTTP.
+> Nezapomeňte, chcete-li použít filtrování chyb je potřeba se zaregistrovat `ErrorFilterModule` modulu HTTP služby.
 
 
-`<equal>` Element uvnitř `<test>` části se označuje jako kontrolní výrazy. Pokud kontrolní výraz vyhodnotí jako true, je filtrovaná chyby z protokolu na ELMAH. Nejsou k dispozici, včetně dalších kontrolních výrazů: `<greater>`, `<greater-or-equal>`, `<not-equal>`, `<lesser>`, `<lesser-or-equal>`a tak dále. Můžete také kombinovat kontrolní výrazy pomocí `<and>` a `<or>` logické operátory. Navíc můžete i zahrnují jednoduchý výraz jako kontrolní výrazy jazyka JavaScript, nebo můžete zapsat vlastní kontrolní výrazy v jazyce C# nebo Visual Basic.
+`<equal>` Element v rámci `<test>` oddíl se označuje jako kontrolní výraz. Pokud se výraz vyhodnotí jako true, chyba filtruje z vaší ELMAH protokolu. Nejsou k dispozici, včetně další kontrolní výrazy: `<greater>`, `<greater-or-equal>`, `<not-equal>`, `<lesser>`, `<lesser-or-equal>`, a tak dále. Můžete také kombinovat pomocí kontrolních výrazů `<and>` a `<or>` logické operátory. A co víc můžete dokonce obsahovat jednoduchý výraz jazyka JavaScript jako kontrolní výraz nebo napsat vlastní kontrolní výrazy v jazyce C# nebo Visual Basic.
 
-Další informace o chybě pro ELMAH možností filtrování, najdete v části [filtrování chyb části](https://code.google.com/p/elmah/wiki/ErrorFiltering) v [ELMAH wiki](https://code.google.com/p/elmah/w/list).
+Další informace o chybě na ELMAH možnosti filtrování, najdete [filtrování chyb části](https://code.google.com/p/elmah/wiki/ErrorFiltering) v [ELMAH wiki](https://code.google.com/p/elmah/w/list).
 
 ## <a name="summary"></a>Souhrn
 
-ELMAH poskytuje jednoduché, ale výkonný mechanismus pro protokolování chyb ve webové aplikaci ASP.NET. Jako systém sledování stavu společnosti Microsoft ELMAH chyby můžete připojit k databázi a podrobnosti o chybě můžete odeslat vývojář e-mailem. Na rozdíl od stavu systému pro monitorování, zahrnuje ELMAH z pole podporu pro širší škálu úložišť dat protokolu chyb, včetně: Microsoft SQL Server, Microsoft Access, Oracle, soubory XML a několik dalších. Kromě toho ELMAH nabízí integrovanou mechanismus pro zobrazení v protokolu chyb a podrobnosti o konkrétní chybě z webové stránky, `elmah.axd`. `elmah.axd` Stránky může také zpracovat informace o chybě jako informačního kanálu RSS, nebo jako soubor hodnot oddělených čárkami (CSV), který si můžete přečíst pomocí aplikace Microsoft Excel. Můžete také určit, aby ELMAH filtru chyby z protokolu pomocí deklarativní nebo programové kontrolní výrazy. A ELMAH lze použít s aplikací ASP.NET verze 1.x.
+ELMAH poskytuje jednoduché, ale výkonný mechanismus pro protokolování chyb ve webové aplikaci ASP.NET. Stejně jako systém monitorování stavu od Microsoftu ELMAH chyby můžete připojit k databázi a podrobnosti o chybě poslat vývojář e-mailem. Na rozdíl od monitorování systému stavu ELMAH zahrnuje podporu pro používání nástroje většímu počtu úložišť dat protokolu chyb, včetně: Microsoft SQL Server, Microsoft Access, Oracle, soubory XML a několik dalších. Kromě toho nabízí ELMAH předdefinovaný mechanismus pro zobrazení v protokolu chyb a podrobnosti o konkrétní chybě z webové stránky, `elmah.axd`. `elmah.axd` Stránky může také vykreslit informace o chybě jako kanál RSS nebo jako soubor hodnot oddělených čárkami (CSV), který si můžete přečíst pomocí aplikace Microsoft Excel. Můžete také dát pokyn ELMAH filtrování chyb z protokolu pomocí deklarativní a programová kontrolní výrazy. A ELMAH jde použít s aplikací ASP.NET verzi 1.x.
 
-Všechny nasazené aplikace by měl mít některé mechanismus pro automaticky protokolování neošetřených výjimek a odesílání oznámení do vývojového týmu. Jestli toho dosahuje pomocí sledování stavu nebo ELMAH je sekundární. Jinými slovy nezáleží na skutečně mnohem ať už používáte sledování stavu nebo ELMAH; Posuďte obou systémů a potom vyberte ten, který nejlépe vyhovuje vašim potřebám. Co je zásadně důležité je, že některé mechanismus zavedou k protokolování neošetřených výjimek v provozním prostředí.
+Každé nasazené aplikace by měla mít určitý mechanismus pro automatické protokolování neošetřené výjimky a odesílání oznámení do vývojového týmu. Určuje, zda to lze provést pomocí monitorování stavu nebo ELMAH je sekundární. Jinými slovy nebude vadit, ve skutečnosti mnohem ať už používáte monitorování stavu nebo ELMAH; Vyhodnocení obou systémů a pak zvolte ten, který nejlépe vyhovuje vašim potřebám. Co je zásadně důležité je, že některé mechanismus být umístěny na místě k protokolování neošetřených výjimek v provozním prostředí.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ### <a name="further-reading"></a>Další čtení
 
-Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
+Další informace o tématech, které jsou popsané v tomto kurzu najdete na následujících odkazech:
 
-- [ELMAH - moduly protokolování chyb a obslužné rutiny](http://dotnetslackers.com/articles/aspnet/ErrorLoggingModulesAndHandlers.aspx)
-- [Stránka projektu ELMAH](https://code.google.com/p/elmah/) (zdrojového kódu, ukázky, wiki)
-- [Zapojení ELMAH do webovou aplikaci na Catch neošetřených výjimek](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx) (video)
-- [Zabezpečení chybové protokolu stránky](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
-- [K vytvoření komponentů modulární ASP.NET pomocí modulů HTTP a obslužné rutiny](https://msdn.microsoft.com/library/aa479332.aspx)
+- [ELMAH – chyba protokolovací moduly a obslužné rutiny](http://dotnetslackers.com/articles/aspnet/ErrorLoggingModulesAndHandlers.aspx)
+- [Stránka projektu ELMAH](https://code.google.com/p/elmah/) (zdrojového kódu, ukázek, wiki)
+- [Zapojení ELMAH do webové aplikace chcete zachytávat neošetřené výjimky](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx) (video)
+- [Stránky protokolů chyb zabezpečení](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
+- [Použití modulů HTTP a obslužné rutiny k vytvoření komponentů modulární ASP.NET](https://msdn.microsoft.com/library/aa479332.aspx)
 - [Kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 > [!div class="step-by-step"]

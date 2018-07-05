@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-autocomplete-control
-title: '[Jak na:] Použití ovládacího prvku ASP.NET AJAX automatického dokončování | Microsoft Docs'
+title: '[Postup:] Pomocí ovládacího prvku ASP.NET AJAX automatické dokončování | Dokumentace Microsoftu'
 author: JoeStagner
-description: Ovládací prvek rozšiřujícího objektu automatického dokončování z ovládacího prvku ASP.NET AJAX Toolkit poskytuje v reálném čase návrhy uživateli jako potvrdí typy v textovém poli na jsme...
+description: Rozšiřující ovládací prvek AutoComplete z technologie ASP.NET AJAX Control Toolkit poskytuje v reálném čase návrhy pro uživatele jako uživatel typy v textovém poli na jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2007
 ms.topic: article
 ms.assetid: 636a88fa-bafa-4310-8163-dba4a3461ce3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-autocomplete-control
 msc.type: video
-ms.openlocfilehash: 935f579f499c7d37d21bd7dac4af1e2716ca8c05
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5a22d8f91af4d8b114722f1fbb2321c6c3a2ac76
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884597"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392578"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-autocomplete-control"></a>[Jak na:] Použití ovládacího prvku ASP.NET AJAX automatického dokončování
+<a name="how-do-i-use-the-aspnet-ajax-autocomplete-control"></a>[Postup:] Pomocí ovládacího prvku ASP.NET AJAX automatického dokončování
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Ovládací prvek rozšiřujícího objektu automatického dokončování z ovládacího prvku ASP.NET AJAX Toolkit poskytuje v reálném čase uživateli jako potvrdí typy v textovém poli na webové stránce, kde je seznamu návrhů získat asynchronní volání webové služby na serveru.
+Rozšiřující ovládací prvek AutoComplete z technologie ASP.NET AJAX Control Toolkit poskytuje v reálném čase návrhy pro uživatele jako uživatel typy v textovém poli na webové stránce, kde se získá seznam návrhů asynchronní volání webové služby na serveru.
 
 [&#9654;Podívejte se na video (7 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-autocomplete-control)
 

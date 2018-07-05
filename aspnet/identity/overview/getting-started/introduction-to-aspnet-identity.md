@@ -1,141 +1,140 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: Úvod do ASP.NET Identity | Microsoft Docs
+title: Úvod do ASP.NET Identity | Dokumentace Microsoftu
 author: jongalloway
-description: Systém členství technologie ASP.NET byla zavedena v systému technologii ASP.NET 2.0 zpět 2005 a od pak byly mnoho změny v typicall způsoby webové aplikace...
+description: Systém členství technologie ASP.NET byla zavedena v systémech ASP.NET 2.0 zpět v roce 2005 a protože a aby byla mnoho změn typicall způsoby webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 59272f4659256e108ee99b22eb3bd3e2583a617c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 39a6f0195c407403b7bd7e2f1eb5b52c822b52a7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874093"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402493"
 ---
 <a name="introduction-to-aspnet-identity"></a>Úvod do ASP.NET Identity
 ====================
-podle [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-> Systém členství technologie ASP.NET byla zavedená s prostředím ASP.NET 2.0 back 2005 a od pak byly provedeny změny v mnoha způsoby webové aplikace obvykle zpracovávat ověřování a autorizace. ASP.NET Identity je nový pohled na co systém členství musí být při vytváření moderní aplikace pro web, telefon nebo tablet.
+> Systém členství technologie ASP.NET byla zavedena v systémech ASP.NET 2.0 zpět v roce 2005 a protože pak byly provedeny změny v mnoha způsoby webové aplikace obvykle zpracovávat ověřování a autorizace. ASP.NET Identity je čerstvé podívat, co systém členství by měla být při vytváření moderních aplikací pro web, telefon nebo tablet.
 > 
-> Tento článek napsal Pranav Rastogi ([@rustd](https://twitter.com/rustd)), Jon Galloway ([@jongalloway](https://twitter.com/jongalloway)), tní Dykstra a Rick Anderson ([ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
+> Tento článek napsal Pranav Rastogi ([@rustd](https://twitter.com/rustd)), Jon Galloway ([@jongalloway](https://twitter.com/jongalloway)), Tom Dykstra a Rick Anderson ([ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
 
 
-## <a name="background-membership-in-aspnet"></a>Pozadí: Členství technologie ASP.NET
+## <a name="background-membership-in-aspnet"></a>Na pozadí: Členství v ASP.NET
 
 ### <a name="aspnet-membership"></a>Členství technologie ASP.NET
 
-[Členství technologie ASP.NET](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx) byl proto, aby vyřešila požadavky na členství lokality, které byly v 2005, které se podílejí ověřování pomocí formulářů a databázi systému SQL Server pro uživatelská jména, hesla a data profilu běžné. Dnes je mnohem širší pole možnosti úložiště dat pro webové aplikace a Většina vývojářů chcete povolit jejich lokality používat sociální identity zprostředkovatele pro funkci ověřování a autorizace. Omezení návrhu členství technologie ASP.NET velmi obtížné tento přechod:
+[Členství technologie ASP.NET](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx) je navržená k řešení požadavky na členství lokality, které bylo běžné v roce 2005 zahrnuta ověřování pomocí formulářů a databázi serveru SQL Server pro uživatelská jména, hesla a data profilu. V současnosti jsou mnohem širší pole s možností úložiště dat pro webové aplikace a Většina vývojářů chcete povolit své weby, používat poskytovatele sociálních identit pro ověřování a autorizace funkce. Omezení členství technologie ASP.NET návrhu velmi obtížné tohoto přechodu je:
 
-- Schéma databáze je navržené pro SQL Server a nelze ji změnit. Můžete přidat informace o profilu, ale další data nachází v balení do jiné tabulky, což znesnadňuje pro přístup k jakýmkoli způsobem s výjimkou prostřednictvím rozhraní API poskytovatele profilu.
-- Systému zprostředkovatele umožňuje změnit úložiště zálohování dat, ale v systému je uspořádaná kolem předpoklady, které jsou vhodné pro relační databázi. Můžete napsat zprostředkovatele uložit informace o členství v mechanismus nerelační úložiště, jako je například úložiště tabulek Azure, ale pak budete muset obejít relační návrhu pomocí zápisu velké množství kódu a spoustu `System.NotImplementedException` výjimky pro metody, které nejsou platí pro databáze NoSQL.
-- Vzhledem k tomu, že funkce protokolu nebo odhlášení je založena na ověřování pomocí formulářů, nemůžete použít systém členství [OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md). OWIN obsahuje komponenty middlewaru pro ověřování, včetně podpory pro přihlašovací údaje pomocí poskytovatelů identit externí (např. Accounts Microsoft, Facebook, Google, Twitter) a přihlašovací údaje pomocí účty organizace z místní služby Active Directory nebo Azure Active Directory. OWIN zahrnuje taky podporu pro OAuth 2.0 JWT a CORS.
+- Schéma databáze je navržená pro SQL Server a nelze ji změnit. Můžete přidat informace o profilu, ale další data je zabalena do jiné tabulky, které je těžké pro přístup k jakýmkoli způsobem s výjimkou prostřednictvím rozhraní API poskytovatele profilu.
+- Zprostředkovatel systému umožňuje změnit záložní úložiště dat, ale systém navržené s ohledem na předpoklady, které jsou vhodné pro relační databáze. Můžete napsat zprostředkovatele pro ukládání informací o členství v mechanismu nerelační úložiště, jako jsou tabulky Azure Storage, ale pak budete muset vyřešit relační návrhu napsáním velké množství kódu a spoustu `System.NotImplementedException` výjimky pro metody, které ji nemají platí pro databáze NoSQL.
+- Protože protokol/odhlášení funkce je založena na ověřování pomocí formulářů, nemůžete použít systém členství [OWIN](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md). OWIN obsahuje komponenty middlewaru ověřování, včetně podpory pro protokol se změnami pomocí externích zprostředkovatelů identity (třeba Accounts Microsoft, Facebook, Google, Twitter) a protokolu se změnami pomocí organizační účty z místní služby Active Directory nebo Azure Active Directory. OWIN také zahrnuje podporu pro OAuth 2.0 JWT a CORS.
 
 ### <a name="aspnet-simple-membership"></a>ASP.NET jednoduché členství
 
-[Jednoduché členství technologie ASP.NET](../../../web-pages/overview/security/16-adding-security-and-membership.md) byl vyvinut jako systém členství pro ASP.NET Web Pages. Byl vydán pomocí služby WebMatrix a Visual Studio 2010 SP1. Cílem jednoduché členství bylo snadné přidání funkcí členství do aplikace Web Pages.
+[Jednoduché členství technologie ASP.NET](../../../web-pages/overview/security/16-adding-security-and-membership.md) byl vyvinut jako systém členství pro rozhraní ASP.NET Web Pages. Byla vydána s nástrojem WebMatrix a Visual Studio 2010 SP1. Cílem jednoduché členství bylo usnadňují přidat členství funkce aplikace Web Pages.
 
-Jednoduché členství snadněji přizpůsobit informace o profilu uživatele, ale stále sdílí jiné problémy s členství technologie ASP.NET a má určitá omezení:
+Jednoduché členství usnadňují přizpůsobit informace profilu uživatele, ale stále sdílí ostatní problémy s členství technologie ASP.NET a má určitá omezení:
 
-- Bylo obtížné zachovat data systému členství v nerelační úložišti.
-- Nemůžete ji použít s OWIN.
-- Předchozí postup nebude fungovat správně s existující zprostředkovatele členství technologie ASP.NET a není rozšiřitelný.
+- Bylo obtížné zachovat data systému členství ve nerelační úložiště.
+- Nelze ho použít s OWIN.
+- Nebude fungovat s existující zprostředkovatelů členství technologie ASP.NET a není rozšiřitelný.
 
 ### <a name="aspnet-universal-providers"></a>ASP.NET Universal Providers
 
-[Balíček ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) byly vyvinuty, aby bylo možné zachovat informace o členství ve službě Microsoft Azure SQL Database a také pracovat se systém SQL Server Compact. Universal Providers byly založený na Entity Framework Code First, což znamená, že můžete uchovávat data v jakékoli úložiště nepodporuje EF použít Universal Providers. S Universal Providers schéma databáze byla vyčištěna poměrně velké také.
+[Balíček ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) byly vyvinuty, aby bylo možné zachovat informace o členství ve službě Microsoft Azure SQL Database a jejich fungovat i pro SQL Server Compact. Balíček Universal Providers byly vytvořeny v Entity Framework Code First, což znamená, že balíček Universal Providers je možné uchovávat data v libovolné úložiště podporuje EF. S Universal Providers schéma databáze byla vyčištěna poměrně hodně také.
 
-Universal Providers jsou postavené na infrastrukturu členství technologie ASP.NET, takže stále provádění stejná omezení jako zprostředkovatel SqlMembership. To znamená byly navrženy pro relačních databází a je těžké si přizpůsobit informace o profilu a uživatele. Tito zprostředkovatelé pořád použít ověřování pomocí formulářů pro funkci přihlášení a odhlášení.
+Balíček Universal Providers jsou postavené na infrastrukturu členství technologie ASP.NET, tak stále provádění stejná omezení jako SqlMembership zprostředkovatele. To znamená že byly navrženy pro relační databáze a je obtížné upravit informace o profilu a uživatele. Tito poskytovatelé pořád použít ověřování pomocí formulářů pro funkci přihlášení a odhlášení.
 
 ## <a name="aspnet-identity"></a>ASP.NET Identity
 
-Scénáře technologie ASP.NET má jako členství vyvinuly v průběhu let, týmem technologie ASP.NET má mnoho vytvořeným ze zpětné vazby od zákazníků.
+Jako členství scénáře v technologii ASP.NET se průběžně vyvíjel let, tým ASP.NET má mnohem zjistili díky spolupráci se zpětnou vazbu od zákazníků.
 
-Za předpokladu, že uživatelé budou přihlašovat tak, že zadáte uživatelské jméno a heslo, které mají registrované ve vaší vlastní aplikaci již není platný. Na webu se stal více sociálních. Uživatelé jsou v reálném čase prostřednictvím sociálních kanálů, jako je Facebook, Twitter a jiné sociální weby interakci mezi sebou. Vývojáři mají uživatelé moci přihlásit pomocí svých sociálních identit, aby měli bohaté prostředí na svých webech. Systém moderní členství musíte povolit na základě přesměrování přihlašovací údaje pro zprostředkovatele ověřování, jako je Facebook, Twitter a dalších.
+Za předpokladu, že uživatelé budou přihlašovat tak, že zadáte uživatelské jméno a heslo, které jste zaregistrovali do vlastní aplikace již není platný. Na webu se stal více sociálních sítí. Uživatelé interagují navzájem v reálném čase prostřednictvím kanálů sociálních sítí, jako je Facebook, Twitter a další sociální weby. Vývojáři mají uživatelé nebudou moct připojovat se pomocí jejich sociálních identit, tak, aby na svých webech můžou mít celou řadu možností. Systém moderní členství musíte povolit na základě přesměrování protokolu se změnami pro zprostředkovatele ověřování, jako je Facebook, Twitter a další.
 
-Jako vyvinuly vývoj webů, takže se vzory vývoj webů. Jednotka testování kódu aplikace se aktivovala základní problém pro vývojáře aplikací. Technologie ASP.NET v 2008 přidat nové rozhraní na základě vzoru Model-View-Controller (MVC), v části usnadňuje vývojářům vytvářet jednotky možností intenzivního testování aplikací ASP.NET. Vývojáři, kteří chtěli jednotky otestovat jejich aplikační logiku také chtěli moci provést pomocí systému členství.
+Jak se vývoj pro web, proto nebyla tyto vzory se dají vývoje pro web. Jednotky testování kódu aplikace se stalo základní problém pro vývojáře aplikací. Technologie ASP.NET v 2008 přidali nový rámec založena na vzoru Model-View-Controller (MVC), v části usnadňuje vývojářům vytváření jednotky testovatelných aplikací ASP.NET. Vývojáři, kteří chtěli jednotky testování své aplikace logiky také chtěli mít možnost to udělat pomocí systému členství.
 
-S ohledem na tyto změny v vývoj webových aplikací ASP.NET Identity vyvinula sledovat tyto cíle:
+Vzhledem k tomu, tyto změny při vývoji webové aplikace ASP.NET Identity byla vyvinuta sledovat tyto cíle:
 
-- **Jeden systém ASP.NET Identity**
+- **ASP.NET Identity systémů**
 
-    - ASP.NET Identity můžete použít se všemi rozhraní ASP.NET, jako je ASP.NET MVC, webových formulářů, webové stránky, webové rozhraní API a SignalR.
-    - ASP.NET Identity lze použít při vytváření webové, telefon, úložiště nebo hybridní aplikace.
-- **Snadné zapojení data profilu o uživateli**
+    - ASP.NET Identity je možné se všemi rozhraní ASP.NET, jako je ASP.NET MVC, webových formulářů, webové stránky, webové rozhraní API a funkce SignalR.
+    - ASP.NET Identity je možné při vytváření webové, phone, store nebo hybridní aplikace.
+- **Snadné připojení v profilu data o uživateli**
 
-    - Budete mít kontrolu nad schéma uživatele a informace o profilu. Například můžete snadno povolit systém k ukládání dat narození uživatele zadané při registraci účtu v aplikaci.
+    - Budete mít kontrolu nad schéma uživatele a informace o profilu. Například můžete snadno povolit systému umožňuje ukládat data narození uživatele zadané při registraci účtu ve vaší aplikaci.
 
-- **Trvalost ovládací prvek**
+- **Ovládací prvek trvalosti**
 
-    - Ve výchozím nastavení ukládá systému ASP.NET Identity všechny informace o uživateli v databázi. ASP.NET Identity používá Entity Framework Code First k implementaci všech svůj mechanismus trvalosti.
-    - Vzhledem k tomu, že můžete řídit schématu databáze, běžné úkoly, jako je například změna názvy tabulek nebo změna datový typ primárních klíčů je jednoduše provést.
-    - Je snadné zařaďte jiného úložiště mechanismy, například SharePoint, služby Table úložiště Azure, databáze NoSQL, atd., aniž by museli throw `System.NotImplementedExceptions` výjimky.
-- **Možnosti testování částí**
+    - Ve výchozím nastavení systém identit technologie ASP.NET ukládá veškeré informace o uživateli v databázi. ASP.NET Identity používá Entity Framework Code First k implementaci všech svůj mechanismus trvalosti.
+    - Protože můžete řídit schéma databáze, běžné úkoly, jako je například změna názvů tabulek nebo změna datový typ primárního klíče je snadno udělat.
+    - Je snadné k mechanismy jiného úložiště, jako je SharePoint, tabulky služby Azure Storage, databáze NoSQL, atd., aniž byste museli throw `System.NotImplementedExceptions` výjimky.
+- **Testování jednotek**
 
-    - ASP.NET Identity vytvoří webovou aplikaci další jednotky možností intenzivního testování. Můžete napsat testy částí pro částí aplikace, které používají identitu ASP.NET.
-- **Zprostředkovatele rolí**
+    - ASP.NET Identity vytvoří webovou aplikaci další jednotky testovatelné. Můžete psát testy jednotek pro částí aplikace využívající ASP.NET Identity.
+- **Zprostředkovatel rolí**
 
-    - Je role zprostředkovatele, který vám umožňuje omezit přístup částí aplikace tak, že role. Můžete snadno vytvořit role, jako je "Admin" a přidání uživatelů do rolí.
-- **Na základě deklarace identity**
+    - Je zprostředkovatel rolí, které umožňuje omezit přístup k různým částem vaší aplikace tak, že role. Můžete snadno vytvořit role, například "Admin" a přidání uživatelů do rolí.
+- **Na základě deklarací identity**
 
-    - ASP.NET Identity podporuje ověřování na základě deklarace, kde je identita uživatele reprezentován jako sadu deklarací identity. Deklarace identity umožňují vývojářům být mnohem víc výrazovou v popisující identity uživatele, než dovolují role. Zatímco členství role je pouze logická hodnota (člen nebo třetí), deklarace identity může obsahovat bohaté informace o členství a identity uživatele.
-- **Zprostředkovatelé přihlášení prostřednictvím sociální sítě**
+    - ASP.NET Identity podporuje ověřování nezaloženého na deklaracích, kde je identitu uživatele reprezentována jako sada deklarací identity. Deklarace identity umožňují vývojářům bude mnohem více výrazovými možnostmi při popisu identity uživatele, než dovolují role. Vzhledem k tomu členství v roli je pouze logická hodnota (člen nebo třetí), může obsahovat deklaraci identity široké škály informací o identitě uživatele a členství.
+- **Poskytovatelé přihlášení prostřednictvím sociální sítě**
 
-    - Můžete snadno přidávat sociální plug-in protokolu například Account Microsoft, Facebook, Twitter, Google a dalších do vaší aplikace a ukládání dat specifických pro uživatele ve vaší aplikaci.
+    - Můžete snadno přidat sociální moduly protokolu například Account Microsoft, Facebook, Twitter, Google a dalších do vaší aplikace a ukládání dat specifických pro uživatele ve vaší aplikaci.
 - **Azure Active Directory**
 
-    - Můžete také přidat funkci přihlášení pomocí služby Azure Active Directory a ukládání dat specifických pro uživatele ve vaší aplikaci. Další informace najdete v tématu [účty organizace](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauth) v vytváření webové projekty ASP.NET v sadě Visual Studio 2013
+    - Můžete také přidání funkce přihlásit pomocí Azure Active Directory a ukládat data specifická pro uživatele ve vaší aplikaci. Další informace najdete v tématu [účty organizace](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauth) ve vytváření webových projektů ASP.NET v sadě Visual Studio 2013
 - **Integrace OWIN**
 
-    - Ověřování pomocí technologie ASP.NET je nyní podle middleware OWIN, který lze použít na všechny hostitele na základě OWIN. ASP.NET Identity nemá žádné závislosti na System.Web. Je plně kompatibilní rozhraní OWIN a lze použít v jakékoli aplikaci OWIN hostované.
-    - ASP.NET Identity používá ověřování OWIN protokolu protokolu rezervace uživatelů na webu. To znamená, že místo použití ověřování pomocí formulářů pro generování souboru cookie, aplikace bude používat OWIN CookieAuthentication to provést.
+    - Ověřování pomocí technologie ASP.NET je teď podle middleware OWIN, který jde použít na všechny hostitele na bázi OWIN. ASP.NET Identity nemá žádné závislosti na System.Web. Je plně kompatibilní rozhraní OWIN a lze použít v jakékoli OWIN hostované aplikace.
+    - ASP.NET Identity používá ověřování OWIN pro v/log odhlášení uživatelů na webu. To znamená, že místo použití ověřování pomocí formulářů k vygenerování souboru cookie, aplikace používá OWIN CookieAuthentication, který chcete.
 - **Balíček NuGet**
 
-    - ASP.NET Identity je znovu distribuován jako balíčku NuGet, který je nainstalován v šablony ASP.NET MVC, webových formulářů a webového rozhraní API, které dodávají spolu s Visual Studio 2013. Tento balíček NuGet můžete stáhnout z Galerie NuGet.
-    - Uvolnění ASP.NET Identity jako NuGet balíček usnadňuje týmem ASP.NET k iteraci v nové funkce a opravy chyb a poskytovat tyto pro vývojáře pro agilní způsobem.
+    - ASP.NET Identity je znovu distribuován jako balíček NuGet, který je nainstalovaný v šablonách technologie ASP.NET MVC, webových formulářů a webového rozhraní API, které se dodávají pomocí sady Visual Studio 2013. Tento balíček NuGet můžete stáhnout z Galerie NuGet.
+    - Uvolnění ASP.NET Identity jako NuGet package usnadňuje tým ASP.NET iterovat nové funkce a opravy chyb a tyto vývojářům dodávat promptně.
 
 ## <a name="getting-started-with-aspnet-identity"></a>Začínáme s ASP.NET Identity
 
-ASP.NET Identity se používá v šablony projektů Visual Studio 2013 pro rozhraní ASP.NET MVC, webových formulářů, webového rozhraní API a SPA. V tomto návodu jsme budete znázorňují použití ASP.NET Identity šablony projektu k přidání funkcí registrace, přihlášení a odhlášení uživatele.
+ASP.NET Identity se používá v šablonách projektů Visual Studio 2013 pro ASP.NET MVC, webových formulářů, SPA a webového rozhraní API. V tomto názorném postupu vytvoříme znázorňují použití ASP.NET Identity šablony projektu k přidání funkcí registrace, přihlášení a odhlášení uživatele.
 
-ASP.NET Identity je implementovaná pomocí následujícího postupu. Účelem tohoto článku je získáte nejvyšší úrovni přehled o ASP.NET Identity; můžete ji krok za krokem podle nebo právě přečtěte si podrobnosti. Podrobnější pokyny k vytváření aplikací pomocí ASP.NET Identity, včetně použití nového rozhraní API pro přidání uživatelů rolí a informace o profilu, najdete v části Další kroky na konci tohoto článku.
+ASP.NET Identity je implementováno pomocí následujícího postupu. Cílem tohoto článku je poskytnout základní přehled ASP.NET Identity můžete na něho krok za krokem nebo jenom zobrazit podrobné informace. Podrobnější pokyny k vytvoření aplikace pomocí ASP.NET Identity, včetně pomocí nového rozhraní API pro přidání uživatelů rolí a informace o profilu, najdete v části Další kroky na konci tohoto článku.
 
-1. Vytvořte aplikaci ASP.NET MVC jednotlivé účty. Můžete použít ASP.NET Identity v architektuře ASP.NET MVC, webových formulářů, webového rozhraní API, SignalR atd. V tomto článku jsme se spustí se aplikace ASP.NET MVC.  
+1. Vytvoření aplikace ASP.NET MVC pomocí samostatné účty. Můžete používat ASP.NET Identity v ASP.NET MVC, webových formulářů, webové rozhraní API, SignalR atd. V tomto článku Začneme s aplikací ASP.NET MVC.  
   
     ![](introduction-to-aspnet-identity/_static/image1.png)
 2. Vytvořený projekt obsahuje následující tři balíčky pro ASP.NET Identity.
 
     - [`Microsoft.AspNet.Identity.EntityFramework`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.EntityFramework/)  
-   Tento balíček obsahuje implementace Entity Framework ASP.NET Identity, který se uchová ASP.NET Identity dat a schématu na SQL Server.
+   Tento balíček obsahuje implementace Entity Framework ASP.NET Identity, který se zachová data technologie ASP.NET Identity a schémat na SQL Server.
     - [`Microsoft.AspNet.Identity.Core`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Core/)  
-   Tento balíček má základní rozhraní pro ASP.NET Identity. Tento balíček lze zapsat implementace pro ASP.NET Identity, že trvalost jiné cíle ukládá jako je například Azure Table Storage, NoSQL databáze atd.
+   Tento balíček obsahuje základní rozhraní pro ASP.NET Identity. Tento balíček je možné napsat implementaci pro identitu ASP.NET, že různé cíle trvalého úložiště, jako jsou Azure Table Storage, NoSQL databáze atd.
     - [`Microsoft.AspNet.Identity.OWIN`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Owin/)  
-   Tento balíček obsahuje funkce, které se používá k zařaďte ověřování OWIN s ASP.NET Identity v aplikacích ASP.NET. Používá se při přidání protokolu do funkce aplikace a volání do middleware ověřování souborů Cookie OWIN ke generování souboru cookie.
-3. Vytváření uživatele.  
-   Spuštění aplikace a potom klikněte na **zaregistrovat** odkaz pro vytvoření uživatele. Následující obrázek ukazuje na stránku registrace, který shromažďuje uživatelské jméno a heslo.  
+   Tento balíček obsahuje funkce, které se používá k ověřování OWIN s ASP.NET Identity v aplikacích technologie ASP.NET. Používá se při přidání protokolu do funkce do vaší aplikace a volání do souboru Cookie ověřování OWIN middleware ke generování souboru cookie.
+3. Vytvoření uživatele.  
+   Spusťte aplikaci a potom klikněte na **zaregistrovat** odkaz pro vytvoření uživatele. Následující obrázek ukazuje stránku registrace, které shromažďuje uživatelské jméno a heslo.  
   
     ![](introduction-to-aspnet-identity/_static/image2.png)  
   
-   Když uživatel klikne **zaregistrovat** tlačítko `Register` akce řadiče účtu vytvoří uživatele voláním rozhraní API ASP.NET Identity, jak je znázorněno níže:
+   Pokud uživatel klikne **zaregistrovat** tlačítko, `Register` akce kontroleru účet vytvoří uživatele voláním rozhraní API technologie ASP.NET Identity, jak je zdůrazněno níže:
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample1.cs?highlight=8-9)]
 4. Přihlásit se.  
-   Pokud byl uživatel vytvořen úspěšně, uživatel přihlášen pomocí `SignInAsync` metoda.  
+   Pokud byl uživatel vytvořen úspěšně, uživatel přihlášený pomocí `SignInAsync` metody.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample2.cs?highlight=12)]
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
-   Zvýrazněný výš v `SignInAsync` metoda generuje [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Vzhledem k tomu, že jsou založené na deklaracích identity systému ASP.NET Identity a ověřování souborů Cookie OWIN, rozhraní framework vyžaduje, aby aplikace ke generování ClaimsIdentity pro uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například jaké role uživatel patří. V této fázi můžete také přidat další deklarace pro uživatele.  
+   Zvýrazněný kód výše v `SignInAsync` generuje metodu [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Protože ASP.NET Identity a ověřování souborů Cookie OWIN jsou založené na deklaracích systém, rozhraní framework vyžaduje, aby aplikace generovat objekt ClaimsIdentity pro daného uživatele. ClaimsIdentity obsahuje informace o všech deklarací identity pro uživatele, například ke kterým rolím uživatel patří. Můžete také přidat další deklarace identity pro uživatele v této fázi.  
   
-   Zvýrazněný níže v `SignInAsync` metoda přihlášení uživatele pomocí třídě z OWIN a volání `SignIn` a předávání v ClaimsIdentity.  
+   Zvýrazněný kód níže v `SignInAsync` metoda přihlásí uživatele s použitím správce AuthenticationManager z OWIN a volání `SignIn` a předávání ClaimsIdentity.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample4.cs?highlight=8-11)]
 5. Odhlaste se.  
@@ -143,34 +142,34 @@ ASP.NET Identity je implementovaná pomocí následujícího postupu. Účelem t
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
-   Zvýrazněných code výš ukazuje OWIN `AuthenticationManager.SignOut` metoda. Toto je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu ve webových formulářů.
+   Zvýrazněný kód výše ukazuje OWIN `AuthenticationManager.SignOut` metody. To je obdobou [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) metodu používanou [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) modulu ve webových formulářů.
 
 ## <a name="components-of-aspnet-identity"></a>Součástí ASP.NET Identity
 
-Následující diagram znázorňuje komponenty ASP.NET Identity systému (klikněte na [to](introduction-to-aspnet-identity/_static/image3.png) nebo v diagramu a zvětšete je). Balíčky zeleně tvoří systém identit technologie ASP.NET. Všechny balíčky jsou závislosti, které jsou potřeba k použití systém identit technologie ASP.NET v aplikacích ASP.NET.
+Následující diagram znázorňuje komponenty systému ASP.NET Identity (klikněte na [to](introduction-to-aspnet-identity/_static/image3.png) nebo v diagramu ji zvětšete). Balíčky zeleně tvoří systém identit technologie ASP.NET. Všechny ostatní balíčky jsou závislosti, které jsou potřeba pro použití systému identit technologie ASP.NET v aplikacích technologie ASP.NET.
 
 [![](introduction-to-aspnet-identity/_static/image5.png)](introduction-to-aspnet-identity/_static/image4.png)
 
 Následuje stručný popis balíčků NuGet není již bylo zmíněno dříve:
 
 - [Microsoft.Owin.Security.Cookies](http://www.nuget.org/packages/Microsoft.Owin.Security.Cookies/)  
- Middleware, který umožňuje aplikaci používat soubor cookie na základě ověřování, podobné technologie ASP. Ověřování pomocí formulářů pro Asp.net.
+ Middleware, který umožňuje aplikaci používat soubor cookie na základě ověřování, podobně jako ASP. Ověřování pomocí formulářů pro síť.
 - [EntityFramework](http://www.nuget.org/packages/EntityFramework/)  
- Technologie přístup doporučené dat společnosti Microsoft pro relačních databází je rozhraní Entity Framework.
+ Entity Framework je technologie přístup doporučené dat společnosti Microsoft pro relační databáze.
 
-## <a name="migrating-from-membership-to-aspnet-identity"></a>Migrace z členství na identitě ASP.NET Identity
+## <a name="migrating-from-membership-to-aspnet-identity"></a>Migrace z členství na ASP.NET Identity
 
-Věříme, že brzy poskytovat pokyny k migraci vaší existující aplikace, které používají členství technologie ASP.NET nebo jednoduché členství na nový systém ASP.NET Identity.
+Věříme, že brzy poskytovat rady k migraci vaší stávající aplikace, které používají členství technologie ASP.NET nebo jednoduché členství na nový systém ASP.NET Identity.
 
 ## <a name="next-steps"></a>Další kroky
 
-- [Vytvoření aplikace ASP.NET MVC 5 s použitím Facebook a Google OAuth2 a přihlašování OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)  
- Tento kurz používá rozhraní API ASP.NET Identity k přidání informace o profilu k uživatelské databázi a jak k ověřování pro Google a sítě Facebook.
-- [Vytvoření aplikace ASP.NET MVC pomocí ověřování a databázi SQL a nasazení do Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)  
- Tento kurz ukazuje, jak použijete rozhraní API Identity k přidání uživatelů a rolí.
-- [Jednotlivých uživatelských účtů](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#indauth) při vytváření ASP.NET – webové projekty v sadě Visual Studio 2013
-- [Účty organizace](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauth) při vytváření ASP.NET – webové projekty v sadě Visual Studio 2013
-- [Přizpůsobení informací o profilu v identitě ASP.NET Identity šablony VS 2013](https://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx)
-- [Další informace získáte ze sociálních sítí, které se používají v rámci šablon projektu VS 2013](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
+- [Vytvoření aplikace ASP.NET MVC 5 s Facebook a Google OAuth2 nebo OpenID přihlašování](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)  
+ Tento kurz používá rozhraní API technologie ASP.NET Identity k přidání informace z profilu k uživatelské databázi a způsob ověřování pomocí Googlu a Facebooku.
+- [Vytvoření aplikace ASP.NET MVC pomocí ověření a SQL DB a nasazení do služby Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)  
+ Tento kurz ukazuje, jak použít rozhraní API Identity k přidání uživatelů a rolí.
+- [Individuální uživatelské účty](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#indauth) při vytváření projektů v prostředí ASP.NET v sadě Visual Studio 2013
+- [Účty organizací](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauth) při vytváření projektů v prostředí ASP.NET v sadě Visual Studio 2013
+- [Přizpůsobení informací o profilu ASP.NET Identity v šablonách VS 2013](https://blogs.msdn.com/b/webdev/archive/2013/10/16/customizing-profile-information-in-asp-net-identity-in-vs-2013-templates.aspx)
+- [Další informace získáte z poskytovatelé služeb sociálních sítí použít v šablonách projektů VS 2013](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
 - [https://github.com/rustd/AspnetIdentitySample](https://github.com/rustd/AspnetIdentitySample)  
- Ukázkovou aplikaci, která ukazuje, jak přidat základní role a podpora uživatelů a jak chcete role a správu uživatelů.
+ Ukázková aplikace, který ukazuje, jak přidat základní role a podpora uživatelů a rolí a správy uživatelů.

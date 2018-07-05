@@ -1,6 +1,6 @@
 ---
 uid: aspnet/overview/owin-and-katana/katana-samples
-title: Ukázky Katana | Microsoft Docs
+title: Použití sady Katana | Dokumentace Microsoftu
 author: microsoft
 description: ''
 ms.author: aspnetcontent
@@ -9,48 +9,47 @@ ms.date: 01/17/2014
 ms.topic: article
 ms.assetid: bec04f5d-2638-4417-b288-97c58c8d6379
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/katana-samples
 msc.type: authoredcontent
-ms.openlocfilehash: 815355c00c9c15cfefa5f98dc89da676743b0390
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e81da1e650d8dfd24a3e0fda6aa42b7f360ce12d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28034487"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393316"
 ---
-<a name="katana-samples"></a>Ukázky Katana
+<a name="katana-samples"></a>Použití sady Katana
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-## <a name="katana-samples"></a>Ukázky Katana
+## <a name="katana-samples"></a>Použití sady Katana
 
 **ASP.NET směruje ukázka** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/AspNetRoutes/ReadMe.txt)  
-V některých aplikacích můžete spojit komponenty OWIN v tabulce směrování Asp.Net node souběžně s komponenty jiných OWIN. Tento příklad ukazuje způsob použití metod rozšíření RouteCollection MapOwinPath a MapOwinRoute poskytované Microsoft.Owin.Host.SystemWeb.
+V některých aplikacích budete chtít připojení komponenty OWIN v tabulce směrování Asp.Net vedle komponenty bez OWIN. Tento příklad ukazuje, jak použít rozšiřující metody RouteCollection MapOwinPath a MapOwinRoute poskytované Microsoft.Owin.Host.SystemWeb.
 
-**Vytvoření větve kanálů ukázka** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/BranchingPipelines/ReadMe.txt)  
-Zpracování žádosti OWIN kanály nemusí být lineární, že můžete vytvořit větve zpracovávat požadavky různými způsoby. Tento příklad ukazuje, jak vytvořit větvení kanál na základě cesty k požadavku nebo jiná data požadavku třeba hlavičky. Tyto součásti jsou k dispozici v Microsoft.Owin.Mapping balíček nuget.
+**Větvení ukázkové kanály** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/BranchingPipelines/ReadMe.txt)  
+Není potřeba mít lineární kanály zpracování žádostí OWIN, je možné větvit ke zpracování požadavků různými způsoby. Tento příklad ukazuje, jak vytvořit větvení profilace na základě cesty k požadavkům nebo jiné žádosti o data, jako jsou hlavičky. Tyto součásti jsou k dispozici v balíčku nuget Microsoft.Owin.Mapping.
 
-**Ukázka vlastního serveru** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/CustomServer/MyCustomServer/CustomServer.cs)   
+**Ukázka vlastních serverových** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/CustomServer/MyCustomServer/CustomServer.cs)   
 Ukazuje, jak použít vlastní server OWIN při vlastním hostování OWIN.
 
-**Ukázka vložených** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/Embedded/ReadMe.txt)  
-Některé servery OWIN lze spustit v rámci vlastní proces (&quot;hostovanou na vlastním&quot;). Tento příklad ukazuje postup spuštění OWIN aplikace pomocí nástroje poskytované subsystémem pro balíček Microsoft.Owin.Hosting nuget.
+**Vložit ukázková** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/Embedded/ReadMe.txt)  
+Některé servery OWIN lze spustit ve vašem vlastním procesu (&quot;v místním prostředí&quot;). Tato ukázka předvádí, jak můžete začít pomocí nástroje poskytované subsystémem balíček nuget Microsoft.Owin.Hosting aplikace OWIN.
 
-**Ukázka HelloWorld** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/HelloWorld/ReadMe.txt)  
-OWIN je server HTTP abstrakce rozhraní API, která umožňuje přenosnost aplikací na různých serverech. Tento příklad ukazuje, jak psát aplikace Hello World pomocí některé **jednoduché obálky** kolem nezpracovaná abstrakce OWIN a spusťte ho na webovém serveru jako ASP.NET.
+**Ukázka Hello World** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/HelloWorld/ReadMe.txt)  
+OWIN je HTTP server abstrakce rozhraní API, která umožňuje přenositelnost aplikací napříč různými servery. Tato ukázka předvádí, jak psát aplikace Hello World pomocí několika **jednoduché obálky** kolem nezpracovaná abstrakce OWIN a spusťte ho na webovém serveru, jako je ASP.NET.
 
 **Ukázka programu Hello World nezpracovaná OWIN** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/HelloWorldRawOwin/ReadMe.txt)  
-Tento příklad znázorňuje, jak psát aplikace Hello, World pomocí **nezpracovaná** abstrakce OWIN a potom ho spusťte na webovém serveru, jako je technologie Asp.Net.
+Tato ukázka předvádí, jak psát aplikace Hello World pomocí **nezpracovaná** abstrakce OWIN a spusťte ho na webovém serveru, jako je Asp.Net.
 
 **Ukázka SignalR** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/SignalR/Program.cs)  
-Ukazuje, jak hostování na vlastním SignalR pomocí OWIN nebo Katana. Další informace o samoobslužné hostování SignalR najdete v tématu [kurz: SignalR hostování na vlastním](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
+Ukazuje, jak hostování na vlastním serveru SignalR používá OWIN a Katana. Další informace o samoobslužné hostování funkci SignalR naleznete v tématu [kurz: SignalR v místním](../../../signalr/overview/deployment/tutorial-signalr-self-host.md).
 
 **Statické soubory ukázka** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/StaticFilesSample/Startup.cs)   
-Ukazuje, jak pro podporu požadavků HTTP pro statické soubory pomocí OWIN nebo Katana.
+Ukazuje, jak pro podporu požadavků HTTP pro statické soubory, které používá OWIN a Katana.
 
 **Webové rozhraní API** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebApi/ReadMe.txt)   
-Tento příklad ukazuje, jak pro hostování OWIN ve službě IIS a přidání webového rozhraní API do kanálu OWIN.
+Tento příklad ukazuje, jak k hostování OWIN ve službě IIS a webového rozhraní API přidat do kanálu OWIN.
 
-**Webový soket ukázka** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebSocketSample/WebSocketServer/Startup.cs)   
-Ukazuje, jak pro podporu webové sokety v OWIN pomocí [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/library/system.net.websockets.websocket(v=vs.110).aspx) třídy.
+**Webových soketů ukázka** | [zdrojový kód](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebSocketSample/WebSocketServer/Startup.cs)   
+Ukazuje, jak pomocí podporují webové sokety OWIN [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/library/system.net.websockets.websocket(v=vs.110).aspx) třídy.

@@ -1,140 +1,139 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
-title: 'Iterace #6 – použijte testy řízený vývoj (C#) | Microsoft Docs'
+title: 'Iterace #6 – použití vývoje řízeného (C#) | Dokumentace Microsoftu'
 author: microsoft
-description: V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci...
+description: V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
 ms.topic: article
 ms.assetid: 013c3c26-7dc3-41d1-8064-f233c86008b5
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 94502625f66d3eb08a24b8f2a369bf456a3367b1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2b3b0dc38d933f7ff8922b6642f904e4bb40cfe1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30876290"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379086"
 ---
-<a name="iteration-6--use-test-driven-development-c"></a>Iterace #6 – použijte testy řízený vývoj (C#)
+<a name="iteration-6--use-test-driven-development-c"></a>Iterace #6 – použití vývoje řízeného (C#)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-[Stáhněte si kód](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
+[Stáhnout kód](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
 
-> V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci přidáme kontaktní skupiny.
+> V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace můžeme přidat skupiny kontaktů.
 
 
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Vytvoření aplikace ASP.NET MVC správy kontaktů (C#)
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Vytvoření aplikace ASP.NET MVC pro správu kontaktů (C#)
   
 
-Z této série kurzů využijeme celou aplikaci obraťte se na správu od začátku ukončíte. Obraťte se na správce aplikace umožňuje ukládat kontaktní údaje - názvy, telefonní čísla a e-mailové adresy – seznam osob.
+V této sérii kurzů jsme integrovali celou aplikaci kontakt správy od začátku na dokončení. Obraťte se na správce aplikace umožňuje ukládat kontaktní údaje - jména, telefonní čísla a e-mailové adresy – seznam lidí.
 
-Přes několikrát jsme sestavení aplikace. S každé iteraci jsme postupně zlepšení aplikace. Cílem tohoto více iterace přístupu je vám umožní pochopit důvod pro každé změně.
+Vytváříme aplikaci přes více iterací. S každou iterací zvyšujeme postupně aplikace. Cílem tohoto přístupu s více iterace je vám pomohl pochopit důvod pro každou změnu.
 
-- Iterace #1 – Vytvoření aplikace. V první iteraci vytvoříme obraťte se na správce v nejjednodušší způsob, jak to možné. Nemůžeme přidat podporu pro základní databázových operací: vytvořit, číst, aktualizovat a odstranit (CRUD).
+- Iterace #1 – Vytvoření aplikace. V první iteraci vytvoříme Správce kontaktů v Nejjednodušším způsobem, jak je to možné. Přidáváme podporu pro základní databázových operací: vytváření, čtení, aktualizace a odstranění (CRUD).
 
-- Iterace #2 – zpřístupnění aplikace vypadat dobrý. V této iteraci můžeme vylepšit vzhled aplikace Úprava výchozí stránky předlohy zobrazení ASP.NET MVC a stylů CSS.
+- Ujistěte se, iterace #2 – vylepšení vzhledu aplikace. V této iterace můžeme zlepšit vzhled aplikace tak, že změna výchozích hlavní stránka zobrazení ASP.NET MVC a stylů CSS.
 
-- Iterace #3 – přidání ověřování formuláře. V třetím iteraci přidáme ověření základní formulář. Jsme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Můžeme také ověřit e-mailových adres a telefonních čísel.
+- Iterace #3 – Přidání ověřovacího formuláře. Ve třetí iterace přidáme ověření základní formulář. Můžeme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také ověření e-mailových adres a telefonních čísel.
 
-- Iterace #4 - li aplikaci volně vázány. V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Například můžeme Refaktorovat naše aplikace pro použití vzoru úložiště a vzoru vkládání závislostí.
+- Iterace #4 – vytvoření volně spárované aplikace. V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
 
-- Iterace #5 – vytvoření testování částí. V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro naše řadiče a logiku ověření.
+- Iterace #5 – vytvoření testů jednotek. V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro naše řadiče a logiku ověřování.
 
-- Iterace #6 - použití vývoje řízeného testováním. V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci přidáme kontaktní skupiny.
+- Iterace #6 – použití vývoje řízeného testováním. V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace můžeme přidat skupiny kontaktů.
 
-- Iterace #7 – přidání funkci Ajax. V sedmého iteraci jsme přidáním podpory pro Ajax zvýšit rychlost reakce a výkon aplikace.
+- Iterace #7 – přidání funkcí Ajax. V sedmé iteraci můžeme zlepšit rychlost reakce a výkon naší aplikace tak, že přidáte podporu pro Ajax.
 
-## <a name="this-iteration"></a>Tato iterace
+## <a name="this-iteration"></a>Tuto iteraci
 
-V předchozí iteraci aplikace, obraťte se na správce jsme vytvořili testování částí zajistit o bezpečnostní opatření pro naše kódu. Motivace pro testování částí se aby naše kód odolnější vůči změnit. Pomocí jednotkových testů na místě jsme brouka provést změnu kódu a okamžitě vědět, zda jsme zrušili existující funkce.
+V předchozí iteraci aplikace Správce kontaktů jsme vytvořili testů jednotek, které poskytují bezpečnostní pro našeho kódu. Motivace pro vytváření testů jednotek bylo zajistit odolnost změnit náš kód. S testy jednotek v místě můžeme využívá elastic provádět změny do našeho kódu a okamžitě zjistit, jestli jsme zrušili existující funkce.
 
-V této iteraci používáme testování částí pro úplně jinou účel. V této iteraci používáme testování částí v rámci filosofie návrhu aplikace volá *vývoje řízeného testováním*. Můžete provádět testy řízený vývoj, nejprve napsat testy a zapište kód pro testy.
+V této iterace používáme testů jednotek pro úplně jinou účel. V této iterace používáme jednotkové testy jako součást filozofie návrhu aplikace volá *vývoj řízený testováním*. Můžete Nácvik vývoje řízeného testováním, nejprve psaní testů a teprve pak píšete kód proti testy.
 
-Přesněji řečeno, když cvičení vývoje řízeného testováním, existují tři kroky, které můžete provést při vytváření kódu (červená / Refaktorovat nebo zelená):
+Přesněji řečeno, při využívání vývoj řízený testováním, existují tři kroky, které můžete provést při vytváření kódu (červenou nebo zelenou nebo Refaktorujte):
 
-1. Zápis testů jednotek, které selžou (červený)
-2. Napsat kód, který předává testování částí (zelený)
-3. Refaktorovat kódu (Refaktorovat)
+1. Napsat Jednotkový test, který selže (červený)
+2. Napsat kód, který projde testem jednotek (zelený)
+3. Refaktoring kódu (Refaktorujte)
 
-Nejprve zápisu testování částí. Testování částí mají vyjádřit svůj záměr pro jak očekáváte, že váš kód se bude chovat. Při prvním vytvoření testu jednotek, má selhat testování částí. Test by měl nezdaří, protože ještě nebyly zapsány žádné aplikační kód, který splňuje test.
+Nejprve můžete napsat Jednotkový test. Jednotkový test by měl vyjadřovat chovat svůj záměr pro jak očekáváte, že váš kód. Při prvním vytvoření testování částí, test jednotky by selhat. Test by měl nezdaří, protože dosud jste nenapsali žádný další kód aplikace, která splňuje testu.
 
-V dalším kroku v pořadí pro testování částí předat napsat přesně akorát kód. Cílem je napsat kód laziest, sloppiest a nejrychlejších možné způsobem. Neměli odpady čas přemýšlení o architektuře vaší aplikace. Místo toho měli byste se zaměřit na zápis minimální množství kódu, které jsou nezbytné pro splnění záměr vyjádřená testování částí.
+Dále napište právě dostatek kódu v pořadí pro test jednotek proběhl úspěšně. Cílem je napsat kód tak, jak laziest, sloppiest a nejrychlejší možné. Neměli ztrácet čas přemýšlení o architektuře vaší aplikace. Místo toho by měla soustředit na psaní minimální množství kódu, které jsou nezbytné pro splnění záměr vyjádřena pomocí testování částí.
 
-Nakonec po jste napsali dostatek kódu, můžete krok zpět a zvažte přehled architektury aplikace. V tomto kroku přepisování (refactor) kódu využitím návrh softwaru vzory – například použitému vzoru – tak, aby váš kód více udržovatelný. Kód v tomto kroku můžete přepsat pomocí fearlessly vzhledem k tomu, že váš kód je předmětem testování částí.
+Nakonec poté, co jste napsali dostatek kódu, které můžete počkáte a zvážíte architektury aplikace. V tomto kroku, přepište (Refaktorujte) kódu s využitím návrh softwaru vzory – například použitému vzoru – tak, aby váš kód je jednodušší údržbu. Váš kód v tomto kroku můžete ucelená přepsat, protože kódu je pokryta testy jednotek.
 
-Existuje mnoho výhod, které jsou výsledkem cvičení testy řízený vývoj. První, testy řízený vývoj vynutí se můžete soustředit na kód, který je ve skutečnosti potřebuje k zapsání. Vzhledem k tomu, že jsou neustále zaměřuje na právě zápis dostatek kódu předat konkrétní test, nebudou moci wandering do plevelem a zápis masivní objemy kód, který se nikdy nepoužívejte.
+Existuje mnoho výhod, které jsou výsledkem ocení vývoj řízený testováním. První vývoj řízený testováním vynutí vám umožní zaměřit se na kód, který má být zapsán skutečně potřebuje. Protože jsou neustále zaměřené na právě psaní dostatek kódu určitého testu předat, nebudou moci wandering do plevelů a zápis obrovského množství kódu, který se nikdy nepoužívejte.
 
-Druhý návrh metodika "nejdřív otestovat" vynutí psaní kódu z perspektivy použití vašeho kódu. Jinými slovy při cvičení vývoje řízeného testováním, neustále programujete testy z hlediska uživatelů. Proto může způsobit vývoje řízeného testováním čisticí a více nerozumí rozhraní API.
+Za druhé návrh metodologie "nejprve otestovat" vynutí psaní kódu z hlediska využití vašeho kódu. Jinými slovy při využívání vývoj řízený testováním, neustále psaní testů z pohledu uživatele. Proto může způsobit testy řízený vývoj rozhraní API přehlednější a pomohou lépe porozumět.
 
-Nakonec vývoje řízeného testováním vynutí zápis testů částí jako součást normální proces vytváření aplikace. Jak se blíží konečný termín projektu, testování je obvykle první věc, kterou nedostane mimo okno. Při cvičení vývoje řízeného testováním na druhé straně, se pravděpodobně být virtuous o zápis testů částí, protože vývoje řízeného testováním provede testování částí centrální proces vytváření aplikace.
+Nakonec vývoj řízený testováním vynutí pro psaní jednotkových testů jako součást normální proces vytváření aplikace. Jak blíží konečný termín projektu testování je obvykle první věc, se kterou jdeme okna. Při využívání vývoj řízený testováním na druhé straně, se pravděpodobně bude porozumí o zápis testů jednotek, protože vývoj řízený testováním provede testování částí centrální proces vytváření aplikace.
 
 > [!NOTE] 
 > 
-> Další informace o vývoje řízeného testováním, I doporučujeme, abyste si přečetli Michael peří kniha **efektivní práce s kódem starší**.
+> Další informace o vývoj řízený testováním, můžu jenom doporučit, abyste si přečetli Michael peří knihy **práci efektivně pomocí starší verze kódu**.
 
 
-V této iteraci přidáme novou funkci pro naši aplikaci obraťte se na správce. Nemůžeme přidat podporu pro skupiny kontaktu. Můžete vytvořit, obraťte se na skupiny a uspořádat do kategorií, jako je například obchodní kontakty a skupiny Friend.
+V této iterace přidáme nové funkce do naší aplikace Správce kontaktů. Přidáváme podporu pro skupiny kontaktu. Můžete použít kontakt skupiny pro uspořádání vašich kontaktů do kategorií, například obchodní a skupiny typu Friend.
 
-Tato nová funkce přidáme do aplikace pomocí následujících proces vývoje řízeného testováním. Jsme budete nejprve napsat naše testy jednotek a jsme budete psát všechny naše kód pro tyto testy.
+Tato nová funkce přidáme k naší aplikace pomocí následujícího postupu řízeného vývoje. Budeme psát testech jednotek nejprve prostě budeme psát všechny našeho kódu proti tyto testy.
 
-## <a name="what-gets-tested"></a>Získá testů, které
+## <a name="what-gets-tested"></a>Co získá testování
 
-Jak již bylo zmíněno v předchozí iteraci, obvykle nemáte zápisu testování částí pro logiku přístup dat nebo zobrazit logiku. Testování částí t zápisu pro logiku přístup dat neuděláte, protože přístup k databázi je relativně pomalé operace. Testování částí t zápisu pro zobrazení logiku neuděláte, protože přístup k zobrazení vyžaduje roztočený až webového serveru, který je relativně pomalé operace. By neměl t zápis testů jednotek, pokud test mohou být provedeny opakovaně velmi rychle
+Jak jsme probírali v předchozí iteraci, můžete obvykle vytvořte jednotkové testy pro logikou přístupu dat ani zobrazit logiku. T zápis testů jednotek pro logikou přístupu dat zadávat, protože přístup k databázi se poměrně pomalá operace. Vzhledem k tomu vybudujete webového serveru, který je poměrně pomalá operace přístupu k zobrazení vyžaduje zadávat t zápis testů jednotek pro zobrazení logiku. Nesmí obsahovat více t napsat Jednotkový test, pokud test lze spustit znovu a znovu velmi rychle
 
-Protože vývoje řízeného testováním vycházejí z testů jednotek, zaměříme původně na zápis řadiče a obchodní logiku. Budeme-li se vyhnout zásahu do databáze nebo zobrazení. Jsme won t změnit databázi nebo vytvořte naše zobrazení až velmi konce tohoto kurzu. Začneme s co může být testována.
+Protože vývoj řízený testováním doprovází testování částí, zaměříme nejprve na kontroleru a obchodní logiky. Můžeme vyhnout, klepnou na databázi nebo zobrazení. Vyhráli jsme t upravit databázi nebo vytvořte naše zobrazení velmi konce tohoto kurzu. Začneme s co můžete otestovat.
 
-## <a name="creating-user-stories"></a>Vytvoření uživatelských scénářů
+## <a name="creating-user-stories"></a>Vytváření uživatelských scénářů
 
-Při cvičení vývoje řízeného testováním, je vždy nejprve zápis testu. To okamžitě vyvolá Otázka: jak můžete rozhodnout, jaké testovací zápis nejprve? Na tuto otázku odpovědět, je nutné zapsat sadu [ **uživatelských scénářů**](http://en.wikipedia.org/wiki/User_stories).
+Při využívání vývoj řízený testováním, vždy začněte psaní testu. To okamžitě vydá dotaz: jak rozhodnout, jaká testovací zapsat nejprve? Na tuto otázku odpovědět, měli byste psát sadu [ **uživatelských scénářů**](http://en.wikipedia.org/wiki/User_stories).
 
-Uživatelský scénář je velmi stručný popis (obvykle jedna věta) požadavek na software. Mělo by být netechnické popis požadavek zapsán z hlediska uživatelů.
+Uživatelský scénář je velmi stručný popis (obvykle jedna věta) požadavky na software. Měla by být netechnické popis požadavek zapsán z pohledu uživatele.
 
-Tady s sadu uživatelských scénářů, které popisují funkce vyžadované službou nové funkce kontaktujte skupiny:
+Tady s sadu uživatelských scénářů, které popisují funkce vyžadované nové funkce skupina kontaktu:
 
-1. Uživatele můžete zobrazit seznam skupin kontaktů.
-2. Uživatele můžete vytvořit novou skupinu kontaktu.
-3. Uživatel může odstranit existující kontaktní skupiny.
-4. Uživatele můžete vybrat skupinu kontaktů, při vytváření nového kontaktu.
-5. Uživatele můžete vybrat skupinu kontaktů, při úpravě existující kontakt.
-6. Seznam skupin kontaktů se zobrazí v zobrazení indexu.
-7. Po kliknutí kontaktujte skupiny, zobrazí se seznam odpovídající kontakty.
+1. Uživatel může zobrazit seznam skupin kontaktů.
+2. Uživatel může vytvořit novou skupinu kontaktu.
+3. Uživatel může odstranit existující skupiny kontaktů.
+4. Uživatele můžete vybrat skupinu a kontaktů, při vytváření nového kontaktu.
+5. Uživatele můžete vybrat skupinu a kontaktů, při úpravě existujícího kontaktu.
+6. Seznam kontaktů skupiny se zobrazí v zobrazení indexu.
+7. Po kliknutí kontaktujte skupinu, zobrazí se seznam odpovídajících kontakty.
 
-Všimněte si, že tento seznam uživatelských scénářů je zcela nerozumí zákazníka. Neexistuje žádné zmínky technickou implementaci podrobnosti.
+Všimněte si, že tento seznam uživatelských scénářů je zcela srozumitelné ze strany zákazníka. Není k dispozici žádnou zmínku o podrobnosti o technické implementaci.
 
-Při procesu vytváření aplikace, se může stát přesnější sadu uživatelských scénářů. Uživatelský scénář může rozdělit na několik scénářů (požadavky). Například můžete rozhodnout, že vytvoření nové skupiny kontaktní by měla zahrnovat ověření. Odesílání kontaktní skupiny bez názvu by měla vrátit chybu ověření.
+Během procesu vytváření vaší aplikace, se může stát přesnější sada uživatelských scénářů. Uživatelský scénář může rozdělit na několik scénářů (požadavky). Například můžete rozhodnout, že vytváří se nová skupina kontaktní by měl zahrnovat ověření. Odesílání kontaktní skupiny bez názvu by měla vrátit chybu ověřování.
 
-Po vytvoření seznam uživatelských scénářů, jste připraveni k zápisu svůj první test jednotky. Začneme vytvořením testování částí pro zobrazení seznamu kontaktů skupin.
+Po vytvoření seznamu uživatelských scénářů, jste připraveni napsat první test částí. Začneme vytvořením testování částí pro zobrazení seznamu kontaktů skupin.
 
-## <a name="listing-contact-groups"></a>Seznam skupin kontaktů
+## <a name="listing-contact-groups"></a>Výpis skupin kontaktů
 
-Naše první uživatelský scénář je, že uživatel by měl být zobrazit seznam skupin kontaktů. Musíme express tento scénář s testu.
+Naši první uživatelský scénář je, že uživatel by měl zobrazit seznam skupin kontaktů. Musíme express tento scénář s testem.
 
-Vytvořit nový test jednotky kliknutím pravým tlačítkem na složku řadiče v projektu ContactManager.Tests výběr **přidat, nové testovací**a výběr **jednotkové testování** šablony (viz obrázek 1). Název nové jednotky testování GroupControllerTest.cs a klikněte na **OK** tlačítko.
-
-
-[![Přidání testů jednotek GroupControllerTest](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
-
-**Obrázek 01**: Přidání testů jednotek GroupControllerTest ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image2.png))
+Vytvořte nový test jednotek kliknutím pravým tlačítkem složku řadiče v projektu ContactManager.Tests výběr **přidat, otestovat nové**a výběrem možnosti **testování částí** šablony (viz obrázek 1). Název nové jednotky testování GroupControllerTest.cs a klikněte na tlačítko **OK** tlačítko.
 
 
-Naše první testování částí je obsažený v výpis 1. Tento test ověřuje, že metoda Index() řadiče skupiny vrátí sadu skupin. Test ověřuje, že kolekce skupin se vrátí v zobrazení data.
+[![Přidání testování částí GroupControllerTest](iteration-6-use-test-driven-development-cs/_static/image1.jpg)](iteration-6-use-test-driven-development-cs/_static/image1.png)
+
+**Obrázek 01**: Přidání testování částí GroupControllerTest ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image2.png))
+
+
+Výpis 1 je součástí naší první test částí. Tento test ověřuje, že metoda Index() skupiny kontroleru vrátí sadu skupin. Test ověří, že kolekci skupin se vrátí v zobrazení data.
 
 **Výpis 1 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample1.cs)]
 
-Když zadáte nejprve kód v výpis 1 v sadě Visual Studio, získáte spoustu červenými vlnovkami. Nevytvořili jsme třídy GroupController nebo skupinu.
+Při prvním zadání kód v informacích 1 v sadě Visual Studio, získáte velké množství červená vlnovka řádky. Jsme nevytvořili GroupController nebo skupinu tříd.
 
-V tomto okamžiku můžeme i sestavení t naše aplikace, můžeme t spouštění naše první testování částí. Tento s funkčním. Který počítá jako selhání testu. Proto máme teď oprávnění, aby vám začali psát kód aplikace. Musíme napsat dostatek kód pro spuštění našem testu.
+V tuto chvíli můžeme dokonce sestavení t naší aplikace, takže můžeme t spustit naši první test částí. S tuto funkční. Který se počítá jako selhání testů. Proto teď máme oprávnění, aby vám začali psát kód aplikace. Musíme napsat dostatek kód ke spuštění našich testů.
 
-Třídy kontroleru skupiny v výpis 2 obsahuje minimální požadované předat testování částí kódu. Akce Index() vrátí seznam staticky programové skupiny (třídy skupiny je definována v výpis 3).
+Třída kontroleru skupiny v informacích 2 obsahuje úplné minimální kód potřebný k předání testu jednotek. Akce Index() vrátí staticky programové seznam skupin (skupina je třída definovaná v informacích 3).
 
-**Listing 2 - Controllers\GroupController.cs**
+**Výpis 2 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample2.cs)]
 
@@ -142,49 +141,49 @@ Třídy kontroleru skupiny v výpis 2 obsahuje minimální požadované předat 
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample3.cs)]
 
-Po přidáme třídy GroupController a skupiny do našich projektu, naše první testování částí úspěšně dokončen (viz obrázek 2). Provedli jsme minimální práce potřebné k projde testem. Je třeba sváteční.
+Poté, co jsme do našich projektu přidat třídy GroupController a skupiny, naši první test částí úspěšně dokončí (viz obrázek 2). Jsme udělali minimální práci potřebnou k projde testem. Je čas oslavili.
 
 
-[![Úspěšné!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
+[![Úspěch!](iteration-6-use-test-driven-development-cs/_static/image2.jpg)](iteration-6-use-test-driven-development-cs/_static/image3.png)
 
-**Obrázek 02**: úspěšné! () [Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image4.png))
+**Obrázek 02**: Úspěch! () [Kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image4.png))
 
 
-## <a name="creating-contact-groups"></a>Vytváření skupin kontaktů
+## <a name="creating-contact-groups"></a>Vytvoření skupiny kontaktů
 
-Nyní se můžeme přesunout k druhý uživatelský scénář. Je potřeba k vytvoření nové skupiny kontaktů. Musíme express svůj záměr s testu.
+Teď můžeme přesunout k druhý uživatelský scénář. Musíme být schopni vytvářet nové skupiny kontaktu. Potřebujeme vyjádřit svůj záměr s testem.
 
-Test v výpis 4 ověřuje, že volání Create() metoda s novou skupinu přidá do seznamu skupin vráceném metodou Index() skupině. Jinými slovy je-li vytvořit novou skupinu pak bych moct vrátit do nové skupiny ze seznamu skupin vráceném metodou Index().
+Test v informacích 4 ověřuje, že volání Create() metodu s novou skupinu přidá do seznamu skupin vrácený metodou Index() skupinu. Jinými slovy je-li vytvořit novou skupinu pak by měl možné vrátit novou skupinu ze seznamu skupin vrácený metodou Index().
 
-**Výpis 4 - Controllers\GroupControllerTest.cs**
+**Část 4 – Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample4.cs)]
 
-Test v výpis 4 volá řadičem skupiny Create() metoda s nový kontakt skupiny. V dalším kroku test ověřuje, volání řadičem skupiny Index() metoda vrátí do nové skupiny v dat zobrazení.
+Test v informacích 4 volá řadič skupiny Create() metodu se vytvoří nový kontakt skupiny. V dalším kroku test ověří, volání řadič skupiny Index() metoda vrátí novou skupinu v zobrazení data.
 
-Změny skupiny řadiče v výpis 5 obsahuje minimální změn, které vyžadují předat nový test.
+Upravené skupiny řadič v informacích 5 obsahuje minimální změny nutné předat nový test.
 
-**Listing 5 - Controllers\GroupController.cs**
+**Výpis 5 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample5.cs)]
 
-## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>Skupiny řadiče v výpis 5 má novou akci Create(). Tato akce přidá skupinu na kolekci skupin. Všimněte si, že byl upraven Index() akce vrátí obsah kolekce skupin.
+## <a name="the-group-controller-in-listing-5-has-a-new-create-action-this-action-adds-a-group-to-a-collection-of-groups-notice-that-the-index-action-has-been-modified-to-return-the-contents-of-the-collection-of-groups"></a>Skupiny kontroleru v zobrazení 5 má nová akce Create(). Tato akce přidá skupinu na kolekci skupin. Všimněte si, že byla změněna Index() akce vrátí obsah kolekci skupin.
 
-Ještě jednou jsme provedli minimální množství práce potřebné k předání testování částí. Po jsme tyto změny provést řadičem skupiny, všechny naše jednotky testy průchodu.
+Znovu jsme provedli úplné minimální množství práce potřebné k předání testu jednotek. Jakmile provedeme tyto změny skupiny kontroleru, všechny naše jednotky testy průchodu.
 
 ## <a name="adding-validation"></a>Přidání ověřování
 
-Tento požadavek nebyl explicitně uvádí uživatelský scénář. Nicméně je možné logicky nutné, aby skupina název. Uspořádání kontakty do skupiny, jinak by být velmi užitečné.
+Tento požadavek nebyl explicitně nastavená v uživatelský scénář. Je však vhodné nutné, aby název skupiny. Uspořádání kontakty do skupin, v opačném případě by být velmi užitečné.
 
-Výpis 6 obsahuje nový test, který vyjadřuje svůj záměr. Tento test ověřuje, že při pokusu o vytvoření skupiny bez nutnosti zadávat název výsledky v chybovou zprávu ověření ve stavu modelu.
+Výpis 6 obsahuje nový test, který vyjadřuje tohoto záměru. Tento test ověřuje, že při pokusu o vytvoření skupiny bez zadávání názvu výsledkem chybovou zprávu ověření do stavu modelu.
 
 **Výpis 6 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample6.cs)]
 
-Účelem uspokojení tento test, je potřeba přidat název vlastnosti do třídy Naše skupiny (viz seznam 7). Kromě toho je potřeba přidat jen nepatrnou kousek logiku ověření do kontroleru skupiny s Create() akce (viz seznam 8).
+Aby to vyhovovalo tento test, že je potřeba přidat vlastnost názvu třídy naší skupiny (viz seznam 7). Kromě toho potřebujeme přidat malý bit logiku ověřování k kontroleru skupiny s Create() akce (viz seznam 8).
 
-**Výpis 7 – Models\Group.cs**
+**Výpis 7 - Models\Group.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample7.cs)]
 
@@ -192,23 +191,23 @@ Výpis 6 obsahuje nový test, který vyjadřuje svůj záměr. Tento test ověř
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample8.cs)]
 
-Všimněte si, že řadičem skupiny Create() akci nyní obsahuje logiku ověřování i databáze. V současné době databázi použitou adaptérem skupiny se skládá z nic jiného než kolekci v paměti.
+Všimněte si, že kontroler skupiny Create() akci nyní obsahuje logiku ověřování a databáze. V současné době databázi používaný řadičem skupina se skládá z nic jiného než kolekci v paměti.
 
-## <a name="time-to-refactor"></a>Čas Refaktorovat
+## <a name="time-to-refactor"></a>Čas refaktorace
 
-Třetí krok v červená, zelená/Refaktorovat je součástí Refaktorovat. V tomto okamžiku musíme krok zpět z našich kódu a zvážit, jak jsme Refaktorovat naše aplikace ke zlepšení návrh. Fáze Refaktorovat je fázi, kdy myslíme pevný o nejlepší způsob implementace Principy návrhu softwaru a vzory.
+Třetí krok v červená, zelená/Refaktorujte je součástí Refaktorovat. V tomto okamžiku musíme kroku zpět z našeho kódu a zvažte, jak jsme Refaktorovat naši aplikaci ke zlepšení jejich návrhu. Refaktorujte fází je fáze, ve kterém by se pevný o nejlepší způsob implementace Principy návrhu softwaru a vzory.
 
-Snažíme se volné změnit naše kód žádným způsobem, který jsme vybrat pro zlepšení návrh kódu. Máme bezpečnostní opatření testů jednotek, které nám zabránit v zastavení stávající funkce.
+Máme volné úpravy našeho kódu žádným způsobem, který jsme zvolte ke zlepšení návrh kódu. Máme bezpečnostní testů jednotek, které nám brání zásadní stávajících funkcí.
 
-Teď, skupiny kontroleru je nepořádek z hlediska návrhu dobrý softwaru. Řadičem skupiny obsahuje zamotaných nepořádek ověření a data přístupový kód. Aby se zabránilo narušení jeden zásady odpovědnosti, je potřeba oddělit tyto problémy do různých tříd.
+V tuto chvíli, skupiny kontroleru je hustá doprava z hlediska návrhu funkční software. Kontroler skupina obsahuje zamotaných nepořádku v ověřování a kód přístupu k datům. Pokud chcete vyhnout, bychom při tom porušili jedné zásadě odpovědnosti, potřebujeme tyto obavy rozdělit do různých tříd.
 
-Naše refactored třídy kontroleru skupina je obsažena v výpis 9. K použití vrstvy služby ContactManager se změnilo kontroleru. Toto je stejné vrstvě služby využívající obraťte se na řadiči.
+Naše refaktorovaný třída kontroleru rozhraní skupiny je součástí výpis 9. Použití ContactManager Vrstva služby byla změněna kontroleru. Toto je stejnou úroveň služby, který jsme použili u kontaktu kontroleru.
 
-Výpis 10 obsahuje nové metody přidat do vrstvy služby ContactManager pro podporu ověřování, výpis a vytvoření skupin. Rozhraní IContactManagerService se aktualizovalo se o nové metody.
+Výpis 10 obsahuje nové metody, které jsou přidány do ContactManager vrstvy služby pro podporu ověřování, zobrazení a vytváření skupin. Rozhraní IContactManagerService byl aktualizován zahrnout nové metody.
 
-Výpis 11 obsahuje novou třídu FakeContactManagerRepository, která implementuje rozhraní IContactManagerRepository. Na rozdíl od EntityContactManagerRepository třídu, která také implementuje rozhraní IContactManagerRepository naše nová třída FakeContactManagerRepository nekomunikuje s databází. Třída FakeContactManagerRepository používá kolekci v paměti jako proxy server pro databázi. Tato třída použijeme v testech jednotek jako vrstva falešných úložiště.
+Výpis 11 obsahuje novou třídu FakeContactManagerRepository, která implementuje rozhraní IContactManagerRepository. Na rozdíl od EntityContactManagerRepository třídy, která také implementuje rozhraní IContactManagerRepository naši novou třídu FakeContactManagerRepository komunikaci s databází. Třída FakeContactManagerRepository používá kolekci v paměti jako proxy server pro databázi. Použijeme tuto třídu jako vrstvu falešné úložiště v testech jednotek.
 
-**Výpis 9 – Controllers\GroupController.cs**
+**Výpis 9 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample9.cs)]
 
@@ -216,33 +215,33 @@ Výpis 11 obsahuje novou třídu FakeContactManagerRepository, která implementu
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample10.cs)]
 
-**Listing 11 - Controllers\FakeContactManagerRepository.cs**
+**Výpis 11 – Controllers\FakeContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample11.cs)]
 
-Úprava IContactManagerRepository vyžaduje rozhraní použít k implementaci CreateGroup() a ListGroups() metody ve třídě EntityContactManagerRepository. Laziest a nejrychlejší způsob, jak to udělat, je přidání se zakázaným inzerováním metody, které vypadat takto:   
+Úprava IContactManagerRepository vyžaduje rozhraní použijte pro implementaci metody CreateGroup() a ListGroups() ve třídě EntityContactManagerRepository. Laziest a nejrychlejší způsob, jak to provést, je přidání metody zástupných procedur, které vypadat nějak takto:   
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample12.cs)]
 
 
-Nakonec tyto změny v návrhu aplikace vyžadovat, aby určité změny pro naše testy jednotek. Nyní potřebujeme používat FakeContactManagerRepository při provádění testování částí. Aktualizované třídy GroupControllerTest je součástí výpis 12.
+Nakonec se tyto změny v návrhu aplikace od nás vyžadovat provést určité změny pro naše testy jednotek. Nyní potřebujeme používat FakeContactManagerRepository při provádění testů jednotek. Aktualizované GroupControllerTest třídy jsou obsaženy v informacích 12.
 
-**Výpis 12 – Controllers\GroupControllerTest.cs**
+**Výpis 12 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample13.cs)]
 
-Po zajišťujeme, že všechny tyto změny, znovu všechny naše testy průchodu jednotky. Celý cyklus systému Red, zelená/Refaktorovat jsme byly dokončeny. Implementovali jsme první dva uživatelských scénářů. Teď máte podpoře testování částí pro požadavky vyjádřené v uživatelských scénářů. Implementace zbytek uživatelských scénářů zahrnuje opakují na stejné cyklus červená, zelená/Refaktorovat.
+Po jejich Usnadňujeme změní, znovu, všechny naše testy jednotek prošly. Jsme dokončili celý cyklus červená, zelená/Refaktorovat. Implementovali jsme první dva uživatelské scénáře. Nyní je k dispozici podpora testování částí pro požadavky uživatelské scénáře. Implementace zbytek uživatelských scénářů zahrnuje opakující se stejný cyklus červená, zelená/Refaktorovat.
 
-## <a name="modifying-our-database"></a>Úprava databáze
+## <a name="modifying-our-database"></a>Změna databáze
 
-Bohužel to i v případě, že jsme splnili všechny požadavky vyjádřená naše testy jednotek, není potřeba našich pracovních. Stále potřebujeme upravit naše databáze.
+Bohužel i když jsme splnili všechny požadavky vyjádřený v testech jednotek, není Hotovo naší práci. Stále potřebujeme upravit naší databázi.
 
-Je potřeba vytvořit novou tabulku databáze skupiny. Postupujte podle těchto kroků:
+Potřebujeme vytvořit novou tabulku databáze skupiny. Postupujte podle těchto kroků:
 
-1. V okně Průzkumníka serveru klikněte pravým tlačítkem na složku tabulky a vyberte možnost nabídky **přidat novou tabulku**.
-2. Zadejte dva sloupce, které jsou popsané dál v Návrháři tabulky.
+1. V okně Průzkumníka serveru, klikněte pravým tlačítkem na složku tabulky a vyberte možnost nabídky **přidat novou tabulku**.
+2. Zadejte dva sloupce je popsáno níže v Návrháři tabulek.
 3. Označte sloupec Id jako primární klíč a sloupec Identity.
-4. Uložte novou tabulku s názvem skupiny kliknutím na ikonu disketová.
+4. Kliknutím na ikonu disketová uložte novou tabulku s názvem skupiny.
 
 <a id="0.11_table01"></a>
 
@@ -253,112 +252,112 @@ Je potřeba vytvořit novou tabulku databáze skupiny. Postupujte podle těchto 
 | Název | nvarchar(50) | False |
 
 
-Dále je potřeba odstranit všechna data z tabulky kontaktů (jinak, jsme won t možné vytvořit relaci mezi tabulkami kontakty a skupiny). Postupujte podle těchto kroků:
+V dalším kroku budeme potřebovat odstranit všechna data z tabulky kontaktů (v opačném případě vyhráli jsme t moct vytvářet relace mezi tabulkami kontakty a skupiny). Postupujte podle těchto kroků:
 
 1. Klikněte pravým tlačítkem na tabulku kontaktů a vyberte možnost nabídky **zobrazit Data tabulky**.
 2. Odstraňte všechny řádky.
 
-Dále je potřeba definovat relaci mezi tabulkou databáze skupiny a stávající databázové tabulky kontaktů. Postupujte podle těchto kroků:
+Dále musíme definovat vztah mezi skupiny databázové tabulky a stávající databáze tabulky kontaktů. Postupujte podle těchto kroků:
 
-1. Klikněte dvakrát na tabulku kontaktů v okně Průzkumníka serveru otevřete návrháře tabulky.
-2. Do tabulky kontaktů s názvem GroupId umožňuje přidáte nový sloupec celé číslo.
-3. Kliknutím na tlačítko vztah otevřete dialogové okno relace cizího klíče (viz obrázek 3).
-4. Kliknutím na tlačítko Přidat.
-5. Klikněte na tlačítko se třemi tečkami, který se zobrazí vedle tlačítko tabulky a sloupce specifikace.
-6. V dialogovém okně tabulky a sloupce, vyberte skupiny jako primární klíč tabulky a Id jako sloupec primárního klíče. Vyberte kontakty jako tabulka cizího klíče a GroupId jako sloupec cizího klíče (viz obrázek 4). Klikněte na tlačítko OK.
+1. Klikněte dvakrát na tabulku kontaktů v okně Průzkumníka serveru pro otevření Návrháře tabulky.
+2. Do tabulky kontaktů s názvem GroupId přidáte nový sloupec celé číslo.
+3. Klikněte na tlačítko relace a otevřete dialogové okno vztahy cizího klíče (viz obrázek 3).
+4. Klikněte na tlačítko Přidat.
+5. Klikněte na tlačítko se třemi tečkami, který se zobrazí vedle tlačítka, tabulky a sloupce specifikace.
+6. V dialogovém okně tabulky a sloupce vyberte skupiny jako tabulku primárního klíče a Id jako sloupec primárního klíče. Vyberte kontakty jako tabulka cizího klíče a ID skupiny jako sloupec cizího klíče (viz obrázek 4). Klikněte na tlačítko OK.
 7. V části **INSERT a UPDATE specifikace**, vyberte hodnotu **Cascade** pro **odstranit pravidlo**.
-8. Klikněte na tlačítko Zavřít zavřete dialogové okno relace cizího klíče.
-9. Klikněte na tlačítko Uložit a uložte změny do tabulky kontaktů.
+8. Kliknutím na tlačítko Zavřít zavřete dialogové okno vztahy cizího klíče.
+9. Kliknutím na tlačítko Uložit uložte změny do tabulky kontaktů.
 
 
 [![Vytvoření relace tabulky databáze](iteration-6-use-test-driven-development-cs/_static/image3.jpg)](iteration-6-use-test-driven-development-cs/_static/image5.png)
 
-**Obrázek 03**: vytvoření databázové tabulky relace ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image6.png))
+**Obrázek 03**: vytvoření databázové tabulky relace ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image6.png))
 
 
-[![Určení relace mezi tabulkami](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
+[![Určení relací mezi tabulkami](iteration-6-use-test-driven-development-cs/_static/image4.jpg)](iteration-6-use-test-driven-development-cs/_static/image7.png)
 
-**Obrázek 04**: určení relace mezi tabulkami ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image8.png))
-
-
-### <a name="updating-our-data-model"></a>Aktualizace našeho datového modelu
-
-Dále je potřeba aktualizovat našeho datového modelu představují nové databázové tabulky. Postupujte podle těchto kroků:
-
-1. Poklikejte na soubor ContactManagerModel.edmx ve složce modely otevřete Entity Designer.
-2. Klikněte pravým tlačítkem na plochu návrháře a vyberte možnost nabídky **aktualizovat Model z databáze**.
-3. V Průvodci aktualizací vyberte skupiny, tabulky a klikněte dokončit tlačítko (viz obrázek 5).
-4. Klikněte pravým tlačítkem na entity skupiny a vyberte možnost nabídky **přejmenovat**. Změňte název *skupiny* entity, která má *skupiny* (singulární).
-5. Klikněte pravým tlačítkem na navigační vlastnost skupin, které se zobrazuje v dolní části entity Kontakt. Změňte název *skupiny* navigační vlastnost pro *skupiny* (singulární).
+**Obrázek 04**: Určení relací mezi tabulkami ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image8.png))
 
 
-[![Aktualizace model Entity Framework z databáze](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
+### <a name="updating-our-data-model"></a>Aktualizuje se naše datového modelu
 
-**Obrázek 05**: aktualizace model Entity Framework z databáze ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image10.png))
+Dále musíme aktualizovat naše datový model, který představuje nové databázové tabulky. Postupujte podle těchto kroků:
 
-
-Po dokončení těchto kroků bude reprezentovat datový model kontakty a skupiny tabulek. Entity Designer by měl zobrazit obě entity (viz obrázek 6).
-
-
-[![Entity Designer zobrazení skupiny a obraťte se na](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
-
-**Obrázek 06**: zobrazení skupiny a obraťte se na Entity Designer ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image12.png))
+1. Poklikejte na soubor ContactManagerModel.edmx ve složce modely otevřete v návrháři entit.
+2. Klikněte pravým tlačítkem na plochu návrháře a vyberte možnost nabídky **aktualizace modelů z databáze**.
+3. V Průvodci aktualizacemi vyberte skupiny tabulky a po dokončení klikněte na tlačítko (viz obrázek 5).
+4. Klikněte pravým tlačítkem na skupiny entit a vyberte možnost nabídky **přejmenovat**. Změňte název *skupiny* entitu, kterou chcete *skupiny* (singulární).
+5. Klikněte pravým tlačítkem na skupiny navigační vlastnost, která se zobrazí v dolní části entitu kontakt. Změňte název *skupiny* navigační vlastnost pro *skupiny* (singulární).
 
 
-### <a name="creating-our-repository-classes"></a>Vytváření tříd naše úložiště
+[![Aktualizace modelu Entity Framework z databáze](iteration-6-use-test-driven-development-cs/_static/image5.jpg)](iteration-6-use-test-driven-development-cs/_static/image9.png)
 
-V dalším kroku musíme implementovat třídu naše úložiště. V průběhu této iterace jsme přidali několik nových metod rozhraní IContactManagerRepository při psaní kódu pro uspokojení naše testy jednotek. Finální verzi rozhraní IContactManagerRepository je obsažený v výpis 14.
+**Obrázek 05**: aktualizace modelu Entity Framework z databáze ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image10.png))
+
+
+Po dokončení těchto kroků bude reprezentovat datového modelu kontakty a skupiny tabulek. V návrháři entit by se měla zobrazit obě entity (viz obrázek 6).
+
+
+[![Zobrazení skupiny a kontakt v návrháři entit](iteration-6-use-test-driven-development-cs/_static/image6.jpg)](iteration-6-use-test-driven-development-cs/_static/image11.png)
+
+**Obrázek 06**: zobrazení skupiny a kontakt v návrháři entit ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image12.png))
+
+
+### <a name="creating-our-repository-classes"></a>Vytváření naší třídy úložiště
+
+Dále musíme implementovat třídu naše úložiště. V průběhu této iterace jsme přidali několik nových metod rozhraní IContactManagerRepository při psaní kódu ke splnění našich testů jednotek. Konečná verze rozhraní IContactManagerRepository je obsažen v informacích 14.
 
 **Výpis 14 - Models\IContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
-Jsme některou z metod týkající se práce se skupinami kontaktní nebyla některá t ve skutečnosti implementována. V současné době třída EntityContactManagerRepository má se zakázaným inzerováním metody pro každou skupinu kontaktů metody uvedené v IContactManagerRepository rozhraní. Například metoda ListGroups() aktuálně vypadá takto:
+Jsme haven t ve skutečnosti implementovat libovolnou metodu týkající se práce se skupinami kontaktu. V současné době EntityContactManagerRepository třída obsahuje metody zástupných procedur pro každou skupinu kontaktů metod uvedených v rozhraní IContactManagerRepository. Například metoda ListGroups() nyní vypadá takto:
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample15.cs)]
 
-Metody se zakázaným inzerováním povoleno nám zkompilovat naší aplikaci a předejte testování částí. Ale nyní je čas ve skutečnosti implementovat tyto metody. Finální verzi třída EntityContactManagerRepository je součástí výpis 13.
+Povolené metody zástupných procedur abychom naši aplikaci zkompiluje a předat jednotkové testy. Ale nyní je čas při implementaci těchto metod. Konečná verze třídy EntityContactManagerRepository je obsažen v informacích 13.
 
 **Výpis 13 – Models\EntityContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample16.cs)]
 
-### <a name="creating-the-views"></a>Vytvoření zobrazení
+### <a name="creating-the-views"></a>Vytváření zobrazení
 
-Aplikace ASP.NET MVC při použití výchozí modul zobrazení ASP.NET. Ano tento t vytvářet zobrazení v odpovědi na test konkrétní jednotka. Ale vzhledem k aplikaci by být nelze bez zobrazení, můžeme t dokončit tento iterace bez vytvoření a úprava zobrazení obsažené v aplikaci obraťte se na správce.
+Aplikace ASP.NET MVC při použití výchozí modul zobrazení ASP.NET. Don t tedy vytvářet zobrazení v reakci na konkrétní Jednotkový test. Ale vzhledem k tomu, že aplikace může být užitečná, zobrazení, můžeme t dokončit tuto iteraci bez vytvoření a úprava zobrazení obsažená v aplikaci Správce kontaktů.
 
-Je potřeba vytvořit následující nové zobrazení pro správu skupin kontaktů (viz obrázek 7):
+Potřebujeme vytvořit následující nová zobrazení pro správu kontaktů skupin (viz obrázek 7):
 
-- Views\Group\Index.aspx - zobrazí seznam skupin kontaktů
-- Views\Group\Delete.aspx - zobrazí potvrzení formuláře pro odstranění skupiny kontaktů
-
-
-[![Zobrazení skupiny indexu](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
-
-**Obrázek 07**: Zobrazení indexu skupiny ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image14.png))
+- Views\Group\Index.aspx – zobrazí seznam skupin kontaktů
+- Views\Group\Delete.aspx – formulář zobrazí potvrzení k odstranění skupiny kontaktů
 
 
-Je potřeba změnit následující stávající zobrazení, aby zahrnovaly kontaktní skupiny:
+[![Zobrazení skupiny Index](iteration-6-use-test-driven-development-cs/_static/image7.jpg)](iteration-6-use-test-driven-development-cs/_static/image13.png)
+
+**Obrázek 07**: skupinovým indexem zobrazení ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image14.png))
+
+
+Potřebujeme upravit následující stávající zobrazení, aby zahrnovaly skupiny kontaktů:
 
 - Views\Home\Create.aspx
 - Views\Home\Edit.aspx
 - Views\Home\Index.aspx
 
-Zobrazí se změny zobrazení prohlížením aplikace Visual Studio, který doprovází v tomto kurzu. Například obrázek 8 znázorňuje zobrazení obraťte se na Index.
+Zobrazí se změny zobrazení pohledem na aplikace sady Visual Studio, který doprovází tento kurz. Například obrázek 8 znázorňuje zobrazení indexu kontaktu.
 
 
-[![Obraťte se na Index zobrazení](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
+[![Zobrazení indexu kontaktu](iteration-6-use-test-driven-development-cs/_static/image8.jpg)](iteration-6-use-test-driven-development-cs/_static/image15.png)
 
-**Obrázek 08**: zobrazení v obraťte se na Index ([Kliknutím zobrazit obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image16.png))
+**Obrázek 08**: Zobrazení indexu kontakt ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-6-use-test-driven-development-cs/_static/image16.png))
 
 
 ## <a name="summary"></a>Souhrn
 
-V této iteraci jsme přidali nové funkce pro naše obraťte se na správce aplikace podle návrhu metodika vývoje řízeného testováním aplikace. Spuštění tak, že vytvoříte sadu uživatelských scénářů. Jsme vytvořili sada testů jednotek, které odpovídají požadavkům vyjádřená uživatelských scénářů. Nakonec napsali jsme právě dostatek kód vyhovět jejich požadavkům vyjádřená testování částí.
+V této iterace jsme přidali nové funkce do naší aplikace Správce kontaktů podle návrhu metodologie vývoj řízený testováním aplikace. Začali jsme tím, že vytvoříte sadu uživatelských scénářů. Vytvořili jsme sadu testů jednotek, která odpovídá požadavky podle uživatelských scénářů. Nakonec jsme napsali jenom dostatek kódu ke splnění požadavků vyjádřena pomocí testů jednotek.
 
-Po jsme dokončení zápisu dostatek kódu vyhovět jejich požadavkům vyjádřená testování částí aktualizovali jsme naši databáze a zobrazení. Jsme přidali novou tabulku skupiny do databáze hotový a aktualizovat datového modelu Entity Framework. Můžeme také vytvořit a upravit sadu zobrazení.
+Poté, co nám podařilo dokončit zápis dostatek kódu ke splnění požadavků vyjádřena pomocí testů jednotek, aktualizovali jsme naše databáze a zobrazení. Jsme přidali novou tabulku skupiny do databáze a aktualizace datového modelu Entity Framework. Můžeme také vytvořit a upravit sadu zobrazení.
 
-V další iterace – poslední iterace – přepisování jsme naši aplikaci chcete využít výhod Ajax. Využitím Ajax, jsme budete zvýšit rychlost reakce a výkonu aplikace, obraťte se na správce.
+Při příští iteraci – poslední iterace – přepsat jsme naši aplikaci využívat technologie Ajax. S využitím jazyka Ajax, vám můžeme zlepšit rychlost reakce a výkon aplikace, kontaktujte správce.
 
 > [!div class="step-by-step"]
 > [Předchozí](iteration-5-create-unit-tests-cs.md)

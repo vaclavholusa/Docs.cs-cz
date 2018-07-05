@@ -1,109 +1,108 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
-title: Vytváření a balení projekty webových aplikací | Microsoft Docs
+title: Sestavení a balení projektů webových aplikací | Dokumentace Microsoftu
 author: jrjlee
-description: Pokud chcete nasadit projekt webové aplikace v prostředí vzdáleného serveru, je první úlohou se projekt sestavil a generovat XPSpolečnost nasazení webové...
+description: Pokud chcete nasadit projekt webové aplikace do prostředí vzdáleného serveru, je první úkol se projekt sestavil a generovat ob nasazení webové...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: 94e92f80-a7e3-4d18-9375-ff8be5d666ac
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: d630e1776607bd0bd7c61e1f0f7234ef58c7533b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ff8312d16dff2a9eec9ae909bca5e72d52f17094
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892306"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382605"
 ---
-<a name="building-and-packaging-web-application-projects"></a>Vytváření a balení projekty webových aplikací
+<a name="building-and-packaging-web-application-projects"></a>Sestavení a balení projektů webových aplikací
 ====================
 podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Pokud chcete nasadit projekt webové aplikace v prostředí vzdáleného serveru, je první úlohou se projekt sestavil a generovat balíčku pro nasazení webu. Toto téma popisuje, jak funguje procesu sestavení pro projekty webových aplikací. Konkrétně vysvětluje:
+> Pokud chcete nasadit projekt webové aplikace do prostředí vzdáleného serveru, je první úkol se projekt sestavil a vygenerování balíčku pro nasazení webu. Toto téma popisuje, jak funguje proces sestavení pro projekty webových aplikací. Konkrétně se vysvětluje:
 > 
-> - Jak webových publikování kanálu (WPP) rozšiřuje procesu sestavení, aby obsahovaly nasazení funkce.
-> - Jak nástroj nasazení webu Internetové informační služby (IIS) (Web Deploy) změní na webové aplikace do balíčku nasazení.
-> - Sestavení a balení zpracovat jak funguje a jaké soubory jsou vytvořeny.
+> - Jak webových publikování kanálu (WPP) rozšiřuje proces sestavení zahrnout funkce nasazení.
+> - Jak nástroj pro nasazení Internetové informační služby (IIS) webu (nasazení webu) se změní na vaší webové aplikace do balíčku pro nasazení.
+> - Sestavení a zabalení zpracovat jak funguje a jaké soubory jsou vytvořeny.
 
 
-V sadě Visual Studio 2010 je podporováno jako procesem sestavení a nasazení pro projekty webových aplikací. JAKO poskytuje sada Microsoft Build Engine (MSBuild) cíle, které rozšiřují funkce nástroje MSBuild jej a povolte integraci s nasazení webu. V sadě Visual Studio můžete zobrazit tato rozšířená funkce na stránkách vlastností projektu webové aplikace. **Balení/publikování webu** stránky, společně s **balení/publikování kódu SQL** stránce umožňuje nakonfigurovat jak projektu webové aplikace zabalené pro nasazení po dokončení procesu sestavení.
+V sadě Visual Studio 2010 podporuje WPP procesu sestavení a nasazení pro projekty webových aplikací. WPP poskytuje sadu Microsoft Build Engine (MSBuild) cíle, které rozšiřují funkce nástroje MSBuild a povolte ji integrovat s nasazením webu. V sadě Visual Studio můžete zobrazit tyto rozšířené funkce na stránkách vlastností projektu webové aplikace. **Balení/publikování webu** stránky, společně s **balení/publikování kódu SQL** stránce umožňuje nakonfigurovat jak projektu webové aplikace je zabalená pro účely nasazení po dokončení procesu sestavení.
 
 ![](building-and-packaging-web-application-projects/_static/image1.png)
 
-## <a name="how-does-the-wpp-work"></a>Jak funguje jako?
+## <a name="how-does-the-wpp-work"></a>Jak funguje WPP?
 
-Pokud jste si prohlédněte soubor projektu pro jazyk C#-projektu na základě webové aplikace, uvidíte, že se importuje dva soubory .targets.
+Pokud jste se podívejte na soubor projektu pro jazyk C#-projekt na základě webové aplikace, uvidíte, že importuje dva soubory .targets.
 
 
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample1.xml)]
 
 
-První **Import** příkaz jsou společná pro všechny projekty Visual C#. Tento soubor *Microsoft.CSharp.targets*, obsahuje cílů a úloh, které jsou specifické pro Visual C#. Například kompilátor C# (**Csc**) úkol vyvolán sem. *Microsoft.CSharp.targets* souboru zase importy *Microsoft.Common.targets* souboru. Definuje cílů, které jsou společné pro všechny projekty, jako je třeba **sestavení**, **znovu sestavit**, **spustit**, **zkompilovat**, a **vyčištění** . Druhý **Import** příkaz je specifická pro projekty webových aplikací. *Microsoft.WebApplication.targets* souboru zase importy *Microsoft.Web.Publishing.targets* souboru. *Microsoft.Web.Publishing.targets* souboru v podstatě *je* jako. Definuje cíle, jako je třeba **balíček** a **MSDeployPublish**, který vyvolání Web Deploy dokončit různé úkoly nasazení.
+První **Import** příkaz je společné pro všechny projekty Visual C#. Tento soubor *Microsoft.CSharp.targets*, obsahuje cíle a úlohy, které jsou specifické pro jazyk Visual C#. Například kompilátor jazyka C# (**Csc**) je úkol vyvolán tady. *Microsoft.CSharp.targets* souboru zase importy *cílů Microsoft.Common.targets* souboru. Definuje cíle, které jsou společné pro všechny projekty, jako je třeba **sestavení**, **znovu sestavit**, **spustit**, **kompilaci**, a **vyčistit** . Druhá **Import** příkaz je specifické pro projekty webových aplikací. *Microsoft.WebApplication.targets* zase soubor importy *Microsoft.Web.Publishing.targets* souboru. *Microsoft.Web.Publishing.targets* soubor v podstatě *je* WPP. Určuje cíle, jako je třeba **balíčku** a **MSDeployPublish**, který vyvolat Webdeploy dokončit různé úkoly nasazení.
 
-Abyste pochopili, jak se používají tyto další cíle v ukázkové řešení obraťte se na správce, otevřete *Publish.proj* souborů a podívejte se na **BuildProjects** cíl.
+Chcete-li pochopit, jak se používají tyto další cíle v ukázkovém řešení Správce kontaktů, otevřete *Publish.proj* soubor a podívejte se na **BuildProjects** cíl.
 
 
 [!code-xml[Main](building-and-packaging-web-application-projects/samples/sample2.xml)]
 
 
-Tento cíl se používá **MSBuild** úloh k vytvoření různých projektů. Upozornění **DeployOnBuild** a **DeployTarget** vlastnosti:
+Používá tento cíl **MSBuild** úkolů k sestavení různé projekty. Všimněte si, že **DeployOnBuild** a **DeployTarget** vlastnosti:
 
-- **DeployOnBuild = true** vlastnost v podstatě znamená "Chcete provést další cíl po úspěšném dokončení sestavení."
-- **DeployTarget** vlastnost identifikuje název cíle, který chcete provést, když **DeployOnBuild** vlastnost rovná **true**. V takovém případě určujete, že chcete MSBuild provést **balíček** cíl po sestavení projektu.
+- **DeployOnBuild = true** vlastnost v podstatě znamená "Chci provést další cíl při sestavení bylo úspěšně dokončeno."
+- **DeployTarget** vlastnost určuje název cíle, které chcete provést, když **DeployOnBuild** rovná vlastnost **true**. V takovém případě určujete, že chcete, aby MSBuild ke spuštění **balíčku** cíl po sestavení projektu.
 
-**Balíček** cíl je definován v *Microsoft.Web.Publishing.targets* souboru. Tento cíl v podstatě trvá výstup sestavení projektu webové aplikace a převede ji balíčku pro nasazení webu, která může být publikována na webovém serveru IIS.
+**Balíčku** cíl je definována v *Microsoft.Web.Publishing.targets* souboru. Tento cíl v podstatě trvá výstupu sestavení projektu webové aplikace a převede ji na balíčku pro nasazení webu, který lze publikovat na webový server služby IIS.
 
 > [!NOTE]
-> Chcete-li zobrazit soubor projektu (například <em>ContactManager.Mvc.csproj</em>) v sadě Visual Studio 2010, je nutné nejprve uvolnit projekt z vašeho řešení. V <strong>Průzkumníku řešení</strong> oken, klikněte pravým tlačítkem na uzel projektu a pak klikněte na tlačítko <strong>uvolnit projekt</strong>. Znovu klikněte pravým tlačítkem na uzel projektu a pak klikněte na <strong>upravit</strong><em>[soubor projektu]</em>). Soubor projektu se otevřou v jeho základním formátu XML. Nezapomeňte projekt znovu načíst, když jste hotovi.  
-> Další informace o cíle MSBuild, úlohy, a <strong>Import</strong> příkazy, najdete v části [vysvětlení souboru projektu](understanding-the-project-file.md). Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
+> Chcete-li zobrazit soubor projektu (například <em>ContactManager.Mvc.csproj</em>) v sadě Visual Studio 2010, musíte nejprve uvolněte projekt z řešení. V <strong>Průzkumníka řešení</strong> okna, klikněte pravým tlačítkem na uzel projektu a pak klikněte na tlačítko <strong>uvolnit projekt</strong>. Znovu klikněte pravým tlačítkem na uzel projektu a pak klikněte na tlačítko <strong>upravit</strong><em>[soubor projektu]</em>). Soubor projektu se otevře v nezpracované podobě XML. Nezapomeňte znovu načíst projekt, až budete hotovi.  
+> Další informace o MSBuild cíle, úkoly, a <strong>Import</strong> příkazy, naleznete v tématu [vysvětlení souboru projektu](understanding-the-project-file.md). Podrobnější Úvod do souborů projektu a WPP najdete v tématu [uvnitř the Microsoft Build Engine: použití nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
 
 
-## <a name="what-is-a-web-deployment-package"></a>Co je balíčku pro nasazení webu?
+## <a name="what-is-a-web-deployment-package"></a>Co je balíček nasazení webu?
 
-Vytvořit a nasadit projekt webové aplikace pomocí sady Visual Studio 2010 nebo pomocí nástroje MSBuild přímo, výsledek je obvykle *balíčku pro nasazení webu*. Balíčku pro nasazení webu je soubor ZIP. Obsahuje všechno, co této služby IIS a Web Deploy potřebují k znovu vytvořit webové aplikace, včetně:
+Při sestavení a nasazení webové aplikace pomocí sady Visual Studio 2010 nebo přímo pomocí nástroje MSBuild, konečný výsledek je obvykle *balíčku pro nasazení webu*. Balíčku pro nasazení webu je soubor ZIP. Obsahuje všechno, co tuto službu IIS a nasazení webu potřebovat k znovu vytvořit webové aplikace, včetně:
 
-- Výstup kompilované webové aplikace, včetně obsahu, soubory prostředků, konfigurační soubory, JavaScript a kaskádových stylů CSS prostředky styl a tak dále.
-- Reference na sestavení pro váš projekt webové aplikace a pro všechny projekty v řešení.
-- Skripty SQL pro generování všechny databáze, které nasazujete s webovou aplikací.
+- Kompilovaný výstup webové aplikace, včetně obsahu, soubory prostředků, konfigurační soubory, JavaScript a CSS prostředků šablon stylů CSS stylu a tak dále.
+- Reference na sestavení pro projekt webové aplikace a pro všechny projekty v rámci vašeho řešení.
+- Skripty SQL pro generování všechny databáze, které nasazujete s vaší webovou aplikací.
 
-Po vygenerování balíčku pro nasazení webu, můžete ho publikovat na webový server služby IIS různými způsoby. Například můžete nasadit vzdáleně pomocí cílení vzdáleného agenta nasazení webové služby nebo obslužná rutina webových nasadit na cílový webový server nebo správce služby IIS lze ručně importovat balíček na cílový webový server. Další informace o těchto přístupy k nasazení najdete v tématu [výběr práva přístup k nasazení webu](../configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md).
+Po vygenerování balíčku pro nasazení webu je možné ji publikovat na webový server služby IIS různými způsoby. Například můžete nasadit ho vzdáleně cílí na vzdáleného agenta pro nasazení webu služby nebo obslužné rutiny webu nasadit na cílový webový server nebo správce služby IIS můžete použít k ručnímu importu balíček na cílový webový server. Další informace o těchto přístupů k nasazení najdete v tématu [výběr právo přístupu k nasazení webu](../configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment.md).
 
-## <a name="how-does-the-build-process-work"></a>Jak funguje procesu sestavení?
+## <a name="how-does-the-build-process-work"></a>Jak funguje proces sestavení?
 
-Ukazuje to, co se stane, když sestavení a balíček projekt webové aplikace:
+To ukazuje, co se stane, když sestavení a zabalení webové aplikace:
 
 ![](building-and-packaging-web-application-projects/_static/image2.png)
 
-Při sestavování projektu webové aplikace procesu sestavení generuje soubor s názvem *[název projektu]. SourceManifest.xml*. Soubor projektu a sestavení výstupu to *. SourceManifest.xml* soubor informuje Web Deploy vše potřebné pro zahrnutí do balíčku pro nasazení webu. Pomocí těchto vstupů, Web Deploy generuje balíčku pro nasazení webu s názvem *[název projektu] .zip*.
+Při sestavování projektu webové aplikace, proces sestavení generuje soubor s názvem *[název projektu]. SourceManifest.xml*. Soubor projektu a výstup sestavení to *. SourceManifest.xml* soubor říká Webdeploy co je potřeba zahrnout do balíčku pro nasazení webu. Pomocí těchto vstupů, Web Deploy generuje balíčku pro nasazení webu s názvem *[název projektu] ZIP*.
 
-Vedle balíčku pro nasazení webu generuje procesu sestavení dva soubory, které vám můžou pomoct při použití balíčku:
+Spolu s balíčku pro nasazení webu proces sestavení generuje dva soubory, které vám mohou pomoci při použití balíčku:
 
-- *. Deploy.cmd* soubor obsahuje sadu parametrizované příkazy nasazení webu (MSDeploy.exe), které publikování vašeho balíčku pro nasazení webu na vzdálený webový server služby IIS. Spuštění *. deploy.cmd* soubor s příslušnými parametry, obvykle poskytuje rychlejší a snadnější alternativní k ruční vytváření MSDeploy.exe příkazů sami.
-- *SetParameters.xml* soubor poskytuje sadu hodnot parametrů, které příkaz MSDeploy.exe. Tyto hodnoty obsahovat vlastnosti, jako je třeba název webové aplikace IIS, do které chcete nasadit balíček hodnoty žádné koncové body služby a v definovány připojovací řetězce *web.config* soubor a všechny vlastnosti nasazení hodnoty definované na stránkách vlastností projektu.
+- *. Deploy.cmd* soubor obsahuje sadu nasazení webu (MSDeploy.exe) příkazy s parametry, které publikují balíčku pro nasazení webu na vzdáleného webového serveru služby IIS. Spuštění *. deploy.cmd* soubor s příslušnými parametry, obvykle poskytuje rychlejší a snazší alternativní k ruční vytváření MSDeploy.exe příkazy sami.
+- *SetParameters.xml* soubor obsahuje sadu hodnot parametrů příkazu MSDeploy.exe. Tyto hodnoty patří vlastnosti, jako je název webové aplikace služby IIS, do které chcete nasadit balíček hodnoty žádné koncové body služby a připojovací řetězce definované v *web.config* soubor a všechny vlastnosti nasazení hodnoty definované na stránkách vlastností projektu.
 
-*SetParameters.xml* souborů je klíčová pro správu procesu nasazení. Tento soubor je generována dynamicky podle obsahu projektu webové aplikace. Například, pokud přidat připojovací řetězec k vaší *web.config* souboru procesu sestavení bude automaticky zjistit připojovací řetězec, odpovídajícím způsobem Parametrizace nasazení a vytvořit položku v  *SetParameters.xml* souboru a umožní vám upravit připojovací řetězec jako součást procesu nasazení. Dalším tématu [parametry konfigurace pro nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md), vysvětluje roli tento soubor podrobněji a popisuje různé způsoby, ve kterém můžete upravit ji během sestavení a nasazení.
+*SetParameters.xml* soubor je klíčem ke správě procesu nasazení. Tento soubor je vygenerovaný dynamicky podle obsahu projektu webové aplikace. Například, pokud chcete přidat připojovací řetězec pro váš *web.config* souboru, proces sestavení bude automaticky rozpoznávat připojovací řetězec, proto parametrizovat nasazení a vytvořit položku v  *SetParameters.xml* souboru, aby bylo možné upravit připojovací řetězec jako součást procesu nasazení. Dalším tématu s názvem [konfigurace parametrů nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md), vysvětluje roli tohoto souboru podrobněji a popisuje různé způsoby, ve kterém můžete upravit ho během sestavení a nasazení.
 
 > [!NOTE]
-> V sadě Visual Studio 2010 jako nepodporuje předkompilace stránky ve webové aplikaci před balení. Další verze sady Visual Studio a jako bude obsahovat možnost předkompilovat webovou aplikaci jako možnost balení.
+> V sadě Visual Studio 2010 WPP nepodporuje předkompilaci stránek ve webové aplikaci před balení. Další verze sady Visual Studio a WPP bude zahrnovat možnost předkompilování webové aplikace jako možnost balení.
 
 
 ## <a name="conclusion"></a>Závěr
 
-Toto téma poskytuje přehled o sestavení a proces balení pro projekty webových aplikací v sadě Visual Studio 2010. Je popsané, jak jako umožňuje vyvolání nástroje nasazení webu příkazy z nástroje MSBuild a je popsáno, jak sestavení a balení procesu.
+Toto téma poskytuje přehled o postupu sestavení a balení projektů webových aplikací v sadě Visual Studio 2010. Je popsáno, jak WPP umožňuje volat Web Deploy příkazy MSBuild, a to je vysvětleno o sestavení a balení procesu.
 
-Po vytvoření balíčku pro nasazení webu, dalším krokem je její nasazení. Další informace najdete v tématu [parametry konfigurace pro nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md) a [nasazení webových balíčků](deploying-web-packages.md).
+Po vytvoření balíčku pro nasazení webu, bude dalším krokem je její nasazení. Další informace najdete v části [konfigurace parametrů nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md) a [nasazení webových balíčků](deploying-web-packages.md).
 
 ## <a name="further-reading"></a>Další čtení
 
-Další témata v tomto kurzu [parametry konfigurace pro nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md) a [nasazení webových balíčků](deploying-web-packages.md), poskytovat informace o tom, jak používat webový balíček, který jste vytvořili. Poslední kurzu této série [pokročilé nasazení webu Enterprise](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md), poskytuje pokyny o tom, jak přizpůsobit a řešení potíží během balení.
+Další témata v tomto kurzu [konfigurace parametrů nasazení webového balíčku](configuring-parameters-for-web-package-deployment.md) a [nasazení webových balíčků](deploying-web-packages.md), obsahují pokyny, jak používat webový balíček, který jste vytvořili. Posledním kurzu této série [pokročilé nasazení podnikového webu](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md), poskytuje pokyny o tom, jak přizpůsobit a řešení potíží s procesem vytváření balíčku.
 
-Podrobnější Úvod do souborů projektu a jako, najdete v části [uvnitř Microsoft Build Engine: pomocí nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
+Podrobnější Úvod do souborů projektu a WPP najdete v tématu [uvnitř the Microsoft Build Engine: použití nástroje MSBuild a Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi a William Bartholomew, ISBN: 978-0-7356-4524-0.
 
 > [!div class="step-by-step"]
 > [Předchozí](understanding-the-build-process.md)

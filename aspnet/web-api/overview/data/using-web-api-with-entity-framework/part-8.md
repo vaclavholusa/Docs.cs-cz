@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-8
-title: Zobrazit podrobnosti o položkách | Microsoft Docs
+title: Zobrazit podrobnosti o položkách | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,33 +9,32 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: 75ef94b1-bbec-4681-9210-452dba816144
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 94863e94f2a8b3f1ce8a8fb85d877bc0768f3d8a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 268c44f842cc2beb32a0a3e4c74b83b7ca9fd787
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868084"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375176"
 ---
-<a name="display-item-details"></a>Podrobnosti o položkách zobrazení
+<a name="display-item-details"></a>Zobrazení podrobností o položkách
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
+[Stáhnout dokončený projekt](https://github.com/MikeWasson/BookService)
 
-V této části bude přidána možnost zobrazení podrobností o jednotlivých adresáře. V app.js přidejte následující kód do modelu zobrazení:
+V této části přidáte možnost, chcete-li zobrazit podrobnosti pro jednotlivé knihy. V app.js přidejte následující kód k zobrazení modelu:
 
 [!code-javascript[Main](part-8/samples/sample1.js)]
 
-V Views/Home/Index.cshtml přidá prvek ke data-bind odkaz Podrobnosti:
+V Views/Home/Index.cshtml přidejte odkaz na podrobnosti o prvek svázat data:
 
 [!code-html[Main](part-8/samples/sample2.html?highlight=5)]
 
-Tato obslužná rutina kliknutí na pro váže &lt;&gt; elementu, který chcete `getBookDetail` funkce na modelu zobrazení.
+Tím je vytvořena vazba obslužné rutiny kliknutí pro &lt;&gt; elementu `getBookDetail` funkce na model zobrazení.
 
-Ve stejném souboru nahraďte následující výstřižku:
+Ve stejném souboru nahraďte následujícím mark-up:
 
 [!code-html[Main](part-8/samples/sample3.html)]
 
@@ -43,13 +42,13 @@ tímto kódem:
 
 [!code-html[Main](part-8/samples/sample4.html)]
 
-Tento kód vytvoří tabulku, která je vázané na data do vlastnosti `detail` pozorovatelné v zobrazení modelu.
+Tento kód vytvoří tabulku, která je vázán na data vlastnosti `detail` pozorovatelných v modelu zobrazení.
 
-"&lt;!--Ko –&gt; &quot; syntaxe umožňuje zahrnout vazbu Knockout mimo elementu DOM. V takovém případě `if` vazby způsobí, že v této části kódu, který se zobrazí pouze tehdy, když `details` hodnotu Null.
+"&lt;!--Ko –&gt; &quot; syntaxe umožňuje zahrnout Knockout vazby mimo prvek modelu DOM. V takovém případě `if` vazby způsobí, že v této části kódu, který se má zobrazit pouze tehdy, když `details` je jiná než null.
 
 [!code-html[Main](part-8/samples/sample5.html)]
 
-Teď Pokud spusťte aplikaci a klikněte na jednu z &quot;podrobností&quot; odkazy, aplikace se zobrazí podrobnosti adresáře.
+Když teď spusťte aplikaci a klikněte na některou &quot;podrobností&quot; odkazy, aplikace se zobrazí podrobnosti adresáře.
 
 [![](part-8/_static/image2.png)](part-8/_static/image1.png)
 

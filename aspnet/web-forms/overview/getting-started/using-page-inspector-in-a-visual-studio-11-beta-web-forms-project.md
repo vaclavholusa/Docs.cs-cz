@@ -1,47 +1,46 @@
 ---
 uid: web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
-title: Díky nástroji Page Inspector pro sadu Visual Studio 2012 v rozhraní ASP.NET Web Forms | Microsoft Docs
+title: Použití Page Inspectoru pro Visual Studio 2012 v rozhraní ASP.NET Web Forms | Dokumentace Microsoftu
 author: rick-anderson
-description: Nástroj Page Inspector pro sadu Visual Studio 2012 je nástroj pro vývoj webů s integrované prohlížeče. Vyberte libovolný element v integrovaném prohlížeči a nástroj Page Inspector...
+description: Nástroj Page Inspector pro sadu Visual Studio 2012 je nástroj pro vývoj webů pomocí integrovaného prohlížeče. Vyberte jakýkoli element ve integrovaného prohlížeče a nástroj Page Inspector...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: 2ece0bf4-aae5-4ff4-8f62-28e0819d4f86
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: ca8a3c194577766e56d0604323fef567d539316c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f1ac1072d33c85ed3e64c493b9cf7970695cea6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28040324"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384472"
 ---
-<a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>Díky nástroji Page Inspector pro sadu Visual Studio 2012 v webové formuláře ASP.NET
+<a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>Použití Page Inspectoru pro Visual Studio 2012 ve webových formulářích ASP.NET
 ====================
 podle Tim Ammann
 
-> Nástroj Page Inspector pro sadu Visual Studio 2012 je nástroj pro vývoj webů s integrované prohlížeče. Vyberte libovolný element, v prohlížeči integrované a nástroj Page Inspector okamžitě klade důraz elementu zdroje a šablon stylů CSS. Můžete procházet všechny stránky v aplikaci, rychle najít zdroje vykreslované značky a pomocí nástroje prohlížeče přímo v prostředí Visual Studio.
+> Nástroj Page Inspector pro sadu Visual Studio 2012 je nástroj pro vývoj webů pomocí integrovaného prohlížeče. Vybrat jakýkoli element ve integrovaného prohlížeče a nástroj Page Inspector okamžitě zvýrazní zdroje a šablon stylů CSS prvku. Můžete procházet všechny stránky v aplikaci, rychle najít zdroje vykreslované značky a použít nástroje prohlížeče přímo v prostředí sady Visual Studio.
 > 
-> Tento kurz shwos povolení režimu kontroly a rychle najít a upravit pravidla šablon stylů CSS a text v rámci svého webového projektu. Tento kurz používá projekt webové formuláře aplikace, ale můžete použít také nástroje Page Inspector pro webové projekty a [MVC](https://go.microsoft.com/?linkid=9802002) aplikace.
+> Tento kurz shwos jak povolit režim kontroly a rychle najít a úprava pravidel šablon stylů CSS a text v rámci webového projektu. V tomto kurzu použijete projekt webových formulářů aplikace, ale můžete použít také nástroje Page Inspector pro webové projekty a [MVC](https://go.microsoft.com/?linkid=9802002) aplikací.
 > 
-> Tento kurz obsahuje následující části:
+> Tento kurz obsahuje následující oddíly:
 > 
-> [Požadavky](#_1_prerequisites)
+> [Požadované součásti](#_1_prerequisites)
 > 
 > [Vytvoření webové aplikace](#_2_creating_a)
 > 
-> [Chcete-li zobrazit aplikaci použít nástroj Page Inspector](#_3_using_page)
+> [Zobrazit aplikaci pomocí nástroje Page Inspector](#_3_using_page)
 > 
 > [Povolit režim kontroly](#_4_inspection_mode)
 > 
-> [Použijte nástroj Page Inspector provádět změny kódu](#_5_using_page)
+> [Použití Page Inspectoru provádět změny kódu](#_5_using_page)
 > 
-> [Režim kontroly a okno HTML](#_6_inspection_mode)
+> [Režim kontroly a v okně HTML](#_6_inspection_mode)
 > 
-> [Zobrazení náhledu změn šablon stylů CSS v okně Styly](#_7_previewing_css)
+> [Náhled změn šablon stylů CSS v okně Styly](#_7_previewing_css)
 > 
 > [Automatická synchronizace šablon stylů CSS](#css_auto_sync)
 > 
@@ -52,161 +51,161 @@ podle Tim Ammann
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) nebo [Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) nebo [sady Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
-> Chcete-li získat nejnovější verzi nástroje Page Inspector, použijte [instalačního programu webové platformy](https://go.microsoft.com/fwlink/?LinkId=255386) nainstalovat sadu Azure SDK pro rozhraní .NET 2.0.
+> Chcete-li získat nejnovější verzi nástroje Page Inspector, použijte [instalačního programu webové platformy](https://go.microsoft.com/fwlink/?LinkId=255386) k instalaci sady Azure SDK pro .NET 2.0.
 
 
-Nástroj Page Inspector je instalován s Microsoft Web Developer Tools. Nejnovější verze je 1.3. Zjištění verze máte, spusťte Visual Studio a vyberte **o sadě Microsoft Visual Studio** z **pomoci** nabídky.
+Nástroj Page Inspector je součástí nástroje Microsoft Web Developer Tools. Nejnovější verze je verze 1.3. Zjištění verze máte, spusťte Visual Studio a vyberte **o Microsoft Visual Studio** z **pomáhají** nabídky.
 
 <a id="_creating_a_web"></a><a id="_2_creating_a"></a>
 
 ## <a name="create-a-web-application"></a>Vytvoření webové aplikace
 
-Nejdřív vytvoříte webovou aplikaci, která nástroj Page Inspector se bude používat. V sadě Visual Studio, vyberte **soubor** &gt; **nový projekt**. Na levé straně, rozbalte položku **Visual C#**, vyberte **webové**a potom vyberte **aplikaci webových formulářů ASP.NET**.
+Nejprve vytvoříte webovou aplikaci, kterou budete používat nástroj Page Inspector se. V sadě Visual Studio, zvolte **souboru** &gt; **nový projekt**. Na levé straně rozbalte **Visual C#** vyberte **webové**a pak vyberte **aplikace webových formulářů ASP.NET**.
 
-![Novou aplikaci Web Forms](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image1.png)
+![Nová aplikace webových formulářů](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image1.png)
 
-Click **OK**.
+Klikněte na tlačítko **OK**.
 
 Aplikace se otevře v **zdroj** zobrazení.
 
-![Novou aplikaci Web Forms v zobrazení zdroje](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image2.png)
+![Nová aplikace webových formulářů v zobrazení zdroje](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image2.png)
 
-Teď, když máte aplikaci pro práci s, můžete použít nástroj Page Inspector prozkoumat a upravit ho.
+Teď, když máte aplikaci pro práci s, můžete použít nástroj Page Inspector sloužící ke zkoumání a upravte ho.
 
 <a id="_starting_page_inspector"></a><a id="_3_starting_page"></a><a id="_3_using_page"></a>
 
-## <a name="use-page-inspector-to-view-the-application"></a>Chcete-li zobrazit aplikaci použít nástroj Page Inspector
+## <a name="use-page-inspector-to-view-the-application"></a>Zobrazit aplikaci pomocí nástroje Page Inspector
 
-V dalším kroku se zobrazí aplikace s nástrojem Page Inspector. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt a potom zvolte **zobrazení v nástroj Page Inspector**.
+V dalším kroku se zobrazit aplikace s nástrojem Page Inspector. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a klikněte na tlačítko **zobrazení v nástroje Page Inspector**.
 
-![Zobrazení v nástroj Page Inspector](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image3.png)
+![Zobrazení v nástroje Page Inspector](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image3.png)
 
-Ve výchozím nastavení kdy nástroj Page Inspector spouští poprvé, je ukotven jako úzké okno na levé straně prostředí Visual Studio. Ponechte ukotven na levé straně a nastavte ji na šířku, který je možnost pro vás, nebo ho v jednom z oblastí, které nástroj ukotvení na nahoru, dolů nebo vpravo:
+Ve výchozím nastavení když poprvé, spustí nástroj Page Inspector je ukotven jako úzké okno na levé straně prostředí sady Visual Studio. Ponechte ukotvena na levé straně a nastavte ho na šířku, který je pro vás naučí, nebo jej v jedné oblasti nástroj ukotvit na nahoru, dolů nebo vpravo:
 
 ![Nástroj Page Inspector pozice ukotvení](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image4.png)
 
-Pokud uvolníte okno nástroj Page Inspector, můžete umístit ji mimo Visual Studio, nebo i na druhém monitoru Pokud nemáte. Však v pořadí, v jakém ALT + TAB mezi nástroj Page Inspector a Visual Studio při okno nástroj Page Inspector není ukotvený, přejděte do **nástroje** &gt; **možnosti** &gt;  **Prostředí** &gt; **karty a okna**a v části **kartě dobře**, zrušte zaškrtnutí políčka názvem **plovoucí nástroj windows vždy zůstat na hlavní okno**:
+Pokud uvolníte okna nástroje Page Inspector, je možné je umístit mimo sadu Visual Studio, nebo dokonce i na druhý monitor pokud nějakou máte. Ale v pořadí ALT + TAB mezi nástroj Page Inspector a sady Visual Studio při okno nástroje Page Inspector je uvolněna, přejděte na **nástroje** &gt; **možnosti** &gt;  **Prostředí** &gt; **karty a Windows**a v části **kartu dobře**zrušte výběr zaškrtávacího políčka volá **plovoucí panely nástrojů trojů zůstávají nad hlavní okno**:
 
-![Zrušením zaškrtnutí plovoucí windows nástroj ALT + TAB mezi odpojenou okno nástroj Page Inspector a Visual Studio](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image5.png)
+![Zrušte zaškrtnutí políčka s plovoucí desetinnou čárkou windows nástroj ALT + TAB mezi Visual Studio a okno neukotvené panely nástroje Page Inspector](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image5.png)
 
-Horní podokno okna nástroje Page Inspector ukazuje aktuální stránky v okně prohlížeče. V dolním podokně zobrazí stránku v značka jazyka HTML na levé straně a některé karty na pravé straně, která umožňují kontrolovat různé aspekty stránky. Dolní podokno je podobná [F12 Developer Tools](https://msdn.microsoft.com/ie/aa740478) v aplikaci Internet Explorer. (Ale na rozdíl od nástrojů pro vývojáře, můžete nástroj Page Inspector přímo v sadě Visual Studio.)
+Horní podokno okna nástroje Page Inspector aktuální stránky zobrazí v okně prohlížeče. V dolním podokně zobrazí na stránce v kódu HTML na levé straně a některé karty na pravé straně, která umožňují kontrolovat různé aspekty stránky. Dolní podokno je podobný [vývojářské nástroje F12 pomáhají](https://msdn.microsoft.com/ie/aa740478) v aplikaci Internet Explorer. (Ale na rozdíl od vývojářských nástrojů, můžete nástroj Page Inspector přímo v sadě Visual Studio.)
 
 ![Inspektor stránek](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image6.png)
 
-V tomto kurzu budete používat v podokně Prohlížeč nástroje Page Inspector a **HTML** a **styly** karty vám pomohou rychle přejděte a provést změny aplikace.
+V tomto kurzu použijete prohlížeč podokna nástroje Page Inspector a **HTML** a **styly** karty, které vám pomohou rychle přejít a provést změny aplikace.
 
 <a id="_4_inspection_mode"></a>
 ## <a name="enable-inspection-mode"></a>Povolit režim kontroly
 
-V dalším kroku uvidíte, jak funguje nástroj Page Inspector kontroly režimu. V okně nástroje Page Inspector klikněte na **kontroly** tlačítko.
+Dále uvidíte, jak funguje režim kontroly nástroje Page Inspector. V okně nástroje Page Inspector klikněte **zkontrolujte, jestli se** tlačítko.
 
-![Kontrola – Element](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image7.png)
+![Zkontrolovat Element](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image7.png)
 
-Informace o režimu kontroly v akci, přesuňte ukazatel myši přes různé části stránky v okně prohlížeče nástroj Page Inspector. Jak to uděláte, nezmění na velké znaménko plus a zvýrazní se element pod:
+Pokud chcete zobrazit režim kontroly v akci, najeďte myší různé části stránky v rámci okna prohlížeče nástroj Page Inspector. Stejně jako, ukazatel myši se změní na velké znaménko plus a zvýrazní prvek pod:
 
-![Ukazatele myši div.content obálky](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image8.png)
+![Ukazatel myši div.content obálky](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image8.png)
 
-Jako ukazatel myši přesunete, Všimněte si, že
+Při přesunu ukazatele myši, Všimněte si, že
 
-- Obsah **zdroj** zobrazit změny zobrazit značku odpovídající vybraný element na stránce. Je označený relevantní značek. Pokud zdroj je v jiném souboru, je tento soubor otevřít v zobrazení zdroje se zvýrazněnou relevantní značkami.
+- Obsah v **zdroj** zobrazení se změní a objeví značka odpovídající vybraný element na stránce. Je zvýrazněn odpovídající značky. Pokud je zdroj do jiného souboru, tento soubor otevřít v zobrazení zdroje se zvýrazněnou relevantní značkami.
 
-- Kód zobrazí v **HTML** ve nástroj Page Inspector také změní tak, aby odpovídaly vybraný element na stránce. V **HTML** kartě popsané relevantní značek.
+- Značky zobrazeny v **HTML** karta v nástroje Page Inspector se také změní tak, aby odpovídaly vybraný element na stránce. V **HTML** kartu, jsou uvedeny odpovídající značky.
 
-- **Styly** kartě se zobrazují pravidla šablon stylů CSS relevantní pro aktuální výběr.
+- **Styly** karta zobrazuje relevantní pro aktuální výběr pravidel šablon stylů CSS.
 
 <a id="_5_using_page"></a>
 
-## <a name="use-page-inspector-to-make-changes-to-markup"></a>Použijte nástroj Page Inspector provádět změny kódu
+## <a name="use-page-inspector-to-make-changes-to-markup"></a>Použití Page Inspectoru provádět změny kódu
 
-Nyní uvidíte, jak můžete použít nástroj Page Inspector k vyhledání a provést změny kódu nebo text, jehož umístění nemusí být hned zjevné.
+Nyní uvidíte, jak vám pomůže nástroj Page Inspector najít a provést změny kódu nebo text, jehož umístění nemusí být hned zjevné.
 
-Nástroj Page Inspector uvést do režimu kontroly a potom přejděte k dolnímu okraji domovské stránce.
+Vložit nástroj Page Inspector v režimu kontroly a potom přejděte do dolní části domovské stránky.
 
-Jakmile zadáte oblasti zápatí, otevře se nástroj Page Inspector *Site.Master* rozložení souboru v **zdroje** zobrazení na dočasné kartě napravo od dalších karty a zvýrazňuje části hlavní stránky, které Vybrali jste. To ukazuje, jak nástroj Page Inspector můžete najít a zobrazit obsah na stránku, která ve skutečnosti může pocházet z jiného souboru než ten, který původně otevřel.
+Jakmile zadáte zápatí, otevře se nástroj Page Inspector *Site.Master* soubor rozložení v **zdroje** zobrazení dočasný kartě napravo od druhé karty a zvýrazní části hlavní stránky, které jste Vybrali jste. To se dozvíte, jak najít a zobrazit obsah na stránce, která ve skutečnosti může pocházet z různých souborů než ten, který původně otevřel nástroje Page Inspector.
 
-![Označuje zápatí v režimu kontroly](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image9.png)
+![Zápatí osvětlení na režim kontroly](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image9.png)
 
-V okně prohlížeče nástroj Page Inspector, přesuňte ukazatel myši nad řádek s copyrightu <a id="a"> </a>Všimněte si.
+V okně prohlížeče nástroj Page Inspector, přesuňte ukazatel myši nad řádek s copyrightu <a id="a"> </a>Všimněte si, že.
 
-V *Site.Master* stránky, odpovídající řádek zvýrazněna.
+V *Site.Master* stránce odpovídajícím řádku se zvýrazní.
 
-![Zápatí autorským řádek zvýrazněna](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image10.png)
+![Zápatí o autorských právech řádek zvýrazněný](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image10.png)
 
-Přidejte na konec řádku v nějaký text *Site.Master* souboru.
+Přidejte nějaký text do konce řádku v *Site.Master* souboru.
 
-&lt;p&gt;&amp;kopírovat; &lt;%: DateTime.Now.Year %&gt; -Moje aplikace skály ASP.NET!&lt; /p&gt;
+&lt;p&gt;&amp;kopírovat; &lt;%: DateTime.Now.Year %&gt; – My ASP.NET Application Rocks!&lt; /p&gt;
 
-Nyní stiskněte Ctrl + Alt + Enter nebo klikněte na panelu aktualizace a zobrazte výsledky v okně prohlížeče nástroj Page Inspector.
+Nyní stiskněte kombinaci kláves Ctrl + Alt + Enter nebo klikněte na panel aktualizace pro zobrazení výsledků v okně prohlížeče nástroj Page Inspector.
 
-![Moje aplikace skály ASP.NET!](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image11.png)
+![My ASP.NET Application Rocks!](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image11.png)
 
-Vám může mít chápat, že zápatí byla na *Default.aspx* stránky, ale ukázalo v hlavní rozložení stránky a nástroj Page Inspector zjistila, že pro vás.
+Jste možná jste si mysleli, že byla v zápatí je uvedené na *Default.aspx* stránky, ale ukázalo být na stránce předlohy rozložení a nástroj Page Inspector zjistila, že pro vás.
 
 <a id="_6_inspection_mode"></a>
 
-## <a name="inspection-mode-and-the-html-window"></a>Režim kontroly a okno HTML
+## <a name="inspection-mode-and-the-html-window"></a>Režim kontroly a v okně HTML
 
-V dalším kroku bude mít rychlý pohled na okno HTML a jak mapuje prvky pro vás.
+V dalším kroku bude mít rychlý pohled na okno HTML a jak mapuje prvky za vás.
 
-Nástroj Page Inspector uvést do režimu kontroly.
+Nástroj Page Inspector převeďte do režimu kontroly.
 
-![Kontrola – Element](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image12.png)
+![Zkontrolovat Element](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image12.png)
 
-Klikněte na horní část stránky, která říká "zde bude vaše logo". Jsou zkoumání určitý element podrobněji tak zobrazení v okně prohlížeče už změní, když ukazatel myši přesunete.
+Klepněte na horní část stránky, která říká "zde bude vaše logo". Prohlížené konkrétní element podrobněji, tak zobrazení v okně prohlížeče už mění při přesunutí ukazatele myši.
 
-Nyní přesunutí ukazatele myši **HTML** okno. Jako ukazatel myši přesunete, nástroj Page Inspector popisuje element v rámci **HTML** okno a zvýrazňuje odpovídající element v okně prohlížeče.
+Nyní přesunutí ukazatele myši **HTML** okna. Při přesunu ukazatele myši, nástroj Page Inspector popisuje element v rámci **HTML** okno a zvýrazní odpovídající element v okně prohlížeče.
 
-![HTML Window](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image13.png)
+![Okno HTML](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image13.png)
 
-Jak před, otevře se nástroj Page Inspector *Site.Master* souboru můžete na kartě dočasné. Klikněte na kartu Site.Master a zvýrazní se odpovídající kód v &lt;záhlaví&gt; části:
+Jako předtím, otevře se nástroj Page Inspector *Site.Master* souboru pro vás dočasné kartě. Klikněte na kartu Site.Master a zvýrazní se odpovídající značky ve &lt;záhlaví&gt; části:
 
 ![Zvýrazněná značka](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image14.png)
 
 <a id="_using_page_inspector"></a><a id="_7_previewing_css"></a>
 
-## <a name="preview-css-changes-in-the-styles-window"></a>Zobrazení náhledu změn šablon stylů CSS v okně Styly
+## <a name="preview-css-changes-in-the-styles-window"></a>Náhled změn šablon stylů CSS v okně Styly
 
-V dalším kroku uvidíte, jak můžete použít nástroj Page Inspector **styly** okna zobrazení náhledu změn do šablon stylů CSS.
+V dalším kroku se zobrazí, jak můžete použít nástroj Page Inspector **styly** okna Náhled změn do šablony stylů CSS.
 
-Klikněte **kontroly** tlačítko uvést do režimu kontroly nástroje Page Inspector.
+Klikněte na tlačítko **zkontrolujte, jestli se** tlačítko Vložit nástroj Page Inspector režim kontroly.
 
-V okně prohlížeče nástroj Page Inspector, přesuňte ukazatel myši nad v části "Home Page", dokud **div.content obálku** se zobrazí popisek.
+V okně prohlížeče nástroj Page Inspector, přesuňte ukazatel myši nad oddíl "Home Page" až do **div.content obálky** popisek se zobrazí.
 
-![Ukazatele myši na elementy](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image15.png)
+![Ukazatel myši přesunout elementy](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image15.png)
 
-Klikněte v části div.content obálku jednou a poté přesuňte ukazatel myši na **styly** okno. V části volič třídy .featured .content obálky zrušte a zaškrtněte políčko pro vlastnost barvu pozadí.
+Klikněte v části div.content obálky jednou a poté přesuňte ukazatel myši na **styly** okna. V části volič .featured .content obálkové třídy zrušte a zaškrtněte políčko pro vlastnost barvu pozadí.
 
 ![Barva pozadí vymazat](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image16.png)
 
 Všimněte si, jak tato změna přináší náhled okamžitě v okně prohlížeče nástroj Page Inspector.
 
-Zaškrtněte políčko znovu, klikněte dvakrát na hodnotu vlastnosti a změňte ji na `red`. Změna ukazuje okamžitě:
+Zaškrtněte toto políčko znovu, klikněte dvakrát na hodnotu vlastnosti a změňte ji na `red`. Změna ukazuje hned:
 
 ![Barva pozadí Red](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image17.png)
 
-**Styly** okno díky usnadňuje testování a náhled šablon stylů CSS změní před potvrzením změny styl list sám sebe.
+**Styly** okno umožňuje snadno test a náhled šablon stylů CSS změní před potvrzením změn na styl listu samotný.
 
 <a id="css_auto_sync"></a>
 ## <a name="css-auto-sync"></a>Automatická synchronizace šablon stylů CSS
 
 > [!NOTE]
-> Tato funkce vyžaduje 1.3 verzi nástroje Page Inspector.
+> Tato funkce vyžaduje verzi 1.3 nástroj Page Inspector.
 
 
-Automatická synchronizace šablon stylů CSS funkce umožňuje přímo upravit soubor CSS a podívejte se změny okamžitě v prohlížeči nástroj Page Inspector.
+Funkce Automatická synchronizace šablon stylů CSS lze upravit přímo soubor šablony stylů CSS a podívejte se změny okamžitě v prohlížeči nástroj Page Inspector.
 
-Klikněte na tlačítko **kontroly** uvést do režimu kontroly nástroje Page Inspector.
+Klikněte na tlačítko **zkontrolujte, jestli se** uvést do režimu kontroly nástroje Page Inspector.
 
-V prohlížeči nástroj Page Inspector, přesuňte ukazatel myši nad v části "Home Page", dokud **div.content obálku** se zobrazí popisek. Klikněte na tlačítko jednou tento element vyberte.
+V prohlížeči nástroj Page Inspector, přesuňte ukazatel myši nad oddíl "Home Page" až do **div.content obálky** popisek se zobrazí. Kliknutím vyberte tento element.
 
-**Syles** v okně se zobrazí všechna pravidla šablon stylů CSS pro tento element. Posuňte se dolů a najít .featured .content obálku třída selektor. Klikněte na ".featured .content obálku". Nástroj Page Inspector otevře soubor CSS, který definuje tento styl (Site.css) a zvýrazňuje odpovídající stylu CSS.
+**– Styly** okno zobrazuje všechna pravidla šablon stylů CSS u tohoto elementu. Posuňte se dolů najít .featured .content – obálky třídy selektor. Klikněte na ".featured .content obálku". Nástroj Page Inspector otevře soubor šablony stylů CSS, která definuje tento styl (Site.css) a zvýrazní odpovídající stylu CSS.
 
 ![Soubor CSS](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image18.png)
 
-Teď změňte hodnotu `background-color` na "red". Změny se okamžitě zobrazí v prohlížeči nástroj Page Inspector.
+Teď změňte hodnotu `background-color` na hodnotu "red". Změny se okamžitě zobrazí v prohlížeči nástroj Page Inspector.
 
 ![Nástroj Page Inspector prohlížeče](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image19.png)
 
@@ -214,84 +213,84 @@ Teď změňte hodnotu `background-color` na "red". Změny se okamžitě zobrazí
 
 ## <a name="using-the-css-color-picker"></a>Výběr barvy šablon stylů CSS
 
-Dále budete Další informace o použití nástroje Page Inspector rychle najít a změnit šablon stylů CSS v výchozí aplikace zvýrazněný text. V tomto příkladu jste se rozhodli, že nemáte jako modře zvýrazněný příklad a chcete ho změnit na jinou barvu.
+V dalším kroku se dozvíte, jak používat nástroj Page Inspector rychle najít a změnit šablon stylů CSS pro zvýrazněného textu ve výchozím nastavení aplikace. V tomto příkladu jste se rozhodli, že nemáte, jako jsou modře zvýrazněný a chcete ho změnit na jinou barvu.
 
-Klikněte **kontroly** tlačítko.
+Klikněte na tlačítko **zkontrolujte, jestli se** tlačítko.
 
-![Kontrola – Element](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image20.png)
+![Zkontrolovat Element](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image20.png)
 
-V okně prohlížeče nástroj Page Inspector, přesuňte ukazatel myši nad zvýrazněnou "videa, kurzy a ukázky" text tak, aby CSS "označením" Popisek se zobrazí.
+V okně prohlížeče nástroj Page Inspector, přesuňte ukazatel myši nad zvýrazněnou "videa, kurzy a ukázky" tak, aby CSS "mark" Popisek zobrazí se text.
 
-![Ukazatele myši značky elementu](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image21.png)
+![Najede myší element značky](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image21.png)
 
-Kliknutím na text vyberte ho. V dolní části se zobrazí odpovídající značky selektor šablon stylů CSS **styly** okno.
+Klepněte na text a vyberte ji. Odpovídající značky selektor šablon stylů CSS se zobrazí v dolní části **styly** okna.
 
-![Označit pro výběr v okně Styly](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image22.png)
+![Označit selektoru v okně Styly](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image22.png)
 
-Klikněte na označit selektor. Tím se otevře *Site.css* souboru pro webovou aplikaci. Klikněte na kartu Site.css a zvýrazní se odpovídající šablon stylů CSS pro selektor:
+Klepněte na volič značky. Tím se otevře *Site.css* souboru pro webovou aplikaci. Klikněte na kartu Site.css a zvýrazní se odpovídající šablony stylů CSS pro selektor:
 
-![Označit selektor v šabloně stylů.](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image23.png)
+![Označit selektoru v šabloně stylů](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image23.png)
 
 Vyberte a odeberte řádku s vlastností barvu pozadí.
 
-Teď použijete nové volby barev Visual Studio 2012 CSS vybrat nový barvu pro **označit** vlastnost barvu pozadí.
+Teď použijete nový výběr barvy šablon stylů CSS 2012 Visual Studio zvolte novou barvu pro **označit** vlastnost barvu pozadí.
 
 <a id="_using_the_visual"></a>
 
 ### <a name="using-the-visual-studio-2012-css-color-picker"></a>Pomocí volby barev služby Visual Studio 2012 šablon stylů CSS
 
-Editor šablon stylů CSS v sadě Visual Studio 2012 má výběr barvy, která usnadňuje zvolte a vložit barvy. Obsahuje výběr "pop rozbalovací", která nabízí jemnějšího ovládání a jednoduchý pruhu barev.
+Editor šablon stylů CSS v sadě Visual Studio 2012 obsahuje barvu ovládacího prvku pro výběr, která umožňuje jednoduše vybrat a vložit barvy. Obsahuje jednoduché pruhu barev a "pop dolů" ovládacího prvku pro výběr, který nabízí lepší kontrolu.
 
-Výběr barvy obsahuje standardní paletu barev, podporuje názvy standardní barev, kódů hash, barvy RGB, RGBA, HSL a HSLA a udržuje seznam barev, které byly naposledy použity v dokumentu.
+Výběr barvy obsahuje standardní paletu barev, podporuje názvy standardních barev, hash kódy, barvy RGB, RGBA, HSL a HSLA a udržuje seznam barvy, které jste naposledy použili v dokumentu.
 
-V řádku, kde byla vlastnost Barva pozadí zadejte "bc" a stiskněte jednou na šipku dolů.
+Na řádku, kde byla vlastnost background-color zadejte "bc" a jednou stisknutím šipky dolů.
 
-Když zadáte první znak každého slova ve vlastnosti oddělené pomlčkou jako "background-color", filtry IntelliSense v seznamu zobrazit pouze vlastnosti, které odpovídají:
+Když zadáte první znak každého slova oddělená spojovníkem vlastnost jako "background-color", filtry IntelliSense v seznamu zobrazit pouze vlastnosti, které odpovídají:
 
-![IntelliSense filtrované hodnoty](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
+![Technologie IntelliSense filtrované hodnoty](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
 
-Nyní zadejte středník. Když to uděláte, vloží se název vlastnosti úplné barvu pozadí. Typ **#** nebo **rgb (**, a zobrazí se na panelu Výběr barev:
+Teď zadejte dvojtečku. Pokud ano, vloží se název vlastnosti plnou barvu pozadí. Typ **#** nebo **rgb (**, a zobrazí se panel pro výběr barev:
 
-![Na panelu Výběr barev šablon stylů CSS](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
+![Výběr pruhu barev šablon stylů CSS](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
 
-Pokud chcete zjistit, jak funguje pruhu barev výběr, klikněte na jeho barvy s ukazatelem myši nebo stiskněte klávesu šipka dolů a pak použijte klávesy se šipkami vlevo a vpravo procházení barvy. Při návštěvě barvu, která je zobrazen náhled s odpovídající hodnotou pro vlastnost background-color:
+Pokud chcete zobrazit, jak funguje pruhu barev pro výběr, klikněte na jeho barvy s ukazatelem myši nebo stisknutím klávesy se šipkou dolů a pak pomocí kláves šipka doleva a doprava procházení barvy. Při návštěvě barvu, je zobrazen odpovídající hodnota pro vlastnost background-color:
 
-![Hodnota vlastnosti Barva pozadí zobrazení náhledu](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image26.png)
+![Hodnota vlastnosti barvu pozadí náhledu](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image26.png)
 
-V tomto okamžiku by mohla stisknutím klávesy Enter vyberte hodnotu a pak středníkem (;) k dokončení položka šablon stylů CSS. Teď přejděte k další části, aby mohli zobrazit, jak funguje barva výběru pop nižší.
+V tomto okamžiku může stisknutím klávesy Enter vyberte hodnotu a potom středníkem (;) k dokončení položky šablon stylů CSS. Teď přejděte k další části tak, abyste viděli, jak funguje v pop – seznamu pro výběr barvy.
 
-#### <a name="using-the-color-picker-pop-down"></a>Pomocí Pop nižší výběr barev
+#### <a name="using-the-color-picker-pop-down"></a>Použití barev výběr Pop dolů
 
-Když pruhu barev nemá přesný barvu, která hledáte, můžete pro výběr barvy rozbalovací pop.
+Pokud u panelu barev není přesná barva, kterou hledáte, můžete použít výběr barvy pop dolů.
 
-Otevřete ho kliknutím na dvojitou šipku na pravém konci pruhu barev nebo stiskněte klávesu šipka dolů jednou nebo dvakrát na klávesnici.
+Pokud chcete soubor otevřít, klikněte na dvojitou šipku na pravém konci pruhu barev nebo jednou nebo dvakrát klávesu šipka dolů na klávesnici.
 
-![Výběr rozbalovací Pop barva šablon stylů CSS](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image27.png)
+![Výběr barvy šablon stylů CSS Pop dolů](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image27.png)
 
-Klikněte na barvu ze svislá čára na pravé straně. Ukazuje to přechodu pro tuto barvu v hlavním okně. Vybrat barvu přímo z panelu svislé stisknutím klávesy Enter nebo klikněte na libovolný bod v hlavním okně zvolit s vyšší přesností.
+Klikněte na barvu z svislá čára na pravé straně. V hlavním okně zobrazí přechod pro tuto barvu. Zvolte barvu přímo z svislá čára stisknutím klávesy Enter nebo klikněte na tlačítko kdekoli v hlavním okně Vybrat s větší přesností.
 
-Pokud je na obrazovce počítače, který chcete použít barvu (nemusí to být v uživatelském rozhraní sady Visual Studio), jeho hodnota můžete zaznamenat pomocí nástroje kapátko vpravo dole.
+Pokud je na obrazovce počítače, který chcete použít barvu (nemusí být uvnitř uživatelské rozhraní Visual Studia), můžete zachytit její hodnotu s použitím nástroje kapátko vpravo dole.
 
-Také můžete změnit krytí barvu přesunutím posuvníku v dolní části volby barev. V tom změny barvu hodnoty RGBA hodnoty, protože formát RGBA může představovat neprůhlednost.
+Neprůhlednost barvu také můžete změnit přesunutím posuvníku v dolní části nástroje pro výběr barvy. Provádí se tak změní se barva hodnot na hodnoty RGBA, protože formát RGBA může představovat neprůhlednosti.
 
 Po výběru barvy, stiskněte klávesu Enter a pak zadejte středníkem k dokončení barvu pozadí položky v *Site.css* souboru.
 
 <a id="_the_update_bar"></a>
 
-### <a name="the-page-inspector-update-bar"></a>Na stránce Inspector aktualizace panelu
+### <a name="the-page-inspector-update-bar"></a>Kontrola aktualizace posuvník
 
-Nástroj Page Inspector okamžitě zjistí změnu *Site.css* souboru (nebo všechny soubory v aplikaci) a zobrazí upozornění na aktualizace panelu.
+Nástroj Page Inspector okamžitě zjistí změnu *Site.css* souboru (nebo na libovolný soubor v aplikaci) a zobrazí upozornění na aktualizace panelu.
 
-![Aktualizace panelu](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image28.png)
+![Panel aktualizace](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image28.png)
 
-Pokud chcete uložit všechny soubory a aktualizujte stránku prohlížeče nástroj Page Inspector, stiskněte Ctrl + Alt + Enter nebo klikněte na panelu aktualizace. Změna v barva zvýraznění se zobrazí v prohlížeči:
+Uložte všechny soubory a aktualizujte prohlížeč, nástroj Page Inspector stisknutím klávesy Ctrl + Alt + Enter nebo klikněte na panel aktualizace. Změna barvy zvýraznění se zobrazí v prohlížeči:
 
-![Barva zvýraznění změnit](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image29.png)
+![Změnit barvu zvýraznění](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image29.png)
 
-<a id="_using_page_inspector_1"></a>Všimněte si, nemusí aktualizovat prohlížeč nástroje Page Inspector přímo na v prostředí Visual Studio. Díky nástroji Page Inspector místo externího prohlížeče umožňuje zůstat v editoru při vývoji webových aplikací.
+<a id="_using_page_inspector_1"></a>Všimněte si, že jednoduše aktualizovat prohlížeč nástroj Page Inspector přímo z prostředí sady Visual Studio. Použití Page Inspectoru místo externího prohlížeče umožňuje zůstat v editoru při vývoji webových aplikací.
 
 ## <a name="see-also"></a>Viz také
 
-[Představení nástroje Page Inspector](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector) (video na kanálu 9)
+[Představení nástroje Page Inspector](https://channel9.msdn.com/posts/visual-studio-vnext-introducing-page-inspector) (video Channel 9)
 
-[Nástroj Page Inspector chybové zprávy](https://go.microsoft.com/?linkid=9813062) (MSDN)
+[Chybové zprávy nástroje Page Inspector](https://go.microsoft.com/?linkid=9813062) (MSDN)

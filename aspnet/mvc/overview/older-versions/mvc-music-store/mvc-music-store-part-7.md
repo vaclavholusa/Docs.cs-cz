@@ -1,64 +1,63 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
-title: 'Část 7: Členství a autorizace | Microsoft Docs'
+title: '7. část: Členství a ověřování | Dokumentace Microsoftu'
 author: jongalloway
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 7 popisuje členství a autorizaci.
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 7. část se věnuje členství a autorizace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2010
 ms.topic: article
 ms.assetid: c8511ebe-68bc-4240-87c3-d5ced84a3f37
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: a0f599da4691c5bb7c8e6f01625fc0e94ce0eac8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 41b17315cbe1f6d93001a736bc24bf003df24061
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879501"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393167"
 ---
-<a name="part-7-membership-and-authorization"></a>Část 7: Členství a autorizace
+<a name="part-7-membership-and-authorization"></a>7. část: Členství a ověřování
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje krok za krokem, jak používat rozhraní ASP.NET MVC a Visual Studio pro vývoj webů.  
+> MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a sady Visual Studio.  
 >   
-> Úložiště Hudba MVC je implementace úložiště lightweight ukázkové, který prodává hudebních alb online a implementuje základní Správa serveru, přihlášení uživatele a nákupního košíku funkce.  
+> Music Store MVC je jednoduché ukázku implementace úložiště prodává hudebních alb online, který implementuje správu základního webu, přihlášení uživatele a nákupního košíku funkce.  
 >   
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 7 popisuje členství a autorizaci.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 7. část se věnuje členství a autorizace.
 
 
-Správce obchodu kontroleru je nyní k dispozici všem uživatelům, kteří navštěvují náš web. Umožňuje změnit to omezit oprávnění na správce webu.
+Správce Store kontroleru je nyní k dispozici všem uživatelům na našem webu. Změňme ji omezit oprávnění na správce webu.
 
 ## <a name="adding-the-accountcontroller-and-views"></a>Přidání zobrazení a AccountController
 
-Jeden rozdíl mezi kompletní šablonou webové aplikace ASP.NET MVC 3 a šablony ASP.NET MVC 3 prázdný webové aplikace je, že prázdné šablonu neobsahuje řadič účet. Vytvoření účtu řadiče přidáme zkopírováním několik souborů z nové aplikace ASP.NET MVC z úplné šablony webové aplikace ASP.NET MVC 3.
+Jedním z rozdílů mezi kompletní šablonu webové aplikace ASP.NET MVC 3 a šablony ASP.NET MVC 3 prázdná webová aplikace je, že prázdnou šablonu neobsahuje řadič účet. Přidáme řadič účet tak, že zkopírujete několik souborů z nové aplikace ASP.NET MVC vytvořené z úplné šablony webové aplikace ASP.NET MVC 3.
 
-Vytvoření nové aplikace ASP.NET MVC pomocí úplné šablony webové aplikace ASP.NET MVC 3 a zkopírujte následující soubory do stejných adresářích v našem projektu:
+Vytvoření nové aplikace ASP.NET MVC pomocí úplné šablony webové aplikace ASP.NET MVC 3 a zkopírujte následující soubory do stejného adresáře v našem projektu:
 
 1. Zkopírujte AccountController.cs v adresáři řadiče
-2. Zkopírujte AccountModels v adresáři modely
-3. Vytvořte adresář účet uvnitř zobrazení adresáře a zkopírujte všechny čtyři zobrazení
+2. Zkopírujte AccountModels v adresáři modelů
+3. Vytvořte účet adresář do adresáře zobrazení a zkopírujte všechny čtyři zobrazení v
 
-Změňte obor názvů pro třídy Controller a modelu, tak budou začínat MvcMusicStore. Třída AccountController by měl použít obor názvů MvcMusicStore.Controllers a třída AccountModels by měl použít obor názvů MvcMusicStore.Models.
+Změna oboru názvů pro třídy Kontroleru a Model, začnou se MvcMusicStore. Třída AccountController by měl používat obor názvů MvcMusicStore.Controllers a třída AccountModels by měl používat obor názvů MvcMusicStore.Models.
 
-*Poznámka: Tyto soubory jsou také k dispozici při stahování MvcMusicStore Assets.zip, ze kterého jsme zkopírovat soubory návrhu naše lokality na začátku tohoto kurzu. Členství soubory jsou umístěny v adresáři kódu.*
+*Poznámka: Tyto soubory jsou také k dispozici MvcMusicStore Assets.zip soubor ke stažení, ze kterého jsme naše lokality návrhu soubory zkopírovány na začátku tohoto kurzu. Členství soubory jsou umístěny v adresáři kódu.*
 
-Aktualizované řešení by měl vypadat asi takto:
+Aktualizované řešení by měl vypadat nějak takto:
 
 ![](mvc-music-store-part-7/_static/image1.png)
 
-## <a name="adding-an-administrative-user-with-the-aspnet-configuration-site"></a>Přidání správce s lokalitou konfigurace ASP.NET
+## <a name="adding-an-administrative-user-with-the-aspnet-configuration-site"></a>Přidání správce s webem konfigurace ASP.NET
 
-Než budeme autorizace vyžadovat v našem webu, budeme potřebovat pro vytvoření uživatele s přístupem. Nejjednodušší způsob, jak vytvořit uživateli se má používat integrované konfigurace ASP.NET Web.
+Předtím, než jsme v našem webu vyžadují autorizace, potřebujeme vytvořit uživatele s přístupem. Nejjednodušší způsob, jak vytvořit uživatele je použití webu integrované konfigurace technologie ASP.NET.
 
-Konfigurace technologie ASP.NET Web spusťte kliknutím na následující ikona v Průzkumníku řešení.
+Kliknutím na ikonu v okně Průzkumník řešení po spuštění webu konfigurace technologie ASP.NET.
 
 ![](mvc-music-store-part-7/_static/image2.png)
 
-Spustí se konfigurace webu. Klikněte na kartě zabezpečení na domovské obrazovce a potom klikněte na odkaz "Povolit role" v centru obrazovky.
+Tím se spustí konfigurace webu. Klikněte na kartu zabezpečení na domovské obrazovce a pak klikněte na odkaz "Povolit role" na střed obrazovky.
 
 ![](mvc-music-store-part-7/_static/image3.png)
 
@@ -66,7 +65,7 @@ Klikněte na odkaz "Vytvořit nebo spravovat role".
 
 ![](mvc-music-store-part-7/_static/image4.png)
 
-Zadejte název role "Správce" a klikněte na tlačítko Přidat roli.
+Zadejte "Administrator" jako název role a klikněte na tlačítko Přidat roli.
 
 ![](mvc-music-store-part-7/_static/image5.png)
 
@@ -79,37 +78,37 @@ Vyplňte pole informace uživatele na levé straně pomocí následujících inf
 | **Pole** | **Hodnota** |
 | --- | --- |
 | **Uživatelské jméno** | Správce |
-| **Heslo** | password123! |
-| **Potvrzení hesla** | password123! |
-| **E-mail** | (všechny e-mailová adresa bude fungovat.) |
-| **Bezpečnostní otázku** | (ať je třeba) |
-| **Zabezpečení odpovědí** | (ať je třeba) |
+| **Heslo** | / password123! |
+| **Potvrzení hesla** | / password123! |
+| **E-mailu** | (žádné e-mailová adresa bude fungovat) |
+| **Bezpečnostní otázku** | (cokoli, co chcete) |
+| **Zabezpečovací odpověď** | (cokoli, co chcete) |
 
-*Poznámka: Samozřejmě můžete žádné heslo, které si přejete. Výchozí nastavení zabezpečení heslo vyžadovat zadání hesla, která má délku 7 znaků dlouhé a obsahuje jeden jiný než alfanumerický znak.*
+*Poznámka: Můžete samozřejmě používat jakékoli heslo, které chcete. Výchozí nastavení zabezpečení hesel vyžadují heslo, které má 7 znaků a obsahuje jeden jiný než alfanumerický znak.*
 
-Vyberte roli správce pro tohoto uživatele a klikněte na tlačítko Vytvořit uživatele.
+Vyberte roli správce u tohoto uživatele a klikněte na tlačítko Vytvořit uživatele.
 
 ![](mvc-music-store-part-7/_static/image7.png)
 
-V tomto okamžiku zobrazí zprávu s upozorněním, že byl uživatel vytvořen úspěšně.
+V tomto okamžiku byste měli vidět zprávu s oznámením, že uživatel byl úspěšně vytvořen.
 
 ![](mvc-music-store-part-7/_static/image8.png)
 
 Teď můžete zavřít okno prohlížeče.
 
-## <a name="role-based-authorization"></a>Ověřování na základě rolí
+## <a name="role-based-authorization"></a>Autorizace na základě rolí
 
 Nyní jsme můžete omezit přístup k určení, že uživatel musí být v roli správce pro přístup k žádné akci kontroleru ve třídě StoreManagerController pomocí atributu [Authorize].
 
 [!code-csharp[Main](mvc-music-store-part-7/samples/sample1.cs)]
 
-*Poznámka: Atribut [autorizovat] můžete umístit na konkrétní akce metody i na úrovni třídy Kontroleru.*
+*Poznámka: Atribut [Authorize] lze umístit na konkrétní akci metody i na úrovni třídy Kontroleru.*
 
-Nyní procházení k /StoreManager zobrazí dialogové okno přihlášení:
+Teď přejdete do /StoreManager otevře dialogové okno přihlášení:
 
 ![](mvc-music-store-part-7/_static/image9.png)
 
-Po přihlášení s naše nový účet správce se nám moci přejít na obrazovce upravit Album jako před.
+Po přihlášení se náš nový účet správce, jsme byli schopni přejděte na obrazovku alba upravit jako před.
 
 > [!div class="step-by-step"]
 > [Předchozí](mvc-music-store-part-6.md)

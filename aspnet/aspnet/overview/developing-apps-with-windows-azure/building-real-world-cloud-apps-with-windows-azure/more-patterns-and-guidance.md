@@ -1,135 +1,134 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
-title: Další vzory a pokyny (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Další postupy a pokyny (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 5da5110afc50fa02fcfae551a18741821f18fcbb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0ea125dbb889df7f253e3aa4bda636b0c4b2bec6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873664"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371804"
 ---
-<a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Další vzory a pokyny (vytváření reálných cloudových aplikací s Azure)
+<a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Další postupy a pokyny (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Informace o elektronická kniha najdete v tématu [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Jste nyní zaznamenané 13 vzorů, které poskytují pokyny o tom, jak úspěšně v cloud computing. Jsou to jenom pár schémat, která se týkají cloudových aplikací. Zde jsou některé další témata výpočetní cloudu a prostředků, které pomáhají s nimi:
+Když jste teď zobrazené 13 vzory, které poskytují pokyny o tom, jak byli úspěšní ve cloud computingu. Toto jsou jen některé ze vzorů, které se vztahují ke cloudovým aplikacím. Tady jsou některé další témata cloud computingu a prostředky, které pomůžou s nimi:
 
-- Migraci stávající místní aplikace do cloudu. 
+- Migrace stávajících místních aplikací do cloudu. 
 
-    - [Přesunutí aplikace do cloudu](https://msdn.microsoft.com/library/ff728592.aspx). Elektronická kniha podle Microsoft Patterns and Practices. Také k dispozici jako [tištěné paperback](https://www.amazon.com/dp/1621140202).
-    - [Migrace Microsoft ASP.NET a IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656). Případová studie podle Roberta Mcmurrayho.
-    - [Přesunutí 4th &amp; primátor na weby Azure](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/). Blog o Jeff Wilcox post, chronicling jeho činnost přesun webovou aplikaci z Amazon Web Services pro službu Web Apps v Azure App Service.
-    - [Přesunutí aplikace do Azure: jaké změny?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Krátké video podle Stefan Schackow, vysvětluje přístupu k systému souborů ve službě Web Apps v Azure App Service.
-    - [Azure hybridní Cloud](https://www.amazon.com/dp/B00EOP4UQW). Výtisk knihy nebo elektronická kniha Danny Garber, Jamal Malik a Adam Fazio.
+    - [Přesun aplikací do cloudu](https://msdn.microsoft.com/library/ff728592.aspx). E-kniha od Microsoft Patterns and Practices. K dispozici i jako [tištěné tištěné verze](https://www.amazon.com/dp/1621140202).
+    - [Migrace Microsoft ASP.NET a IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656). Případová studie podle Robert McMurray.
+    - [Přesunutí 4th &amp; primátor k webům Azure](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/). Blogový příspěvek podle Jeffa Wilcox chronicling své prostředí, přesun webové aplikace z Amazon Web Services do služby Web Apps ve službě Azure App Service.
+    - [Přesun aplikací do Azure: jaké změny?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Krátká videa podle Stefan Schackow, vysvětluje přístupu k systému souborů ve službě Web Apps ve službě Azure App Service.
+    - [Azure Hybrid Cloud](https://www.amazon.com/dp/B00EOP4UQW). Kniha výtisk nebo e kniha od Danny Garber Jamal Malik a Adam Fazio.
 - Zabezpečení, ověřování a autorizace problémy, které jsou jedinečné pro cloudové aplikace
 
-    - [Doprovodné materiály zabezpečení Azure](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Informace najdete v těchto pravidel vzoru vzor federované Identity.
-    - [Zabezpečení sítě Azure](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). Dokument White paper podle Ashin Palekar.
+    - [Pokyny pro zabezpečení Azure](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
+    - [Microsoft Vzory a postupy – doprovodné materiály k Azure](https://msdn.microsoft.com/library/dn568099.aspx). Model vrátný viz, model Federovaná identita.
+    - [Zabezpečení sítě Azure](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). Dokument White paper o Ashin Palekara.
 
-Viz také dodatečné cloudové výpočetní vzory a dokumentaci na webu [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx).
+Viz také další cloud computingu modely a pokyny na [Microsoft Patterns and Practices – pokyny k Azure](https://msdn.microsoft.com/library/dn568099.aspx).
 
 <a id="resources"></a>
 ## <a name="resources"></a>Prostředky
 
-Další informace o tomto konkrétní tématu každý kapitol v této příručce e poskytuje odkazy na zdroje. Následující seznam obsahuje odkazy na přehledy doporučené vzorků a osvědčené postupy pro vývoj úspěšné cloudu s Azure.
+Další informace o tomto konkrétním tématem jednotlivých kapitol v této e kniha obsahuje odkazy na prostředky. Následující seznam obsahuje odkazy na přehledy o osvědčené postupy a vzory doporučené úspěšné pro vývoj pro cloud s Azure.
 
 Dokumentace
 
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy.
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
-- [Azure pokyny](https://azure.microsoft.com/develop/net/guidance/) stránku portálu oficiální dokumentaci týkající se vývoje aplikací pro Azure.
+- [Osvědčené postupy pro navrhování rozsáhlých služeb v Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper Mark Simms a Michael Thomassy.
+- [Bezporuchový: Pokyny, odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper Marc Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze bezporuchový videu z řady.
+- [Doprovodné materiály k Azure](https://azure.microsoft.com/develop/net/guidance/) stránku portálu oficiální dokumentaci související s vývojem aplikací pro Azure.
 
 Videa
 
-- [Vytváření skutečných cloudových aplikací s Azure – část 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324) a [část 2](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325). Video prezentace podle Scott Guthrie založený na elektronických knih. Zobrazí se v technické Ed Austrálie v září 2013. Starší verzi téže prezentaci doručenou v konferenční Norská vývojáři (NDC) v červen 2013: [NDC část 1](http://vimeo.com/68215538), [NDC část 2](http://vimeo.com/68215602).
-- [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Představuje 400 úroveň zobrazení o tom, jak architektury cloudových aplikací. Tato řada se zaměřuje na teorie a důvodech doporučené vzory; Další podrobnosti postupy najdete v tématu sestavování velkých řadu podle moduly SIMM značky.
-- [Vytváření Big: Poučení vyplývající z Azure zákazníků – část 1](https://channel9.msdn.com/Events/Build/2012/3-029) a [část 2](https://channel9.msdn.com/Events/Build/2012/3-030). Série videí dvě části Simon Davies a moduly označit SIMM, podobně jako u řady bezporuchový ale orientované další směrem k praktické implementace.
+- [Sestavování skutečných cloudových aplikací s Azure – část 1](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR324) a [2. část](https://channel9.msdn.com/Events/TechEd/Australia/2013/AZR325). Video na prezentaci Scotta guthrie, založenou na tuto elektronickou příručku. Uvedené v Austrálii Ed Odborný v září 2013. Starší verzi téže prezentaci doručenou v Ndc (Norwegian Developers Conference) v červnu 2013: [1. část Norwegian](http://vimeo.com/68215538), [2. část Norwegian](http://vimeo.com/68215602).
+- [Bezporuchový: Sestavování škálovatelných, odolných cloudových služeb](https://channel9.msdn.com/Series/FailSafe). Série videí devět částí Ulrich Homann, Marc Mercuri a Mark Simms. Představuje 400 úroveň zobrazení o tom, jak navrhovat cloudových aplikací. Tato série se zaměřuje na teorií a důvodech doporučené způsoby; Další postupy podrobnosti najdete v tématu Vytváření velký řady podle Mark Simms.
+- [Vytváření Big: Získané z Azure zákazníky – část 1](https://channel9.msdn.com/Events/Build/2012/3-029) a [2. část](https://channel9.msdn.com/Events/Build/2012/3-030). Série videí dvojdílného Simon Davies a Mark Simms, podobně jako řady bezporuchový ale orientovaný více směrem k praktické implementace.
 
 Ukázka kódu
 
-- [Opravte ji aplikace, která doprovází elektronická kniha](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002).
-- [Cloudové služby základy v Azure v jazyce C# pro sadu Visual Studio 2012](http://aka.ms/csf). Ke stažení projekt na webu Microsoft Code Gallery zahrnuje kód a dokumentace vyvinuté pomocí Microsoft zákazníka poradní tým (KOČKA). Demonstruje řadu osvědčené postupy doporučená v série videí bezporuchový a sestavování velkých a v dokumentu white paper bezporuchový. Galerie kódů stránka taky obsahuje odkazy na rozsáhlou dokumentaci autory projektu – viz zvlášť část [cloudové služby základy wiki kolekce](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx) odkaz blue pole v horní části Popis projektu. Tento projekt a v dokumentaci pro ni stále aktivně vyvíjených, takže je lepší volbou informace o mnoho témata než podobné, ale starší dokumenty white paper.
+- [Oprava aplikace, který doprovází elektronická kniha](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4?cdn_id=2013-12-03-002).
+- [Cloud Service Fundamentals v Azure v jazyce C# pro sadu Visual Studio 2012](http://aka.ms/csf). Ke stažení projekt na webu Microsoft Code Gallery zahrnuje kód a dokumentace vyvinuté pomocí Microsoft zákazníka poradní tým (kočky). Ukazuje řadu osvědčených postupů v série videí bezporuchový a sestavování velkých objemů a dokument white paper bezporuchový práva v oblasti. Galerie kódu na stránce taky obsahuje odkazy na si rozsáhlou dokumentaci k autory projektu – viz zvlášť [Cloud Service Fundamentals wiki kolekce](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx) odkaz modrá pole v horní části Popis projektu. Tento projekt a v dokumentaci pro něj stále aktivně vyvíjen, aby byla informace o mnoha témat vhodnější než podobné, ale starší dokumenty white paper.
 
-Kopírování pevný knihy
+Kopírovat pevný knihy
 
 - [Cloud Computing biblické](https://www.amazon.com/dp/0470903562). Podle Barrie Sosinsky.
-- [Verze ji! Navrhování a nasazení softwaru produkční prostředí](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). By Michael T. Nygard.
-- [Vzory cloudové architektury: Použití Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do). Podle Wilder faktury.
-- [Windows Azure Platform](https://www.amazon.com/dp/1430235632). Podle Tejaswi Redkar.
-- [Windows Azure programování vzory pro začínající podniky](https://www.amazon.com/dp/1849685606). Podle Riccardo Becker.
-- [Microsoft Windows Azure Development kuchařka](https://www.amazon.com/dp/1849682224). Podle Neil Mackenzie.
+- [Uvolnění! Návrh a nasazení softwaru připravené pro produkční prostředí](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Zpopularizoval Michael T. Nygard.
+- [Vzory cloudové architektury: Použití Microsoft Azure](http://shop.oreilly.com/product/0636920023777.do). Podle Wilder vyúčtování.
+- [Windows Azure Platform](https://www.amazon.com/dp/1430235632). Podle Tejaswiho jde.
+- [Windows Azure programovací modely pro Start-upy](https://www.amazon.com/dp/1849685606). Podle Riccardo Becker.
+- [Microsoft Windows Azure – vývoj kuchařka](https://www.amazon.com/dp/1849682224). Podle Neil Mackenzie.
 
-Nakonec při začít vytváření reálných aplikací a jejich spouštění v Azure, dřív nebo později budete pravděpodobně potřebovat pomoc od odborníků. Například můžete klást otázky v lokalitách komunity [fóra Azure nebo StackOverflow](https://azure.microsoft.com/support/forums/), nebo mohou kontaktovat Microsoft přímo za účelem podpory Azure. Společnost Microsoft nabízí několik úrovní se na technickou podporu Azure: Souhrn a porovnání možností najdete v tématu [podporu Azure](https://azure.microsoft.com/support/plans/).
+Nakonec při můžete začít vytvářet skutečné aplikace a běží v Azure, dříve či později ho budete pravděpodobně potřebovat pomoc od odborníků. Můžete klást otázky v komunitním webům, jako [fóra Azure nebo StackOverflow](https://azure.microsoft.com/support/forums/), nebo přímo u podpory Azure můžete kontaktovat Microsoft. Společnost Microsoft nabízí několik úrovní technické podpory Azure: Přehled a porovnání možností najdete v tématu [podpory Azure](https://azure.microsoft.com/support/plans/).
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>Potvrzování
+## <a name="acknowledgments"></a>Potvrzení
 
-Tento obsah napsal tní Dykstra, Rick Anderson a Wasson Jan. Většina původní obsah pochází [Scott Guthrie](https://weblogs.asp.net/scottgu/), a je mu zase obrázek na materiálu z moduly SIMM značky a Microsoft zákazníka poradní tým (KOČKA).
+Tento obsah byl napsán tak, že Tomáš Dykstra, Rick Anderson a Mike Wasson. Většina původní obsah pochází z [Scott Guthrie](https://weblogs.asp.net/scottgu/), a že zase nakreslili na materiál z Mark Simms a Microsoft zákazníka poradní tým (KOČKA).
 
-Mnoho kolegy v Microsoftu recenze a komentář na pracovní verze a kódu:
+Mnoho kolegy v Microsoftu zkontroluje a označen jako koncepty a kód:
 
-- TIM Ammann - přečetli kapitoly automatizace.
-- Bennage Kryštof – zkontrolovat a testovat kód opravte ji.
-- Ryan bobulovinami - přečetli kapitoly CD/CI.
-- Vittorio Bertocci - přečetli kapitoly jednotné přihlašování.
-- Jan Clayton - pomohly vyřešit technické problémy ve skriptech prostředí PowerShell.
-- Conor Cunningham - přečetli kapitoly možnosti úložiště data.
-- Carlos Farre – zkontrolovat a testovat kód opravte ji pro problémy se zabezpečením.
-- Larry Franks - přečetli telemetrie a monitorování kapitoly.
-- Jonathan Gao - přečetli Hadoop a MapReduce části kapitoly možnosti úložiště data.
-- Sidney Higa - zkontrolovány všechny kapitolám.
-- Gordon Hogenson - přečetli kapitoly zdroj ovládacího prvku.
-- Tamra Horák - možnosti ukládání dat zkontrolovat, objektů blob a fronty kapitolám.
-- Pranav Rastogi - přečetli kapitoly jednotné přihlašování.
-- Červen digestoru kterých – přidání zpracování chyb a nápovědu k prostředí PowerShell skripty pro automatizaci.
-- Mani Subramanian - zkontrolovány všechny kapitolám a vedla revize kódu a testování procesu pro kód opravit.
-- Shauna Tinline-Petr - přečetli dělení kapitoly data.
-- Selcin Tukarslan - zkontrolovat kapitolám, které se týkají SQL Database a SQL Server.
-- Služby EDWARD Wu - poskytuje ukázkový kód pro kapitoly jednotné přihlašování.
-- Guang Yang - napsali skripty pro automatizaci prostředí PowerShell.
+- TIM Ammann - zkontrolovat, jestli kapitoly automatizace.
+- Christopher Bennage - přezkoumány a testovat kód opravit.
+- Ryan bobulovinami - zkontrolovat, jestli kapitoly CD/CI.
+- Vittorio Bertocci - zkontrolovat, jestli kapitoly jednotného přihlašování.
+- Chris Clayton - pomohla řešení technických problémů ve skriptech Powershellu.
+- Conor Cunningham - zkontrolovat, jestli kapitoly možnosti datového úložiště.
+- Carlos Farre - přezkoumány a testovat kód Fix It pro problémy se zabezpečením.
+- Larry Franks - zkontrolovat, jestli telemetrie a monitorování kapitoly.
+- Jonathan Gao - MapReduce části kapitoly možnosti úložiště dat a zkontrolovat Hadoop.
+- Sidney Higa - zkontrolovat, jestli všechny kapitol.
+- Gordon Hogenson - zkontrolovat, jestli kapitoly zdrojového ovládacího prvku.
+- Tamra Myers – možnosti úložiště přezkoumání dat, objektů blob a fronty kapitol.
+- Pranav Rastogi - zkontrolovat, jestli kapitoly jednotného přihlašování.
+- Červen blenderu Rogers – přidání zpracování chyb a nápovědu k automatizační skripty prostředí PowerShell.
+- Mani Subramanian - zkontroluje všechny kapitol a vedla revize kódu a testování procesu pro kód opravit.
+- Shaun Tinline-Jones - zkontrolovat, jestli dělení kapitoly dat.
+- Selcin Tukarslan - přezkoumání kapitol, které se týkají SQL Database a SQL Server.
+- EDWARD Wu – k dispozici ukázkový kód pro kapitoly jednotného přihlašování.
+- Guang Yang - napsal automatizační skripty prostředí PowerShell.
 
-Členové [Microsoft Developer pokyny Advisory Council](http://aka.ms/DGAC) (DGAC) také recenze a komentář na koncepty:
+Členové [Advisory Council pokyny Microsoftu pro vývojáře](http://aka.ms/DGAC) (DGAC) také zkontroluje a označen jako koncepty:
 
-- Jean-Luc Boucho
+- Boucho Jean Luc
 - Catalin Gheorghiu
 - Wouter de Kort
-- Carlosu dos Santos
+- Carlos dos Santos
 - Neil Mackenzie
 - Dennis Persson
 - Simonu Sabat
 - [Aleksey Sinyagin](http://www.linkedin.com/in/sinyagin)
-- Wagnera faktury
+- Bill Wagnera
 - Michael dřeva
 
-Jiní členové DGAC recenze a komentář na předběžná přehledu:
+Ostatní členové DGAC přezkoumány a okomentováno předběžné osnovy:
 
 - Damir Arh
-- Edward Bakker
+- EDWARD Bakker
 - Srdjan Bozovic
-- Jde Man kanál
+- Jde Man Chan
 - Gianni Rosa Gallina
 - Paulo Morgado
 - JASON Oliveira
 - Alberto Poblacion
-- Ryan Riley
-- Perez Jones Tsisah
+- Ryan Rileymu
+- Tsisah PEREZ Jones
 - Roger Whitehead
 - Pawel Wilkosz
 

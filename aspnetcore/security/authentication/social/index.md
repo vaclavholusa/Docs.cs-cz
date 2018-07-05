@@ -1,98 +1,99 @@
 ---
-title: Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
+title: Facebook, Google a externí zprostředkovatel ověřování v ASP.NET Core
 author: rick-anderson
-description: Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci pomocí externí zprostředkovatelé ověřování OAuth 2.0.
+description: Tento kurz ukazuje vytvoření ASP.NET Core 2.x aplikace pomocí externího zprostředkovatele ověřování OAuth 2.0.
 ms.author: riande
 ms.date: 11/01/2016
 uid: security/authentication/social/index
-ms.openlocfilehash: 58045504ce4588f854428273273d3ea8f181e12e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b3fbd98215537fad7b283d1bf96ebd259e0b980a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277995"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37366272"
 ---
-# <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externího poskytovatele ověřování v ASP.NET Core
+# <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externí zprostředkovatel ověřování v ASP.NET Core
 
 Podle [Valeriy Novytskyy](https://github.com/01binary) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Tento kurz ukazuje, jak sestavit ASP.NET Core 2.x aplikaci, která umožňuje uživatelům přihlásit se pomocí pověření z externí zprostředkovatelé ověřování OAuth 2.0.
+Tento kurz ukazuje, jak vytvářet v ASP.NET Core 2.x aplikaci, která umožňuje uživatelům přihlášení pomocí přihlašovacích údajů z externího zprostředkovatele ověřování OAuth 2.0.
 
-[Facebook](xref:security/authentication/facebook-logins), [Twitter](xref:security/authentication/twitter-logins), [Google](xref:security/authentication/google-logins), a [Microsoft](xref:security/authentication/microsoft-logins) poskytovatelé jsou popsané v následujících částech. Jiní poskytovatelé jsou k dispozici v balíčky jiných výrobců, jako [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) a [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers).
+[Facebook](xref:security/authentication/facebook-logins), [Twitter](xref:security/authentication/twitter-logins), [Google](xref:security/authentication/google-logins), a [Microsoft](xref:security/authentication/microsoft-logins) poskytovatelé jsou popsané v následujících částech. Ostatní zprostředkovatelé jsou k dispozici v balíčky třetích stran, jako [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) a [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers).
 
-![Ikony sociálních médií pro Facebook, Twitter, Google plus a Windows](index/_static/social.png)
+![Ikony sociálních médií pro Facebook, Twitter, Google, plus a Windows](index/_static/social.png)
 
-Povolení uživatelům přihlásit se pomocí přihlašovacích údajů existující je vhodné pro uživatele a posune řadu složitosti správy proces přihlášení do jiného výrobce. Příklady, jak sociálních přihlášení můžete jednotka provozu a k zákaznickým převody, najdete v části případové studie podle [Facebook](https://www.facebook.com/unsupportedbrowser) a [Twitter](https://dev.twitter.com/resources/case-studies).
+Umožňuje uživatelům přihlašovat se pomocí existujících přihlašovacích údajů je pro uživatele pohodlný a posune mnoho složitých úkolů při správě procesu přihlašování do jiného výrobce. Příklady, jak sociální přihlášení můžete jednotka provoz a zákazníka převody, naleznete v tématu případové studie podle [Facebook](https://www.facebook.com/unsupportedbrowser) a [Twitter](https://dev.twitter.com/resources/case-studies).
 
-Poznámka: Balíčky uvedené v této abstraktní značnou část složitosti tok ověřování OAuth, ale pochopení podrobnosti může být nutný při řešení potíží. Mnoho prostředky jsou k dispozici. například v tématu [Úvod do OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2) nebo [Principy OAuth 2](http://www.bubblecode.net/2016/01/22/understanding-oauth2/). Některé problémy lze vyřešit prohlížením [ASP.NET Core zdrojového kódu pro balíčky zprostředkovatele](https://github.com/aspnet/Security/tree/dev/src).
+Poznámka: Balíčky okomentovat abstraktní spoustu složitost tok ověřování OAuth, ale Princip podrobnosti může být nezbytné při řešení potíží. Mnoho prostředků jsou k dispozici. Viz například [Úvod do OAuth 2](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2) nebo [Principy OAuth 2](http://www.bubblecode.net/2016/01/22/understanding-oauth2/). Některé problémy dají odstranit pohledem [ASP.NET Core zdrojový kód pro balíčky poskytovatele](https://github.com/aspnet/Security/tree/dev/src).
 
 ## <a name="create-a-new-aspnet-core-project"></a>Vytvořte nový projekt ASP.NET Core
 
-* V aplikaci Visual Studio 2017, vytvořte nový projekt na stránce Start nebo prostřednictvím **soubor > Nový > projekt**.
+* V sadě Visual Studio 2017, vytvořte nový projekt z úvodní stránky, nebo prostřednictvím **soubor > Nový > projekt**.
 
 * Vyberte **webové aplikace ASP.NET Core** šablony, které jsou k dispozici v **Visual C# > .NET Core** kategorie:
 
-![Dialogové okno Nový projekt](index/_static/new-project.png)
+![Dialogové okno nového projektu](index/_static/new-project.png)
 
-* Klepněte na **webové aplikace** a ověřte **ověřování** je nastaven na **jednotlivé uživatelské účty**:
+* Klepněte na **webovou aplikaci** a ověřte **ověřování** je nastavena na **jednotlivé uživatelské účty**:
 
 ![Dialogové okno nové webové aplikace](index/_static/select-project.png)
 
-Poznámka: V tomto kurzu platí pro verze sady SDK technologie ASP.NET Core 2.0, které lze vybrat v horní části průvodce.
+Poznámka: Tento kurz se vztahuje na verzi ASP.NET Core 2.0 SDK, která se dají v horní části průvodce.
 
-## <a name="apply-migrations"></a>Použijte migrace
+## <a name="apply-migrations"></a>Použití migrace
 
-* Spusťte aplikaci a vyberte **přihlásit** odkaz.
+* Spusťte aplikaci a vyberte **přihlášení** odkaz.
 * Vyberte **zaregistrujte se jako nový uživatel** odkaz.
-* Zadejte e-mailu a heslo pro nový účet a potom vyberte **zaregistrovat**.
-* Postupujte podle pokynů pro použití migrace.
+* Zadejte e-mail a heslo pro nový účet a potom vyberte **zaregistrovat**.
+* Postupujte podle pokynů a použití migrace.
 
 ## <a name="require-ssl"></a>Požadovat protokol SSL
 
 OAuth 2.0 vyžaduje použití protokolu SSL pro ověřování prostřednictvím protokolu HTTPS.
 
-Poznámka: Projekty vytvořené pomocí **webové aplikace** nebo **webového rozhraní API** šablony projektů pro ASP.NET Core 2.x automaticky konfigurují pro povolit protokol SSL a spustit s adresou URL https, pokud **jednotlivých Uživatelské účty** na jste vybrali možnost **dialogové okno Změna ověřování** v Průvodci projektu jak je uvedeno výše.
+Poznámka: Projekty vytvořené využitím **webovou aplikaci** nebo **webového rozhraní API** šablony projektů pro ASP.NET Core 2.x se automaticky konfigurují pro povolení protokolu SSL a spustit s adresou URL protokolu https, pokud **jednotlivé Uživatelské účty** na jste vybrali možnost **dialogové okno Změnit ověřování** v Průvodci vytvořením projektu, jak je znázorněno výše.
 
-* Vyžadovat šifrování SSL na svém webu pomocí následujících kroků v [vynutit SSL v aplikaci ASP.NET Core](xref:security/enforcing-ssl) tématu.
+* Vyžadování protokolu SSL na vašem webu pomocí následujících kroků v [vynucování SSL v aplikaci ASP.NET Core](xref:security/enforcing-ssl) tématu.
 
-## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>Používat SecretManager k uložení tokeny přiřadila zprostředkovatele přihlášení
+## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>Pomocí SecretManager ukládat tokeny přiřadil zprostředkovatele přihlášení
 
-Přihlášení prostřednictvím sociální sítě poskytovatelů přiřadit **Id aplikace** a **tajný klíč aplikace** tokeny během procesu registrace (přesné pojmenování závisí zprostředkovatele).
+Přiřadit zprostředkovatele přihlášení prostřednictvím sociální sítě **Id aplikace** a **tajný klíč aplikace** tokeny během procesu registrace. Přesné token názvy lišit podle zprostředkovatele. Tyto tokeny představují přihlašovací údaje, které vaše aplikace používá pro přístup k rozhraní API. Tokeny představují "tajné", které lze propojit s díky konfiguraci aplikací [manažera tajných](xref:security/app-secrets#secret-manager). Tajný klíč správce je bezpečnější alternativu pro ukládání tokenů v konfiguračním souboru, například *appsettings.json*.
 
-Tyto hodnoty jsou efektivně *uživatelské jméno* a *heslo* vaše aplikace používá pro přístup k jejich rozhraní API a tvoří "všechna tajemství" které může být propojený konfiguraci vaší aplikace pomocí **Tajný klíč správce** místo je uložen v konfiguračních souborech přímo nebo přímo v kódu je.
+> [!IMPORTANT]
+> Tajný klíč správce je jenom pro účely vývoje. Můžete ukládat a chránit Azure testovací a produkční tajných kódů pomocí [poskytovatele konfigurace služby Azure Key Vault](xref:security/key-vault-configuration).
 
-Postupujte podle kroků v [bezpečného úložiště tajné klíče aplikace v vývoj v ASP.NET Core](xref:security/app-secrets) téma tak, aby můžete ukládat tokeny přiřadí každé níže zprostředkovatele přihlášení.
+Postupujte podle kroků v [bezpečné ukládání tajných kódů aplikace při vývoji v ASP.NET Core](xref:security/app-secrets) tématu pro ukládání tokenů přiřadil každý zprostředkovatele přihlášení níže.
 
-## <a name="setup-login-providers-required-by-your-application"></a>Instalační program zprostředkovatele přihlášení, které jsou požadované aplikací
+## <a name="setup-login-providers-required-by-your-application"></a>Instalační program zprostředkovatele přihlášení požadovaná vaší aplikací
 
-Ke konfiguraci aplikace pomocí příslušného zprostředkovatele použijte v následujících tématech:
+Ke konfiguraci vaší aplikaci použít příslušné poskytovatele použijte následující témata:
 
 * [Facebook](xref:security/authentication/facebook-logins) pokyny
 * [Twitter](xref:security/authentication/twitter-logins) pokyny
 * [Google](xref:security/authentication/google-logins) pokyny
 * [Microsoft](xref:security/authentication/microsoft-logins) pokyny
-* [Ostatní poskytovatele](xref:security/authentication/otherlogins) pokyny
+* [Jiný poskytovatel](xref:security/authentication/otherlogins) pokyny
 
 [!INCLUDE[](~/includes/chain-auth-providers.md)]
 
 ## <a name="optionally-set-password"></a>Volitelně můžete nastavit heslo
 
-Při registraci prostřednictvím poskytovatele externí přihlášení nemáte heslo zaregistrována aplikace. To nebude můžete vytvářet a zapamatování hesla pro lokalitu, ale také udržuje je závislá na na externího zprostředkovatele přihlášení. Pokud není k dispozici na externího zprostředkovatele přihlášení, nebudete moct přihlásit k webu.
+Při registraci se externího zprostředkovatele přihlášení, není nutné heslo registrován s aplikací. To řeší jste od vytvoření a zapamatování hesla pro lokalitu, ale také umožňuje závisí na externího zprostředkovatele přihlášení. Pokud není k dispozici na externího zprostředkovatele přihlášení, nebudete moct přihlásit k webu.
 
-Vytvořte heslo a přihlaste se pomocí e-mailu nastavený během v procesu přihlašování s externí zprostředkovatele:
+Chcete-li vytvořit heslo a přihlaste se pomocí e-mailu, kterou jste nastavili během procesu přihlašování s externí zprostředkovatele:
 
-* Klepněte na **Hello &lt;e-mailový alias&gt;**  v pravém horním rohu přejděte na odkaz **spravovat** zobrazení.
+* Klepněte **Hello &lt;e-mailový alias&gt;**  v pravém horním rohu přejít na odkaz **spravovat** zobrazení.
 
 ![Zobrazení Správa webové aplikace](index/_static/pass1a.png)
 
 * Klepněte na **vytvořit**
 
-![Nastavit stránku heslo](index/_static/pass2a.png)
+![Nastavte heslo stránku](index/_static/pass2a.png)
 
-* Nastavte platné heslo a tím můžete se přihlásit pomocí e-mailu.
+* Nastavili platné heslo a může být využit k přihlášení pomocí e-mailu.
 
 ## <a name="next-steps"></a>Další kroky
 
-* Tento článek zavedená externího ověřování a vysvětlení nezbytné součásti potřebné k přidání externích přihlášení do aplikace ASP.NET Core.
+* Tento článek zavedené externího ověřování a vysvětlení požadovaných součástí pro přidání externí přihlášení do aplikace ASP.NET Core.
 
-* Referenční stránky specifický pro zprostředkovatele konfigurace přihlášení pro zprostředkovatele požadované aplikace.
+* Referenční stránky specifickým pro zprostředkovatele konfigurace přihlášení pro zprostředkovatele, které vaše aplikace vyžaduje.

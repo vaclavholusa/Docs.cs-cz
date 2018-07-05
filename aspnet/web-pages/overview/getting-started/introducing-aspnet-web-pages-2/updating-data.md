@@ -1,127 +1,126 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
-title: Představení technologie ASP.NET Web Pages – aktualizace dat databáze | Microsoft Docs
+title: Představení rozhraní ASP.NET Web Pages – aktualizace databázových dat | Dokumentace Microsoftu
 author: tfitzmac
-description: V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady tý...
+description: V tomto kurzu se dozvíte, jak aktualizovat záznam (změnit) existující databáze při použití webových stránek ASP.NET (Razor). Předpokládá, že jste dokončili řady th...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: e889cd27e2267a08f7b6ea708c92e35edbdd7a1a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 259034a795b9dff7001165a182bc0e84bb690491
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898532"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377048"
 ---
-<a name="introducing-aspnet-web-pages---updating-database-data"></a>Představení technologie ASP.NET Web Pages – aktualizace dat databáze
+<a name="introducing-aspnet-web-pages---updating-database-data"></a>Úvod do webových stránek ASP.NET – aktualizace databázových dat
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> V tomto kurzu se dozvíte, jak aktualizovat položku (změnit) existující databáze při použití technologie ASP.NET Web Pages (Razor). Předpokládá, že jste dokončili řady prostřednictvím [zadávání dat pomocí pomocí formulářů pomocí rozhraní ASP.NET Web Pages](entering-data.md).
+> V tomto kurzu se dozvíte, jak aktualizovat záznam (změnit) existující databáze při použití webových stránek ASP.NET (Razor). Předpokládá, že jste dokončili řady prostřednictvím [vstupní Data podle používání Forms pomocí rozhraní ASP.NET Web Pages](entering-data.md).
 > 
-> Získáte informace:
+> Co se dozvíte:
 > 
-> - Jak vybrat jednotlivé záznamy v `WebGrid` pomocné rutiny.
+> - Jak vybrat jednotlivý záznam v `WebGrid` pomocné rutiny.
 > - Jak si jeden záznam z databáze.
-> - Postup předběžné načtení formuláře s hodnotami ze záznamů databáze.
-> - Postup aktualizace stávajícího záznamu v databázi.
-> - Tom, jak ukládat informace na stránce bez jeho zobrazení.
-> - Jak používat k ukládání informací skryté pole.
+> - Postup předběžné načtení formuláře s hodnotami ze záznamu v databázi.
+> - Jak aktualizovat stávající záznam v databázi.
+> - Jak ukládat informace na stránce bez zobrazení.
+> - Jak používat skrytého pole k ukládání informací.
 >   
 > 
-> Funkce nebo technologie popsané:
+> Popsané funkce a technologie:
 > 
 > - `WebGrid` Pomocné rutiny.
-> - SQL `Update` příkaz.
-> - `Database.Execute` Metoda.
+> - SQL `Update` příkazu.
+> - `Database.Execute` Metody.
 > - Skryté pole (`<input type="hidden">`).
 
 
-## <a name="what-youll-build"></a>Co budete sestavení
+## <a name="what-youll-build"></a>Co budete vytvářet
 
-V tomto kurzu předchozí jste zjistili, jak přidat záznam do databáze. Zde dozvíte jak zobrazit záznam pro úpravy. V *filmy* stránky, budete aktualizovat `WebGrid` pomocné rutiny, které se zobrazí **upravit** odkaz vedle jednotlivých film:
+V předchozím kurzu jste zjistili, jak přidat záznam do databáze. Tady se dozvíte, jak zobrazit záznam pro úpravy. V *filmy* stránky, budete aktualizovat `WebGrid` pomocné rutiny, takže se zobrazí **upravit** odkaz vedle každý film:
 
-![WebGrid zobrazení, včetně odkazu na "Upravit" pro každý film](updating-data/_static/image1.png)
+![Zobrazit WebGrid včetně odkaz pro "Úpravy" pro každý film](updating-data/_static/image1.png)
 
-Když kliknete **upravit** odkaz, tím přejdete na jinou stránku, kde informace film je již ve formuláři:
+Když kliknete **upravit** odkaz, tím přejdete na jinou stránku, kde je video informace již ve formě:
 
-![Upravit film stránky zobrazující film bude upravena](updating-data/_static/image2.png)
+![Upravit video stránky zobrazující film bude upravován](updating-data/_static/image2.png)
 
-Můžete změnit žádnou hodnotu. Při odesílání změn kódu na stránce aktualizuje databázi a přejde zpět na film výpis.
+Můžete změnit libovolné hodnoty. Když odešlete změny kódu na stránce aktualizuje databázi a přejde zpět do seznamu video.
 
-Tato část procesu funguje skoro stejně jako *AddMovie.cshtml* stránky, které jste vytvořili v předchozí kurz, takže většinu tohoto kurzu bude známé.
+Tato část procesu funguje skoro stejně jako *AddMovie.cshtml* stránky, kterou jste vytvořili v předchozím kurzu, tak velkou část tohoto kurzu bude známé.
 
-Způsob, jak upravit jednotlivé film může implementovat několika způsoby. Přístup zobrazí jste vybrali, protože je snadno implementovat a pochopitelnější.
+Je možné implementovat způsob, jak upravit jednotlivé film několika způsoby. Tento přístup je znázorněno byla vybrána, protože je snadno pochopitelný a snadno se implementuje.
 
-## <a name="adding-an-edit-link-to-the-movie-listing"></a>Přidávání do seznamu film odkaz pro úpravy
+## <a name="adding-an-edit-link-to-the-movie-listing"></a>Přidání odkaz pro úpravy seznamu Movie
 
-Pokud chcete začít, budete aktualizovat *filmy* stránky tak, aby každý film výpis také obsahuje **upravit** odkaz.
+Pokud chcete začít, budete aktualizovat *filmy* stránce tak, že každý film výpis také obsahuje **upravit** odkaz.
 
-Otevřete *Movies.cshtml* souboru.
+Otevřít *Movies.cshtml* souboru.
 
-V těle stránky změnit `WebGrid` značek přidáním sloupce. Tady je upravených značek:
+V těle stránky, změňte `WebGrid` kód tak, že přidáte sloupec. Tady je upravený kód:
 
 [!code-html[Main](updating-data/samples/sample1.html?highlight=6)]
 
-Nový sloupec, je tato:
+Nový sloupec se tohle:
 
 [!code-html[Main](updating-data/samples/sample2.html)]
 
-Bod v tomto sloupci se zobrazí odkaz (`<a>` element) jejíž text říká "Upravit". Máme po je vytvoření odkaz, který vypadá takto při spuštění stránky s `id` hodnotu pro každý film jiné:
+Bod v tomto sloupci se má zobrazit odkaz (`<a>` element) jejichž text říká "Upravit". Co jsme po je vytvořit odkaz, který vypadá podobně jako následující při spuštění stránky s `id` hodnotu pro každý film:
 
 [!code-css[Main](updating-data/samples/sample3.css)]
 
-Tento odkaz bude vyvolat stránku s názvem *EditMovie*, a předá řetězec dotazu `?id=7` na této stránce.
+Tento odkaz se vyvolat stránku s názvem *EditMovie*, a předá řetězec dotazu `?id=7` na tuto stránku.
 
-Syntaxe pro nový sloupec, může vypadat poněkud složité, je to ale jenom protože umístí společně několik elementy. Každý jednotlivý prvek je jednoduchá. Pokud vám soustředit se jenom na právě na `<a>` elementu, zobrazí tento kód:
+Syntaxe pro nového sloupce, který může vypadat trochu složité, ale pouze důvodem umístí společně několik elementů je. Každý jednotlivý prvek je jednoduché. Pokud se můžete soustředit na jenom `<a>` elementu, zobrazí tento kód:
 
 [!code-html[Main](updating-data/samples/sample4.html)]
 
-Některé informace o tom, jak funguje mřížky: v mřížce zobrazené řádky, jeden pro každý záznam v databázi, a zobrazuje sloupce pro každé pole v záznamu v databázi. Když je vytvářen každý řádek mřížky, `item` objekt obsahuje záznam databáze (položek) pro tento řádek. Toto uspořádání poskytuje způsob, jak můžete získat na data pro tento řádek v kódu. To je, co vidíte zde: výraz `item.ID` dochází hodnota ID položky pro aktuální databázi. Můžete získat žádné z hodnot v databázi (název, genre nebo rok) stejným způsobem jako pomocí `item.Title`, `item.Genre`, nebo `item.Year`.
+Základní informace o tom, jak funguje mřížky: v mřížce zobrazené řádky, jeden pro každý záznam v databázi, a zobrazuje sloupce pro každé pole v záznamu v databázi. Zatímco každý řádek mřížky se vytváří, `item` záznamu v databázi (položky) pro tento řádek obsahuje objekt. Toto uspořádání poskytuje způsob, jak získat data pro tento řádek kódu. Který se zobrazí zde: výraz `item.ID` je stále hodnotu ID aktuální položky databáze. Vám může získat některé z hodnot v databázi (title, rozšířením podle tematických nebo rok) stejným způsobem jako pomocí `item.Title`, `item.Genre`, nebo `item.Year`.
 
-Výraz `"~/EditMovie?id=@item.ID` kombinuje součástí pevně cílová adresa URL (`~/EditMovie?id=`) s číslem ID této dynamicky odvozené. (Jste viděli `~` operátor v předchozí kurzu; je operátor ASP.NET, který představuje aktuální kořenový adresář webu.)
+Výraz `"~/EditMovie?id=@item.ID` kombinuje pevně zakódované část cílové adrese URL (`~/EditMovie?id=`) s číslem ID této dynamicky odvozené. (Jste viděli `~` operátor v předchozím kurzu; je operátor technologie ASP.NET, který představuje aktuální kořenové složky webu.)
 
-Výsledkem je, že tato součást kód ve sloupci jednoduše vytvoří něco jako následující kód v době běhu:
+Výsledkem je, že tuto část kódu ve sloupci jednoduše vytvoří něco jako následující kód za běhu:
 
 [!code-xml[Main](updating-data/samples/sample5.xml)]
 
-Samozřejmě se skutečnou hodnotou `id` se bude lišit pro každý řádek.
+Přirozeně, skutečné hodnoty `id` se bude lišit pro každý řádek.
 
-## <a name="creating-a-custom-display-for-a-grid-column"></a>Vytváření vlastních zobrazení sloupce mřížky
+## <a name="creating-a-custom-display-for-a-grid-column"></a>Vytváření vlastních zobrazení pro sloupec mřížky
 
-Nyní zpět na sloupci mřížky. Tři sloupce původně bylo v mřížce zobrazí pouze data hodnoty (název, genre a roku). Toto zobrazení určeného předávání název sloupce databáze &mdash; například `grid.Column("Title")`.
+Vraťme se k sloupci mřížky. Tři sloupce jste původně měli v mřížce se zobrazí pouze hodnoty dat (název, rozšířením podle tematických a roku). Toto zobrazení určený název sloupce databáze &mdash; například `grid.Column("Title")`.
 
-Tento nový **upravit** odkaz sloupce se liší. Místo zadání název sloupce, které předávání `format` parametr. Tento parametr umožňuje definovat značek, `WebGrid` pomocná učiní spolu s `item` hodnotu pro zobrazení data ve sloupci jako tučné a zelenou nebo ve formátu, které chcete. Například pokud byste chtěli nadpis zobrazuje tučným písmem, můžete vytvořit sloupec následujícím způsobem:
+Tato nová **upravit** sloupec propojení se liší. Místo určení názvu sloupce, které předávání `format` parametru. Tento parametr umožňuje definovat kód, který `WebGrid` pomocné rutiny vykreslí spolu s `item` hodnota pro zobrazení dat sloupců jako tučný nebo zelenou nebo ve formátu, který má být. Například pokud byste chtěli název se zobrazí tučně, můžete například vytvořit sloupec jako v tomto příkladu:
 
 [!code-html[Main](updating-data/samples/sample6.html)]
 
-(Různé `@` znaky, které se zobrazí v `format` vlastnost označit přechod mezi značek a kódu hodnotu.)
+(Různé `@` znaků, které se zobrazí v `format` vlastnost označit přechod mezi značky a hodnoty kódu.)
 
-Jakmile víte o `format` vlastnost, je jednodušší zjistit, jak nové **upravit** připravili odkaz sloupce:
+Jakmile budete vědět o `format` vlastnost, je lze snáze pochopit jak nové **upravit** odkaz sloupce dohromady:
 
 [!code-html[Main](updating-data/samples/sample7.html)]
 
-Sloupec obsahuje *pouze* z kódu, který vykreslí odkaz, plus některé informace (ID), je extrahována ze záznamů databáze pro řádek.
+Sloupec obsahuje *pouze* z kódu, který vykreslí na odkaz, a navíc několik informací (ID), které jsou extrahovány ze záznamu v databázi pro řádek.
 
 > [!TIP]
 > 
-> **Poziční parametry pro metodu a pojmenované parametry**
+> **Pojmenované parametry a poziční parametry pro metodu**
 > 
-> Tolikrát, kolikrát jste volal metodu a do ní předán parametry, jednoduše uvedené v seznamu hodnot parametrů oddělených čárkami. Tady je několik příkladů:
+> V mnoha případech když jste volali metodu a předat parametry, můžete jednoduše uvedli hodnoty parametrů oddělených čárkami. Tady je několik příkladů:
 > 
 > `db.Execute(insertCommand, title, genre, year)`
 > 
 > `Validation.RequireField("title", "You must enter a title")`
 > 
-> Jsme nepomohly problém zmínili, když znáte tento kód, ale v každém případě se předávání do metod v určitém pořadí parametrů &mdash; konkrétně, pořadí, ve kterém jsou definovány parametry v dané metody. Pro `db.Execute` a `Validation.RequireFields`, pokud se promíchají pořadí hodnot předáte, by získat chybová zpráva při spuštění stránky nebo alespoň některé neobvyklé výsledky. Je zřejmé budete muset vědět předat parametry v pořadí. (Ve službě WebMatrix, IntelliSense vám může pomoci další obrázek na název, typ a pořadí parametrů.)
+> Pokud znáte tento kód, ale v obou případech se předávání parametrů k metodám v určitém pořadí jsme neměli zmiňovat problém &mdash; konkrétně, pořadí, ve kterém jsou parametry definované v této metodě. Pro `db.Execute` a `Validation.RequireFields`, pokud se promíchají pořadí hodnot předáte byste získali chybová zpráva při spuštění stránky nebo alespoň nějaké neobvyklé výsledky. Je zřejmé budete muset vědět předávat parametry v pořadí. (V nástroji WebMatrix, IntelliSense vám můžou pomoct při zjistit název, typ a pořadí parametrů.)
 > 
-> Jako alternativu k předávání hodnot v pořadí, můžete použít *pojmenované parametry*. (Předávání parametrů v pořadí se označuje jako pomocí *poziční parametry*.) Pojmenované parametry je explicitně zahrnout název parametru při předávání jeho hodnotu. Jste použili pojmenované parametry již několikrát v těchto kurzech. Příklad:
+> Jako alternativu k předávání hodnot v pořadí, můžete použít *pojmenované parametry*. (V pořadí předávání parametrů se označuje jako pomocí *poziční parametry*.) Pro pojmenované parametry explicitně zahrnete název parametru předává jeho hodnotu. Využili jste pojmenované parametry již s počtem opakování v těchto kurzech. Příklad:
 > 
 > [!code-csharp[Main](updating-data/samples/sample8.cs)]
 > 
@@ -129,187 +128,187 @@ Sloupec obsahuje *pouze* z kódu, který vykreslí odkaz, plus některé informa
 > 
 > [!code-css[Main](updating-data/samples/sample9.css)]
 > 
-> Pojmenované parametry jsou užitečné několik situací, zejména v případě, že metoda přebírá mnoho parametrů. Jedna je, když chcete předat pouze jeden nebo dva parametry, ale hodnoty, které chcete předat nejsou mezi první pozice v seznamu parametrů. Jiné situaci je, pokud chcete zvýšit vašeho kódu předáním parametry v pořadí, ve kterém je pro vás nejvhodnější.
+> Pojmenované parametry jsou užitečné pro několik situací, zejména v případě, že metoda přijímá velký počet parametrů. Jeden je, když chcete předat pouze jeden nebo dva parametry, ale nejsou hodnoty, které chcete předat mezi první pozice v seznamu parametrů. Je jiné situace, kdy mají být váš kód lépe čitelný předáním parametry v pořadí, ve kterém je pro vás nejvhodnější.
 > 
-> Samozřejmě používat pojmenované parametry, budete muset znát názvy parametrů. Služba WebMatrix IntelliSense můžete *zobrazit* názvy, ale nemůžete vyplnit aktuálně je pro vás.
+> Samozřejmě pokud chcete použít pojmenované parametry, budete muset znát názvy parametrů. Služba WebMatrix IntelliSense můžete *zobrazit* názvy, ale nemůžete vyplnit aktuálně je pro vás.
 
 
-## <a name="creating-the-edit-page"></a>Vytvoření stránky úpravy
+## <a name="creating-the-edit-page"></a>Vytvoření stránky pro úpravu
 
-Nyní můžete vytvořit *EditMovie* stránky. Když uživatelé kliknou na **upravit** odkazu, který se nakonec se na této stránce.
+Nyní můžete vytvořit *EditMovie* stránky. Když uživatelé kliknou **upravit** odkaz, na této stránce se zobrazí skončit.
 
-Vytvoření stránky s názvem *EditMovie.cshtml* a nahraďte, co je v souboru s následující kód:
+Vytvoření stránky s názvem *EditMovie.cshtml* a nahradit, co je v souboru následujícím kódem:
 
 [!code-cshtml[Main](updating-data/samples/sample10.cshtml)]
 
-Tento kód a kód je podobná máte ve *AddMovie* stránky. Je malý rozdíl v text pro tlačítko pro odeslání. Stejně jako u *AddMovie* stránky, dojde `Html.ValidationSummary` volání, které se zobrazí chyby ověření, pokud jsou k dispozici. Tentokrát jsme se vynechala volání `Validation.Message`, protože se zobrazí chyby v souhrnu ověření. Jak jsme uvedli v předchozím kurzu, můžete použít v různých kombinacích souhrnu ověření a jednotlivé chybové zprávy.
+Tento kód a kód se podobá mít *AddMovie* stránky. Je malý rozdíl v textu tlačítka pro odeslání. Stejně jako u *AddMovie* stránce, dojde `Html.ValidationSummary` volání, které se zobrazí chyby ověření, pokud tam nějaké jsou. Nyní jsme se přitom volání `Validation.Message`, protože chyby se zobrazí v souhrnu ověření. Jak je uvedeno v předchozím kurzu, můžete použít v různých kombinacích Souhrn ověření a jednotlivé chybové zprávy.
 
-Všimněte si znovu, že `method` atribut `<form>` element je nastaven na hodnotu `post`. Stejně jako u *AddMovie.cshtml* stránky, tato stránka umožňuje změny do databáze. Proto by měla provést tento formulář `POST` operaci. (Další informace o rozdílu mezi `GET` a `POST` operací, najdete v článku [GET, POST a zabezpečení protokolu HTTP příkaz](form-basics.md#GET,_POST,_and_HTTP_Verb_Safety) bočním panelu v tomto kurzu ve formulářích HTML.)
+Všimněte si, že znovu, který `method` atribut `<form>` prvek je nastaven na `post`. Stejně jako u *AddMovie.cshtml* stránky, tato stránka provádí změny v databázi. Proto by měl provádět tento formulář `POST` operace. (Další informace o rozdílech mezi `GET` a `POST` operací, najdete v článku [GET, POST a HTTP příkaz bezpečnosti](form-basics.md#GET,_POST,_and_HTTP_Verb_Safety) boční panel v tomto kurzu ve formulářích HTML.)
 
-Jak už jste viděli v dřívější kurzu, `value` atributy do textových polí se se nastavují s kódu Razor, aby bylo možné přednačtení je. Tentokrát, když používáte proměnné jako `title` a `genre` pro tuto úlohu místo `Request.Form["title"]`:
+Jak už jste viděli v předchozí kurzu `value` textových polí se nastavují atributy s kódem Razor k jejich předběžné načtení. Tentokrát ale používáte proměnné jako `title` a `genre` pro tuto úlohu místo `Request.Form["title"]`:
 
 `<input type="text" name="title" value="@title" />`
 
-Jako dříve, tento kód bude přednačtení textové hodnoty pole s hodnotami film. Se zobrazí ve chvíli, proč je užitečné používat proměnné tentokrát místo použití `Request` objektu.
+Jako dříve, tento kód bude předběžné načtení textové hodnoty pole s hodnotami video. Zobrazí se vám za chvíli důvody, proč je užitečný použít proměnné pro tuto chvíli namísto použití `Request` objektu.
 
-K dispozici je také `<input type="hidden">` element na této stránce. Tento element ukládá ID film bez viditelnosti na stránce. ID je původně předána na stránku pomocí pomocí hodnoty řetězce dotazu (`?id=7` nebo podobné v adrese URL). Hodnota ID vložíte do skryté pole, můžete zkontrolovat, zda je k dispozici při odeslání formuláře, i když už máte přístup k původní adresu URL, který stránka byla vyvolána s.
+K dispozici je také `<input type="hidden">` prvek na této stránce. Tento prvek ukládá ID film bez zviditelnění na stránce. ID původně předána na stránku pomocí hodnoty řetězce dotazu (`?id=7` nebo podobné v adrese URL). Vložením hodnoty ID do skryté pole, abyste měli jistotu, že je k dispozici při odeslání formuláře, i když už nebude mít přístup k původní adresu URL, které stránky se vyvolala s.
 
-Na rozdíl od *AddMovie* stránky kód pro *EditMovie* stránky má dvě odlišné funkce. První funkce je, že pokud stránka se zobrazí při prvním (a *pouze* pak), kód získá ID film z řetězce dotazu. Kód pak používá ID, které ke čtení odpovídající film z databáze nástroje a zobrazení (přednačtení) ji do textových polí.
+Na rozdíl od *AddMovie* stránce kód *EditMovie* stránka má dva různé funkce. První funkce je, že když stránka se zobrazí první (a *pouze* pak), kód získá ID video z řetězce dotazu. Kód pak používá ID na odpovídající videa z databáze pro čtení a zobrazení (přednačtení) ji do textových polí.
 
-Funkce second je, že když uživatel klikne **odeslání změn** tlačítko kód má číst hodnoty do textových polí a jejich ověření. Kód má také k aktualizaci položky databáze s novými hodnotami. Tento postup je podobný jako při přidávání záznam, jako jste viděli v *AddMovie*.
+Druhá funkce je, že když uživatel klikne **odeslat změny** tlačítko, kód má číst hodnoty do textových polí a ověřit je. Kód má také k aktualizaci položky databáze s novými hodnotami. Tato technika je podobné jako přidání záznamu, protože jste viděli v *AddMovie*.
 
-## <a name="adding-code-to-read-a-single-movie"></a>Přidání kódu ke čtení jeden film
+## <a name="adding-code-to-read-a-single-movie"></a>Přidání kódu pro čtení jednoho videa
 
-K provedení první funkci, přidejte do horní části stránky tento kód:
+K provedení první funkce, tento kód vložte do horní části stránky:
 
 [!code-cshtml[Main](updating-data/samples/sample11.cshtml)]
 
-Většina tohoto kódu je uvnitř bloku, která se spouští `if(!IsPost)`. `!` Operátor znamená "Ne", takže znamená výraz *Pokud tento požadavek není post odeslání*, což je nepřímým způsobem o tom, že *Pokud tento požadavek je při prvním spuštění této stránce*. Jak již bylo uvedeno dříve, tento kód by měl spustit *pouze* při prvním spuštění stránky. Pokud nebylo uzavřete kód v `if(!IsPost)`, by spustit při každém stránka je vyvolána, jestli poprvé nebo v reakci na tlačítko klikněte na tlačítko.
+Většina tento kód je uvnitř bloku, který se spustí `if(!IsPost)`. `!` Operátor znamená "not", takže znamená, že výraz *Pokud tento požadavek není odeslání příspěvku*, což je o tom, že to nepřímé způsob *Pokud tento požadavek je při prvním spuštění této stránce*. Jak je uvedeno výše, tento kód spustit *pouze* při prvním spuštění stránky. Pokud zadáte nepovedlo kód v `if(!IsPost)`, by spustit pokaždé, když se na stránce je vyvolána, zda poprvé nebo v reakci na tlačítku klikněte na tlačítko.
 
-Všimněte si, že tento kód obsahuje `else` blokovat této doby. Jak jsme uvedli, když zavedli jsme `if` bloky, někdy chcete spustit alternativní kódu, pokud není podmínka testujete hodnotu true. Je to tento případ sem. Pokud podmínka předá (to znamená, pokud je třeba ID předána na stránku ok), přečíst řádek z databáze. Ale pokud podmínka neprojde, `else` bloku běží a kód nastaví chybovou zprávu.
+Všimněte si, že tento kód obsahuje `else` blokovat této doby. Jak jsme už uvedli, když jsme představili `if` bloky, někdy chcete spustit alternativní kódu, pokud neplatí stavu testování. Je to tento případ tady. Pokud bude podmínka splněna (tj. Pokud předané na stránku ID je v pořádku), čtení řádku z databáze. Nicméně, pokud podmínka není úspěšný, `else` bloku spuštěn a kód nastaví chybovou zprávu.
 
-## <a name="validating-a-value-passed-to-the-page"></a>Ověřování hodnotu předána na stránku
+## <a name="validating-a-value-passed-to-the-page"></a>Ověřuje se hodnota předána na stránku
 
-Kód používá `Request.QueryString["id"]` získat ID, která je předána na stránku. Kód zajišťuje, že hodnota byla zadána ve skutečnosti ID. Pokud byla předána žádná hodnota, nastaví kód chyby ověřování.
+Tento kód použije `Request.QueryString["id"]` k získání ID, která je předána na stránku. Kód zajišťuje, že hodnotu byl předán ve skutečnosti identifikátor. Pokud byla předána žádná hodnota, nastaví kód chyby ověřování.
 
-Tento kód ukazuje jiný způsob, jak ověřit informace. V tomto kurzu předchozí pracoval s `Validation` pomocné rutiny. Registrovaných pole k ověření a automaticky se ověřování ASP.NET a zobrazí chyby pomocí `Html.ValidationMessage` a `Html.ValidationSummary`. V takovém případě však můžete jste ověřování není skutečně uživatelského vstupu. Místo toho že ověřování hodnotu, která byla předána na stránku z jinde. `Validation` Pomocné rutiny, která není to pro vás.
+Tento kód ukazuje různé způsob, jak ověřit informace. V předchozím kurzu, kterou jste pracovali `Validation` pomocné rutiny. Jste zaregistrovali pole k ověření a ASP.NET automaticky nebyla ověření a zobrazí chyby pomocí `Html.ValidationMessage` a `Html.ValidationSummary`. V takovém případě však je už ověřování není ve skutečnosti uživatelského vstupu. Místo toho že ověřování hodnotu, která byla předána na stránku odjinud. `Validation` Pomocné rutiny, která neumí za vás.
 
-Proto byste zkontrolovat hodnotu sami, vyzkoušejte s `if(!Request.QueryString["ID"].IsEmpty()`). Pokud dojde k potížím, můžete zobrazit chyba pomocí `Html.ValidationSummary`, stejně jako `Validation` pomocné rutiny. Chcete-li to udělat, zavolejte `Validation.AddFormError` a předejte ji zprávu zobrazíte. `Validation.AddFormError` je integrované metoda, která umožňuje definovat vlastní zprávy, které se pomocí ověřování systému, které jste již obeznámeni s svázání. (Později v tomto kurzu budeme mluvit o tom, aby tento proces ověření trochu robustnější.)
+Proto byste zkontrolovat hodnotu sami, testováním s `if(!Request.QueryString["ID"].IsEmpty()`). Pokud je nějaký problém, můžete zobrazit chyba s použitím `Html.ValidationSummary`, stejně jako `Validation` pomocné rutiny. Chcete-li to mohli udělat, zavolejte `Validation.AddFormError` a předejte jí zprávu zobrazit. `Validation.AddFormError` je integrovaná metoda, která umožňuje definovat vlastní zprávy, které jsou ověřování systému, kterou jste již obeznámeni s. (Dále v tomto kurzu budeme mluvit o tom, aby tento proces ověření trochu výkonnější.)
 
-Po provedení se, že je ID videa, kód čte databázi, hledá pouze položku jedné databáze. (Pravděpodobně jste si všimli obecné vzor pro databázové operace: Otevřete databázi, definovat příkazu jazyka SQL a spusťte příkaz.) Tentokrát SQL `Select` příkaz obsahuje `WHERE ID = @0`. Protože ID je jedinečný, se může vracet jenom jeden záznam.
+Jakmile ověříte, že je ID videa, kód čte databázi, hledá jenom položky izolované databáze. (Pravděpodobně jste si všimli obecný vzor databázových operací: Otevřete databázi, definujte příkaz SQL a spuštění příkazu.) Tentokrát SQL `Select` výpis obsahuje `WHERE ID = @0`. Protože ID je jedinečný, může být vrácen pouze jeden záznam.
 
-Dotaz se provádí pomocí `db.QuerySingle` (není `db.Query`, jako jste použili movie seznam), a vloží kód výsledku do `row` proměnné. Název `row` libovolný; zadáte název proměnné jakkoli chcete. Proměnné inicializovat v horní části pak hodnotu podrobnosti o filmu tak, aby tyto hodnoty lze zobrazit v textových polích.
+Dotaz se provádí pomocí `db.QuerySingle` (není `db.Query`, jako jste použili pro výpis film), a vloží kód do výsledku `row` proměnné. Název `row` libovolný; můžete pojmenovat proměnné, jakkoli chcete. Proměnné inicializovány v horní části se pak naplní se podrobnosti o filmu tak, aby tyto hodnoty lze zobrazit v textových polích.
 
-## <a name="testing-the-edit-page-so-far"></a>Testování stránce pro úpravy (dosavadní)
+## <a name="testing-the-edit-page-so-far"></a>Testování stránky pro úpravu (zatím)
 
-Pokud chcete otestovat stránku, spusťte *filmy* nyní a klikněte na tlačítko **upravit** odkaz vedle žádné film. Zobrazí se *EditMovie* stránky s podrobnostmi předvyplněné film jste vybrali:
+Pokud chcete otestovat stránku, spusťte *filmy* stránce teď a klikněte na tlačítko **upravit** odkaz vedle libovolné video. Zobrazí se vám *EditMovie* stránky s podrobnostmi o vyplňují za video, které jste vybrali:
 
-![Upravit film stránky zobrazující film bude upravena](updating-data/_static/image3.png)
+![Upravit video stránky zobrazující film bude upravován](updating-data/_static/image3.png)
 
-Všimněte si, že adresa URL stránky obsahuje něco podobného jako `?id=10` (nebo jiné telefonní číslo). Dosavadní který otestujete **upravit** odkazů v *film* stránky práce, stránku je přečtení ID z řetězce dotazu, a že databázi dotazy s cílem získat jeden film záznam pracuje.
+Všimněte si, že adresa URL stránky obsahuje něco jako `?id=10` (nebo jiné telefonní číslo). Zatím jste otestovali, který **upravit** odkazů v *film* stránce práce, že vaše stránka je čtení ID z řetězce dotazu a pracuje, že databáze dotaz pro získání film jeden záznam.
 
-Můžete změnit informace film, ale nic se stane, když kliknete na tlačítko **odeslání změn**.
+Můžete změnit informace film, ale nic se nestane po kliknutí na **odeslat změny**.
 
-## <a name="adding-code-to-update-the-movie-with-the-users-changes"></a>Přidání kódu k aktualizaci film uživatele změn
+## <a name="adding-code-to-update-the-movie-with-the-users-changes"></a>Přidání kódu k aktualizaci videa pomocí změny uživatele
 
-V *EditMovie.cshtml* souboru, pokud chcete implementovat funkce second (ukládají se změny), přidejte následující kód pouze uvnitř složená závorka `@` bloku. (Pokud si nejste jistí, přesně umístění kód, můžete se podívat na [úplný výpis pro stránku upravit film kódu](#Complete_Page_Listing_for_EditMovie) , zobrazí se na konci tohoto kurzu.)
+V *EditMovie.cshtml* implementovat druhou funkci (ukládají se změny), přidejte následující kód jenom složené závorce `@` bloku. (Pokud si nejste jistí, přesně, kde chcete změnit kód, můžete si prohlédnout [dokončení kódu pro stránku Upravit video](#Complete_Page_Listing_for_EditMovie) , který se zobrazí na konci tohoto kurzu.)
 
 [!code-csharp[Main](updating-data/samples/sample12.cs)]
 
-Znovu, tento kód a kód je podobný kódu v *AddMovie*. Kód je v `if(IsPost)` blokovat, protože tento kód spustí pouze v případě, že uživatel klikne **odeslání změn** tlačítko &mdash; , kdy (a pouze tehdy, když) formulář odeslal. V takovém případě nepoužíváte testu jako `if(IsPost && Validation.IsValid())`– to znamená, nejsou kombinace obou testů pomocí AND. Na této stránce můžete nejprve určit, jestli je odeslání formuláře (`if(IsPost)`) a pak zaregistrujte pole pro ověření. Potom můžete testovat výsledky ověření (`if(Validation.IsValid()`). Tok se poněkud liší od v *AddMovie.cshtml* stránky, ale účinek je stejný.
+Znovu, je podobný kód v tomto značek a kódu *AddMovie*. Kód je v `if(IsPost)` blokovat, protože tento kód se spustí pouze v případě, že uživatel klikne **odeslat změny** tlačítko &mdash; to znamená, pokud (a pouze tehdy, když) byl odeslán formulář. V tomto případě, že nepoužíváte testu jako `if(IsPost && Validation.IsValid())`– to znamená, nejsou kombinování oba testy s použitím AND. Na této stránce, je nejprve určit, zda je odeslání formuláře (`if(IsPost)`) a teprve pak zaregistrujte pole pro ověřování. Pak můžete testovat výsledky ověření (`if(Validation.IsValid()`). Tok je mírně odlišná v porovnání s *AddMovie.cshtml* stránky, ale efekt je stejný.
 
-Získat hodnoty do textových polí pomocí `Request.Form["title"]` a podobný kód pro druhý `<input>` elementy. Všimněte si, že tuto chvíli kód získá film ID mimo skryté pole (`<input type="hidden">`). Pokud stránky spustili poprvé, kód tu ID z řetězce dotazu. Získat hodnotu z pole skrytá a ujistěte se, že vám ID videa, která byla původně zobrazena, v případě, že od té doby se nějakým způsobem změnit řetězec dotazu.
+Získat hodnoty do textových polí pomocí `Request.Form["title"]` a podobné pro druhý `<input>` elementy. Všimněte si, že tentokrát kód získá ID film mimo skryté pole (`<input type="hidden">`). Při provádění na stránce první, je kód teď ID mimo řetězec dotazu. Získat hodnotu z skryté pole, abyste měli jistotu, že se zobrazuje ID videa, která byla původně zobrazí v případě, že řetězec dotazu byla nějakým způsobem změněna od té doby.
 
-Opravdu důležité rozdíl mezi *AddMovie* kód a tento kód je, že v tomto kódu použít SQL `Update` příkaz místo `Insert Into` příkaz. Následující příklad ukazuje syntaxi SQL `Update` příkaz:
+Velmi důležitý rozdíl mezi *AddMovie* kódu a tento kód je, že v tomto kódu můžete použít SQL `Update` příkaz místo `Insert Into` příkazu. Následující příklad ukazuje syntaxi SQL `Update` – příkaz:
 
 `UPDATE table SET col1="value", col2="value", col3="value" ... WHERE ID = value`
 
-Můžete zadat všechny sloupce v libovolném pořadí a nemáte nutně aktualizovat každý sloupec během `Update` operaci. (ID samostatně, nelze aktualizovat, protože záznam, výsledkem by uložit jako nový záznam a který není povolen pro `Update` operace.)
+Všechny sloupce, můžete zadat v libovolném pořadí a není nutné nutně aktualizovat každý sloupec během `Update` operace. (ID, nelze aktualizovat, protože záznam, který by ve skutečnosti uložit jako nový záznam a, který není povolen pro `Update` operace.)
 
 > [!NOTE] 
 > 
-> **Důležité** `Where` klauzule s ID je velmi důležité, protože se jedná o tom, jak databázi zná databázi, kterou záznamů, které chcete aktualizovat. Pokud jste ji přerušili `Where` klauzuli by aktualizoval databázi *každých* záznamů v databázi. Ve většině případů, které by se havárie.
+> **Důležité** `Where` klauzule s ID je velmi důležité, protože to je, jak databáze pozná, kterou databázi záznamů, které chcete aktualizovat. Pokud jste minule přestali `Where` klauzule, aktualizovali byste databázi *každý* záznamů v databázi. Ve většině případů, které by byly havárii.
 
 
-V kódu jsou hodnoty tak, aby aktualizace předán příkaz jazyka SQL s použitím zástupné symboly. Opakování, co jsme uvedli jste před: z bezpečnostních důvodů *pouze* použít zástupné symboly a předat hodnoty do příkazu SQL.
+V kódu jsou předány aktualizaci hodnot pro příkaz jazyka SQL s použitím zástupných symbolů. Opakovat, co jsme řekli před: z bezpečnostních důvodů *pouze* použít zástupné znaky pro předání hodnot pro příkaz jazyka SQL.
 
-Po kód používá `db.Execute` ke spuštění `Update` prohlášení, je přesměrován zpět na stránku výpis, kde můžete sledovat změny.
+Jakmile tento kód použije `db.Execute` ke spuštění `Update` příkaz, je přesměrován zpět na stránku seznam, kde můžete sledovat změny.
 
 > [!TIP] 
 > 
-> **Jiný SQL příkazy, různé metody**
+> **Různé SQL příkazy, různé metody**
 > 
-> Možná jste si všimli, používáte mírně různé metody pro spouštění různých příkazů SQL. Ke spuštění `Select` dotaz to potenciálně vrací více záznamů, můžete použít `Query` metoda. Ke spuštění `Select` dotaz, který víte, bude vrátit jen jednu položku databáze, můžete použít `QuerySingle` metoda. Ke spuštění příkazů, které usnadňují změny, ale které nevrací položky databáze, můžete použít `Execute` metoda.
+> Jste si možná všimli, že používáte mírně odlišné metody spouští různé příkazy SQL. Ke spuštění `Select` dotaz, který potenciálně vrací více záznamů, je použít `Query` metody. Ke spuštění `Select` dotaz, který vrátí pouze jednu položku databáze, je použít `QuerySingle` metody. Ke spuštění příkazů, provést změny, ale který nevracejte položky databáze, můžete použít `Execute` metody.
 > 
-> Budete muset mít různé metody, protože každý z nich vrátí odlišné výsledky, protože jste viděli již rozdíl mezi `Query` a `QuerySingle`. ( `Execute` Ve skutečnosti vrátí metoda hodnotu také &mdash; konkrétně, počet řádky databáze, které byly ovlivněny příkaz &mdash; ale můžete jste byla ignorována, dosavadní.)
+> Je třeba mít různé metody, protože každá z nich vrací různé výsledky, jak jste už viděli v rozdílu mezi `Query` a `QuerySingle`. ( `Execute` Ve skutečnosti vrátí metoda hodnotu také &mdash; konkrétně, počet řádky databáze, které byly ovlivněny příkaz &mdash; ale můžete jste byla ignorována, který zatím.)
 > 
-> Samozřejmě `Query` metoda může vrátit pouze jeden řádek databáze. Ale technologie ASP.NET vždy zpracuje výsledky `Query` metoda jako kolekce. I v případě, že metoda vrátí pouze jeden řádek, budete muset tento jeden řádek extrahovat z kolekce. Proto v situacích, kde jste *vědět* získáte zpět pouze jeden řádek, je bit pohodlnější použití `QuerySingle`.
+> Samozřejmě `Query` metoda může vrátit pouze jeden řádek. Ale ASP.NET vždy zpracovává výsledky `Query` metoda jako kolekce. I v případě, že metoda vrátí pouze jeden řádek, budete muset extrahovat tento jeden řádek z kolekce. Proto v situacích, kde jste *vědět* získáte zpět pouze jeden řádek, je vhodnější použít trochu `QuerySingle`.
 > 
-> Existuje několik metod, které provádějí konkrétní typy databázových operací. Můžete najít v seznamu metod databáze v [Stručná referenční příručka aplikace ASP.NET Web Pages rozhraní API](../../api-reference/asp-net-web-pages-api-reference.md#Data).
+> Existuje několik metod, které provádějí konkrétní typy databázových operací. Můžete najít seznam metod databáze [Stručná referenční rozhraní API technologie ASP.NET Web Pages](../../api-reference/asp-net-web-pages-api-reference.md#Data).
 
 
-## <a name="making-validation-for-the-id-more-robust"></a>Provedení ověření informace ID robustní
+## <a name="making-validation-for-the-id-more-robust"></a>Aby ověřování pro ID více robustní
 
-Při prvním spuštění stránky, můžete získat ID film z řetězce dotazu, takže můžete přejít, že film získat z databáze. Můžete provedeny jistotu, že ve skutečnosti došlo hodnotu na vyhledání, která jste udělali s využitím tento kód:
+Při prvním spuštění stránky ID video z řetězce dotazu, které získáte můžete přejít z databáze získat tento film. Je ověřeno, že ve skutečnosti došlo hodnotu k vyhledání, které jste provedli pomocí tohoto kódu:
 
 [!code-csharp[Main](updating-data/samples/sample13.cs)]
 
-Použít tento kód a ujistěte se, pokud uživatel získá k *EditMovies* stránky bez první výběru video v *filmy* stránky, na stránce se zobrazí uživatelsky přívětivý chybová zpráva. (Jinak, uživatelé by viz chybu, která je pravděpodobně pouze matou.)
+Ujistěte se, že pokud se uživatel dostane do pomocí tohoto kódu *EditMovies* stránky bez první video ve výběru *filmy* stránky, na stránce zobrazí popisnou chybovou zprávu. (V opačném případě uživatelé uvidí chybu, která je pravděpodobně právě zmást.)
 
-Toto ověření není však nepříliš robustní. Stránka může být vyvolána také s tyto chyby:
+Toto ověření se však nepříliš robustní. Na stránce může být vyvoláno také s těmito chybami:
 
-- ID není číslo. Například může vyvolat stránku s adresou URL jako `http://localhost:nnnnn/EditMovie?id=abc`.
-- ID je číslo, ale odkazuje na film, který neexistuje (například `http://localhost:nnnnn/EditMovie?id=100934`).
+- Identifikátor není číslo. Například může vyvolat na stránce s adresou URL jako `http://localhost:nnnnn/EditMovie?id=abc`.
+- ID je číslo, ale odkazuje na film, který neexistuje (třeba `http://localhost:nnnnn/EditMovie?id=100934`).
 
-Pokud jste zvědaví, pokud chcete zobrazit chyby, které jsou výsledkem tyto adresy URL, spusťte *filmy* stránky. Vyberte video upravit a poté změňte adresu URL *EditMovie* stránky na adresu URL, která obsahuje abecedním ID nebo ID film neexistující.
+Pokud jste zvědaví, pokud chcete zobrazit chyby, které vzniknou z těchto adres URL, spusťte *filmy* stránky. Vyberte video chcete upravit a potom změňte adresu URL *EditMovie* stránky na adresu URL, která obsahuje abecední ID nebo ID neexistující videa.
 
-Proto co můžete dělat? První je zajistit, že ne jenom je ID předána na stránku, ale že ID je celé číslo. Změnit kód `!IsPost` test, aby vypadala jako v tomto příkladu:
+Tak co byste měli dělat? Abyste měli jistotu, že není pouze ID předána na stránku, ale, že ID je celé číslo je první opravu. Změňte kód `!IsPost` testu, aby vypadala jako v tomto příkladu:
 
 [!code-csharp[Main](updating-data/samples/sample14.cs)]
 
-Na druhou podmínku, která jste přidali `IsEmpty` test, propojený s `&&` (logické a):
+Na druhou podmínku, která jste přidali `IsEmpty` testu, propojené s `&&` (logický operátor a):
 
 [!code-csharp[Main](updating-data/samples/sample15.cs)]
 
-Může pamatovat z [Úvod do programování webových stránek ASP.NET](../introducing-razor-syntax-c.md) kurz, který jako metody `AsBool` `AsInt` převést na jiný datový typ řetězec znaků. `IsInt` – Metoda (a jiné, jako jsou `IsBool` a `IsDateTime`) jsou podobné. Ale testují pouze zda je *můžete* převést řetězec bez ve skutečnosti převod. Proto zde jste se v podstatě oznámením *Pokud hodnotu řetězce dotazu lze převést na celé číslo...* .
+Může nezapomeňte z [Úvod do programování webových stránek ASP.NET](../introducing-razor-syntax-c.md) kurz, který metody, jako jsou `AsBool` `AsInt` převést na jiný datový typ řetězec znaků. `IsInt` – Metoda (a jiné, jako například `IsBool` a `IsDateTime`) jsou podobné. Však jsou jen pro testování, zda jste *můžete* převést řetězec bez samotnému provedení převodu. Takže tady v podstatě říkáte *Pokud hodnotu řetězce dotazu lze převést na celé...* .
 
-Potenciální problém hledá film, který neexistuje. Kód slouží k získání film vypadá tento kód:
+Možný problém hledá videa, která neexistuje. Kód slouží k získání filmu vypadá takto:
 
 [!code-csharp[Main](updating-data/samples/sample16.cs)]
 
-Pokud předáte `movieId` hodnotu `QuerySingle` metoda, která neodpovídá skutečné film, nic nevrátí a příkazy, které následují (například `title=row.Title`) vést k chybám.
+Pokud předáte `movieId` hodnota, která se `QuerySingle` metodě, která neodpovídá skutečné film, nevrátí a příkazy, které následují (například `title=row.Title`) dojít k chybám.
 
-Je opět snadno opravu. Pokud `db.QuerySingle` metoda vrátí žádné výsledky `row` proměnná bude mít hodnotu null. Proto můžete zkontrolovat, zda `row` proměnná má hodnotu null, před pokusem o získání hodnoty z něj. Následující kód přidá `if` bloku kolem příkazy, které získávají hodnoty z `row` objektu:
+Znovu se to snadno napravit. Pokud `db.QuerySingle` metoda nebyly vráceny žádné výsledky `row` proměnná bude mít hodnotu null. Proto můžete zkontrolovat, zda `row` proměnná má hodnotu null, než se pokusíte získat hodnoty z něj. Následující kód přidává `if` bloku kolem příkazy, které získávají hodnoty z celkového počtu `row` objektu:
 
 [!code-csharp[Main](updating-data/samples/sample17.cs)]
 
-Stránku s tyto dva další ověřovací testy, stane odrážka ověření. Kompletní kód `!IsPost` větve bude vypadat jako tento ukázkový:
+Na stránce se tyto dvě další ověřovací testy, stane odrážky testování. Kompletní kód `!IsPost` větev teď vypadá jako v tomto příkladu:
 
 [!code-csharp[Main](updating-data/samples/sample18.cs)]
 
-Jsme budete jednou Upozorňujeme, že tato úloha je vhodné využít pro `else` bloku. Pokud nemáte jsou testy úspěšné, `else` bloky nastavit chybové zprávy.
+Jsme Všimněte ještě jednou, že tato úloha je vhodné využít pro `else` bloku. Pokud nejsou testy úspěšné, `else` bloky nastavení chybové zprávy.
 
-## <a name="adding-a-link-to-return-to-the-movies-page"></a>Přidání odkazu na návrat na stránku filmy
+## <a name="adding-a-link-to-return-to-the-movies-page"></a>Přidání propojení se vrátíte na stránku filmy
 
-Konečné a užitečné podrobností je přidáte propojení zpět *filmy* stránky. Obyčejnou toku události, uživatelé spustí ve *filmy* a klikněte na tlačítko **upravit** odkaz. Která integruje do *EditMovie* stránky, kde můžete upravit film a klikněte na tlačítko. Po kód zpracovává změnu, je přesměrován zpět *filmy* stránky.
+Konečné a užitečné podrobností je můžete přidat odkaz zpět *filmy* stránky. V běžném toku událostí bude uživatele začíná už na *filmy* stránky a klikněte na tlačítko **upravit** odkaz. Který přináší do *EditMovie* stránku, kde můžete upravit video a klikněte na tlačítko. Po kód zpracovává změny, je přesměrován zpět *filmy* stránky.
 
 Ale:
 
-- Uživatel může rozhodnout nic nezmění.
-- Uživatel může být, že podmínky na tuto stránku bez první kliknutí na **upravit** na odkaz v *filmy* stránky.
+- Uživatel se mohli rozhodnot něco změnit.
+- Uživatel může jste získali na tuto stránku bez nejdříve kliknutím **upravit** odkaz v *filmy* stránky.
 
-V obou případech chcete mohli snadno vrátit do hlavní výpis. Je snadno opravu &mdash; přidejte následující kód bezprostředně za ukončovací `</form>` značky v kódu:
+V obou případech budete chtít umožňují snadno vrátit na hlavní výpis. Jde to snadno napravit &mdash; přidejte následující kód bezprostředně po zavření `</form>` značky v kódu:
 
 [!code-html[Main](updating-data/samples/sample19.html)]
 
-Tyto značky používají stejnou syntaxi pro `<a>` element, který jste se seznámili s jinde. Adresa URL obsahuje `~` rozumí "root webu."
+Tento kód používá stejnou syntaxi pro `<a>` element, který jste se seznámili jinde. Adresa URL obsahuje `~` rozumí "kořenový adresář webu."
 
-## <a name="testing-the-movie-update-process"></a>Testování procesu aktualizace filmu
+## <a name="testing-the-movie-update-process"></a>Testování procesu aktualizace Movie
 
-Nyní můžete otestovat. Spustit *filmy* a klikněte na tlačítko **upravit** vedle film. Když *EditMovie* se zobrazí stránka provádět změny film a klikněte na tlačítko **odeslání změn**. Jakmile se zobrazí seznam film, ujistěte se, že se změny zobrazují.
+Nyní můžete otestovat. Spustit *filmy* stránce a klikněte na tlačítko **upravit** vedle videa. Když *EditMovie* se zobrazí stránka, provést změny filmů a klikněte na tlačítko **odeslat změny**. Jakmile se zobrazí výpis film, ujistěte se, že změny jsou zobrazeny.
 
-Chcete-li mít jistotu, že ověřování pracuje, klikněte na tlačítko **upravit** pro jiné film. Když dojde k *EditMovie* zrušte zaškrtnutí políčka **Genre** pole (nebo **roku** pole, nebo obě) a zkuste odeslat změny. Se zobrazí chyba, jak jste zvyklí:
+Chcete-li mít jistotu, že funguje ověřování, klikněte na tlačítko **upravit** pro jiné video. Když se zobrazí *EditMovie* zrušte **žánr** pole (nebo **rok** pole nebo obojí) a odeslat provedené změny. Zobrazí se vám chyby dle očekávání:
 
-![Upravit film stránky zobrazující chyby ověřování](updating-data/_static/image4.png)
+![Upravit video stránky zobrazující chyby ověření](updating-data/_static/image4.png)
 
-Klikněte na tlačítko **vrátit do seznamu film** odkaz na zrušte změny a vrátit se *filmy* stránky.
+Klikněte na tlačítko **vrátit seznam film** odkaz opustit změny a vraťte se do *filmy* stránky.
 
-## <a name="coming-up-next"></a>Objevuje další
+## <a name="coming-up-next"></a>Chystá se další
 
-V dalším kurzu se zobrazí, jak odstranit záznam film.
+V dalším kurzu zobrazí se vám odstranění záznamu video.
 
-## <a name="complete-listing-for-movie-page-updated-with-edit-links"></a>Úplný seznam pro stránku Movie (aktualizovat pomocí odkazů pro úpravy)
+## <a name="complete-listing-for-movie-page-updated-with-edit-links"></a>Úplný seznam pro stránku Movie (aktualizován odkazů pro úpravy)
 
 [!code-cshtml[Main](updating-data/samples/sample20.cshtml)]
 
 <a id="Complete_Page_Listing_for_EditMovie"></a>
-## <a name="complete-page-listing-for-edit-movie-page"></a>Dokončení výpis stránky pro stránku film úpravy
+## <a name="complete-page-listing-for-edit-movie-page"></a>Úplný výpis stránky pro stránku Upravit video
 
 [!code-cshtml[Main](updating-data/samples/sample21.cshtml)]
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](../../getting-started/introducing-razor-syntax-c.md)
+- [Úvod k programování v prostředí ASP.NET pomocí syntaxe Razor](../../getting-started/introducing-razor-syntax-c.md)
 - [Prohlášení aktualizace SQL](http://www.w3schools.com/sql/sql_update.asp) na webu W3Schools
 
 > [!div class="step-by-step"]

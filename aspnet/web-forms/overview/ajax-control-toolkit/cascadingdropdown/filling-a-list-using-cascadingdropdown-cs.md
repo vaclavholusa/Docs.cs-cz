@@ -1,73 +1,72 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
-title: Naplnění seznamu pomocí CascadingDropDown (C#) | Microsoft Docs
+title: Vyplnění seznamu ovládacím prvkem použití ovládacího prvku CascadingDropDown (C#) | Dokumentace Microsoftu
 author: wenz
-description: Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby změny v jedné rozevírací seznam zatížení přidružené hodnoty v anoth...
+description: Sada nástrojů AJAX Control Toolkit ovládacího prvku CascadingDropDown rozšiřuje ovládací prvek DropDownList tak, aby se změny v jedné DropDownList zatížení související hodnoty v anoth...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: f949aafa-fe57-43b0-b722-f0dd33a900be
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c9e47f6484e49013004bf15084f98440ee67558e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 12a4271b2697df8e24fca5f7ff30797b1e4e077a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870970"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385418"
 ---
-<a name="filling-a-list-using-cascadingdropdown-c"></a>Naplnění seznamu pomocí CascadingDropDown (C#)
+<a name="filling-a-list-using-cascadingdropdown-c"></a>Vyplnění seznamu ovládacím prvkem použití ovládacího prvku CascadingDropDown (C#)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/9/0/7/907760b1-2c60-4f81-aeb6-ca416a573b0d/cascadingdropdown0.cs.zip) nebo [stahovat PDF](http://download.microsoft.com/download/2/d/c/2dc10e34-6983-41d4-9c08-f78f5387d32b/cascadingdropdown0CS.pdf)
 
-> Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby se změny v jedné rozevírací seznam zatížení přidružené hodnoty v jiné rozevírací seznam. (Například jeden seznam obsahuje seznam nám stavy a další seznamu je pak vyplněn hlavní města v tomto stavu.) V prvním kroku k vyřešení je ve skutečnosti vyplnění pomocí tento ovládací prvek rozevírací seznam.
+> Sada nástrojů AJAX Control Toolkit ovládacího prvku CascadingDropDown rozšiřuje ovládací prvek DropDownList tak, aby se změny v jedné DropDownList zatížení související hodnoty v jiném DropDownList. (Například jeden seznam obsahuje seznam nám stavy a dalším seznamu je pak vyplněna hlavních měst v tomto stavu.) První výzva k řešení je pro skutečné vyplnění rozevíracího seznamu pomocí tohoto ovládacího prvku.
 
 
 ## <a name="overview"></a>Přehled
 
-Ovládací prvek CascadingDropDown v Toolkitu AJAX rozšiřuje ovládací prvek rozevírací seznam tak, aby se změny v jedné rozevírací seznam zatížení přidružené hodnoty v jiné rozevírací seznam. (Například jeden seznam obsahuje seznam nám stavy a další seznamu je pak vyplněn hlavní města v tomto stavu.) V prvním kroku k vyřešení je ve skutečnosti vyplnění pomocí tento ovládací prvek rozevírací seznam.
+Sada nástrojů AJAX Control Toolkit ovládacího prvku CascadingDropDown rozšiřuje ovládací prvek DropDownList tak, aby se změny v jedné DropDownList zatížení související hodnoty v jiném DropDownList. (Například jeden seznam obsahuje seznam nám stavy a dalším seznamu je pak vyplněna hlavních měst v tomto stavu.) První výzva k řešení je pro skutečné vyplnění rozevíracího seznamu pomocí tohoto ovládacího prvku.
 
 ## <a name="steps"></a>Kroky
 
-Chcete aktivovat funkce ASP.NET AJAX a sady nástrojů ovládacího prvku `ScriptManager` řízení musíte umístit kdekoli na stránce (ale uvnitř `<form>` element):
+K aktivaci funkce technologie ASP.NET AJAX a Control Toolkit `ScriptManager` ovládací prvek je třeba umístit kdekoli na stránce (ale v rámci `<form>` element):
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample1.aspx)]
 
-Ovládací prvek rozevírací seznam je pak potřeba:
+Ovládací prvek DropDownList je pak potřeba:
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample2.aspx)]
 
-Pro tento seznam se přidá rozšiřujícího objektu CascadingDropDown. K webové službě, která pak vrátí seznam položek, který se má zobrazit v seznamu, kterou bude odesílat Asynchronní požadavek. Tento postup vyžaduje je nutné následující atributy CascadingDropDown nastavit:
+Pro tento seznam je přidán CascadingDropDown rozšíření. Asynchronní požadavek se odešle do webové služby, která pak vrátí seznam položek, které lze zobrazit v seznamu. Aby to fungovalo nutné nastavit následující atributy CascadingDropDown:
 
-- `ServicePath`: Adresa URL webové služby doručování položky seznamu
-- `ServiceMethod`: Webové metody doručování položky seznamu
-- `TargetControlID`: ID rozevíracího seznamu
+- `ServicePath`: Adresa URL webová služba doručování položky seznamu
+- `ServiceMethod`: Metoda webové zajištění položky seznamu
+- `TargetControlID`: ID z rozevíracího seznamu
 - `Category`: Informace o kategoriích, které je odeslána do webové metody při volání
-- `PromptText`: Text zobrazí v případě, že asynchronní načítání seznamu dat ze serveru
+- `PromptText`: Text zobrazovaný v případě asynchronní načítání seznamu data ze serveru
 
-Zde je kód pro `CascadingDropDown` elementu. Jediným rozdílem mezi C# a VB je název přidružené webové služby:
+Tady je zápis `CascadingDropDown` elementu. Jediným rozdílem mezi C# a VB je název přidružené webové služby:
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample3.aspx)]
 
-Kód jazyka JavaScript pocházejících z `CascadingDropDown` rozšiřujícího objektu volá metody webové služby s podpisem následující:
+Z kódu jazyka JavaScript `CascadingDropDown` volání rozšiřující metody webové služby s následující signaturou:
 
 [!code-csharp[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample4.cs)]
 
-Proto je důležitým aspektem, že metoda musí vrátit pole typu `CascadingDropDownNameValue` (definovanou sadu ovládacího prvku ASP.NET AJAX). V `CascadingDropDownNameValue` contructor, je třeba zadat text položky seznamu a pak jeho hodnoty, první stejně jako `<option value="VALUE">NAME</option>` by se ve formátu HTML. Tady je několik ukázkových dat:
+Proto je důležitým aspektem je, že metoda musí vracet pole typu `CascadingDropDownNameValue` (definované technologie ASP.NET AJAX Control Toolkit). V `CascadingDropDownNameValue` konstruktoru, první text položky seznamu a pak její hodnotu musí být zadaná, stejně jako `<option value="VALUE">NAME</option>` byste udělali ve formátu HTML. Tady je ukázková data:
 
 [!code-aspx[Main](filling-a-list-using-cascadingdropdown-cs/samples/sample5.aspx)]
 
-Při načítání stránky v prohlížeči aktivuje se v seznamu pro vyplnění pomocí tří dodavatelů.
+Načítání stránky v prohlížeči se aktivuje seznamu tankujeme tři dodavatelů.
 
 
 [![V seznamu se vyplní automaticky](filling-a-list-using-cascadingdropdown-cs/_static/image2.png)](filling-a-list-using-cascadingdropdown-cs/_static/image1.png)
 
-V seznamu se vyplní automaticky ([Kliknutím zobrazit obrázek v plné velikosti](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
+V seznamu se vyplní automaticky ([kliknutím ji zobrazíte obrázek v plné velikosti](filling-a-list-using-cascadingdropdown-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Next](using-cascadingdropdown-with-a-database-cs.md)

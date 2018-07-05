@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/authentication/logging-users-into-your-membership-system
-title: Uživatelé protokolování do systému členství | Microsoft Docs
+title: Protokolování uživatelů do systému členství | Dokumentace Microsoftu
 author: JoeStagner
-description: V tomto videu Jan Stagner ukazuje, jak pro naši uživatelé přihlášení k systému členství technologie ASP.NET.
+description: V tomto videu Joe Stagner ukazuje, jak naši uživatelé přihlásit systém členství technologie ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/29/2010
 ms.topic: article
 ms.assetid: 39a7142b-8228-4dae-8578-c26d70e3ae71
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/logging-users-into-your-membership-system
 msc.type: video
-ms.openlocfilehash: 5f10c270a415ff87422e664b2b10b7af336718b8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f58fedf6f77805cebf6363393799b969d9b823e9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880600"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383620"
 ---
-<a name="logging-users-into-your-membership-system"></a>Uživatelé protokolování do systému členství
+<a name="logging-users-into-your-membership-system"></a>Přihlášení uživatelů do systému členství
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-V tomto videu Jan Stagner ukazuje, jak pro naši uživatelé přihlášení k systému členství technologie ASP.NET.
+V tomto videu Joe Stagner ukazuje, jak naši uživatelé přihlásit systém členství technologie ASP.NET.
 
 [&#9654;Podívejte se na video (19 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/logging-users-into-your-membership-system)
 

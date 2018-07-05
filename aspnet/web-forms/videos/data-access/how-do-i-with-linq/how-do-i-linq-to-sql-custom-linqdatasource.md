@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource
-title: '[Jak na:] Technologie LINQ to SQL: vlastní LinqDataSource | Microsoft Docs'
+title: '[Postup:] Technologie LINQ to SQL: vlastní zdroj LinqDataSource | Dokumentace Microsoftu'
 author: scottstanfield
-description: Ovládací prvek LinqDataSource lze přizpůsobit declaritively, jak je znázorněno v rámci 5 nebo prostřednictvím kódu pomocí zpracování metodu zvolíte.
+description: Ovládací prvek zdroje dat LinqDataSource je možné přizpůsobit declaritively, jak je uvedeno v části 5 nebo prostřednictvím kódu díky zpracování výběr metody.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2008
 ms.topic: article
 ms.assetid: 9d020ec8-a7a8-4753-b73a-d9d0584d72e3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-custom-linqdatasource
 msc.type: video
-ms.openlocfilehash: a873a514abbe798993cb7e85c81035045e7ae874
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5174090b0c8d03a07e956879d1ca5ea17a0f00c2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30883778"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374808"
 ---
-<a name="how-do-i-linq-to-sql-custom-linqdatasource"></a>[Jak na:] Technologie LINQ to SQL: vlastní LinqDataSource
+<a name="how-do-i-linq-to-sql-custom-linqdatasource"></a>[Postup:] Technologie LINQ to SQL: vlastní zdroj LinqDataSource
 ====================
 podle [Scott Stanfield](https://github.com/scottstanfield)
 
-Ovládací prvek LinqDataSource lze přizpůsobit declaritively, jak je znázorněno v rámci 5 nebo prostřednictvím kódu pomocí zpracování metodu zvolíte.
+Ovládací prvek zdroje dat LinqDataSource je možné přizpůsobit declaritively, jak je uvedeno v části 5 nebo prostřednictvím kódu díky zpracování výběr metody.
 
-[&#9654;Podívejte se na video (9 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-custom-linqdatasource)
+[&#9654;Podívejte se na video (9 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-linq-to-sql-custom-linqdatasource)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-linq-to-sql-linqdatasource.md)

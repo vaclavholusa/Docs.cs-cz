@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-hovermenu-extender
-title: '[Jak na:] Použití rozšíření HoverMenu ASP.NET AJAX? | Microsoft Docs'
+title: '[Postup:] Použít technologie ASP.NET AJAX – Extender HoverMenu? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Zjistit, jak vytvořit místní nabídky, který se zobrazí pokaždé, když uživatel ukazatel myši k elementu jsme pomocí ovládacího prvku HoverMenu rozšiřujícího objektu...
+description: Dozvíte se víc o použití nabídky HoverMenu rozšiřující ovládací prvek k vytvoření kontextové nabídky, která se zobrazí pokaždé, když uživatel najede myší nad prvek jsme...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/31/2007
 ms.topic: article
 ms.assetid: 61086ed8-ad8b-499a-84d2-5b6b68ede15a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-hovermenu-extender
 msc.type: video
-ms.openlocfilehash: b507f1d3a14dec723d17462d956c06635179077f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b49a44270c61211e54356fc1498d7ab8f003e3f7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892657"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374902"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-hovermenu-extender"></a>[Jak na:] Použití rozšíření HoverMenu ASP.NET AJAX?
+<a name="how-do-i-use-the-aspnet-ajax-hovermenu-extender"></a>[Postup:] Použít technologie ASP.NET AJAX – Extender HoverMenu?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Můžete zjistit, jak vytvořit místní nabídky, který se zobrazí pokaždé, když uživatel ukazatel myši element na webové stránce pomocí prvku HoverMenu rozšiřujícího objektu.
+Objevte, jak použít rozšiřující ovládací prvek nabídky HoverMenu k vytvoření kontextové nabídky, která se zobrazí pokaždé, když uživatel najede myší nad prvkem webové stránky.
 
 [&#9654;Podívejte se na video (7 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-hovermenu-extender)
 

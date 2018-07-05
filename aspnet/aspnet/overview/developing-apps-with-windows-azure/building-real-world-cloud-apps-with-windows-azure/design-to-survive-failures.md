@@ -1,136 +1,135 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
-title: Návrh při selhání (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Návrh odolný proti chybám (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 01883cb0be3e7c7b5dc8d32b784ccb3a28652f1e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: db7398cfd9ed51d716cb595d977b482fd0da131e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874106"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37372459"
 ---
-<a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Návrh při selhání (vytváření reálných cloudových aplikací s Azure)
+<a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Návrh pro selhání (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Informace o elektronická kniha najdete v tématu [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Jednou z věcí, budete muset vezměte v úvahu při vytváření jakéhokoli typu aplikace, ale hlavně jeden, který se spustí v cloudu, kde mnoha lidmi budete používat, je návrhu aplikace, aby mohli pohodlné zpracování chyb a nadále získávat hodnota co nejvíc možné. Dispozici dostatek času co se chystáte dojít k chybě v jakémkoli prostředí nebo jakéhokoli softwaru systému. Jak vaše aplikace zpracovává těchto situacích Určuje, jak nespokojený získají vašich zákazníků a kolik čas strávený analýza a odstraňování potíží.
+Jednou z věcí, které mají zvážit při vytváření jakéhokoli typu aplikace, ale hlavně jeden, který se spustí v cloudu, ve kterém velké množství lidí použití, jak navrhovat aplikace tak, aby můžete elegantně zpracovat selhání a dál přinášet nemalé hodnoty je co nejvíce je to možné. Zadaný dostatek času, co se chystáte dojde k problémům v jakémkoli prostředí nebo v každém softwarovém systému. Způsob, jakým aplikace zpracovává tyto situace Určuje, jak nespokojený vaši zákazníci můžou získat a jak dlouho budete muset věnovat analýza a řešení problémů.
 
 ## <a name="types-of-failures"></a>Typy chyb
 
-Existují dvě kategorie základní chyb, které budete chtít jinak zpracovat:
+Existují dvě základní kategorie chyb, které budete chtít zpracovat jinak:
 
-- Dočasná samoopravení selhání například přerušované problémů s připojením.
-- Trvalé selhání, které vyžadují zásah.
+- Přechodná, opravy chyb, jako jsou problémy s připojením sítě.
+- Trvalou chyby, které vyžadují zásah.
 
-Pro přechodných chyb můžete implementovat zásady opakování zajistit, že ve většině případů aplikace obnoví rychle a automaticky. Vaši zákazníci mohou Všimněte si, trochu delší doby odezvy, ale jinak nebude mít vliv. Ukážeme některé způsoby, jak zpracovávat tyto chyby ve [přechodných chyb kapitoly](transient-fault-handling.md).
+Pro přechodná selhání můžete implementovat zásady opakování zajistit, že ve většině případů obnoví aplikace rychle a automaticky. Může si vaši zákazníci o něco delší dobu odezvy, ale jinak nebude mít vliv. Vám ukážeme některé způsobů zpracování těchto chyb v [zpracování přechodných chyb kapitoly](transient-fault-handling.md).
 
-Pro trvalé selhání, můžete implementovat, sledování a protokolování funkce, které rychle vás upozorní, jakmile se vyskytnout potíže a které usnadňuje analýza hlavní příčiny. Ukážeme některé způsoby, jak si udržíte nad těchto druhů chyb v [monitorování a Telemetrie kapitoly](monitoring-and-telemetry.md).
+Pro enduring selhání, můžete implementovat monitorování a protokolování funkci, která okamžitě vás upozorní, když vzniku a, která usnadňuje analýzu původní příčiny. Vám ukážeme některé způsoby, jak vám připněte si tyto druhy chyb v [monitorování a Telemetrie kapitoly](monitoring-and-telemetry.md).
 
-## <a name="failure-scope"></a>Selhání oboru
+## <a name="failure-scope"></a>Rozsah selhání
 
-Máte také myslet selhání oboru – jestli má vliv jeden počítač, celé služby, jako je SQL Database nebo úložiště nebo celou oblast.
+Taky je potřeba uvažovat o selhání oboru – ať už je vliv na jeden počítač, celou službu jako je SQL Database nebo úložiště nebo celou oblast.
 
-![Selhání oboru](design-to-survive-failures/_static/image1.png)
+![Rozsah selhání](design-to-survive-failures/_static/image1.png)
 
 ### <a name="machine-failures"></a>Selhání počítače
 
-V Azure novou automaticky nahrazuje server, který selhal a dobře navrženou cloudové aplikace zotavení z tento druh selhání rychle a automaticky. Dříve jsme zdůraznit škálovatelnost výhod bezstavové webovou vrstvu a snadné zotavení ze selhání serveru je Další výhodou statelessness. Usnadnění obnovení je také jednou z výhod platforma jako služba (PaaS) funkce jako je SQL Database a Azure App Service Web Apps. Selhání hardwaru vyskytují jen vzácně, ale pokud k nim dojde, že tyto služby zpracovat je automaticky. Nemáte i napsat kód pro zpracování chyby počítače, když používáte jednu z těchto služeb.
+V Azure selhání serveru je automaticky nahrazena novou a dobře navržené cloudové aplikace zotavení z tohoto typu selhání automaticky a rychle. Dříve jsme zdůraznit výhod škálovatelnosti bezstavové webové vrstvy a Další výhodou statelessness je snadné zotavení ze selhání serveru. Snadné obnovení je také jednou z výhod platforma jako služba (PaaS) funkce, jako je SQL Database a Azure App Service Web Apps. Selhání hardwaru, které se vyskytují jen vzácně, ale pokud k nim dojde, že tyto služby je umožňují automaticky zpracovat; dokonce nemusíte psát kód pro zpracování chyb počítače, když pracujete s některou z těchto služeb.
 
-### <a name="service-failures"></a>Selhání služby
+### <a name="service-failures"></a>Chyby služby
 
-Cloudové aplikace se obvykle používají více služeb. Například aplikace opravte ji používá službu SQL Database, službu úložiště a webové aplikace je nasazená do služby Azure App Service. Co bude vaše aplikace dělat, když dojde k selhání jednoho služby, které závisí na? Pro některé služby selhání popisný "je nám líto, zkuste to znovu později" zpráva může být nejvhodnější můžete provést. Ale v mnoha případech můžete lépe provést. Například když back-end data store je vypnutý, můžete přijímají vstup uživatele, zobrazení, "vaše žádost byla přijata" a úložiště musí být zhruba else vstup dočasně; a pokud je služba potřebujete provozní znovu, můžete načíst vstupu a zpracovat.
+Cloudové aplikace obvykle používají více služeb. Například aplikace Fix It používá službu SQL Database, službu úložiště a webové aplikace se nasadí do služby Azure App Service. Co se vaše aplikace dělat, když dojde k selhání jednoho služby, které závisí na? Pro některé služby selhání popisný "je nám líto, zkuste to znovu později" zpráva může být nejlepší, vám pomůžou. Ale v mnoha scénářích vám pomůžou lépe. Například když váš back endovým datům úložiště je vypnutý, můžete přijímají vstup uživatele, zobrazit "vaše žádost byla přijata" a dočasně; ukládání vstup musí být zhruba else potom když službu, potřebujete opět v provozu, můžete načíst vstupní a zpracovat je.
 
-[Zaměřené na fronty práci vzor](queue-centric-work-pattern.md) kapitoly ukazuje jeden ze způsobů tohoto scénáře. Aplikace opravte ukládá úkoly do databáze SQL, ale nemá ukončete pracovat, když databáze SQL je mimo provoz. V této kapitole vidíte ukládání uživatelský vstup pro úlohu ve frontě a používání pracovní proces fronty číst a aktualizovat úlohu. Pokud SQL je vypnutý, je schopnost vytvářet úlohy opravte ho neovlivní; pracovní proces můžete počkat a zpracovat nové úkoly, pokud databáze SQL je k dispozici.
+[Vzor založený na frontě pracovní](queue-centric-work-pattern.md) kapitoly ukazuje jeden ze způsobů tímto scénářem poradit. Aplikace Fix It ukládá úkoly do databáze SQL, ale nemusí to přestane pracovat po SQL Database je mimo provoz. V této kapitole uvidíme, jak uložit uživatelský vstup pro úlohu ve frontě a používat pracovní proces frontě číst a aktualizovat úlohu. Pokud SQL je vypnutý, není ovlivněn; schopnost vytvářet úkoly Fix It pracovní proces může čekat a zpracovat nové úkoly v případě, že SQL Database je dostupná.
 
-### <a name="region-failures"></a>Selhání oblast
+### <a name="region-failures"></a>Selhání oblasti
 
-Celý oblastech mohou selhat. Přírodní katastrofě mohl poškodit datového centra, může získat průmětu podle meteor, trunk řádku do datového centra může vyjmout zemědělec burying krávy s rýpadlového atd. Pokud vaše aplikace je hostována v datovém centru stricken co můžete udělat? Je možné nastavit aplikaci v Azure můžou běžet v několika oblastech současně, takže pokud dojde k havárii v jednom, můžete pokračovat ve spouštění v jiné oblasti. Taková selhání jsou velmi výjimečných výskytů a většinu aplikací není přejít prostřednictvím obruče nezbytné, aby byla zajištěna nepřerušená činnost služby prostřednictvím selhání toto řazení. Najdete v části prostředky na konci kapitoly informace o tom, jak udržovat aplikace k dispozici i prostřednictvím selhání oblast.
+Celé oblasti může selhat. Přírodní katastrofě může zničit datového centra, může získat sloučí podle meteor službě, může být snížili řádku trunk do datového centra dobytka burying krávy s rýpadlového atd. Pokud je vaše aplikace hostovaná v stricken datacenter co dělat? Je možné nastavit vaši aplikaci v Azure ke spuštění v několika oblastech současně, takže pokud nedojde k havárii v jednom, bude možné i nadále spuštěna v jiné oblasti. Tyto chyby jsou velmi vzácné výskyty a většina aplikací není přejít přes obruče nezbytné k zajištění nepřerušovaného službě přes tento typ selhání. V části prostředky na konci kapitoly informace o tom, jak vaše aplikace, klidně i prostřednictvím selhání oblasti k dispozici.
 
-Cílem Azure se provést všechny tyto druhy selhání bylo mnohem snazší zpracování a budete zde naleznete několik příkladů jak jsme se učinit v následujících kapitolách.
+Cílem Azure je zpracování všem těmto typům selhání mnohem jednodušší a uvidíte několik příkladů, jak vám to jde, který v následujících kapitolách.
 
-## <a name="slas"></a>SLA
+## <a name="slas"></a>Smlouvy o úrovni služeb
 
-Lidé často uslyšíme smlouvy o úrovni služeb (SLA) v prostředí cloudu. V podstatě jedná se o tom, jak spolehlivé své služby je lišící které společností. 99,9 %, které SLA znamená, že byste měli očekávat službu pravděpodobně nepracuje správně 99,9 % času. Který je docela typické hodnota pro SLA a vypadá jako velmi vysoké číslo ale nemusí zjistíte, jak dlouhá doba dolů. 1 % ve skutečnosti částek. Zde je tabulku, která ukazuje, kolik výpadek různých procent SLA částka přes rok, měsíc a týden.
+Lidé často poslechněte si o smlouvy o úrovni služeb (SLA) v cloudovém prostředí. V podstatě jde o příslibů, které usnadňují společností o tom, jak spolehlivé příslušnou službu. 99,9 % smlouva SLA znamená, že jste byste očekávat, že služba funguje správně 99,9 % času. To je poměrně Typická hodnota pro smlouvu SLA a vypadá podobně jako velmi velký počet, ale možná zjistíte, kolik času dolů. 1 % ve skutečnosti částek. Tady je tabulka, která ukazuje, jak velká Doba výpadku různých procentní smlouvy SLA částka za rok, měsíc a za týden.
 
-![Tabulka SLA](design-to-survive-failures/_static/image2.png)
+![Smlouva SLA tabulky](design-to-survive-failures/_static/image2.png)
 
-Proto 99,9 % SLA znamená služby může být mimo provoz 8.76 hodin v roce nebo 43,2 minut za měsíc. Který je více výpadek než většina lidí mějte na paměti. Takže jako vývojář chcete mějte na paměti, že je možné určité množství výpadek a zpracování řádně způsobem. V určitém okamžiku někdo se bude používat vaše aplikace a služby bude mimo provoz a chcete minimalizovat negativní dopad této na zákazníka.
+Proto 99,9 % smlouva SLA znamená, že vaše služba může být mimo provoz 8.76 hodin za rok nebo 43,2 minut za měsíc. To je více časové prodlevy než většina lidí realizovat. Tak jako vývojář chcete mějte na paměti, že je možné určité množství časové prodlevy a bezproblémové způsobem ji zpracovat. V určitém okamžiku někdo se bude používat vaše aplikace a služby se to být mimo provoz a chcete minimalizovat negativní dopad, který na zákazníka.
 
-Jednou z věcí byste měli vědět o SLA je jakém časovém horizontu odkazuje na: nemá hodiny získat resetovat, každý týden, každý měsíc nebo každý rok? V Azure můžeme resetovat hodiny každý měsíc, což je pro vás lépe než roční SLA, protože roční SLA může skrýt chybný měsíců tak, že je odsazení s řadou dobrý měsíců.
+Je jedna věc, kterou byste měli vědět o SLA jakém časovém horizontu, na který odkazuje: funkci hodin získat resetování, každý týden, každý měsíc nebo každý rok? V Azure jsme obnovit platit každý měsíc, což je pro vás lepší než roční SLA, protože roční SLA může skrýt slabé měsíce započtení s řadou dobré měsíců.
 
-Samozřejmě jsme vždy aspire udělat lépe než SLA; Obvykle budete dolů mnohem méně než. Potenciálu je, že pokud se nám někdy dolů po dobu delší než maximální výpadek požádejte pro vrácení peněz. Množství peníze, kterou získáte zpět pravděpodobně nebude kompenzovat plně obchodní dopad nad výpadek, ale tento aspekt smlouvě SLA funguje jako vynucení zásad a vás informuje, že jsme vzít velmi vážně.
+Samozřejmě vždy držet udělat lépe než SLA; Obvykle budete dolů mnohem menší než. Uskutečnění je, že pokud jsme pro vás někdy dolů po dobu delší než maximální časové prodlevy můžete požádat o vrácení peněz. Množství peníze, které získáte zpět pravděpodobně nebude kompenzovat plně dopad na chod firmy překročení časové prodlevy, ale tento aspekt smlouvy SLA funguje jako penále za a oznámí vám, že jsme jít velmi vážně.
 
-### <a name="composite-slas"></a>Složené SLA
+### <a name="composite-slas"></a>Složené smlouvy SLA
 
-Důležité myslet, když se díváte na SLA je dopad používání více služeb v aplikaci s každou službou nutnosti samostatné SLA. Například aplikace opravte používá Azure App Service Web Apps, úložiště Azure a SQL Database. Zde jsou čísla svých SLA od data, kdy tato e kniha probíhá zápis v prosinci 2013:
+Důležité zamyslet, když se díváte na smlouvy SLA je dopad pomocí několika služeb v aplikaci, přičemž každá služba má samostatné smlouvy SLA. Například aplikace Fix It používá Azure App Service Web Apps služby Azure Storage a SQL Database. Tady jsou jejich čísla SLA k datu, které tato elektronická kniha se zápisem v prosinci, 2013:
 
-![Databáze SQL webový server, úložiště, SLA](design-to-survive-failures/_static/image3.png)
+![Smlouva SLA webové stránky, Storage, SQL Database](design-to-survive-failures/_static/image3.png)
 
-Jaký je maximální dolů čas, které očekáváte pro aplikace založené na tyto služby SLA? Může si myslíte, že vaše výpadkům budou rovna nejhorší procento SLA System nebo 99,9 % v tomto případě. Který by mít hodnotu true, pokud všechny tři služby se nezdařilo vždy ve stejnou dobu, ale který není nutně ve skutečnosti stane. Každá služba může selhat nezávisle v různou dobu, proto je nutné vypočítat složený SLA vynásobením jednotlivých čísel smlouvy o úrovni služeb.
+Jaký je maximální výpadek podle vašeho očekávání pro aplikace založené na těchto smluv SLA služby? Si možná myslíte, že vaše dolů by se rovná nejhorší procento SLA nebo 99,9 % v tomto případě. Který bude mít hodnotu true, pokud všechny tři služby se nezdařilo vždy ve stejnou dobu, ale to není nutně co přesně se stane. Každá služba může selhat nezávisle na sobě v různou dobu, abyste měli k výpočtu Složená hodnota SLA vynásobením jednotlivých čísel smlouvu SLA.
 
-![Složené SLA](design-to-survive-failures/_static/image4.png)
+![Složená hodnota SLA](design-to-survive-failures/_static/image4.png)
 
-Tak, aby vaše aplikace může být mimo provoz nejen 43,2 minut za měsíc ale 3krát tato šířka, 108 minut za měsíc – a přesto být v rámci smlouvy SLA pro Azure.
+Aby vaše aplikace může být mimo provoz nejen 43,2 minut za měsíc, ale 3násobek velikosti, 108 minut za měsíc – a v rámci smlouvy SLA pro Azure i nadále.
 
-Tento problém není jedinečný do Azure. Ve skutečnosti poskytujeme nejlepší cloudu SLA všechny cloudové služby, které jsou k dispozici, a budete mít podobný problémy řešení Pokud použití jakéhokoli dodavatele cloudových služeb. To ukazuje je význam přemýšlení o jak můžete navrhnout vaší aplikace pro zpracování selhání nevyhnutelné služby řádně ukončena, protože by se mohlo stát dostatečně často k mít vliv na vaše zákazníky nebo uživatele.
+Tento problém není jedinečný pro Azure. Ve skutečnosti zajišťuje nejlepší cloud SLA kteroukoli cloudovou službu, která je k dispozici a bude nutné podobné problémy řešit, pokud používáte libovolného dodavatele cloudových služeb. To ukazuje je důležitost přemýšlet o tom, jak můžete navrhnout vaše aplikace pro zpracování selhání nevyhnutelné služby bez výpadku, protože může dojít dostatečně často dopad na vaše zákazníky nebo uživatele.
 
-### <a name="cloud-slas-compared-to-enterprise-down-time-experience"></a>SLA cloudu ve srovnání s enterprise době prostředí
+### <a name="cloud-slas-compared-to-enterprise-down-time-experience"></a>Cloud, smlouvy o úrovni služeb ve srovnání s enterprise výpadkům prostředí
 
-Uživatelé někdy Řekněme, "V mé aplikace enterprise nikdy máte tyto problémy." Pokud požádáte kolik výpadkům na měsíc ve skutečnosti mají, obvykle říká, "Dobře, odehrává se příležitostně." A pokud požádejte jak často budou proud, "Někdy musíme zálohovat nebo instalaci nového serveru nebo aktualizace softwaru." Samozřejmě, který se zkracuje jako čas. Většinu firemních aplikací dokud je obzvláště důležité jsou ve skutečnosti dolů déle než dobu povolenou našich smluv SLA služby. Ale pokud je váš server a vaše infrastruktura a vy budete pro něj a v ovládacím prvku je odpovědný, zpravidla myslíte, že menší angst dobu mimo provoz. V cloudovém prostředí budete závisí na někdo jiný a nevíte, co se děje, takže mívají získat více obavy o něm.
+Uživatelé někdy říct "Ve své aplikaci enterprise mám nikdy k dispozici tyto problémy." Po zadání otázky kolik výpadkům v měsíci ve skutečnosti mají, jsou obvykle například "Dobře, to se stane, čas od času." A po zadání otázky jak často se uznat, který "Někdy potřebujeme zálohovat nebo instalaci nového serveru nebo aktualizace softwaru." Samozřejmě, které se počítá jako časové prodlevy. Většina podnikových aplikací Pokud jsou obzvláště důležité jsou ve skutečnosti dolů déle než dovolují naše smlouvy SLA služby časového intervalu. Ale když je váš server a infrastrukturu, budete pro něj a kontrolu nad jeho budete cítit, že menší angst dolů časy. V cloudovém prostředí budete závisí na někdo jiný a nevíte co se děje, takže může vést k získání více obavy o něm.
 
-Pokud organizace lze dosáhnout větší procento doby provozu než můžete získat z cloudu SLA, budou se provádí mnohem víc peníze výdaje na hardware. Cloudové služby to udělat, ale se účtují další pro jeho služby. Místo toho můžete využít finančně efektivní služby a navrhnout softwaru tak, aby nevyhnutelné selhání způsobit přerušení minimální zákazníkům. Úlohu jako návrháře cloudové aplikace není mnoho aby se zabránilo selhání, aby se zabránilo katastrofická a můžete udělat zaměřit na software, nikoli na hardwaru. Zatímco se maximalizovat střední čas mezi selhání zajistit podnikové aplikace, cloudových aplikací snažit minimalizovat střední čas obnovení.
+Organizace dosahuje větší procento doby provozu než získáte z cloudu smlouvy SLA, dělají to podle mnohem víc peníze výdaje na hardware. Cloudovou službu to udělat, ale byste museli mnoho dalšího pro jeho služby účtovat. Místo toho využít nákladově efektivní služby a návrh vašeho softwaru tak, aby nevyhnutelné selhání způsobit přerušení minimální vašim zákazníkům. Úlohy při návrhu aplikace cloud není tak velká, aby selhání, aby se zabránilo katastrofická a můžete to udělat díky zaměření na softwaru, ne na hardware. Vzhledem k tomu, přitom se snaží maximalizovat střední doby mezi poruchami podnikové aplikace, cloudové aplikace snažit minimalizovat průměrný čas potřebný k obnovení.
 
-### <a name="not-all-cloud-services-have-slas"></a>Ne všechny cloudové služby mají SLA
+### <a name="not-all-cloud-services-have-slas"></a>Ne všechny cloudové služby mají smlouvy o úrovni služeb
 
-Uvědomte si také, Ne každé cloudové služby i má SLA. Pokud je aplikace závislá na službě se žádná záruka, doby provozu, může být mimo provoz daleko déle, než může Představte si. Například pokud povolíte přihlásit k webu pomocí zprostředkovatele sociálních třeba Facebook nebo Twitter, zkontrolujte u poskytovatele služeb a zjistěte, pokud je SLA, takže vám možná odhlašování došlo není. Ale pokud ověřovací služby ocitne mimo provoz nebo nemůže podporovat objem požadavků, jež throw na to, vaši zákazníci jsou zamčené z vaší aplikace. Může být mimo provoz, dnů nebo déle. Tvůrci jeden novou aplikaci stovky milionů souborů ke stažení, očekává a závislá na ověřování Facebook – ale nebyla komunikují s Facebook před přechodem za provozu a zjištěných příliš pozdní které došlo žádné SLA pro tuto službu.
+Upozorňujeme také, že ne každé cloudové službě ještě nemá smlouvu SLA. Pokud je vaše aplikace závislá na službě s neposkytujeme záruku doby provozu, může být mimo provoz mnohem déle, než může být imagine. Například pokud povolíte přihlašování k webu pomocí poskytovatele sociálních sítí, jako je Facebook nebo Twitter, obraťte se na poskytovatele služeb, které chcete zjistit, pokud je SLA a může pro vás tam není. Ale pokud ověřovací službu ocitne mimo provoz nebo je schopen množství žádostí, abyste vyvolali na to, které podporují, jsou zamknuté vaši zákazníci z vaší aplikace. Dnů nebo i delší dobu, může být mimo provoz. Autoři jednu novou aplikaci očekával stovky milionů souborů ke stažení a závislá na ověřování sítě Facebook –, ale nepovedlo komunikovat s Facebooku nepřejdou za provozu a zjištěných příliš pozdě, které se žádná smlouva SLA pro tuto službu.
 
-### <a name="not-all-downtime-counts-toward-slas"></a>Ne všechny počty výpadek směrem k SLA
+### <a name="not-all-downtime-counts-toward-slas"></a>Ne všechny počty výpadek směrem k smlouvy o úrovni služeb
 
-Některé cloudové služby může úmyslně odepření služby, pokud vaše aplikace používá přepsání je. To se označuje jako *omezení*. Pokud služba má SLA, má být uvedeno podmínky, za kterých může být omezené, a měli vyhnout tyto podmínky a náležitě reagovat na omezení, pokud se stane návrhu aplikace. Například pokud dojde k chybě při překročení určitého počtu za sekundu žádosti o službu, spusťte chcete Ujistěte se, že automatické opakované pokusy nenastávají tak rychle, že způsobí omezení pokračujte. Budeme mít více tedy o omezení v [přechodných chyb kapitoly](transient-fault-handling.md).
+Některé cloudové služby může záměrně odepřít služby v případě, že aplikace nadměrně používá. Tento postup se nazývá *omezování*. Pokud služba má smlouvu SLA, by mělo být uvedeno podmínky, za kterých může být omezený a návrhu vaší aplikace měli vyhnout tyto podmínky a náležitě reagovat na omezení, pokud se to stane. Například pokud požadavky na službu začínají selhávat po překročení určitého počtu za sekundu, chcete zajistit, aby automatické opakování pokusů nedojde tak rychle, mohou způsobit omezení pokračujte. Budeme mít více říkají o omezování v [zpracování přechodných chyb kapitoly](transient-fault-handling.md).
 
 ## <a name="summary"></a>Souhrn
 
-Tato kapitola se pokusila můžete Uvědomte si, proč cloudové aplikace skutečných má být navržena k selhání řádně. Od verze [další kapitoly](monitoring-and-telemetry.md), zbývající vzory této série přejděte do více podrobností o několik strategií, můžete to udělat:
+Tato kapitola nepokusí umožňují Uvědomte si, proč reálného světa cloudové aplikace má být navržena k překonání selhání bez výpadku. Počínaje [další kapitolu](monitoring-and-telemetry.md), zbývající vzory v této sérii přejít na podrobnější informace o několik strategií, můžete to udělat:
 
-- Vhodné mít [monitorování a telemetrie](monitoring-and-telemetry.md), takže získáte informace rychle o selhání, které vyžadují zásah, a máte dostatek informací k jejich řešení.
-- [Zpracování přechodných](transient-fault-handling.md) implementací inteligentního opakování logiku, tak, aby vaše aplikace obnoví automaticky při může a spadne zpět na [jistič](transient-fault-handling.md#circuitbreakers) logiku, když ji nelze.
-- Použití [distribuované ukládání do mezipaměti](distributed-caching.md) aby se minimalizoval propustnosti, latenci a připojení problémy s přístupem k databázi.
-- Implementace přijít spojovacích prostřednictvím [fronty způsob práce zaměřený](queue-centric-work-pattern.md)tak, aby vaše aplikace front-endu pokračovat v práci při back-end je vypnutý.
+- Mít kvalitní [monitorování a telemetrie](monitoring-and-telemetry.md), kde zjistíte, rychle o selhání, které vyžadují zásah, a máte dostatek informací k jejich řešení.
+- [Zpracování přechodných chyb](transient-fault-handling.md) implementací logiku opakování inteligentní, aby vaše aplikace obnoví automaticky při může a spadne zpět na [jistič](transient-fault-handling.md#circuitbreakers) logiku, když ji nelze.
+- Použití [distribuované ukládání do mezipaměti](distributed-caching.md) za účelem minimalizace připojení, latence a propustnosti problémy s přístupem k databázi.
+- Volné párování prostřednictvím implementace [pracovní postup založený na frontě](queue-centric-work-pattern.md)tak, aby front-endu vaší aplikace můžete i nadále fungovat, když back-endu je mimo provoz.
 
 ## <a name="resources"></a>Prostředky
 
-Další informace najdete v dalších kapitolách v této e knihy a následující prostředky.
+Další informace najdete v dalších kapitolách tuto elektronickou příručku a následující prostředky.
 
-Dokumentace:
+Dokumentace ke službě:
 
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze série videí bezporuchový.
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper moduly SIMM značky a Michael Thomassy.
-- [Azure obchodní kontinuity technické pokyny](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx). Dokument White paper Patrik Wickline a Jason Roth.
+- [Bezporuchový: Pokyny, odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper Marc Mercuri, Ulrich Homann a Andrew Townhill. Webová stránka verze bezporuchový videu z řady.
+- [Osvědčené postupy pro navrhování rozsáhlých služeb v Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Dokument White paper Mark Simms a Michael Thomassy.
+- [Technické pokyny Azure obchodní kontinuity podnikových procesů](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx). Dokument White paper Patrick Wickline a Jason Roth.
 - [Zotavení po havárii a vysoká dostupnost pro aplikace Azure](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx). Dokument White paper Michael McKeown, Hanu Kommalapati a Jason Roth.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Viz příručka nasazení více datového centra, jistič vzor.
-- [Podpora Azure - smlouvy o úrovni služeb](https://azure.microsoft.com/support/legal/sla/).
-- [Kontinuita podnikových procesů v Azure SQL Database](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx). Dokumentaci k SQL Database vysokou dostupnost a po havárii funkce obnovení.
+- [Microsoft Vzory a postupy – doprovodné materiály k Azure](https://msdn.microsoft.com/library/dn568099.aspx). Zobrazit pokyny k nasazení s více datového centra, jističe.
+- [Podpora Azure – smlouvy o úrovni služeb](https://azure.microsoft.com/support/legal/sla/).
+- [Kontinuita podnikových procesů ve službě Azure SQL Database](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx). Dokumentaci ke službě SQL Database vysokou dostupnost a funkce pro obnovení.
 - [Vysoká dostupnost a zotavení po havárii pro SQL Server na virtuálních počítačích Azure](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx).
 
 Videa:
 
-- [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Řada devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Uvede základními koncepty a architektury zásady způsobem, velmi přístupné a zajímavé, s scénářů čerpají z prostředí Microsoft zákazníka poradní tým (CAT) s skutečným zákazníkům. Díly 1 a 8 zabývají podrobněji důvody pro navrhování cloudové aplikace při selhání. Další informace najdete v části následné diskusní omezování v díl 2 počínaje 49:57, diskuzi o selhání body a selhání režimy v díl 2 počínaje 56:05 a diskuzi o moduly dělení na okruh v díl 3 počínaje 40:55.
-- [Vytváření Big: Poučení vyplývající z Azure zákazníků – část II](https://channel9.msdn.com/Events/Build/2012/3-030). Moduly SIMM označit zmíněn návrhu pro selhání a instrumentace vše. Podobně jako u řady bezporuchový ale přejde do další postupy podrobnosti.
+- [Bezporuchový: Sestavování škálovatelných, odolných cloudových služeb](https://channel9.msdn.com/Series/FailSafe). Ulrich Homann, Marc Mercuri a Mark Simms devět částí série. Nabídne základními koncepty a Principy architektury tak vysoce dostupné a zajímavé příběhy z prostředí Microsoft zákazníka poradní tým (CAT) se skutečným zákazníkům. Epizody 1 a 8 pohledu do hloubky důvody pro vývoj cloudových aplikací při selhání. Další informace najdete v článku následné diskuzi o omezování v epizoda 2 počínaje 49:57 diskuzi o bodů selhání a režimů selhání v epizoda 2 počínaje 56:05 a diskuzi o jističe v epizodě 3 počínaje 40:55.
+- [Vytváření Big: Získané od zákazníků Azure – část II](https://channel9.msdn.com/Events/Build/2012/3-030). Mark Simms se hovoří o návrh pro selhání a všechno, co instrumentace. Podobně jako řady bezporuchový ale přejde do další postupy podrobnosti.
 
 > [!div class="step-by-step"]
 > [Předchozí](unstructured-blob-storage.md)

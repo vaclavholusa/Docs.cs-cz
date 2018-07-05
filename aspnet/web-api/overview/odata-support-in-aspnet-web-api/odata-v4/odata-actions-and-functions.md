@@ -1,29 +1,28 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
-title: Akce a funkce v OData v4, pomocí rozhraní ASP.NET Web API 2.2 | Microsoft Docs
+title: Akce a funkce v OData v4 pomocí rozhraní ASP.NET Web API 2.2 | Dokumentace Microsoftu
 author: MikeWasson
-description: V prostředí OData akce a funkce jsou způsob, jak přidat serverové chování, které nejsou snadno definován jako operace CRUD na entity. Tento kurz ukazuje, jak...
+description: V prostředí OData akce a funkce jsou způsob, jak přidat chování na straně serveru, které nejsou snadno definované jako operace CRUD u entit. Tento kurz ukazuje, jak...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/27/2014
 ms.topic: article
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: 532362f0c0faaaf0cb0c04726856f0497e5261b5
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: c78a9acabcb346b33a4fe53aa0d18ef67ddcaf33
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "26566773"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371960"
 ---
-<a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>Akce a funkce v OData v4, pomocí rozhraní ASP.NET Web API 2.2
+<a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>Akce a funkce v OData v4 pomocí rozhraní ASP.NET Web API 2.2
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-> V prostředí OData akce a funkce jsou způsob, jak přidat serverové chování, které nejsou snadno definován jako operace CRUD na entity. Tento kurz ukazuje, jak přidat akcí a funkcí do OData v4 koncový bod, pomocí webového rozhraní API 2.2. Tento kurz je založený na kurz [vytvoření OData v4 koncový bod pomocí rozhraní ASP.NET Web API 2](create-an-odata-v4-endpoint.md)
+> V prostředí OData akce a funkce jsou způsob, jak přidat chování na straně serveru, které nejsou snadno definované jako operace CRUD u entit. Tento kurz ukazuje postupy při přidání akcí a funkcí do koncového bodu OData v4, pomocí Web API 2.2. Tento kurz vychází z kurzu [vytvořit OData v4 koncový bod pomocí rozhraní ASP.NET Web API 2](create-an-odata-v4-endpoint.md)
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
@@ -36,80 +35,80 @@ podle [Wasson Jan](https://github.com/MikeWasson)
 > 
 > ## <a name="tutorial-versions"></a>Kurz verze
 > 
-> OData verze 3, najdete v části [akcí OData ve webovém rozhraní API 2 ASP.NET](../odata-v3/odata-actions.md).
+> OData verze 3, naleznete v tématu [akcí OData, které v prostředí ASP.NET Web API 2](../odata-v3/odata-actions.md).
 
 
-Rozdíl mezi *akce* a *funkce* je, že akce může mít vedlejší účinky, a funkce nepodporují. Akce a funkce může vrátit data. Některé použití akce patří:
+Rozdíl mezi *akce* a *funkce* je, že akce může mít vedlejší účinky a funkce nepodporují. Akce a funkce může vrátit data. Mezi použití akce patří:
 
-- Komplexní transakce.
-- Manipulace se několik entit najednou.
-- Povolení aktualizací pouze na určité vlastnosti entity.
+- Složité transakce.
+- Manipulace s několika entit najednou.
+- Povolení aktualizací pouze k určité vlastnosti entity.
 - Odesílání dat, která není entita.
 
-Funkce jsou užitečné pro vracení informací, které neodpovídá přímo na položku entita nebo kolekce.
+Funkce jsou užitečné pro vracení informací, které neodpovídá přímo na entitu nebo kolekci.
 
-Akce (nebo funkce), můžete vybrat jednu entitu nebo kolekce. V terminologii OData, je to *vazby*. Můžete taky nechat &quot;nevázaný&quot; akce/funkce, které se nazývají jako statické operace ve službě.
+Akce (nebo funkce) můžete cílit na jednu entitu nebo kolekci. V terminologii OData, je to *vazby*. Můžete taky nechat &quot;nevázaného&quot; akce/funkce, které se nazývají jako statické operace ve službě.
 
 ## <a name="example-adding-an-action"></a>Příklad: Přidání akce
 
-Umožňuje definovat akci, která má hodnocení produktu.
+Umožňuje definovat akci, která hodnocení produktu.
 
 > [!NOTE]
-> V tomto kurzu vychází kurzu [vytvoření OData v4 koncový bod pomocí rozhraní ASP.NET Web API 2](create-an-odata-v4-endpoint.md)
+> V tomto kurzu vychází z kurzu [vytvořit OData v4 koncový bod pomocí rozhraní ASP.NET Web API 2](create-an-odata-v4-endpoint.md)
 
 
-Nejprve přidejte `ProductRating` modelu, který má představovat hodnocení.
+Nejprve přidejte `ProductRating` modelu k reprezentaci hodnocení.
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample1.cs)]
 
-Také přidat **DbSet** k `ProductsContext` třídy, takže EF vytvoří hodnocení tabulku v databázi.
+Také přidat **DbSet** k `ProductsContext` třídy, aby EF vytvoří hodnocení tabulky v databázi.
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample2.cs)]
 
-### <a name="add-the-action-to-the-edm"></a>Přidat akci k modelu EDM
+### <a name="add-the-action-to-the-edm"></a>Přidání akce do modelu EDM
 
 V WebApiConfig.cs přidejte následující kód:
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample3.cs)]
 
-**EntityTypeConfiguration.Action** metoda akce přidá do datového modelu entity (EDM). **Parametr** metoda určuje parametr s určeným pro akci.
+**EntityTypeConfiguration.Action** metoda přidá akci do modelu entity data model (EDM). **Parametr** metody určuje parametr typu pro akci.
 
-Tento kód také nastaví obor názvů pro EDM. Obor názvů záleží, protože identifikátor URI pro akci zahrnuje název plně kvalifikovaný akce:
+Tento kód také nastaví obor názvů pro modelu EDM. Obor názvů je důležité, protože identifikátor URI pro akce obsahuje akce plně kvalifikovaný název:
 
 [!code-console[Main](odata-actions-and-functions/samples/sample4.cmd)]
 
 > [!NOTE]
-> V typické konfigurace služby IIS tečky v této adresy URL způsobí, že služba IIS vrátí chybu 404. To lze vyřešit tak, že přidáte do souboru Web.Config v následující části:
+> V typické konfiguraci služby IIS způsobí tečky v této adresy URL IIS vrátí chybu 404. Můžete to vyřešit přidáním následujícího oddílu do souboru Web.Config:
 
 [!code-xml[Main](odata-actions-and-functions/samples/sample5.xml)]
 
-### <a name="add-a-controller-method-for-the-action"></a>Přidání metody Kontroleru pro akci
+### <a name="add-a-controller-method-for-the-action"></a>Přidání Kontroleru metody akce
 
-Chcete-li povolit &quot;míra&quot; akce, přidejte následující metodu do `ProductsController`:
+Povolit &quot;míra&quot; akce, přidejte následující metodu do `ProductsController`:
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample6.cs)]
 
-Všimněte si, že metoda název odpovídá názvu akce. **[HttpPost]** Určuje atribut metodu je metoda HTTP POST.
+Všimněte si, že název metody odpovídá názvu akce. **[HttpPost]** atribut určuje, že metoda je metodou HTTP POST.
 
-Volání akce, klient odešle požadavek HTTP POST takto:
+Abyste mohli vyvolat akce, klient odešle požadavek HTTP POST podobný tomuto:
 
 [!code-console[Main](odata-actions-and-functions/samples/sample7.cmd)]
 
-&quot;Míra&quot; akce je svázat s instancemi produktu, tak, aby identifikátor URI pro akci akce plně kvalifikovaný název připojí k identifikátoru URI entity. (Odvolat, že jsme obor názvů EDM nastavená na &quot;ProductService&quot;, takže je název akce plně kvalifikovaný &quot;ProductService.Rate&quot;.)
+&quot;Míra&quot; akce je svázat s instancemi produktu, takže akce plně kvalifikovaný název připojí k identifikátoru URI entity je identifikátoru URI pro akci. (Připomínáme, že nastavíme na obor názvů EDM &quot;ProductService&quot;, takže je název akce plně kvalifikovaný &quot;ProductService.Rate&quot;.)
 
-Text žádosti obsahuje parametry akcí jako datové části JSON. Webové rozhraní API automaticky převede datové části JSON do **ODataActionParameters** objekt, který je právě slovník hodnot parametrů. Pomocí tohoto slovníku pro přístup k parametrů v metodu řadiče.
+Text žádosti obsahuje parametry akce jako datovou část JSON. Webové rozhraní API automaticky převede datové části JSON do **ODataActionParameters** objekt, který je právě slovník hodnot parametrů. Pomocí tohoto slovníku pro přístup k parametrům ve své metodě kontroleru.
 
-Pokud klient odešle parametry akcí v chybného formátování, hodnota **ModelState.IsValid** je false. Zkontrolujte tento příznak ve své metodě kontroleru a vrátí chybu, pokud **IsValid** je false.
+Pokud klient odešle parametry akce v chybného formátování, hodnota **ModelState.IsValid** má hodnotu false. Zkontrolujte tento příznak ve své metodě kontroleru a vrátí chybu, pokud **IsValid** má hodnotu false.
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample8.cs)]
 
 ## <a name="example-adding-a-function"></a>Příklad: Přidání funkce
 
-Nyní Pojďme přidat funkci prostředí OData, vrátí nejnákladnější produktu. Jako dříve, prvním krokem je přidání funkce do modelu EDM. V WebApiConfig.cs přidejte následující kód.
+Nyní Pojďme přidat funkci prostředí OData, která vrací nejdražší produktu. Jako dříve, prvním krokem je přidání funkce do modelu EDM. V WebApiConfig.cs přidejte následující kód.
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample9.cs)]
 
-V takovém případě je vázána kolekci produktů, nikoli jednotlivých instancí produktu funkce. Klienti vyvolání funkce odesláním požadavek GET:
+V takovém případě je funkce vázaná kolekci produktů, spíše než jednotlivé instance produktu. Klienti vyvolat funkci odesláním požadavku GET:
 
 [!code-console[Main](odata-actions-and-functions/samples/sample10.cmd)]
 
@@ -117,29 +116,29 @@ Tady je metoda kontroleru pro tuto funkci:
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample11.cs)]
 
-Všimněte si, že název metody odpovídá názvu funkce. **[Třídy MetadataExchangeClientMode]** Určuje atribut metodu je metoda HTTP GET.
+Všimněte si, že název metody odpovídá názvu funkce. **[HttpGet]** atribut určuje, že metoda je metoda HTTP GET.
 
-Zde je odpověď HTTP:
+Tady je odpovědi HTTP:
 
 [!code-console[Main](odata-actions-and-functions/samples/sample12.cmd)]
 
-## <a name="example-adding-an-unbound-function"></a>Příklad: Přidání Nesvázanou funkci
+## <a name="example-adding-an-unbound-function"></a>Příklad: Přidání nepřipojeného – funkce
 
-Předchozí příklad se funkce vazbou na určitou kolekci. V tomto příkladu další vytvoříme *nevázaný* funkce. Nevázaný funkce se nazývají jako statické operace ve službě. Funkce v tomto příkladu vrací DPH pro danou PSČ.
+V předchozím příkladu se funkce vazbou na určitou kolekci. V tomto příkladu další vytvoříme *nevázaného* funkce. Nevázaný funkce jsou volány jako statické operace ve službě. Funkce v tomto příkladu vrátí daň z prodeje pro danou poštovní směrovací číslo.
 
-V souboru WebApiConfig přidejte do modelu EDM funkce:
+V souboru WebApiConfig přidáte funkce do modelu EDM:
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample13.cs)]
 
-Všimněte si, že jsme volání **funkce** přímo na **Tvůrce ODataModelBuilder**, místo typu entity nebo kolekci. Tato hodnota informuje Tvůrce modelu funkce nevázaný.
+Všimněte si, že jsme volání **funkce** přímo na **Tvůrce ODataModelBuilder**, místo typu entity nebo kolekci. Říká Tvůrce modelu, že funkce není vázaný.
 
 Tady je metoda kontroleru, který implementuje funkce:
 
 [!code-csharp[Main](odata-actions-and-functions/samples/sample14.cs)]
 
-Řadič webového rozhraní API, který umístěte tuto metodu v nezáleží. Může ho dát `ProductsController`, nebo definujte samostatné řadiče. **[ODataRoute]** atribut definuje šablonu identifikátoru URI pro funkci.
+Které kontroler Web API je umístit tuto metodu v nezáleží. Může ho dát `ProductsController`, nebo definujte samostatný kontroleru. **[ODataRoute]** atribut definuje šablonu identifikátoru URI pro funkci.
 
-Tady je požadavek klienta příklad:
+Tady je příklad žádosti klienta:
 
 [!code-console[Main](odata-actions-and-functions/samples/sample15.cmd)]
 

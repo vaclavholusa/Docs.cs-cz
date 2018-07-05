@@ -1,31 +1,30 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: 'Kurz: Začínáme s SignalR 2 a MVC 5 | Microsoft Docs'
+title: 'Kurz: Začínáme s knihovnou SignalR 2 a MVC 5 | Dokumentace Microsoftu'
 author: pfletcher
-description: Tento kurz ukazuje, jak vytvořit v reálném čase chatovací aplikace pomocí ASP.NET SignalR 2. SignalR přidáte do aplikace MVC 5 a vytvořit zobrazení chat...
+description: Tento kurz ukazuje použití funkcí SignalR 2 technologie ASP.NET k vytvoření aplikace pro chatování v reálném čase. Přidáte funkci SignalR k aplikaci MVC 5 a vytvořit zobrazení chat...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
 ms.topic: article
 ms.assetid: 80bfe5fb-bdfc-41fe-ac43-2132e5d69fac
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: ca0471114da7363c5df9d459308708e7ab4f8b84
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 903319040c9ac938cea5dce2e6579d88e0d80bb5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28033844"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384048"
 ---
-<a name="tutorial-getting-started-with-signalr-2-and-mvc-5"></a>Kurz: Začínáme s SignalR 2 a MVC 5
+<a name="tutorial-getting-started-with-signalr-2-and-mvc-5"></a>Kurz: Začínáme s knihovnou SignalR 2 a MVC 5
 ====================
-podle [Patrik Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)
+podle [Patrick Fletcher](https://github.com/pfletcher), [Tim Teebken](https://github.com/timlt)
 
-[Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/Getting-Started-with-c366b2f3)
 
-> Tento kurz ukazuje, jak vytvořit v reálném čase chatovací aplikace pomocí ASP.NET SignalR 2. SignalR přidáte do aplikace MVC 5 a vytvořit zobrazení chatu a odesílat zprávy o zobrazení. 
+> Tento kurz ukazuje použití funkcí SignalR 2 technologie ASP.NET k vytvoření aplikace pro chatování v reálném čase. Přidáte funkci SignalR k aplikaci MVC 5 a vytvořit zobrazení chatu k odesílání a zobrazení zprávy. 
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
@@ -33,49 +32,49 @@ podle [Patrik Fletcher](https://github.com/pfletcher), [Tim Teebken](https://git
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - .NET 4.5
 > - MVC 5
-> - SignalR verze 2
+> - Funkce SignalR verze 2
 >   
 > 
 > 
-> ## <a name="using-visual-studio-2012-with-this-tutorial"></a>Tento kurz pomocí sady Visual Studio 2012
+> ## <a name="using-visual-studio-2012-with-this-tutorial"></a>V tomto kurzu pomocí sady Visual Studio 2012
 > 
 > 
-> Pokud chcete používat Visual Studio 2012 v tomto kurzu, postupujte takto:
+> Pokud chcete použít Visual Studio 2012 s tímto kurzem, postupujte takto:
 > 
 > - Aktualizace vašeho [Správce balíčků](http://docs.nuget.org/docs/start-here/installing-nuget) na nejnovější verzi.
-> - Nainstalujte [webové platformy](https://www.microsoft.com/web/downloads/platform.aspx).
-> - Ve webové platformy, vyhledání a instalace **ASP.NET a webové nástroje 2013.1 pro sadu Visual Studio 2012**. Šablony sady Visual Studio pro třídy SignalR dojde k instalaci, jako **rozbočovače**.
-> - Některé šablony (jako například **třídy pro spuštění OWIN**) nebudou k dispozici; pro tyto třídy soubor použít místo.
+> - Nainstalujte [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
+> - Instalace webové platformy, vyhledejte a nainstalujte **technologie ASP.NET a webové nástroje 2013.1 pro Visual Studio 2012**. Tím se nainstaluje šablony sady Visual Studio pro funkci SignalR třídy jako **centra**.
+> - Některé šablony (jako například **třídy pro spuštění OWIN**) nebudou k dispozici; pro ty, použijte místo toho soubor třídy.
 > 
 > 
 > ## <a name="tutorial-versions"></a>Kurz verze
 > 
-> Informace o předchozích verzích SignalR najdete v tématu [starší verze funkce SignalR](../older-versions/index.md).
+> Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
 > 
-> ## <a name="questions-and-comments"></a>Dotazy a připomínky
+> ## <a name="questions-and-comments"></a>Otázky a komentáře
 > 
-> Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit v komentářích v dolní části stránky. Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [fórum pro ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
+> Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
 ## <a name="overview"></a>Přehled
 
-Tento kurz vás seznámí s vývoj v reálném čase webové aplikace s ASP.NET SignalR 2 a ASP.NET MVC 5. Tento kurz používá stejný kód aplikace chat jako [kurzu Začínáme SignalR](tutorial-getting-started-with-signalr.md), ale ukazuje, jak přidat do aplikace MVC 5.
+Tento kurz vás seznámí s vývoj aplikací webu v reálném čase s knihovnou SignalR 2 technologie ASP.NET a ASP.NET MVC 5. V tomto kurzu použijete stejný kód aplikace chat jako [kurzu Začínáme se SignalR](tutorial-getting-started-with-signalr.md), ale ukazuje, jak přidat do aplikace MVC 5.
 
-V tomto tématu se dozvíte následující úlohy vývoj SignalR:
+V tomto tématu se dozvíte následujících úkolů SignalR:
 
-- Přidání do aplikace MVC 5 knihovně SignalR.
-- Vytvoření třídy spuštění OWIN tak, aby nabízel obsah pro klienty a rozbočovače.
+- Přidání knihovny SignalR pro aplikaci MVC 5.
+- Vytvoření rozbočovače a spouštěcí třídy OWIN tak, aby nabízel obsah pro klienty.
 - K odesílání zpráv a zobrazení aktualizací z centra pomocí knihovny jQuery SignalR na webové stránce.
 
-Následující snímek obrazovky ukazuje dokončené chatovací aplikace spuštěné v prohlížeči.
+Následující snímek obrazovky ukazuje dokončené chatovací aplikaci spuštěnou v prohlížeči.
 
 ![Instance chatu](tutorial-getting-started-with-signalr-and-mvc/_static/image1.png)
 
-Části:
+Oddíly:
 
 - [Nastavení projektu](#setup)
-- [Spustit ukázku](#run)
-- [Zkontrolujte kód](#code)
+- [Spuštění ukázky](#run)
+- [Prozkoumejte kód](#code)
 - [Další kroky](#next)
 
 <a id="setup"></a>
@@ -84,31 +83,31 @@ Následující snímek obrazovky ukazuje dokončené chatovací aplikace spušt�
 
 Předpoklady:
 
-- Visual Studio 2013. Pokud nemáte Visual Studio, najdete v části [ASP.NET stáhne](https://www.asp.net/downloads) získat volné Visual Studio 2013 Express vývoj nástroj.
+- Visual Studio 2013. Pokud nemáte Visual Studio, přečtěte si téma [ASP.NET stáhne](https://www.asp.net/downloads) získat bezplatné Visual Studio 2013 Express vývojový nástroj.
 
-V této části ukazuje, jak vytvořit aplikaci ASP.NET MVC 5, přidejte knihovně SignalR a vytvoření chatovací aplikace.
+Tato část ukazuje, jak vytvořit aplikaci ASP.NET MVC 5 a přidejte knihovny SignalR, vytvořit chatovací aplikaci.
 
-1. V sadě Visual Studio vytvořte aplikaci C# ASP.NET s cílem rozhraní .NET Framework 4.5, pojmenujte ji SignalRChat a klikněte na tlačítko OK.
+1. V sadě Visual Studio vytvořit aplikaci C# ASP.NET, který cílí na rozhraní .NET Framework 4.5, pojmenujte ho SignalRChat a klikněte na tlačítko OK.
 
-    ![Vytvořit web](tutorial-getting-started-with-signalr-and-mvc/_static/image2.png)
-2. V `New ASP.NET Project` dialogové okno a vyberte **MVC**a klikněte na tlačítko **změna ověřování**.
+    ![Vytvořte web](tutorial-getting-started-with-signalr-and-mvc/_static/image2.png)
+2. V `New ASP.NET Project` dialogového okna a vyberte **MVC**a klikněte na tlačítko **změna ověřování**.
 
-    ![Vytvořit web](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
-3. Vyberte **bez ověřování** v **změna ověřování** dialogové okno a klikněte na tlačítko **OK**.
+    ![Vytvořte web](tutorial-getting-started-with-signalr-and-mvc/_static/image3.png)
+3. Vyberte **bez ověřování** v **změna ověřování** dialogových oken a klikněte na tlačítko **OK**.
 
     ![Vyberte bez ověřování](tutorial-getting-started-with-signalr-and-mvc/_static/image4.png)
 
     > [!NOTE]
-    > Pokud vyberete zprostředkovatele různých ověřování pro aplikaci, `Startup.cs` pro vás bude možné vytvořit třídu; nebudete muset vytvořit vlastní `Startup.cs` – třída v kroku 10 níže.
-4. Klikněte na tlačítko **OK** v **nový projekt ASP.NET** dialogové okno.
-5. Otevřete **nástroje | Správce balíčků knihoven | Konzola správce balíčků** a spusťte následující příkaz. Tento krok přidává do projektu sadu souborů skriptů a odkazy na sestavení, které umožňují funkce SignalR.
+    > Pokud vyberete jiný ověřování zprostředkovatele pro vaši aplikaci `Startup.cs` třída se vytvoří pro vás; nebudete muset vytvořit vlastní `Startup.cs` třídy v kroku 10 níže.
+4. Klikněte na tlačítko **OK** v **nový projekt ASP.NET** dialogového okna.
+5. Otevřít **nástroje | Správce balíčků knihoven | Konzola správce balíčků** a spusťte následující příkaz. Tento krok přidává do projektu sadu souborů skriptů a odkazy na sestavení, které umožňují funkce SignalR.
 
     `install-package Microsoft.AspNet.SignalR`
-6. V **Průzkumníku**, rozbalte složku skripty. Všimněte si, že byly přidány do projektu knihovny skriptů pro SignalR.
+6. V **Průzkumníka řešení**, rozbalte složku skripty. Všimněte si, že byly přidány do projektu knihovny skriptů pro funkci SignalR.
 
     ![Složka skripty](tutorial-getting-started-with-signalr-and-mvc/_static/image5.png)
-7. V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt, vyberte **přidat | Nová složka**, a přidejte novou složku s názvem **Hubs**.
-8. Klikněte pravým tlačítkem myši **Hubs** složku, klikněte na tlačítko **přidat | Nová položka**, vyberte **Visual C# | Web | SignalR** uzlu **nainstalovaná** podokně, vyberte **třídy rozbočovače SignalR (v2)** z podokna center a vytvoření nového centra s názvem **ChatHub.cs**. Tato třída použije jako server rozbočovače SignalR zasílání zpráv na všechny klienty.
+7. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, vyberte **přidat | Nová složka**, a přidejte novou složku s názvem **rozbočovače**.
+8. Klikněte pravým tlačítkem myši **rozbočovače** složky, klikněte na tlačítko **přidat | Nová položka**, vyberte **Visual C# | Web | SignalR** uzlu **nainstalováno** vyberte **třída rozbočovače SignalR (v2)** v prostředním podokně a vytvoříte nové centrum s názvem **ChatHub.cs**. Tato třída bude používat jako server rozbočovače SignalR, která odesílá zprávy na všechny klienty.
 
     ![Vytvoření nového centra](tutorial-getting-started-with-signalr-and-mvc/_static/image6.png)
 9. Nahraďte kód v **ChatHub** třídy následujícím kódem.
@@ -117,80 +116,80 @@ V této části ukazuje, jak vytvořit aplikaci ASP.NET MVC 5, přidejte knihovn
 10. Vytvořte novou třídu s názvem souboru Startup.cs. Změňte obsah souboru následujícím způsobem.
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample2.cs)]
-11. Upravit `HomeController` nalezena třída v **Controllers/HomeController.cs** a přidejte následující metodu do třídy. Tato metoda vrátí hodnotu **Chat** zobrazení, který chcete vytvořit později.
+11. Upravit `HomeController` třída součástí **Controllers/HomeController.cs** a přidejte následující metodu do třídy. Tato metoda vrátí **Chat** zobrazení, které vytvoříte v pozdějším kroku.
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample3.cs)]
-12. Klikněte pravým tlačítkem myši **zobrazení Domů** složky a vyberte **přidat... | Zobrazení**.
-13. V **přidat zobrazení** dialogové okno, název nového zobrazení **Chat**.
+12. Klikněte pravým tlačítkem myši **zobrazení Domů** a pak zvolte položku **přidat... | Zobrazení**.
+13. V **přidat zobrazení** dialogového okna, název nového zobrazení **Chat**.
 
     ![Přidání zobrazení](tutorial-getting-started-with-signalr-and-mvc/_static/image7.png)
 14. Nahraďte obsah **Chat.cshtml** následujícím kódem.
 
     > [!IMPORTANT]
-    > Když přidáte do projektu sady Visual Studio SignalR a další skript knihovny, může správce balíčků nainstalujte verzi souboru skriptu SignalR, která je novější než verze uvedené v tomto tématu. Ujistěte se, že odkaz na skript v kódu odpovídá verzi knihovny skriptu nainstalovaná ve vašem projektu.
+    > Když přidáte SignalR a další skript knihovny do projektu sady Visual Studio, může správce balíčků nainstalovat verzi souboru skriptu SignalR, která je novější než verze uvedené v tomto tématu. Ujistěte se, že odkaz na skript v kódu odpovídá verzi nainstalovanou ve vašem projektu knihovnu skriptu.
 
     [!code-cshtml[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample4.cshtml)]
-15. **Uložte všechny** pro projekt.
+15. **Uložit vše** pro projekt.
 
 <a id="run"></a>
 
-## <a name="run-the-sample"></a>Spustit ukázku
+## <a name="run-the-sample"></a>Spuštění ukázky
 
 1. Stisknutím klávesy F5 spusťte projekt v režimu ladění.
-2. V adresním řádku prohlížeče, připojit **/home/chat** na adresu URL výchozí stránky pro projekt. Načtení stránky Chat v instanci prohlížeče a vyzve k uživatelské jméno.
+2. V adresním řádku prohlížeče připojit **/home/chat** odeslané na adresu výchozí stránky pro projekt. Chat stránka načte v instanci prohlížeče a vyzve k zadání uživatelského jména.
 
-    ![Zadejte uživatelské jméno](tutorial-getting-started-with-signalr-and-mvc/_static/image8.png)
+    ![Zadejte uživatelské jméno.](tutorial-getting-started-with-signalr-and-mvc/_static/image8.png)
 3. Zadejte uživatelské jméno.
-4. Zkopírujte adresu URL v adresním řádku prohlížeče a použít ho k otevřít dva další instance prohlížeče. V každé instanci prohlížeče zadejte jedinečné uživatelské jméno.
-5. V každé instanci prohlížeče přidat komentář a klikněte na tlačítko **odeslat**. Komentáře by měl zobrazit ve všech instancích prohlížeče.
+4. Zkopírujte adresu URL v adresním řádku prohlížeče a můžete otevřít dvě další instance prohlížeče. V každé instanci prohlížeče zadejte jedinečné uživatelské jméno.
+5. V každé instanci prohlížeče, přidejte komentář a klikněte na tlačítko **odeslat**. Zobrazit komentáře ve všech instancích prohlížeče.
 
     > [!NOTE]
-    > Tento jednoduchý chatovací aplikace neudržuje kontext diskuzi na serveru. Rozbočovač, všesměrově komentáře pro všechny aktuálního uživatele. Uživatelé, kteří připojení chat později zobrazí zprávy přidat od okamžiku že připojí.
-6. Následující snímek obrazovky ukazuje chatovací aplikace spuštěné v prohlížeči.
+    > Tento jednoduchý chatovací aplikaci nespravuje kontext diskuse na serveru. Centrum vysílá poznámky pro všechny aktuálního uživatele. Uživatelé, kteří později připojit chat uvidí zprávy přidány od okamžiku, že se že připojí.
+6. Na následujícím snímku obrazovky je vidět chatovací aplikace spuštěné v prohlížeči.
 
-    ![Konverzace prohlížečů](tutorial-getting-started-with-signalr-and-mvc/_static/image9.png)
-7. V **Průzkumníku řešení**, zkontrolujte **dokumentů skriptu** uzel pro běžící aplikaci. Tento uzel je viditelný v režimu ladění, pokud používáte Internet Explorer jako prohlížeč. Existuje soubor skriptu s názvem **centra** vygenerovanou knihovně SignalR dynamicky za běhu. Tento soubor spravuje komunikace mezi skriptu jQuery a kódu na straně serveru. Pokud používáte jiný prohlížeč než Internet Explorer, můžete taky přejít dynamická **centra** soubor procházením ji přímo, například http://mywebsite/signalr/hubs.
+    ![Chat prohlížeče](tutorial-getting-started-with-signalr-and-mvc/_static/image9.png)
+7. V **Průzkumníka řešení**, zkontrolujte **dokumenty skriptu** uzel pro běžící aplikaci. Tento uzel je viditelný v režimu ladění, pokud používáte Internet Explorer jako svůj prohlížeč. Existuje soubor skriptu s názvem **rozbočovače** generující knihovně SignalR dynamicky za běhu. Tento soubor skladuje komunikaci mezi jQuery skriptu a kódem na straně serveru. Pokud používáte prohlížeč než Internet Explorer, se dá dostat taky dynamické **rozbočovače** souboru tak, že přejdete na ni přímo, například http://mywebsite/signalr/hubs.
 
 <a id="code"></a>
 
-## <a name="examine-the-code"></a>Zkontrolujte kód
+## <a name="examine-the-code"></a>Prozkoumejte kód
 
-Chatovací aplikace SignalR ukazuje dva základní úlohy vývoj SignalR: vytváření rozbočovač jako hlavní koordinaci objekt na serveru a odesílat a přijímat zprávy pomocí knihovny jQuery SignalR.
+Chatovací aplikace SignalR ukazuje dvě základní úkoly vývoje SignalR: vytváří se centrum jako objekt hlavního koordinace na serveru a pomocí knihovny jQuery SignalR k odesílání a příjem zpráv.
 
 ### <a name="signalr-hubs"></a>Rozbočovače SignalR
 
-V ukázce kódu **ChatHub** třída odvozená z **Microsoft.AspNet.SignalR.Hub** třídy. Odvozování z **rozbočovače** třída je užitečný způsob, jak sestavit aplikaci pro SignalR. Můžete vytvořit veřejné metody na vaší třídě rozbočovače a pak tyto metody přístup voláním z skriptů na webové stránce.
+V ukázce kódu **ChatHub** třída odvozena z **Microsoft.AspNet.SignalR.Hub** třídy. Odvozování z **centra** třída je užitečný způsob, jak vytvořit aplikaci SignalR. Můžete vytvořit veřejné metody ve třídě centra a potom tyto metody přístup k jejich voláním z skripty na webové stránce.
 
-V kódu chat klienti volání **ChatHub.Send** metodu pro odeslání nové zprávy. Rozbočovače pak odešle zprávu do všech klientů voláním **Clients.All.addNewMessageToPage**.
+V kódu, konverzace, klienti volání **ChatHub.Send** metoda odesílá nová zpráva. Centrum pak odešle zprávu pro všechny klienty voláním **Clients.All.addNewMessageToPage**.
 
-**Odeslat** metoda ukazuje několik konceptů rozbočovače:
+**Odeslat** metoda ukazuje několik konceptů hub:
 
-- Deklarujte veřejné metody v rozbočovači, aby klienti mohou volat je.
-- Použití **Microsoft.AspNet.SignalR.Hub.Clients** vlastnost, která má přístup všichni klienti připojení k této rozbočovače.
-- Volání funkce na straně klienta (například `addNewMessageToPage` funkce) k aktualizaci klientů.
+- Deklarujte veřejné metody v rozbočovači, tak, aby klienti mohou volat.
+- Použití **Microsoft.AspNet.SignalR.Hub.Clients** vlastnosti pro přístup k všechny klienty připojené pro toto centrum.
+- Volání funkce na straně klienta (například `addNewMessageToPage` funkce) aktualizovat klienty.
 
     [!code-csharp[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample5.cs)]
 
 ### <a name="signalr-and-jquery"></a>SignalR a jQuery
 
-**Chat.cshtml** zobrazení souboru v ukázce kódu ukazuje, jak používat knihovny jQuery SignalR ke komunikaci s rozbočovači SignalR. Základních úloh v kódu vytváříte odkaz na automaticky generovaný proxy serveru pro rozbočovač, deklarace funkci, která serveru můžete volat k předávaný obsah pro klienty a spuštění připojení k odesílání zpráv do rozbočovače.
+**Chat.cshtml** zobrazení souboru v příkladu kódu ukazuje, jak používat knihovny jQuery SignalR pro komunikaci se rozbočovače SignalR. Odkaz na automaticky generovaný proxy serveru pro rozbočovač, deklarace funkce, která můžete volat na serveru, abyste předávaný obsah pro klienty a spuštění připojení pro odesílání zpráv do centra vytváření základních úloh v kódu.
 
 Následující kód deklaruje odkaz na proxy server rozbočovače.
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample6.js)]
 
 > [!NOTE]
-> V jazyce JavaScript je odkaz na třídě serveru a její členy v camelCase. Odkazuje na ukázka kódu jazyka C# **ChatHub** třídy v jazyce JavaScript jako **chatHub**. Pokud chcete odkazovat `ChatHub` – třída v jQuery s konvenční Pascal velká a malá písmena stejně jako v jazyce C#, upravte soubor ChatHub.cs třídy. Přidat `using` příkaz tak, aby odkazovaly `Microsoft.AspNet.SignalR.Hubs` oboru názvů. Pak přidejte `HubName` atribut `ChatHub` třídy, například `[HubName("ChatHub")]`. Nakonec aktualizujte vaši jQuery informaci, abyste `ChatHub` třídy.
+> V jazyce JavaScript je odkaz na třídu serveru a jeho členy v stylem camel case. Odkazuje na vzorový kód jazyka C# **ChatHub** třídy v jazyce JavaScript jako **chatHub**. Pokud chcete odkazovat `ChatHub` třídy v jQuery s konvenčním Pascal malá a velká písmena stejně jako v jazyce C#, upravte soubor třídy ChatHub.cs. Přidat `using` příkaz tak, aby odkazovaly `Microsoft.AspNet.SignalR.Hubs` oboru názvů. Pak přidejte `HubName` atribut `ChatHub` třídy, například `[HubName("ChatHub")]`. Nakonec aktualizujte referenci jQuery pro `ChatHub` třídy.
 
 
-Následující kód ukazuje, jak vytvořit funkci zpětného volání ve skriptu. Třídy rozbočovače na serveru volá tuto funkci tak, aby nabízel aktualizace obsahu do jednotlivých klientů. Volitelné volání `htmlEncode` funkce zobrazí způsob, jak HTML kódování obsahu zprávy, než se zobrazí na stránce jako způsob, jak zabránit vložení skriptu.
+Následující kód ukazuje, jak vytvořit funkci zpětného volání ve skriptu. Třída rozbočovače na serveru volá tuto funkci tak, aby nabízel obsah aktualizací pro jednotlivé klienty. Volitelné volání `htmlEncode` funkce ukazuje způsob, jak HTML kódování obsahu zprávy před jejich zobrazením na stránce jako způsob, jak brání injektáži skriptu.
 
 [!code-html[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample7.html)]
 
-Následující kód ukazuje, jak k otevření připojení do centra. Kód spustí připojení a předává je funkce, která se zpracovat událost kliknutím na **odeslat** tlačítka na stránce konverzace.
+Následující kód ukazuje, jak otevřít připojení v centru. Kód spustí připojení a pak ji předá funkci pro zpracování události kliknutí na **odeslat** tlačítko na stránce konverzace.
 
 > [!NOTE]
-> Tento přístup zajišťuje, že připojení před provedením obslužné rutiny události.
+> Tento přístup zajišťuje, že připojení před provedením obslužná rutina události.
 
 
 [!code-javascript[Main](tutorial-getting-started-with-signalr-and-mvc/samples/sample8.js)]
@@ -199,12 +198,12 @@ Následující kód ukazuje, jak k otevření připojení do centra. Kód spust�
 
 ## <a name="next-steps"></a>Další kroky
 
-Jste zjistili, že SignalR je architektura pro vytváření aplikací webu v reálném čase. Také jste zjistili několik úloh vývoj SignalR: jak přidat do aplikace ASP.NET SignalR, jak vytvořit třídy rozbočovače a jak odesílat a přijímat zprávy z rozbočovače.
+Jste zjistili, že SignalR je architektura určená k vytváření aplikací webu v reálném čase. Také jste se naučili několik úloh vývoje SignalR: jak přidat do aplikace ASP.NET SignalR, jak vytvořit třídu centra a jak odesílat a přijímat zprávy z centra.
 
-Podrobný postup nasazení ukázkové aplikace SignalR do Azure, najdete v části [pomocí SignalR s webovými aplikacemi ve službě Azure App Service](../deployment/using-signalr-with-azure-web-sites.md). Podrobné informace o tom, jak nasadit webový projekt sady Visual Studio na webu systému Windows Azure najdete v tématu [vytvoření webové aplikace ASP.NET ve službě Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
+Návod k nasazení ukázkové aplikace SignalR pro Azure najdete v tématu [pomocí SignalR s webovými aplikacemi ve službě Azure App Service](../deployment/using-signalr-with-azure-web-sites.md). Podrobné informace o tom, jak nasadit webový projekt sady Visual Studio na webu Windows Azure naleznete v tématu [vytvoření webové aplikace ASP.NET ve službě Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
-Informace o pokročilejší SignalR vývoji koncepty, najdete na následujících stránkách pro SignalR zdrojového kódu a prostředky:
+Informace o pokročilejších pojmech vývoj SignalR, naleznete na následujících stránkách pro funkci SignalR zdrojový kód a prostředky:
 
 - [Projekt SignalR](http://signalr.net)
-- [SignalR Githubu a ukázky](https://github.com/SignalR/SignalR)
+- [Funkce SignalR Githubu a ukázky](https://github.com/SignalR/SignalR)
 - [SignalR Wiki](https://github.com/SignalR/SignalR/wiki)

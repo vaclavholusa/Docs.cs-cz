@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/authentication/how-to-change-the-forms-authentication-properties
-title: Postup změny vlastnosti ověřování formulářů | Microsoft Docs
+title: Změna vlastností ověřování pomocí formulářů | Dokumentace Microsoftu
 author: JoeStagner
-description: Jan Stagner využívá předchozí ukázky kódu ukazují, jak chcete změnit dobu ověřování pro aplikaci ASP.NET. Další informace o tý...
+description: Joe Stagner využívá předchozí ukázky kódu ukazují, jak změnit dobu ověřování pro aplikaci ASP.NET. Další informace o th...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2008
 ms.topic: article
 ms.assetid: a374c0cb-63fb-4630-9915-2ca8f4973da8
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/how-to-change-the-forms-authentication-properties
 msc.type: video
-ms.openlocfilehash: 79648d79ed516b7f9d7a2ca4ea1a796d25f216db
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a1159ce03e10e86e9c3c83c40454a5793b913026
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881734"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381233"
 ---
-<a name="how-to-change-the-forms-authentication-properties"></a>Postup změny vlastnosti ověřování formulářů
+<a name="how-to-change-the-forms-authentication-properties"></a>Změna vlastností ověřování pomocí formulářů
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Jan Stagner využívá předchozí ukázky kódu ukazují, jak chcete změnit dobu ověřování pro aplikaci ASP.NET. Další informace o tuto ukázku kurzu nachází [zde](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md).
+Joe Stagner využívá předchozí ukázky kódu ukazují, jak změnit dobu ověřování pro aplikaci ASP.NET. Další informace o této ukázce se nachází kurz [tady](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md).
 
 [&#9654;Podívejte se na video (7 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-change-the-forms-authentication-properties)
 

@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/index
-title: Rozhovory | Microsoft Docs
+title: Přednášky | Dokumentace Microsoftu
 author: rick-anderson
-description: ASP.NET MVC 1 komunikuje
+description: ASP.NET MVC 1 přednášky
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
 ms.topic: article
 ms.assetid: 276507d5-e9bd-46ba-8e98-32a8957504fa
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/conference-presentations
 msc.type: chapter
-ms.openlocfilehash: ed730075f5c4232ff48406a2cc047d85f16c2244
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 972d27f811820fe39cf849646aef2b128e52d593
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26565315"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384106"
 ---
-<a name="talks"></a>Rozhovory
+<a name="talks"></a>Přednášky
 ====================
-> ASP.NET MVC 1 komunikuje
+> ASP.NET MVC 1 přednášky
 
 
-- [Vytváření NerdDinner.com s Microsoft ASP.NET Model View Controller (MVC)](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
-- [Prostředí řadiče zobrazení další nejvyšší modelu na Amerika](americas-next-top-model-view-controller-framework.md)
-- [Expertem na ještě efektivněji černé pásu tipy](ninja-on-fire-black-belt-tips.md)
+- [Vytvoření aplikace NerdDinner.com v modelu Microsoft ASP.NET Model View Controller (MVC)](creating-nerddinnercom-with-microsoft-aspnet-model-view-controller-mvc.md)
+- [Model View Controller (MVC) – příští nejlepší architektura v USA](americas-next-top-model-view-controller-framework.md)
+- [Tipy pro zkušené vývojáře](ninja-on-fire-black-belt-tips.md)

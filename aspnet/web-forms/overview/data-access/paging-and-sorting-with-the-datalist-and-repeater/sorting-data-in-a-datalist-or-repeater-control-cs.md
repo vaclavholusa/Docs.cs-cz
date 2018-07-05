@@ -1,401 +1,400 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
-title: Řazení dat v DataList nebo prvku Repeater (C#) | Microsoft Docs
+title: Řazení dat v prvku DataList nebo Repeater (C#) | Dokumentace Microsoftu
 author: rick-anderson
-description: V tomto kurzu podíváme, jak se zahrnuje řazení podpora v DataList a opakovače, jakož i konstruování DataList nebo opakovače, jejichž data můžete...
+description: V tomto kurzu prozkoumáme způsob řazení podpory v ovládacích prvcích DataList a Repeater, jakož i jak sestavit DataList nebo Repeater, jejichž data můžete...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
 ms.topic: article
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2f31425a46408d6d544c6cdf2ce169b5547a2dd8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 85b59040cce266165353fe1627ffd983473bdcb6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30889550"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371636"
 ---
-<a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Řazení dat v DataList nebo prvku Repeater (C#)
+<a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>Řazení dat v prvku DataList nebo Repeater (C#)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_CS.exe) nebo [stáhnout PDF](sorting-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial45cs1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_45_CS.exe) nebo [stahovat PDF](sorting-data-in-a-datalist-or-repeater-control-cs/_static/datatutorial45cs1.pdf)
 
-> V tomto kurzu podíváme, jak se zahrnuje řazení podpora v DataList a opakovače, jakož i konstruování DataList nebo opakovače, jejichž data můžete stránkovaného fondu a seřazeny.
+> V tomto kurzu prozkoumáme způsob řazení podpory v ovládacích prvcích DataList a Repeater, jakož i jak sestavit DataList nebo Repeater, jehož data můžete stránkování a řazení.
 
 
 ## <a name="introduction"></a>Úvod
 
-V [předchozí kurzu](paging-report-data-in-a-datalist-or-repeater-control-cs.md) jsme se zaměřili na tom, jak přidat podporu stránkování k DataList. Jsme vytvořili novou metodu v `ProductsBLL` – třída (`GetProductsAsPagedDataSource`) vrácená `PagedDataSource` objektu. Když je vázán k DataList nebo opakovače, by DataList nebo opakovače zobrazí právě k požadované stránce data. Tento postup je podobný co se používá interně ovládacími prvky GridView DetailsView a FormView zajistit jejich integrované výchozí funkce stránkování.
+V [předchozí kurz o službě](paging-report-data-in-a-datalist-or-repeater-control-cs.md) jsme se zaměřili na tom, jak přidat podporu stránkování a v prvku DataList. Jsme vytvořili novou metodu v `ProductsBLL` třídy (`GetProductsAsPagedDataSource`), který se vrátil `PagedDataSource` objektu. Při vázání na ovládacích prvcích DataList nebo Repeater, DataList nebo Repeater zobrazí jenom požadovanou stránku. Tento postup je podobný co se používá interně ovládacími prvky GridView DetailsView a FormView k zajištění jejich integrované výchozí funkce stránkování.
 
-Nabízí podporu stránkování, kromě GridView také zahrnuje předinstalované řazení podpory. DataList ani opakovače poskytuje vestavěnou funkci řazení; řazení funkce však mohou být přidány s malou část kódu. V tomto kurzu podíváme, jak se zahrnuje řazení podpora v DataList a opakovače, jakož i konstruování DataList nebo opakovače, jejichž data můžete stránkovaného fondu a seřazeny.
+Kromě nabízí podporu stránkování prvku GridView. obsahuje i mimo pole řazení podpory. DataList ani Repeater poskytuje integrovanou funkci řazení; řazení funkce však mohou být přidány pomocí bitového kódu. V tomto kurzu prozkoumáme způsob řazení podpory v ovládacích prvcích DataList a Repeater, jakož i jak sestavit DataList nebo Repeater, jehož data můžete stránkování a řazení.
 
-## <a name="a-review-of-sorting"></a>Zkontrolujte řazení
+## <a name="a-review-of-sorting"></a>Přehled řazení
 
-Jak jsme viděli v [stránkování a řazení dat sestavy](../paging-and-sorting/paging-and-sorting-report-data-cs.md) kurzu prvek GridView poskytuje předinstalované řazení podpory. Každé pole GridView může mít přiřazený `SortExpression`, což naznačuje datové pole, podle kterého chcete řadit data. Při GridView s `AllowSorting` je nastavena na `true`, každé pole GridView, který má `SortExpression` záhlaví se vykresluje jako LinkButton má hodnotu vlastnosti. Když uživatel klikne na konkrétní GridView pole s hlavičky, nastane zpětné volání a data jsou seřazená podle pole kliknutelnou s `SortExpression`.
+Jak jsme viděli v [stránkování a řazení dat sestavy](../paging-and-sorting/paging-and-sorting-report-data-cs.md) kurz, obsahuje prvek GridView mimo pole řazení podporu. Každé pole ovládacího prvku GridView může mít přidruženou `SortExpression`, což znamená datové pole, podle kterého chcete data seřadit. Při GridView s `AllowSorting` je nastavena na `true`, každé pole ovládacího prvku GridView, které má `SortExpression` záhlaví se vykresluje jako odkazem (LinkButton) má hodnotu vlastnosti. Když uživatel klikne na konkrétní hlavičku s pole ovládacího prvku GridView, dojde k postbacku a data seřadí podle kliknutí na pole s `SortExpression`.
 
-Ovládací prvek GridView má `SortExpression` taky vlastnost, která ukládá `SortExpression` pole GridView data jsou seřazená podle. Kromě toho `SortDirection` vlastnost určuje, zda data který se má seřadit ve vzestupném nebo sestupném pořadí (Pokud uživatel klikne na odkaz záhlaví pole s konkrétní GridView dvakrát za sebou, pořadí řazení je přepínat stav).
+Ovládací prvek GridView `SortExpression` , vlastnost, která ukládá `SortExpression` pole ovládacího prvku GridView data seřadí podle. Kromě toho `SortDirection` vlastnost označuje, zda se v datech který se má seřadit v vzestupném nebo sestupném pořadí (Pokud uživatel klikne přepínat konkrétní odkaz záhlaví pole s GridView dvakrát za sebou, pořadí řazení).
 
-Když GridView je vázán k jeho řízení zdrojů dat, se předá jeho `SortExpression` a `SortDirection` vlastnosti, které chcete data zdroj ovládacího prvku. Ovládací prvek zdroj dat načte data a potom je seřadí podle zadaných `SortExpression` a `SortDirection` vlastnosti. Po řazení dat, vrátí ovládací prvek zdroje dat ji do GridView.
+Když prvku GridView je vázán na jeho ovládací prvek zdroje dat, se předá jeho `SortExpression` a `SortDirection` vlastnosti, které chcete data správy zdrojového kódu. Ovládací prvek zdroje dat načte data a pak ho seřadí podle zadané `SortExpression` a `SortDirection` vlastnosti. Po seřazení dat, ovládací prvek zdroje dat vrátí ji do prvku GridView.
 
-Tato funkce s ovládacími prvky DataList nebo opakovače replikovat, jsme musí:
+Tuto funkci s ovládacími prvky DataList nebo Repeater replikovat, budeme musí:
 
-- Vytvoření řazení rozhraní
-- Mějte na paměti, seřadit podle pole data a jestli se má seřadit ve vzestupném nebo sestupném pořadí
-- Vyzvat ObjectDataSource k řazení dat. podle konkrétní datové pole
+- Vytvoření rozhraní pro řazení
+- Mějte na paměti datové pole pro řazení podle a jestli se mají seřadit v vzestupném nebo sestupném pořadí
+- Dáte pokyn, aby ObjectDataSource řazení dat podle konkrétní datové pole
 
-Jsme budete řešení tyto tři úlohy v krocích 3 a 4. Následující, podíváme, jak se zahrnuje stránkování i řazení podpory v DataList nebo opakovače.
+Jsme budete řešit tyto tři úkoly v krocích 3 a 4. Pod prozkoumáme jak zahrnout i stránkování a řazení podpory v prvku DataList nebo Repeater.
 
-## <a name="step-2-displaying-the-products-in-a-repeater"></a>Krok 2: Zobrazení v prvku Repeater produkty
+## <a name="step-2-displaying-the-products-in-a-repeater"></a>Krok 2: Zobrazení produkty v Repeateru
 
-Před jsme starat o implementaci všechny funkce související s řazení, umožní s začněte tím, že seznam produktů v ovládacím prvku opakovače. Začněte otevřením `Sorting.aspx` stránku `PagingSortingDataListRepeater` složky. Přidání ovládacího prvku opakovače na webovou stránku, nastavení jeho `ID` vlastnost `SortableProducts`. Opakovače s inteligentním, vytvořte nový ObjectDataSource s názvem `ProductsDataSource` a nakonfigurovat ji k načtení dat z `ProductsBLL` třídu s `GetProducts()` metoda. Vyberte možnost (žádné) možnost z rozevíracího seznamu na kartách INSERT, UPDATE a DELETE.
-
-
-[![ObjectDataSource vytvořit a nakonfigurovat jej lze pomocí této metody GetProductsAsPagedDataSource()](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
-
-**Obrázek 1**: ObjectDataSource vytvořit a nakonfigurovat jej pro použití `GetProductsAsPagedDataSource()` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image3.png))
+Předtím, než jsme se starat o implementaci některé funkce související s řazení, umožní s začněte tím, že výpis produktů v ovládacím prvku opakovače. Začněte otevřením `Sorting.aspx` stránku `PagingSortingDataListRepeater` složky. Přidání ovládacího prvku Repeater na webovou stránku, nastavení jeho `ID` vlastnost `SortableProducts`. Opakovače s inteligentním, vytvořte nový prvek ObjectDataSource s názvem `ProductsDataSource` a jeho konfigurace pro načtení dat z `ProductsBLL` třída s `GetProducts()` metody. Vyberte možnost (žádné) rozevírací seznamy na kartách INSERT, UPDATE a DELETE.
 
 
-[![Nastavte rozevíracím seznamu v aktualizaci UPDATE, INSERT a odstranit karty na (žádný)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
+[![Vytvoření prvku ObjectDataSource a nakonfigurujte ho na použití GetProductsAsPagedDataSource() – metoda](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image2.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image1.png)
 
-**Obrázek 2**: nastavte rozevíracím seznamu v aktualizaci UPDATE, INSERT a odstranit karty na (žádný) ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image6.png))
+**Obrázek 1**: vytvoření ObjectDataSource a konfigurace pro použití `GetProductsAsPagedDataSource()` – metoda ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image3.png))
 
 
-Na rozdíl od s DataList, Visual Studio automaticky nevytvoří `ItemTemplate` po vazby ke zdroji dat ovládacího prvku opakovače. Kromě toho musí přidáme to `ItemTemplate` deklarativně jako inteligentní značky ovládacího prvku s opakovače chybí možnost Upravit šablony v DataList s nalezen. Umožňují s používat stejné `ItemTemplate` z předchozí kurz, který zobrazí název produktu s, dodavatele a kategorie.
+[![Nastavte rozevírací seznam obsahuje v UPDATE, INSERT a odstranit karty na (žádný)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image5.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image4.png)
 
-Po přidání `ItemTemplate`, opakovače a ObjectDataSource s deklarativní by měl vypadat podobně jako následující:
+**Obrázek 2**: Nastavte rozevírací seznam obsahuje v UPDATE, INSERT a odstranit karty na (žádný) ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image6.png))
+
+
+Na rozdíl od s DataList, Visual Studio neprovádí automatické vytváření `ItemTemplate` pro ovládací prvek Repeater po vazby ke zdroji dat. Kromě toho jsme musí přidat `ItemTemplate` deklarativně, jako je inteligentní značky ovládacího prvku s Repeater chybí možnost Upravit šablony v prvku DataList s. Umožňují s použít stejné `ItemTemplate` v předchozím kurzu, který zobrazí název produktu s, dodavatele a kategorie.
+
+Po přidání `ItemTemplate`, Repeater a prvku ObjectDataSource s deklarativní by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample1.aspx)]
 
-Obrázek 3 ukazuje tuto stránku při zobrazení prostřednictvím prohlížeče.
+Obrázek 3 ukazuje tuto stránku při prohlížení prostřednictvím prohlížeče.
 
 
-[![Zobrazí se každý produkt s názvem, dodavatele a kategorii](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
+[![Zobrazí se každý produkt s názvem, dodavatele a kategorie](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image8.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image7.png)
 
-**Obrázek 3**: každý produkt s názvem, dodavatele a kategorie se zobrazí ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image9.png))
+**Obrázek 3**: se zobrazí každý produkt s názvem, dodavatele a kategorie ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image9.png))
 
 
 ## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>Krok 3: Instruující ObjectDataSource k řazení dat.
 
-Řazení dat, které zobrazuje v Opakovači, je potřeba informovat ObjectDataSource výrazu řazení, podle kterého má řazení proběhnout data. Předtím, než ObjectDataSource načítá data, nejprve aktivuje její [ `Selecting` událostí](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), což dává příležitost, abychom mohli zadejte výraz řazení. `Selecting` Obslužné rutiny události se předá objekt typu [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), který má vlastnost s názvem [ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx). `DataSourceSelectArguments` Třída slouží k předávání žádostí souvisejících s daty z příjemce dat k řízení zdrojů dat a zahrnuje [ `SortExpression` vlastnost](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
+Seřadit data zobrazená v Opakovači, musíme informovat ObjectDataSource řadicí výraz, podle kterého mají být řazeny data. Před ObjectDataSource načte data, nejprve aktivuje její [ `Selecting` události](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), což dává příležitost, abychom mohli zadat výraz řazení. `Selecting` Obslužná rutina události je předán objekt typu [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), který má vlastnost s názvem [ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) typu [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx). `DataSourceSelectArguments` Třída slouží k předávání žádostí souvisejících s daty z příjemce dat pro ovládací prvek zdroje dat a zahrnuje [ `SortExpression` vlastnost](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
 
-Chcete-li předat řazení informace ze stránky ASP.NET ObjectDataSource, vytvořit obslužnou rutinu události pro `Selecting` událostí a použijte následující kód:
+K předávání informací řazení ze stránky ASP.NET do ObjectDataSource, vytvořit obslužnou rutinu události pro `Selecting` událostí a pomocí následujícího kódu:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample2.cs)]
 
-*SortExpression* hodnota by měla být přiřazená název datového pole seřadit podle data (například ProductName). Neexistuje vlastnost související směr řazení, takže pokud chcete data seřaďte v sestupném pořadí, doplňovací řetězec DESC k *sortExpression* hodnotu (například ProductName DESC).
+*SortExpression* hodnota by se měla přiřadit název datového pole seřadit podle data (například ProductName). Není žádná vlastnost související směr řazení, takže pokud chcete data seřadit v sestupném pořadí, připojte řetězec DESC k *sortExpression* hodnotu (například ProductName DESC).
 
-Pokračujte a zkuste několik různých hodnot pevně pro *sortExpression* a testovat výsledky v prohlížeči. Jak ukazuje obrázek 4, při použití ProductName DESC jako *sortExpression*, produkty jsou seřazeny podle názvu jejich ve vzestupném abecedním pořadí.
-
-
-[![Produkty jsou seřazeny podle názvu jejich Reverse abecedně](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
-
-**Obrázek 4**: The produkty jsou seřazeny podle názvu jejich v abecedním pořadí Reverse ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image12.png))
+Pokračujte a zkuste několik různých hodnot pevně zakódované pro *sortExpression* a výsledky testů v prohlížeči. Jak ukazuje obrázek 4, při použití ProductName DESC jako *sortExpression*, produkty jsou seřazeny podle názvu ve vzestupném abecedním pořadí.
 
 
-## <a name="step-4-creating-the-sorting-interface-and-remembering-the-sort-expression-and-direction"></a>Krok 4: Vytvoření rozhraní řazení a zapamatování výrazů řazení a směr
+[![Produkty jsou seřazeny podle názvu v abecedním pořadí reverzní](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image11.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image10.png)
 
-Zapnutí podpory v GridView řazení převede text záhlaví každý řazení pole s LinkButton, po kliknutí na seřadí data odpovídajícím způsobem. Řazení rozhraní má smysl pro GridView, kde jeho data přehledně rozložená ve sloupcích. Pro ovládací prvky DataList a opakovače ale jiné řazení rozhraní je potřeba. Společné rozhraní řazení seznam dat (na rozdíl od mřížky dat), je rozevíracího seznamu, který poskytuje pole, podle kterých se dají řadit data. Umožní s implementovat takového rozhraní pro účely tohoto kurzu.
-
-Přidat ovládací prvek rozevírací seznam webového výše `SortableProducts` opakovače a nastavte její `ID` vlastnost `SortBy`. V okně vlastností klikněte na výpustky v `Items` vlastnost, aby si Editor kolekce ListItem. Přidat `ListItem` s k řazení dat. tím `ProductName`, `CategoryName`, a `SupplierName` pole. Také přidat `ListItem` seřadit produkty podle názvu jejich ve vzestupném abecedním pořadí.
-
-`ListItem` `Text` Vlastnosti lze nastavit na jakoukoli hodnotu (například název), ale `Value` vlastnosti musí být nastavena na název datového pole (například ProductName). Chcete-li seřadit výsledky v sestupném pořadí, připojte řetězec DESC název pole dat, jako je ProductName DESC.
+**Obrázek 4**: The produkty jsou seřazeny podle názvu v abecedním pořadí reverzní ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image12.png))
 
 
-![Přidání položky ListItem pro každé pole řazení dat](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
+## <a name="step-4-creating-the-sorting-interface-and-remembering-the-sort-expression-and-direction"></a>Krok 4: Vytvoření rozhraní pro řazení a zapamatování výraz řazení a směr
 
-**Obrázek 5**: přidání `ListItem` pro každé pole řazení dat
+Zapnutí podpory v prvku GridView řazení převede text záhlaví každého pole řazení s odkazem (LinkButton), které při kliknutí seřadí data odpovídajícím způsobem. Řazení rozhraní dává smysl pro aplikaci prvku GridView, kde svá data se elegantně zobrazuje ve sloupci. U ovládacích prvků DataList a Repeater však jiné řazení rozhraní je potřeba. Běžné řazení rozhraní seznam dat (na rozdíl od mřížky dat), je rozevírací seznam, který obsahuje pole, podle kterých lze seřadit data. Umožní s implementovat toto rozhraní pro účely tohoto kurzu.
+
+Přidat ovládací prvek DropDownList webového výše `SortableProducts` Repeater a nastavte jeho `ID` vlastnost `SortBy`. V okně Vlastnosti klikněte na symbol tří teček v `Items` vlastnost přineste si Editor kolekce ListItem. Přidat `ListItem` s řazení dat podle `ProductName`, `CategoryName`, a `SupplierName` pole. Také přidat `ListItem` k seřazení produktů podle jejich názvu ve vzestupném abecedním pořadí.
+
+`ListItem` `Text` Vlastnosti můžete nastavit na libovolnou hodnotu (jako je jméno), ale `Value` vlastnosti musí být nastavena na název datového pole (jako je například ProductName). Chcete-li seřadit výsledky v sestupném pořadí, připojte řetězec DESC s názvem pole dat, jako je ProductName DESC.
 
 
-Nakonec přidejte ovládacího prvku tlačítko webové napravo rozevírací seznam. Nastavte její `ID` k `RefreshRepeater` a jeho `Text` vlastnosti aktualizace.
+![Přidat položky ListItem pro každé pole řazení dat](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image13.png)
 
-Po vytvoření `ListItem` s a přidání tlačítko Aktualizovat rozevírací seznam a tlačítko deklarativní syntaxi s by měl vypadat takto:
+**Obrázek 5**: Přidejte `ListItem` pro každé pole řazení dat
+
+
+Nakonec přidejte ovládací prvek tlačítko webového napravo od DropDownList. Nastavte jeho `ID` k `RefreshRepeater` a jeho `Text` vlastnosti k aktualizaci.
+
+Po vytvoření `ListItem` s a přidáte tlačítko Aktualizovat, DropDownList a tlačítko deklarativní syntaxe s by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample3.aspx)]
 
-Pomocí řazení rozevírací seznam dokončení, musíme další aktualizace ObjectDataSource s `Selecting` obslužné rutiny události tak, aby používala vybraný `SortBy``ListItem` s `Value` vlastnost oproti výraz pevně řazení.
+S kompletní řazení DropDownList musíme dále aktualizovat ObjectDataSource s `Selecting` obslužná rutina události tak, že používá vybraný `SortBy``ListItem` s `Value` vlastnost na rozdíl od pevně zakódované řadicí výraz.
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample4.cs)]
 
-V tomto okamžiku při první návštěvě stránce bude produkty původně seřazené podle `ProductName` pole dat, protože s `SortBy` `ListItem` vybrané ve výchozím nastavení (viz obrázek 6). Vyberete různé řazení možnost například kategorie a kliknutím na tlačítko Aktualizovat způsobí zpětné volání a znovu seřadit data název kategorie, jak je vidět na obrázku 7.
+V tuto chvíli při první návštěvě stránky bude produkty zpočátku seřazené podle `ProductName` datové pole, protože s `SortBy` `ListItem` ve výchozím nastavení zaškrtnuto (viz obrázek 6). Vyberete jinou možnost, jako je například kategorie řazení a kliknutí na Aktualizovat vyvolávají zpětné odeslání a znovu řadit data podle názvu kategorie, jak je vidět na obrázku 7.
 
 
-[![Tyto produkty jsou původně seřazené podle názvu](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
+[![Produkty jsou zpočátku seřazené podle názvu](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image15.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image14.png)
 
-**Obrázek 6**: produkty jsou původně seřazené podle názvu jejich ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image16.png))
+**Obrázek 6**: The produkty, které jsou zpočátku seřazené podle názvu ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image16.png))
 
 
-[![Tyto produkty jsou nyní seřazené podle kategorie](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
+[![Produkty jsou teď seřazené podle kategorie](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image18.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image17.png)
 
-**Obrázek 7**: produkty jsou nyní seřazené podle kategorie ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image19.png))
+**Obrázek 7**: The produkty, které jsou teď seřazené podle kategorie ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image19.png))
 
 
 > [!NOTE]
-> Kliknutím na tlačítko Aktualizovat způsobí, že data jako automaticky znovu seřazené protože stav opakovače s zobrazení je zakázané, a způsobuje opakovače se svázat svůj zdroj dat na každé zpětné volání. Pokud jste již opakovače s zobrazení stav povoleno, změna toto řazení rozevíracího seznamu won t mít žádné dopad na pořadí řazení. Chcete-li to opravit, vytvoření obslužné rutiny události pro tlačítko Aktualizovat s `Click` událostí a obnovení vazby opakovače svůj zdroj dat (voláním opakovače s `DataBind()` metoda).
+> Kliknutím na tlačítko Aktualizovat způsobí, že data si automaticky znovu seřazený, protože stav zobrazení opakovače s je zakázané, a způsobuje Repeater znovu připojit ke zdroji dat při každém postbacku. Pokud jste již opakovače s stav zobrazení povolený, změna řazení rozevíracího seznamu vyhráli t mít jakékoli dopad na pořadí řazení. Chcete-li to napravit, vytvořit obslužnou rutinu události pro tlačítko Aktualizovat s `Click` událostí a obnovení vazby Repeater ke zdroji dat (voláním opakovače s `DataBind()` metoda).
 
 
-## <a name="remembering-the-sort-expression-and-direction"></a>Zapamatování výrazů řazení a směr
+## <a name="remembering-the-sort-expression-and-direction"></a>Zapamatování výraz řazení a směr
 
-Při vytváření řazení DataList nebo opakovače na stránce, kde bez řazení související postback může dojít, je s imperativní že výrazů řazení a směr zapamatován napříč postback. Představte si například, že v tomto kurzu zahrnout tlačítko Odstranit u každého produktu aktualizován opakovače. Když uživatel klikne na tlačítko Odstranit jsme d spouštět nějaký kód odstranit vybrané produktu a konkrétním data, která mají opakovače. Pokud nejsou podrobnosti řazení zachová pro zpětné volání, údaje zobrazené na obrazovce se vrátí do původního pořadí řazení.
+Při vytváření seřaditelné DataList nebo Repeater na stránce, kde bez řazení související zpětná volání může dojít, je, že výraz řazení a směr se uloží postbacků dnešní s. Představte si například, že jsme aktualizovali Opakovači v tomto kurzu zahrnout tlačítko Odstranit v jednotlivých produktech. Když uživatel klikne na tlačítko Odstranit jsme d spouštět nějaký kód k odstranění vybraného produktu a potom znovu připojit data, která mají opakovače. Pokud podrobnosti řazení se zachová pro zpětné volání, data zobrazená na obrazovce se vrátí k původní pořadí řazení.
 
-V tomto kurzu rozevírací seznam implicitně ukládá řazení výraz a směr svůj stav zobrazení pro nás. Pokud jsme používali různé řazení rozhraní, jeden s Řekněme, LinkButtons, které poskytuje různé možnosti řazení d musíme postará pamatovat pořadí řazení mezi postback. To je možné dosáhnout uložením řazení parametry ve stavu zobrazení stránky s, včetně řazení parametr v řetězci dotazu nebo prostřednictvím některé jiné technika trvalost stavu.
+Pro účely tohoto kurzu DropDownList implicitně uloží řazení výraz a směr svůj stav zobrazení pro nás. Kdybychom používali jiné rozhraní pro řazení, jednu s LinkButtons říct, která poskytují různé možnosti řazení d potřebujeme pečlivě postbacků mějte na paměti pořadí řazení. Toho je možné dosáhnout uložením řazení parametry ve stavu zobrazení s stránky, včetně parametr řazení v řetězec dotazu, nebo prostřednictvím některé další techniku trvalého stavu.
 
-Budoucí příklady v tomto kurzu prozkoumejte postup zachovat řazení podrobnosti ve stavu zobrazení stránky s.
+Další příklady v tomto kurzu si projděte zachování řazení podrobnosti ve stavu zobrazení stránky s.
 
-## <a name="step-5-adding-sorting-support-to-a-datalist-that-uses-default-paging"></a>Krok 5: Přidání řazení podporu pro DataList, který používá výchozí stránkování
+## <a name="step-5-adding-sorting-support-to-a-datalist-that-uses-default-paging"></a>Krok 5: Přidání podpory řazení DataList, který používá výchozí stránkování
 
-V [předchozí kurzu](paging-report-data-in-a-datalist-or-repeater-control-cs.md) jsme se zaměřili na implementaci stránkování výchozí s DataList. Umožní s tato předchozí příklad rozšířit pro zahrnují možnost řadit stránkové data. Začněte otevřením `SortingWithDefaultPaging.aspx` a `Paging.aspx` stránky v `PagingSortingDataListRepeater` složky. Z `Paging.aspx` klikněte na tlačítko zdroj pro zobrazení stránky s deklarativní. Kopírovat vybraný text (viz obrázek 8) a vložte jej do deklarativní z `SortingWithDefaultPaging.aspx` mezi `<asp:Content>` značky.
-
-
-[![Deklarativní v replikaci &lt;asp: obsah&gt; značek z Paging.aspx SortingWithDefaultPaging.aspx](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
-
-**Obrázek 8**: deklarativní v replikaci `<asp:Content>` značky z `Paging.aspx` k `SortingWithDefaultPaging.aspx` ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image22.png))
+V [předchozím kurzu](paging-report-data-in-a-datalist-or-repeater-control-cs.md) jsme se zaměřili na tom, jak implementovat výchozí stránkování s a v prvku DataList. Umožní s rozšířit tuto předchozí příklad patří schopnost stránkovaná data seřadit. Začněte otevřením `SortingWithDefaultPaging.aspx` a `Paging.aspx` stránky v `PagingSortingDataListRepeater` složky. Z `Paging.aspx` stránky, klikněte na tlačítko zdroj zobrazíte deklarativním označení stránky s. Zkopírování vybraného textu (viz obrázek 8) a vložte ho do deklarativním označení `SortingWithDefaultPaging.aspx` mezi `<asp:Content>` značky.
 
 
-Po zkopírování deklarativní, zkopírujte metody a vlastnosti ve `Paging.aspx` stránky třídu s kódem v pozadí k třídě kódu pro `SortingWithDefaultPaging.aspx`. V dalším kroku pozorně zobrazení `SortingWithDefaultPaging.aspx` stránku v prohlížeči. By měl mít květy stejné funkce a vzhled jako `Paging.aspx`.
+[![Deklarativní v replikaci &lt;asp: Content&gt; značek z Paging.aspx SortingWithDefaultPaging.aspx](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image21.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image20.png)
 
-## <a name="enhancing-productsbll-to-include-a-default-paging-and-sorting-method"></a>Rozšíření ProductsBLL zahrnout výchozí stránkování a řazení – metoda
+**Obrázek 8**: deklarativní v replikaci `<asp:Content>` značek z `Paging.aspx` k `SortingWithDefaultPaging.aspx` ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image22.png))
 
-V předchozích kurzu jsme vytvořili `GetProductsAsPagedDataSource(pageIndex, pageSize)` metoda v `ProductsBLL` třídy, který vrátil `PagedDataSource` objektu. To `PagedDataSource` objekt byl naplněný *všechny* produkty (prostřednictvím BLL s `GetProducts()` metoda), ale když vázaný DataList pouze záznamy odpovídající zadanému *index stránky* a *pageSize* byly zobrazeny vstupní parametry.
 
-V tomto kurzu jsme přidali řazení podporu zadáním výrazů řazení z ObjectDataSource s `Selecting` obslužné rutiny události. Tento postup funguje i když ObjectDataSource se vrátí objekt, který lze seřadit, jako je třeba `ProductsDataTable` vrácené `GetProducts()` metoda. Ale `PagedDataSource` objekt vrácený `GetProductsAsPagedDataSource` metoda nepodporuje řazení jeho vnitřní datové zdroje. Místo toho je potřeba seřadit výsledky vrácené `GetProducts()` metoda *před* jsme ji umístit do `PagedDataSource`.
+Po zkopírování deklarativní, zkopírujte metod a vlastností v `Paging.aspx` stránky s použití modelu code-behind třídy k použití modelu code-behind třídu pro `SortingWithDefaultPaging.aspx`. V dalším kroku věnujte chvíli zobrazíte `SortingWithDefaultPaging.aspx` stránku v prohlížeči. By měl vykazovat stejné funkce a vzhled jako `Paging.aspx`.
 
-K tomu, vytvoření nové metody v `ProductsBLL` třídy `GetProductsSortedAsPagedDataSource(sortExpression, pageIndex, pageSize)`. Seřadit `ProductsDataTable` vrácený `GetProducts()` metoda, zadejte `Sort` vlastnost jeho výchozí `DataTableView`:
+## <a name="enhancing-productsbll-to-include-a-default-paging-and-sorting-method"></a>Vylepšení ProductsBLL obsahovat výchozí stránkování a řazení – metoda
+
+V předchozím kurzu jsme vytvořili `GetProductsAsPagedDataSource(pageIndex, pageSize)` metoda ve `ProductsBLL` třídy, která vrátila `PagedDataSource` objektu. To `PagedDataSource` se naplní objekt *všechny* produktů (prostřednictvím BLL s `GetProducts()` metoda), ale při vázání na ovládacím prvku DataList jen takové záznamy, které odpovídají zadané *pageIndex* a *pageSize* se zobrazí vstupní parametry.
+
+Dříve v tomto kurzu jsme přidali podporu třídění tak, že zadáte výraz řazení v prvku ObjectDataSource s `Selecting` obslužné rutiny události. Tento postup funguje, i když prvku ObjectDataSource se vrátí objekt, který se dají řadit, jako je třeba `ProductsDataTable` vrácených `GetProducts()` metody. Ale `PagedDataSource` vrácený `GetProductsAsPagedDataSource` metoda nepodporuje řazení jeho vnitřní datového zdroje. Místo toho potřebujeme seřadit výsledky vrácené `GetProducts()` metoda *před* jsme ji umístit do `PagedDataSource`.
+
+K tomu vytvořit novou metodu v `ProductsBLL` třídy, `GetProductsSortedAsPagedDataSource(sortExpression, pageIndex, pageSize)`. Řazení `ProductsDataTable` vrácené `GetProducts()` metoda, zadejte `Sort` vlastnost jeho výchozí `DataTableView`:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample5.cs)]
 
-`GetProductsSortedAsPagedDataSource` Metoda se pouze mírně liší od `GetProductsAsPagedDataSource` metoda vytvořili v předchozí kurzu. Konkrétně `GetProductsSortedAsPagedDataSource` přijímá další vstupní parametr `sortExpression` a přiřadí této hodnoty `Sort` vlastnost `ProductDataTable` s `DefaultView`. Po zadání několika řádků kódu později, `PagedDataSource` objekt s zdroj dat je přiřazen `ProductDataTable` s `DefaultView`.
+`GetProductsSortedAsPagedDataSource` Metoda se liší jen mírně z `GetProductsAsPagedDataSource` metoda vytvořili v předchozím kurzu. Zejména `GetProductsSortedAsPagedDataSource` další vstupní parametr přijímá `sortExpression` a přiřadí tuto hodnotu `Sort` vlastnost `ProductDataTable` s `DefaultView`. Pár řádků kódu později, `PagedDataSource` je přiřazen objekt s zdroje dat `ProductDataTable` s `DefaultView`.
 
 ## <a name="calling-the-getproductssortedaspageddatasource-method-and-specifying-the-value-for-the-sortexpression-input-parameter"></a>Volání metody GetProductsSortedAsPagedDataSource a určující hodnotu pro parametr SortExpression vstup
 
-Pomocí `GetProductsSortedAsPagedDataSource` Metoda dokončení, dalším krokem je zadejte hodnotu tohoto parametru. ObjectDataSource v `SortingWithDefaultPaging.aspx` je nyní nakonfigurován, aby volání `GetProductsAsPagedDataSource` metoda a předává dva vstupní parametry prostřednictvím jeho dva `QueryStringParameters`, které jsou určené v `SelectParameters` kolekce. Tyto dva `QueryStringParameters` označuje, že zdroj `GetProductsAsPagedDataSource` metoda s *index stránky* a *pageSize* parametry pocházejí z pole řetězce dotazu `pageIndex` a `pageSize`.
+S `GetProductsSortedAsPagedDataSource` metoda kompletní, dalším krokem je poskytnout hodnotu tohoto parametru. Prvek ObjectDataSource v `SortingWithDefaultPaging.aspx` je aktuálně nakonfigurován pro volání `GetProductsAsPagedDataSource` metoda a předá dva vstupní parametry prostřednictvím jeho dvě `QueryStringParameters`, které jsou určené v `SelectParameters` kolekce. Tyto dvě `QueryStringParameters` označuje, že zdroj `GetProductsAsPagedDataSource` metody s *pageIndex* a *pageSize* parametry pocházejí z pole řetězce dotazu `pageIndex` a `pageSize`.
 
-Aktualizace ObjectDataSource s `SelectMethod` vlastnosti, které se vyvolá nové `GetProductsSortedAsPagedDataSource` metoda. Pak přidejte nový `QueryStringParameter` tak, aby *sortExpression* vstupní parametr přistupuje z pole řetězce dotazu `sortExpression`. Nastavte `QueryStringParameter` s `DefaultValue` k ProductName.
+Aktualizace prvku ObjectDataSource s `SelectMethod` vlastnost tak, že vyvolá nový `GetProductsSortedAsPagedDataSource` metody. Pak přidejte nový `QueryStringParameter` tak, aby *sortExpression* vstupní parametr je přístupná z pole řetězce dotazu `sortExpression`. Nastavte `QueryStringParameter` s `DefaultValue` k ProductName.
 
-Po provedení těchto změn ObjectDataSource s deklarativní by měl vypadat podobně jako:
+Po provedení těchto změn prvku ObjectDataSource s deklarativní by měl vypadat jako:
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample6.aspx)]
 
-V tomto okamžiku `SortingWithDefaultPaging.aspx` stránka bude abecedně seřaďte své výsledky podle názvu produktu (viz obrázek 9). Důvodem je, že ve výchozím nastavení, je předaná hodnota ProductName jako `GetProductsSortedAsPagedDataSource` metoda s *sortExpression* parametr.
+V tomto okamžiku `SortingWithDefaultPaging.aspx` stránky se jeho výsledky seřadit abecedně podle názvu produktu (viz obrázek 9). Důvodem je, že ve výchozím nastavení, je hodnota ProductName předáno jako `GetProductsSortedAsPagedDataSource` metody s *sortExpression* parametru.
 
 
-[![Ve výchozím nastavení jsou výsledky seřazené podle ProductName](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
+[![Ve výchozím nastavení výsledky jsou seřazené podle ProductName](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image24.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image23.png)
 
-**Obrázek 9**: ve výchozím výsledky jsou seřazené podle `ProductName` ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image25.png))
+**Obrázek 9**: ve výchozím nastavení, výsledky jsou seřazeny podle `ProductName` ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image25.png))
 
 
-Pokud ručně přidáte `sortExpression` pole řetězce dotazu, jako `SortingWithDefaultPaging.aspx?sortExpression=CategoryName` výsledky budou seřazeny podle zadaného `sortExpression`. Ale to `sortExpression` parametr není zahrnutý v řetězci dotazu při přesunu dat na jinou stránku. Kliknutím na další nebo poslední stránku ve skutečnosti tlačítka trvá nám zpět do `Paging.aspx`! Kromě toho že s aktuálně žádné řazení rozhraní. Jediným způsobem, uživatel může změnit pořadí řazení stránkové dat je přímo manipulace s řetězci dotazu.
+Pokud chcete ručně přidat `sortExpression` pole řetězce dotazu, jako `SortingWithDefaultPaging.aspx?sortExpression=CategoryName` výsledky budou seřazeny podle zadaného `sortExpression`. Nicméně to `sortExpression` parametr není součástí řetězec dotazu při přesunu na jinou stránku data. Kliknutím na další nebo poslední stránku ve skutečnosti tlačítka přebírá nám zpět do `Paging.aspx`! Kromě toho zde s aktuálně žádné řazení rozhraní. Jediným způsobem, uživatel může změnit pořadí řazení stránkovaného dat je přímá manipulace s řetězec dotazu.
 
-## <a name="creating-the-sorting-interface"></a>Vytváření rozhraní řazení
+## <a name="creating-the-sorting-interface"></a>Vytvoření rozhraní pro řazení
 
-Je potřeba nejdřív aktualizovat `RedirectUser` metodu pro odeslání uživatelům `SortingWithDefaultPaging.aspx` (místo `Paging.aspx`) a zahrnout `sortExpression` hodnota v řetězci dotazu. Také jsme měli přidat jen pro čtení, úrovni stránky s názvem `SortExpression` vlastnost. Tato vlastnost, podobně jako `PageIndex` a `PageSize` vlastnosti vytvořili v předchozí kurzu, vrátí hodnotu `sortExpression` pole řetězce dotazu, pokud existuje a výchozí hodnota (ProductName) jinak.
+Musíme nejprve aktualizovat `RedirectUser` metodu pro odeslání uživateli `SortingWithDefaultPaging.aspx` (místo `Paging.aspx`) a chcete zahrnout `sortExpression` hodnotu v řetězec dotazu. Také jsme měli přidat jen pro čtení,-úrovni stránky s názvem `SortExpression` vlastnost. Tuto vlastnost, podobně jako `PageIndex` a `PageSize` vlastnosti vytvořené v předchozím kurzu, vrátí hodnotu `sortExpression` pole řetězce dotazu, pokud existuje a výchozí hodnotu (ProductName) jinak.
 
-Aktuálně `RedirectUser` metoda přijímá pouze jeden vstupní parametr index stránky pro zobrazení. Může však nastat situace, když chcete přesměrovat uživatele na konkrétní stránku dat pomocí výraz řazení, než jaké s zadaný v řetězci dotazu. Za chvíli vytvoříme rozhraní řazení pro tuto stránku, která bude zahrnovat řadu ovládací prvky webového tlačítko pro řazení dat podle zadaného sloupce. Po kliknutí těchto tlačítek na, chceme přesměruje uživatele předávání v hodnota výrazu odpovídající řazení. Aby bylo možné tuto funkci, vytvářet dvě verze `RedirectUser` metoda. První z nich by měl přijmout právě index stránky, pokud chcete zobrazit, zatímco druhý přijímá stránky indexu a řazení výraz.
+Aktuálně `RedirectUser` metoda přijímá pouze jeden vstupní parametr index stránky k zobrazení. Může však nastat situace, kdy chceme přesměruje uživatele na konkrétní stránce dat s využitím řadicí výraz, než jaké s zadané v řetězec dotazu. Za chvíli vytvoříme řazení rozhraní pro tuto stránku, která bude obsahovat řadu tlačítko webové ovládací prvky pro řazení data podle zadaného sloupce. Jedno z těchto tlačítek se při kliknutí na, chcete přesměrovat uživatele předanou ve výrazu hodnotu odpovídající řazení. Chcete-li poskytují tuto funkci, vytvořte dvě verze `RedirectUser` metody. První z nich by měla přijímat pouze index stránky k zobrazení, zatímco druhá přijímá výrazu indexu a řazení stránky.
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample7.cs)]
 
-V prvním příkladu v tomto kurzu jsme vytvořili řazení rozhraní pomocí rozevírací seznam. V tomto příkladu umožňují s použít tři ovládací prvky webového tlačítko umístěna nad DataList, jednu pro řazení podle `ProductName`, jeden pro `CategoryName`a jeden pro `SupplierName`. Přidejte tři tlačítko webové ovládací prvky, nastavení jejich `ID` a `Text` vlastnosti odpovídajícím způsobem:
+V prvním příkladu v tomto kurzu jsme vytvořili řazení rozhraní pomocí DropDownList. V tomto příkladu vám umožňují s použít tři ovládací prvky webového tlačítko umístěn nad ovládacím prvku DataList, jeden pro řazení podle `ProductName`, jeden pro `CategoryName`a jeden pro `SupplierName`. Přidejte tři ovládací prvky tlačítka webové nastavení jejich `ID` a `Text` vlastnosti odpovídajícím způsobem:
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample8.aspx)]
 
-Dále vytvořte `Click` obslužné rutiny události pro každý. Obslužné rutiny událostí by měly volat `RedirectUser` metoda, vrácení uživatele na první stránku pomocí výrazu odpovídající řazení.
+Dále vytvořte `Click` obslužnou rutinu události pro každý. Obslužné rutiny události by měly volat `RedirectUser` metoda vrací uživatele na první stránku pomocí odpovídající řadicí výraz.
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample9.cs)]
 
-Při první návštěvě stránky, data jsou seřazená podle abecedy podle názvu produktu (odkazuje zpět na obrázku 9). Klikněte na tlačítko Další přechodu na druhé stránce dat a klikněte na tlačítko řazení podle kategorie tlačítko. To nám vrátí na první stránku dat, seřazené podle názvu kategorie (viz obrázek 10). Podobně klepnutím na řazení podle dodavatele tlačítko seřadí data od první stránky dat dodavatelem. Volba řazení je zapamatován jako data je prostřednictvím stránkovaného fondu. Obrázek 11 zobrazuje stránku po řazení podle kategorie a pak přechodu na stránku třináctou data.
+Při první návštěvě stránky, data abecedně seřazené podle názvu produktu (vrátit zpět k obrázek 9). Klikněte na tlačítko Další přejděte k druhé stránce data a potom klikněte na řazení podle kategorie tlačítko. Vrátí se nám na první stránku dat, seřazené podle názvu kategorie (viz obrázek 10). Podobně klepnutím na řazení podle dodavatele tlačítko seřadí data od první stránky dat dodavatelem. Možnost řazení je uloží, protože data je stránkování prostřednictvím. Po seřazení podle kategorie a pak přechodu na stránku třináctou dat obrázku 11 můžete vidět na stránce.
 
 
-[![Produkty jsou seřazené podle kategorie](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
+[![Produkty jsou seřazeny podle kategorie](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image27.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image26.png)
 
-**Obrázek 10**: produkty jsou seřazené podle kategorie ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image28.png))
-
-
-[![Výraz řazení je zapamatovaných při stránkování prostřednictvím dat](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
-
-**Obrázek 11**: výraz řazení je zapamatovaných při stránkování prostřednictvím dat ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image31.png))
+**Obrázek 10**: The produkty jsou seřazeny podle kategorie ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image28.png))
 
 
-## <a name="step-6-custom-paging-through-records-in-a-repeater"></a>Krok 6: Vlastní stránkování prostřednictvím záznamy v prvku Repeater
+[![Výraz řazení se uloží, při stránkování přes Data](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image30.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image29.png)
 
-Příklad DataList zkontrolován v kroku 5 stránky prostřednictvím svá data pomocí techniky stránkování neefektivní výchozí. Při procházení dostatečně velké objemy dat, je nutné použít vlastní stránkování. Zpět v [efektivně stránkování prostřednictvím velké objemy dat](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs.md) a [řazení dat vlastní stránkovaného](../paging-and-sorting/sorting-custom-paged-data-cs.md) kurzy, jsme se zaměřili na rozdíly mezi výchozími a vlastní stránkování a vytvořený metody v BLL pro Použití vlastní stránkování a řazení vlastní stránkové data. Konkrétně v těchto dvou předchozí kurzy, jsme přidali následující tři metody, které `ProductsBLL` třídy:
+**Obrázek 11**: The řadicí výraz se uloží, při stránkování prostřednictvím Data ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image31.png))
 
-- `GetProductsPaged(startRowIndex, maximumRows)` Vrátí podmnožinu záznamy začínající na konkrétní *startRowIndex* a nejvýše *maximumRows*.
-- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` Vrátí podmnožinu konkrétní záznamů seřazené podle zadaného *sortExpression* vstupní parametr.
+
+## <a name="step-6-custom-paging-through-records-in-a-repeater"></a>Krok 6: Vlastní stránkování prostřednictvím záznamy v Repeateru
+
+V příkladu v prvku DataList prozkoumat v kroku 5 stránek prostřednictvím její data způsobem neefektivní výchozí stránkování. Při procházení dostatečně velké objemy dat, je nutné použít vlastní stránkování. Zpátky [efektivně stránkování prostřednictvím velkých objemů dat](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs.md) a [řazení vlastní stránkování dat](../paging-and-sorting/sorting-custom-paged-data-cs.md) kurzy, jsme se zaměřili na rozdíly mezi výchozí a vlastní stránkování a vytvořené metody v BLL pro Použití vlastní stránkování a řazení vlastní stránkovaná data. Konkrétně se tyto dvě předchozích kurzů, jsme přidali následující tři metody, které `ProductsBLL` třídy:
+
+- `GetProductsPaged(startRowIndex, maximumRows)` Vrátí záznamy, které začínají na určitou podskupinu *startRowIndex* a nejvýše *maximumRows*.
+- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` Vrátí podmnožinu záznamů seřazených podle zadaného konkrétní *sortExpression* vstupního parametru.
 - `TotalNumberOfProducts()` poskytuje celkový počet záznamů v `Products` databázové tabulky.
 
-Tyto metody slouží k efektivní stránky a řazení prostřednictvím dat pomocí ovládacího prvku DataList nebo opakovače. Pro znázornění je umožnit s začněte tím, že vytvoření ovládacího prvku opakovače s vlastní podporu stránkování; potom přidáme možnosti řazení.
+Tyto metody slouží k efektivnímu stránce a roztřídit data pomocí ovládacího prvku DataList nebo Repeater. Pro ilustraci to umožní s začněte vytvořením prvku opakovače s vlastní podporou stránkování; potom přidáme možnosti řazení.
 
-Otevřete `SortingWithCustomPaging.aspx` stránku `PagingSortingDataListRepeater` složky a přidat prvku Repeater na stránku nastavení jeho `ID` vlastnost, která má `Products`. Inteligentní značky opakovače s, vytvořte nový ObjectDataSource s názvem `ProductsDataSource`. Nakonfigurovat, aby vyberte data z `ProductsBLL` třídu s `GetProductsPaged` metoda.
-
-
-[![Konfigurace ObjectDataSource lze pomocí této metody GetProductsPaged ProductsBLL třídu s](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
-
-**Obrázek 12**: Konfigurace ObjectDataSource pro použití `ProductsBLL` třídu s `GetProductsPaged` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image34.png))
+Otevřít `SortingWithCustomPaging.aspx` stránku `PagingSortingDataListRepeater` složky a přidat Repeateru na stránku nastavení jeho `ID` vlastnost `Products`. Opakovače s inteligentním, vytvořte nový prvek ObjectDataSource s názvem `ProductsDataSource`. Vyberte svoje data z konfigurace `ProductsBLL` třída s `GetProductsPaged` metoda.
 
 
-Nastavte rozevírací seznamy v aktualizaci UPDATE, INSERT a odstraňte karty na (žádný) a pak klikněte na tlačítko Další. Průvodce konfigurace zdroje dat vyzve k zadání zdroje `GetProductsPaged` metoda s *startRowIndex* a *maximumRows* vstupní parametry. Ve skutečnosti se ignorují tyto vstupní parametry. Místo toho *startRowIndex* a *maximumRows* hodnoty budou předány v prostřednictvím `Arguments` vlastnost ObjectDataSource s `Selecting` obslužné rutiny události, stejně jako jsme zadali *sortExpression* v této ukázce první kurz s. Proto nechejte zdrojový parametr rozevíracích seznamů v Průvodci nastavte na žádný.
+[![Konfigurace ObjectDataSource metody GetProductsPaged ProductsBLL třída s](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image33.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image32.png)
+
+**Obrázek 12**: Konfigurace ObjectDataSource k použití `ProductsBLL` třída s `GetProductsPaged` – metoda ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image34.png))
 
 
-[![Zadaná sada parametrů zdroje nechte na hodnotu None](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
+Nastavte rozevírací seznamy v UPDATE, INSERT a odstraňovat karty na (žádný) a potom klikněte na tlačítko Další. Průvodce konfigurace zdroje dat vyzve k zadání zdrojů `GetProductsPaged` metody s *startRowIndex* a *maximumRows* vstupní parametry. Ve skutečnosti tyto vstupní parametry budou ignorovány. Místo toho *startRowIndex* a *maximumRows* hodnoty budou předávána ve prostřednictvím `Arguments` vlastnost v prvku ObjectDataSource s `Selecting` obslužná rutina události, stejně jako jak jsme zadali *sortExpression* v první kurz s ukázkou. Proto nechte zdroji parametru rozevírací seznamy v Průvodci nastavte na None.
 
-**Obrázek 13**: ponechte zdroje parametr nastaven na hodnotu None ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image37.png))
+
+[![Ponechte sady zdrojů na hodnotu None](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image36.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image35.png)
+
+**Obrázek 13**: ponechte zdroje parametr nastaven na hodnotu None ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image37.png))
 
 
 > [!NOTE]
-> Proveďte *není* nastavit ObjectDataSource s `EnablePaging` vlastnost `true`. To způsobí, že ObjectDataSource automaticky zahrnout vlastní *startRowIndex* a *maximumRows* parametry, které `SelectMethod` s existující seznam parametrů. `EnablePaging` Vlastnost je užitečná, když vlastní vazby stránkovaného data do ovládacího prvku GridView, DetailsView nebo FormView, protože tyto ovládací prvky očekávat určité chování z ObjectDataSource této s k dispozici pouze v případě `EnablePaging` vlastnost je `true`. Vzhledem k tomu, že máme ručně přidat podporu stránkování pro DataList a opakovače, ponechte tuto vlastnost nastavit na `false` (výchozí), protože jsme budete cukrárna potřebných funkcí přímo v naší stránce s ASP.NET.
+> Proveďte *není* nastavit ObjectDataSource s `EnablePaging` vlastnost `true`. To způsobí, že ObjectDataSource automaticky zahrnulo vlastní *startRowIndex* a *maximumRows* parametrů `SelectMethod` s existující seznam parametrů. `EnablePaging` Vlastnost je užitečná, když vlastní vazby dat k ovládacímu prvku GridView, DetailsView nebo FormView stránkováním vzhledem k tomu, že tyto ovládací prvky očekávat určité chování v prvku ObjectDataSource této s k dispozici pouze v případě `EnablePaging` vlastnost `true`. Vzhledem k tomu, že budeme muset ručně přidat podporu stránkování v prvku DataList a Repeater, ponechejte tuto vlastnost nastavenu `false` (výchozí), jak jsme budete zanést do potřebné funkce přímo v rámci naši stránku ASP.NET.
 
 
-Nakonec zadejte opakovače s `ItemTemplate` tak, aby produkt s název, kategorie a dodavatele. Po provedení těchto změn opakovače a ObjectDataSource deklarativní syntaxi s by měl vypadat takto:
+Nakonec definujte opakovače s `ItemTemplate` tak, aby produkt s názvem, kategorie a dodavateli. Po provedení těchto změn Repeater a ObjectDataSource deklarativní syntaxe s by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample10.aspx)]
 
-Za chvíli navštívit stránku prostřednictvím prohlížeče a Všimněte si, že jsou vráceny žádné záznamy. Důvodem je, že jsme jste zatím k určení *startRowIndex* a *maximumRows* hodnoty parametrů; proto hodnoty 0 jsou předávány v obou. Chcete-li tyto hodnoty zadat vytvořit obslužnou rutinu události pro ObjectDataSource s `Selecting` událostí a nastavte tyto parametry hodnoty prostřednictvím kódu programu pevně hodnoty 0 a 5, v uvedeném pořadí:
+Za chvíli najdete na stránce prostřednictvím prohlížeče a Všimněte si, že nejsou vráceny žádné záznamy. Důvodem je, že jsme ve ještě k určení *startRowIndex* a *maximumRows* hodnoty parametrů; proto hodnoty 0 jsou předávány v obou. Chcete-li zadat tyto hodnoty, vytvořit obslužnou rutinu události pro prvek ObjectDataSource s `Selecting` událostí a nastavte tyto parametry hodnoty prostřednictvím kódu programu k pevně definovaných hodnot 0 až 5 v uvedeném pořadí:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample11.cs)]
 
-Díky této změně stránky, při zobrazení prostřednictvím prohlížeče, zobrazuje prvních pět produkty.
+Díky této změně stránky, při zobrazení v prohlížeči zobrazí prvních pěti produkty.
 
 
-[![Zobrazení první pět záznamů](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
+[![Prvních pět záznamů se zobrazí.](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image39.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image38.png)
 
-**Obrázek 14**: zobrazení první pět záznamů ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image40.png))
+**Obrázek 14**: jsou zobrazeny prvních pět záznamů ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image40.png))
 
 
 > [!NOTE]
-> Produkty uvedené v obrázku 14 dojít, který se má seřadit podle názvu produktu, protože `GetProductsPaged` uložené procedury, která provádí efektivní vlastního dotazu stránkování řadí výsledky podle `ProductName`.
+> Produkty uvedenými v obrázek 14 dojít, který se má seřadit podle názvu produktu, protože `GetProductsPaged` uloženou proceduru, která provádí efektivní vlastní stránkování dotaz řadí výsledky podle `ProductName`.
 
 
-Aby bylo možné povolit uživateli krok prostřednictvím stránky, je potřeba sledovat počáteční index řádku a maximální počet řádků a mějte na paměti tyto hodnoty mezi postback. V příkladu stránkování výchozí jsme použili pole řetězce dotazu se zachovat tyto hodnoty; v této ukázce umožní zachovat tyto informace ve stavu zobrazení stránky s s. Vytvořte následující dvě vlastnosti:
+Umožní uživateli procházení stránek, musíme udržovat přehled o start index řádku a maximální počet řádků a postbacků pamatovat si tyto hodnoty. V příkladu stránkování výchozí jsme použili pole řetězce dotazu k uchování těchto hodnot. pro tuto ukázku umožní zachovat tyto informace ve stavu zobrazení stránky s s. Vytvořte následující dvě vlastnosti:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample12.cs)]
 
-Potom aktualizujte kód obslužné rutiny události zvolíte tak, aby používala `StartRowIndex` a `MaximumRows` vlastnosti místo pevně hodnoty 0 a 5:
+V dalším kroku aktualizovat kód v obslužné rutině události Selecting tak, aby používala `StartRowIndex` a `MaximumRows` vlastnosti namísto pevně definovaných hodnot 0 až 5:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample13.cs)]
 
-V tomto okamžiku Naše stránka stále zobrazuje pouze prvních pět záznamů. Nicméně s těmito vlastnostmi na místě, jsme re připravené k vytvoření naše rozhraní stránkování.
+V tomto okamžiku naši stránku stále zobrazuje jenom prvních pět záznamů. Nicméně s těmito vlastnostmi na místě, můžeme znovu připraven na vytvoření našeho stránkovací rozhraní.
 
 ## <a name="adding-the-paging-interface"></a>Přidání rozhraní stránkování
 
-V příkladu stránkování výchozí štítek webové zobrazení ovládací prvek, který zobrazí jaké stránky dat včetně a celkový počet stránek existují použít umožňují s pomocí stejné první, předchozí a další, poslední stránkování rozhraní. Přidejte čtyři ovládací prvky webového tlačítko a popisek pod opakovače.
+Umožněte s pomocí stejné první, Previous, další poslední stránkování rozhraní používá v příkladu stránkování výchozí včetně popisek webové zobrazení ovládacího prvku, který zobrazí stránku co data a celkový počet stránek existovat. Přidejte čtyři ovládací prvky webového tlačítko a popisek pod opakovače.
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample14.aspx)]
 
-Dále vytvořte `Click` obslužných rutin událostí pro čtyři tlačítka. Po kliknutí z těchto tlačítek na, musíme aktualizovat `StartRowIndex` a rebind data, která mají opakovače. Kód pro první, předchozí a další tlačítka je dostatečně jednoduchá, ale pro poslední tlačítko jak jsme je zjistit počáteční index řádků na poslední stránku dat? K výpočtu tento index, jakož i schopnost určit, že zda by měla být povolená tlačítka Další a poslední potřebujeme vědět, celkový počet záznamů jsou stránkování prostřednictvím. Jsme můžete určit voláním `ProductsBLL` třídu s `TotalNumberOfProducts()` metoda. Umožňují s vytvoření vlastnosti jen pro čtení, úrovně stránky s názvem `TotalRowCount` , vrátí výsledky `TotalNumberOfProducts()` metoda:
+Dále vytvořte `Click` obslužné rutiny událostí pro čtyři tlačítka. Jedno z těchto tlačítek se při kliknutí na, musíme aktualizovat `StartRowIndex` a obnovení vazby dat k opakovače. Kód pro první, předchozí a další tlačítka je dostatečně jednoduchá, ale pro poslední tlačítko jak můžeme zjistit počáteční index řádků na poslední stránku dat? Pro výpočet tento index stejně jako schopnost určit, že zda by měla být povolená tlačítka Další a poslední potřebujeme vědět, kolik záznamů se stránkování prostřednictvím. Můžeme to určit pomocí volání `ProductsBLL` třída s `TotalNumberOfProducts()` metoda. Umožňují s vytvořit vlastnosti jen pro čtení, úrovni stránky s názvem `TotalRowCount` , který vrátí výsledky `TotalNumberOfProducts()` metody:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample15.cs)]
 
-S touto vlastností jsme můžete teď určit poslední stránku s počáteční index řádku. Konkrétně se s výsledkem celé číslo z `TotalRowCount` minus 1 dělený `MaximumRows`, násobenou `MaximumRows`. Jsme teď může zapisovat `Click` obslužných rutin událostí pro čtyři tlačítka rozhraní stránkování:
+S touto vlastností můžeme nyní určit poslední index stránky s počátečního řádku. Konkrétně to s výsledkem celé číslo z `TotalRowCount` minus 1 hodnotou `MaximumRows`, násobenou `MaximumRows`. Můžeme se teď dá zapisovat `Click` obslužné rutiny událostí pro čtyři tlačítka stránkování rozhraní:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample16.cs)]
 
-Nakonec musíme zakázat tlačítka první a předchozí v rozhraní stránkování, při zobrazení na první stránku dat a tlačítka Další a poslední při zobrazení poslední stránky. K tomu, přidejte následující kód do ObjectDataSource s `Selecting` obslužné rutiny události:
+Nakonec musíme zakázat první a předchozí tlačítka stránkování rozhraní při procházení první stránky dat a tlačítka Další a poslední při prohlížení na poslední stránce. Chcete-li to provést, přidejte následující kód do prvku ObjectDataSource s `Selecting` obslužné rutiny události:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample17.cs)]
 
-Po přidání těchto `Click` obslužné rutiny událostí a kód k povolení nebo zakázání prvky rozhraní stránkování podle aktuální index řádku počáteční testovací stránce v prohlížeči. Jako znázorňuje obrázek 15, pokud nejprve na stránce první, a bude předchozí tlačítka jsou zakázány. Kliknutím na tlačítko Další zobrazuje stránku druhý dat, když kliknete na poslední zobrazí poslední stránce (viz následující obrázky 16 a 17). Při zobrazení na poslední stránku dat jsou zakázány na další a poslední tlačítka.
+Po přidání těchto `Click` obslužné rutiny událostí a kód pro povolení nebo zakázání stránkování prvky rozhraní založené na index aktuálního řádku start, otestovat stránku v prohlížeči. Jak znázorňuje obrázek 15, při první návštěvě stránky první a předchozí tlačítka se jsou zakázané. Kliknutím na další ukazuje na druhé stránce data, při kliknutí na poslední se zobrazí na poslední stránce (viz obrázky 16 a 17). Při prohlížení na poslední stránku dat na další a poslední tlačítka jsou zakázané.
 
 
-[![Poslední tlačítka předchozí a nejsou při zobrazení první stránka produkty](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
+[![Předchozí a poslední tlačítka jsou zakázány při procházení první stránky produktů](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image42.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image41.png)
 
-**Obrázek 15**: poslední tlačítka a Previous nejsou při zobrazení první stránka produkty ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png))
+**Obrázek 15**: Previous a poslední tlačítka jsou zakázány při procházení první stránky produktů ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image43.png))
 
 
 [![Druhá stránka produkty jsou Dispalyed](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image45.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image44.png)
 
-**Obrázek 16**: druhé stránce produkty jsou Dispalyed ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
+**Obrázek 16**: druhou stránku produktů jsou Dispalyed ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image46.png))
 
 
-[![Kliknutím na poslední zobrazí na poslední stránku dat](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
+[![Kliknutím na poslední zobrazí poslední stránky dat](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image48.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image47.png)
 
-**Obrázek 17**: Kliknutím na poslední zobrazí poslední stránku Data ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image49.png))
+**Obrázek 17**: Kliknutím na poslední zobrazí Data poslední stránky ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image49.png))
 
 
-## <a name="step-7-including-sorting-support-with-the-custom-paged-repeater"></a>Krok 7: Včetně řazení podporu pro vlastní opakovače stránkovaného fondu
+## <a name="step-7-including-sorting-support-with-the-custom-paged-repeater"></a>Krok 7: Včetně řazení podporu s vlastním stránkováním Repeater
 
-Teď, když byl implementován vlastní stránkování, znovu připravení zahrnují řazení podporujeme. `ProductsBLL` Třídu s `GetProductsPagedAndSorted` metoda má stejné *startRowIndex* a *maximumRows* vstupní parametry jako `GetProductsPaged`, ale umožňuje další  *sortExpression* vstupní parametr. Použít `GetProductsPagedAndSorted` metoda z `SortingWithCustomPaging.aspx`, je potřeba provést následující kroky:
+Teď, když byl implementován vlastní stránkování, znovu připravený k zahrnují řazení podporujeme. `ProductsBLL` Třída s `GetProductsPagedAndSorted` metoda má stejný *startRowIndex* a *maximumRows* vstupní parametry jako `GetProductsPaged`, ale umožňuje další  *sortExpression* vstupního parametru. Použít `GetProductsPagedAndSorted` metodu z `SortingWithCustomPaging.aspx`, musíme provést následující kroky:
 
 1. Změnit ObjectDataSource s `SelectMethod` vlastnost z `GetProductsPaged` k `GetProductsPagedAndSorted`.
-2. Přidat *sortExpression* `Parameter` objekt, který chcete ObjectDataSource s `SelectParameters` kolekce.
-3. Vytvoření privátního, úrovně stránky `SortExpression` vlastnost, která je uchována jeho hodnota napříč postback prostřednictvím stav zobrazení stránky s.
-4. Aktualizace ObjectDataSource s `Selecting` obslužné rutiny události přiřadit ObjectDataSource s *sortExpression* parametr hodnota úrovně stránky `SortExpression` vlastnost.
-5. Vytvořte rozhraní řazení.
+2. Přidat *sortExpression* `Parameter` objekt ObjectDataSource s `SelectParameters` kolekce.
+3. Vytvoření privátní, úrovni stránky `SortExpression` vlastnost, která se uchovávají napříč postbacků prostřednictvím stav zobrazení stránky s jeho hodnotu.
+4. Aktualizace prvku ObjectDataSource s `Selecting` obslužná rutina události přiřazení ObjectDataSource s *sortExpression* parametr hodnoty úrovni stránky `SortExpression` vlastnost.
+5. Vytvoření rozhraní pro řazení.
 
-Začněte tím, že aktualizace ObjectDataSource s `SelectMethod` vlastnost a přidávání *sortExpression* `Parameter`. Ujistěte se, že *sortExpression* `Parameter` s `Type` je nastavena na `String`. Po dokončení těchto úloh první dva, ObjectDataSource s deklarativní by měl vypadat následovně:
+Začněte tím, že aktualizace ObjectDataSource s `SelectMethod` vlastností a přidání *sortExpression* `Parameter`. Ujistěte se, že *sortExpression* `Parameter` s `Type` je nastavena na `String`. Po dokončení těchto prvních dvou úloh, ObjectDataSource s deklarativní by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample18.aspx)]
 
-Dále je třeba úrovně stránky `SortExpression` vlastnost, jehož hodnota je serializováno stavu zobrazení. Pokud byla nastavena žádná hodnota výraz řazení, použijte jako výchozí ProductName:
+V dalším kroku budeme potřebovat úrovni stránky `SortExpression` vlastnost, jejíž hodnota je serializována stavu zobrazení. Pokud byla nastavena žádná hodnota výraz řazení, použijte jako výchozí ProductName:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample19.cs)]
 
-Předtím, než ObjectDataSource vyvolá `GetProductsPagedAndSorted` metoda je potřeba nastavit *sortExpression* `Parameter` na hodnotu `SortExpression` vlastnost. V `Selecting` obslužné rutiny události, přidejte následující řádek kódu:
+Předtím, než vyvolá ObjectDataSource `GetProductsPagedAndSorted` metoda musíme nastavit *sortExpression* `Parameter` na hodnotu `SortExpression` vlastnost. V `Selecting` obslužná rutina události, přidejte následující řádek kódu:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample20.cs)]
 
-Zbývá k implementaci rozhraní řazení. Jako jsme to udělali v posledním příkladu, umožní s mít rozhraní řazení implementovaná pomocí tří ovládací prvky webového tlačítko, které umožňují uživatelům řazení výsledků podle názvu produktu, kategorie nebo dodavatele.
+Už jen zbývá k implementaci rozhraní řazení. Jako jsme to udělali v předchozím příkladu, umožní s řazení rozhraní, které jsou implementované pomocí tří tlačítko ovládacích prvků, které uživateli umožňují řazení výsledků podle názvu produktu, kategorie nebo dodavatele.
 
 
 [!code-aspx[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample21.aspx)]
 
-Vytvoření `Click` obslužné rutiny události pro tyto tři ovládací prvky tlačítek. Události obslužnou rutinu, resetovat `StartRowIndex` na hodnotu 0, nastavte `SortExpression` na odpovídající hodnotu a obnovení vazby dat opakovače:
+Vytvoření `Click` obslužné rutiny událostí pro tyto tři ovládací prvky tlačítek. V obslužné rutiny, resetovat `StartRowIndex` na hodnotu 0, nastavte `SortExpression` odpovídající hodnotu a obnovení vazby dat k opakovače:
 
 
 [!code-csharp[Main](sorting-data-in-a-datalist-or-repeater-control-cs/samples/sample22.cs)]
 
-Že všechny existuje s je k němu! Když došlo k několika kroků získat vlastní řazení a stránkování implementována, kroky měla velmi podobné těm, které jsou potřebné pro výchozí stránkování. Obrázek 18 ukazuje produkty při prohlížení na poslední stránku dat při seřazené podle kategorie.
+Všechny existuje tento s je to! Když došlo k několika kroky k získání vlastní stránkování a řazení implementované, byly kroky velmi podobné těm, které jsou potřebné pro výchozí stránkování. Obrázek 18 ukazuje produkty při prohlížení na poslední stránku dat při řazení podle kategorie.
 
 
-[![Zobrazí se poslední Data stránky, Sorted podle kategorií,](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
+[![Zobrazí se Data poslední stránky, seřazeno podle kategorie](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image51.png)](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image50.png)
 
-**Obrázek 18**: poslední stránku dat, Sorted podle kategorií, se zobrazí ([Kliknutím zobrazit obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image52.png))
+**Obrázek 18**: poslední stránku Data, seřazeno podle kategorie, zobrazí se ([kliknutím ji zobrazíte obrázek v plné velikosti](sorting-data-in-a-datalist-or-repeater-control-cs/_static/image52.png))
 
 
 > [!NOTE]
-> V předchozích příkladech, při řazení podle dodavatele, které dodavatel byl použit jako výraz řazení. Ale pro vlastní implementaci stránkování, potřebujeme používat NázevSpolečnosti. Důvodem je, že uložené procedury, která je zodpovědná za implementaci vlastní stránkování `GetProductsPagedAndSorted` předá výraz řazení do `ROW_NUMBER()` – klíčové slovo, `ROW_NUMBER()` – klíčové slovo vyžaduje místo aliasu, raději skutečný název sloupce. Proto musí používáme `CompanyName` (název sloupce v `Suppliers` tabulky) namísto aby alias použitý v `SELECT` dotazu (`SupplierName`) pro výraz řazení.
+> V předchozích příkladech je při řazení podle dodavatele, který dodavatel byl použit jako výraz řazení. Ale pro vlastní implementaci stránkování, musíme použít CompanyName. Důvodem je, že uloženou proceduru, která je zodpovědná za implementaci vlastní stránkování `GetProductsPagedAndSorted` předává výraz řazení do `ROW_NUMBER()` – klíčové slovo, `ROW_NUMBER()` – klíčové slovo vyžaduje skutečný název sloupce, nikoli jako alias. Proto musíme použít `CompanyName` (název sloupce v `Suppliers` tabulky) namísto alias používaný v `SELECT` dotazu (`SupplierName`) pro výraz řazení.
 
 
 ## <a name="summary"></a>Souhrn
 
-Ani DataList ani opakovače nabízí integrovanou podporu řazení, ale pomocí bit kódu a vlastní řazení rozhraní, je možné přidat tyto funkce. Při implementaci řazení, ale není stránkování, výrazů řazení lze zadat prostřednictvím `DataSourceSelectArguments` objekt předaný do ObjectDataSource s `Select` metoda. To `DataSourceSelectArguments` objekt s `SortExpression` vlastnost může být přiřazena aplikace ObjectDataSource s `Selecting` obslužné rutiny události.
+Ani ovládacích prvků DataList a Repeater nabízejí integrovanou podporu třídění, ale pomocí bitového kódu a vlastní řazení rozhraní, je možné přidat tyto funkce. Při implementaci řazení, ale ne stránkování, řadicí výraz se dá nastavit až `DataSourceSelectArguments` objekt předaný v prvku ObjectDataSource s `Select` metody. To `DataSourceSelectArguments` objektu s `SortExpression` vlastnost můžete přiřadit v prvku ObjectDataSource s `Selecting` obslužné rutiny události.
 
-Pro přidání možností řazení do DataList nebo opakovače, který již poskytuje podporu stránkování, je nejjednodušší způsob přizpůsobení vrstvu obchodní logiky obsahovat metodu, která přijímá výraz řazení. Tyto informace lze předat pak ve prostřednictvím parametru v ObjectDataSource s `SelectParameters`.
+Přidání možnosti řazení DataList nebo Repeater, která již poskytuje podporu stránkování, je nejjednodušší způsob přizpůsobení vrstvy obchodní logiky obsahovat metodu, který přijímá řadicí výraz. Tyto informace je pak možné předat v prostřednictvím parametru v prvku ObjectDataSource s `SelectParameters`.
 
-V tomto kurzu dokončení součást stránkování a řazení s ovládacími prvky DataList a opakovače. Naše další a finální kurzu bude zkontrolujte postup přidání tlačítka na DataList a opakovače s šablony chcete-li provést některé funkce vlastní, zahájená uživatelem na základě položky.
+V tomto kurzu dokončíte naše zkoumání stránkování a řazení ovládacími prvky DataList a Repeater. V našem kurzu další a finální prozkoumá jak přidat tlačítko webové ovládací prvky s šablon ovládacích prvků DataList a Repeater negace některé vlastní, kterou inicioval uživatel funkce na základě za položku.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Zvláštní poděkování
+## <a name="special-thanks-to"></a>Speciální k
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontrolorem pro tento kurz byl David Suru. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Vedoucí kontrolor pro účely tohoto kurzu byla David Suru. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Předchozí](paging-report-data-in-a-datalist-or-repeater-control-cs.md)

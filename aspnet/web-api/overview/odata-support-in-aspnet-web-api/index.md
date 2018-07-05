@@ -1,46 +1,45 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/index
-title: V rozhraní ASP.NET Web API OData | Microsoft Docs
+title: V rozhraní ASP.NET Web API OData | Dokumentace Microsoftu
 author: rick-anderson
-description: Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je protokol přístupu dat pro web. Poskytuje jednotným způsobem pro dotazování a zpracování datových sad. Webové rozhraní API s...
+description: Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je data protokol pro web. Poskytuje jednotným způsobem pro dotazování a manipulaci s datovými sadami. Webové rozhraní API s...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/17/2012
 ms.topic: article
 ms.assetid: 9151c605-e911-4f24-95b5-ca310b105abf
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
-ms.openlocfilehash: dd46454ae78424ab383a71d185ff7a563692cc5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 56f8e6d9c00689e01b8da207eb49b8c3088a82d8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566716"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389044"
 ---
 <a name="odata-in-aspnet-web-api"></a>V rozhraní ASP.NET Web API OData
 ====================
-> Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je protokol přístupu dat pro web. Poskytuje jednotným způsobem pro dotazování a zpracování datových sad. Webové rozhraní API podporuje verze 3 a 4 verze protokolu OData.
+> Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je data protokol pro web. Poskytuje jednotným způsobem pro dotazování a manipulaci s datovými sadami. Webové rozhraní API podporuje verze 3 a 4 verze protokolu OData.
 
 
 - [OData v4](odata-v4/index.md)
 
-    - [Vytvořit koncový bod OData v4](odata-v4/create-an-odata-v4-endpoint.md)
-    - [Vytvoření aplikace OData v4 klienta (C#)](odata-v4/create-an-odata-v4-client-app.md)
-    - [Vztahy entit v OData v4](odata-v4/entity-relations-in-odata-v4.md)
+    - [Vytvoření koncového bodu OData v4](odata-v4/create-an-odata-v4-endpoint.md)
+    - [Vytvoření klientské aplikace OData v4 (C#)](odata-v4/create-an-odata-v4-client-app.md)
+    - [Relace prvků v OData v4](odata-v4/entity-relations-in-odata-v4.md)
     - [Akce a funkce v OData v4](odata-v4/odata-actions-and-functions.md)
-    - [Omezení v OData v4](odata-v4/odata-containment-in-web-api-22.md)
-    - [Vytvoření typu Singleton v OData v4](odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22.md)
-    - [Otevřete typy v OData v4](odata-v4/use-open-types-in-odata-v4.md)
-    - [Komplexní typ dědičnosti v OData v4](odata-v4/complex-type-inheritance-in-odata-v4.md)
+    - [Zahrnutí v OData v4](odata-v4/odata-containment-in-web-api-22.md)
+    - [Vytvoření jednoho prvku v OData v4](odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22.md)
+    - [Otevřené typy v OData v4](odata-v4/use-open-types-in-odata-v4.md)
+    - [Komplexní dědičnost typů v OData v4](odata-v4/complex-type-inheritance-in-odata-v4.md)
 - [OData v3](odata-v3/index.md)
 
-    - [Vytváření koncový bod OData v3](odata-v3/creating-an-odata-endpoint.md)
-    - [Podpora vztahy entit v OData v3](odata-v3/working-with-entity-relations.md)
-    - [Akce OData v rozhraní Web API 2](odata-v3/odata-actions.md)
+    - [Vytvoření koncového bodu OData v3](odata-v3/creating-an-odata-endpoint.md)
+    - [Podpora relací prvků v OData v3](odata-v3/working-with-entity-relations.md)
+    - [Akce OData ve webovém rozhraní API 2](odata-v3/odata-actions.md)
     - [Volání služby OData z klienta .NET (C#)](odata-v3/calling-an-odata-service-from-a-net-client.md)
-- [Podpora možnosti dotazu OData v rozhraní Web API 2](supporting-odata-query-options.md)
-- [Pomocí $select, $, rozbalte položku a $value v Web API 2 OData](using-select-expand-and-value.md)
-- [Konvencí směrování v rozhraní Web API 2 OData](odata-routing-conventions.md)
-- [Doprovodné materiály zabezpečení pro webové rozhraní API 2 OData](odata-security-guidance.md)
+- [Podpora možností dotazů OData ve webovém rozhraní API 2](supporting-odata-query-options.md)
+- [Používání možností $select, $expand a $value ve webovém rozhraní API 2 OData](using-select-expand-and-value.md)
+- [Konvence směrování ve webovém rozhraní API 2 OData](odata-routing-conventions.md)
+- [Bezpečnostní pokyny k webovému rozhraní API 2 OData](odata-security-guidance.md)

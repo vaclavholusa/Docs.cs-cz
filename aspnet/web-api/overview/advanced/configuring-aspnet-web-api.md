@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/advanced/configuring-aspnet-web-api
-title: Konfigurace rozhraní ASP.NET Web API 2 | Microsoft Docs
+title: Konfigurace rozhraní ASP.NET Web API 2 | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,27 +9,26 @@ ms.date: 03/31/2014
 ms.topic: article
 ms.assetid: 9e10a700-8d91-4d2e-a31e-b8b569fe867c
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: de2396710fb9434c84bf14a2faa37b98154f34d8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8fd08098b5a425f2cbd7939f5f90550b98c34071
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874977"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37387074"
 ---
 <a name="configuring-aspnet-web-api-2"></a>Konfigurace rozhraní ASP.NET Web API 2
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
 Toto téma popisuje postup konfigurace webového rozhraní API ASP.NET.
 
 - [Nastavení konfigurace](#settings)
-- [Konfigurace webového rozhraní API s hostování prostředí ASP.NET](#webhost)
-- [Konfiguraci webového rozhraní API pomocí vlastní hostování OWIN](#selfhost)
+- [Konfigurace webového rozhraní API s hostování v technologii ASP.NET](#webhost)
+- [Konfigurace webového rozhraní API s vlastním hostováním OWIN](#selfhost)
 - [Globální webové rozhraní API služby](#services)
-- [Konfigurace Kontroleru](#percontrollerconfig)
+- [Konfigurace na Kontroleru](#percontrollerconfig)
 
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>Nastavení konfigurace
@@ -38,16 +37,16 @@ Nastavení konfigurace webového rozhraní API jsou definovány v [HttpConfigura
 
 | Člen | Popis |
 | --- | --- |
-| **Překladače závislostí** | Umožňuje vkládání závislostí pro řadiče. V tématu [pomocí překladače závislostí webového rozhraní API](dependency-injection.md). |
+| **Překladače závislostí** | Povolí vkládání závislostí pro řadiče. Zobrazit [použitím překladač závislostí webového rozhraní API](dependency-injection.md). |
 | **Filtry** | Filtry akcí. |
-| **Formátovací moduly** | [Formátovací moduly typu média](../formats-and-model-binding/media-formatters.md). |
-| **IncludeErrorDetailPolicy** | Určuje, zda server by měla obsahovat podrobnosti o chybě, například zprávy o výjimkách nebo trasování zásobníku zpráv odpovědí HTTP. V tématu [IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
-| **Inicializátor** | Funkci, která provede konečnou inicializaci **HttpConfiguration**. |
+| **Formátovací moduly** | [Formátovací moduly typu médií](../formats-and-model-binding/media-formatters.md). |
+| **IncludeErrorDetailPolicy** | Určuje, zda server by měl obsahovat podrobnosti o chybě, například zprávy o výjimkách nebo trasování zásobníku v odpovědích HTTP. Zobrazit [IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
+| **Inicializátor** | Funkce, která provede konečnou inicializaci **HttpConfiguration**. |
 | **MessageHandlers** | [Obslužné rutiny zpráv HTTP](http-message-handlers.md). |
 | **ParameterBindingRules** | Kolekce pravidel pro vazby parametrů na akce kontroleru. |
 | **Vlastnosti** | Obecná vlastnost kontejneru. |
-| **Trasy** | Kolekce tras. V tématu [směrování v rozhraní ASP.NET Web API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md). |
-| **Služby** | Kolekce služeb. V tématu [služby](#services). |
+| **Trasy** | Kolekce tras. Zobrazit [směrování v rozhraní ASP.NET Web API](../web-api-routing-and-actions/routing-in-aspnet-web-api.md). |
+| **Služby** | Kolekce služeb. Zobrazit [služby](#services). |
 
 
 ## <a name="prerequisites"></a>Požadavky
@@ -55,47 +54,47 @@ Nastavení konfigurace webového rozhraní API jsou definovány v [HttpConfigura
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional nebo Enterprise Edition.
 
 <a id="webhost"></a>
-## <a name="configuring-web-api-with-aspnet-hosting"></a>Konfigurace webového rozhraní API s hostování prostředí ASP.NET
+## <a name="configuring-web-api-with-aspnet-hosting"></a>Konfigurace webového rozhraní API s hostování v technologii ASP.NET
 
-V aplikaci ASP.NET, nakonfigurujte rozhraní Web API voláním [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) v **aplikace\_spustit** metoda. **Konfigurace** metoda přebírá delegáta pomocí jediného parametru typu **HttpConfiguration**. Všechny vaše konfiguračním uvnitř delegát proveďte.
+V aplikaci technologie ASP.NET, nakonfigurujte rozhraní Web API voláním [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) v **aplikace\_Start** metody. **Konfigurovat** metoda přijímá delegát s jedním parametrem typu **HttpConfiguration**. Proveďte všechny vaše konfiguračním uvnitř delegáta.
 
-Tady je příklad použití delegáta anonymní:
+Tady je příklad použití anonymního delegáta:
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample1.cs)]
 
-V aplikaci Visual Studio 2017 šablona projektu "webové aplikace ASP.NET" automaticky nastaví kód konfigurace, pokud zvolíte možnost "Webového rozhraní API" v **nový projekt ASP.NET** dialogové okno.
+V sadě Visual Studio 2017 "Webovou aplikaci ASP.NET" Šablona projektu automaticky nastaví kód konfigurace-li možnost "Webového rozhraní API" v **nový projekt ASP.NET** dialogového okna.
 
 [![](configuring-aspnet-web-api/_static/image2.png)](configuring-aspnet-web-api/_static/image1.png)
 
-Šablona projektu vytvoří soubor s názvem WebApiConfig.cs uvnitř aplikace\_spouštěcí složka. Tento soubor kód definuje delegáta, kde byste měli umístit kódu webového rozhraní API konfigurace.
+Šablona projektu vytvoří soubor s názvem WebApiConfig.cs uvnitř aplikace\_spouštěcí složka. Tento soubor kódu definuje delegáta, ve kterém byste měli umístit kódu konfigurace webového rozhraní API.
 
 ![](configuring-aspnet-web-api/_static/image3.png)
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample2.cs?highlight=12)]
 
-Šablona projektu také přidá kód, který vyvolá delegáta z **aplikace\_spustit**.
+Šablona projektu také přidá kód, který volá delegáta z **aplikace\_Start**.
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample3.cs?highlight=5)]
 
 <a id="selfhost"></a>
-## <a name="configuring-web-api-with-owin-self-hosting"></a>Konfiguraci webového rozhraní API pomocí vlastní hostování OWIN
+## <a name="configuring-web-api-with-owin-self-hosting"></a>Konfigurace webového rozhraní API s vlastním hostováním OWIN
 
-Pokud jste samoobslužné hostování s OWIN, vytvořte novou **HttpConfiguration** instance. V této instanci provádět žádnou konfiguraci a poté předat instanci systému na **Owin.UseWebApi** metoda rozšíření.
+Pokud jste samoobslužné hostování s OWIN, vytvořte nový **HttpConfiguration** instance. Provádět žádnou konfiguraci v této instanci a pak předejte instanci **Owin.UseWebApi** – metoda rozšíření.
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample4.cs)]
 
-Tento kurz [OWIN použití Self-Host ASP.NET Web API 2](../hosting-aspnet-web-api/use-owin-to-self-host-web-api.md) ukazuje úplné kroky.
+Tento kurz [použití OWIN Self-Host ASP.NET Web API 2](../hosting-aspnet-web-api/use-owin-to-self-host-web-api.md) ukazuje kompletní postup.
 
 <a id="services"></a>
 ## <a name="global-web-api-services"></a>Globální webové rozhraní API služby
 
-**HttpConfiguration.Services** kolekce obsahuje sadu služeb global services, která webového rozhraní API používá k provádění různých úloh, jako jsou řadiče výběr a vyjednávání obsahu.
+**HttpConfiguration.Services** kolekce obsahuje sadu služeb global services, které webové rozhraní API používá k provádění různých úloh, jako je například řadič výběru a vyjednávání obsahu.
 
 > [!NOTE]
-> **Služby** kolekce není pro obecné účely mechanismus pro službu zjišťování nebo závislost vkládání. Ukládá pouze typy služeb, které jsou známé rozhraní Web API.
+> **Služby** kolekce není mechanismus pro obecné účely pro dokáže vložit službu zjišťování nebo závislost. Ukládá pouze typy služeb, které jsou známé rozhraní Web API.
 
 
-**Služby** kolekce je inicializována s výchozí sadou služeb a může poskytnout vlastní vlastních implementací. Některé služby podporuje víc instancí, zatímco ostatní může mít pouze jednu instanci. (Však také poskytuje služby na úrovni kontroleru; viz [-Controller konfigurace](#percontrollerconfig).
+**Služby** kolekce je inicializována s výchozí sadou služeb a může poskytnout vlastní vlastní implementace. Některé služby podporují více instancí, zatímco jiné můžou mít jenom jednu instanci. (Ale také může poskytovat služby na úrovni kontroleru; viz [konfigurace na Kontroleru](#percontrollerconfig).
 
 Jednou instancí služby
 
@@ -103,20 +102,20 @@ Jednou instancí služby
 | Služba | Popis |
 | --- | --- |
 | **IActionValueBinder** | Získá vazbu pro parametr. |
-| **IApiExplorer** | Získá popisy rozhraní API vystavené aplikace. V tématu [vytváření stránky nápovědy pro webové rozhraní API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
-| **IAssembliesResolver** | Získá seznam sestavení pro aplikaci. V tématu [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IBodyModelValidator** | Ověří model, který je číst z textu žádosti formátovací modul typu média. |
+| **IApiExplorer** | Získá popisy rozhraní API aplikace. Zobrazit [vytváření stránek nápovědy webového rozhraní API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
+| **IAssembliesResolver** | Získá seznam sestavení pro aplikaci. Zobrazit [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **IBodyModelValidator** | Ověří model, který je číst z textu požadavku formátovací modul typu média. |
 | **IContentNegotiator** | Provede vyjednávání obsahu. |
-| **IDocumentationProvider** | Poskytuje dokumentaci k rozhraní API. Výchozí hodnota je **null**. V tématu [vytváření stránky nápovědy pro webové rozhraní API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
+| **IDocumentationProvider** | Poskytuje dokumentaci pro rozhraní API. Výchozí hodnota je **null**. Zobrazit [vytváření stránek nápovědy webového rozhraní API](../getting-started-with-aspnet-web-api/creating-api-help-pages.md). |
 | **IHostBufferPolicySelector** | Určuje, zda by měl hostitel vyrovnávací paměti obsah entity zprávy HTTP. |
-| **IHttpActionInvoker** | Vyvolá akce kontroleru. V tématu [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpActionSelector** | Vybere akci kontroleru. V tématu [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpControllerActivator** | Aktivuje řadiči. V tématu [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpControllerSelector** | Vybere kontroler. V tématu [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **IHttpControllerTypeResolver** | Obsahuje seznam typů kontroleru webového rozhraní API v aplikaci. V tématu [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
-| **ITraceManager** | Inicializuje rámce pro trasování. V tématu [trasování v rozhraní ASP.NET Web API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
-| **ITraceWriter** | Poskytuje zapisovač trasování. Výchozí hodnota je zapisovač trasování "no-op". V tématu [trasování v rozhraní ASP.NET Web API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
-| **IModelValidatorCache** | Poskytuje mezipaměť validátory modelu. |
+| **IHttpActionInvoker** | Vyvolá akce kontroleru. Zobrazit [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **IHttpActionSelector** | Vybírá akci kontroleru. Zobrazit [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **IHttpControllerActivator** | Aktivuje kontroleru. Zobrazit [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **IHttpControllerSelector** | Vybere kontroler. Zobrazit [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **IHttpControllerTypeResolver** | Obsahuje seznam typů kontroleru webového rozhraní API v aplikaci. Zobrazit [směrování a výběr akce](../web-api-routing-and-actions/routing-and-action-selection.md). |
+| **ITraceManager** | Inicializuje rámce pro trasování. Zobrazit [trasování v rozhraní ASP.NET Web API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
+| **ITraceWriter** | Poskytuje zapisovač trasování. Výchozí hodnota je zápis trasování "no-op". Zobrazit [trasování v rozhraní ASP.NET Web API](../testing-and-debugging/tracing-in-aspnet-web-api.md). |
+| **IModelValidatorCache** | Poskytuje mezipaměť validátorů modelů. |
 
 Více instancí služby
 
@@ -126,29 +125,29 @@ Více instancí služby
 |    <strong>IFilterProvider</strong>     |                                                                                           Vrátí seznam filtrů pro akce kontroleru.                                                                                           |
 |  <strong>ModelBinderProvider</strong>   |                                                                                                Vrátí vazač modelu pro daného typu.                                                                                                |
 | <strong>ModelMetadataProvider</strong>  |                                                                                                     Poskytuje metadata pro model.                                                                                                     |
-| <strong>ModelValidatorProvider</strong> |                                                                                                   Poskytuje validátor pro model.                                                                                                    |
-|  <strong>ValueProviderFactory</strong>  | Vytvoří zprostředkovatele hodnot. Další informace najdete v tématu Karel místo blogu [vytvoření zprostředkovatele vlastní hodnoty v WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |
+| <strong>ModelValidatorProvider</strong> |                                                                                                   Poskytuje validátor modelu.                                                                                                    |
+|  <strong>ValueProviderFactory</strong>  | Vytvoří zprostředkovatele hodnot. Další informace najdete v tématu Mike koutů blogovém příspěvku [vytvoření zprostředkovatele vlastní hodnoty v WebAPI](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |
 
-Chcete-li přidat vlastní implementaci služby s více instancemi, volejte **přidat** nebo **vložit** na **služby** kolekce:
+Chcete-li přidat vlastní implementaci na více instancí služby, zavolejte **přidat** nebo **vložit** na **služby** kolekce:
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample5.cs)]
 
-Pokud chcete nahradit vlastní implementaci jedné instance služby, volání **nahradit** na **služby** kolekce:
+Chcete-li nahradit vlastní implementaci služby jednou instancí, zavolejte **nahradit** na **služby** kolekce:
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample6.cs)]
 
 <a id="percontrollerconfig"></a>
-## <a name="per-controller-configuration"></a>Konfigurace Kontroleru
+## <a name="per-controller-configuration"></a>Konfigurace na Kontroleru
 
-Můžete přepsat na základě-controller následující nastavení:
+Můžete přepsat následující nastavení na základě na kontroleru:
 
-- Formátovací moduly typu média
+- Formátovací moduly typu médií
 - Parametr vazby pravidla
 - Služby
 
-Uděláte to tak definovat vlastní atribut, který implementuje **IControllerConfiguration** rozhraní. Pak použijte atribut kontroleru.
+Uděláte to tak, definujte vlastní atribut, který implementuje **IControllerConfiguration** rozhraní. Potom použijte atribut pro kontroler.
 
-Následující příklad nahradí formátovací moduly typu média výchozí vlastní formátování.
+Následující příklad nahradí výchozí formátovací moduly typu médií vlastní formátovací modul.
 
 [!code-csharp[Main](configuring-aspnet-web-api/samples/sample7.cs)]
 
@@ -157,6 +156,6 @@ Následující příklad nahradí formátovací moduly typu média výchozí vla
 - **HttpControllerSettings** objektu
 - **HttpControllerDescriptor** objektu
 
-**HttpControllerDescriptor** obsahuje popis řadiči, který můžete zkontrolovat pro informační účely (k rozlišení dvou řadičích indikované).
+**HttpControllerDescriptor** obsahuje popis kontroler, který můžete prozkoumat k informačním účelům (například k rozlišení mezi dvěma řadiči).
 
-Použití **HttpControllerSettings** objekt, který chcete nakonfigurovat kontroleru. Tento objekt obsahuje podmnožinu konfigurační parametry, které je možné přepsat na základě-controller. Všechna nastavení, která Neměnit výchozí na globální **HttpConfiguration** objektu.
+Použití **HttpControllerSettings** objekt konfigurace kontroleru. Tento objekt obsahuje dílčí parametry konfigurace, které můžete přepsat na základě na kontroleru. Všechna nastavení, která Neměnit výchozí na globální **HttpConfiguration** objektu.

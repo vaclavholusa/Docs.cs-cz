@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-editor/creating-and-modifying-a-css-file
-title: Vytváření a úpravy souboru CSS | Microsoft Docs
+title: Vytváření a úpravy souboru CSS | Dokumentace Microsoftu
 author: tmiranda
-description: Toto video představuje funkce šablon stylů CSS styl sady Visual Studio 2008. Visual Studio 2008 šablon stylů CSS funkce můžete snadno vytvořit šablony stylů...
+description: Toto video představuje funkce šablon stylů CSS stylu sady Visual Studio 2008. Funkce šablon stylů CSS Visual Studio 2008 usnadňují vytváření šablony stylů...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
 ms.topic: article
 ms.assetid: e7c3b221-87ce-444e-9106-bb0609665009
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/creating-and-modifying-a-css-file
 msc.type: video
-ms.openlocfilehash: ee3f25281fed12b316e5b3db30e253f140c7ecfb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 51e96671ea4971b28d7e68392049eefdbc72918f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880814"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384261"
 ---
 <a name="creating-and-modifying-a-css-file"></a>Vytváření a úpravy souboru CSS
 ====================
 podle [Todd Miranda](https://github.com/tmiranda)
 
-Toto video představuje funkce šablon stylů CSS styl sady Visual Studio 2008. Visual Studio 2008 šablon stylů CSS funkce usnadňují vytváření šablony stylů a styly prostřednictvím rozhraní ve stylu vlastnost. Tím se odebere vývojář z nutnosti podrobnosti implementace šablon stylů CSS.
+Toto video představuje funkce šablon stylů CSS stylu sady Visual Studio 2008. Funkce šablon stylů CSS Visual Studio 2008 usnadňují vytváření šablony stylů a styly prostřednictvím vlastnosti stylu rozhraní. Tím se odebere vývojář z museli potýkat se podrobnosti implementace šablon stylů CSS.
 
 [&#9654;Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-and-modifying-a-css-file)
 

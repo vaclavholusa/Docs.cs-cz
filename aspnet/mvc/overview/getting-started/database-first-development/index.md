@@ -1,33 +1,32 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/index
-title: Začínáme s databáze Entity Framework 6 nejdřív pomocí MVC 5 | Microsoft Docs
+title: Začínáme s Entity Framework 6 Database nejdřív pomocí MVC 5 | Dokumentace Microsoftu
 author: rick-anderson
-description: Tato řada ukazuje způsob použití Database First vývoj pro vytváření aplikací MVC 5 s platformou Entity Framework
+description: Tato série ukazuje, jak používat Database First vývoje pro vytvoření aplikace MVC 5 s Entity Framework
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/17/2013
 ms.topic: article
 ms.assetid: 3437215a-c4ba-46ed-8378-d61c79c9d38c
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development
 msc.type: chapter
-ms.openlocfilehash: 5d31e4527305c4efd47f706c70a700d62d3d0896
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e80e1e9dc2cca42b065cdd3230ff3eeff998d0b2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26563716"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368542"
 ---
-<a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Začínáme s databáze Entity Framework 6 nejdřív pomocí MVC 5
+<a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Začínáme s Entity Framework 6 Database nejdřív pomocí MVC 5
 ====================
-> Tato řada ukazuje způsob použití Database First vývoj pro vytváření aplikací MVC 5 s platformou Entity Framework
+> Tato série ukazuje, jak používat Database First vývoje pro vytvoření aplikace MVC 5 s Entity Framework
 
 
 - [Začínáme s Entity Framework 6 Database First pomocí MVC 5](setting-up-database.md)
-- [Vytváření webové aplikace a datové modely](creating-the-web-application.md)
+- [Vytvoření webové aplikace a datových modelů](creating-the-web-application.md)
 - [Generování zobrazení](generating-views.md)
 - [Změna databáze](changing-the-database.md)
 - [Přizpůsobení zobrazení](customizing-a-view.md)
-- [Rozšíření ověřování dat](enhancing-data-validation.md)
-- [Publikování v Azure](publish-to-azure.md)
+- [Rozšířené ověřování dat](enhancing-data-validation.md)
+- [Publikování do Azure](publish-to-azure.md)

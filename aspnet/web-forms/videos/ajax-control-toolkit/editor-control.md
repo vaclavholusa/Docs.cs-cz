@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/editor-control
-title: Ovládací prvek editor | Microsoft Docs
+title: Ovládací prvek editoru | Dokumentace Microsoftu
 author: JoeStagner
-description: Toto video ukazují, jak používat nové řízení Editor WYSIWYG Editor z Toolkitu Microsoft AJAX.
+description: Toto video ukazuje, jak používat nový ovládací prvek editoru WYSIWYG editoru z Microsoft AJAX Control Toolkit.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/13/2009
 ms.topic: article
 ms.assetid: 8c766d28-60c0-423b-afaa-7cb2a93f8d7e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/editor-control
 msc.type: video
-ms.openlocfilehash: eb4368378d639691e67cc96964f7cbbc9bc0a98f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6498deb68897a81647c3478de2d1ab8939adbfb3
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882735"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37387348"
 ---
-<a name="editor-control"></a>Ovládací prvek
+<a name="editor-control"></a>Ovládací prvek editoru
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Toto video ukazují, jak používat nové řízení Editor WYSIWYG Editor z Toolkitu Microsoft AJAX.
+Toto video ukazuje, jak používat nový ovládací prvek editoru WYSIWYG editoru z Microsoft AJAX Control Toolkit.
 
 [&#9654;Podívejte se na video (4 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/editor-control)
 

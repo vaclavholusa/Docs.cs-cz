@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/measuring-the-business-value-of-ajax
-title: Měření obchodní hodnota AJAX | Microsoft Docs
+title: Měření obchodní hodnoty jazyka AJAX | Dokumentace Microsoftu
 author: rick-anderson
-description: Je dobře známé schopnost zvýšení uživatele webových aplikací ASP.NET AJAX. Pomocí sady Visual Studio Team System můžete měřit busine...
+description: ASP.NET AJAX je dobře známý schopnost vylepšit uživatelské prostředí webových aplikací. V aplikaci Visual Studio Team System můžete měřit busine...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2007
 ms.topic: article
 ms.assetid: 60bb771b-e938-490f-944e-c80bc6bbdc12
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/measuring-the-business-value-of-ajax
 msc.type: video
-ms.openlocfilehash: ef7569a5b4ac278f1bf7ac7f03e2ccf60408e5a1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7a4dcb19b5cab8dcb1f3834daa4aafa604fa9534
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895737"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385820"
 ---
-<a name="measuring-the-business-value-of-ajax"></a>Měření obchodní hodnota AJAX
+<a name="measuring-the-business-value-of-ajax"></a>Měření obchodní hodnoty jazyka AJAX
 ====================
-podle Erica Lee
+podle Eric Lee
 
-Je dobře známé schopnost zvýšení uživatele webových aplikací ASP.NET AJAX. Pomocí sady Visual Studio Team System můžete měřit obchodní hodnotu pro přidání prvku ASP.NET AJAX na webových aplikací. Konkrétně můžete schopnosti zatížení a testování webů nástroje Visual Studio Team System a prozkoumejte, jak rozdíl ve velikost přenosu dat HTTP ovlivňuje výkon a škálovatelnost charakteristiky webové aplikace.
+ASP.NET AJAX je dobře známý schopnost vylepšit uživatelské prostředí webových aplikací. V aplikaci Visual Studio Team System můžete také měření obchodní hodnoty jazyka ASP.NET AJAX přidání webových aplikací. Konkrétně můžete použít možnosti zatížení a testování webové aplikace Visual Studio Team System a prozkoumejte, jak ovlivňuje rozdíl v velikost přenosu dat HTTP charakteristiky výkonu a škálovatelnosti webové aplikace.
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/measuring-the-business-value-of-ajax)
 

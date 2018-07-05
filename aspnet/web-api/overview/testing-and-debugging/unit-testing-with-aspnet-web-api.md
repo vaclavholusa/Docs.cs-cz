@@ -1,35 +1,34 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
-title: Rozhraní ASP.NET Web API 2 testování částí | Microsoft Docs
+title: Testování rozhraní ASP.NET Web API 2 | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento pokyny a aplikace ukazují, jak vytvářet testy částí jednoduché pro vaši aplikaci webovém rozhraní API 2. Tento kurz ukazuje, jak zahrnout proj test jednotky...
+description: Tento průvodce a aplikace ukazují, jak vytvořit jednoduchý částí pro vaši aplikaci s webovým rozhraním API 2. Tento kurz ukazuje, jak zahrnout proj test jednotek...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2014
 ms.topic: article
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 4d6102dd81589e41894d8ecd95bf9ddd761a65bd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: da56b38809faf760b7c390eb76ac9c4556d635c6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28042742"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376171"
 ---
-<a name="unit-testing-aspnet-web-api-2"></a>Rozhraní ASP.NET Web API 2 testování částí
+<a name="unit-testing-aspnet-web-api-2"></a>Testování rozhraní ASP.NET Web API 2
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-[Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
 
-> Tento pokyny a aplikace ukazují, jak vytvářet testy částí jednoduché pro vaši aplikaci webovém rozhraní API 2. Tento kurz ukazuje, jak chcete zahrnout projektu testů jednotek ve vašem řešení a zapisovat zkušební metody, které zkontrolujte vrácené hodnoty z metody kontroleru.
+> Tento průvodce a aplikace ukazují, jak vytvořit jednoduchý částí pro vaši aplikaci s webovým rozhraním API 2. Tento kurz ukazuje, jak zahrnout projekt testu jednotek ve vašem řešení a zapisovat testovací metody, které zkontrolujte hodnoty vrácené z metody kontroleru.
 > 
-> Tento kurz předpokládá, že se seznámíte se základními koncepcemi rozhraní ASP.NET Web API. Úvodní kurz, najdete v části [Začínáme s ASP.NET Web API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md).
+> Tento kurz předpokládá, že jste obeznámeni se základními koncepcemi rozhraní ASP.NET Web API. Úvodní tutoriál naleznete v tématu [Začínáme s ASP.NET Web API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md).
 > 
-> Testování částí v tomto tématu jsou záměrně omezeny na jednoduché datové scénáře. Testování pokročilejší scénáře datových částí, najdete v části [Mocking Entity Framework při jednotky testování ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
+> Testování částí v tomto tématu jsou záměrně omezené na jednoduché datové scénáře. Testování pokročilejší scénáře datových částí, naleznete v tématu [vytvoření modelu Entity Framework při jednotky testování ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
@@ -42,16 +41,16 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 
 Toto téma obsahuje následující oddíly:
 
-- [Požadavky](#prereqs)
-- [Stáhněte si kód](#download)
-- [Vytvoření aplikace pomocí projektu testování částí](#appwithunittest)
+- [Požadované součásti](#prereqs)
+- [Stáhnout kód](#download)
+- [Vytvoření aplikace pomocí projektu testů jednotek](#appwithunittest)
 
-    - [Přidání projektu testů jednotek při vytváření aplikace](#whencreate)
-    - [Přidání projektu testů jednotek do existující aplikace](#addtoexisting)
-- [Nastavení aplikace webové rozhraní API 2](#setupproject)
-- [Instalace balíčků NuGet v testovacího projektu](#testpackages)
+    - [Přidejte projekt testu jednotek při vytváření aplikace](#whencreate)
+    - [Přidat projekt testování částí do existující aplikace](#addtoexisting)
+- [Nastavení aplikace webového rozhraní API 2](#setupproject)
+- [Instalace balíčků NuGet v projektu testů](#testpackages)
 - [Vytváření testů](#tests)
-- [Spouštění testů](#runtests)
+- [Spuštění testů](#runtests)
 
 <a id="prereqs"></a>
 ## <a name="prerequisites"></a>Požadavky
@@ -59,109 +58,109 @@ Toto téma obsahuje následující oddíly:
 Visual Studio 2017 Community, Professional nebo Enterprise edition
 
 <a id="download"></a>
-## <a name="download-code"></a>Stáhněte si kód
+## <a name="download-code"></a>Stáhnout kód
 
-Stažení [dokončený projekt](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11). Ke stažení projekt zahrnuje jednotka testovacího kódu pro toto téma a [Mocking Entity Framework při jednotky testování rozhraní ASP.NET Web API](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md) tématu.
+Stáhněte si [dokončený projekt](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11). Ke stažení projekt zahrnuje kód testu jednotek pro toto téma a [vytvoření modelu Entity Framework při jednotky testování webového rozhraní API ASP.NET](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md) tématu.
 
 <a id="appwithunittest"></a>
-## <a name="create-application-with-unit-test-project"></a>Vytvoření aplikace pomocí projektu testování částí
+## <a name="create-application-with-unit-test-project"></a>Vytvoření aplikace pomocí projektu testů jednotek
 
-Můžete buď vytvoření projektu testů jednotek při vytváření aplikace nebo přidání projektu testů jednotek do existující aplikace. Tento kurz ukazuje obě metody pro vytvoření projektu testování částí. Chcete-li v tomto kurzu, můžete použít buď způsob.
+Můžete buď při vytváření aplikace vytvořit projekt testování částí nebo přidat projekt testování částí do stávající aplikace. Tento kurz ukazuje obě metody pro vytvoření projektu testů jednotek. Chcete-li v tomto kurzu můžete použít kterýkoliv přístup.
 
 <a id="whencreate"></a>
-### <a name="add-unit-test-project-when-creating-the-application"></a>Přidání projektu testů jednotek při vytváření aplikace
+### <a name="add-unit-test-project-when-creating-the-application"></a>Přidejte projekt testu jednotek při vytváření aplikace
 
-Vytvoření nové webové aplikace ASP.NET s názvem **StoreApp**.
+Vytvořit novou webovou aplikaci ASP.NET s názvem **StoreApp**.
 
 ![Vytvoření projektu](unit-testing-with-aspnet-web-api/_static/image1.png)
 
-V systému windows nový projekt ASP.NET, vyberte **prázdný** šablony a přidat složky a základní odkazy pro webového rozhraní API. Vyberte **přidat testování částí** možnost. Automaticky s názvem projektu testování částí **StoreApp.Tests**. Můžete ponechat tento název.
+V oknech Nový projekt ASP.NET, vyberte **prázdný** šablony a přidat složky a základní odkazy pro webové rozhraní API. Vyberte **přidání jednotkových testů** možnost. Automaticky s názvem projektu testování částí **StoreApp.Tests**. Abyste mohli tento název.
 
-![Vytvoření projektu testování částí](unit-testing-with-aspnet-web-api/_static/image2.png)
+![Vytvořte projekt testu jednotek](unit-testing-with-aspnet-web-api/_static/image2.png)
 
-Po vytvoření aplikace, zobrazí se, že obsahuje dva projekty.
+Po vytvoření aplikace, uvidíte, že obsahuje dva projekty.
 
 ![dva projekty](unit-testing-with-aspnet-web-api/_static/image3.png)
 
 <a id="addtoexisting"></a>
-### <a name="add-unit-test-project-to-an-existing-application"></a>Přidání projektu testů jednotek do existující aplikace
+### <a name="add-unit-test-project-to-an-existing-application"></a>Přidat projekt testování částí do existující aplikace
 
-Pokud jste nevytvořili projektu testů jednotek při vytváření aplikace, můžete přidat jeden kdykoli. Předpokládejme například, že již máte aplikaci s názvem StoreApp a chcete přidat testování částí. Chcete-li přidat projektu testů jednotek, klikněte pravým tlačítkem na řešení a vyberte **přidat** a **nový projekt**.
+Pokud jste nevytvořili projekt testu jednotek při vytváření vaší aplikace, můžete přidat jednu kdykoli. Předpokládejme například, že již máte aplikaci s názvem StoreApp a chcete přidat testy jednotek. Chcete-li přidat projekt testování částí, klikněte pravým tlačítkem na řešení a vyberte **přidat** a **nový projekt**.
 
 ![Přidat nový projekt do řešení](unit-testing-with-aspnet-web-api/_static/image4.png)
 
-Vyberte **Test** v levém podokně a vyberte **projektu testování částí** pro typ projektu. Název projektu **StoreApp.Tests**.
+Vyberte **testovací** v levém podokně a vyberte **projekt testu jednotek** pro typ projektu. Pojmenujte projekt **StoreApp.Tests**.
 
-![Přidání projektu testování částí](unit-testing-with-aspnet-web-api/_static/image5.png)
+![přidejte projekt testu jednotek](unit-testing-with-aspnet-web-api/_static/image5.png)
 
-Zobrazí se projektu testů jednotek ve vašem řešení.
+Projekt testu jednotek se zobrazí ve vašem řešení.
 
-V projektu testování částí přidáte odkaz na projekt na původní projekt.
+V projektu testování částí přidejte odkaz na projekt do původního projektu.
 
 <a id="setupproject"></a>
-## <a name="set-up-the-web-api-2-application"></a>Nastavení aplikace webové rozhraní API 2
+## <a name="set-up-the-web-api-2-application"></a>Nastavení aplikace webového rozhraní API 2
 
-V projektu StoreApp přidat třídu soubor, který chcete **modely** složku s názvem **Product.cs**. Obsah souboru nahraďte následujícím kódem.
+V projektu StoreApp, přidejte soubor třídy do **modely** složku s názvem **Product.cs**. Obsah souboru nahraďte následujícím kódem.
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample1.cs)]
 
 Sestavte řešení.
 
-Klikněte pravým tlačítkem na složku řadiče a vyberte **přidat** a **novou vygenerovanou položku**. Vyberte **prázdný kontroler – rozhraní Web API 2**.
+Klikněte pravým tlačítkem na složku řadiče a vyberte **přidat** a **novou vygenerovanou položku**. Vyberte **rozhraní Web API 2 kontroler – prázdný**.
 
-![Přidat nový řadič](unit-testing-with-aspnet-web-api/_static/image6.png)
+![Přidat nový kontroler](unit-testing-with-aspnet-web-api/_static/image6.png)
 
-Nastavte název řadiče na **SimpleProductController**a klikněte na tlačítko **přidat**.
+Nastavte název kontroleru **SimpleProductController**a klikněte na tlačítko **přidat**.
 
-![Zadejte řadič](unit-testing-with-aspnet-web-api/_static/image7.png)
+![Zadejte kontroler](unit-testing-with-aspnet-web-api/_static/image7.png)
 
-Existujícího kódu nahraďte následujícím kódem. Pro zjednodušení tento příklad, jsou data uložena v seznamu místo databáze. V seznamu definované v této třídě představuje provozními daty. Všimněte si, že je řadič obsahuje konstruktor, který přebírá jako parametr seznam objektů produktu. Tento konstruktor umožňuje předat testovací data při testování částí. Řadičem také zahrnuje dvě **asynchronní** metody pro ilustraci asynchronních metod testování částí. Tyto asynchronní metody, které byly implementovány voláním **Task.FromResult** minimalizovat nadbytečné kód, ale obvykle metody by mělo zahrnovat náročná operace.
+Nahraďte stávající kód následujícím kódem. Pro zjednodušení tento příklad, jsou data uložená v seznamu, nikoli databázi. Seznam definované v této třídě představuje produkční data. Všimněte si, že kontroler obsahuje konstruktor, který jako parametr používá seznam objektů produktu. Tento konstruktor umožňuje předat testovacích dat při testování částí. Kontroler také zahrnuje dva **asynchronní** metody pro ilustraci asynchronních metod testování částí. Asynchronní metody byly implementované voláním **Task.FromResult** minimalizovat cizí kód, ale obvykle metody bude zahrnovat náročná operace.
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-Metoda GetProduct vrací instanci třídy **IHttpActionResult** rozhraní. IHttpActionResult je jednou z nových funkcí ve webovém rozhraní API 2 a usnadňují vývoj testů jednotek. Třídy, které implementují rozhraní IHttpActionResult se nacházejí v [System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) oboru názvů. Tyto třídy představují možné odpovědí z akcí žádosti a odpovídají stavové kódy HTTP.
+Metoda GetProduct vrátí instanci **IHttpActionResult** rozhraní. IHttpActionResult je jedním z nových funkcí ve webovém rozhraní API 2 a zjednodušuje vývoj jednotkových testů. Třídy, které implementují rozhraní IHttpActionResult se nacházejí v [System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) oboru názvů. Tyto třídy představují možné odpovědi z požadavku akce a odpovídají stavové kódy HTTP.
 
 Sestavte řešení.
 
-Teď jste připravení nastavit k testovacímu projektu.
+Nyní jste připraveni nastavit testovacího projektu.
 
 <a id="testpackages"></a>
-## <a name="install-nuget-packages-in-test-project"></a>Instalace balíčků NuGet v testovacího projektu
+## <a name="install-nuget-packages-in-test-project"></a>Instalace balíčků NuGet v projektu testů
 
-Použijete-li vytvořit aplikaci prázdnou šablonou, projektu testování částí (StoreApp.Tests) neobsahuje žádné nainstalované balíčky NuGet. Další šablony, jako je například šabloně webového rozhraní API zahrnout některé balíčky NuGet do projektu testování částí. V tomto kurzu musí zahrnovat balíček Microsoft ASP.NET Web API 2 jádra pro projekt test.
+Když použijete prázdnou šablonu k vytvoření aplikace, projekt testu jednotek (StoreApp.Tests) neobsahuje žádné nainstalované balíčky NuGet. Další šablony, jako je například šabloně webového rozhraní API patří některé balíčky NuGet v projektu testování částí. Pro účely tohoto kurzu musí zahrnovat balíček Microsoft ASP.NET Web API 2 Core do testovacího projektu.
 
-Klikněte pravým tlačítkem na projekt StoreApp.Tests a vyberte **spravovat balíčky NuGet**. Je třeba vybrat StoreApp.Tests projektu přidat balíčky do daného projektu.
+Klikněte pravým tlačítkem na projekt StoreApp.Tests a vyberte **spravovat balíčky NuGet**. Je nutné vybrat projekt StoreApp.Tests přidat balíčky pro tento projekt.
 
 ![Správa balíčků](unit-testing-with-aspnet-web-api/_static/image8.png)
 
 Najít a nainstalovat balíček Microsoft ASP.NET Web API 2 jádra.
 
-![instalovat balíček základní webové rozhraní api](unit-testing-with-aspnet-web-api/_static/image9.png)
+![Nainstalujte balíček základního webového rozhraní api](unit-testing-with-aspnet-web-api/_static/image9.png)
 
 Zavřete okno Spravovat balíčky NuGet.
 
 <a id="tests"></a>
 ## <a name="create-tests"></a>Vytváření testů
 
-Ve výchozím nastavení zahrnuje soubor prázdný test s názvem UnitTest1.cs testovacího projektu. Tento soubor obsahuje atributy že použijete k vytvoření testovací metody. Testy jednotek můžete použít tento soubor nebo je možné vytvořit svůj vlastní soubor.
+Ve výchozím nastavení obsahuje soubor prázdný test s názvem UnitTest1.cs testovacího projektu. Tento soubor obsahuje atributy, že pomocí kterých lze vytvářet testovací metody. Pro testy jednotky můžete použít tento soubor nebo vytvořte svůj vlastní soubor.
 
 ![UnitTest1](unit-testing-with-aspnet-web-api/_static/image10.png)
 
-V tomto kurzu vytvoříte vlastní třídu testu. Soubor UnitTest1.cs můžete odstranit. Přidejte třídu s názvem **TestSimpleProductController.cs**a kódu nahraďte následujícím kódem.
+V tomto kurzu vytvoříte testovací třídy. Můžete odstranit soubor UnitTest1.cs. Přidejte třídu pojmenovanou **TestSimpleProductController.cs**a nahraďte kód následujícím kódem.
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample3.cs)]
 
 <a id="runtests"></a>
 ## <a name="run-tests"></a>Spouštění testů
 
-Nyní jste připraveni ke spuštění testů. Všechny metody, které jsou označené **TestMethod** atribut bude být testována. Z **Test** položky nabídky, spusťte testy.
+Nyní jste připraveni ke spuštění testů. Všechny metody, která jsou označena **TestMethod** atribut bude ověřovat. Z **Test** položku nabídky, spusťte testy.
 
 ![Provádění testů](unit-testing-with-aspnet-web-api/_static/image11.png)
 
-Otevřete **Průzkumníka testů** okně a Všimněte si výsledky testů.
+Otevřít **Průzkumník testů** okně a Všimněte si, že výsledky testů.
 
 ![výsledky testu](unit-testing-with-aspnet-web-api/_static/image12.png)
 
 ## <a name="summary"></a>Souhrn
 
-Dokončení tohoto kurzu. Data v tomto kurzu se záměrně zjednodušené zaměřit se na jednotce testování podmínky. Testování pokročilejší scénáře datových částí, najdete v části [Mocking Entity Framework při jednotky testování ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
+Dokončili jste tento kurz. Data v tomto kurzu se záměrně zjednodušená zaměřit se na testování podmínek. Testování pokročilejší scénáře datových částí, naleznete v tématu [vytvoření modelu Entity Framework při jednotky testování ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).

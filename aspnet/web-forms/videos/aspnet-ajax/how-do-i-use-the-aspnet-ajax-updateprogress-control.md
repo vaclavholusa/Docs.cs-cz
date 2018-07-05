@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-control
-title: '[Jak na:] Použití ovládacího prvku ASP.NET AJAX UpdateProgress? | Microsoft Docs'
+title: '[Postup:] Pomocí ovládacího prvku ASP.NET AJAX UpdateProgress? | Dokumentace Microsoftu'
 author: JoeStagner
-description: V aplikaci AJAX je často znatelné pozastavení mezi době, kdy prohlížeč odešle požadavek sítě a časem v prohlížeči obdrží odpověď. T...
+description: V aplikaci AJAX často dochází znatelný pozastavení mezi čas, kdy prohlížeč odešle požadavek sítě a doby prohlížeč obdrží odpověď. T....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2007
 ms.topic: article
 ms.assetid: fadc5c5a-e481-4472-b339-715cc036dc4e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-control
 msc.type: video
-ms.openlocfilehash: f38d2ea2db59fa830aa200b9718000ed35566271
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b7a5f74041c849251273c4864f5c03ab1af24e59
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886495"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37387361"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-updateprogress-control"></a>[Jak na:] Použití ovládacího prvku ASP.NET AJAX UpdateProgress?
+<a name="how-do-i-use-the-aspnet-ajax-updateprogress-control"></a>[Postup:] Pomocí ovládacího prvku ASP.NET AJAX UpdateProgress?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-V aplikaci AJAX je často znatelné pozastavení mezi době, kdy prohlížeč odešle požadavek sítě a časem v prohlížeči obdrží odpověď. Aby mohl uživatel vědět, že síťovou konverzaci probíhající, UpdateProgress AJAX technologie ASP.NET poskytuje ovládací prvek okamžitou zpětnou vazbu zobrazením animovaný bitové kopie, 'načítání' text nebo jiné HTML, které zmizí po obdržení odpovědi sítě.
+V aplikaci AJAX často dochází znatelný pozastavení mezi čas, kdy prohlížeč odešle požadavek sítě a doby prohlížeč obdrží odpověď. Ovládací prvek, umožníte uživateli vědět, že síťovou konverzaci probíhat, UpdateProgress AJAX technologie ASP.NET poskytuje okamžitou zpětnou vazbu zobrazením animovaný obrázek, text "načítání" nebo jiné HTML, která zmizí, jakmile obdrží odpověď sítě.
 
 [&#9654;Podívejte se na video (6 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-updateprogress-control)
 

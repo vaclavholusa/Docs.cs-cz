@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
-title: 'Jak na: implementace zobrazení modely, které budou spravovat Data pro zobrazení v rozhraní ASP.NET MVC? | Microsoft Docs'
+title: 'Postup: implementace modelů zobrazení kvůli správě dat v zobrazeních ASP.NET MVC? | Dokumentace Microsoftu'
 author: rick-anderson
-description: V tomto videu Jan PEL ukazuje, jak použít koncept &quot;modelu zobrazení&quot; pro správu dat pro zobrazení ASP.NET MVC. Ukázkový projekt MVC je nejprve vytvořit...
+description: V tomto videu pixelů na Chris ukazuje způsob použití konceptu &quot;Model zobrazení&quot; pro správu dat pro zobrazení ASP.NET MVC. Ukázkový projekt MVC je nejprve vytv...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/11/2009
 ms.topic: article
 ms.assetid: 22f55d63-78f7-44fd-9107-f74cbe16022b
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views
 msc.type: video
-ms.openlocfilehash: 95be7e6bdbefe3f988fbc4065a8298395fb3ac89
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f0713b87dc6455016de921998a994f8bca7dd8bc
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871191"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378083"
 ---
-<a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>Jak na: implementace zobrazení modely, které budou spravovat Data pro zobrazení v rozhraní ASP.NET MVC?
+<a name="how-do-i-implement-view--models-to-manage-data-for-aspnet-mvc-views"></a>Postup: implementace modelů zobrazení kvůli správě dat v zobrazeních ASP.NET MVC?
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan ukazuje, jak použít koncept "Model zobrazení" pro správu dat pro zobrazení ASP.NET MVC. Nejprve je vytvoří ukázkový MVC projekt, který používá ViewDataDictionary balíček a předat data z řadiče zobrazení. Dále třídu je vytvořen, který představuje zobrazení modelu pro zobrazení v ukázkový projekt MVC. Jako součást této implementaci jsou popsané výhody tohoto přístupu zobrazení modelu. Nakonec je diskuse o tom, jak oddílu aplikační logiku při použití na implementace zobrazení modelu.
+V toto video pixelů na Chris ukazuje způsob použití pojmu "Model zobrazení" pro správu dat pro zobrazení ASP.NET MVC. Nejprve se vytvoří ukázkový projekt MVC, která používá objektu ViewDataDictionary balení a předání dat z kontroleru zobrazení. V dalším kroku se vytvoří třídu, která představuje model zobrazení pro zobrazení v ukázkový projekt MVC. Jako součást této implementaci jsou popsané výhody přístupu modelu zobrazení. Nakonec je diskuse o tom, jak rozdělit logiku aplikace při používání implementace modelu zobrazení.
 
 [&#9654;Podívejte se na video (21 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views)
 

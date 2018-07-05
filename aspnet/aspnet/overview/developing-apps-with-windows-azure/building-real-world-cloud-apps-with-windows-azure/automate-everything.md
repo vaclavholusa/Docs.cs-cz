@@ -1,77 +1,76 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
-title: Automatizovat vše (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Automatizace všechno, co (sestavování skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 45d3d72454852217303050d17b678c4a5710dcb5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "30875172"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376780"
 ---
-<a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatizovat vše (vytváření reálných cloudových aplikací s Azure)
+<a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatizace všechno, co (sestavování skutečných cloudových aplikací s Azure)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Úvod do e adresáře, najdete v části [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Úvod do e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Prvních tří vzorů, které podíváme ve skutečnosti použít k žádným projektem vývoj softwaru, ale hlavně pro projekty cloudových. Tento vzor je o automatizaci úloh vývoj. Je důležité tématu, protože manuální procesy pomalé a náchylný; automatizace, kolik z nich možné pomáhá nastavit rychlé, spolehlivé a agilní pracovní postup. Je jednoznačně důležité pro vývoj cloudové protože snadno můžete automatizovat řadu úkolů, které je obtížné nebo dokonce znemožňují k automatizaci v místním prostředí. Například můžete nastavit celou testovací prostředí, včetně nového webového serveru a back-end virtuálních počítačů, databází, blob storage (úložiště souborů), fronty, atd.
+První tři vzory, které se podíváme na ve skutečnosti platí do jakéhokoli projektu vývoje softwaru, ale především pro projekty v cloudu. Tento model je o automatizaci úkolů vývoje. Je důležité tématu, protože ruční procesy jsou pomalé a náchylné; automatizace, kolik z nich, je to možné pomáhá nastavit rychlé, spolehlivé a flexibilní pracovní postup. Je jednoznačně důležité pro vývoj pro cloud, protože můžete snadno automatizovat mnoho úloh, které je obtížné či nemožné automatizace v místním prostředí. Například můžete nastavit celou testovací prostředí, včetně nového webovém serveru a back endové virtuální počítače, databáze, blob storage (úložiště souborů), fronty, atd.
 
 ## <a name="devops-workflow"></a>Pracovní postup DevOps
 
-Stále uslyšíte termín "DevOps." Termín vyvinuté mimo rozpoznávání, budete muset integrovat vývoj a provoz úloh a vývoji softwaru efektivně. Druh pracovního postupu, který chcete povolit je taková, ve kterém můžete vyvíjet aplikace, nasazení, dozvědět se od produkční použití ho, změnit v reakci na co když jste se naučili a opakujte cyklus rychle a spolehlivě.
+Stále uslyšíte termín "DevOps." Výraz vyvinuté mimo rozpoznávání nutné integrovat úlohy vývoje a provozu, abyste mohli efektivně vyvíjet software. Typ pracovního postupu, který chcete povolit je jedna, ve kterém můžete vyvíjet aplikace, nasaďte ji, Učte se od produkční účely v jeho, změňte ji v reakci na co jste se naučili a opakovat cyklus rychle a spolehlivě.
 
-Některé vývojové týmy úspěšné cloudu nasadit několikrát za den za provozu prostředí. Tým Azure použít k nasazení hlavní každé 2 – 3 měsíce, ale nyní jej aktualizovat verze dílčími aktualizacemi každé 2 až 3 dny a hlavní verze každé 2 až 3 týdny. Získávání do této cadence skutečně vám pomůže se reaguje na názory zákazníků.
+Některé vývojové týmy úspěšní cloudoví nasadit více než jednou za den na živém prostředí. Tým Azure použít k nasazení hlavní aktualizace každé 2 až 3 měsíce, ale teď ji verze menší každé 2 – 3 dny a hlavní verzí každé 2 až 3 týdny. Certifikace do tohoto tempo ve skutečnosti vám pomůže se reagovat na zpětnou vazbu od zákazníků.
 
-Aby bylo možné provést, je třeba povolit cyklus vývoj a nasazení, který je opakovatelných, spolehlivé, předvídatelný a nízkou cyklus doby.
+Aby bylo možné provést, budete muset povolit cyklu vývoje a nasazení opakovatelným, spolehlivý a předvídatelný a má nízkou cyklu.
 
 ![Pracovní postup DevOps](automate-everything/_static/image1.png)
 
-Doba mezi Pokud máte představu pro funkci a když jsou zákazníci použití a poskytování zpětné vazby jinými slovy, musí být co nejkratší. První tři vzory – automatizovat vše, Správa zdrojového kódu a průběžnou integraci a doručení – jsou všechny informace o doporučených postupech, které doporučujeme, aby bylo možné povolit tento druh procesu.
+Jinými slovy musí být časový úsek mezi Pokud máte nápad na funkci a když se zákazníci jeho použití a poskytnutí zpětné vazby co nejkratší. První tři vzory – plná, správy zdrojového kódu, automatizace a průběžnou integraci a doručování – se používají osvědčené postupy, které doporučujeme, aby bylo možné povolit tento druh procesu.
 
 ## <a name="azure-management-scripts"></a>Skripty pro správu Azure
 
-V [Úvod do této e knihy](introduction.md), jste viděli webové konzoly, portálu pro správu Azure. Portálu pro správu umožňuje sledovat a spravovat všechny prostředky, které jste nasadili v Azure. Je snadný způsob, jak vytvořit a odstranění služeb jako třeba webové aplikace a virtuálních počítačů, tyto služby konfigurovat, sledovat operace služby a tak dále. Je skvělý nástroj, ale jeho použití je ruční proces. Pokud budete vyvíjet produkční aplikace libovolnou velikost, a hlavně v prostředí team, doporučujeme, aby přejděte prostřednictvím portálu uživatelského rozhraní, chcete-li další informace a seznamte se s Azure a poté automatizaci procesů, které jste budete by opakovaně.
+V [Úvod do e kniha](introduction.md), jste viděli webové konzoly na portálu pro správu Azure. Na portálu pro správu umožňuje monitorovat a spravovat všechny prostředky, které jste nasadili v Azure. Je snadný způsob, jak vytvářet a odstraňovat služeb, jako je webové aplikace a virtuální počítače, tyto služby konfigurovat, monitorovat operace služby a tak dále. Je to skvělý nástroj, ale jeho pomocí provádí ručně. Pokud se chystáte vyvíjet produkční aplikace všech velikostí a obzvláště v prostředí team, doporučujeme projít uživatelského rozhraní, pokud chcete další informace a prozkoumat Azure portal a potom automatizovat procesy, které budete opakovaně dělat.
 
-Téměř vše, co můžete udělat ručně v portálu pro správu nebo ze sady Visual Studio můžete také provést volání rozhraní API REST správy. Můžete napsat skripty s použitím [prostředí Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx), nebo můžete použít otevřeným zdrojem framework [Chef](http://www.opscode.com/chef/) nebo [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Můžete také použít nástroj příkazového řádku Bash v prostředí Mac nebo Linux. Azure má skriptování rozhraní API pro tyto různých prostředích, která je [rozhraní API pro správu .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) v případě, že chcete napsat kód místo skriptu.
+Téměř vše, co můžete udělat ručně v portálu pro správu nebo ze sady Visual Studio je možné provést pomocí volání rozhraní API pro správu REST. Můžete psát skripty pomocí [prostředí Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx), nebo můžete použít open source architektura [Chef](http://www.opscode.com/chef/) nebo [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Můžete také použít nástroj příkazového řádku prostředí Bash v prostředí Mac nebo Linux. Azure nemá skriptovací rozhraní API pro těchto různých prostředích a má [.NET API pro správu](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) v případě, že chcete napsat kód namísto skriptu.
 
-Aplikaci, opravte ji vytvořili jsme některé skripty prostředí Windows PowerShell, které automatizují procesy vytváření testovacího prostředí a nasazení projektu do prostředí a přečtěte část obsah těchto skriptů.
+Aplikace Fix It jsme vytvořili několik prostředí Windows PowerShell skripty, které automatizují procesy vytváření testovacího prostředí a nasazení projektu do daného prostředí. proto si probereme některé obsah těchto skriptů.
 
 ## <a name="environment-creation-script"></a>Vytvoření skriptu prostředí
 
-Je název první skriptu podíváme *New-AzureWebsiteEnv.ps1*. Vytvoří prostředí Azure, můžete nasadit opravte ji aplikaci pro testování. Hlavní úlohy, které tento skript provede jsou následující:
+První skript podíváme na jmenuje *New-AzureWebsiteEnv.ps1*. Vytvoří prostředí Azure, můžete nasadit Fix It aplikaci pro účely testování. Hlavní úkoly, které tento skript provádí jsou následující:
 
 - Vytvoření webové aplikace.
-- Vytvoření účtu úložiště. (Požadováno pro objekty BLOB a fronty, jak uvidíte v dalších kapitolách.)
-- Vytvoření databáze SQL serveru a dvě databáze: aplikační databáze a databáze členství.
-- Ukládání nastavení v Azure, která aplikace bude používat pro přístup k účtu úložiště a databáze.
-- Vytvořte soubory nastavení, které se použijí k automatizaci nasazení.
+- Vytvoření účtu úložiště. (Vyžadováno pro objekty BLOB a fronty, jak uvidíte v dalších kapitolách.)
+- Vytvoření databáze SQL serveru a dvě databáze: databáze aplikace a databáze členství.
+- Store nastavení v Azure, která aplikace bude používat pro přístup k účtu úložiště a databáze.
+- Vytvoření souborů s nastavením, které se použijí k automatizaci nasazení.
 
 ### <a name="run-the-script"></a>Spusťte skript
 
 
 > [!NOTE]
-> Tato část kapitoly jsou uvedeny příklady skripty a příkazy, které zadáte, aby bylo možné spustit. Tuto ukázku a neposkytuje všechno, co potřebujete vědět, aby bylo možné spustit skripty. Podrobné pokyny how-k-proveďte it, najdete v [příloha: Opravte ji ukázka Application](the-fix-it-sample-application.md#deploybase).
+> Tato část kapitoly zobrazuje příklady, které zadáte, aby bylo možné je spouštět příkazy a skripty. Tato ukázka a neposkytuje všechno, co potřebujete vědět, chcete-li spustit skripty. Podrobné postupy-k-it pokyny najdete v tématu [příloha: Opravte ji ukázkové aplikace](the-fix-it-sample-application.md#deploybase).
 
 
-Chcete-li spustit skript prostředí PowerShell, který spravuje služby Azure, budete muset nainstalovat konzoly Azure PowerShell a nakonfigurovat ho na spolupráci s předplatným Azure. Po nastavení, můžete spustit opravte ji prostředí vytvoření skriptu pomocí příkazu podobné následujícímu:
+Chcete-li spustit skript prostředí PowerShell, který spravuje služby Azure, které je nutné nainstalovat konzolu prostředí Azure PowerShell a nakonfigurujte ho na spolupráci s vaším předplatným Azure. Po nastavení, můžete spustit Fix It prostředí vytváření skriptu s příkaz podobný následujícímu:
 
 `.\New-AzureWebsiteEnv.ps1 -Name <websitename> -SqlDatabasePassword <password>`
 
-`Name` Parametr určuje název, který se má použít při vytváření databáze a úložiště účtů a `SqlDatabasePassword` parametr určuje heslo pro účet správce, který se vytvoří pro databázi SQL. Existují další parametry, které můžete použít, podíváme později.
+`Name` Parametr určuje název, který má použít při vytváření účtů databáze a úložišť a `SqlDatabasePassword` parametr určuje heslo pro účet správce, která bude vytvořena pro službu SQL Database. Existují další parametry, které můžete použít, že se podíváme na později.
 
 ![Okno prostředí PowerShell](automate-everything/_static/image2.png)
 
@@ -85,102 +84,102 @@ Po dokončení skriptu uvidíte na portálu management portal, co byl vytvořen.
 
 A webové aplikace:
 
-![Webový server](automate-everything/_static/image5.png)
+![Webové stránky](automate-everything/_static/image5.png)
 
-Na **konfigurace** kartě pro webovou aplikaci, uvidíte, že má nastavení účtu úložiště a připojovací řetězce SQL databáze nastavení pro opravu jeho aplikace.
+Na **konfigurovat** karta pro webovou aplikaci, uvidíte, že má nastavení účtu úložiště a připojovací řetězce databáze SQL nastavené pro opravu jeho aplikaci.
 
 ![appSettings a connectionStrings](automate-everything/_static/image6.png)
 
-*Automatizace* složka teď také obsahuje  *&lt;zadaným hodnotám websitename&gt;.pubxml* souboru. Tento soubor uchovává nastavení, která MSBuild použijete k nasazení aplikace do prostředí Azure, kterou jste právě vytvořili. Příklad:
+*Automatizace* složka teď obsahuje také  *&lt;zadaným hodnotám websitename&gt;.pubxml* souboru. Tento soubor uchovává nastavení, které MSBuild použijete k nasazení aplikace do prostředí Azure, kterou jste právě vytvořili. Příklad:
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 
-Jak vidíte, skript vytvořil dokončení testovacího prostředí a celý proces se provádí v přibližně 90 sekund.
+Jak je vidět, skript vytvořil dokončení testovacího prostředí a celý proces se provádí v přibližně 90 sekund.
 
-Pokud někdo na váš tým chce vytvořit testovací prostředí, mohou pouze spouštět skript. Jenom je rychlý, ale také může být jistý, že používají stejný jako ten, který používáte prostředí. Nepodařilo se poměrně jako jisti této, pokud všichni byla nastavení věcí ručně pomocí portálu pro správu uživatelského rozhraní.
+Pokud někdo ve vašem týmu chce vytvořit testovací prostředí, lze pouze spustit skript. Nejenže je rychlý, ale také mohli být jistí, že používáte stejný jako ten, který používáte prostředí. Nebylo možné úplně jistí, který pokud všem uživatelům se nastavit věci ručně pomocí portálu pro správu uživatelského rozhraní.
 
-### <a name="a-look-at-the-scripts"></a>Podívejte se na tyto skripty
+### <a name="a-look-at-the-scripts"></a>Podívejte se na skripty
 
-Existují ve skutečnosti tři skripty, které tuto práci. Můžete volat z příkazového řádku a automaticky použije další dvě udělat některé úlohy:
+Nejsou ve skutečnosti tři skripty, které tuto práci. Můžete volat z příkazového řádku a automaticky použije další dvě provést některé úlohy:
 
 - *Nové AzureWebSiteEnv.ps1* je hlavního skriptu.
 
     - *Nové AzureStorage.ps1* vytvoří účet úložiště.
     - *Nové AzureSql.ps1* vytvoří databáze.
 
-### <a name="parameters-in-the-main-script"></a>Parametry v hlavního skriptu
+### <a name="parameters-in-the-main-script"></a>Parametry v hlavním skriptu
 
-Hlavní skriptu *New-AzureWebSiteEnv.ps1*, definuje několik parametrů:
+Hlavní skript *New-AzureWebSiteEnv.ps1*, definuje několik parametrů:
 
 [!code-powershell[Main](automate-everything/samples/sample2.ps1)]
 
 Jsou vyžadovány dva parametry:
 
-- Název webové aplikace, kterou vytvoří skript. (Používá se také pro adresu URL: `<name>.azurewebsites.net`.)
-- Heslo pro nového správce databáze serveru, který vytvoří skript.
+- Název webové aplikace, které skript vytvoří. (To se také používá pro adresu URL: `<name>.azurewebsites.net`.)
+- Heslo pro nového správce databázového serveru, který vytvoří skript.
 
-Volitelné parametry umožňují určit umístění center dat (výchozí hodnota je "Západní USA"), správce název databázového serveru (výchozí hodnota je "dbuser") a pravidla brány firewall pro server databáze.
+Volitelné parametry umožňují určit umístěním datového centra (výchozí nastavení "Západní USA"), správce název databázového serveru (výchozí nastavení "dbuser") a pravidla brány firewall pro databázový server.
 
 ### <a name="create-the-web-app"></a>Vytvoření webové aplikace
 
-První věc skript nemá, je vytvoření webové aplikace pomocí volání `New-AzureWebsite` rutiny předávání v k němu webovou aplikaci název a umístění hodnoty parametrů:
+První věc, kterou skriptu je vytvoření webové aplikace pomocí volání `New-AzureWebsite` rutiny předáním ve webové aplikaci hodnoty název a umístění parametru:
 
 [!code-powershell[Main](automate-everything/samples/sample3.ps1?highlight=2)]
 
-### <a name="create-the-storage-account"></a>Vytvořit účet úložiště
+### <a name="create-the-storage-account"></a>Vytvoření účtu úložiště
 
-Potom hlavní skript se spustí <em>New-AzureStorage.ps1</em> skriptu, zadání "<em>&lt;zadaným hodnotám websitename&gt;</em>úložiště" pro název účtu úložiště a stejná data center umístění jako webové aplikace.
+Pak hlavní skript se spustí <em>New-AzureStorage.ps1</em> skriptu, určení "<em>&lt;zadaným hodnotám websitename&gt;</em>úložiště" pro název účtu úložiště a stejné datové centrum jako umístění webové aplikace.
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 
-*Nové AzureStorage.ps1* volání `New-AzureStorageAccount` vytvořte účet úložiště a vrátí účet názvem a přístupovým klíčové hodnoty. Aplikace bude nutné tyto hodnoty pro přístup k objektům BLOB a fronty v účtu úložiště.
+*Nové AzureStorage.ps1* volání `New-AzureStorageAccount` rutina pro vytvoření účtu úložiště a vrátí účet klíčové hodnoty názvu a přístup. Aplikace tyto hodnoty budete potřebovat pro přístup k objektům BLOB a fronty v účtu úložiště.
 
 [!code-powershell[Main](automate-everything/samples/sample5.ps1?highlight=2)]
 
-Nemusí se vždy chcete vytvořit nový účet úložiště; skript může zvýšit tak, že přidáte parametr, který volitelně přesměruje ho na použití existující účet úložiště.
+Vždy nebudete chtít vytvořit nový účet úložiště; skript může vylepšit tak, že přidáte parametr, který volitelně přesměruje ho na použití existující účet úložiště.
 
-### <a name="create-the-databases"></a>Vytvoření databáze
+### <a name="create-the-databases"></a>Vytvoření databází
 
-Hlavního skriptu pak spustí skript vytvoření databáze, *New-AzureSql.ps1*, po nastavení výchozí databáze a názvy pravidel brány firewall:
+Pak spustí skript vytvoření databáze, hlavního skriptu *New-AzureSql.ps1*, po nastavení výchozí databáze a názvy pravidel brány firewall:
 
 [!code-powershell[Main](automate-everything/samples/sample6.ps1)]
 
 [!code-powershell[Main](automate-everything/samples/sample7.ps1?highlight=2)]
 
-Vytvoření databázového skriptu načte vývojářském počítači IP adresu a nastaví pravidlo brány firewall tak, aby vývojářském počítači můžete připojit k a správě serveru. Vytvoření databázového skriptu pak prochází nastavte databáze několik kroků:
+Skript vytvoření databáze načte vývojového počítače IP adresu a nastaví pravidlo brány firewall, tak vývojovém počítači můžete připojit k a správě serveru. Vytvoření skriptu databáze dále prochází kroky k několika kroky k nastavení databáze:
 
-- Vytvoří server pomocí `New-AzureSqlDatabaseServer` rutiny.
+- Vytvoří na serveru s použitím `New-AzureSqlDatabaseServer` rutiny.
 
     [!code-powershell[Main](automate-everything/samples/sample8.ps1?highlight=1)]
-- Vytvoří pravidla brány firewall pro povolení vývojářském počítači ke správě serveru a umožňuje připojení k tomuto webové aplikace. 
+- Vytvoří pravidla brány firewall pro povolení vývojovém počítači ke správě serveru a k tomu, aby webové aplikace k němu připojit. 
 
     [!code-powershell[Main](automate-everything/samples/sample9.ps1?highlight=3,5)]
 - Vytvoří kontext databáze, která obsahuje název serveru a přihlašovací údaje, pomocí `New-AzureSqlDatabaseServerContext` rutiny.
 
     [!code-powershell[Main](automate-everything/samples/sample10.ps1?highlight=4)]
 
-    `New-PSCredentialFromPlainText` je funkce ve skriptu, který volá `ConvertTo-SecureString` rutiny k šifrování hesla a vrátí `PSCredential` objektu, stejný typ, který `Get-Credential` rutina vrátí.
+    `New-PSCredentialFromPlainText` je funkce ve skriptu, který volá `ConvertTo-SecureString` rutiny můžete šifrovat hesla a vrátí `PSCredential` objektu stejného typu, který `Get-Credential` rutina vrátí.
 - Vytvoří aplikační databázi a databázi členství pomocí `New-AzureSqlDatabase` rutiny.
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
-- Volá tocreates místně definované funkce připojovací řetězec pro každou databázi. Aplikace bude používat tyto připojovací řetězce pro přístup k databázím. 
+- Volá místně definované funkce tocreates připojovací řetězec pro každou databázi. Aplikace bude používat tyto připojovací řetězce pro přístup k databázím. 
 
     [!code-powershell[Main](automate-everything/samples/sample12.ps1?highlight=1-2)]
 
-    Get-SQLAzureDatabaseConnectionString je funkci definovanou v skript, který vytvoří připojovací řetězec z hodnoty parametrů použité k němu.
+    Get-SQLAzureDatabaseConnectionString je funkci definovanou ve skriptu, který vytváří připojovací řetězec z hodnoty parametrů zadat do něj.
 
     [!code-powershell[Main](automate-everything/samples/sample13.ps1?highlight=1)]
-- Vrátí tabulku hash se název databázového serveru a připojovací řetězce.
+- Vrátí zatřiďovací tabulku s název databázového serveru a připojovací řetězce.
 
     [!code-powershell[Main](automate-everything/samples/sample14.ps1)]
 
-Aplikace opravte ji používá samostatné členství a databáze aplikace. Je také možné uvést dat členství a aplikací do jedné databáze.
+Aplikace Fix It používá samostatné členství a aplikačních databází. Je také možné umístit data členství a aplikace v jedné databázi.
 
-### <a name="store-app-settings-and-connection-strings"></a>Ukládání nastavení aplikace a připojovacích řetězců
+### <a name="store-app-settings-and-connection-strings"></a>Nastavení aplikací pro Store a připojovací řetězce
 
-Azure nabízí funkce, která vám umožní uložit nastavení a připojovací řetězce, které automaticky přepsání, které jsou vraceny aplikace při pokusu o čtení `appSettings` nebo `connectionStrings` kolekcí v souboru Web.config. Jde o alternativu k použití [transformace Web.config](../../../../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md) při nasazení. Další informace najdete v tématu [ukládat citlivá data v Azure](source-control.md#appsettings) dál v této příručce e.
+Azure nabízí funkce, která umožňuje ukládání nastavení a připojovací řetězce, které automaticky přepsat, co se vrátí do aplikace při pokusu o čtení `appSettings` nebo `connectionStrings` kolekcí v souboru Web.config. Jedná se o alternativu k použití [transformace Web.config](../../../../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md) při nasazení. Další informace najdete v tématu [Store citlivá data v Azure](source-control.md#appsettings) dále v této e knihy.
 
-Vytvoření skriptu prostředí ukládá v Azure všechny `appSettings` a `connectionStrings` hodnoty, které aplikace potřebuje přístup k účtu úložiště a databáze při spuštění v Azure.
+Vytvoření skriptu prostředí uloží v Azure všechny `appSettings` a `connectionStrings` hodnoty, které aplikace potřebuje pro přístup k účtu úložiště a databáze při spuštění v Azure.
 
 [!code-powershell[Main](automate-everything/samples/sample15.ps1)]
 
@@ -188,41 +187,41 @@ Vytvoření skriptu prostředí ukládá v Azure všechny `appSettings` a `conne
 
 [!code-powershell[Main](automate-everything/samples/sample17.ps1?highlight=2)]
 
-[New Relic](http://newrelic.com/) telemetrie rozhraní, které jsme předvedení v [monitorování a Telemetrie](monitoring-and-telemetry.md) kapitoly. Skript pro vytvoření prostředí se také restartuje, webové aplikace, abyste měli jistotu, že vybere nastavení New Relic.
+[Nástroj společnosti New Relic](http://newrelic.com/) je architektura telemetrická data, která vám ukážeme v [monitorování a Telemetrie](monitoring-and-telemetry.md) kapitoly. Vytvoření skriptu prostředí se také restartuje, webové aplikace, abyste měli jistotu, že vybere nastavení New Relic.
 
 [!code-powershell[Main](automate-everything/samples/sample18.ps1?highlight=2)]
 
 ### <a name="preparing-for-deployment"></a>Příprava pro nasazení
 
-Na konci procesu vytvoření skriptu prostředí volá dvě funkce postup vytvoření souborů, které se použijí skript nasazení.
+Na konci procesu vytváření skript prostředí volá dvě funkce k vytvoření souborů, které se použijí skriptem nasazení.
 
-Jednu z těchto funkcí vytvoří profil publikování *(&lt;zadaným hodnotám websitename&gt;.pubxml* souboru). Kód zavolá rozhraní API REST Azure pro získání nastavení publikování a ukládá informace v *.publishsettings* souboru. Pak používá informace z tohoto souboru spolu s souboru šablony (*pubxml.template*) k vytvoření *.pubxml* soubor, který obsahuje profil publikování. Tento dvoukrokový proces simuluje, co se děje v sadě Visual Studio: stažení *.publishsettings* souboru a import, který chcete vytvořit profil publikování.
+Jeden z těchto funkcí vytvoří profil publikování *(&lt;zadaným hodnotám websitename&gt;.pubxml* souboru). Kód volá rozhraní Azure REST API pro získání nastavení publikování a uloží informace *.publishsettings* souboru. Potom použije informace z tohoto souboru spolu s soubor šablony (*pubxml.template*) Chcete-li vytvořit *.pubxml* soubor, který obsahuje profil publikování. Tento dvoukrokový proces simuluje, co můžete dělat v sadě Visual Studio: Stáhněte si *.publishsettings* souboru a import, který chcete vytvořit profil publikování.
 
-Další funkce používá jiný soubor šablony (Web environment.template) k vytvoření *webu environment.xml* soubor, který obsahuje nastavení skript nasazení použije spolu s *.pubxml*souboru.
+Další funkce používá jiný soubor šablony (Web environment.template) k vytvoření *webu environment.xml* soubor, který obsahuje nastavení, skript nasazení použije spolu s *.pubxml*souboru.
 
 ### <a name="troubleshooting-and-error-handling"></a>Řešení potíží a zpracování chyb
 
-Skripty se podobně jako programy: můžou selhat a pokud se tak chcete vědět, co nejvíce můžete o selhání, a zda ji způsobil. Z toho důvodu vytvoření skriptu prostředí změní hodnotu `VerbosePreference` proměnnou z `SilentlyContinue` k `Continue` tak, aby všechny podrobné zprávy se zobrazují. Také změní hodnotu `ErrorActionPreference` proměnnou z `Continue` k `Stop`tak, aby skript zastaví, i když zjistí neukončující chyby:
+Skripty jsou jako programy: volání můžou selhat a kdy to dělají budete chtít vědět co nejvíce o selhání a co způsobilo vypršení jejího. Z tohoto důvodu skriptu pro vytváření prostředí změní hodnotu `VerbosePreference` proměnné z `SilentlyContinue` k `Continue` tak, aby se zobrazují všechny podrobné zprávy. Také změní hodnotu `ErrorActionPreference` proměnné z `Continue` k `Stop`tak, aby skript zastaví, i když se setká s neukončujícími chybami:
 
 [!code-powershell[Main](automate-everything/samples/sample19.ps1)]
 
-Před jeho veškerou práci, ukládá skript tak, aby ho můžete vypočítat uplynulý čas, pokud se provádí čas spuštění:
+Předtím, než ho nemá žádnou práci, ukládá skript tak, aby ho můžete výpočet uplynulého času, po dokončení počáteční čas:
 
 [!code-powershell[Main](automate-everything/samples/sample20.ps1)]
 
-Až se dokončí svojí práci, skript zobrazí uplynulý čas:
+Jakmile se dokončí svou práci, skript zobrazí uplynulý čas:
 
 [!code-powershell[Main](automate-everything/samples/sample21.ps1)]
 
-A pro každé klíčové operace skript zapisuje podrobné zprávy, například:
+A pro všechny klíčové operace skript zapisuje podrobné zprávy, například:
 
 [!code-powershell[Main](automate-everything/samples/sample22.ps1)]
 
 ## <a name="deployment-script"></a>Skript nasazení
 
-Co *New-AzureWebsiteEnv.ps1* nemá skript pro vytvoření prostředí, *publikovat AzureWebsite.ps1* nemá skriptu pro nasazení aplikace.
+Co *AzureWebsiteEnv.ps1 nový* skript provádí pro vytvoření prostředí *publikovat AzureWebsite.ps1* skript provádí pro nasazení aplikace.
 
-Skript nasazení získá název webové aplikace z *webu environment.xml* soubor vytvořený pomocí skriptu pro vytváření prostředí.
+Získá název webové aplikace ze skriptu nasazení *webu environment.xml* soubor vytvořený pomocí skriptu pro vytváření prostředí.
 
 [!code-powershell[Main](automate-everything/samples/sample23.ps1)]
 
@@ -230,40 +229,40 @@ Získá heslo uživatele nasazení z *.publishsettings* souboru:
 
 [!code-powershell[Main](automate-everything/samples/sample24.ps1)]
 
-Se provede [MSBuild](http://msbuildbook.com/) příkaz, který vytvoří a nasadí projekt:
+Je spuštěn [MSBuild](http://msbuildbook.com/) příkaz, který sestaví a nasadí projekt:
 
 [!code-powershell[Main](automate-everything/samples/sample25.ps1)]
 
-A pokud jste určili `Launch` parametr na příkazovém řádku, zavolá `Show-AzureWebsite` rutiny otevře výchozí prohlížeč na adresu URL webu.
+A pokud jste určili `Launch` parametr příkazového řádku, které volá `Show-AzureWebsite` rutiny a otevřete váš výchozí prohlížeč na adresu URL webu.
 
 [!code-powershell[Main](automate-everything/samples/sample26.ps1?highlight=3)]
 
-Skript nasazení můžete spustit pomocí příkazu podobné následujícímu:
+Skript nasazení můžete spustit pomocí příkazu podobný následujícímu:
 
 `.\Publish-AzureWebsite.ps1 ..\MyFixIt\MyFixIt.csproj -Launch`
 
-A až skončíte, prohlížeči se otevře s web spuštěný v cloudu v `<websitename>.azurewebsites.net` adresy URL.
+A po dokončení, v prohlížeči se otevře se web spuštěný v cloudu, a `<websitename>.azurewebsites.net` adresy URL.
 
-![Automatická oprava aplikace nasazené do systému Windows Azure](automate-everything/_static/image7.png)
+![Oprava aplikace nasazené na platformě Windows Azure](automate-everything/_static/image7.png)
 
 ## <a name="summary"></a>Souhrn
 
-Pomocí těchto skriptů máte jistotu, že se shoduje s kroky bude vždy provést ve stejném pořadí pomocí stejných možností. To pomáhá zajistit, že každý vývojář v týmu není neproběhly něco nebo zřeteli něco a nasazení něco vlastní na vlastním počítači, který nebude fungovat ve skutečnosti stejným způsobem jako v prostředí druhý člen seskupení, nebo v produkčním prostředí.
+S těmito skripty můžete být jisti, že stejný postup bude vždy provést ve stejném pořadí pomocí stejných možností. To pomáhá zajistit, že každý vývojář v týmu není přijít o něco schválně pokazí něco nebo vlastní na vlastní počítač, nebudou fungovat ve skutečnosti stejným způsobem jako v prostředí jinému členovi týmu nebo v produkčním prostředí něco nasadila.
 
-Podobným způsobem můžete automatizovat nejvíce Azure funkce správy, které můžete provést v portálu pro správu pomocí rozhraní REST API, skriptů prostředí Windows PowerShell, jazyk rozhraní .NET API nebo Bash nástroj, který můžete spustit na platformě Linux nebo Mac.
+Podobným způsobem můžete automatizovat většinu služeb Azure funkce správy, které můžou provádět na portálu management portal, pomocí rozhraní REST API, skriptů prostředí Windows PowerShell, jazyk rozhraní .NET API nebo prostředí Bash nástroj, který můžete spustit na Linuxu nebo macu.
 
-V [další kapitoly](source-control.md) jsme budete podívejte se na zdrojový kód a vysvětlit, proč je důležité zahrnout skripty do vašeho úložiště zdrojového kódu.
+V [další kapitolu](source-control.md) vytvoříme podívejte se na zdrojový kód a vysvětlit, proč je důležité zahrnout skripty do vašeho úložiště zdrojového kódu.
 
 ## <a name="resources"></a>Prostředky
 
-- [Instalace a konfigurace prostředí Windows PowerShell pro Azure](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1). Popisuje postup instalace rutin prostředí Azure PowerShell a jak nainstalovat certifikát, zda je nutné v počítači, abyste mohli spravovat vaše Azure účtu. Toto je skvělým místem začít pracovat, protože má také odkazy na zdroje informací prostředí PowerShell, sám sebe.
-- [Centra skriptů Azure](https://docs.microsoft.com/azure/automation/automation-runbook-gallery). Portál WindowsAzure.com prostředky pro vývoj skriptů, které spravují služby Azure, s odkazy na získávání kurzy Začínáme, rutina referenční dokumentaci a zdrojový kód a ukázkové skripty
-- [Tvůrce skriptů víkendu: Začínáme s Azure a prostředí PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx). V blogu vyhrazený pro prostředí Windows PowerShell poskytuje tento příspěvek Skvělý úvod pomocí prostředí PowerShell pro Azure správy funkcí.
-- [Instalace a konfigurace rozhraní příkazového řádku Azure napříč platformami](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Úvodní kurz pro Azure skriptování framework, který funguje na Mac a Linux, jakož i Windows systémy.
-- [Nástroje příkazového řádku části tématu stáhnout sady Azure SDK a nástroje](https://azure.microsoft.com/downloads/). Stránka portálu dokumentace a produkty ke stažení související s nástroje příkazového řádku pro Azure.
-- [Automatizace všechno, co se knihovny správy Azure a rozhraní .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Scott Hanselman zavádí .NET správy rozhraní API pro Azure.
-- [Pomocí skriptů prostředí PowerShell systému Windows k publikování pro vývojáře a testovací prostředí](https://msdn.microsoft.com/library/azure/dn642480.aspx). Dokumentace MSDN, která vysvětluje, jak používat publikovat skripty, které automaticky generuje sada Visual Studio pro webové projekty.
-- [Prostředí PowerShell nástroje pro sadu Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Visual Studio rozšíření, která přidá podporu pro prostředí Windows PowerShell v sadě Visual Studio.
+- [Instalace a konfigurace Windows Powershellu pro Azure](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1). Vysvětluje, jak nainstalovat nejnovější verzi rutin Azure Powershellu a nainstalovat certifikát, musí v počítači, abyste mohli spravovat Azure započítat i. To je skvělé místo, kde můžete začít pracovat, protože má také odkazy na zdroje informací pro výuku Powershellu samotný.
+- [Centrum skriptů Azure](https://docs.microsoft.com/azure/automation/automation-runbook-gallery). Zdroje informací pro vývoj skriptů, které správy služeb Azure, s odkazy na kurzy Začínáme, rutina referenční dokumentaci a zdrojový kód a ukázky skriptů pro portál WindowsAzure.com
+- [Tvůrce skriptů víkendu: Začínáme s Azure a Powershellu](http://blogs.technet.com/b/heyscriptingguy/archive/2013/06/22/weekend-scripter-getting-started-with-windows-azure-and-powershell.aspx). Tento příspěvek na blogu vyhrazená pro prostředí Windows PowerShell, poskytuje vynikající Úvod do používání Powershellu pro správu Azure functions.
+- [Instalace a konfigurace rozhraní příkazového řádku Azure Cross-Platform](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Úvodní kurz pro Azure skriptovací framework, která funguje na Mac a Linux, jakož i Windows systémy.
+- [Nástroje příkazového řádku části tématu stáhnout sady Azure SDK a nástroje](https://azure.microsoft.com/downloads/). Stránka portálu dokumentace a soubory ke stažení týkající se nástrojů příkazového řádku Azure.
+- [Automatizace všechno, co s knihovnami správy Azure a .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx). Scott Hanselman přináší rozhraní .NET API pro správu Azure.
+- [Pomocí skriptů Windows Powershellu k publikování do vývojových a testovacích prostředí](https://msdn.microsoft.com/library/azure/dn642480.aspx). Dokumentace MSDN, který vysvětluje, jak použít publikování skripty, které aplikace Visual Studio generuje pro webové projekty.
+- [Nástroje PowerShell Tools for Visual Studio 2013](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597). Visual Studio rozšíření, které přidává podporu jazyka pro prostředí Windows PowerShell v sadě Visual Studio.
 
 > [!div class="step-by-step"]
 > [Předchozí](introduction.md)

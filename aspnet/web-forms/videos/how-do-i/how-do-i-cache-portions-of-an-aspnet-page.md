@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
-title: '[Jak na:] Části stránky ASP.NET do mezipaměti | Microsoft Docs'
+title: '[Postup:] Částí stránky ASP.NET do mezipaměti | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan ukazuje, jak pro ukládání do mezipaměti některé části stránky ASP.NET implementací OutputCache pro uživatelské ovládací prvky na stránce. První,...
+description: V toto video pixelů na Chris ukazuje, jak jeden nebo více částí stránky ASP.NET do mezipaměti implementací OutputCache u uživatelských ovládacích prvků na stránce. Nejprve je potřeba...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2009
 ms.topic: article
 ms.assetid: b20b2b30-a557-4567-8e27-56f1e04235e2
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: aad3c59a89616874eb66bd4c83bf9a2917fc798c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d619f04691fcc5aae9902f8102613c068bec28f4
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26571888"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37373059"
 ---
-<a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[Jak na:] Části mezipaměti pro stránku ASP.NET
+<a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[Postup:] Mezipaměť částí stránky ASP.NET
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan ukazuje, jak pro ukládání do mezipaměti některé části stránky ASP.NET implementací OutputCache pro uživatelské ovládací prvky na stránce. Nejprve stránky ASP.NET se vytvoří a uloží do mezipaměti pomocí direktivy OutputCache. Několik uživatelské ovládací prvky jsou potom vytvořili a uložili do mezipaměti pro různé doby trvání. Vztah mezi stránky uložené v mezipaměti Doba trvání a doba trvání ovládací prvek mezipaměti je zkontrolovat. Různá kritéria pro ukládání do mezipaměti ovládací prvky jsou kontrolovány, včetně příkladem VaryByControl kde vnořených uživatelské ovládací prvky můžete řídit ukládání do mezipaměti jejich nadřazené ovládacích prvků.
+V toto video pixelů na Chris ukazuje, jak jeden nebo více částí stránky ASP.NET do mezipaměti implementací OutputCache u uživatelských ovládacích prvků na stránce. Nejprve stránky technologie ASP.NET je vytvořili a uložili do mezipaměti použití direktivy OutputCache. Několik uživatelské ovládací prvky jsou pak vytvořili a uložili do mezipaměti pro jinou dobu trvání. Vztah mezi stránky v mezipaměti Doba trvání a zkontroluje dobu mezipaměti ovládacího prvku. Různých kritérií pro ukládání do mezipaměti ovládací prvky jsou kontrolovány včetně příkladem VaryByControl kde vnořených uživatelských ovládacích prvků můžete řídit, ukládání do mezipaměti z jejich nadřazených ovládacích prvků.
 
-[&#9654; Podívejte se na video (19 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cache-portions-of-an-aspnet-page)
+[&#9654;Podívejte se na video (19 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-cache-portions-of-an-aspnet-page)

@@ -1,67 +1,66 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
-title: Provádění několik animací ve stejnou dobu (C#) | Microsoft Docs
+title: Postupné provedení několika animací současně (C#) | Dokumentace Microsoftu
 author: wenz
-description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Umožňuje spustit severa...
+description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Umožňuje spustit severa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 219149e1-3ee9-4b79-8fe4-7433f6b7d15b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-at-the-same-time-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6ecd822f7fa00a24e97b9aa14888798825624617
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 500971bb1bad101a165c8dda6f5fa3d5cfe3aba4
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869358"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382816"
 ---
-<a name="executing-several-animations-at-the-same-time-c"></a>Provádění několik animací ve stejnou dobu (C#)
+<a name="executing-several-animations-at-the-same-time-c"></a>Postupné provedení několika animací současně (C#)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation2.cs.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation2CS.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation2.cs.zip) nebo [stahovat PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation2CS.pdf)
 
-> V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Umožňuje spustit několik animací paralelní způsobem.
+> Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. To umožňuje spuštění několika animací paralelní způsobem.
 
 
 ## <a name="overview"></a>Přehled
 
-V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Umožňuje spustit několik animací paralelní způsobem.
+Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. To umožňuje spuštění několika animací paralelní způsobem.
 
 ## <a name="steps"></a>Kroky
 
-První řadě zahrnují `ScriptManager` na stránce; potom knihovny ASP.NET AJAX je načtena, aby bylo možné použít Toolkitu:
+Za prvé, zahrnout `ScriptManager` na stránce; potom technologie ASP.NET AJAX je načíst knihovnu, což umožňuje použití Control Toolkit:
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample1.aspx)]
 
-Animace se použijí na panel textu, který vypadá takto:
+Animace se použijí pro panel text, který vypadá takto:
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample2.aspx)]
 
-Související třídy CSS pro panel definovat barvu pozadí dobrý a také nastavit pevnou šířku pro panel:
+V přidružené třídy šablony stylů CSS pro panel definovat barvu pozadí nice a také nastavit Pevná šířka panelu:
 
 [!code-css[Main](executing-several-animations-at-the-same-time-cs/samples/sample3.css)]
 
-Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj `runat="server"`:
+Pak přidejte `AnimationExtender` na stránku, poskytování `ID`, `TargetControlID` atribut a povinný údaj `runat="server"`:
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample4.aspx)]
 
-V rámci `<Animations>` uzlu, použijte `<OnLoad>` ke spuštění animací, jakmile byla úplným načtením stránky. Obecně platí `<OnLoad>` přijímá pouze jeden animace. Rozhraní framework animace umožňuje připojení k několika animace do jednoho pomocí `<Parallel>` elementu. Všechny animace v rámci `<Parallel>` jsou spouštěny ve stejnou dobu.
+V rámci `<Animations>` uzlu, použijte `<OnLoad>` ke spuštění animací, jakmile úplným načtením stránky. Obecně platí `<OnLoad>` přijímá pouze jeden animace. Animace framework umožňuje připojit k několika animací do jednoho pomocí `<Parallel>` elementu. Všechny animace v rámci `<Parallel>` jsou spouštěny ve stejnou dobu.
 
-Tady je je možné kód pro `AnimationExtender` řízení, pozvolného vysouvání a změna velikosti panelu ve stejnou dobu:
+Tady je možné značky `AnimationExtender` ovládacího prvku, mizení a změnu velikosti panelu ve stejnou dobu:
 
 [!code-aspx[Main](executing-several-animations-at-the-same-time-cs/samples/sample5.aspx)]
 
-A skutečně: při spuštění tohoto skriptu se zobrazí na panelu a potom změní (více než threefolding svou šířku a halfing výšku) a setmívá ve stejnou dobu.
+A skutečně: při spuštění tohoto skriptu se zobrazí na panelu a pak změní velikost (více než threefolding svou šířku a halfing jeho výška) a setmívá ve stejnou dobu.
 
 
-[![Na panelu je pozvolného vysouvání a změna velikosti (včetně jeho obsahu, díky modul vykreslování prohlížeče)](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
+[![Na panelu je mizení a změna velikosti (včetně jeho obsahu díky prohlížeče vykreslovací modul)](executing-several-animations-at-the-same-time-cs/_static/image2.png)](executing-several-animations-at-the-same-time-cs/_static/image1.png)
 
-Na panelu je pozvolného vysouvání a změna velikosti (včetně jeho obsahu, díky modul vykreslování prohlížeče) ([Kliknutím zobrazit obrázek v plné velikosti](executing-several-animations-at-the-same-time-cs/_static/image3.png))
+Na panelu je mizení a změna velikosti (včetně jeho obsahu díky prohlížeče vykreslovací modul) ([kliknutím ji zobrazíte obrázek v plné velikosti](executing-several-animations-at-the-same-time-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](adding-animation-to-a-control-cs.md)

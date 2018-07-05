@@ -1,68 +1,67 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/changing-the-database
-title: 'Databázi EF nejprve s architekturou ASP.NET MVC: Změna databáze | Microsoft Docs'
+title: 'EF Database First s ASP.NET MVC: Změna databáze | Dokumentace Microsoftu'
 author: tfitzmac
-description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
 ms.topic: article
 ms.assetid: cfd5c083-a319-482e-8f25-5b38caa93954
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
-ms.openlocfilehash: 63ee8768a43dbdac80922e3adbedd3378c10da73
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7c9bca87c51bee35be2c5b533916255be80056b0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879319"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385431"
 ---
-<a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>Databázi EF nejprve s architekturou ASP.NET MVC: Změna databáze
+<a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>EF Database First s ASP.NET MVC: Změna databáze
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tato řada kurzu se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořte a odstraňovat data, která se nachází v tabulce databáze. Generovaný kód odpovídá sloupců v tabulce databáze.
+> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. V této sérii kurzů se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořit a odstranit data, která se nachází v databázové tabulce. Generovaný kód odpovídá sloupců v tabulce databáze.
 > 
-> Tato část řady se zaměřuje na provedení aktualizace na strukturu databáze a šíření této změny v rámci webové aplikace.
+> Tato části této série se zaměřuje na provádět aktualizaci struktura databáze změny a šíření tuto změnu v rámci webové aplikace.
 
 
-## <a name="add-a-column"></a>Přidá sloupec
+## <a name="add-a-column"></a>Přidat sloupec
 
-Pokud aktualizujete struktura tabulky v databázi, je třeba zajistit, že změny rozšířena do datový model, zobrazení a kontroler.
+Při aktualizaci struktury tabulky v databázi, je potřeba zajistit, že vaše změna rozšířena na datový model, zobrazení a kontroler.
 
-V tomto kurzu přidáte nový sloupec do tabulky Student k zaznamenání křestní jméno student. Pokud chcete přidat tento sloupec, otevřete projekt databáze a otevřete soubor Student.sql. Prostřednictvím návrháře nebo kód T-SQL, přidat sloupec s názvem **MiddleName** , je NVARCHAR(50) a umožňuje hodnoty NULL.
+Pro účely tohoto kurzu přidáte nový sloupec do tabulky Student k zaznamenání prostřední jméno studenta. Chcete-li přidat tento sloupec, otevřete projekt databáze a otevřete soubor Student.sql. Pomocí návrháře nebo kód T-SQL, přidejte sloupec s názvem **MiddleName** , který je NVARCHAR(50) a povoluje hodnoty NULL.
 
-![Přidat křestní jméno](changing-the-database/_static/image1.png)
+![Přidejte druhé křestní jméno](changing-the-database/_static/image1.png)
 
-Nasaďte tuto změnu do místní databáze spuštěním projekt databáze (nebo F5). Nové pole se přidá do tabulky. Pokud se nezobrazí se v Průzkumníku objektů SQL serveru, klikněte na tlačítko Aktualizovat v podokně.
+Nasaďte tuto změnu do místní databáze spuštěním projektu databáze (nebo F5). Nové pole se přidá do tabulky. Pokud v Průzkumníku objektů SQL serveru ji nevidíte, klikněte na tlačítko Aktualizovat v podokně.
 
-![zobrazení nového sloupce](changing-the-database/_static/image2.png)
+![Zobrazit nový sloupec](changing-the-database/_static/image2.png)
 
-Nový sloupec v tabulce databáze existuje, ale neexistuje aktuálně v třídy datového modelu. Je třeba aktualizovat model, který má obsahovat nový sloupec. V **modely** složku, otevřete **ContosoModel.edmx** soubor k zobrazení diagramu modelu. Všimněte si, že Student model neobsahuje vlastnost MiddleName. Klepněte pravým tlačítkem myši na návrhovou plochu a vyberte **aktualizovat Model z databáze**.
+Nový sloupec existuje v tabulce databáze, ale neexistuje momentálně ve třídě datového modelu. Je nutné aktualizovat modelu, který má obsahovat nový sloupec. V **modely** složku, otevřete **ContosoModel.edmx** soubor k zobrazení diagramu modelu. Všimněte si, že Student model neobsahuje vlastnost MiddleName. Klikněte pravým tlačítkem kamkoli na návrhové ploše a vyberte **aktualizace modelů z databáze**.
 
-![Aktualizace modelu](changing-the-database/_static/image3.png)
+![aktualizace modelu](changing-the-database/_static/image3.png)
 
-V Průvodci aktualizací, vyberte **aktualizovat** kartě a **Student** tabulky.
+V Průvodci aktualizacemi, vyberte **aktualizovat** kartu a **Student** tabulky.
 
 ![Průvodce aktualizací](changing-the-database/_static/image4.png)
 
 Klikněte na tlačítko **Dokončit**.
 
-Po dokončení procesu aktualizace zahrnuje nový diagram databáze **MiddleName** vlastnost. Uložit **ContosoModel.edmx** souboru. Je nutné uložit tento soubor nové vlastnosti mají být předány **Student.cs** třídy. Nyní jste aktualizovali databáze a modelu.
+Po dokončení procesu aktualizace zahrnuje nový databázový diagram **MiddleName** vlastnost. Uložit **ContosoModel.edmx** souboru. Je nutné uložit tento soubor pro novou vlastnost mají být předány **Student.cs** třídy. Teď jste aktualizovali databáze a modelu.
 
 Sestavte řešení.
 
-Bohužel zobrazení stále neobsahuje novou vlastnost. K aktualizaci zobrazení máte dvě možnosti – můžete znovu vygenerovat zobrazení generování uživatelského rozhraní pro třídu Student přidáním znovu, nebo můžete ručně přidat nové vlastnosti pro stávající zobrazení. V tomto kurzu přidáte generování uživatelského rozhraní znovu vzhledem k tomu, že jste neprovedli změny přizpůsobené zobrazení automaticky generovány. Můžete uvažovat o ručně přidejte vlastnost, pokud byly provedeny změny zobrazení a nechcete tyto změny budou ztraceny.
+Bohužel zobrazení stále neobsahují nové vlastnosti. Chcete-li aktualizovat zobrazení máte dvě možnosti – můžete znovu vygenerovat zobrazení tak, že znovu přidáte generování uživatelského rozhraní pro třídu Student nebo můžete ručně přidat nové vlastnosti pro stávající zobrazení. V tomto kurzu přidáte základní kostry aplikace znovu vzhledem k tomu, že všechny vlastní změny nebyla provedena pro automaticky generované zobrazení. Můžete zvážit, když změny provedené zobrazení a nechcete, aby tyto změny přijít o ručním přidání vlastnost.
 
-Aby se znovu vytvořit zobrazení, odstranit **studenty** ve složce **zobrazení**a odstranit **StudentsController**. Klikněte pravým tlačítkem **řadiče** složky a přidat generování uživatelského rozhraní pro **Student** modelu. Znovu, názvu kontroleru **StudentsController**. Vyberte **OK**.
+Aby se zajistilo zobrazení jsou znovu vytvořena, odstraňte **studenty** ve složce **zobrazení**a odstranit **StudentsController**. Klikněte pravým tlačítkem na **řadiče** složky a přidat generování uživatelského rozhraní pro **Student** modelu. Znovu, název kontroleru **StudentsController**. Vyberte **OK**.
 
-Zobrazení nyní obsahují vlastnost MiddleName.
+Zobrazení nyní obsahovat vlastnost MiddleName.
 
 ![Zobrazit křestní jméno](changing-the-database/_static/image5.png)
 
-V další části přidáte kód pro přizpůsobení zobrazení pro zobrazení podrobností o student záznamu.
+V další části přidáte kód pro přizpůsobení zobrazení k zobrazení podrobností o záznamu studentů.
 
 > [!div class="step-by-step"]
 > [Předchozí](generating-views.md)

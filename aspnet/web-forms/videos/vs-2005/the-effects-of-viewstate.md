@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/vs-2005/the-effects-of-viewstate
-title: Důsledky ViewState | Microsoft Docs
+title: Účinky mechanismu ViewState | Dokumentace Microsoftu
 author: rick-anderson
-description: Rozhraní ASP.NET poskytuje mechanismus ViewState automaticky udržovat stav aplikace pomocí dat dopředu a dozadu mezi requ prohlížeče...
+description: ASP.NET framework poskytuje mechanismu ViewState automaticky pomocí dat vpřed a zpět mezi prohlížeči requ Udržovat stav aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2007
 ms.topic: article
 ms.assetid: 112e3efc-6865-4296-80a0-35910c4b3b12
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/the-effects-of-viewstate
 msc.type: video
-ms.openlocfilehash: 8792f06583ed2ff82093f2cfd63cd1c1e4ac80cd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a5ea15eb05917db5935b04c9ce2aa20e1cb8e196
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30899431"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391793"
 ---
-<a name="the-effects-of-viewstate"></a>Důsledky ViewState
+<a name="the-effects-of-viewstate"></a>Účinky mechanismu ViewState
 ====================
-podle Erica Lee
+podle Eric Lee
 
-Rozhraní ASP.NET poskytuje mechanismus ViewState automaticky udržovat stav aplikace pomocí dat dopředu a dozadu mezi požadavky prohlížeče. V tomto videu vidíte, jak určuje některé ASP.NET, jako je například rozevírací seznam a textové pole Udržovat stav podle hodnot formuláře zpětného volání, nikoli ViewState, inteligentní vývojáři je zakázání nepotřebných ViewState. Pomocí Visual Studio Team System jsme můžete zobrazit jak to výrazně snižuje velikost požadavku a odpovědi dat a zvyšuje výkon a škálovatelnost aplikace.
+ASP.NET framework poskytuje mechanismus ViewState provedením data vpřed a zpět mezi požadavky na prohlížeč automaticky udržovat stav aplikace. V tomto videu uvidíme, jak ovládací prvky některé technologie ASP.NET například DropDownList a textové pole Udržovat stav je založen na hodnoty zpětného vystavení formuláře, nikoli vlastnosti ViewState, umožňuje inteligentní pro vývojáře k zakázání nepotřebných ViewState. Pomocí Visual Studio Team System můžeme vidět jak to významně snižuje velikost dat požadavků a odpovědí a zlepšuje výkon a škálovatelnost aplikace.
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-effects-of-viewstate)
 

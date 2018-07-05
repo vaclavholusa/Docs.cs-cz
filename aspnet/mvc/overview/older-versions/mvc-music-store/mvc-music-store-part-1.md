@@ -1,130 +1,129 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
-title: 'Část 1: Přehled a soubor -> Nový projekt | Microsoft Docs'
+title: 'Část 1: Přehled a soubor -> Nový projekt | Dokumentace Microsoftu'
 author: jongalloway
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 1 obsahuje přehled a soubor -> Nový projekt.
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 1 zahrnuje přehled a soubor -> Nový projekt.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
 ms.topic: article
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 2082927d18c95563893da199d60347fa15952446
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: c03b62db2227c167c68ca5cf8174e4322658d39d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868968"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377886"
 ---
 <a name="part-1-overview-and-file-new-project"></a>Část 1: Přehled a soubor -> Nový projekt
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje krok za krokem, jak používat rozhraní ASP.NET MVC a Visual Studio pro vývoj webů.  
+> MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a sady Visual Studio.  
 >   
-> Úložiště Hudba MVC je implementace úložiště lightweight ukázkové, který prodává hudebních alb online a implementuje základní Správa serveru, přihlášení uživatele a nákupního košíku funkce.  
+> Music Store MVC je jednoduché ukázku implementace úložiště prodává hudebních alb online, který implementuje správu základního webu, přihlášení uživatele a nákupního košíku funkce.  
 >   
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 1 obsahuje přehled a soubor -&gt;nový projekt.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 1. část obsahuje přehled a soubor -&gt;nový projekt.
 
 
 ## <a name="overview"></a>Přehled
 
-Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje podrobné postupy pro vývoj webů používat rozhraní ASP.NET MVC a aplikace Visual Web Developer. Jsme budete od pomalu, takže vývoj webů úrovni začátečník prostředí je to v pořádku.
+MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a aplikace Visual Web Developer. Jsme budete spuštění pomalu, takže Začátečník úrovně webové vývojové prostředí je v pořádku.
 
-Aplikace, kterou jsme budete sestavení je jednoduchý Hudba úložiště. Existují tři hlavní části aplikace: nákupy, najdete v článku věnovaném a správu.
+Aplikace, kterou jsme vám sestavení je jednoduché music store. Existují tři hlavní části aplikace: nákupní, registrace a správa.
 
 ![](mvc-music-store-part-1/_static/image1.jpg)
 
-Návštěvníky můžete procházet alba Genre:
+Návštěvníci můžete procházet alb podle žánru:
 
 ![](mvc-music-store-part-1/_static/image2.jpg)
 
-Mohou zobrazovat jednoho alba a přidat jej do jejich košíku:
+Mohou zobrazit jednu alba a přidat do košíku jejich:
 
 ![](mvc-music-store-part-1/_static/image3.jpg)
 
-Jejich můžete zkontrolovat jejich košíku odebrání všech položek, které už mají:
+Jejich košíku odebrat všechny položky, které už nechcete, můžete zkontrolovat:
 
 ![](mvc-music-store-part-1/_static/image4.jpg)
 
-Přistoupíte k ověření se výzva k přihlášení nebo registraci pro uživatelský účet.
+Přistoupíte k ověření je vyzve k přihlásit nebo zaregistrovat u určitého uživatelského účtu.
 
 ![](mvc-music-store-part-1/_static/image1.png)
 
 ![](mvc-music-store-part-1/_static/image2.png)
 
-Po vytvoření účtu, mohou být provedeny pořadí tak, že vyplníte informace o přesouvání a platba. Pro zjednodušení jsme používáte úžasné povýšení: vše je zdarma, pokud se kód povýšení "FREE"!
+Po vytvoření účtu, můžete provést pořadí vyplněním dopravě a platební informace. Abychom si to nekomplikovali, máme spuštěnou úžasné propagační akce: vše, co je zdarma po zadání propagační kód, který "FREE"!
 
 ![](mvc-music-store-part-1/_static/image5.jpg)
 
-Po změně pořadí, uvidí jednoduché potvrzovací obrazovce:
+Po změně pořadí, se zobrazí obrazovka s potvrzením jednoduchý:
 
 ![](mvc-music-store-part-1/_static/image6.jpg)
 
-Kromě stránek faceing zákazníka jsme také sestavíte oddílu správce, který obsahuje seznam alb, ze kterých mohou správci vytvořit, upravit a odstranit alb:
+Kromě stránek faceing zákazníka budete také vytváříme správce oddílu, který se zobrazí seznam objektů alb, ze kterých můžou správci vytvářet, upravovat a odstranit alb:
 
 ![](mvc-music-store-part-1/_static/image7.jpg)
 
-## <a name="1-file--gt-new-project"></a>1. Soubor -&gt; nový projekt
+## <a name="1-file--gt-new-project"></a>1. Soubor –&gt; nový projekt
 
 ### <a name="installing-the-software"></a>Instalace softwaru
 
-V tomto kurzu začneme vytvořením nového projektu ASP.NET MVC 3 pomocí volné Visual Web Developer 2010 Express (což je bezplatná) a pak postupně přidáme funkce k vytvoření kompletní funkční aplikaci. Na této cestě jsme zaměříme přístup k databázi, scénáře příspěvků formuláře, ověřování dat pomocí stránky předlohy pro rozložení konzistentní stránky, pomocí rozhraní AJAX pro aktualizace stránky a ověřování, přihlášení uživatele a další.
+V tomto kurzu se začne tím, že vytvoříte nový projekt ASP.NET MVC 3 s použitím na bezplatné Visual Web Developer 2010 Express (které je zdarma) a pak postupně přidáme funkce, které chcete vytvořit kompletní funkční aplikaci. Cestou se budeme zabývat přístup k databázi, scénáře účtování formuláře a ověřování dat pomocí stránek předlohy pro rozložení konzistentní stránky pomocí rozhraní AJAX pro aktualizace stránky a ověřování, přihlašování uživatelů a další.
 
-Můžete absolvovat krok za krokem, nebo si můžete stáhnout hotová aplikace z [MVC. Hudba úložiště](https://github.com/evilDave/MVC-Music-Store).
+Podrobný postup sledovat, nebo si můžete stáhnout hotovou aplikaci [MVC. Music Store](https://github.com/evilDave/MVC-Music-Store).
 
-Visual Studio 2010 SP1 nebo Visual Web Developer 2010 Express SP1 (bezplatné verze sady Visual Studio 2010) slouží k sestavení aplikace. Budeme používat systému SQL Server Compact (také zdarma) k hostování databáze. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže.
+Visual Studio 2010 SP1 nebo Visual Web Developer 2010 Express SP1 (bezplatná verze sady Visual Studio 2010) můžete použít k sestavení aplikace. Budeme používat systému SQL Server Compact (také zdarma) k hostování databáze. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže.
 
 
-- [Visual Studio Web Developer Express SP1 požadavky]
-- [Aktualizace nástrojů rozhraní ASP.NET MVC 3]
-- [SQL Server Compact 4.0] - včetně modul runtime a nástroje podpory
+- [Požadavky na visual Studio Web Developer Express SP1]
+- [Technologie ASP.NET MVC 3 nástroje Update]
+- [SQL Server Compact 4.0] – včetně podpory modulu runtime a nástroje
 
 
 ### <a name="creating-a-new-aspnet-mvc-3-project"></a>Vytvoření nového projektu ASP.NET MVC 3
 
-Začneme výběrem "Nový projekt" v nabídce Soubor v aplikaci Visual Web Developer. Otevře dialogové okno Nový projekt.
+Začneme tak, že vyberete "Nový projekt" nabídka soubor v aplikaci Visual Web Developer. Tím se zobrazí dialogové okno Nový projekt.
 
 ![](mvc-music-store-part-1/_static/image5.png)
 
-Jsme vyberte Visual C# -&gt; webové šablony skupiny na levé straně, a potom vyberte šablonu "ASP.NET MVC 3 webové aplikace" v prostředním sloupci. Název projektu MvcMusicStore a klepněte na tlačítko OK.
+Vybereme Visual C# -&gt; webové šablony skupinu na levé straně, a potom v prostředním sloupci zvolte šablonu "Aplikace pro Web ASP.NET MVC 3". Pojmenujte svůj projekt MvcMusicStore a kliknutím na tlačítko OK.
 
 ![](mvc-music-store-part-1/_static/image8.jpg)
 
-Tato akce zobrazí sekundární dialog, který umožňuje, aby některých specifických nastavení MVC pro naše projekt. Vyberte následující položky:
+Zobrazí se sekundární dialogové okno, které umožňuje provádět některé konkrétní nastavení MVC pro náš projekt. Vyberte následující položky:
 
-Šablona projektu – vyberte prázdný
+Šablona projektu – výběr možnosti prázdná
 
-Zobrazit modul – vyberte Razor
+Zobrazit modul – Výběr Razor
 
-Použití sémantického kód HTML5 - zaškrtnutí
+Použití sémantického značek HTML5 - checked
 
-Ověřte, zda jsou následující nastavení, poté na tlačítko OK.
+Zkontrolujte, že vaše nastavení se, jak je znázorněno níže, a kliknutím na tlačítko OK.
 
 ![](mvc-music-store-part-1/_static/image9.jpg)
 
-Tím se vytvoří naše projektu. Podívejme se na složky, které jsou přidané do naší aplikaci v Průzkumníku řešení na pravé straně.
+Tím se vytvoří našem projektu. Pojďme se podívat na složky, které byly přidány do naší aplikace v Průzkumníku řešení na pravé straně.
 
 ![](mvc-music-store-part-1/_static/image10.jpg)
 
-Není úplně prázdné šablonu prázdný MVC 3 – přidá do základní složky struktury:
+Není úplně prázdná šablona prázdná MVC 3 – přidá strukturu základní složky:
 
 ![](mvc-music-store-part-1/_static/image6.png)
 
-ASP.NET MVC využívá některé základní zásady vytváření názvů pro názvy složek:
+ASP.NET MVC používá některé základní konvence pojmenování pro názvy složek:
 
 | **Složka** | **Účel** |
 | --- | --- |
-| **/ Řadiče** | Řadiče reagovat na vstup z prohlížeče, rozhodněte, jak ho použít a vrátí odpověď uživatele. |
-| **Nebo zobrazení.** | Zobrazení uložení naše šablony uživatelského rozhraní |
-| **/ Modely** | Modely uložení a pracovat s daty |
-| **A obsah** | Tato složka obsahuje naše obrázky, CSS a dalšího statického obsahu |
-| **A skriptů** | Tato složka obsahuje soubory naše JavaScript |
+| **/ Řadiče** | Kontrolery reagovat na vstup z prohlížeče, rozhodněte, jak ho použít a vrátit odpověď uživatele. |
+| **/ Zobrazení** | Zobrazení obsahovat naše šablony uživatelského rozhraní |
+| **/ Modelů** | Modely uchování a manipulaci s daty |
+| **/ Obsahu** | Tato složka obsahuje naše Image, šablon stylů CSS a dalšího statického obsahu |
+| **/ Skripty** | Tato složka obsahuje naši soubory jazyka JavaScript |
 
-Tyto složky jsou zahrnuty i v aplikaci ASP.NET MVC prázdný, protože rozhraní ASP.NET MVC ve výchozím nastavení používá přístup "konvence přes konfigurace" a některé výchozí předpokladů podle konvence pojmenování složek. Pro instanci řadiče vyhledejte zobrazení ve složce zobrazení ve výchozím nastavení bez nutnosti explicitně určovat to ve vašem kódu. Provedením vykrvovacího vpichu s výchozích konvencí snižuje množství kód, který potřebujete k zápisu, a můžete také usnadňují jinými vývojáři pochopit projektu. Vysvětlíme tyto konvence další, jak jsme sestavení aplikace.
+Tyto složky jsou zahrnuta i v aplikaci ASP.NET MVC prázdný, protože rozhraní ASP.NET MVC ve výchozím nastavení používá přístup "konvence nad konfigurací" a některé výchozí předpokladů podle konvence pojmenování složek. Například řadiče hledat zobrazení v zobrazení složky ve výchozím nastavení aniž by bylo nutné explicitně určit ve vašem kódu. Nastolit pomocí výchozích konvencí snižuje množství kódu, které musíte napsat, a také usnadnit pro jiné vývojáře k pochopení vašeho projektu. Vysvětlíme, tato konvence další, jako jsme integrovali naši aplikaci.
 
 > [!div class="step-by-step"]
 > [Next](mvc-music-store-part-2.md)

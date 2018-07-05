@@ -1,63 +1,83 @@
 ---
-title: Nahrání souborů do stránky Razor v ASP.NET Core
+title: Nahrání souborů do stránky v ASP.NET Core Razor
 author: guardrex
 description: Zjistěte, jak k nahrání souborů do stránky Razor.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/12/2017
+ms.date: 07/03/2018
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 43268e24b67279b57c990a6289922ae38d883221
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 62e20ef33e2da44657aba19dab938913147d9bfe
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275954"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37433916"
 ---
-# <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Nahrání souborů do stránky Razor v ASP.NET Core
+# <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Nahrání souborů do stránky v ASP.NET Core Razor
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-V této části je znázorněn nahrávání souborů stránky Razor.
+V této části je znázorněn nahrávání souborů s stránky Razor.
 
-[Film stránky Razor ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) v tento kurz používá jednoduchý model vazby k nahrání souborů, které funguje dobře pro nahrávání souborů malé. Informace o streamování velkých souborů, v tématu [nahrávání velkých souborů s streamování](xref:mvc/models/file-uploads#uploading-large-files-with-streaming).
+[Video stránek Razor ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) v tento kurz používá jednoduchý model vazby k nahrání souborů, které dobře funguje pro nahrávání souborů malé. Informace o datových proudů velkých souborů, najdete v části [nahrávání velkých souborů pomocí streamování](xref:mvc/models/file-uploads#uploading-large-files-with-streaming).
 
-V následujících krocích se funkce nahrávání souboru plán film přidá do ukázková aplikace. Je reprezentována plán film `Schedule` třídy. Třída zahrnuje dvě verze plánu. Jedna verze je poskytováno zákazníkům, `PublicSchedule`. Jiné verze se má použít pro zaměstnance společnosti `PrivateSchedule`. Každá verze je uloženo jako samostatný soubor. Tento kurz ukazuje, jak provést dvě nahrávání souborů ze stránky s jediným POŠTOVNÍM k serveru.
+V následujících krocích se funkci odesílání souborů plán video přidá do ukázkové aplikace. Plán video představuje `Schedule` třídy. Třída zahrnuje dvě verze plánu. Jedna verze je poskytováno zákazníkům, `PublicSchedule`. Jiné verze se používá pro zaměstnance společnosti `PrivateSchedule`. Každá verze je odeslán jako samostatný soubor. Tento kurz ukazuje, jak provést dvě nahrávání souborů ze stránky s jeden příspěvek na server.
 
-## <a name="security-considerations"></a>Aspekty zabezpečení
+## <a name="security-considerations"></a>Důležité informace o zabezpečení
 
-Upozornění: musí být provedeny, když nabízí uživatelům možnost k nahrání souborů do serveru. Útočník může spustit [útok DoS](/windows-hardware/drivers/ifs/denial-of-service) a jiným útokům na systém. Některé kroky zabezpečení, které sníží pravděpodobnost úspěšného útoku jsou:
+Upozornění musí být provedeny, když zároveň uživatelům poskytují možnost k nahrání souborů do serveru. Útočníci se dá provádět [útok DoS](/windows-hardware/drivers/ifs/denial-of-service) a dalších útoků na systém. Některé kroky zabezpečení, které sníží pravděpodobnost úspěšného útoku, že jsou:
 
-* Nahrání souborů do oblasti nahrávání souboru vyhrazené systému, takže je jednodušší uložit opatření zabezpečení nahraná obsahu. Když umožňující nahrávání souborů, ujistěte se, oprávnění ke spouštění jsou zakázány na umístění nahrávání.
-* Použijte soubor bezpečný název určit aplikace, nikoli z vstup uživatele nebo název souboru nahrávaný soubor.
-* Povolte jenom konkrétní sadu schválený přípon.
-* Ověřte, že kontrola klienta se provádí na serveru. Kontrola na straně klienta jsou snadno obejít.
-* Zkontrolujte velikost nahrávání a zabránit nahrávání větší, než se očekávalo.
-* Spusťte vyhledávání virů nebo malwaru v nahraném obsah.
+* Nahrání souborů do oblasti nahrávání souboru vyhrazené systému, takže je jednodušší a stanovit bezpečnostní opatření u odeslaný obsah. Když umožňující nahrávání souborů, ujistěte se, která oprávnění ke spouštění v umístění nahrávání jsou zakázána.
+* Použijte soubor bezpečný název určit aplikace, nikoli ze vstupu uživatele nebo název souboru uloženého souboru.
+* Povolte pouze konkrétní sadu přípon souborů schválené.
+* Ověřte, že jsou provedeny kontroly na straně klienta na serveru. Je snadné pro obejití kontroly na straně klienta.
+* Zkontrolujte velikost nahrávání a zakázat nahrávání větší, než se očekávalo.
+* Spusťte vyhledávání virů a malwaru na odeslaný obsah.
 
 > [!WARNING]
-> Odesílání škodlivý kód do systému je často prvním krokem k provádění kód, který můžete:
-> * Úplné převzetí a systému.
-> * Přetížení systému se výsledek, který systému úplně selže.
-> * Ohrožení dat uživatele nebo systému.
-> * Graffiti se vztahují na veřejné rozhraní.
+> Nahrává se škodlivý kód do systému je často prvním krokem při provádění kódu, který můžete:
+> * Úplné převzetí systému.
+> * Přetížení systému s výsledkem, který systém zcela selže.
+> * Ohrozit data uživatele nebo systému.
+> * Graffiti platí pro veřejné rozhraní.
 
-## <a name="add-a-fileupload-class"></a>Přidání třídy odesílání souborů při odpovědích
+## <a name="add-a-fileupload-class"></a>Přidejte třídu FileUpload
 
-Vytvoření stránky Razor pro zpracování pár nahrávání souborů. Přidat `FileUpload` třídy, která je vázána na stránku získat data plánu. Klikněte pravým tlačítkem *modely* složky. Vyberte **přidat** > **třída**. Název třídy **odesílání souborů při odpovědích** a přidejte následující vlastnosti:
+Vytvoření stránky Razor pro zpracování pár nahrávání souborů. Přidat `FileUpload` třídy, který je vázán na stránce získat data plánu. Klikněte pravým tlačítkem myši *modely* složky. Vyberte **přidat** > **třídy**. Název třídy **FileUpload** a přidejte následující vlastnosti:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/FileUpload.cs)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
-Třída nemá vlastnost pro nadpis podle plánu a vlastnost pro každou z dvou verzích plán. Všechny tři vlastnosti jsou požadovány a název musí mít 3 až 60 znaků.
+::: moniker-end
+
+Třída nemá vlastnost pro název plánu a vlastnost pro každý dvě verze plán. Všechny tři vlastnosti jsou povinné a název musí být dlouhý 3 až 60 znaků.
 
 ## <a name="add-a-helper-method-to-upload-files"></a>Přidejte pomocnou metodu k nahrání souborů
 
-Nechcete duplicity kód pro zpracování souborů nahrané plán, přidejte nejprve statickou pomocnou metodu. Vytvoření *nástroje* složky v aplikaci a přidejte *FileHelpers.cs* soubor s následujícím obsahem. Pomocná metoda `ProcessFormFile`, trvá [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) a [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary) a vrátí řetězec obsahující velikost souboru a jeho obsah. Se kontroluje, typu obsahu a délka. Pokud soubor neprojde ověřování pravosti, chyba je přidán do `ModelState`.
+Aby se zabránilo duplicitě kód pro zpracování souborů odeslané plán, je třeba nejprve přidáte statickou pomocnou metodu. Vytvoření *nástroje* složky v aplikaci a přidejte *FileHelpers.cs* soubor s následujícím obsahem. Pomocná metoda `ProcessFormFile`, přebírá [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) a [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary) a vrátí řetězec obsahující velikosti a obsahu souboru. Typ obsahu a délka jsou kontrolovány. Pokud soubor není úspěšný ověření, chyba je přidána do `ModelState`.
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Utilities/FileHelpers.cs)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
 
-### <a name="save-the-file-to-disk"></a>Uložte soubor na disku
+::: moniker-end
 
-Ukázková aplikace uloží odeslané soubory do pole databáze. Chcete-li uložit soubor na disku, použijte [FileStream](/dotnet/api/system.io.filestream). V následujícím příkladu se zkopíruje soubor držené `FileUpload.UploadPublicSchedule` k `FileStream` v `OnPostAsync` metoda. `FileStream` Zapíše soubor na disku `<PATH-AND-FILE-NAME>` poskytuje:
+### <a name="save-the-file-to-disk"></a>Uložte soubor na disk
+
+Ukázková aplikace ukládá nahraných souborů do pole databáze. Chcete-li uložit soubor na disk, použijte [FileStream](/dotnet/api/system.io.filestream). V následujícím příkladu se zkopíruje soubor ukládaná společností `FileUpload.UploadPublicSchedule` k `FileStream` v `OnPostAsync` metoda. `FileStream` Zapíše soubor na disk na `<PATH-AND-FILE-NAME>` k dispozici:
 
 ```csharp
 public async Task<IActionResult> OnPostAsync()
@@ -79,30 +99,52 @@ public async Task<IActionResult> OnPostAsync()
 }
 ```
 
-Pracovní proces musí mít oprávnění k zápisu do určeného umístění `filePath`.
+Pracovní proces musí mít oprávnění k zápisu do umístění určeného proměnnou `filePath`.
 
 > [!NOTE]
-> `filePath` *Musí* patří název souboru. Pokud není zadán název souboru, [UnauthorizedAccessException](/dotnet/api/system.unauthorizedaccessexception) je vyvolána za běhu.
+> `filePath` *Musí* zahrnovat název souboru. Pokud není zadaný název souboru, [UnauthorizedAccessException](/dotnet/api/system.unauthorizedaccessexception) je vyvolána výjimka za běhu.
 
 > [!WARNING]
-> Nikdy zachovat odeslané soubory ve stejném stromu pro adresář jako aplikace.
+> Nikdy neměli zachovat nahrané soubory ve stromové struktuře stejného adresáře jako aplikace.
 >
-> Ukázka kódu neposkytuje žádnou serverové ochranu proti nahrávání souborů škodlivý. Informace o omezení útoku při přijetí soubory od uživatelů najdete v následujících zdrojích informací:
+> Vzorový kód poskytuje žádné serverové ochranu proti nahrávání škodlivých souborů. Informace o omezení možností útoku, při přijetí soubory od uživatelů najdete v následujících zdrojích:
 >
-> * [Nahrávání neomezený souborů](https://www.owasp.org/index.php/Unrestricted_File_Upload)
-> * [Zabezpečení Azure: Ujistěte se, že příslušný ovládací prvky jsou zavedené při přijetí soubory od uživatelů](/azure/security/azure-security-threat-modeling-tool-input-validation#controls-users)
+> * [Nahrání souboru bez omezení](https://www.owasp.org/index.php/Unrestricted_File_Upload)
+> * [Zabezpečení Azure: Ujistěte se, že odpovídající ovládací prvky jsou na místě při přijetí soubory od uživatelů](/azure/security/azure-security-threat-modeling-tool-input-validation#controls-users)
 
-### <a name="save-the-file-to-azure-blob-storage"></a>Uložte soubor do Azure Blob Storage
+### <a name="save-the-file-to-azure-blob-storage"></a>Uložte soubor do úložiště objektů Blob v Azure
 
-Pokud chcete nahrát obsah souboru do Azure Blob Storage, najdete v části [Začínáme s Azure Blob Storage pomocí rozhraní .NET](/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Téma ukazuje, jak používat [UploadFromStream](/dotnet/api/microsoft.windowsazure.storage.file.cloudfile.uploadfromstreamasync) Uložit [FileStream](/dotnet/api/system.io.filestream) do úložiště objektů blob.
+Nahrát obsah souboru do úložiště objektů Blob v Azure, najdete v článku [Začínáme s Azure Blob Storage pomocí .NET](/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Téma ukazuje, jak používat [UploadFromStream](/dotnet/api/microsoft.windowsazure.storage.file.cloudfile.uploadfromstreamasync) uložte [FileStream](/dotnet/api/system.io.filestream) do úložiště objektů blob.
 
-## <a name="add-the-schedule-class"></a>Přidání třídy plán
+## <a name="add-the-schedule-class"></a>Přidat třídu plán
 
-Klikněte pravým tlačítkem *modely* složky. Vyberte **přidat** > **třída**. Název třídy **plán** a přidejte následující vlastnosti:
+Klikněte pravým tlačítkem myši *modely* složky. Vyberte **přidat** > **třídy**. Název třídy **plán** a přidejte následující vlastnosti:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/Schedule.cs)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
 
-Používá třída `Display` a `DisplayFormat` atributy, které vytvářejí popisné názvy a formátování při vykreslení data plánu.
+::: moniker-end
+
+Tato třída používá `Display` a `DisplayFormat` atributy, které vytvářejí popisné názvy a formátování při vykreslování dat plánu.
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="update-the-razorpagesmoviecontext"></a>Aktualizace RazorPagesMovieContext
+
+Zadejte `DbSet` v `RazorPagesMovieContext` (*Data/RazorPagesMovieContext.cs*) pro plány:
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Data/RazorPagesMovieContext.cs?highlight=17)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 ## <a name="update-the-moviecontext"></a>Aktualizace MovieContext
 
@@ -110,102 +152,203 @@ Zadejte `DbSet` v `MovieContext` (*Models/MovieContext.cs*) pro plány:
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
-## <a name="add-the-schedule-table-to-the-database"></a>Přidat do databáze v tabulce plán
+::: moniker-end
 
-Otevřete konzolu Správce balíčků (pomocí PMC): **nástroje** > **Správce balíčků NuGet** > **Konzola správce balíčků**.
+## <a name="add-the-schedule-table-to-the-database"></a>Přidat plán tabulku do databáze
 
-![Pomocí PMC nabídky](../first-mvc-app/adding-model/_static/pmc.png)
+Otevřete konzoly Správce balíčků (PMC): **nástroje** > **Správce balíčků NuGet** > **Konzola správce balíčků**.
 
-V pomocí PMC spuštěním následujících příkazů. Přidat tyto příkazy `Schedule` tabulky k databázi:
+![PMC nabídky](../first-mvc-app/adding-model/_static/pmc.png)
+
+V konzole PMC spusťte následující příkazy. Přidat tyto příkazy `Schedule` tabulky v databázi:
 
 ```powershell
 Add-Migration AddScheduleTable
 Update-Database
 ```
 
-## <a name="add-a-file-upload-razor-page"></a>Přidat nahrání souboru stránky Razor
+## <a name="add-a-file-upload-razor-page"></a>Přidat stránky Razor odesílání souborů
 
-V *stránky* složky, vytvoření *plány* složky. V *plány* složku vytvořit stránku s názvem *Index.cshtml* pro nahrávání plán s následujícím obsahem:
+V *stránky* složku, vytvořte *plány* složky. V *plány* složku, vytvořte stránku s názvem *Index.cshtml* pro nahrávání plánu s následujícím obsahem:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie21/Pages/Schedules/Index.cshtml)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
 
-Každá skupina formuláře zahrnuje  **\<popisek >** který zobrazí název každé vlastnosti třídy. `Display` Atributy v `FileUpload` model poskytují zobrazovaných hodnot pro popisky. Například `UploadPublicSchedule` zobrazovaný název vlastnosti je nastaven s `[Display(Name="Public Schedule")]` a proto zobrazí "Veřejné plán" v popisku, když se vykreslí formulář.
+::: moniker-end
 
-Každá skupina formuláře zahrnuje ověřování  **\<span >**. Uživatelský vstup nesplňuje-li vlastnost atributy nastavit v `FileUpload` třídy nebo pokud platí jedna z `ProcessFormFile` metoda souboru ověřování selže, model se nepodaří ověřit. Pokud selže ověření modelu, je generován zprávu užitečné ověření uživatele. Například `Title` vlastnost je opatřen poznámkou `[Required]` a `[StringLength(60, MinimumLength = 3)]`. Pokud se uživateli nepodaří zadat název, obdrží zprávu s upozorněním, že je vyžadována hodnota. Pokud uživatel zadá hodnotu menší než 3 znaky nebo víc než 60 znaků, obdrží zprávu s upozorněním, že hodnota má nesprávnou délku. Soubor je zadaný, který nemá žádný obsah, zobrazí se zpráva označující, že soubor je prázdný.
+Každý formulář skupinou  **\<popisek >** , který zobrazí název každé vlastnosti třídy. `Display` Atributů `FileUpload` nabízí model zobrazované hodnoty popisků. Například `UploadPublicSchedule` zobrazovaného názvu vlastnosti se nastaví pomocí `[Display(Name="Public Schedule")]` a proto zobrazí "Veřejný plán" v popisku při vykreslení formuláři.
 
-## <a name="add-the-page-model"></a>Přidání stránky modelu
+Každá skupina formuláře zahrnuje ověření  **\<span >**. Uživatelský vstup nesplňuje-li nastavit atributy vlastnosti `FileUpload` třídy nebo zda má některý `ProcessFormFile` metoda soubor ověřování selže, modelu se nepodařilo ověřit. Pokud selže ověření modelu se vykreslí užitečné ověřovací zprávu pro uživatele. Například `Title` vlastnost je opatřen poznámkou `[Required]` a `[StringLength(60, MinimumLength = 3)]`. Pokud se uživateli nepodaří zadat název, obdrží zprávu s oznámením, že je vyžadována hodnota. Pokud uživatel zadá hodnotu menší než tři znaky nebo více než 60 znaků, obdrží zprávu s oznámením, že hodnota má nesprávnou délku. Pokud soubor uvedený, který nemá žádný obsah, zobrazí se zpráva označující, že soubor je prázdný.
 
-Přidání stránky modelu (*Index.cshtml.cs*) k *plány* složky:
+## <a name="add-the-page-model"></a>Přidání modelu stránky
+
+Přidat model stránky (*Index.cshtml.cs*) k *plány* složky:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Pages/Schedules/Index.cshtml.cs)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
-Model stránky (`IndexModel` v *Index.cshtml.cs*) váže `FileUpload` třídy:
+::: moniker-end
+
+Model stránky (`IndexModel` v *Index.cshtml.cs*) vytvoří vazbu `FileUpload` třídy:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index21.cshtml.cs?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
 
-Model také používá seznam plány (`IList<Schedule>`) k zobrazení plány, které jsou uloženy v databázi na stránce:
+::: moniker-end
+
+Seznam plánů používá model (`IList<Schedule>`) Chcete-li zobrazit plány, které jsou uloženy v databázi na stránce:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index21.cshtml.cs?name=snippet2)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
 
-Při načtení stránky s `OnGetAsync`, `Schedules` je naplněny z databáze a používat ke generování tabulky HTML z načíst plánů:
+::: moniker-end
+
+Při načtení stránky s `OnGetAsync`, `Schedules` je vyplněný z databáze a sloužící ke generování tabulku HTML načíst plánů:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index21.cshtml.cs?name=snippet3)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
-Při odeslání formuláře na server, `ModelState` je zaškrtnuté. Pokud je neplatná, `Schedule` znovu sestaven, a vykreslí stránku s jeden nebo více ověřovacích zpráv s informacemi o tom, proč stránky ověření se nezdařilo. Pokud je platná, `FileUpload` vlastnosti se používají v *OnPostAsync* k dokončení nahrávání souborů pro dvě verze plánu a vytvořit nový `Schedule` objekt, který chcete uložit data. Plán pak je uložena do databáze:
+::: moniker-end
+
+Při odeslání formuláře k serveru, `ModelState` je zaškrtnuté políčko. Pokud není platný, `Schedule` znovu sestaví, a na stránce vykresluje se s jeden nebo více ověřovacích zpráv s informacemi o tom, proč se nezdařilo ověření stránky. Pokud je platný, `FileUpload` vlastnosti jsou používány v *OnPostAsync* k dokončení nahrávání souboru pro dvě verze plán a vytvořit nový `Schedule` objekt pro uložení data. Plán se pak uloží do databáze:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index21.cshtml.cs?name=snippet4)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 
-## <a name="link-the-file-upload-razor-page"></a>Odkaz nahrávání souborů stránky Razor
+::: moniker-end
 
-Otevřete *_Layout.cshtml* a přidat odkaz na navigačním panelu k dosažení stránka nahrávání souboru:
+## <a name="link-the-file-upload-razor-page"></a>Propojit samotné nahrávání souborů stránky Razor
 
-[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
+Otevřít *Pages/Shared/_Layout.cshtml* a přidat odkaz na navigačním panelu na stránce plány:
 
-## <a name="add-a-page-to-confirm-schedule-deletion"></a>Přidat stránku potvrďte odstranění plánu
+```cshtml
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li><a asp-page="/Index">Home</a></li>
+        <li><a asp-page="/Schedules/Index">Schedules</a></li>
+        <li><a asp-page="/About">About</a></li>
+        <li><a asp-page="/Contact">Contact</a></li>
+    </ul>
+</div>
+```
 
-Když uživatel klikne na Odstranit plán, je k dispozici šanci na tlačítko Storno. Přidat stránku potvrzení odstranění (*Delete.cshtml*) k *plány* složky:
+## <a name="add-a-page-to-confirm-schedule-deletion"></a>Přidat stránku pro potvrzení odstranění plánu
+
+Když uživatel klikne na odstranění plánu, je k dispozici možnost zrušit operaci. Přidat stránku potvrzení odstranění (*Delete.cshtml*) k *plány* složky:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie21/Pages/Schedules/Delete.cshtml)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
-Model stránky (*Delete.cshtml.cs*) načte jeden plán identifikovaný `id` v datech trasy žádosti. Přidat *Delete.cshtml.cs* do souboru *plány* složky:
+::: moniker-end
+
+Model stránky (*Delete.cshtml.cs*) načte jeden plán identifikovaný `id` v datech trasy žádost. Přidat *Delete.cshtml.cs* do souboru *plány* složky:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Pages/Schedules/Delete.cshtml.cs)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 
-`OnPostAsync` Metoda zpracovává odstranění plán, podle jeho `id`:
+::: moniker-end
+
+`OnPostAsync` Obsluhovala odstraňuje se plán, podle jeho `id`:
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete21.cshtml.cs?name=snippet1&highlight=8,12-13)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
 
-Po úspěšném odstranění plán, `RedirectToPage` odešle uživateli zpět na plány *Index.cshtml* stránky.
+::: moniker-end
 
-## <a name="the-working-schedules-razor-page"></a>Funkční stránky Razor plány
+Po úspěšném odstranění plánu, `RedirectToPage` uživatel odešle zpět plány *Index.cshtml* stránky.
 
-Při načtení stránky, popisky a vstupy pro plán název, plán veřejné a privátní plán se vykreslují tlačítka Odeslat:
+## <a name="the-working-schedules-razor-page"></a>Funkční plány stránky Razor
 
-![Plány stránky Razor, jak je vidět na počáteční zatížení bez chyby ověření a prázdné pole](uploading-files/_static/browser1.png)
+Když se stránka načte, popisků a vstupy pro název plánu, plán veřejné a privátní plánu jsou vykreslovány pomocí tlačítka Odeslat:
 
-Výběr **nahrát** tlačítko bez naplnění žádná pole je v rozporu `[Required]` atributů v modelu. `ModelState` Je neplatný. Uživateli se zobrazí chybové zprávy ověření:
+![Stránka Razor plány, jak je vidět na počátečním načtení bez chyb ověření a prázdná pole](uploading-files/_static/browser1.png)
 
-![Ověření chybové zprávy zobrazují vedle každého vstupního ovládacího prvku](uploading-files/_static/browser2.png)
+Výběr **nahrát** tlačítko bez naplnění libovolné pole je v rozporu `[Required]` atributů v modelu. `ModelState` Je neplatný. Uživateli se zobrazí chybové zprávy ověření:
 
-Zadejte dvě písmena do **název** pole. Ověření změny zpráva indikující, že název musí být 3 až 60 znaků:
+![Chybové zprávy ověření se zobrazí vedle každého vstupního ovládacího prvku](uploading-files/_static/browser2.png)
 
-![Změnit název ověřovací zprávy](uploading-files/_static/browser3.png)
+Zadejte dvě písmena do **název** pole. Změny ověření zpráva označující, že název musí být dlouhý 3 až 60 znaků:
 
-Pokud jeden nebo více plánů se odešlou, **načíst plány** načíst plány vykreslí část:
+![Změnit název ověřovací zpráva](uploading-files/_static/browser3.png)
 
-![Tabulka načíst plány, zobrazuje název každý plán nahrán datum UTC, veřejné verze velikost souboru a velikost souboru privátní verze](uploading-files/_static/browser4.png)
+Když se nahrají nejmíň jeden plán, **načíst plány** vykreslí část načíst plány:
 
-Můžete kliknout na uživatele **odstranit** odkaz z ní k dosažení zobrazení potvrzení odstranění, které mají příležitost potvrdit nebo zrušit operaci odstranění.
+![Tabulka načíst plány, zobrazuje název každého plánu, nahrát data ve standardu UTC, veřejné verze souboru velikost a velikost souboru privátní verze](uploading-files/_static/browser4.png)
+
+Uživatel může kliknout **odstranit** odkaz z něj k dosažení zobrazení potvrzení odstranění, ve kterých budou mít možnost potvrdit nebo zrušit operaci odstranění zopakovat.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Pro řešení potíží s informací o s `IFormFile` nahrát, najdete v článku [nahrávání souborů v ASP.NET Core: řešení potíží s](xref:mvc/models/file-uploads#troubleshooting).
+Informace o odstraňování potíží `IFormFile` nahrát, najdete v článku [nahrání souborů v ASP.NET Core: řešení potíží s](xref:mvc/models/file-uploads#troubleshooting).
 
-Děkujeme, že dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětnou vazbu. [Začínáme s MVC a EF základní](xref:data/ef-mvc/intro) je vynikající postupujte podle kroků až tento kurz.
+Děkujeme vám za dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětnou vazbu. [Začínáme s MVC a EF Core](xref:data/ef-mvc/intro) je vynikající postupujte až v tomto kurzu.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Nahrávání souborů v ASP.NET Core](xref:mvc/models/file-uploads)
+* [Nahrání souborů v ASP.NET Core](xref:mvc/models/file-uploads)
 * [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile)
 
 > [!div class="step-by-step"]

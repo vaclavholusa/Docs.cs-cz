@@ -1,125 +1,124 @@
 ---
 uid: mvc/overview/security/preventing-open-redirection-attacks
-title: Prevence útoků otevřete přesměrování (C#) | Microsoft Docs
+title: Prevence útoků na otevřeném přesměrování (C#) | Dokumentace Microsoftu
 author: jongalloway
-description: Tento kurz popisuje, jak lze zabránit útokům otevřete přesměrování v aplikacích ASP.NET MVC. Tento kurz popisuje změny, které byly provedeny...
+description: Tento kurz vysvětluje, jak lze zabránit útokům otevřené přesměrování ve svých aplikacích ASP.NET MVC. Tento kurz popisuje změny, které mají za cíl...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
 ms.topic: article
 ms.assetid: 69fb02e0-f5b7-4c35-878c-fa87164fc785
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: ec1cd1791eb6d32e7c1ea50bc6626929cad2960e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 27921e23d38d34332b81fb85dcc795c8f9ff0352
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879670"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375467"
 ---
-<a name="preventing-open-redirection-attacks-c"></a>Prevence útoků otevřete přesměrování (C#)
+<a name="preventing-open-redirection-attacks-c"></a>Prevence útoků na otevřeném přesměrování (C#)
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Tento kurz popisuje, jak lze zabránit útokům otevřete přesměrování v aplikacích ASP.NET MVC. Tento kurz popisuje změny, které byly provedeny v AccountController v architektuře ASP.NET MVC 3 a ukazuje, jak můžete tyto změny použít na vaše stávající technologie ASP.NET MVC 1.0 a 2 aplikace.
+> Tento kurz vysvětluje, jak lze zabránit útokům otevřené přesměrování ve svých aplikacích ASP.NET MVC. Tento kurz popisuje změny, které byly provedeny v AccountController v architektuře ASP.NET MVC 3 a ukazuje, jak je možné použít tyto změny v existujících ASP.NET MVC 1.0 a 2 aplikacemi.
 
 
-## <a name="what-is-an-open-redirection-attack"></a>Co je útok otevřete přesměrování?
+## <a name="what-is-an-open-redirection-attack"></a>Co je útok otevřené přesměrování?
 
-Webové aplikace, který přesměruje na adresu URL, která je zadána prostřednictvím požadavku například řetězci dotazu nebo formuláře dat může potenciálně manipulováno k přesměrování uživatelů na externí, škodlivý URL. Tato manipulaci se nazývá útok otevřete přesměrování.
+Libovolné webové aplikace, který přesměruje na adresu URL, která je zadáno pomocí požadavku, například data řetězce dotazu nebo formuláře může být potenciálně úmyslně přesměrovat uživatele na škodlivé, externí adresu URL. Toto úmyslné poškozování, se nazývá otevřené přesměrování útoku.
 
-Vždy, když vaše aplikace logiky přesměruje na zadané adrese URL, je nutné ověřit, že adresu URL pro přesměrování nikdo neoprávněně nemanipuloval. Přihlášení, které se používá ve výchozím AccountController pro ASP.NET MVC 1.0 a ASP.NET MVC 2 je zranitelný vůči útokům přesměrování otevřete. Naštěstí je snadné k aktualizaci existující aplikace oprav z verze Preview ASP.NET MVC 3.
+Pokaždé, když se vaše aplikace logiky se přesměruje na zadané adresy URL, je nutné ověřit, že adresa URL pro přesměrování bylo neoprávněně manipulováno. Přihlašovací údaje používané pro ASP.NET MVC 1.0 a ASP.NET MVC 2 ve výchozím nastavení AccountController je ohrožen útoky přesměrování otevřete. Je naštěstí snadné k aktualizaci existující aplikace pomocí opravy z technologie ASP.NET MVC 3 ve verzi Preview.
 
-Zjistit chybu podíváme, jak funguje přesměrování přihlášení v projektu webové aplikace ASP.NET MVC 2 výchozí. V této aplikaci pokusu navštívit akce kontroleru, který má atribut [autorizovat] přesměruje neoprávnění uživatelé /Account/LogOn zobrazení. Tato přesměrování, které /Account/LogOn bude obsahovat parametr řetězce dotazu returnUrl tak, aby uživatel se může vracet na původně požadovanou URL adresu po jejich úspěšně přihlášeni.
+Informace o tom ohrožení zabezpečení, Podívejme se na fungování přesměrování přihlášení v projektu webové aplikace ASP.NET MVC 2 výchozí. V této aplikaci pokus o navštivte akce kontroleru, který má atribut [Authorize] přesměruje neoprávněným uživatelům /Account/LogOn zobrazení. Toto přesměrování, které /Account/LogOn bude obsahovat řetězec dotazu parametr returnUrl tak, aby uživatel může být vrácen na původně požadovanou URL adresu po jejich úspěšném přihlášení.
 
-Na tomto snímku obrazovky uvidíme, že pokus o přístup k zobrazení /Account/ChangePassword, když není přihlášen výsledkem přesměrování na /Account/LogOn? ReturnUrl = % 2fAccount % 2fChangePassword % 2f.
+Na snímku obrazovky níže můžeme vidět, že pokus o přístup k zobrazení /Account/ChangePassword, když není přihlášený výsledkem přesměrování /Account/LogOn? ReturnUrl = % 2fAccount % 2fChangePassword % 2f.
 
 [![](preventing-open-redirection-attacks/_static/image2.png)](preventing-open-redirection-attacks/_static/image1.png)
 
-**Obrázek 01**: přihlašovací stránku s otevřete přesměrování
+**Obrázek 01**: přihlašovací stránku s otevřené přesměrování
 
-Vzhledem k tomu, že parametr řetězce dotazu ReturnUrl není ověřená, útočník ho upravit, abyste vložit libovolnou adresu URL do parametru k provedení útoku otevřete přesměrování. Ukazuje to jsme můžete změnit parametr ReturnUrl na [ http://bing.com ](http://bing.com), takže výsledný přihlašovací adresa URL bude/Account/přihlášení? ReturnUrl =<http://www.bing.com/>. Po úspěšně přihlašování k webu, jsme se přesměrují na [ http://bing.com ](http://bing.com). Vzhledem k tomu, že toto přesměrování není ověřen, může místo toho přejděte na škodlivé weby, které se pokouší přesvědčit uživatele, aby.
+Protože parametr querystring ReturnUrl neověří, útočník ho upravit, abyste vložit libovolnou adresu URL do parametru provádět útok otevřené přesměrování. Chcete-li to ukazuje, můžeme upravit parametr ReturnUrl [ http://bing.com ](http://bing.com), takže bude Výsledná adresa URL pro přihlášení/účet/přihlášení? ReturnUrl =<http://www.bing.com/>. Po úspěšném přihlášení k webu jsme se přesměrují na [ http://bing.com ](http://bing.com). Protože toto přesměrování neověří, může místo toho přejděte na škodlivým webům, která se pokusí přimět uživatele.
 
-### <a name="a-more-complex-open-redirection-attack"></a>Složitější otevřete útoku přesměrování
+### <a name="a-more-complex-open-redirection-attack"></a>Složitější otevřené přesměrování útoku
 
-Otevřete přesměrování útoky jsou obzvláště nebezpečné, protože útočník ví, že Pokoušíme se přihlaste se k určitému webu, který je zranitelný nám [útoky phishing](https://www.microsoft.com/protect/fraud/phishing/symptoms.aspx). Například útočník může odeslat škodlivý e-mailů webu uživatelům ve snaze zaznamenat jejich hesla. Podíváme, jak to bude fungovat na webu NerdDinner. (Všimněte si, že byl aktualizován živý web NerdDinner chránit před útoky otevřete přesměrování.)
+Protože útočník ví, že jsme se snažíte přihlásit konkrétní web, který nám zranitelný jsou zvlášť nebezpečné útoky otevřené přesměrování [útoku](https://www.microsoft.com/protect/fraud/phishing/symptoms.aspx). Například útočník může odeslat škodlivý e-mailů uživatelům webu za účelem zachycení jejich hesla. Podívejme se na tom, jak by to fungovalo v lokalitě NerdDinner. (Mějte na paměti, živého webu NerdDinner je aktualizovaná pro ochranu před útoky otevřené přesměrování.)
 
-Nejprve útočník odešle nám odkaz na přihlašovací stránku na NerdDinner, která zahrnuje přesměrování, které jejich padělané stránky:
+Nejprve útočník odešle nám odkaz na stránku pro přihlášení na NerdDinner, která zahrnuje přesměrování na stránku falešných:
 
 [http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn](http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn)
 
-Všimněte si, že návratová adresa URL odkazuje na nerddiner.com, které chybí "n" z večeři aplikace word. V tomto příkladu je to doméně, která určuje, že útočník. Když jsme získat přístup na výše uvedený odkaz, jsme se prováděné na oprávněné NerdDinner.com přihlašovací stránku.
+Všimněte si, že návratová adresa URL odkazuje na nerddiner.com, které chybí "n" z dinner aplikace word. V tomto příkladu to je doména, která určuje, že útočník. Když jsme na výše uvedeném odkazu, jsme přejdete na oprávněné aplikace NerdDinner.com přihlašovací stránku.
 
 [![](preventing-open-redirection-attacks/_static/image4.png)](preventing-open-redirection-attacks/_static/image3.png)
 
-**Obrázek 02**: NerdDinner přihlašovací stránku s otevřete přesměrování
+**Obrázek 02**: NerdDinner přihlašovací stránku s otevřené přesměrování
 
-Když jsme správně přihlásit, akce ASP.NET MVC AccountController přihlášení nám přesměruje na adresu URL zadanou v parametru řetězce dotazu returnUrl. V takovém případě je adresu URL, kterou má zadán útočník, který je [ http://nerddiner.com/Account/LogOn ](http://nerddiner.com/Account/LogOn). Pokud jsme velmi watchful, že je velmi pravděpodobné, že nebude, zjistíme zvlášť, protože útočník byl pečlivě zkontrolujte, zda jejich padělané stránka vypadá úplně stejně jako legitimní přihlašovací stránku. Tento přihlašovací stránku obsahuje, chyba zprávu požadavku, nemůžeme přihlásit znovu. Clumsy nás, jsme musí zadali heslo.
+Jsme správně přihlásit, přihlášení akce ASP.NET MVC AccountController nám přesměruje na adresu URL zadanou v parametru querystring returnUrl. V takovém případě je adresu URL, který útočník přešel, což je [ http://nerddiner.com/Account/LogOn ](http://nerddiner.com/Account/LogOn). Pokud jsme velmi watchful, že je velmi pravděpodobné že nebude, zjistíme zvlášť, protože byl pozor, abyste měli jistotu, že útočník jejich falešných stránka vypadá stejně jako legitimní přihlašovací stránky. Tato přihlašovací stránku obsahuje, chybová zpráva požaduje, můžeme přihlásit znovu. Clumsy nám, jsme musí zadali heslo.
 
 [![](preventing-open-redirection-attacks/_static/image6.png)](preventing-open-redirection-attacks/_static/image5.png)
 
-**Obrázek 03**: Forged NerdDinner přihlašovací obrazovku
+**Obrázek 03**: založených na zfalšovaných NerdDinner přihlašovací obrazovky
 
-Když jsme znovu naše uživatelské jméno a heslo, padělané přihlašovací stránky uloží informace a odešle nám zpět na web legitimní NerdDinner.com. V tomto okamžiku NerdDinner.com lokality již ověřen nám, takže přímo na této stránce můžete přesměrovat padělané přihlašovací stránku. Konečným výsledkem je, že útočník má naše uživatelské jméno a heslo a jsme neberou v úvahu, že jsme jste zadali na ně.
+Když znovu jsme naše uživatelské jméno a heslo, falešných přihlašovací stránku uloží informace a nám odešle zpět na oprávněné aplikace NerdDinner.com lokality. V tomto okamžiku lokality aplikace NerdDinner.com již ověřen nám, takže falešných přihlašovací stránku lze přesměrovat přímo na tuto stránku. Konečným výsledkem je, že útočník má naše uživatelské jméno a heslo a jsme neberou v úvahu, že jsme jste poskytli k nim.
 
-## <a name="looking-at-the-vulnerable-code-in-the-accountcontroller-logon-action"></a>Prohlížení kód citlivé na přihlášení akce AccountController
+## <a name="looking-at-the-vulnerable-code-in-the-accountcontroller-logon-action"></a>Prohlížení zranitelné kód v přihlášení akce AccountController
 
-Kód pro přihlášení akce v aplikaci ASP.NET MVC 2 je uveden níže. Všimněte si, že po úspěšném přihlášení kontroleru vrátí přesměrování returnUrl. Uvidíte, že žádné ověření se provádí před returnUrl parametr.
+Kód pro proces přihlášení v aplikaci ASP.NET MVC 2 je uveden níže. Všimněte si, že po úspěšném přihlášení kontroleru vrátí přesměrování adresa returnUrl. Uvidíte, že žádné ověření se provádí proti parametr returnUrl.
 
-**Výpis 1 – akce ASP.NET MVC 2 přihlášení v `AccountController.cs`**
+**Výpis 1 – ASP.NET MVC 2 přihlášení v akci `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample1.cs)]
 
-Nyní Podíváme se na změny akce ASP.NET MVC 3 přihlášení. Tento kód byl změněn na ověření parametru returnUrl voláním nové metody v System.Web.Mvc.Url pomocná třída s názvem `IsLocalUrl()`.
+Nyní Pojďme se podívat na změny na ASP.NET MVC 3 přihlášení akci. Tento kód byl změněn na parametr returnUrl ověřit pomocí volání nové metody System.Web.Mvc.Url pomocná třída s názvem `IsLocalUrl()`.
 
-**Výpis 2 – akce ASP.NET MVC 3 přihlášení v `AccountController.cs`**
+**Výpis 2 – ASP.NET MVC 3 přihlášení v akci `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample2.cs)]
 
-To se změnil na ověření parametr návratové adresy URL voláním nové metody v System.Web.Mvc.Url pomocná třída, `IsLocalUrl()`.
+To byl změněn na ověřte parametr návratové adresy URL tak, že volání nové metody ve třídě pomocné rutiny System.Web.Mvc.Url `IsLocalUrl()`.
 
-## <a name="protecting-your-aspnet-mvc-10-and-mvc-2-applications"></a>Ochrana rozhraní ASP.NET MVC 1,0 a MVC 2 aplikace
+## <a name="protecting-your-aspnet-mvc-10-and-mvc-2-applications"></a>Ochrana ASP.NET MVC 1,0 a MVC 2 aplikace
 
-Přidáním pomocnou metodu IsLocalUrl() a aktualizaci akce přihlášení k ověření parametru returnUrl jsme můžete využít výhod ASP.NET MVC 3 změny v našem existující ASP.NET MVC 1.0 a 2 aplikace.
+Přidáním Pomocná metoda IsLocalUrl() a aktualizuje se přihlášení akce, která má parametr returnUrl ověřit jsme mohou využít výhod změny architektuře ASP.NET MVC 3 naší stávající ASP.NET MVC 1.0 a 2 aplikacemi.
 
-Metoda UrlHelper IsLocalUrl() ve skutečnosti jenom volání do metody v System.Web.WebPages jako toto ověření používá i rozhraní ASP.NET Web Pages.
+Metoda UrlHelper IsLocalUrl() ve skutečnosti pouze volání do metody v System.Web.WebPages jako toto ověření slouží také v aplikacích ASP.NET Web Pages.
 
 **Výpis 3 – metoda IsLocalUrl() z ASP.NET MVC 3 UrlHelper `class`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample3.cs)]
 
-Metoda IsUrlLocalToHost obsahuje logiku samotné ověření, jak je znázorněno v výpis 4.
+Metoda IsUrlLocalToHost obsahuje logiku skutečné ověřování, jak je uvedeno v informacích 4.
 
-**Výpis 4 – metoda IsUrlLocalToHost() z System.Web.WebPages RequestExtensions – třída**
+**Část 4 – metoda IsUrlLocalToHost() ze třídy System.Web.WebPages RequestExtensions**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample4.cs)]
 
-V našich ASP.NET MVC 1.0 nebo 2 aplikace přidáme IsLocalUrl() metoda do AccountController, ale jste doporučujeme, aby ho přidat do samostatné pomocná třída Pokud je to možné. Jsme tak, že bude pracovat uvnitř AccountController budou dva malé změny ve verzi ASP.NET MVC 3 IsLocalUrl(). Nejprve Změníme jeho z veřejné metody privátní metodu, vzhledem k tomu, že jsou přístupné veřejné metody v řadiče jako akce kontroleru. Za druhé upravíme volání, která kontroluje hostitele adresy URL pro hostitele aplikací. Aby se volání využívá místní kontext požadavku pole Třída UrlHelper. Nepoužívejte. RequestContext.HttpContext.Request.Url.Host, použijeme to. Request.Url.Host. Následující kód ukazuje změny metoda IsLocalUrl() pro použití s třídou řadiče v ASP.NET MVC 1.0 a 2 aplikace.
+V naše technologie ASP.NET MVC 1,0 nebo 2 aplikace přidáme IsLocalUrl() metodu AccountController, ale můžete dohlédněte na to, pokud je to možné ho přidat do samostatné pomocné třídě. Verze technologie ASP.NET MVC 3 IsLocalUrl() učiníme dvě malých změn, tak, že bude fungovat uvnitř AccountController. Nejprve Změníme ji z veřejné metody privátní metodu, protože veřejné metody v zařízení můžou mít přístup akce kontroleru. Za druhé upravíme volání, která kontroluje hostitel adresy URL vůči hostitele aplikací. Že volání využívá místní kontext požadavku v třída UrlHelper. Namísto použití této funkce. RequestContext.HttpContext.Request.Url.Host, budeme používat toto. Request.Url.Host. Následující kód ukazuje upravená metoda IsLocalUrl() pro použití s třídou kontroler ASP.NET MVC 1,0 a 2 aplikacemi.
 
-**Výpis 5 – IsLocalUrl() metoda, která je upravit pro použití s třídu MVC jsou řadič MVC**
+**Výpis 5 – IsLocalUrl() metoda, která je upravit pro použití s třídu Kontroleru MVC**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample5.cs)]
 
-Teď, když metoda IsLocalUrl() je na místě, jsme ji volat z našich akce přihlášení k ověření parametru returnUrl, jak je znázorněno v následujícím kódu.
+Teď, když metoda IsLocalUrl() je na místě, můžeme ji volat z našich akce přihlášení k ověření parametr returnUrl jak je znázorněno v následujícím kódu.
 
-**Výpis 6 – aktualizované přihlášení metodu, která ověří parametr returnUrl**
+**Výpis 6 – aktualizované přihlašovací metodu, která ověřuje parametr returnUrl**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample6.cs)]
 
-Nyní jsme můžete otestovat útoku otevřete přesměrování probíhá pokus o přihlášení pomocí externí návratovou adresu URL. Umožňuje použít /Account/LogOn? ReturnUrl =<http://www.bing.com/> znovu.
+Teď můžeme otestovat útok otevřené přesměrování pokusem o přihlášení pomocí externí návratová adresa URL. Použijeme /Account/LogOn? ReturnUrl =<http://www.bing.com/> znovu.
 
 [![](preventing-open-redirection-attacks/_static/image8.png)](preventing-open-redirection-attacks/_static/image7.png)
 
 **Obrázek 04**: testování aktualizované akce přihlášení
 
-Po úspěšném přihlášení se jsme se přesměrují do akce Kontroleru domovské nebo indexu, nikoli na externí adresu URL.
+Po úspěšném přihlášení, jsme se přesměrují na akce Kontroleru Home/Index spíše než externí adresu URL.
 
 [![](preventing-open-redirection-attacks/_static/image10.png)](preventing-open-redirection-attacks/_static/image9.png)
 
-**Obrázek 05**: Otevřete přesměrování útoku potlačována
+**Obrázek 05**: otevřené přesměrování útoku potlačována
 
 ## <a name="summary"></a>Souhrn
 
-Otevřete přesměrování útoky může dojít, když přesměrování adresy URL jsou předány jako parametry v adrese URL pro aplikaci. Otevřete ASP.NET MVC 3, šablona obsahuje kód pro ochranu proti útokům přesměrování. Můžete přidat tento kód se některé změny ASP.NET MVC 1.0 a 2 aplikace. Chránit před útoky otevřete přesměrování při přihlašování do ASP.NET 1.0 a 2 aplikací, přidejte metodu IsLocalUrl() a ověření parametru returnUrl v akci pro přihlášení.
+Útoky otevřené přesměrování může dojít při přesměrování adresy URL jsou předány jako parametry v adrese URL pro aplikaci. Otevřete ASP.NET MVC 3, šablona obsahuje kód pro ochranu před útoky přesměrování. Můžete přidat tento kód s určitými úpravami a 2 aplikace ASP.NET MVC 1,0. K ochraně před útoky na otevřeném přesměrování při přihlašování do 1.0 technologie ASP.NET a 2 aplikací, přidejte metodu IsLocalUrl() a ověřte parametr returnUrl v akci přihlášení.

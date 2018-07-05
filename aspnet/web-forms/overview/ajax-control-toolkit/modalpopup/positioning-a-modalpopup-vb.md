@@ -1,67 +1,66 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
-title: Umístění ModalPopup (VB) | Microsoft Docs
+title: Umístění ovládacího prvku ModalPopup (VB) | Dokumentace Microsoftu
 author: wenz
-description: ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Ale ovládací prvek nenabízí...
+description: Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Ale ovládací prvek nenabízí...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 8a07210c-eb0e-485e-9ee8-82a101520e65
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2d20888674dfedee7a7af85efd8df118c8394c6c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1578a1bd6d5e3b595eba526552b8723daefb2ba1
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874613"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37387829"
 ---
-<a name="positioning-a-modalpopup-vb"></a>Umístění ModalPopup (VB)
+<a name="positioning-a-modalpopup-vb"></a>Umístění ovládacího prvku ModalPopup (VB)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.vb.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4VB.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup4.vb.zip) nebo [stahovat PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup4VB.pdf)
 
-> ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Ovládací prvek ale nenabízí integrovanou funkci na pozici automaticky otevřeném okně.
+> Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Ovládací prvek ale nenabízí vestavěnou funkci na pozici automaticky otevíraného okna.
 
 
 ## <a name="overview"></a>Přehled
 
-ModalPopup ovládacího prvku Toolkitu AJAX nabízí jednoduchý způsob, jak vytvořit modální místní prostředky klienta. Ovládací prvek ale nenabízí integrovanou funkci na pozici automaticky otevřeném okně.
+Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Ovládací prvek ale nenabízí vestavěnou funkci na pozici automaticky otevíraného okna.
 
 ## <a name="steps"></a>Kroky
 
-Chcete-li aktivovat funkce ASP.NET AJAX a sady nástrojů ovládacího prvku `ScriptManager`. ovládací prvek musíte umístit kdekoli na stránce (ale uvnitř `<form>` element):
+K aktivaci funkce technologie ASP.NET AJAX a Control Toolkit `ScriptManager`. ovládací prvek je třeba umístit kdekoli na stránce (ale v rámci `<form>` element):
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample1.aspx)]
 
-Dál přidejte panel, který slouží jako modální místní. Tlačítko slouží k zavření automaticky otevřeném okně:
+V dalším kroku přidáte panel, který slouží jako modální místní nabídky. Tlačítko slouží k zavření automaticky otevírané okno:
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample2.aspx)]
 
-Vždy, když se zobrazí automaticky otevřeném okně, musí být umístěna na určité místo na stránce. Pro tuto úlohu je vytvořen funkce jazyka JavaScript na straně klienta. Nejprve se pokusí získat přístup k panelu. Pokud se aktivace podaří, pozice panelu je nastavena pomocí šablon stylů CSS a JavaScript (změny, které bude pozici v místní nabídce). Ale `ModalPopupExtender` ovládací prvek také pokusí umístit automaticky otevřeném okně. Kód jazyka JavaScript proto umisťuje opakovaně místní, každou desetinu sekundy.
+Pokaždé, když se zobrazí automaticky otevírané okno, musí být umístěn na určité místo na stránce. Pro tuto úlohu se vytvoří funkce jazyka JavaScript na straně klienta. Nejprve se pokusí přistupovat k panelu. Pokud se aktivace podaří, pozici panelu se nastavuje pomocí šablon stylů CSS a JavaScriptu (změnit pozici automaticky otevíraného okna na budou). Ale `ModalPopupExtender` ovládací prvek se rovněž snaží pozici automaticky otevíraného okna. Proto kód jazyka JavaScript opakovaně umístí automaticky otevírané okno, každou desetinu sekundy.
 
 [!code-html[Main](positioning-a-modalpopup-vb/samples/sample3.html)]
 
-Jak můžete vidět, vrátí hodnotu, která `setTimeout()` metodu JavaScript je uložen v globální proměnné. To umožňuje zastavit opakovaných umístění automaticky otevřeném okně na vyžádání, pomocí `clearTimeout()` metoda:
+Jak je vidět, návratová hodnota `setTimeout()` metodu JavaScript se uloží do globální proměnné. Zastavit opakované umístění automaticky otevíraného okna na vyžádání, díky tomu pomocí `clearTimeout()` metody:
 
 [!code-javascript[Main](positioning-a-modalpopup-vb/samples/sample4.js)]
 
-Nyní již zbývá udělat je ověřte prohlížeč volat tyto funkce, kdykoli je to vhodné. `movePanel()` Funkce JavaScript, která musí být volána, když po kliknutí na tlačítko, která spustí panelu:
+Nyní vše, co už zbývá jen se v prohlížeči volání těchto funkcí, kdykoli je to vhodné. `movePanel()` Funkce JavaScript, která musí být volána, když po kliknutí na tlačítko, která aktivuje panelu:
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample5.aspx)]
 
-A `stopMoving()` funkce stává play při zavření automaticky otevřeném okně. to může být aktivována v `ModalPopupExtender` ovládacího prvku:
+A `stopMoving()` funkce vstupu do play při zavření to může automaticky otevírané okno se aktivuje v `ModalPopupExtender` ovládacího prvku:
 
 [!code-aspx[Main](positioning-a-modalpopup-vb/samples/sample6.aspx)]
 
 
-[![Modální automaticky otevřeném okně se zobrazí na určené pozici](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
+[![Modální místní nabídky se zobrazí na určené pozici](positioning-a-modalpopup-vb/_static/image2.png)](positioning-a-modalpopup-vb/_static/image1.png)
 
-Modální automaticky otevřeném okně se zobrazí na určené pozici ([Kliknutím zobrazit obrázek v plné velikosti](positioning-a-modalpopup-vb/_static/image3.png))
+Modální místní nabídky se zobrazí na určené pozici ([kliknutím ji zobrazíte obrázek v plné velikosti](positioning-a-modalpopup-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](handling-postbacks-from-a-modalpopup-vb.md)

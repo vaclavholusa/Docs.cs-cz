@@ -1,7 +1,7 @@
 <a name="scaffold"></a>
-### <a name="scaffold-the-movie-model"></a>Vygenerované uživatelské rozhraní film modelu
+### <a name="scaffold-the-movie-model"></a>Vygenerované uživatelské rozhraní Video modelu
 
-* Spusťte následující z příkazového řádku (v adresáři projektu, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory):
+* Spusťte následující příkaz z příkazového řádku (v adresáři projektu, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory):
 
   ```console
   dotnet restore
@@ -13,7 +13,7 @@ Pokud dojde k chybě:
 No executable found matching command "dotnet-aspnet-codegenerator"
   ```
 
-Chyba který předchází se stane, když se do nesprávného adresáře. Otevřete příkazové prostředí do adresáře projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory), a poté spusťte příkaz který předchází.
+Předchozí chybě dojde, když jsou do nesprávného adresáře. Otevřete příkazové okno k adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory), a poté spusťte příkaz when.
 
 Pokud dojde k chybě:
   ```
@@ -22,4 +22,4 @@ Pokud dojde k chybě:
   because it is being used by another process.
   ```
 
-Visual Studio ukončete a spusťte příkaz znovu.
+Ukončení sady Visual Studio a spusťte příkaz znovu.

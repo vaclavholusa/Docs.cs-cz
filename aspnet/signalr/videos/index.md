@@ -1,6 +1,6 @@
 ---
 uid: signalr/videos/index
-title: Funkce SignalR technologie ASP.NET videa | Microsoft Docs
+title: Videa o ASP.NET SignalR | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,18 +9,17 @@ ms.date: 12/12/2012
 ms.topic: article
 ms.assetid: c0ea52a3-7497-4204-88c6-91591ac1a6b2
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/videos
 msc.type: book
-ms.openlocfilehash: c05938c415b1dd9eae60b865fc4434660b767579
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9da04aa8ee29d5c43117688ca7c25197e04734a0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26565957"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367752"
 ---
-<a name="aspnet-signalr-videos"></a>Funkce SignalR technologie ASP.NET videa
+<a name="aspnet-signalr-videos"></a>Videa o ASP.NET SignalR
 ====================
-- [Funkce SignalR technologie ASP.NET videa](getting-started/index.md)
+- [Videa o ASP.NET SignalR](getting-started/index.md)
 
     - [SignalR a webové sokety](getting-started/signalr-and-web-sockets.md)

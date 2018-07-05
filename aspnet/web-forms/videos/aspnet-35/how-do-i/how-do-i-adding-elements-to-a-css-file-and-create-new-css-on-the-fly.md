@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly
-title: '[Jak na:] Přidání souboru elementů šablon stylů CSS a vytvoření nové šablony stylů CSS za chodu | Microsoft Docs'
+title: '[Postup:] Přidání prvků do šablony stylů CSS souborů a vytvoření nové šablony stylů CSS v reálném čase | Dokumentace Microsoftu'
 author: rick-anderson
-description: V tomto videu jsme vychází z existující šablony stylů a vylepšení s ID elementu pomocí nové nástroje pro správu šablon stylů CSS v sadě Visual Studio 2008.
+description: V tomto videu jsme stavět na existující šablony stylů a zlepšení s ID elementu pomocí nového nástroje pro správu šablon stylů CSS v sadě Visual Studio 2008.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2008
 ms.topic: article
 ms.assetid: 426a5d0f-fde7-447c-ad69-4efe45f8efea
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly
 msc.type: video
-ms.openlocfilehash: 8bb43776b1fff27b25562376f1c8f7cb42615718
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 036ea175f6a4fb62b7c4823fa33d261d6c92e4de
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884120"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385405"
 ---
-<a name="how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly"></a>[Jak na:] Přidání elementů šablon stylů CSS souboru a vytvoření nové šablony stylů CSS za chodu
+<a name="how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly"></a>[Postup:] Přidání prvků do šablony stylů CSS souborů a vytvoření nové šablony stylů CSS v reálném čase
 ====================
 podle Asli Bilgin
 
-V tomto videu jsme vychází z existující šablony stylů a vylepšení s ID elementu pomocí nové nástroje pro správu šablon stylů CSS v sadě Visual Studio 2008.
+V tomto videu jsme stavět na existující šablony stylů a zlepšení s ID elementu pomocí nového nástroje pro správu šablon stylů CSS v sadě Visual Studio 2008.
 
-[&#9654;Podívejte se na video (16 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly)
+[&#9654;Podívejte se na video (16 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-adding-elements-to-a-css-file-and-create-new-css-on-the-fly)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-working-with-visual-studio-2008-net-framework.md)

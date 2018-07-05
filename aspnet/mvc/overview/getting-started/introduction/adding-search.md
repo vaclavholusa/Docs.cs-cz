@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-search
-title: Hledání | Microsoft Docs
+title: Hledání | Dokumentace Microsoftu
 author: Rick-Anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,132 +9,131 @@ ms.date: 05/22/2015
 ms.topic: article
 ms.assetid: df001954-18bf-4550-b03d-43911a0ea186
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 8afa72d4dbc4695e7d26c6ef4052be08a7c69080
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 797384fb04d3ec6fa618ac1848a7efd548b30dbf
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871828"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362574"
 ---
 <a name="search"></a>Hledat
 ====================
-podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
 
-## <a name="adding-a-search-method-and-search-view"></a>Přidání metodu Search a zobrazení vyhledávání
+## <a name="adding-a-search-method-and-search-view"></a>Přidání vyhledávací metody a zobrazení vyhledávání
 
-V této části přidáte možnosti vyhledávání `Index` metody akce, která umožňuje vyhledávání filmy genre nebo název.
+V této části přidáte možnost vyhledávání `Index` metody akce, která umožňuje hledat filmy podle žánru nebo názvu.
 
-## <a name="updating-the-index-form"></a>Aktualizace indexu formuláře
+## <a name="updating-the-index-form"></a>Aktualizuje se Index formuláře
 
-Začněte tím, že aktualizace `Index` metoda akce ke stávající `MoviesController` třídy. Zde je kód:
+Začněte tím, že aktualizace `Index` metody akce ke stávající `MoviesController` třídy. Zde je kód:
 
 [!code-csharp[Main](adding-search/samples/sample1.cs?highlight=1,6-9)]
 
-První řádek `Index` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazu a vyberte filmy:
+První řádek `Index` metoda vytvoří následující [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotaz pro výběr videa:
 
 [!code-csharp[Main](adding-search/samples/sample2.cs)]
 
-Dotaz je definována v tomto okamžiku, ale dosud nebyla spuštěna v databázi.
+Dotaz je definován v tomto okamžiku, ale nebyl dosud spuštěn na databázi.
 
-Pokud `searchString` parametr obsahuje řetězec, filmy dotazu je změněno na filtrování na základě hodnoty řetězec pro hledání, pomocí následujícího kódu:
+Pokud `searchString` parametr obsahuje řetězec, dotaz filmy je upravit tak, aby filtrování na základě hodnoty hledaný řetězec, pomocí následujícího kódu:
 
 [!code-csharp[Main](adding-search/samples/sample3.cs)]
 
-`s => s.Title` Je výše uvedený kód [výrazu Lambda](https://msdn.microsoft.com/library/bb397687.aspx). Lambdas se používají v na základě metod [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) metoda použitá ve výše uvedeném kódu. Dotazy LINQ nebudou provedeny, když jsou definovány nebo když jsou upraveny voláním metody `Where` nebo `OrderBy`. Místo toho při provádění dotazu je odložení, což znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) metoda je volána. V `Search` ukázce dotaz se spouštějí v tom *Index.cshtml* zobrazení. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](https://msdn.microsoft.com/library/bb738633.aspx).
+`s => s.Title` Je výše uvedený kód [výraz Lambda](https://msdn.microsoft.com/library/bb397687.aspx). Výrazy lambda se používají v založených na volání metody [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) dotazuje jako argumenty pro standardní metody operátoru dotazu, jako [kde](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) metodu používanou ve výše uvedeném kódu. Dotazy LINQ nejsou provedeny, když jsou definovány, nebo při jejich změně voláním metody `Where` nebo `OrderBy`. Místo toho provádění dotazu je odloženo, což znamená, že vyhodnocení výrazu je odloženo jeho očekávané hodnoty ve skutečnosti procházen nebo [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) metoda je volána. V `Search` vzorku a spuštění dotazu v *Index.cshtml* zobrazení. Další informace o odložený dotaz, naleznete v tématu [provádění dotazu](https://msdn.microsoft.com/library/bb738633.aspx).
 
 > [!NOTE]
-> [Obsahuje](https://msdn.microsoft.com/library/bb155125.aspx) metoda běží v databázi, není c# výše uvedený kód. V databázi [obsahuje](https://msdn.microsoft.com/library/bb155125.aspx) mapuje [SQL LIKE](https://msdn.microsoft.com/library/ms179859.aspx), což je malá a velká písmena.
+> [Obsahuje](https://msdn.microsoft.com/library/bb155125.aspx) metodu spustíte v databázi, není kód jazyka c# výše. V databázi [obsahuje](https://msdn.microsoft.com/library/bb155125.aspx) mapuje [SQL LIKE](https://msdn.microsoft.com/library/ms179859.aspx), což je malá a velká písmena.
 
-Teď můžete aktualizovat `Index` zobrazení, které se uživateli zobrazí formulář.
+Nyní můžete aktualizovat `Index` zobrazení, které se uživateli zobrazí formulář.
 
-Spusťte aplikaci a přejděte do *nebo filmy nebo Index*. Připojit řetězec dotazu, jako `?searchString=ghost` na adresu URL. Filtrované filmy jsou zobrazeny.
+Spusťte aplikaci a přejděte do */filmy/Index*. Připojte řetězec dotazu jako `?searchString=ghost` na adresu URL. Zobrazují se filtrované filmy.
 
 ![SearchQryStr](adding-search/_static/image1.png)
 
-Pokud změníte podpis `Index` metoda tak, aby měl parametr s názvem `id`, `id` parametr bude odpovídat `{id}` zástupný symbol pro výchozí směruje sada v *aplikace\_Start\ Soubor RouteConfig.cs* souboru.
+Pokud se změní podpis `Index` metoda může mít parametr s názvem `id`, `id` parametr budou odpovídat `{id}` zástupný symbol pro výchozí trasy sady v *aplikace\_Start\ RouteConfig.cs* souboru.
 
 [!code-json[Main](adding-search/samples/sample4.json)]
 
-Původní `Index` metoda vypadá takto::
+Původní `Index` metoda vypadá takto:
 
 [!code-csharp[Main](adding-search/samples/sample5.cs)]
 
-Upravenou `Index` metoda vypadat takto:
+Upravené `Index` metoda vypadá takto:
 
 [!code-csharp[Main](adding-search/samples/sample6.cs?highlight=1,3)]
 
-Název hledání můžete nyní předat jako data trasy (segment adresy URL) místo jako hodnotu řetězce dotazu.
+Nyní lze předat název vyhledávání jako data trasy (segment adresy URL) místo jako hodnotu řetězce dotazu.
 
 ![](adding-search/_static/image2.png)
 
-Nelze však budou uživatelé chcete upravit adresu URL pokaždé, když chtějí hledat film. Ano, teď můžete přidáte uživatelského rozhraní, můžete je filtrovat filmy. Pokud jste změnili podpis `Index` metoda k testování jak předat parametr ID vázané na trasy ho změnit tak, aby vaše `Index` metoda přijímá řetězcový parametr s názvem `searchString`:
+Ale nemůžete očekávat, že uživatelům změnit adresu URL pokaždé, když chtějí hledat videa. Takže teď jste přidáte uživatelské rozhraní umožňující je filtrovat videa. Pokud jste změnili podpis `Index` metody testování jak předat parametru ID vázané na trasy, změňte ho tak, aby vaše `Index` metoda použije parametr řetězce s názvem `searchString`:
 
 [!code-csharp[Main](adding-search/samples/sample7.cs)]
 
-Otevřete *Views\Movies\Index.cshtml* souborů a právě po `@Html.ActionLink("Create New", "Create")`, přidejte značku formuláře zvýrazněná níže:
+Otevřít *Views\Movies\Index.cshtml* souboru a jenom po `@Html.ActionLink("Create New", "Create")`, přidejte značku formuláře, jejichž přehled najdete níže:
 
 [!code-cshtml[Main](adding-search/samples/sample8.cshtml?highlight=12-15)]
 
-`Html.BeginForm` Pomocné rutiny vytvoří počáteční `<form>` značky. `Html.BeginForm` Pomocná způsobí, že formulář post sám na sebe, když uživatel odešle formulář kliknutím **filtru** tlačítko.
+`Html.BeginForm` Pomocné rutiny vytvoří počáteční `<form>` značky. `Html.BeginForm` Pomocné rutiny způsobí, že formulář ke zveřejnění na sebe sama, jakmile uživatel formulář odešle kliknutím **filtr** tlačítko.
 
-Visual Studio 2013 má dobrý zlepšování při zobrazení a úpravy souborů zobrazení. Při spuštění aplikace s soubor zobrazení otevřít, Visual Studio 2013 vyvolá metoda akce kontroleru správné zobrazíte zobrazení.
+Visual Studio 2013 obsahuje nice zlepšování při zobrazení a úpravy souborů zobrazení. Při spuštění aplikace se zobrazit soubor otevřít, Visual Studio 2013 vyvolá metoda akce kontroleru správné zobrazení.
 
 ![](adding-search/_static/image3.png)
 
-Pomocí zobrazení indexu otevřete v sadě Visual Studio (jak je znázorněno na obrázku výše), klepněte na pev.cenu F5 nebo F5 spusťte aplikaci a pak zkuste vyhledat film.
+Když je zobrazení indexu otevřete v sadě Visual Studio (jak je znázorněno na obrázku výše), klepněte na pev.cenu F5 nebo F5 spusťte aplikaci a pak zkuste vyhledat videa.
 
 ![](adding-search/_static/image4.png)
 
-Neexistuje žádné `HttpPost` přetížení z `Index` metoda. Není nutné, protože metoda není změny stavu aplikace, právě filtrování dat.
+Neexistuje žádná `HttpPost` přetížení `Index` metody. Není nutné, protože metoda není změněn stav aplikace, stačí filtrování dat.
 
-Můžete přidat následující `HttpPost Index` metoda. V takovém případě by odpovídat původce volání akce `HttpPost Index` metody a `HttpPost Index` metoda by spustit jak je znázorněno na obrázku níže.
+Můžete přidat následující `HttpPost Index` metody. V takovém případě by odpovídala původce volání akce `HttpPost Index` metody a `HttpPost Index` spustili byste metodu, jak je znázorněno na následujícím obrázku.
 
 [!code-csharp[Main](adding-search/samples/sample9.cs)]
 
 ![SearchPostGhost](adding-search/_static/image5.png)
 
-Ale i v případě, přidejte tuto `HttpPost` verzi `Index` metoda, existuje omezení v tom, jak to všechny byl implementován. Představte si, že chcete bookmark konkrétní hledání nebo chcete poslat odkaz přátel, chcete-li zobrazit stejný filtrovaný seznam filmy mohou klepnutím. Všimněte si, že adresa URL požadavku HTTP POST je stejný jako adresu URL pro požadavek GET (localhost:xxxxx nebo filmy nebo Index) – chybí informace o vyhledávání v adrese URL sám sebe. Práva nyní informace řetězec hledání je odeslána na server jako hodnotu pole formuláře. To znamená, že nelze zaznamenáte tyto informace vyhledávání bookmark nebo poslat přátel v adrese URL.
+Ale i v případě, že přidáte to `HttpPost` verzi `Index` metoda, existuje omezení v tom, jak to vše implementován. Představte si, že chcete konkrétní hledání (záložky) nebo chcete poslat odkaz s přáteli, mohou kliknout, chcete-li zobrazit stejné filtrovaný seznam videa. Všimněte si, že adresa URL pro odeslání požadavku HTTP POST je stejný jako adresu URL pro požadavek na získání (localhost:xxxxx/filmy/Index) – není k dispozici žádné informace o vyhledávání v adrese URL samotného. Pravé teď vyhledávací řetězec informace jsou odeslány na server jako hodnotu pole formuláře. To znamená, že nelze zachytit tyto informace vyhledávání (záložky) nebo odeslat přátel v adrese URL.
 
-Řešení, je použít přetížení `BeginForm` který určuje, že požadavek POST měli přidat informace o vyhledávání na adresu URL, a že by měl být směrované na `HttpGet` verzi `Index` metoda. Nahradit existující bez parametrů `BeginForm` metoda s následující kód:
+Řešením je použití přetížení `BeginForm` , která určuje, že požadavek POST by měla přidat informace o hledání na adresu URL a, že by měl směrovat na `HttpGet` verzi `Index` metody. Nahraďte existující konstruktor bez parametrů `BeginForm` metoda následujícím kódem:
 
 [!code-cshtml[Main](adding-search/samples/sample10.cshtml)]
 
 ![BeginFormPost_SM](adding-search/_static/image6.png)
 
-Teď při odesílání vyhledávání, adresa URL obsahuje řetězec dotazu vyhledávání. Hledání budou také moct `HttpGet Index` metody akce, i když máte `HttpPost Index` metoda.
+Nyní když odešlete vyhledávání, adresa URL obsahuje hledaný řetězec dotazu. Hledání budou také moct `HttpGet Index` metodě akce, i když máte `HttpPost Index` metody.
 
 ![IndexWithGetURL](adding-search/_static/image7.png)
 
-## <a name="adding-search-by-genre"></a>Přidání vyhledávání podle Genre
+## <a name="adding-search-by-genre"></a>Přidání vyhledávání podle žánru
 
-Pokud jste přidali `HttpPost` verzi `Index` metoda, odstraňte jej.
+Pokud jste přidali `HttpPost` verzi `Index` metoda, odstraňte ji.
 
-V dalším kroku přidáte funkci tak, aby uživatelé vyhledejte filmy podle genre. Nahraďte `Index` metoda následujícím kódem:
+V dalším kroku přidáte funkci, která umožňují uživatelům vyhledat filmy podle žánru. Nahradit `Index` metodu s následujícím kódem:
 
 [!code-csharp[Main](adding-search/samples/sample11.cs)]
 
-Tato verze `Index` metoda přebírá další parametr, a to `movieGenre`. Vytvoření první několika řádků kódu `List` objekt pro uložení žánry film z databáze.
+Tato verze `Index` metoda přijímá další parametr, a to `movieGenre`. Vytvoření první několika řádků kódu `List` objekt pro uložení žánry video z databáze.
 
 Následující kód je dotaz LINQ, který načte všechny žánry z databáze.
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-Kód používá `AddRange` metoda obecná `List` kolekce odlišné žánry přidat do seznamu. (Bez `Distinct` modifikátor, by byl přidán duplicitní žánry – například komedie by byl přidán dvakrát v naše ukázka). Kód pak uloží seznam žánry v `ViewBag.MovieGenre` objektu. Ukládání dat kategorie (takové film genre společnosti) jako [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) objekt v `ViewBag`, pak se typické postup pro aplikace MVC, přístup k datům kategorii v rozevírací pole se seznamem.
+Tento kód použije `AddRange` metoda Obecné `List` kolekce pro přidání různých žánry do seznamu. (Bez `Distinct` modifikátor, byly přidány duplicitní žánry – například byly přidány komedie dvakrát v naší ukázce). Pak uloží seznam žánry v kódu `ViewBag.MovieGenre` objektu. Ukládání kategorie dat (takové video rozšířením podle tematických společnosti) jako [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) objekt `ViewBag`, pak je obvyklý postup pro aplikace MVC se přístup k datům kategorie v rozevíracím seznamu.
 
-Následující kód ukazuje, jak zkontrolovat `movieGenre` parametr. Pokud není prázdná, omezí kód další dotaz filmy omezit vybrané filmy k zadané genre.
+Následující kód ukazuje, jak zkontrolovat `movieGenre` parametru. Pokud není prázdná, omezí kód dál filmy dotaz omezit vybrané videa k zadaným rozšířením podle tematických.
 
 [!code-csharp[Main](adding-search/samples/sample13.cs)]
 
-Jak jsme uvedli dříve, dotaz se nespouští na databáze, dokud je vstupní seznamu video přes (který se stane v zobrazení po `Index` metoda akce vrací).
+Jak bylo uvedeno dříve, dotaz se nespouští na databázi, dokud není procházen seznamu video (který se stane v zobrazení po `Index` metoda akce vrací).
 
-## <a name="adding-markup-to-the-index-view-to-support-search-by-genre"></a>Přidání značek k zobrazení Index pro podporu vyhledávání podle Genre
+## <a name="adding-markup-to-the-index-view-to-support-search-by-genre"></a>Přidání značek do zobrazení Index pro podporu vyhledávání podle žánru
 
-Přidat `Html.DropDownList` pomocníka, který má *Views\Movies\Index.cshtml* souboru, těsně před `TextBox` pomocné rutiny. Dokončený kód je zobrazena níže:
+Přidat `Html.DropDownList` pomocná rutina pro *Views\Movies\Index.cshtml* souboru, těsně před `TextBox` pomocné rutiny. Dokončený kód je zobrazena níže:
 
 [!code-cshtml[Main](adding-search/samples/sample14.cshtml?highlight=11)]
 
@@ -142,21 +141,21 @@ V následujícím kódu:
 
 [!code-cshtml[Main](adding-search/samples/sample15.cshtml)]
 
-Poskytuje klíč pro parametr "MovieGenre" `DropDownList` pomocná rutina pro vyhledání `IEnumerable<SelectListItem>` v `ViewBag`. `ViewBag` Byly zadané v metodě akce:
+Poskytuje klíč pro parametr "MovieGenre" `DropDownList` pomocná rutina pro vyhledání `IEnumerable<SelectListItem>` v `ViewBag`. `ViewBag` Používala v metodě akce:
 
 [!code-csharp[Main](adding-search/samples/sample16.cs?highlight=10)]
 
-Parametr "Vše" poskytuje popisku. Pokud tuto volbu si prohlédnout v prohlížeči, uvidíte, že jeho atribut "value" je prázdný. Vzhledem k tomu, že naše řadiče pouze filtry `if` řetězec není `null` nebo je prázdná, odesílání prázdnou hodnotu pro `movieGenre` ukazuje všechny žánry.
+Parametr "All" poskytuje popisku. Pokud tato volba si prohlédnout v prohlížeči, uvidíte, že jeho atribut "value" je prázdný. Protože kontroleru pouze filtruje `if` řetězec není `null` nebo je prázdná, prázdná hodnota pro odesílání `movieGenre` ukazuje všechny žánrů.
 
-Můžete také nastavit možnost být vybrán ve výchozím nastavení. Pokud byste chtěli "Komedie" jako výchozí možnost, chcete změnit kód v Kontroleru takto:
+Můžete také nastavit možnost vybrat ve výchozím nastavení. Pokud byste chtěli "Komedie" jako výchozí možnost, chcete změnit kód v Kontroleru takto:
 
 [!code-cshtml[Main](adding-search/samples/sample17.cshtml)]
 
-Spusťte aplikaci a přejděte do *nebo filmy nebo Index*. Zkuste hledání genre, název film a obě kritéria.
+Spusťte aplikaci a přejděte do */filmy/Index*. Zkuste hledat podle žánru, název filmu a obě kritéria.
 
 ![](adding-search/_static/image8.png)
 
-V této části můžete vytvořit metody akce vyhledávání a zobrazení, která umožní uživatelům vyhledávat podle názvu film a genre. V další části se budete podíváte na tom, jak přidat vlastnost, která má `Movie` modelu a postup přidání inicializátoru, který se automaticky vytvoří testovací databáze.
+V této části vytvoříte metody akce vyhledávání a zobrazení, které umožňují uživatelům vyhledat tak, že název filmu a rozšířením podle tematických. V další části, budete pohledu na tom, jak přidat vlastnost, která má `Movie` modelu a přidání inicializátoru, který se automaticky vytvoří testovací databáze.
 
 > [!div class="step-by-step"]
 > [Předchozí](examining-the-edit-methods-and-edit-view.md)

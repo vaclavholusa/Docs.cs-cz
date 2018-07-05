@@ -1,101 +1,100 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
-title: Představení technologie ASP.NET Web Pages – publikování webu pomocí služby WebMatrix | Microsoft Docs
+title: Představení rozhraní ASP.NET Web Pages – publikování webu pomocí služby WebMatrix | Dokumentace Microsoftu
 author: tfitzmac
-description: V tomto kurzu je poslední část v sadě kurz, který představuje rozhraní ASP.NET Web Pages a Microsoft WebMatrix. Popisuje, jak publikování webu t...
+description: Tento kurz je finální pokračování v této sérii kurzů, který představuje rozhraní ASP.NET Web Pages a Microsoft WebMatrix. Popisuje, jak publikovat svůj web t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
 ms.topic: article
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 7b9bffac5cc72e1bea3f1b211cc03be2ccb8e499
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: c6fa7692527b7aa65e93cd57ed5bd56f42e54bd6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "30899587"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37373484"
 ---
-<a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Představení technologie ASP.NET Web Pages – publikování webu pomocí služby WebMatrix
+<a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>Úvod do webových stránek ASP.NET – publikování webu pomocí Webmatrixu
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> V tomto kurzu je poslední část v sadě kurz, který představuje rozhraní ASP.NET Web Pages a Microsoft WebMatrix. Popisuje, jak publikovat vaší lokality k Internetu, aby ostatní s ním pracovat. Předpokládá, že jste dokončili řady prostřednictvím [vytváření konzistentní vypadat pro weby technologie ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251585).
+> Tento kurz je finální pokračování v této sérii kurzů, který představuje rozhraní ASP.NET Web Pages a Microsoft WebMatrix. Popisuje, jak publikovat svůj web na Internetu, ostatní mohli pracovat s ním. Předpokládá, že jste dokončili řady prostřednictvím [vytváření konzistentní vzhled pro weby technologie ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251585).
 > 
-> Naučíte, jak publikovat používá web:
+> Dozvíte se víc o publikování vašeho webu pomocí:
 > 
 > - Microsoft Azure
-> - Web hostingové společnosti
+> - Webové hostingové společnosti
 
 
-## <a name="about-publishing-your-site"></a>O publikování webu
+## <a name="about-publishing-your-site"></a>Publikování webu
 
-Až nyní kroky dokončíte všechnu práci na místním počítači, včetně testování vaší stránky. Ke spuštění vaší<em>.cshtml</em> stránky, jste použili webový server, který je integrovaný do služby WebMatrix, a to služba IIS Express. Můžete ale samozřejmě nikdo můžete zobrazit na server, který jste vytvořili s výjimkou je. Umožníte dalším uživatelům práci s webem musíte publikovat na Internetu.
+Až dosud jste provedli všechny práce na místním počítači, včetně testování stránek. Ke spuštění vaší<em>.cshtml</em> stránky, využili jste webový server, která je integrovaná do služby WebMatrix, konkrétně služby IIS Express. Můžete ale samozřejmě nikdo můžete zobrazit na webu, který jste vytvořili s výjimkou je. Informovat tak ostatní uživatele práci s webem, je nutné ji publikovat na Internetu.
 
-Pokud již máte přístup k veřejné webovému serveru, publikování znamená, že budete mít tak, aby měl účet s *Cloudová platforma* nebo *poskytovatele hostitelských služeb*. Cloudové platformy, jako je Microsoft Azure poskytuje infrastrukturu na vyžádání pro vaše aplikace. Poskytovatel hostingu je společnosti, který je vlastníkem veřejně přístupná webové servery a který bude pronajímat, můžete místo pro svůj web. Hostování plány spustit z několika dolarů za měsíc (nebo i volné) pro malé weby na mnoho stovky dolarů za měsíc pro vysoký počet komerčních webů.
+Pokud již máte přístup k veřejné webový server, publikování znamená, že budete muset mít s účtem *cloudovou platformu* nebo *poskytovatele hostingu*. Cloudové platformy, jako je například Microsoft Azure poskytuje infrastrukturu na vyžádání pro vaše aplikace. Poskytovatel hostingu je společnost, která vlastní servery veřejně přístupný webový a, který bude poskytovat do nájmu můžete místo pro váš web. Spuštění z za pár dolarů za měsíc (nebo dokonce bezplatná) plány hostování pro malé weby na stovky dolarů za měsíc pro komerční websites velkého rozsahu.
 
 > [!NOTE]
-> Máte přístup k veřejné webovému serveru prostřednictvím poskytovatele služeb Internetu (ISP), které umožňují získat doma internetové služby. Poskytovatel hostitelských však musí podporovat rozhraní ASP.NET Web Pages. Nemáte mnoho poskytovatelů internetových služeb, ale je vždy vhodné kontrola.
+> Můžete mít přístup public webový server prostřednictvím poskytovatele internetových služeb (ISP), který použijete k získání doma internetové služby. Váš poskytovatel hostingu však musí podporovat rozhraní ASP.NET Web Pages. Není mnoho poskytovatelů internetových služeb, ale je vždy vhodné kontrolu.
 
 
-V tomto kurzu jsme vám poskytují přehled o tom, jak publikovat. Není praktické zajistit najdete přesné informace pro všechno, protože proces se trochu liší pro všechny poskytovatele hostitelských služeb. Ale získáte představu o tom, jak probíhá proces.
+V tomto kurzu dáme vám přehled o tom, jak publikovat. Není praktické poskytnout přesné informace pro všechno, protože proces se trochu liší pro každý poskytovatele hostingu. Ale získáte představu o tom, jak tento proces funguje.
 
 Tento kurz obsahuje čtyři části:
 
-1. [Nastavení výchozí stránka](#defaultpage)
+1. [Nastavení výchozí stránky](#defaultpage)
 2. Publikování (zvolte jednu z následujících)  
- a. [Publikování webu do služby Microsoft Azure](#azure)  
- b. [Publikování webu Webhosting společnosti](#host)
-3. [Aktualizace živý web: opětovné publikování](#update)
+ a. [Publikování webu ve službě Microsoft Azure](#azure)  
+ b. [Publikování webu na webu firma poskytující Hosting](#host)
+3. [Aktualizuje se živého webu: opětovné publikování](#update)
 
 <a id="defaultpage"></a>
-## <a name="setting-up-the-default-page"></a>Nastavení výchozí stránka
+## <a name="setting-up-the-default-page"></a>Nastavení výchozí stránky
 
-Když uživatel přejde na základní adresa pro svůj web, se uživateli zobrazí výchozí stránku pro váš web. Například pokud Default.htm je nastaven jako výchozí stránky pro lokalitu na www.contoso.com, přejděte do <strong>www.contoso.com</strong> je stejný jako přejdete na <strong>www.contoso.com/Default.htm</strong>.
+Když uživatel přejde na základní adresu pro web, se uživateli zobrazí výchozí stránka pro váš web. Například pokud Default.htm je nastaven jako výchozí stránku webu na www.contoso.com, pak přejdete do <strong>www.contoso.com</strong> je stejný jako přejdete na <strong>www.contoso.com/Default.htm</strong>.
 
-V současné době váš web používá **Default.cshtml** jako výchozí stránky. Tato stránka je vhodná pro výchozí stránku, ale v tomto kurzu jste nepřidali žádný obsah na této stránce, by se zobrazily prázdné stránky. Otevřete stránku Default.cshtml a nahradí obsah následujícím kódem.
+V současné době je váš web používá **stránku Default.cshtml** jako výchozí stránky. Tato stránka je v pořádku pro výchozí stránku, ale v tomto kurzu jste nepřidali žádný obsah na této stránce tak, že by se zobrazily prázdnou stránku. Otevřete stránku Default.cshtml a nahraďte obsah následujícím kódem.
 
 [!code-cshtml[Main](publishing/samples/sample1.cshtml)]
 
-Nyní je připraven pro publikaci vaší lokality. První zobrazí se postup nasazení webu na Azure a jak ji nasadit do webhosting společnosti. Buď možnost funguje pro váš web z umístění a je potřeba jenom použijte jednu z možností nasazení.
+Váš web je nyní připraveno k publikaci. Nejprve se zobrazí postup nasazení webu do Azure a jak ji nasadit do webové firma poskytující hosting. Funguje kterákoli z nich možností pro webové stránky a je potřeba jenom použijte jednu z možností nasazení.
 
 <a id="azure"></a>
-## <a name="publishing-your-site-to-microsoft-azure"></a>Publikování webu do služby Microsoft Azure
+## <a name="publishing-your-site-to-microsoft-azure"></a>Publikování webu ve službě Microsoft Azure
 
-V tomto kurzu se nejprve zobrazí nasazení webu na Microsoft Azure. Po přihlášení pomocí účtu Microsoft, můžete vytvořit až 10 bezplatných webů v Azure. Tyto volné lokality poskytují pohodlný způsob pro testování vaší lokality. Vždy můžete odstranit tento server příklad později a nepoužívejte všechny volné stránek. Během několika minut můžete vytvořit Bezplatný zkušební účet. Podrobnosti najdete v tématu [bezplatná zkušební verze Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+V tomto kurzu se nejprve ukazují, jak nasadit svůj web do Microsoft Azure. Když se přihlásíte pomocí účtu Microsoft, můžete vytvořit až 10 bezplatných webů v Azure. Tyto bezplatné lokality poskytují pohodlný způsob, jak testovat svoje weby. Vždy můžete odstranit tento příklad web později, abyste se vyhnuli použití všech bezplatných webů. Během několika minut můžete vytvořit Bezplatný zkušební účet. Podrobnosti najdete v tématu [bezplatnou zkušební verzi Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
 
-Na pásu karet WebMatrix, klikněte **publikovat** tlačítko.
+Na pásu karet nástroje WebMatrix, klikněte na tlačítko **publikovat** tlačítko.
 
-!["Publikování" tlačítko WebMatrix pásu karet](publishing/_static/image1.png)
+!["Publikovat" tlačítko na pásu karet nástroje WebMatrix](publishing/_static/image1.png)
 
-**Publikovat vaše lokality** se zobrazí dialogové okno. Pokud nejste přihlášeni ke svému účtu Microsoft, bude obsahovat dialogové okno **Začínáme s Azure** odkaz. Kliknutím na tento odkaz.
+**Publikovat web** se zobrazí dialogové okno. Pokud nejste přihlášeni k účtu Microsoft, bude obsahovat dialogových oken **Začínáme s Azure** odkaz. Kliknutím na tento odkaz.
 
 ![Publikování webu](publishing/_static/image2.png)
 
-Pokud nejste přihlášeni k účtu Microsoft, můžete je znovu příležitost k přihlášení. Musíte se přihlásit k účtu Microsoft k publikování webu v Azure.
+Pokud nejste přihlášeni k účtu Microsoft, budete mít znovu příležitost k přihlášení. Musíte se přihlásit k účtu Microsoft k publikování webu v Azure.
 
 ![Přihlásit se](publishing/_static/image3.png)
 
-Po přihlášení k účtu Microsoft, dialogové okno obsahuje odkazy na vytvoření nového webu v Azure nebo připojit k existující weby v Azure.
+Po přihlášení ke svému účtu Microsoft, dialogové okno obsahuje odkazy na vytvoření nového webu v Azure nebo se připojit k jednomu z existující weby v Azure.
 
-![Vytvoří nový web](publishing/_static/image4.png)
+![Vytvoří nový web.](publishing/_static/image4.png)
 
-Vyberte **vytvoří nový web**.
+Vyberte **vytvoření nového webu**.
 
-Pokud název projektu **WebPagesMovies**, bude výchozí název pro svůj web **webpagesmovies.azurewebsites.net**. Tento výchozí název je pravděpodobně není k dispozici, jak je indikován červený vykřičník.
+Pokud název vašeho projektu **WebPagesMovies**, bude mít výchozí název pro svůj web **webpagesmovies.azurewebsites.net**. Tento výchozí název je s největší pravděpodobností není k dispozici, je určeno červený vykřičník.
 
 ![název výchozí webové stránky](publishing/_static/image5.png)
 
-Změňte název webového serveru na jinou hodnotu, která je k dispozici a vyberte umístění, které je blízko vaši polohu.
+Změnit název serveru, který je k dispozici a vyberte umístění, které je blízko vaší polohy.
 
 ![název změněné lokality](publishing/_static/image6.png)
 
-Click **OK**.
+Klikněte na tlačítko **OK**.
 
-Služba WebMatrix performss test ke zjištění, zda je server kompatibilní s vaší lokality.
+Služba WebMatrix performss testu k určení, zda je server kompatibilní s vaší lokality.
 
 ![testování kompatibility](publishing/_static/image7.png)
 
@@ -107,118 +106,118 @@ Výsledky testování kompatibility se zobrazí.
 
 Vyberte **pokračovat**.
 
-Služba WebMatrix zobrazí soubory a databáze, které bude publikována do lokality. Vzhledem k tomu, že je to první, kdy jsou publikování webu, jsou uvedeny všechny soubory. Zrušte zaškrtnutí políčka soubor, který není připravena k publikování. V dalších publikacích se zobrazí pouze soubory, které se změnily. V tématu [aktualizace živý web: opětovné publikování](#update).
+Služba WebMatrix zobrazí soubory a databáze, které bude publikována do lokality. Protože při prvním publikování webu, jsou uvedeny všechny soubory. Zrušte zaškrtnutí políčka soubor, který není připravená k publikování. V následující publikace se zobrazí pouze soubory, které se změnily. Zobrazit [aktualizace živého webu: opětovné publikování](#update).
 
-![publikování náhledu](publishing/_static/image9.png)
+![Náhled publikování](publishing/_static/image9.png)
 
 Vyberte **pokračovat**.
 
-Po nasazení webu do Azure, se zobrazí zpráva, která určuje, že je dokončená nasazení.
+Po nasazení webu do Azure, zobrazí se zpráva, která označuje, že dokončení nasazení.
 
-![publikování dokončení](publishing/_static/image10.png)
+![publikování dokončeno](publishing/_static/image10.png)
 
-Lokality a databáze byly publikovány do služby Azure a jsou nyní k dispozici na veřejnost. Kliknutím na odkaz ve zprávě o dokončení publikování a zobrazí vaše nasazené lokality. Můžete nebo každý, kdo má přístup k Internetu, můžete přidat nebo upravit záznamy v databázi.
+Web a databáze byly publikovány do Azure a jsou teď dostupné pro veřejnost. Klikněte na odkaz ve zprávě označující publikování dokončí a zobrazí se vám teď váš web. Vy nebo každý, kdo má přístup k Internetu, můžete přidat nebo upravit záznamy v databázi.
 
 ![](publishing/_static/image11.png)
 
 <a id="host"></a>
-## <a name="publishing-your-site-to-a-web-hosting-company"></a>Publikování webu Webhosting společnosti
+## <a name="publishing-your-site-to-a-web-hosting-company"></a>Publikování webu na webu firma poskytující Hosting
 
-Pokud se rozhodnete nebude publikován do Azure, můžete místo toho publikování webu na web hostingové společnosti.
+Pokud se rozhodnete nebude publikován do Azure, můžete místo toho publikování webu pro webové hostování společnosti.
 
-Klikněte **najít hostování webů** odkaz.
+Klikněte na tlačítko **najít webhosting** odkaz.
 
-![Tlačítko "najít hostování webů, v dialogovém okně Nastavení publikování](publishing/_static/image12.png)
+![Tlačítka 'Najít hostování webů' v dialogovém okně Nastavení publikování](publishing/_static/image12.png)
 
-Přejděte na stránku na webu Microsoft, který uvádí poskytovatelé hostitelských služeb, které podporují ASP.NET.
+Přejděte na stránku na webu společnosti Microsoft, který obsahuje seznam poskytovatelé hostitelských služeb, které podporují ASP.NET.
 
-![Stránky na webu společnosti Microsoft, které uvádí poskytovatelé hostitelských služeb](publishing/_static/image13.png)
+![Stránka na webu Microsoftu, který obsahuje seznam poskytovatelů hostingu](publishing/_static/image13.png)
 
-Samozřejmě může být obtížné zjistit, teď právě jaký hostování funkcí může vyžadovat na dlouhou dobu. Tady je několik věcí, které je třeba zvážit:
+Samozřejmě může být obtížné zjistit, teď právě jaké funkce hostování může vyžadovat v dlouhodobém horizontu. Tady je několik věcí, které byste měli zvážit:
 
-- Pro účely WebPagesMovies lokality nemusíte mít samostatné rozšíření pro SQL Server, který se velmi často stojí. Ve vaší lokalitě používáte SQL Server Compact Edition, což je úplný a samostatný. Přístup k serveru SQL je však může být zapotřebí pro budoucí webu práce, kterou, které můžete provést. Pokud se domníváte, že pravděpodobně, zajistěte, aby funkce SQL serveru můžete později přidat.
+- Pro účely WebPagesMovies lokality nemusíte mít samostatné doplněk pro SQL Server, který často velmi náklady. Ve vaší lokalitě používáte SQL Server Compact Edition, který je samostatný. Přístup k SQL serveru však může být zapotřebí pro některé budoucí webu práce, kterou děláte. Pokud se domníváte, že máte, ujistěte se, že funkce SQL serveru můžete později přidat.
 - Zkontrolujte, zda poskytovatel hostingu podporuje protokol publikování nasazení webu. Můžete publikovat pomocí protokolu FTP, ale je pohodlnější službu Web Deploy používat.
 
-Některé servery nabízejí bezplatné zkušební období. Bezplatná zkušební verze je dobrý způsob, jak zkuste publikování a hostování při jste stále experimentování se službou WebMatrix a webové stránky ASP.NET.
+Některé servery nabízejí bezplatné zkušební období. Bezplatnou zkušební verzi je dobrým způsobem, jak opakujte publikování a hostování při budete stále experimentování s nástrojem WebMatrix a webové stránky ASP.NET.
 
-Vyberte ten, který chcete. V tomto kurzu jsme vybrat DiscountASP.NET, protože při jsme vytvořili kurz, že společnosti měli povýšení, které uživatelé mohou hostovat lokalitu zdarma pro několik měsíců.
+Vyberte si ten, který vám vyhovuje. Pro účely tohoto kurzu jsme vybrali DiscountASP.NET, protože když jsme vytvářeli kurzu, měli této společnosti v rámci propagační akce, která lidem hostovat lokalitu zdarma po dobu několika měsíců.
 
 > [!NOTE]
-> Námi zvolený poskytovatele hostitelských služeb v tomto kurzu se nemohou interpretovat jako souhlas této společnosti nad všemi ostatními. Ale jsme měli vybrat jednu pro obrázek a DiscountASP.NET je jedním z řada společností, které podporuje technologie ASP.NET Web Pages a protokol nasazení webu pro publikování.
+> Námi zvolený prostřednictvím poskytovatele hostitelských služeb pro účely tohoto kurzu, neměly by být vykládány jako o potvrzení této společnosti přes jakýkoli jiný. Ale jsme měli vybrat jednu pro obrázek a DiscountASP.NET je jednou z mnoha společnosti, které podporuje rozhraní ASP.NET Web Pages a protokolu Webdeploy publikovat.
 
 
-Obvykle se poté, co jste se přihlásili s poskytovateli hostitelských služeb, společnost vám pošle e-mailu, který obsahuje uživatelské jméno a heslo, adresu URL webového serveru a tak dále. Pokud hostingové společnosti podporuje protokol nasazení webu, se může odeslat můžete soubor, který obsahuje nastavení publikování, nebo můžete stáhnout z Internetu. Soubor nastavení publikování zjednodušuje proces pro vás.
+Obvykle poté, co jste se zaregistrovali u poskytovatele hostingu, společnost vám pošle e-mailu, který obsahuje uživatelské jméno a heslo, adresu URL webového serveru a tak dále. Pokud hostovací společnost podporuje protokolu Webdeploy, se může odeslat je soubor, který obsahuje nastavení publikování, nebo můžete stáhnout z Internetu. Soubor nastavení publikování zjednodušuje proces za vás.
 
-Pokud jste se přihlásili a jste připraveni publikovat, klikněte na tlačítko **publikovat** tlačítko pásu karet služby WebMatrix. **Nastavení publikování** se zobrazí dialogové okno.
+Pokud jste se zaregistrovali a jste připraveni publikovat, klikněte na tlačítko **publikovat** tlačítko na pásu karet nástroje WebMatrix. **Nastavení publikování** se zobrazí dialogové okno.
 
-Pokud poskytovatel hostingu odeslat soubor nastavení publikování, klikněte na tlačítko **importu nastavení publikování** propojení a import souboru. Pokud nemáte soubor nastavení publikování, vyplňte pole pomocí hodnoty, které jste hostingové společnosti odeslat v e-mailu. Tady je co **nastavení publikování** dialogové okno může vypadat například po dokončení:
+V případě poskytovatele hostingu odeslaný soubor nastavení publikování, klikněte na tlačítko **importovat nastavení publikování** propojit a naimportujte ho. Pokud nemáte soubor nastavení publikování, vyplňte pole pomocí hodnot, které hostingové společnosti vám poslali e-mailem. Co **nastavení publikování** dialogové okno může vypadat po dokončení:
 
-![Nastavení publikování vyplněno v dialogovém okně, nastavení publikování.](publishing/_static/image14.png)
+![Nastavení publikování vyplněna v dialogovém okně "nastavení publikování.](publishing/_static/image14.png)
 
-Klikněte na tlačítko **ověření připojení**. Pokud se vše, co je to v pořádku, dialogové okno sestavy **připojení úspěšně**, což znamená, že může komunikovat s server poskytovatele hostitelských služeb.
+Klikněte na tlačítko **ověřit připojení**. Pokud všechno, co je v pořádku, dialogové okno sestavy **úspěšně připojila**, což znamená, že může komunikovat se serverem poskytovatele hostingu.
 
-![Úspěch zprávy Pokud publikování jsou nastavení správná](publishing/_static/image15.png)
+![Úspěch zprávu při publikování se používají správná nastavení](publishing/_static/image15.png)
 
-Pokud dojde k potížím, služba WebMatrix nemá je nejlepší říct, co problém je:
+Pokud je nějaký problém, služba WebMatrix provede nejlépe, říct, že problém je:
 
-![Chybová zpráva, pokud došlo k potížím s nastavením publikování](publishing/_static/image16.png)
+![Chybová zpráva, pokud je nějaký problém s nastavením publikování](publishing/_static/image16.png)
 
-Klikněte na tlačítko **Uložit** uložte nastavení. Služba WebMatrix nabízí chcete provést test a ujistěte se, že správně může komunikovat s hostování lokality:
+Klikněte na tlačítko **Uložit** uložte nastavení. Služba WebMatrix nabízí proveďte test, abyste měli jistotu, že můžete správně komunikují s lokalitou hostingu:
 
-![Zprávy, které chcete provést test procesu publikování nabídky](publishing/_static/image17.png)
+![Zpráva k provedení testu se proces publikování nabídky](publishing/_static/image17.png)
 
-Klikněte na tlačítko **Ano**. Služba WebMatrix ukládání některých ukázkových souborů do poskytovatele hostitelských služeb. Pokud se provádí testování kompatibility, služba WebMatrix hlásí výsledky:
+Klikněte na tlačítko **Ano**. Služba WebMatrix některé ukázkové soubory nahraje do poskytovatele hostingu. Po dokončení testování kompatibility se službou WebMatrix hlásí výsledky:
 
-![Výsledky testu publikování](publishing/_static/image18.png)
+![Výsledky testu pro publikování](publishing/_static/image18.png)
 
-Pokud jste připravení přejít, pokračujte a klikněte na tlačítko **pokračovat** pro skutečných zahájíte proces publikování. Služba WebMatrix obrázky co soubory jsou ve vaší lokalitě a jsou již na hostitelském serveru (ihned, none) a poskytuje náhled proces publikování:
+Pokud jste připravení, pokračujte a klepněte na tlačítko **pokračovat** skutečném zahájíte proces publikování. Služba WebMatrix přijde na to, co soubory jsou ve vaší lokalitě a jsou už na hostitelském serveru (ihned, žádné) a nabízí přehled procesu publikování:
 
-![Verze Preview jaké soubory, které odešlete proces publikování](publishing/_static/image19.png)
+![Ve verzi Preview, jaké soubory, které odešlete proces publikování](publishing/_static/image19.png)
 
-Seznam souborů k publikování, které zahrnuje webové stránky, které jste vytvořili jako *Movies.cshtml*. Seznam také obsahuje soubory pro pomocné rutiny, které jste nainstalovali, soubory a spustit SQL Server Compact Edition pro vaši databázi a tak dále. V důsledku toho počáteční publikování proces může být výrazně.
+Seznam souborů k publikování, které zahrnuje webové stránky, které jste vytvořili jako *Movies.cshtml*. Seznam obsahuje také soubory pro pomocné funkce, které jste nainstalovali, soubory, které chcete spustit SQL Server Compact Edition pro vaši databázi a tak dále. V důsledku toho počáteční procesu publikování může být významné.
 
-Klikněte na tlačítko **pokračovat**. Služba WebMatrix zkopíruje soubory na server poskytovatele hostitelských služeb. Až skončíte, výsledky jsou uvedeny ve stavovém řádku:
+Klikněte na tlačítko **pokračovat**. Služba WebMatrix zkopíruje soubory na server poskytovatele hostingu. Po dokončení, výsledky jsou uvedeny ve stavovém řádku:
 
-![Stavová zpráva panelu při procesu publikování byl úspěšně dokončen.](publishing/_static/image20.png)
+![Stav panelu zprávy, když proces publikování byl úspěšně dokončen.](publishing/_static/image20.png)
 
-Pokud chcete zobrazit živý web, klikněte na odkaz ve stavovém řádku. Přidat *filmy* na adresu URL, a zobrazí se *Movies.cshtml* soubor, který jste vytvořili:
+Pokud chcete zobrazit živého webu, klikněte na odkaz ve stavovém řádku. Přidat *filmy* na adresu URL, a zobrazí se vám *Movies.cshtml* soubor, který jste vytvořili:
 
 ![Živý web stránkou filmy](publishing/_static/image21.png)
 
 <a id="update"></a>
-## <a name="updating-the-live-site-republishing"></a>Aktualizace živý web: opětovné publikování
+## <a name="updating-the-live-site-republishing"></a>Aktualizuje se živého webu: opětovné publikování
 
-Po publikování webu (do Azure nebo webhosting společnosti) jsou dvě kopie &mdash; verze na váš počítač a verze na poskytovatele služeb. Pravděpodobně budete chtít pokračovat ve vývoji lokality (Pokud nic jiného, jako součást sady další kurz). Když to uděláte, budete muset web znovu publikovat, aby bylo možné kopírovat změny z vašeho počítače a poskytovatelem služeb. Proces publikování ve službě WebMatrix můžete určit, jaké soubory se změnili na svém webu a publikovat pouze tyto soubory.
+Po publikování vaší lokality (do Azure nebo webhosting společnosti), jsou dvě kopie &mdash; verze v počítači a verze na poskytovatele služeb. Pravděpodobně budete chtít pokračovat ve vývoji webu (Pokud nic jiného, další sérii kurzů v rámci). Když použijete, budete muset znovu publikovat svůj web, aby bylo možné kopírovat změny z vašeho počítače k poskytovateli služby. Proces publikování ve Webmatrixu můžete zjistit, co byly změněné soubory na váš web a publikovat pouze tyto soubory.
 
-Chcete-li zjistit, jak funguje opětovné publikování, otevřete *Movies.cshtml* lokality, provedení některých malých změn a pak soubor uložte. Můžete například změnit název na `Movies - Updated`.
+Chcete-li zjistit, jak funguje znovu publikovat, otevřete *Movies.cshtml* webu, proveďte nějakou změnu (krátkodobé používání) a pak soubor uložte. Například změnit nadpis `Movies - Updated`.
 
-Klikněte **publikovat** tlačítka na pásu karet. Služba WebMatrix Určuje, co se změnilo a zobrazí náhled souborů, které budete publikovat.
+Klikněte na tlačítko **publikovat** tlačítko na pásu karet. Služba WebMatrix Určuje, co se změnilo a zobrazí náhled souborů, které budete publikovat.
 
-![Dialogové okno "Publikovat" zobrazující změněné soubory připravené pro opětovné publikování](publishing/_static/image22.png)
+![Dialogové okno "Publikovat" zobrazující změněné soubory připravené k opětovné publikování](publishing/_static/image22.png)
 
 > [!IMPORTANT] 
 > 
-> Ve výchozím nastavení, služba WebMatrix publikuje vaše databáze (*SDF* souboru) pouze při prvním publikování webu. Jakmile vaše lokalita je publikována a osoby jsou interakci s webem, databázi na živý web má obvykle reálná data lokality. Budete muset buďte velmi opatrní nechcete přepsat databázi za provozu s *SDF* soubor, který je v počítači, který obvykle obsahuje pouze testovacích datech. Proto se zobrazí upozornění **publikování přepíše všechny vzdálené databáze**, a proč je zaškrtnutí políčka pro *WebPagesMovies.sdf* ve výchozím nastavení zaškrtnuto.
+> Ve výchozím nastavení, služba WebMatrix publikuje vaši databázi (*SDF* souboru) pouze při prvním publikování webu. Jakmile se vaše lokalita je publikována a uživatelé interagují s webem, databázi na živém webu má obvykle reálná data lokality. Je nutné přepsat živé databáze s velmi opatrní *SDF* soubor, který je v počítači, který obvykle obsahuje pouze testovací data. To je důvod, proč se zobrazí upozornění **publikování se přepíšou všechny vzdálené databáze**, a proč zaškrtnutí políčka *WebPagesMovies.sdf* ve výchozím nastavení zaškrtnuto.
 
 
-Klikněte na tlačítko **pokračovat**. Služba WebMatrix zobrazuje zpráva o úspěšném provedení jakou měla poprvé, kterou jste publikovali a publikuje změněné soubory.
+Klikněte na tlačítko **pokračovat**. Služba WebMatrix publikuje změněných souborů a zobrazí zprávu o úspěšném dokončení stejně, jako kdyby poprvé, kterou jste publikovali.
 
-Přejděte na web za provozu (můžete kliknout na odkaz ve zprávě úspěch Pokud se stále zobrazuje) a ověřit, že byl publikovaný změny.
+Přejít do živého webu (můžete kliknout na odkaz v zpráva o úspěchu Pokud je stále zobrazena) a ověřte, že vaše změny se publikoval.
 
 > [!TIP] 
 > 
 > **Vzdálené úpravy souborů**
 > 
-> Jako alternativu k změna vaší lokality a poté opětovné publikování můžete upravit vzdálené soubory přímo ve službě WebMatrix. V tomto scénáři otevřete soubor, který je na poskytovatele služeb a služba WebMatrix stáhne kopii ho můžete upravit. Pokaždé, když jste uložili soubor, služba WebMatrix odešle změny do lokality.
+> Jako alternativu k změně webu a pak znovu publikovat můžete upravit vzdálené soubory přímo ve službě WebMatrix. V tomto scénáři otevřete soubor, který je u poskytovatelů služeb a služba WebMatrix stáhne kopii jej můžete upravit. Pokaždé, když se soubor uložíte, služba WebMatrix odešle změny do lokality.
 > 
-> Vzdálené úpravy je snadný způsob, jak změnit živý web. Změny, které uděláte takto však nejsou synchronizovány se soubory ve vaší místní lokalitě. Chcete-li synchronizovat místní soubory s vzdálené lokality, můžete stáhnout vzdálených souborů. Tento proces funguje podobně jako publikování, s výjimkou pozpátku.
+> Vzdálené úpravy je snadný způsob, jak provádět změny živého webu. Změny provedené tímto způsobem se však nejsou synchronizované s souborů ve vaší místní lokalitě. K synchronizaci místních souborů s vzdálené lokality, může stahování vzdálených souborů. Tento proces funguje stejně jako publikování, s výjimkou v opačném pořadí.
 > 
-> Jsme nebude popisují více o vzdálené úpravy a stahování vzdálené zařízení WebMatrix sem. Jsou velmi užitečné, pokud máte více uživatelů pro práci na stejném webu na různých počítačích. Další informace najdete v tématu [publikování a upravit vzdálené lokality pomocí služby WebMatrix 2 Beta](https://go.microsoft.com/fwlink/?LinkId=251591).
+> Nebude popisujeme více o vzdálené úpravy a stáhnout vzdálené zařízení WebMatrix tady. Jsou velmi užitečné, pokud máte více lidem pracovat na stejném místě na různých počítačích. Další informace najdete v tématu [publikování a úprava vzdálené lokality pomocí služby WebMatrix 2 Beta](https://go.microsoft.com/fwlink/?LinkId=251591).
 
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Fórum služby WebMatrix rozhraní ASP.NET Web Pages ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), skvělým místem pro zveřejňování otázky a odpovědi.
+- [Fórum služby WebMatrix rozhraní ASP.NET Web Pages ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages)skvělým místem pro zveřejňování otázky a odpovědi.
 
 > [!div class="step-by-step"]
 > [Předchozí](layouts.md)

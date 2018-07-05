@@ -1,253 +1,252 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
-title: Omezení dat úpravy funkce na základě uživatele (VB) | Microsoft Docs
+title: Omezení funkcí pro úpravu dat podle uživatele (VB) | Dokumentace Microsoftu
 author: rick-anderson
-description: Ve webové aplikaci, která umožňuje uživatelům upravovat data může mít různé uživatelské účty různých dat úpravy oprávnění. V tomto kurzu podíváme jak t...
+description: Ve webové aplikaci, která umožňuje uživatelům upravovat data může mít různé uživatelské účty jiné úpravy dat oprávnění. V tomto kurzu prozkoumáme jak t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
 ms.topic: article
 ms.assetid: 9dc264a6-feb8-474b-8b91-008c50708065
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eccb8e114e0ecf772680a2e5b36a761736cf8025
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8530dfd37570ed5fcc45ef4d6c30750c5d4d2152
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30887870"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37377112"
 ---
-<a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>Omezení funkce změny dat na základě uživatele (VB)
+<a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>Omezení funkcí pro úpravu dat podle uživatele (VB)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_23_VB.exe) nebo [stáhnout PDF](limiting-data-modification-functionality-based-on-the-user-vb/_static/datatutorial23vb1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_23_VB.exe) nebo [stahovat PDF](limiting-data-modification-functionality-based-on-the-user-vb/_static/datatutorial23vb1.pdf)
 
-> Ve webové aplikaci, která umožňuje uživatelům upravovat data může mít různé uživatelské účty různých dat úpravy oprávnění. V tomto kurzu podíváme, jak dynamicky upravit funkce změny dat na základě hostujícími uživatele.
+> Ve webové aplikaci, která umožňuje uživatelům upravovat data může mít různé uživatelské účty jiné úpravy dat oprávnění. V tomto kurzu prozkoumáme jak dynamicky upravit možnosti úprav dat na základě hostujícími uživatele.
 
 
 ## <a name="introduction"></a>Úvod
 
-Počet webových aplikací podporují uživatelských účtů a poskytují různé možnosti, sestavy a funkce na základě přihlášeného uživatele. Například s naše kurzy jsme chtít povolit uživatelům od dodavatele společností k přihlášení na aktualizace webu a obecné informace o jejich produktech - jejich název a množství na jednotku, případně – společně s informacemi dodavatele, jako je například název své společnosti, Adresa, kontaktní osoby s informace a tak dále. Kromě toho jsme chtít obsahovat některé uživatelské účty pro osoby z naší společnosti tak, aby se mohl přihlásit a aktualizovat informace o produktu, jako jsou jednotky na skladě, minimální počet a tak dále. Naše webové aplikace může také povolit anonymní uživatelé navštíví (lidem, kteří nejsou přihlášení), ale omezí je povolit pouze zobrazení data. S takového uživatelského účtu systému zavedené by chceme data ovládací prvky webového na našich stránkách ASP.NET a nabídnout vkládání, úpravy a odstraňování možnosti, které jsou vhodné pro aktuálně přihlášeného uživatele.
+Počet webových aplikací podpora uživatelských účtů a poskytují různé možnosti, sestavy a funkce na základě přihlášeného uživatele. Například prostřednictvím našich kurzů jsme chtít umožnit uživatelům od dodavatele společností k přihlášení k webu a aktualizace obecné informace o svých produktech - své jméno a množství na jednotku, možná – společně s informacemi dodavatelů, jako je například název své společnosti Adresa, kontaktní osoby s informace a tak dále. Kromě toho budeme chtít zahrnout některé uživatelské účty pro lidi z naší společnosti tak, aby se mohl přihlásit a aktualizovat informace o produktu jako minimální počet jednotek na skladě a tak dále. Naši webovou aplikaci může také umožnit anonymní uživatele na web (uživatelů, kteří nejste přihlášeni), ale by omezit je jen zobrazení data. S takového uživatelského účtu systému na místě jsme byste měli data webové ovládací prvky na našich stránkách ASP.NET nabízí vložení, úpravy a odstranění funkce vhodné pro aktuálně přihlášeného uživatele.
 
-V tomto kurzu podíváme, jak dynamicky upravit funkce změny dat na základě hostujícími uživatele. Konkrétně vytvoříme stránky, které se zobrazí informace o dodavateli v upravitelné DetailsView společně s GridView, které jsou uvedeny produkty, které poskytuje dodavatel. Pokud je uživatel na stránce z naší společnosti, mohou: prohlížet jakékoli informace dodavatele s; upravit jejich adresu; a upravit informace pro některý z produktů od dodavatele. Pokud uživatel je však z určité společnosti, mohou pouze zobrazit a upravit své vlastní informace o adrese a můžete upravit pouze jejich produktů, které nebyly byla označena jako zastaveny.
-
-
-[![Uživatel z naší společnosti můžete upravit všechny informace s dodavatele](limiting-data-modification-functionality-based-on-the-user-vb/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image1.png)
-
-**Obrázek 1**: A uživatele z naše společnosti můžete upravit libovolného dodavatele s informace ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image3.png))
+V tomto kurzu prozkoumáme jak dynamicky upravit možnosti úprav dat na základě hostujícími uživatele. Zejména vytvoříme stránku, která zobrazuje informace o dodavateli v upravitelné DetailsView spolu s prvku GridView, která zobrazuje seznam produktů, poskytnutých dodavatelem. Pokud je uživatel na stránce naší společnosti, mohou: prohlížet jakékoli informace s dodavatelem; upravit jejich adresy; a upravovat informace pro některý z produktů poskytnutých dodavatelem. Pokud však uživatel z určité společnosti, můžou jenom zobrazit a upravit své vlastní informace o adrese a lze upravit pouze jejich produkty, které ještě nebyly označeny jako ukončena.
 
 
-[![Uživatel z konkrétní dodavatele může pouze zobrazení a úpravy své informace](limiting-data-modification-functionality-based-on-the-user-vb/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image4.png)
+[![Uživatel z naše společnost, která může upravovat všechny informace s dodavatelem](limiting-data-modification-functionality-based-on-the-user-vb/_static/image2.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image1.png)
 
-**Obrázek 2**: A uživatele z konkrétní dodavatele můžete pouze zobrazení a úpravy své informace ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image6.png))
-
-
-Umožňují s začít!
-
-> [!NOTE]
-> ASP.NET 2.0 systém členství s poskytuje standardizovaná rozšiřitelná platforma pro vytváření, správu a ověřování uživatelských účtů. Vzhledem k tomu, že prozkoumání systém členství je nad rámec tyto kurzy, v tomto kurzu místo "fakes" členství tím, že anonymní návštěvníky zvolit, jestli jsou od jiného dodavatele konkrétní nebo z naší společnosti. Další informace o členství, najdete v části Moje [zkoumání technologii ASP.NET 2.0 s členství, role a profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx) článek řady.
+**Obrázek 1**: uživatele z náš společnosti můžete upravit libovolného dodavatele s informace ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image3.png))
 
 
-## <a name="step-1-allowing-the-user-to-specify-their-access-rights"></a>Krok 1: Umožní uživateli zadat jejich přístupová práva
+[![Uživatel z konkrétního dodavatele může pouze zobrazení a upravit jejich informace](limiting-data-modification-functionality-based-on-the-user-vb/_static/image5.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image4.png)
 
-Ve skutečných webové aplikaci bude zahrnovat informace o uživatelském s účtu zda šlo pro naše společnost nebo pro určité dodavatele, a tyto informace by prostřednictvím kódu programu přístupné z našich stránek ASP.NET, jakmile se uživatel přihlásil k webu. Tyto informace může zachytit pomocí technologie ASP.NET 2.0 s rolí systému, jako informace o účtu uživatele prostřednictvím profilu systému, nebo prostřednictvím některé vlastní prostředky.
-
-Vzhledem k tomu, že cílem tohoto kurzu je ukázka, jak přizpůsobit funkce změny dat na základě přihlášeného uživatele a není určena k představením technologii ASP.NET 2.0 s členství, role a profil systémy, k určení použijeme mechanismus velmi jednoduše možnosti pro uživatele na stránce - rozevírací seznam, ze kterého můžete určit uživatele, pokud by mohli zobrazit a upravit informace o dodavateli nebo, případně co konkrétní dodavatele s informace se mohou zobrazit a upravit. Pokud uživatel uvádí, že se můžete zobrazit a upravit všechny informace dodavatele (výchozí), Jana stránky prostřednictvím všech dodavatelů, upravit všechny informace o adrese s dodavateli a upravit název a množství pro některý z produktů poskytnuté dodavatelem vybrané jednotce. Pokud uživatel označuje, že se dá jenom zobrazit a upravit konkrétního dodavatele, ale pak se můžete zobrazit podrobnosti a produktů pro tuto jednoho dodavatele a můžete pouze aktualizovat název a množství na informace o jednotce pro tyto produkty, které jsou *není* zastaveny.
-
-Naše prvním krokem v tomto kurzu, pak je vytvořit tento rozevírací seznam a jeho naplnění dodavatelů v systému. Otevřete `UserLevelAccess.aspx` stránky v `EditInsertDelete` složky, přidejte rozevírací seznam jejichž `ID` je nastavena na `Suppliers`a vytvořte vazbu Tento rozevírací seznam s novou ObjectDataSource s názvem `AllSuppliersDataSource`.
+**Obrázek 2**: uživatele z konkrétní dodavatele můžete jenom zobrazit a upravit informace o jejich ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image6.png))
 
 
-[![Vytvořit nový ObjectDataSource s názvem AllSuppliersDataSource](limiting-data-modification-functionality-based-on-the-user-vb/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image7.png)
-
-**Obrázek 3**: vytvoření nové ObjectDataSource s názvem `AllSuppliersDataSource` ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image9.png))
-
-
-Vzhledem k tomu, že chceme, aby tento rozevírací seznam zahrnout všechny dodavatele, nakonfigurujte ObjectDataSource má být vyvolán `SuppliersBLL` třídu s `GetSuppliers()` metoda. Také zajistěte, aby ObjectDataSource s `Update()` metoda je namapována na `SuppliersBLL` třídu s `UpdateSupplierAddress` metoda, jako tento ObjectDataSource také použije DetailsView jsme přidali v kroku 2.
-
-Po dokončení Průvodce ObjectDataSource, proveďte kroky nakonfigurováním `Suppliers` rozevírací seznam tak, aby se zobrazí `CompanyName` pole data a používá `SupplierID` jako hodnota pro každé datové pole `ListItem`.
-
-
-[![Konfigurace rozevírací seznam dodavatelé používat NázevSpolečnosti a KódDodavatele datových polí](limiting-data-modification-functionality-based-on-the-user-vb/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image10.png)
-
-**Obrázek 4**: konfigurace `Suppliers` rozevírací seznam pro použití `CompanyName` a `SupplierID` datových polí ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image12.png))
-
-
-V tomto okamžiku rozevírací seznam obsahuje seznam názvů společnosti dodavatelů v databázi. Ale musíme také obsahují možnost "Zobrazit a upravit všechna dodavatelé" k rozevírací seznam. K tomu, nastavte `Suppliers` rozevírací seznam s `AppendDataBoundItems` vlastnost `true` a poté přidejte `ListItem` jejichž `Text` vlastnost je "Zobrazit a upravit všechna dodavatelé" a jehož hodnota je `-1`. Tím přidáte přímo pomocí deklarativní nebo pomocí návrháře tak, že přejdete do okna vlastností a kliknete na tři tečky v rozevírací seznam s `Items` vlastnost.
+Začínáme s let!
 
 > [!NOTE]
-> Odkazovat zpět [ *a podrobností filtrování s rozevírací seznam* ](../masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md) kurz podrobné podrobnější informace o přidání vyberte všechny položky k Vycentrovat rozevírací seznam.
+> ASP.NET 2.0 systém členství s poskytuje standardizovanou a rozšiřitelnou platformu pro tvorbu, správu a probíhá ověřování uživatelských účtů. Prozkoumání systému členství je nad rámec těchto kurzů, v tomto kurzu místo "napodobenin" členství tím, že anonymní uživatelé zvolit, jestli jsou od určitého dodavatele nebo z naše společnost, která. Další informace o členství, najdete v části Moje [zkoumání ASP.NET 2.0 s členství, role a profil](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx) série článků.
 
 
-Po `AppendDataBoundItems` vlastnost byla nastavena a `ListItem` přidali, rozevírací seznam s deklarativní by měl vypadat jako:
+## <a name="step-1-allowing-the-user-to-specify-their-access-rights"></a>Krok 1: Umožňuje uživateli zadat jejich přístupová práva
+
+Ve skutečných webové aplikaci bude zahrnovat informace o účtu uživatele s, jestli je to šlo pro naše společnost, nebo pro konkrétní dodavatele a tyto informace by programově přístupných z našich stránek ASP.NET, jakmile se uživatel přihlásil k webu. Tyto informace můžou být zachytávané ASP.NET 2.0 s rolí systému jako informace o účtu uživatele prostřednictvím profilu systému, nebo prostřednictvím některé vlastní prostředky.
+
+Protože cílem tohoto kurzu je předvést úprava možnosti Změna dat na základě přihlášeného uživatele a není určena k předvedení technologie ASP.NET 2.0 s členství, role a systémů profilu, použijeme mechanismus velmi jednoduše určit možnosti pro uživatele na stránce - DropDownList, ze kterého uživatel může zvolit pokud by měl být schopen zobrazit a upravit všechny informace o dodavateli nebo, případně co konkrétního dodavatele s informace můžete zobrazit a upravit. Pokud uživatel označuje, že může zobrazit a upravovat všechny informace dodavateli (výchozí), Jana stránkovat všichni dodavatelé, upravovat všechny informace o adrese s dodavateli a upravit název a množství na jednotku pro některý z poskytnutých dodavatelem vybraných produktů. Pokud uživatel označuje, že si můžete jenom zobrazit a upravit konkrétního dodavatele, ale pak si můžete podívat na podrobnosti a produktů pro jednoho dodavatele a můžete pouze aktualizovat název a množství na informace o jednotce pro tyto produkty, které jsou *není* ukončena.
+
+Naši první krok v tomto kurzu je pak k vytvoření této DropDownList a přidejte do ní dodavatelů v systému. Otevřít `UserLevelAccess.aspx` stránku `EditInsertDelete` složky, přidejte DropDownList jehož `ID` je nastavena na `Suppliers`a tento DropDownList svázat nového prvku ObjectDataSource s názvem `AllSuppliersDataSource`.
+
+
+[![Vytvoření nového prvku ObjectDataSource s názvem AllSuppliersDataSource](limiting-data-modification-functionality-based-on-the-user-vb/_static/image8.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image7.png)
+
+**Obrázek 3**: vytvoření nového prvku ObjectDataSource s názvem `AllSuppliersDataSource` ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image9.png))
+
+
+Protože chceme, aby tento DropDownList mají zahrnout všichni dodavatelé, nakonfigurujte prvek ObjectDataSource, který má být vyvolán `SuppliersBLL` třída s `GetSuppliers()` metody. Také zajistěte, aby ObjectDataSource s `Update()` metoda je namapována na `SuppliersBLL` třída s `UpdateSupplierAddress` metody, jako tento prvek ObjectDataSource se taky použije v ovládacím prvku DetailsView. budeme přidávat v kroku 2.
+
+Po dokončení Průvodce prvek ObjectDataSource, proveďte kroky tím, že nakonfigurujete `Suppliers` DropDownList tak, že ukazuje `CompanyName` pole data a použije `SupplierID` jako hodnota pro každé datové pole `ListItem`.
+
+
+[![Konfigurace DropDownList dodavatelé CompanyName a KódDodavatele datových polí](limiting-data-modification-functionality-based-on-the-user-vb/_static/image11.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image10.png)
+
+**Obrázek 4**: konfigurace `Suppliers` DropDownList k použití `CompanyName` a `SupplierID` datových polí ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image12.png))
+
+
+V tomto okamžiku DropDownList uvádí názvy společností, dodavatelů v databázi. Však musíme také možnost "Zobrazit nebo upravit všichni dodavatelé" DropDownList. Chcete-li to provést, nastavte `Suppliers` DropDownList s `AppendDataBoundItems` vlastnost `true` a potom přidat `ListItem` jehož `Text` je vlastnost "Zobrazit nebo upravit všichni dodavatelé" a jehož hodnota je `-1`. To lze přidat přímo pomocí deklarativní, nebo prostřednictvím Návrháře v okně Vlastnosti a kliknutím na symbol tří teček v DropDownList s `Items` vlastnost.
+
+> [!NOTE]
+> Vraťte se do [ *filtrování záznamů Master/Detail s DropDownList* ](../masterdetail/master-detail-filtering-with-a-dropdownlist-vb.md) kurz podrobnější informace o přidání datové vazby DropDownList vyberte všechny položky.
+
+
+Po `AppendDataBoundItems` vlastnost byla nastavena a `ListItem` přidali, DropDownList s deklarativní by měl vypadat:
 
 
 [!code-aspx[Main](limiting-data-modification-functionality-based-on-the-user-vb/samples/sample1.aspx)]
 
-Obrázek 5 ukazuje snímek obrazovky naše aktuální průběh, při zobrazení prostřednictvím prohlížeče.
+Obrázek 5 ukazuje snímek obrazovky naše aktuální průběh, když zobrazit pomocí prohlížeče.
 
 
-[![Dodavatelé rozevírací seznam obsahuje zobrazit všechny ListItem a jeden pro každou dodavatele](limiting-data-modification-functionality-based-on-the-user-vb/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image13.png)
+[![Dodavatelé DropDownList obsahuje zobrazit všechny ListItem Plus jeden pro každý dodavatele](limiting-data-modification-functionality-based-on-the-user-vb/_static/image14.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image13.png)
 
-**Obrázek 5**: `Suppliers` rozevírací seznam obsahuje zobrazit všechny `ListItem`, a jeden pro každou dodavatele ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image15.png))
+**Obrázek 5**: `Suppliers` DropDownList obsahuje zobrazit všechny `ListItem`, Plus jeden pro každý dodavatele ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image15.png))
 
 
-Vzhledem k tomu, že chceme ihned po uživatel změnil jejich výběr aktualizovat uživatelské rozhraní, nastavte `Suppliers` rozevírací seznam s `AutoPostBack` vlastnost `true`. V kroku 2 vytvoříme DetailsView ovládací prvek, který se zobrazí informace o dodavatel(é) na základě výběru rozevírací seznam. Potom v kroku 3, vytvoříme obslužné rutiny události pro tento rozevírací seznam s `SelectedIndexChanged` událostí, ve kterém přidáme kód, který sváže informace odpovídající dodavatele DetailsView podle vybrané dodavatele.
+Protože chceme aktualizovat uživatelské rozhraní ihned po uživateli došlo ke změně jejich výběr, nastavte `Suppliers` DropDownList s `AutoPostBack` vlastnost `true`. V kroku 2 vytvoříme, který se zobrazí informace o dodavatel(é) na základě výběru DropDownList ovládacího prvku DetailsView. Pak v kroku 3, vytvoříme obslužnou rutinu události pro tento DropDownList s `SelectedIndexChanged` událostí, ve kterém přidáme kód, který váže odpovídající informace k ovládacím prvku DetailsView. na základě vybraného poskytovatele.
 
-## <a name="step-2-adding-a-detailsview-control"></a>Krok 2: Přidání ovládacího prvku DetailsView
+## <a name="step-2-adding-a-detailsview-control"></a>Krok 2: Přidání ovládacího prvku DetailsView.
 
-Umožní s nástrojem DetailsView můžete zobrazit informace o dodavateli. Pro uživatele, který můžete zobrazit a upravit všech dodavatelů bude DetailsView podporovat stránkování, které uživateli umožňují krok prostřednictvím jeden záznam informace dodavatele najednou. Pokud uživatel pracuje konkrétního dodavatele, ale DetailsView se zobrazí pouze konkrétní dodavatele s informace a nebude obsahovat rozhraní stránkování. V obou případech je potřeba povolit uživatelům upravit adresu s jiného dodavatele, města a pole země DetailsView.
+Umožní s pomocí DetailsView můžete zobrazit informace o dodavateli. Pro uživatele, který můžete zobrazit a upravit všechny dodavatelů bude ovládacím prvku DetailsView podporovat stránkování, které uživateli umožňují krokovat jeden záznam dodavatele informace najednou. Pokud uživatel pracuje pro konkrétní dodavatele, ale ovládacím prvku DetailsView zobrazí informace s pouze konkrétní dodavatele a nebudou obsahovat rozhraní stránkování. V obou případech musí ovládacím prvku DetailsView. aby uživatel mohl upravit dodavatele adresa, Město a zemi pole.
 
-Přidejte na stránku pod DetailsView `Suppliers` nastavte rozevírací seznam, jeho `ID` vlastnost `SupplierDetails`a navázat jej na `AllSuppliersDataSource` ObjectDataSource vytvořili v předchozím kroku. Dále zkontrolujte zaškrtávací políčka Povolit stránkování a povolit úpravy z DetailsView s inteligentním.
+Přidat na stránku pod DetailsView `Suppliers` DropDownList, nastavte jeho `ID` vlastnost `SupplierDetails`a vytvořte mu vazbu k `AllSuppliersDataSource` ObjectDataSource vytvořili v předchozím kroku. V dalším kroku zaškrtněte zaškrtávací políčka Povolit stránkování a povolit úpravy z inteligentních značek s prvku DetailsView.
 
 > [!NOTE]
-> Pokud se tento t možnost Povolit úpravy v inteligentní DetailsView s značky ho s vzhledem k tomu, že nemapují ObjectDataSource s `Update()` metodu `SuppliersBLL` třídu s `UpdateSupplierAddress` metoda. Přejít zpět a tuto konfiguraci změnit, po jejímž uplynutí má možnost Povolit úpravy zobrazí v DetailsView s inteligentním nastavit chvíli trvat.
+> Pokud se zobrazí možnost Povolit úpravy v prvku DetailsView s inteligentní don t označte ji s protože nemapují ObjectDataSource s `Update()` metodu `SuppliersBLL` třída s `UpdateSupplierAddress` metody. Přejít zpět a provést tuto konfiguraci změnit, po jejímž uplynutí možnost Povolit úpravy by se zobrazit v prvku DetailsView s inteligentním chvíli trvat.
 
 
-Vzhledem k tomu `SuppliersBLL` třídu s `UpdateSupplierAddress` metoda přijímá pouze čtyři parametry - `supplierID`, `address`, `city`, a `country` -upravit DetailsView s BoundFields tak, aby `CompanyName` a `Phone` BoundFields jsou jen pro čtení. Kromě toho odebrat `SupplierID` BoundField úplně. Nakonec `AllSuppliersDataSource` ObjectDataSource má aktuálně jeho `OldValuesParameterFormatString` vlastnost nastavena na hodnotu `original_{0}`. Za chvíli odebrat nastavení této vlastnosti z úplně deklarativní syntaxe, nebo ji nastavte na výchozí hodnotu `{0}`.
+Protože `SuppliersBLL` třída s `UpdateSupplierAddress` metoda přijímá pouze čtyři parametry - `supplierID`, `address`, `city`, a `country` – upravte prvek DetailsView s BoundFields tak, aby `CompanyName` a `Phone` BoundFields jsou jen pro čtení. Kromě toho odebrat `SupplierID` zcela Vlastnost BoundField. Nakonec `AllSuppliersDataSource` ObjectDataSource má v současné době jeho `OldValuesParameterFormatString` nastavenou na `original_{0}`. Za chvíli odebrat nastavení této vlastnosti z deklarativní syntaxe zcela nebo ji nastavte na výchozí hodnotu `{0}`.
 
-Po dokončení konfigurace `SupplierDetails` DetailsView a `AllSuppliersDataSource` ObjectDataSource, budeme mít následující kód:
+Po dokončení konfigurace `SupplierDetails` DetailsView a `AllSuppliersDataSource` prvek ObjectDataSource, budeme mít následující kód:
 
 
 [!code-aspx[Main](limiting-data-modification-functionality-based-on-the-user-vb/samples/sample2.aspx)]
 
-V tomto okamžiku můžete prostřednictvím stránkování DetailsView a aktualizovat informace o adrese vybrané dodavatele s, bez ohledu na výběru provedeném `Suppliers` rozevírací seznam (viz obrázek 6).
+V tomto okamžiku můžete ovládacím prvku DetailsView stránkování prostřednictvím a je možné aktualizovat informace o adrese vybrané dodavatele s, bez ohledu na výběr provedený v `Suppliers` DropDownList (viz obrázek 6).
 
 
-[![Žádné informace o dodavateli lze zobrazit a aktualizovat svou adresu](limiting-data-modification-functionality-based-on-the-user-vb/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image16.png)
+[![Veškeré informace, Dodavatelé mohou zobrazit a aktualizovat jeho adresy](limiting-data-modification-functionality-based-on-the-user-vb/_static/image17.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image16.png)
 
-**Obrázek 6**: Libovolná dodavatelé informace lze zobrazit a aktualizovat její adresu ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image18.png))
-
-
-## <a name="step-3-displaying-only-the-selected-supplier-s-information"></a>Krok 3: Zobrazení jenom vybraných dodavatele s informací o
-
-Naší stránce s aktuálně zobrazí informace o všech dodavatelů, bez ohledu na to, zda byl vybrán konkrétní dodavatele z `Suppliers` rozevírací seznam. Aby bylo možné zobrazit pouze informace dodavatele pro vybrané dodavatele je potřeba přidat další ObjectDataSource na naší stránce, který načte informace o konkrétní dodavatele.
-
-Přidat nové ObjectDataSource na stránku, pojmenování ho `SingleSupplierDataSource`. Z inteligentních značek, klikněte na odkaz Konfigurace zdroje dat a mějte ho používat `SuppliersBLL` třídu s `GetSupplierBySupplierID(supplierID)` metoda. Stejně jako u `AllSuppliersDataSource` ObjectDataSource, mají `SingleSupplierDataSource` ObjectDataSource s `Update()` metoda namapované na `SuppliersBLL` třídu s `UpdateSupplierAddress` metoda.
+**Obrázek 6**: Any dodavatelé informace můžete zobrazit a aktualizovat jeho adresa ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image18.png))
 
 
-[![Konfigurace SingleSupplierDataSource ObjectDataSource lze pomocí této metody GetSupplierBySupplierID(supplierID)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image19.png)
+## <a name="step-3-displaying-only-the-selected-supplier-s-information"></a>Krok 3: Zobrazení pouze informace s vybranou dodavatele
 
-**Obrázek 7**: konfigurace `SingleSupplierDataSource` ObjectDataSource pro použití `GetSupplierBySupplierID(supplierID)` – metoda ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image21.png))
+Naši stránku aktuálně zobrazuje informace pro všechny dodavatele bez ohledu na to, zda byl vybrán konkrétního dodavatele z `Suppliers` DropDownList. Aby bylo možné zobrazit pouze informace dodavatel pro vybrané dodavatele potřebujeme přidat jiného prvku ObjectDataSource na naši stránku, ten, který načte informace o konkrétní dodavatele.
 
-
-V dalším kroku jsme znovu zobrazit výzva k zadání parametru Zdroj `GetSupplierBySupplierID(supplierID)` metoda s `supplierID` vstupní parametr. Vzhledem k tomu, že má být zobrazena informace pro dodavatele, vybrat z rozevírací seznam, použijte `Suppliers` rozevírací seznam s `SelectedValue` vlastnost jako zdroj parametru.
-
-
-[![Použijte rozevírací seznam dodavatelé jako KódDodavatele Zdroj parametru](limiting-data-modification-functionality-based-on-the-user-vb/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image22.png)
-
-**Obrázek 8**: použití `Suppliers` rozevírací seznam jako `supplierID` Zdroj parametru ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image24.png))
+Přidat nový prvek ObjectDataSource na stránku jeho pojmenování `SingleSupplierDataSource`. Z inteligentních značek, klikněte na odkaz Konfigurovat zdroj dat a jeho použití `SuppliersBLL` třída s `GetSupplierBySupplierID(supplierID)` metody. Stejně jako u `AllSuppliersDataSource` prvek ObjectDataSource, mají `SingleSupplierDataSource` ObjectDataSource s `Update()` metodu mapované na `SuppliersBLL` třída s `UpdateSupplierAddress` metoda.
 
 
-I když tento druhý ObjectDataSource přidat, je aktuálně konfigurována ovládací prvek DetailsView vždy nutné použít `AllSuppliersDataSource` ObjectDataSource. Je potřeba přidat logiku upravit zdroj dat používaný v DetailsView v závislosti na tom `Suppliers` vybrána položka rozevírací seznam. Chcete-li dosáhnout, vytvořte `SelectedIndexChanged` obslužné rutiny události pro rozevírací seznam dodavatelů. To můžete snadno vytvořit dvojitým kliknutím na rozevírací seznam v návrháři. Této obslužné rutiny události musí určit, jaké zdroje dat použít a musí rebind data, která mají DetailsView. To se provádí následujícím kódem:
+[![Konfigurace SingleSupplierDataSource ObjectDataSource GetSupplierBySupplierID(supplierID) metody](limiting-data-modification-functionality-based-on-the-user-vb/_static/image20.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image19.png)
+
+**Obrázek 7**: konfigurace `SingleSupplierDataSource` ObjectDataSource k použití `GetSupplierBySupplierID(supplierID)` – metoda ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image21.png))
+
+
+Dále jsme znovu zobrazit výzva k zadání parametru Zdroj `GetSupplierBySupplierID(supplierID)` metody s `supplierID` vstupního parametru. Vzhledem k tomu, že má být zobrazena informace pro dodavatele vybrali DropDownList, použijte `Suppliers` DropDownList s `SelectedValue` vlastnost jako zdroj parametru.
+
+
+[![Použít DropDownList dodavatelé jako KódDodavatele zdroji parametru](limiting-data-modification-functionality-based-on-the-user-vb/_static/image23.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image22.png)
+
+**Obrázek 8**: použijte `Suppliers` DropDownList jako `supplierID` zdroji parametru ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image24.png))
+
+
+I přes tento druhý ObjectDataSource přidali ovládací prvek DetailsView je aktuálně nakonfigurován pro vždy používat `AllSuppliersDataSource` ObjectDataSource. Je potřeba přidat logiku pro zdroj dat používaný v ovládacím prvku DetailsView. v závislosti na nastavení `Suppliers` DropDownList položka vybrána. Chcete-li to provést, vytvořte `SelectedIndexChanged` obslužné rutiny události pro DropDownList dodavatelů. To lze nejsnadněji vytvořit dvojitým kliknutím rozevírací seznam v návrháři. Tato obslužná rutina události musí určit, jaký zdroj dat použít a musíte znovu připojit data do ovládacího prvku DetailsView. To lze provést následujícím kódem:
 
 
 [!code-vb[Main](limiting-data-modification-functionality-based-on-the-user-vb/samples/sample3.vb)]
 
-Obslužné rutiny události začíná tak, že určíte, zda jste vybrali možnost "Zobrazit a upravit všechna dodavatelé". Pokud byl, nastaví `SupplierDetails` DetailsView s `DataSourceID` k `AllSuppliersDataSource` a vrátí uživatele na první záznam v sadě dodavatelé nastavením `PageIndex` vlastnost na hodnotu 0. Pokud však uživatel vybral konkrétní dodavatele z rozevírací seznam DetailsView s `DataSourceID` je přiřazena k `SingleSuppliersDataSource`. Zdroj bez ohledu na to, jaká data se používá, `SuppliersDetails` režimu je vrátit zpátky do režimu jen pro čtení a dat je odrážejí do ovládacího prvku DetailsView voláním `SuppliersDetails` ovládacího prvku s `DataBind()` metoda.
+Obslužná rutina události začíná tak, že určíte, zda jste vybrali možnost "Zobrazit nebo upravit všichni dodavatelé". Pokud ano, nastaví `SupplierDetails` prvek DetailsView s `DataSourceID` k `AllSuppliersDataSource` a vrátí uživatele na první záznam v sadě dodavatelů tím, že nastavíte `PageIndex` vlastnost na hodnotu 0. Pokud však uživatel vybral konkrétní dodavatele z DropDownList DetailsView s `DataSourceID` přiřazen `SingleSuppliersDataSource`. Bez ohledu na to, jaká data se používá zdroj, `SuppliersDetails` režimu je vrátit zpět do režimu jen pro čtení a data se znovu připojeno do ovládacího prvku DetailsView voláním `SuppliersDetails` ovládacího prvku s `DataBind()` metody.
 
-Pomocí této obslužné rutiny události na místě ovládacího prvku DetailsView nyní zobrazuje vybrané dodavatele, pokud jste vybrali možnost "Zobrazit a upravit všechna dodavatelé", v takovém případě všechny dodavatele můžete zobrazit pomocí rozhraní stránkování. Obrázek 9 ukazuje na stránku s možností "Zobrazit a upravit všechna dodavatelé"; Všimněte si, že rozhraní stránkování existuje, které uživateli umožňují přejděte a aktualizovat všechny dodavatele. Obrázek 10 ukazuje na stránku s dodavatelem Ma Maison vybrané. Jenom informace o s Ma Maison se v takovém případě lze zobrazit a upravovat.
-
-
-[![Všechny informace dodavatelé lze zobrazit a upravit](limiting-data-modification-functionality-based-on-the-user-vb/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image25.png)
-
-**Obrázek 9**: všechny dodavatelé informace lze zobrazit a upravovaný ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image27.png))
+Pomocí této obslužné rutiny události na místě ovládacím prvku DetailsView nyní zobrazuje vybrané dodavatele, pokud jste vybrali možnost "Zobrazit nebo upravit všichni dodavatelé", v takovém případě všechny dodavatele lze zobrazit pomocí rozhraní stránkování. Obrázek 9 ukazuje na stránku s možností "Zobrazit nebo upravit všichni dodavatelé"; Mějte na paměti, že rozhraní stránkování je k dispozici, uživatel navštívit a aktualizovat libovolnému dodavateli. Obrázek 10 ukazuje na stránku s dodavatelem Ma Maison vybrali. Pouze informace s Ma Maison se může zobrazit a upravovat v tomto případě.
 
 
-[![Můžete zobrazit a upravovat pouze vybrané dodavatele s informace](limiting-data-modification-functionality-based-on-the-user-vb/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image28.png)
+[![Všechny informace dodavatelé mohou zobrazit a upravit](limiting-data-modification-functionality-based-on-the-user-vb/_static/image26.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image25.png)
 
-**Obrázek 10**: pouze s vybrané dodavatele informace mohou být Viewed a upravovaný ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image30.png))
+**Obrázek 9**: všechny dodavatelé informace můžete zobrazit a upravovaný ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image27.png))
+
+
+[![Pouze vybrané dodavatele s informace můžete zobrazit a upravit](limiting-data-modification-functionality-based-on-the-user-vb/_static/image29.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image28.png)
+
+**Obrázek 10**: jenom vybrané dodavatele s informace můžou být Viewed a upravovaný ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image30.png))
 
 
 > [!NOTE]
-> V tomto kurzu řízení rozevírací seznam a DetailsView s `EnableViewState` musí být nastavena na `true` (výchozí) protože rozevírací seznam s `SelectedIndex` a DetailsView s `DataSourceID` změny vlastností s musí být zapamatovaných napříč postback.
+> Pro účely tohoto kurzu DropDownList i DetailsView ovládací prvek s `EnableViewState` musí být nastaveno na `true` (výchozí) protože DropDownList s `SelectedIndex` a DetailsView s `DataSourceID` změny vlastností s musí uživatel zadat postbacků.
 
 
-## <a name="step-4-listing-the-suppliers-products-in-an-editable-gridview"></a>Krok 4: Výpis dodavatelé produkty v upravitelné GridView
+## <a name="step-4-listing-the-suppliers-products-in-an-editable-gridview"></a>Krok 4: Výpis produkty dodavatelů v upravitelné GridView
 
-S kompletní DetailsView naše dalším krokem je zahrnout upravitelné rutina GridView obsahující seznam těchto produktů poskytnutých vybrané dodavatelem. Tato rutina GridView by měl povolit úpravy jenom `ProductName` a `QuantityPerUnit` pole. Navíc pokud je uživatel na stránce od určitého dodavatele, se musí povolit pouze aktualizace těchto produktů, které jsou *není* zastaveny. K tomu je třeba nejprve přidat přetížení `ProductsBLL` třídu s `UpdateProducts` metoda, která přebírá jenom na `ProductID`, `ProductName`, a `QuantityPerUnit` pole vstupy. Jsme sunout provedl tento proces předem v mnoha kurzy, a můžete s právě podívejte se na sem kód, který má být přidán do `ProductsBLL`:
+S ovládacím prvku DetailsView. dokončení naším dalším krokem je zahrnout upravitelné prvku GridView, který obsahuje seznam těchto produktů poskytovaných vybrané dodavatelem. Tento prvek GridView by měl povolit úpravy pouze `ProductName` a `QuantityPerUnit` pole. Kromě toho pokud je uživatel na stránce od konkrétního dodavatele, ji by měl povolit pouze aktualizace těchto produktů, které jsou *není* ukončena. K tomu můžeme budete muset nejdřív přidat přetížení `ProductsBLL` třída s `UpdateProducts` metodu, která přijímá jenom `ProductID`, `ProductName`, a `QuantityPerUnit` pole jako vstupy. Jsme ve předem prošli tento proces v mnoha kurzy, proto nechte s právě prohlédněte si kód, která by měla být přidána do `ProductsBLL`:
 
 
 [!code-vb[Main](limiting-data-modification-functionality-based-on-the-user-vb/samples/sample4.vb)]
 
-S toto přetížení vytvořili, jsme re připraveno k přidání GridView a jeho přidružené ObjectDataSource. Přidat nové GridView na stránku, nastavte jeho `ID` vlastnost `ProductsBySupplier`a nakonfigurujte ho na použití nové ObjectDataSource s názvem `ProductsBySupplierDataSource`. Vzhledem k tomu, že chceme, aby tato rutina GridView seznam těchto produktů vybrané dodavatel, `ProductsBLL` třídu s `GetProductsBySupplierID(supplierID)` metoda. Také mapovat `Update()` metoda do nového `UpdateProduct` přetížení jsme právě vytvořili.
+Pomocí tohoto přetížení vytvořili, můžeme znovu připraven k přidání ovládacího prvku GridView a její přidružené ObjectDataSource. Přidání nového ovládacího prvku GridView na stránku, nastavte jeho `ID` vlastnost `ProductsBySupplier`a nakonfigurujte ho na použití nového prvku ObjectDataSource s názvem `ProductsBySupplierDataSource`. Protože chceme, aby tento GridView seznam těchto produktů vybrané dodavatelem, použijte `ProductsBLL` třída s `GetProductsBySupplierID(supplierID)` metody. Také namapovat `Update()` metoda k novému `UpdateProduct` přetížení, které jsme právě vytvořili.
 
 
 [![Konfigurace ObjectDataSource použít přetížení UpdateProduct právě vytvořili](limiting-data-modification-functionality-based-on-the-user-vb/_static/image32.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image31.png)
 
-**Obrázek 11**: Konfigurace ObjectDataSource pro použití `UpdateProduct` přetížení právě vytvořili ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image33.png))
+**Obrázek 11**: Konfigurace ObjectDataSource k použití `UpdateProduct` přetížení právě vytvořili ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image33.png))
 
 
-Jsme znovu zobrazí výzva k výběru Zdroj parametru `GetProductsBySupplierID(supplierID)` metoda s `supplierID` vstupní parametr. Vzhledem k tomu, že chceme zobrazit tyto produkty pro dodavatele vybraný v ovládacím prvku DetailsView, použijte `SuppliersDetails` ovládací prvek DetailsView s `SelectedValue` vlastnost jako zdroj parametru.
+Můžeme znovu výzva k výběru parametr zdroj `GetProductsBySupplierID(supplierID)` metody s `supplierID` vstupního parametru. Protože chceme zobrazit produkty pro dodavatele vybraný v ovládacím prvku DetailsView, použijte `SuppliersDetails` ovládací prvek DetailsView s `SelectedValue` vlastnost jako zdroj parametru.
 
 
-[![Použijte vlastnost SelectedValue s SuppliersDetails DetailsView jako zdroj parametru](limiting-data-modification-functionality-based-on-the-user-vb/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image34.png)
+[![Použití vlastnosti SelectedValue prvku SuppliersDetails DetailsView s jako parametr zdroje](limiting-data-modification-functionality-based-on-the-user-vb/_static/image35.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image34.png)
 
-**Obrázek 12**: použití `SuppliersDetails` DetailsView s `SelectedValue` vlastnost jako zdroj parametru ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image36.png))
+**Obrázek 12**: použijte `SuppliersDetails` prvek DetailsView s `SelectedValue` vlastnost jako zdroj parametru ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image36.png))
 
 
-Vrácením GridView, odeberte všechna pole GridView s výjimkou `ProductName`, `QuantityPerUnit`, a `Discontinued`, označování `Discontinued` Vlastnost CheckBoxField jen pro čtení. Zkontrolujte také, možnost Povolit úpravy GridView s inteligentním. Až tyto změny byly provedeny, deklarativní GridView a ObjectDataSource by měl vypadat podobně jako následující:
+Vrácení k prvku GridView, odeberte všechna pole prvku GridView s výjimkou `ProductName`, `QuantityPerUnit`, a `Discontinued`, označování `Discontinued` třídě CheckBoxField jen pro čtení. Navíc zaškrtněte možnost Povolit úpravy z inteligentních značek s ovládacího prvku GridView. Po provedení těchto změn deklarativní ovládacími prvky GridView a ObjectDataSource by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](limiting-data-modification-functionality-based-on-the-user-vb/samples/sample5.aspx)]
 
-Stejně jako u našich předchozí ObjectDataSources tento jeden s `OldValuesParameterFormatString` je nastavena na `original_{0}`, které způsobí problémy při pokusu o aktualizaci název produktu s nebo množství na jednotku. Tato vlastnost odebrání deklarativní syntaxi zcela nebo ji nastavte na svou výchozí `{0}`.
+Stejně jako u našich předchozí ObjectDataSources tento jeden s `OldValuesParameterFormatString` je nastavena na `original_{0}`, která by mohla způsobit potíže při pokusu o aktualizaci produkt s názvem nebo množství na jednotku. Úplně odeberte tuto vlastnost z deklarativní syntaxe nebo ji nastavte na jeho výchozí `{0}`.
 
-Dokončení této konfigurace, naši stránku teď seznamy produktů, poskytuje dodavatel v prvku GridView (viz obrázek 13). Aktuálně *žádné* lze aktualizovat název produktu s nebo množství na jednotku. Musíme aktualizovat logiku stránky tak, aby tato funkce je zakázána pro – starší formáty produktů pro uživatele, kteří s konkrétní dodavatele. Jsme budete řešení tento poslední díl v kroku 5.
+S touto konfigurací kompletní naši stránku nyní obsahuje produkty poskytnuté dodavatelem v prvku GridView (viz obrázek 13). Aktuálně *jakékoli* produkt s názvem nebo množství na jednotku je možné aktualizovat. Musíme aktualizovat logiku naši stránku tak, aby tato funkce je zakázaná pro odpojené produkty pro uživatele přidružené k určité dodavatele. Jsme budete řešit tento poslední část v kroku 5.
 
 
-[![Produkty, které poskytuje dodavatel vybrané jsou zobrazeny.](limiting-data-modification-functionality-based-on-the-user-vb/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image37.png)
+[![Jsou zobrazeny poskytnutých dodavatelem vybrané produkty](limiting-data-modification-functionality-based-on-the-user-vb/_static/image38.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image37.png)
 
-**Obrázek 13**: The produkty poskytuje dodavatel vybrané zobrazují ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image39.png))
+**Obrázek 13**: The produkty poskytnuté dodavatelem vybrané zobrazují ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image39.png))
 
 
 > [!NOTE]
-> Po přidání tohoto upravitelné GridView `Suppliers` rozevírací seznam s `SelectedIndexChanged` obslužné rutiny události musí aktualizovat na GridView vrátit do stavu jen pro čtení. Jinak hodnota pokud jiný jiného dodavatele je vybraná při uprostřed úpravy informací o produktu, odpovídající indexu v GridView pro nové dodavatele bude také možné upravovat. Chcete-li tomu zabránit, jednoduše nastavte GridView s `EditIndex` vlastnost `-1` v `SelectedIndexChanged` obslužné rutiny události.
+> Přidání této upravitelné GridView `Suppliers` DropDownList s `SelectedIndexChanged` obslužné rutiny události musí aktualizovat na hodnotu prvku GridView se vrátit do stavu jen pro čtení. V opačném případě jiný dodavatel vybrali při uprostřed úpravy informace o produktech, odpovídající index v prvku GridView pro nové dodavatele bude také upravovat. Chcete-li tomu zabránit, stačí nastavit prvek GridView s `EditIndex` vlastnost `-1` v `SelectedIndexChanged` obslužné rutiny události.
 
 
-Odvolat také, že je důležité, aby GridView být stav zobrazení s povoleno (výchozí nastavení). Pokud jste nastavili GridView s `EnableViewState` vlastnost `false`, riskujete, že náhodně odstraněním nebo úpravou zaznamenává počet uživatelů. V tématu [upozornění: souběžnosti problém s ASP.NET 2.0 GridViews nebo DetailsView/FormViews tento podpora úpravy nebo odstranění a jejichž stav zobrazení je zakázána](http://scottonwriting.net/sowblog/posts/10054.aspx) Další informace.
+Také Připomínáme, že je důležité, že GridView s zobrazení stav povoleno (výchozí chování). Pokud nastavíte GridView s `EnableViewState` vlastnost `false`, spustíte riskujete souběžných uživatelů zaznamenává neúmyslnému odstranění nebo úpravy. V tématu [upozornění: problém souběžnosti s ASP.NET 2.0 prvků GridViews/DetailsView/FormViews tohoto podpora úpravy nebo odstranění a jejichž stav zobrazení je zakázaná](http://scottonwriting.net/sowblog/posts/10054.aspx) Další informace.
 
-## <a name="step-5-disallow-editing-for-discontinued-products-when-showedit-all-suppliers-is-not-selected"></a>Krok 5: Zakáže úpravy zastaví produkty při zobrazit a upravit všechna Dodavatelé je Nevybráno
+## <a name="step-5-disallow-editing-for-discontinued-products-when-showedit-all-suppliers-is-not-selected"></a>Krok 5: Zakažte úpravy ukončena produkty při zobrazit nebo upravit všechny Dodavatelé je nevybraných
 
-Když `ProductsBySupplier` GridView je plně funkční, aktuálně zajišťuje příliš mnoho přístup k uživatelům, kteří jsou z konkrétní dodavatele. Podle našich obchodní pravidla takové uživatelé neměli mít možnost aktualizace – starší formáty produktů. Chcete-li vynutit, jsme můžete skrýt (nebo zakázat) na tlačítko Upravit v těchto řádcích GridView – starší formáty produkty při přístupu stránce uživatelem od jiného dodavatele.
+Zatímco `ProductsBySupplier` GridView je plně funkční, aktuálně zajišťuje příliš mnoho přístup uživatelům, kteří jsou od určitého dodavatele. Za naše obchodní pravidla nesmí tyto uživatelé nebudou moct aktualizovat odpojené produkty. Pokud to pokud chcete vynutit, jsme můžete skrýt (nebo zakázat) na tlačítko Upravit tyto řádky GridView s odpojené produkty, když na stránce se právě návštěvě uživatele od jiného dodavatele.
 
-Vytvoření obslužné rutiny události pro GridView s `RowDataBound` událostí. V této obslužné rutiny události, je potřeba určit, zda uživatel je přidružen konkrétní dodavatele, který v tomto kurzu se dá určit kontrolou dodavatelé rozevírací seznam s `SelectedValue` vlastnost – pokud ji s něco jiných než -1, pak uživatel je související s konkrétní dodavatele. Pro tyto uživatele musíme pak určit, zda je přerušeno produktu. Jsme můžete získat odkaz na skutečnou `ProductRow` instance vázaný na řádek GridView prostřednictvím `e.Row.DataItem` vlastnost, jak je popsáno v [ *zobrazení souhrn informací v GridView s zápatí* ](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb.md) kurz. Pokud už není podporovaný produktu, jsme získat programový odkaz na tlačítko Upravit v GridView s CommandField pomocí technik popsaných v tomto kurzu předchozí [ *přidání Client-Side potvrzení při odstranění* ](adding-client-side-confirmation-when-deleting-vb.md). Jakmile jsme odkaz jsme potom můžete skrýt nebo na tlačítko zakázat.
+Vytvořte obslužnou rutinu události pro prvek GridView s `RowDataBound` událostí. V této obslužné rutiny události potřebujeme k určení, zda je uživatel přidružený konkrétního dodavatele, které pro účely tohoto kurzu, můžete určit tak, že zkontrolujete dodavatelé DropDownList s `SelectedValue` vlastnost – pokud ji s něco jiné než -1 a pak mu je spojené s konkrétní dodavatele. Pro tyto uživatele následně je potřeba určit, zda se vyřazuje produktu. Jsme získejte odkaz na skutečnou `ProductRow` instance je vázán na řádku prvku GridView prostřednictvím `e.Row.DataItem` vlastnost, jak je popsáno v [ *zobrazuje souhrnné informace v zápatí prvku GridView s* ](../custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb.md) kurz. Pokud se vyřazuje, produktu, můžeme vzít programový odkaz na tlačítku pro úpravy v prvku GridView s CommandField pomocí techniky popsané v předchozím kurzu [ *přidání Client-Side potvrzení při odstraňování* ](adding-client-side-confirmation-when-deleting-vb.md). Jakmile budeme mít odkaz na jsme pak můžete skrýt nebo zakázat tlačítko.
 
 
 [!code-vb[Main](limiting-data-modification-functionality-based-on-the-user-vb/samples/sample6.vb)]
 
-Pomocí této události obslužné rutiny na místě, pokud tyto produkty, které jsou zastaveny návštěvou tuto stránku jako uživatel od jiného dodavatele konkrétní nejsou upravitelné, jako tlačítko Upravit skryt pro tyto produkty. Například s Chef Anton Gumbo Mix je deaktivovaný produkt pro nový Orléans Cajun Delights dodavatele. Pokud na stránce pro tento konkrétní dodavatele, tlačítko Upravit pro tento produkt je skryta nebyl zřejmý (viz obrázek 14). Při návštěvě pomocí "Zobrazit a upravit všechna dodavatelů", je tlačítko Upravit však k dispozici (viz obrázek 15).
+S touto událostí obslužné rutiny na místě, pokud tyto produkty, které jsou vyřazeny navštívit tuto stránku jako uživatel od konkrétního dodavatele se nedají upravovat, na tlačítku pro úpravy je skrytý pro tyto produkty. Například s Chef Anton Gumbo Mix je ukončená produktu pro nový Orleans Cajun Delights dodavatele. Při návštěvě stránky pro tento konkrétní dodavatele, přístup se skryje tlačítko Upravit pro tento produkt (viz obrázek 14). Ale při návštěvě pomocí "Zobrazit nebo upravit všichni dodavatelé", tlačítko pro úpravy je dostupné (viz obrázek 15).
 
 
-[![Pro uživatele specifické pro dodavatele je skrytý na tlačítko Upravit Chef Anton s Gumbo Mix](limiting-data-modification-functionality-based-on-the-user-vb/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image40.png)
+[![Pro konkrétní dodavatele uživatele tlačítko Upravit pro Chef Anton s Gumbo Mix skryté](limiting-data-modification-functionality-based-on-the-user-vb/_static/image41.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image40.png)
 
-**Obrázek 14**: pro specifické pro dodavatele uživatele je skrytý na tlačítko Upravit Chef Anton s Gumbo Mix ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image42.png))
-
-
-[![Pro všechny uživatele dodavatelé zobrazit a upravit se zobrazí tlačítko Upravit pro Chef Anton s Gumbo Mix](limiting-data-modification-functionality-based-on-the-user-vb/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image43.png)
-
-**Obrázek 15**: pro zobrazit či upravit všichni dodavatelé uživatelé, na tlačítko Upravit Chef Anton s Gumbo Mix se zobrazí ([Kliknutím zobrazit obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image45.png))
+**Obrázek 14**: pro konkrétní dodavatele uživatele skryté tlačítko Upravit pro Chef Anton s Gumbo Mix ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image42.png))
 
 
-## <a name="checking-for-access-rights-in-the-business-logic-layer"></a>Kontrola přístupová práva v vrstvu obchodní logiky
+[![Pro všechny uživatele dodavatelé zobrazit nebo upravit je zobrazeno tlačítko Upravit pro Chef Anton s Gumbo Mix](limiting-data-modification-functionality-based-on-the-user-vb/_static/image44.png)](limiting-data-modification-functionality-based-on-the-user-vb/_static/image43.png)
 
-V tomto kurzu ASP.NET zpracovává stránky veškerou logiku s ohledem na informace, co uživatel uvidí a jaké produkty, si můžete aktualizovat. V ideálním případě by tato logika by být k dispozici také na vrstvu obchodní logiky. Například `SuppliersBLL` třídu s `GetSuppliers()` (která vrátí všechny dodavatelé) může zahrnovat kontrola zkontrolujte, zda je aktuálně přihlášený uživatel *není* spojené s konkrétní dodavatele. Podobně `UpdateSupplierAddress` metoda můžou zahrnovat kontrolu zajistit, aby aktuálně přihlášeného uživatele buď práce na incidentu pro naše společnost (a proto můžete aktualizovat všechny informace o adrese dodavatelé) nebo je přidružen dodavatele, jejichž data se právě aktualizuje.
+**Obrázek 15**: pro zobrazit nebo upravit všichni dodavatelé uživatelé, tlačítko Upravit pro Chef Anton s se zobrazí Gumbo Mix ([kliknutím ji zobrazíte obrázek v plné velikosti](limiting-data-modification-functionality-based-on-the-user-vb/_static/image45.png))
 
-Tyto vrstvy BLL kontroly nemělo být vzhledem k tomu, že v našem kurzu, uživatel s právy vyplývají z rozevírací seznam na stránce, které třídy BLL nemůže získat přístup. Pokud používáte systém členství nebo jeden z schémat ověřování na více systémů v poli poskytované ASP.NET (například ověřování systému Windows), aktuálně přihlášeného uživatele s údaje o role a je přístupný z BLL, a díky takový přístup práva kontroluje možné na prezentační a BLL vrstvy.
+
+## <a name="checking-for-access-rights-in-the-business-logic-layer"></a>Kontrolují se oprávnění v vrstvy obchodní logiky
+
+V tomto kurzu ASP.NET stránky zpracovává veškerou logiku s ohledem na jaké informace může zobrazit uživatele a jaké produkty, že můžete aktualizovat. V ideálním případě by tato logika by být k dispozici také v vrstvy obchodní logiky. Například `SuppliersBLL` třída s `GetSuppliers()` – metoda (která vrátí všechny dodavatelé) může zahrnovat kontrolu a ujistěte se, že je aktuálně přihlášený uživatel *není* spojené s konkrétní dodavatele. Podobně `UpdateSupplierAddress` metoda může zahrnovat kontrolu a ujistěte se, že aktuálně přihlášeného uživatele buď pracoval pro naše společnost, která (a tedy můžete aktualizovat všechny informace o adrese dodavatelé) nebo je spojen s od dodavatele, jejichž data se aktualizuje.
+
+Můžu nenabízela tyto vrstvy BLL kontroly vzhledem k tomu, že v našem kurzu uživatele s právy stanovuje DropDownList na stránce, která BLL třídy nemůže získat přístup. Pokud používáte systém členství nebo jeden z pole out v ověřovací schémata poskytovaných technologií ASP.NET (například ověřování Windows), aktuálně přihlášeného uživatele s informace a informace o roli je přístupná z knihoven BLL, díky čemuž takový přístup práva zkontroluje v prezentaci a BLL vrstvy je to možné.
 
 ## <a name="summary"></a>Souhrn
 
-Většina serverů, které poskytují uživatelské účty se muset přizpůsobit rozhraní změny dat na základě přihlášeného uživatele. Správci můžou odstranit a upravit všechny záznam, zatímco uživatelé bez oprávnění správce může být omezena pouze aktualizace nebo odstranění záznamů vytvářely sami. Bez ohledu scénáři může být, ovládací prvky webového, ObjectDataSource, data a vrstvu obchodní logiky třídy lze rozšířit pro přidání nebo odepřít určité funkce na základě přihlášeného uživatele. V tomto kurzu jsme viděli, jak omezit lze zobrazit a upravovat data v závislosti na tom, jestli je uživatel spojené s konkrétní dodavatele nebo pokud to šlo pro naše společnost.
+Většina serverů, které poskytují uživatelské účty potřebovat k přizpůsobení rozhraní pro úpravu dat na základě přihlášeného uživatele. Administrativní uživatelé moci odstranit a upravit libovolný záznam, zatímco uživatelé bez oprávnění správce může být omezena pouze aktualizace nebo odstranění záznamů sami vytvořili. Bez ohledu scénář může být, webové ovládací prvky, prvek ObjectDataSource, dat a vrstvy obchodní logiky třídy je možné rozšířit na Přidat nebo odepřít určité funkce na základě přihlášeného uživatele. V tomto kurzu jsme viděli, jak zobrazit a upravovat data v závislosti na tom, zda byl uživatel spojené s konkrétní dodavatele nebo pokud to šlo pro naše společnost, která omezit.
 
-V tomto kurzu se ukončí součást vložení, aktualizace a odstranění dat pomocí ovládacích prvků GridView DetailsView a FormView. Od verze v dalším kurzu, jsme budete zapněte naše pozornost přidání stránkování a řazení podpory.
+V tomto kurzu končí naše zkoumání vložení, aktualizace a odstranění dat pomocí ovládacího prvku GridView, DetailsView a FormView ovládacích prvků. Spuštění k dalšímu kurzu, jsme vám zapnout pozornost na přidání stránkování a řazení podpory.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
 > [Předchozí](adding-client-side-confirmation-when-deleting-vb.md)

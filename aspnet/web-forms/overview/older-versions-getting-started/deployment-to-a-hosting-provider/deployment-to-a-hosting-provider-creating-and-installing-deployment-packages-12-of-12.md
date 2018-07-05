@@ -1,95 +1,94 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
-title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží (12 12) | Microsoft Docs'
+title: 'Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží s (12 12) | Dokumentace Microsoftu'
 author: tdykstra
-description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného projektu webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
 ms.topic: article
 ms.assetid: 3fc23eed-921d-4d46-a610-a2d156e4bd03
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 2a8342f026498a7cf3ff4a3c158ed177c15b7111
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: bc3a412820638b347d2e5781c01481f622dd2033
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30890382"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376346"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží (12 12)
+<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: řešení potíží s (12 12)
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
+[Stáhnout počáteční projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
-> Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web. Visual Studio 2010 můžete také použít při instalaci aktualizace Publikovat Web. Úvod do řady, najdete v části [z prvního kurzu řady](deployment-to-a-hosting-provider-introduction-1-of-12.md).
+> Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web. Můžete také použít Visual Studio 2010 při instalaci aktualizace Publikovat Web. Úvod do řady, naleznete v tématu [z prvního kurzu této série](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
-> Kurz, který ukazuje nasazení funkce zavedená po vydání sady Visual Studio 2012 RC, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit na weby systému Windows Azure, najdete v části [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
+> Kurz ukazuje nasazení funkce zavedená po verzi RC sady Visual Studio 2012, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit do modelu weby Windows Azure, najdete v tématu [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
-Tato stránka popisuje některé běžné problémy, které mohou nastat při nasazení webové aplikace ASP.NET pomocí sady Visual Studio. U každé z nich jsou uvedené možné příčiny a odpovídající řešení.
+Tato stránka popisuje některé běžné problémy, které mohou nastat při nasazení webové aplikace ASP.NET pomocí sady Visual Studio. U každé z nich jeden nebo více možné příčiny a odpovídající řešení jsou k dispozici.
 
-## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>Chyba serveru v aplikaci - '/' aktuální vlastní nastavení chyb zabránit informace o chybě zobrazení vzdáleně
+## <a name="server-error-in--application---current-custom-error-settings-prevent-details-of-the-error-from-being-viewed-remotely"></a>Chyba serveru v aplikaci – "/" aktuální vlastní nastavení chyb zabránit podrobností o chybě zobrazení vzdáleně
 
 ### <a name="scenario"></a>Scénář
 
-Po nasazení se vzdáleným hostitelem lokality, obdržíte chybovou zprávu, která uvádí customErrors nastavení v souboru Web.config, ale neurčují, co byl skutečné příčinu chyby:
+Po nasazení webu na vzdáleného hostitele, zobrazí chybová zpráva, která uvádí nastavení customErrors v souboru Web.config, ale neukazuje, jak se skutečné příčinu chyby:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample1.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení ASP.NET zobrazuje podrobné informace o chybě jenom v případě, že webová aplikace běží v místním počítači. Obecně nechcete zobrazit podrobné informace o chybě, pokud webová aplikace je veřejně dostupné přes Internet, protože hackery, pravděpodobně bude moci tyto informace slouží k vyhledání ohrožení zabezpečení v aplikaci. Ale při nasazování webu nebo aktualizací k lokalitě, někdy něco přejde nesprávný a potřebujete získat skutečné chybové zprávě.
+Ve výchozím nastavení technologie ASP.NET zobrazuje podrobné informace o chybě pouze v případě, že vaše webová aplikace běží na místním počítači. Obecně nechcete zobrazit podrobné informace o chybě, když je webová aplikace veřejně dostupné přes Internet, protože hackery možné pomocí těchto informací můžete najít ohrožení zabezpečení v aplikaci. Ale při nasazování webu nebo aktualizace do lokality, někdy něco může pokazit a budete muset získat skutečné chybové zprávě.
 
-Chcete-li aplikaci zobrazovat podrobné chybové zprávy, když je spuštěna u vzdáleného hostitele, upravte soubor Web.config nastavit `customErrors` režimu vypnuto, nasazení aplikace a spusťte aplikaci znovu:
+Umožňuje aplikaci zobrazovat podrobné chybové zprávy, když je spuštěná na vzdáleného hostitele, upravte soubor Web.config pro nastavení `customErrors` režimu vypnuté, opětovné nasazení aplikace a spusťte aplikaci znovu:
 
-1. Pokud má soubor Web.config aplikace `customErrors` element v `system.web` elementu, změny `mode` atribut na "off". V opačném případě přidat `customErrors` element v `system.web` element s `mode` atribut nastaven na "off", jak je znázorněno v následujícím příkladu:
+1. Pokud má soubor Web.config aplikace `customErrors` prvek `system.web` prvku, změnit `mode` atribut "Off". Jinak přidejte `customErrors` prvek `system.web` element s `mode` atribut nastaven na "off", jak je znázorněno v následujícím příkladu:
 
     [!code-xml[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample2.xml?highlight=3)]
 2. Nasazení aplikace.
-3. Spusťte aplikaci a opakujte, ať jste dříve způsobující vzniku problému. Nyní se zobrazí, co je skutečné chybové zprávě.
-4. Až vyřešíte chybu, obnovit původní `customErrors` nastavení a znovu nasaďte aplikaci.
+3. Spuštění aplikace a opakujte cokoli, co jste provedli dříve, která způsobila k dojít k chybě. Teď vidíte, co je skutečné chybové zprávě.
+4. Po vyřešení chyby obnovení původní `customErrors` nastavení a znovu nasadit aplikaci.
 
 ## <a name="access-is-denied-in-a-web-page-that-uses-sql-server-compact"></a>Přístup byl odepřen na webové stránce, používá SQL Server Compact
 
 ### <a name="scenario"></a>Scénář
 
-Při nasazení webu, který používá systém SQL Server Compact a spuštění stránky v nasazené lokality, který přistupuje k databázi, zobrazí se následující chybová zpráva:
+Po nasazení webu, který používá SQL Server Compact a spuštění stránky v nasazené lokality, který přistupuje k databázi, se zobrazí následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample3.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Účet NETWORK SERVICE na serveru musí být možné číst SQL Compact služba nativní binární soubory, které jsou v *bin\amd64* nebo *bin\x86* složka, ale nemá čtení oprávnění pro příslušné složky. Sada oprávnění ke čtení pro SÍŤOVOU službu na *bin* složku, a zkontrolujte, zda rozšíření oprávnění k podsložky.
+Účet NETWORK SERVICE na serveru musí být schopni číst SQL Compact služba nativní binární soubory, které jsou v *bin\amd64* nebo *bin\x86* složka, ale oprávnění pro čtení pro tyto složky. Sada oprávnění ke čtení pro SÍŤOVOU službu *bin* složku a zkontrolujte, zda rozšíření oprávnění na podsložky.
 
-## <a name="cannot-read-configuration-file-due-to-insufficient-permissions"></a>Nelze načíst konfigurační soubor z důvodu nedostatečných oprávnění.
+## <a name="cannot-read-configuration-file-due-to-insufficient-permissions"></a>Nelze přečíst konfigurační soubor. z důvodu nedostatečných oprávnění
 
 ### <a name="scenario"></a>Scénář
 
-Po kliknutí na tlačítko sady Visual Studio tlačítko Publikovat k nasazení aplikace do služby IIS na místním počítači, publikování nezdaří a **výstup** okně se zobrazí chybová zpráva podobná této:
+Po kliknutí na Visual Studio tlačítko Publikovat k nasazení aplikace do služby IIS na místním počítači, publikování selže a **výstup** okno zobrazuje chybová zpráva podobná této:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample4.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Chcete-li použít jedním kliknutím publikování do služby IIS na místním počítači, musí být spuštěna Visual Studio s oprávněními správce. Zavřete Visual Studio a restartujte ji s oprávněními správce.
+Chcete-li použít jedním kliknutím publikovat do služby IIS na místním počítači, musíte používat Visual Studio s oprávněními správce. Zavřete sadu Visual Studio a restartujte ji s oprávněními správce.
 
-## <a name="could-not-connect-to-the-destination-computer--using-the-specified-process"></a>Může se připojit k cílovému počítači... Pomocí zadaného procesu
+## <a name="could-not-connect-to-the-destination-computer--using-the-specified-process"></a>Nelze se připojit k cílovému počítači... Pomocí zadaného procesu
 
 ### <a name="scenario"></a>Scénář
 
-Po kliknutí na tlačítko sady Visual Studio tlačítko Publikovat k nasazení aplikace, publikování nezdaří a **výstup** okně se zobrazí chybová zpráva podobná této:
+Po kliknutí na Visual Studio tlačítko Publikovat k nasazení aplikace, publikování selže a **výstup** okno zobrazuje chybová zpráva podobná této:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample5.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Proxy server je přerušení komunikace s na cílový server. Z ovládacích panelů Windows nebo v aplikaci Internet Explorer, vyberte **Možnosti Internetu** a vyberte **připojení** kartě. V **vlastnosti Internetu** dialogové okno, klikněte na tlačítko **nastavení místní sítě**. V **nastavení místní sítě (LAN)** dialogové okno, zrušte **automaticky zjišťovat nastavení** zaškrtávací políčko. Klikněte na tlačítko publikovat znovu.
+Proxy server je přerušení komunikace s na cílový server. Pomocí ovládacích panelů Windows nebo v aplikaci Internet Explorer, vyberte **Možnosti Internetu** a vyberte **připojení** kartu. V **vlastnosti Internetu** dialogové okno, klikněte na tlačítko **nastavení místní sítě**. V **nastavení místní sítě (LAN)** dialogové okno, zrušte **automaticky zjišťovat nastavení** zaškrtávací políčko. Potom klikněte na tlačítko publikovat znovu.
 
-Pokud potíže potrvají, obraťte se na správce systému a zjistit, co můžete udělat pomocí nastavení proxy nebo brány firewall. Problém se stane, protože nasazení webu používá nestandardního portu pro nasazení služby webové správy (8172); pro další připojení Web Deploy používá port 80. Při nasazení do hostujícího zprostředkovatele třetí strany, obvykle použijete služby webové správy.
+Pokud se problém nevyřeší, obraťte se na správce systému k určení, co se dá dělat pomocí nastavení brány firewall nebo proxy serveru. Tento problém nastává vzhledem k tomu nestandardního portu nasazení webu používá pro nasazení služby webové správy (8172); pro další připojení nasazení webu používá port 80. Při nasazování do poskytovatele hostitelských služeb třetích stran, obvykle použijete služby webové správy.
 
 ## <a name="default-net-40-application-pool-does-not-exist"></a>Výchozí fond 4.0 aplikací rozhraní .NET neexistuje.
 
@@ -101,137 +100,137 @@ Když nasadíte aplikaci, která vyžaduje rozhraní .NET Framework 4, zobrazí 
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve službě IIS není nainstalována technologie ASP.NET 4. Pokud je server, které nasazujete na vývojovém počítači a má na sobě nainstalovanou sadu Visual Studio 2010, technologii ASP.NET 4 je nainstalován v počítači, ale nemusí být nainstalován ve službě IIS. Na serveru, který nasazujete otevřete příkazový řádek se zvýšenými oprávněními a spuštěním následujících příkazů nainstalujte technologii ASP.NET 4 ve službě IIS:
+Ve službě IIS není nainstalována technologie ASP.NET 4. Pokud je server, který nasazujete na vývojovém počítači a na kterém je nainstalována aplikace Visual Studio 2010, technologii ASP.NET 4 je nainstalovaná na počítači, ale nemusí být nainstalován ve službě IIS. Na serveru, na které nasazujete otevřete příkazový řádek se zvýšenými oprávněními a spuštěním následujících příkazů nainstalujte technologii ASP.NET 4 ve službě IIS:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample7.cmd)]
 
-Může také musíte ručně nastavit verze rozhraní .NET Framework výchozí fond aplikací. Další informace najdete v tématu [nasazení do IIS jako testovacím prostředí](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) kurzu.
+Může také musíte ručně nastavit verzi rozhraní .NET Framework výchozí fond aplikací. Další informace najdete v tématu [nasazení do služby IIS jako testovacího prostředí](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) kurzu.
 
-## <a name="format-of-the-initialization-string-does-not-conform-to-specification-starting-at-index-0"></a>Formát inicializačního řetězce nevyhovuje specifikaci začínající na pozici 0.
+## <a name="format-of-the-initialization-string-does-not-conform-to-specification-starting-at-index-0"></a>Formát inicializačního řetězce neodpovídá specifikaci začínající na indexu 0.
 
 ### <a name="scenario"></a>Scénář
 
-Poté, co nasadíte aplikaci pomocí jedním kliknutím publikujte, když spustíte stránky, který přistupuje k databázi získáte následující chybová zpráva:
+Poté, co nasadíte aplikaci jedním kliknutím pomocí publikování, když spustíte stránku, která přistupuje k databázi získáte následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample8.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Otevřete *Web.config* souboru v nasazené lokality a zkontrolujte, zda hodnoty připojovacího řetězce začínat `$(ReplacableToken_`, jako v následujícím příkladu:
+Otevřít *Web.config* souboru v nasazené lokality a zkontrolujte, zda hodnoty připojovacího řetězce začínají `$(ReplacableToken_`, jako v následujícím příkladu:
 
 [!code-xml[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample9.xml)]
 
-Pokud připojovací řetězce vypadat jako tento ukázkový, upravte soubor projektu a přidejte následující vlastnosti, která má `PropertyGroup` element, který je pro všechny konfigurace sestavení:
+Pokud připojovací řetězce vypadají jako v tomto příkladu, upravte soubor projektu a přidejte následující vlastnost, která má `PropertyGroup` element, který je pro všechny konfigurace sestavení:
 
 [!code-xml[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample10.xml)]
 
-Pak znovu nasaďte aplikaci.
+Znovu nasaďte aplikaci.
 
 ## <a name="http-500-internal-server-error"></a>HTTP 500 Internal Server Error
 
 ### <a name="scenario"></a>Scénář
 
-Při spuštění bude web, zobrazí se následující chybová zpráva bez konkrétní informace o tom, příčinu chyby:
+Při spuštění webu nasazené, zobrazí se následující chybová zpráva bez konkrétních informací určující příčinu chyby:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample11.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Existuje mnoho příčiny 500 chyb, avšak možnou příčinou použijete-li tyto kurzy je uvést XML element do nesprávné místo v jednom transformace souborů XML. Například by se tato chyba, když vložíte transformace, která vloží `<location>` prvek v rámci `<system.web>` místo přímo pod `<configuration>`. Řešení je v takovém případě opravte transformaci souboru XML a znovu nasadit.
+Existuje mnoho příčiny 500 chyb, ale je jednou z možných příčin pokud postupujete tyto kurzy vložit XML element ve špatné místo v jednom ze souborů transformace XML. Například byste získali tuto chybu, když vložíte transformace, která vloží `<location>` element v rámci `<system.web>` místo přímo pod `<configuration>`. Řešením je v takovém případě opravte soubor transformace XML a znovu nasadit.
 
-## <a name="http-50021-internal-server-error"></a>HTTP 500.21 Internal Server Error
+## <a name="http-50021-internal-server-error"></a>HTTP 500.21 se interní chyba serveru
 
 ### <a name="scenario"></a>Scénář
 
-Při spuštění bude web, zobrazí se následující chybová zpráva:
+Při spuštění bude web se zobrazí následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample12.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Webu jste nasadili cíle ASP.NET 4, ale technologie ASP.NET 4 není registrovaný ve službě IIS na serveru. Na serveru otevřete příkazový řádek se zvýšenými oprávněními a zaregistrovat technologii ASP.NET 4 spuštěním následujících příkazů:
+Webu jste nasadili cíle ASP.NET 4, ale ASP.NET 4 není zaregistrovaný ve službě IIS na serveru. Na serveru otevřete příkazový řádek se zvýšenými oprávněními a zaregistrovat technologii ASP.NET 4 spuštěním následujících příkazů:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample13.cmd)]
 
-Může také musíte ručně nastavit verze rozhraní .NET Framework výchozí fond aplikací. Další informace najdete v tématu [nasazení do IIS jako testovacím prostředí](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) kurzu.
+Může také musíte ručně nastavit verzi rozhraní .NET Framework výchozí fond aplikací. Další informace najdete v tématu [nasazení do služby IIS jako testovacího prostředí](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) kurzu.
 
-## <a name="login-failed-opening-sql-server-express-database-in-appdata"></a>Přihlášení se nezdařilo otevírání databáze SQL Server Express v aplikaci\_dat
+## <a name="login-failed-opening-sql-server-express-database-in-appdata"></a>Přihlášení se nezdařilo otevření databáze SQL Server Express v aplikaci\_dat
 
 ### <a name="scenario"></a>Scénář
 
-Můžete aktualizovat *Web.config* souboru připojovací řetězec tak, aby odkazoval na databázi SQL Server Express jako *.mdf* souboru v vaše *aplikace\_Data* složku a první čas spuštění aplikace, které se zobrazí následující chybová zpráva:
+Můžete aktualizovat *Web.config* souboru připojovací řetězec tak, aby odkazoval na databázi SQL Server Express jako *.mdf* ve vaší *aplikace\_Data* složky a první Doba spuštění aplikace, které se zobrazí následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample14.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Název *.mdf* souboru nesmí shodovat s názvem databáze SQL Server Express, které se někdy existovalo v počítači, i v případě, že jste odstranili *.mdf* soubor dříve existující databáze. Změňte název *.mdf* souboru na název, který dosud nebyl použit jako název databáze a změňte *Web.config* soubor k použití nového názvu. Jako alternativu, můžete použít [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) odstranit dříve existující systém SQL Server Express databáze.
+Název *.mdf* soubor nesmí shodovat s názvem databáze SQL Server Express, který stále existuje ve vašem počítači i v případě, že jste odstranili *.mdf* soubor dříve existující databáze. Změňte název *.mdf* soubor má název, který dosud nebyl použit jako název databáze a změňte *Web.config* soubor se má použít nový název. Jako alternativu můžete použít [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) odstranit dříve existující systém SQL Server Express databáze.
 
-## <a name="model-compatibility-cannot-be-checked"></a>Model kompatibility nelze zkontrolovat
+## <a name="model-compatibility-cannot-be-checked"></a>Model kompatibility nelze zaregistrovat
 
 ### <a name="scenario"></a>Scénář
 
-Můžete aktualizovat *Web.config* souboru připojovací řetězec tak, aby odkazoval na novou databázi SQL Server Express, a při prvním spuštění aplikace se zobrazí následující chybová zpráva:
+Můžete aktualizovat *Web.config* souboru připojovací řetězec tak, aby odkazoval na nové databáze systému SQL Server Express a při prvním spuštění aplikace se zobrazí následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample15.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Pokud název databáze, které jste zadali v souboru Web.config byla použita nikdy předtím, než v počítači, možná již existuje databáze s některé tabulky v ní. Vyberte nový název, který nebyl použit v počítači před a změny *Web.config* souboru tak, aby odkazoval používat tento nový název databáze. Jako alternativu, můžete použít [SQL Server Express Utility](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990) nebo [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) odstranit stávající databázi.
+Pokud název databáze, kterou chcete vložit do souboru Web.config byla použita nikdy předtím, než v počítači, může být databáze již existuje v rámci některé tabulky v ní. Zvolte jiný název, který nebyl použit v počítači před a změnit *Web.config* souboru tak, aby odkazoval na tento nový název databáze používat. Jako alternativu můžete použít [Express nástroje SQL Server](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990) nebo [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) k odstranění existující databáze.
 
-## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>Chyba SQL, když se skript pokusí o vytvoření uživatelů nebo rolí
+## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>Chyba SQL, když se skript pokusí vytvořit uživatele nebo role
 
 ### <a name="scenario"></a>Scénář
 
-Používáte-li nasazení databáze nakonfigurované na **balení/publikování kódu SQL** , skripty SQL, které se během nasazení spouští zahrnují vytvořit uživatele nebo vytvořit roli příkazy a selhání spuštění skriptu po provedení těchto příkazů. Zobrazí podrobnější zprávy, jako jsou následující:
+Nasazení databáze nakonfigurované na použití **balení/publikování kódu SQL** kartu, skripty SQL, které při nasazení zahrnovat příkazy Create User nebo vytvořit roli a selhání spuštění skriptu při spuštění těchto příkazů. Může se zobrazit podrobné zprávy, jako je následující:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample16.cmd)]
 
-Pokud k této chybě dojde, když jste nakonfigurovali nasazení databáze v **Publikovat Web** Průvodce místo **balení/publikování kódu SQL** kartě, vytvořit vlákno v [konfigurace a Nasazení](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment) fórum a řešení přidá k této stránce řešení potíží.
+Pokud k této chybě dochází při konfiguraci nasazení databáze v **Publikovat Web** Průvodce místo **balení/publikování kódu SQL** kartu, vytvořit posloupnost v: [konfigurace a Nasazení](https://forums.asp.net/26.aspx/1?Configuration+and+Deployment) fóra a řešení se přidají do této stránce řešení potíží.
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Uživatelský účet, který používáte k provedení nasazení nemá oprávnění k vytvoření uživatele nebo role. Například by mohl přiřazovat hostingové společnosti `db_datareader`, `db_datawriter`, a `db_ddladmin` role pro uživatelský účet, který nastavuje za vás. Ty jsou dostatečné pro vytváření Většina databázových objektů, ale ne pro vytváření uživatelů nebo rolí. Jedním ze způsobů, aby se zabránilo chyba je vyloučení uživatelé a role z nasazení databáze. Můžete to provést úpravou `PreSource` element pro databázi automaticky generovaný skript tak, že obsahují následující atributy:
+Uživatelský účet, který používáte k nasazení nemá oprávnění k vytváření uživatelů nebo rolí. Například může přiřadit hostovací společnost `db_datareader`, `db_datawriter`, a `db_ddladmin` role pro uživatelský účet, který nastaví kolekci za vás. Toto jsou dostatečná pro vytvoření Většina databázových objektů, ale ne pro vytváření uživatelů nebo rolí. Jedním ze způsobů, aby se zabránilo chybě je vyloučení uživatelé a role z nasazení databáze. Můžete to provést úpravou `PreSource` – element pro databáze automaticky vygenerovaný skript tak, že obsahují následující atributy:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample17.cmd)]
 
-Informace o tom, jak upravit `PreSource` element v souboru projektu, najdete v části [postupy: Úprava nastavení nasazení v souboru projektu](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx). Pokud uživatelé nebo role ve vaší databázi vývoj musí být v cílové databázi, obraťte se na svého poskytovatele hostingu.
+Informace o tom, jak upravit `PreSource` element v souboru projektu naleznete v tématu [postupy: Úprava nastavení nasazení v souboru projektu](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx). Pokud uživatelé nebo role v databázi vývoj musí být v cílové databázi, obraťte se na svého poskytovatele hostingových služeb.
 
-## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>Chyba časového limitu serveru SQL při spouštění vlastních skriptů při nasazení
+## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>Časový limit chyba systému SQL Server při spuštění vlastních skriptů při nasazení
 
 ### <a name="scenario"></a>Scénář
 
-Jste zadali vlastní skripty SQL, pokud chcete spustit během nasazení a spuštění nástroje nasazení webu je, že vypršení časového limitu.
+Jste zadali vlastní skripty SQL ke spuštění během nasazení a spuštění nasazení webu je, že časový limit.
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Spuštění více skriptů, které mají režimy jinou transakci může způsobit chyby vypršení časového limitu. Ve výchozím nastavení automaticky generovaných skriptů spustit v transakci, ale nepodporují vlastní skripty. Pokud jste vybrali **stáhnout data nebo schéma z existující databáze** možnost **balení/publikování kódu SQL** kartě, a pokud přidáte vlastní skript SQL, musíte změnit nastavení transakcí na některé skripty tak, aby všechny skripty používat stejné nastavení transakce. Další informace najdete v tématu [postupy: nasazení databáze s projekt webové aplikace](https://msdn.microsoft.com/library/dd465343.aspx).
+Spouštění více skriptů, které mají různé transakční režimy mohou způsobit chyby časového limitu. Ve výchozím nastavení automaticky generovaných skriptů spustit v transakci, ale nepodporují vlastní skripty. Pokud vyberete **o přijetí změn dat a/nebo schéma z existující databáze** možnost **balení/publikování kódu SQL** kartu, a pokud chcete přidat vlastní skripty SQL, je nutné změnit nastavení transakcí na některé skripty tak, aby všechny skripty používají stejné nastavení transakce. Další informace najdete v tématu [postupy: nasazení databáze se projekt webové aplikace](https://msdn.microsoft.com/library/dd465343.aspx).
 
-Pokud jste nakonfigurovali nastavení transakce, tak, aby všechny byly stejné, ale stále se tato chyba zobrazí, možných řešení je spustit skripty odděleně. V **databázové skripty** mřížky ve **nasadit** kartě SQL, zrušte **zahrnout** zaškrtnutí políčka pro skript, který způsobuje chybu vypršení časového limitu, pak publikování tohoto projektu. Přejděte zpět do **databázové skripty** mřížky, vyberte tento skript **zahrnout** zaškrtněte políčko a zrušte výběr **zahrnout** zaškrtnutí políčka pro jiné skripty. Potom projekt znovu publikujte. Tentokrát při publikování, pouze vybrané vlastní skript se spustí.
+Pokud jste nakonfigurovali nastavení transakcí tak, aby všechny jsou stejné, ale stále se tato chyba, možná alternativní řešení je na spouštění skriptů samostatně. V **databázové skripty** mřížky **balení/publikování** karta SQL, zrušte **zahrnout** zaškrtávací políčko pro skript, který způsobuje chybu časového limitu, poté projekt publikujte. Pak přejděte zpátky do **databázové skripty** mřížce, vyberte tento skript **zahrnout** zaškrtněte políčko a zrušte zaškrtnutí **zahrnout** zaškrtávací políčka pro jiné skripty. Potom znovu publikujte projekt. Tentokrát při publikování, jen vybrané vlastní skript se spustí.
 
-## <a name="stream-data-of-site-manifest-is-not-yet-available"></a>Datový proud dat lokality manifestu dosud nejsou k dispozici
+## <a name="stream-data-of-site-manifest-is-not-yet-available"></a>Stream Data lokality manifestu ještě není k dispozici
 
 ### <a name="scenario"></a>Scénář
 
-Při instalaci balíčku pomocí *deploy.cmd* soubor s `t` (testovací) možnost, zobrazí se následující chybová zpráva:
+Při instalaci balíčku pomocí *deploy.cmd* souboru `t` (testovací) možnost se zobrazí následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample18.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Chybová zpráva znamená, že příkaz nemůže vytvořit sestava testu. Však může spustit příkaz, pokud použijete `y` (vlastní instalace). Zpráva pouze znamená, že existuje problém se spuštěním příkazu v testovacím režimu.
+Chybová zpráva znamená, že příkaz nelze vytvořit testovací sestavu. Však může spustit příkaz, pokud používáte `y` (vlastní instalace). Zpráva značí pouze, že je nějaký problém se spuštěním příkazu v režimu testu.
 
 ## <a name="this-application-requires-managedruntimeversion-v40"></a>Tato aplikace vyžaduje ManagedRuntimeVersion v4.0
 
 ### <a name="scenario"></a>Scénář
 
-Při pokusu o nasazení, zobrazí se následující chybová zpráva:
+Při pokusu o nasazení se zobrazí následující chybová zpráva:
 
- Chyba: Datový proud dat z ' umístění sitemanifest/dbFullSql [@path= 'C:\TEMP\AdventureWorksGrant.sql']/sqlScript' ještě není k dispozici. Fond aplikací, který se pokoušíte použít má vlastnost 'managedRuntimeVersion' na hodnotu "v2.0". Tato aplikace vyžaduje 'v4.0'. 
+ Chyba: Streamování dat z ' umístění sitemanifest/dbFullSql [@path= "C:\TEMP\AdventureWorksGrant.sql']/sqlScript" ještě není k dispozici. Fond aplikací, který se pokoušíte použít má vlastnost 'managedRuntimeVersion' nastavena na "v2.0". Tato aplikace vyžaduje "v4.0". 
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve službě IIS není nainstalována technologie ASP.NET 4. Pokud je server, které nasazujete na vývojovém počítači a má na sobě nainstalovanou sadu Visual Studio 2010, technologii ASP.NET 4 je nainstalován v počítači, ale nemusí být nainstalován ve službě IIS. Na serveru, který nasazujete otevřete příkazový řádek se zvýšenými oprávněními a spuštěním následujících příkazů nainstalujte technologii ASP.NET 4 ve službě IIS:
+Ve službě IIS není nainstalována technologie ASP.NET 4. Pokud je server, který nasazujete na vývojovém počítači a na kterém je nainstalována aplikace Visual Studio 2010, technologii ASP.NET 4 je nainstalovaná na počítači, ale nemusí být nainstalován ve službě IIS. Na serveru, na které nasazujete otevřete příkazový řádek se zvýšenými oprávněními a spuštěním následujících příkazů nainstalujte technologii ASP.NET 4 ve službě IIS:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample19.cmd)]
 
@@ -239,87 +238,87 @@ Ve službě IIS není nainstalována technologie ASP.NET 4. Pokud je server, kte
 
 ### <a name="scenario"></a>Scénář
 
-Při nasazení balíčku, zobrazí se následující chybová zpráva:
+Když nasazujete balíček, zobrazí se následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample20.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Se pokoušíte nasadit ze Správce služby IIS pomocí webového nasazení 1.1 uživatelského rozhraní na server, který má Web Deploy 2.0 nainstalované. Pokud používáte nástroj pro vzdálenou správu služby IIS k nasazení importem balíčku, zkontrolujte **dostupné nové funkce** dialogové okno při vytvoření připojení. (Toto dialogové okno může být zobrazují pouze jednou při prvním vytváření připojení. Zrušte připojení a začít od začátku, zavřete Správce služby IIS a znovu jej spusťte tak, že zadáte `inetmgr /reset` na příkazovém řádku.) Pokud některou z funkcí uvedené **nasazení webového uživatelského rozhraní**a má číslo verze nižší než 8, na server, který nasazujete může mít nasazení webu nainstalovaná verze 1.1 a 2.0. K nasazení z klienta, který má nainstalovanou 2.0, server musí mít jenom nasazení webu 2.0 nainstalované. Budete muset obraťte se na svého poskytovatele hostingu k vyřešení problému.
+Pokoušíte se nasazení ze Správce služby IIS pomocí uživatelského rozhraní služby webové nasazení 1.1 na serveru, který má Web Deploy 2.0 nainstalované. Pokud používáte nástroj služby IIS pro vzdálenou správu nasazení na základě importování balíčku, zaškrtněte **dostupné nové funkce** dialogové okno po navázání připojení. (Toto dialogové okno může být zobrazil jenom jednou při prvním vytvoření připojení. Vymazat připojení a začít znovu, zavřete Správce služby IIS a jeho opětovné zahájení tak, že zadáte `inetmgr /reset` příkazového řádku.) Pokud jedna z funkcí uvedených **uživatelského rozhraní webu nasadit**a má číslo verze nižší než 8, zatímco nasazujete na server může mít nasazení webu, nainstalované verze 1.1 a 2.0. K nasazení z klienta, který má 2.0 nainstalované, server musí mít pouze nasazení webu 2.0 nainstalované. Budete muset kontaktovat poskytovatele hostingu k vyřešení tohoto problému.
 
-## <a name="unable-to-load-the-native-components-of-sql-server-compact"></a>Nelze načíst nativní součásti systému SQL Server Compact
+## <a name="unable-to-load-the-native-components-of-sql-server-compact"></a>Nepovedlo se načíst nativní součásti systému SQL Server Compact
 
 ### <a name="scenario"></a>Scénář
 
-Při spuštění bude web, zobrazí se následující chybová zpráva:
+Při spuštění bude web se zobrazí následující chybová zpráva:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample21.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Bude web nemá *amd64* a *x86* podsložky nativní sestavení v nich v rámci aplikace *bin* složky. Na počítači, který má SQL Server Compact nainstalovaná, nativní sestavení jsou umístěné v *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private*. Chcete-li nainstalovat balíček NuGet SqlServerCompact je nejlepší způsob, jak získat správné soubory do správné složky v projektu sady Visual Studio. Instalace balíčku Přidá skript po sestavení zkopírovat nativní sestavení do *amd64* a *x86*. V pořadí pro tato nasazení ale musíte ručně zahrnout je do projektu. Další informace najdete v tématu [nasazení systému SQL Server Compact](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md) kurzu.
+Nasazený web nemá *amd64* a *x86* podsložky s nativní sestavení v nich v rámci aplikace *bin* složky. Na počítači, který má SQL Server Compact nainstalován nativní sestavení jsou umístěny v *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private*. K instalaci balíčku NuGet SqlServerCompact je nejlepší způsob, jak získat správný soubory do správné složky v projektu sady Visual Studio. Instalace balíčku přidává skriptu po sestavení zkopírovat nativní sestavení do *amd64* a *x86*. Aby tato nasazení je však nutné ručně zahrnout je do projektu. Další informace najdete v tématu [nasazení systému SQL Server Compact](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md) kurzu.
 
 ## <a name="path-is-not-valid-error-after-deploying-an-entity-framework-code-first-application"></a>"Cesta není platná" Chyba po nasazení aplikace Entity Framework Code First
 
 ### <a name="scenario"></a>Scénář
 
-Nasazení aplikace, která používá migrace Entity Framework Code First a databázového systému, jako je například SQL Server Compact, která ukládá svou databázi v souboru v aplikaci\_složku Data. Máte migrace Code First nakonfigurované k vytvoření databáze po prvním nasazení. Při spuštění aplikace zobrazí chybová zpráva jako v následujícím příkladu:
+Nasazení aplikace, který používá migrace Entity Framework Code First a DBMS, jako je například SQL Server Compact, která ukládá své databáze v souboru v aplikaci\_složku Data. Máte migrace Code First nakonfigurované k vytvoření databáze po prvním nasazení. Při spuštění aplikace zobrazí chybová zpráva jako v následujícím příkladu:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample22.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Kód nejprve se pokouší vytvořit databázi, ale aplikace\_dat složka neexistuje. Buď nebyly žádné soubory *aplikace\_Data* složky, pokud jste nasadili, nebo jste vybrali **vyloučit aplikace\_Data** na **balení/publikování webu** kartě **vlastnosti projektu** okno. Proces nasazení nebude vytvořte složku na serveru, pokud nejsou žádné soubory ve složce, který se má zkopírovat na server. Pokud jste již měli databázi nastavit v lokalitě, proces nasazení odstraní soubory a *aplikace\_Data* samotné Pokud jste vybrali složce **odebrat další soubory v cíli** v profil publikování. Problém vyřešit, umístit soubor zástupný text jako soubor .txt na *aplikace\_Data* složky, ujistěte se, že nemáte **vyloučit aplikace\_Data** vybrána a znovu nasadit. 
+Kód nejprve se pokouší vytvořit databázi, ale aplikace\_Data složka neexistuje. Buď nebyly žádné soubory *aplikace\_Data* složky, pokud jste nasadili, nebo jste vybrali **vyloučit aplikace\_Data** na **Balení/publikováníwebu** karty **vlastnosti projektu** okna. Proces nasazení nebude vytvořte složku na serveru, pokud nejsou žádné soubory ve složce, které se mají zkopírovat na server. Pokud už máte databázi nastavit na webu, procesu nasazení odstraní soubory a *aplikace\_Data* samotnou Pokud vyberete složku **odebrat další soubory v cílovém umístění** v profil publikování. Chcete-li problém vyřešit, umístěte zástupný soubor například soubor .txt v *aplikace\_Data* složky, ujistěte se, že nemáte **vyloučit aplikace\_Data** vybrali a znovu nasadit. 
 
-## <a name="com-object-that-has-been-separated-from-its-underlying-rcw-cannot-be-used"></a>"Nelze použít objekt COM, který má rozdělené z jeho základní RCW."
+## <a name="com-object-that-has-been-separated-from-its-underlying-rcw-cannot-be-used"></a>"Nelze použít objekt COM, který byl oddělen od podkladové obálky RCW."
 
 ### <a name="scenario"></a>Scénář
 
-Byly úspěšně jedním kliknutím publikování pro nasazení aplikace a pak spusťte získávání této chybě:
+Byli jste úspěšně jedním kliknutím pomocí publikování pro nasazení aplikace a pak spusťte zobrazuje tato chyba:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample23.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Zavření a spustit sadu Visual Studio je obvykle všechno, co je potřeba tuto chybu vyřešit.
+Zavřít a znovu spustit sadu Visual Studio je obvykle všechno potřebné k vyřešení této chyby.
 
-## <a name="deployment-fails-because-user-credentials-used-for-publishing-dont-have-setacl-authority"></a>Nasazení selže protože uživatele pověření použít pro nemají publikování setACL autority
+## <a name="deployment-fails-because-user-credentials-used-for-publishing-dont-have-setacl-authority"></a>Nasazení selže protože uživatele k použít přihlašovací údaje nemají publikování setACL autority
 
 ### <a name="scenario"></a>Scénář
 
-Publikování selže s chybou, že jste označuje nemáte oprávnění k nastavení oprávnění složky (uživatelský účet, který používáte nemá setACL autorita).
+Publikování selže a zobrazí se chyba, která znamená, že nemáte oprávnění k nastavení oprávnění pro složky (uživatelský účet, který používáte nemá setACL autorita).
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění na webu složky jsou správné a není potřeba nastavit, že zakážete toto chování přidáním **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). 
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud víte, že výchozí oprávnění u složky webu jsou správné a není potřeba nastavit, je toto chování zakázat tak, že přidáte **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** souboru profilu publikování (Chcete-li mít vliv na jeden profil) nebo do souboru wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak tyto soubory upravit, naleznete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). 
 
-## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Když se aplikace pokusí o zápis do složky aplikace chyby odepření přístupu
+## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>Přístup byl odepřen chyby, když se aplikace snaží k zápisu do složky, do aplikace
 
 ### <a name="scenario"></a>Scénář
 
-Vaše aplikace chyby při pokusu o vytvoření nebo úprava soubor v jednom ze složky aplikací, protože nemá autoritu zápisu pro tuto složku.
+Vaše aplikace chyby při pokusu vytvořit nebo upravit soubor v jednom ze složek aplikace, protože nemá autoritu zápisu pro tuto složku.
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud aplikace potřebuje přístup k zápisu do podsložky, můžete nastavit oprávnění pro tuto složku, jak je znázorněno [nastavení oprávnění ke složkám](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md) a [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzy. Pokud aplikace potřebuje přístup k zápisu do kořenové složky webu, budete muset zabránit jeho nastavení jen pro čtení v kořenové složce přidáním **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** do souboru profilu publikování (Chcete-li mít vliv na jeden profil), nebo na soubor wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak upravit tyto soubory najdete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). <a id="aspnet45error"></a>
+Ve výchozím nastavení, sady Visual Studio oprávnění ke čtení v kořenové složce serveru a oprávnění k zápisu na aplikaci\_složku Data. Pokud vaše aplikace potřebuje oprávnění k zápisu do podsložky, oprávnění pro tuto složku můžete nastavit, jak je znázorněno [nastavení oprávnění pro složky](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md) a [nasazení do produkčního prostředí](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) kurzy. Pokud vaše aplikace potřebuje oprávnění k zápisu do kořenové složky webu, je nutné zabránit v nastavení přístup jen pro čtení pro kořenovou složku tak, že přidáte **&lt;IncludeSetACLProviderOn cílové&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** souboru profilu publikování (Chcete-li mít vliv na jeden profil) nebo do souboru wpp.targets (Chcete-li mít vliv na všechny profily). Informace o tom, jak tyto soubory upravit, naleznete v tématu [postupy: Úprava nastavení nasazení profilu (.pubxml) soubory](https://msdn.microsoft.com/library/ff398069.aspx). <a id="aspnet45error"></a>
 
-## <a name="configuration-error---targetframework-attribute-references-a-version-that-is-later-than-the-installed-version-of-the-net-framework"></a>Chyba konfigurace - atribut targetFramework odkazuje na verzi, která je novější než nainstalovaná verze rozhraní .NET Framework
+## <a name="configuration-error---targetframework-attribute-references-a-version-that-is-later-than-the-installed-version-of-the-net-framework"></a>Chyba konfigurace – atribut targetFramework odkazuje na verzi, která je novější než nainstalovaná verze rozhraní .NET Framework
 
 ### <a name="scenario"></a>Scénář
 
-Úspěšně jste publikovali webový projekt, který cílí technologie ASP.NET 4.5, ale při spuštění aplikace (s `customErrors` režim nastaven na hodnotu "off" v souboru Web.config) zobrazí následující chyba:
+Byla úspěšně publikována webový projekt, který cílí na technologii ASP.NET 4.5, ale při spuštění aplikace (s `customErrors` režim nastaven na hodnotu "off" v souboru Web.config) zobrazí následující chyba:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample24.cmd)]
 
-Pole Chyba zdroje chybové stránky jsou následující řádek ze souboru Web.config jako příčinu chyby:
+Do pole chyby zdroje chybové stránky najdete následující řádek ze souboru Web.config jako Příčina chyby:
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample25.cmd)]
 
 ### <a name="possible-cause-and-solution"></a>Možná příčina a řešení
 
-Server nepodporuje technologii ASP.NET 4.5. Obraťte se na poskytovatele hostingu k určení, kdy a podporu pro technologii ASP.NET 4.5 mohou být přidány. Pokud se upgrade serveru není možné, je nutné nasadit webový projekt, který cílí ASP.NET 4 nebo dřívější místo. Pokud nasadíte na technologii ASP.NET 4 nebo dřívější webový projekt se stejným cílem, vyberte **odebrat další soubory v cílovém umístění** v zaškrtávací políčko **nastavení** kartě **Publikovat Web**průvodce. Pokud nevyberete **odebrat další soubory v cílovém umístění**, nadále bude mít konfigurace chybovou stránku.
+Server nepodporuje technologii ASP.NET 4.5. Obraťte se na poskytovatele hostingu k určení, kdy a zda lze přidat podporu pro technologii ASP.NET 4.5. Pokud upgradujete server není možné zvolit, budete muset nasadit webový projekt, který cílí na ASP.NET 4 nebo dřívější místo. Pokud provádíte nasazení ASP.NET 4 nebo dřívější webového projektu do stejného cíle, vyberte **odebrat další soubory v cílovém umístění** zaškrtávací políčko na **nastavení** karty **Publikovat Web**průvodce. Pokud nevyberete **odebrat další soubory v cílovém umístění**, budete i nadále stránka Chyba konfigurace.
 
-Projekt **vlastnosti** systém windows obsahuje cílový framework rozevírací seznam, ale tento problém nelze vyřešit změnou právě, z **rozhraní .NET Framework 4.5** k **rozhraní .NET Framework 4**. Pokud je na starší verzi framework změnit cílový framework, budou mít dál odkazy na sestavení novější verze framework projektu a nespustí. Budete muset ručně změnit tyto odkazy nebo vytvořte nový projekt, který cílí rozhraní .NET Framework 4 nebo dřívější. Další informace najdete v tématu [rozhraní .NET Framework cílení pro weby](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
+Projekt **vlastnosti** windows zahrnuje cílového rozhraní framework rozevíracího seznamu, ale tento problém nelze vyřešit stačí, když změníte z **rozhraní .NET Framework 4.5** k **rozhraní .NET Framework 4**. Pokud změníte cílový rámec na starší verzi rozhraní framework projektu budou mít dál odkazy na novější verzi rozhraní framework, sestavení a nespustí. Budete muset ručně tyto odkazy změnit nebo vytvořit nový projekt, který cílí na .NET Framework 4 nebo dřívější. Další informace najdete v tématu [cílení rozhraní .NET pro weby](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

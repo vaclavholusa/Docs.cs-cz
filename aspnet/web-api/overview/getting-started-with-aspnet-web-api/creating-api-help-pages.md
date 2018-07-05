@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: Vytvoření stránky nápovědy pro rozhraní ASP.NET Web API | Microsoft Docs
+title: Vytváření stránek nápovědy webového rozhraní API ASP.NET | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,125 +9,124 @@ ms.date: 04/01/2013
 ms.topic: article
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 8803c406660398ad3314306a1bcdf99af418082d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "28037900"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393126"
 ---
-<a name="creating-help-pages-for-aspnet-web-api"></a>Vytvoření stránky nápovědy pro rozhraní ASP.NET Web API
+<a name="creating-help-pages-for-aspnet-web-api"></a>Vytváření stránek nápovědy pro rozhraní ASP.NET Web API
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-Při vytváření webového rozhraní API je často užitečné vytvořit stránku nápovědy, aby ostatní vývojáři věděli, jak volat rozhraní API. Veškerá dokumentace může vytvořit ručně, ale je lepší automaticky vytvořit co největší míře.
+Při vytváření webového rozhraní API, často je užitečné vytvořit stránku nápovědy, tak, aby ostatní vývojáři vědět, jak volat rozhraní API. Dokumentace může vytvořit ručně, ale je lepší automaticky vytvořit co největší míře.
 
-Chcete-li tato úloha jednodušší, rozhraní ASP.NET Web API poskytuje knihovnu pro automatické generování stránky nápovědy v době běhu.
+Pro usnadnění tohoto úkolu, rozhraní ASP.NET Web API poskytuje knihovnu pro automatické generování stránek nápovědy v době běhu.
 
 ![](creating-api-help-pages/_static/image1.png)
 
-## <a name="creating-api-help-pages"></a>Vytvoření stránky nápovědy rozhraní API
+## <a name="creating-api-help-pages"></a>Vytváření stránek nápovědy k rozhraní API
 
-Nainstalujte [ASP.NET a webové nástroje 2012.2 aktualizace](https://go.microsoft.com/fwlink/?LinkId=282650). Tato aktualizace se integruje stránky nápovědy do šablony projektu webového rozhraní API.
+Nainstalujte [ASP.NET a Web Tools 2012.2 aktualizace](https://go.microsoft.com/fwlink/?LinkId=282650). Tato aktualizace stránky nápovědy integruje šablony projektu webového rozhraní API.
 
-Dále vytvořte nový projekt ASP.NET MVC 4 a výběr šablony projektu webového rozhraní API. Šablona projektu vytvoří řadič příklad rozhraní API s názvem `ValuesController`. Šablona vytvoří také stránky nápovědy rozhraní API. Všechny soubory kódu pro stránku nápovědy jsou umístěny ve složce oblastí projektu.
+Dále vytvořte nový projekt ASP.NET MVC 4 a vyberte šablonu projektu webového rozhraní API. Šablona projektu vytvoří řadič ukázkové rozhraní API s názvem `ValuesController`. Šablona vytvoří také stránek nápovědy rozhraní API. Všechny soubory kódu stránky s nápovědou jsou umístěny ve složce oblasti projektu.
 
 ![](creating-api-help-pages/_static/image2.png)
 
-Při spuštění aplikace Domovská stránka obsahuje odkaz na tuto stránku nápovědy rozhraní API. Na domovské stránce je relativní cesta/help.
+Při spuštění aplikace na domovské stránce obsahuje odkaz na stránku nápovědy na rozhraní API. Z domovské stránky je relativní cesta/help.
 
 ![](creating-api-help-pages/_static/image3.png)
 
-Tento odkaz umožňuje souhrnnou stránku rozhraní API.
+Tento odkaz vám přináší na souhrnnou stránku rozhraní API.
 
 ![](creating-api-help-pages/_static/image4.png)
 
-Tato stránka zobrazení MVC je definována v Areas/HelpPage/Views/Help/Index.cshtml. Můžete upravit této stránce můžete upravit rozložení, úvod, název, styly a tak dále.
+Pro tuto stránku zobrazení MVC je definována v Areas/HelpPage/Views/Help/Index.cshtml. Můžete upravit této stránky můžete upravit rozložení, úvod, název, styly a tak dále.
 
-Hlavní část stránky je tabulka rozhraní API, seskupené podle řadiče. Položky tabulky jsou generována dynamicky, pomocí **IApiExplorer** rozhraní. (I mluvit o další informace o tomto rozhraní později.) Pokud přidáte nový řadič rozhraní API, v tabulce se automaticky aktualizuje v době běhu.
+Hlavní části stránky je tabulka rozhraní API, seskupené podle kontroleru. Položky tabulky generuje dynamicky pomocí **IApiExplorer** rozhraní. (I více zabývat toto rozhraní později.) Pokud chcete přidat nový kontroler API, se automaticky aktualizuje v tabulce v době běhu.
 
-Sloupec "API" seznam Metoda HTTP a relativní identifikátor URI. Sloupec "Popis" obsahuje dokumentace pro každé rozhraní API. Na začátku dokumentace je právě zástupný text. V další části I budete ukazují, jak přidat dokumentace z komentáře XML.
+Sloupce "Rozhraní API" seznam metodu HTTP a relativní identifikátor URI. Ve sloupci "Popis" obsahuje dokumentaci pro každé rozhraní API. Na začátku dokumentace je jen zástupný text. V další části můžu ukážeme, jak přidat dokumentace ke službě z komentářů XML.
 
-Každé rozhraní API obsahuje odkaz na stránku s podrobnější informace, včetně příklad těla požadavku a odpovědi.
+Každé rozhraní API obsahuje odkaz na stránku se podrobnější informace, včetně příklad těla požadavku a odpovědi.
 
 ![](creating-api-help-pages/_static/image5.png)
 
-## <a name="adding-help-pages-to-an-existing-project"></a>Přidání stránky nápovědy do existujícího projektu
+## <a name="adding-help-pages-to-an-existing-project"></a>Přidání stránky nápovědy k existujícímu projektu
 
-Stránky nápovědy můžete přidat do existujícího projektu webového rozhraní API pomocí Správce balíčků NuGet. Tato možnost je užitečná, že spustíte z šablonu jiný projekt, než má šablona "Webového rozhraní API".
+Stránky nápovědy k existujícímu projektu webového rozhraní API můžete přidat pomocí Správce balíčků NuGet. Tato možnost je užitečná, že spusťte ze šablony jiný projekt než má šablona "Webového rozhraní API".
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a potom vyberte **Konzola správce balíčků**. V [Konzola správce balíčků](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) okno, zadejte jeden z následujících příkazů:
+Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V [Konzola správce balíčků](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) okno, zadejte jeden z následujících příkazů:
 
-Pro **C#** aplikace: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
+Pro **jazyka C#** aplikace: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 
 Pro **jazyka Visual Basic** aplikace: `Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
 
-Existují dva balíčky, jeden pro jazyk C# a jeden v jazyce Visual Basic. Nezapomeňte použít ten, který odpovídá projektu.
+Existují dva balíčky, jeden pro jazyk C# a jeden pro jazyk Visual Basic. Ujistěte se, že chcete používat ten, který odpovídá projektu.
 
-Tento příkaz nainstaluje potřebné sestavení a přidá zobrazení MVC pro stránky nápovědy (umístěný ve složce oblasti nebo HelpPage). Budete muset ručně přidejte odkaz na stránku nápovědy. Identifikátor URI je/help. Chcete-li vytvořit odkaz v zobrazení syntaxe razor, přidejte následující:
+Tento příkaz nainstaluje potřebná sestavení a přidá zobrazení MVC pro stránky nápovědy (umístěný ve složce plochy/HelpPage). Bude potřeba ručně přidat odkaz na stránku nápovědy. Identifikátor URI je/help. Pokud chcete vytvořit odkaz v zobrazení razor, přidejte následující:
 
 [!code-cshtml[Main](creating-api-help-pages/samples/sample1.cshtml)]
 
-Také zajistěte, aby k registraci oblasti. V souboru Global.asax, přidejte následující kód, který **aplikace\_spustit** metodu, pokud tam není již:
+Také ujistěte se, že k registraci oblasti. V souboru Global.asax přidejte následující kód, který **aplikace\_Start** metodu, pokud tam není již:
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample2.cs?highlight=4)]
 
-## <a name="adding-api-documentation"></a>Přidání dokumentaci k rozhraní API
+## <a name="adding-api-documentation"></a>Přidání dokumentace k rozhraní API
 
-Ve výchozím nastavení v nápovědě stránky máte řetězce zástupný symbol pro dokumentaci. Můžete použít [dokumentační komentáře XML](https://msdn.microsoft.com/library/b2s063f7.aspx) vytvořit v dokumentaci. Chcete-li povolit tuto funkci, otevřete soubor oblasti nebo HelpPage nebo aplikace\_Start/HelpPageConfig.cs a zrušte komentář u následujícího řádku:
+Ve výchozím nastavení, v nápovědě stránky obsahují zástupný text řetězce pro dokumentaci. Můžete použít [dokumentační komentáře XML](https://msdn.microsoft.com/library/b2s063f7.aspx) vytvořit v dokumentaci. Chcete-li tuto funkci povolit, otevřete soubor oblasti nebo HelpPage/aplikace\_Start/HelpPageConfig.cs a zrušte komentář u následujícího řádku:
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample3.cs)]
 
-Teď povolte dokumentace XML. V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. Vyberte **sestavení** stránky.
+Nyní povolte dokumentace XML. V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyberte **vlastnosti**. Vyberte **sestavení** stránky.
 
 ![](creating-api-help-pages/_static/image6.png)
 
-V části **výstup**, zkontrolujte **souborů dokumentace XML**. Do textového pole zadejte "aplikace\_Data/XmlDocument.xml".
+V části **výstup**, zkontrolujte **soubor dokumentace XML**. Do textového pole zadejte "aplikace\_Data/XmlDocument.xml".
 
 ![](creating-api-help-pages/_static/image7.png)
 
-Dále otevřete kód pro `ValuesController` kontroler API, která je definována v /Controllers/ValuesControler.cs. Přidejte do metody kontroleru některé dokumentační komentáře. Příklad:
+Dále otevřete kód `ValuesController` kontroleru rozhraní API, která je definována v /Controllers/ValuesControler.cs. Přidáte nějaké komentáře k dokumentaci pro metody kontroleru. Příklad:
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample4.cs)]
 
 > [!NOTE]
-> Tip: Pokud umístit pomocí kurzoru na řádku výše metodu a zadejte tři lomítka, Visual Studio automaticky vloží elementy XML. Potom můžete vyplnit prázdné znaky.
+> Tip: Pokud umístit blikající kurzor na řádek nad metodu a zadejte tři lomítka, Visual Studio automaticky vloží prvky XML. Potom můžete vyplnit prázdné hodnoty.
 
 
-Nyní sestavení a spusťte aplikaci znovu a přejděte na stránky nápovědy. Řetězce dokumentace by se zobrazit v tabulce rozhraní API.
+Nyní vytvářet a spusťte aplikaci znovu a přejděte na stránky nápovědy. Dokumentace ke službě řetězce by se zobrazit v tabulce rozhraní API.
 
 ![](creating-api-help-pages/_static/image8.png)
 
-Na stránce nápovědy přečte řetězce ze souboru XML v době běhu. (Když nasadíte aplikaci, ujistěte se, k nasazení souboru XML.)
+Na stránce nápovědy přečte řetězce ze souboru XML v době běhu. (Když nasadíte aplikaci, ujistěte se, že k nasazení souboru XML.)
 
-## <a name="under-the-hood"></a>Pod pokličkou
+## <a name="under-the-hood"></a>Pohled pod kapotu
 
-Stránky nápovědy jsou postavený na **ApiExplorer** třídy, která je součástí rozhraní Web API. **ApiExplorer** třída poskytuje suroviny pro vytvoření stránky nápovědy. Pro každé rozhraní API **ApiExplorer** obsahuje **ApiDescription** , který popisuje rozhraní API. Pro tento účel "API" se rozumí kombinace metodu HTTP a relativní identifikátor URI. Tady jsou například některé odlišné rozhraní API:
+Stránky nápovědy jsou zabudovány nad **ApiExplorer** třídu, která je součástí rozhraní Web API. **ApiExplorer** třída poskytuje suroviny pro vytvoření stránky nápovědy. Pro každé rozhraní API **ApiExplorer** obsahuje **ApiDescription** popisující rozhraní API. V tomto případě "API" je definován jako kombinace relativní URI a metodou HTTP. Například tady jsou některé různá rozhraní API:
 
 - ZÍSKAT /api/Products
-- ZÍSKAT /api/produkty / {id}
-- POST/api/produkty
+- ZÍSKAT/webové rozhraní API/produkty / {id}
+- Publikovat/api/produkty
 
-Pokud je akce kontroleru podporuje více metod HTTP, **ApiExplorer** každá metoda zpracovává jako odlišné rozhraní API.
+Pokud je akce kontroleru podporuje více metod HTTP, **ApiExplorer** považuje každá metoda různých rozhraní API.
 
-Skrytí rozhraní API z **ApiExplorer**, přidejte **ApiExplorerSettings** atribut akci a sadu *IgnoreApi* na hodnotu true.
+Skrýt rozhraní API z **ApiExplorer**, přidejte **ApiExplorerSettings** akce a nastavte atribut *IgnoreApi* na hodnotu true.
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample5.cs)]
 
-Můžete také přidat tento atribut řadiče, vyloučit celý kontroler.
+Můžete také přidat tento atribut na řadič, vyloučit celý kontroler.
 
-Třída ApiExplorer získá dokumentaci řetězců z **IDocumentationProvider** rozhraní. Jak už jste viděli dříve, knihovny pomoci stránek poskytuje **IDocumentationProvider** , který získá dokumentaci z řetězců dokumentace XML. Kód se nachází v /Areas/HelpPage/XmlDocumentationProvider.cs. Můžete získat dokumentaci z jiného zdroje vytvořením vlastní **IDocumentationProvider**. Chcete-li propojit je s nahoru, zavolejte **SetDocumentationProvider** rozšíření metody definované v **HelpPageConfigurationExtensions**
+Třída ApiExplorer získá dokumentaci řetězců z **IDocumentationProvider** rozhraní. Jak jste viděli již dříve, poskytuje knihovna stránky nápovědy **IDocumentationProvider** , který získá dokumentaci z řetězců dokumentaci XML. Kód se nachází v /Areas/HelpPage/XmlDocumentationProvider.cs. Můžete získat dokumentaci z jiného zdroje napsáním vlastní **IDocumentationProvider**. Chcete-li ji nastavit, zavolejte **SetDocumentationProvider** metody rozšíření definované v **HelpPageConfigurationExtensions**
 
-**ApiExplorer** automaticky volání **IDocumentationProvider** rozhraní pro získání dokumentace řetězce pro každé rozhraní API. Ukládá je do **dokumentace** vlastnost **ApiDescription** a **ApiParameterDescription** objekty.
+**ApiExplorer** automaticky zavolá **IDocumentationProvider** rozhraní pro získání dokumentace řetězce pro každé rozhraní API. Ukládá je v **dokumentaci** vlastnost **ApiDescription** a **ApiParameterDescription** objekty.
 
 ## <a name="next-steps"></a>Další kroky
 
-Nejste omezená na stránky nápovědy, které jsou tady uvedené. Ve skutečnosti **ApiExplorer** není omezeno na vytváření stránky nápovědy. Některé skvělé příspěvky si myslím mimo pole má zapisovat Yao Huang odkazů:
+Nejste omezeni na stránky nápovědy je vidět tady. Ve skutečnosti **ApiExplorer** není omezena pouze na vytváření stránek nápovědy. Ty Huang Yao zapsala si že některé skvělé příspěvky najdete, vám uvažujete úprav:
 
-- [Přidání jednoduché testovacího klienta na stránce nápovědy k serveru ASP.NET Web API](https://blogs.msdn.com/b/yaohuang1/archive/2012/12/02/adding-a-simple-test-client-to-asp-net-web-api-help-page.aspx)
-- [Provedení ASP.NET Web API stránce nápovědy k pracovat s vlastním hostováním služby](https://blogs.msdn.com/b/yaohuang1/archive/2012/12/20/making-asp-net-web-api-help-page-work-on-self-hosted-services.aspx)
-- [Vytvoření v době návrhu nápovědy stránky (nebo klienta) pro ASP.NET Web API](https://blogs.msdn.com/b/yaohuang1/archive/2013/01/20/design-time-generation-of-help-page-or-proxy-for-asp-net-web-api.aspx)
-- [Rozšířené přizpůsobení stránce nápovědy](https://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx)
+- [Přidání jednoduchého testovacího klienta stránka nápovědy k ASP.NET Web API](https://blogs.msdn.com/b/yaohuang1/archive/2012/12/02/adding-a-simple-test-client-to-asp-net-web-api-help-page.aspx)
+- [Vytváření technologie ASP.NET webové rozhraní API pomáhají stránky pracovat na služby v místním prostředí](https://blogs.msdn.com/b/yaohuang1/archive/2012/12/20/making-asp-net-web-api-help-page-work-on-self-hosted-services.aspx)
+- [Vytvoření v době návrhu nápovědy stránky (nebo klienta) pro rozhraní ASP.NET Web API](https://blogs.msdn.com/b/yaohuang1/archive/2013/01/20/design-time-generation-of-help-page-or-proxy-for-asp-net-web-api.aspx)
+- [Rozšířená přizpůsobení stránce nápovědy](https://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx)

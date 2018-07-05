@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
-title: Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam | Microsoft Docs
+title: Zkoumání, jak ASP.NET MVC vygeneruje uživatelské rozhraní pomocné rutiny DropDownList | Dokumentace Microsoftu
 author: Rick-Anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,35 +9,34 @@ ms.date: 01/12/2012
 ms.topic: article
 ms.assetid: 8921d7f2-21f0-427a-8b27-2df7251174b0
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: 09d2d7a0df5e8ffa14160b7d3c16b1e9da905fa1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ece3645f2b37550058a5c93bdd9badbc088ae11c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874080"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382962"
 ---
-<a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Prozkoumání, jak rozhraní ASP.NET MVC scaffolds pomocná rozevírací seznam
+<a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Zkoumání, jak ASP.NET MVC vygeneruje uživatelské rozhraní pomocné rutiny DropDownList
 ====================
-podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *řadiče* složku a potom vyberte **přidat kontroler**. Název kontroleru **StoreManagerController**. Nastavení možností pro **přidat kontroler** dialogové okno, jak je znázorněno na obrázku níže.
+V **Průzkumníka řešení**, klikněte pravým tlačítkem myši *řadiče* složku a pak vyberte **přidat kontroler**. Název kontroleru **StoreManagerController**. Nastavení možností pro **přidat kontroler** dialogového okna, jak je znázorněno na následujícím obrázku.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image1.png)
 
-Upravit *StoreManager\Index.cshtml* zobrazení a odebrání `AlbumArtUrl`. Odebrání `AlbumArtUrl` bude čitelnost prezentaci. Dokončený kód je uveden níže.
+Upravit *StoreManager\Index.cshtml* zobrazení a odebrání `AlbumArtUrl`. Odebrání `AlbumArtUrl` se čitelnost prezentaci. Dokončený kód je uveden níže.
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample1.cshtml)]
 
-Otevřete *Controllers\StoreManagerController.cs* souboru a najděte `Index` metoda. Přidat `OrderBy` klauzule, alba seřadí podle ceny. Kód dokončení jsou uvedeny níže.
+Otevřít *Controllers\StoreManagerController.cs* souborů a vyhledejte `Index` metody. Přidat `OrderBy` klauzule tak alba budou seřazeny podle ceny. Kompletní kód je uveden níže.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample2.cs)]
 
-Řazení podle ceny budou usnadňují testování změny databáze. Pokud testujete úpravy a vytvoření metody, můžete tak uložená data se zobrazí první nízkou cenu.
+Řazení podle ceny vám usnadní testování změn do databáze. Při testování upravit a vytvořit metody, můžete tak uložených dat budou zobrazovat první nízkou cenu.
 
-Otevřete *StoreManager\Edit.cshtml* souboru. Přidejte následující řádek bezprostředně za značce legendy.
+Otevřít *StoreManager\Edit.cshtml* souboru. Přidejte následující řádek bezprostředně po tagu legendy.
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample3.cshtml)]
 
@@ -45,135 +44,135 @@ Následující kód ukazuje kontextu této změny:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample4.cshtml)]
 
-`AlbumId` Je potřeba provést změny k záznamu alb.
+`AlbumId` Je potřeba provést změny na alba záznam.
 
-Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci. Vyberte k **správce** propojení a pak vyberte **vytvořit nový** odkaz pro vytvoření nové album. Ověřte, zda že byla uložena alba informace. Upravit alba a ověřte, zda jsou nastavené jako trvalé změny, které jste provedli.
+Stisknutím kláves CTRL + F5 spusťte aplikaci. Kliknutím **správce** propojení a potom vyberte **vytvořit nový** odkaz pro vytvoření nové album. Ověřte, zda že byl uložen alba informace. Upravit alba a ověřte, zda jsou trvalé, provedené změny.
 
-### <a name="the-album-schema"></a>Schéma Album
+### <a name="the-album-schema"></a>Alba schématu
 
-`StoreManager` Kontroler vytvořený mechanismus generování uživatelského rozhraní MVC umožňuje CRUD (vytvořit, číst, Update, Delete) přístup k alba v databázi Hudba úložiště. Schéma album informace jsou uvedeny níže:
+`StoreManager` Řadič vytvořené mechanismu generování uživatelského rozhraní MVC umožňuje přístup CRUD (vytváření, čtení, Update, Delete) ke alba v databázi music store. Schéma alba informace naleznete níže:
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image2.png)
 
-`Albums` Tabulky neukládá genre alba a popis, ukládá cizí klíč k `Genres` tabulky. `Genres` Tabulka obsahuje genre název a popis. Podobně `Albums` tabulka neobsahuje název alba umělci, ale cizí klíč k `Artists` tabulky. `Artists` Tabulka obsahuje jméno. Pokud si projdete data v `Albums` tabulky, můžete zobrazit každý řádek obsahuje cizí klíč k `Genres` tabulky a cizí klíč `Artists` tabulky. Následující obrázek zobrazit některá data tabulky z `Albums` tabulky.
+`Albums` Tabulky neukládá žánr alba a popis, ukládá cizí klíč `Genres` tabulky. `Genres` Tabulka obsahuje žánr název a popis. Podobně `Albums` tabulka neobsahuje název alba umělcům, ale cizí klíč `Artists` tabulky. `Artists` Tabulka obsahuje jméno. Pokud prozkoumáte data v `Albums` tabulky, se zobrazí každý řádek obsahuje cizí klíč `Genres` tabulky a cizí klíč `Artists` tabulky. Na následujícím obrázku ukazují některé data tabulky z `Albums` tabulky.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image3.png)
 
-### <a name="the-html-select-tag"></a>Značka HTML vyberte
+### <a name="the-html-select-tag"></a>Značka HTML Select
 
-HTML `<select>` – element (vytvořený HTML [rozevírací seznam](https://msdn.microsoft.com/library/dd492948.aspx) pomocné rutiny) se používá k zobrazení úplný seznam hodnot (například seznam žánry). Pro úpravy formulářů Pokud se aktuální hodnota označuje, můžete seznamu výběru zobrazit aktuální hodnota. Jsme viděli dříve tomto při Nastaví vybrané hodnoty **komedie**. Seznam select je ideální pro zobrazení kategorie nebo dat cizího klíče. `<select>` Element pro cizí klíč Genre zobrazí seznam názvů možné genre, ale při ukládání formuláře je vlastnost Genre aktualizovat hodnotou Genre cizího klíče, nikoli název zobrazený genre. Na následujícím obrázku je genre vybrané **Disco** a umělce **Donna letní**.
+Kód HTML `<select>` – element (vytvořené pomocí jazyka HTML [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) pomocné rutiny) umožňuje zobrazit úplný seznam hodnot (jako je například seznam žánry). Pro editační formuláře Pokud aktuální hodnota je známý, můžete seznamu výběru zobrazit aktuální hodnotu. Jsme viděli dříve tomto při nastavíme na vybranou hodnotu **komedie**. Seznam select je ideální pro zobrazení kategorií nebo data cizího klíče. `<select>` – Element pro cizí klíč žánr zobrazí seznam názvů možné genre, ale při ukládání formuláři vlastnost žánr se aktualizuje s rozšířením podle tematických hodnoty cizího klíče, nikoli název zobrazený žánr. Na následujícím obrázku je rozšířením podle tematických vybrané **Roz** a je umělce **Donnou léto**.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image4.png)
 
-### <a name="examining-the-aspnet-mvc-scaffolded-code"></a>Zkoumání rozhraní ASP.NET MVC vygeneroval kód
+### <a name="examining-the-aspnet-mvc-scaffolded-code"></a>Zkoumání rozhraní ASP.NET MVC automaticky generovaný kód
 
-Otevřete *Controllers\StoreManagerController.cs* souboru a najděte `HTTP GET Create` metoda.
+Otevřít *Controllers\StoreManagerController.cs* souborů a vyhledejte `HTTP GET Create` metody.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample5.cs)]
 
-`Create` Metoda přidá dva [SelectList](https://msdn.microsoft.com/library/system.web.mvc.selectlist.aspx) objekty ke `ViewBag`, jeden, který bude obsahovat informace genre a jeden, který bude obsahovat umělcem informace. [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) přetížení konstruktoru používá výše má tři argumenty:
+`Create` Metoda přidá dvě [SelectList](https://msdn.microsoft.com/library/system.web.mvc.selectlist.aspx) objektů `ViewBag`, jeden tak, aby obsahovala žánr informace a jeden obsahuje informace o interpreta. [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) přetížení konstruktoru využité nad má tři argumenty:
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample6.cs)]
 
-1. *položky*: [rozhraní IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) obsahující položky v seznamu. V příkladu nahoře, vrácený seznam žánry `db.Genres`.
-2. *dataValueField*: název vlastnosti v **rozhraní IEnumerable** seznamu, který obsahuje hodnotu klíče. V příkladu nahoře `GenreId` a `ArtistId`.
-3. *dataTextField*: název vlastnosti v **rozhraní IEnumerable** seznamu, který obsahuje informace k zobrazení. V umělci a tabulka genre `name` pole se používá.
+1. *položky*: [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) obsahující položky v seznamu. V příkladu výše, vrácený seznam žánry `db.Genres`.
+2. *dataValueField*: název vlastnosti v **IEnumerable** seznam, který obsahuje hodnotu klíče. V příkladu výše `GenreId` a `ArtistId`.
+3. *dataTextField*: název vlastnosti v **IEnumerable** seznam, který obsahuje informace k zobrazení. V vašim animátorům a rozšířením podle tematických tabulky `name` pole se používá.
 
-Otevřete *Views\StoreManager\Create.cshtml* soubor a zkontrolujte `Html.DropDownList` kód pomocné rutiny pro genre pole.
+Otevřít *Views\StoreManager\Create.cshtml* souboru a zkoumat `Html.DropDownList` pomocné rutiny značky žánr pole.
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample7.cshtml)]
 
-První řádek ukazuje, že zobrazení pro vytváření trvá `Album` modelu. V `Create` výše uvedená metoda, byl předán žádný model, tak získá zobrazení **null** `Album` modelu. V tomto okamžiku se vytváří nové album proto nemáme žádné `Album` data pro ni.
+První řádek ukazuje, že zobrazení pro vytváření trvá `Album` modelu. V `Create` metody uvedené výše, byl předán žádný model, takže získá zobrazení **null** `Album` modelu. V tomto okamžiku vytváříme nové album, takže nemáme žádné `Album` data pro něj.
 
-[Html.DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) přetížení výše uvedeném převezme název pole, které chcete vytvořit vazbu k modelu. Tento název se používá také k Hledat **ViewBag** objekt obsahující [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) objektu. Pomocí této přetížení, je nutné na název **ViewBag SelectList** objekt `GenreId`. Druhý parametr (`String.Empty`) je text, který se zobrazí, pokud je vybrána žádná položka. Toto je přesně co chceme, při vytváření nové album. Je-li druhý parametr odebrat a použít následující kód:
+[Html.DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) přetížení výše uvedené přebírá název pole, které chcete vytvořit vazbu modelu. Také používá tento název k vyhledání **objekt ViewBag** objekt obsahující [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) objektu. Pomocí tohoto přetížení, je nutné provést název **objekt ViewBag SelectList** objekt `GenreId`. Druhý parametr (`String.Empty`) je text, který se zobrazí, když není vybrána žádná položka. To je přesně chceme při vytváření nové album. Je-li odebrat druhý parametr a použít následující kód:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample8.cshtml)]
 
-V seznamu vyberte výchozí první prvek nebo Rock ve výběru.
+První prvek nebo Rock výchozí seznamu příkazu select v naší ukázce.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image5.png)
 
-Zkoumání `HTTP POST Create` metoda.
+Zkoumání `HTTP POST Create` metody.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample9.cs)]
 
-Toto přetížení `Create` metoda trvá `album` objekt, vytvořený systémem vazby modelu ASP.NET MVC z formuláře hodnoty odeslány. Při odesílání nové album, pokud stav modelu, který je platný, a neexistují žádné chyby databáze, se přidá nové album databáze. Následující obrázek ukazuje vytvoření nové album.
+Toto přetížení `Create` přijímá metodu `album` objekt vytvořený pomocí systému vazby modelu ASP.NET MVC z hodnot formuláře, pošle. Při odeslání nové album, pokud je platný stav modelu a nejsou žádné chyby databáze, se přidá nový alba databáze. Vytvoření nové album naleznete na následujícím obrázku.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image6.png)
 
-Můžete použít [nástroj fiddler](http://www.fiddler2.com/fiddler2/) prozkoumat hodnoty odeslaného formuláře vazbou modelu ASP.NET MVC používá k vytvoření objektu alb.
+Můžete použít [nástroj fiddler](http://www.fiddler2.com/fiddler2/) ke kontrole hodnot odeslaného formuláře, že vazba modelu ASP.NET MVC používá k vytvoření objektu alba.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image7.png).
 
-### <a name="refactoring-the-viewbag-selectlist-creation"></a>Refaktoring vytvoření ViewBag SelectList
+### <a name="refactoring-the-viewbag-selectlist-creation"></a>Refaktoring vytváření SelectList objekt ViewBag
 
-Obě `Edit` metody a `HTTP POST Create` metoda mít identické kódu nastavit **SelectList** v **ViewBag**. Ve smyslu [SUCHÝCH](http://en.wikipedia.org/wiki/Don't_repeat_yourself), jsme se Refaktorovat tento kód. Vytočit použití tohoto rozdělili kód později.
+Oba `Edit` metody a `HTTP POST Create` metoda mít stejný kód nastavit **SelectList** v **objekt ViewBag**. V duchu [suchého](http://en.wikipedia.org/wiki/Don't_repeat_yourself), jsme se tento kód Refaktorovat. Teď Uděláme to využívání Refaktorovat kód později.
 
-Vytvoření nové metody pro přidání genre a umělcem **SelectList** k **ViewBag**.
+Vytvoření nové metody pro přidání žánr a interpreta **SelectList** k **objekt ViewBag**.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample10.cs)]
 
-Nahraďte dva řádky nastavení `ViewBag` v každé z `Create` a `Edit` metody s volání `SetGenreArtistViewBag` metoda. Dokončený kód je uveden níže.
+Nahraďte dva řádky nastavení `ViewBag` ve všech `Create` a `Edit` pomocí volání metody `SetGenreArtistViewBag` metoda. Dokončený kód je uveden níže.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample11.cs)]
 
-Vytvořit nového alba a upravit album k ověření, že změny fungovat.
+Vytvořte nové album a upravte alba k ověření, že změny fungovat.
 
-### <a name="explicitly-passing-the-selectlist-to-the-dropdownlist"></a>Explicitně předávání SelectList rozevírací seznam
+### <a name="explicitly-passing-the-selectlist-to-the-dropdownlist"></a>Explicitně předávání SelectList DropDownList
 
-Vytvoření zobrazení vytvořit a upravit pomocí generování uživatelského rozhraní ASP.NET MVC následující **rozevírací seznam** přetížení:
+Vytvoření a úprava zobrazení vytvořené pomocí generování uživatelského rozhraní ASP.NET MVC následující **DropDownList** přetížení:
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample12.cs)]
 
-`DropDownList` Kód pro vytvoření zobrazení je uveden níže.
+`DropDownList` Kód pro vytvoření zobrazení se zobrazuje níže.
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample13.cshtml)]
 
-Protože `ViewBag` vlastnost pro `SelectList` jmenuje `GenreId`, **rozevírací seznam** pomocníka použijete `GenreId` **SelectList** v **ViewBag** . V následujícím **rozevírací seznam** přetížení, `SelectList` explicitně předán.
+Protože `ViewBag` vlastnost `SelectList` jmenuje `GenreId`, **DropDownList** pomocné rutiny použije `GenreId` **SelectList** v **objekt ViewBag** . V následujícím **DropDownList** přetížení, `SelectList` explicitně je předán.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample14.cs)]
 
-Otevřete *Views\StoreManager\Edit.cshtml* soubor a změňte **rozevírací seznam** volání explicitně předávat **SelectList**, pomocí výše uvedených přetížení. To lze proveďte pro Genre kategorii. Dokončený kód je zobrazena níže:
+Otevřít *Views\StoreManager\Edit.cshtml* soubor a změňte **DropDownList** volání explicitně předávat **SelectList**, pomocí přetížení výše. To lze proveďte pro kategorii Žánr. Dokončený kód je zobrazena níže:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample15.cshtml)]
 
-Spusťte aplikaci a klikněte na tlačítko **správce** odkaz, pak přejděte do alb Jazz a vyberte **upravit** odkaz.
+Spusťte aplikaci a klikněte na tlačítko **správce** propojení, pak přejděte do alb Jazz a vyberte **upravit** odkaz.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image8.png)
 
-Místo zobrazení Jazz jako aktuálně vybrané genre, zobrazí se Rock. Pokud argument řetězce (vlastnost pro vazbu) a **SelectList** objekt mají stejný název, vybrané hodnoty se nepoužívá. Pokud žádné vybrané hodnoty zadané, prohlížečů výchozí prvním elementem v **SelectList**(což je **Rock** v předchozím příkladu). Jedná se o známé omezení **rozevírací seznam** pomocné rutiny.
+Místo zobrazení Jazz jako aktuálně vybraný genre, zobrazí se Rock. Pokud argument řetězce (vlastnost pro vazbu) a **SelectList** objekt mají stejný název, vybrané hodnoty se nepoužívá. Pokud neexistuje žádná vybraná hodnota k dispozici, výchozí prohlížeče na první prvek v **SelectList**(což je **Rock** v předchozím příkladu). Toto je známé omezení **DropDownList** pomocné rutiny.
 
-Otevřete *Controllers\StoreManagerController.cs* soubor a změňte **SelectList** objektu názvy `Genres` a `Artists`. Dokončený kód je zobrazena níže:
+Otevřít *Controllers\StoreManagerController.cs* soubor a změňte **SelectList** názvy do objektů `Genres` a `Artists`. Dokončený kód je zobrazena níže:
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample16.cs)]
 
-Názvy žánry a umělci jsou lepší názvy kategorií, obsahují více než jen ID každé kategorii. Refaktoring, kterou jsme provedli dříve placené. Místo změna **ViewBag** v čtyři metody byly izolované na našem změny `SetGenreArtistViewBag` metoda.
+Názvy žánry a umělci jsou lepší názvy kategorií, obsahují více než jen ID každé kategorie. Vyplatilo refaktoring, který jsme to udělali dříve. Místo změny **objekt ViewBag** v čtyři metody byly izolován na naše změny `SetGenreArtistViewBag` metoda.
 
-Změna **rozevírací seznam** volání v části Vytvoření a úprava zobrazení s novým **SelectList** názvy. Nový kód pro úpravy zobrazení je zobrazena níže:
+Změnit **DropDownList** volání v části Vytvoření a úprava zobrazení s novým **SelectList** názvy. Nový kód pro zobrazení pro úpravy je zobrazena níže:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample17.cshtml)]
 
-Zobrazení pro vytváření vyžaduje k zabránění zobrazení první položky SelectList prázdný řetězec.
+Vytvořit zobrazení vyžaduje zabránit se zobrazí první položku SelectList prázdný řetězec.
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample18.cshtml)]
 
-Vytvořit nového alba a upravit album k ověření, že změny fungovat. Testování kódu upravit tak, že vyberete album s genre než Rock.
+Vytvořte nové album a upravte alba k ověření, že změny fungovat. Testování kódu upravit tak, že vyberete alba s žánr než Rock.
 
-### <a name="using-a-view-model-with-the-dropdownlist-helper"></a>Model zobrazení pomocí pomocníka rozevírací seznam
+### <a name="using-a-view-model-with-the-dropdownlist-helper"></a>Pomocí zobrazení modelu s pomocné rutiny DropDownList
 
-Vytvořte novou třídu ve složce ViewModels s názvem `AlbumSelectListViewModel`. Nahraďte kód v `AlbumSelectListViewModel` třídy následujícím kódem:
+Vytvořte novou třídu v modely ViewModels složku s názvem `AlbumSelectListViewModel`. Nahraďte kód v `AlbumSelectListViewModel` třídy následujícím kódem:
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample19.cs)]
 
-`AlbumSelectListViewModel` Konstruktor přebírá album, seznam umělci a žánry a vytvoří objekt obsahující alba a `SelectList` žánry a umělci.
+`AlbumSelectListViewModel` Konstruktor přijímá alba, seznam vašim animátorům a žánry a vytvoří objekt, který obsahuje alba a `SelectList` žánry a umělci.
 
-Sestavení projektu proto `AlbumSelectListViewModel` je k dispozici při vytváření zobrazení v dalším kroku.
+Sestavte projekt proto `AlbumSelectListViewModel` je k dispozici, když budeme vytvářet zobrazení v dalším kroku.
 
 Přidat `EditVM` metodu `StoreManagerController`. Dokončený kód je uveden níže.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample20.cs)]
 
-Klikněte pravým tlačítkem na `AlbumSelectListViewModel`, vyberte **vyřešit**, pak **pomocí MvcMusicStore.ViewModels;**.
+Klikněte pravým tlačítkem myši `AlbumSelectListViewModel`vyberte **vyřešit**, pak **pomocí MvcMusicStore.ViewModels;**.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image9.png)
 
@@ -181,31 +180,31 @@ Alternativně můžete přidat následující příkaz using:
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample21.cs)]
 
-Klikněte pravým tlačítkem na `EditVM` a vyberte **přidat zobrazení**. Pomocí možností vidíte níže.
+Klikněte pravým tlačítkem myši `EditVM` a vyberte **přidat zobrazení**. Pomocí možnosti zobrazené níže.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image10.png)
 
-Vyberte **přidat**, potom můžete nahradit obsah *Views\StoreManager\EditVM.cshtml* soubor s následující:
+Vyberte **přidat**, poté nahraďte obsah *Views\StoreManager\EditVM.cshtml* souboru následujícím kódem:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample22.cshtml)]
 
-`EditVM` Značek je velmi podobný původní `Edit` značek s následujícími výjimkami.
+`EditVM` Značek je velmi podobný původní `Edit` značky s následujícími výjimkami.
 
-- Vlastnosti v modelu `Edit` zobrazení jsou ve formátu `model.property`(například `model.Title` ). Vlastnosti v modelu `EditVm` zobrazení jsou ve formátu `model.Album.property`(například `model.Album.Title`). Důvodem je, že `EditVM` zobrazení byla předána kontejner pro `Album`, nikoli `Album` jako v `Edit` zobrazení.
-- **Rozevírací seznam** druhý parametr pochází z modelu zobrazení, není **ViewBag**.
-- **BeginForm** Pomocník `EditVM` zobrazit explicitně příspěvky zpět `Edit` metody akce. Zveřejněním zpět do `Edit` akce, nemáme k zápisu `HTTP POST EditVM` akce a můžete opakovaně použít `HTTP POST` `Edit` akce.
+- Vlastnosti v modelu `Edit` zobrazení jsou ve tvaru `model.property`(například `model.Title` ). Vlastnosti v modelu `EditVm` zobrazení jsou ve tvaru `model.Album.property`(například `model.Album.Title`). Důvodem je, že `EditVM` zobrazení se předá kontejner `Album`, nikoli `Album` stejně jako v `Edit` zobrazení.
+- **DropDownList** druhý parametr pochází z modelu zobrazení není **objekt ViewBag**.
+- **BeginForm** Pomocník `EditVM` zobrazení explicitně odeslat zpět `Edit` metody akce. Tím, že publikuje zpět `Edit` akce, nemáme pro zápis `HTTP POST EditVM` akce a můžete znovu použít `HTTP POST` `Edit` akce.
 
-Spusťte aplikaci a upravit album. Změňte adresu URL používat `EditVM`. Změňte pole a stiskněte tlačítko **Uložit** tlačítko ověřit kód funguje.
+Spusťte aplikaci a upravit alba. Změňte adresu URL na použití `EditVM`. Změnit pole a klikněte **Uložit** tlačítko ověřit kód funguje.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image11.png)
 
-### <a name="which-approach-should-you-use"></a>Jaký přístup mám použít?
+### <a name="which-approach-should-you-use"></a>Jaký přístup byste měli použít?
 
-Všechny tři přístupy, zobrazí se acceptible. Celá řada vývojářů přednost explictily průchodu `SelectList` k `DropDownList` pomocí `ViewBag`. Tento přístup má výhodu, která poskytuje flexibilní použití vhodnější název kolekce. Přímý přístup do jedné paměti je nelze pojmenovat `ViewBag SelectList` objektu stejný název jako vlastnost modelu.
+Všechny tři postupy uvedené jsou acceptible. Mnoho vývojářů raději explictily pass `SelectList` k `DropDownList` pomocí `ViewBag`. Tento přístup má výhodu současného vám poskytuje flexibilitu používat více vhodný název pro kolekci. Jeden výstrahou je nelze pojmenovat `ViewBag SelectList` stejný název jako vlastnost modelu objektu.
 
-Někteří vývojáři přednost ViewModel přístup. Ostatní zvažte podrobnější značek a generovaný kód HTML přístupu ViewModel nevýhodou.
+Někteří vývojáři radši ViewModel přístup. Ostatní vezměte v úvahu podrobnější značek a generovaný kód HTML přístupu ViewModel nevýhodu.
 
-V této části jsme se dozvěděli, tři způsoby používání **rozevírací seznam** daty kategorie. V další části ukážeme, jak přidat novou kategorii.
+V této části jsme se naučili tři způsoby používání **DropDownList** s daty kategorie. V další části vám ukážeme, jak přidat novou kategorii.
 
 > [!div class="step-by-step"]
 > [Předchozí](using-the-dropdownlist-helper-with-aspnet-mvc.md)

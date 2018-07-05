@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-validation
-title: Přidání ověřování | Microsoft Docs
+title: Přidání ověřování | Dokumentace Microsoftu
 author: Rick-Anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,15 +9,14 @@ ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 9f35ca15-e216-4db6-9ebf-24380b0f31b4
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 96dc6724b48daf77034c0741be970be11b81ab37
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 7348b0b51f7db516f398b218d37c9163cb186d73
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961513"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37373406"
 ---
 <a name="adding-validation"></a>Přidání ověřování
 ====================
@@ -25,147 +24,147 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
 [!INCLUDE [Tutorial Note](sample/code-location.md)]
 
-V této části přidáte logiku ověření pro `Movie` modelu a budete ujistěte, že ověřovací pravidla se uplatňují vždy, když uživatel se pokusí vytvořit nebo upravit film pomocí aplikace.
+V této části přidáte logiku ověřování k `Movie` model a zajistíte, že ověřovacích pravidel se vynucují kdykoli se uživatel pokusí o vytvoření nebo úprava videa pomocí aplikace.
 
-## <a name="keeping-things-dry"></a>Zachování SUCHÝCH věcí
+## <a name="keeping-things-dry"></a>Udržování suchého věcí
 
-Jedním ze základních principů návrhu architektury ASP.NET MVC je [SUCHÝCH](http://en.wikipedia.org/wiki/Don't_repeat_yourself) (&quot;nemáte opakujte sami&quot;). ASP.NET MVC umožňuje zadejte funkce nebo chování jenom jednou a potom ho v aplikaci projeví everywhere mít. To snižuje množství kódu, které potřebujete k zápisu a umožňuje kód, který menší chyba náchylné k chybám a jednodušší správu zápisu.
+Jedním ze základních principů návrhu ASP.NET MVC je [suchého](http://en.wikipedia.org/wiki/Don't_repeat_yourself) (&quot;není opakujte sami&quot;). ASP.NET MVC umožňuje zadat funkci nebo chování pouze jednou a potom jste ho všude, kde se projeví v aplikaci. To snižuje množství kódu, které potřebujete k zápisu a provede kód, který napíšete náchylné k chybám a snadněji udržovat méně chyb.
 
-Podpora ověřování poskytované ASP.NET MVC a Entity Framework Code First je skvělým příklad SUCHÝCH zásadu v akci. V jednom místě (ve třídě modelu) můžete určit deklarativně ověřovací pravidla a pravidla jsou vynucována everywhere v aplikaci.
+Podpora ověřování poskytované rozhraní ASP.NET MVC a Entity Framework Code First je skvělé příkladem zásada SUCHÝCH v akci. Ověřovací pravidla můžete zadat pomocí deklarace na jednom místě (ve třídě modelu) a pravidel se vynucují kdekoli v aplikaci.
 
-Podíváme, jak můžete využít výhod tato podpora ověřování v aplikaci film.
+Podívejme se na tom, jak můžete využít této podpory ověřování v aplikace movie.
 
-## <a name="adding-validation-rules-to-the-movie-model"></a>Přidávání pravidel ověřování modelu filmu
+## <a name="adding-validation-rules-to-the-movie-model"></a>Přidání pravidel ověřování do modelu Movie
 
-Budete začněte tím, že některé logiku ověření pro přidání `Movie` třídy.
+Zobrazí za přibližně tak, že přidáte některé logiku ověřování k `Movie` třídy.
 
-Otevřete *Movie.cs* souboru. Upozornění [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů neobsahuje `System.Web`. DataAnnotations poskytuje integrovanou sadu atributů ověření, které můžete provést deklarativně všechny třídy nebo vlastnost. (Také obsahuje formátování atributů, například [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) který usnadní formátování a neposkytují žádné ověření.)
+Otevřít *Movie.cs* souboru. Všimněte si, že [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů neobsahuje `System.Web`. DataAnnotations poskytuje integrovanou sadu atributů ověření, které můžete provést pomocí deklarace tříd nebo vlastností. (Také obsahuje formátování atributů, jako je [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) , pomoct při formátování a neposkytují žádné ověřování.)
 
-Nyní aktualizovat `Movie` třída využít předdefinované [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx), a [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributů ověření. Nahraďte `Movie` třídy následujícím kódem:
+Teď aktualizovat `Movie` třídy, které chcete využít výhod integrovaného [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx), a [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributů ověření. Nahraďte `Movie` třídy následujícím kódem:
 
 [!code-csharp[Main](adding-validation/samples/sample1.cs?highlight=5,13-15,18-19,22-23)]
 
-[ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) Atribut Nastaví maximální délku řetězce a nastaví toto omezení v databázi, proto se změní schéma databáze. Klikněte pravým tlačítkem na **filmy** tabulky v **Průzkumníka serveru** a klikněte na tlačítko **otevřete definici tabulky**:
+[ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) Atribut Nastaví maximální délku řetězce a nastaví toto omezení pro databáze, proto se změní schéma databáze. Klikněte pravým tlačítkem na **filmy** tabulku v **Průzkumníka serveru** a klikněte na tlačítko **Otevřít definici tabulky**:
 
 ![](adding-validation/_static/image1.png)
 
-Na obrázku výše vidíte všech polí s řetězcem jsou nastaveny na [NVARCHAR (maximum)](https://technet.microsoft.com/library/ms186939.aspx). Migrace použijeme k aktualizaci schématu. Sestavte řešení a pak otevřete **Konzola správce balíčků** okna a zadejte následující příkazy:
+Na obrázku výše, zobrazí se všechna pole řetězců jsou nastaveny na [NVARCHAR (maximální velikost)](https://technet.microsoft.com/library/ms186939.aspx). Migraci budeme používat k aktualizaci schématu. Sestavte řešení a pak otevřete **Konzola správce balíčků** okna a zadejte následující příkazy:
 
 [!code-console[Main](adding-validation/samples/sample2.cmd)]
 
-Po dokončení tohoto příkazu Visual Studio otevře soubor třídy, který definuje nový `DbMIgration` odvozené třídy se zadaným názvem (`DataAnnotations`) a v `Up` metoda se zobrazí kód, který aktualizuje schématu omezení:
+Po dokončení tohoto příkazu, Visual Studio otevře soubor třídy, která definuje nový `DbMIgration` odvozené třídy se zadaným názvem (`DataAnnotations`) a `Up` metoda vidíte kód, který aktualizuje schéma omezení:
 
 [!code-csharp[Main](adding-validation/samples/sample3.cs)]
 
-`Genre` Pole je už s možnou hodnotou Null (to znamená, je třeba zadat hodnotu). `Rating` Pole má maximální délku 5 a `Title` má maximální délku 60. Minimální délka 3 na `Title` a rozsah na `Price` nevytvořila změny schématu.
+`Genre` Pole je už s možnou hodnotou Null (to znamená, je nutné zadat hodnotu). `Rating` Pole má maximální délku 5 a `Title` má maximální délku 60. Minimální délka 3 na `Title` a rozsah na `Price` nevytvořil změny schématu.
 
-Zkontrolujte schéma film:
+Zkontrolujte schéma filmu:
 
 ![](adding-validation/_static/image2.png)
 
-Pole řetězce zobrazit nové omezení délky a `Genre` je již zaškrtnuté jako s možnou hodnotou Null.
+Pole řetězců se zobrazí nová omezení délky a `Genre` již proběhne jako s možnou hodnotou Null.
 
-Atributy ověření zadejte chování, které chcete vynutit ve vlastnostech modelu, které se použijí k. `Required` a `MinimumLength` atributy znamená, že vlastnost musí mít hodnotu; ale nic zabrání zadat mezer splňovat toto ověření uživatele. [Regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut se používá k omezení znaků, může být vstup. Ve výše, kódu `Genre` a `Rating` musí používat pouze písmena (bílé místo, číslice a speciální znaky nejsou povoleny). [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) Atribut omezuje hodnota v zadaném rozsahu. `StringLength` Atribut umožňuje nastavit maximální délka ve vlastnosti string a volitelně jeho minimální délka. Typů hodnot (například `decimal, int, float, DateTime`) jsou ze své podstaty potřeba a nepotřebujete `Required` atribut.
+Ověření atributy určují chování, které chcete vynutit na, které se použijí pro vlastnosti modelu. `Required` a `MinimumLength` atributy znamená, že vlastnost musí mít hodnotu, ale nic zabraňuje uživateli v zadávání prázdnými znaky až splňovat toto ověření. [Regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut se používá k omezení znaků, může být vstupní. Ve výše uvedeném kódu `Genre` a `Rating` musí používat jen písmena (prázdné znaky, číslice a speciální znaky nejsou povoleny). [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) Atribut omezuje hodnotu do zadaného rozsahu. `StringLength` Atribut umožňuje nastavit maximální délka vlastnosti typu string a volitelně jeho minimální délka. Typy hodnot (například `decimal, int, float, DateTime`) jsou ze své podstaty povinné a nemusíte `Required` atribut.
 
-Kód nejprve zajistí, že ověřovací pravidla, které jste zadali na třídu modelu, jsou vyžadována před aplikace uloží změny v databázi. Například následující kód vyvolá výjimku [DbEntityValidationException](https://msdn.microsoft.com/library/system.data.entity.validation.dbentityvalidationexception(v=vs.103).aspx) výjimka při `SaveChanges` metoda je volána, protože některé požadované `Movie` chybí hodnoty vlastností:
+Kód nejprve zajistí, že se vynucují ověřovacích pravidel, které jste zadali na třídu modelu, předtím, než se aplikace uloží změny do databáze. Například kód uvedený níže vyvolá [DbEntityValidationException](https://msdn.microsoft.com/library/system.data.entity.validation.dbentityvalidationexception(v=vs.103).aspx) výjimka při `SaveChanges` metoda je volána, protože některé požadované `Movie` hodnoty vlastností nebyly nalezeny:
 
 [!code-csharp[Main](adding-validation/samples/sample4.cs)]
 
-Výše uvedený kód vyvolá následující výjimky:
+Výše uvedený kód vyvolala následující výjimku:
 
-*Ověření se nezdařilo pro jednu nebo více entit. Naleznete ve vlastnosti 'EntityValidationErrors' Další podrobnosti.*
+*Ověření se nezdařilo pro jednu nebo více entit. Viz vlastnost 'EntityValidationErrors' Další podrobnosti.*
 
-S ověřovacích pravidel automaticky vynucováno rozhraní .NET Framework pomáhá zkontrolujte aplikace robustnější. Také zajistí, že nelze zapomenete a ověřit něco nechtěně umožní chybná data do databáze.
+S ověřovací pravidla automaticky vynucuje sada .NET Framework pomáhá vytvářet vaše aplikace odolnější. Také zajistí, že nelze zapomenete něco ověření a neúmyslně nechat chybná data do databáze.
 
 ## <a name="validation-error-ui-in-aspnet-mvc"></a>Chyba ověření uživatelského rozhraní v architektuře ASP.NET MVC
 
-Spusťte aplikaci a přejděte do */Movies* adresy URL.
+Spusťte aplikaci a přejděte */Movies* adresy URL.
 
-Klikněte **vytvořit nový** odkaz na přidání nové videa. Vyplňte formulář s některé neplatné hodnoty. Jakmile jQuery ověřování na straně klienta zjistí chybu, zobrazí chybovou zprávu.
+Klikněte na tlačítko **vytvořit nový** odkaz na přidání nového videa. Vyplňte formulář pomocí některé neplatné hodnoty. Jakmile jQuery ověřování na straně klienta zjistí chyby, zobrazí chybovou zprávu.
 
 ![8_validationErrors](adding-validation/_static/image3.png)
 
 > [!NOTE]
-> pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárkou (",") desetinné čárky, je třeba zahrnout NuGet globalize popsané dříve v tomto kurzu.
+> pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárkou (",") pro desetinné čárky, je nutné zahrnout NuGet globalizace, jak je popsáno výše v tomto kurzu.
 
 
-Všimněte si, jak formulář automaticky použila barvu červené ohraničení zvýrazněte textová pole, které obsahují neplatná data a má vygenerované chybovou zprávu ověření příslušné vedle každé z nich. Chyby se vynucují (pomocí jazyka JavaScript a jQuery) klientské a serverové (v případě, že uživatel, který má JavaScript zakázaná).
+Všimněte si, jak formulář automaticky použila červené ohraničení zvýrazněte textová pole, které obsahují neplatná data a je vyzářeno chybovou zprávu ověření odpovídající vedle každé z nich. Chyby se vynucují straně klienta (pomocí jazyků JavaScript a jQuery) a na straně serveru (v případě má zakázaný JavaScript).
 
-Skutečné výhodou je, že nebyla budete muset změnit jeden řádek kódu `MoviesController` třídy nebo v *Create.cshtml* zobrazení, aby bylo možné povolit toto ověření uživatelského rozhraní. Řadič a zobrazení, které jste vytvořili dříve v tomto kurzu automaticky zachyceny až ověření pravidla, kterou jste zadali pomocí atributů ověření ve vlastnostech `Movie` třída modelu. Test ověření pomocí `Edit` metody akce a stejné ověření platí.
+Skutečné výhodou je, že nemusíte změnit jediný řádek kódu v `MoviesController` třídy nebo *Create.cshtml* zobrazení, chcete-li povolit toto ověření uživatelského rozhraní. Kontroler a zobrazení, které jste vytvořili dříve v tomto kurzu automaticky vybere nahoru ověřovací pravidla, které jste zadali pomocí atributů ověření na vlastnosti `Movie` třída modelu. Test ověření pomocí `Edit` je použít metody akce a stejné ověřování.
 
-Data formuláře není odesílat na server, dokud nejsou žádné chyby ověření straně klienta. Můžete to ověřit umístěním přerušení v metodě HTTP Post, pomocí [nástroj fiddler](http://fiddler2.com/fiddler2/), nebo aplikaci Internet Explorer [nástroje pro vývojáře F12](https://msdn.microsoft.com/ie/aa740478).
+Data formuláře neodešle na server, dokud nedojde k žádným chybám ověření na straně klienta. Můžete to ověřit tak, že vložíte přerušení metodu Post protokolu HTTP s použitím [nástroj fiddler](http://fiddler2.com/fiddler2/), nebo IE [vývojářské nástroje F12 pomáhají](https://msdn.microsoft.com/ie/aa740478).
 
-## <a name="how-validation-occurs-in-the-create-view-and-create-action-method"></a>Dojde k ověření v vytvořením zobrazování a vytváření metody akce
+## <a name="how-validation-occurs-in-the-create-view-and-create-action-method"></a>Jak probíhá ověřování vytvořením zobrazit a vytvořit metody akce
 
-Může vás zajímat, jak byl vygenerován ověření uživatelské rozhraní bez jakýchkoli aktualizací kód v kontroleru nebo zobrazení. Další výpis znázorňuje, co `Create` metody v `MovieController` třída vypadají. Jsou stejné jako u jak je vytvořen v tomto kurzu.
+Může vás zajímat, jak byl vygenerován ověření uživatelského rozhraní bez jakýchkoli aktualizací kódu v kontroleru nebo zobrazení. Následující výpis ukazuje, co `Create` metody v `MovieController` vypadají třídy. Jsou to neliší od jak jste je vytvořili dříve v tomto kurzu.
 
 [!code-csharp[Main](adding-validation/samples/sample5.cs)]
 
-První (HTTP GET) `Create` metoda akce zobrazí počáteční vytvořit formulář. Druhý (`[HttpPost]`) verze zpracovává post formuláře. Druhý `Create` – metoda ( `HttpPost` verze) volání `ModelState.IsValid` zkontrolujte, zda video má všechny chyby ověření. Voláním této metody vyhodnotí všechny atributy ověřování, které byly použity k objektu. Pokud objekt má chyby ověření, `Create` metoda znovu zobrazí formulář. Pokud nejsou žádné chyby, metoda nové film uloží v databázi. V našem příkladu film **formuláře není odeslána na server, pokud nejsou chyby ověření na straně klienta; zjištěna druhá** `Create` **metoda je volána nikdy**. Pokud zakážete JavaScript v prohlížeči, ověření klienta je zakázané a HTTP POST `Create` volání metod `ModelState.IsValid` zkontrolujte, zda video má všechny chyby ověření.
+První (HTTP GET) `Create` zobrazí úvodní formulář vytvořit metody akce. Druhý (`[HttpPost]`) verze zpracovává odeslaného formuláře. Druhá `Create` – metoda ( `HttpPost` verze) volání `ModelState.IsValid` ke kontrole, jestli má tento film všechny chyby ověření. Voláním této metody vyhodnotí všechny atributy ověření, které se použily k objektu. Pokud objekt má chyby ověření, `Create` metoda znovu zobrazí formulář. Pokud nejsou žádné chyby, metoda tento nový film uloží v databázi. V našem příkladu film **formuláři není odeslána na server, pokud nejsou zjištěny na straně klienta; chyby ověřování druhého** `Create` **nikdy volána metoda**. Pokud zakážete jazyka JavaScript v prohlížeči, je zakázáno ověřování na straně klienta a HTTP POST `Create` volání metody `ModelState.IsValid` ke kontrole, jestli má tento film všechny chyby ověření.
 
-Můžete nastavit bod přerušení v `HttpPost Create` metoda a ověřte nikdy volání metody, ověřování na straně klienta nebude odesílat data formuláře, pokud jsou zjištěny chyby ověřování. Pokud zakázat JavaScript v prohlížeči a pak odeslání formuláře s chybami, se setkají místo přerušení. Se stále objevuje úplného ověření bez JavaScript. Následující obrázek ukazuje, jak zakázat JavaScript v aplikaci Internet Explorer.
+Lze nastavit bod přerušení v `HttpPost Create` metoda a ověřit se nikdy nevolá metodu, ověřování na straně klienta nebude odeslat data formuláře, když se zjistí chyby ověření. Pokud zakážete jazyka JavaScript v prohlížeči a pak odesláním formuláře s chybami, se setkají bodu přerušení. Vy i přesto úplného ověření bez jazyka JavaScript. Následující obrázek ukazuje, jak zakázat jazyka JavaScript v aplikaci Internet Explorer.
 
 ![](adding-validation/_static/image5.png)
 
 ![](adding-validation/_static/image6.png)
 
-Následující obrázek ukazuje, jak zakázat JavaScript v prohlížeči FireFox.
+Následující obrázek ukazuje, jak zakázat jazyka JavaScript v prohlížeči FireFox.
 
 ![](adding-validation/_static/image7.png)
 
-Následující obrázek ukazuje, jak zakázat JavaScript v prohlížeči Chrome.
+Následující obrázek ukazuje, jak zakázat jazyka JavaScript v prohlížeči Chrome.
 
 ![](adding-validation/_static/image8.png)
 
-Níže je *Create.cshtml* zobrazit šablonu, která vygeneroval dříve v tomto kurzu. Použije se uvedené výše obě metody akce k zobrazení původního formuláře a znovu ji zobrazit v případě chyby.
+Níže je uvedená *Create.cshtml* zobrazit šablonu, která automaticky dříve v tomto kurzu. Používá se pomocí metody akce, které jsou uvedené výše obě počáteční formulář pro zobrazení a znovu ho zobrazit v případě chyby.
 
 [!code-cshtml[Main](adding-validation/samples/sample6.cshtml?highlight=16-17)]
 
-Všimněte si, jak kód používá `Html.EditorFor` pomocná rutina pro výstup `<input>` element pro každou `Movie` vlastnost. U tohoto pomocníka je volání `Html.ValidationMessageFor` metodu helper. Tyto dvě metody helper pracovat objekt modelu, který je předán zobrazení řadičem (v tomto případě `Movie` objekt). Budou automaticky hledat atributů ověření zadané v modelu a zobrazí chybové zprávy podle potřeby.
+Všimněte si, jak tento kód použije `Html.EditorFor` pomocné rutiny pro výstup `<input>` – element pro každé `Movie` vlastnost. Vedle tohoto pomocníka je volání `Html.ValidationMessageFor` Pomocná metoda. Tyto dvě metody helper pracovat s modelu objektu, který je předán adaptérem k zobrazení (v tomto případě `Movie` objekt). Zobrazují se automaticky pro ověření atributy určené v modelu a zobrazí chybové zprávy podle potřeby.
 
-Co je skutečně dobrý o tento přístup je, že ani řadičem ani `Create` zobrazit šablonu zná nic o skutečné ověřovacích pravidel vynucován nebo o specifické chybové zprávy zobrazují. Ověřovací pravidla a řetězce chyby se zadávají pouze v `Movie` třídy. Tyto stejné ověřovací pravidla budou automaticky použita pro `Edit` zobrazení a jakékoli další zobrazení šablony můžete vytvořit které upravit modelu.
+Co je hodně příjemné o tento přístup je, že žádná z kontroleru ani `Create` zobrazit šablonu nic ví o skutečné ověřovacích pravidel se vynucují nebo specifické chybové zprávy zobrazeny. Ověřovací pravidla a chybové řetězce se zadávají pouze v `Movie` třídy. Tyto stejné ověřovací pravidla se automaticky využije na `Edit` zobrazení a jakékoli další zobrazení šablony můžete vytvořit, upravit model.
 
-Pokud chcete později změnit logiku ověření, můžete tak učinit na jednom místě přidáním atributů ověření modelu (v tomto příkladu `movie` třídy). Nebudete mít starat o různých částech aplikace je nekonzistentní s jak se vynucují pravidla – veškerou logiku ověřování definované na jednom místě se použije everywhere. To zajišťuje kód velmi vyčištění a umožňuje snadno spravovat a momentální. . To znamená, že je budete mít plně ctít zásady *SUCHÝCH* zásadu.
+Pokud chcete později změnit logiku ověřování, můžete k tomu v přesně jedno místo přidávání atributů ověření do modelu (v tomto příkladu `movie` třídy). Není nutné se starat o různé části aplikace, s jakým způsobem se vynucují pravidla nekonzistentní – veškerou logiku ověřování definované na jednom místě, který se použít kdekoli. To zajišťuje velmi čistým kódem a umožňuje snadno vyvíjet a udržovat. A to znamená, že je budete mít plně dodržením *suchého* zásadě.
 
 ## <a name="using-datatype-attributes"></a>Pomocí atributů datový typ
 
-Otevřete *Movie.cs* soubor a zkontrolujte `Movie` třídy. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) Obor názvů poskytuje atributy formátování kromě integrovanou sadu atributů ověření. Provedli jsme již [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) Výčtová hodnota, datum vydání a pole cena. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti s příslušnou [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut.
+Otevřít *Movie.cs* souboru a zkoumat `Movie` třídy. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) Obor názvů obsahuje atributy formátování kromě integrovaná sada atributů ověření. Už jsme použili [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) hodnota výčtu datum vydání a na pole price. Následující kód ukazuje `ReleaseDate` a `Price` vlastnosti příslušnou [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut.
 
 [!code-csharp[Main](adding-validation/samples/sample7.cs)]
 
-[Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy pouze poskytovat pro modul zobrazení pro zobrazení dat (a zadejte atributy, jako `<a>` pro adresy URL a `<a href="mailto:EmailAddress.com">` e-mailu. Můžete použít [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut pro ověření formátu dat. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut slouží k určení datový typ, který je specifičtější než vnitřní typ databáze, jsou ***není*** atributů ověření. V tomto případě chceme jenom udržování přehledu o datum, není datum a čas. [Datový typ výčtu](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) poskytuje pro mnoho typů dat, jako například *datum, čas, telefonní číslo, měny, EmailAddress* a další. `DataType` Atributu můžete také povolit aplikace automaticky poskytnout konkrétní typ funkce. Například `mailto:` může vytvořit odkaz pro [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), a datum selektor lze zadat pro [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) v prohlížečích podporujících [HTML5](http://html5.org/). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy vysílá standardu HTML 5 [data -](http://ejohn.org/blog/html-5-data-attributes/) (vyslovováno *data dash*) atributy, které můžete porozumět standardu HTML 5 prohlížeče. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy neposkytují žádné ověření.
+[Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy pouze poskytnout nápovědu pro modul zobrazení pro zobrazení dat (a zadat atributy například `<a>` pro adresy URL a `<a href="mailto:EmailAddress.com">` e-mailu. Můžete použít [regulární výraz](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) atribut pro ověření formátu data. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut se používá k určení datový typ, který je specifičtější než vnitřní typ databáze, jsou ***není*** atributů ověření. V tomto případě chceme jenom udržovat přehled o datum, nejsou data a času. [Datový typ výčtu](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) poskytuje pro mnoho typů dat, například *datum, čas, telefonní číslo, Měna, EmailAddress* a provádění dalších akcí. `DataType` Atribut můžete také povolit aplikace a zajistit tak automaticky specifické pro typ funkce. Například `mailto:` propojení lze vytvořit pro [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), a selektor date lze zadat pro [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) v prohlížečích podporujících [HTML5](http://html5.org/). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy vysílá HTML 5 [data -](http://ejohn.org/blog/html-5-data-attributes/) (vyslovováno *data dash*) atributy, které umožní pochopit prohlížeče HTML 5. [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributy se neposkytuje žádné ověřování.
 
-`DataType.Date` neurčuje formát data, které se zobrazí. Ve výchozím nastavení, zobrazí se pole dat podle výchozích formátů podle serveru [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
+`DataType.Date` neurčuje formátu, který se zobrazí datum. Ve výchozím nastavení, zobrazí se pole data podle výchozí formát založený na serveru [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx).
 
-`DisplayFormat` Atribut slouží k explicitnímu zadání formát data:
+`DisplayFormat` Atribut se používá s ohledem na formát data:
 
 
 [!code-csharp[Main](adding-validation/samples/sample8.cs)]
 
 
-`ApplyFormatInEditMode` Nastavení určuje, že zadané formátování také bude použito při hodnota je zobrazena v textovém poli pro úpravy. (Který není vhodné pro některá pole – například pro hodnoty měny, nemusí chcete symbolu měny do textového pole pro úpravy.)
+`ApplyFormatInEditMode` Nastavení určuje, že zadané formátování také bude použito při hodnota se zobrazí v textovém poli pro úpravu. (Pokud nechcete pro některá pole – například pro hodnoty měny, nemusí chcete symbol měny v textovém poli pro úpravu.)
 
-Můžete použít [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut podle sám sebe, ale obecně je vhodné používat [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) také atribut. `DataType` Přenese tak atribut *sémantiku* dat, jako byl proti na tom, jak vykreslit ho na obrazovce a nabízí následující výhody, které není dostupná s `DisplayFormat`:
+Můžete použít [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut samotný, ale to je obecně vhodné použít [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) také atribut. `DataType` Atribut přenáší *sémantiku* dat jako rozdíl od vykreslování na obrazovce a nabízí následující výhody, které vám s `DisplayFormat`:
 
-- V prohlížeči můžete povolit funkce HTML5 (např. k zobrazení ovládacího prvku kalendář, symbolu měny vhodné národního prostředí, e-mailu odkazy, atd.).
-- Ve výchozím nastavení, prohlížeč bude vykreslovat data správný formát na základě vaší [národního prostředí](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
-- [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributu můžete povolit MVC na výběr šablony pravé pole k poskytnutí dat ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) pokud používá samotné používá šablonu řetězec). Další informace najdete v tématu Brad Wilson [ASP.NET MVC 2 šablony](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (I když napsané pro MVC 2, tento článek stále platí pro aktuální verzi ASP.NET MVC.)
+- Funkce HTML5 (pro příklad, který znázorňuje ovládacího prvku kalendář, symbol měny odpovídající národní prostředí, odkazy na e-mailu, atd.) můžete povolit v prohlížeči.
+- Ve výchozím prohlížeči bude vykreslovat data ve správném formátu, na základě vašich [národní prostředí](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx).
+- [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut můžete povolit MVC zvolit šablonu pravé pole k poskytnutí dat ( [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) pokud používá sama používá šablony řetězce). Další informace najdete v tématu Brada Wilsona [šablony ASP.NET MVC 2](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). (I když napsané pro MVC 2, tento článek stále platí pro aktuální verzi technologie ASP.NET MVC.)
 
-Pokud použijete `DataType` atribut s poli data, budete muset určit `DisplayFormat` atribut také, aby se zajistilo, že pole správně vykreslení v prohlížeči Chrome. Další informace najdete v tématu [tohoto podprocesu StackOverflow](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie).
+Pokud používáte `DataType` atribut pomocí pole pro datum, budete muset zadat `DisplayFormat` atribut také aby se správně vykresluje pole v prohlížečích Chrome. Další informace najdete v tématu [toto vlákno na StackOverflow](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie).
 
 > [!NOTE]
-> k ověřování jQuery nefunguje s [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Například následující kód bude vždy zobrazovat chyby ověření straně klienta, i v případě, že datum je v zadaném rozsahu:
+> k ověřování jQuery nefunguje s [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Například následující kód se vždy zobrazí chyba ověření na straně klienta, i v případě, že datum je v zadaném rozsahu:
 > 
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
-> Budete muset zakázat ověřování jQuery datum používat [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut s [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Je obecně není vhodné zkompilovat pevného data v modely, takže pomocí [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a [data a času](https://msdn.microsoft.com/library/system.datetime.aspx) se nedoporučuje.
+> Je potřeba zakázat ověřování jQuery data použít [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atributem [data a času](https://msdn.microsoft.com/library/system.datetime.aspx). Není obvykle vhodné pro kompilaci pevného data ve vašich modelů použít [rozsah](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) atribut a [data a času](https://msdn.microsoft.com/library/system.datetime.aspx) se nedoporučuje.
 
 
-Následující kód ukazuje kombinování atributy na jeden řádek:
+Následující kód ukazuje kombinace atributů na jednom řádku:
 
 [!code-csharp[Main](adding-validation/samples/sample10.cs?highlight=6,10)]
 
-V další části řady, jsme budete zkontrolujte, zda aplikace a některá vylepšení pro automaticky generované `Details` a `Delete` metody.
+V další části série, přidáme zkontrolujte, zda aplikace a vylepšování některé automaticky generované `Details` a `Delete` metody.
 
 > [!div class="step-by-step"]
 > [Předchozí](adding-a-new-field.md)

@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-draggable-panel-extender
-title: '[Jak na:] Použití rozšíření ASP.NET AJAX Přetahovatelným panelu? | Microsoft Docs'
+title: '[Postup:] Použít zařízení Extender Přetažitelného panelu technologie ASP.NET AJAX? | Dokumentace Microsoftu'
 author: JoeStagner
-description: S rozšiřující Přetahovatelným panely ASP.NET AJAX můžete zadat panelu obsah hlavičky oblasti, která umožňuje uživatelům přesunout panelu kolem webové stránky.
+description: S Extender Přetažitelného panelu technologie ASP.NET AJAX můžete poskytovat panelu obsahu oblast záhlaví, který umožňuje uživateli přesunutí panelu kolem webové stránky.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/31/2007
 ms.topic: article
 ms.assetid: 6f93a786-93f3-4a48-8fd5-001016550619
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-draggable-panel-extender
 msc.type: video
-ms.openlocfilehash: 6bdcf825d8e8f4a0e24d0b8455bb5f8947085833
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6f276afcca6796ee39a344fc5cfd2e96e24f7098
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880853"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362450"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-draggable-panel-extender"></a>[Jak na:] Použití rozšíření ASP.NET AJAX Přetahovatelným panelu?
+<a name="how-do-i-use-the-aspnet-ajax-draggable-panel-extender"></a>[Postup:] Použít zařízení Extender Přetažitelného panelu technologie ASP.NET AJAX?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-S rozšiřující Přetahovatelným panely ASP.NET AJAX můžete zadat panelu obsah hlavičky oblasti, která umožňuje uživatelům přesunout panelu kolem webové stránky.
+S Extender Přetažitelného panelu technologie ASP.NET AJAX můžete poskytovat panelu obsahu oblast záhlaví, který umožňuje uživateli přesunutí panelu kolem webové stránky.
 
 [&#9654;Podívejte se na video (6 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-draggable-panel-extender)
 

@@ -1,227 +1,226 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
-title: 'Iterace #5 – testů jednotek vytvořit (C#) | Microsoft Docs'
+title: 'Iterace #5 – vytvoření testů jednotek (C#) | Dokumentace Microsoftu'
 author: microsoft
-description: V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro o...
+description: V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro o...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
 ms.topic: article
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7a61b5791a40088df9d27f7b1bd37df1831ef22b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6466e7332e0e11420a0e99c77a87a7cddc0e34e2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30875575"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37372401"
 ---
-<a name="iteration-5--create-unit-tests-c"></a>Iterace #5 – vytvoření testování částí (C#)
+<a name="iteration-5--create-unit-tests-c"></a>Iterace #5 – vytvoření testů jednotek (C#)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-[Stáhněte si kód](iteration-5-create-unit-tests-cs/_static/contactmanager_5_cs1.zip)
+[Stáhnout kód](iteration-5-create-unit-tests-cs/_static/contactmanager_5_cs1.zip)
 
-> V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro naše řadiče a logiku ověření.
-
-
-## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Vytvoření aplikace ASP.NET MVC správy kontaktů (C#)
-
-Z této série kurzů využijeme celou aplikaci obraťte se na správu od začátku ukončíte. Obraťte se na správce aplikace umožňuje ukládat kontaktní údaje - názvy, telefonní čísla a e-mailové adresy – seznam osob.
-
-Přes několikrát jsme sestavení aplikace. S každé iteraci jsme postupně zlepšení aplikace. Cílem tohoto více iterace přístupu je vám umožní pochopit důvod pro každé změně.
-
-- Iterace #1 – Vytvoření aplikace. V první iteraci vytvoříme obraťte se na správce v nejjednodušší způsob, jak to možné. Nemůžeme přidat podporu pro základní databázových operací: vytvořit, číst, aktualizovat a odstranit (CRUD).
-
-- Iterace #2 – zpřístupnění aplikace vypadat dobrý. V této iteraci můžeme vylepšit vzhled aplikace Úprava výchozí stránky předlohy zobrazení ASP.NET MVC a stylů CSS.
-
-- Iterace #3 – přidání ověřování formuláře. V třetím iteraci přidáme ověření základní formulář. Jsme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Můžeme také ověřit e-mailových adres a telefonních čísel.
-
-- Iterace #4 - li aplikaci volně vázány. V této třetí iteraci jsme využít výhod několik softwaru vzory návrhu na bylo snazší spravovat a upravovat aplikace obraťte se na správce. Například můžeme Refaktorovat naše aplikace pro použití vzoru úložiště a vzoru vkládání závislostí.
-
-- Iterace #5 – vytvoření testování částí. V páté iteraci jsme snadněji naše aplikace spravovat a upravovat přidáním testování částí. Jsme model třídy modelu našich dat a vytvářet testy částí pro naše řadiče a logiku ověření.
-
-- Iterace #6 - použití vývoje řízeného testováním. V této šesté iteraci přidáme nové funkce pro naši aplikaci tak, že nejprve zápis testů částí a psaní kódu pro testování částí. V této iteraci přidáme kontaktní skupiny.
-
-- Iterace #7 – přidání funkci Ajax. V sedmého iteraci jsme přidáním podpory pro Ajax zvýšit rychlost reakce a výkon aplikace.
+> V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro naše řadiče a logiku ověřování.
 
 
-## <a name="this-iteration"></a>Tato iterace
+## <a name="building-a-contact-management-aspnet-mvc-application-c"></a>Vytvoření aplikace ASP.NET MVC pro správu kontaktů (C#)
 
-V předchozí iteraci aplikace, obraťte se na správce jsme rozdělili aplikaci se víc volně vázány. Jsme oddělené aplikaci do různých řadič, služby a vrstvy úložiště. Jednotlivé úrovně komunikuje s vrstvy pod ním prostřednictvím rozhraní.
+V této sérii kurzů jsme integrovali celou aplikaci kontakt správy od začátku na dokončení. Obraťte se na správce aplikace umožňuje ukládat kontaktní údaje - jména, telefonní čísla a e-mailové adresy – seznam lidí.
 
-Jsme rozdělili aplikace, abyste mohli snadněji spravovat a upravovat aplikace. Například pokud je potřeba použít novou technologií přístupu data, můžete nám jednoduše změnit vrstvy úložiště bez zásahu do řadiče nebo vrstva služby. Tím, že správce kontaktujte volně vázány, jsme sunout provedené aplikace odolnější vůči změnit.
+Vytváříme aplikaci přes více iterací. S každou iterací zvyšujeme postupně aplikace. Cílem tohoto přístupu s více iterace je vám pomohl pochopit důvod pro každou změnu.
 
-Ale co se stane, když je potřeba přidat novou funkci obraťte se na správce aplikace? Nebo, co se stane, když jsme oprava chyby? Sad, ale i Principy pravdivosti psaní kódu je, že vždy, když touch kódu vytvoříte nebezpečí nové chyby.
+- Iterace #1 – Vytvoření aplikace. V první iteraci vytvoříme Správce kontaktů v Nejjednodušším způsobem, jak je to možné. Přidáváme podporu pro základní databázových operací: vytváření, čtení, aktualizace a odstranění (CRUD).
 
-Například jemné jeden den, Správce může zobrazit dotaz můžete přidat nové funkce, obraťte se na správce. Jana chce můžete přidat podporu pro skupiny kontaktu. Jana chce vám umožňuje uživatelům uspořádání jejich kontakty do skupin jako je například přátel, obchodních a tak dále.
+- Ujistěte se, iterace #2 – vylepšení vzhledu aplikace. V této iterace můžeme zlepšit vzhled aplikace tak, že změna výchozích hlavní stránka zobrazení ASP.NET MVC a stylů CSS.
 
-Chcete-li implementovat tuto novou funkci, budete muset upravit všechny tři vrstvy aplikace, obraťte se na správce. Budete muset přidat další nové funkce v řadičích, vrstvě služby a úložiště. Jakmile začnete měnit kód, riskujete přerušení funkce, který odpracoval před.
+- Iterace #3 – Přidání ověřovacího formuláře. Ve třetí iterace přidáme ověření základní formulář. Můžeme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také ověření e-mailových adres a telefonních čísel.
 
-Refaktoring naše aplikace na samostatné vrstvy, jako jsme to udělali v předchozí iteraci byl dobré. Bylo dobré, protože umožňuje nám dělat změny na celý vrstvy bez zásahu zbývající aplikace. Ale pokud budete chtít snadněji spravovat a upravovat kód v rámci vrstvy, budete muset vytvářet testy částí pro kód.
+- Iterace #4 – vytvoření volně spárované aplikace. V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
 
-Můžete použít jinou jednotku testu jednotlivá jednotka kódu. Tyto jednotky kódu jsou menší než vrstvy celou aplikaci. Testování částí se obvykle používají k ověření, jestli konkrétní metoda ve vašem kódu chová očekávaným způsobem. Například by vytvořit testů jednotek pro metodu CreateContact() vystavené ContactManagerService třídy.
+- Iterace #5 – vytvoření testů jednotek. V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro naše řadiče a logiku ověřování.
 
-Testování částí pro pracovní aplikace, která je jenom jako bezpečnostní opatření. Vždy, když upravíte kódu v aplikaci, můžete spustit sadu testů jednotek pro zkontrolujte, zda úpravy dělí stávající funkce. Testování částí byl váš kód bezpečné upravit. Testování částí zajistěte všechny kódu v aplikaci odolnější vůči změnit.
+- Iterace #6 – použití vývoje řízeného testováním. V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace můžeme přidat skupiny kontaktů.
 
-V této iteraci přidáme testování částí pro naši aplikaci obraťte se na správce. Tímto způsobem v další iterace jsme můžete přidat skupiny obraťte se na naše aplikace bez obav o pozastavení stávající funkce.
-
-> [!NOTE] 
-> 
-> Existují různé platformy včetně NUnit, xUnit.net a MbUnit testování částí. V tomto kurzu používáme jednotky testování framework zahrnutá v sadě Visual Studio. Však můžete stejným způsobem použít jednu z těchto alternativní architektury.
+- Iterace #7 – přidání funkcí Ajax. V sedmé iteraci můžeme zlepšit rychlost reakce a výkon naší aplikace tak, že přidáte podporu pro Ajax.
 
 
-## <a name="what-gets-tested"></a>Získá testů, které
+## <a name="this-iteration"></a>Tuto iteraci
 
-V ideálním veškerý kód by být pokryté komponentami testování částí. V ideálním můžete být ideální bezpečnostní opatření. Bude moci upravit každý řádek kódu v aplikaci a okamžitě vědět, spuštěním testů jednotek, zda změna překročila stávající funkce.
+V předchozí iteraci aplikace Správce kontaktů jsme rozdělili do více volně spárované aplikace. Jsme oddělené aplikaci do různých kontroler, služby a vrstvy úložiště. Každá vrstva komunikuje s vrstvy pod ní prostřednictvím rozhraní.
 
-Ale jsme nejsou zobrazeny t za provozu v ideálním. V praxi, když zápis testů částí které soustředit se jenom na zápis testů pro obchodní logiky (například logiku ověření). Konkrétně můžete *nepodporují* zápis testů částí data přístup logiky nebo logika zobrazení.
+Jsme rozdělili aplikace, aby aplikace lépe spravovat a upravovat. Například pokud bychom někdy potřebovali novou technologii přístup data, můžeme jednoduše změnit vrstvu úložiště bez zásahu do kontroleru nebo vrstva služby. Tím, že správce kontaktů volně propojené a jsme uložit provedené aplikace odolnější vůči změnit.
 
-Chcete-li být užitečné, třeba testy jednotek spustit velmi rychle. Snadno můžete shromažďujete stovky (nebo dokonce tisíce) testování částí pro aplikaci. Pokud testy jednotek trvat dlouhou dobu spuštění budete vyhnout, jejich spuštění. Jinými slovy dlouhotrvající testů jednotek jsou nepoužitelná pro účely kódování den.
+Ale co se stane, když je potřeba přidat nové funkce do aplikace Správce kontaktů? Nebo co se stane, když jsme opravy chyby? Líto, že odcházíte, ale také ověřené pravdy psaní kódu, který je v každé touch vytvoříte riziko zavlečení nových chyb kódu.
 
-Z tohoto důvodu je obvykle Nezapisovat testy částí pro kód, který komunikuje s databází. Spuštěným stovky testování částí pro online databáze může být příliš pomalé. Místo toho model databáze a napsat kód, který komunikuje s databází imitované (probereme, že mocking databázi níže).
+Například jeden den v pořádku, Správce může vás požádat o novou funkci přidat do Správce kontaktů. Můžete přidat podporu pro skupiny kontaktu chce. Jana chce, abyste uživatelům uspořádat si kontakty do skupiny, například přátel, firmy a tak dále.
 
-Podobné z jiného důvodu je obvykle Nezapisovat testování částí pro zobrazení. Chcete-li otestovat zobrazení, musí začne pracovat webovém serveru. Protože roztočený webový server je relativně pomalé proces, není doporučeno vytvářet testy částí pro zobrazení.
+Aby bylo možné implementovat tuto novou funkci, budete muset změnit všechny tři vrstvy aplikace Správce kontaktů. Bude potřeba přidat nové funkce do řadiče, vrstva služby a úložiště. Jakmile začnete upravovat kód, riskujete dopadem na dřívější kód funkce, které fungovalo.
 
-Pokud zobrazení obsahuje složitý logiku měli zvážit, přesun logiku do pomocné metody. Můžete napsat testy částí pro pomocné metody, které se provedou bez roztočený webový server.
+Refaktoring naší aplikace do samostatných vrstev, jako jsme to udělali v předchozí iteraci byla dobrá věc. To byl dobrá věc, protože umožňuje nám zvýšit celý vrstvy provádět změny bez zásahu do zbývajících částí aplikace. Ale pokud chcete lépe spravovat a upravovat kód v rámci vrstvy, musíte vytvořit testy jednotek pro kód.
+
+Použijete jednotka testu jednotlivých částí kódu. Tyto jednotky kódu jsou menší než vrstvy celé aplikace. Testování částí se obvykle používají k ověření, jestli konkrétní metody v kódu se chová způsobem, který očekáváte. Například by vytvoření testování částí pro metodu CreateContact() vystavené ContactManagerService třídy.
+
+Testy jednotek pro pracovní aplikace, která je jenom jako bezpečnostní. Pokaždé, když upravíte kódu v aplikaci, můžete spustit sady testů jednotek ke kontrole, jestli úpravy přeruší stávající funkce. Testy jednotek byl kód bezpečně upravovat. Testy jednotek Ujistěte se, veškerý kód ve vaší aplikaci odolnější vůči změnit.
+
+V této iterace přidáme k naší aplikace Správce kontaktů testování částí. Tímto způsobem, při příští iteraci, můžeme přidat skupiny kontaktu pro naši aplikaci bez starostí o zásadní stávajících funkcí.
 
 > [!NOTE] 
 > 
-> Při psaní testů pro logiku data přístup, nebo zobrazení logiku není vhodné při zápis testů částí při sestavování funkční nebo integrace testů může být velmi cenné tyto testy.
+> Existují různé architektury, včetně MbUnit, NUnit a xUnit.net testování částí. V tomto kurzu používáme jednotkových testů součástí sady Visual Studio. Však stejně snadno můžete jedno z těchto alternativních rozhraní.
+
+
+## <a name="what-gets-tested"></a>Co získá testování
+
+V ideálním všech kódů by být pokryté komponentami testování částí. V ideálním budete mít dokonalý bezpečnostní. By moci upravit libovolném řádku kódu v aplikaci a vědět, okamžitě, spuštěním testování částí, zda tato změna se podařilo přerušit stávajících funkcí.
+
+Můžeme ale nejsou t za provozu v ideálním. V praxi, při psaní testů jednotek můžete soustředit na psaní testů pro vaši obchodní logiku (například logiku ověřování). Konkrétně můžete *nejsou* vytvořte jednotkové testy pro vaše data přístup logiku nebo logice zobrazení.
+
+Aby byly užitečné, musí spustit testy jednotek velmi rychle. Snadno můžete shromažďujete stovkách (nebo dokonce tisících) testů jednotek pro aplikace. Pokud trvat dlouhou dobu pro spuštění testů jednotek budete vyhnout, jejich spuštění. Jinými slovy jsou zbytečné pro každodenní kódování, účely dlouhodobě spuštěných testů jednotek.
+
+Z tohoto důvodu se obvykle nenapíšete testů jednotek pro kód, který komunikuje s databází. Provozování testů jednotek pro živé databáze může být pomalý. Místo toho napodobení databáze a napsat kód, který komunikuje s mock databáze (podíváme na to napodobování databázi níže).
+
+Ze stejného důvodu obvykle nenapíšete testů jednotek pro zobrazení. Aby bylo možné testovat zobrazení, musíte aktivovat webový server. Vzhledem k tomu vybudujete webový server je poměrně pomalý proces, vytváření testů jednotek pro zobrazení se nedoporučuje.
+
+Pokud zobrazení obsahuje složitější logiku byste zvážit, přesun logiku do metody Helper. Můžete psát testy jednotek pro pomocné metody, které jsou spuštěny bez rozbíhání webový server.
+
+> [!NOTE] 
+> 
+> Při psaní testů pro logikou přístupu k datům nebo zobrazení logiky není vhodné při psaní testů jednotek, tyto testy může být velmi důležité, při vytváření funkční nebo integraci testů.
 
 
 > [!NOTE] 
 > 
-> ASP.NET MVC je modul zobrazení webových formulářů. Zatímco modul Web Forms zobrazení je závislé na webovém serveru, nemusí být další moduly zobrazení.
+> ASP.NET MVC je webové formuláře zobrazovací modul. Webové formuláře zobrazovací modul je závislé na webovém serveru, nemusí být ostatní moduly zobrazení.
 
 
-## <a name="using-a-mock-object-framework"></a>Pomocí rozhraní Mock objektu
+## <a name="using-a-mock-object-framework"></a>Pomocí Mock objektu Framework
 
-Při vytváření testů jednotek, musíte téměř vždy využít architekturu model objektu. Model objektu rozhraní umožňuje vytvářet mocks a zástupných procedur pro třídy v aplikaci.
+Při vytváření testů jednotek, musíte téměř vždy využít architekturu napodobení objektu. Napodobení objektu rozhraní umožňuje vytvářet mocks a zástupných procedur pro třídy ve vaší aplikaci.
 
-Například můžete použít model objektu rozhraní k vygenerování verzi mock vaší třídy úložiště. Tímto způsobem třídu imitované úložiště můžete použít místo třídu skutečné úložiště v testů jednotek. Pomocí mock úložiště umožňuje vyhnout se provádění kódu databáze při provádění testů jednotek.
+Například můžete použít rozhraní napodobení objekt ke generování verzi mock třídy úložiště. Tímto způsobem třídu mock úložiště můžete použít namísto třídy skutečné úložiště v rámci testování součástí. Pomocí mock úložiště umožňuje vyhnout se provádění kódu databáze při provádění testu jednotek.
 
-Visual Studio nezahrnuje framework model objektu. Existuje však několik architektury model objektu komerční s otevřeným zdrojem k dispozici pro rozhraní .NET framework:
+Visual Studio nezahrnuje framework napodobení objektu. Existují však několik komerční s otevřeným zdrojovým kódem napodobení objekt k dispozici pro rozhraní .NET framework:
 
-1. Moq – toto rozhraní je k dispozici v rámci licence BSD s otevřeným zdrojem. Můžete si stáhnout Moq z [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/).
-2. Rhino Mocks – toto rozhraní je k dispozici v části s otevřeným zdrojem BSD licencí. Můžete si stáhnout Rhino Mocks z [ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx).
-3. Typemock Odpojovač - Toto je komerční framework. Můžete si stáhnout zkušební verzi z [ http://www.typemock.com/ ](http://www.typemock.com/).
+1. Moq - toto rozhraní je k dispozici v rámci licence BSD open source. Můžete si stáhnout Moq z [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/).
+2. Rhino Mocks – toto rozhraní je k dispozici v rámci licence BSD open source. Můžete si stáhnout Rhino Mocks z [ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx).
+3. Typemock Odpojovač – to je komerční rozhraní. Můžete stáhnout zkušební verzi z [ http://www.typemock.com/ ](http://www.typemock.com/).
 
-V tomto kurzu rozhodli používat Moq. Ale můžete stejným způsobem použít Rhino Mocks nebo Typemock Odpojovač vytvořit model objektů aplikace obraťte se na správce.
+V tomto kurzu jsem se rozhodla používat Moq. Však stejně snadno můžete Rhino Mocks nebo Typemock Odpojovač vytvořit model objektů aplikace Správce kontaktů.
 
-Než budete moct použít Moq, je třeba provést následující kroky:
+Před použitím Moq, budete muset provést následující kroky:
 
 1. .
-2. Předtím, než jste rozbalte stahování, ujistěte se, klikněte pravým tlačítkem na soubor a klikněte na tlačítko s názvem bez přípony **Odblokovat** (viz obrázek 1).
-3. Rozbalte stahování.
-4. Přidat odkaz na sestavení Moq pravým tlačítkem na složku odkazů v projektu ContactManager.Tests a výběrem **přidat odkaz na**. Na kartě Procházet přejděte do složky, kde jste rozbalené Moq a vyberte Moq.dll sestavení. Klikněte **OK** tlačítko.
-5. Po dokončení těchto kroků složce odkazy by měl vypadat jako na obrázku 2.
+2. Předtím, než můžete rozbalit soubor ke stažení, ujistěte se, že pravým tlačítkem myši na soubor a klikněte na tlačítko s popiskem **Odblokovat** (viz obrázek 1).
+3. Rozbalte stažený soubor.
+4. Přidat odkaz na sestavení Moq tak, že kliknete pravým tlačítkem na složku odkazy v projektu ContactManager.Tests a vyberete **přidat odkaz**. Na kartě Procházet přejděte do složky, kde odblokujte Moq a vyberte Moq.dll sestavení. Klikněte na tlačítko **OK** tlačítko.
+5. Po dokončení těchto kroků složky odkazů by měl vypadat jako na obrázku 2.
 
 
 [![Odblokování Moq](iteration-5-create-unit-tests-cs/_static/image1.jpg)](iteration-5-create-unit-tests-cs/_static/image1.png)
 
-**Obrázek 01**: odblokování Moq ([Kliknutím zobrazit obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image2.png))
+**Obrázek 01**: odblokování Moq ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image2.png))
 
 
 [![Po přidání Moq odkazy](iteration-5-create-unit-tests-cs/_static/image2.jpg)](iteration-5-create-unit-tests-cs/_static/image3.png)
 
-**Obrázek 02**: odkazy po přidání Moq ([Kliknutím zobrazit obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image4.png))
+**Obrázek 02**: odkazy po přidání Moq ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image4.png))
 
 
-## <a name="creating-unit-tests-for-the-service-layer"></a>Testování částí pro vrstvu služby
+## <a name="creating-unit-tests-for-the-service-layer"></a>Vytváření testů jednotek pro vrstvu služby
 
-Umožní s začněte vytvořením sadu testů jednotek pro vrstvu služby s aplikací naše obraťte se na správce. Chcete-li ověřit ověřovací logiku použijeme tyto testy.
+Umožní s začněte vytvořením sady testů jednotek pro vrstvu služby s aplikací naše Správce kontaktů. Použijeme tyto testy k ověření naší logiku ověřování.
 
-Vytvořte novou složku s názvem modely v ContactManager.Tests projektu. V dalším kroku klikněte pravým tlačítkem na složku modely a vyberte **přidat, nový Test**. **Přidat nový Test** otevře se dialogové okno znázorněný na obrázku 3. Vyberte **jednotkové testování** šablony a pojmenujte nový test ContactManagerServiceTest.cs. Klikněte **OK** tlačítko přidáte nový test pro projekt Test.
+Vytvořte novou složku s názvem modely v projektu ContactManager.Tests. V dalším kroku klikněte pravým tlačítkem na složku modely a vyberte **přidat, nový Test**. **Přidat nový Test** se zobrazí dialogové okno je znázorněno na obrázku 3. Vyberte **testování částí** šablony a pojmenujte nový test ContactManagerServiceTest.cs. Klikněte na tlačítko **OK** tlačítko Přidat nový test do projektu Test.
 
 > [!NOTE] 
 > 
-> Obecně platí budete chtít struktura složek testovacího projektu tak, aby odpovídaly struktura složek projektu ASP.NET MVC. Například řadič testy umístit do složky řadiče, model testů ve složce modely a tak dále.
+> Obecně byste měli strukturu složky pro testovací projekt tak, aby odpovídaly struktuře složky vašeho projektu ASP.NET MVC. Například umístit kontroleru testů ve složce řadiče testů modelu ve složce modely a tak dále.
 
 
 [![Models\ContactManagerServiceTest.cs](iteration-5-create-unit-tests-cs/_static/image3.jpg)](iteration-5-create-unit-tests-cs/_static/image5.png)
 
-**Obrázek 03**: Models\ContactManagerServiceTest.cs ([Kliknutím zobrazit obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image6.png))
+**Obrázek 03**: Models\ContactManagerServiceTest.cs ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image6.png))
 
 
-Na začátku chceme test CreateContact() metody vystavené ContactManagerService třídy. Vytvoříme následujících pět testů:
+Na začátku chceme otestovat CreateContact() metoda použitá v třídě ContactManagerService. Vytvoříme následujících pět testů:
 
-- CreateContact() - testy této CreateContact() vrátí hodnotu true, pokud je platný kontakt předaný metodě.
-- CreateContactRequiredFirstName() - testy, zda je přidána chybová zpráva do stavu modelu, když kontakt s chybějící křestní jméno je předaný metodě CreateContact().
-- CreateContactRequredLastName() - testy, zda je přidána chybová zpráva do stavu modelu, když kontakt s chybějící příjmení je předaný metodě CreateContact().
-- CreateContactInvalidPhone() - testy, zda je přidána chybová zpráva do stavu modelu, když kontakt s neplatným telefonním číslem je předaný metodě CreateContact().
-- CreateContactInvalidEmail() - testy, zda je přidána chybová zpráva do stavu modelu, když kontakt s neplatnou e-mailovou adresou je předaný metodě CreateContact()...
+- CreateContact() - testů tohoto CreateContact() vrátí hodnotu true, pokud platný kontakt je předán do metody.
+- CreateContactRequiredFirstName() - testy, chybová zpráva se přidá do stavu modelu při kontaktu s chybějící křestní jméno se předá metodě CreateContact().
+- CreateContactRequredLastName() - testy, chybová zpráva se přidá do stavu modelu při kontaktu s chybějící příjmení se předá metodě CreateContact().
+- CreateContactInvalidPhone() - testy, chybová zpráva se přidá do stavu modelu při kontaktu s neplatným telefonním číslem se předá metodě CreateContact().
+- CreateContactInvalidEmail() - testy, chybová zpráva se přidá do stavu modelu při kontaktu s neplatnou e-mailovou adresu se předá metodě CreateContact()...
 
-První test ověřuje, že a obraťte se na platný nevygeneruje chybu ověření. Zbývající testy zkontrolujte jednotlivých pravidel ověřování.
+První test ověří, že platný kontakt nevygeneruje chybu ověřování. Zbývající testy zkontrolujte všech ověřovacích pravidel.
 
-Kód pro tyto testy je obsažený v výpis 1.
+Kód pro tyto testy je obsažen v informacích 1.
 
-**Listing 1 - Models\ContactManagerServiceTest.cs**
+**Výpis 1 - Models\ContactManagerServiceTest.cs**
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample1.cs)]
 
 
-Protože třída kontaktu jsme se používá v výpis 1, je potřeba přidat odkaz na rozhraní Entity Framework Microsoft do našich testovacího projektu. Přidáte odkaz na sestavení System.Data.Entity.
+Protože používáme třídy kontakt v informacích 1, potřebujeme přidat odkaz na rozhraní Entity Framework společnosti Microsoft do našich testovacího projektu. Přidáte odkaz na sestavení System.Data.Entity.
 
 
-Výpis 1 obsahuje metodu s názvem inicializaci(), který je upraven pomocí atributu [TestInitialize]. Tato metoda je volána automaticky, než se spustí všechny testy jednotek (nazývá se 5krát bezprostředně před všechny testy jednotek). Metoda inicializaci() vytvoří imitované úložiště s následující řádek kódu:
+Výpis 1 obsahuje metodu s názvem Initialize(), který je upraven pomocí atributu [TestInitialize]. Tato metoda je volána automaticky před spuštěním každého testu jednotek (5krát je volána bezprostředně před každou testování částí). Metodu Initialize() vytvoří mock úložiště s následující řádek kódu:
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample2.cs)]
 
-Tento řádek kódu používá ke generování imitované úložiště z rozhraní IContactManagerRepository Moq framework. Imitované úložiště se používá namísto skutečné EntityContactManagerRepository předejdete přístup k databázi, když se spustí každý testování částí. Implementuje metodu rozhraní IContactManagerRepository imitované úložiště, ale t Tento metody ve skutečnosti provádět žádné kroky.
+Tento řádek kódu používá ke generování mock úložiště z rozhraní IContactManagerRepository Moq framework. Mock úložiště se používá namísto skutečné EntityContactManagerRepository pro zabránění přístupu k databázi, když se spustí každý Jednotkový test. Mock úložiště implementuje metodu rozhraní IContactManagerRepository, ale t don metody skutečně provádět.
 
 > [!NOTE] 
 > 
-> Pokud používáte Moq framework, je rozdíl mezi \_mockRepository a \_mockRepository.Object. Bývalé odkazuje model&lt;IContactManagerRepository&gt; třídu, která obsahuje metody pro určení, jak se bude chovat imitované úložiště. K tomu odkazuje na skutečnou imitované úložiště, který implementuje rozhraní IContactManagerRepository.
+> Pokud používáte rozhraní framework Moq, je rozdíl mezi \_mockRepository a \_mockRepository.Object. Nejprve odkazuje model&lt;IContactManagerRepository&gt; třídu, která obsahuje metody pro určení, jak se bude chovat mock úložiště. Druhá možnost odkazuje na skutečné mock úložiště, který implementuje rozhraní IContactManagerRepository.
 
 
-Imitované úložiště se používá v metodě inicializaci() při vytváření instance třídy ContactManagerService. Všechny testy jednotlivých jednotek použít tuto instanci třídy ContactManagerService.
+Při vytváření instance třídy ContactManagerService mock úložiště slouží v metodu Initialize(). Všechny jednotlivé jednotkových testů používat tuto instanci třídy ContactManagerService.
 
-Výpis 1 obsahuje pět metody, které odpovídají jednotlivým testování částí. Každá z těchto metod opatřen atributem [TestMethod]. Při spuštění testování částí, se nazývá libovolné metody, která má tento atribut. Jinými slovy libovolné metody, která opatřen atributem [TestMethod] je testování částí.
+Výpis 1 obsahuje pět metod, které odpovídají jednotlivým testů jednotek. Každá z těchto metod je upravený pomocí atributu [TestMethod]. Při spuštění testů jednotek, se nazývá jakoukoli metodu, která má tento atribut. Jinými slovy jakoukoli metodu, která je upravena pomocí atributu [TestMethod] je testování částí.
 
-První testování částí s názvem CreateContact(), ověřuje, že volání CreateContact() vrátí hodnotu true, pokud je platnou instanci třídy, obraťte se na předaný metodě. Test vytvoří instanci třídy kontaktu, volá metodu CreateContact() a ověřuje, že CreateContact() vrátí hodnotu true.
+První test částí s názvem CreateContact(), ověří, že CreateContact() volání vrátí hodnotu true při vytvoření platné instance třídy kontakt je předán metodě. Test vytvoří instanci třídy kontakt, volá metodu CreateContact() a ověřuje, že CreateContact() vrátí hodnotu true.
 
-Zbývající testy ověřte, zda při volání metody CreateContact() neplatný kontaktují potom metoda vrátí hodnotu false a stav modelu, který je přidána chybová zpráva ověření očekávané. Například CreateContactRequiredFirstName() test vytvoří instanci třídy, obraťte se s prázdný řetězec pro vlastnost jeho FirstName. V dalším kroku CreateContact() metoda volána s neplatnou kontakt. Nakonec test ověřuje, že CreateContact() vrací hodnotu false a že stav modelu, který obsahuje chybovou zprávu ověření očekávané "jméno je povinné."
+Zbývající testy ověřte, že při volání metody CreateContact() neplatný kontakt pak metoda vrátí hodnotu false a chybových zpráv ověření očekávané se přidá do stavu modelu. Například CreateContactRequiredFirstName() test vytvoří instanci třídy kontaktu s prázdným řetězcem pro jeho vlastnost FirstName. V dalším kroku je volána metoda CreateContact() neplatný kontakt. Nakonec test ověří, že CreateContact() vrátí hodnotu false a že ze stavů modelu obsahuje chybovou zprávu ověření očekávané "jméno je povinné."
 
-Testování částí v výpis 1 můžete spustit výběrem možnosti nabídky **Test, spustit všechny testy v řešení (CTRL + R, A)**. Výsledky testů se zobrazí v okně výsledků testu (viz obrázek 4).
+Můžete spustit testy jednotek v informacích 1 tak, že vyberete možnost nabídky **testovací běh, všechny testy v řešení (CTRL + R, A)**. Výsledky testů se zobrazí v okně Výsledky testu (viz obrázek 4).
 
 
 [![Výsledky testu](iteration-5-create-unit-tests-cs/_static/image4.jpg)](iteration-5-create-unit-tests-cs/_static/image7.png)
 
-**Obrázek 04**: výsledky testu ([Kliknutím zobrazit obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image8.png))
+**Obrázek 04**: výsledky testů ([kliknutím ji zobrazíte obrázek v plné velikosti](iteration-5-create-unit-tests-cs/_static/image8.png))
 
 
-## <a name="creating-unit-tests-for-controllers"></a>Testování částí pro řadiče
+## <a name="creating-unit-tests-for-controllers"></a>Vytváření testů jednotek pro Kontrolery
 
-Aplikace ASP.NETMVC řízení toku interakce s uživatelem. Při testování řadič, budete chtít otestovat, zda řadičem vrací pravé akce výsledek a zobrazení data. Můžete také chtít otestovat, zda řadič komunikuje s třídy modelu způsobem očekává.
+Aplikace ASP.NETMVC řízení toku interakci s uživatelem. Při testování kontroleru, budete chtít otestovat, jestli kontroler vrací pravé akce výsledek a zobrazit data. Můžete také otestovat, jestli řadič komunikuje s tříd modelu způsobem očekávání.
 
-Například výpis 2 obsahuje dvě testování částí pro kontaktujte řadič Create() metoda. První testování částí ověřuje, že když a obraťte se na platný předána metodě Create() pak metodu Create() přesměruje na Index akci. Jinými slovy když uplyne a obraťte se na platný, Metoda Create() by měl vrátit RedirectToRouteResult, která představuje akci Index.
+Například výpis 2 obsahuje dva testy jednotek pro kontroler kontakt Create() metoda. První test částí ověřuje, že když platný kontakt se předá metodě Create(), pak metoda Create() přesměruje na akce indexu. Jinými slovy při předání platný kontakt, Create() metoda by měla vrátit RedirectToRouteResult, představující akce indexu.
 
-Jsme nejsou zobrazeny chcete t testování vrstvě služby ContactManager, když se testují vrstvě řadiče. Proto jsme model vrstvy služby s následující kód v metodě inicializovat:
+Budeme zadávat t chcete testovací vrstva služby ContactManager při testujeme vrstvě kontroleru. Proto jsme napodobení vrstvě služby s následujícím kódem v metodě inicializace:
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample3.cs)]
 
-V testu jednotek CreateValidContact() můžeme model chování volání vrstvě služby CreateContact() metoda s následující řádek kódu:
+V testu jednotek CreateValidContact() jsme napodobení chování volání vrstva služby CreateContact() metodu s následující řádek kódu:
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample4.cs)]
 
-Tento řádek kódu způsobí, že služba imitované ContactManager vrátí hodnotu true v případě jeho CreateContact() metoda je volána. Ve vrstvě služby mocking, abychom mohli otestovat chování kontroleru bez nutnosti spouštět všechny kód ve vrstvě služby.
+Tento řádek kódu způsobí, že vrací hodnotu true, když je zavolána metoda CreateContact() mock ContactManager služba. Podle napodobování vrstva služby, abychom mohli otestovat chování kontroleru aniž by bylo nutné provést všechny kódu ve vrstvě služeb.
 
-Druhý testování částí ověřuje, že akce Create() vrátí zobrazení pro vytváření, pokud je neplatný kontaktujte předaný metodě. Jsme způsobit vrstvě služby CreateContact() metoda vrátí hodnotu false s následující řádek kódu:
+Druhý test jednotek ověřuje, že akce Create() vrátí zobrazení pro vytváření při neplatný kontakt je předán metodě. Jsme způsobit vrstva služby CreateContact() metoda vrátí hodnotu false s následující řádek kódu:
 
 [!code-csharp[Main](iteration-5-create-unit-tests-cs/samples/sample5.cs)]
 
-Pokud Metoda Create() chová jako Očekáváme, měla by při vrstvě služby vrátí hodnotu false vrátit zobrazení pro vytváření. Tímto způsobem řadičem můžete zobrazit chybové zprávy ověření v zobrazení pro vytváření a uživatel má možnost opravit tento neplatné obraťte se na vlastnosti.
+Pokud Metoda Create() chová jako Očekáváme, že pak měla by vrátit zobrazení pro vytváření při vrstva služby vrátí hodnotu false. Tímto způsobem kontroleru můžete zobrazit chybové zprávy ověření v zobrazení pro vytváření a uživatel tak možnost opravit tuto neplatné vlastnosti kontaktu.
 
 
-Pokud máte v plánu vytvářet testy částí pro řadičů budete muset vrátit zobrazení explicitní názvy z vaší akce kontroleru. Například nevrátí zobrazení takto:
+Pokud máte v plánu testů jednotek pro vaše řadiče sestavení budete muset vrátit explicitní zobrazit názvy z akce kontroleru. Například nesmí vracet zobrazení takto:
 
 Vrátí View();
 
-Místo toho vrátíte zobrazení takto:
+Místo toho vrátí zobrazení takto:
 
 Vrátí View("Create");
 
@@ -234,11 +233,11 @@ Pokud si nejste explicitní při vrácení zobrazení ViewResult.ViewName vlastn
 
 ## <a name="summary"></a>Souhrn
 
-V této iteraci jsme vytvořili testování částí pro naši aplikaci obraťte se na správce. Tyto testy jednotek jsme můžete spustit kdykoli ověřit, že naše aplikace stále chová způsobem, který se očekává. Testování částí fungují jako bezpečnostní opatření pro naši aplikaci to nám bezpečně upravit aplikaci v budoucnu.
+V této iterace jsme vytvořili testů jednotek pro naši aplikaci Správce kontaktů. V každém okamžiku k ověření, že naše aplikace stále chová způsobem, který Očekáváme, že můžeme spustit tyto testy jednotek. Testování částí fungovat jako bezpečnostní pro naši aplikaci, která umožňuje nám bezpečně upravovat naši aplikaci v budoucnosti.
 
-Jsme vytvořili dvě sady testů jednotek. Nejdřív jsme testovali ověřovací logiku vytvořením testování částí pro naše vrstvu služby. V dalším kroku jsme testovali logiku řízení toku vytvořením testování částí pro naše řadiče vrstvu. Při testování naše vrstvy služby, jsme izolované naše testy pro naše vrstvu služby z našich vrstvy úložiště mocking naše vrstvy úložiště. Při testování vrstvě řadiče, jsme izolované naše testy pro naše vrstvu řadič mocking vrstvě služby.
+Vytvořili jsme dvě sady testů jednotek. Nejprve jsme otestovali naše logiku ověřování pomocí testů jednotek pro naše vrstvu služby. Dále jsme testovali naše logiky řízení toku ve vytváření testů jednotek pro naše vrstvu kontroleru. Při testování vrstva naše služby, jsme izolována testech pro naše služby vrstvu z našich vrstvy úložiště napodobování naše vrstvy úložiště. Při testování vrstvě kontroleru, jsme izolována testech pro naše řadič vrstvu napodobování vrstva služby.
 
-V další iterace jsme upravit aplikaci obraťte se na správce, tak, aby podporoval skupiny kontaktu. Tato nová funkce přidáme do aplikace pomocí procesu návrhu softwaru s názvem testy řízený vývoj.
+V další iteraci upravíme Správce kontaktů aplikaci tak, aby podporoval skupiny kontaktu. Tato nová funkce přidáme k naší aplikaci pomocí procesu návrhu softwaru s názvem vývoj řízený testováním.
 
 > [!div class="step-by-step"]
 > [Předchozí](iteration-4-make-the-application-loosely-coupled-cs.md)

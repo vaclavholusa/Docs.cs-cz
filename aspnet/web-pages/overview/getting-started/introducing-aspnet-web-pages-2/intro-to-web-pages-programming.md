@@ -1,348 +1,347 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
-title: Představení technologie ASP.NET Web Pages – programování základy | Microsoft Docs
+title: Představení rozhraní ASP.NET Web Pages – základy programování | Dokumentace Microsoftu
 author: tfitzmac
-description: 'V tomto kurzu získáte přehled o programu na webových stránkách ASP.NET se syntaxí Razor. Co se dozvíte: základní syntaxe, Razor, který používáte pro pr...'
+description: 'Tento kurz poskytuje přehled toho, jak do aplikace v ASP.NET Web Pages se syntaxí Razor. Co se dozvíte: základní syntaxe "Razor", který používáte pro žádosti o přijetí změn...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/17/2015
 ms.topic: article
 ms.assetid: 7526ed45-a97d-4e8a-8301-01324ef0eff9
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: 60115dd06a27bf856427953de29e993194afb991
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3824db99b3313876585fe284c254ac89b256bc8f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33839283"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383242"
 ---
-<a name="introducing-aspnet-web-pages---programming-basics"></a>Představení technologie ASP.NET Web Pages – základy programování
+<a name="introducing-aspnet-web-pages---programming-basics"></a>Úvod do ASP.NET Web Pages – základy programování
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> V tomto kurzu získáte přehled o programu na webových stránkách ASP.NET se syntaxí Razor.
+> Tento kurz poskytuje přehled toho, jak do aplikace v ASP.NET Web Pages se syntaxí Razor.
 > 
-> Získáte informace:
+> Co se dozvíte:
 > 
-> - Základní syntaxe "Razor", který používáte pro programování na webových stránkách ASP.NET.
-> - Některé základní C#, což je programovací jazyk, který budete používat.
+> - Základní syntaxe "Razor", který používáte pro programování v rozhraní ASP.NET Web Pages.
+> - Některé základní C#, která je programovací jazyk, který budete používat.
 > - Některé základní koncepty programování pro webové stránky.
-> - Postup instalace balíčků (součásti, které obsahují předem kódu) pro použití s vaší lokality.
-> - Jak používat *Pomocníci* k provádění běžných úloh programování.
+> - Postup instalace balíčků (komponenty, které obsahují předem připravených kódu) pro použití s vaší lokality.
+> - Jak používat *pomocné rutiny* k provádění běžných programovacích úkolů.
 >   
 > 
-> Funkce nebo technologie popsané:
+> Popsané funkce a technologie:
 > 
 > - A Správce balíčků NuGet.
 > - `Gravatar` Pomocné rutiny.
 
 
-V tomto kurzu je primárně cvičení v Úvod k programování syntaxe, které budete používat pro ASP.NET Web Pages. Získáte informace o *syntaxe Razor* a kód, který je napsán v C# programovací jazyk. Z této syntaxe širokého jste získali v předchozí kurzu; v tomto kurzu vysvětlíme další syntaxe.
+Tento kurz je primárně cvičení v Úvod k programování syntaxe, které budete používat pro rozhraní ASP.NET Web Pages. Získáte informace o *syntaxe Razor* a kód, který je napsán v jazyce C# je programovací jazyk. Jste získali v předchozím kurzu; balíčku glimpse této syntaxe v tomto kurzu vám objasníme další syntaxe.
 
-Promise jsme, že tento kurz zahrnuje většinu programování se zobrazí jeden kurzu, a že je pouze kurz, který je *pouze* o programování. Ve zbývající kurzy v této sadě ve skutečnosti vytvoříte stránky, které provádějí zajímavé věcí.
+Slibujeme, že tento kurz zahrnuje většinu programovacích, zobrazí se vám v jedné kurzu a je jediným kurz, který je *pouze* o programování. Ve zbývající kurzy v této sadě skutečně vytvoříte stránky, které se zajímavých věcí.
 
-Budete také další informace o *Pomocníci*. Pomocné rutiny je komponenta – zabalené up úsek kódu – které můžete přidat na stránku. Pomocné rutiny provede práci za vás, který jinak může být zdlouhavé nebo komplexní udělat ručně.
+Dozvíte se víc i o *pomocné rutiny*. Pomocné rutiny je komponenta – zabalené nahoru část kódu –, který můžete přidat na stránku. Pomocná rutina provede práci, který jinak může být zdlouhavý nebo komplexní udělat ručně.
 
-## <a name="creating-a-page-to-play-with-razor"></a>Vytvoření stránky můžete experimentovat s Razor
+## <a name="creating-a-page-to-play-with-razor"></a>Vytvoření stránky přehrávání s jádrem Razor
 
-V této části budete přehrávání trochu s jádrem Razor, kde získáte představu o základní syntaxe.
+V této části budete přehrávání trochu s jádrem Razor získali představu o základní syntaxe.
 
-Spusťte službu WebMatrix, pokud je již spuštěn. Budete používat web, který jste vytvořili v předchozí kurzu ([získávání spuštěna s webové stránky](https://go.microsoft.com/fwlink/?LinkId=251578)). Chcete-li ho znovu otevřít, klikněte na tlačítko **osobní weby** a zvolte **WebPageMovies**:
+Pokud ještě není spuštěná, spusťte službu WebMatrix. Na webu, kterou jste vytvořili v předchozím kurzu budete používat ([získávání spuštěn pomocí webových stránek](https://go.microsoft.com/fwlink/?LinkId=251578)). Chcete-li ho znovu otevřít, klikněte na tlačítko **části osobní weby** a zvolte **WebPageMovies**:
 
-![Služba WebMatrix úvodní obrazovka zobrazující možnosti otevřete lokality a osobní weby zvýrazněná](intro-to-web-pages-programming/_static/image1.png)
+![Služba WebMatrix úvodní obrazovku zobrazující možnosti Otevřít web a osobní weby zvýrazněnou](intro-to-web-pages-programming/_static/image1.png)
 
 Vyberte **soubory** pracovního prostoru.
 
-Na pásu karet klikněte na tlačítko **nový** vytvoření stránky. Vyberte **CSHTML** a zadejte název nové stránky *TestRazor.cshtml*.
+Na pásu karet klikněte na tlačítko **nový** vytvořit stránku. Vyberte **CSHTML** a novou stránku pojmenujte *TestRazor.cshtml*.
 
-Click **OK**.
+Klikněte na tlačítko **OK**.
 
-Zkopírujte následující do souboru úplného nahrazení, co již existuje.
+Zkopírujte do něj následující do souboru, úplná výměna, co již existuje.
 
 > [!NOTE]
-> Při kopírování kód nebo kód z příkladů do stránky odsazení a zarovnání nemusí být stejné jako v tomto kurzu. Odsazení a zarovnání nemá vliv, jak kód spustí, když.
+> Při kopírování kód nebo kód z příkladů do stránky odsazení a zarovnání nemusí být stejný jako v tomto kurzu. Jak kód poběží, ale nemají vliv odsazení a zarovnání.
 
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample1.cshtml)]
 
-## <a name="examining-the-example-page"></a>Zkoumání na příkladu stránky
+## <a name="examining-the-example-page"></a>Zkoumání příklad stránky
 
-Většina zobrazené je obyčejnou HTML. V horní části je však tento blok kódu:
+Většina co uvidí je běžný HTML. V horní části existuje ale tento blok kódu:
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample2.cshtml)]
 
-Všimněte si následujících akcí o tento blok kódu:
+Všimněte si, že následující věci, o tento blok kódu:
 
-- Znak @ informuje ASP.NET že následuje kódu Razor, není ve formátu HTML. ASP.NET bude považovat všechno po @ – znak jako kód, dokud se spouští se znovu do některé kódu HTML. (V tomto případě to je &lt;! DOCTYPE&gt; elementu.
-- Složené závorky ({a}) uzavřete blok kódu Razor, pokud kód obsahuje více než jeden řádek. Složené závorky řekněte ASP.NET, kde kód pro tento blok spuštění a ukončení.
-- / / Komentář označte znaků – tedy součástí kód, který nebude provést.
-- Každý příkaz musí končit středníkem (;). (Není komentář, ale.)
-- Můžete uložit hodnoty v *proměnné*, který vytvoříte (*deklarovat*) s var. – klíčové slovo Při vytváření proměnné, můžete mu název, který může obsahovat písmena, číslice a podtržítka (\_). Názvy proměnných nesmí začínat číslicí a nelze použít název programování – klíčové slovo (například var).
-- Řetězce znaků (např. "ASP.NET" a "Webové stránky") je uzavřít do uvozovek. (Musí být dvojitých uvozovek.) Čísla nejsou v uvozovkách.
-- Prázdné znaky mimo uvozovky není důležité. Konce řádků většinou nezáleží; výjimkou je, že řetězec v uvozovkách nelze rozdělit na řádcích. Odsazení a zarovnání nejsou důležité.
+- Znak @ řekne technologie ASP.NET, že následuje kódu Razor, není ve formátu HTML. ASP.NET bude považovat za všechno @ znak jako kód, dokud se nespustí se znovu na kód HTML. (V tomto případě to &lt;! Typ dokumentu&gt; elementu.
+- Složené závorky ({a}) uzavřete blok kódu Razor, pokud kód má více než jeden řádek. Složené závorky řekněte technologie ASP.NET, pokud kód pro daný blok začíná a končí.
+- / / Komentář označte znaků –, který je součástí kódu, který nebude spuštěno.
+- Každý příkaz musí končit středníkem (;). (Není komentáře, i když.)
+- Můžete ukládat hodnoty v *proměnné*, kterou vytvoříte (*deklarovat*) s – klíčové slovo var. Když vytvoříte proměnnou, můžete jí název, který může obsahovat písmena, číslice a podtržítka (\_). Názvy proměnných nesmí začínat číslicí a název programování – klíčové slovo (například var) nelze použít.
+- Řetězce znaků (např. "ASP.NET" nebo "Webové stránky") je uzavřít do uvozovek. (Dvojité uvozovky musí být.) Čísla nejsou v uvozovkách.
+- Prázdné znaky mimo uvozovek nezáleží. Konce řádků převážně na mezerách nezáleží; výjimkou je, že nelze rozdělit řetězec v uvozovkách na řádcích. Odsazení a zarovnání na mezerách nezáleží.
 
-Něco, co není zřejmé z tohoto příkladu je, že veškerý kód je malá a velká písmena. To znamená, že je proměnné TheSum proměnnou jiný než proměnné, které může mít název theSum nebo thesum. Podobně var je klíčové slovo, ale Var není.
+To není zřejmé z tohoto příkladu je, že veškerý kód je velká a malá písmena. To znamená, že proměnné TheSum je proměnnou jiný než proměnné, které může mít název theSum nebo thesum. Podobně je klíčové slovo var, ale není proměnná.
 
 ### <a name="objects-and-properties-and-methods"></a>Objekty a vlastnosti a metody
 
-Pak je výraz DateTime.Now. Jednoduše řečeno, data a času je *objekt*. Je-li objekt věcí, kterou můžete programu s – na stránce textové pole, soubor, bitovou kopii, webové žádosti, e-mailovou zprávu, záznam zákazníka, atd. Objekty mají jednu nebo více *vlastnosti* popisují jejich vlastnosti. Objekt textové pole má vlastnost Text (mimo jiné), objekt žádosti má vlastnost adresa Url (a dalších), e-mailovou zprávu má vlastnost From a na vlastnost, a tak dále. Objekty mají také *metody* , které jsou "akce" mohou provádět. Můžete budete pracovat s objekty mnoho.
+Pak je výraz DateTime.Now. Jednoduše řečeno, data a času je *objekt*. Objekt je věc, kterou můžete programovat s – na stránce, textové pole, soubor, obrázek, webový požadavek, e-mailovou zprávu, záznam zákazníka, atd. Objekty mají jednu nebo více *vlastnosti* , které popisují jejich vlastnosti. Textový objekt pole má vlastnost Text (mimo jiné), žádost o objekt má vlastnost adresa Url (a další), e-mailovou zprávu má vlastnost od a do vlastnosti, a tak dále. Objekty mají také *metody* , které jsou "akce" mohou provádět. Můžete pracovat se objekty hodně.
 
-Jak je vidět z příkladu, data a času je objekt, který vám umožní program data a časy. Obsahuje vlastnost s názvem nyní, vrátí aktuální datum a čas.
+Jak je vidět z příkladu, data a času je objekt, který vám umožní program data a časy. Má vlastnost s názvem nyní, který vrátí aktuální datum a čas.
 
 ### <a name="using-code-to-render-markup-in-the-page"></a>Pomocí kódu k vykreslení kódu na stránce
 
-V těle stránky Všimněte si následujících akcí:
+V těle stránky Všimněte si následujícího:
 
 [!code-html[Main](intro-to-web-pages-programming/samples/sample3.html)]
 
-Znovu znak @ informuje technologie ASP.NET tento co následuje je kód, není ve formátu HTML. Kód můžete přidat následuje výraz kódu a ASP.NET v tomto bodě vykreslí hodnotu tohoto práva výraz. V příkladu @a vykreslí ať je hodnota proměnné s názvem a, @product vykreslí vše, co je v proměnné s názvem produktu a tak dále.
+Znovu znak @ řekne ASP.NET této dále je kód, není ve formátu HTML. V kódu můžete přidat za nímž následuje výrazu kódu a technologie ASP.NET vykreslit hodnota tohoto výrazu vpravo od tohoto okamžiku. V tomto příkladu @a vykreslí cokoli, co je hodnota proměnné s názvem, @product vykreslí cokoli, co je v proměnné s názvem produktu a tak dále.
 
-Nejste omezeno na proměnné, ale. Zde několik instancí znak @ předchází výrazu:
+Nejste omezeni pouze na proměnné, i když. V několika instancí, znak @ předchází výraz:
 
-- @(\*b) vykreslí produktu ať jsou v proměnné a a b. ( \* Operátor znamená násobení.)
-- @(technologie + "" + produktu) vykreslí po zřetězení je a přidání mezery v rozmezí hodnot v proměnných technologie a produktu. Operátor (+) pro zřetězení řetězců je stejný jako operátor pro přidání čísla. ASP.NET lze obvykle zjistit, zda pracujete s čísla nebo řetězce a správné funkci s + – operátor.
-- @Request.Url vykreslí vlastnost adresa Url objektu požadavku. Objekt žádosti obsahuje informace o aktuálním požadavku z prohlížeče a samozřejmě vlastnost adresa Url obsahuje adresu URL aktuální žádosti.
+- @(\*b) vykreslí součin cokoli, co je v proměnné a b. ( \* Provozovatelem násobení.)
+- @(technologie + "" + produktu) vykreslí hodnoty v proměnné technologie a produktů po zřetězení je a přidání mezeru mezi. Operátor (+) pro zřetězení řetězců je stejný jako operátor pro přidání čísel. Technologie ASP.NET můžete obvykle říct, jestli pracujete s čísla nebo řetězce a dělá správné věci se + – operátor.
+- @Request.Url vykreslí vlastnost adresa Url objekt žádosti. Objekt žádosti obsahuje informace o aktuální požadavek z prohlížeče a samozřejmě vlastnost adresa Url obsahuje adresu URL aktuální žádosti.
 
-V příkladu je navržen tak, aby ukazují, že můžete pracovat různými způsoby. Můžete provádět výpočty v bloku kódu v horní části, put výsledků do proměnné a následnému vykreslení proměnné v kódu. Nebo můžete provést výpočtů v práva výraz ve značkách. Přístupů, které použijete, závisí na jaké úlohy a do určité míry, na vlastní předvolby.
+V příkladu je navržený tak, aby zobrazit, který je možné pracovat v různých způsobů. Můžete provádět výpočty v bloku kódu v horní části, vložte výsledky do proměnné a následnému vykreslení proměnné v kódu. Nebo můžete provést výpočty výrazu vpravo v kódu. Přístup, který použijete, závisí na co děláte a do určité míry na vašich vlastních předvoleb.
 
-### <a name="seeing-the-code-in-action"></a>Zobrazení kódu v akci
+### <a name="seeing-the-code-in-action"></a>Zobrazuje kód v akci
 
-Klikněte pravým tlačítkem na název souboru a potom zvolte **spustit v prohlížeči**. Zobrazí stránku v prohlížeči se všechny hodnoty a výrazy přeložit na stránce.
+Klikněte pravým tlačítkem na název souboru a klikněte na tlačítko **spustit v prohlížeči**. Zobrazí se stránka v prohlížeči s všechny hodnoty a výrazy ve stránce přeložit.
 
-![Spouštění v prohlížeči stránky 'TestRazor.](intro-to-web-pages-programming/_static/image2.png)
+![Stránka "TestRazor" spuštěná v prohlížeči](intro-to-web-pages-programming/_static/image2.png)
 
-Podívejte se na zdroj v prohlížeči.
+Podívejte se na zdroje v prohlížeči.
 
-!["Test Razor" zdroje stránku v prohlížeči](intro-to-web-pages-programming/_static/image3.png)
+!["Testování Razor" zdroje stránky v prohlížeči](intro-to-web-pages-programming/_static/image3.png)
 
-Podle očekávání z prostředí v předchozí kurzu žádná kódu Razor není na stránce. Zobrazí se pouze skutečné zobrazovaných hodnot. Při spuštění stránky ve skutečnosti děláte požadavek na webový server, který je součástí služby WebMatrix. Po přijetí žádosti ASP.NET vyřeší všechny hodnoty a výrazy a vykreslí jejich hodnoty na stránku. Pak odešle stránku v prohlížeči.
+Jak budete chtít z prostředí v předchozím kurzu, žádná z kódu Razor není na stránce. Všechno, co se zobrazí se zobrazení skutečné hodnoty. Při spuštění stránky ve skutečnosti děláte požadavku na webový server, která je integrována do služby WebMatrix. Při přijetí požadavku ASP.NET řeší všechny hodnoty a výrazy a vykreslí jejich hodnoty do stránky. Potom odešle stránku v prohlížeči.
 
 > [!TIP] 
 > 
-> **Syntaxe Razor a C#**
+> **Razor a C#**
 > 
-> Až nyní jsme uvedli jste, že pracujete se syntaxí Razor. Je to pravda, ale není kompletní scénáře. Skutečné programovací jazyk, který používáte, se nazývá *C#*. C# byl vytvořen společností Microsoft prostřednictvím deset před a se stala jedna primární programovacích jazyků pro vytváření aplikací pro Windows. Všechna pravidla, které jste se seznámili s o název proměnné a postup vytvoření příkazy a tak dále jsou ve skutečnosti všechna pravidla jazyka C#.
+> Až nyní jsme uvedli jste, že pracujete se syntaxí Razor. Který má hodnotu true, ale není kompletní. Skutečné programovací jazyk, který používáte, se nazývá *jazyka C#*. C# byl vytvořen microsoftem přes objevil před deseti lety a se stal jednou z primární programovací jazyk pro vytváření aplikací pro Windows. Ve skutečnosti všechna pravidla jazyka C# jsou všechna pravidla, které se zobrazily informace o tom, jak pojmenovat proměnnou a jak vytvořit příkazy a tak dále.
 > 
-> Syntaxe Razor odkazuje přesněji řečeno na malou sadu konvence pro jak vložení tohoto kódu do stránky. Například konvence používání označit kódu na stránce a @ {} pro vložení bloku kódu je aspekt Razor stránky. Pomocné rutiny jsou také považovány za součást syntaxe Razor. Na více místech než jenom v aplikaci ASP.NET Web Pages se používá syntaxi Razor. (Například, použije se v zobrazení ASP.NET MVC také.)
+> Razor odkazuje přesněji řečeno na malou sadu konvence pro jak vložit tento kód do stránky. Například konvence používání označit kód na stránce a @ {} Vložit blok kódu je aspekt stránky Razor. Pomocné rutiny jsou také považovány za součást Razor. Na více místech než jenom v ASP.NET Web Pages se používá syntaxi Razor. (Například používá se v zobrazeních ASP.NET MVC stejně.)
 > 
-> Jsme zmínili, to vzhledem k tomu, že pokud hledáte informace o programovací rozhraní ASP.NET Web Pages, můžete využít mnoho odkazy na Razor. Však velké množství tyto odkazy se nevztahují na jste to a může být matoucí. A ve skutečnosti mnoho vaše otázky programovací skutečně budou o práci s C# nebo práci s technologií ASP.NET. Proto se podíváte speciálně pro informace o syntaxi Razor, nemusí najít odpovědi, které potřebujete.
+> Jsme zmínili, to vzhledem k tomu, že pokud hledáte informace o programovacím rozhraní ASP.NET Web Pages, najdete velké množství odkazů na Razor. Velké množství tyto odkazy se však nevztahují na jste postup a může být matoucí. A ve skutečnosti řadu programovacích dotazy jsou ve skutečnosti se informace o práci s jazykem C# nebo práce s technologií ASP.NET. Proto když se podíváte speciálně pro informace o syntaxi Razor, nemusí najít odpovědi, které potřebujete.
 
 
-## <a name="adding-some-conditional-logic"></a>Přidání některé podmíněnou logiku
+## <a name="adding-some-conditional-logic"></a>Přidání některých podmíněnou logiku
 
-Jedním z skvělé funkce o použití kódu na stránce je, že můžete změnit, co se stane závislosti na různých podmínkách. V této části kurzu budete přehrát s některé způsoby, jak změnit, co se zobrazí na stránce.
+Jednou z nejlepších funkcí o pomocí kódu na stránce je, které lze změnit, co se stane, na základě různých podmínek. V této části kurzu jste budete pohrajte si s některé způsoby, jak změnit obsah zobrazený na stránce.
 
-V příkladu bude jednoduchý a poněkud contrived tak, aby nám umožní soustředit se na podmíněnou logiku. Stránka, kterou vytvoříte, bude postupujte takto:
+V příkladu bude jednoduchá a trochu contrived tak, aby nám umožní soustředit se na podmíněnou logiku. Stránka, kterou vytvoříte, bude postupujte takto:
 
-- Zobrazte různé text na stránce, v závislosti na tom, zda je první stránka se zobrazí, nebo zda jste klikli na tlačítko pro odeslání stránky. Bude první podmíněného test.
-- Zobrazí se zpráva, pouze v případě, že určitou hodnotu, je předaná řetězec dotazu adresy URL (http://...?show=true). Který bude druhý podmíněného test.
+- Zobrazte různé text na stránce v závislosti na tom, zda je první stránka se zobrazí nebo určuje, zda jste ke kliknutí na tlačítko pro odeslání stránky. Který bude prvním podmíněným testem.
+- Zobrazte zprávu pouze v případě, že určitou hodnotu předaný řetězec dotazu adresy URL (http://...?show=true). Které se stanou druhý podmíněným testem.
 
-Ve službě WebMatrix, vytvořte stránku a pojmenujte ji *TestRazorPart2.cshtml*. (Na pásu karet klikněte na tlačítko **nový**, zvolte **CSHTML**, název souboru a pak klikněte na tlačítko **OK**.)
+V nástroji WebMatrix, vytvořte stránku s názvem *TestRazorPart2.cshtml*. (Na pásu karet klikněte na tlačítko **nový**, zvolte **CSHTML**, zadejte název souboru a pak klikněte na tlačítko **OK**.)
 
-Obsah této stránky nahraďte následujícím textem:
+Nahraďte obsah této stránky s následujícími možnostmi:
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample4.cshtml)]
 
-Blok kódu v horní části inicializuje proměnné s názvem zpráva s textem. V těle stránky, obsah proměnné zpráva se zobrazí uvnitř &lt;p&gt; elementu. Kód obsahuje také &lt;vstupní&gt; elementu, který chcete vytvořit **odeslání** tlačítko.
+Blok kódu v horní části inicializuje proměnnou s názvem zprávu s nějaký text. V těle stránky, obsah proměnné, zpráva se zobrazí uvnitř &lt;p&gt; elementu. Také obsahuje značku &lt;vstupní&gt; prvku k vytvoření **odeslat** tlačítko.
 
-Spusťte stránku, abyste viděli, jak to funguje teď. Teď, je v podstatě statické stránky, i v případě, že kliknete **odeslání** tlačítko.
+Spustíte stránku, abyste viděli, jak to funguje teď. Teď je v podstatě jako statická stránka i v případě, že kliknete **odeslat** tlačítko.
 
-Vraťte se zpátky do prostředí WebMatrix. Uvnitř bloku kódu, přidejte následující zvýrazněný kód *po* řádek, který inicializuje zpráva:
+Vraťte se do prostředí WebMatrix. Uvnitř bloku kódu přidejte následující zvýrazněný kód *po* řádek, který inicializuje zpráva:
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample5.cshtml?highlight=4-6)]
 
-### <a name="the-if---block"></a>Zda blok {}
+### <a name="the-if---block"></a>Když bloku {}
 
-Co jste právě přidali byl Pokud podmínka. V kódu pokud podmínka má struktura takto:
+Co jste právě přidali byl if podmínku. V kódu pokud podmínka má strukturu takto:
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample6.cs)]
 
-Podmínky pro testování je v závorkách. Musí být hodnota nebo výraz, který vrátí hodnotu true nebo false. Pokud je podmínka pravdivá, ASP.NET spustí příkaz nebo příkazy, které jsou uvnitř složené závorky. (Těch, které jsou *pak* součástí *Pokud potom* logiku.) Pokud je podmínka vyhodnocena jako false, je přeskočen blok kódu.
+Je testovanou podmínku do závorek. Musí být hodnota nebo výraz, který vrátí hodnotu true nebo false. Pokud je podmínka pravdivá, spustí ASP.NET příkaz nebo příkazy, které jsou uvnitř složených závorek. (To jsou *pak* součástí *if-then* logiky.) Pokud podmínka není splněna, blok kódu přeskočen.
 
-Tady je několik příkladů podmínky můžete otestovat v Pokud příkaz:
+Tady je pár příkladů podmínky můžete otestovat v příkazu if – příkaz:
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-Proměnné před hodnoty nebo výrazy můžete otestovat pomocí <em>logický operátor</em> nebo <em>relační operátor</em>: rovná se (==) větší než (&gt;), menší než (&lt;), větší než nebo rovno (&gt;=) a menší než nebo rovno (&lt;=). ! = Znamená operátor není rovno – například pokud (! = 0) znamená <em>Pokud</em> <em>a</em><em>není rovno 0</em>.
+Proměnné s hodnotami nebo proti výrazy můžete otestovat pomocí <em>logického operátoru</em> nebo <em>operátor porovnání</em>: rovno (==) větší než (&gt;), menší než (&lt;), větší než nebo rovno (&gt;=) a menší než nebo rovno (&lt;=). ! = Znamená operátor není rovno – například pokud (! = 0) znamená <em>Pokud</em> <em>a</em><em>není rovno 0</em>.
 
 > [!NOTE]
-> Ujistěte se, že jste si všimli, že relační operátor pro hodnotu (==) není stejný jako =. = Operátor slouží pouze k přiřadit hodnoty (var = 2). Pokud kombinujete tyto operátory, budete buď dojde k chybě nebo některé neobvyklé výsledků.
+> Ujistěte se, že si všimnete, že operátor porovnání pro (==) se rovná není stejný jako =. = – Operátor se používá jenom pro přiřazení hodnoty (var = 2). Jsou-li zkombinovány tyto operátory budete buď dojde k chybě nebo získáte některé strangeová výsledky.
 
 
-K ověření, zda je hodnota true, úplná syntaxe je if(IsDone == true). Ale můžete použít také if(IsDone) zástupce. Pokud není žádná relační operátor, ASP.NET předpokládá, že testujete pro hodnotu true.
+K otestování, jestli je hodnota true, je úplnou syntaxi if(IsDone == true). Ale můžete použít také if(IsDone) zástupce. Pokud neexistuje žádný operátor porovnání, ASP.NET předpokládá, že testujete pro hodnotu true.
 
-Na! operátor samostatně znamená logický operátor NOT. Například podmínka v případě (! IsPost) znamená *Pokud IsPost není true*.
+Do! operátor samostatně znamená, že logický operátor NOT. Například, podmínky if (! IsPost) znamená, že *pokud neplatí IsPost*.
 
-Podmínky můžete kombinovat pomocí logické a (&amp; &amp; operátor) nebo logické OR (|| – operátor). Například pokud poslední podmínky v předchozí příklady znamená *Pokud FileProcessingIsDone není nastaven na hodnotu true a displayMessage nastaven na hodnotu false*.
+Podmínky můžete kombinovat pomocí logické AND (&amp; &amp; operátor) nebo logický operátor OR (|| – operátor). Například poslední if podmínky v předchozích příkladech znamená *Pokud FileProcessingIsDone není nastavená na hodnotu true a displayMessage nastavená na false*.
 
-### <a name="the-else-block"></a>Else bloku
+### <a name="the-else-block"></a>Jiného bloku
 
-Jednou z poslední věcí o tom, zda bloky: Pokud bloku může následovat else bloku. Blok else je užitečné je budete muset provést jiný kód, pokud je podmínka vyhodnocena jako false. Zde je jednoduchý příklad:
+Jednou z poslední věcí o tom, zda bloky: Pokud blok může být následován z jiného bloku. Je užitečné z jiného bloku je budete muset provést různý kód, pokud podmínka není splněna. Tady je jednoduchý příklad:
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample8.cs)]
 
-Některé příklady uvidíte v dalších kurzech této série, kde je užitečné pomocí jiného bloku.
+Zobrazí se vám několik příkladů v dalších kurzech v této sérii, ve kterém pomocí jiného bloku je užitečné.
 
-### <a name="testing-whether-the-request-is-a-submit-post"></a>Zjištění, zda se jedná o žádost odešlete (post)
+### <a name="testing-whether-the-request-is-a-submit-post"></a>Testování, zda je požadavek na odeslání (post)
 
-Existuje více, ale umožňuje získat zpátky v příkladu, který má podmínku if(IsPost) {...}. IsPost je ve skutečnosti vlastnost aktuální stránky. Při prvním požadavku na stránku IsPost vrací hodnotu false. Ale pokud klikněte na tlačítko nebo jinak stránku odeslat – to znamená, post – IsPost vrací hodnotu true. Proto IsPost můžete určit, zda, že pracujete s odeslání formuláře. (Z hlediska příkazy HTTP, pokud je požadavek operaci GET IsPost vrací hodnotu false. Pokud je požadavek operaci POST, IsPost vrací hodnotu true.) V novější kurzu budete pracovat s vstupní formuláře, kde bude tento test zvlášť užitečná.
+Víc, ale umožňuje vrátit k tomu v příkladu, který má podmínku if(IsPost) {...}. IsPost je ve skutečnosti vlastností aktuální stránky. Při prvním vyžádání stránky IsPost vrátí hodnotu false. Ale pokud klikněte na tlačítko nebo jinak stránku odeslat – tedy účtovat – IsPost vrací hodnotu true. Takže IsPost vám umožní určit, jestli pracujete s odesláním formuláře. (Z hlediska příkazů HTTP, pokud se jedná o operaci GET, IsPost vrátí hodnotu false. Pokud se jedná o operaci POST, IsPost vrací hodnotu true.) V pozdějších kurzech budete pracovat s vstupní formuláře, ve kterém bude užitečné tento test.
 
-Spuštění stránky. Vzhledem k tomu, že je to první, kdy se požadované stránce, se zobrazí "Toto je prvním jste si vyžádali stránce". Tento řetězec je hodnota, která inicializovat proměnnou zprávy. Je if(IsPost) test, ale která vrátí hodnotu false v tuto chvíli tak kód uvnitř zda blokovat nefunguje.
+Spuštění stránky. Protože to je poprvé, kdy se požadované na stránce se zobrazí "To je poprvé, kterou jste požadovali na stránce". Tento řetězec je hodnota, která inicializovala proměnnou zprávy do. If(IsPost) test se však, která vrátí hodnotu false v tomto okamžiku tak kód uvnitř if blokovat se nespustí.
 
-Klikněte **odeslání** tlačítko. Požadavek na stránku je znovu. Jako dříve, proměnné zpráva nastavena na "Toto je prvním...". Ale tentokrát test if(IsPost) vrátí hodnotu true, takže kód uvnitř zda blokovat spuštění. Kód změní hodnotu proměnné zpráva na jinou hodnotu, kterou bude vykreslen do kódu.
+Klikněte na tlačítko **odeslat** tlačítko. Na stránce je požádat znovu. Jako dřív, a zpráva proměnná je nastavena na "Toto je první přihlášení...". Ale tentokrát test if(IsPost) vrátí hodnotu true, tak kód uvnitř if blok. Hodnota proměnné zpráva změn kódu na jinou hodnotu, která bude vykreslen v kódu.
 
-Pokud teď přidat podmínku do kódu. Níže &lt;p&gt; elementu, který obsahuje **odeslání** tlačítko, přidejte následující kód:
+Nyní přidejte if podmínky v kódu. Níže &lt;p&gt; element, který obsahuje **odeslat** tlačítko, přidejte následující kód:
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample9.cshtml)]
 
-Přidáváte kód uvnitř značky, takže je musíte spustit s @. Pak je Pokud test podobné tomu jste přidali dříve v bloku kódu. Ve složených závorkách, ale přidáváte obyčejnou HTML – alespoň, je běžné dokud získá k @DateTime.Now. Je to jiné trocha kódu Razor, proto znovu budete muset přidat úrovních před ním.
+Přidáte kód uvnitř značky, takže je nutné začít s @. Pokud se test podobný jste přidali dříve v bloku kódu. Uvnitř složených závorek, ale přidáváte běžný HTML – minimální, je běžné dokud nenarazí @DateTime.Now. Je to něco jiného kódu Razor, proto znovu budete muset přidat před tímto prvkem.
 
-Bod tady je, že můžete přidat, pokud podmínky v obou kód blokovat v horní části a ve značkách. Pokud použijete, pokud kód může být podmínka v těle stránky, řádky uvnitř bloku. V takovém případě a jako hodnotu true, kdykoliv kombinovat značek a kódu, budete muset použít, aby bylo jasné s technologií ASP.NET kde je kód.
+Tady je bod je, že můžete přidat, pokud podmínky v obou kód bloku v horní části a v kódu. Pokud použijete, pokud podmínka v těle stránky řádky uvnitř bloku může být značek nebo kódu. V takovém případě a jako hodnotu true, kdykoli je kombinovat značek a kódu, je nutné použít k němu zrušte na technologii ASP.NET ve kterém je kód.
 
-Spuštění stránky a klikněte na tlačítko **odeslání**. Tentokrát nejen zobrazí jiná zpráva při odeslání ("teď jste odeslané..."), ale zobrazit novou zprávu, která zobrazí datum a čas.
+Spuštění stránky a klikněte na tlačítko **odeslat**. Tentokrát nejen zobrazí různé zprávy při odeslání ("nyní jste odeslali..."), ale zobrazit novou zprávu, která obsahuje data a času.
 
-!["Test Razor 2" stránku v prohlížeči s časovým razítkem zobrazující po odeslání](intro-to-web-pages-programming/_static/image4.png)
+![Odeslání stránky "Zkušební Razor 2" s časovým razítkem zobrazení po spuštění v prohlížeči](intro-to-web-pages-programming/_static/image4.png)
 
-### <a name="testing-the-value-of-a-query-string"></a>Testování hodnota řetězce dotazu
+### <a name="testing-the-value-of-a-query-string"></a>Testování hodnoty řetězce dotazu
 
-Jeden další test. Tentokrát přidáte pokud blok, který porovnává hodnotu s názvem show, která mohla být předána v řetězci dotazu. (Jako jsou to: `http://localhost:43097/TestRazorPart2.cshtml?show=true`) změníte stránky tak, aby zpráva vám jste se zobrazení ("Toto je prvním...", atd.) se zobrazí jenom v případě zobrazit hodnotu true.
+Jeden další test. Tentokrát přidáte if blok, který testuje hodnotu s názvem show, která mohla být předána v řetězci dotazu. (Tímto způsobem: `http://localhost:43097/TestRazorPart2.cshtml?show=true`) na stránce změníte tak, aby zpráva vám jste se zobrazení ("Toto je první přihlášení...", atd.) se zobrazí jenom v případě zobrazit hodnotu true.
 
-V dolní (ale uvnitř) přidejte následující blok kódu v horní části stránky:
+V dolní části (ale uvnitř) přidejte následující blok kódu v horní části stránky:
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample10.cs)]
 
-Kompletní kód bloku teď vypadá jako v následujícím příkladu. (Nezapomeňte, že zkopírujete kód na stránku, odsazení může vypadat jinak. Ale který nemá žádný vliv na to, jak se spustí kód nástroje.)
+Kompletní kód bloku nyní vzhled jako v následujícím příkladu. (Mějte na paměti, že pokud nezkopírujete kód na vaši stránku odsazení může vypadat jinak. Ale, který nemá vliv na způsob spuštění kódu.)
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample11.cshtml)]
 
-Nový kód v bloku inicializuje proměnné s názvem showMessage na hodnotu false. Pokud tomu pak testy a vyhledejte hodnotu v řetězci dotazu. Při prvním požadavku na stránku, má adresu URL podobné následujícímu:
+Nový kód v bloku inicializuje proměnnou s názvem Zobrazitzpravu na hodnotu false. Pak provede if test a vyhledejte hodnotu v řetězci dotazu. Při prvním požadavku na stránku, má adresu URL podobný následujícímu:
 
 `http://localhost:43097/TestRazorPart2.cshtml`
 
-Kód určuje, zda adresa URL obsahuje proměnné s názvem show v řetězci dotazu, jako je tato verze adresy URL:
+Kód určuje, zda adresa URL obsahuje proměnnou s názvem show v řetězci dotazu, podobně jako tato verze adresy URL:
 
 `http://localhost:43097/TestRazorPart2.cshtml`? Zobrazit = true
 
-Sama zjistí QueryString vlastnost objektu žádosti. Pokud řetězec dotazu obsahuje položku nazvanou zobrazit, a pokud je daná položka nastavená na hodnotu true a zda bloku běží a nastavuje proměnnou showMessage na hodnotu true.
+Samotný test prohledá řetězec dotazu vlastnosti objektu žádosti. Pokud řetězec dotazu obsahuje položku s názvem show a této položky je nastavena na hodnotu true, pokud blok spustí a nastaví Zobrazitzpravu proměnnou na hodnotu true.
 
-Jak můžete vidět je tady, možností. Jako název informacemi o tom, řetězec dotazu je řetězec. Ale můžete jenom otestovat pro hodnotu true a false Pokud je hodnota, které testujete logickou hodnotu (true nebo false). Hodnota proměnné zobrazit mohli otestovat v řetězci dotazu, musíte ho převést na logickou hodnotu. To je, jaké metody AsBool – přebírá řetězec jako vstup a převede jej na logickou hodnotu. Je zřejmé zda je řetězec "PRAVDA", AsBool metoda převede tuto hodnotu na hodnotu true. Pokud je hodnota řetězce cokoliv jiného, AsBool vrací hodnotu false.
+Existuje zdvih tady, jak je vidět. Jako název říká, řetězec dotazu je řetězec. Ale můžete jenom otestovat pro hodnotu true a false hodnota, kterou testujete-li logická hodnota (true/false). Před otestováním hodnotu proměnné zobrazit v řetězci dotazu, budete muset převést na logickou hodnotu. To je, co dělá metodu AsBool – přijímá řetězec jako vstup a převede ho na hodnotu typu Boolean. Je zřejmé zda je řetězec "true", metoda AsBool převede tuto hodnotu na hodnotu true. Pokud je hodnota řetězce cokoli jiného, AsBool vrátí hodnotu false.
 
 > [!TIP] 
 > 
 > **Datové typy a metody As()**
 > 
-> Jsme uvedli jste, pouze pokud při vytváření proměnné používané var. – klíčové slovo To není celý článek, ale. Chcete-li upravit hodnoty – k přidání čísla, nebo zřetězení řetězců, a porovnání kalendářních dat a testovat true nebo false – C# má pro práci s příslušnou interního vyjádření hodnoty. C# můžete *obvykle* zjistěte, co by měl být této reprezentace (to znamená, co *typ* data) podle jaké úlohy s hodnotami. Teď a potom ale ji nejde udělat. Pokud ne, je nutné zvýšit tak, že explicitně zadáte jak C# by měl představovat data. Metoda AsBool nemá, který – obsahuje informace pro C#, řetězcovou hodnotu "true" nebo "Nepravda" zacházeno jako logická hodnota. Podobné metody existovat k reprezentaci řetězce jako jiné typy taky jako AsInt (zpracovávat jako celé číslo), AsDateTime (zpracovávat jako datum a čas), AsFloat (zpracovávat jako číslo s plovoucí desetinnou čárkou) a tak dále. Pokud používáte jako metody (), pokud C# nelze představují hodnotu řetězce podle požadavku, uvidíte chybu.
+> Jsme uvedli jste, pouze pokud při vytváření proměnné, používat klíčové slovo var. To není celý scénář, ale. Aby bylo možné manipulaci s hodnotami – přidání čísel, nebo řetězení řetězců, nebo porovnávání dat nebo test pro Pravda/Nepravda – C# má pro práci s odpovídající vnitřní reprezentaci hodnoty. C# můžete *obvykle* zjistit, co by měl být tohoto vyjádření (to znamená, co *typ* data) podle co děláte s hodnotami. Teď nebo později ale to nemůžete udělat. Pokud ne, je nutné zvýšit tak, že explicitně jak C# by měla představovat data. Metoda AsBool činí – říká C#, že řetězcovou hodnotu "true" nebo "false" by se měla zpracovávat jako logická hodnota. Podobné metody existovat k reprezentaci řetězce jako jiné typy, jako jsou AsInt (nakládání jako s celým číslem), AsDateTime (nakládání jako datum/čas), AsFloat (nakládání jako číslo s plovoucí desetinnou čárkou) a tak dále. Když použijete tyto metody (), pokud C# nemůže představovat hodnotu řetězce podle požadavku, zobrazí se vám chyba.
 
 
-V kódu stránky, odebrat nebo komentář tohoto elementu (v tomto poli zobrazuje komentáři out):
+V kódu stránky, odstranit nebo okomentovat tento prvek (tady se zobrazují komentářem navýšení kapacity):
 
 [!code-html[Main](intro-to-web-pages-programming/samples/sample12.html)]
 
-Práva, kde můžete odebrat nebo označeno jako komentář text, přidejte následující:
+Right kde odebrán nebo zakomentované text, přidejte následující:
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample13.cshtml)]
 
-Pokud je test zobrazeno, pokud je nastavena hodnota true, proměnnou showMessage vykreslení &lt;p&gt; element s hodnotou proměnné zpráva.
+Pokud je test zobrazeno, pokud je hodnota true, proměnná Zobrazitzpravu vykreslení &lt;p&gt; element s hodnotou proměnné zpráva.
 
 ### <a name="summary-of-your-conditional-logic"></a>Souhrn podmíněnou logiku
 
-V případě, že nejste zcela jisti co jste právě provedli, zde je souhrn.
+V případě, že nejste úplně jistí co jste právě provedli, tady je souhrn.
 
-- Proměnné zpráva je inicializováno výchozí řetězec ("Toto je prvním...").
-- Pokud požadavek na stránku výsledek odeslání (post), je hodnota zprávy změněna na "teď jste odeslána..."
-- Proměnná showMessage je inicializován na hodnotu false.
-- Pokud obsahuje řetězec dotazu? zobrazit = true, showMessage proměnná je nastavená na hodnotu true.
-- Do kódu, pokud je nastavena hodnota true, showMessage &lt;p&gt; prvek je vykreslovaný, která zobrazuje hodnotu zprávy. (Pokud showMessage hodnotu false, nic se vykreslí v tomto bodě ve značkách.)
-- Do kódu, pokud je požadavek post &lt;p&gt; prvek je vykreslovaný, která zobrazuje datum a čas.
+- Zpráva proměnná je inicializována na výchozí řetězec ("to je poprvé...").
+- Pokud požadavek na stránku je výsledek odeslání (post), hodnota zprávy se změní na "nyní jste odeslali..."
+- Zobrazitzpravu proměnná je inicializována na hodnotu false.
+- Pokud řetězec dotazu obsahuje? zobrazit = true, Zobrazitzpravu proměnná je nastavená na hodnotu true.
+- V kódu, pokud je hodnota true, Zobrazitzpravu &lt;p&gt; prvek je vykreslovaný, který zobrazuje hodnotu zprávy. (Pokud Zobrazitzpravu má hodnotu false, nic se vykreslí v tomto bodě v kódu.)
+- V kódu, pokud je příspěvek, žádost &lt;p&gt; prvek je vykreslovaný, který zobrazí datum a čas.
 
-Spuštění stránky. Neexistuje žádná zpráva, protože showMessage je nastavena hodnota false, takže ve značkách if(showMessage) test vrátí hodnotu false.
+Spuštění stránky. Neexistuje žádná zpráva, protože Zobrazitzpravu má hodnotu false, takže v kódu testu if(showMessage) vrátí hodnotu false.
 
-Klikněte na tlačítko **odeslání**. Zobrazí datum a čas, ale stále žádná zpráva.
+Klikněte na tlačítko **odeslat**. Zobrazí datum a čas, ale stále žádná zpráva.
 
-V prohlížeči přejděte do pole Adresa URL a přidejte následující na konec adresy URL:? Zobrazit = true a stiskněte klávesu Enter.
+V prohlížeči přejdete na pole adresy URL a přidejte následující na konec adresy URL:? Zobrazit = true a potom stiskněte klávesu Enter.
 
-!["Test Razor 2" stránku v prohlížeči a zobrazí řetězec dotazu](intro-to-web-pages-programming/_static/image5.png)
+!["Testování Razor 2" stránku v prohlížeči a zobrazí řetězec dotazu](intro-to-web-pages-programming/_static/image5.png)
 
-Stránka se zobrazí znovu. (Protože jste změnili adresu URL, to je nový požadavek, není odeslat.) Klikněte na tlačítko **odeslání** znovu. Zpráva zobrazí znovu, jako je datum a čas.
+Na stránce se zobrazí znovu. (Protože jste změnili adresu URL, to je novou žádost, ne odeslat.) Klikněte na tlačítko **odeslat** znovu. Zpráva se zobrazí znovu, jako je datum a čas.
 
-!["Test Razor 2" stránka po odeslání, pokud je řetězec dotazu](intro-to-web-pages-programming/_static/image6.png)
+!["Testování Razor 2" stránku po odesílat, pokud je řetězec dotazu](intro-to-web-pages-programming/_static/image6.png)
 
-V adrese URL, změňte? zobrazit = true na? Zobrazit = false a stiskněte klávesu Enter. Stránku odešlete znovu. Stránka je zpět na tom, jak jste spustili – žádná zpráva.
+V adrese URL, změňte? zobrazit = true na? Zobrazit = false a stiskněte klávesu Enter. Na stránce odešlete znovu. Na stránce je zpátky na tom, jak začít – žádná zpráva.
 
-Jak již bylo uvedeno dříve, logiku tohoto příkladu je malým contrived. Ale pokud budete se objeví v mnoha stránek, a bude trvat jednu nebo více formulářů, které jste se seznámili s sem.
+Jak bylo uvedeno dříve, logika v tomto příkladu je trochu contrived. Nicméně, pokud se objevují v mnoha stránkách, a bude trvat nejméně jeden z formuláře Seznámili jste se sem.
 
-## <a name="installing-a-helper-displaying-a-gravatar-image"></a>Instalace pomocné rutiny (zobrazení bitovou kopii Gravatar)
+## <a name="installing-a-helper-displaying-a-gravatar-image"></a>Instalace pomocné rutiny (zobrazení obrázku Gravatar)
 
-Některé úlohy, které uživatelé často chtějí provést na webových stránkách vyžadovat velké množství kódu nebo vyžadovat další znalostní báze. Příklady: zobrazení grafu pro data; ukládání Facebook "Jako" na stránku; odesílání e-mailu z webu; oříznutí nebo změna velikosti obrázků; pomocí služby PayPal pro váš web. Chcete-li snadné provést tyto druhy věcí, rozhraní ASP.NET Web Pages vám umožní používat *Pomocníci*. Pomocné rutiny jsou komponenty, která po instalaci lokality a které umožňují typické úlohy provádět pomocí několika řádků kódu Razor.
+Některé úlohy, které uživatelé často chtějí dělat na webových stránkách vyžadují velké množství kódu nebo vyžadovat další znalostní báze. Příklady: zobrazuje graf pro data. uvedení služby Facebook "Jako" na stránce. odeslání e-mailů z vašeho webu; oříznutí nebo změny velikosti obrázků; pomocí služby PayPal pro váš web. Abyste usnadnili snadnou udělat Tyhle druhy věcí, rozhraní ASP.NET Web Pages vám umožní používat *pomocné rutiny*. Pomocné rutiny jsou komponenty, které instalujete pro lokalitu a, které umožňují provádět typické úlohy pomocí pár řádků kódu Razor.
 
-ASP.NET – webové stránky má několik Pomocníci součástí. Mnoho pomocné rutiny jsou však k dispozici v balíčcích (doplňky), které jsou k dispozici pomocí Správce balíčků NuGet. NuGet umožňuje vybrat balíček pro instalaci a pak se stará o všechny podrobnosti instalace.
+ASP.NET Web Pages má několik pomocných rutin součástí. Mnoho pomocné rutiny jsou však k dispozici v balíčcích (doplňky), které jsou k dispozici pomocí Správce balíčků NuGet. NuGet umožňuje vybrat balíček pro instalaci a pak se postará o všechny podrobnosti o instalaci.
 
-V této části kurzu nainstalujete pomocné rutiny, která umožňuje zobrazit obrázek Gravatar (dále jen "globálně rozpoznaný miniatury"). Dozvíte dvě věci. Jeden je jak najít a nainstalovat pomocné rutiny. Budete také zjistěte, jak pomocné rutiny usnadňuje dělejte, které byste jinak potřebovali Uděláte to pomocí velké množství kódu, budete muset napsat sami.
+V této části kurzu nainstalujete pomocné rutiny, která umožňuje zobrazit obrázek Gravatar ("globálně uznávané avatar"). Dozvíte dvě věci. Jedna je pro vyhledání a instalace pomocné rutiny. Se také dozvíte, jak pomocné rutiny umožňuje snadno udělat něco, co by jinak musíte udělat pomocí velké množství kódu, které byste museli napsat sami.
 
-Můžete zaregistrovat vlastní Gravatar na webu Gravatar na [ http://www.gravatar.com/ ](http://www.gravatar.com/), ale to není nezbytně nutné, aby vytvořit účet Gravatar k provedení této části kurzu.
+Můžete zaregistrovat na webu Gravatar na vlastní Gravatar [ http://www.gravatar.com/ ](http://www.gravatar.com/), ale to není nezbytné pro vytvoření účtu Gravatar k provedení této části kurzu.
 
-Ve službě WebMatrix, klikněte **NuGet** tlačítko.
+V nástroji WebMatrix, klikněte na tlačítko **NuGet** tlačítko.
 
-![Dialogové okno Galerie NuGet ve službě WebMatrix](intro-to-web-pages-programming/_static/image7.png)
+![Dialogové okno Galerie NuGet v nástroji WebMatrix](intro-to-web-pages-programming/_static/image7.png)
 
-Tím se spustí Správce balíčků NuGet a zobrazí se dostupné balíčky. (Ne všechny balíčky jsou pomocné; některé přidání funkcí do prostředí WebMatrix samotné některé další šablony atd.) Může se zobrazit chybová zpráva o nekompatibility verzí. Tuto chybovou zprávu můžete ignorovat kliknutím **OK** a budete pokračovat v tomto kurzu.
+To spustí Správce balíčků NuGet a zobrazí dostupné balíčky. (Všechny balíčky jsou pomocné rutiny, některé přidávají funkce do prostředí WebMatrix, sama, některé jsou další šablony atd.) Může zobrazit chybová zpráva týkající se nekompatibilita verzí. Kliknutím můžete ignorovat tuto chybovou zprávu **OK** a pokračovat v tomto kurzu.
 
-![Dialogové okno Galerie NuGet ve službě WebMatrix](intro-to-web-pages-programming/_static/image8.png)
+![Dialogové okno Galerie NuGet v nástroji WebMatrix](intro-to-web-pages-programming/_static/image8.png)
 
-Do vyhledávacího pole zadejte "Pomocníci asp.net". NuGet ukazuje balíčky, které odpovídají hledaným výrazům.
+Do vyhledávacího pole zadejte "pomocné rutiny technologie asp.net". NuGet zobrazuje balíčky, které odpovídají hledaným výrazům.
 
 ![Galerie NuGet ve službě WebMatrix zobrazující balíčky](intro-to-web-pages-programming/_static/image9.png)
 
-Knihovnu ASP.NET Web Helpers obsahuje kód pro zjednodušení mnoho běžných úkolů, včetně použití Gravatar bitových kopií. Vyberte **knihovnu ASP.NET Web Helpers** balíček a potom klikněte na **nainstalovat** spustíte instalační program. Vyberte **Ano** když se zobrazí dotaz, pokud chcete nainstalovat balíček a přijměte podmínky pro dokončení instalace.
+Knihovnu ASP.NET Web Helpers obsahuje kód, který zjednodušuje mnoho běžných úkolů, včetně využití čipu TPM Gravatar imagí. Vyberte **knihovnu ASP.NET Web Helpers** balíček a pak klikněte na tlačítko **nainstalovat** ke spuštění Instalační služby. Vyberte **Ano** když se zobrazí výzva, pokud chcete balíček nainstalovat a přijměte podmínky dokončete instalaci.
 
-Je to. NuGet se stáhne a nainstaluje vše, včetně žádné další součásti, které mohou být požadovány (*závislosti*).
+Je to. NuGet stáhne a nainstaluje vše, včetně všechny další součásti, které mohou vyžadovat (*závislosti*).
 
-Pokud z nějakého důvodu musíte odinstalovat pomocné rutiny, je velmi podobný procesu. Klikněte **NuGet** tlačítko, klikněte na tlačítko **nainstalovaná** kartě a vyberte balíček, který chcete odinstalovat.
+Pokud z nějakého důvodu je nutné odinstalovat pomocné rutiny, je velmi podobné. Klikněte na tlačítko **NuGet** tlačítko, klikněte na tlačítko **nainstalováno** kartu a vyberte balíček, který chcete odinstalovat.
 
-## <a name="using-a-helper-in-a-page"></a>Na stránce pomocí pomocné rutiny
+## <a name="using-a-helper-in-a-page"></a>Použití pomocné rutiny na stránce
 
-Teď použijete pomocné rutiny, který jste právě nainstalovali. Proces přidávání pomocné rutiny pro stránky je podobný pro většinu pomocné rutiny.
+Teď použijete pomocné rutiny, které jste právě nainstalovali. Proces pro přidání na stránku pomocné rutiny je podobný pro většinu pomocné rutiny.
 
-Ve službě WebMatrix, vytvořte stránku a pojmenujte ji *GravatarTest.cshml*. (Vytváření zvláštní stránky k testování pomocné rutiny, ale pomocné rutiny můžete použít na libovolné stránce ve vaší lokalitě.)
+V nástroji WebMatrix, vytvořte stránku s názvem *GravatarTest.cshml*. (Vytváření speciální stránky k otestování pomocné rutiny, ale pomocné rutiny můžete použít na libovolné stránce ve vaší lokalitě.)
 
-Uvnitř &lt;textu&gt; elementu, přidejte &lt;div&gt; elementu. Uvnitř &lt;div&gt; elementu, zadejte toto:
+Uvnitř &lt;tělo&gt; element, přidejte &lt;div&gt; element. Uvnitř &lt;div&gt; elementu, zadejte toto:
 
 @Gravatar.
 
-Znak @ je ve stejném jste dosud používali označit kódu Razor. **Gravatar** je pomocný objekt, který kterými pracujete.
+Znak @ je ve stejném zatím jste používali pro označení kódu Razor. **Gravatar** je objekt pomocné rutiny, které pracujete.
 
 Jakmile zadáte tečku (.), služba WebMatrix zobrazí seznam *metody* (funkce) zpřístupní Gravatar pomocné rutiny:
 
-![Gravatar pomocná IntelliSense rozevírací seznam](intro-to-web-pages-programming/_static/image10.png)
+![Gravatar pomocné rutiny technologie IntelliSense rozevíracího seznamu](intro-to-web-pages-programming/_static/image10.png)
 
-Tato funkce se označuje jako *IntelliSense*. Kód vám pomáhá tím, že poskytuje kontext příslušné volby. IntelliSense pracuje s HTML, CSS, kódu ASP.NET, JavaScript a další jazyky, které jsou podporovány ve službě WebMatrix. Je jiné funkce, která usnadňuje vývoj webových stránek ve službě WebMatrix.
+Tato funkce se označuje jako *IntelliSense*. Pomáhá při kódování tím, že poskytuje kontext odpovídající možnosti. Technologie IntelliSense funguje s HTML, CSS, kód technologie ASP.NET, JavaScriptu a dalších jazycích, které jsou podporovány v nástroji WebMatrix. Je další funkce, která usnadňuje vývoj webových stránek v nástroji WebMatrix.
 
-Stisknutím klávesy G na klávesnici a že IntelliSense vyhledá metodu GetHtml najdete v článku. Stisknutím klávesy Tab. IntelliSense vloží vybranou metodu (GetHtml) za vás. Otevřete závorku a Všimněte si, že je automaticky přidán kulaté závorky. Zadejte e-mailovou adresu v uvozovkách mezi dvěma závorky. Pokud máte účet Gravatar, bude vrácen profilový obrázek. Pokud nemáte účet Gravatar, je vrácen výchozí image. Když jste hotovi, řádek vypadá takto:
+G klávesu na klávesnici a podívejte se, aby IntelliSense najde GetHtml metoda. Stisknutím klávesy Tab. Vybrané metody (GetHtml) vloží technologie IntelliSense. Zadejte levou (otevírací) a Všimněte si, že pravou závorku se přidá automaticky. Zadejte e-mailovou adresu v uvozovkách mezi dvěma závorky. Pokud máte účet Gravatar, vrátí se váš profilový obrázek. Pokud nemáte účet Gravatar, vrátí se výchozí image. Jakmile budete hotovi, řádku vypadá takto:
 
 [!code-css[Main](intro-to-web-pages-programming/samples/sample14.css)]
 
-Nyní zobrazte stránku v prohlížeči. Obrázek nebo výchozí image se zobrazí, v závislosti na tom, jestli máte účet Gravatar.
+Nyní zobrazení stránky v prohlížeči. Váš obrázek nebo výchozí image se zobrazí, v závislosti na tom, jestli máte účet Gravatar.
 
 ![Gravatar](intro-to-web-pages-programming/_static/image11.png) ![Výchozí image](intro-to-web-pages-programming/_static/image12.png)
 
-Získat představu o co je to pomocné rutiny pro vás, zobrazte si zdroj stránku v prohlížeči. Společně s HTML, které jste měli v stránku zobrazí element bitovou kopii, která obsahuje identifikátor. Toto je kód, který pomocné rutiny vykreslovány na stránce na místě, kde jste měli @Gravatar.GetHtml. Pomocné rutiny trvalo informace, které poskytuje a vygeneruje kód, který komunikuje přímo se Gravatar, aby bylo možné získat zpět správné bitové kopie pro zadaný účet.
+Chcete-li získat představu, co dělá pomocné rutiny pro vás, Zobrazit zdroj stránky v prohlížeči. Spolu s HTML, který měl na stránce se zobrazí element image, která obsahuje identifikátor. Toto je kód, který do stránky v místě, kde jste měli vykresluje pomocné rutiny @Gravatar.GetHtml. Pomocná rutina trvalo informace k dispozici a generovaného kódu, která komunikuje přímo Gravatar aby zpět získal správné bitové kopie pro zadaný účet.
 
-Metoda GetHtml také umožňuje přizpůsobit image tím, že poskytuje další parametry. Následující kód ukazuje, jak požádat o image má šířky a výšky 40 pixelů a používá zadané výchozí obrázek s názvem **wavatar** Pokud zadaný účet neexistuje.
+Metoda GetHtml také umožňuje přizpůsobit obrázek tím, že poskytuje další parametry. Následující kód ukazuje, jak požádat o image má šířku a výšku 40 pixelů a používá zadané výchozí image s názvem **wavatar** Pokud uvedený účet neexistuje.
 
 [!code-javascript[Main](intro-to-web-pages-programming/samples/sample15.js)]
 
-Tento kód vytvoří přibližně následující výsledek (výchozí image se náhodně liší).
+Tento kód vytvoří něco jako následující výsledek (výchozí image bude náhodně lišit).
 
 ![](intro-to-web-pages-programming/_static/image13.png)
 
-## <a name="coming-up-next"></a>Objevuje další
+## <a name="coming-up-next"></a>Chystá se další
 
-Aby tento kurz krátké jsme museli soustředit na pouze několik základy. Samozřejmě je *mnoho* další Razor a C#. Dozvíte se další jako můžete projít tyto kurzy. Pokud byste chtěli dozvědět další informace o programování aspektů Razor a C# nyní, si můžete přečíst podrobnější Úvod zde: [Úvod do ASP.NET webové programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890).
+Zachovat tento krátký kurz, jsme museli zaměřit jenom pár základy. Samozřejmě je *hodně* víc informací, které Razor a C#. Dozvíte se víc při projděte si tyto kurzy. Pokud chcete dozvědět více o programování aspektů Razor a C# teď si můžete přečíst tady důkladnější Úvod: [Úvod do ASP.NET webové programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890).
 
-V dalším kurzu se seznámíte s práci s databází. V tomto kurzu začnete budete vytvářet ukázkovou aplikaci, která umožňuje zobrazit seznam oblíbených filmů.
+V dalším kurzu se seznámíte práci s databází. V tomto kurzu budete začít vytvářet ukázkovou aplikaci, která umožňuje seznamu Oblíbené videa.
 
 ## <a name="complete-listing-for-testrazor-page"></a>Úplný seznam TestRazor stránky
 
@@ -358,7 +357,7 @@ V dalším kurzu se seznámíte s práci s databází. V tomto kurzu začnete bu
 
 ## <a name="additional-resources"></a>Další prostředky
 
-- [Úvod do rozhraní ASP.NET Web programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Úvod k programování v prostředí ASP.NET pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Pomocník Twitter](../../ui-layouts-and-themes/twitter-helper.md)
 
 > [!div class="step-by-step"]

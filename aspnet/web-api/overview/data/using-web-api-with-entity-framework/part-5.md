@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-5
-title: Vytváření objektů přenos dat (DTOs) | Microsoft Docs
+title: Vytvoření objektů pro přenos dat (DTO) | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,51 +9,50 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: 0fd07176-b74b-48f0-9fac-0f02e3ffa213
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 35e01f959072b96204de3e2ce3d507635720e110
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6a066f1aca909afc2956e2026d9025cb87f10b1f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878682"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37399922"
 ---
-<a name="create-data-transfer-objects-dtos"></a>Vytváření objektů přenos dat (DTOs)
+<a name="create-data-transfer-objects-dtos"></a>Vytvoření objektů pro přenos dat (DTO)
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
+[Stáhnout dokončený projekt](https://github.com/MikeWasson/BookService)
 
-Pravé nyní naše webové rozhraní API zpřístupní entity databáze do klienta. Klient obdrží data, která mapuje přímo do databázové tabulky. Nicméně, který není vždy vhodné. Někdy budete chtít změnit tvar data, která můžete odeslat do klienta. Například můžete chtít:
+Pravé teď naše webové rozhraní API zveřejňuje entity databáze do klienta. Klient obdrží data, která mapuje přímo na databázových tabulek. Nicméně, který není vždy vhodné. Někdy budete chtít změnit tvar data, která odesíláte do klienta. Například můžete chtít:
 
-- Odeberte cyklické odkazy (viz předchozí části).
-- Skryjte konkrétní vlastnosti, které klienti nemají co dělat k zobrazení.
-- Vynechte některé vlastnosti za účelem snížení velikosti datové části.
-- Vyrovnání objekt grafy, které obsahují vnořených objektů, aby je bylo pohodlnější pro klienty.
-- Vyhněte se "typu overpost" ohrožení zabezpečení. (Viz [ověření modelu](../../formats-and-model-binding/model-validation-in-aspnet-web-api.md) diskuzi o navýšení zveřejňování.)
-- Oddělte vrstvě služby z databázové vrstvě.
+- Odeberte cyklické odkazy (viz předchozí část).
+- Skryjte určité vlastnosti, které klienti neměl zobrazit.
+- Vynechte některé vlastnosti, aby bylo možné zmenšit velikost datové části.
+- Sloučení grafů objektů, které obsahují vnořené objekty, aby se daly vhodnější pro klienty.
+- Vyhněte se "over-pass-the účtování" ohrožení zabezpečení. (Viz [ověření modelu](../../formats-and-model-binding/model-validation-in-aspnet-web-api.md) diskuzi o navýšení účtování.)
+- Oddělte vrstvě služby z vrstvy vaší databáze.
 
-Pokud chcete dosáhnout, můžete definovat *objekt pro přenos dat* (DTO). DTO je objekt, který definuje, jak budou data odeslány prostřednictvím sítě. Podívejme se, jak funguje s entitou adresáře. Ve složce modely přidejte dvě třídy DTO:
+Chcete-li to provést, můžete definovat *objekt pro přenos dat* (DTO). Objekt DTO je objekt, který definuje, jak data se odešlou přes síť. Podívejme se, jak to funguje s entitou knihy. Ve složce modely přidejte dvě DTO třídy:
 
 [!code-csharp[Main](part-5/samples/sample1.cs)]
 
-`BookDetailDTO` Třída obsahuje všechny vlastnosti z adresáře modelu, vyjma toho, že `AuthorName` je řetězec, který bude obsahovat jméno autora. `BookDTO` Třída obsahuje podmnožinu vlastnosti z `BookDetailDTO`.
+`BookDetailDTO` Třída zahrnuje všechny vlastnosti z knihy modelu, s výjimkou, že `AuthorName` je řetězec, který bude obsahovat jméno autora. `BookDTO` Třída obsahuje podmnožinu vlastností z `BookDetailDTO`.
 
-Potom nahraďte tyto dvě metody GET v `BooksController` třídy s verzemi, které vracejí DTOs. Použijeme LINQ **vyberte** příkaz Převést z adresáře entity do DTOs.
+Tyto dvě metody GET v dalším kroku nahraďte `BooksController` třídy s verzemi, které vracejí DTO. Použijeme LINQ **vyberte** příkaz Převést ze seznamu entit na DTO.
 
 [!code-csharp[Main](part-5/samples/sample2.cs)]
 
-Tady je SQL generované nové `GetBooks` metoda. Uvidíte, že EF překládá LINQ **vyberte** do příkazu SQL SELECT.
+Tady je SQL vygeneroval nový `GetBooks` metody. Uvidíte, že překládá EF LINQ **vyberte** do příkazu SQL SELECT.
 
 [!code-sql[Main](part-5/samples/sample3.sql)]
 
-Nakonec upravte `PostBook` metoda vrátí DTO.
+Nakonec upravte `PostBook` metoda vrátí objekt DTO.
 
 [!code-csharp[Main](part-5/samples/sample4.cs)]
 
 > [!NOTE]
-> V tomto kurzu jsme se převodu na DTOs ručně v kódu. Další možností je použití knihovny jako [AutoMapper](http://automapper.org/) , která zpracovává převod automaticky.
+> V tomto kurzu převádíme na DTO ručně v kódu. Další možností je použít knihovnu jako [AutoMapper](http://automapper.org/) , která zpracovává server převod automaticky.
 > 
 > [!div class="step-by-step"]
 > [Předchozí](part-4.md)

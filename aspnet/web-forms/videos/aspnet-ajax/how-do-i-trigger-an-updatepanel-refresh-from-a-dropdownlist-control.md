@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control
-title: '[Jak na:] Spustit aktualizaci UpdatePanel z ovládacího prvku rozevírací seznam? | Microsoft Docs'
+title: '[Postup:] Aktivace aktualizace z ovládací prvek DropDownList? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Ve většině naše videí na webu technologie ASP.NET AJAX UpdatePanel jsme použili ovládacího prvku tlačítko způsobí UpdatePanel aktualizujte jeho obsah. Ještě můžeme použít libovolnou událost...
+description: Ve většině naše videa u prvku UpdatePanel technologie ASP.NET AJAX jsme použili ovládací prvek tlačítko způsobit ovládacího prvku UpdatePanel aktualizovat jeho obsah. Můžeme ještě použít libovolná událost...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/22/2007
 ms.topic: article
 ms.assetid: e90defdb-b6b1-4f38-8f6a-7adccbb426ef
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control
 msc.type: video
-ms.openlocfilehash: c6304736485aaea2501daaf1ad80dd4304b4f67a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a94ca5891b848578ba8c42db512f8960742c0ced
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884766"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380581"
 ---
-<a name="how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control"></a>[Jak na:] Spustit aktualizaci UpdatePanel z ovládacího prvku rozevírací seznam?
+<a name="how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control"></a>[Postup:] Aktivace aktualizace z ovládací prvek DropDownList?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Ve většině naše videí na webu technologie ASP.NET AJAX UpdatePanel jsme použili ovládacího prvku tlačítko způsobí UpdatePanel aktualizujte jeho obsah. Ještě můžeme použít libovolnou událost aktivováno žádné jiný server ovládací prvek ASP.NET. Toto video používá událost SelectedIndexChanged ovládací prvek rozevírací seznam jako aktivační událost pro aktualizaci prvku UpdatePanel. Vidíme také jak jsme můžete dynamicky měnit šablony stylů třídy související s ovládacími prvky obsažené v ovládacím prvku UpdatePanel.
+Ve většině naše videa u prvku UpdatePanel technologie ASP.NET AJAX jsme použili ovládací prvek tlačítko způsobit ovládacího prvku UpdatePanel aktualizovat jeho obsah. Ještě jsme může použít jakékoli události vyvolané službou jakékoli další serverový ovládací prvek ASP.NET. Toto video používá událost SelectedIndexChanged. ovládací prvek DropDownList jako trigger pro aktualizaci prvku UpdatePanel. Vidíme také jak nám můžete dynamicky měnit třídu šablony stylů přidružené ovládací prvky obsažené v ovládacím prvku UpdatePanel.
 
-[&#9654;Podívejte se na video (9 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control)
+[&#9654;Podívejte se na video (9 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-implement-the-persistent-communications-pattern-using-web-services.md)

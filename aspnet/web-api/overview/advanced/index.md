@@ -1,34 +1,33 @@
 ---
 uid: web-api/overview/advanced/index
-title: Rozšířené témata pro rozhraní ASP.NET Web API | Microsoft Docs
+title: Pokročilá témata pro rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: rick-anderson
-description: Pokročilejší témata pro vývoj rozhraní ASP.NET Web API, po které jste se naučili základy.
+description: Pokročilejší témata pro vývoj pro ASP.NET Web API, až poté, co jste se seznámili se základy.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: 7404a0f1-52f7-410c-abd0-c96bab52d217
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced
 msc.type: chapter
-ms.openlocfilehash: dca812e1c88d1aa2692365711d71813199be9ca2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ae17bdbebf1d8fc0c6e42da2bbe96e260b0523ae
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566329"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381568"
 ---
-<a name="advanced-topics-for-aspnet-web-api"></a>Rozšířené témata pro rozhraní ASP.NET Web API
+<a name="advanced-topics-for-aspnet-web-api"></a>Pokročilá témata pro rozhraní ASP.NET Web API
 ====================
-> Pokročilejší témata pro vývoj rozhraní ASP.NET Web API, po které jste se naučili základy.
+> Pokročilejší témata pro vývoj pro ASP.NET Web API, až poté, co jste se seznámili se základy.
 
 
-- [Konfigurace rozhraní Web API 2](configuring-aspnet-web-api.md)
-- [Vkládání závislostí v rozhraní Web API 2](dependency-injection.md)
+- [Konfigurace webového rozhraní API 2](configuring-aspnet-web-api.md)
+- [Injektáž závislostí ve webovém rozhraní API 2](dependency-injection.md)
 - [Volání webového rozhraní API z klienta .NET (C#)](calling-a-web-api-from-a-net-client.md)
-- [Obslužné rutiny zpráv HTTP v rozhraní Web API](http-message-handlers.md)
-- [Obslužné rutiny zpráv HttpClient v rozhraní Web API](httpclient-message-handlers.md)
-- [Odeslání dat formuláře HTML v rozhraní Web API: Data formuláře urlencoded](sending-html-form-data-part-1.md)
-- [Odeslání dat formuláře HTML v rozhraní Web API: souboru nahrávání a vícedílné zprávy standardu MIME](sending-html-form-data-part-2.md)
-- [Soubory cookie protokolu HTTP v rozhraní ASP.NET Web API](http-cookies.md)
+- [Obslužné rutiny zpráv HTTP ve webovém rozhraní API](http-message-handlers.md)
+- [Obslužné rutiny zpráv HttpClient ve webovém rozhraní API](httpclient-message-handlers.md)
+- [Posílání dat formulářů HTML ve webovém rozhraní API: Data formuláře kódovaná pomocí adresy URL](sending-html-form-data-part-1.md)
+- [Posílání dat formulářů HTML ve webovém rozhraní API: Nahrání souboru a vícedílné zprávy MIME](sending-html-form-data-part-2.md)
+- [Soubory cookie HTTP ve webovém rozhraní API technologie ASP.NET](http-cookies.md)

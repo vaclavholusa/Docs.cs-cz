@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-6
-title: Vytvoření klienta JavaScript | Microsoft Docs
+title: Vytvoření Javascriptového klienta | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,39 +9,38 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: 20360326-b123-4b1e-abae-1d350edf4ce4
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 29d50e448e6d282c7db06b9d1946ac221347e1ea
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b0b8ef9bd44bbce5102f2b12717e330f72a9e0c9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879306"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400931"
 ---
-<a name="create-the-javascript-client"></a>Vytvoření klienta JavaScript
+<a name="create-the-javascript-client"></a>Vytvoření Javascriptového klienta
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
+[Stáhnout dokončený projekt](https://github.com/MikeWasson/BookService)
 
-V této části vytvoříte klienta pro aplikaci, pomocí HTML, JavaScript a [Knockout.js](http://knockoutjs.com/) knihovny. Klientská aplikace jsme budete vytvářet ve fázích:
+V této části vytvoříte klienta pro aplikaci v jazyce HTML, JavaScript a [knihovnou Knockout.js](http://knockoutjs.com/) knihovny. Vytvoříme klientskou aplikaci ve fázích:
 
-- Zobrazuje seznam seznamů.
+- Zobrazuje seznam knihy.
 - Zobrazuje podrobnosti adresáře.
-- Přidání nového seznamu.
+- Přidává se nová kniha.
 
-Knihovny Knockout využívá schéma Model-View-ViewModel (modelem MVVM):
+Knihovny Knockout používá vzor Model-View-ViewModel (MVVM):
 
-- **Modelu** je serverové reprezentace dat v doméně obchodní (v našem případ, knihy a autoři).
+- **Modelu** je reprezentace dat v doméně business (v našich případu, knihy a autoři) na straně serveru.
 - **Zobrazení** je prezentační vrstvy (HTML).
-- **Modelu zobrazení** se objekt jazyka JavaScript, která obsahuje modely. Model zobrazení je abstrakce kód uživatelského rozhraní. Nemá žádné znalosti reprezentace HTML. Místo toho představuje abstraktní zobrazení, funkce, jako &quot;seznam seznamů&quot;.
+- **Model zobrazení** je objekt jazyka JavaScript obsahující modely. Model zobrazení je abstrakce kód uživatelského rozhraní. Nemá žádné znalosti jazyka HTML představující. Místo toho představuje abstraktní funkce zobrazení, jako například &quot;seznam knihy&quot;.
 
-Zobrazení je vázané na data do modelu zobrazení. Aktualizace do modelu zobrazení, se automaticky promítnou v zobrazení. Model zobrazení také získá události ze zobrazení, například kliknutím na tlačítko.
+Zobrazení je vázaný na data do modelu zobrazení. Aktualizace zobrazení modelu se automaticky projeví v zobrazení. Model zobrazení také načte události z zobrazení, jako je tlačítko klikne.
 
 ![](part-6/_static/image1.png)
 
-Tento přístup umožňuje snadno změnit rozložení a uživatelského rozhraní aplikace, protože vazby, můžete změnit bez přepisování žádný kód. Například může zobrazit seznam položek, jako `<ul>`, poté ji později změnit na tabulku.
+Tento přístup umožňuje snadno změnit rozložení a uživatelského rozhraní aplikace, protože vazby, můžete změnit bez přepsání jakéhokoli kódu. Například může zobrazit seznam položek jako `<ul>`, pak ji později změnit na tabulku.
 
 ## <a name="add-the-knockout-library"></a>Přidání knihovny Knockout
 
@@ -51,26 +50,26 @@ V sadě Visual Studio z **nástroje** nabídce vyberte možnost **Správce balí
 
 Tento příkaz přidá Knockout soubory do složky skriptů.
 
-## <a name="create-the-view-model"></a>Vytvoření modelu zobrazení
+## <a name="create-the-view-model"></a>Vytvoření zobrazení modelu
 
-Přidejte soubor JavaScript s názvem app.js do složky skriptů. (V Průzkumníku řešení klikněte pravým tlačítkem na složku skripty, vyberte **přidat**, pak vyberte **soubor JavaScript**.) Vložte následující kód:
+Přidejte soubor JavaScriptu s názvem app.js do složky skriptů. (V Průzkumníku řešení klikněte pravým tlačítkem na složku skripty, vyberte **přidat**a pak vyberte **soubor JavaScript**.) Vložte následující kód:
 
 [!code-javascript[Main](part-6/samples/sample2.js)]
 
-V Knockout `observable` třída umožňuje datové vazby. Při změně obsahu existuje zjištěný, upozorní lze zobrazit všechny ovládací prvky vázané na data, mohou sami aktualizovat. ( `observableArray` Třída je pole verze *lze zobrazit*.) Naše model zobrazení začínat, má dva pozorovatelné objekty:
+V Knockout `observable` třída umožňuje datové vazby. Při změně obsahu pozorovat, upozorní pozorovat všechny ovládací prvky vázané na data, tak mohou aktualizovat sami. ( `observableArray` Třídy je pole verze *pozorovat*.) Začněte tím náš model zobrazení má dvě pozorovatelné objekty:
 
-- `books` obsahuje seznam knih.
+- `books` obsahuje seznam knihy.
 - `error` obsahuje chybovou zprávu, pokud selže volání AJAX.
 
-`getAllBooks` Metoda provede volání AJAX získat seznam knih. Pak vynutí výsledek do `books` pole.
+`getAllBooks` Metoda provádí volání AJAX k získání seznamu knihy. Pak uloží výsledek do `books` pole.
 
-`ko.applyBindings` Metoda je součástí knihovny Knockout. Přebírá jako parametr modelu zobrazení a nastaví datové vazby.
+`ko.applyBindings` Metoda je součástí knihovny Knockout. Model zobrazení jako parametr přijímá a nastaví datovou vazbu.
 
-## <a name="add-a-script-bundle"></a>Přidat sady skriptu
+## <a name="add-a-script-bundle"></a>Přidat sadu skriptů
 
-Sdružování je funkce v technologii ASP.NET 4.5, která usnadňuje kombinovat nebo sady více souborů do jediného souboru. Sdružování snižuje počet požadavků na server, což může zlepšit čas načítání stránky.
+Sdružování je funkce v technologii ASP.NET 4.5, který umožňuje snadno kombinovat nebo sady více souborů do jediného souboru. Sdružování snižuje počet požadavků na server, což může zlepšit čas načítání stránky.
 
-Otevřete soubor aplikace\_Start/BundleConfig.cs. Přidejte následující kód do metody RegisterBundles.
+Otevřete soubor aplikace\_Start/BundleConfig.cs. Přidejte následující kód k metodě RegisterBundles.
 
 [!code-csharp[Main](part-6/samples/sample3.cs)]
 

@@ -1,6 +1,6 @@
 ---
 uid: signalr/overview/older-versions/scaleout-in-signalr
-title: Úvod do škálování v systému SignalR 1.x | Microsoft Docs
+title: Úvod do škálování aplikace SignalR 1.x | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,42 +9,41 @@ ms.date: 04/29/2013
 ms.topic: article
 ms.assetid: 3fd9f11c-799b-4001-bd60-1e70cfc61c19
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: ee3384046bf8a0f363aa6801d7a46f68b2bf125a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a492eabfb5a74472b44095f24704028f6cd8a12a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28043743"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375218"
 ---
-<a name="introduction-to-scaleout-in-signalr-1x"></a>Úvod do škálování v systému SignalR 1.x
+<a name="introduction-to-scaleout-in-signalr-1x"></a>Úvod do škálování aplikace SignalR 1.x
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Patrik Fletcher](https://github.com/pfletcher)
+podle [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
-Obecně platí, existují dva způsoby škálování webové aplikace: *škálovat* a *škálovat*.
+Obecně platí, existují dva způsoby, jak škálovat webovou aplikaci: *vertikálně navýšit kapacitu* a *horizontální navýšení kapacity*.
 
-- Škálování znamená větší serveru (nebo na větší virtuální počítač) pomocí více paměti RAM, procesory atd.
-- Horizontální navýšení kapacity znamená přidávat další servery pro zpracování zátěže.
+- Vertikálně navýšit kapacitu znamená větší serveru (nebo větší virtuální počítač) pomocí více paměti RAM, procesory atd.
+- Horizontální navýšení kapacity znamená, že přidáte další servery pro zpracování zátěže.
 
-Problém s vertikálním navýšení kapacity je rychle dosáhl limitu velikost počítače. Kromě toho budete muset škálovat. Však při škálovat, klienti mohou získat směrovány na jiné servery. Klient, který je připojený k jednomu serveru nebude příjem zpráv odeslaných z jiného serveru.
+Problém s vertikálním navýšení kapacity je rychle dosažení limitu na velikost počítače. Kromě toho je potřeba škálovat na více systémů. Ale při horizontálním navýšením kapacity je získat klienty směrovat na různé servery. Klient, který je připojený k jednomu serveru nebude přijímat zprávy odeslané z jiného serveru.
 
 ![](scaleout-in-signalr/_static/image1.png)
 
-Jedním z řešení je k předávání zpráv mezi servery pomocí komponenty s názvem *propojovacího rozhraní*. S propojovacího rozhraní povoleno každá instance aplikace odesílá zprávy do propojovacího rozhraní a předává je propojovacího rozhraní dalších instancí aplikace. (V elektronické součástky, propojovací rozhraní je skupina paralelní konektorů. Obdobně propojovací rozhraní SignalR připojí více serverů.)
+Jedním z řešení je k předávání zpráv mezi servery pomocí komponenty s názvem *propojovací rozhraní systému*. Propojovací rozhraní povolená každá instance aplikace odesílá zprávy do propojovacího rozhraní a propojovacího rozhraní předává je do jiné instance aplikace. (V elektronika, je skupina paralelní konektory propojovacího rozhraní. Obdobně propojovací rozhraní systému SignalR připojí víc serverů.)
 
 ![](scaleout-in-signalr/_static/image2.png)
 
-Funkce SignalR aktuálně poskytuje tři backplanes:
+Funkce SignalR v současné době poskytuje tři backplanes:
 
-- **Azure Service Bus**. Service Bus je zasílání zpráv infrastrukturu, která umožňuje součásti odesílat zprávy volně párované způsobem.
-- **Redis**. Redis je úložišti klíč hodnota v paměti. Redis podporuje vzor publikovat/odebírat ("pub nebo sub") pro odesílání zpráv.
-- **SQL Server**. Propojovací rozhraní systému SQL Server zapíše zprávy do tabulky SQL. Propojovacího rozhraní používá službu Service Broker pro efektivní zasílání zpráv. Ale spolupracuje také pokud Service Broker není povolena.
+- **Azure Service Bus**. Service Bus je infrastruktura zasílání zpráv, který umožňuje součástem pro odesílání zpráv volně způsobem.
+- **Redis**. Redis je úložiště klíč / hodnota v paměti. Redis podporuje vzorec publikovat/odebírat ("pub/sub") pro odesílání zpráv.
+- **SQL Server**. Propojovací rozhraní systému SQL Server zapisuje zprávy do tabulky SQL. Propojovacího rozhraní používá pro efektivní zasílání zpráv služby Service Broker. Ale to funguje také v případě služby Service Broker není povolená.
 
-Pokud nasazujete aplikaci na platformě Azure, zvažte použití propojovacího rozhraní Azure Service Bus. Pokud nasazujete do serverové farmy, zvažte systému SQL Server nebo Redis backplanes.
+Pokud nasadíte svou aplikaci v Azure, zvažte použití propojovacího rozhraní Azure Service Bus. Pokud provádíte nasazení do serverové farmy, vezměte v úvahu systému SQL Server nebo Redis backplanes.
 
-Následující témata obsahují podrobné kurzy pro každý propojovacího rozhraní:
+Následující témata obsahují podrobné kurzy pro každého propojovací rozhraní systému:
 
 - [Škálování aplikace SignalR službou Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
 - [Šklálování aplikace SignalR službou Redis](scaleout-with-redis.md)
@@ -52,24 +51,24 @@ Následující témata obsahují podrobné kurzy pro každý propojovacího rozh
 
 ## <a name="implementation"></a>Implementace
 
-V systému SignalR každá zpráva se budou odesílat prostřednictvím sběrnice zpráv. Implementuje sběrnice zpráv [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) rozhraní, která poskytuje abstrakci se publikování a přihlášení k odběru. Backplanes fungovat tak, že nahradíte výchozí **IMessageBus** se sběrnicí určené pro tento propojovacího rozhraní. Je například sběrnici zpráv pro Redis [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), a používá Redis [pub nebo sub](http://redis.io/topics/pubsub) mechanismus odesílat a přijímat zprávy.
+V knihovně SignalR každá zpráva se odesílá prostřednictvím sběrnice zpráv. Implementuje sběrnice zpráv [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) rozhraní, které poskytuje abstrakci se publikovat/odebírat. Backplanes fungovat tak, že nahradíte výchozí **IMessageBus** se sběrnicí navržené pro propojovací rozhraní. Například sběrnici zpráv pro Redis je [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), a používá Redis [pub/sub](http://redis.io/topics/pubsub) mechanismus pro odesílání a příjem zpráv.
 
-Každá instance serveru se připojí k propojovacího rozhraní přes sběrnici. Pokud je odeslána zpráva, přejdete do propojovacího rozhraní a propojovacího rozhraní odešle ji do každého serveru. Když server získá zprávu z propojovacího rozhraní, uloží zprávu v místní mezipaměti. Server pak přináší zprávy pro klienty z místní mezipaměti.
+Každá instance serveru se připojí k propojovací rozhraní systému přes Service bus. Při odesílání zprávy přejde do propojovacího rozhraní a odesílá je propojovacího rozhraní na každý server. Když server dostane zprávu z propojovacího rozhraní, vloží zprávu v místní mezipaměti. Server poté předává zprávy klientů z místní mezipaměti.
 
-Pro každé připojení klienta je sledovat průběh klienta při čtení datový proud zpráv pomocí kurzoru. (Kurzoru představuje pozici v datovém proudu zpráv.) Pokud se klient odpojí a potom se znovu připojí, zobrazí dotaz, sběrnici pro všechny zprávy, které byly přijaty po hodnotu kurzoru klienta. Samé se stane, když připojení používá [dlouhé dotazování](../getting-started/introduction-to-signalr.md#transports). Po dokončení žádosti dlouhé dotazování klienta otevře nové připojení a požádá o zprávy, které byly přijaty po kurzor.
+Pro každé připojení klienta jsou sledovány klienta probíhá čtení datový proud zpráv pomocí kurzoru. (Kurzor představuje pozice v proudu zpráv.) Pokud se klient odpojí a potom se znovu připojí, požádá Service bus pro všechny zprávy, které byly přijaty za hodnotou kurzor klienta. Se stejnou věc stane, když připojení používá [dlouhé dotazování](../getting-started/introduction-to-signalr.md#transports). Po dokončení žádosti dlouhé dotazování klienta se otevře nové připojení a vyzve k zadání zprávy, které byly přijaty po kurzor.
 
-Funguje mechanismus kurzoru i v případě, že klient se směruje na jiný server na znovu. Propojovacího rozhraní si je vědoma ve všech serverech a nezávisle na tom, který server pro připojení klienta.
+Mechanismus funguje kurzor i v případě, že klient se směruje na jiný server na znovu připojit. Propojovacího rozhraní zohledňuje všech serverů a nebude vadit, který server pro připojení klienta.
 
 ## <a name="limitations"></a>Omezení
 
-Pomocí propojovací rozhraní, maximální propustnost je nižší, než je v případě, že klienti komunikují přímo s uzlem jeden server. Je to způsobeno propojovacího rozhraní předává každou zprávu pro každý uzel, takže propojovacího rozhraní se může stát úzkým místem. Zda je toto omezení problém závisí na aplikaci. Tady jsou například některé typické scénáře SignalR:
+Maximální propustnost, pomocí propojovací rozhraní, je nižší, než je, pokud klienti komunikovat přímo k uzlu jeden server. Důvodem je, propojovacího rozhraní předává všechny zprávy pro každý uzel, takže propojovacího rozhraní se může stát kritickým bodem. Záleží na aplikaci, zda toto omezení je nějaký problém. Například tady jsou některé typické scénáře SignalR:
 
-- [Všesměrové vysílání server](tutorial-server-broadcast-with-aspnet-signalr.md) (například běžícími): Backplanes fungovat i pro tento scénář, protože serveru ovládá rychlost, jakou jsou odesílány zprávy.
-- [Klient klient](tutorial-getting-started-with-signalr.md) (například chat): V tomto scénáři můžou propojovacího rozhraní problémové místo, pokud počet zpráv škáluje s počtem klientů; to znamená, pokud počet zpráv zvětšování úměrně Další klienti se připojují.
-- [Vysoká frekvence v reálném čase](tutorial-high-frequency-realtime-with-signalr.md) (např. v reálném čase hry): propojovací rozhraní se nedoporučuje pro tento scénář.
+- [Server vysílání](tutorial-server-broadcast-with-aspnet-signalr.md) (například akciích): Backplanes fungovat dobře pro tento scénář, protože rychlost, jakou jsou odesílány zprávy pro ovládací prvky server.
+- [Klient klient](tutorial-getting-started-with-signalr.md) (například konverzace): V tomto scénáři propojovacího rozhraní může být kritickým bodem v případě, že počet zpráv, které se škáluje s počtem klientů; to znamená, pokud roste počet zpráv proporcionálně Další klienti se připojují k.
+- [Vysokofrekvenční Reálný čas](tutorial-high-frequency-realtime-with-signalr.md) (například hry v reálném čase): pro tento scénář se nedoporučuje propojovacího rozhraní.
 
-## <a name="enabling-tracing-for-signalr-scaleout"></a>Povolení trasování pro škálování SignalR
+## <a name="enabling-tracing-for-signalr-scaleout"></a>Povolení trasování pro škálování aplikace SignalR
 
-Pokud chcete povolit trasování pro backplanes, přidat následující části v souboru web.config, v kořenové **konfigurace** element:
+Povolení trasování pro backplanes, přidejte do souboru web.config v kořenovém adresáři v dalších částech **konfigurace** element:
 
 [!code-html[Main](scaleout-in-signalr/samples/sample1.html)]

@@ -1,92 +1,91 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/enhancing-data-validation
-title: 'Databázi EF nejprve s architekturou ASP.NET MVC: rozšíření ověřování dat | Microsoft Docs'
+title: 'EF Database First s ASP.NET MVC: rozšířené ověřování dat | Dokumentace Microsoftu'
 author: tfitzmac
-description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
 ms.topic: article
 ms.assetid: 0ed5e67a-34c0-4b57-84a6-802b0fb3cd00
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 8ea2e94db7956b76c5ccf0a139ac024e38910b49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a328aa8aec2c512d77ddabec31b3785b8742e018
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879605"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376711"
 ---
-<a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>Databázi EF nejprve s architekturou ASP.NET MVC: rozšíření ověřování dat
+<a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>EF Database First s ASP.NET MVC: rozšířené ověřování dat
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tato řada kurzu se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořte a odstraňovat data, která se nachází v tabulce databáze. Generovaný kód odpovídá sloupců v tabulce databáze.
+> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. V této sérii kurzů se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořit a odstranit data, která se nachází v databázové tabulce. Generovaný kód odpovídá sloupců v tabulce databáze.
 > 
-> Tato část řady se zaměřuje na přidání poznámek data do datového modelu k určení požadavků na ověření a zobrazení formátování. Byl vylepšen na základě na zpětnou vazbu od uživatelů v sekci komentáře.
+> Tato části této série se zaměřuje na přidání anotací dat do datového modelu k určení požadavků na ověření a zobrazení formátování. Byl vylepšen závislosti na zpětnou vazbu od uživatelů v části komentáře.
 
 
-## <a name="add-data-annotations"></a>Přidat datových poznámek
+## <a name="add-data-annotations"></a>Přidání anotací dat
 
-Jak už jste viděli v dřívější tématu, některá pravidla ověření budou automaticky použita na vstup uživatele. Například můžete jenom zadat číslo pro vlastnost úrovni. Chcete-li určit další pravidla ověření, můžete přidat datových poznámek na třídu modelu. Tyto poznámky platí v celé vaší webové aplikace pro zadanou vlastnost. Můžete taky použít formátování atributy, které Změna zobrazení vlastnosti; Změna, jako hodnota použitá pro popisky text.
+Jak už jste viděli v dřívějším tématu, některá pravidla ověřování dat se automaticky použijí se vstupem uživatele. Například můžete pouze zadat číslo pro vlastnost na podnikové úrovni. Chcete-li určit další pravidla pro ověření dat, můžete přidat anotacemi dat do vaší třídy modelu. Tyto poznámky platí v celé vaší webové aplikace pro zadanou vlastnost. Můžete také použít atributy formátování, které se mění, jak se zobrazují vlastnosti; například změna hodnoty použité pro textové popisky.
 
-V tomto kurzu budete přidávat poznámky data omezit délka zadané vlastnosti FirstName, LastName a MiddleName hodnoty. V databázi jsou tyto hodnoty omezení na 50 znaků; Nicméně ve webové aplikaci tento limit pro počet znaků není aktuálně používá. Pokud uživatel poskytuje více než 50 znaků pro jednu z těchto hodnot, dojde k chybě stránky při pokusu o uložení hodnotu do databáze. Úrovni bude také omezit na hodnoty od 0 do 4.
+V tomto kurzu přidáte datových poznámek k omezení délky zadané vlastnosti FirstName, LastName a MiddleName hodnoty. V databázi tyto hodnoty jsou omezené na 50 znaků. Nicméně ve webové aplikaci tento limit počtu znaků není aktuálně používá. Pokud uživatel zadá více než 50 znaků. pro jednu z těchto hodnot, na stránce havaruje při pokusu o uložení hodnoty do databáze. Bude také omezit na podnikové úrovni pro hodnoty v rozmezí 0 až 4.
 
-Otevřete **Student.cs** v soubor **modely** složky. Přidejte do třídy následující zvýrazněný kód.
+Otevřít **Student.cs** soubor **modely** složky. Přidejte následující zvýrazněný kód do třídy.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample1.cs?highlight=5,15,17,20)]
 
-Enrollment.cs přidejte následující zvýrazněný kód.
+V Enrollment.cs přidejte následující zvýrazněný kód.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample2.cs?highlight=5,10)]
 
 Sestavte řešení.
 
-Přejděte na stránku pro úpravu nebo vytváření student. Pokud se pokusíte zadat více než 50 znaků, se zobrazí chybová zpráva.
+Přejděte na stránku pro úpravy nebo vytváření student. Pokud se pokusíte k zadání více než 50 znaků, zobrazí se chybová zpráva.
 
 ![zobrazit chybová zpráva](enhancing-data-validation/_static/image1.png)
 
-Přejděte na stránku pro úpravy registrace a pokus o poskytují úrovni výše 4.
+Přejděte na stránku pro úpravy registrace a pokus o poskytují známku vyjádřenou nad 4.
 
-![Chyba úrovni rozsahu](enhancing-data-validation/_static/image2.png)
+![Chyba rozsahu na podnikové úrovni](enhancing-data-validation/_static/image2.png)
 
-Úplný seznam datových poznámek ověření můžete provést u třídy a vlastnosti, najdete v části [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx).
+Úplný seznam datových poznámek ověření můžete provést u třídy a vlastnosti, naleznete v tématu [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx).
 
 ## <a name="add-metadata-classes"></a>Přidání třídy metadat
 
-Přidání atributy ověření přímo do třídy modelu funguje, když neočekáváte databázi chcete změnit; ale pokud vaše změny v databázi a je nutné znovu vygenerovat třídu modelu, ztratíte všechny atributy, které měl použít pro třídu modelu. Tento přístup může být velmi neefektivní a náchylné k došlo ke ztrátě důležitých ověřovacích pravidel.
+Přidávání atributů ověření přímo do třídy modelu funguje, když nepočítáte databáze, kterou chcete změnit; Nicméně pokud změny databáze a potřebujete se znovu vygenerovat třídu modelu, budou ztraceny všechny atributy, které jste použili pro třídu modelu. Tento přístup může být velmi neefektivní a náchylné ke ztrátě důležitých ověřovacích pravidel.
 
-Chcete-li se tomuto problému vyhnout, můžete přidat třídu metadat, která obsahuje atributy. Pokud přidružíte třídy modelu pro třídu metadat, jsou tyto atributy použité pro model. V tento postup mohou vytvořit třídu modelu znovu bez ztráty všechny atributy, které byly použity pro třídu metadat.
+K tomuto problému vyhnout, můžete přidat třídu metadat, která obsahuje atributy. Když přiřadíte třídy modelu pro třídu metadat, jsou tyto atributy použité pro model. V takovém případě může znovu vygenerovat třídu modelu bez ztráty všechny atributy, které se použily třídu metadat.
 
-V **modely** složky, přidejte třídu s názvem **Metadata.cs**.
+V **modely** složky, přidejte třídu pojmenovanou **Metadata.cs**.
 
-![Přidání třídy metadat](enhancing-data-validation/_static/image3.png)
+![Přidat třídu metadat](enhancing-data-validation/_static/image3.png)
 
 Nahraďte kód v Metadata.cs následujícím kódem.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample3.cs)]
 
-Tyto třídy metadata obsahují všechny atributy ověřování, které jste použili předtím do třídy modelu. **Zobrazení** atribut slouží ke změně hodnoty použít pro popisky text.
+Tyto třídy metadata obsahují všechny atributy ověřování, které jste použili předtím na třídy modelu. **Zobrazení** atribut se používá ke změně hodnoty používané pro textové popisky.
 
-Nyní je třeba přidružit třídy modelu třídy metadat.
+Nyní je třeba přidružit tříd modelu třídy metadat.
 
-V **modely** složky, přidejte třídu s názvem **PartialClasses.cs**.
+V **modely** složky, přidejte třídu pojmenovanou **PartialClasses.cs**.
 
 Obsah souboru nahraďte následujícím kódem.
 
 [!code-csharp[Main](enhancing-data-validation/samples/sample4.cs)]
 
-Všimněte si, že každá třída je označena jako `partial` třída a všechny odpovídající název a oboru názvů jako třída, která se automaticky vygeneroval. Použitím atribut metadat třídu zajistíte, že atributy ověření dat se použije k třídě automaticky generovány. Tyto atributy nebudou ztracena při opětovném generování tříd modelu, protože atribut metadat se používá v částečné třídy, které nejsou znovu vygeneroval.
+Všimněte si, že každá třída je označena jako `partial` třídy a každý odpovídá názvu a oboru názvů jako třída, která není automaticky vygenerován. Použitím atributu metadat na částečné třídy zajistíte, že atributy ověření dat se použije pro automaticky generované třídy. Tyto atributy nesmí být ztraceny po budete znovu generovat třídy modelu, protože metadat atributu se použije v částečné třídy, které se znovu vygeneroval.
 
-Chcete-li znovu vygenerovat automaticky vygenerované třídy, otevřete soubor ContosoModel.edmx. Znovu klikněte pravým tlačítkem na návrhové plochy a vyberte možnost **aktualizovat Model z databáze**. I když jste nezměnili databáze, tento proces se znova vygeneruje třídy. V **aktualizovat** vyberte **tabulky** a **Dokončit**.
+Chcete-li znovu vygenerovat automaticky vygenerované třídy, otevřete soubor ContosoModel.edmx. Ještě jednou klikněte pravým tlačítkem na návrhové ploše a vyberte **aktualizace modelů z databáze**. I když nedošlo ke změně databáze, tento proces se znova vygeneruje třídy. V **aktualizovat** kartu, vyberte možnost **tabulky** a **Dokončit**.
 
 ![Aktualizovat tabulky](enhancing-data-validation/_static/image4.png)
 
-Uložte soubor ContosoModel.edmx tak, aby se změny projevily.
+Uložte soubor ContosoModel.edmx, aby se změny projevily.
 
-Otevřete soubor Student.cs nebo soubor Enrollment.cs a Všimněte si, že atributy ověření dat, které jste provedli dříve již nejsou v souboru. Ale spusťte aplikaci a Všimněte si, že ověřovací pravidla stále použít při zadávání dat.
+Otevřete soubor Student.cs nebo Enrollment.cs a Všimněte si, že atributy ověření dat, které jste použili dříve už nejsou v souboru. Ale spusťte aplikaci a Všimněte si, že ověřovací pravidla, se uplatní při zadávání dat.
 
 > [!div class="step-by-step"]
 > [Předchozí](customizing-a-view.md)

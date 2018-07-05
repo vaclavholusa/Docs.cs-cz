@@ -1,33 +1,32 @@
 ---
 uid: signalr/overview/getting-started/index
-title: SignalR Začínáme | Microsoft Docs
+title: Začínáme se SignalR | Dokumentace Microsoftu
 author: rick-anderson
-description: Další informace o ASP.NET SignalR funkce SignalR technologie ASP.NET je nová knihovna pro vývojáře využívající technologii ASP.NET, která usnadňuje vývoj funkce webu v reálném čase. SignalR umožňuje bi...
+description: Další informace o funkci SignalR technologie ASP.NET funkce SignalR technologie ASP.NET je nová knihovna pro vývojáře využívající technologii ASP.NET, který usnadňuje vývoj funkcí v reálném čase. Funkce SignalR umožňuje bi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
 ms.topic: article
 ms.assetid: 2acff246-c74c-4277-b539-35bc42988c6f
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: 23d54a781354fbccfd5c42bfb4280d8c45ee4c30
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8dc6b4a41b1bf0f0284d5ff8dd408ad34c29bab
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26565453"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389302"
 ---
-<a name="signalr-getting-started"></a>SignalR Začínáme
+<a name="signalr-getting-started"></a>Začínáme se SignalR
 ====================
-> SignalR novinky, platformy, které běží a jak začít pracovat.
+> Funkce SignalR novinky, platformy, na kterých se spouští a jak začít pracovat.
 
 
-- [Úvod do SignalR](introduction-to-signalr.md)
+- [Úvod ke knihovně SignalR](introduction-to-signalr.md)
 - [Podporované platformy](supported-platforms.md)
-- [Kurz: Začínáme s SignalR 2](tutorial-getting-started-with-signalr.md)
-- [Kurz: Začínáme s SignalR 2 a MVC 5](tutorial-getting-started-with-signalr-and-mvc.md)
-- [Kurz: Vysoká frekvence v reálném čase s SignalR 2](tutorial-high-frequency-realtime-with-signalr.md)
-- [Kurz: Server všesměrového vysílání pomocí nástroje SignalR 2](tutorial-server-broadcast-with-signalr.md)
-- [Rukou na testovacího prostředí: V reálném čase webových aplikací pomocí nástroje SignalR](real-time-web-applications-with-signalr.md)
+- [Kurz: Začínáme s knihovnou SignalR 2](tutorial-getting-started-with-signalr.md)
+- [Kurz: Začínáme s knihovnou SignalR 2 a MVC 5](tutorial-getting-started-with-signalr-and-mvc.md)
+- [Kurz: Vysokofrekvenční reálný čas s knihovnou SignalR 2](tutorial-high-frequency-realtime-with-signalr.md)
+- [Kurz: Serverové vysílání s knihovnou SignalR 2](tutorial-server-broadcast-with-signalr.md)
+- [Praktické cvičené: Webové aplikace v reálném čase s knihovnou SignalR](real-time-web-applications-with-signalr.md)

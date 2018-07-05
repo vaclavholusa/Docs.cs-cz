@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/aspnet-35/data-controls/index
-title: Ovládací prvky datových | Microsoft Docs
+title: Ovládací prvky dat | Dokumentace Microsoftu
 author: rick-anderson
-description: Tato sada videa prozkoumá použití nových funkcí řízení dat s ASP.NET 3.5
+description: Tato sada video vysvětluje, jak používat nové funkce řízení dat pomocí technologie ASP.NET 3.5
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
 ms.topic: article
 ms.assetid: 62fc223f-9c29-4af9-bdb7-902103d5cff1
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/data-controls
 msc.type: chapter
-ms.openlocfilehash: aa4214c52a60559ace33c688fb251a3f26302997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 99f806b2179ed422c2a816e8a6fbfd35e8da7d92
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26570457"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385289"
 ---
-<a name="data-controls"></a>Ovládací prvky datových
+<a name="data-controls"></a>Ovládací prvky dat
 ====================
-> Tato sada videa prozkoumá použití nových funkcí řízení dat s ASP.NET 3.5
+> Tato sada video vysvětluje, jak používat nové funkce řízení dat pomocí technologie ASP.NET 3.5
 
 
-- [ListView – ovládací prvek](the-listview-control.md)
+- [Ovládací prvek ListView](the-listview-control.md)
 - [Ovládací prvek DataPager](the-datapager-control.md)

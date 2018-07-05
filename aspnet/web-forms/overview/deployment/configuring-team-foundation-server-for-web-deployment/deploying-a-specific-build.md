@@ -1,138 +1,137 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
-title: Nasazení konkrétní sestavení | Microsoft Docs
+title: Nasazení konkrétního sestavení | Dokumentace Microsoftu
 author: jrjlee
-description: Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétní předchozího sestavení do nového cíle, jako je pracovním nebo produkčním enviro...
+description: Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétního předchozí sestavení na nové umístění, jako je pracovní nebo produkční enviro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: c979535f-48a3-4ec4-a633-a77889b86ddb
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: 271d084b3c69016df5be28ada032973bf7fd5a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6d55497dbc13133aa9c8b8eaecca0f6915fd9ed0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880034"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388221"
 ---
-<a name="deploying-a-specific-build"></a>Nasazení konkrétní sestavení
+<a name="deploying-a-specific-build"></a>Nasazení konkrétního sestavení
 ====================
 podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétní předchozího sestavení do nového cíle, jako je pracovním nebo produkčním prostředí.
+> Toto téma popisuje postup nasazení webových balíčků a databázové skripty z konkrétního předchozí sestavení na nové umístění, jako jsou testovací nebo produkční prostředí.
 
 
-Toto téma je součástí ze série kurzů na základě kolem podnikové požadavky nasazení fiktivní společnost s názvem Fabrikam, Inc. Tento kurz řady používá ukázkové řešení&#x2014; [řešení obraťte se na správce](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s úrovní realistické složitější, včetně aplikace ASP.NET MVC 3, komunikaci Windows Služba Foundation (WCF) a projekt databáze.
+Toto téma je součástí série kurzů podle požadavků na nasazení enterprise fiktivní společnosti s názvem společnosti Fabrikam, Inc. V této sérii kurzů používá ukázkové řešení&#x2014; [řešení Správce kontaktů](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;představující webovou aplikaci s realistické úroveň složitosti, včetně aplikace ASP.NET MVC 3, komunikace Windows Služba Foundation (WCF) a databázový projekt.
 
-Metoda nasazení jádrem tyto kurzy je založena na popsaný přístup souboru projektu rozdělení [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahující sestavení pokyny, které platí pro každé cílové prostředí a jeden, který obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu konkrétní prostředí sloučeny do souboru projektu bez ohledu na prostředí a vytvořit úplnou sadu pokynů sestavení.
+Metody nasazení v srdci těchto kurzů je založen na rozdělení přístupu soubor projektu je popsáno v [vysvětlení souboru projektu](../web-deployment-in-the-enterprise/understanding-the-project-file.md), ve kterém je řízena procesem sestavení a nasazení dva soubory projektu&#x2014;jeden obsahuje pokyny pro sestavení, které platí pro všechny cílové prostředí a jeden obsahuje nastavení pro konkrétní prostředí sestavení a nasazení. V okamžiku sestavení souboru projektu specifických pro prostředí se sloučí do souboru projektu bez ohledu na prostředí a vytvoří kompletní sadu pokynů sestavení.
 
 ## <a name="task-overview"></a>Přehled úloh
 
-Dosud témata v této sadě kurz zaměřuje na postup sestavení, balíčků a nasazování webových aplikací a databází v rámci jednoho kroku nebo automatizované procesu. Ale v některé běžné scénáře, budete chtít ze sestavení do složky rozevíracího seznamu vyberte prostředky, které nasadíte. Jinými slovy nemusí být nejnovější sestavení sestavení, který chcete nasadit.
+Až doteď témata v této sérii kurzů zaměřené na tom, jak sestavit, balení a nasazení webových aplikací a databází v rámci jednoho kroku nebo automatizovat proces. Ale v některé běžné scénáře, třeba vyberte prostředky, které nasadíte ze seznamu sestavení v odkládací složce. Jinými slovy nejnovějšího buildu nemusí být sestavení, které chcete nasadit.
 
-Vezměte v úvahu scénář průběžnou integraci (CI) popsané v předchozí tématu [vytváření sestavení definice, podporuje nasazení](creating-a-build-definition-that-supports-deployment.md). Jste vytvořili definice sestavení v Team Foundation Server (TFS) 2010. Pokaždé, když vývojář kontroluje kód do sady TFS, Team Build bude sestavení kódu, vytváření balíčků webové a databázové skripty jako součást procesu sestavení, spustit všechny testy jednotek a nasazení vašich prostředků v testovacím prostředí. V závislosti na zásady uchovávání informací, které jste nakonfigurovali, když jste vytvořili definice sestavení zachovají TFS určitého počtu předchozích sestavení.
+Vezměte v úvahu scénář kontinuální integrace (CI) je popsáno v předchozím tématu [vytvoření sestavení definice, že podporuje nasazení](creating-a-build-definition-that-supports-deployment.md). Vytvořili jste definici sestavení v Team Foundation Server (TFS) 2010. Pokaždé, když vývojář kontroluje kód do TFS, Team Build se vytváření kódu, vytváření balíčků pro webové a databázové skripty jako součást procesu sestavení, spuštění všech testů jednotek a nasadit prostředky do testovacího prostředí. V závislosti na zásady uchovávání informací, které jste nakonfigurovali při vytváření definice sestavení si zachovají TFS určitého počtu předchozích sestavení.
 
 ![](deploying-a-specific-build/_static/image1.png)
 
-Nyní předpokládejme, že jste provedli ověření a ověření testování proti jednu z těchto sestavení v testovacím prostředí a jste připraveni k nasazení aplikace do pracovního prostředí. Do té doby vývojáři mohou mít změnami nový kód. Nechcete, aby znovu sestavte řešení a nasazení do fázovacího prostředí a nechcete, aby k nasazení nejnovější sestavení pro testovací prostředí. Místo toho kterou chcete nasadit konkrétní build, který jste se ověřit a ověřit na serveru test.
+Nyní předpokládejme, že jste provedli ověření a ověřovací testování s některou z těchto sestavení v testovacím prostředí a jste připraveni nasadit aplikaci do přípravného prostředí. Do té doby vývojáři mohou se změnami nový kód. Nechcete, aby znovu sestavte řešení a nasazení do přípravného prostředí a nechcete, aby k nasazení na nejnovější verzi do přípravného prostředí. Místo toho kterou chcete nasadit konkrétní sestavení, které jste ověření a ověření na testovacích serverech.
 
-K tomu, budete muset v Microsoft Build Engine (MSBuild) umožňují vyhledávání webových balíčků a databázové skripty, které vygenerovaly konkrétní sestavení.
+K tomu budete muset zjistit Microsoft Build Engine (MSBuild), kde najdete balíčky webové a databázové skripty, které generují konkrétního sestavení.
 
 ## <a name="overriding-the-outputroot-property"></a>Přepisování vlastnosti OutputRoot
 
-V [ukázkové řešení](../web-deployment-in-the-enterprise/the-contact-manager-solution.md), *Publish.proj* souboru deklaruje vlastnost s názvem **OutputRoot**. Jak již název naznačuje, jde kořenové složky, která obsahuje všechno, co se generuje procesu sestavení. V *Publish.proj* souboru, můžete zobrazit, **OutputRoot** vlastnost odkazuje na kořenový adresář pro všechny prostředky pro nasazení.
+V [ukázkové řešení](../web-deployment-in-the-enterprise/the-contact-manager-solution.md), *Publish.proj* souboru deklaruje vlastnost s názvem **OutputRoot**. Jak název napovídá, to je kořenová složka, která obsahuje všechno, co se generuje procesu sestavení. V *Publish.proj* souboru, můžete zobrazit, který **OutputRoot** vlastnost odkazuje na kořenový adresář pro všechny prostředky pro nasazení.
 
 > [!NOTE]
-> **OutputRoot** je název běžně používané vlastnosti. Visual C# a Visual Basic soubory projektu také deklarovat tuto vlastnost k uložení kořenový adresář pro všechny výstupy sestavení.
+> **OutputRoot** je běžně používaný vlastnost název. Soubory Visual C# a Visual Basic projektu tuto vlastnost k uložení umístění kořenového adresáře pro všechna výstupní sestavení také deklarovat.
 
 
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
 
 
-Pokud chcete soubor projektu do nasazení webových balíčků a databáze skripty z jiného umístění&#x2014;jako výstupy předchozí sestavení TFS&#x2014;jednoduše je potřeba přepsat **OutputRoot** vlastnost. Na serveru Team Build byste měli nastavit hodnotu vlastnosti ke složce relevantní sestavení. MSBuild spustili z příkazového řádku, můžete zadat hodnotu pro **OutputRoot** jako argument příkazového řádku:
+Pokud chcete, aby váš soubor projektu pro nasazení webových balíčků a databázové skripty z jiného umístění&#x2014;výstupy předchozích sestavení TFS, jako jsou&#x2014;jednoduše je potřeba přepsat **OutputRoot** vlastnost. Do složky relevantní sestavení byste měli nastavit hodnotu vlastnosti na serveru Team Build. Pokud jste používali nástroj MSBuild z příkazového řádku, můžete zadat hodnotu pro **OutputRoot** jako argument příkazového řádku:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
 
 
-V praxi však by také chcete přeskočit **sestavení** cíl&#x2014;neexistuje bod při vytváření řešení, pokud nemáte v úmyslu použít výstupy sestavení. Může to uděláte tak, že zadáte cíle, které chcete spustit z příkazového řádku:
+V praxi, ale také chcete přeskočit **sestavení** cílové&#x2014;neexistuje bod v sestavení vašeho řešení, pokud nemáte v úmyslu použít výstupy sestavení. Může to provedete tak, že určíte cíle, které chcete spustit z příkazového řádku:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
 
 
-Ale ve většině případů budete chtít vytvořit logika nasazení do definice sestavení sady TFS. Díky tomu mohou uživatelé s **fronty sestavení** oprávnění k aktivaci nasazení z jakékoli instalaci sady Visual Studio s připojením k serveru TFS.
+Ale ve většině případů budete chtít vytvořit svoji logiku nasazení do definice sestavení TFS. To umožňuje uživatelům s **zařazovat sestavení do fronty** oprávnění k aktivaci nasazení z jakékoli instalaci sady Visual Studio s připojením k serveru TFS.
 
 ## <a name="creating-a-build-definition-to-deploy-specific-builds"></a>Vytvoření definice sestavení pro nasazení konkrétní sestavení
 
-Následující postup popisuje, jak k vytvoření definice sestavení, která umožní uživatelům aktivační událost nasazení pro pracovní prostředí s jedním příkazem.
+Následující postup popisuje, jak vytvořit definici sestavení, která umožňuje uživatelům aktivační události nasazení do přípravného prostředí pomocí jediného příkazu.
 
-V takovém případě nechcete definici sestavení ve skutečnosti sestavit nic&#x2014;chcete být spuštěna v souboru projektu vlastní logiky nasazení. *Publish.proj* soubor obsahuje podmíněnou logiku, který přeskočí **sestavení** cíle, pokud soubor běží v Team Build. Dělá to pomocí vyhodnocení integrované **BuildingInTeamBuild** vlastnosti, která se automaticky nastaví na **true** při spuštění souboru projektu v Team Build. V důsledku toho můžete přeskočit procesu sestavení a jednoduše spusťte soubor projektu nasazení existující sestavení.
+V takovém případě nechcete, aby definice sestavení nic sestavit&#x2014;je vhodné ji ke spuštění v souboru projektu vlastní logiku nasazení. *Publish.proj* soubor obsahuje podmíněnou logiku, který přeskočí **sestavení** cílit, pokud soubor běží ve službě Team Build. Dělá to tak, že vyhodnocení vestavěných **BuildingInTeamBuild** vlastnost, která se automaticky nastaví na **true** při spuštění souboru projektu v Team Build. V důsledku toho můžete přeskočit procesu sestavení a spusťte soubor projektu a nasazení existujícího sestavení.
 
-**K vytvoření definice sestavení pro ruční aktivaci nasazení**
+**Chcete-li vytvořit definici sestavení k ruční aktivaci nasazení**
 
-1. V sadě Visual Studio 2010 v **Team Explorer** okno, rozbalte uzel vaší týmového projektu, klikněte pravým tlačítkem na **sestavení**a potom klikněte na **novou definici sestavení**.
+1. V sadě Visual Studio 2010 v **Team Exploreru** okna, rozbalte uzel týmového projektu, klikněte pravým tlačítkem na **sestavení**a potom klikněte na tlačítko **nová definice sestavení**.
 
     ![](deploying-a-specific-build/_static/image2.png)
-2. Na **Obecné** kartě, pojmenujte definici sestavení (například **DeployToStaging**) a volitelný popis.
-3. Na **aktivační událost** vyberte **Ruční – vrácení se změnami nespouštějí nového sestavení**.
-4. Na **sestavení výchozí** ve **kopie sestavení výstup do následující složky, vyřaďte** pole, zadejte cestu Universal Naming Convention (UNC) vaší složky (například  **\\TFSBUILD\Drops**).
+2. Na **Obecné** kartu, zadejte název definice sestavení (například **DeployToStaging**) a volitelně také popis.
+3. Na **aktivační událost** kartu, vyberte možnost **manuálně – vrácení se změnami nespouštějí nového sestavení**.
+4. Na **výchozí hodnoty sestavení** kartě **Kopírovat výstup sestavení na následující odkládací složky** zadejte cestu (Universal Naming Convention) odkládací složky (například  **\\TFSBUILD\Drops**).
 
     ![](deploying-a-specific-build/_static/image3.png)
-5. Na **proces** ve **souboru procesu sestavení** rozevíracího seznamu, ponechejte **DefaultTemplate.xaml** vybrané. Toto je jedna z výchozích šablon procesu sestavení, které se přidají do všechny nové týmových projektů.
-6. V **parametry procesu sestavení** tabulky, klikněte na tlačítko v **položky k sestavení** řádek a klikněte **třemi tečkami** tlačítko.
+5. Na **procesu** kartě **soubor procesu sestavení** rozevíracího seznamu, ponechejte tuto položku **DefaultTemplate.xaml** vybrané. Toto je jedna z výchozích šablon procesů sestavení, které se přidají do všech nových týmových projektů.
+6. V **parametry procesu sestavení** tabulku, klikněte na tlačítko v **položky k sestavení** řádku a potom klikněte na tlačítko **tlačítko se třemi tečkami** tlačítko.
 
     ![](deploying-a-specific-build/_static/image4.png)
 7. V **položky k sestavení** dialogové okno, klikněte na tlačítko **přidat**.
-8. V **položky typu** rozevíracího seznamu vyberte **soubory projektu nástroje MSBuild**.
-9. Přejděte do umístění souboru vlastní projektu, se kterým řízení procesu nasazení, vyberte soubor a pak klikněte na tlačítko **OK**.
+8. V **položky typu** rozevíracího seznamu vyberte **soubory projektu MSBuild**.
+9. Přejděte do umístění souboru vlastních projektů, pomocí kterého řízení procesu nasazení, vyberte ho a pak klikněte na tlačítko **OK**.
 
     ![](deploying-a-specific-build/_static/image5.png)
 10. V **položky k sestavení** dialogové okno, klikněte na tlačítko **OK**.
-11. V **parametry procesu sestavení** tabulky, rozbalte **Upřesnit** části.
-12. V **argumenty MSBuild** řádek, zadejte umístění souboru projektu konkrétní prostředí a přidejte zástupný symbol pro umístění složky sestavení:
+11. V **parametry procesu sestavení** tabulky, rozbalte **Upřesnit** oddílu.
+12. V **argumenty nástroje MSBuild** řádek, zadejte umístění vašeho souboru projektu pro konkrétní prostředí a přidáte zástupný symbol pro umístění složky sestavení:
 
     [!code-console[Main](deploying-a-specific-build/samples/sample4.cmd)]
 
     ![](deploying-a-specific-build/_static/image6.png)
 
     > [!NOTE]
-    > Budete potřebovat k přepsání **OutputRoot** hodnotu pokaždé, když fronty sestavení. Je to popsané v dalším postupu.
+    > Je potřeba přepsat **OutputRoot** hodnotu pokaždé, když se zařadit sestavení do fronty. Je to popsané v dalším postupu.
 13. Klikněte na tlačítko **Uložit**.
 
-Když spustíte sestavení, je potřeba aktualizovat **OutputRoot** vlastnost tak, aby odkazoval na sestavení, které chcete nasadit.
+Po aktivaci sestavení, je potřeba aktualizovat **OutputRoot** vlastnost tak, aby odkazoval na sestavení, které chcete nasadit.
 
-**K nasazení konkrétní sestavení z definice sestavení**
+**K nasazení konkrétního sestavení z definice sestavení**
 
-1. V **Team Explorer** okno, klikněte pravým tlačítkem na definici sestavení a pak klikněte na tlačítko **fronty nové sestavení**.
+1. V **Team Exploreru** okna, klikněte pravým tlačítkem na definici sestavení a pak klikněte na tlačítko **zařadit nové sestavení**.
 
     ![](deploying-a-specific-build/_static/image7.png)
-2. V **fronty sestavení** v dialogovém **parametry** rozbalte **Upřesnit** části.
-3. V **argumenty MSBuild** řádek, nahraďte hodnotu **OutputRoot** vlastnost s umístění složky sestavení. Příklad:
+2. V **zařadit sestavení do fronty** dialogovém okně **parametry** kartu, rozbalte **Upřesnit** oddílu.
+3. V **argumenty nástroje MSBuild** řádek, nahraďte hodnotu **OutputRoot** vlastnost umístění složky sestavení. Příklad:
 
     [!code-console[Main](deploying-a-specific-build/samples/sample5.cmd)]
 
     ![](deploying-a-specific-build/_static/image8.png)
 
     > [!NOTE]
-    > Ujistěte se, že zahrnovat koncové lomítko na konci cestu do složky sestavení.
+    > Nezapomeňte zahrnout adresy koncové lomítko na konci cesty ke složce sestavení.
 4. Klikněte na tlačítko **fronty**.
 
-Když fronty sestavení, bude soubor projektu nasazení databázové skripty a webové balíčky ze složky rozevírací sestavení, kterou jste zadali v **OutputRoot** vlastnost.
+Při vložení sestavení do fronty, soubor projektu bude nasazení databázové skripty a webových balíčků ze složky pro přetažení sestavení, kterou jste zadali v **OutputRoot** vlastnost.
 
 ## <a name="conclusion"></a>Závěr
 
-Toto téma popisuje postup publikování materiály pro nasazení, jako je webových balíčků a databázové skripty, z předchozí konkrétní sestavení pomocí modelu nasazení souboru projektu rozdělení. Ho vysvětlení, jak lze přepsat **OutputRoot** vlastnost a jak začlenit logiku nasazení do sady TFS sestavení definice.
+Toto téma popisuje, jak chcete publikovat nasazení prostředky, jako jsou webové balíčky a skripty databáze, z konkrétní předchozí sestavení pomocí modelu nasazení souboru projektu rozdělení. Vysvětlení postupu přepsání **OutputRoot** definice sestavení pro vlastnost a tom, jak začlenit logiky nasazení do TFS.
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o vytváření definic sestavení, najdete v části [vytvoření základní definice sestavení](https://msdn.microsoft.com/library/ms181716.aspx) a [definovat proces vaše sestavení](https://msdn.microsoft.com/library/ms181715.aspx). Další pokyny k sestavení služby Řízení front, najdete v části [fronty sestavení](https://msdn.microsoft.com/library/ms181722.aspx).
+Další informace o vytvoření definice sestavení, naleznete v tématu [vytvořit a Basic Build Definition](https://msdn.microsoft.com/library/ms181716.aspx) a [definovat svůj proces sestavení](https://msdn.microsoft.com/library/ms181715.aspx). Další pokyny k řazení sestavení do fronty, naleznete v tématu [zařadit sestavení do fronty](https://msdn.microsoft.com/library/ms181722.aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](creating-a-build-definition-that-supports-deployment.md)

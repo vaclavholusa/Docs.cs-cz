@@ -1,44 +1,43 @@
 ---
 uid: web-api/overview/security/integrated-windows-authentication
-title: Integrované ověřování systému Windows | Microsoft Docs
+title: Integrované ověřování Windows | Dokumentace Microsoftu
 author: MikeWasson
-description: Popisuje použití integrovaného ověřování systému Windows v rozhraní ASP.NET Web API.
+description: Popisuje použití integrovaného ověřování Windows v rozhraní ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/18/2012
 ms.topic: article
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: bf5f55d98d61cdfdd246a847f41a6f1c65f00bfc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f11b9fe5d98118a252c6c00dd2997b2ee9a3da7a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566752"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381600"
 ---
-<a name="integrated-windows-authentication"></a>Integrované ověřování systému Windows
+<a name="integrated-windows-authentication"></a>Ověření integrované Windows
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-Integrované ověřování systému Windows umožňuje uživatelům přihlásit pomocí svých pověření systému Windows pomocí protokolu Kerberos nebo NTLM. Klient odešle přihlašovací údaje v hlavičce autorizace. Ověřování systému Windows je nejvhodnější pro prostředí intranetu. Další informace najdete v tématu [ověřování systému Windows](https://www.iis.net/configreference/system.webserver/security/authentication/windowsauthentication).
+Integrované ověřování Windows umožňuje uživatelům přihlásit se pomocí svých přihlašovacích údajů Windows, pomocí protokolu Kerberos nebo NTLM. Klient odešle přihlašovací údaje v autorizační hlavičce. Ověřování Windows je nejvhodnější pro prostředí intranetu. Další informace najdete v tématu [ověřování Windows](https://www.iis.net/configreference/system.webserver/security/authentication/windowsauthentication).
 
-| Výhody | Nevýhody |
+| Android – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze. | Universal Windows Platform – používá  rozhraní API. |
 | --- | --- |
-| -Integrované ve službě IIS. -Neodešle přihlašovací údaje uživatele v požadavku. – Pokud je klientský počítač patří do domény (například intranet aplikace), není potřeba zadat přihlašovací údaje uživatele. | -Není doporučena pro internetové aplikace. -Vyžaduje podporu protokolu Kerberos nebo NTLM v klientovi. -Klienta musí být v doméně služby Active Directory. |
+| -Integrovaná do služby IIS. -Neodesílá přihlašovacích údajů uživatele v požadavku. – Pokud je klientský počítač patří do domény (například intranet aplikace), není nutné zadávat přihlašovací údaje uživatele. | -Není doporučena pro internetové aplikace. -Vyžaduje podporu protokolu Kerberos nebo NTLM v klientovi. -Klient musí být v doméně služby Active Directory. |
 
 > [!NOTE]
-> Pokud je vaše aplikace hostována v Azure a budete mít místní doméně Active Directory, vezměte v úvahu federaci vaše místní AD pomocí služby Azure Active Directory. Tímto způsobem uživatelé přihlásit pomocí svých přihlašovacích údajů na místní, ale ověřování se provádí pomocí služby Azure AD. Další informace najdete v tématu [Azure Authentication](../../../visual-studio/overview/2012/windows-azure-authentication.md).
+> Pokud je vaše aplikace hostovaná v Azure a budete mít místní doméně služby Active Directory, vezměte v úvahu federaci s Azure Active Directory vaše místní službě AD. Tímto způsobem uživatelé přihlásit pomocí svých přihlašovacích údajů místního, ale ve službě Azure AD provádí ověřování. Další informace najdete v tématu [ověřování Azure](../../../visual-studio/overview/2012/windows-azure-authentication.md).
 
 
-Pokud chcete vytvořit aplikaci, která používá integrované ověřování systému Windows, vyberte šablonu "Intranetu aplikace" v Průvodci projekt MVC 4. Tato šablona projektu vloží následující nastavení v souboru Web.config:
+Chcete-li vytvořit aplikaci, která se používá ověření integrované Windows, vyberte šablonu "Intranetové aplikace" v Průvodci vytvořením projektu MVC 4. Tuto šablonu projektu umístí následující nastavení v souboru Web.config:
 
 [!code-xml[Main](integrated-windows-authentication/samples/sample1.xml)]
 
-Na straně klienta, integrované ověřování systému Windows funguje s žádný prohlížeč, který podporuje [Negotiate](http://www.ietf.org/rfc/rfc4559.txt) schéma ověřování, který obsahuje většinu hlavní prohlížeče. Pro klientské aplikace .NET **HttpClient** třída podporuje ověřování systému Windows:
+Na straně klienta funguje ověření integrované Windows pomocí libovolného prohlížeče, který podporuje [Negotiate](http://www.ietf.org/rfc/rfc4559.txt) schéma ověřování, která zahrnuje většinu hlavních prohlížečů. Pro klientské aplikace .NET **HttpClient** třída podporuje ověřování Windows:
 
 [!code-csharp[Main](integrated-windows-authentication/samples/sample2.cs)]
 
-Ověřování systému Windows je zranitelný vůči webů útoky padělání (proti útokům CSRF) požadavku. V tématu [prevence útoků (proti útokům CSRF) padělání požadavku posílaného mezi weby](preventing-cross-site-request-forgery-csrf-attacks.md).
+Ověřování Windows je ohrožen útoky proti padělání (CSRF) žádosti více webů. Zobrazit [prevence útoků proti padělání (CSRF) podvržení žádosti](preventing-cross-site-request-forgery-csrf-attacks.md).

@@ -1,192 +1,191 @@
 ---
 uid: signalr/overview/security/introduction-to-security
-title: Úvod do SignalR zabezpečení | Microsoft Docs
+title: Úvod do zabezpečení knihovnou SignalR | Dokumentace Microsoftu
 author: pfletcher
-description: Popisuje problémy se zabezpečením, které musíte zvážit při vývoji aplikace SignalR.
+description: Popisuje problémy se zabezpečením, které je třeba zvážit při vývoji aplikace SignalR.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
 ms.topic: article
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 9a4f09c8036d6d662dfdc44d7c7feaba0101e0c6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 372eb843667d5beaf43042c9a351eab92121c102
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873898"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37370575"
 ---
-<a name="introduction-to-signalr-security"></a>Úvod k zabezpečení SignalR
+<a name="introduction-to-signalr-security"></a>Úvod do zabezpečení knihovnou SignalR
 ====================
-podle [Patrik Fletcher](https://github.com/pfletcher), [tní FitzMacken](https://github.com/tfitzmac)
+podle [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek popisuje problémy se zabezpečením, které musíte zvážit při vývoji aplikace SignalR. 
+> Tento článek popisuje problémy se zabezpečením, které je třeba zvážit při vývoji aplikace SignalR. 
 > 
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - .NET 4.5
-> - SignalR verze 2
+> - Funkce SignalR verze 2
 >   
 > 
 > 
-> ## <a name="previous-versions-of-this-topic"></a>Předchozí verze tohoto tématu
+> ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
 > 
-> Informace o předchozích verzích SignalR najdete v tématu [starší verze funkce SignalR](../older-versions/index.md).
+> Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
 > 
-> ## <a name="questions-and-comments"></a>Dotazy a připomínky
+> ## <a name="questions-and-comments"></a>Otázky a komentáře
 > 
-> Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit v komentářích v dolní části stránky. Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [fórum pro ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
+> Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
 ## <a name="overview"></a>Přehled
 
 Tento dokument obsahuje následující části:
 
-- [Koncepty zabezpečení SignalR](#concepts)
+- [Koncepty zabezpečení knihovnou SignalR](#concepts)
 
     - [Ověřování a autorizace](#authentication)
     - [Token připojení](#connectiontoken)
-    - [Při opětovné připojení, opětovné připojování ke skupinám](#rejoingroup)
-- [Jak SignalR brání padělání požadavku posílaného mezi weby](#csrf)
-- [Doporučení zabezpečení SignalR](#recommendations)
+    - [Při obnovování spojení některých skupin](#rejoingroup)
+- [Jak SignalR brání padělání žádosti více webů](#csrf)
+- [Doporučení zabezpečení knihovnou SignalR](#recommendations)
 
     - [Zabezpečený protokol soketu vrstvy (SSL)](#ssl)
-    - [Nepoužívejte skupiny jako mechanismus zabezpečení](#groupsecurity)
+    - [Nepoužívejte jako vhodný mechanismus zabezpečení skupiny](#groupsecurity)
     - [Bezpečně zpracování vstupu z klientů](#input)
-    - [Sjednocování změnu stavu uživatele s aktivního připojení](#reconcile)
-    - [Automaticky generované soubory proxy JavaScript](#autogen)
+    - [Sjednocování změnu stavu uživatele s aktivní připojení](#reconcile)
+    - [Automaticky generované soubory proxy server JavaScript](#autogen)
     - [Výjimky](#exceptions)
 
 <a id="concepts"></a>
 
-## <a name="signalr-security-concepts"></a>Koncepty zabezpečení SignalR
+## <a name="signalr-security-concepts"></a>Koncepty zabezpečení knihovnou SignalR
 
 <a id="authentication"></a>
 
 ### <a name="authentication-and-authorization"></a>Ověřování a autorizace
 
-SignalR neposkytuje všechny funkce pro ověřování uživatelů. Místo toho integrované funkce SignalR do stávající struktury ověřování pro aplikaci. Jak budete by normálně ve vaší aplikace a pracovat s výsledky ověřování ve vaší SignalR kódu, ověřování uživatelů. Například můžete ověřit uživatele pomocí ověřování ASP.NET pomocí formulářů a pak vynutit v centru, kteří uživatelé nebo role mají oprávnění k volání metody. V centru můžete předat také informace o ověřování, jako je například uživatelské jméno nebo jestli se uživatel patří do role, do klienta.
+Funkce SignalR nenabízí žádné funkce pro ověřování uživatelů. Místo toho je integrovat funkce SignalR do existující struktury ověřování pro aplikaci. Při by normálně v aplikaci a práci s výsledky ověřování ve vaší SignalR kódování, ověřování uživatelů. Například můžete ověřovat uživatele pomocí ověřování formulářů ASP.NET a pak vynutit ve vašem Centru, kteří uživatelé nebo role mají oprávnění k volání metody. V centru můžete také předat ověřovací informace, jako je například uživatelské jméno nebo určuje, zda uživatel patří do role, do klienta.
 
-Funkce SignalR poskytuje [Autorizovat](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atribut k určení uživatelů, kteří mají přístup do rozbočovače nebo metoda. Použít atribut autorizovat k rozbočovači nebo konkrétní metody v rozbočovači. Bez atribut autorizovat jsou k dispozici pro klienta, který je připojený k rozbočovači všechny veřejné metody v rozbočovači. Další informace o centrech najdete v tématu [ověřování a autorizace pro rozbočovače SignalR](hub-authorization.md).
+Funkce SignalR poskytuje [Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) atribut k určení, kteří mají přístup do centra nebo metody. Můžete použít atribut Authorize rozbočovač nebo konkrétní metody v rozbočovači. Bez atributu Authorize všechny veřejné metody v rozbočovači jsou dostupné pro klienta, který je připojený k rozbočovači. Další informace o centrech najdete v tématu [ověřování a autorizace Center SignalR](hub-authorization.md).
 
-Můžete použít `Authorize` atribut rozbočovače, ale není trvalé připojení. K vynucení pravidel autorizace při použití `PersistentConnection` je nutné přepsat `AuthorizeRequest` metoda. Další informace o trvalé připojení najdete v tématu [ověřování a autorizace pro trvalé připojení SignalR](persistent-connection-authorization.md).
+Můžete použít `Authorize` atributu rozbočovače, ale ne trvalé připojení. K vynucení pravidel autorizace, při použití `PersistentConnection` je nutné přepsat `AuthorizeRequest` metody. Další informace o trvalé připojení najdete v tématu [ověřování a autorizace trvalých připojení SignalR](persistent-connection-authorization.md).
 
 <a id="connectiontoken"></a>
 
 ### <a name="connection-token"></a>Token připojení
 
-SignalR snižuje riziko provádění škodlivý příkazy ověřením identity odesílatele. Pro každý požadavek klienta a serveru předejte token připojení, který obsahuje id připojení a uživatelské jméno pro ověřené uživatele. Id připojení jednoznačně identifikuje každého připojený klient. Server náhodně vygeneruje id připojení, když se vytvoří nové připojení a přetrvává toto id po dobu trvání připojení. Mechanismus ověřování pro webovou aplikaci obsahuje uživatelské jméno. SignalR používá šifrování a digitální podpis k ochraně token připojení.
+Funkce SignalR snižuje riziko provádění škodlivých příkazů ověřením identity odesílatele. Pro každý požadavek klienta a serveru předat token připojení, který obsahuje id připojení a uživatelské jméno pro ověřené uživatele. Id připojení jednoznačně identifikuje každý připojený klient. Server náhodně generovat id připojení, když se vytvoří nové připojení a trvá tímto identifikátorem po dobu trvání připojení. Mechanismus ověřování pro webovou aplikaci obsahuje uživatelské jméno. Funkce SignalR používá šifrování a digitálním podpisem k ochraně token připojení.
 
 ![](introduction-to-security/_static/image2.png)
 
-Pro každý požadavek server ověřuje obsah tokenu, aby zajistila, že požadavek pochází ze zadaného uživatele. Uživatelské jméno musí odpovídat id připojení. Tím, že ověří id připojení a uživatelské jméno, SignalR zabrání uživatel se zlými úmysly snadno zosobnění jiného uživatele. Pokud server nelze ověřit token připojení, žádost skončí s chybou.
+Pro každý požadavek server ověřuje obsah tokenu k zajištění, že žádost pochází ze zadaného uživatele. Uživatelské jméno musí odpovídat id připojení. Ověřením id připojení a uživatelské jméno SignalR zabrání uživateli se zlými úmysly snadno zosobnění jiného uživatele. Pokud server nemůže ověřit token připojení, požadavek selže.
 
 ![](introduction-to-security/_static/image4.png)
 
-Id připojení je součástí procesu ověřování, by neměl odhalit id připojení pro jednoho uživatele jiným uživatelům nebo uložení hodnoty na straně klienta, jako v souboru cookie.
+Id připojení je součástí procesu ověřování, by neměla zobrazit jeden uživatel id připojení pro jiné uživatele nebo uložení hodnoty na straně klienta, jako například do souboru cookie.
 
 <a id="rejoingroup"></a>
 
-### <a name="rejoining-groups-when-reconnecting"></a>Při opětovné připojení, opětovné připojování ke skupinám
+### <a name="rejoining-groups-when-reconnecting"></a>Při obnovování spojení některých skupin
 
-Ve výchozím nastavení SignalR aplikace bude automaticky znovu přiřadit uživatele do příslušných skupin po opětovném připojení z dočasné přerušení, jako je například když je připojení vyřazen a znovu vytvořit předtím, než vyprší časový limit připojení. Při opětovné připojení, klient bude provedeno úspěšně skupiny token, který obsahuje id připojení a skupiny přiřazené. Skupiny tokenu je digitálně podepsat a zašifrovat. Klient zachová stejné id připojení po opětovné připojení; id připojení předán z opětovného připojení klienta proto musí odpovídat id předchozího připojení používaná klientem. Toto ověření zabrání předání žádosti o připojení neoprávněným skupiny při opětovném připojení uživatel se zlými úmysly.
+Ve výchozím nastavení aplikace SignalR se automaticky znovu přiřadit uživatele do příslušných skupin při obnovování spojení z dočasné přerušení, jako je například pokud je připojení vyřadit a znovu vytvořit předtím, než vyprší časový limit připojení. Při obnovování spojení, klient předá skupiny token, který obsahuje id připojení a přiřazených skupin. Skupina tokenu je digitálně podepsané a šifrovaná. Klient zachová stejné id připojení po opětovné připojení; id připojení, které jsou předány z opětovného připojení klienta proto musí odpovídat id předchozího připojení použitou klientem. Toto ověření zabrání předání žádosti o připojení neoprávněné skupiny při obnovování spojení uživatel se zlými úmysly.
 
-Je ale důležité si uvědomit, že token skupiny nevyprší platnost. Pokud uživatel patřil do skupiny v minulosti, ale byl vyloučen z této skupiny, může tento uživatel moci napodobovat skupiny token, který obsahuje zakázané skupiny. Pokud potřebujete bezpečně spravovat uživatele, kteří patří do skupiny, které potřebujete k ukládání dat na serveru, například v databázi. Potom si do vaší aplikace, která ověřuje na serveru, zda uživatel patří do skupiny přidejte logiku. Příklad ověření členství ve skupině, najdete v části [práce se skupinami](../guide-to-the-api/working-with-groups.md).
+Je důležité si uvědomit, že skupina token, nemá prošlou platnost. Pokud uživatel patřil do skupiny v minulosti, ale byl vyloučen z této skupiny, může mít možnost tak, aby napodoboval skupiny token, který obsahuje zakázané skupiny. Pokud potřebujete k bezpečné správě, kteří uživatelé patří do skupiny, které potřebujete k ukládání těchto dat na serveru, jako například v databázi. Pak přidejte logiku pro vaše aplikace, která se ověřuje na serveru, zda uživatel patří do skupiny. Příklad ověření členství ve skupinách najdete v tématu [práce se skupinami](../guide-to-the-api/working-with-groups.md).
 
-Automaticky opětovné připojování ke skupinám platí pouze při připojení je znovu připojeny po dočasné přerušení. Pokud uživatel odpojí podle přechodem z aplikace nebo se aplikace restartuje, aplikace musí zpracovávat postup přidání tohoto uživatele správný skupinám. Další informace najdete v tématu [práce se skupinami](../guide-to-the-api/working-with-groups.md).
+Automaticky některých skupin projeví pouze v případě, že připojení je znovu připojeny po dočasné přerušení. Pokud uživatel odpojí podle navigaci pryč z aplikace nebo restartování aplikace, aplikace musí zpracovat přidání tohoto uživatele do správné skupiny. Další informace najdete v tématu [práce se skupinami](../guide-to-the-api/working-with-groups.md).
 
 <a id="csrf"></a>
 
-## <a name="how-signalr-prevents-cross-site-request-forgery"></a>Jak SignalR brání padělání požadavku posílaného mezi weby
+## <a name="how-signalr-prevents-cross-site-request-forgery"></a>Jak SignalR brání padělání žádosti více webů
 
-Proti útokům webů padělání požadavku (CSRF) je útok, při kterém škodlivé weby odešle požadavek na citlivé lokality, kde uživatel momentálně přihlášen. SignalR zabraňuje proti útokům CSRF tím, že velmi pravděpodobně škodlivý lokality za účelem vytvoření žádost platná pro vaši aplikaci SignalR.
+Padělání žádosti mezi weby (CSRF) je útok, kde škodlivý web odešle požadavek na zranitelné lokality, kde uživatel je momentálně přihlášený. Funkce SignalR brání CSRF tím, že škodlivý lokality za účelem vytvořte žádost platná pro vaše aplikace SignalR extrémně nepravděpodobné.
 
-### <a name="description-of-csrf-attack"></a>Popis útoku proti útokům CSRF
+### <a name="description-of-csrf-attack"></a>Popis útoku CSRF
 
-Tady je příklad útoku proti útokům CSRF:
+Tady je příklad útok CSRF:
 
-1. Uživatel přihlásí do www.example.com, ověřování pomocí formulářů.
+1. Přihlášení uživatele do www.example.com, ověřování pomocí formulářů.
 2. Server ověřuje uživatele. Odpověď ze serveru obsahuje soubor cookie ověřování.
-3. Bez protokolování uživatel navštíví škodlivý web. Tento škodlivý lokalita obsahuje následující formuláře HTML: 
+3. Bez odhlášení, uživatel navštíví škodlivý web. Tento škodlivý web obsahuje následující formulář HTML: 
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
-   Všimněte si, že akce formuláře požadavky na server, snadno napadnutelný, aby škodlivé weby. Toto je část "webů" proti útokům CSRF.
-4. Uživatel kliknutím na tlačítko pro odeslání. V prohlížeči zahrnuje ověřovacího souboru cookie s požadavkem.
-5. Žádost se spustí na serveru example.com s kontext ověřování uživatele a dělat vše, co ověřený uživatel může provádět.
+   Všimněte si, že akce formuláře zveřejní ohrožených site nechcete škodlivé weby. Toto je část "webů" CSRF.
+4. Uživatel klikne na tlačítko Odeslat. Prohlížeč zahrnuje ověřovacího souboru cookie s požadavkem.
+5. Požadavek běží na serveru example.com s kontext ověřování uživatele a dělat cokoli, ověřený uživatel smí provádět.
 
-I když tento příklad vyžaduje, aby uživatel klepnutím na tlačítko formuláře, na stránce škodlivého může stejným způsobem jako snadno spustit skript, který odešle požadavek AJAX do vaší aplikace SignalR. Kromě toho pomocí protokolu SSL nebrání útoku proti útokům CSRF protože škodlivé weby můžete odeslat požadavek "https://".
+Přestože tento příklad vyžaduje, aby uživatel kliknout na tlačítko formuláře, stejně jako můžete snadno spouštět skript, který odesílá požadavek AJAX do vaší aplikace SignalR může škodlivé stránky. Kromě toho pomocí protokolu SSL nebrání útok CSRF, protože škodlivý web můžete poslat žádost o "https://".
 
-Obvykle je možné proti webové stránky, které používají soubory cookie pro ověřování, proti útokům CSRF útokům, protože prohlížeče odesílají všechny relevantní soubory cookie k cílovému webu. Útoky proti útokům CSRF však nejsou omezeny na zneužitím soubory cookie. Ověřování Basic a Digest jsou například také snadno napadnutelný. Po přihlášení uživatele pomocí ověřování základní nebo Digest, v prohlížeči automaticky odesílá přihlašovací údaje až do ukončení relace.
+Útokům CSRF jsou obvykle možné proti webové stránky, které používají soubory cookie pro ověřování, protože prohlížeče odesílají všechny relevantní soubory cookie na cílový webový server. Útokům CSRF však nejsou omezené na využívání soubory cookie. Například jsou Basic a Digest ověřování také zranitelné. Po přihlášení uživatele pomocí ověřování základní nebo Digest, prohlížeč automaticky odesílá přihlašovací údaje, dokud se relace neukončí.
 
-### <a name="csrf-mitigations-taken-by-signalr"></a>Způsoby zmírnění proti útokům CSRF provedenou SignalR
+### <a name="csrf-mitigations-taken-by-signalr"></a>Zmírnění CSRF provedenou SignalR
 
-SignalR provede následující kroky na škodlivé weby zabránit ve vytváření platné požadavky do vaší aplikace. SignalR je potřeba provést tyto kroky ve výchozím nastavení, není nutné provádět žádnou akci v kódu.
+Funkce SignalR přijímá následující kroky, aby se zabránilo škodlivým webům ve vytváření platných žádostí na aplikace. SignalR je potřeba provést tyto kroky ve výchozím nastavení, není potřeba provádět žádnou akci ve vašem kódu.
 
 - **Zakázat žádosti napříč doménami**  
- SignalR zakáže žádosti napříč doménami, které uživatelům zabrání v volání koncový bod SignalR z externí domény. SignalR považovat každá žádost z externí domény není platný a blokuje žádosti. Doporučujeme, abyste toto výchozí chování; v opačném škodlivé weby by mohl přimět uživatele odesílání příkazů na váš web. Pokud budete muset použít napříč požadavky domény, najdete v části [postup připojení mezi doménami](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) .
-- **Předejte token připojení řetězce dotazu, není soubor cookie**  
- SignalR předá token připojení jako hodnotu řetězce dotazu místo jako soubor cookie. Ukládání token připojení v souboru cookie nebezpečné, protože prohlížeč nechtěně může předávat token připojení, když je zjištěna škodlivý kód. Navíc předávání token připojení v řetězci dotazu zabrání token připojení uložením nad rámec aktuální připojení. Uživatel se zlými úmysly proto nelze provést žádost pověřeními ověřování jiným uživatelem.
+ Funkce SignalR zakáže žádosti napříč doménami uživatelům zabránit ve volání koncových bodů SignalR z externí domény. Funkce SignalR považuje za jakýkoli požadavek od externí domény není platný a blokuje žádosti. Doporučujeme zachovat toto výchozí chování v opačném případě škodlivým webům může přimět uživatele k odesílání příkazů do vaší lokality. Pokud budete muset použít napříč požadavky domény, přečtěte si téma [jak k navázání připojení mezi doménami](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) .
+- **Předat token připojení v řetězci dotazu, nikoli soubor cookie**  
+ Funkce SignalR předá token připojení jako hodnotu řetězce dotazu, místo jako soubor cookie. Ukládání token připojení do souboru cookie nebezpečné, protože v prohlížeči může nechtěně předat token připojení vyskytne škodlivý kód. Také předá připojení token v řetězci dotazu zabraňuje token připojení uložením mimo aktuální připojení. Uživatel se zlými úmysly proto nelze vytvořit žádost pod přihlašovacími údaji jiným uživatelem.
 - **Ověřit token připojení**  
- Jak je popsáno v [token připojení](#connectiontoken) části serveru zná, které id připojení souvisí s každou ověřeného uživatele. Server nezpracovává každá žádost z id připojení, která neodpovídá uživatelské jméno. Není pravděpodobné, že uživatel se zlými úmysly může uhodnout žádost platná, protože uživatel se zlými úmysly musel předem znát uživatelské jméno a aktuální id náhodně generované připojení. Toto id připojení stává neplatným, jakmile je připojení ukončeno. Anonymní uživatelé by neměl mít přístup k žádné citlivé informace.
+ Jak je popsáno v [token připojení](#connectiontoken) části server ví, u kterého id připojení souvisí s každého ověřeného uživatele. Server není zpracovat jakýkoli požadavek od id připojení, které se neshoduje s uživatelským jménem. Není pravděpodobné, že uživatel se zlými úmysly může uhodnout žádost platná, protože uživatel se zlými úmysly byste museli znát uživatelské jméno a aktuální id náhodně vygenerované připojovací. Toto id připojení se stane neplatným, jako je připojení ukončeno. Anonymní uživatelé neměli mít přístup k žádné citlivé údaje.
 
 <a id="recommendations"></a>
 
-## <a name="signalr-security-recommendations"></a>Doporučení zabezpečení SignalR
+## <a name="signalr-security-recommendations"></a>Doporučení zabezpečení knihovnou SignalR
 
 <a id="ssl"></a>
 
 ### <a name="secure-socket-layers-ssl-protocol"></a>Zabezpečený protokol soketu vrstvy (SSL)
 
-Protokol SSL používá šifrování k zabezpečení přenosu dat mezi klientem a serverem. Pokud vaše aplikace SignalR přenáší citlivé informace mezi klientem a serverem, použijte protokol SSL pro přenos. Další informace o nastavení protokolu SSL najdete v tématu [postup nastavení protokolu SSL ve službě IIS 7](https://www.iis.net/learn/manage/configuring-security/how-to-set-up-ssl-on-iis).
+Protokol SSL používá šifrování pro zabezpečení přenosu dat mezi klientem a serverem. Pokud vaše aplikace SignalR přenáší citlivých informací mezi klientem a serverem, použijte protokol SSL pro přenos. Další informace o nastavení protokolu SSL najdete v tématu [nastavení protokolu SSL ve službě IIS 7](https://www.iis.net/learn/manage/configuring-security/how-to-set-up-ssl-on-iis).
 
 <a id="groupsecurity"></a>
 
-### <a name="do-not-use-groups-as-a-security-mechanism"></a>Nepoužívejte skupiny jako mechanismus zabezpečení
+### <a name="do-not-use-groups-as-a-security-mechanism"></a>Nepoužívejte jako vhodný mechanismus zabezpečení skupiny
 
-Skupiny jsou pohodlný způsob shromažďování související uživatele, ale nejsou zabezpečené mechanismus pro omezení přístupu k důvěrným informacím. To platí hlavně když uživatelé mohou automaticky znovu připojí skupiny během o obnovení. Místo toho zvažte přidání mohou uživatelé s oprávněním k roli a omezení přístupu k metodě rozbočovače pouze členům této role. Příklad omezení přístupu na základě role, naleznete v části [ověřování a autorizace pro rozbočovače SignalR](hub-authorization.md). Příklad ověření přístupu uživatelů do skupin, pokud připojení, naleznete v části [práce se skupinami](../guide-to-the-api/working-with-groups.md).
+Skupiny představují pohodlný způsob shromažďování související uživatele, ale nejsou zabezpečené mechanismus pro omezení přístupu k citlivým údajům. To platí zejména když uživatelé mohou automaticky znovu připojí skupiny během o obnovení. Místo toho zvažte přidání k roli privilegovaných uživatelů a omezení přístupu k metodě rozbočovače pouze členům této role. Příklad omezení přístupu podle rolí, najdete v části [ověřování a autorizace Center SignalR](hub-authorization.md). Příklad při obnovování spojení kontroly přístupu uživatelů ke skupinám, naleznete v tématu [práce se skupinami](../guide-to-the-api/working-with-groups.md).
 
 <a id="input"></a>
 
 ### <a name="safely-handling-input-from-clients"></a>Bezpečně zpracování vstupu z klientů
 
-Aby se zajistilo, že uživatel se zlými úmysly neodesílá skriptu jiným uživatelům, musí kódovat veškerý vstup z klientů, který je určený pro všesměrové vysílání pro ostatní klienty. Zprávy v přijímající klienty spíše než serveru, by měl kódování, protože aplikace SignalR může mít mnoho různých typů klientů. Kódování HTML funguje proto webovému klientovi, ale ne pro jiné typy klientů. Například metoda klienta webové zobrazíte chatovací zprávy by bezpečně popisovač uživatelské jméno a zpráva voláním `html()` funkce.
+Aby bylo zajištěno, že uživatel se zlými úmysly neodesílá skript ostatním uživatelům, musí kódovat veškerý vstup od klientů, která je určená pro vysílání na jiných klientů. Vzhledem k tomu, že vaše aplikace SignalR může mít mnoho různých typů klientů, by měl kódování zpráv na přijímající klienty spíše než serveru. Proto kódování HTML funguje pro webového klienta, ale ne pro jiné typy klientů. Například webové metodě klienta pro zobrazení zprávy chatu by bezpečně zpracovat uživatelské jméno a zpráv pomocí volání `html()` funkce.
 
 [!code-html[Main](introduction-to-security/samples/sample2.html?highlight=3-4)]
 
 <a id="reconcile"></a>
 
-### <a name="reconciling-a-change-in-user-status-with-an-active-connection"></a>Sjednocování změnu stavu uživatele s aktivního připojení
+### <a name="reconciling-a-change-in-user-status-with-an-active-connection"></a>Sjednocování změnu stavu uživatele s aktivní připojení
 
-Pokud se stav ověření uživatele, změní během aktivního připojení existuje, uživateli se zobrazí chyba s oznámením, "identity uživatele se nemůže změnit během aktivního připojení SignalR." V takovém případě aplikace by měl znovu připojit k serveru a ujistěte se, že jsou koordinované id připojení a uživatelské jméno. Například pokud vaše aplikace umožňuje uživatelům odhlášení během aktivního připojení existuje, uživatelské jméno pro připojení se už nebude shodovat s názvem, je předaná pro další požadavek. Bude chtít zastavit připojení, než odhlášení uživatele a pak ji znovu spusťte.
+Pokud se stav ověření změní existuje aktivní připojení, uživateli se zobrazí chyba s oznámením, "identitu uživatele nelze změnit během aktivního připojení SignalR." V takovém případě vaší aplikace měli znovu připojit k serveru a ujistěte se, že se koordinují id připojení a uživatelské jméno. Například pokud vaše aplikace umožňuje uživateli odhlásit, když existuje aktivní připojení, uživatelské jméno pro připojení se už shodovat s názvem, který je předán pro další požadavek. Bude chcete zastavit připojení, než se uživatel odhlásí a pak ji znovu spusťte.
 
-Je ale důležité si uvědomit, že většina aplikací nebude potřeba ručně zastavit a spustit připojení. Pokud vaše aplikace přesměruje uživatele na samostatné stránce po přihlášení, jako je například výchozí chování v aplikaci Web Forms nebo aplikace MVC nebo aktualizuje aktuální stránku po odhlášení, aktivní připojení automaticky odpojí a ne nevyžaduje žádnou další akci.
+Je důležité si uvědomit, že většina aplikací nebudete muset ručně zastavit a spustit připojení. Pokud vaše aplikace přesměruje uživatele na samostatné stránce po přihlášení, jako je výchozí chování v aplikaci webových formulářů nebo aplikace MVC nebo aktualizuje aktuální stránku po odhlášení, aktivní připojení se automaticky odpojí a ne vyžadovat žádnou další akci.
 
-Následující příklad ukazuje, jak zastavit a spustit připojení v případě, že došlo ke změně stavu uživatele.
+Následující příklad ukazuje, jak zastavit a spustit připojení při změně stavu uživatele.
 
 [!code-html[Main](introduction-to-security/samples/sample3.html)]
 
-Nebo ověřování stavu uživatele může změnit, pokud váš web používá klouzavé vypršení platnosti se ověřování pomocí formulářů a neaktivní zachovat ověřovacího souboru cookie platné. V takovém případě se odhlásit uživatele a uživatelské jméno se již nebudou shodovat s názvem uživatele v token připojení. Tento problém můžete vyřešit tak, že přidáte některé skript, který pravidelně požádá o prostředek na webovém serveru chcete zachovat ověřovacího souboru cookie platné. Následující příklad ukazuje, jak požádat o prostředku každých 30 minut.
+Nebo, pokud vaše lokalita používá klouzavé vypršení platnosti se ověřování pomocí formulářů a neexistuje žádná aktivita zachovat platný ověřovací soubor cookie se může změnit stav ověření daného uživatele. V takovém případě uživatel se odhlásíte a uživatelské jméno se již nebude odpovídat uživatelské jméno v tokenu připojení. Tento problém můžete vyřešit tak, že přidáte některé skript, který pravidelně požádá o prostředek na webový server a zachovat platný ověřovací soubor cookie. Následující příklad ukazuje, jak vyžádat prostředek každých 30 minut.
 
 [!code-javascript[Main](introduction-to-security/samples/sample4.js)]
 
 <a id="autogen"></a>
 
-### <a name="automatically-generated-javascript-proxy-files"></a>Automaticky generované soubory proxy JavaScript
+### <a name="automatically-generated-javascript-proxy-files"></a>Automaticky generované soubory proxy server JavaScript
 
-Pokud nechcete zahrnout všechny rozbočovače a metody soubor proxy JavaScript pro každého uživatele, můžete zakázat automatické generování souboru. Tuto možnost můžete zvolit, pokud máte více rozbočovače a metody, ale nechcete, aby každý uživatel znát všechny metody. Zakázat automatické generování nastavením **EnableJavaScriptProxies** k **false**.
+Pokud nechcete zahrnout všechny rozbočovače a metody do souboru proxy JavaScript pro každého uživatele, můžete zakázat automatické vygenerování souboru. Tuto možnost můžete zvolit, pokud máte více rozbočovače a metody, ale nechcete, aby každý uživatel, je potřeba vědět všechny metody. Zakázat automatické generování nastavením **EnableJavaScriptProxies** k **false**.
 
 [!code-csharp[Main](introduction-to-security/samples/sample5.cs)]
 
-Další informace o souborech proxy JavaScript najdete v tématu [vygenerovaný proxy server a jakým způsobem vám](../guide-to-the-api/hubs-api-guide-javascript-client.md#genproxy). <a id="exceptions"></a>
+Další informace o proxy soubory jazyka JavaScript naleznete v tématu [vygenerovaný proxy server a co to dělá za vás](../guide-to-the-api/hubs-api-guide-javascript-client.md#genproxy). <a id="exceptions"></a>
 
 ### <a name="exceptions"></a>Výjimky
 
-Vyhněte se předávání objektů výjimky pro klienty, vzhledem k tomu objekty mohou být citlivé informace pro klienty. Místo toho volání metody na straně klienta, který zobrazí relevantní chybovou zprávu.
+Vyhněte se předávání objektů výjimky pro klienty, protože objekty může zveřejnit citlivé informace pro klienty. Místo toho volejte metodu na straně klienta, který se zobrazí odpovídající chybová zpráva.
 
 [!code-csharp[Main](introduction-to-security/samples/sample6.cs)]

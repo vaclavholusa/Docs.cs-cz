@@ -1,33 +1,32 @@
 ---
 uid: web-api/videos/getting-started/index
-title: Přehled technologie ASP.NET Web API a jak rychle začít videa | Microsoft Docs
+title: Přehled ASP.NET Web API a získat úvodní videa | Dokumentace Microsoftu
 author: rick-anderson
-description: Toto je řadu videa, která vám pomůžou začít s rozhraním ASP.NET Web API.
+description: Toto je sérii videí, které vám pomůžou začít s rozhraním ASP.NET Web API.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2012
 ms.topic: article
 ms.assetid: 1c7cc326-04f5-4578-bf62-a7d381f380f7
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/videos/getting-started
 msc.type: chapter
-ms.openlocfilehash: c06a3e5670839af357a515331cd864521d260c0e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fc44cf0bc05276b54869eba30b7b502c9532e61e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26567001"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376520"
 ---
-<a name="aspnet-web-api-overview-and-getting-started-videos"></a>Přehled technologie ASP.NET Web API a jak rychle začít videa
+<a name="aspnet-web-api-overview-and-getting-started-videos"></a>Přehled ASP.NET Web API a získat úvodní videa
 ====================
-> Toto je řadu videa, která vám pomůžou začít s rozhraním ASP.NET Web API.
+> Toto je sérii videí, které vám pomůžou začít s rozhraním ASP.NET Web API.
 
 
-- [Rozhraní ASP.NET Web API](aspnet-web-api.md)
-- [Rozhraní ASP.NET Web API, část 1: První webového rozhraní API](your-first-web-api.md)
-- [Rozhraní ASP.NET Web API, část 2: Získání dat](getting-data.md)
-- [Rozhraní ASP.NET Web API, část 3: Odstraňte a aktualizace](delete-and-update.md)
-- [Rozhraní ASP.NET Web API, část 4: Stránkování a dotazování](paging-and-querying.md)
-- [Rozhraní ASP.NET Web API, část 5: Vlastního ověřování](custom-validation.md)
-- [Rozhraní ASP.NET Web API, část 6: autorizace](authorization.md)
+- [Webové rozhraní API v ASP.NET](aspnet-web-api.md)
+- [Webové rozhraní API v ASP.NET, 1. část: První webové rozhraní API](your-first-web-api.md)
+- [Webové rozhraní API v ASP.NET, 2. část: Získání dat](getting-data.md)
+- [Webové rozhraní API v ASP.NET, 3. část: Odstranění a aktualizace](delete-and-update.md)
+- [Webové rozhraní API v ASP.NET, 4. část: Stránkování a tvorba dotazů](paging-and-querying.md)
+- [Webové rozhraní API v ASP.NET, 5. část: Vlastní ověřování](custom-validation.md)
+- [Webové rozhraní API v ASP.NET, 6. část: Autorizace](authorization.md)

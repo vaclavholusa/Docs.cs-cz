@@ -1,61 +1,60 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
-title: Pomocí ovládacích prvků pro ověřování (VB) TextBoxWatermark | Microsoft Docs
+title: Použití ovládacího prvku TextBoxWatermark s validačních ovládacích prvků (VB) | Dokumentace Microsoftu
 author: wenz
-description: TextBoxWatermark ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je možné...
+description: Ovládacího prvku TextBoxWatermark v sadou nástrojů AJAX Control Toolkit rozšiřuje textové pole tak, aby text se zobrazí v poli. Když uživatel klikne do pole, to jsem...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: e6c2cb98-f745-4bc8-973a-813879c8a891
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0ca1a4af62af1d65525e59d0b7bc47245dd01476
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 25a18bf4ad514fbeadd321f50d3b715b38d656cd
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879228"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376575"
 ---
-<a name="using-textboxwatermark-with-validation-controls-vb"></a>Pomocí TextBoxWatermark ovládací prvky pro ověřování (VB)
+<a name="using-textboxwatermark-with-validation-controls-vb"></a>Použití ovládacího prvku TextBoxWatermark s validačních ovládacích prvků (VB)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark2.vb.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark2VB.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/TextBoxWatermark2.vb.zip) nebo [stahovat PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/textboxwatermark2VB.pdf)
 
-> TextBoxWatermark ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je vyprázdnit. Pokud uživatel ponechá bez nutnosti zadávat text do pole, zobrazí se předem vyplněných text znovu. To může dojít ke konfliktu s ovládacími prvky ověřování ASP.NET na stejné stránce, ale mohou být tyto problémy překonat.
+> Ovládacího prvku TextBoxWatermark v sadou nástrojů AJAX Control Toolkit rozšiřuje textové pole tak, aby text se zobrazí v poli. Když uživatel klikne do pole, je prázdný. Pokud uživatel ponechá pole bez nutnosti zadávat text, zobrazí se předem vyplněných text. To může kolidovat s ASP.NET validačních ovládacích prvků na stejné stránce, ale může tyto problémy překonat.
 
 
 ## <a name="overview"></a>Přehled
 
-`TextBoxWatermark` Ovládacího prvku Toolkitu AJAX rozšiřuje textové pole tak, aby text se zobrazí v rámci pole. Když uživatel klikne do pole, je vyprázdnit. Pokud uživatel ponechá bez nutnosti zadávat text do pole, zobrazí se předem vyplněných text znovu. To může dojít ke konfliktu s ovládacími prvky ověřování ASP.NET na stejné stránce, ale mohou být tyto problémy překonat.
+`TextBoxWatermark` Ovládacího prvku AJAX Control Toolkit rozšiřuje textové pole tak, aby text se zobrazí v poli. Když uživatel klikne do pole, je prázdný. Pokud uživatel ponechá pole bez nutnosti zadávat text, zobrazí se předem vyplněných text. To může kolidovat s ASP.NET validačních ovládacích prvků na stejné stránce, ale může tyto problémy překonat.
 
 ## <a name="steps"></a>Kroky
 
-Základní nastavení vzorku je následující: `TextBox` ovládací prvek je vodoznakem pomocí `TextBoxWatermarkExtender` ovládacího prvku. Tlačítko zpětné volání se aktivuje a bude možné později použít k aktivaci ověřovací ovládací prvky na stránce. Navíc `ScriptManager` řízení se vyžaduje k chybě při inicializaci prvku ASP.NET AJAX:
+Základní nastavení vzorku je následující: `TextBox` ovládací prvek je horní mezí, použití `TextBoxWatermarkExtender` ovládacího prvku. Tlačítko aktivuje zpětného odeslání a bude možné později použít k aktivaci validačních ovládacích prvků na stránce. Navíc `ScriptManager` ovládací prvek je potřebné k inicializaci technologie ASP.NET AJAX:
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample1.aspx)]
 
-Nyní přidejte `RequiredFieldValidator` ovládací prvek, který kontroluje, zda je text v poli při odeslání formuláře. `InitialValue` Validátoru musí být nastavena na stejnou hodnotu, která se používá v `TextBoxWatermarkExtender` ovládacího prvku: po odeslání formuláře hodnota beze změny textové pole je hodnota vodoznaku v něm:
+Teď přidejte `RequiredFieldValidator` ovládací prvek, který kontroluje, zda je text v poli při odeslání formuláře. `InitialValue` Validátoru musí být nastavena na stejnou hodnotu, která se používá v `TextBoxWatermarkExtender` ovládacího prvku: když se odešle formulář, beze změny textové pole hodnotu hodnoty meze v rámci něj:
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample2.aspx)]
 
-Ale je jedním z problémů s tímto přístupem: Jestliže klient zakáže JavaScript, není pole text předem s vodoznakového textu, proto `RequiredFieldValidator` neaktivuje chybovou zprávu. Proto druhý `RequiredFieldValidator` ovládací prvek je vyžadován, která vyhledává prázdné textové pole (vynechání `InitialValue` atribut).
+Nicméně je jeden problém s tímto přístupem: Jestliže klient zakáže jazyka JavaScript, pole textu není proto předem s vodoznakového textu `RequiredFieldValidator` neaktivuje chybovou zprávu. Proto sekundy `RequiredFieldValidator` ovládací prvek je vyžadován, který vyhledává prázdné textové pole (vynechání `InitialValue` atributu).
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample3.aspx)]
 
-Vzhledem k tomu použít i validátory `Display` = `"Dynamic"`, koncový uživatel nemůže odlišit od vzhled, které ze dvou validátory byla aktivována; místo toho to vypadá, došlo jenom jeden z nich.
+Jelikož obě validátory používat `Display` = `"Dynamic"`, koncovému uživateli nelze rozlišit z vizuálního vzhledu, která dvě validátorů se vyvolala; místo toho to vypadá, došlo jenom jeden z nich.
 
-Nakonec přidejte některé kódu na straně serveru k vypsání text v poli, pokud žádné program pro ověření objeví chybová zpráva:
+Nakonec přidejte nějaký kód na straně serveru do výstupního text v poli, pokud nebyl nalezen žádný validátor vydané chybová zpráva:
 
 [!code-aspx[Main](using-textboxwatermark-with-validation-controls-vb/samples/sample4.aspx)]
 
 
-[![Validátor complains, že neexistuje žádný text v poli](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
+[![Program pro ověření, že neexistuje žádný text v poli si bude stěžovat.](using-textboxwatermark-with-validation-controls-vb/_static/image2.png)](using-textboxwatermark-with-validation-controls-vb/_static/image1.png)
 
-Validátor complains, že neexistuje žádný text v poli ([Kliknutím zobrazit obrázek v plné velikosti](using-textboxwatermark-with-validation-controls-vb/_static/image3.png))
+Validátor si bude stěžovat na, že neexistuje žádný text v poli ([kliknutím ji zobrazíte obrázek v plné velikosti](using-textboxwatermark-with-validation-controls-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](using-textboxwatermark-in-a-formview-vb.md)

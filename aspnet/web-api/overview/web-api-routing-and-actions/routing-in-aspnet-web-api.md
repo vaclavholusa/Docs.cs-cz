@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
-title: Směrování v rozhraní ASP.NET Web API | Microsoft Docs
+title: Směrování ve webovém rozhraní API technologie ASP.NET | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,31 +9,30 @@ ms.date: 02/11/2012
 ms.topic: article
 ms.assetid: 0675bdc7-282f-4f47-b7f3-7e02133940ca
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: aa0ecc96029051fef6a81ac08f7fcf52a24de59c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5e3bba70993dafcdd93feed52813ee80697b1038
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26567082"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374202"
 ---
 <a name="routing-in-aspnet-web-api"></a>Směrování v rozhraní ASP.NET Web API
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
 Tento článek popisuje, jak rozhraní ASP.NET Web API směruje požadavky HTTP na řadiče.
 
 > [!NOTE]
-> Pokud jste obeznámeni s architekturou ASP.NET MVC, směrování rozhraní Web API je velmi podobný směrování MVC. Hlavní rozdíl je, že webového rozhraní API používá metoda HTTP není cesta k identifikátoru URI, můžete vybrat akci. Můžete také použít MVC stylu směrování v rozhraní Web API. Tento článek nepřebírá žádnou znalost rozhraní ASP.NET MVC.
+> Pokud jste obeznámeni s architekturou ASP.NET MVC, směrování rozhraní Web API je velmi podobný směrování MVC. Hlavní rozdíl je, že webové rozhraní API používá metoda HTTP není cesta k identifikátoru URI, můžete vybrat akci. Můžete také použít MVC – vizuální styl směrování v rozhraní Web API. Tento článek nepředpokládá žádnou znalost ASP.NET MVC.
 
 
-## <a name="routing-tables"></a>Směrovacích tabulek
+## <a name="routing-tables"></a>Směrovací tabulky
 
-V rozhraní ASP.NET Web API *řadič* je třída, která zpracovává požadavky HTTP. Veřejné metody řadiče se nazývají *metody akce* nebo jednoduše *akce*. Když rozhraní Web API přijme požadavek, přesměruje požadavek na akci.
+V rozhraní ASP.NET Web API *řadič* je třída, která zpracovává požadavky HTTP. Veřejné metody kontroleru se nazývají *metody akce* nebo jednoduše *akce*. Žádost o přijetí rozhraní Web API přesměruje požadavek na akci.
 
-Určit akci, která má být vyvolán, používá rozhraní *směrovací tabulky*. Šablona projektu sady Visual Studio pro webové rozhraní API vytvoří výchozí trasa:
+Chcete-li zjistit, jakou akci, která se má vyvolat, systém použije *směrovací tabulky*. Šablona projektu sady Visual Studio pro webové rozhraní API vytvoří výchozí trasy:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample1.cs)]
 
@@ -41,87 +40,87 @@ Tato trasa je definována v souboru WebApiConfig.cs, který je umístěn v aplik
 
 ![](routing-in-aspnet-web-api/_static/image1.png)
 
-Další informace o **WebApiConfig** třídy najdete v tématu [konfigurace rozhraní ASP.NET Web API](../advanced/configuring-aspnet-web-api.md).
+Další informace o **WebApiConfig** najdete v tématu [konfigurace ASP.NET Web API](../advanced/configuring-aspnet-web-api.md).
 
-Pokud hostujete samoobslužné webové rozhraní API, musíte nastavit do směrovací tabulky přímo na **HttpSelfHostConfiguration** objektu. Další informace najdete v tématu [hostování na vlastním serveru webového rozhraní API](../older-versions/self-host-a-web-api.md).
+Pokud samoobslužné hostování webového rozhraní API, je nutné nastavit směrovací tabulky přímo na **HttpSelfHostConfiguration** objektu. Další informace najdete v tématu [samoobslužné hostování webového rozhraní API](../older-versions/self-host-a-web-api.md).
 
-Obsahuje každou položku v tabulce směrování *šablonu trasy*. Výchozí šablona trasy pro webového rozhraní API je &quot;rozhraní api nebo {controller} / {id}&quot;. V této šabloně &quot;rozhraní api&quot; je segment literálu cesty a {controller} a {id} jsou proměnné zástupný symbol.
+Obsahuje každou položku v tabulce směrování *šablonu trasy*. Výchozí šablona trasy pro webové rozhraní API je &quot;rozhraní api / {controller} / {id}&quot;. V této šabloně &quot;api&quot; je segment cesty literálu a {controller} a {id} jsou proměnné zástupný symbol.
 
-Když rozhraní Web API obdrží požadavek HTTP, pokouší se identifikátor URI pro jeden z šablon trasy do směrovací tabulky. Pokud žádná trasa odpovídá, klient obdrží chybu 404. Například následující identifikátory URI odpovídají výchozí trasu:
+Rozhraní Web API přijme požadavek HTTP, pokusí se vyhledat identifikátor URI pro jeden z šablon trasy do směrovací tabulky. Pokud neodpovídá žádná trasa klient obdrží chybu 404. Například následující identifikátory URI odpovídaly výchozí trasy:
 
 - / api/contacts
 - /API/Contacts/1
 - /API/Products/gizmo1
 
-Ale následující identifikátor URI neodpovídá, protože jí chybí &quot;rozhraní api&quot; segmentu:
+Ale následující identifikátor URI neodpovídá, protože postrádá &quot;api&quot; segmentu:
 
 - / contacts/1
 
 > [!NOTE]
-> Důvod pomocí "rozhraní api" v postupu je zabrání se tím kolizím s architekturou ASP.NET MVC směrování. Tímto způsobem může mít &quot;/kontaktuje&quot; přejděte na řadič MVC a &quot;/api/contacts&quot; přejděte do kontroleru webového rozhraní API. Samozřejmě pokud vám nevyhovuje touto konvencí, můžete změnit výchozí směrovací tabulka.
+> Pro zabránění kolizím s architekturou ASP.NET MVC směrovací je důvod pomocí "rozhraní api" v této trase. Tímto způsobem může mít &quot;/kontaktuje&quot; přejít na kontroler MVC, a &quot;/api/contacts&quot; přejít na kontroler Web API. Samozřejmě pokud se vám tato konvence, můžete změnit výchozí směrovací tabulka.
 
-Jakmile je nalezen odpovídající trasy, vybere webového rozhraní API kontroleru a akce:
+Po nalezení odpovídající trasy rozhraní Web API vybere kontroleru a akce:
 
-- Najít kontroler, přidá webového rozhraní API &quot;řadič&quot; na hodnotu *{controller}* proměnné.
-- Akce najdete webového rozhraní API porovná metodu protokolu HTTP a pak hledá akce jejichž název začíná tímto názvem metoda HTTP. Například s požadavek GET webového rozhraní API vypadá pro akci, která začíná &quot;získat... &quot;, jako například &quot;GetContact&quot; nebo &quot;GetAllContacts&quot;. Touto konvencí platí pouze pro GET, POST, PUT a DELETE metody. Můžete povolit další metody HTTP pomocí atributů na vašem řadiči. Příklad této uvidíme později.
-- Ostatní proměnné zástupný symbol v šabloně trasy, jako *{id}* jsou namapované na parametrů akcí.
+- Najít kontroler webového rozhraní API přidá &quot;řadič&quot; na hodnotu *{controller}* proměnné.
+- Najít akce, webové rozhraní API zjistí metodu HTTP a pak hledá akci, jejichž název začíná s tímto názvem metody HTTP. Například požadavek GET, webové rozhraní API hledá akci, která začíná &quot;získat... &quot;, jako například &quot;GetContact&quot; nebo &quot;GetAllContacts&quot;. Tato konvence platí pouze pro GET, POST, PUT a DELETE metody. Pomocí atributů na vašem řadiči můžete povolit další metody HTTP. Ukážeme příklad, který později.
+- Další proměnné zástupný symbol v šabloně trasy, jako například *{id}* jsou mapovány na parametry akce.
 
-Podívejme se na příklad. Předpokládejme, že definovat následující řadiče:
+Pojďme se podívat na příklad. Předpokládejme, že můžete definovat následující kontroler:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample2.cs)]
 
-Zde jsou některé možné požadavků protokolu HTTP, společně s akci, která volán pro každou:
+Tady jsou některé možné požadavků protokolu HTTP, spolu s akci, která získá pro každé vyvolání:
 
-| Metoda HTTP | Cesta URI | Akce | Parametr |
+| Metoda HTTP | Cesta identifikátoru URI | Akce | Parametr |
 | --- | --- | --- | --- |
-| GET | rozhraní API nebo produkty | GetAllProducts | *(žádný)* |
-| GET | rozhraní API, produkty nebo 4 | GetProductById | 4 |
+| ZÍSKAT | rozhraní API a produktů | GetAllProducts | *(žádné)* |
+| ZÍSKAT | rozhraní API, produkty nebo 4 | GetProductById | 4 |
 | DELETE | rozhraní API, produkty nebo 4 | DeleteProduct | 4 |
-| POST | rozhraní API nebo produkty | *(žádná shoda)* |  |
+| PŘÍSPĚVEK | rozhraní API a produktů | *(žádná shoda)* |  |
 
-Všimněte si, že *{id}* segment identifikátoru URI, pokud existuje, je namapovaný na *id* parametr akce. V tomto příkladu řadičem definuje dvě metody GET, jeden s *id* parametr a jeden bez parametrů.
+Všimněte si, že *{id}* segment identifikátoru URI, pokud jsou k dispozici, je namapována na *id* parametru akce. V tomto příkladu kontroleru definuje dvě metody GET, jednu s *id* parametr a jedna bez parametrů.
 
-Také Upozorňujeme, že požadavek POST se nezdaří, protože nedefinuje kontroleru &quot;Post... &quot; metoda.
+Všimněte si také, požadavek POST se nezdaří, protože kontroler nedefinuje &quot;příspěvek... &quot; metody.
 
-## <a name="routing-variations"></a>Směrování variant
+## <a name="routing-variations"></a>Směrování odchylky
 
-Popsané v předchozí části základní mechanismus směrování pro ASP.NET Web API. Tato část popisuje některé rozdíly.
+Předchozí část popisuje základní mechanismus směrování pro ASP.NET Web API. Tato část popisuje několik variant.
 
 ### <a name="http-methods"></a>Metody HTTP
 
-Místo použití zásady vytváření názvů pro metody HTTP, můžete explicitně zadat metoda HTTP pro akce architekturu metoda akce s **třídy MetadataExchangeClientMode**, **HttpPut**, **HttpPost** , nebo **HttpDelete** atribut.
+Namísto použití zásady vytváření názvů pro metody HTTP, můžete explicitně určit metoda HTTP pro akci pomocí upravení metodu akce pomocí **HttpGet**, **HttpPut**, **HttpPost** , nebo **HttpDelete** atribut.
 
-V následujícím příkladu je metoda FindProduct namapovaný na požadavky GET:
+V následujícím příkladu je metoda FindProduct namapována na požadavky GET:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample3.cs)]
 
-Povolit více metod HTTP pro akci, nebo povolíte metod HTTP než GET, PUT, POST a odstranění, použijte **AcceptVerbs** atribut, který přebírá seznam metod HTTP.
+Povolit více metod HTTP pro akci, nebo povolíte metod HTTP než GET, PUT, POST a DELETE, použijte **AcceptVerbs** atribut, který přebírá seznam metod HTTP.
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample4.cs)]
 
 <a id="routing_by_action_name"></a>
-### <a name="routing-by-action-name"></a>Směrování podle názvu akce
+### <a name="routing-by-action-name"></a>Směrování tím, že název akce
 
-Výchozí směrování šablonu webového rozhraní API používá metodu protokolu HTTP a vyberte akci. Můžete však také vytvořit trasu, kde je název akce zahrnutá v identifikátoru URI:
+Výchozí šablonou směrování webového rozhraní API používá metodu HTTP a vyberte akci. Můžete ale také vytvořit trasu, kde je název akce součástí identifikátoru URI:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample5.cs)]
 
-V této šabloně trasy *{action}* názvů parametrů metody akce v kontroleru. Pomocí této styl směrování slouží k zadání povolených metod HTTP atributy. Předpokládejme například, že herní zařízení má následující metodu:
+V této šabloně trasy *{action}* názvy parametrů metody akce v kontroleru. S tímto stylem směrování použijte atributy k určení povolené metody HTTP. Předpokládejme například, že zařízení má následující metodu:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample6.cs)]
 
-V takovém případě by metodu podrobnosti mapování požadavek GET pro "api/produkty/podrobnosti/1". Tento styl směrování je podobná ASP.NET MVC a může být vhodné pro rozhraní API stylu RPC.
+V takovém případě by podrobnosti metody mapování požadavek GET pro "rozhraní api/produkty/podrobnosti/1". Tento styl směrování se podobá do architektury ASP.NET MVC a může být vhodné pro rozhraní API stylu RPC.
 
-Název akce můžete přepsat pomocí **název akce** atribut. V následujícím příkladu, existují dvě akce, které jsou mapovány na &quot;rozhraní api, produkty nebo miniaturu/*id*. Jedna podporuje GET a dalších POST:
+Název akce lze přepsat pomocí **ActionName** atribut. V následujícím příkladu jsou dvě akce, které mapují na &quot;rozhraní api, produkty/Miniatura/*id*. Jedna podporuje GET a druhý příspěvek:
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample7.cs)]
 
-### <a name="non-actions"></a>Jiné akce
+### <a name="non-actions"></a>Bez akce
 
-Abyste zabránili získávání vyvolána jako akce metodu, pomocí **NonAction** atribut. To signalizuje do rozhraní metoda není akce, i v případě, že by se jinak neshodovaly pravidla směrování.
+Chcete-li metoda zabránit v získání vyvolán jako akci, použijte **NonAction** atribut. Signál, rozhraní Framework, že metoda není akci, i v případě, že odpovídají jinak pravidel směrování.
 
 [!code-csharp[Main](routing-in-aspnet-web-api/samples/sample8.cs)]
 
 ## <a name="further-reading"></a>Další čtení
 
-Toto téma poskytuje podrobný pohled směrování. Další podrobnosti naleznete v [směrování a výběr akce](routing-and-action-selection.md), který popisuje, přesně jak rozhraní odpovídá identifikátor URI pro trasu, vybere řadič a potom vybere akci k vyvolání.
+Toto téma poskytuje souhrnný přehled směrování. Další podrobnosti najdete v části [směrování a výběr akce](routing-and-action-selection.md), která popisuje přesně jak rozhraní odpovídá identifikátor URI pro trasu, vybere kontroler a pak vybere akce, která se má vyvolat.

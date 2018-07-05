@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-determine-whether-an-asynchronous-postback-has-occurred
-title: '[Jak na:] Určit, že zda asynchronní Postback došlo? | Microsoft Docs'
+title: '[Postup:] Určit, jestli asynchronního postbacku došlo k chybě? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Metoda Page_Load formuláře ASP.NET – webové aplikace spustí během standardní nepoužívají zpětné volání nebo zpětné volání asychnronous části stránky. V tomto videu...
+description: Metody Page_Load webový formulář ASP.NET se spustí během standardní mají formu celostránkového zpětného odeslání nebo zpětného odeslání asychnronous stránky. V tomto videu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/25/2007
 ms.topic: article
 ms.assetid: aabc168b-582a-4668-90b1-3d700285aa1a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-determine-whether-an-asynchronous-postback-has-occurred
 msc.type: video
-ms.openlocfilehash: 5fbea5f0aee0e1686c3e459f6a000428ca4b9829
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d4776444587f3c31f6107783bf740d8f263e28d4
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882166"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37386471"
 ---
-<a name="how-do-i-determine-whether-an-asynchronous-postback-has-occurred"></a>[Jak na:] Určit, že zda asynchronní Postback došlo?
+<a name="how-do-i-determine-whether-an-asynchronous-postback-has-occurred"></a>[Postup:] Určit, jestli asynchronního postbacku došlo k chybě?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Stránce\_metodu načtení formuláře aplikace technologie ASP.NET, budou spuštěny při standardní nepoužívají zpětné volání nebo zpětné volání asychnronous části stránky. V tomto videu jsme zjistěte, jak ASP.NET AJAX ScriptManager můžete použít k určení, zda došlo UpdatePanel zpětné volání, která umožňuje nám k podmíněnému spuštění kódu.
+Na stránce\_zatížení metoda webový formulář ASP.NET se spustí během standardní mají formu celostránkového zpětného odeslání nebo zpětného odeslání asychnronous stránky. V tomto videu jsme zjistěte, jak můžete použít k určení, zda došlo k chybě ovládacím prvkem UpdatePanel postback ScriptManager technologie ASP.NET AJAX, které nám umožňuje k podmíněnému spuštění kódu.
 
 [&#9654;Podívejte se na video (5 minut).](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-determine-whether-an-asynchronous-postback-has-occurred)
 

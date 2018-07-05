@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender
-title: '[Jak na:] Použití rozšíření DynamicPopulate ASP.NET AJAX? | Microsoft Docs'
+title: '[Postup:] Použít technologie ASP.NET AJAX – Extender DynamicPopulate? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Podívejte se na ukázku pomocí ASP.NET AJAX DynamicPopulate rozšiřujícího objektu dynamicky naplnit oblast webové stránky s výsledky asynchronní certifikační autority...
+description: Podívejte se na předvedení použití zařízení extender DynamicPopulate technologie ASP.NET AJAX pro dynamicky vyplnění oblasti webové stránky s výsledky asynchronní certifikační autority...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/31/2007
 ms.topic: article
 ms.assetid: 1c83e543-3f56-42ed-9d10-ac3f8dd26093
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender
 msc.type: video
-ms.openlocfilehash: 189c46d5ad363de57219c57fbc382369a22c9ea9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b7159fd80e7679a61fea114c592a87fb835db491
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30887067"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376217"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender"></a>[Jak na:] Použití rozšíření DynamicPopulate ASP.NET AJAX?
+<a name="how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender"></a>[Postup:] Použít technologie ASP.NET AJAX – Extender DynamicPopulate?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Podívejte se na ukázku pomocí ASP.NET AJAX DynamicPopulate rozšiřujícího objektu dynamicky naplnit oblast webové stránky s výsledky asynchronní volání webové metody.
+Podívejte se na předvedení použití zařízení extender DynamicPopulate technologie ASP.NET AJAX pro dynamicky vyplnění oblasti webové stránky s výsledky asynchronní volání webové metodě.
 
-[&#9654;Podívejte se na video (11 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender)
+[&#9654;Podívejte se na video (11 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-dynamicpopulate-extender)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-use-the-aspnet-ajax-draggable-panel-extender.md)

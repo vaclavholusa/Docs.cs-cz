@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
-title: '[Jak na:] Využívat adaptéry popisný řízení šablon stylů CSS? | Microsoft Docs'
+title: '[Postup:] Využití adaptérů ovládacích prvků kompatibilních šablon stylů CSS? | Dokumentace Microsoftu'
 author: rick-anderson
-description: Ovládací prvek adaptéry popisný šablon stylů CSS umožňují změnit HTML, který je vykreslen metodou standardního ovládacího prvku serveru ASP.NET 2.0. V tomto videu jsme informace c...
+description: Ovládací prvek adaptéry popisný šablon stylů CSS bylo možné změnit kód HTML, který je vykreslen metodou standardní serverový ovládací prvek technologie ASP.NET 2.0. V tomto videu jsme dozvíte stan...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/01/2007
 ms.topic: article
 ms.assetid: aa5a29e3-0cc2-4cc0-986d-e845dbf01813
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
 msc.type: video
-ms.openlocfilehash: 93c35d12fcbbdcf0dd98a399df8d6e2207dcef89
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: fcdf1328c7f550936a96055ce6f1a8f29823bfe2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/05/2018
-ms.locfileid: "28988078"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379357"
 ---
-<a name="how-do-i-utilize-the-css-friendly-control-adapters"></a>[Jak na:] Využívat adaptéry popisný řízení šablon stylů CSS?
+<a name="how-do-i-utilize-the-css-friendly-control-adapters"></a>[Postup:] Využití adaptérů ovládacích prvků kompatibilních šablon stylů CSS?
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-Ovládací prvek adaptéry popisný šablon stylů CSS umožňují změnit HTML, který je vykreslen metodou standardního ovládacího prvku serveru ASP.NET 2.0. V tomto videu jsme informace, že standardního ovládacího prvku Menu technologie ASP.NET vykreslí HTML `<table>` elementu, ale ovládací prvek adaptéry popisný šablon stylů CSS s učiní stejný ovládací prvek HTML `<ul>` element seznamu, vylepšení přístupnosti a prezentace v nabídce. 
+Ovládací prvek adaptéry popisný šablon stylů CSS bylo možné změnit kód HTML, který je vykreslen metodou standardní serverový ovládací prvek technologie ASP.NET 2.0. V tomto videu jsme dozvíte, že standardní ovládací prvek ASP.NET nabídky vykreslí HTML `<table>` element, ale adaptérů šablon stylů CSS popisný ovládací prvek vykreslí stejný ovládací prvek HTML `<ul>` prvek seznamu, vylepšení přístupnosti v nabídce a prezentace. 
 
-[&#9654; Podívejte se na video (26 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-utilize-the-css-friendly-control-adapters)
+[&#9654;Podívejte se na video (26 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-utilize-the-css-friendly-control-adapters)

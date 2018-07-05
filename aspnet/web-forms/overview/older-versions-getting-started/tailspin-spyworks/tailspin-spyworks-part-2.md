@@ -1,50 +1,49 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
-title: 'Část 2: Data Access Layer | Microsoft Docs'
+title: '– Část 2: Vrstva přístupu k datům | Dokumentace Microsoftu'
 author: JoeStagner
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 2 popisuje přidání vrstva přístupu k datům.
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. 2. část se věnuje přidání vrstvy přístupu k datům.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
 ms.topic: article
 ms.assetid: 5a9d5429-d70b-411c-8474-f42cf7ef8a2b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 9f734b04a0f4cec3c33bc5b42ef283ea64cdb463
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 13abb02e76b3af80aa11d09e75dc223403917804
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30890486"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382566"
 ---
-<a name="part-2-data-access-layer"></a>Část 2: Data Access Layer
+<a name="part-2-data-access-layer"></a>2. část: Vrstva přístupu k datům
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks ukazuje, jak neobvykle jednoduché je vytvoření efektivní a škálovatelné aplikace pro platformu .NET. Zobrazuje vypnout používání skvělé nové funkce v rozhraní ASP.NET 4 k sestavení online úložiště, včetně nákupy, najdete v článku věnovaném a správu.
+> Tailspin Spyworks ukazuje, jak mimořádně jednoduché je vytvářet výkonné a škálovatelné aplikace pro platformu .NET. Zobrazuje vypnout použití skvělých nových funkcí v technologii ASP.NET 4 k sestavení nebo online úložiště, včetně nákupu, Pokladna a správu.
 > 
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 2 popisuje přidání vrstva přístupu k datům.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. 2. část se věnuje přidání vrstvy přístupu k datům.
 
 
-## <a id="_Toc260221668"></a>  Přidání Data Access Layer
+## <a id="_Toc260221668"></a>  Přidání vrstvy přístupu k datům
 
-Naše aplikace pro elektronické obchodování bude záviset na dvě databáze.
+Naši aplikaci elektronického obchodování, bude záviset na dvě databáze.
 
-Informace o odběrateli použijeme standardní databáze členství technologie ASP.NET. Pro naše nákupní košík a produkt katalog jsme budete implementovat databázi SQL Express následujícím způsobem.
+Informace o zákaznících použijeme standardní databáze členství technologie ASP.NET. Pro náš katalog nákupního košíku a produktu jsme budete následujícím způsobem implementace databáze SQL Express.
 
 ![](tailspin-spyworks-part-2/_static/image1.jpg)
 
-Obsahující vytvořené databáze (Commerce.mdf) v aplikaci aplikace\_složky dat je možné přejít k vytvoření naše Data Access Layer pomocí rozhraní .NET Framework Entity.
+Databáze (Commerce.mdf) máte vytvořený v aplikaci aplikace\_složka dat je možné přejít k vytvoření naší vrstvy přístupu k datům pomocí Entity Frameworku .NET.
 
-Vytvoříme složku s názvem "Data\_přístup" a jejich klikněte pravým tlačítkem na této složky a vyberte možnost "Přidat novou položku".
+Vytvoříme složku s názvem "Data\_přístup" a je v této složce klikněte pravým tlačítkem myši a vyberte "Přidat novou položku".
 
-"Nainstalovaných šablonách" položku a pak vyberte položku "ADO.NET Entity Data Model" Zadejte EDM\_Commerce.edmx jako název a klikněte na tlačítko "Přidat".
+"Nainstalované šablony" položky a pak vyberte "ADO.NET Entity Data Model" Zadejte EDM\_Commerce.edmx jako název a klikněte na tlačítko "Přidat".
 
 ![](tailspin-spyworks-part-2/_static/image2.jpg)
 
-Zvolte "Generování z databáze".
+Zvolte možnost "Generovat z databáze".
 
 ![](tailspin-spyworks-part-2/_static/image1.png)
 
@@ -56,7 +55,7 @@ Zvolte "Generování z databáze".
 
 Uložit a sestavit.
 
-Nyní jsme připraveni přidat naše první funkce – Kategorie nabídky produktů.
+Nyní jsme připraveni pro přidání naši první funkci – nabídky kategorie produktu.
 
 > [!div class="step-by-step"]
 > [Předchozí](tailspin-spyworks-part-1.md)

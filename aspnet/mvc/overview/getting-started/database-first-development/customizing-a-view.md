@@ -1,46 +1,45 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/customizing-a-view
-title: 'Databázi EF nejprve s architekturou ASP.NET MVC: přizpůsobení zobrazení | Microsoft Docs'
+title: 'EF Database First s ASP.NET MVC: přizpůsobení zobrazení | Dokumentace Microsoftu'
 author: tfitzmac
-description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tento kurz seri...
+description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. Tento kurz seri...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
 ms.topic: article
 ms.assetid: 269380ff-d7e1-4035-8ad1-fe1316a25f76
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/customizing-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 8338603e032329ad03d47c6392e508aa07c6858e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: bfbcfd39dd1cf0abe89a00d2958ca010f0e5e109
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867655"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376495"
 ---
-<a name="ef-database-first-with-aspnet-mvc-customizing-a-view"></a>Databázi EF nejprve s architekturou ASP.NET MVC: přizpůsobení zobrazení
+<a name="ef-database-first-with-aspnet-mvc-customizing-a-view"></a>EF Database First s ASP.NET MVC: přizpůsobení zobrazení
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní k existující databázi. Tato řada kurzu se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořte a odstraňovat data, která se nachází v tabulce databáze. Generovaný kód odpovídá sloupců v tabulce databáze.
+> Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. V této sérii kurzů se dozvíte, jak automaticky vygenerovat kód, který umožňuje uživatelům zobrazit, upravit, vytvořit a odstranit data, která se nachází v databázové tabulce. Generovaný kód odpovídá sloupců v tabulce databáze.
 > 
-> Tato část řady se zaměřuje na změnu zobrazení automaticky generované pro zlepšení prezentaci.
+> Tato části této série se zaměřuje na změny automaticky generované zobrazení k vylepšení v prezentaci.
 
 
-## <a name="add-enrolled-courses-to-student-details"></a>Přidat zaregistrovaná kurzy student podrobnosti o
+## <a name="add-enrolled-courses-to-student-details"></a>Přidat zaregistrovaná kurzy Podrobnosti studenta
 
-Generovaný kód poskytuje dobrý výchozí bod pro vaši aplikaci, ale neposkytuje nutně všechny funkce, které potřebujete ve vaší aplikaci. Můžete upravit kód, který splňovat požadavky na konkrétní aplikace. V současné době aplikace zaregistrované kurzy pro vybrané student nezobrazí. V této části přidáte zaregistrovaná kurzy pro každý studenty do **podrobnosti** zobrazení pro student.
+Generovaný kód poskytuje dobrým výchozím bodem pro vaši aplikaci, ale neposkytuje nutně všechny funkce, které potřebujete ve vaší aplikaci. Můžete upravit kód pro konkrétní požadavkům vaší aplikace. V současné době aplikace zaregistrovaná kurzy pro vybrané student nezobrazuje. V této části přidáte zaregistrované kurzy pro každého studenta do **podrobnosti** zobrazení pro studenta.
 
-Otevřete **Students/Details.cshtml**a pod poslední &lt;/dl&gt; kartě, ale před uzavírací &lt;/div&gt; značky, přidejte následující kód.
+Otevřít **Students/Details.cshtml**a pod poslední &lt;/dl&gt; kartu, ale před uzavírající &lt;/div&gt; značky, přidejte následující kód.
 
 [!code-cshtml[Main](customizing-a-view/samples/sample1.cshtml)]
 
-Tento kód vytvoří tabulku, která zobrazí řádek pro každý záznam v tabulce registrace pro vybrané student. **Zobrazení** metoda vykreslí HTML pro objekt (typem modelItem), který reprezentuje výraz. Použít metodu zobrazení (nikoli jednoduše vložení hodnoty vlastnosti v kódu) a ujistěte se, hodnota formátována správně na základě jeho typu a šablonu pro daný typ. V tomto příkladu každý výraz vrací jedinou vlastnost z aktuální záznam v smyčky a hodnoty jsou primitivní typy, které se vykresluje jako text.
+Tento kód vytvoří tabulku, která se zobrazí řádek pro každý záznam v tabulce registrace pro vybrané studentů. **Zobrazení** metoda vykreslí HTML pro objekt (modelItem), který představuje výraz. Použití zobrazení metody (místo v kódu jednoduše vložení hodnoty vlastnosti) do Ujistěte se, že hodnota formátována správně na základě jeho typu a šablonu pro daný typ. V tomto příkladu každý výraz vrátí jedinou vlastnost z aktuální záznam ve smyčce a hodnoty jsou primitivní typy, které jsou generovány jako text.
 
-Přejděte do zobrazení studenty nebo Index znovu a vyberte **podrobnosti** pro jednu na studentů. Uvidíte, že neobsahuje zaregistrovaná kurzy v zobrazení.
+Přejděte do zobrazení pro studenty/Index znovu a vyberte **podrobnosti** pro jeden z studenty. Uvidíte, že registrovaná kurzy byla zahrnuta v zobrazení.
 
-![Student s registrací.](customizing-a-view/_static/image1.png)
+![studenta s registrací](customizing-a-view/_static/image1.png)
 
 > [!div class="step-by-step"]
 > [Předchozí](changing-the-database.md)

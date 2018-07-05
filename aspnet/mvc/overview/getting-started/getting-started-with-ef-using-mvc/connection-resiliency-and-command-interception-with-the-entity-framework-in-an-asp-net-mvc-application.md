@@ -1,184 +1,183 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
-title: Odolnost připojení a zachycením příkaz s použitím Entity Framework v aplikaci ASP.NET MVC | Microsoft Docs
+title: Odolnost připojení a zachycení příkazů s Entity Framework v aplikaci ASP.NET MVC | Dokumentace Microsoftu
 author: tdykstra
-description: Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 5 s použitím Entity Framework 6 Code First a Visual Studio...
+description: Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio a Entity Framework 6 Code First...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2015
 ms.topic: article
 ms.assetid: c89d809f-6c65-4425-a3fa-c9f6e8ac89f2
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 4a43a9120bf3fa69b00b234d65d0f59d3ce9975b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: bacc49ff60b758b729c200f7943ff654f614ac4c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30875341"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37394791"
 ---
-<a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Odolnost připojení a zachycením příkaz s použitím Entity Framework v aplikaci ASP.NET MVC
+<a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Odolnost připojení a zachycení příkazů s Entity Framework v aplikaci ASP.NET MVC
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhněte si dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stáhnout PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso univerzity ukázkovou webovou aplikaci demonstruje postup vytvoření aplikace ASP.NET MVC 5 s použitím Entity Framework 6 Code First a Visual Studio 2013. Informace o kurzu řady najdete v tématu [z prvního kurzu řady](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
-Pokud spuštění aplikace místně v IIS Express na vašem vývojovém počítači. Reálné aplikaci zpřístupnit ostatním uživatelům používat přes Internet, je nutné nasadit do webové poskytovatele hostitelských služeb a je nutné nasadit databázi k databázovému serveru.
+Zatím aplikace je spuštěné místně v rámci služby IIS Express na vašem vývojovém počítači. Aplikace skutečný zpřístupnit ostatním uživatelům používat přes Internet, je zapotřebí nasadit na web poskytovatele hostitelských služeb a je zapotřebí nasadit databázi k databázovému serveru.
 
-V tomto kurzu se dozvíte jak používat dvě funkce Entity Framework 6, které jsou obzvláště cenná tehdy, když nasazujete do prostředí cloudu: odolnost připojení (automatické opakování pokusů pro přechodné chyby) a příkaz zachycením (dotazy SQL catch všechny odeslal do databáze za účelem protokolu nebo změnit).
+V tomto kurzu se dozvíte o použití dvou funkcí Entity Framework 6, které jsou obzvláště cenná tehdy, když provádíte nasazení do prostředí cloudu: odolnost připojení (automatické opakování pro přechodné chyby) a příkaz zachycení (catch všechny SQL dotazy Odesláno do databáze za účelem protokolu nebo je změnit).
 
-V tomto kurzu pro zachycení odolnost a příkaz připojení je volitelný. Pokud přeskočíte v tomto kurzu, bude mít několik menší nastavení musí být uvedeny v následujících kurzech.
+Tento kurz pro zachycení odolnost proti chybám a příkaz připojení je volitelné. Pokud jste tento kurz přeskočit, bude mít několik drobné úpravy má být provedeno v dalších kurzech.
 
 ## <a name="enable-connection-resiliency"></a>Povolit odolnost připojení
 
-Když nasadíte aplikaci do služby Windows Azure, budete nasazovat databáze k databázi SQL Windows Azure, Cloudová služba databáze. Připojení přechodné chyby jsou obvykle častější při připojení k databázi Cloudová služba než pokud váš webový server a serverem databáze jsou přímo připojené společně ve stejném datovém centru. I v případě cloudu webového serveru a databáze cloudové služby jsou hostované ve stejném datovém centru, existují další síťové připojení mezi nimi, které může mít problémy, například nástroje pro vyrovnávání zatížení.
+Když nasadíte aplikaci do Windows Azure, budete nasazovat databázi k Windows Azure SQL Database je Cloudová databázová služba. Připojení přechodné chyby jsou obvykle častější při připojování k Cloudová databázová služba než kdy webový server a databáze serveru byli přímo připojení společně ve stejném datovém centru. I v případě, že webový server cloud a Cloudová databázová služba hostované ve stejném datovém centru, existují další síťová připojení mezi nimi, které mohou mít problémy, jako jsou nástroje pro vyrovnávání zatížení.
 
-Také Cloudová služba je obvykle sdílet jinými uživateli, což znamená, že jeho reakce mohou být ovlivněny je. A váš přístup k databázi může být předmětem omezení. Omezení znamená služba databáze vyvolá výjimek při pokusu o přístup k jeho další často než je povolený v smlouvy úrovni služeb (SLA).
+Také cloudovou službu se obvykle sdílí jiní uživatelé, což znamená, že jeho reakce mohou být ovlivněny. A váš přístup k databázi může podléhat omezení šířky pásma. Omezení znamená, že databázová služba vyvolá výjimky při pokusu o přístup k jeho další často než je povolené v smlouva o úrovni služeb (SLA).
 
-Mnoho nebo většina připojení problémy při přístupech cloudové služby jsou přechodné, to znamená, že vyřešit samy v krátké době. Proto při operaci databáze a načíst typ chyby, který je obvykle přechodný, vám může opakujte akci po krátké počkejte a operace může být úspěšné. Pokud zpracovat přechodné chyby tak, že automaticky zkusíte znovu, můžete zadat mnohem lepší podmínky pro vaše uživatele viditelnosti většina z nich zákazníka. Funkce odolnost připojení na Entity Framework 6 automatizuje, že proces opakování se nezdařilo dotazy SQL.
+Mnoho nebo většinu problémy s připojením při přístupech cloudové služby jsou přechodné, to znamená, že tyto možnosti vyřeší sami v krátké době. Proto při operaci databáze a získat typ chyby, je nejčastěji přechodné, můžete zkusit operaci zopakovat po krátkém čekání a operace může být úspěšné. Pokud zpracování přechodných chyb tak, že automaticky zkusíte znovu, můžete zadat mnohem lepší prostředí pro vaše uživatele viditelnosti většina z nich zákazníka. Funkce odolnost připojení v Entity Framework 6 automatizuje, že proces opakování neúspěšných dotazů SQL.
 
-Funkci odolnost připojení musí bylo správně nakonfigurované pro konkrétní databázi služby:
+Funkce odolnosti proti chybám připojení musí být správně nakonfigurovaný pro konkrétní databázi služby:
 
-- Je třeba vědět, výjimek, které by mohly být přechodné. Chcete opakovat chyby způsobené k dočasné ztrátě v připojení k síti, nejsou chyby způsobené chybami programu, například.
-- Má čekat odpovídající množství času mezi opakování operace se nezdařila. Můžete počkat již mezi opakovanými pokusy pro zpracování balíku než pro online webovou stránku, kde je uživatel čekání na odpověď.
-- Má odpovídající počet doby, než se bude opakovat. Můžete chtít opakování vícekrát v batch proces, který by v aplikaci online.
+- Je třeba vědět, jaké výjimky jsou může být přechodná. Chcete opakovat chyb způsobených k dočasné ztrátě v připojení k síti, nejsou chyby způsobené chyby programu, například.
+- Má odpovídající množství času mezi opakovanými pokusy o neúspěšné operaci čekání. Můžete počkat déle mezi opakovanými pokusy pro dávkové zpracování než pro online webovou stránku, kde uživatel je čekání na odpověď.
+- Má to chcete zkusit znovu příslušným počtem niž se. Můžete chtít opakovat je víckrát v dávkové zpracování, která byste to udělali v aplikaci online.
 
-Můžete nakonfigurovat tato nastavení ručně pro jakékoli prostředí databáze nepodporuje zprostředkovatele Entity Framework, ale výchozí hodnoty, které obvykle fungují dobře u online aplikace, která používá databázi SQL Windows Azure byla již nakonfigurována, a ty jsou nastavení, které budete implementovat pro aplikaci univerzity Contoso.
+Můžete nakonfigurovat tato nastavení ručně pro všechny databáze prostředí podporovaná službou zprostředkovatele Entity Framework, ale už jsou nakonfigurované výchozí hodnoty, které obvykle fungují dobře pro online aplikaci, která používá Windows Azure SQL Database, a Toto jsou nastavení, která bude implementace pro aplikaci Contoso University.
 
-Všechny stačí povolit odolnost připojení je vytvořte třídu v vaše sestavení, která je odvozena z [DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx) třídy a v této třídě nastavte databázi SQL *strategii provádění*, což v EF je jiný termín pro *zásady opakování*.
+Vše, co musíte udělat, aby povolit odolnost připojení je vytvoření třídy v sestavení, která je odvozena z [DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx) třídy a v dané třídě nastavení databáze SQL *strategie provádění*, což je v EF je jiný termín pro *zásady opakování*.
 
-1. Ve složce DAL přidejte soubor třídy s názvem *SchoolConfiguration.cs*.
-2. Kód šablony nahraďte následujícím kódem:
+1. Ve složce DAL, přidejte soubor třídy s názvem *SchoolConfiguration.cs*.
+2. Nahraďte kód šablony následujícím kódem:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-    Rozhraní Entity Framework automaticky spustí kód najde v třídu odvozenou z `DbConfiguration`. Můžete použít `DbConfiguration` třídy konfigurační úkony v kódu, který by jinak uděláte *Web.config* souboru. Další informace najdete v tématu [EntityFramework konfigurace založené na kódu](https://msdn.microsoft.com/data/jj680699).
+    Entity Framework automaticky spustí kód, který najde ve třídě, která je odvozena z `DbConfiguration`. Můžete použít `DbConfiguration` třídě, aby provedl úlohy konfigurace v kódu, který by jinak provedete *Web.config* souboru. Další informace najdete v tématu [EntityFramework konfigurace založená na kódu](https://msdn.microsoft.com/data/jj680699).
 3. V *StudentController.cs*, přidejte `using` příkaz pro `System.Data.Entity.Infrastructure`.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
-4. Změňte všechny `catch` blokuje této catch `DataException` výjimky tak, aby se catch `RetryLimitExceededException` výjimky místo. Příklad:
+4. Změnit všechny `catch` blokuje této catch `DataException` výjimky tak, aby se zachytit `RetryLimitExceededException` výjimky místo. Příklad:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cs?highlight=1)]
 
-    Jste používali `DataException` pokusit se identifikovat chyby, které můžou být přechodné, aby měla přátelskou zprávou "opakujte". Ale nyní, když jste zapnuli zásady opakovaných pokusů, jenom chyby, které by mohly být přechodné bude již byly se pokusila a se nezdařilo několikrát, a skutečný vrátil výjimku bude uzavřen do `RetryLimitExceededException` výjimka.
+    Jste používali `DataException` se pokouší zjistit chyby, které může být přechodná, aby bylo možné poskytnout přátelskou zprávou "zkuste to znovu". Ale teď, když jste zapnuli zásady opakování, může být přechodná pouze chyby se již mít se snažily neúspěšně několikrát, a skutečné vrátila výjimku budou zabalené v `RetryLimitExceededException` výjimky.
 
-Další informace najdete v tématu [odolnost připojení Entity Framework nebo opakujte logiku](https://msdn.microsoft.com/data/dn456835).
+Další informace najdete v tématu [odolnost Entity Framework připojení / logice opakování](https://msdn.microsoft.com/data/dn456835).
 
-## <a name="enable-command-interception"></a>Povolit příkaz zachycení
+## <a name="enable-command-interception"></a>Povolit zachycení příkazů
 
-Teď, když jste zapnuli zásady opakovaných pokusů, jak můžete otestovat ověření, že funguje podle očekávání? Není tak snadno vynutit přechodná chyba provést, hlavně, když spouštíte místně, a je obzvláště složité je skutečný přechodné chyby integrovat do test automatizované jednotky. Chcete-li otestovat funkci odolnost připojení, potřebujete způsob, jak zachytávat dotazy, které Entity Framework odešle na SQL Server a nahraďte typ výjimky, který je obvykle přechodná odpověď serveru SQL.
+Teď, když jste zapnuli zásady opakování, jak můžete otestovat ověření, že funguje podle očekávání? Není tak snadné vynutit o přechodnou chybu, která se provede, zejména pokud používáte místně a by být obzvláště složité je integrovat skutečné přechodné chyby testu jednotek automatizované. K otestování funkce odolnosti proti chybám připojení, potřebujete způsob, jak zachytit dotazy, které odešle Entity Framework pro SQL Server a nahraďte odpovědi serveru SQL Server, který je obvykle přechodný typ výjimky.
 
-Můžete také použít dotaz zachycení kvůli implementaci osvědčený postup pro cloudové aplikace: [protokolu latenci a úspěch nebo selhání všechna volání do externích služeb](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) například databázové služby. Poskytuje EF6 [vyhrazené protokolování API](https://msdn.microsoft.com/data/dn469464) , může být snazší protokolování, ale v této části kurzu budete Další informace o použití rozhraní Entity Framework [funkci zachycení](https://msdn.microsoft.com/data/dn469464) přímo, i pro protokolování a pro simulaci přechodné chyby.
+Kvůli implementaci osvědčený postup pro cloudové aplikace můžete také použít dotaz zachycení: [protokolování latence a úspěch nebo neúspěch všechna volání externích služeb](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) například databázové služby. Poskytuje EF6 [vyhrazené protokolování rozhraní API](https://msdn.microsoft.com/data/dn469464) , který lze provádět jednodušší protokolování, ale v této části kurzu se dozvíte o použití rozhraní Entity Framework [zachycení funkce](https://msdn.microsoft.com/data/dn469464) přímo, i pro protokolování a pro simulaci přechodné chyby.
 
-### <a name="create-a-logging-interface-and-class"></a>Vytvoření rozhraní protokolování a – třída
+### <a name="create-a-logging-interface-and-class"></a>Vytvoření protokolování rozhraní a třídy
 
-A [nejvhodnější pro protokolování](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) se to udělat pomocí rozhraní místo pevně kódováno volání System.Diagnostics.Trace nebo třída protokolování. Který usnadňuje mechanismu protokolování později změnit, pokud byste někdy potřebovali udělat. Proto v této části vytvoříte rozhraní protokolování a třídu pro implementaci jej/p > 
+A [osvědčený postup pro protokolování](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) , je to udělat pomocí rozhraní namísto pevně kódováno pomocí volání System.Diagnostics.Trace nebo třída protokolování. Který usnadňuje mechanismu protokolování později změnit, pokud byste někdy potřebovali udělat. Takže v této části vytvoříte rozhraní protokolování a třídu pro implementaci ní/p > 
 
-1. Vytvořte složku v projektu s názvem *protokolování*.
-2. V *protokolování* složky, vytvořte soubor třídy s názvem *ILogger.cs*a kód šablony nahraďte následujícím kódem:
+1. Vytvoření složky v projektu a pojmenujte ho *protokolování*.
+2. V *protokolování* složce vytvořte soubor třídy *ILogger.cs*a nahraďte kód šablony následujícím kódem:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs)]
 
-    Rozhraní obsahuje tři úrovně trasování a určete relativní důležitost protokolů a z nich slouží k zadání informací o latence pro volání externí služby, jako je například databázové dotazy. Metody protokolování, mají přetížení, které umožňují předat výjimku. Toto je tak, aby informace o výjimce, včetně protokolů trasování a vnitřní výjimky je spolehlivě podle třídy, který implementuje rozhraní, aniž byste museli spoléhat na které se provádí v každém volání metody protokolování v celé aplikaci.
+    Rozhraní obsahuje tři úrovně trasování a určete relativní důležitost protokoly a je určen k zadání informací o latenci pro volání externích služeb, například databázové dotazy. Protokolování metody mají přetížení, které umožňují předat výjimku. Je to tak, aby se informace o výjimkách včetně zásobníku trasování a vnitřní výjimky spolehlivě protokoluje třídou, která implementuje rozhraní, aniž byste museli spoléhat na, který provádí v jednotlivých voláních metody protokolování v celé aplikaci.
 
-    Metody TraceApi umožňují sledovat latence každé volání externí služba například databáze SQL.
-3. V *protokolování* složky, vytvořte soubor třídy s názvem *Logger.cs*a kód šablony nahraďte následujícím kódem:
+    Metody TraceApi umožňují vám umožní sledovat latenci každého volání externí službě, jako je SQL Database.
+3. V *protokolování* složce vytvořte soubor třídy *Logger.cs*a nahraďte kód šablony následujícím kódem:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample5.cs)]
 
-    Implementace používá pro trasování System.Diagnostics. Toto je integrované funkce rozhraní .NET, což usnadňuje generování a použijte informace trasování. Existuje mnoho "naslouchací procesy" můžete použít s trasováním System.Diagnostics, zápis do souborů, například protokoly a jejich zápis do úložiště objektů blob v Azure. Některé z možností a odkazy na další zdroje informací pro další informace najdete v tématu v [řešení potíží s weby Azure v sadě Visual Studio](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio). Pro tento kurz se budete pouze podíváte na protokoly v sadě Visual Studio **výstup** okno.
+    Implementace použije k provedení trasování System.Diagnostics. Toto je integrovaná funkce .NET, takže se dá snadno generovat a používat informace o trasování. Existuje mnoho "naslouchacích procesů" pomocí trasování System.Diagnostics můžete použít k zápisu do souborů, například protokoly nebo zapsat do úložiště objektů blob v Azure. Některé z možností a odkazy na další zdroje informací pro další informace najdete v tématu v [Poradce při potížích s weby Azure v sadě Visual Studio](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio). V tomto kurzu budete díval jenom na protokoly v sadě Visual Studio **výstup** okna.
 
-    V případě produkční aplikace byste měli vzít v úvahu trasování balíčky než System.Diagnostics a rozhraní objektu ILogger umožňuje přepnout do různých trasování mechanismus, pokud se rozhodnete k tomu je poměrně snadné.
+    V produkční aplikace může být vhodné vzít v úvahu trasování balíčky než System.Diagnostics a ILogger interface usnadňuje relativně přepnout na mechanismu různých trasování, pokud se rozhodnete k tomu.
 
-### <a name="create-interceptor-classes"></a>Vytvořit zachytávací modul třídy
+### <a name="create-interceptor-classes"></a>Vytvoření třídy zachycování
 
-Dále vytvoříte třídy, které rozhraní Entity Framework zavolá do pokaždé, když se má odeslat dotaz na databázi, jeden pro simulaci přechodné chyby a jeden udělat protokolování. Tyto třídy interceptoru musí být odvozeny od `DbCommandInterceptor` třídy. V nich zapisovat metoda přepsání, které jsou automaticky volána, když dotaz se chystá provést. V těchto metod můžete prozkoumat nebo protokolu dotaz odeslaný do databáze, a můžete změnit dotaz před odesláním do databáze nebo vrátit něco Entity Framework sami bez i předávání dotaz do databáze.
+Dále vytvoříte třídy, které rozhraní Entity Framework volat pokaždé, když se chce odešle dotaz do databáze, jeden pro simulaci přechodné chyby a jeden provedete protokolování. Tyto třídy zachycování musí být odvozen z `DbCommandInterceptor` třídy. V nich můžete zapsat přepsání metody, které jsou automaticky volána, když je dotaz se pokračovalo. V těchto metodách můžete prozkoumat nebo protokolu dotaz odeslaný do databáze, a můžete změnit dotaz před odesláním do databáze nebo vracely něco k Entity Frameworku sami bez i předá dotaz do databáze.
 
-1. Pro vytvoření třídy interceptoru, který bude protokolovat každý dotaz SQL, který je odeslal do databáze, vytvořte soubor třídy s názvem *SchoolInterceptorLogging.cs* v *DAL* složku a nahraďte kód šablony s Následující kód:
+1. Chcete-li vytvořit třídu zachycování, která se budou protokolovat každého dotazu SQL, který je odeslán do databáze, vytvořte soubor třídy *SchoolInterceptorLogging.cs* v *DAL* složky a nahraďte kód šablony s Následující kód:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample6.cs)]
 
-    Pro úspěšné dotazy nebo příkazy tento kód zapíše protokol informací s informacemi o latence. Pro výjimky vytvoří se protokol chyb.
-2. Pro vytvoření třídy interceptoru, který vygeneruje fiktivní přechodné chyby, když zadáte "Výjimku" v **vyhledávání** pole, vytvořte soubor třídy s názvem *SchoolInterceptorTransientErrors.cs* v *DAL* složky a nahraďte kód šablony s následujícím kódem:
+    Tento kód pro úspěšné dotazy nebo příkazy, zapíše protokol informací s informace o latenci. Pro výjimky vytvoří protokol chyb.
+2. Chcete-li vytvořit třídu zachycování, která vygeneruje fiktivní přechodné chyby, když zadáte "Vyvolat" v **hledání** pole, vytvořte soubor třídy *SchoolInterceptorTransientErrors.cs* v *DAL* složky a nahraďte kód šablony následujícím kódem:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample7.cs)]
 
-    Tento kód pouze přepsání `ReaderExecuting` metodu, která je volána pro dotazy, které může vrátit více řádků dat. Pokud jste chtěli zkontrolujte odolnost připojení pro jiné typy dotazů, může také přepsat `NonQueryExecuting` a `ScalarExecuting` metody, jako interceptoru protokolování nemá.
+    Tento kód jenom přepsání `ReaderExecuting` metodu, která je volána pro dotazy vracející více řádků dat. Pokud chcete zkontrolovat odolnost připojení pro jiné typy dotazů, může také přepsat `NonQueryExecuting` a `ScalarExecuting` metody, jako protokolování zachycování nepodporuje.
 
-    Při spuštění stránky Student a zadejte hledaný řetězec "Výjimku", tento kód vytvoří fiktivní výjimka databáze SQL pro chyby číslo 20, typu ví, nejčastěji přechodné. Další chyba čísla aktuálně rozpoznán jako přechodný jsou 64, 233, 10053, 10054, 10060, 10928, 10929, 40197, 40501 a 40613, ale to se může měnit v nové verze databáze SQL.
+    Při spuštění stránky studentů a zadejte hledaný řetězec "Vyvolat", tento kód vytvoří fiktivní výjimka SQL Database pro číslo chyby 20, typ ví, že je nejčastěji přechodné. Jsou různé počty chyb aktuálně rozpoznána jako přechodné 64, 233, 10053, 10054, 10060, 10928, 10929, 40197, 40501 a 40613, ale ty se mohou změnit v nových verzích služby SQL Database.
 
-    Kód vrátí Entity Framework namísto spuštění dotazu a předání výsledky dotazu back výjimku. Přechodný výjimka je vrácen čtyřikrát a pak se kód vrátí do běžný postup předat dotaz do databáze.
+    Vrátí kód výjimky k Entity Frameworku namísto spuštění dotazu a předá zpět výsledků. Přechodné výjimky se vrátí čtyřikrát, a potom vrátí kód na běžný postup předáním dotaz do databáze.
 
-    Vzhledem k tomu, že je všechno, co přihlášení, budete moci zobrazit Entity Framework se pokusí provést dotaz čtyřikrát před nakonec úspěšné, a v aplikaci jediným rozdílem je, že trvá déle k vykreslení stránky s výsledky dotazu.
+    Vzhledem k tomu, že všechno, co se zaznamená, budete moct zjistit, že Entity Framework pokusí o provedení dotazu čtyřikrát před nakonec úspěšná, a jediným rozdílem v aplikaci je, že trvá déle k vykreslení stránky s výsledky dotazu.
 
-    Počet, který se bude opakovat rozhraní Entity Framework se dá konfigurovat; kód určuje čtyřikrát, protože se jedná o výchozí hodnotu pro zásady spouštění databáze SQL. Pokud změníte zásady spouštění, musíte také změnit zde kód, který určuje, kolikrát se generují přechodné chyby. Můžete také změnit kód ke generování další výjimky tak, aby rozhraní Entity Framework vyvolá výjimku `RetryLimitExceededException` výjimka.
+    Počet pokusů, které se bude opakovat Entity Framework je možné konfigurovat; kód určuje čtyřikrát, protože to je výchozí hodnota pro zásady spouštění SQL Database. Pokud změníte zásady spouštění, máte také změnit zde kód, který určuje, kolikrát se generují přechodné chyby. Můžete také změnit kód tak, aby se vyvolá rozhraní Entity Framework generovat další výjimky `RetryLimitExceededException` výjimky.
 
-    Hodnota, zadejte do vyhledávacího pole bude v `command.Parameters[0]` a `command.Parameters[1]` (jeden se používá pro křestní jméno a jeden pro název poslední). Když se najde hodnotu "% Throw %", "Výjimku" je nahrazena v těchto parametrů "služby" tak, aby některé studenti, kteří budou nalezena a vrácena.
+    Hodnotu, kterou zadáte do vyhledávacího pole bude v `command.Parameters[0]` a `command.Parameters[1]` (jeden se používá pro křestní jméno a jeden pro příjmení). Když je nalezena hodnota "% Throw %", "Vyvolat" se nahrazuje v tyto parametry "služby" tak, aby některé studenty nalezen, který se vrátil.
 
-    Toto je jenom pohodlný způsob pro testování odolnost připojení na základě změny některé vstup aplikace uživatelského rozhraní. Můžete také psát kód, který generuje přechodné chyby pro všechny dotazy nebo aktualizace, jak je popsáno dále v komentáře o *DbInterception.Add* metoda.
+    Toto je jenom pohodlný způsob, jak testovat odolnost proti chybám připojení na základě změny některých vstup do uživatelského rozhraní aplikace. Můžete také napsat kód, který generuje přechodné chyby pro všechny dotazy nebo aktualizace, jak je popsáno dále v komentářích o *DbInterception.Add* metody.
 3. V *Global.asax*, přidejte následující `using` příkazy:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
-4. Přidat zvýrazněné řádky, které se `Application_Start` metoda:
+4. Přidat zvýrazněné řádky a `Application_Start` metody:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs?highlight=7-8)]
 
-    Tyto řádky kódu jsou co způsobí, že váš kód interceptoru spustit, když Entity Framework odesílá dotazy do databáze. Všimněte si, že vzhledem k tomu, že jste vytvořili samostatné interceptoru třídy pro simulaci přechodné chybě a protokolování, můžete nezávisle povolit či zakázat.
+    Tyto řádky kódu se, co způsobí, že váš kód zachycování má být spuštěn při Entity Framework odesílá dotazy do databáze. Všimněte si, že vzhledem k tomu, že jste vytvořili samostatné zachycování třídy pro přechodná chyba simulace a protokolování, můžete nezávisle na sobě povolit a zakázat.
 
-    Můžete přidat pomocí sběrače `DbInterception.Add` metoda kdekoli v kódu; nemá v `Application_Start` metoda. Další možností je uvést tento kód ve třídě DbConfiguration, který jste vytvořili dříve a nastavte zásady spouštění.
+    Můžete přidat pomocí sběrače `DbInterception.Add` metodu kdekoli v kódu; nemusí být v `Application_Start` metoda. Další možností je vložit tento kód ve třídě DbConfiguration, který jste vytvořili dříve ke konfiguraci zásady spouštění.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs?highlight=6-7)]
 
-    Kdekoli vložte tento kód, pečlivě není možné provést `DbInterception.Add` pro stejné interceptoru více než jednou, nebo budete získat další interceptoru instance. Například pokud přidáte interceptoru protokolování dvakrát, zobrazí dva protokoly pro každý dotaz SQL.
+    Všude, kde vložte tento kód, dejte pozor, ke spuštění `DbInterception.Add` pro stejný zachycování více než jednou, ale zobrazí se další zachycování instance. Například pokud přidáte zachycování protokolování dvakrát, zobrazí se vám dva protokolů pro každý dotaz SQL.
 
-    Sběrače jsou spouštěny v pořadí registrace (pořadí, v jakém `DbInterception.Add` metoda je volána). Pořadí může v závislosti na tom, jaké úlohy v zachycovač podstatné. Například může interceptoru změnit příkaz SQL, který získá v `CommandText` vlastnost. Pokud ho změnit příkazu SQL, získáte další interceptoru změněné příkazu SQL, není původní příkaz SQL.
+    Sběrače jsou provedeny v pořadí registrace (pořadí, ve kterém `DbInterception.Add` volání metody). V závislosti na tom, co děláte v Sběrač může být důležité pořadí. Například zachycování může změnit pomocí příkazu SQL, který získá v `CommandText` vlastnost. Pokud ji změnit pomocí příkazu SQL, se zobrazí další zachycování změněné příkaz SQL, nikoli původní příkaz SQL.
 
-    Napsání kódu simulace přechodné chybě způsobem, který umožňuje způsobit přechodné chyby zadáním jiné hodnoty v uživatelském rozhraní. Jako alternativu můžete napsat kód interceptoru vždy generovat pořadí přechodný výjimek bez kontroly hodnotu konkrétní parametru. Potom můžete přidat zachycovač jenom v případě, že chcete vygenerovat přechodné chyby. Pokud to uděláte, ale nepřidáte interceptoru až po dokončení inicializace databáze. Jinými slovy proveďte operaci nejméně jednu databázi jako dotaz na jednom z vaší sady entit, před zahájením generování přechodné chyby. Rozhraní Entity Framework provede několik dotazů při inicializaci databáze a nejsou provést v transakci, takže chyby při inicializaci by mohlo způsobit kontext k získání nekonzistentním stavu.
+    Jste napsali kód přechodná chyba simulace způsobem, který umožňuje způsobit přechodné chyby tak, že zadáte jinou hodnotu v uživatelském rozhraní. Jako alternativu můžete napsat kód zachycování vždy generovat posloupnost přechodným výjimkám bez kontroly pro konkrétní parametr hodnoty. Sběrač, pak můžete přidat pouze v případě, že chcete vygenerovat přechodné chyby. Pokud to uděláte, ale nepřidávejte zachycování až po dokončení inicializace databází. Jinými slovy proveďte nejméně jednu databázi operace, jako například dotaz na jednom ze sady entit, před zahájením generování přechodné chyby. Entity Framework provede několik dotazů během inicializace databází a nebudou provedeny v transakci, takže chyby při inicializaci by mohlo způsobit kontext k získání do nekonzistentního stavu.
 
-## <a name="test-logging-and-connection-resiliency"></a>Testovací připojení a protokolování odolnost proti chybám
+## <a name="test-logging-and-connection-resiliency"></a>Test připojení k protokolování a odolnost proti chybám
 
-1. Stisknutím klávesy F5 spusťte aplikaci v režimu ladění a klikněte **studenty** kartě.
-2. Podívejte se na sady Visual Studio **výstup** a zobrazte výstup trasování. Možná budete muset posunout nahoru po některé chyby jazyka JavaScript, abyste se dostali na protokoly zapsaných správcem vaší protokolovacího nástroje.
+1. Stisknutím klávesy F5 spusťte aplikaci v režimu ladění a pak klikněte na tlačítko **studenty** kartu.
+2. Podívejte se na Visual Studio **výstup** okno a zobrazit výstup trasování. Budete muset posunout nahoru za některé chyby JavaScriptu získat protokoly vytvořené vaší protokolovacího nástroje.
 
-    Všimněte si, zda se zobrazí skutečné příkazy jazyka SQL odeslal do databáze. Zobrazí některé počáteční dotazy a příkazy, které Entity Framework nemá Pokud chcete začít, kontrola verze databáze a tabulky historie migrací (získáte informace o migrace v dalším kurzu). Zobrazit dotaz pro stránkování, chcete-li zjistit, kolik studenti, kteří existují, a nakonec se zobrazí dotaz, který získá student data.
+    Všimněte si, že vidíte skutečné SQL dotazy odeslané do databáze. Uvidíte některé počáteční dotazy a příkazy, které rozhraní Entity Framework nemá Pokud chcete začít, kontrola verze databáze a tabulky historie migrace (získáte informace o migraci v dalším kurzu). Zobrazit dotaz pro stránkování, chcete-li zjistit, kolik studenty existují, a nakonec se zobrazí dotaz, který získá data studentů.
 
-    ![Protokolování pro normální dotazu](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
-3. V **studenty** stránky, zadejte hledaný řetězec "Výjimku" a klikněte na tlačítko **vyhledávání**.
+    ![Protokolování pro normální dotaz](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
+3. V **studenty** stránky, jako řetězec hledání zadejte "Vyvolat" a klikněte na tlačítko **hledání**.
 
-    ![Throw – řetězec pro hledání](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
+    ![Vyvolat hledaný řetězec](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 
-    Můžete si všimnout, že v prohlížeči zdá se, že zablokuje pro několik sekund, zatímco Entity Framework opakuje dotaz několikrát. První opakování se stane velmi rychle potom počkejte před zvyšuje před každou další opakování. Tento proces nebude čekání před každou opakování nazývá *exponenciálního omezení rychlosti*.
+    Můžete si všimnout, že v prohlížeči vypadá, že přestane reagovat na několik sekund, zatímco rozhraní Entity Framework se opakovaně pokouší o dotazu několikrát. Prvním opakováním se stane velmi rychle, pak čekání před zvýšení před každou další zkuste to znovu. Tento proces už čekání před voláním opakováními *exponenciálního omezení rychlosti*.
 
-    Pokud na stránce se zobrazuje, zobrazující studenty, kteří mají "na" v jejich názvy, podívejte se na ve výstupním okně a zobrazí stejný dotaz byl proveden pokus o pětkrát, nejprve čtyřikrát vrácením přechodné výjimky. Pro každý přechodná chyba se zobrazí v protokolu, který zapisovat při generování přechodná chyba v `SchoolInterceptorTransientErrors` – třída ("Returning přechodná chyba pro příkaz...") a zobrazí se v protokolu zapisovat při `SchoolInterceptorLogging` získá výjimku.
+    Pokud na stránce se zobrazí, zobrazení pro studenty, kteří mají "s" v jejich názvy, podívejte se na v okně Výstup a zobrazí stejný dotaz došlo k pokusu o pětkrát, nejprve čtyřikrát vrácením přechodné výjimky. U každé přechodné chyby, který píšete při generování přechodná chyba v protokolu uvidíte `SchoolInterceptorTransientErrors` třídy ("Returning přechodná chyba pro příkaz...") a zobrazí se v protokolu zapisují při `SchoolInterceptorLogging` získá výjimku.
 
-    ![Protokolování výstupu zobrazující opakování](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+    ![Uložit výstup protokolování zobrazující opakování](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
-    Vzhledem k tomu, že zadaný hledaný řetězec dotazu, který vrací student data je parametry:
+    Vzhledem k tomu, že zadáte hledaný řetězec, je s parametry dotazu, který vrací data studenta:
 
     [!code-sql[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.sql)]
 
-    Hodnota parametry nejsou protokolování, ale můžete to udělat. Pokud chcete zobrazit hodnoty parametrů, můžete napsat kód protokolování k získání hodnot parametrů z `Parameters` vlastnost `DbCommand` objekt, který můžete získat v interceptoru metody.
+    Neprotokolují hodnoty parametrů, ale můžete to udělat. Pokud chcete zobrazit hodnoty parametrů, můžete napsat kód protokolování k získání hodnot parametrů z `Parameters` vlastnost `DbCommand` objekt, který vám mít metody zachycování.
 
-    Poznámka: Tento test nelze opakovat, pokud zastavte aplikaci a restartujte ji. Pokud chcete otestovat odolnost připojení více než jednou. v jedné spustit aplikace, můžete napsat kód, chcete-li obnovit čítač chyby v `SchoolInterceptorTransientErrors`.
-4. Rozdíl v strategii provádění (zásady opakování) provede, komentář `SetExecutionStrategy` řádek v *SchoolConfiguration.cs*, znovu spusťte stránce studenty v režimu ladění a vyhledejte řetězec "Throw" znovu.
+    Všimněte si, že tento test nelze opakovat, pokud aplikaci zastavte a restartujte ji. Pokud chcete mít možnost Testovat odolnost připojení více než jednou v jedné spuštění aplikace, můžete napsat kód Vynulovat čítač Chyba v `SchoolInterceptorTransientErrors`.
+4. Uvidíte rozdíl strategie provádění (zásady opakování) vystaví, komentářů `SetExecutionStrategy` řádku v *SchoolConfiguration.cs*, znovu spusťte stránce studenty v režimu ladění a znovu vyhledat "Vyvolání výjimky".
 
-    Tentokrát ladicí program zastaví v první generovaného výjimka při pokusu o provedení dotazu poprvé okamžitě.
+    Tentokrát ladicí program se zastaví při první výjimky generované okamžitě při pokusu o provedení dotazu poprvé.
 
     ![Fiktivní výjimky](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
-5. Zrušením komentáře u *SetExecutionStrategy* řádek v *SchoolConfiguration.cs*.
+5. Zrušením komentáře u *SetExecutionStrategy* řádku v *SchoolConfiguration.cs*.
 
 ## <a name="summary"></a>Souhrn
 
-V tomto kurzu jste se seznámili povolení odolnost připojení a protokolu příkazy SQL, které Entity Framework vytvoří a odešle do databáze. V dalším kurzu nasadíte aplikaci do Internetu, použít migrace Code First pro nasazení databáze.
+V tomto kurzu jste viděli, jak povolit odolnost připojení a protokolů příkazy SQL, které lze kombinovat rozhraní Entity Framework a odesílá do databáze. V dalším kurzu nasazujete aplikace na Internetu, pomocí migrace Code First pro nasazení databáze.
 
-Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit. Můžete také vyžádat nová témata na [zobrazit mi jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu. Můžete také požádat o nový témat na [Show Me jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
 
-Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET - doporučené prostředky](../../../../whitepapers/aspnet-data-access-content-map.md).
+Odkazy na další zdroje Entity Framework lze nalézt v [přístup k datům ASP.NET – doporučené zdroje informací](../../../../whitepapers/aspnet-data-access-content-map.md).
 
 > [!div class="step-by-step"]
 > [Předchozí](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)

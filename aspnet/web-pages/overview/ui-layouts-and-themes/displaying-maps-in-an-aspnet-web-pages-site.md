@@ -1,37 +1,36 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
-title: Zobrazení mapy v rozhraní ASP.NET Web Pages lokality (Razor) | Microsoft Docs
+title: Zobrazení mapy v ASP.NET Web Pages lokality (Razor) | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento článek vysvětluje, jak zobrazit interaktivní mapy na stránkách na webu technologie ASP.NET Web Pages (Razor) podle mapování služeb poskytovaných Bing, Google, Ma...
+description: Tento článek vysvětluje, jak zobrazit interaktivní mapy na stránkách na webu rozhraní ASP.NET Web Pages (Razor) podle mapování služby poskytované Bing, Google, Ma...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
 ms.topic: article
 ms.assetid: b5c268dd-ca6a-4562-b94c-a220fcf01f58
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 608dab8760bad7b877ab6fd4f89b21e980f5b1db
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 210cc37427024a4e8cae309634141900bb28b55e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893859"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368832"
 ---
-<a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Zobrazení mapy v Web Pages (Razor) technologie ASP.NET
+<a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Zobrazení map na webu rozhraní ASP.NET Web Pages (Razor)
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek vysvětluje, jak zobrazit interaktivní mapy na stránkách na webu technologie ASP.NET Web Pages (Razor) podle mapování služeb poskytovaných Bing, Google, MapQuest a Yahoo.
+> Tento článek vysvětluje, jak se zobrazí na stránkách na webu rozhraní ASP.NET Web Pages (Razor) podle mapování služby poskytované Bing, Google, Yahoo a MapQuest interaktivní mapy.
 > 
-> Získáte informace:
+> Co se dozvíte:
 > 
-> - Popisuje, jak Generovat mapu založené na adresu.
-> - Popisuje, jak Generovat mapu podle zeměpisné šířky a délky.
-> - Jak zaregistrovat účet služby Bing Maps Developer a získat klíč pro použití s mapy Bing.
+> - Postup generování mapování na základě adresy.
+> - Postup generování mapy založené na zeměpisné šířky a délky.
+> - Jak se zaregistrovat vývojářský účet mapy Bing a získat klíč pro použití službou mapy Bing.
 > 
-> Toto je funkce technologie ASP.NET byla zavedená v článku:
+> Toto je funkce technologie ASP.NET zavedené v následujícím článku:
 > 
 > - `Maps` Pomocné rutiny.
 >   
@@ -43,76 +42,76 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 > - Služba WebMatrix 2
 >   
 > 
-> V tomto kurzu taky spolupracuje se službou WebMatrix 3.
+> V tomto kurzu funguje taky pomocí služby WebMatrix 3.
 
 
-Ve webových stránkách, můžete zobrazení mapy na stránce pomocí `Maps` pomocné rutiny. Můžete vygenerovat založené na adresu nebo na sadu zeměpisné šířky a délky souřadnice mapy. `Maps` Třída umožňuje volání do oblíbených mapy moduly včetně Bing, Google, MapQuest a Yahoo.
+Na webových stránkách, můžete zobrazit mapování na stránce pomocí `Maps` pomocné rutiny. Můžete generovat mapy založené na adresu nebo na sadu souřadnice zeměpisné šířky a délky. `Maps` Umožňuje volání do mapy Oblíbené moduly včetně Bing, Google, Yahoo a MapQuest třídy.
 
-Postup přidání mapování na stránku jsou stejné bez ohledu na to, které z modulů mapy volání. Stačí přidat odkaz na soubor JavaScript, který umožňuje dostupné metody pro zobrazení mapy, a pak volání metody `Maps` pomocné rutiny.
+Kroky pro přidání mapování do stránky jsou stejné bez ohledu na to, které moduly mapy volání. Stačí přidat odkaz na soubor jazyka JavaScript, která je k dispozici metody k zobrazení mapy, a pak zavolat metody `Maps` pomocné rutiny.
 
-Vybrat službu mapy závislosti na němž `Maps` Pomocná metoda, která používáte. Můžete použít některou z těchto:
+Zvolte service pro mapy, podle níž `Maps` pomocnou metodu použijete. Můžete použít některý z těchto:
 
 - `Maps.GetBingHtml`
 - `Maps.GetGoogleHtml`
 - `Maps.GetYahooHtml`
 - `Maps.GetMapQuestHtml`
 
-## <a name="installing-the-pieces-you-need"></a>Instalace součásti, které potřebujete
+## <a name="installing-the-pieces-you-need"></a>Instalace částí, které potřebujete
 
-Chcete-li zobrazit mapy, je třeba tyto údaje:
+K zobrazení mapy, je třeba tyto údaje:
 
-- `Maps` Pomocné rutiny. Verze 2 knihovnu ASP.NET Web Helpers se tohoto pomocníka. Pokud jste ještě nepřidali knihovny, můžete ho nainstalovat ve vaší lokalitě jako balíčku NuGet. Podrobnosti najdete v tématu [instalaci pomocné rutiny v stránku ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=252372). (V galerii, vyhledejte `microsoft-web-helpers` balíčku.)
-- Knihovna jQuery. Několik šablon webu služby WebMatrix již zahrnují knihovny jQuery v jejich *skriptu* složek. Pokud jste tyto knihovny, si můžete stáhnout nejnovější knihovny jQuery přímo z [jQuery.org](http://jQuery.org) lokality. Nebo můžete vytvořit nové lokality pomocí šablony (například **Starter Site** šablony) a poté zkopírujte soubory jQuery z této lokality k aktuální lokalitě.
+- `Maps` Pomocné rutiny. Ve verzi 2 knihovnu ASP.NET Web Helpers je tohoto pomocníka. Pokud jste ještě nepřidali knihovny, můžete ho nainstalovat na vašem webu jako balíček NuGet. Podrobnosti najdete v tématu [instalace pomocné rutiny na webu technologie ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=252372). (V galerii, vyhledejte `microsoft-web-helpers` balíčku.)
+- Knihovna jQuery. Některé šablony webu služby WebMatrix již zahrnují knihovny jQuery v jejich *skript* složek. Pokud tyto knihovny, si můžete stáhnout nejnovější verze knihovny jQuery přímo [jQuery.org](http://jQuery.org) lokality. Nebo můžete vytvořit nový web pomocí šablony (třeba **Starter Site** šablony) a zkopírujte soubory jQuery z této lokality k aktuální lokalitě.
 
-Nakonec pokud chcete použít mapy Bing, musíte nejprve vytvořit účet (zdarma) a získat klíč. Získat klíč, postupujte takto:
+Nakonec pokud chcete použít služby mapy Bing, musíte nejdřív vytvořit účet (zdarma) a získat klíč. Pokud chcete získat klíče, postupujte takto:
 
-1. Vytvoření účtu na [Bing Maps vývojářský účet](https://www.microsoft.com/maps/developers/web.aspx). Musíte mít účet Microsoft (Windows Live ID) také.
+1. Vytvoření účtu na [vývojářský účet pro mapy Bing](https://www.microsoft.com/maps/developers/web.aspx). Musíte mít účet Microsoft (Windows Live ID) i.
 
-    Můžete zadat, že chcete použít klíč pro **vyhodnocení a testovací**. Pokud testujete mapování funkce ve vašem počítači pomocí nástroje WebMatrix a služby IIS Express, přejděte **lokality** prostoru a poznamenejte si adresu URL vašeho webu (například `http://localhost:50408`, i když vaše číslo portu bude pravděpodobně lišit). Můžete to použít *localhost* adresu jako lokalita při registraci.
-2. Po registraci pro účet, přejděte na účet Center pro mapy Bing a klikněte na tlačítko **vytvořit nebo zobrazení klíče**:
+    Můžete určit, že chcete použít klíč pro **vyhodnocování a testování**. Pokud testujete funkci mapování na vlastním počítači pomocí služby WebMatrix a služby IIS Express, přejděte **lokality** pracovního prostoru a poznamenejte si adresu URL vašeho webu (například `http://localhost:50408`, i když vaše číslo portu bude pravděpodobně lišit). To může být použito *localhost* adresu jako web při registraci.
+2. Poté, co jste se zaregistrovali účet, přejděte na účet Center pro mapy Bing a klikněte na tlačítko **vytvořit nebo zobrazení klíče**:
 
-    ![mapping-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
-3. Záznam klíč, který vytvoří Bing.
+    ![mapování-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
+3. Záznam klíč, který vytvoří Bingu.
 
-## <a name="creating-a-map-based-on-an-address-using-google"></a>Vytváření mapy založené na adresu (pomocí Google)
+## <a name="creating-a-map-based-on-an-address-using-google"></a>Vytváří se mapování na základě adresy (pomocí Google)
 
-Následující příklad ukazuje, jak vytvořit stránku, která vykreslí mapu založené na adresu. Tento příklad ukazuje, jak používat službu mapy Google.
+Následující příklad ukazuje, jak vytvořit stránku, která vykreslí mapu, na základě adresy. Tento příklad ukazuje, jak používat Google Maps.
 
-1. Vytvořte soubor s názvem *MapAddress.cshtml* v kořenovém adresáři serveru. Tato stránka bude Generovat mapu založené na adresu, která můžete předat.
-2. Zkopírujte následující kód do souboru, přepsání existujícího obsahu.
+1. Vytvořte soubor s názvem *MapAddress.cshtml* v kořenové složce webu. Tato stránka bude generovat mapy založené na adresu, která mu předáte.
+2. Zkopírujte následující kód do souboru, přepisování stávajícího obsahu.
 
     [!code-cshtml[Main](displaying-maps-in-an-aspnet-web-pages-site/samples/sample1.cshtml)]
 
-    Všimněte si následujících funkcí stránky:
+    Všimněte si, že následující funkce stránky:
 
-    - `<script>` Element v `<head>` elementu. V příkladu `<script>` element odkazy *jquery 1.6.4.min.js* souboru, který je minifikovaný (komprimované) verze knihovny jQuery, verze 1.6.4. Všimněte si, že odkaz na předpokládá, že *.js* soubor *skripty* složku vašeho webu. 
+    - `<script>` Prvek `<head>` elementu. V tomto příkladu `<script>` elementu odkazy *jquery 1.6.4.min.js* soubor, který se nachází minifikovaný (komprimované) verzi knihovny jQuery verze 1.6.4. Všimněte si, že odkaz předpokládá, že *js* soubor se *skripty* složku vašeho webu. 
 
         > [!NOTE]
-        > Pokud používáte jinou verzi knihovny jQuery, ujistěte se, že nastavíte ukazatel na příslušnou verzi správně.
-    - Volání `@Maps.GetGoogleHtml` v těle stránky. Chcete-li mapování adresy, musíte zadat řetězec adresy. Metody pro jiné moduly mapy fungovat podobným způsobem (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
-3. Spuštění stránky a zadejte adresu. Na stránce zobrazuje mapě, podle Google Maps, který ukazuje umístění, které jste zadali.
+        > Pokud používáte jinou verzi knihovny jQuery, ujistěte se, že jste správně přejdete tuto verzi.
+    - Volání `@Maps.GetGoogleHtml` těla stránky. Pokud chcete namapovat adresu, musíte předat řetězec adresy. Metody pro ostatní moduly mapy fungují podobným způsobem (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
+3. Spustit na stránku a zadejte adresu. Na stránce zobrazí mapu založeny na mapách Googlu, která zobrazuje umístění, které jste zadali.
 
-     ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+     ![mapování 1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
-## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>Vytváření mapy podle zeměpisnou šířku a délku koordinuje (pomocí Bing)
+## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>Vytvoření mapy založené na zeměpisné šířce a délce koordinuje (pomocí Bing)
 
-Tento příklad ukazuje postup vytvoření mapy podle souřadnice. Tento příklad ukazuje, jak používat mapy Bing a jak se zahrnuje klíč Bing. (Můžete vytvořit mapu podle souřadnice také pomocí jiné mapy motory bez použití klíče služby Bing.)
+Tento příklad ukazuje způsob vytvoření mapy podle souřadnic. Tento příklad ukazuje, jak pomocí služby mapy Bing a jak zahrnovat klíč Bingu. (Můžete vytvořit mapy podle souřadnic také pomocí jiné mapování modulů bez použití klíče Bingu.)
 
-1. Vytvořte soubor s názvem *MapCoordinates.cshtml* v kořenu lokality a nahradit existující obsah s následující kód a značky:
+1. Vytvořte soubor s názvem *MapCoordinates.cshtml* v kořenové složce serveru a nahradit existující obsah s následujícím kódem a značky:
 
     [!code-cshtml[Main](displaying-maps-in-an-aspnet-web-pages-site/samples/sample2.cshtml)]
-2. Nahraďte `your-key-here` klíčem mapy Bing, který jste vygenerovali dříve.
-3. Spustit *MapCoordinates.cshtml* zadejte zeměpisné šířky a délky a pak klikněte na tlačítko **mapy ji!** tlačítko. (Pokud neznáte žádné souřadnice, zkuste následující postup. Toto je umístění v Redmondu Microsoft kanceláře.)
+2. Nahraďte `your-key-here` s klíčem služby mapy Bing, který jste vygenerovali dříve.
+3. Spustit *MapCoordinates.cshtml* stránce zadejte zeměpisné šířky a délky a potom klikněte na tlačítko **mapy ho!** tlačítko. (Pokud si nejste jisti všechny souřadnice, zkuste následující postup. Toto je umístění v campusech Microsoft Redmond.)
 
    - Zeměpisná šířka: 47.6781005859375
    - Zeměpisná délka:-122.158317565918
 
-     Stránka se zobrazí pomocí souřadnice, které jste zadali.
+     Na stránce se zobrazí pomocí souřadnic, které jste zadali.
 
-     ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+     ![mapování 3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
 
-[Referenční dokumentace rozhraní API Microsoft.Maps](https://msdn.microsoft.com/library/gg427611.aspx)
+[Reference k rozhraní API Microsoft.Maps](https://msdn.microsoft.com/library/gg427611.aspx)

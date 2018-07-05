@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-create-an-aspnet-ajax-extender-from-scratch
-title: '[Jak na:] Vytvoření ASP.NET AJAX Extender od začátku? | Microsoft Docs'
+title: '[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender? | Dokumentace Microsoftu'
 author: rick-anderson
-description: Naučte se vytvářet extender prvku ASP.NET AJAX pro standardní ovládací prvek ASP.NET serveru. Postup přidání vlastností na straně serveru a kódu JavaScript na straně klienta jsme se zobrazují...
+description: Informace o vytvoření extenderu ASP.NET AJAX pro standardní serverový ovládací prvek ASP.NET. Jsme se zobrazí postup, chcete-li přidat vlastnosti na straně serveru a jazyka JavaScript na straně klienta...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/01/2007
 ms.topic: article
 ms.assetid: 526b4ec1-4a80-4fae-bf0d-af5cb78f5d02
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-create-an-aspnet-ajax-extender-from-scratch
 msc.type: video
-ms.openlocfilehash: be2d1b1c22bac3b9648e65004937031fafb30973
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b759c7a9924e633679d91e7a38e7db7e470f23a2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882855"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382420"
 ---
-<a name="how-do-i-create-an-aspnet-ajax-extender-from-scratch"></a>[Jak na:] Vytvoření ASP.NET AJAX Extender od začátku?
+<a name="how-do-i-create-an-aspnet-ajax-extender-from-scratch"></a>[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender?
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-Naučte se vytvářet extender prvku ASP.NET AJAX pro standardní ovládací prvek ASP.NET serveru. Postup přidání vlastností na straně serveru a kódu JavaScript na straně klienta k rozšíření chování standardního ovládacího prvku textového pole, když ve stejný přístup lze použít pro všechny ostatní ovládací prvek serveru jsme se zobrazí. Další pomoc při vytváření extender prvku ASP.NET AJAX, naleznete [vytváření nové rozšiřujícího objektu](../../overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs.md) návod.
+Informace o vytvoření extenderu ASP.NET AJAX pro standardní serverový ovládací prvek ASP.NET. Jsme se zobrazí postup, chcete-li přidat vlastnosti na straně serveru a jazyka JavaScript na straně klienta pro rozšíření chování standardního ovládacího prvku textového pole, ale stejný přístup můžete použít pro jakýkoli jiný ovládací prvek serveru. Další pomoc při vytváření technologie ASP.NET AJAX – extender najdete [vytvoření nového extenderu](../../overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs.md) návodu.
 
 [&#9654;Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-create-an-aspnet-ajax-extender-from-scratch)
 

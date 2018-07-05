@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-display-the-product-list
-title: Zobrazit seznam produktů Tailspin Spyworks - | Microsoft Docs
+title: Tailspin Spyworks – zobrazení seznamu produktů | Dokumentace Microsoftu
 author: JoeStagner
-description: Jan Stagner ukazuje, jak zobrazit seznam produktů v Tailspin Spyworks ukázkové aplikace webových formulářů.
+description: Joe Stagner ukazuje, jak zobrazit seznam produktů v ukázkové aplikaci webových formulářů Tailspin Spyworks.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2010
 ms.topic: article
 ms.assetid: 4c0d920f-e80a-445d-a9da-b603e25d49c4
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-display-the-product-list
 msc.type: video
-ms.openlocfilehash: 47613ef606eebbf8fa29743ce8263d08c6cae148
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b11a8ad1be240eee433523d7c42dbea16f4fd171
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30894574"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380477"
 ---
-<a name="tailspin-spyworks---display-the-product-list"></a>Tailspin Spyworks - zobrazení seznamu produktu
+<a name="tailspin-spyworks---display-the-product-list"></a>Tailspin Spyworks – zobrazení seznamu produktů
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Jan Stagner ukazuje, jak zobrazit seznam produktů v Tailspin Spyworks ukázkové aplikace webových formulářů.
+Joe Stagner ukazuje, jak zobrazit seznam produktů v ukázkové aplikaci webových formulářů Tailspin Spyworks.
 
-[&#9654;Podívejte se na video (9 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-display-the-product-list)
+[&#9654;Podívejte se na video (9 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/tailspin-spyworks-display-the-product-list)
 
 > [!div class="step-by-step"]
 > [Předchozí](tailspin-spyworks-category-menu.md)

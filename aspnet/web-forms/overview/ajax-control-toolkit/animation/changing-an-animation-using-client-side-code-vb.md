@@ -1,62 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
-title: Změna animace pomocí kódu na straně klienta (VB) | Microsoft Docs
+title: Změna animace klientským kódem (VB) | Dokumentace Microsoftu
 author: wenz
-description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animace může taky...
+description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze také...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: a7fe5de5-a964-4780-ae5e-70821dfb50a0
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7f9b72576cc3a9e91827cfb40983821704621060
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: cc8ca2c962c5ebe5e0c45d5b575031ada3e64acd
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879150"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37386744"
 ---
-<a name="changing-an-animation-using-client-side-code-vb"></a>Změna animace pomocí kódu na straně klienta (VB)
+<a name="changing-an-animation-using-client-side-code-vb"></a>Změna animace klientským kódem (VB)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation11.vb.zip) nebo [stahovat PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation11VB.pdf)
 
-> V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animace se změní taky pomocí vlastního kódu jazyka JavaScript na straně klienta.
+> Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze také změnit pomocí vlastního kódu jazyka JavaScript na straně klienta.
 
 
 ## <a name="overview"></a>Přehled
 
-V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Animace se změní taky pomocí vlastního kódu jazyka JavaScript na straně klienta.
+Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze také změnit pomocí vlastního kódu jazyka JavaScript na straně klienta.
 
 ## <a name="steps"></a>Kroky
 
-První řadě zahrnují `ScriptManager` na stránce; potom knihovny ASP.NET AJAX je načtena, aby bylo možné použít Toolkitu:
+Za prvé, zahrnout `ScriptManager` na stránce; potom technologie ASP.NET AJAX je načíst knihovnu, což umožňuje použití Control Toolkit:
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample1.aspx)]
 
-Animace se použijí na panel textu, který vypadá takto:
+Animace se použijí pro panel text, který vypadá takto:
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample2.aspx)]
 
-Související třídy CSS pro panel definovat barvu pozadí dobrý a také nastavit pevnou šířku pro panel:
+V přidružené třídy šablony stylů CSS pro panel definovat barvu pozadí nice a také nastavit Pevná šířka panelu:
 
 [!code-css[Main](changing-an-animation-using-client-side-code-vb/samples/sample3.css)]
 
-Skutečné animace je spuštěn HTML tlačítko:
+Skutečné animace spustí HTML tlačítko:
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample4.aspx)]
 
-Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj `runat="server"`:
+Pak přidejte `AnimationExtender` na stránku, poskytování `ID`, `TargetControlID` atribut a povinný údaj `runat="server"`:
 
 [!code-aspx[Main](changing-an-animation-using-client-side-code-vb/samples/sample5.aspx)]
 
-Všimněte si, že neexistuje žádná `<Animations>` uzel v rámci `AnimationExtender` ovládacího prvku. Vlastní kód JavaScript slouží k poskytování animací, který se má použít s ovládacím prvkem.
+Všimněte si, že neexistuje žádná `<Animations>` uzlu v rámci `AnimationExtender` ovládacího prvku. Vlastní kód jazyka JavaScript se používá k poskytování animace, který se má použít s ovládacím prvkem.
 
-Stejně jako u rozhraní API serveru z `AnimationExtender`, neexistuje žádný snadný způsob, jak přiřadit animace rozšiřujícího objektu ještě. Ale rozšiřujícího objektu vystavit několik metod, jak číst a zapisovat animací zaregistrována různé události (`OnClick`, `OnLoad`a tak dále). Následuje několik příkladů:
+Stejně jako u serveru rozhraní API `AnimationExtender`, neexistuje žádný snadný způsob, jak přiřadit animace zařízení extender ještě. Ale zařízení extender zpřístupní ke čtení a zápisu animací několik metod zaregistrovaného na různé události (`OnClick`, `OnLoad`, a tak dále). Následuje několik příkladů:
 
 - `get_OnClick()`
 - `set_OnClick()`
@@ -64,20 +63,20 @@ Stejně jako u rozhraní API serveru z `AnimationExtender`, neexistuje žádný 
 - `set_OnLoad()`
 - `...`
 
-Formát vrácenou hodnotu `get_*()` funkce a formát argument pro `set_*()` funkce je řetězec formátu JSON, poskytuje reprezentaci objektu z co by být značek XML. V současné době neexistuje žádný způsob, jak předat objekt v, ale je možné načíst objekt z daného animace (`get_OnXXXBehavior()` metody).
+Formát vrácené hodnoty `get_*()` funkce a formát argumentu pro `set_*()` funkce je řetězec formátu JSON, poskytuje reprezentaci objektu toho, co by být kód XML. V současné době neexistuje žádný způsob předat objekt, ale je možné číst objekt z dané animace (`get_OnXXXBehavior()` metody).
 
-Tady je řetězec formátu JSON (bez uvozovek rozdělujících a přehledně naformátovaná) představující animace aktivuje tlačítko, ale animace panelu změny velikosti a roztmívání ve stejnou dobu:
+Tady je řetězec formátu JSON (bez oddělovací uvozovky a hezky formátovaný) představující animace aktivuje tlačítko, ale animace panelu podle jejich velikosti a mizení ve stejnou dobu:
 
 [!code-json[Main](changing-an-animation-using-client-side-code-vb/samples/sample6.json)]
 
-Následující kód v JavaScriptu přiřadí JSON descripting k `OnClick` animace aktuální rozšiřujícího objektu a spustí ho:
+Následující kód jazyka JavaScript přiřadí JSON descripting k `OnClick` animace aktuální zařízení extender a spustí ho:
 
 [!code-html[Main](changing-an-animation-using-client-side-code-vb/samples/sample7.html)]
 
 
-[![Animace se spustí okamžitě, bez kliknutí myši (a s velmi malé značek)](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)
+[![Animace se spustí okamžitě, bez kliknutí myší (a s velmi málo značky)](changing-an-animation-using-client-side-code-vb/_static/image2.png)](changing-an-animation-using-client-side-code-vb/_static/image1.png)
 
-Animace se spustí okamžitě, bez klikněte na tlačítko myši (a s velmi malé značek) ([Kliknutím zobrazit obrázek v plné velikosti](changing-an-animation-using-client-side-code-vb/_static/image3.png))
+Animace se spustí okamžitě, bez kliknutí myší (a s velmi málo značky) ([kliknutím ji zobrazíte obrázek v plné velikosti](changing-an-animation-using-client-side-code-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](executing-animations-using-client-side-code-vb.md)

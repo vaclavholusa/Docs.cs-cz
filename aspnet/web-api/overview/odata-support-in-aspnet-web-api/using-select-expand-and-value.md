@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
-title: Pomocí $select, $, rozbalte položku a $value v prostředí ASP.NET Web API 2 OData | Microsoft Docs
+title: Pomocí $select $expand a $value v ASP.NET Web API 2 OData | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,71 +9,70 @@ ms.date: 10/11/2013
 ms.topic: article
 ms.assetid: 43279a80-a96c-4564-b6ea-ad992a2d6828
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/using-select-expand-and-value
 msc.type: authoredcontent
-ms.openlocfilehash: f229cdbd8850a787dd3585e0640e8e66f6109331
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f7e70bd76668f2af9215d57ee1cc9e7d41948c67
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566722"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37384761"
 ---
-<a name="using-select-expand-and-value-in-aspnet-web-api-2-odata"></a>Pomocí $select, $, rozbalte položku a $value v prostředí ASP.NET Web API 2 OData
+<a name="using-select-expand-and-value-in-aspnet-web-api-2-odata"></a>Pomocí $select $expand a $value v ASP.NET Web API 2 OData
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-Webové rozhraní API 2 přidává podporu pro rozšířit $expand, $select a možnosti $value protokolu OData. Tyto možnosti Povolit klienta k řízení reprezentaci, který získá zpět ze serveru.
+Webové rozhraní API 2 přidává podporu pro $$expand, $select a možnosti $value prostředí OData. Tyto možnosti umožňují klienta pro řízení reprezentaci, který získá zpět ze serveru.
 
-- **Rozbalte $** způsobí, že mají být zahrnuty vložené v odpovědi související entity.
+- **$expand** způsobí, že související entity, které být zahrnuty vložené v odpovědi.
 - **$select** vybere podmnožinu vlastnosti, které chcete zahrnout do odpovědi.
 - **$value** získá nezpracovanou hodnotu vlastnosti.
 
 ## <a name="example-schema"></a>Příklad schématu
 
-V tomto článku budete použít služby OData, která definuje tři entity: produktu, dodavatel a kategorie. Každý produkt má jednu kategorii a jednoho dodavatele.
+Pro účely tohoto článku použiju služby OData, který definuje tři entity: produktu, dodavatel a kategorie. Každý produkt má jednu kategorii a jednoho dodavatele.
 
 ![](using-select-expand-and-value/_static/image1.png)
 
-Zde jsou tříd jazyka C#, které definují modelem entity:
+Tady jsou třídy C#, které definují modely entity:
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample1.cs)]
 
-Všimněte si, že `Product` třída definuje navigační vlastnosti pro `Supplier` a `Category`. `Category` Třída definuje navigační vlastnost pro produkty v každé kategorii.
+Všimněte si, že `Product` třídy definuje vlastnosti navigace `Supplier` a `Category`. `Category` Třída definuje vlastnost navigace pro produkty v jednotlivých kategoriích.
 
-Chcete-li vytvořit koncový bod OData pro toto schéma, použijte generování uživatelského rozhraní sady Visual Studio 2013, jak je popsáno v [vytváření koncový bod OData v rozhraní ASP.NET Web API](odata-v3/creating-an-odata-endpoint.md). Přidáte samostatné řadiče pro produkt, kategorie a dodavatele.
+Chcete-li vytvořit koncový bod OData pro toto schéma, použijte generování uživatelského rozhraní sady Visual Studio 2013, jak je popsáno v [vytváření koncového bodu OData v rozhraní ASP.NET Web API](odata-v3/creating-an-odata-endpoint.md). Přidejte samostatný řadiče pro produkt, kategorie a dodavateli.
 
 ## <a name="enabling-expand-and-select"></a>Povolení $rozbalte a $select
 
-Ve Visual Studiu 2013 se vytvoří generování uživatelského rozhraní Web API OData řadič této automaticky podporuje $expand a $select. Pro referenci tady jsou požadavky na podporu $rozbalte a $select v kontroleru.
+V sadě Visual Studio 2013 generování uživatelského rozhraní Web API OData vytvoří kontroler, který automaticky podporuje $expand a $select. Pro srovnání, tady jsou požadavky na podporu $rozbalte a $select v kontroleru.
 
-Pro kolekce, řadičem na `Get` metoda musí vrátit **IQueryable**.
+Pro kolekce, kontroler společnosti `Get` metoda musí vracet **IQueryable**.
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample2.cs)]
 
-Pro jednotlivé entity vrátit **SingleResult&lt;T&gt;**, kde T představuje **IQueryable** obsahující žádnou nebo jednu entitu.
+Pro jednotlivé entity, vrátí **SingleResult&lt;T&gt;**, kde T je **IQueryable** obsahující žádnou nebo jednu entitu.
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample3.cs)]
 
-Navíc uspořádání vaší `Get` metody s **[Queryable]** atributu, jak je znázorněno v předchozích fragmentů kódu. Alternativně volání **EnableQuerySupport** na **HttpConfiguration** objekt při spuštění. (Další informace najdete v tématu [povolení možnosti dotazu OData](supporting-odata-query-options.md#enable).)
+Navíc uspořádání vašich `Get` metody s **[Queryable]** atributu, jak je znázorněno v předchozích fragmentů kódu. Můžete také volat **EnableQuerySupport** na **HttpConfiguration** při spuštění. (Další informace najdete v tématu [povolení možnosti dotazu OData](supporting-odata-query-options.md#enable).)
 
-## <a name="using-expand"></a>Pomocí $rozbalte
+## <a name="using-expand"></a>Rozbalte položku pomocí $
 
-Při dotazu OData entity nebo kolekci, výchozí odpověď neobsahuje entit v relaci. Zde je ukázka, výchozí odpověď pro sadu entit kategorií:
+Když odešlete dotaz OData entitu nebo kolekci, výchozí odpověď neobsahuje související entity. Tady je příklad, výchozí odpověď pro sadu entit kategorií:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample4.cmd)]
 
-Jak vidíte, odpověď neobsahuje všechny produkty, i když kategorie entity má navigační odkaz produkty. Klient však můžete použít $rozbalte získat seznam produktů pro každou kategorii. Rozbalte možnost $expand přejde v řetězci dotazu požadavku:
+Jak je vidět, odpověď neobsahuje žádné produkty, i v případě, že má entita kategorie produktů navigační odkaz. Však může klient použít $rozbalte zobrazíte seznam produktů pro každou kategorii. Možnost rozbalování na $ přejde v řetězci dotazu požadavku:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample5.cmd)]
 
-Server bude nyní zahrnují tyto produkty pro každou kategorii vložením s kategorií. Tady je datové části odpovědi:
+Server teď bude obsahovat produktů pro každou kategorii, vložený v kategorii. Tady je datové části odpovědi:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample6.cmd)]
 
-Všimněte si, že každou položku v poli "value" obsahuje seznam produktů.
+Všimněte si, že každá položka v poli "value" obsahuje seznam produktů.
 
-$Expand rozbalte možnost trvá čárkami oddělený seznam navigačních vlastností pro rozbalení. Následující požadavek rozšíří kategorii a dodavatel pro produkt.
+$Expand možnost přijímá čárkami oddělený seznam navigačních vlastností pro rozbalení. Následující požadavek rozšíří kategorii a dodavatele, produktu.
 
 [!code-console[Main](using-select-expand-and-value/samples/sample7.cmd)]
 
@@ -81,7 +80,7 @@ Tady je text odpovědi:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample8.cmd)]
 
-Můžete rozbalit více než jednu úroveň navigační vlastnosti. Následující příklad obsahuje všechny produkty pro kategorii a také dodavatel pro každý produkt.
+Můžete rozbalit více než jednu úroveň navigační vlastnosti. Následující příklad obsahuje všechny produkty pro kategorii a také dodavatel pro jednotlivé produkty.
 
 [!code-console[Main](using-select-expand-and-value/samples/sample9.cmd)]
 
@@ -89,15 +88,15 @@ Tady je text odpovědi:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample10.cmd)]
 
-Ve výchozím omezení webového rozhraní API rozšíření maximální hloubka 2. Který brání klientovi odesílání komplexní požadavků jako `$expand=Orders/OrderDetails/Product/Supplier/Region`, což může být neefektivní pro dotazování a vytvořit velké odpovědi. Chcete-li přepsat výchozí nastavení, nastavte **MaxExpansionDepth** vlastnost **[Queryable]** atribut.
+Ve výchozím omezení webového rozhraní API hloubku maximální rozšíření na 2. Klient, který brání v odesílání složité požadavky, jako je `$expand=Orders/OrderDetails/Product/Supplier/Region`, který může být neefektivní pro dotazování a vytvořit velké odpovědi. Chcete-li přepsat výchozí hodnotu, nastavte **MaxExpansionDepth** vlastnost na **[Queryable]** atribut.
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample11.cs)]
 
-Další informace o $rozšířit možnost, najdete v části [rozbalte možností dotazu systému ($expand)](http://www.odata.org/documentation/odata-v2-documentation/uri-conventions/#46_Expand_System_Query_Option_expand) v oficiální dokumentaci OData.
+Další informace o $rozšířit možnosti, najdete v části [rozbalte možností dotazu systému ($expand)](http://www.odata.org/documentation/odata-v2-documentation/uri-conventions/#46_Expand_System_Query_Option_expand) v oficiální dokumentaci OData.
 
 ## <a name="using-select"></a>Pomocí $select
 
-Možnost $select určuje podmnožinu vlastnosti, které chcete zahrnout do text odpovědi. Například získat jenom název a cena jednotlivých produktů, použijte následující dotaz:
+Možnost $select určuje podmnožinu vlastností, které budou obsahovat v textu odpovědi. Například pokud chcete získat název a ceny jednotlivých produktů, použijte následující dotaz:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample12.cmd)]
 
@@ -105,7 +104,7 @@ Tady je text odpovědi:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample13.cmd)]
 
-Můžete kombinovat $select a $expand rozbalte ve stejném dotazu. Nezapomeňte zahrnout vlastnost rozšířené možnosti $select. Například následující požadavek získá název produktu a dodavatele.
+Můžete kombinovat $select a $expand ve stejném dotazu. Ujistěte se, že mají být zahrnuty vlastnost rozšířené možnosti $select. Například následující požadavek získá název produktu a dodavateli.
 
 [!code-console[Main](using-select-expand-and-value/samples/sample14.cmd)]
 
@@ -113,7 +112,7 @@ Tady je text odpovědi:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample15.cmd)]
 
-Můžete také vybrat vlastnosti v rámci rozšířené vlastnosti. Následující žádost o rozšíří produkty a vybere název kategorie a název produktu.
+Můžete také vybrat vlastnosti v rámci rozšířené vlastnosti. Následující požadavek rozšiřuje produktů a vybere název kategorie a název produktu.
 
 [!code-console[Main](using-select-expand-and-value/samples/sample16.cmd)]
 
@@ -121,28 +120,28 @@ Tady je text odpovědi:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample17.cmd)]
 
-Další informace o možnost $select najdete v tématu [vyberte možností dotazu systému ($select)](http://www.odata.org/documentation/odata-v2-documentation/uri-conventions/#48_Select_System_Query_Option_select) v oficiální dokumentaci OData.
+Další informace o možnosti $select, naleznete v tématu [vyberte možností dotazu systému ($select)](http://www.odata.org/documentation/odata-v2-documentation/uri-conventions/#48_Select_System_Query_Option_select) v oficiální dokumentaci OData.
 
-## <a name="getting-individual-properties-of-an-entity-value"></a>Získávání jednotlivé vlastnosti entity ($value)
+## <a name="getting-individual-properties-of-an-entity-value"></a>Načtení jednotlivých vlastností entity ($value)
 
-Existují dva způsoby pro klienta OData k získání jednotlivých vlastnost z entity. Klienta můžete získat hodnotu ve formátu OData nebo získá nezpracovanou hodnotu vlastnosti.
+Existují dva způsoby, jak klient OData Chcete-li získat jednotlivé vlastnost z entity. Klienta můžete získat hodnotu ve formátu OData nebo získat nezpracované hodnoty vlastnosti.
 
 Následující požadavek získá vlastnost ve formátu OData.
 
 [!code-console[Main](using-select-expand-and-value/samples/sample18.cmd)]
 
-Tady je příklad odpověď ve formátu JSON:
+Tady je příklad odpovědi ve formátu JSON:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample19.cmd)]
 
-Chcete-li získat nezpracovanou hodnotu vlastnosti, připojte $value identifikátor URI:
+Nezpracovaná hodnota vlastnosti získáte připojte k identifikátoru URI $value:
 
 [!code-console[Main](using-select-expand-and-value/samples/sample20.cmd)]
 
-Zde je odpovědi. Všimněte si, že typ obsahu, který není "text/plain" JSON.
+Tady je tato odpověď. Všimněte si, že typ obsahu není "text/plain" JSON.
 
 [!code-console[Main](using-select-expand-and-value/samples/sample21.cmd)]
 
-Pro podporu těchto dotazů do kontroleru OData, přidejte metodu s názvem `GetProperty`, kde `Property` je název vlastnosti. Například by s názvem metodu GET pro vlastnost název `GetName`. Metoda by měla vrátit hodnotu této vlastnosti:
+Pro podporu těchto dotazů v řadiče OData, přidejte metodu s názvem `GetProperty`, kde `Property` je název vlastnosti. Například metoda GET pro vlastnost název pojmenován `GetName`. Metoda by měla vrátit hodnota dané vlastnosti:
 
 [!code-csharp[Main](using-select-expand-and-value/samples/sample22.cs)]

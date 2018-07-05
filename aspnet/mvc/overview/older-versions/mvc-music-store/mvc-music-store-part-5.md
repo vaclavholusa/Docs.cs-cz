@@ -1,177 +1,176 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
-title: 'Část 5: Úpravy formulářů a ukázka | Microsoft Docs'
+title: '5. část: Editační formuláře a Šablonování | Dokumentace Microsoftu'
 author: jongalloway
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 5 popisuje úpravy formulářů a ukázka.
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 5 obsahuje úpravy formuláře a šablonování textu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
 ms.topic: article
 ms.assetid: 6b09413a-6d6a-425a-87c9-629f91b91b28
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: d584e614b5a4124044cd9decd2272192ca164643
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f799c4d492e88f3edcf3800e66e0a1bae3845ba2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874909"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395198"
 ---
-<a name="part-5-edit-forms-and-templating"></a>Část 5: Úpravy formulářů a ukázka
+<a name="part-5-edit-forms-and-templating"></a>5. část: Editační formuláře a Šablonování
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje krok za krokem, jak používat rozhraní ASP.NET MVC a Visual Studio pro vývoj webů.  
+> MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a sady Visual Studio.  
 >   
-> Úložiště Hudba MVC je implementace úložiště lightweight ukázkové, který prodává hudebních alb online a implementuje základní Správa serveru, přihlášení uživatele a nákupního košíku funkce.
+> Music Store MVC je jednoduché ukázku implementace úložiště prodává hudebních alb online, který implementuje správu základního webu, přihlášení uživatele a nákupního košíku funkce.
 > 
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 5 popisuje úpravy formulářů a ukázka.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 5 obsahuje úpravy formuláře a šablonování textu.
 
 
-V posledních kapitoly jsme byly načítání dat z databáze a jeho zobrazení. V této kapitole jsme budete také povolit úpravy data.
+V posledních kapitole jsme se načítání dat z databáze a jeho zobrazení. V této kapitole jsme zároveň umožní úpravy data.
 
-## <a name="creating-the-storemanagercontroller"></a>Vytváření StoreManagerController
+## <a name="creating-the-storemanagercontroller"></a>Vytváří StoreManagerController
 
-Budete začneme vytvořením nového řadiče názvem **StoreManagerController**. Pro tento kontroler můžeme využít výhod funkce generování uživatelského rozhraní dostupné v ASP.NET MVC 3 nástroje pro aktualizaci. Nastavení možností pro dialogové okno Přidat kontroler, jak je uvedeno níže.
+Budete Začneme tím, že vytvoříte nový kontroler volá **StoreManagerController**. Pro tento kontroler jsme se využití výhod funkcí generování uživatelského rozhraní dostupných v ASP.NET MVC 3 nástroje Update. Nastavení možností v dialogovém okně Přidat kontroler, jak je znázorněno níže.
 
 ![](mvc-music-store-part-5/_static/image1.png)
 
-Když kliknete na tlačítko Přidat, uvidíte, že mechanismus generování uživatelského rozhraní ASP.NET MVC 3 nemá dobré množství práce, můžete:
+Když kliknete na tlačítko Přidat, uvidíte, že mechanismus generování uživatelského rozhraní ASP.NET MVC 3 dělá správné množství práce za vás:
 
-- Vytvoří nový StoreManagerController s místní proměnné Entity Framework
-- Přidá do projektu zobrazení složky StoreManager složku
-- Přidá Create.cshtml, Delete.cshtml, Details.cshtml, Edit.cshtml a Index.cshtml zobrazení silného typu k třídě Album
+- Vytvoří nový StoreManagerController s lokální proměnná Entity Framework
+- Přidá do zobrazení složky projektu StoreManager složku
+- Přidá zobrazení Create.cshtml, Delete.cshtml, Details.cshtml, Edit.cshtml a Index.cshtml do alb třídy silného typu
 
 ![](mvc-music-store-part-5/_static/image2.png)
 
-Nové třídy kontroleru StoreManager zahrnuje CRUD (vytvořit, číst, aktualizovat, odstraňovat) akce kontroleru, které vědět, jak pracovat s alba třída modelu a použije naše kontext Entity Framework pro přístup k databázi.
+Nová třída kontroleru StoreManager zahrnuje CRUD (vytváření, čtení, aktualizace nebo odstranění) akce kontroleru, které už víte, jak pracovat s alba třída modelu a používat náš kontext Entity Framework pro přístup k databázi.
 
-## <a name="modifying-a-scaffolded-view"></a>Úprava vygenerované zobrazení
+## <a name="modifying-a-scaffolded-view"></a>Úprava vygenerovaná zobrazení
 
-Je důležité si pamatovat, že když tento kód se vygeneroval pro nás, je standardní kódu ASP.NET MVC, stejně jako jste jsme byla zápis v rámci tohoto kurzu. Je určena k ušetříte čas, který by potřebují na psaní kódu kontroleru standardní a ruční vytvoření zobrazení se silnými typy, ale nejedná se o typ generovaného kódu může viděli jste, kterými pří upozornění v komentářích o tom, jak nesmí změnit kód. Toto je váš kód a jste chtěli ho změnit.
+Je dobré si uvědomit, že když tento kód byl generován pro nás, je standardní kód technologie ASP.NET MVC, stejně jako My jsme byl zápis v celém tomto kurzu. Je určená a ušetřete čas strávený by na psaní kódu kontroleru standardizované a ruční vytvoření zobrazení se silnými typy, ale to není typ generovaného kódu jste možná viděli začíná v komentářích, o jak nesmí změnit adresář upozornění kód. To je váš kód a už má ho změnit.
 
-Ano začneme rychlé upravit pro zobrazení indexu StoreManager (nebo Views/StoreManager/Index.cshtml). Toto zobrazení zobrazí tabulky, který uvádí alb v našem úložišti pomocí operace upravit / podrobnosti / odstranit odkazy a zahrnuje alba veřejné vlastnosti. Odstraníme AlbumArtUrl pole, protože se nejedná o velmi užitečná v tomto zobrazení. V &lt;tabulky&gt; část zobrazení kódu, odeberte &lt;tý&gt; a &lt;td&gt; elementy, které obaluje AlbumArtUrl odkazy, jak znázorňuje následující zvýrazněné řádky:
+Takže začneme rychlé úpravy zobrazení indexu StoreManager (/ Views/StoreManager/Index.cshtml). Toto zobrazení zobrazí tabulku, která obsahuje seznam alb v našem úložišti pomocí operace upravit / podrobnosti / odstranit odkazy a zahrnuje alba veřejné vlastnosti. Pole AlbumArtUrl Odebereme, protože není v tomto zobrazení velmi užitečné. V &lt;tabulky&gt; části zobrazení kódu, odeberte &lt;th&gt; a &lt;td&gt; prvky okolní AlbumArtUrl odkazy, jak je uvedeno ve níže zvýrazněné řádky:
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample1.cshtml)]
 
-Kód upravené zobrazení bude vypadat takto:
+Upravené zobrazit kód bude vypadat následovně:
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample2.cshtml)]
 
-## <a name="a-first-look-at-the-store-manager"></a>První podívejte se na správce úložiště
+## <a name="a-first-look-at-the-store-manager"></a>První pohled na Store správce
 
-Nyní spusťte aplikaci a vyhledejte/StoreManager /. Zobrazí se jsme právě změněna, zobrazující seznam alba v úložišti s odkazy na Upravit podrobnosti a odstraňte Index Správce úložiště.
+Nyní spusťte aplikaci a přejděte do/StoreManager /. Zobrazí se správce Index Store jsme právě upravili, seznamem alba v úložišti s odkazy na podrobnosti, upravit nebo odebrat.
 
 ![](mvc-music-store-part-5/_static/image3.png)
 
-Kliknutím na odkaz pro úpravy zobrazí formulář upravit s poli alba, včetně rozevírací seznamy pro Genre a umělcem.
+Kliknutím na odkaz pro úpravy zobrazí formulář pro úpravy s poli alba, včetně rozevírací seznamy pro žánr a interpreta.
 
 ![](mvc-music-store-part-5/_static/image4.png)
 
-Klikněte na odkaz "Zpět na seznam" v dolní části, a potom klikněte na odkaz na podrobnosti pro Album. Zobrazí podrobné informace o jednotlivých alb.
+Klikněte na odkaz "Zpět do seznamu" v dolní části a potom klikněte na odkaz podrobnosti pro alba. Zobrazí podrobné informace o jednotlivých Album.
 
 ![](mvc-music-store-part-5/_static/image5.png)
 
-Znovu klikněte na tlačítko zpět do seznamu odkazů a potom klikněte na odkaz pro odstranění. Zobrazí se dialogové okno s potvrzením, zobrazení podrobností alba a s dotazem, pokud jsme si jisti, že chceme odstranit.
+Znovu klikněte na tlačítko Zpět na odkaz na seznamu a potom klikněte na odkaz pro odstranění. Zobrazí se potvrzovací dialogové okno, zobrazující podrobnosti alba a s dotazem, pokud jsme si jisti, že chceme, aby k jeho odstranění.
 
 ![](mvc-music-store-part-5/_static/image6.png)
 
-Kliknutím na tlačítko Odstranit v dolní části odstraňte alba a vrátíte se na indexovou stránku, který ukazuje album odstranit.
+Kliknutím na tlačítko Odstranit v dolní části odstranit alba a vrátí na indexovou stránku, která zobrazuje alba odstraněn.
 
-Jsme neprovádí se správcem úložiště, ale máme řadiče a zobrazení kódu pro operace CRUD spuštění z.
+Pomocí Správce Store nezvládli jsme, ale máme řadič a zobrazit kód pro spuštění z operace CRUD.
 
-## <a name="looking-at-the-store-manager-controller-code"></a>Prohlížení kódu Kontroleru Správce úložiště
+## <a name="looking-at-the-store-manager-controller-code"></a>Prohlížení kódu Store správce Kontroleru
 
-Řadič Správce úložiště obsahuje dobrý množství kódu. Přejděte přes tento shora dolů. Řadičem zahrnuje některé standardní obory názvů pro kontroler MVC, stejně jako odkaz na obor názvů naše modely. Řadičem má privátní instanci MusicStoreEntities, každý z akce kontroleru používané pro přístup k datům.
+Správce řadiče Store obsahuje správné množství kódu. Podívejme to shora dolů. Kontroler zahrnuje některé standardní obory názvů pro kontroler MVC, stejně jako odkaz na našem oboru názvů modelů. Kontroler má privátní instanci MusicStoreEntities používaný jednotlivými akce kontroleru pro přístup k datům.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample3.cs)]
 
-### <a name="store-manager-index-and-details-actions"></a>Uložení akce správce Index a podrobnosti
+### <a name="store-manager-index-and-details-actions"></a>Store správce Index a podrobnosti akce
 
-Zobrazení indexu načte seznam alb, včetně každé album odkazované Genre a umělcem informace, jak jsme viděli dříve při práci na metodě procházet úložiště. Zobrazení indexu je následující odkazy na propojené objekty tak, že ho můžete zobrazení každé album Genre a umělcem název, kontroler, která má být efektivní a dotazování pro tyto informace v původní žádosti.
+Index zobrazení načte seznam alb, včetně každé album odkazované žánr a interpreta informace, jak jsme viděli dříve při práci na metodu Store Procházet. Zobrazení indexu je následující odkazy na propojené objekty tak, aby ji můžete zobrazit název žánr každý alba a interpret, tak kontroleru se ještě efektivní a dotazování pro tuto informaci v původní požadavek.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample4.cs)]
 
-Akce kontroleru podrobnosti řadičem StoreManager funguje stejně jako akce podrobnosti řadič úložiště jsme napsali dříve – vyžádá alba podle ID pomocí metody Find(), vrátí ji do zobrazení.
+Akce kontroleru podrobnosti o adaptéru StoreManager funguje stejně jako akce Kontroleru Details Store jsme napsali dříve – dotazuje na alba podle ID, pomocí metody Find(), pak jej vrátí do zobrazení.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample5.cs)]
 
 ### <a name="the-create-action-methods"></a>Vytvořit metody akce
 
-Vytvořit metody akce jsou jen málo liší od těch, které jsou, které jste viděli dosavadní práce, protože vstup formuláře, které zpracovávají. Pokud uživatel nejprve navštíví /StoreManager nebo vytvořit nebo se zobrazí prázdné formuláře. Tato stránka HTML bude obsahovat &lt;formuláře&gt; elementy, kde můžete zadat podrobnosti alba vstupní element, který obsahuje rozevírací seznam a textové pole.
+Vytvořit metody akce jsou mírně liší od těch, které jsme zatím viděli, protože vstup formuláře, které zpracovávají. Pokud uživatel nejprve navštíví /StoreManager/vytvoření /, zobrazí se prázdný formulář. Na této stránce HTML &lt;formuláře&gt; prvků, ve kterém můžete zadat podrobnosti alba vstupní element, který obsahuje rozevírací seznam a textové pole.
 
-Poté, co uživatel vyplní hodnot formuláře alb, jejich stiskněte tlačítko "Uložit" k odeslání, že tyto změny zpět do aplikace pro uložení v databázi. Uživatel stiskne tlačítko "uložit" &lt;formuláře&gt; provede POST protokolu HTTP zpět na /StoreManager nebo vytvořit nebo adresa URL a odeslat &lt;formuláře&gt; hodnoty v rámci protokolu HTTP POST.
+Jakmile uživatel vyplní alba hodnot formuláře, stisknutím "Save" tlačítko pro odeslání, že tyto změny zpět do naší aplikace uložte do databáze. Když uživatel stiskne tlačítko "save" &lt;formuláře&gt; provede HTTP-POST zpět na /StoreManager/vytvoření/adresu URL a odešlete &lt;formuláře&gt; hodnoty jako součást požadavku HTTP POST.
 
-ASP.NET MVC umožňuje snadno rozložit logiku z těchto dvou scénářů volání adresy URL povolením nám implementovat dvě samostatné metody akce "Vytvořit", v rámci třídy Naše StoreManagerController – jednu pro zpracování počáteční procházet HTTP GET a /StoreManager/Create Nebo adresa URL a dalších pro zpracování požadavku HTTP POST odeslané změny.
+ASP.NET MVC umožňuje snadno rozdělit logiku z těchto dvou scénářů volání adresy URL tím, že abychom mohli implementovat dvě samostatné metody akce "Vytvořit", v rámci naší třídy StoreManagerController – z nich se má zpracovat počáteční procházet HTTP GET /StoreManager/Create / Adresa URL a druhý pro zpracování požadavku HTTP POST odevzdané změny.
 
-### <a name="passing-information-to-a-view-using-viewbag"></a>Předání informací zobrazení použití položek ViewBag
+### <a name="passing-information-to-a-view-using-viewbag"></a>Předávání informací do zobrazení použití položek ViewBag
 
-Jsme dříve v tomto kurzu jste použili objekt ViewBag, ale nebyly mluvili mnohem o něm. Objekt ViewBag umožňuje nám předávat informace k zobrazení bez použití objekt silného typu modelu. V takovém případě naší akce kontroleru HTTP GET upravit musí předat i seznam žánry a umělci do formuláře k naplnění rozevíracích seznamů a nejjednodušší způsob, jak to udělat je mohli je vrátit jako položek ViewBag.
+Jsme využili objekt ViewBag dříve v tomto kurzu, ale nebyly mluvili většinu o něm. Objekt ViewBag umožňuje k předávání informací do zobrazení bez použití objektu model silného typu. V tomto případě naše akce kontroleru HTTP GET úpravy je potřeba předat i seznam žánry a umělci do formuláře k naplnění a nejjednodušší způsob, jak to udělat, je vrátit jako objekt ViewBag položky.
 
-Objekt ViewBag je dynamický objekt, což znamená, že můžete zadat ViewBag.Foo nebo ViewBag.YourNameHere, aniž byste museli psát kód, který definuje tyto vlastnosti. Kód řadiče používá v tomto případě ViewBag.GenreId a ViewBag.ArtistId tak, aby hodnoty rozevírací odeslána s formuláře budou GenreId a ArtistId, které jsou vlastnostmi alb, které bude nastavení.
+Objekt ViewBag je dynamický objekt, což znamená, že můžete zadat ViewBag.Foo nebo ViewBag.YourNameHere, aniž byste museli psát kód, který definuje tyto vlastnosti. Kód kontroler použije v tomto případě ViewBag.GenreId a ViewBag.ArtistId tak, aby odeslané s formuláři rozevíracího seznamu hodnoty budou GenreId a ArtistId, které jsou vlastnosti, které se nastavení.
 
-Tyto hodnoty rozevírací seznam se vrátíte na formuláři pomocí SelectList objekt, který je vytvořen pouze k tomuto účelu. Děje se tak pomocí kódu takto:
+Tyto hodnoty rozevírací seznam se vrátí do formuláře pomocí SelectList objektu, který je vytvořenou přesně pro tento účel. To se provádí pomocí kódu takto:
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample6.cs)]
 
-Jak je vidět z kódu metoda akce tři parametry jsou používány k vytvoření tohoto objektu:
+Jak je vidět z kódu metody akce, tři parametry jsou použity k vytvoření tohoto objektu:
 
-- Seznam položek, které bude možné zobrazení rozevíracího seznamu. Všimněte si, že tato akce není právě řetězec – seznam žánry jsme se předávání.
-- Další parametr předána SelectList je vybraná hodnota. Tento způsob SelectList umí předem vyberte položku v seznamu. To bude jednodušší zjistit, když se podíváme na úpravy formuláře, který je poměrně podobné.
-- Konečný parametr je vlastnost, která má být zobrazen. V tomto případě to je označující, zda je vlastnost Genre.Name, které se zobrazí uživateli.
+- Seznam položek, které rozevírací seznam bude zobrazení. Všimněte si, že to není jenom řetězec – jsme se předají seznam žánrů.
+- Další parametr předávaný do SelectList je vybraná hodnota. Tento způsob SelectList ví, jak předem vyberete položku v seznamu. To bude srozumitelnější, když se podíváme na formulář pro úpravy, které je hodně podobné.
+- Poslední parametr je vlastnost, která má být zobrazena. V tomto případě to je, že vlastnost Genre.Name co se zobrazí uživateli.
 
-Si uvědomit pak je poměrně jednoduché akce HTTP GET vytvořit – dvě SelectLists jsou přidány do objekt ViewBag a předán žádný objekt modelu formuláře (protože nebyl ještě vytvořen).
+To na paměti pak je docela jednoduché akce HTTP GET vytvoření – dva SelectLists jsou přidány do objekt ViewBag a žádný objekt modelu je předán do formuláře (protože nebyl ještě vytvořen).
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample7.cs)]
 
-### <a name="html-helpers-to-display-the-drop-downs-in-the-create-view"></a>Pomocné rutiny HTML zobrazení seznamy vyřadit v zobrazení vytvořit
+### <a name="html-helpers-to-display-the-drop-downs-in-the-create-view"></a>Pomocné rutiny HTML zobrazíte rozevírací nabídky v zobrazení pro vytváření
 
-Vzhledem k tomu, že jste už jsme mluvili o tom, jak se předávají rozevíracího seznamu hodnot do zobrazení, podívejme rychlý přehled najdete v zobrazení tyto hodnoty zobrazení. V zobrazení kódu (nebo Views/StoreManager/Create.cshtml), zobrazí se následující volání přišla zobrazíte rozevírací Genre dolů.
+Vzhledem k tomu, že už jsme mluvili o jak rozevírací seznam hodnot jsou předány do zobrazení, Pojďme se na rychlý pohled na zobrazení, abyste viděli, jak tyto hodnoty jsou zobrazeny. V zobrazení kódu (/ Views/StoreManager/Create.cshtml), zobrazí se následující při volání k zobrazení seznamu žánr dolů.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample8.cshtml)]
 
-To se označuje jako HTML Helper - nástroj metodu, která provádí úlohu běžné zobrazení. Pomocné rutiny HTML jsou velmi užitečné při ochraně našich kód zobrazení stručná a čitelná. Poskytuje pomocné rutiny Html.DropDownList ASP.NET MVC, ale jako ukážeme později je možné vytvořit vlastní pomocné rutiny pro zobrazení kód, který jsme budete znovu použít v naší aplikaci.
+To se označuje jako pomocné rutiny HTML – nástroj pro metodu, která provádí běžné zobrazení úlohy. Pomocné rutiny HTML jsou velmi užitečné při zachování našeho kódu zobrazení stručnější a čitelnější. Poskytuje pomocné rutiny Html.DropDownList ASP.NET MVC, ale jak uvidíme dále je možné vytvořit vlastní pomocné rutiny pro zobrazení kódu, které nám budete znovu použít v naší aplikaci.
 
-Volání Html.DropDownList právě musí být sdělili dvě věci –, kde k získání seznamu zobrazíte a jaké hodnota (pokud existuje) by měla být předem vybrané. Určuje první parametr, GenreId, rozevírací seznam a hledat hodnotu s názvem GenreId ve model nebo ViewBag. Druhý parametr je slouží k určení hodnota, která má zobrazit jako zpočátku vybrali v rozevíracím seznamu. Vzhledem k tomu, že tento formulář je formulář pro vytvoření, neexistuje žádná hodnota být Zkontrolujte předem vybrané a je předán String.Empty.
+Volání Html.DropDownList je jenom nutné až k tomu dojde dvě věci – tam, kde k získání seznamu zobrazíte a jakou hodnotu (pokud existuje) musí být předem vybraná. První parametr GenreId, říká DropDownList hledat hodnotu s názvem GenreId v modelu nebo objekt ViewBag. Druhý parametr slouží k označení hodnoty zobrazíte původně vybrali v rozevíracím seznamu. Protože tento formulář je formulář pro vytvoření, neexistuje žádná hodnota bude Zkontrolujte předem vybrané a je předán String.Empty.
 
-### <a name="handling-the-posted-form-values"></a>Zpracování odeslání formuláře hodnoty
+### <a name="handling-the-posted-form-values"></a>Zpracování hodnot publikování formuláře
 
-Jak již bylo zmíněno před, existují dvě metody akce, které jsou spojené s každou formuláře. První zpracuje požadavek HTTP GET a zobrazí formulář. Druhý zpracuje požadavek HTTP POST, který obsahuje hodnoty odeslaného formuláře. Všimněte si, že má akce kontroleru [HttpPost] atributu, který aplikaci ASP.NET MVC oznámeno, že má pouze odpovědět na požadavky HTTP POST.
+Jak jsme probírali před, existují dvě metody akce přidružené každý formulář. První zpracuje požadavek HTTP GET a zobrazí formulář. Druhá zpracovává žádost HTTP POST, který obsahuje hodnoty odeslané formuláře. Všimněte si, že má akce kontroleru atributu [HttpPost], který technologii ASP.NET MVC řekne, že by měl pouze reagovat na požadavky HTTP POST.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample9.cs)]
 
-Tato akce má čtyři zodpovědnosti:
+Tato akce má čtyři odpovědnosti:
 
 - 1. Čtení hodnot formuláře
-- 2. Zkontrolujte, pokud formuláře hodnoty předejte všechna pravidla ověřování
-- 3. Pokud je odeslání formuláře je platný, uložte data a zobrazit aktualizovaný seznam
-- 4. Pokud odeslání formuláře není platný, je třeba znovu zobrazte formulář s chyby ověření
+- 2. Zaškrtněte, pokud hodnot formuláře předejte všechna pravidla ověřování
+- 3. Pokud se odeslání formuláře je platný, uložit data a zobrazí aktualizovaný seznam
+- 4. Pokud odeslání formuláře není platná, znovu zobrazte formulář s chyby ověření
 
-#### <a name="reading-form-values-with-model-binding"></a>Čtení hodnot formuláře s vazby modelu
+#### <a name="reading-form-values-with-model-binding"></a>Čtení hodnot formuláře pomocí vazby modelu
 
-Odeslání formuláře, který obsahuje hodnoty pro GenreId a ArtistId (z rozevíracího seznamu) a hodnoty textového pole pro název, ceny a AlbumArtUrl zpracovává akce kontroleru. I když je možné přímý přístup k hodnotám formuláře, je vhodnější je použití možností vytvoření vazby modelu integrovaných v architektuře ASP.NET MVC. Když akce kontroleru přebírá jako parametr typu modelu, ASP.NET MVC se pokusí naplnit objekt daného typu pomocí formuláře vstupy (stejně jako hodnoty trasy a řetězce dotazu). Dělá to tak, že vyhledá hodnoty, jejichž názvy odpovídají vlastností objektu modelu, například při nastavení hodnoty GenreId nový objekt alb, hledá vstup s názvem GenreId. Při vytváření zobrazení pomocí standardních metod v architektuře ASP.NET MVC formuláře budou vždy být vykreslen pomocí názvů vlastností jako vstupní pole názvy, tak to názvy polí se právě odpovídat.
+Odeslání formuláře, který obsahuje hodnoty GenreId a ArtistId (z rozevíracího seznamu) a textové pole hodnot pro název, cena a AlbumArtUrl zpracovává akce kontroleru. I když je možné pro přímý přístup k hodnotám formuláře, lepším řešením je použití do ASP.NET MVC integrované možnosti vazby modelu. Typ modelu, který jako parametr pořízením akce kontroleru ASP.NET MVC se pokusí o naplnění objektu tohoto typu pomocí formuláře vstupy (stejně jako hodnoty trasy a řetězce dotazu). Dělá to pomocí hodnot, jejichž názvy odpovídají vlastností objektu modelu, třeba při nastavování hodnoty GenreId nový objekt alb, hledá vstupní hodnota s názvem GenreId. Při vytváření zobrazení pomocí standardních metod v architektuře ASP.NET MVC formuláře bude vždy být vykreslen pomocí názvy vlastností jako názvy vstupních polí, takže to názvy polí se právě spárujte.
 
 #### <a name="validating-the-model"></a>Ověření modelu
 
-Model byl ověřen pomocí jednoduché volání ModelState.IsValid. Jsme nepřidali žádné ověřovací pravidla Naše třída Album ještě - provedeme, které za chvilku – proto nyní tato kontrola nemá mnohem udělat. Co je důležité je, že tato kontrola ModelStat.IsValid se přizpůsobí se jí ověřovacích pravidel, které jsme umístí našeho modelu, takže budoucí změny pravidel ověřování nevyžadují žádné aktualizace kódu akce kontroleru.
+Model se ověří pomocí jednoduchého volání do ModelState.IsValid. Jsme nepřidali žádná pravidla ověřování do naší třídy alba ještě – uděláme, které se za chvilku – teď tuto kontrolu nemusí dělat v podstatě. Důležité je, že tato kontrola ModelStat.IsValid se bude přizpůsobovat ověřovacích pravidel, které jsme na náš model, takže budoucí změny pravidel ověřování nevyžadují žádné aktualizace kódu akce kontroleru.
 
-#### <a name="saving-the-submitted-values"></a>Ukládání odeslaná hodnoty
+#### <a name="saving-the-submitted-values"></a>Ukládá zadané hodnoty
 
-Pokud odeslání formuláře ověřením úspěšně projde, je čas k uložení hodnoty do databáze. S platformou Entity Framework, který právě vyžaduje přidávání modelu do kolekce alb a volání SaveChanges.
+Pokud odeslání formuláře projdou ověřením, je čas k uložení hodnoty do databáze. S Entity Framework, která vyžaduje jen přidáním modelu do kolekce alba a volání SaveChanges.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample10.cs)]
 
-Rozhraní Entity Framework generuje příslušnými příkazy SQL k zachování této hodnoty. Po uložení dat, můžeme přesměrovat zpět do seznamu alb, uvidíme náš aktualizace. K tomu je potřeba vrácení RedirectToAction s názvem akce kontroleru, který jsme má zobrazit. V takovém případě, je metoda Index.
+Entity Framework generuje příslušnými příkazy SQL pro uchování hodnoty. Po uložení dat, jsme přesměrovat zpět do seznamu alb, takže uvidíme náš aktualizace. To se provádí tak, že vrací RedirectToAction s názvem, které chceme zobrazená akce kontroleru. V tomto případě to je metoda Index.
 
-#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>Zobrazení odesílání neplatný formuláře s chybami ověření
+#### <a name="displaying-invalid-form-submissions-with-validation-errors"></a>Neplatná notace odesílání chyb ověření zobrazení
 
-V případě vstup neplatný formuláře hodnoty rozevírací jsou přidány do objekt ViewBag (jako v případě HTTP GET) a model vazby hodnoty jsou předán zpět do zobrazení pro zobrazení. Chyby ověření se automaticky zobrazí pomocí @Html.ValidationMessageFor pomocné rutiny HTML.
+V případě neplatná notace vstupní hodnoty rozevírací seznam se přidají do objekt ViewBag (stejně jako v případě protokolu HTTP GET) a hodnoty vazby modelu jsou předány zpět do zobrazení pro zobrazení. Chyby ověřování se automaticky zobrazí pomocí @Html.ValidationMessageFor pomocné rutiny HTML.
 
 #### <a name="testing-the-create-form"></a>Testování vytvořit formulář
 
-K otestování tohoto limitu, spusťte aplikaci a přejděte k /StoreManager/Create / - zobrazí se prázdný formulář, který byl vrácen metodou HTTP pro vytvoření StoreController-GET.
+K otestování to, spusťte aplikaci a přejděte na /StoreManager/vytvoření / – zobrazí se prázdný formulář, který byl vrácen metodou HTTP pro vytvoření StoreController-GET.
 
 Vyplňte hodnoty a klikněte na tlačítko Vytvořit k odeslání formuláře.
 
@@ -181,89 +180,89 @@ Vyplňte hodnoty a klikněte na tlačítko Vytvořit k odeslání formuláře.
 
 ### <a name="handling-edits"></a>Zpracování úprav
 
-Upravit dvojici akce (HTTP GET a HTTP POST) jsou velmi podobné vytvořit metody akce, kterou jsme právě prohlédli. Vzhledem k tomu, že Upravit scénář zahrnuje práci s existujícího alba, upravit HTTP-GET metoda načte založené na parametr "id" Album předána prostřednictvím trasy. Tento kód pro načtení album od AlbumId je stejný, jako jsme jste dříve prohlédl v podrobnosti akce kontroleru. Stejně jako u vytvořením / metoda HTTP GET rozevíracího seznamu hodnoty jsou vráceny prostřednictvím objekt ViewBag. To umožňuje nám vrátit Album jako naše model objektu do zobrazení (což je pro třídu Album silného typu) při předání další data (např. seznam žánry) prostřednictvím objekt ViewBag.
+Jsou velmi podobné vytvořit metody akce, které zvažovali jsme i jen pár akce úpravy (HTTP GET a POST protokolu HTTP). Protože Upravit scénář zahrnuje práce s existující album, upravit HTTP-GET načte metoda na základě parametru "id" Album předaný prostřednictvím trasy. Tento kód pro načtení alba podle AlbumId je stejný, jako jsme dříve se zabývali v podrobnosti akce kontroleru. Stejně jako u vytvořením / metody GET protokolu HTTP, rozevírací seznam hodnot jsou vráceny prostřednictvím objekt ViewBag. To umožňuje vrátit alba jako náš model objektu zobrazení (které je silně typováno do třídy alba) při předání dalších dat (např. seznam žánry) přes objekt ViewBag.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample11.cs)]
 
-Akce HTTP POST upravit je velmi podobné akce HTTP POST vytvořit. Jediným rozdílem je, že místo přidávání nové album k databázi. Kolekce alb, jsme se hledání aktuální instance alba pomocí db. Entry(album) a nastavení jeho stavu na změněné. Tato hodnota informuje Entity Framework upravovat existujícího alba a vytvoření nového.
+Upravit HTTP-POST akce je velmi podobný akce vytvoření HTTP-POST. Jediným rozdílem je, že místo přidání nové album k databázi. Kolekce alb, jsme hledáte aktuální instance alba pomocí databáze. Entry(album) a nastavení jeho stavu na změněné. To říká Entity Framework, upravovat stávající album na rozdíl od vytvoření nového.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample12.cs)]
 
-Abychom mohli otestovat to zjistit tak, že spuštění aplikace a procházení/StoreManger / pak kliknutím na odkaz pro úpravy pro album.
+Můžeme to zjistit otestovat spuštění aplikace a přejdete do/StoreManger/a poté kliknutím na odkaz pro úpravy pro alba.
 
 ![](mvc-music-store-part-5/_static/image9.png)
 
-Zobrazí se upravit formu jako je uvedené metodou HTTP GET upravit. Vyplňte hodnoty a klikněte na tlačítko Uložit.
+Zobrazí se zobrazí metodou HTTP GET upravit formulář pro úpravy. Vyplňte hodnoty a klikněte na tlačítko Uložit.
 
 ![](mvc-music-store-part-5/_static/image10.png)
 
-To formulář odešle, uloží hodnoty a vrátí nám do seznamu alb, zobrazující, že hodnoty byly aktualizovány.
+To formulář odešle, uloží hodnoty a vrátí nám do seznamu obrázek znázorňující, že hodnoty byly aktualizovány.
 
 ![](mvc-music-store-part-5/_static/image11.png)
 
 ### <a name="handling-deletion"></a>Zpracování odstranění
 
-Odstranění následující stejné jako upravit a vytvořit, pomocí akce jeden řadič k zobrazení formuláře potvrzení a jiné akce kontroleru pro zpracování odeslání formuláře.
+Odstranění používá stejný vzor jako Edit and Create, pomocí akce jeden kontroler k potvrzení formulář pro zobrazení a další akce kontroleru pro zpracování odeslání formuláře.
 
-Akce kontroleru HTTP GET odstranit je přesně stejný jako naše předchozí akce kontroleru podrobnosti Správce úložiště.
+Akce kontroleru HTTP GET odstranit je přesně stejný jako naše předchozí akce kontroleru Store správce podrobnosti.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample13.cs)]
 
-Zobrazuje se formulář, který je silného typu typ alb, pomocí šablony odstranit zobrazení obsahu.
+Formulář, který je silně typováno zobrazíme na typ alb, šablona odstranit zobrazení obsahu.
 
 ![](mvc-music-store-part-5/_static/image12.png)
 
-Odstranit šablonu zobrazí všechna pole pro model, ale nemůžeme odlišují zjednodušení této nižší. Zobrazení kódu v /Views/StoreManager/Delete.cshtml změňte na následující.
+Odstranit šablonu zobrazí všechna pole pro model, ale můžeme odlišují zjednodušit tohoto seznamu. Změňte zobrazení kódu v /Views/StoreManager/Delete.cshtml takto.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample14.cshtml)]
 
-Zobrazí zjednodušená potvrzení odstranění.
+Zobrazí se zjednodušený potvrzení odstranění.
 
 ![](mvc-music-store-part-5/_static/image13.png)
 
-Kliknutím na tlačítko Odstranit způsobí, že formulář poslat zpět na server, který provede akci DeleteConfirmed.
+Kliknutím na tlačítko Odstranit způsobí, že formulář, který se má publikovat zpět na server, který provede akci DeleteConfirmed.
 
 [!code-csharp[Main](mvc-music-store-part-5/samples/sample15.cs)]
 
-Naše HTTP POST odstranit řadiče akce provede následující akce:
+Naše HTTP POST odstranit akce Kontroleru provede následující akce:
 
-- 1. Načte Album podle ID
+- 1. Načte alba podle ID
 - 2. Neodstraní alba a uložit změny
-- 3. Provede přesměrování Index, zobrazující, že alba byla odebrána ze seznamu
+- 3. Provede přesměrování Index, zobrazuje, zda alba byl odebrán ze seznamu
 
-Abyste to mohli otestovat, spusťte aplikaci a přejděte do /StoreManager. Vyberte album ze seznamu a klikněte na odkaz odstranit.
+Abyste to mohli otestovat, spusťte aplikaci a přejděte do /StoreManager. Vyberte alba ze seznamu a klikněte na odkaz pro odstranění.
 
 ![](mvc-music-store-part-5/_static/image14.png)
 
-Zobrazí se naše potvrzovací obrazovce a odstranění.
+Zobrazí se potvrzovací obrazovce a naše odstranit.
 
 ![](mvc-music-store-part-5/_static/image15.png)
 
-Kliknutím na tlačítko Odstranit odebere alba a vrátí nám na stránku Index Správce úložiště, který ukazuje, že alba byla odstraněna.
+Kliknutím na tlačítko Odstranit odebere alba a vrátí nám na Store správce indexovou stránku, který ukazuje, že alba byl odstraněn.
 
 ![](mvc-music-store-part-5/_static/image16.png)
 
-### <a name="using-a-custom-html-helper-to-truncate-text"></a>Použití vlastní pomocné rutiny HTML zkrátit text
+### <a name="using-a-custom-html-helper-to-truncate-text"></a>Použití vlastní pomocné rutiny HTML došlo ke zkrácení text
 
-My jsme jedním z možných problémů s naší stránce s Index Správce úložiště. Naše název alba a umělcem název vlastnosti můžete obě být dostatečně dlouhé, může vyvolat vypnout naše formátování tabulky. Vytvoříme vlastní pomocné rutiny HTML umožněte nám snadno zkrátit těchto a dalších vlastností v našem zobrazení.
+Máme jedním potenciálním problémem s naší Store správce indexovou stránku. Naše alba a interpret vlastnosti mohou být dostatečně dlouhá, že může vyvolat vypnout naše formátování tabulky. Vytvoříme vlastní pomocné rutiny HTML k umožňuje snadno zkrátit těchto a dalších vlastnostech v našich zobrazení.
 
 ![](mvc-music-store-part-5/_static/image17.png)
 
-Syntaxe Razor pro @helper syntaxe má provedené velmi snadné vytvoření vlastní pomocné funkce pro použití v zobrazení. Otevření zobrazení /Views/StoreManager/Index.cshtml a následující kód přidejte přímo po @model řádku.
+Syntaxe Razor pro @helper syntaxe bylo poměrně snadno vytvořit vlastní pomocné funkce pro použití v zobrazení. Otevření zobrazení /Views/StoreManager/Index.cshtml a následující kód přidejte přímo po @model řádku.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample16.cshtml)]
 
-Tato pomocná metoda přebírá řetězec a umožňuje maximální délku. Pokud zadaný text je kratší než zadaná délka, pomocné rutiny výstupy jej jako-je. Pokud je delší, zkrátí text a vykreslí "..." pro zbytek.
+Tato pomocná metoda přijímá řetězec a umožňující maximální délku. Pokud zadaný text je kratší než délka zadaná, pomocné rutiny uloží jej jako-je. Pokud je delší, zkrátí text a vykreslí "..." pro zbytek.
 
-Nyní jsme vám pomůže naše Truncate pomocníka název alba i umělcem název vlastnosti musí být kratší než 25 znaků. Kód dokončení zobrazení pomocí našeho nového pomocníka Truncate se zobrazí níže.
+Teď můžeme použít naše Truncate pomocné rutiny pro interpret i název vlastnosti musí být kratší než 25 znaků. Kompletní přehled kódu pomocí našich nových Truncate pomocné rutiny se zobrazí pod.
 
 [!code-cshtml[Main](mvc-music-store-part-5/samples/sample17.cshtml)]
 
-Nyní když jsme procházejí /StoreManager/ adresu URL, alba a názvy jsou zachovány níže naše maximální délky.
+Nyní když jsme procházejí /StoreManager/ adresy URL, alba a názvy jsou zachovány nižší než naše maximální délky.
 
 ![](mvc-music-store-part-5/_static/image18.png)
 
-Poznámka: Zobrazí v případě jednoduchého vytváření a používání pomocné rutiny v jednom zobrazení. Další informace o vytváření Pomocníci, které můžete použít v celé vaší lokality, najdete v části Moje blogu: [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
+Poznámka: Zobrazí jednoduchý případ vytváření a použití pomocné rutiny v jednom zobrazení. Další informace o vytvoření pomocných rutin, které můžete použít v celém webu, najdete v mé blogovém příspěvku: [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
 
 
 > [!div class="step-by-step"]

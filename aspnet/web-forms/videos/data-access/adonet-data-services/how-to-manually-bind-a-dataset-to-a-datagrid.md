@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid
-title: Jak ručně vytvořit vazbu datovou sadu Datagrid | Microsoft Docs
+title: Postup ruční svázání datové sady s mřížkou DataGrid | Dokumentace Microsoftu
 author: JoeStagner
-description: V tomto videu, část 2 / 3, Jan Stagner používá ukázkovou aplikaci ASP vytvořené v rámci, abychom ukázali, jak ručně vytvořit vazbu datovou sadu datagrid. Pro...
+description: V tomto videu, část 2 ze 3, Joe Stagner používá ukázkovou aplikaci ASP vytvořili v části pro demonstraci ruční svázání datové sady s mřížkou DataGrid. Pro...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
 ms.topic: article
 ms.assetid: 1e339f8a-72ea-463a-b186-c09dd7b12993
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid
 msc.type: video
-ms.openlocfilehash: f1662c68b9783cb810bd85766afc29e10c0d2db6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 2f9d550dd244b532354eb5aca6e69d982d116911
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886352"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382043"
 ---
-<a name="how-to-manually-bind-a-dataset-to-a-datagrid"></a>Jak ručně vytvořit vazbu datovou sadu Datagrid
+<a name="how-to-manually-bind-a-dataset-to-a-datagrid"></a>Postup ruční svázání datové sady s mřížkou DataGrid
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-V tomto videu, část 2 / 3, Jan Stagner používá ukázkovou aplikaci ASP vytvořené v rámci, abychom ukázali, jak ručně vytvořit vazbu datovou sadu datagrid. Další informace o tomto videu, přečtěte si [vytváření Data Access Layer](../../../overview/data-access/introduction/creating-a-data-access-layer-vb.md) kurzu přístup data.
+V tomto videu, část 2 ze 3, Joe Stagner používá ukázkovou aplikaci ASP vytvořili v části pro demonstraci ruční svázání datové sady s mřížkou DataGrid. Další informace o tomto videu najdete v článku [vytvoření vrstvy přístupu k datům](../../../overview/data-access/introduction/creating-a-data-access-layer-vb.md) kurzu dat přístup.
 
 [&#9654;Podívejte se na video (7 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-to-manually-bind-a-dataset-to-a-datagrid)
 

@@ -1,117 +1,116 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
-title: Načítání a zobrazení dat s model vazby a webových formulářů | Microsoft Docs
+title: Načtení a zobrazení dat ovládacím prvkem modelu vazby a webových formulářů | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
+description: V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Data interakce díky vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
 ms.topic: article
 ms.assetid: 9f24fb82-c7ac-48da-b8e2-51b3da17e365
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: 26873efa5dbfdbdab39a52cfb9cfd5a65c8231a3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 4a76fcfd2620eb0789b7a6a23990037a1eebaf4c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30889092"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378492"
 ---
-<a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Načítání a zobrazování dat pomocí vazby modelu a webové formuláře
+<a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>Načtení a zobrazení dat ovládacím prvkem vazby modelu a webové formuláře
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Vazby modelu umožňuje dat interakce více jednoduché než plánování práce s daty objekty zdrojů (například ObjectDataSource nebo SqlDataSource). Tato řada začíná úvodní informace a přesune do dalších pokročilých konceptů v dalších kurzech.
+> V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Vazby modelu díky dat interakce více přímočaré než pracující s daty objektů zdroje (například ObjectDataSource nebo SqlDataSource). Tato série začíná úvodní materiály a přesune pokročilejších pojmech v budoucích kurzech.
 > 
-> Vzor vazby modelu funguje s technologií pro přístup k žádné data. V tomto kurzu budete používat rozhraní Entity Framework, ale můžete použít technologie přístup data, která je pro vás nejvíce dobře známé. Z ovládacího prvku serveru vázané na data, jako je například ovládacího prvku GridView ListView, DetailsView nebo FormView zadejte názvy metod, které chcete použít pro výběr, aktualizaci, odstranění a vytvoření data. V tomto kurzu bude zadejte hodnotu pro metody SelectMethod.
+> Vzoru vazby modelu funguje s technologií přístupu všechny data. V tomto kurzu budete používat Entity Framework, ale můžete použít technologii přístup data, která je nejvíc známými. Z ovládacího prvku serveru vázané na data, jako je například ovládacího prvku GridView, ListView, DetailsView nebo FormView zadáte názvy metod používaných pro výběr, aktualizace, odstraňování a vytváření data. V tomto kurzu můžete zadat hodnotu pro metody SelectMethod.
 > 
-> V rámci této metody poskytují logiku pro načítání dat. V dalším kurzu nastavíte hodnoty pro metodu UpdateMethod, metoda DeleteMethod a metodu InsertMethod.
+> V rámci této metody pro načítání dat zadáte logiku. V dalším kurzu nastavíte hodnoty pro UpdateMethod a DeleteMethod InsertMethod.
 > 
-> Můžete [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB. Kód ke stažení pracuje s Visual Studio 2012 nebo Visual Studio 2013. Používá šablony sady Visual Studio 2012, která se poněkud liší od šablony sady Visual Studio 2013 uvedené v tomto kurzu.
+> Je možné [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB. Ke stažení kódu funguje pomocí sady Visual Studio 2012 nebo Visual Studio 2013. Používá šablonu Visual Studio 2012, která se trochu liší od sady Visual Studio 2013 šablonu uvedenou v tomto kurzu.
 > 
-> V tomto kurzu spusťte aplikaci v sadě Visual Studio. Můžete provést také aplikace dostupné přes Internet pomocí nasazení do hostujícího zprostředkovatele. Společnost Microsoft nabízí bezplatné webových hostitelských služeb pro až 10 webových serverů ve  
->  [Bezplatný zkušební účet Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604). Informace o tom, jak nasadit webový projekt sady Visual Studio do Azure App Service Web Apps naleznete v tématu [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md) řady. Tento kurz také ukazuje, jak nasadit databázi SQL serveru do Azure SQL Database pomocí migrace Entity Framework Code First.
+> V tomto kurzu spustíte aplikaci v sadě Visual Studio. Můžete také zpřístupnit aplikace přes Internet nasazením k poskytovateli hostingu. Společnost Microsoft nabízí bezplatné webových hostitelských služeb pro až 10 webových serverů ve  
+>  [Bezplatný zkušební účet Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604). Informace o tom, jak nasadit webový projekt sady Visual Studio do Azure App Service Web Apps, najdete v článku [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md) řady. Tento kurz také ukazuje způsob použití migrace Entity Framework Code First pro nasazení databáze SQL serveru do služby Azure SQL Database.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
 > 
-> - Microsoft Visual Studio 2013 nebo Microsoft Visual Studio Express 2013 pro Web
+> - Microsoft Visual Studio 2013 nebo Microsoft Visual Studio Express 2013 for Web
 >   
 > 
-> V tomto kurzu funguje taky s Visual Studio 2012, ale bude určité rozdíly v šabloně uživatelské rozhraní a projekt.
+> V tomto kurzu funguje taky s Visual Studio 2012, ale bude existovat několik rozdílů v šabloně uživatelského rozhraní a projektu.
 
 
-## <a name="what-youll-build"></a>Co budete sestavení
+## <a name="what-youll-build"></a>Co budete vytvářet
 
 V tomto kurzu budete:
 
-1. Vytvoření datových objektů, které odráží vysoké školy s studenty zaregistrované v rámci přípravy
-2. Vytvoření databázových tabulek z objektů
+1. Vytváření datových objektů, které odpovídají vysoké školy se zúčastnili studenti zapsáni na kurzy
+2. Vytváření databázových tabulek z objektů
 3. Naplnění databáze testovací data
 4. Zobrazení dat v webového formuláře
 
 ## <a name="set-up-project"></a>Nastavení projektu
 
-V sadě Visual Studio 2013, vytvořte novou **webové aplikace ASP.NET** názvem **ContosoUniversityModelBinding**.
+V sadě Visual Studio 2013, vytvořte nový **webová aplikace ASP.NET** volá **ContosoUniversityModelBinding**.
 
 ![Vytvoření projektu](retrieving-data/_static/image2.png)
 
-Vyberte šablonu, webových formulářů a nechte výchozí možnosti. Klikněte na tlačítko OK nastavení projektu.
+Výběr šablony webových formulářů a nechte výchozí možnosti. Klikněte na tlačítko OK pro nastavení projektu.
 
-![Vyberte webové formuláře](retrieving-data/_static/image3.png)
+![Vyberte webových formulářů](retrieving-data/_static/image3.png)
 
-Bude nutné mít několik malé změny přizpůsobení vzhledu webu. Otevřete **Site.Master** soubor a změňte název zahrnout Contoso univerzity místo Moje aplikace technologie ASP.NET.
+Nejprve vytvoříte několik malých změn, aby přizpůsobit vzhled webu. Otevřít **Site.Master** soubor a změňte nadpis na patří společnosti Contoso University místo Moje aplikace technologie ASP.NET.
 
 [!code-aspx[Main](retrieving-data/samples/sample1.aspx?highlight=1)]
 
-Změňte text záhlaví z **název aplikace** k **Contoso univerzity**.
+Změňte text záhlaví z **název_aplikace** k **Contoso University**.
 
 [!code-aspx[Main](retrieving-data/samples/sample2.aspx?highlight=7)]
 
-Také v Site.Master, můžete změňte navigační odkazy, které se zobrazují v hlavičce tak, aby odrážela stránek, které jsou relevantní pro tuto lokalitu. Nebudete potřebovat buď **o** stránky nebo **kontaktujte** stránky tak může tyto odkazy odebrat. Místo toho je nutné odkaz na stránku s názvem **studenty**. Tato stránka ještě nebyl vytvořen.
+Také v Site.Master, změňte navigační odkazy, které se zobrazí v záhlaví tak, aby odrážely stránek, které jsou relevantní pro tuto lokalitu. Nebudete potřebovat buď **o** stránky nebo **kontakt** stránky je možné tyto odkazy odebrat. Místo toho budete potřebovat odkaz na stránku s názvem **studenty**. Tato stránka ještě nebyl vytvořen.
 
 [!code-aspx[Main](retrieving-data/samples/sample3.aspx)]
 
 Uložte a zavřete Site.Master.
 
-Teď vytvoříte webového formuláře pro zobrazení dat student. Klikněte pravým tlačítkem na projekt, a **přidat** **novou položku**. Vyberte **webové formuláře se stránkou předlohy** šablony a pojmenujte ji **Students.aspx**.
+Teď vytvoříte webový formulář pro zobrazení údajů studentů. Klikněte pravým tlačítkem na váš projekt a **přidat** **nová položka**. Vyberte **webové formuláře se stránkou předlohy** šablony a pojmenujte ho **Students.aspx**.
 
 ![Vytvoření stránky](retrieving-data/_static/image5.png)
 
-Vyberte **Site.Master** jako stránky předlohy pro nový webový formulář.
+Vyberte **Site.Master** jako hlavní stránka nového webového formuláře.
 
 ## <a name="create-the-data-models-and-database"></a>Vytvoření datové modely a databáze
 
-Migrace Code First použije k vytvoření objektů a odpovídající databázových tabulek. Tyto tabulky se uloží informace o studenty a jejich kurzy.
+Migrace Code First použije k vytvoření objektů a odpovídající databázových tabulek. Tyto tabulky uloží informace o studenty a jejich přípravy.
 
 Ve složce modely, přidejte novou třídu s názvem **UniversityModels.cs**.
 
-![Vytvoření třídy modelu](retrieving-data/_static/image7.png)
+![Vytvoření tříd modelu](retrieving-data/_static/image7.png)
 
-V tomto souboru Definujte třídy SchoolContext, studenty, registraci a během takto:
+V tomto souboru Definujte třídy SchoolContext, studenty, registrace a kurzu následujícím způsobem:
 
 [!code-csharp[Main](retrieving-data/samples/sample4.cs)]
 
-Třída SchoolContext je odvozena od DbContext, která spravuje připojení k databázi a změny v datech.
+SchoolContext třída je odvozena od položky DbContext, který spravuje připojení k databázi a změny v datech.
 
-Ve třídě studenty, Všimněte si, atributy, které se aplikovaly **FirstName**, **LastName**, a **roku** vlastnosti. Tyto atributy se použije pro ověření dat v tomto kurzu. Můžete zjednodušit kód pro tento ukázkový projekt, byly s atributy ověření dat označeny pouze tyto vlastnosti. V skutečné projektu platit na všechny vlastnosti, které je třeba ověřená data, například vlastnosti ve třídách registraci a během atributů ověření.
+Ve třídě studentů, Všimněte si, že atributy, které se použily **FirstName**, **LastName**, a **rok** vlastnosti. Tyto atributy se použije pro ověřování dat v tomto kurzu. Pro zjednodušení kódu pro tento ukázkový projekt, jenom tyto vlastnosti byly označeny ověření dat atributy. V projektu aplikace skutečný platit pro všechny vlastnosti, které je třeba ověřenými daty, například vlastnosti v třídách registrace a kurzu atributů ověření.
 
 Uložte UniversityModels.cs.
 
-Nástroje pro migrace Code First budete používat k nastavení databáze, založený na těchto třídách.
+K nastavení databáze založené na těchto tříd budou používat nástroje pro migrace Code First.
 
 V **Konzola správce balíčků**, spusťte příkaz:  
 `enable-migrations -ContextTypeName ContosoUniversityModelBinding.Models.SchoolContext`
 
-Po úspěšném dokončení příkazu obdržíte zprávu s oznámením povoleným migrace
+Pokud se příkaz úspěšně dokončí. zobrazí se zpráva s informacemi o tom, že povolíte migrace
 
-![Povolit migrace](retrieving-data/_static/image8.png)
+![povolení migrace](retrieving-data/_static/image8.png)
 
-Všimněte si, že nový soubor s názvem **Configuration.cs** byla vytvořena. V sadě Visual Studio je tento soubor otevřít automaticky po jejím vytvoření. Obsahuje třídu konfigurace **počáteční hodnoty** metodu, která umožňuje k předběžnému naplnění tabulky databáze s testovacích datech.
+Všimněte si, že se nový soubor s názvem **Configuration.cs** se vytvořil. V sadě Visual Studio je tento soubor otevřít automaticky po jeho vytvoření. Obsahuje třídu konfigurace **počáteční hodnoty** metodu, která umožňuje k předběžnému naplnění tabulky databáze s testovací data.
 
-Přidejte následující kód do metody počáteční hodnoty. Budete muset přidat **pomocí** údajů **ContosoUniversityModelBinding.Models** oboru názvů.
+Přidejte následující kód k metodě počáteční hodnoty. Bude potřeba přidat **pomocí** příkaz **ContosoUniversityModelBinding.Models** obor názvů.
 
 [!code-csharp[Main](retrieving-data/samples/sample5.cs)]
 
@@ -119,69 +118,69 @@ Uložte Configuration.cs.
 
 V konzole Správce balíčků, spusťte příkaz `add-migration initial`.
 
-Spusťte příkaz `update-database`.
+Potom spusťte příkaz `update-database`.
 
-Pokud se zobrazí výjimku při spuštění tohoto příkazu, je možné, že mají různé hodnoty pro StudentID a CourseID z hodnot v metodě počáteční hodnoty. Otevřete tyto tabulky v databázi a vyhledat existující hodnoty pro StudentID a CourseID. Přidejte tyto hodnoty v kódu pro synchronizace replik indexů v tabulce registrace.
+Pokud se zobrazí výjimka při spuštění tohoto příkazu, je možné, že mají různé hodnoty pro StudentID a CourseID z hodnot v metodě počáteční hodnoty. Otevření těchto tabulek v databázi a najděte existující hodnoty pro StudentID a CourseID. Přidejte tyto hodnoty v kódu pro synchronizace replik indexů tabulce registrace.
 
-Soubor databáze byl přidán, ale je aktuálně skrytá v projektu. Klikněte na tlačítko **zobrazit všechny soubory** zobrazit soubor.
+Soubor databáze byl přidán, ale aktuálně je skryté v projektu. Klikněte na tlačítko **zobrazit všechny soubory** k zobrazení souboru.
 
 ![Zobrazit všechny soubory](retrieving-data/_static/image10.png)
 
-Všimněte si souboru .mdf se teď zobrazí v aplikaci\_složku Data.
+Všimněte si, že soubor .mdf se teď zobrazí v aplikaci\_složku Data.
 
 ![soubor databáze](retrieving-data/_static/image12.png)
 
-Poklikejte na soubor MDF a otevřete Průzkumníka serveru. V tabulkách teď existují a jsou naplněný daty.
+Poklikejte na soubor MDF a otevřete Průzkumníka serveru. Tabulky nyní existují a jsou naplněný daty.
 
 ![tabulky databáze](retrieving-data/_static/image14.png)
 
-## <a name="display-data-from-students-and-related-tables"></a>Zobrazit data z studenty a související tabulky
+## <a name="display-data-from-students-and-related-tables"></a>Zobrazení dat z studenty a související tabulky
 
-S daty v databázi nyní jste připraveni k načtení dat a jejich zobrazení na webové stránce. Budete používat **GridView** ovládací prvek pro zobrazení dat ve sloupci a řádky.
+S daty v databázi nyní jste připraveni k načtení těchto dat a zobrazení na webové stránce. Budete používat **GridView** ovládací prvek pro zobrazení dat ve sloupci a řádky.
 
-Otevřete Students.aspx a vyhledejte **MainContent** zástupný symbol. V rámci zástupného symbolu, přidejte **GridView** ovládací prvek, který obsahuje následující kód.
+Otevřete Students.aspx a vyhledejte **MainContent** zástupný symbol. V rámci tohoto zástupného symbolu, přidejte **GridView** ovládací prvek, který obsahuje následující kód.
 
 [!code-aspx[Main](retrieving-data/samples/sample6.aspx)]
 
-Existuje několik důležité koncepty v Všimněte tímto kódem značek. První, Všimněte si, že je zadána hodnota pro **metody SelectMethod** vlastnost v elementu GridView. Tato hodnota určuje název metody, která se používá k načítání dat pro GridView. Tato metoda vytvoří v dalším kroku. Druhý, Všimněte si, že **ItemType** je nastavena na třídě studenty, kterou jste vytvořili dříve. Nastavením této hodnoty lze odkazovat k vlastnostem této třídy v kódu značek. Například třída Student obsahuje kolekci s názvem registrace. Můžete použít **Item.Enrollments** načíst tuto kolekci a pak použijte syntaxi LINQ načtení součet zaregistrovaná kredity pro každý student.
+Existuje několik důležitých konceptů v tomto kódu značek můžete setkat. Napřed si všimněte, že je hodnota pro **metoda SelectMethod** vlastnost v prvku GridView. Tato hodnota určuje název metody, která se používá k načítání dat pro prvku GridView. Tato metoda vytvoří v dalším kroku. Za druhé, Všimněte si, že **ItemType** je nastavena na třídu Student, který jste vytvořili dříve. Nastavením této hodnoty mohou odkazovat na vlastnosti této třídy v kódu značek. Například třída Student obsahuje kolekci s názvem registrace. Můžete použít **Item.Enrollments** načíst tuto kolekci a pak použijte syntaxi LINQ k načtení souhrnu zaregistrovaná kredity pro každého studenta.
 
-V souboru kódu na pozadí, budete muset přidat metodu, která je určená pro **metody SelectMethod** hodnotu. Otevřete **Students.aspx.cs**a přidejte **pomocí** pro příkazy **ContosoUniversityModelBinding.Models** a **System.Data.Entity**obory názvů.
+V souboru kódu na pozadí, je třeba přidat metodu, která je určená pro **metoda SelectMethod** hodnotu. Otevřít **Students.aspx.cs**a přidejte **pomocí** příkazů **ContosoUniversityModelBinding.Models** a **System.Data.Entity**obory názvů.
 
 [!code-csharp[Main](retrieving-data/samples/sample7.cs)]
 
-Pak přidejte následující metodu. Všimněte si, že název tato metoda odpovídá názvu, který jste zadali pro metody SelectMethod.
+Potom přidejte následující metodu. Všimněte si, že název této metody odpovídá názvu, kterou jste zadali pro metody SelectMethod.
 
 [!code-csharp[Main](retrieving-data/samples/sample8.cs)]
 
-**Zahrnout** klauzule zvyšuje výkon tohoto dotazu, ale není nezbytné pro dotaz pro práci. Bez klauzuli zahrnout by načíst data pomocí opožděného načítání, který zahrnuje odeslání samostatné dotaz do databáze pokaždé, když související s načíst data. Tím, že poskytuje klauzuli zahrnout, data se načítají pomocí přes načítání, což znamená, všechna související data se načítají prostřednictvím jednoho dotazu databáze. V případech, kde je většina souvisejících dat nesmí být může být použit, přes načítání méně efektivní, protože načítat další data. Nicméně v takovém případě přes načítání poskytuje nejlepší výkon vzhledem k tomu, že se pro každý záznam zobrazí související data.
+**Zahrnout** klauzule zlepšuje výkon tohoto dotazu, ale není nezbytné pro dotaz můžete pracovat. Bez klauzule zahrnout by se data obnovit pomocí opožděné načtení, což zahrnuje odesílání samostatný dotaz do databáze pokaždé, když týkající se, že se data načítají. Poskytnutím klauzule zahrnutí jsou data načtena pomocí předběžné načítání, což znamená, že všechna související data je získat pomocí jediného dotazu databáze. V případech, kde je většina souvisejících dat nesmí být použit, nemůžou dočkat, až načítání může být méně efektivní, protože je načíst další data. Nicméně v tomto případě předběžné načítání poskytuje nejlepší výkon vzhledem k tomu, že se pro každý záznam zobrazí související data.
 
-Pro další informace o výkonu zvážení při načítání související data, najdete v části s názvem **Lazy Eager a explicitní načítání souvisejících dat** v [čtení související Data pomocí rozhraní Entity Framework v ASP Aplikace .NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) tématu.
+Další informace o posouzení výkonu při načítání související data, najdete v článku v části s názvem **opožděné Eager a explicitní načítání souvisejících dat** v [čtení souvisejících dat s Entity Framework v ASP Aplikace .NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) tématu.
 
-Ve výchozím nastavení data jsou seřazená podle hodnot vlastnosti označen jako klíč. Můžete přidat klauzuli OrderBy chcete zadat jinou hodnotu pro řazení. V tomto příkladu se používá výchozí vlastnost StudentID pro řazení. V [řazení, stránkování a filtrování dat](sorting-paging-and-filtering-data.md) tématu, vám umožní uživateli vybrat sloupec pro řazení.
+Ve výchozím nastavení data seřazené podle hodnoty vlastnosti označeným jako klíč. Můžete přidat klauzuli OrderBy zadat jinou hodnotu pro řazení. V tomto příkladu se používá výchozí vlastnost StudentID pro řazení. V [řazení, stránkování a filtrování dat](sorting-paging-and-filtering-data.md) tématu, vám umožní uživateli vybrat sloupec pro řazení.
 
-Spuštění webové aplikace a přejděte na stránku studenty. Na stránce studenti, kteří se zobrazí následující informace student.
+Spuštění webové aplikace a přejděte na stránku pro studenty. Na stránce studenty zobrazí následující informace studentů.
 
-![Zobrazit data](retrieving-data/_static/image16.png)
+![zobrazení dat](retrieving-data/_static/image16.png)
 
 ## <a name="automatic-generation-of-model-binding-methods"></a>Automatické generování metody vazby modelu
 
-Při práci přes tento kurz řady, můžete jednoduše zkopírovat kód z tohoto kurzu do projektu. Jednou z nevýhod tohoto přístupu je však, nemusí se dozvěděli o funkce poskytované sadě Visual Studio k automatickému generování kódu pro metody vazby modelu. Při práci na vašich vlastních projektů, automatické generování kódu můžete ušetřit čas a získat představu o tom, jak implementovat operaci. Tato část popisuje funkci generování automatické kódu. Tato část je pouze informativní a neobsahuje žádný kód, který je nutné implementovat ve vašem projektu.
+Při práci prostřednictvím v této sérii kurzů, můžete jednoduše zkopírovat kód z kurzu do projektu. Jednou z nevýhod tohoto přístupu je, že nemusí se dozvěděli o funkci poskytovaný sadou Visual Studio k automatickému generování kódu pro metody vazby modelu. Při práci na vašich vlastních projektů, automatické generování kódu můžete vám ušetří čas a nápovědu získáte představu o tom, jak implementovat operace. Tato část popisuje funkci generování automatických kódu. Tato část je pouze informativní a neobsahuje žádný kód, který budete muset implementovat ve vašem projektu.
 
-Při nastavení hodnoty pro **metody SelectMethod**, **metody UpdateMethod**, **metodu InsertMethod**, nebo **metody DeleteMethod** vlastností v kódu značek můžete vybrat **vytvoření nové metody** možnost.
+Při nastavování hodnoty pro **metoda SelectMethod**, **UpdateMethod**, **InsertMethod**, nebo **DeleteMethod** vlastností v kódu značek můžete vybrat **vytvořit novou metodu** možnost.
 
-![Vytvoření nové metody](retrieving-data/_static/image18.png)
+![Vytvořit novou metodu](retrieving-data/_static/image18.png)
 
-Visual Studio nejen vytvoří metodu v kódu s správný podpis, ale také generuje kód implementace a pomůže vám při provádění této operace. Pokud je nejdřív nastavit **ItemType** vlastnost před použitím funkci generování automatické kód generovaný kód použije tento typ pro operace. Například při nastavení této vlastnosti metody UpdateMethod, následující kód se automaticky vygeneroval:
+Visual Studio nejen vytvoří metodu v kódu s správný podpis, ale také vygeneruje implementační kód, abychom vám s prováděním operace. Pokud nejprve nastavíte **ItemType** vlastnost před použitím funkci generování automatických kód vygenerovaný kód bude používat tento typ pro operace. Například při nastavení vlastnosti UpdateMethod, následující kód je automaticky generován:
 
 [!code-csharp[Main](retrieving-data/samples/sample9.cs)]
 
-Výše uvedený kód znovu, není nutné přidat do projektu. V dalším kurzu budete implementovat metody pro aktualizaci, odstranění a přidání nová data.
+Výše uvedený kód znovu, nemusí být přidány do projektu. V dalším kurzu budete implementovat metod pro aktualizaci, odstranění a přidání nová data.
 
 ## <a name="conclusion"></a>Závěr
 
-V tomto kurzu jste vytvořili třídy modelu dat a generuje databázi z těchto tříd. Tabulky databáze, které se naplní se testovacích datech. Použít vazby modelu k načtení dat z databáze a pak se zobrazují data v GridView.
+V tomto kurzu jste vytvořili tříd datových modelů a generují databázi z těchto tříd. Naplní tabulek databáze se testovací data. Vazby modelu se používá k načtení dat z databáze a pak se zobrazují data v GridView.
 
-V dalším [kurzu](updating-deleting-and-creating-data.md) této série povolíte aktualizaci, odstranění a vytvoření data.
+V dalším [kurzu](updating-deleting-and-creating-data.md) v této sérii, vám umožní aktualizace, odstraňování a vytváření data.
 
 > [!div class="step-by-step"]
 > [Next](updating-deleting-and-creating-data.md)

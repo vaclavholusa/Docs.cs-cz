@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
-title: 'Jak na: použití směrování s webovými formuláři ASP.NET? | Microsoft Docs'
+title: 'Postup: použití směrování s webovými formuláři ASP.NET? | Dokumentace Microsoftu'
 author: rick-anderson
-description: V tomto videu Jan PEL ukazuje, jak implementovat směrování pro webové formuláře ASP.NET 4. Nejprve koncept směrování adresu URL se porovná s mapování adresy URL na p...
+description: Chris pixelů na toto video ukazuje, jak implementovat směrování webových formulářů v technologii ASP.NET 4. Nejprve je mapování adresy URL p porovnání koncept směrování adresy URL...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2010
 ms.topic: article
 ms.assetid: a3ab6cd9-8f71-4b73-9336-21c0de078269
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: b268bd628d3b0108d783023cd30d21b43c1b3758
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8ef8edd68d9918817df564227d1f37716d49d132
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896238"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383448"
 ---
-<a name="how-do-i-use-routing-with-aspnet-web-forms"></a>Jak na: použití směrování s webovými formuláři ASP.NET?
+<a name="how-do-i-use-routing-with-aspnet-web-forms"></a>Postup: použití směrování s webovými formuláři ASP.NET?
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V tomto videu Jan PEL ukazuje, jak implementovat směrování pro webové formuláře ASP.NET 4. Nejprve koncept směrování adresu URL se porovná s mapování adresy URL na fyzický soubor v lokalitě. Potom ukázka trasy pro adresu URL je definována v soubor global.asax souboru aplikace\_obslužné rutiny události spuštění. Trasy, která obsahuje parametrizované hodnotu, která může uživatel zadat v adrese URL. Ukázkové stránky je poté jste vytvořili a hodnota parametru trasy, které je extrahován na stránce\_obslužné rutiny události zatížení. V dalším kroku trasu druhý je definován s více parametrů a trasy na stejné stránce jako počáteční trasy. Stránce\_obslužné rutiny události zatížení je rozšířena extrahovat hodnotu parametru další trasy a zobrazit různé informace podle toho, jaké hodnoty byly předány na stránku.
+Chris pixelů na toto video ukazuje, jak implementovat směrování webových formulářů v technologii ASP.NET 4. Nejprve koncept směrování adresy URL se porovnává se mapování adresy URL na fyzickou v lokalitě. Potom směrování vzorku pro adresy URL je definován v souboru global.asax souboru aplikace\_spuštění obslužné rutiny události. Trasa obsahuje parametrizované hodnotu, která může uživatel zadat v adrese URL. Se pak vytvoří ukázkovou stránku a hodnota parametru trasy, které je extrahován na stránce\_obslužná rutina události Load. V dalším kroku Druhá trasa je definován, který má více parametrů a trasy na stejnou stránku jako počáteční trasy. Na stránce\_obslužná rutina události zatížení rozbalen a extrahovat hodnotu parametru další trasy a zobrazit různé informace, podle toho, jaké hodnoty byly předány na stránku.
 
 [&#9654;Podívejte se na video (15 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-routing-with-aspnet-web-forms)
 

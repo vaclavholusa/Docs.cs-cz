@@ -1,29 +1,28 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience
-title: 'ASP.NET MVC Storefront část 18: Vytvoření prostředí | Microsoft Docs'
+title: 'ASP.NET MVC prezentace – část 18: Vytvoření prostředí | Dokumentace Microsoftu'
 author: robconery
-description: V této díl pracuji na vyžádání všechny technické součásti dohromady a souvislý, prostředí, pro kupujícímu.
+description: V této epizodě pracuji na všechny technické kusy dohromady a vytvoří koherentního "prostředí" pro nakupujících. najdete tak souhrnné informace.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
 ms.topic: article
 ms.assetid: 1636464e-900e-4926-bd5a-88adb5315ff9
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience
 msc.type: video
-ms.openlocfilehash: fa027721b6fbb5d2bc7c4736b08cff998a7cb028
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e468c836cac44ac1ed3bfce00b5fc91827df7456
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30867200"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37366887"
 ---
-<a name="aspnet-mvc-storefront-part-18-creating-an-experience"></a>ASP.NET MVC Storefront část 18: Vytvoření prostředí
+<a name="aspnet-mvc-storefront-part-18-creating-an-experience"></a>ASP.NET MVC prezentace – část 18: Vytvoření prostředí
 ====================
-podle [ukrást Conery](https://github.com/robconery)
+podle [Rob Conery](https://github.com/robconery)
 
-V této díl pracuji na vyžádání všechny technické částí společně na formuláři souvislý "prostředí" pro kupujícímu.
+V této epizodě pracuji na všechny technické kusy dohromady a vytvoří koherentního "prostředí" pro nakupujících. najdete tak souhrnné informace.
 
 [&#9654;Podívejte se na video (21 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-18-creating-an-experience)
 

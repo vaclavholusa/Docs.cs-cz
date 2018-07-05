@@ -1,6 +1,6 @@
 ---
 uid: mvc/videos/mvc-1/index
-title: ASP.NET MVC 1 | Microsoft Docs
+title: ASP.NET MVC 1 | Dokumentace Microsoftu
 author: rick-anderson
 description: ASP.NET MVC 1
 ms.author: aspnetcontent
@@ -9,15 +9,14 @@ ms.date: 11/14/2011
 ms.topic: article
 ms.assetid: a780d06b-36cd-410a-b95a-b6b935b5a7fa
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1
 msc.type: chapter
-ms.openlocfilehash: ad33f7cb81b0124728cfa36c8ff3ba0a473e351f
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: f78eccf536e5be30d574fa2306b2f498b81c77ff
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29153901"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381781"
 ---
 <a name="aspnet-mvc-1"></a>ASP.NET MVC 1
 ====================
@@ -44,7 +43,7 @@ ms.locfileid: "29153901"
     - [Prezentace ASP.NET MVC – část 16: Opakování členství s OpenID](aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
     - [Prezentace ASP.NET MVC – část 17: Pokladna s Jeffem Atwoodem](aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
     - [Prezentace ASP.NET MVC – část 18: Vytvoření prostředí](aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-    - [ASP.NET MVC Storefront část 19: Zpracování objednávky s pracovním postupem prostředí Windows](aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+    - [Prezentace ASP.NET MVC – část 19: Zpracování objednávek pracovním postupem Windows](aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
     - [Prezentace ASP.NET MVC – část 19a: Pokračování pracovního postupu Windows](aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
     - [Prezentace ASP.NET MVC – část 20: Přihlášení](aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
     - [Prezentace ASP.NET MVC – část 21: Správa objednávek a přizpůsobení](aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

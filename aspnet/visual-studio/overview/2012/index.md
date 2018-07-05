@@ -1,27 +1,26 @@
 ---
 uid: visual-studio/overview/2012/index
-title: ASP.NET a Visual Studio 2012 | Microsoft Docs
+title: ASP.NET a Visual Studio 2012 | Dokumentace Microsoftu
 author: rick-anderson
-description: Vývoj webové aplikace ASP.NET pomocí sady Visual Studio 2012
+description: Vývoj webových aplikací ASP.NET pomocí sady Visual Studio 2012
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/25/2013
 ms.topic: article
 ms.assetid: 51900291-7787-4a6e-be4e-fa558486f5ff
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012
 msc.type: chapter
-ms.openlocfilehash: 21f7800b2a5d396b040fe5a04b70214469e74392
-ms.sourcegitcommit: 3625e4f7a667641b058d23126f0d9d1844fee886
+ms.openlocfilehash: 4f89ec40e574e145fe450af6d5129ba949d07b91
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/20/2018
-ms.locfileid: "27980134"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393087"
 ---
 <a name="aspnet-and-visual-studio-2012"></a>ASP.NET a Visual Studio 2012
 ====================
-> Vývoj webové aplikace ASP.NET pomocí sady Visual Studio 2012
+> Vývoj webových aplikací ASP.NET pomocí sady Visual Studio 2012
 
 
 - [Visual Studio 2012 – funkce pro úpravu kódu HTML](visual-studio-2012-html-editing-features.md)

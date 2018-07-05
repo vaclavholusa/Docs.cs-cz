@@ -1,26 +1,25 @@
 ---
 uid: mobile/index
-title: Mobilní aplikace a weby s technologií ASP.NET | Microsoft Docs
+title: Mobilní aplikace a servery s technologií ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
-description: Zjistěte, jak technologie ASP.NET umožňuje snadno vytvářet mobilní webové aplikace
+description: Zjistěte, jak ASP.NET umožňuje snadno sestavovat mobilní webové aplikace
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2011
 ms.topic: article
 ms.assetid: 71217425-e015-41af-b88a-1f4472f81886
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: b20f99d92451ac96f11c05db38c737102c714891
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0175bd5fe20d832bbb40996e11fcb2263d622e37
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26563734"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374335"
 ---
-<a name="mobile-apps--sites-with-aspnet"></a>Mobilní aplikace a weby s technologií ASP.NET
+<a name="mobile-apps--sites-with-aspnet"></a>Mobilní aplikace a weby pomocí ASP.NET
 ====================
-- [Mobile](overview.md)
-- [Ovládací prvky ASP.NET Mobile otestované zařízení](tested-devices.md)
-- [Simulovat oblíbených mobilních zařízení pro testování](device-simulators.md)
+- [Mobilní zařízení](overview.md)
+- [Zařízení testovaná na mobilní ovládací prvky ASP.NET](tested-devices.md)
+- [Simulace oblíbených mobilních zařízení pro testování](device-simulators.md)

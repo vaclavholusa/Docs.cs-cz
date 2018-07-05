@@ -1,63 +1,62 @@
 ---
 uid: web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
-title: Vykreslování rozhraní ASP.NET Web Pages (Razor) lokality pro mobilní zařízení | Microsoft Docs
+title: Vykreslování v prostředí ASP.NET stránky (Razor) serverů pro mobilní zařízení | Dokumentace Microsoftu
 author: tfitzmac
-description: 'Tento článek popisuje postup vytváření stránek v serveru technologie ASP.NET Web Pages (Razor), který vykreslí správně na mobilních zařízeních. Co se dozvíte: jak můžete...'
+description: 'Tento článek popisuje, jak vytvářet stránky na webu rozhraní ASP.NET Web Pages (Razor), která se vykreslí správně na mobilních zařízeních. Co se dozvíte: jak budete...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
 ms.topic: article
 ms.assetid: f15ab392-c05e-4269-83bf-7c6d2b8c8ec8
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
 msc.type: authoredcontent
-ms.openlocfilehash: 641798c5b835be959d02dd0d854b61ca21d83016
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d5c94af644c0dbc918544fe5112545c348136587
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897316"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37369415"
 ---
-<a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>Vykreslování ASP.NET – webové stránky (Razor) servery pro mobilní zařízení
+<a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a>Vykreslení webů s ASP.NET webovými stránkami (Razor) pro mobilní zařízení
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek popisuje postup vytváření stránek v serveru technologie ASP.NET Web Pages (Razor), který vykreslí správně na mobilních zařízeních.
+> Tento článek popisuje, jak vytvářet stránky na webu rozhraní ASP.NET Web Pages (Razor), která se vykreslí správně na mobilních zařízeních.
 > 
-> Získáte informace:
+> Co se dozvíte:
 > 
-> - Jak používat zásady vytváření názvů určíte, že na stránce je určený speciálně pro mobilní zařízení.
+> - Jak používat zásady vytváření názvů určit, že na stránce je určený speciálně pro mobilní zařízení.
 >   
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
 > 
-> - Rozhraní ASP.NET Web Pages (Razor) 3
+> - Webové stránky ASP.NET (Razor) 3
 >   
 > 
-> V tomto kurzu taky spolupracuje se službou ASP.NET Web Pages 2.
+> V tomto kurzu se také pracuje s ASP.NET Web Pages 2.
 
 
-ASP.NET – webové stránky umožňuje vytvářet vlastní zobrazení pro vykreslování obsah na mobilní telefon nebo jiné zařízení.
+Webové stránky ASP.NET umožňuje vytvářet vlastní zobrazení pro vykreslení obsahu na mobilní telefon nebo jiné zařízení.
 
-Nejjednodušší způsob, jak vytvořit stránku specifické pro zařízení v stránku webové stránky ASP.NET je pomocí vzor pojmenovávání souborů takto: <em>FileName.</em> <em>Mobile</em><em>.cshtml</em>. Můžete vytvořit dvě verze stránky (například jednu s názvem <em>MyFile.cshtml</em> a jednu s názvem <em>MyFile.Mobile.cshtml</em>). V době, kdy požadavky na mobilní zařízení spuštění <em>MyFile.cshtml</em>, ASP.NET vykreslí obsah z <em>MyFile.Mobile.cshtml</em>. V opačném <em>MyFile.cshtml</em> je vykreslen.
+Nejjednodušší způsob, jak vytvořit stránku specifická pro zařízení na webu rozhraní ASP.NET Web Pages je pomocí vzoru pro pojmenovávání souborů následujícím způsobem: <em>FileName.</em> <em>Mobile</em><em>.cshtml</em>. Můžete vytvořit dvě verze stránky (například jeden s názvem <em>MyFile.cshtml</em> a jeden s názvem <em>MyFile.Mobile.cshtml</em>). V době, když mobilní zařízení požádá o spuštění <em>MyFile.cshtml</em>, rozhraní ASP.NET vykreslí obsah z <em>MyFile.Mobile.cshtml</em>. V opačném případě <em>MyFile.cshtml</em> vykreslením.
 
-Následující příklad ukazuje, jak můžete povolit mobilní vykreslování přidáním stránky obsahu pro mobilní zařízení. *Page1.cshtml* obsahuje obsah a bočním panelu navigace. *Page1.Mobile.cshtml* obsahuje stejný obsah, ale vynechá na bočním panelu.
+Následující příklad ukazuje, jak povolit mobilní vykreslování přidáním stránku obsahu pro mobilní zařízení. *Page1.cshtml* obsahuje obsah a bočním panelu navigace. *Page1.Mobile.cshtml* obsahuje stejný obsah, ale vynechá na bočním panelu.
 
-1. V lokalitě služby ASP.NET Web Pages, vytvořte soubor s názvem *Page1.cshtml* a nahraďte aktuální obsah následující kód.
+1. Na webu rozhraní ASP.NET Web Pages, vytvořte soubor s názvem *Page1.cshtml* a nahraďte následující značky na aktuální obsah.
 
     [!code-html[Main](rendering-aspnet-web-pages-sites-for-mobile-devices/samples/sample1.html)]
-2. Vytvořte soubor s názvem *Page1.Mobile.cshtml* a nahraďte následující kód existujícího obsahu. Všimněte si, že mobilní verzi stránce vynechá části navigace pro lepší vykreslování na menší obrazovce.
+2. Vytvořte soubor s názvem *Page1.Mobile.cshtml* a nahraďte existující obsah následujícím kódem. Všimněte si, že mobilní verzi stránce vynechá části navigace pro lepší vykreslování na obrazovce menší.
 
     [!code-html[Main](rendering-aspnet-web-pages-sites-for-mobile-devices/samples/sample2.html)]
 3. Spustit prohlížeč pro stolní počítač a přejděte do *Page1.cshtml*. ![mobilesites-1](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image1.png)
-4. Spustit prohlížeč pro mobilní zařízení (nebo emulátoru mobilního zařízení) a přejděte do *Page1.cshtml*. (Všimněte si, že neuvedete *.mobile.* jako součást adresy URL.) I když požadavek je pro *Page1.cshtml*, rozhraní ASP.NET vykreslí *Page1.Mobile.cshtml*.
+4. Spustit mobilní prohlížeče (nebo emulátoru mobilního zařízení) a přejděte do *Page1.cshtml*. (Všimněte si, že není zadána *.mobile.* jako část adresy URL.) I když je požadavek *Page1.cshtml*, rozhraní ASP.NET vykreslí *Page1.Mobile.cshtml*.
 
     ![mobilesites-2](rendering-aspnet-web-pages-sites-for-mobile-devices/_static/image2.png)
 
 > [!NOTE]
-> K testování mobilních stránek, můžete použít simulátoru mobilních zařízení, která běží na stolním počítači. Tento nástroj umožňuje testovací webové stránky, jako by vypadal na mobilních zařízeních (to znamená, obvykle s mnohem menšími umožňuje zobrazit oblast). Jedním z příkladů simulátoru je [uživatele agenta přepínači rozšíření](http://addons.mozilla.org/firefox/addon/user-agent-switcher/) pro aplikaci Mozilla Firefox, která vám umožňuje emulovat různé mobilní prohlížeče z plochy verzi Firefox.
+> K otestování mobilních stránek, můžete použít simulátor mobilní zařízení, na kterém běží na stolním počítači. Tento nástroj umožňuje testování webových stránek, jak by vypadala na mobilních zařízeních (to znamená, obvykle s mnohem menší umožňuje zobrazit oblast). Jedním z příkladů simulátoru je [doplňků uživatelského agenta přepínání](http://addons.mozilla.org/firefox/addon/user-agent-switcher/) pro Mozilla Firefox, která vám umožňuje emulovat různá mobilní prohlížeče v desktopové verzi Firefox.
 
 
 <a id="Additional_Resources"></a>

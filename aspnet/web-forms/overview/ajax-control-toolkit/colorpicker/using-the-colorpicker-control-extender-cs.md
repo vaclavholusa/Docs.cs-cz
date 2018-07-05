@@ -1,119 +1,118 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
-title: Pomocí rozšiřujícího objektu ColorPicker řízení (C#) | Microsoft Docs
+title: Použití zařízení Extender ovládacího prvku ColorPicker (C#) | Dokumentace Microsoftu
 author: microsoft
-description: ColorPicker je prvku ASP.NET AJAX rozšiřujícího objektu, která poskytuje funkci Barva výdej straně klienta pomocí uživatelského rozhraní v ovládacím prvku místní. Je možné připojit k žádné ASP.NET...
+description: ColorPicker je extenderu ASP.NET AJAX, která poskytuje funkce vybere barvu na straně klienta s uživatelským rozhraním v ovládacím prvku popup. Může být připojen k žádné ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
 ms.topic: article
 ms.assetid: 0d86a1e7-a910-4ab2-b85c-7a9ea6906c39
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4d44fc81305e668b545246cf044dce275563d81a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f20928099e2b4db477705cd1634fd28745a328ac
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873846"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383901"
 ---
-<a name="using-the-colorpicker-control-extender-c"></a>Pomocí rozšiřujícího objektu ColorPicker řízení (C#)
+<a name="using-the-colorpicker-control-extender-c"></a>Použití zařízení Extender ovládacího prvku ColorPicker (C#)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-> ColorPicker je prvku ASP.NET AJAX rozšiřujícího objektu, která poskytuje funkci Barva výdej straně klienta pomocí uživatelského rozhraní v ovládacím prvku místní. Se lze připojit k žádné ASP.NET TextBox – ovládací prvek. It.
+> ColorPicker je extenderu ASP.NET AJAX, která poskytuje funkce vybere barvu na straně klienta s uživatelským rozhraním v ovládacím prvku popup. Může být připojen na libovolný ovládací prvek TextBox technologie ASP.NET. Ho.
 
 
-Cílem tohoto kurzu je vysvětlují, jak můžete použít rozšiřujícího objektu řízení Toolkit ColorPicker řízení AJAX. Rozšiřujícího objektu řízení ColorPicker zobrazí automaticky otevřeném okně. dialog, který vám umožní vybrat barvu. ColorPicker je užitečné, kdykoli budete chtít poskytnout intuitivní uživatelské rozhraní pro uživatele a vybrat barvu.
+Cílem tohoto kurzu je vysvětlují, jak můžete použít zařízení extender ovládacího prvku Toolkit ColorPicker ovládacího prvku AJAX. Extender ovládacího prvku ColorPicker zobrazí dialogové okno automaticky otevíraného okna, která umožňuje vybrat barvu. ColorPicker je vhodný v každé byste chtěli poskytnout intuitivní uživatelské rozhraní pro uživatele pro výběr barvy.
 
-## <a name="extending-a-textbox-control-with-the-colorpicker-control-extender"></a>Rozšíření ovládacího prvku textového pole s rozšiřujícího objektu ColorPicker ovládací prvek
+## <a name="extending-a-textbox-control-with-the-colorpicker-control-extender"></a>Rozšíří ovládací prvek TextBox s zařízení Extender ovládacího prvku ColorPicker
 
-Představte si například, že chcete vytvořit web, který umožňuje uživatelům serveru k vytvoření vlastní karty firmy. Návštěvníky můžete zadejte text pro vizitky a vybrat barvu. Stránka ASP.NET v výpis 1 obsahuje dva ovládací prvky textové pole s názvem txtCardText a txtCardColor. Při odesílání formuláře, vybrané hodnoty jsou zobrazeny (viz obrázek 1).
-
-
-[![Jednoduchý formulář pro vytvoření vizitky](using-the-colorpicker-control-extender-cs/_static/image1.jpg)](using-the-colorpicker-control-extender-cs/_static/image1.png)
-
-**Obrázek 01**: jednoduchý formulář pro vytvoření vizitky ([Kliknutím zobrazit obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image2.png))
+Představte si například, že chcete vytvořit web, který umožňuje návštěvníkům vytváření přizpůsobených obchodních karet. Návštěvníci můžete zadat text pro kartu firmy a vybrat barvu. Na stránce technologie ASP.NET v informacích 1 obsahuje dva ovládací prvky textového pole s názvem txtCardText a txtCardColor. Při odeslání formuláře se zobrazí vybrané hodnoty (viz obrázek 1).
 
 
-**Listing 1 - CreateCard.aspx**
+[![Jednoduchý formulář pro vytvoření karty firmy](using-the-colorpicker-control-extender-cs/_static/image1.jpg)](using-the-colorpicker-control-extender-cs/_static/image1.png)
+
+**Obrázek 01**: jednoduchý formulář pro vytvoření vizitky ([kliknutím ji zobrazíte obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image2.png))
+
+
+**Výpis 1 - CreateCard.aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample1.aspx)]
 
-Formuláře v výpis 1 funguje, ale neposkytuje vysoký výkon uživatele. Do textového pole Zadejte barvu, která má uživatel. Pokud uživatel chce specializované barev – například právě správné odstín pea zelená - pak uživatel musí rozmyslete si kód HTML bez pomoci.
+Formulář v nástrojích pro výpis 1 funguje, ale neposkytuje skvělé uživatelské prostředí. Uživatel musí zadat barvu do textového pole. Pokud uživatel požaduje specializované barvy – například právě správné odstín pea zelená - pak uživatel musí zjistit kód HTML bez pomoci.
 
-Rozšiřujícího objektu řízení ColorPicker slouží k vytvoření lepší uživatelské prostředí. ColorPicker zobrazí dialogové okno barvy, když se přesunout fokus na ovládací prvek textové pole (viz obrázek 2).
-
-
-[![Ovládací prvek ColorPicker rozšiřujícího objektu](using-the-colorpicker-control-extender-cs/_static/image2.jpg)](using-the-colorpicker-control-extender-cs/_static/image3.png)
-
-**Obrázek 02**: rozšiřujícího objektu ColorPicker ovládací prvek ([Kliknutím zobrazit obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image4.png))
+Extender ovládacího prvku ColorPicker slouží k vytvoření lepší uživatelské prostředí. ColorPicker zobrazí dialogové okno Barva, když se přesunete fokus na ovládací prvek textového pole (viz obrázek 2).
 
 
-Je potřeba provést dva kroky pro použití rozšíření řízení ColorPicker s formuláři v výpis 1:
+[![Extender ovládacího prvku ColorPicker](using-the-colorpicker-control-extender-cs/_static/image2.jpg)](using-the-colorpicker-control-extender-cs/_static/image3.png)
 
-1. Přidání ovládacího prvku ScriptManager na stránku
-2. Přidání rozšiřujícího objektu řízení ColorPicker na stránku
+**Obrázek 02**: The extenderu ovládacího prvku ColorPicker ([kliknutím ji zobrazíte obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image4.png))
 
-Než budete moct použít ColorPicker, je nutné přidat na stránku ovládací prvek ScriptManager. Je vhodná k přidání prvek ScriptManager přímo pod serverovou otevírání &lt;formuláře&gt; značky. Můžete přetáhnout prvek ScriptManager na stránce z panelu nástrojů (prvek ScriptManager se nachází na kartě Rozšíření AJAX). Alternativně můžete zadat následující značka do zobrazení zdroje pod počáteční značka formuláře na straně serveru:
+
+Je třeba provést dva kroky pro použití s formulář v nástrojích pro výpis 1 extender ovládacího prvku ColorPicker:
+
+1. Přidání ovládacího prvku ScriptManager na stránce
+2. Extender ovládacího prvku ColorPicker přidat na stránku
+
+Před použitím ColorPicker, je nutné přidat ovládací prvek ScriptManager na stránku. Je vhodné místo pro přidání ScriptManager přímo pod levou serverové &lt;formuláře&gt; značky. Prvek ScriptManager na stránku můžete přetáhnout z panelu nástrojů (prvek ScriptManager se nachází na kartě Rozšíření AJAX). Alternativně můžete zadat následující značku do zobrazení zdroje pod počáteční značka pro formulář na straně serveru:
 
 &lt;ASP: ScriptManager ID = "ScriptManager1" runat = "server" /&gt;
 
-V návrhovém zobrazení je nejjednodušší způsob, jak přidat rozšiřujícího objektu řízení ColorPicker na stránku. Pokud umístěte ukazatel myši nad txtCardColor textové pole, možnost Inteligentní úloh, zobrazí se povoluje můžete přidat rozšiřujícího objektu (viz obrázek 3). Pokud vyberete tuto možnost, zobrazí se Průvodce rozšiřujícího objektu (viz obrázek 4).
+Nejjednodušší způsob, jak přidat na stránku – extender ovládacího prvku ColorPicker je v zobrazení Návrh. Pokud myší najedete myší txtCardColor textové pole, inteligentní úloh možnost bude nabídnuta povoluje můžete přidat zařízení extender (viz obrázek 3). Pokud vyberete tuto možnost, zobrazí se Průvodce zařízení Extender (viz obrázek 4).
 
 
-[![Přidání extender](using-the-colorpicker-control-extender-cs/_static/image3.jpg)](using-the-colorpicker-control-extender-cs/_static/image5.png)
+[![Přidání zařízení extender](using-the-colorpicker-control-extender-cs/_static/image3.jpg)](using-the-colorpicker-control-extender-cs/_static/image5.png)
 
-**Obrázek 03**: Přidání extender ([Kliknutím zobrazit obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image6.png))
-
-
-[![Výběr ovládacího prvku extender pomocí Průvodce rozšiřujícího objektu](using-the-colorpicker-control-extender-cs/_static/image4.jpg)](using-the-colorpicker-control-extender-cs/_static/image7.png)
-
-**Obrázek 04**: výběr extender ovládacího prvku pomocí Průvodce rozšiřujícího objektu ([Kliknutím zobrazit obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image8.png))
+**Obrázek 03**: přidání zařízení extender ([kliknutím ji zobrazíte obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image6.png))
 
 
-Můžete si vybrat rozšiřujícího objektu ColorPicker rozšířit txtCardColor textové pole s ColorPicker rozšiřujícího objektu. Kliknutím na OK zavřete dialogové okno.
+[![Extender ovládacího prvku pomocí Průvodce rozšiřující výběr](using-the-colorpicker-control-extender-cs/_static/image4.jpg)](using-the-colorpicker-control-extender-cs/_static/image7.png)
 
-Po provedení těchto změn zdroj pro stránku vypadá jako výpis 2.
+**Obrázek 04**: výběr – extender ovládacího prvku pomocí Průvodce zařízení Extender ([kliknutím ji zobrazíte obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image8.png))
+
+
+Můžete si vybrat zařízení extender ColorPicker rozšířit txtCardColor textové pole s ColorPicker zařízení extender. Klikněte na tlačítko OK zavřete dialogové okno.
+
+Po provedení těchto změn zdroje stránky vypadá výpis 2.
 
 Výpis 2 - CreateCard.aspx (s ColorPicker)
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample2.aspx)]
 
-Všimněte si, zda tato stránka obsahuje teď ColorPickerExtender ovládací prvek, který se zobrazí pod txtCardColor TextBox – ovládací prvek. Ovládací prvek ColorPickerExtender rozšiřuje ovládacího prvku txtCardColor tak, aby se zobrazí dialogové okno pro výběr barev.
+Všimněte si, že stránka nyní obsahuje ColorPickerExtender ovládací prvek, který se zobrazí přímo pod txtCardColor TextBox – ovládací prvek. Ovládací prvek ColorPickerExtender rozšiřuje txtCardColor ovládacího prvku tak, aby zobrazil dialogové okno Výběr barvy.
 
-## <a name="using-a-button-to-launch-the-color-picker-dialog"></a>Pomocí tlačítka Spustit dialogové okno pro výběr barev
+## <a name="using-a-button-to-launch-the-color-picker-dialog"></a>Pomocí tlačítka Spustit dialogové okno Výběr barvy
 
-Rozšiřujícího objektu ColorPicker podporuje následující vlastnosti:
+Zařízení extender ColorPicker podporuje následující vlastnosti:
 
-- PopupButtonId - ID tlačítka na stránku, která způsobí, že dialogového okna pro výběr barev zobrazí.
-- PopupPosition - pozice relativně k cílový ovládací prvek dialogového okna pro výběr barev. Možné hodnoty jsou absolutní, Center, BottomLeft, BottomRight, TopLeft, TopRight práva a doleva (výchozí hodnota je BottomLeft).
-- SampleControlId - ID ovládacího prvku, který zobrazí vybrané barvy.
-- SelectedColor – počáteční barvu vybraná ColorPicker.
+- PopupButtonId - ID na stránce, která způsobí, že dialogové okno Výběr barvy se zobrazí tlačítko.
+- PopupPosition – pozice relativně k cílovému ovládacímu prvku dialogového okna pro výběr barvy. Možné hodnoty jsou absolutní, System Center, BottomLeft, BottomRight, TopLeft, TopRight vpravo a vlevo (výchozí hodnota je BottomLeft).
+- SampleControlId - ID pro ovládací prvek zobrazující vybranou barvu.
+- SelectedColor – Počáteční barva zvolila ColorPicker.
 
-Tyto vlastnosti můžete přizpůsobit zobrazení dialogového okna pro výběr barvy a zobrazení vybrané barvy. Stránka v výpis 3 znázorňuje, jak můžete použít několik z těchto vlastností.
+Tyto vlastnosti můžete přizpůsobit, jak je zobrazeno dialogové okno Výběr barvy a jak se zobrazí vybranou barvu. Na stránce v informacích 3 ukazuje, jak můžete používat některé z těchto vlastností.
 
 **Výpis 3 - CreateCardButton.aspx**
 
 [!code-aspx[Main](using-the-colorpicker-control-extender-cs/samples/sample3.aspx)]
 
-Na stránku výpis 3 zahrnuje barvu vyberte tlačítko (viz obrázek 5). Kliknutí na toto tlačítko se zobrazí dialogové okno pro výběr barev nad textové pole. Pokud vyberete barvu, která z tohoto dialogového okna vybrané barvy zobrazí jako barvu pozadí lblSample popisek – ovládací prvek.
+Na stránce v informacích 3 zahrnuje výběr barvy tlačítka (viz obrázek 5). Po kliknutí na toto tlačítko, zobrazí se dialogové okno Výběr barvy vyšší než textovém poli. Je-li vybrat barvu z tohoto dialogového okna vybraná barva zobrazí jako barva pozadí lblSample ovládacího prvku popisku.
 
-Vlastnost ColorPicker PopupButtonID slouží k Barva vyberte tlačítko přidružit ColorPicker rozšiřujícího objektu. Pokud zadáte hodnotu pro vlastnost PopupButtonID, dialogové okno pro výběr barev už se zobrazí, když má právě fokus, cílový ovládací prvek. Musíte kliknout na tlačítko zobrazit dialogové okno.
+Vlastnost ColorPicker PopupButtonID je slouží k přidružení zařízení extender ColorPicker tlačítko Vybrat barvu. Pokud zadáte hodnotu pro vlastnost PopupButtonID, dialogové okno Výběr barvy už se zobrazí, když cílový ovládací prvek má fokus. Musíte kliknout na tlačítko pro zobrazení dialogového okna.
 
-Vlastnost SampleControlID je použito k přidružení ovládacího prvku, který zobrazí vybrané barvy s ColorPicker. ColorPicker změní barvu pozadí tohoto ovládacího prvku na aktuálně vybrané barvy.
+Vlastnost SampleControlID je použito k přidružení ovládací prvek, který zobrazuje vybrané barvy s ColorPicker. Barva pozadí tohoto ovládacího prvku ColorPicker změní na aktuálně vybraná barva.
 
 
-[![Zobrazení dialogového okna pro výběr barvy s tlačítkem na](using-the-colorpicker-control-extender-cs/_static/image5.jpg)](using-the-colorpicker-control-extender-cs/_static/image9.png)
+[![Zobrazení dialogového okna pro výběr barvy s tlačítkem](using-the-colorpicker-control-extender-cs/_static/image5.jpg)](using-the-colorpicker-control-extender-cs/_static/image9.png)
 
-**Obrázek 05**: zobrazení dialogového okna pro výběr barvy s tlačítkem na ([Kliknutím zobrazit obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image10.png))
+**Obrázek 05**: zobrazení dialogového okna pro výběr barvy s tlačítkem ([kliknutím ji zobrazíte obrázek v plné velikosti](using-the-colorpicker-control-extender-cs/_static/image10.png))
 
 
 ## <a name="summary"></a>Souhrn
 
-V tomto kurzu jste zjistili, jak používat rozšiřujícího objektu řízení ColorPicker zobrazíte dialogové okno pro výběr barev místní. Nejdřív jsme se zaměřili jak můžete zobrazit dialogové okno když fokus se přesune do ovládacího prvku textového pole. V dalším kroku jste zjistili, jak vytvořit tlačítko, které se zobrazí dialogové okno pro výběr barev, když se po kliknutí na tlačítko.
+V tomto kurzu jste zjistili, jak použít zařízení extender ovládacího prvku ColorPicker zobrazíte dialogové okno Výběr barvy automaticky otevíraného okna. Nejprve jsme prozkoumat, jak můžete zobrazit dialogové okno když fokus se přesune na ovládací prvek textového pole. Dále jste zjistili, jak vytvořit tlačítko, které při kliknutí na tlačítko se zobrazí dialogové okno Výběr barvy.
 
 > [!div class="step-by-step"]
 > [Next](using-the-colorpicker-control-extender-vb.md)

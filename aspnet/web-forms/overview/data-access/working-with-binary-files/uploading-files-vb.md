@@ -1,46 +1,45 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
-title: Nahrávání souborů (VB) | Microsoft Docs
+title: Nahrávání souborů (VB) | Dokumentace Microsoftu
 author: rick-anderson
-description: Zjistěte, jak povolit uživatelům odesílat binární soubory (například dokumenty aplikace Word nebo PDF) na svůj web, kde může být uložena v systému souborů na server, buď...
+description: Zjistěte, jak povolit uživatelům odesílat binární soubory (jako jsou například dokumenty aplikace Word nebo PDF) k vašemu webovému serveru, kde mohou být uloženy v systému souborů na server, buď...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
 ms.topic: article
 ms.assetid: f7c00fbd-652c-433d-8ed3-0e5168a4d4df
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fbc4aaf80ac7e0f960e140b492055fe35cd2b6ce
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1b6257c05bcefa01d3358536ffbdfc3a31d6b280
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
-ms.locfileid: "30888094"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37373156"
 ---
 <a name="uploading-files-vb"></a>Nahrávání souborů (VB)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_54_VB.exe) nebo [stáhnout PDF](uploading-files-vb/_static/datatutorial54vb1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/4/a/7/4a7a3b18-d80e-4014-8e53-a6a2427f0d93/ASPNET_Data_Tutorial_54_VB.exe) nebo [stahovat PDF](uploading-files-vb/_static/datatutorial54vb1.pdf)
 
-> Zjistěte, jak umožnit uživatelům odesílat binární soubory (například dokumenty aplikace Word nebo PDF) na svůj web, kde může být uložena v systému souborů serveru nebo databáze.
+> Zjistěte, jak povolit uživatelům odesílat binární soubory (jako jsou například dokumenty aplikace Word nebo PDF) k vašemu webovému serveru, kde mohou být uloženy v systému souborů serveru nebo v databázi.
 
 
 ## <a name="introduction"></a>Úvod
 
-Všechny z kurzů jsme zkontrolován, pokud jste již dříve pracovali výhradně pomocí textová data. Mnoho aplikací mít však datové modely, které zaznamenat textové a binární data. Stránku online dating může povolit uživatelům odesílat obrázku chcete přidružit svůj profil. Náborová webu může uživatelům nahrát jejich obnovení jako dokument aplikace Microsoft Word nebo PDF.
+Všechny kurzy jsme pracovali ve prozkoumat zatím výhradně s textová data. Mnoho aplikací však mít datové modely, které zaznamenávají textové a binární data. Online dating lokality může uživatelům umožní nahrát obrázek pro přidružení k svůj profil. Náboru webu může umožnit uživatelům odeslat jejich obnovení jako dokument aplikace Microsoft Word nebo PDF.
 
-Práce s binární data přidá novou sadu problémy. Jsme musíte se rozhodnout, jak je binární data uložená v aplikaci. Rozhraní používá pro vkládání nových záznamů má aktualizovat, aby uživateli umožní nahrát soubor z jejich počítače a kroků navíc musí být přijata k zobrazení nebo poskytují způsob pro stahování záznam s přidružené binární data. V tomto kurzu a další tři jsme budete prozkoumejte postup hurdle tyto problémy. Na konci tyto kurzy budete Vyvinuli jsme plně funkční aplikaci, která přidruží obrázků a PDF – příručka každou kategorii. V tomto kurzu konkrétní jsme budete podívejte se na různé techniky pro ukládání binárních dat a zjistit, jak povolit uživatelům odesílat soubor z jejich počítače a byla uložena v systému souborů webového serveru s.
+Práce s binárními daty přidá novou řadu jiných problémů. Jsme musíte rozhodnout, jak binární data jsou uložena v aplikaci. Rozhraní použité pro vkládání nových záznamů musí aktualizovat, aby uživatel mohl odeslat soubor ze svého počítače a pár kroků navíc musí být přijata má být zobrazeno nebo poskytují prostředky pro stahování záznam s přidružená binární data. V tomto kurzu a další tři podíváme, jak hurdle tyto výzvy. Na konci tyto kurzy budete mít vytváříme plně funkční aplikaci, která přidružuje obrázek a PDF si brožuru o jednotlivých kategorií. V tomto konkrétním kurzu vytvoříme podívejte se na různých postupů pro ukládání binárních dat a podívejte se, jak povolit uživatelům odesílat soubor z jejich počítače a jeho uložení v systému souborů webového serveru s.
 
 > [!NOTE]
-> Binární data, která je součástí datový model aplikace s se někdy označuje jako [BLOB](http://en.wikipedia.org/wiki/Binary_large_object), zkratka pro binární rozsáhlý objekt. V těchto kurzech I jste se rozhodli použít terminologie binární data, i když termín objektu BLOB je totožná.
+> Binární data, která je součástí aplikace s datový model se někdy označuje jako [BLOB](http://en.wikipedia.org/wiki/Binary_large_object), zkratka pro Binary Large OBject. V těchto kurzech můžu zvolil možnost použití terminologie binární data, i když jako objekt BLOB je synonymní.
 
 
-## <a name="step-1-creating-the-working-with-binary-data-web-pages"></a>Krok 1: Vytvoření pracovní s webovými stránkami binární Data
+## <a name="step-1-creating-the-working-with-binary-data-web-pages"></a>Krok 1: Vytvoření práce s webovými stránkami binární Data
 
-Než začneme prozkoumat problémy související s přidání podpory pro binární data, umožní s nejprve vytváření stránek ASP.NET v našem webu projekt, který budeme potřebovat pro tento kurz a další tři chvíli trvat. Nejprve přidejte novou složku s názvem `BinaryData`. Dál přidejte následující stránky ASP.NET do této složky, a zkontrolujte, zda přidružit každou stránku s `Site.master` hlavní stránky:
+Než začneme k prozkoumání problémů, které jsou přidružené k přidání podpory pro binární data, umožní s nejdřív využít k vytvoření stránky technologie ASP.NET v našem projektu webu, který budeme potřebovat pro tento kurz a další tři. Začněte přidáním novou složku s názvem `BinaryData`. Dále přidejte následující stránky ASP.NET do této složky, nezapomeňte přiřadit každou stránku s `Site.master` hlavní stránky:
 
 - `Default.aspx`
 - `FileUpload.aspx`
@@ -49,128 +48,128 @@ Než začneme prozkoumat problémy související s přidání podpory pro binár
 - `UpdatingAndDeleting.aspx`
 
 
-![Přidání stránky ASP.NET pro binární Data související s kurzy](uploading-files-vb/_static/image1.gif)
+![Přidání stránky technologie ASP.NET pro binární Data související kurzy](uploading-files-vb/_static/image1.gif)
 
-**Obrázek 1**: Přidání stránky ASP.NET pro binární Data související s kurzy
-
-
-V jiných složkách, jako `Default.aspx` v `BinaryData` složky zobrazí seznam kurzů k v jeho části. Odvolat, který `SectionLevelTutorialListing.ascx` tuto funkci zajišťuje uživatelský ovládací prvek. Proto přidat tento uživatelský ovládací prvek pro `Default.aspx` přetažením z Průzkumníka řešení na stránku s zobrazení návrhu.
+**Obrázek 1**: Přidání stránky technologie ASP.NET pro binární Data související kurzy
 
 
-[![Přidání SectionLevelTutorialListing.ascx uživatelského ovládacího prvku do Default.aspx](uploading-files-vb/_static/image2.gif)](uploading-files-vb/_static/image1.png)
-
-**Obrázek 2**: Přidat `SectionLevelTutorialListing.ascx` uživatelského ovládacího prvku na `Default.aspx` ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image2.png))
+V jiných složkách, jako jsou `Default.aspx` v `BinaryData` složky zobrazí seznam kurzů v příslušném oddílu. Vzpomeňte si, že `SectionLevelTutorialListing.ascx` uživatelský ovládací prvek tuto funkci poskytuje. Proto přidat tento uživatelský ovládací prvek `Default.aspx` přetažením v Průzkumníku řešení na stránku s návrhové zobrazení.
 
 
-Nakonec přidejte tyto stránek jako položky na `Web.sitemap` souboru. Konkrétně, přidejte následující kód po Enhancing GridView `<siteMapNode>`:
+[![Přidat na stránku Default.aspx SectionLevelTutorialListing.ascx uživatelského ovládacího prvku](uploading-files-vb/_static/image2.gif)](uploading-files-vb/_static/image1.png)
+
+**Obrázek 2**: Přidejte `SectionLevelTutorialListing.ascx` uživatelský ovládací prvek `Default.aspx` ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image2.png))
+
+
+A konečně, přidejte tyto stránky jako položky `Web.sitemap` souboru. Konkrétně, přidejte následující kód za Enhancing prvku GridView `<siteMapNode>`:
 
 
 [!code-xml[Main](uploading-files-vb/samples/sample1.xml)]
 
-Po aktualizaci `Web.sitemap`, pozorně Zobrazit kurzy web prostřednictvím prohlížeče. V nabídce na levé straně nyní obsahuje položky pro práci s kurzy binární Data.
+Po aktualizaci `Web.sitemap`, věnujte chvíli zobrazit kurzy web prostřednictvím prohlížeče. V nabídce na levé straně teď obsahuje položky pro práci s kurzy binární Data.
 
 
-![Mapy webu nyní obsahuje položky pro práci s kurzy binární Data](uploading-files-vb/_static/image3.gif)
+![Mapa webu nyní obsahuje záznamy pro práci s kurzy binární Data](uploading-files-vb/_static/image3.gif)
 
-**Obrázek 3**: mapy webu nyní obsahuje položky pro práci s kurzy binární Data
-
-
-## <a name="step-2-deciding-where-to-store-the-binary-data"></a>Krok 2: Rozhodování, kam se mají ukládat binární Data
-
-Binární data, která souvisí s datovým modelem aplikace s mohou být uloženy v jednom ze dvou míst: v systému souborů webového serveru s s odkazem na soubor uložené v databázi. nebo přímo v rámci samotná databáze (viz obrázek 4). Každý přístup má svou vlastní sadu výhody a nevýhody a merits podrobnější informace.
+**Obrázek 3**: mapy webu nyní obsahuje záznamy pro práci s kurzy binární Data
 
 
-[![Binární Data se uloží v systému souborů nebo přímo v databázi](uploading-files-vb/_static/image4.gif)](uploading-files-vb/_static/image3.png)
+## <a name="step-2-deciding-where-to-store-the-binary-data"></a>Krok 2: Rozhodování, kam Store binárních dat
 
-**Obrázek 4**: binární Data se uloží v systému souborů nebo přímo v databázi ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image4.png))
+Binární data, která je přidružena s datovým modelem aplikace mohou být uloženy v jednom z následujících dvou míst: v systému souborů webového serveru s odkazem na soubor uložený v databázi. nebo přímo v rámci samotné databázi (viz obrázek 4). Každý přístup má svou vlastní sadu výhody a nevýhody a merits podrobnější informace.
 
 
-Představte si, že jsme chtěli rozšířit databázi Northwind přidružit obrázku u každého produktu. Jednou z možností by být k ukládání těchto souborů bitové kopie v systému souborů webového serveru s a poznamenejte si cestu v `Products` tabulky. S tímto přístupem d přidáme `ImagePath` sloupec, který se `Products` tabulku typu `varchar(200)`, možná. Když uživatel nahrál obrázku pro Chai, že obrázek je uložený v systému souborů webového serveru s v `~/Images/Tea.jpg`, kde `~` představuje fyzickou cestu s aplikací. To znamená pokud webová stránka se zobrazuje na fyzickou cestu `C:\Websites\Northwind\`, `~/Images/Tea.jpg` by se ekvivalentní `C:\Websites\Northwind\Images\Tea.jpg`. Po nahrání souboru bitové kopie, jsme d Chai záznam v aktualizujte `Products` tabulky tak, aby jeho `ImagePath` sloupec odkazuje cesta novou bitovou kopii. Můžeme použít `~/Images/Tea.jpg` nebo právě `Tea.jpg` Pokud jsme se rozhodli, že všechny obrázky produktů by měly být umístěny v aplikaci s `Images` složky.
+[![Binární Data mohou být uloženy v systému souborů nebo přímo v databázi](uploading-files-vb/_static/image4.gif)](uploading-files-vb/_static/image3.png)
 
-Jsou uvedené hlavní výhody ukládání binární data v systému souborů:
+**Obrázek 4**: binární Data mohou být uloženy v systému souborů nebo přímo v databázi ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image4.png))
 
-- **Snadná implementace** jako jsme krátce zobrazí, ukládání a načítání binární data uložená v databázi přímo zahrnuje trochu další kód než při práci s daty v systému. Kromě toho aby se uživatel k zobrazení nebo stažení. binární data se mají být uvedeny adresou URL tato data. Pokud data umístěná v systému souborů webového serveru s, adresa URL je jednoduchá. Pokud jsou data uložena v databázi, ale webové stránky musí vytvořit, které se načítají a vrátit data z databáze.
-- **Pro binární data širší přístup** binární data může musí být přístupné pro ostatní služby nebo aplikace, které nelze načítat data z databáze. Například může také musí být k dispozici uživatelům přes obrázky spojené s každou produktu [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol), v takovém případě jsme d Chcete uložit binární data v systému souborů.
-- **Výkon** Pokud binární data jsou uložena v systému souborů, vyžádání a zahlcení sítě mezi serverem databáze a webového serveru bude menší než pokud binární data jsou uložena přímo v databázi.
 
-Hlavní nevýhodou ukládání binárních dat v systému souborů je, že ji odděluje data z databáze. Pokud dojde k odstranění záznamu z `Products` tabulky, související soubor v systému souborů webového serveru s není automaticky odstraněn. Jsme musí zápisu kódu navíc odstranit soubor nebo systému souborů se zaplní nepoužívané, osamocené soubory. Kromě toho při zálohování databáze, musí zajišťujeme, že aby zálohování přidružená binární data v systému souborů, také. Přesun databáze do jiné lokality nebo server představuje podobné problémy.
+Představte si, že jsme chtěli rozšířit databázi Northwind k přidružení obrázek každého produktu. Jednou z možností by být k ukládání těchto souborů obrázků v systému souborů webového serveru s a poznamenejte si cestu v `Products` tabulky. S tímto přístupem d přidáme `ImagePath` sloupec, který se `Products` tabulku typu `varchar(200)`, možná. Když se uživatel nahraje obrázek pro Chai, daný obrázek může být uložen v systému souborů webového serveru s v `~/Images/Tea.jpg`, kde `~` představuje fyzickou cestu s aplikací. To znamená pokud na webu je kořenovým adresářem v fyzickou cestu `C:\Websites\Northwind\`, `~/Images/Tea.jpg` ekvivalentní `C:\Websites\Northwind\Images\Tea.jpg`. Po nahrání souboru obrázku, d aktualizujeme Chai záznamu v `Products` tabulku tak, aby jeho `ImagePath` sloupec odkazuje cesta nová image. Mohli bychom použít `~/Images/Tea.jpg` nebo jen `Tea.jpg` Pokud jsme se rozhodli, že všechny bitové kopie produktu by měly být umístěny v aplikaci s `Images` složky.
 
-Alternativně můžete uložená binární data přímo v databázi Microsoft SQL Server 2005 vytvořením sloupec typu `varbinary`. Jako pomocí jiných datových typů proměnné délky, můžete určit maximální délka binárních dat, která mohou být uložena v tomto sloupci. Například můžete vyhradit maximálně 5 000 bajtů použít `varbinary(5000)`; `varbinary(MAX)` umožňuje maximální velikost úložiště, o 2 GB.
+Hlavní výhody ukládání binárních dat v systému souborů jsou:
 
-Hlavní výhodou ukládání binární data přímo v databázi je úzkou párování mezi binární data a záznamů databáze. To výrazně zjednodušuje databáze úlohy správy, jako je zálohování nebo přesunutí databáze do jiné lokality nebo server. Odstranění záznamu automaticky odstraní také odpovídající binární data. Existují také další jemně výhod ukládání binární data v databázi. V tématu [ukládání binární soubory přímo v databázi pomocí technologie ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/120606-1.aspx) pro podrobné informace.
+- **Snadné implementaci** jako ukážeme za chvíli, ukládání a načítání binárních dat ukládají přímo v rámci databáze vyžaduje trochu více kódu, než při práci s daty prostřednictvím systému souborů. Kromě toho, aby uživatel k zobrazení nebo stažení binární data musí být předkládány s adresou URL k těmto datům. Pokud jsou data uložená v systému souborů webového serveru s, adresa URL je jednoduché. Pokud jsou data uložená v databázi, ale webové stránce musí být vytvořen, které se načítají a vrátit data z databáze.
+- **Širší přístup k datům binární** možná bude nutné binární data dostupná pro ostatní služby nebo aplikace, které není možné si vyžádat data z databáze. Například může být také musí být dostupné uživatelům prostřednictvím imagí spojené s každou produktu [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol), v takovém případě d chceme ukládání binárních dat v systému souborů.
+- **Výkon** Pokud binární data uložená v systému souborů, vyžádání a zahlcení sítě mezi serverem databáze a webového serveru bude menší než pokud binární data jsou uložena přímo v databázi.
+
+Hlavní nevýhodou ukládání binárních dat v systému souborů je, že odděluje data z databáze. Pokud se odstraní záznam z `Products` tabulky, přidružený soubor v systému souborů webového serveru s není automaticky odstraněn. Jsme musí zapsat další kód k odstranění souboru nebo systému souborů se zaplní nevyužité, osamocené soubory. Kromě toho při zálohování databáze, musí zajišťujeme, že aby zálohy přidružené binárních dat v systému souborů, i. Přesun databáze do jiné lokality nebo server představuje podobné problémy.
+
+Alternativně binární data mohou být uloženy přímo v databázi Microsoft SQL Server 2005 vytvořením sloupce typu `varbinary`. Stejně jako s jinými datovými typy proměnné délky, můžete zadat maximální délka binárních dat, která se můžou uchovávat v tomto sloupci. Například pokud chcete rezervovat maximálně 5 000 bajtů použijte `varbinary(5000)`; `varbinary(MAX)` umožňuje maximální velikost úložiště, přibližně 2 GB.
+
+Hlavní výhodou ukládání binárních dat přímo do databáze je určitou úzkou svázanost mezi binárních dat a záznam v databázi. To výrazně zjednodušuje administrativní úlohy, jako je zálohování nebo přesunutí databáze do jiné lokality nebo server. Odstranění záznamu automaticky odstraní také, odpovídající binární data. Existují také další drobným výhody ukládání binárních dat v databázi. Zobrazit [ukládání binární soubory přímo v databázi pomocí technologie ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/120606-1.aspx) najdete podrobnější informace.
 
 > [!NOTE]
-> V systému Microsoft SQL Server 2000 a dřívějších verzích `varbinary` datový typ měli maximální limit 8 000 bajtů. K uložení až 2 GB binárních dat [ `image` datový typ](https://msdn.microsoft.com/library/ms187993.aspx) se musí použít místo. Po přidání `MAX` v systému SQL Server 2005, ale `image` datový typ je zastaralá. Ho s stále podporována z důvodů zpětné kompatibility, ale Microsoft oznámila, který `image` datový typ budou odebrány v budoucí verzi systému SQL Server.
+> V systému Microsoft SQL Server 2000 a předchozími verzemi `varbinary` datový typ má maximální limit 8 000 bajtů. K ukládání binárních dat až 2 GB [ `image` datový typ](https://msdn.microsoft.com/library/ms187993.aspx) použije místo toho je potřeba. Přidání `MAX` v systému SQL Server 2005, ale `image` datový typ je zastaralá. To s i nadále podporovány pro zpětnou kompatibilitu, ale společnost Microsoft ohlásila, že `image` datový typ bude v budoucí verzi systému SQL Server odebrána.
 
 
-Pokud pracujete s starší datového modelu může zobrazit `image` datového typu. Databáze Northwind s `Categories` tabulka má `Picture` sloupec, který slouží k uložení binární data souboru s bitovou kopií pro kategorii. Vzhledem k tomu, že databáze Northwind má jeho kořeny v aplikaci Microsoft Access a dřívějších verzích systému SQL Server, tento sloupec je typu `image`.
+Pokud pracujete se starší datový model může se zobrazit `image` datového typu. Databáze Northwind s `Categories` tabulka má `Picture` sloupec, který slouží k ukládání binárních dat souboru obrázku pro kategorii. Protože databáze Northwind má jeho kořenových adresářů v aplikaci Microsoft Access a dřívějších verzích systému SQL Server, je tento sloupec typu `image`.
 
-Pro tento kurz a další tři použijeme obou přístupů. `Categories` Tabulka již obsahuje `Picture` sloupec pro ukládání binární obsah bitové kopie pro kategorii. Sloupec, přidáme `BrochurePath`, k uložení cestu k souboru PDF v systému souborů webového serveru s, který slouží k poskytování kvalita tisku a profesionální přehled kategorie.
+V tomto kurzu a další tři použijeme oba přístupy. `Categories` Tabulka již obsahuje `Picture` sloupec pro ukládání binární obsah image pro kategorii. Přidáme další sloupec `BrochurePath`pro uložení v systému souborů serveru s web, který slouží k poskytování kvalita tisku, dokonalý přehled o kategorii cestu k souboru PDF.
 
 ## <a name="step-3-adding-thebrochurepathcolumn-to-thecategoriestable"></a>Krok 3: Přidání`BrochurePath`sloupec, který se`Categories`tabulky
 
-Aktuálně kategorie tabulka obsahuje pouze čtyři sloupce: `CategoryID`, `CategoryName`, `Description`, a `Picture`. Kromě těchto polí je potřeba přidat novou, který bude odkazovat na kategorie s – příručka (pokud existuje). Chcete-li přidat tento sloupec, přejděte do Průzkumníka serveru, přejděte do tabulky, klikněte pravým tlačítkem na `Categories` tabulky a zvolte otevřete definice tabulky (viz obrázek 5). Pokud nevidíte Průzkumníka serveru, zprovoznit výběrem možnosti v Průzkumníku serveru v nabídce zobrazení nebo stiskněte kombinaci kláves Ctrl + Alt + S.
+Aktuálně tabulce kategorie obsahuje pouze čtyři sloupce: `CategoryID`, `CategoryName`, `Description`, a `Picture`. Kromě těchto polí potřebujeme přidat nový, který bude odkazovat do kategorie s brožura (pokud existuje). Chcete-li přidat tento sloupec, přejděte do Průzkumníka serveru podrobnostem do tabulek, klikněte pravým tlačítkem na `Categories` tabulce a zvolte Otevřít definici tabulky (viz obrázek 5). Pokud se nezobrazí v Průzkumníku serveru, otevřete ho tak, že vyberete možnost Průzkumníku serveru v nabídce Zobrazit nebo stiskněte kombinaci kláves Ctrl + Alt + S.
 
-Přidejte nový `varchar(200)` sloupec, který se `Categories` tabulky, který je pojmenován `BrochurePath` a umožňuje `NULL` s a klikněte na ikonu Uložit (nebo stiskněte kombinaci kláves Ctrl + S).
+Přidat nový `varchar(200)` sloupec, který se `Categories` tabulku s názvem `BrochurePath` a umožňuje `NULL` s a klikněte na ikonu Uložit (nebo stiskněte kombinaci kláves Ctrl + S).
 
 
-[![Přidat sloupec BrochurePath do tabulky kategorií](uploading-files-vb/_static/image5.gif)](uploading-files-vb/_static/image5.png)
+[![Přidání BrochurePath sloupce do tabulky kategorie](uploading-files-vb/_static/image5.gif)](uploading-files-vb/_static/image5.png)
 
-**Obrázek 5**: přidání `BrochurePath` sloupec, který se `Categories` tabulky ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image6.png))
+**Obrázek 5**: Přidejte `BrochurePath` sloupec, který se `Categories` tabulky ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image6.png))
 
 
 ## <a name="step-4-updating-the-architecture-to-use-thepictureandbrochurepathcolumns"></a>Krok 4: Aktualizace architekturu pro použití`Picture`a`BrochurePath`sloupce
 
-`CategoriesDataTable` v dat přístup Layer (DAL) v současnosti má čtyři `DataColumn` s definované: `CategoryID`, `CategoryName`, `Description`, a `NumberOfProducts`. Když jsme původně navržené tento DataTable v [vytváření Data Access Layer](../introduction/creating-a-data-access-layer-vb.md) kurzu `CategoriesDataTable` pouze měl první tři sloupce; `NumberOfProducts` sloupec se přidal ve [a podrobností pomocí s odrážkami Seznam záznamů hlavní s DataList podrobnosti](../filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md) kurzu.
+`CategoriesDataTable` V Data přístup Layer (DAL) aktuálně obsahuje čtyři `DataColumn` s definované: `CategoryID`, `CategoryName`, `Description`, a `NumberOfProducts`. Když jsme navrhovali původně tohoto objektu DataTable v [vytvoření vrstvy přístupu k datům](../introduction/creating-a-data-access-layer-vb.md) kurzu `CategoriesDataTable` platili jen první tři sloupce; `NumberOfProducts` byl přidán sloupec v [pomocí záznamů Master/Detail seznam s odrážkami Seznam hlavních záznamů s podrobnostmi v prvku DataList](../filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb.md) kurzu.
 
-Jak je popsáno v *vytváření Data Access Layer*, DataTables v datové sadě zadali tvoří obchodních objektů. TableAdapters jsou zodpovědní za komunikaci s databází a naplnění objekty obchodní s výsledky dotazu. `CategoriesDataTable` Se nacházejí `CategoriesTableAdapter`, který má tři metody načtení dat:
+Jak je popsáno v *vytvoření vrstvy přístupu k datům*, datové tabulky v datové sadě zadán tvoří obchodní objekty. Objekty TableAdapter jsou zodpovědní za komunikaci s databází a naplňování obchodních objektů s výsledky dotazu. `CategoriesDataTable` Je vyplněn `CategoriesTableAdapter`, která má tři metody pro načítání dat:
 
-- `GetCategories()` spustí hlavní dotazu TableAdapter s a vrátí `CategoryID`, `CategoryName`, a `Description` pole všechny záznamy v `Categories` tabulky. Hlavní dotaz je co je používán automaticky generovaný `Insert` a `Update` metody.
-- `GetCategoryByCategoryID(categoryID)` Vrátí `CategoryID`, `CategoryName`, a `Description` pole kategorie, jejichž `CategoryID` rovná *categoryID*.
-- `GetCategoriesAndNumberOfProducts()` -Vrátí `CategoryID`, `CategoryName`, a `Description` pole pro všechny záznamy v `Categories` tabulky. Také pomocí poddotazu vrátí počet produktů, které jsou spojené s každou kategorii.
+- `GetCategories()` s hlavním dotazu objektu TableAdapter provede a vrátí `CategoryID`, `CategoryName`, a `Description` pole všech záznamů v `Categories` tabulky. Hlavní dotaz je, co je používán automaticky generovanou `Insert` a `Update` metody.
+- `GetCategoryByCategoryID(categoryID)` Vrátí `CategoryID`, `CategoryName`, a `Description` pole kategorie, jehož `CategoryID` rovná *categoryID*.
+- `GetCategoriesAndNumberOfProducts()` -Vrátí `CategoryID`, `CategoryName`, a `Description` pole pro všechny záznamy v `Categories` tabulky. Vrátit počet produktů, které jsou spojené s každou kategorii, zabírá poddotaz.
 
-Všimněte si, že žádná z nich vrácena dotazy `Categories` tabulky s `Picture` nebo `BrochurePath` sloupce; ani nemá `CategoriesDataTable` poskytují `DataColumn` s pro tato pole. Chcete-li pracovat na obrázku a `BrochurePath` vlastnosti, musíme nejprve přidat je do `CategoriesDataTable` a aktualizujte `CategoriesTableAdapter` třídy vracení tyto sloupce.
+Všimněte si, že žádná z nich vrácena dotazy `Categories` tabulky s `Picture` nebo `BrochurePath` sloupce; ani nemá `CategoriesDataTable` poskytují `DataColumn` s těchto polí. Chcete-li pracovat s obrázkem a `BrochurePath` vlastnosti, musíme nejprve přidat je do `CategoriesDataTable` a následně neaktualizují `CategoriesTableAdapter` třídy pro vracení tyto sloupce.
 
 ## <a name="adding-thepictureandbrochurepathdatacolumn-s"></a>Přidávání`Picture`a`BrochurePath``DataColumn` s
 
-Začněte přidáním těchto dvou sloupců `CategoriesDataTable`. Klikněte pravým tlačítkem na `CategoriesDataTable` s hlavičky v místní nabídce vyberte Přidat a poté zvolte možnost sloupec. Tím se vytvoří nový `DataColumn` DataTable s názvem `Column1`. Přejmenujte tento sloupec `Picture`. V okně vlastnosti nastavit `DataColumn` s `DataType` vlastnost `System.Byte[]` (Toto není možnost v rozevíracím seznamu, je potřeba zadat v).
+Začněte přidáním těchto dvou sloupců `CategoriesDataTable`. Klikněte pravým tlačítkem na `CategoriesDataTable` s záhlaví, v místní nabídce vyberte možnost Přidat a pak zvolte možnosti sloupce. Tím se vytvoří nový `DataColumn` v objektu DataTable s názvem `Column1`. Přejmenujte tento sloupec na `Picture`. V okně Vlastnosti nastavte `DataColumn` s `DataType` vlastnost `System.Byte[]` (nejedná se o možnost v rozevíracím seznamu, je potřeba zadat ho v).
 
 
 [![Vytvoření obrázku s názvem DataColumn, jejichž datový typ je System.Byte]](uploading-files-vb/_static/image6.gif)](uploading-files-vb/_static/image7.png)
 
-**Obrázek 6**: vytvoření `DataColumn` pojmenované `Picture` jejichž `DataType` je `System.Byte[]` ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image8.png))
+**Obrázek 6**: vytvoření `DataColumn` pojmenované `Picture` jehož `DataType` je `System.Byte[]` ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image8.png))
 
 
-Přidejte další `DataColumn` do DataTable, pojmenování ho `BrochurePath` pomocí výchozího `DataType` hodnotu (`System.String`).
+Přidejte další `DataColumn` do objektu DataTable, jeho pojmenování `BrochurePath` pomocí výchozího `DataType` hodnotu (`System.String`).
 
-## <a name="returning-thepictureandbrochurepathvalues-from-the-tableadapter"></a>Návrat`Picture`a`BrochurePath`hodnoty z TableAdapter
+## <a name="returning-thepictureandbrochurepathvalues-from-the-tableadapter"></a>Vrací`Picture`a`BrochurePath`hodnoty z objektu TableAdapter
 
-S tyto dva `DataColumn` s přidán do `CategoriesDataTable`, jsme re připravené k aktualizaci `CategoriesTableAdapter`. Jsme může mít obě tyto hodnoty ve sloupcích, vrátí se v hlavní dotazu TableAdapter, ale to by navrácení binární data pokaždé, když `GetCategories()` byla volána metoda. Místo toho umožňují s aktualizovat hlavní dotazu TableAdapter tak, aby `BrochurePath` a vytvořte metodu načtení další data, která vrátí určité kategorie s `Picture` sloupce.
+Pomocí těchto dvou `DataColumn` s přidán do `CategoriesDataTable`, můžeme znovu připravený k aktualizaci `CategoriesTableAdapter`. Společnost Microsoft může mít obě tyto hodnoty sloupců vrácený v hlavním dotazu objektu TableAdapter, ale to by vrácení binárních dat pokaždé, když `GetCategories()` vyvolání metody. Místo toho aktualizovat umožňují s hlavním dotazu objektu TableAdapter vrací do stavu `BrochurePath` a vytvořte metodu načtení dalších dat, která vrací určité kategorie s `Picture` sloupce.
 
-Pokud chcete aktualizovat hlavní dotazu TableAdapter, klikněte pravým tlačítkem na `CategoriesTableAdapter` záhlaví s a v místní nabídce vyberte možnost konfigurovat. Otevře Průvodce konfigurací adaptéru tabulky, které jsme jste viděli v několika posledních kurzy. Aktualizovat dotaz tak, aby `BrochurePath` a klikněte na tlačítko Dokončit.
-
-
-[![Aktualizace seznamu sloupců v příkazu SELECT také vrátit BrochurePath](uploading-files-vb/_static/image7.gif)](uploading-files-vb/_static/image9.png)
-
-**Obrázek 7**: aktualizace v seznamu sloupců `SELECT` příkaz také vrátit `BrochurePath` ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image10.png))
+Aktualizovat hlavní dotaz TableAdapter, klikněte pravým tlačítkem na `CategoriesTableAdapter` s záhlaví a zvolte možnost konfigurace v místní nabídce. Tím se vyvolá průvodce konfigurací adaptéru tabulky, které jsme viděli v několika posledních kurzy ve. Aktualizovat dotaz vrací do stavu `BrochurePath` a klikněte na tlačítko Dokončit.
 
 
-Při použití příkazů SQL ad-hoc TableAdapter, aktualizaci seznamu sloupců v hlavním dotazu pro všechny aktualizace seznamu sloupců `SELECT` dotaz metody v TableAdapter. To znamená `GetCategoryByCategoryID(categoryID)` metoda se aktualizovalo a vrátit `BrochurePath` sloupec, který může být jsme určený. Však je aktualizované taky v seznamu sloupců `GetCategoriesAndNumberOfProducts()` metoda, odebrání poddotazu, která vrátí počet produktů, pro každou kategorii! Proto je potřeba aktualizovat tato metoda s `SELECT` dotazu. Klikněte pravým tlačítkem na `GetCategoriesAndNumberOfProducts()` metoda, zvolte konfigurovat a obnovit `SELECT` dotazu zpět na původní hodnotu:
+[![Aktualizovat seznam sloupců v příkazu SELECT také vrátit BrochurePath](uploading-files-vb/_static/image7.gif)](uploading-files-vb/_static/image9.png)
+
+**Obrázek 7**: aktualizace v seznamu sloupců `SELECT` příkaz rovněž vracejí `BrochurePath` ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image10.png))
+
+
+Při použití příkazů jazyka SQL ad hoc pro TableAdapter, aktualizuje se seznam sloupců v hlavním dotazu aktualizuje seznam sloupců pro všechny `SELECT` metody v TableAdapter dotazu. To znamená, že `GetCategoryByCategoryID(categoryID)` metoda aktualizovala se vraťte `BrochurePath` sloupec, který může být jsme chtěli. Ale je také aktualizovat v seznamu sloupců `GetCategoriesAndNumberOfProducts()` metoda odebrání poddotazu, který vrací počet produktů pro každou kategorii! Proto musíme aktualizovat tuto metodu s `SELECT` dotazu. Klikněte pravým tlačítkem na `GetCategoriesAndNumberOfProducts()` metoda, zvolením možnosti konfigurovat a vrátit se `SELECT` dotazu zpět na původní hodnotu:
 
 
 [!code-sql[Main](uploading-files-vb/samples/sample2.sql)]
 
-Dál vytvořte novou TableAdapter metodu, která vrátí určité kategorie s `Picture` hodnota sloupce. Klikněte pravým tlačítkem na `CategoriesTableAdapter` s záhlaví a zvolte možnost přidat dotaz spustíte Průvodce konfigurací dotazu TableAdapter. Prvním krokem v tomto průvodci nám požádá, že pokud nám chcete dotaz na data pomocí příkazu SQL ad-hoc, nový uložená procedura nebo některého ze stávajících. Vyberte příkazy SQL použít a klikněte na tlačítko Další. Vzhledem k tomu, že jsme se vracejí řádek, vyberte SELECT, který vrací řádky možnost z druhém kroku.
+V dalším kroku vytvoření nové metody TableAdapter, který vrací určité kategorie s `Picture` hodnota ve sloupci. Klikněte pravým tlačítkem na `CategoriesTableAdapter` s záhlaví a výběrem možnosti Přidat dotaz spustíte Průvodce konfigurací dotazu TableAdapter. Prvním krokem tohoto průvodce výzva, že když chceme dotazy na data pomocí ad-hoc příkazu SQL, nový uložená procedura nebo některý z existujících. Vyberte možnost použít SQL příkazy a klikněte na tlačítko Další. Protože jsme se vrací řádek, zvolte SELECT, který vrátí řádky možnost v druhém kroku.
 
 
-[![Vyberte příkazy SQL použijte možnost](uploading-files-vb/_static/image8.gif)](uploading-files-vb/_static/image11.png)
+[![Vyberte možnost použít SQL příkazy možnost](uploading-files-vb/_static/image8.gif)](uploading-files-vb/_static/image11.png)
 
-**Obrázek 8**: Vyberte příkazy SQL použijte možnost ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image12.png))
+**Obrázek 8**: Vyberte použít SQL příkazy možnost ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image12.png))
 
 
-[![Vzhledem k tomu, že dotaz vrátí záznam z tabulky kategorie, zvolte vyberte, která vrací řádky](uploading-files-vb/_static/image9.gif)](uploading-files-vb/_static/image13.png)
+[![Vzhledem k tomu, že dotaz vrátí záznam z tabulky kategorie, zvolte Vybrat, které vrátí řádky](uploading-files-vb/_static/image9.gif)](uploading-files-vb/_static/image13.png)
 
-**Obrázek 9**: vzhledem k tomu, že dotaz vrátí záznam z tabulky kategorie, zvolte výběru, která vrací řádky ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image14.png))
+**Obrázek 9**: vzhledem k tomu, že dotaz vrátí záznam z tabulky kategorie, zvolte možnost vybrat, na které vrátí řádky ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image14.png))
 
 
 V tomto kroku zadejte následující dotaz SQL a klikněte na tlačítko Další:
@@ -178,121 +177,121 @@ V tomto kroku zadejte následující dotaz SQL a klikněte na tlačítko Další
 
 [!code-sql[Main](uploading-files-vb/samples/sample3.sql)]
 
-Posledním krokem je vybrat název pro novou metodu. Použití `FillCategoryWithBinaryDataByCategoryID` a `GetCategoryWithBinaryDataByCategoryID` výplně DataTable a vraťte se DataTable vzory, v uvedeném pořadí. Kliknutím na tlačítko Dokončit ukončete průvodce.
+Posledním krokem je vybrat název pro novou metodu. Použití `FillCategoryWithBinaryDataByCategoryID` a `GetCategoryWithBinaryDataByCategoryID` zaplní, datové tabulky a vrátit objekt DataTable vzory, v uvedeném pořadí. Kliknutím na Dokončit dokončíte průvodce.
 
 
-[![Zvolte názvy metody s TableAdapter](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
+[![Zvolte názvy pro metody s TableAdapter](uploading-files-vb/_static/image10.gif)](uploading-files-vb/_static/image15.png)
 
-**Obrázek 10**: Zvolte názvy pro TableAdapter s metody ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image16.png))
+**Obrázek 10**: Zvolte názvy pro TableAdapter s metod ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image16.png))
 
 
 > [!NOTE]
-> Po dokončení Průvodce konfigurací tabulky adaptér dotaz může zobrazit dialogové okno oznamující, že nový text příkazu vrací data se schématem liší od schématu hlavní dotazu. Průvodce je poznamenat stručně řečeno, který hlavní dotazu TableAdapter s `GetCategories()` vrátí schéma jiný než ten, který jsme právě vytvořili. Ale toto je co chceme, takže můžete tuto zprávu ignorovat.
+> Po dokončení Průvodce konfigurací dotazu adaptér tabulka může se zobrazit dialogové okno oznamující, že nový text příkazu vrací data se schématem liší od schématu hlavního dotazu. V krátkém průvodci je konstatujme, že s hlavním dotazu objektu TableAdapter `GetCategories()` vrátí odlišné schéma než ten, který jsme právě vytvořili. Ale to je jak chceme, abyste tuto zprávu můžete ignorovat.
 
 
-Navíc mějte na paměti, že pokud používáte ad-hoc příkazů SQL a pomocí průvodce můžete změnit hlavní dotazu TableAdapter s novější někde v čase, se upraví `GetCategoryWithBinaryDataByCategoryID` metoda s `SELECT` zahrnout pouze tyto sloupce ze seznamu sloupců příkaz s hlavní dotazu (to znamená, budou odebrány `Picture` sloupce z dotazu). Budete muset ručně aktualizovat sloupce seznamu vrátíte zpět `Picture` sloupců, podobně jako co jsme se s `GetCategoriesAndNumberOfProducts()` metoda dříve v tomto kroku.
+Také, mějte na paměti, pokud používáte SQL příkazy ad-hoc a pomocí průvodce můžete změnit TableAdapter s hlavním dotazu někdy později v čase, se bude měnit `GetCategoryWithBinaryDataByCategoryID` metody s `SELECT` zahrnout pouze tyto sloupce ze seznamu sloupců příkazu s Hlavní dotaz (to znamená, že se odeberou `Picture` sloupce z dotazu). Budete muset ručně aktualizovat seznam sloupců se vraťte `Picture` sloupce, fungují podobně jako `GetCategoriesAndNumberOfProducts()` metoda dříve v tomto kroku.
 
-Po přidání dvou `DataColumn` s k `CategoriesDataTable` a `GetCategoryWithBinaryDataByCategoryID` metodu `CategoriesTableAdapter`, tyto třídy v Návrháři DataSet zadali by měl vypadat jako na snímku obrazovky v obrázek 11.
-
-
-![Návrháři DataSet zahrnuje nové sloupce a – metoda](uploading-files-vb/_static/image11.gif)
-
-**Obrázek 11**: návrháře DataSet zahrnuje nové sloupce a – metoda
+Po přidání obou `DataColumn` s `CategoriesDataTable` a `GetCategoryWithBinaryDataByCategoryID` metodu `CategoriesTableAdapter`, těchto tříd v Návrháři datové sady typu by měl vypadat jako na snímku obrazovky v obrázek 11.
 
 
-## <a name="updating-the-business-logic-layer-bll"></a>Aktualizace vrstvu obchodní logiky (BLL)
+![Návrhář DataSet obsahuje nové sloupce a – metoda](uploading-files-vb/_static/image11.gif)
 
-S vrstvy DAL aktualizovat zbývá k posílení obchodní logiky vrstvy (BLL) o metodu pro nové `CategoriesTableAdapter` metoda. Přidejte následující metodu do `CategoriesBLL` třídy:
+**Obrázek 11**: Návrhář DataSet obsahuje nové sloupce a – metoda
+
+
+## <a name="updating-the-business-logic-layer-bll"></a>Aktualizace vrstvy obchodní logiky (BLL)
+
+Pomocí vrstvy DAL aktualizovat, už jen zbývá k posílení obchodní logiky vrstvy (BLL) obsahovat metodu pro novou `CategoriesTableAdapter` metody. Přidejte následující metodu do `CategoriesBLL` třídy:
 
 
 [!code-vb[Main](uploading-files-vb/samples/sample4.vb)]
 
-## <a name="step-5-uploading-a-file-from-the-client-to-the-web-server"></a>Krok 5: Nahrání souboru z klienta na webový server
+## <a name="step-5-uploading-a-file-from-the-client-to-the-web-server"></a>Krok 5: Nahrát soubor z klienta na webový server
 
-Při shromažďování binární data, často tato data poskytuje koncovým uživatelem. Pokud chcete zaznamenat tyto informace, uživatel musí být možné nahrát soubor z jejich počítače do webového serveru. Odeslaná data je pak potřeba integrovat datový model, který může to znamenat ukládání souboru do systému souborů s webového serveru a přidání cesty k souboru v databázi nebo zápis binární obsah přímo do databáze. V tomto kroku budete podíváme na to, jak chcete, aby uživatel k nahrání souborů z jejich počítače k serveru. V dalším kurzu jsme budete zapněte naše pozornost integraci nahrávaný soubor do datového modelu.
+Při shromažďování binárních dat, často tato data pochází koncovým uživatelem. Pokud chcete zaznamenat tyto informace, musí uživatel moct nahrát soubor z počítače na webový server. Odesílaná data pak musí být integrovaná s datovým modelem, který může to znamenat ukládání souboru do systému souborů s webového serveru a přidání cesty k souboru v databázi nebo zápis binární obsah přímo do databáze. V tomto kroku podíváme na to, jak chcete, aby uživatel nahrát na server soubory z počítače. V dalším kurzu jsme vám zapnout pozornost na integraci nahraný soubor s datovým modelem.
 
-ASP.NET 2.0 s novou [ovládací prvek webu odesílání souborů při odpovědích](https://msdn.microsoft.com/library/ms227677(VS.80).aspx) poskytuje mechanismus pro uživatelům odeslat soubor z počítače na webový server. Ovládací prvek odesílání souborů při odpovědích vykreslí jako `<input>` element jehož `type` je atribut nastaven na soubor, který prohlížeče zobrazí jako textové pole s tlačítko Procházet. Klepnutím na tlačítko Procházet vyvolá dialogové okno, ze kterého může uživatel vybrat soubor. Při odeslání formuláře zpět obsah s vybraný soubor se odesílají společně s zpětné volání. Na straně serveru je přístupný prostřednictvím vlastnosti odesílání souborů při odpovědích ovládacích prvků s informace o nahrávaný soubor.
+ASP.NET 2.0 s novou [FileUpload webový ovládací prvek](https://msdn.microsoft.com/library/ms227677(VS.80).aspx) poskytuje mechanismus pro uživatelům odeslat soubor z počítače na webový server. Ovládací prvek FileUpload vykreslí jako `<input>` elementu jehož `type` atribut je nastaven na soubor, který prohlížeče zobrazí jako textové pole pomocí tlačítka Procházet. Kliknutím na tlačítko Procházet zobrazí dialogové okno, ze kterého může uživatel vybrat soubor. Formulář, když se pošle zpátky s obsahem vybraný soubor jsou poslat spolu s zpětné volání. Informace o nahraný soubor na straně serveru, jsou přístupné prostřednictvím FileUpload ovládacího prvku s vlastností.
 
-K předvedení odesílání souborů, otevřete `FileUpload.aspx` stránku `BinaryData` složku, přetáhněte ovládací prvek odesílání souborů při odpovědích z panelu nástrojů na návrháře a nastavení ovládacího prvku s `ID` vlastnost `UploadTest`. V dalším kroku přidání ovládacího prvku tlačítko webové nastavení jeho `ID` a `Text` vlastnosti, které chcete `UploadButton` a nahrajte soubor vybrané v uvedeném pořadí. Nakonec, umístěte ovládací prvek popisek webové pod tlačítko, vymažte jeho `Text` vlastnost a sadu jeho `ID` vlastnost `UploadDetails`.
+Abychom si předvedli nahrávání souborů, otevřete `FileUpload.aspx` stránku `BinaryData` složku, přetáhněte FileUpload ovládacího prvku z panelu nástrojů do návrháře a nastavení ovládacího prvku s `ID` vlastnost `UploadTest`. Dále přidejte ovládací prvek tlačítko webového nastavení jeho `ID` a `Text` vlastností `UploadButton` a nahrajte soubor vybrané, v uvedeném pořadí. A konečně, umístěte ovládací prvek popisek webové pod tlačítko, vymažte jeho `Text` vlastnost a nastavte jeho `ID` vlastnost `UploadDetails`.
 
 
 [![Přidání ovládacího prvku odesílání souborů při odpovědích na stránku ASP.NET](uploading-files-vb/_static/image12.gif)](uploading-files-vb/_static/image17.png)
 
-**Obrázek 12**: Přidání ovládacího prvku odesílání souborů při odpovědích na stránku ASP.NET ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image18.png))
+**Obrázek 12**: Přidání ovládacího prvku odesílání souborů při odpovědích na stránce ASP.NET ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image18.png))
 
 
-Obrázek 13 zobrazí tato stránka při zobrazení prostřednictvím prohlížeče. Všimněte si, že klepnutím na tlačítko Procházet otevře výběr dialogové okno souboru, umožňuje uživateli vybrat soubor z jejich počítače. Jakmile se soubor nebyl vybraný, klepnutím na tlačítko Odeslat vybraný soubor způsobí, že zpětné volání, která odešle binární obsah s vybraného souboru na webový server.
+Zobrazí obrázek 13 tuto stránku při prohlížení prostřednictvím prohlížeče. Všimněte si, že kliknete na tlačítko Procházet zobrazí výběr dialogového okna souboru, které uživateli umožňují vybrat soubor z počítače. Jakmile byl vybrán soubor, kliknutím na tlačítko Odeslat vybraný soubor vyvolá zpětné volání, která odešle binární obsah s vybraný soubor na webový server.
 
 
-[![Uživatele můžete vybrat soubor k odeslání z jejich počítače k serveru](uploading-files-vb/_static/image13.gif)](uploading-files-vb/_static/image19.png)
+[![Uživatel může vybrat soubor k odeslání z jejich počítače k serveru](uploading-files-vb/_static/image13.gif)](uploading-files-vb/_static/image19.png)
 
-**Obrázek 13**: kterého uživatel může vybrat soubor k odeslání z jejich počítače na serveru ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image20.png))
+**Obrázek 13**: uživatel může vybrat soubor k nahrání z jejich počítače k serveru ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image20.png))
 
 
-Zpětné volání nahraný soubor lze uložit do systému souborů nebo jeho binární data možné pracovat s přímo prostřednictvím datového proudu. V tomto příkladu umožní s vytvořit `~/Brochures` složky a nahraný soubor uložte. Začněte přidáním `Brochures` složku do lokality jako podsložku kořenový adresář. Dále vytvořte obslužnou rutinu události pro `UploadButton` s `Click` událostí a přidejte následující kód:
+Zpětné volání nahraný soubor je ukládat do systému souborů nebo binární data je možné pracovat s přímo prostřednictvím Stream. V tomto příkladu umožní s vytvořit `~/Brochures` složce a uložit nahraný soubor. Začněte přidáním `Brochures` složky do lokality jako podsložku ke kořenovému adresáři. Dále vytvořte obslužnou rutinu události pro `UploadButton` s `Click` událostí a přidejte následující kód:
 
 
 [!code-vb[Main](uploading-files-vb/samples/sample5.vb)]
 
-Ovládací prvek odesílání souborů při odpovědích poskytuje celou řadu vlastností pro práci s odeslaná data. Pro instanci [ `HasFile` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.hasfile.aspx) označuje, zda byl soubor odeslaný uživatelem, zatímco [ `FileBytes` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.filebytes.aspx) poskytuje přístup k nahrané binární data jako pole bajtů. `Click` Obslužné rutiny události spustí tím zajistí, že soubor byl odeslán. Pokud soubor se nahrají popisek zobrazuje název nahrávaný soubor, jeho velikost v bajtech a typ obsahu.
+Ovládací prvek FileUpload poskytuje celou řadu vlastností pro práci s odesílaná data. Například [ `HasFile` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.hasfile.aspx) označuje, zda soubor byl odeslán uživatelem, zatímco [ `FileBytes` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.filebytes.aspx) poskytuje přístup k nahrané binárních dat jako pole bajtů. `Click` Obslužná rutina události začíná tím, že zajišťuje, že se soubor odeslal. Pokud souboru je nahraná, popisek se zobrazuje název uloženého souboru, jeho velikost v bajtech a jeho typ obsahu.
 
 > [!NOTE]
-> K zajištění, že uživatel uloží soubor můžete zkontrolovat `HasFile` vlastnost a zobrazí upozornění, pokud ji s `False`, nebo můžete použít [ovládací prvek RequiredFieldValidator](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/validation/default.aspx) místo.
+> K zajištění, že uživatel nahraje soubor můžete zkontrolovat `HasFile` vlastnost a zobrazí upozornění, pokud ho s `False`, nebo můžete použít [ovládací prvek RequiredFieldValidator](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/validation/default.aspx) místo.
 
 
-Odesílání souborů při odpovědích s `SaveAs(filePath)` nahrávaný soubor uloží do zadaného *filePath*. *filePath* musí být *fyzická cesta* (`C:\Websites\Brochures\SomeFile.pdf`) ne *virtuální* *cesta* (`/Brochures/SomeFile.pdf`). [ `Server.MapPath(virtPath)` Metoda](https://msdn.microsoft.com/library/system.web.httpserverutility.mappath.aspx) obsahuje virtuální cestu a vrátí jeho odpovídající fyzická cesta. Virtuální cesta, která následuje `~/Brochures/fileName`, kde *fileName* je název nahrávaný soubor. V tématu [pomocí Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml) pro další informace o virtuálních a fyzických cest a používání `Server.MapPath`.
+FileUpload s `SaveAs(filePath)` uloží nahraný soubor do zadaného *filePath*. *filePath* musí být *fyzická cesta* (`C:\Websites\Brochures\SomeFile.pdf`) spíše než *virtuální* *cesta* (`/Brochures/SomeFile.pdf`). [ `Server.MapPath(virtPath)` Metoda](https://msdn.microsoft.com/library/system.web.httpserverutility.mappath.aspx) obsahuje virtuální cestu a vrátí odpovídající fyzická cesta. Virtuální cesta, která následuje `~/Brochures/fileName`, kde *fileName* je název uloženého souboru. Zobrazit [pomocí Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml) pro další informace o virtuálních a fyzických cest a používání `Server.MapPath`.
 
-Po dokončení `Click` obslužné rutiny události, za chvíli k otestování stránku v prohlížeči. Klikněte na tlačítko Procházet a vyberte soubor z pevného disku a potom klikněte na tlačítko Nahrát soubor vybrané. Zpětné volání odešle obsah vybraného souboru webového serveru, který se potom zobrazí informace o souboru před jeho uložením `~/Brochures` složky. Po nahrání souboru, vraťte k sadě Visual Studio a klikněte na tlačítko Aktualizovat v Průzkumníku řešení. Měli byste vidět soubor, který jste právě nahráli ve složce ~/Brochures!
-
-
-[![EvolutionValley.jpg soubor byl odeslán na webový server](uploading-files-vb/_static/image14.gif)](uploading-files-vb/_static/image21.png)
-
-**Obrázek 14**: soubor `EvolutionValley.jpg` byl odeslán na webový server ([Kliknutím zobrazit obrázek v plné velikosti](uploading-files-vb/_static/image22.png))
+Po dokončení `Click` obslužná rutina události, využít k otestování stránky v prohlížeči. Klikněte na tlačítko Procházet a vyberte soubor z pevného disku a pak klikněte na tlačítko Nahrát soubor vybrali. Zpětné volání pošle obsah na vybraný soubor na webový server, který se pak zobrazí informace o souboru před uložením do `~/Brochures` složky. Po nahrání souboru, vraťte se do sady Visual Studio a klikněte na tlačítko Aktualizovat v Průzkumníku řešení. Soubor, který jste právě nahráli ve složce ~/Brochures byste měli vidět!
 
 
-![EvolutionValley.jpg byla uložena do složky ~/Brochures](uploading-files-vb/_static/image15.gif)
+[![EvolutionValley.jpg soubor se odeslal do webového serveru](uploading-files-vb/_static/image14.gif)](uploading-files-vb/_static/image21.png)
+
+**Obrázek 14**: soubor `EvolutionValley.jpg` byl odeslán na webový server ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image22.png))
+
+
+![EvolutionValley.jpg byl uložen do složky ~/Brochures](uploading-files-vb/_static/image15.gif)
 
 **Obrázek 15**: `EvolutionValley.jpg` byla uložena do `~/Brochures` složky
 
 
-## <a name="subtleties-with-saving-uploaded-files-to-the-file-system"></a>Odlišnosti s ukládání odeslané soubory do systému souborů
+## <a name="subtleties-with-saving-uploaded-files-to-the-file-system"></a>Odlišnosti s ukládáním nahraných souborech do systému souborů
 
-Existuje několik odlišnosti, které je potřeba řešit při ukládání nahrávání souborů do systému souborů webového serveru s. První, zde s problém zabezpečení. Uložte soubor do systému souborů, kontext zabezpečení, pod kterou je prováděna stránku ASP.NET musí mít oprávnění k zápisu. Webový vývojový Server ASP.NET běží v kontextu aktuálního uživatelského účtu. Pokud používáte Microsoft s Internetové informační služby (IIS) jako webový server, kontext zabezpečení závisí na verzi služby IIS a její konfiguraci.
+Existuje několik odlišností, které je nutné vyřešit při ukládání nahrávání souborů do systému souborů webového serveru s. Nejdřív se tam s problém zabezpečení. Uložte soubor do systému souborů, kontext zabezpečení, pod kterou je prováděna stránky ASP.NET musí mít oprávnění k zápisu. Webový Server ASP.NET Development běží v kontextu aktuálního uživatelského účtu. Pokud používáte Microsoft s (Internetová informační služba) jako webový server, kontext zabezpečení závisí na verzi služby IIS a jeho konfigurace.
 
-Dalším problémem ukládat soubory do systému souborů se pohybuje kolem pojmenování souborů. V současné době naší stránce s uloží všechny soubory ukládány `~/Brochures` adresáře pomocí stejný název jako soubor s klientského počítače. Pokud uživatel A odešle – příručka s názvem `Brochure.pdf`, soubor se uloží jako `~/Brochure/Brochure.pdf`. Ale co když zopakovat později B uživatel odešle – příručka jiný soubor, který se stane mít stejný název souboru (`Brochure.pdf`)? Kódem máme teď uživatele s souboru, budou přepsány nahrávání s uživatel B.
+Dalším problémem ukládat soubory do systému souborů zásadní kolem pojmenování souborů. V současné době všechny nahrané soubory na naší stránce uloží `~/Brochures` adresářem pomocí služby se stejným názvem jako soubor s klientského počítače. Pokud uživatel A nahraje brožuru s názvem `Brochure.pdf`, soubor se uloží jako `~/Brochure/Brochure.pdf`. Ale co když nějakou dobu novější uživateli B nahraje si brožuru o jiný soubor, který se stane, chcete-li mít stejný název souboru (`Brochure.pdf`)? S kódem máme dnes, uživatel s soubor se přepíše nahrávání s uživateli B.
 
-Existuje několik postupů pro řešení konfliktů názvů souborů. Jednou z možností je zakázat nahrání souboru, pokud existuje nějaká se stejným názvem již existuje. S tímto přístupem, když se uživatel B se pokusí odeslat soubor s názvem `Brochure.pdf`, systém nebude uložit soubor a místo toho zobrazí zpráva informující uživatele B soubor přejmenujte a zkuste to znovu. Jiná možnost je k uložení souboru pomocí jedinečný název souboru, který může být [globálně jedinečný identifikátor (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) nebo hodnotu z příslušné databáze záznamů s primární klíče sloupce (za předpokladu, že nahrávání je přidružen konkrétního řádku v datovém modelu). V dalším kurzu jsme budete tyto možnosti podrobněji prozkoumat.
+Existuje několik technik pro řešení konfliktů název souboru. Jednou z možností je zakázat nahrávání souboru, pokud existuje se stejným názvem už existuje. Díky tomuto přístupu, když se uživatel B se pokusí odeslat soubor s názvem `Brochure.pdf`, systém nebude uložit soubor a místo toho zobrazí zpráva uživateli B soubor přejmenujte a zkuste to znovu. Další možností je uložte soubor pomocí jedinečný název souboru, který může být [globálně jedinečný identifikátor (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) nebo hodnotu od odpovídajících záznamů s primární sloupce klíče databáze (za předpokladu, že je přidružené k odeslání konkrétního řádku v datovém modelu). V dalším kurzu prozkoumáme těchto možností podrobněji.
 
-## <a name="challenges-involved-with-very-large-amounts-of-binary-data"></a>Problémy spojené s velmi velkých objemů binární Data
+## <a name="challenges-involved-with-very-large-amounts-of-binary-data"></a>Výzvy spojené s velmi velkého objemu binárních dat
 
-Tyto kurzy předpokládat, že je binární data zaznamenaná mírné velikost. Pracujete s velmi velkým množstvím binární datové soubory, které jsou několik MB nebo větší zavádí nové výzvy, které jsou nad rámec těchto kurzů. Například ve výchozím nastavení ASP.NET odmítnou nahrávání více než 4 MB, i když to můžete nakonfigurovat přes [ `<httpRuntime>` element](https://msdn.microsoft.com/library/e1f13641.aspx) v `Web.config`. Služba IIS ukládá příliš vlastní omezení velikosti nahrávání souborů. V tématu [velikost souboru nahrát IIS](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html) Další informace. Čas potřebný k nahrání velkých souborů kromě toho můžete překročit výchozí 110 sekundách, po kterou čekat ASP.NET pro žádost. Existují také paměti a výkon problémy, které nastat při práci s velkými soubory.
+Tyto kurzy předpokládá, že je binární data zaznamenaná středně velká velikost. Pracujete s velmi velkým množstvím binární datové soubory, které jsou několika megabajtů nebo větší zavádí nové výzvy, které jsou nad rámec těchto kurzů. Například ve výchozím nastavení technologie ASP.NET, bude taková nahrávání více než 4 MB, i když je možné nakonfigurovat pomocí [ `<httpRuntime>` element](https://msdn.microsoft.com/library/e1f13641.aspx) v `Web.config`. Služba IIS ukládá příliš vlastní omezení velikosti nahrávání souborů. Zobrazit [IIS nahrát soubor velikost](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html) Další informace. Čas potřebný k nahrávání velkých souborů navíc může překročit výchozí 110 sekund, po které ASP.NET bude čekat požadavek. Existují také výkon a paměť problémy, které vznikají při práci s velkými soubory.
 
-Odesílání souborů při odpovědích řízení je nepraktické pro nahrávání velkých souborů. Jako obsah souboru s jsou odeslání na server, čekat, bez jakékoli potvrzení, že je jejich nahrávání pokročíte patiently koncového uživatele. Toto není mnoho problém, při plánování práce s menší soubory, které lze odeslat během pár sekund, ale může být problém při plánování práce s větší soubory, které může trvat nahrát. Existuje mnoho různých třetích stran souboru nahrávání ovládací prvky, které jsou vhodnější pro zpracování velkých nahrávání a mnohé z těchto dodavatelů poskytují indikátory průběhu a ActiveX nahrát správci, která představují mnohem zajímavější činnost koncového uživatele.
+Je FileUpload ovládacího prvku nepraktické pro nahrávání velkých souborů. Jako obsah souboru s jsou odeslání na server, musí koncový uživatel dokončení čekat bez jakéhokoli potvrzení, že jejich nahrávání probíhá. To není tolik problém, při práci s menší soubory, které se dají nahrát, během několika sekund, ale může být problém při práci s většími soubory, které může trvat k nahrání. Existuje řada různých výrobců souboru nahrávání ovládací prvky, které jsou vhodnější pro zpracování velkých nahrávání a mnohé z těchto dodavatelů poskytují indikátory průběhu a ActiveX nahrát správci, které představují mnohem zajímavější činnost koncového uživatele.
 
-Pokud aplikace potřebuje pro zpracování velkých souborů, budete muset pečlivě prozkoumat problémů a najděte vhodné řešení pro konkrétních potřeb.
+Pokud vaše aplikace potřebuje pro zpracování velkých souborů, budete muset pečlivě prozkoumat problémů a najděte vhodné řešení pro vaše konkrétní potřeby.
 
 ## <a name="summary"></a>Souhrn
 
-Vytváření aplikace, která je potřeba zaznamenat binární data představuje určité problémy. V tomto kurzu jsme prozkoumali první dvě: rozhodování, kam se mají ukládat binární data a povolení pro nahrání binární obsah prostřednictvím na webové stránce. Prostřednictvím následujících třech kurzy ukážeme, jak přidružit odesílaná data záznam v databázi a také jak zobrazit binární data souběžně s jeho text datová pole.
+Vytvoření aplikace, kterou je potřeba zaznamenat binárních dat představuje určité problémy. V tomto kurzu Prozkoumali jsme první dva: rozhodování, kam chcete uložit binární data a která uživatelům umožňuje nahrát binární obsah prostřednictvím webové stránky. V následujících třech kurzy uvidíme, jak přidružit záznam v databázi nahraných dat, jakož i způsob zobrazení binárních dat společně s jeho datová pole text.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="further-reading"></a>Další čtení
 
-Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
+Další informace o tématech, které jsou popsané v tomto kurzu najdete na následujících odkazech:
 
-- [Použití velké hodnoty datových typů](https://msdn.microsoft.com/library/ms178158.aspx)
-- [Odesílání souborů při odpovědích ovládací prvek – elementy QuickStart](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/standard/fileupload.aspx)
-- [Ovládací prvek ASP.NET 2.0 odesílání souborů při odpovědích serveru](http://www.wrox.com/WileyCDA/Section/id-292158.html)
-- [Tmavý straně nahrávání souborů](http://www.aspnetresources.com/articles/dark_side_of_file_uploads.aspx)
+- [Použití vysoké hodnoty datových typů](https://msdn.microsoft.com/library/ms178158.aspx)
+- [Rychlé starty fileUpload ovládacího prvku](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/standard/fileupload.aspx)
+- [Serverový ovládací prvek ASP.NET 2.0 FileUpload](http://www.wrox.com/WileyCDA/Section/id-292158.html)
+- [Tmavě straně nahrávání souborů](http://www.aspnetresources.com/articles/dark_side_of_file_uploads.aspx)
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
-## <a name="special-thanks-to"></a>Zvláštní poděkování
+## <a name="special-thanks-to"></a>Speciální k
 
-Tento kurz řady byla zkontrolovány uživatelem mnoho užitečné kontrolorů. Vést kontroloři v tomto kurzu se Teresy Murphy a Bernadette Leigh. Kontrola Moje nadcházející články MSDN máte zájem? Pokud ano, vyřaďte mi řádek v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
+V této sérii kurzů byl recenzován uživatelem mnoho užitečných revidující. Vedoucí revidující pro účely tohoto kurzu byly Teresy Murphy a Bernadette Leigh. Zajímat téma Moje nadcházejících článcích MSDN? Pokud ano, vyřaďte mě řádek na [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com)
 
 > [!div class="step-by-step"]
 > [Předchozí](updating-and-deleting-existing-binary-data-cs.md)

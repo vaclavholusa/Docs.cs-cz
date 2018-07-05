@@ -1,226 +1,225 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
-title: Zdroj ovládacího prvku (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Zdrojový ovládací prvek (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2015
 ms.topic: article
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 0022458fa89a3be7ee8303750ad0e072df3b1bab
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 12c695b65a21452fdc4a31e821854253bccec0d7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30875692"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368972"
 ---
-<a name="source-control-building-real-world-cloud-apps-with-azure"></a>Správa zdrojového kódu (vytváření reálných cloudových aplikací s Azure)
+<a name="source-control-building-real-world-cloud-apps-with-azure"></a>Správy zdrojového kódu (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Informace o elektronická kniha najdete v tématu [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Správa zdrojového kódu je nezbytné pro všechny projekty vývoje cloudu, nejen team prostředí. Domníváte nebude úprav zdrojový kód nebo i dokument aplikace Word bez funkci zpět a automatické zálohování a Správa zdrojového kódu nabízí tyto funkce na úrovni projektu, kde můžete uložit i další čas, kdy dojde k chybě. Cloudové služby správy zdrojového kódu již nemusíte si dělat starosti o složité nastavení a můžete použít Visual Studio Online zdrojového kódu zdarma až 5 uživatelů.
+Je nezbytné pro všechny projekty vývoje pro cloud, ne jenom Týmová prostředí správy zdrojového kódu. Nebylo by si představit úpravy zdrojového kódu nebo dokonce Wordový dokument bez funkce zpět a automatické zálohování a Správa zdrojového kódu nabízí tyto funkce na úrovni projektu, kde se dají ušetřit ještě víc času, kdy dojde k chybě. S cloudovými službami zdrojového ovládacího prvku už nemusíte dělat starosti o složité nastavování a můžete použít Visual Studio Online správy zdrojového kódu až 5 uživatelů zdarma.
 
-První část této kapitoly vysvětluje tři klíčové osvědčené postupy pro mějte na paměti:
+První část této kapitole popisuje tři klíčové osvědčené postupy a mějte na paměti:
 
-- [Skripty pro automatizaci považovat za zdrojový kód](#scripts) a verze je spolu s kódu aplikace.
-- [Nikdy se změnami tajné klíče](#secrets) (citlivých dat jako pověření) do úložiště zdrojového kódu.
-- [Nastavit zdroj větví](#devops) povolit DevOps pracovního postupu.
+- [Skripty pro automatizaci považovat za zdrojový kód](#scripts) a verze je společně s kódu aplikace.
+- [Nikdy se změnami tajných kódů](#secrets) (citlivá data, jako je například přihlašovací údaje) do úložiště zdrojového kódu.
+- [Nastavit zdrojové větve](#devops) umožňující pracovních postupů DevOps.
 
-Zbývající část kapitoly dává některé ukázkové implementace tyto vzory v sadě Visual Studio, Azure a Visual Studio Online:
+Zbývající část kapitola obsahuje některé ukázky implementace tyto vzory v sadě Visual Studio, Azure a Visual Studio Online:
 
-- [Přidat skripty ke správě zdrojového kódu v sadě Visual Studio](#vsscripts)
-- [Ukládat citlivá data v Azure](#appsettings)
-- [Pomocí Git v sadě Visual Studio a Visual Studio Online](#gittfs)
+- [Přidat skripty do správy zdrojového kódu v sadě Visual Studio](#vsscripts)
+- [Store citlivá data v Azure](#appsettings)
+- [Pomocí Gitu ve Visual Studio a Visual Studio Online](#gittfs)
 
 <a id="scripts"></a>
 ## <a name="treat-automation-scripts-as-source-code"></a>Skripty pro automatizaci považovat za zdrojového kódu
 
-Při práci na projektu cloudové často měníte věcí a chcete mít možnost rychle reagovat na problémech ohlášených zákazníky. Rychle reagovat, která využívá skripty pro automatizaci, jak je popsáno v [automatizovat všechno](automate-everything.md) kapitoly. Všechny skripty, které můžete použít k vytvoření prostředí, nasaďte do něj škálování ho, atd., musí být synchronizované se zdrojovým kódem vaší aplikace.
+Když pracujete na projektu cloudu často měníte věci a chtějí mít možnost rychle reagovat na problémy, které nahlásili ho vaši zákazníci. Rychle reagovat zahrnuje použití skripty pro automatizaci, jak je vysvětleno v [automatizovat všechno](automate-everything.md) kapitoly. Všechny skripty, které použijete k vytvoření prostředí, nasaďte do ní, škálování, atd., musí být synchronizované se zdrojovým kódem vaší aplikace.
 
-Aby skripty synchronizovaná s kódem, uložte je do systému správy zdrojů. Pak pokud byste někdy potřebovali chcete vrátit zpět změny nebo provést rychlou opravu produkčním kódu, který je odlišný od kódu vývoj, nemáte ztrácet čas pokusu sledovat nastavení, které se změnily nebo které členové týmu mít kopie verze, které potřebujete. Jste zajištěná, které jsou synchronizované s základu kódu, který je pro potřebujete, a jste zajištěná, že všichni členové týmu funguje stejné skripty, skripty, které potřebujete. Jestli potřebujete automatizovat testování a nasazování oprava výrobní nebo vývoj nových funkcí, pak budete mít správné skript pro kód, který je třeba aktualizovat.
+Aby skripty synchronizovaná s kódem, uložte je v systému správy zdrojů. Pak pokud byste někdy potřebovali chcete vrátit zpět změny nebo provést rychlou opravu produkční kód, který se liší od vývoje kódu, nemusíte plýtvat vaším časem při sledování nastavení, které byly změněny nebo které členové týmu mají kopie verze, které potřebujete. Budete jistí, které jsou synchronizované s základu kódu, který je pro budete potřebovat a budete jistí, že všichni členové týmu pracujete s stejné skripty skripty, které potřebujete. Potom, jestli je potřeba automatizovat testování a nasazování opravu hotfix do produkčního prostředí nebo vývoj nových funkcí, budete mít správný skript pro kód, který je potřeba aktualizovat.
 
 <a id="secrets"></a>
-## <a name="dont-check-in-secrets"></a>Nekontrolovat v tajných klíčů
+## <a name="dont-check-in-secrets"></a>Nezaškrtávejte políčko v tajných kódů
 
-Úložiště zdrojového kódu je obvykle přístupné pro příliš mnoho uživatelů pro něj být odpovídajícím způsobem bezpečné místo pro citlivá data, jako jsou hesla. Pokud se skripty spoléhají na tajné klíče, jako jsou hesla, Parametrizace tato nastavení tak, že nemáte ukládány ve zdrojovém kódu a uložit vaše tajné klíče někde jinde.
+Úložiště zdrojového kódu je obvykle přístupné pro příliš mnoho lidí pro ni bude odpovídajícím způsobem zabezpečené místo pro citlivá data, jako jsou hesla. Pokud skripty využívají tajné kódy jako jsou hesla, parametrizujte tato nastavení tak, že nejsou uloženy ve zdrojovém kódu a ukládejte tajné klíče někde jinde.
 
-Například se Azure umožňuje stáhnout soubory, které obsahují nastavení publikování k automatizaci tvorby profilů publikování. Tyto soubory zahrnují uživatelská jména a hesla, které mají oprávnění ke správě služeb Azure. Pokud použijete tuto metodu pro vytvoření publikovat profily, a pokud se tyto soubory do správy zdrojového kódu se změnami, kdo má přístup do úložiště můžete zobrazit těchto uživatelských jmen a hesel. Je možné bezpečně uložit heslo v samotném profilu publikování protože je šifrovaný a je v *. pubxml.user* soubor, který ve výchozím nastavení není součástí zdrojového kódu.
+Azure umožňuje stáhnout soubory, které obsahují například publikovat nastavení k automatizaci vytváření profilů publikování. Tyto soubory obsahují uživatelská jména a hesla, které mají oprávnění ke správě služeb Azure. Pokud použijete tuto metodu pro vytvoření publikačních profilů, a pokud odešlete těchto souborů do správy zdrojových kódů, každý, kdo má přístup k úložišti můžete zobrazit tyto uživatelská jména a hesla. Můžete bezpečně uložit heslo v profilu publikování samotné protože je šifrovaný a je *. pubxml.user* soubor, který ve výchozím nastavení není zahrnut ve správě zdrojového kódu.
 
 <a id="devops"></a>
-## <a name="structure-source-branches-to-facilitate-devops-workflow"></a>Struktura zdroje větví usnadňuje DevOps pracovního postupu
+## <a name="structure-source-branches-to-facilitate-devops-workflow"></a>Struktura větví zdroje usnadnit pracovních postupů DevOps
 
-Jak implementovat větve v úložišti se týká také možnosti k vývoji nových funkcí a opravte problémy v produkčním prostředí. Tady je vzor, že mnoho střední velikosti týmy použití:
+Jak implementovat větve v úložišti ovlivňuje vaši schopnost jak vyvíjet nové funkce a opravy problémů v produkčním prostředí. Toto je vzor, spoustu středně velké týmy používají:
 
-![Struktura zdroje firemní pobočky](source-control/_static/image1.png)
+![Struktura větve zdroje](source-control/_static/image1.png)
 
-Hlavní větve vždy odpovídá kód, který je v produkčním prostředí. Větvemi hlavní odpovídají různých fázích životního cyklu vývoj. Vývoj větve je, kde budete implementovat nové funkce. Pro malý tým právě máte hlavní a vývoj, ale často doporučujeme, aby uživatelé měli pracovní větev mezi vývojovým týmem a hlavní server. Můžete vytvořit pracovní pro konečné integrace testování předtím, než aktualizace se přesune do produkčního prostředí.
+Hlavní větve vždy odpovídá kód, který je v produkčním prostředí. Větvemi hlavní odpovídají různých fázích životního cyklu vývoje. Vývoj větev je, kde implementují nové funkce. Pro malý tým může stačí master a vývoj, ale často doporučujeme, aby uživatelé měli pracovní větev mezi vývojem a hlavní. Můžete použít pracovní pro konečné integrační testování před aktualizace se přesune do produkčního prostředí.
 
-Pro velký týmy může být samostatné větve pro každou novou funkci; pro menší tým může mít každý přihlašuje na větev vývoj.
+Pro velké objemy týmy, které mohou být samostatných větvích pro každé nové vlastnosti; pro menší tým může mít každý vracet se změnami do větve vývoje.
 
-Pokud máte větev pro jednotlivé funkce, když funkce A je připravený sloučení změny jeho zdrojového kódu až do vývoj větev a dolů na další funkce větve. Tento zdrojový kód slučování proces může být časově náročná a nechcete svou práci při zachování funkce samostatné, některé týmy používají jinou názvem *[funkci přepínačů](http://en.wikipedia.org/wiki/Feature_toggle)* (označované taky jako *funkci příznaky*). To znamená, že všechny kód pro všechny funkce je ve stejné pobočce, ale povolit nebo zakázat jednotlivých funkcí s použitím přepínače v kódu. Předpokládejme například, funkce A je nové pole pro úlohy aplikace opravte ji a funkce B přidává funkce ukládání do mezipaměti. Kód pro obě funkce může být v pobočce vývoj, ale pouze zobrazení bude aplikace pole nové proměnné je nastavena na hodnotu true a bude používat jenom ukládání do mezipaměti při různých proměnná je nastavená na hodnotu true. Pokud funkci A není připraven chcete zvýšit, ale funkce B je připraveno, můžete zvýšit úroveň všech kódu do produkčního prostředí s přepínač funkcí A vypnout a B funkce přepínač na. Potom můžete dokončit A funkce a povyšte ho později, všechny s slučování žádný zdrojový kód.
+Pokud máte větev pro každou funkci, pokud funkce A je připraven sloučení změny jeho zdrojového kódu až do vývoje větve a dolů do jiné větve funkcí. Tento zdrojový kód sloučení procesu může být časově náročné a pokud chcete vyhnout, které pracují přitom zachovat samostatné funkce, některé týmy implementovat alternativu volá *[přepínání funkcí](http://en.wikipedia.org/wiki/Feature_toggle)* (známou taky jako *příznaků funkcí*). To znamená, že veškerý kód pro všechny funkce je ve stejné pobočce, ale povolit nebo zakázat jednotlivých funkcí s použitím přepínače v kódu. Předpokládejme například, funkce A je nové pole pro úlohy aplikace Fix It a funkce B přidává funkce ukládání do mezipaměti. Kód pro obě funkce může být ve větvi vývoje, ale pouze zobrazení aplikace budou nové pole, když je proměnná nastavena na hodnotu true a použije jenom ukládání do mezipaměti při různých proměnná je nastavená na hodnotu true. Pokud není funkce A by se dala zvýšit, ale funkce B je připraven, můžete zvýšit úroveň veškerý kód do produkčního prostředí s přepínačem funkce A vypnout a zapnout funkci B. Potom můžete dokončit A funkce a zvyšte jeho úroveň později, všechny se nesloučí zdrojového kódu.
 
-Jestli používáte větví nebo přepínačů pro funkce, větvení struktura jako to umožňuje toku kódu z vývojového do provozního agilní a opakovatelných způsobem.
+Jestli větve nebo přepíná používali pro funkce, větvení struktury tímto způsobem umožňuje toku kódu z vývojového do produkčního prostředí agile a opakovatelné způsobem.
 
-Tato struktura také umožňuje rychle reagovat na připomínky zákazníků. Pokud potřebujete provést rychlou opravu do produkčního prostředí, můžete provést také která efektivně agilní způsobem. Můžete vytvořit větev z hlavní nebo pracovní a až to bude hotové sloučení až do hlavní a dolů na vývoj a funkce větve.
+Tato struktura také vám umožní rychle reagovat na zpětnou vazbu od zákazníků. Pokud potřebujete provést rychlou opravu do produkčního prostředí, můžete provést také, která efektivně pružně. Můžete vytvořit větev mimo hlavní nebo testovacího a až to bude hotové jeho sloučení do hlavní větve nahoru a dolů do větve vývoje a funkce.
 
-![Oprava hotfix větve](source-control/_static/image2.png)
+![Větev hotfixu](source-control/_static/image2.png)
 
-Bez větvení struktura takto s jeho oddělení produkce a vývoj větví by mohlo provozní problém v pozici museli povýšíte nový kód funkce společně s vaše produkční opravte je. Nový kód funkce nemusí být plně otestované a připravena k produkční a možná budete muset udělat velké množství pracovních zálohování na změny, které nejsou připravené. Nebo možná budete muset zpoždění vaší opravu, aby bylo možné testovat změny a jejich přípravu k nasazení.
+Bez větvení struktury tímto způsobem s jeho oddělení produkce a vývojových větvích by mohlo problém produkčního prostředí v pozici by bylo nutné podporovat nové funkce kódu společně s jste kód opravili správně produkčního prostředí můžete. Nový kód funkce nemusí být plně otestovaný a připravený pro produkční a možná budete muset udělat spoustu práce zálohování Zavádíme změny, které ještě nejsou připravené. Nebo může být nutné zpoždění jste kód opravili správně, pokud chcete otestovat změny a jejich přípravu pro nasazení.
 
-Zobrazí se další příklady, jak implementovat tyto tři vzory v sadě Visual Studio, Azure a Visual Studio Online. Toto jsou příklady spíše než podrobné pokyny krok za krokem how-k-proveďte it; podrobné pokyny, které poskytují veškeré potřebné kontextu, najdete v článku [prostředky](#resources) části na konci kapitoly.
+Dále uvidíte příklady toho, jak implementovat tyto tři vzory v sadě Visual Studio, Azure a Visual Studio Online. Toto jsou příklady spíše než podrobné postupy-k-it pokyny; podrobné pokyny, které poskytují veškeré potřebné kontextu, najdete v článku [prostředky](#resources) části na konci kapitoly.
 
 <a id="vsscripts"></a>
-## <a name="add-scripts-to-source-control-in-visual-studio"></a>Přidat skripty ke správě zdrojového kódu v sadě Visual Studio
+## <a name="add-scripts-to-source-control-in-visual-studio"></a>Přidat skripty do správy zdrojového kódu v sadě Visual Studio
 
-Ke správě zdrojového kódu v sadě Visual Studio můžete přidat skripty, včetně jejich ve složce řešení sady Visual Studio (za předpokladu, že je váš projekt ve správě zdrojového kódu). Zde je možné ho provést.
+Skripty můžete přidat do správy zdrojového kódu v sadě Visual Studio včetně ve složce řešení sady Visual Studio (za předpokladu, že váš projekt je ve správě zdrojového kódu). Tady je jeden způsob, jak to udělat.
 
 Vytvořte složku pro skripty ve složce řešení (stejné složce, která má vaše *.sln* souboru).
 
-![Automatizace složky](source-control/_static/image3.png)
+![Složka služby Automation](source-control/_static/image3.png)
 
 Zkopírujte soubory skriptů do složky.
 
-![Obsah složky automatizace](source-control/_static/image4.png)
+![Obsah složky služby Automation](source-control/_static/image4.png)
 
 V sadě Visual Studio přidejte do projektu složku řešení.
 
-![Výběr nového řešení složky nabídky](source-control/_static/image5.png)
+![Výběr nabídky novou složku řešení](source-control/_static/image5.png)
 
-A přidejte soubory skriptu ke složce řešení.
+A přidejte soubory skriptů do složky řešení.
 
 ![Přidat existující položku nabídky Výběr](source-control/_static/image6.png)
 
 ![Přidat existující položku – dialogové okno](source-control/_static/image7.png)
 
-Soubory skriptů jsou nyní zahrnuty ve vašem projektu a Správa zdrojového kódu je sledování změn jejich verze spolu s odpovídající změny zdrojového kódu.
+Soubory skriptů jsou teď součástí vašeho projektu a správy zdrojového kódu se ke sledování jejich změny verze společně s odpovídající změny zdrojového kódu.
 
 <a id="appsettings"></a>
-## <a name="store-sensitive-data-in-azure"></a>Ukládat citlivá data v Azure
+## <a name="store-sensitive-data-in-azure"></a>Store citlivá data v Azure
 
-Pokud spustíte aplikaci webu v Azure, jeden způsob, jak zabránit ukládání přihlašovacích údajů ve správě zdrojového kódu je uložit je do Azure.
+Pokud spustíte svou aplikaci na webu v Azure, je jeden způsob, jak zabránit ukládání přihlašovacích údajů ve správě zdrojového kódu k jejich uložení v Azure.
 
-Například aplikace opravte ukládá v jeho Web.config soubor dva připojovací řetězce, které budou mít hesla v produkční a klíč, který poskytuje přístup k účtu úložiště Azure.
+Například aplikace Fix It ukládá v jeho souboru Web.config souborů dva připojovací řetězce, které se mají hesla v produkčním prostředí a klíč, který poskytuje přístup k vašemu účtu úložiště Azure.
 
 [!code-xml[Main](source-control/samples/sample1.xml?highlight=2-3,11)]
 
-Pokud vložíte skutečné produkční hodnoty těchto nastavení v vaše *Web.config* souboru, nebo pokud jste zadali v *Web.Release.config* soubor k transformaci Web.config vložení je během nasazení, konfigurace budete být uložen v úložišti zdrojů. Pokud zadáte databázové připojovací řetězce do provozní profil publikování, heslo bude v vaše *.pubxml* souboru. (Může vyloučit *.pubxml* souboru od správy zdrojového kódu, ale pak ztratíte Výhodou sdílení všechna ostatní nastavení nasazení.)
+Pokud přesunete samotnou produkci hodnoty pro tato nastavení v vaše *Web.config* souboru, nebo pokud je vložíte do *Web.Release.config* souboru nakonfigurujte transformaci Web.config pro vložení během nasazení budete se ukládají v úložišti zdroje. Pokud zadáte databázové připojovací řetězce do produkce profil publikování, heslo bude v vaše *.pubxml* souboru. (Může vyloučit *.pubxml* souborů ze správy zdrojových kódů, ale pak ztratíte výhodu, že všechna ostatní nastavení nasazení pro sdílení obsahu.)
 
-Azure vám dává alternativu pro **appSettings** a připojovací řetězce části *Web.config* souboru. Tady je příslušné části **konfigurace** kartu pro webovou stránku v portálu správy Azure:
+Azure nabízí alternativu pro **appSettings** a připojovací řetězce oddíly *Web.config* souboru. Tady je odpovídající část **konfigurace** karta pro webovou stránku v portálu správy Azure:
 
 ![appSettings a connectionStrings portálu](source-control/_static/image8.png)
 
-Při nasazení projektu na tento web a spouštět aplikace, ať hodnoty jsou uloženy v Azure přepsat, ať hodnoty jsou v souboru Web.config.
+Při nasazení projektu na tomto webu a spouštět aplikace přepsat libovolné hodnoty jsou uložené v Azure, libovolné hodnoty jsou v souboru Web.config.
 
-Tyto hodnoty lze nastavit v Azure pomocí portálu pro správu nebo skripty. V prostředí vytvoření skriptu pro automatizaci jste viděli v [automatizovat všechno](automate-everything.md) kapitoly vytvoří Azure SQL Database, získá úložiště a připojovací řetězce SQL Database a ukládá těchto tajných klíčů v nastavení pro svůj web.
+Tyto hodnoty můžete nastavit v Azure pomocí portálu pro správu nebo skripty. Automatizační skript vytváření prostředí jste viděli v [automatizovat všechno](automate-everything.md) kapitoly vytvoří databázi SQL Azure, získá storage a připojovací řetězce SQL Database a ukládá těchto tajných kódů v nastavení pro webový server.
 
 [!code-powershell[Main](source-control/samples/sample2.ps1)]
 
 [!code-powershell[Main](source-control/samples/sample3.ps1)]
 
-Všimněte si, že tyto skripty jsou parametry tak, aby skutečnými hodnotami nemáte získat formou zdrojové úložiště.
+Všimněte si, že tyto skripty jsou parametrizovány tak, aby skutečnými hodnotami nechcete získat trvale uložena do úložiště zdrojového kódu.
 
-Při spuštění místně ve vašem vývojovém prostředí, aplikace načte místního souboru Web.config a připojení body řetězec k databázi serveru SQL LocalDB v *aplikace\_Data* složky webového projektu. Při spuštění aplikace v Azure a aplikace se pokusí načíst tyto hodnoty ze souboru Web.config, získá zpět a používá jsou hodnoty uložené pro webový server, není co je skutečně v souboru Web.config.
+Při spuštění místně ve vašem vývojovém prostředí aplikace načte váš místní soubor Web.config a připojení body řetězec k databázi systému SQL Server LocalDB ve *aplikace\_Data* složce webového projektu. Při spuštění aplikace v Azure a aplikace se pokusí načíst tyto hodnoty ze souboru Web.config, získá zpět a používá jsou hodnoty uložené pro webový server není co je skutečně v souboru Web.config.
 
 <a id="gittfs"></a>
-## <a name="use-git-in-visual-studio-and-visual-studio-online"></a>Pomocí Git v sadě Visual Studio a Visual Studio Online
+## <a name="use-git-in-visual-studio-and-visual-studio-online"></a>Pomocí Gitu ve Visual Studio a Visual Studio Online
 
-Všechny zdrojové prostředí pro řízení můžete použít k implementaci větvení struktura DevOps uvedené výše. Pro distribuované týmy [distribuované systém správy verzí](http://en.wikipedia.org/wiki/Distributed_revision_control) (DVCS) může být nejvhodnější; pro ostatními týmy [centralizované systému](http://en.wikipedia.org/wiki/Revision_control) může lépe pracovat.
+Všechny zdrojové prostředí pro ovládací prvek můžete implementovat DevOps větvení struktury, které jsou uvedené výše. Distribuovaných týmů [distribuovaný systém řízení verze](http://en.wikipedia.org/wiki/Distributed_revision_control) (systém DVCS) může být nejvhodnější; pro jiné týmy [centralizované systému](http://en.wikipedia.org/wiki/Revision_control) může být vhodnější.
 
-[Git](http://git-scm.com/) je DVCS, který se stane velmi oblíbenou. Při použití Git pro řízení zdrojů, máte úplnou kopii úložiště se všemi jeho historie v místním počítači. Spousta lidí přednost tomu, že vzhledem k tomu je snazší pokračovat v práci, když nejsou připojené k síti – můžete nadále se potvrdí a odvolání, vytvářet a přepnutí větví a tak dále. I když jste připojení k síti, je jednodušší a rychlejší vytvoření větví a přepnutí větví, když všechno, co je místní. Také můžete provést místní potvrzení a odvolání bez nutnosti vliv na ostatní vývojáři. A můžete dávky potvrzení před jejich odesláním na server.
+[Git](http://git-scm.com/) je DVCS, který se má stát velmi populární. Pokud používáte Git pro správu zdrojového kódu, máte úplnou kopii úložiště s celou její historií v místním počítači. Mnoho lidí dáváte přednost, protože je to snazší pokračovat v práci, když nejste připojení k síti – můžou dál vykonávat potvrzení změn a vrácení zpět, vytvářet a přepnutí větví a tak dále. I v případě, že jste připojeni k síti, je jednodušší a rychlejší vytváření větví a přepínání větví všechno, co je místní. Můžete také provést místních potvrzení změn, vrácení zpět bez nutnosti vliv na ostatní vývojáři. A může hromadně potvrzení před odesláním do serveru.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), dříve se označuje jako Team Foundation Service, nabízí i Git a [správy verzí Team Foundation](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; centralizované správy zdrojového kódu). Zde ve společnosti Microsoft ve skupině Azure pomocí některé týmy centralizované zdrojového kódu, některé použití distribuována, a některé použít kombinaci (centralizované pro některé projekty a distribuován pro další projekty). Službu VSO je zdarma pro uživatele, až 5. Můžete si zaregistrovat pro plánu free [zde](https://go.microsoft.com/fwlink/?LinkId=307137).
+[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), dříve známé jako Team Foundation Service, nabízí i Git a [Team Foundation Version Control](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; centralizované správy zdrojového kódu). Tady v Microsoftu v Azure group některé týmy používají centralizovanou správu zdrojového kódu, používat distribuována, a některé používá kombinaci (centralizovaná u některých projektů a distribuován pro jiné projekty). Služby VSO je zdarma až pro 5 uživatelů. Si můžete zaregistrovat bezplatný plán [tady](https://go.microsoft.com/fwlink/?LinkId=307137).
 
-Visual Studio 2013 zahrnuje integrovanou prvotřídní [podporu Git](https://msdn.microsoft.com/library/hh850437.aspx); tady je rychlý ukázku jak to funguje.
+Visual Studio 2013 zahrnuje prvotřídní integrované [podporu úložiště Git](https://msdn.microsoft.com/library/hh850437.aspx); zde je rychlý ukázku toho, jak to funguje.
 
-S projektem otevřeným v nástroji Visual Studio 2013, klikněte pravým tlačítkem na řešení v **Průzkumníku řešení**a zvolte **přidat řešení správy zdrojového kódu**.
+S projektem otevřeným v sadě Visual Studio 2013, klikněte pravým tlačítkem na řešení v **Průzkumníka řešení**a zvolte **přidat řešení do správy zdrojových kódů**.
 
 ![Přidat řešení do správy zdrojového kódu](source-control/_static/image9.png)
 
-Visual Studio zobrazí, pokud chcete použít TFVC (centralizované správy verzí) nebo Git.
+Visual Studio výzvu, pokud chcete používat TFVC (centralizované správy verzí) nebo Git.
 
-![Zvolte zdrojového kódu](source-control/_static/image10.png)
+![Zvolte možnost správy zdrojového kódu](source-control/_static/image10.png)
 
-Když vyberete Git a klikněte na tlačítko **OK**, Visual Studio vytvoří nové místní úložiště Git ve složce řešení. Nové úložiště nejsou uloženy žádné soubory ještě; je nutné je přidat do úložiště pomocí tohoto postupu potvrzení Git. Pravým tlačítkem na řešení v **Průzkumníku řešení**a potom klikněte na **potvrdit**.
+Když vyberete Git a klikněte na tlačítko **OK**, sada Visual Studio vytvoří nové místní úložiště Git ve složce řešení. Nové úložiště ještě; neobsahuje žádné soubory je nutné je přidat do úložiště Git commit způsobem. Klikněte pravým tlačítkem na řešení v **Průzkumníka řešení**a potom klikněte na tlačítko **potvrzení**.
 
-![Potvrzení](source-control/_static/image11.png)
+![Potvrzení změn](source-control/_static/image11.png)
 
-Visual Studio automaticky zpracuje všechny soubory projektu pro potvrzení a zobrazí je v **Team Explorer** v **změny zahrnuté** podokně. (Pokud byly některé nebyla chcete zahrnout do potvrzení, můžete třeba vybrat, klikněte pravým tlačítkem a klikněte na tlačítko **vyloučit**.)
+Visual Studio automaticky zpracuje všechny soubory projektu pro potvrzení a uvádí jejich v **Team Exploreru** v **zahrnuté změny** podokně. (Pokud byly některé nechcete zahrnout do potvrzení změn, můžete vybrat, klikněte pravým tlačítkem a klikněte na tlačítko **vyloučit**.)
 
 ![Team Explorer](source-control/_static/image12.png)
 
-Zadejte komentář potvrzení a klikněte na **potvrzení**, a Visual Studio provádí potvrzení a zobrazí ID potvrzení.
+Zadejte komentář potvrzení a klikněte na tlačítko **potvrzení**, a sady Visual Studio spustí potvrzení a zobrazí ID potvrzení změn.
 
 ![Team Explorer změny](source-control/_static/image13.png)
 
-Teď Pokud změníte nějaký kód tak, aby se liší od co je v úložišti, můžete snadno zobrazit rozdíly. Klikněte pravým tlačítkem na soubor, který jste změnili, vyberte **porovnání s Unmodified**, a získat porovnání zobrazení, který ukazuje nepotvrzené změny.
+Teď Pokud nějaký kód změnit tak, aby se liší od co je v úložišti, můžete snadno zobrazit rozdíly. Klikněte pravým tlačítkem na soubor, který jste změnili, vyberte **porovnat s Unmodified**, zobrazí se zobrazení porovnání, která zobrazuje nepotvrzené změny.
 
-![Porovnání s beze změny](source-control/_static/image14.png)
+![Porovnat s verzí bez úprav](source-control/_static/image14.png)
 
-![Diff zobrazuje změny](source-control/_static/image15.png)
+![Změny zobrazení rozdílu](source-control/_static/image15.png)
 
-Zobrazí se snadno jaké změny prováděné a vrátit se změnami.
+Můžete snadno zobrazit změny teď a vrátit je se změnami.
 
-Předpokládejme, že budete muset udělat větev – můžete to udělat v sadě Visual Studio příliš. V **Team Explorer**, klikněte na tlačítko **nové větve**.
+Předpokládejme, že budete muset udělat větev – můžete tak učinit v sadě Visual Studio příliš. V **Team Exploreru**, klikněte na tlačítko **novou větev**.
 
-![Nové větve Team Explorer](source-control/_static/image16.png)
+![Team Explorer novou větev](source-control/_static/image16.png)
 
-Zadejte název větve, klikněte na tlačítko **vytvoření větve**, a pokud jste vybrali **větve najdete v článku věnovaném**, Visual Studio automaticky rezervuje nové větve.
+Zadejte název větve, klikněte na tlačítko **vytvořit větev**, a pokud jste vybrali **rezervovat větev**, Visual Studio automaticky rezervuje novou větev.
 
-![Nové větve Team Explorer](source-control/_static/image17.png)
+![Team Explorer novou větev](source-control/_static/image17.png)
 
-Teď můžete provádět změny souborů a jejich změnami na tuto větev. A můžete snadno přepínat mezi pobočkami a Visual Studio automaticky synchronizace, který si vyhradili soubory podle toho, co jste větev. V tomto příkladu title webové stránky v  *\_Layout.cshtml* byla změněna na "Oprava hotfix 1" v HotFix1 větev.
+Teď můžete provádět změny souborů a vrácení se změnami do této větve. A můžete snadno přepínat mezi větve a sady Visual Studio automaticky synchronizuje soubory na větvi, které byly rezervovány. V tomto příkladu nadpisu webové stránky v  *\_Layout.cshtml* byl změněn na "Opravy hotfix 1" v HotFix1 větve.
 
 ![Hotfix1 větve](source-control/_static/image18.png)
 
-Pokud přepnete zpět do hlavní pobočky, obsah  *\_Layout.cshtml* souboru automaticky obnovit jsou v hlavní pobočce.
+Pokud přepnete zpět do hlavní větve, obsah  *\_Layout.cshtml* soubor automaticky obnovit jsou v hlavní větvi.
 
-![Hlavní větve](source-control/_static/image19.png)
+![Hlavní větev](source-control/_static/image19.png)
 
-Tento jednoduchý příklad jak můžete rychle vytvořit větev a překlopit přepínat mezi větve. Tato funkce umožňuje vysoce agilní pracovní postup pomocí strukturu větve a skripty pro automatizaci zobrazovat v [automatizovat všechno](automate-everything.md) kapitoly. Například může být práce v pobočce vývoj, vytvořte větev oprava hotfix z hlavní, přejděte do nové větve, provedené změny existuje a potvrdit a pak přejděte zpátky do větve vývoj a pokračovat, co jste dělali.
+Tento jednoduchý příklad toho, jak můžete rychle vytvořit větev a překlopit vpřed a zpět mezi větvemi. Tato funkce umožňuje vysoce agilní pracovní postup pomocí strukturu větví a skripty pro automatizaci uvedené v [automatizovat všechno](automate-everything.md) kapitoly. Například může být práci ve větvi vývoj, vytvořte větev opravy hotfix z hlavní, přepnout na novou větev, proveďte požadované změny existuje a potvrdíte je a pak přepněte zpět do větve vývoje a pokračovat, co jste dělali.
 
-Co jste se seznámili s tady je způsob práce s místní úložiště Git v sadě Visual Studio. V prostředí team je obvykle také doručte změny do běžné úložiště. Nástroje sady Visual Studio také umožňují bodu do vzdáleného úložiště Git. K tomuto účelu můžete použít webu GitHub.com, nebo můžete použít [Git v prostředí Visual Studio Online](https://msdn.microsoft.com/library/hh850437.aspx) integrovat všechny ostatní sady Visual Studio Online funkce jako je například pracovní položkou a sledování chyb.
+Co už víte, zde je způsob práce s místním úložištěm Git v sadě Visual Studio. V prostředí team obvykle také vložíte změny běžné úložiště. Nástroje sady Visual Studio také umožňují tak, aby odkazoval do vzdáleného úložiště Git. K tomuto účelu můžete použít webu GitHub.com, nebo můžete použít [Git ve Visual Studiu Online](https://msdn.microsoft.com/library/hh850437.aspx) integrovaná všechny ostatní sady Visual Studio Online funkce jako je například pracovní položky a sledování chyb.
 
-Tato akce není jediným způsobem, jak můžete implementovat agilní větvení strategie, samozřejmě. Můžete povolit stejné agilní pracovní postup pomocí úložiště správy centralizované zdrojů.
+Tato akce není jediným způsobem je možné implementovat agilní strategie větvení, samozřejmě. Můžete povolit stejného agilní pracovního postupu pomocí úložiště centralizovanou správu zdrojového ovládacího prvku.
 
 ## <a name="summary"></a>Souhrn
 
-Měřit její úspěšnost systému správy zdrojů na základě jak rychle provést změnu a získat tak bezpečné a předvídatelné za provozu. Pokud se přistihnete Vystrašené provedení změny, protože je nutné provést jeden nebo dva ruční testování v něm, vám může položte otázku, co musíte udělat process-wise nebo test-wise tak, aby tato změna může provést, v minutách, nebo na nejhorší už než hodinu. Jednou z možných strategií pro tento krok je implementace průběžnou integraci a nastavené průběžné doručování, který vám nabídneme [další kapitoly](continuous-integration-and-continuous-delivery.md).
+Měřit její úspěšnost systému správy zdrojů na základě toho, jak rychle můžete provést změnu a získat za bezpečné a předvídatelným způsobem. Pokud se děsili toho k provedení změny, protože je nutné provést jeden nebo dva ručního testování v něm, můžete pokládat sami co musíte udělat process-wise nebo test-wise tak, že můžete provést tuto změnu v minutách, nebo na nejhorší ne déle než hodinu. Jednou z možných strategií pro způsobem, který je implementace průběžné integrace a průběžné doručování, což si probereme [další kapitolu](continuous-integration-and-continuous-delivery.md).
 
 <a id="resources"></a>
 ## <a name="resources"></a>Prostředky
 
-[Visual Studio Online](https://www.visualstudio.com/) portál poskytuje dokumentace a podpora služby, a můžete si zaregistrovat účet. Pokud máte Visual Studio 2012 a chcete použít Git, přečtěte si téma [Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c).
+[Visual Studio Online](https://www.visualstudio.com/) portál poskytuje dokumentace a podpora služby a můžete se zaregistrovat pro účet. Pokud máte sadu Visual Studio 2012 a chcete použít Git, přečtěte si téma [Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c).
 
-Další informace o TFVC (centralizované správy verzí) a Git (distribuované verzí) najdete v následujících zdrojích informací:
+Další informace o TFVC (centralizované správy verzí) a Git (distribuovanou správu verzí) naleznete na následujících odkazech:
 
-- [Které systém správy verzí použít: TFVC nebo Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Dokumentace MSDN, obsahuje tabulku shrnutí rozdíly mezi TFVC a Git.
-- [Dobře je dobré Team Foundation Server a je dobré Git, ale který je lepší?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Porovnání Git a TFVC.
+- [Který systém správy verzí mám použít: TFVC nebo Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Dokumentace MSDN obsahuje tabulku se souhrnem rozdílech mezi TFVC a Git.
+- [Dobře chci Team Foundation Server a jsem, jako je Git, ale které je lepší?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Porovnání Git a TFVC.
 
-Další informace o větvení strategie najdete v následujících zdrojích informací:
+Další informace o strategie větvení naleznete na následujících odkazech:
 
-- [Vytvoření kanálu verze sadou Team Foundation Server 2012](https://msdn.microsoft.com/library/dn449957.aspx). Dokumentace k Microsoft Patterns and Practices. V kapitole 6 diskuzi o větvení strategie. Funkce obranou přepíná prostřednictvím funkce větve a pokud se používají větve pro funkce, obhajuje zachování jejich krátkodobou (hodin nebo dnů maximálně).
-- [Průvodce řízení verze](https://aka.ms/vsarsolutions). Průvodce větvení strategie podle ALM Rangers. Na kartě soubory ke stažení najdete v části Vytvoření větve Strategies.pdf.
-- [Vývoj softwaru pomocí funkce přepínačů](https://msdn.microsoft.com/magazine/dn683796.aspx). Článek v časopise MSDN.
-- [Funkce přepínání](http://martinfowler.com/bliki/FeatureToggle.html). Úvod k funkci přepíná / funkce flags na blogu Martin Fowler.
-- [Funkce přepínačů vs funkce větví](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx). Jiné příspěvku na blogu o funkce přepínačů, podle Dylan Smith.
+- [Vytváření procesních toků pro verzi serveru Team Foundation Server 2012](https://msdn.microsoft.com/library/dn449957.aspx). Dokumentace ke službě Microsoft Patterns and Practices. Viz kapitola 6 diskuzi o strategie větvení. Funkce pomocníků přepíná přes větve funkcí, pokud větve pro funkce se používají, nejzávažnějších a jejich krátkodobou (hodiny nebo i dny maximálně).
+- [Verze ovládacího prvku průvodce](https://aka.ms/vsarsolutions). Příručka k strategie větvení pomocí ALM Rangers. Na kartě soubory ke stažení najdete v článku Strategies.pdf větvení.
+- [Vývoj softwaru s funkcí přepíná](https://msdn.microsoft.com/magazine/dn683796.aspx). Článek v časopise MSDN Magazine.
+- [Funkce přepínání](http://martinfowler.com/bliki/FeatureToggle.html). Úvod k funkci přepíná / na blog Martina Fowlera příznaky funkcí.
+- [Funkce přepíná vs větve funkcí](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx). Jiné blogový příspěvek o funkci přepínačů, podle Dylan Smith.
 
-Další informace o způsobu zpracování citlivé informace, které by neměl být zachovány v zdrojová ovládací prvek úložiště najdete v následujících zdrojích informací:
+Další informace o tom, jak zpracovat citlivé informace, které by neměly být udržovány v úložišť správy zdrojového kódu naleznete na následujících odkazech:
 
-- [Osvědčené postupy pro nasazování hesel a dalších citlivých dat do ASP.NET a službě Azure App Service](../../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
-- [Weby Azure: Jak řetězců aplikace a připojovací řetězce pracovní](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/). Vysvětluje funkci Azure, který přepíše `appSettings` a `connectionStrings` data *Web.config* souboru.
-- [Vlastní nastavení konfigurace a aplikací v Azure weby - Stefan Schackow](https://azure.microsoft.com/documentation/videos/configuration-and-app-settings-of-azure-web-sites/).
+- [Osvědčené postupy pro nasazení hesel a dalších citlivých dat do ASP.NET a službě Azure App Service](../../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md).
+- [Model weby Azure: Jak řetězců aplikace a připojení fungují řetězce](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/). Vysvětluje funkci Azure, která přepíše `appSettings` a `connectionStrings` data *Web.config* souboru.
+- [Vlastní nastavení konfigurace a aplikace na webech Azure – s Stefan Schackow](https://azure.microsoft.com/documentation/videos/configuration-and-app-settings-of-azure-web-sites/).
 
-Informace o dalších metodách pro zachování citlivých informací mimo zdrojového kódu najdete v tématu [ASP.NET MVC: zachovat privátní nastavení ze zdrojového kódu](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx).
+Informace o dalších metodách pro uchování citlivých informací ze správy zdrojového kódu, naleznete v tématu [ASP.NET MVC: zachovat privátní nastavení ze správy zdrojového kódu](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](automate-everything.md)

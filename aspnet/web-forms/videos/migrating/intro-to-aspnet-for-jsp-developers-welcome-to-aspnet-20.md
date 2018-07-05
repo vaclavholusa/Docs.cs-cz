@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20
-title: 'Úvod do technologie ASP.NET pro vývojáře JSP: Vítá vás technologie ASP.NET 2.0 | Microsoft Docs'
+title: 'Úvod do ASP.NET pro vývojáře v JSP: Vítejte v ASP.NET 2.0 | Dokumentace Microsoftu'
 author: microsoft
-description: Tato relace se zaměřuje na základní informace potřebné pro pochopení ASP.NET a jak ASP.NET integruje s rozhraní .NET Framework a Microsoft IIS.
+description: Tato relace se zaměřuje na základní informace nezbytné k pochopení technologie ASP.NET a jak ASP.NET integruje do rozhraní .NET Framework a Microsoft IIS.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/25/2006
 ms.topic: article
 ms.assetid: 1a95474a-a897-4ba1-b372-8a112cb324ba
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20
 msc.type: video
-ms.openlocfilehash: 20f73bfeb0ad00725482af35941c998407dec776
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 38c7c42c248fe9f6c06852d1d580c2fdb42fd5d8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882680"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391751"
 ---
-<a name="intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20"></a>Úvod do technologie ASP.NET pro vývojáře JSP: Vítá vás technologie ASP.NET 2.0
+<a name="intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20"></a>Úvod do ASP.NET pro vývojáře v JSP: Vítejte v ASP.NET 2.0
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-Tato relace se zaměřuje na základní informace potřebné pro pochopení ASP.NET a jak ASP.NET integruje s rozhraní .NET Framework a Microsoft IIS.
+Tato relace se zaměřuje na základní informace nezbytné k pochopení technologie ASP.NET a jak ASP.NET integruje do rozhraní .NET Framework a Microsoft IIS.
 
 [&#9654;Podívejte se na video (61 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20)
 

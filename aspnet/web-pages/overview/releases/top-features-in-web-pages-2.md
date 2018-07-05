@@ -1,47 +1,46 @@
 ---
 uid: web-pages/overview/releases/top-features-in-web-pages-2
-title: Horní funkce v rozhraní ASP.NET Web Pages 2 | Microsoft Docs
+title: Horní funkce v rozhraní ASP.NET Web Pages 2 | Dokumentace Microsoftu
 author: microsoft
-description: Toto téma obsahuje přehled hlavní nové funkce v ASP.NET Web Pages 2, jednoduché webové programování framework, která je součástí WebMatr...
+description: Toto téma obsahuje přehled o hlavní nové funkce v ASP.NET Web Pages 2, jednoduché webové programování rozhraní, která je součástí WebMatr...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2012
 ms.topic: article
 ms.assetid: cc712e72-c3d0-4e43-bc2d-28cc09cd8f71
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: f0d32edd3ab54c55aa06c803cd91e01cbbb8f08a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3cdb9d83e0f612ad7404bfaa9721b580916e112d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30899379"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385263"
 ---
-<a name="the-top-features-in-aspnet-web-pages-2"></a>Hlavní funkce v rozhraní ASP.NET Web Pages 2
+<a name="the-top-features-in-aspnet-web-pages-2"></a>Hlavní funkce webových stránek v ASP.NET 2
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-> Tento článek obsahuje přehled hlavní nové funkce v 2 RC webových stránek ASP.NET, jednoduché webové programování framework, která je součástí [Microsoft WebMatrix 2 RC](https://www.microsoft.com/web/).
+> Tento článek poskytuje přehled o hlavní nové funkce v RC 2 technologie ASP.NET Web Pages, jednoduché webové programování rozhraní, která je součástí [Microsoft WebMatrix 2 RC](https://www.microsoft.com/web/).
 > 
-> **Zahrnuté součásti:** 
+> **Co je součástí:** 
 > 
 > - [Instalace služby WebMatrix](#install)
 > - [Nové a vylepšené funkce](#New_and_Enhanced_Features)
 > 
->     - [Změny ve verzi RC](#Changes_for_the_RC_Version)
->     - [Změny ve verzi Beta](#Changes_for_the_Beta_Version)
->     - [Pomocí šablony nové a aktualizované webů](#templates)
+>     - [Změny pro verzi RC](#Changes_for_the_RC_Version)
+>     - [Změn pro vydání Beta](#Changes_for_the_Beta_Version)
+>     - [Pomocí šablony nových a aktualizovaných webů](#templates)
 >     - [Ověřování uživatelského vstupu](#validation)
->     - [Povolení přihlášení ze sítě Facebook a jiných lokalitách pomocí OAuth a OpenID](#oauthsetup)
->     - [Přidání mapy využitím pomocné rutiny mapy](#maphelper)
->     - [Spouštění webových stránek aplikací vedle sebe](#sidebyside)
+>     - [Povolení přihlášení z Facebooku a dalších lokalit pomocí OAuth a OpenID](#oauthsetup)
+>     - [Přidání map použití pomocné rutiny mapy](#maphelper)
+>     - [Spuštění webové stránky aplikace vedle sebe](#sidebyside)
 >     - [Vykreslování stránek pro mobilní zařízení](#mobile)
 > - [Další zdroje informací](#resources)
 > 
 > > [!NOTE]
-> > Toto téma předpokládá, že používáte službu WebMatrix pro práci s kódu ASP.NET Web Pages 2. Však jako s 1 webové stránky, mohou také vytvářet weby 2 webových stránek pomocí sady Visual Studio, který vám dává rozšířené funkce IntelliSense a ladění. Pro práci s webovými stránkami v sadě Visual Studio, musíte nejprve nainstalovat Visual Studio 2010 SP1, Visual Web Developer Express 2010 SP1 nebo Visual Studio 11 Beta. Nainstalujte technologie ASP.NET MVC 4 Beta, která obsahuje šablony a nástroje pro vytváření aplikací ASP.NET MVC 4 a Web Pages 2 v sadě Visual Studio.
+> > Toto téma předpokládá, že používáte služby WebMatrix pro práci s vaším kódem ASP.NET Web Pages 2. Ale jako s 1 webové stránky, můžete také vytvořit webové stránky 2 webů pomocí sady Visual Studio, která vám umožňuje rozšířené možnosti technologie IntelliSense a ladění. Pro práci s webovými stránkami v sadě Visual Studio, je nutné nejprve nainstalovat Visual Studio 2010 SP1, Visual Web Developer Express 2010 SP1 nebo Visual Studio 11 Beta. Nainstalujte ASP.NET MVC 4 Beta, který obsahuje šablony a nástroje pro vytváření aplikací ASP.NET MVC 4 a Web Pages 2 v sadě Visual Studio.
 > 
 > 
 > *Poslední aktualizace: 18. června 2012*
@@ -50,179 +49,179 @@ podle [Microsoft](https://github.com/microsoft)
 <a id="install"></a>
 ## <a name="installing-webmatrix"></a>Instalace služby WebMatrix
 
-K instalaci webové stránky, můžete použít Microsoft webové platformy, které je bezplatná aplikace, která lze snadno nainstalovat a nakonfigurovat související webové technologie. Budete instalovat beta verzi 2 WebMatrix zahrnuje Beta 2 webové stránky.
+Chcete-li nainstalovat webové stránky, můžete použít instalačního programu webové platformy, což je bezplatná aplikace, která umožňuje jednoduše nainstalovat a nakonfigurovat související webové technologie. Budete instalovat beta verzi 2 služby WebMatrix zahrnuje Beta 2 webové stránky.
 
-1. Přejděte na stránku instalace na nejnovější verzi instalačního programu webové platformy:
+1. Přejděte na instalační stránku pro nejnovější verzi instalačního programu webové platformy:
 
     [https://go.microsoft.com/fwlink/?LinkId=226883](https://go.microsoft.com/fwlink/?LinkId=226883)
 
     > [!NOTE]
-    > Pokud již máte nainstalovanou službu WebMatrix 1, tato instalace se aktualizuje na beta verzi služby WebMatrix 2. Můžete spustit weby, které byly vytvořené pomocí verze 1 nebo 2 na stejném počítači. Další informace najdete v části na [spuštění webové stránky aplikace vedle sebe](#sidebyside).
-2. Zvolte **nyní nainstalovat**. 
+    > Pokud už máte nainstalovanou službu WebMatrix 1, tato instalace aktualizuje na beta verzi 2 služby WebMatrix. Můžete spustit weby, které byly vytvořeny pomocí verze 1 nebo 2 na stejném počítači. Další informace najdete v části na [spuštění webové stránky aplikace vedle sebe](#sidebyside).
+2. Zvolte **nainstalovat**. 
 
-    Pokud používáte Internet Explorer, přejděte k dalšímu kroku. Pokud používáte jiný prohlížeč jako Mozilla Firefox nebo Google Chrome, zobrazí se výzva k uložení *Webmatrix.exe* soubor do počítače. Uložte soubor a klikněte na něj spustíte instalační program.
-3. Spusťte instalační program a vybrat **nainstalovat** tlačítko. Tím se nainstaluje službu WebMatrix a webové stránky.
+    Pokud používáte Internet Explorer, přejděte k dalšímu kroku. Pokud používáte jiný prohlížeč, jako je Mozilla Firefox a Google Chrome, zobrazí se výzva k uložení *Webmatrix.exe* soubor do počítače. Uložte soubor a potom klikněte na ni a spustí se instalační služby.
+3. Spusťte instalační program a zvolte **nainstalovat** tlačítko. Tím se nainstaluje služba WebMatrix a webové stránky.
 
 ## <a id="New_and_Enhanced_Features"></a>  Nové a vylepšené funkce
 
 ### <a id="Changes_for_the_RC_Version"></a>  Změny pro verzi RC (červen 2012)
 
-Verze RC verze v červen 2012 obsahuje několik změny z aktualizace Beta verze, která byla vydána v březnu 2012. Tyto změny jsou:
+Verze RC verze z června 2012 má několik změn od aktualizace Beta verze, která byla vydána v březnu 2012. Tyto změny jsou:
 
-- A `Validation.AddFormError` metoda byla přidána do `Validation` pomocné rutiny. To je užitečné, pokud je ověření provést ručně (například můžete ověřit hodnotu, která je předán v řetězci dotazu) a chcete přidat chybovou zprávu, která lze zobrazit `Html.ValidationSummary` metoda. Další informace najdete v části [ověření dat, nebude pocházet přímo z uživatelů](https://go.microsoft.com/fwlink/?LinkId=253002#Validating_Data_That_Doesnt_Come_Directly_from_Users) v [ověření vstupu uživatele na webech rozhraní ASP.NET Web Pages (Razor)](https://go.microsoft.com/fwlink/?LinkId=253002).
-- Odebrali jsme funkci pro sdružování a minimalizace ze základních ASP.NET Web Pages 2 sestavení. V důsledku toho `Assets` pomocné rutiny, které jsou uvedeny dále v tomto dokumentu není k dispozici. Místo toho je nutné nainstalovat [ASP.NET optimalizace](http://nuget.org/packages/Microsoft.Web.Optimization/0.1) balíček NuGet. Další informace najdete v tématu [sdružování a Minifikace prostředky v stránku ASP.NET Web Pages (Razor)](https://go.microsoft.com/fwlink/?LinkId=255373).
-- Byly přidány další sestavení pro ASP.NET Web Pages 2 podporu. Pouze znatelný vliv této změny je, že, může se zobrazit další sestavení na webu *bin* složky Po vytvoření lokality nebo lokality nasazení do hostujícího zprostředkovatele.
+- A `Validation.AddFormError` metoda byla přidána do `Validation` pomocné rutiny. To je užitečné, pokud je ověření provést ručně (například můžete ověřit hodnotu, která je předána v řetězci dotazu) a chcete přidat chybovou zprávu, která lze zobrazit `Html.ValidationSummary` metody. Další informace najdete v části [ověření, že nebude pocházejí přímo z uživatelé dat](https://go.microsoft.com/fwlink/?LinkId=253002#Validating_Data_That_Doesnt_Come_Directly_from_Users) v [ověření vstupu uživatele ve webových stránek ASP.NET (Razor) lokality](https://go.microsoft.com/fwlink/?LinkId=253002).
+- Funkce pro sdružování a minifikace byla odebrána ze sestavení jádra ASP.NET Web Pages 2. V důsledku toho `Assets` uvedené dále v tomto dokumentu není k dispozici. Místo toho je nutné nainstalovat [ASP.NET optimalizace](http://nuget.org/packages/Microsoft.Web.Optimization/0.1) balíček NuGet. Další informace najdete v tématu [sdružování a Minifikace prostředků na webu rozhraní ASP.NET Web Pages (Razor)](https://go.microsoft.com/fwlink/?LinkId=255373).
+- Přidali jsme další sestavení pro podporu technologie ASP.NET Web Pages 2. Pouze znatelný vliv této změny je, že může se zobrazit více sestavení na webu *bin* složky Po vytvoření webu nebo nasazení webu k poskytovateli hostingu.
 
 <a id="Changes_for_the_Beta_Version"></a>
 ### <a name="changes-for-the-beta-version-february-2012"></a>Změny pro Beta verzi (únor 2012)
 
-Beta verze vydané v únoru 2012 má pouze několik změn z verze Beta, která byla vydána v prosince 2011. Tyto změny jsou:
+Vydáno v únoru 2012 Beta verzi má jen několik změn z verze beta verze, která byla vydána v roce 2011 dne. Tyto změny jsou:
 
-- Syntaxe Razor teď podporuje podmíněné atributy. V kódu HTML elementu, pokud je atribut nastaven na hodnotu, v kód serveru, který přeloží `false` nebo `null`, technologie ASP.NET nevykresluje atribut vůbec. Představte si například, že máte následující kód pro zaškrtávací políčko:
+- Razor teď podporuje podmíněné atributy. V kódu HTML odstraňuje prvek, pokud je atribut nastaven na hodnotu, která v serverovém kódu k `false` nebo `null`, technologie ASP.NET nevykresluje atribut vůbec. Představte si například, že máte následující kód pro zaškrtávací políčko:
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample1.html)]
 
-    Pokud hodnota `checked1` přeloží na `false` nebo `null`, `checked` atribut není vykreslen. Toto je narušující změně.
-- `Validation.GetHtml` Metoda byla přejmenována na `Validation.For`. Toto je narušující změně; `Validation.GetHtml` ve verzi beta verzi nebude fungovat.
-- Teď můžete použít `~` operátor v kódu odkazovat kořenovému adresáři webu bez použití `Href` funkce. (To znamená, můžete najít a vyřešit analyzátor Razor nyní `~` operátor bez nutnosti volání explicitní metoda `Href`.) `Href` Metoda pořád funguje, takže tento není narušující změně.
+    Pokud hodnota `checked1` přeloží na `false` nebo `null`, `checked` atribut není vykresleno. Toto je zásadní změnu.
+- `Validation.GetHtml` Metoda se přejmenovala na `Validation.For`. Toto je zásadní změnu; `Validation.GetHtml` nebudou fungovat ve verzi Beta.
+- Nyní můžete zahrnout `~` operátor v kódu tak, aby odkazovaly kořenovém adresáři webu bez použití `Href` funkce. (To znamená, analyzátor Razor teď můžete vyhledat a vyřešit `~` operátor bez nutnosti volání do rozhraní explicitní metoda `Href`.) `Href` Metoda stále funguje, takže to není zásadní změnu.
 
-    Například pokud jste dřív měli kód takto:
+    Například pokud jste dřív měli kód následujícím způsobem:
 
     `<a href="@Href("~/Default.cshtml")">Home</a>`
 
-    Teď můžete použít kód takto:
+    Teď můžete použít značky takto:
 
     `<a href="~/Default.cshtml">Home</a>`
-- `Scripts` Pomocné rutiny pro správu prostředků (prostředků) se nahradil údajem `Assets` pomocné rutiny, která má mírně odlišné metody, jako jsou následující:
+- `Scripts` Pomocné rutiny pro správu prostředků (prostředek) se nahradil údajem `Assets` pomocné rutiny, která má mírně odlišné metod, jako je následující:
 
   - Pro `Scripts.Add`, použijte `Assets.AddScript`
   - Pro `Scripts.GetScriptTags`, použijte `Assets.GetScripts`
 
-    Toto je narušující změně; `Scripts` třída není k dispozici ve verzi Beta. Příklady kódu v tomto dokumentu, které používají správu asset byly aktualizovány s tuto změnu.
+    Toto je zásadní změnu; `Scripts` třída není k dispozici ve verzi Beta. Díky této změně se aktualizovaly příklady kódu v tomto dokumentu, které používají správu prostředků.
 
 <a id="templates"></a>
-### <a name="using-the-new-and-updated-site-templates"></a>Pomocí šablony nové a aktualizované webů
+### <a name="using-the-new-and-updated-site-templates"></a>Pomocí šablony nových a aktualizovaných webů
 
-**Starter Site** šablony je aktualizovaná tak, aby běžel na Web Pages 2 ve výchozím nastavení. Obsahuje taky následující nové funkce:
+**Starter Site** šablony byl aktualizován tak, aby běžel na Web Pages 2 ve výchozím nastavení. Také obsahuje následující nové funkce:
 
-- Vykreslování stránky mobilní zařízení. Pomocí stylů CSS a `@media` selektoru **Starter Site** poskytuje lepší vykreslování stránek na menších obrazovkách, včetně mobilních zařízení obrazovky.
-- Vylepšené možnosti členství a ověřování. Můžete je nechat protokolu uživatele na váš web pomocí účtů z jiných sociálních sítí, jako je například Twitteru, Facebooku a Windows Live. Další informace najdete v tématu [povolení přihlášení ze sítě Facebook a další lokality pomocí OAuth a OpenID](#oauthsetup) části.
-- HTML5 elements.
+- Vykreslování části stránky mobilní zařízení. Pomocí stylů CSS a `@media` selektor, **Starter Site** poskytuje vylepšené vykreslování stránek na menších obrazovkách, včetně obrazovky mobilního zařízení.
+- Vylepšené možnosti členství a ověřování. Pustit se přihlašují uživatelé na webu pomocí účtů z jiných sociálních sítí, jako je Twitter, Facebook a Windows Live. Další informace najdete v tématu [povolení přihlášení z Facebooku a ostatní weby pomocí OAuth a OpenID](#oauthsetup) oddílu.
+- Prvky HTML5.
 
-Nové **osobní stránku** šablona umožňuje vytvořit web, který obsahuje osobní blog, stránka s fotografiemi a na stránce služby Twitter. Web na základě můžete přizpůsobit **osobní stránku** šablony pomocí těchto kroků:
+Nové **osobního webu** šablona umožňuje vytvořit web, který obsahuje osobní blog, stránka s fotografiemi a stránku Twitteru. Můžete přizpůsobit na základě lokality **osobního webu** šablony následujícím způsobem:
 
-- Změna vzhledu stránky úpravou souboru rozložení (*\_SiteLayout.cshtml*) a soubor styly (*Site.css*).
-- Instalace balíčků NuGet, které přidávají funkce do vaší lokality. Informace o tom, jak nainstalovat balíčky, včetně knihovnu ASP.NET Web Helpers zobrazit kurz [instalaci pomocné rutiny](https://go.microsoft.com/fwlink/?LinkId=202889#webhelpers).
+- Změna vzhledu stránky tak, že upravíte soubor rozložení (*\_SiteLayout.cshtml*) a soubor styly (*Site.css*).
+- Instalace balíčků NuGet, které přidávají funkce do vaší lokality. Informace o tom, jak nainstalovat balíčky, včetně knihovnu ASP.NET Web Helpers, najdete v kurzu [instalace pomocné rutiny](https://go.microsoft.com/fwlink/?LinkId=202889#webhelpers).
 
-Pro přístup k **osobní stránku** šablony, vyberte **šablony** na WebMatrix **rychlý Start** obrazovky.
+Pro přístup **osobního webu** šablony, zvolte **šablony** na služby WebMatrix **rychlý Start** obrazovky.
 
 [![topseven-personalsite-1](top-features-in-web-pages-2/_static/image2.png)](top-features-in-web-pages-2/_static/image1.png)
 
-V **šablony** dialogovém okně vyberte **osobní stránku** šablony.
+V **šablony** dialogového okna zvolte **osobního webu** šablony.
 
 [![topseven-personalsite-2](top-features-in-web-pages-2/_static/image4.png)](top-features-in-web-pages-2/_static/image3.png)
 
-Cílová stránka **osobní stránku** šablona umožňuje odkazech na blogu, Twitter, stránky a stránky fotografie.
+Na úvodní stránku **osobního webu** stránky a stránka s fotografiemi šablona umožňuje-li nastavit blogu, použijte odkazy na Twitteru.
 
 [![topseven-personalsite-3](top-features-in-web-pages-2/_static/image6.png)](top-features-in-web-pages-2/_static/image5.png)
 
 <a id="validation"></a>
 ### <a name="validating-user-input"></a>Ověřování uživatelského vstupu
 
-V 1 webové stránky, k ověření vstupu uživatele na odeslaného formuláře, použijete `System.Web.WebPages.Html.ModelState` třídy. (To je znázorněno v některé z ukázky kódu v tomto kurzu 1 webové stránky s názvem [práci s daty](../data/5-working-with-data.md).) Stále můžete tento přístup na Web Pages 2. Web Pages 2 však nabízí vylepšené nástroje pro ověřování vstupu uživatele:
+V 1 webové stránky, pro ověření uživatelského vstupu v odeslané formuláře, použijete `System.Web.WebPages.Html.ModelState` třídy. (To je znázorněno v některé z ukázek kódu v tomto kurzu 1 webové stránky s názvem [práce s daty](../data/5-working-with-data.md).) V Web Pages 2 můžete nadále používat tento přístup. Web Pages 2 ale také nabízí vylepšené nástroje pro ověření vstupu uživatele:
 
-- Nové třídy ověření, včetně `System.Web.WebPages.ValidationHelper` a `System.Web.WebPages.Validator`, které umožňují provádět efektivní ověření úkoly zadání několika řádků kódu.
-- Volitelně ověřování na straně klienta, který poskytuje okamžitou zpětnou vazbu pro uživatele místo nutnosti kontaktování serveru ke kontrole chyb při ověřování. (Z bezpečnostních důvodů, ověření se provádí na serveru i v případě, že kontroly prováděly v klientovi předem.)
+- Nové třídy ověřování, včetně `System.Web.WebPages.ValidationHelper` a `System.Web.WebPages.Validator`, umožňující provádět výkonnou ověření pomocí pár řádků kódu.
+- Volitelně ověřování na straně klienta, který poskytuje okamžitou zpětnou vazbu k uživateli nemusíte mít odezvy serveru zkontrolujte výskyt chyb ověření. (Z bezpečnostních důvodů, provede se ověření na serveru i v případě, že kontroly byly provedeny v klientovi předem.)
 
-Pokud chcete používat nové funkce ověřování, postupujte takto:
+Pokud chcete použít nové funkce ověřování, postupujte takto:
 
-V kódu stránky zaregistrovat element má být ověřen pomocí metody `Validation` Pomocník: `Validation.RequireField`, `Validation.RequireFields` (k registraci více elementů potřeba), nebo `Validation.Add`. `Add` Metoda slouží k určení dalších typů ověřovací kontroly, jako je datový typ kontroly, porovnání položek v různých polí, délka řetězce kontroly a vzory (s použitím regulárních výrazů). Následuje několik příkladů:
+V kódu stránky zaregistrovat element, který má být ověřen pomocí metody `Validation` pomocné rutiny: `Validation.RequireField`, `Validation.RequireFields` (k registraci více prvků jako povinné.), nebo `Validation.Add`. `Add` Metoda umožňuje určit jiné druhy ověřovací kontroly, jako je datový typ kontroly, položky v různých polí, kontroluje délku řetězce, porovnání a vzory (pomocí regulárních výrazů). Následuje několik příkladů:
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample2.html)]
 
-Chcete-li zobrazit chyba specifické pro pole, volejte `Html.ValidationMessage` v kódu pro každý prvek ověřován:
+Chcete-li zobrazit konkrétní pole chyb, zavolejte `Html.ValidationMessage` ve značkách pro každý prvek ověřován:
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample3.cshtml)]
 
-Chcete-li zobrazit souhrn (`<ul>` seznamu) všech chyb na stránce `Html.ValidationSummary` do kódu:
+Chcete-li zobrazit souhrn (`<ul>` seznamu) všech chyb na stránce `Html.ValidationSummary` v kódu:
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample4.cshtml)]
 
-Tyto kroky jsou dost implementovat ověřování na straně serveru. Pokud chcete přidat ověřování na straně klienta, kromě toho proveďte následující kroky.
+Tyto kroky jsou dost informací k implementaci ověřování na straně serveru. Pokud chcete přidat ověřování na straně klienta, kromě postupujte následovně.
 
-Přidejte následující odkazy na soubor skriptu uvnitř `<head>` část webové stránky. První dva odkazům na skript, přejděte na vzdálených souborů na serveru doručování obsahu (CDN) sítě. Odkaz na třetí odkazuje na soubor skriptu místní. Když není k dispozici CDN produkční aplikace by měla implementovat zálohu. Test záložní.
+Přidejte následující odkazy na soubor skriptu uvnitř `<head>` části webové stránky. První dva odkazy skriptu odkazovat na vzdálené soubory na serveru content delivery network (CDN). Třetí odkaz ukazovat na místní skript. Produkční aplikace by měla implementovat záložní CDN není k dispozici. Testování na náhradní řešení.
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample5.html)]
 
-Nejjednodušší způsob, jak získat místní kopii *jquery.validate.unobtrusive.min.js* knihovna je vytvoření nové webové stránky lokality na základě jedné z šablony webů (například Starter Site). Zahrnuje webu vytvořených šablonou *jquery.validate.unobtrusive.js* souboru ve složce jeho skripty, ze kterého můžete zkopírovat ho na server.
+Nejjednodušší způsob, jak získat místní kopii *jquery.validate.unobtrusive.min.js* knihovna je pro vytvoření nové webové stránky webu na základě jedné z šablony webu (např. první web). Web vytvořený pomocí šablony obsahuje *jquery.validate.unobtrusive.js* soubor v jeho složky Scripts, ze kterého můžete zkopírovat ho do vaší lokality.
 
-Pokud váš web používá<em>\_SiteLayout</em> stránky k řízení rozložení stránky, můžete zahrnout tyto odkazy skript v této stránce tak, aby ověření je k dispozici pro všechny stránky obsahu. Pokud chcete provést ověření pouze na konkrétní stránky, můžete pro registraci skriptů na pouze stránky, správce prostředků. Chcete-li to provést, volejte `Assets.AddScript(path)` na stránce, který chcete ověřit a odkazovat na každý ze souborů skriptu. Pak přidejte volání `Assets.GetScripts` v  <em>\_SiteLayout</em> stránky k vykreslení zaregistrovanou `<script>` značky. Další informace najdete v části [skripty registrace pomocí Správce prostředků](#resmanagement).
+Pokud webová stránka používá<em>\_SiteLayout</em> stránky k řízení rozložení stránky, můžete zahrnout tyto odkazy na skript na této stránce tak, že ověřování je k dispozici pro všechny stránky obsahu. Pokud chcete provádět ověřování pouze na konkrétní stránky, můžete registrovat skripty na pouze na těchto stránkách správce prostředků. Chcete-li to provést, zavolejte `Assets.AddScript(path)` na stránce, kterou chcete ověřit a odkazovat na každém ze souborů skriptu. Pak přidejte volání do `Assets.GetScripts` v  <em>\_SiteLayout</em> stránky k vykreslení zaregistrovanou `<script>` značky. Další informace najdete v části [skripty registrace pomocí Správce prostředků](#resmanagement).
 
-Volání do kódu pro jednotlivý prvek `Validation.For` metoda. Tato metoda vysílá atributy této jQuery můžete připojit k ověřování na straně klienta. Příklad:
+Ve značkách pro jednotlivý element volání `Validation.For` metody. Tato metoda generuje atributy tohoto jQuery lze připojit k ověřování na straně klienta. Příklad:
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample6.cshtml)]
 
-Následující příklad ukazuje na stránku, která ověřuje uživatelský vstup ve formuláři. Chcete-li spustit a otestovat kód pro ověření, postupujte takto:
+Následující příklad ukazuje na stránku, která ověřuje vstup uživatele ve formuláři. Chcete-li spustit a otestovat kód pro ověření, postupujte takto:
 
 1. Vytvořit nový web pomocí jedné z šablony webu služby WebMatrix 2, které zahrnuje *skripty* složky, například **Starter Site** šablony.
-2. V nové lokalitě, vytvořte novou *.cshtml* stránky a obsah na stránku nahraďte následujícím kódem.
-3. Spusťte stránku v prohlížeči. Zadejte platné a neplatné hodnoty zobrazíte důsledky pro ověření. Například povinné pole ponechte prázdné nebo zadejte písmeno v **kredity** pole.
+2. V nové lokalitě, vytvořte nový *.cshtml* stránce a nahraďte jeho obsah na stránce s následujícím kódem.
+3. Spuštění stránky v prohlížeči. Zadejte platné a neplatné values a posoudit dopad na ověření. Například povinné pole ponechte prázdné nebo zadejte písmeno v **kredity** pole.
 
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample7.cshtml)]
 
-Zde je stránka, když uživatel odešle platný vstup:
+Tady je stránka, když uživatel odešle platný vstup:
 
-[![topSeven-valid-1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
+[![topSeven platný 1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
 
-Když uživatel odešle s povinné pole prázdné, zde je stránka:
+Tady je stránka, když uživatel odešle s povinné pole prázdné:
 
-[![topSeven-valid-2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
+[![topSeven platný 2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
 
-Zde je stránka, když uživatel odešle s něco jiného než celé číslo **kredity** pole:
+Tady je stránka, když uživatel odešle s jinou hodnotu než celé číslo v **kredity** pole:
 
-[![topSeven-valid-3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
+[![topSeven platný 3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
 
-Další informace najdete v následujících příspěvcích na blogu:
+Další informace najdete v těchto příspěvcích na blogu:
 
-- [Aktualizovat ověření u webové stránky v2](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2344) základní informace o přidání ověření pomocí `Validation` pomocné rutiny (pouze server straně)
-- [Aktualizovat ověření u webové stránky v2, část 2](http://www.mikepope.com/blog/DisplayBlog.aspx?permalink=2347) přidání ověřování na straně klienta.
-- [Aktualizovat ověření u webové stránky v2, část 3](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2351) formátování chyby ověření.
+- [Aktualizovat ověření ve v2 webové stránky](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2344) základní informace o přidání pomocí ověření `Validation` pomocné rutiny (pouze server strana)
+- [Aktualizovat ověření ve verzi v2 webové stránky, část 2](http://www.mikepope.com/blog/DisplayBlog.aspx?permalink=2347) přidání ověřování na straně klienta.
+- [Aktualizovat ověření ve verzi v2 webové stránky, část 3](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2351) formátování chyby ověření.
 
 <a id="resmanagement"></a>
-### <a name="registering-scripts-using-the-assets-manager"></a>Registrace pomocí Správce prostředků skriptů
+### <a name="registering-scripts-using-the-assets-manager"></a>Registrace skriptů pomocí Správce prostředků
 
-Správce prostředků je nová funkce, která můžete použít k registraci a vykreslit klienta skripty v serverovém kódu. Tato funkce je užitečná při práci s kódem z více souborů (například rozložení stránky, stránky obsahu, pomocné rutiny atd.), které jsou sloučeny do jediné stránce za běhu. Správce prostředků koordinuje a přesvědčte se, že soubory skriptu se správně odkazují a efektivně na vykreslené stránce, bez ohledu na to, které soubory kódu jsou volány z nebo kolikrát se nazývají zdrojové soubory. Správce prostředků také vykreslí `<script>` značky na správném místě, aby stránce může načíst rychle (aniž byste museli stáhnout skripty při vykreslování) a abyste se vyhnuli chybám, které může dojít, pokud jsou skripty volána před provedením vykreslování je dokončena.
+Správce prostředků je nová funkce, která v serverovém kódu můžete použít k registraci a vykreslit klientských skriptů. Tato funkce je užitečná při práci s kódem z více souborů (jako je rozložení stránek, obsahu stránky, pomocné rutiny, atd.), které jsou sloučeny do jediné stránce v době běhu. Správce prostředků koordinuje zdrojových souborů, abyste měli jistotu, že soubory skriptů jsou odkazovány správně a efektivně na vykreslené stránce bez ohledu na to, soubory kódu, které se volají z nebo kolikrát se nazývají. Správce prostředků také vykresluje `<script>` značek na správném místě, tak, aby na stránce může načíst rychle (bez stažení skripty při vykreslování) a aby nedocházelo k chybám, které může dojít, pokud jsou volány skripty před vykreslením je dokončena.
 
-Předpokládejme například, že vytvoříte vlastní pomocné rutiny, která volá soubor JavaScript a volat tohoto pomocníka ve třech různých místech v kódu stránky obsahu. Pokud nepoužijete správce prostředků k registraci volání skriptu do pomocné rutiny, tři různé `<script>` značky, které vykreslené stránce se zobrazí všechny bod do stejného souboru skriptu. A, v závislosti na tom, kde `<script>` značky jsou vloženy na vykreslené stránce, chyb, může dojít, pokud se skript pokusí o přístup k určité prvky na stránce před plně načtení stránky. Pokud použijete Správce prostředků k registraci skript, vyhněte se těmto problémům.
+Předpokládejme například, že vytvoření vlastního pomocného objektu, který volá soubor jazyka JavaScript a volat této pomocné rutiny na třech různých místech v kódu stránky obsahu. Pokud nepoužíváte správce prostředků k registraci skript volá v pomocné rutiny, třemi různými `<script>` značky, které odkazujících na stejný soubor skriptu se zobrazí v vykreslené stránky. Navíc, v závislosti na tom, kde `<script>` značky jsou vloženy na vykreslené stránce, chyb může nastat, pokud se skript pokusí o přístup k některé prvky stránky před stránka úplně načte. Pokud používáte Správce prostředků k registraci skript, vyhněte se těmto problémům.
 
 Skript můžete zaregistrovat pomocí Správce prostředků tímto způsobem:
 
-- V kódu, který musí odkazovat na skript, zavolejte `Assets.AddScript` metoda.
-- V  *\_SiteLayout* stránky, volejte `Assets.GetScripts` metoda k vykreslení `<script>` značky. 
+- V kódu, který musí odkazovat na skript, zavolejte `Assets.AddScript` metody.
+- V  *\_SiteLayout* stránky, zavolejte `Assets.GetScripts` metoda k vykreslení `<script>` značky. 
 
     > [!NOTE]
-    > Vkládat volání `Assets.GetScripts` jako velmi poslední položky `<body>` element  *\_SiteLayout* stránky. To pomáhá stránce načíst rychlejší a může pomoct vyhnout se chybám skriptu.
+    > Vložit volání `Assets.GetScripts` jako poslední položka v `<body>` elementu  *\_SiteLayout* stránky. To pomáhá stránky se načítají rychleji a může pomoci zabránit chybám skriptů.
 
 Následující příklad ukazuje, jak funguje správce prostředků. Kód obsahuje následující položky:
 
-- Vlastního pomocného objektu s názvem `MakeNote`. Tato pomocná vykreslí řetězec v poli nástrojem pro zabalení `div` element kolem něj, naformátovat ohraničením a přidáním &quot;Poznámka:&quot; k němu. Pomocné rutiny také voláním soubor JavaScript, který přidá běhového chování pro poznámku. Místo reference skriptu pomocí `<script>` značky, pomocné rutiny zaregistruje skript voláním `Assets.AddScript` .
-- Soubor JavaScript. Toto je soubor, který volá pomocné rutiny a dočasně zvětšuje velikost písma položek Poznámka během `mouseover` událostí.
-- Stránky obsahu, která odkazuje<em>\_SiteLayout</em> stránku, vykreslí obsah v textu a pak zavolá `MakeNote` pomocné rutiny.
-- A  *\_SiteLayout* stránky. Tato stránka obsahuje hlavičku běžné a strukturou rozložení stránky. Zahrnuje také volání `Assets.GetScripts`, což je, jak správce prostředků vykreslí skript volá na stránce.
+- Vlastního pomocného objektu s názvem `MakeNote`. Tohoto pomocníka vykreslí řetězec v poli obalením `div` element kolem něj, který má ve stylu s ohraničením a přidáním &quot;Poznámka:&quot; k němu. Pomocná rutina volá také soubor jazyka JavaScript, která přidá chování za běhu na poznámku. Namísto odkazu na skript s `<script>` pomocné rutiny značky registruje skript voláním `Assets.AddScript` .
+- Soubor jazyka JavaScript. Jedná se o soubor, který je volán pomocné rutiny a dočasně zvýší velikost písma položky Poznámka během `mouseover` událostí.
+- Stránky obsahu, který odkazuje<em>\_SiteLayout</em> vykreslí část obsahu v těle stránky a pak zavolá `MakeNote` pomocné rutiny.
+- A  *\_SiteLayout* stránky. Tato stránka obsahuje běžné záhlaví a strukturu rozložení stránky. Zahrnuje také volání `Assets.GetScripts`, což je, jak správce prostředků vykreslí skript volá na stránce.
 
-Spustit ukázku:
+Ke spuštění ukázky:
 
-1. Vytvoření webu k prázdný Web Pages 2. Můžete použít WebMatrix **prázdný web** pro tuto šablonu.
+1. Vytvořte prázdný web Web Pages 2. Můžete použít službou WebMatrix **prázdný web** pro tuto šablonu.
 2. Vytvořte složku s názvem *skripty* v lokalitě.
-3. V *skripty* složky, vytvořte soubor s názvem *Test.js*, kopie *Test.js* obsahu do ní z příkladu a uložte soubor...
+3. V *skripty* složce vytvořte soubor s názvem *Test.js*, kopírování *Test.js* obsah do něj z příkladu a uložte soubor...
 4. Vytvořte složku s názvem *aplikace\_kód* v lokalitě.
-5. V *aplikace\_kód* složky, vytvořte soubor s názvem *Helpers.cshtml*, zkopírujte do ní ukázkový kód a uložte je do složky s názvem *aplikace\_kódu*v kořenové složce.
-6. V kořenové složce webu, vytvořte soubor s názvem  *\_SiteLayout.cshtml,* příklad zkopírujte do něj a soubor uložte.
-7. V kořenovém adresáři webu, vytvořte soubor s názvem *ContentPage.cshtml*, přidejte ukázkový kód a uložte ho.
-8. Spustit *ContentPage* v prohlížeči. Byl předán řetězec `MakeNote` pomocné rutiny, které je vykresleno jako zabalené Poznámka.
-9. Přesune ukazatel myši nad Poznámka. Skript dočasně zvětšuje velikost písma poznámky.
-10. Zobrazte zdroj na vykreslené stránce. Z důvodu, kam jste umístili volání `Assets.GetScripts`, vygenerované `<script>` značku, která volá *Test.js* je velmi poslední položky v těle stránky.
+5. V *aplikace\_kód* složce vytvořte soubor s názvem *Helpers.cshtml*, zkopírujte do ní ukázkový kód a uložte ho do složky s názvem *aplikace\_kód*v kořenové složce.
+6. V kořenové složce v lokalitě, vytvořte soubor s názvem  *\_SiteLayout.cshtml,* příklad zkopírujte do něj a soubor uložte.
+7. V kořenovém adresáři webu vytvořte soubor s názvem *ContentPage.cshtml*, přidejte ukázkový kód a uložte ho.
+8. Spustit *ContentPage* v prohlížeči. Byl předán řetězec `MakeNote` pomocné rutiny se vykreslí jako zabalený poznámku.
+9. Přesune ukazatel myši na poznámku. Skript dočasně zvýší velikost písma poznámky.
+10. Zobrazte zdroj vykreslené stránky. Z důvodu, kterého jste umístili volání `Assets.GetScripts`, vygenerované `<script>` značku, která volá *Test.js* je poslední položka v těla stránky.
 
 *Test.js*
 
@@ -240,239 +239,239 @@ Spustit ukázku:
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample11.cshtml)]
 
-Následující snímek obrazovky ukazuje *ContentPage.cshtml* v prohlížeči, když podržíte ukazatel myši nad Poznámka:
+Následující snímek obrazovky ukazuje *ContentPage.cshtml* v prohlížeči, když podržíte ukazatel myši nad poznámky:
 
 [![topSeven-resmgr-1](top-features-in-web-pages-2/_static/image14.png)](top-features-in-web-pages-2/_static/image13.png)
 
 <a id="oauthsetup"></a>
-### <a name="enabling-logins-from-facebook-and-other-sites-using-oauth-and-openid"></a>Povolení přihlášení ze sítě Facebook a jiných lokalitách pomocí OAuth a OpenID
+### <a name="enabling-logins-from-facebook-and-other-sites-using-oauth-and-openid"></a>Povolení přihlášení z Facebooku a dalších lokalit pomocí OAuth a OpenID
 
-Web Pages 2 poskytuje rozšířené možnosti pro členství a ověřování. Hlavní vylepšení je, že jsou nové [OAuth](http://oauth.net/) a [OpenID](http://openid.net/) zprostředkovatele. Pomocí těchto poskytovatelů, můžete je nechat protokolu uživatele na váš web pomocí svých existujících přihlašovacích údajů ze sítě Facebook, Twitter, Windows Live, Google a Yahoo. K přihlášení pomocí účtu sítě Facebook, například uživatelé mohou zvolit právě Facebook ikonu, která je přesměruje na přihlašovací stránku služby Facebook, kde zadat informace o uživateli. Přihlášení k síti Facebook se pak můžete přidružit ke svému účtu na váš web. Související vylepšení funkcí členství webové stránky je, že uživatelé mohou přidružit více přihlášení (včetně přihlášení ze sociálních sítí) s jeden účet na vašem webu.
+Web Pages 2 poskytuje rozšířené možnosti pro členství a ověřování. Hlavní vylepšení je, že jsou nové [OAuth](http://oauth.net/) a [OpenID](http://openid.net/) poskytovatelů. Pomocí těchto zprostředkovatelů, můžete nechat přihlášení uživatelů do vašeho webu pomocí existujících přihlašovacích údajů z Facebooku, Twitteru, Windows Live, Google a Yahoo. K přihlášení pomocí účtu sítě Facebook, například uživatele můžete prostě vybrat ikonu Facebooku, který přesměruje na přihlašovací stránku Facebooku, kde jsou informace o uživateli zadat. Přihlášení k Facebooku, pak můžete přiřadit ke svému účtu na webu. Související vylepšení funkcí členství webové stránky je, že uživatelé mohou přidružit více přihlašovací jména (včetně přihlašování ze sociálních sítí) pomocí jednoho účtu na vašem webu.
 
-Tento obrázek zobrazuje stránku pro přihlášení z **Starter Site** šablony, které může uživatel Facebook, Twitter nebo Windows Live ikonu povolíte protokolování s externím účtu:
+Tento obrázek ukazuje na přihlašovací stránku z **Starter Site** šablony, ve kterém může uživatel vybrat Facebooku, Twitteru nebo Windows Live ikonu povolíte protokolování s využitím externí účet:
 
 [![topSeven-oauth-1](top-features-in-web-pages-2/_static/image16.png)](top-features-in-web-pages-2/_static/image15.png)
 
-Můžete povolit OAuth a OpenID členství pomocí několika řádků kódu. Metody a vlastnosti, použijete pro práci s OAuth a OpenID poskytovatelé jsou v `WebMatrix.Security.OAuthWebSecurity` třídy.
+Můžete povolit OAuth a OpenID členství pomocí pár řádků kódu. Metody a vlastnosti můžete použít pro práci s OAuth a OpenID zprostředkovatelé jsou v `WebMatrix.Security.OAuthWebSecurity` třídy.
 
-Doporučený způsob, jak začít pracovat s nové zprostředkovatele místo použití kódu povolit přihlášení z jiných webů, ale je použití nového **Starter Site** šablony, která je součástí služby WebMatrix 2 Beta. **Starter Site** Šablona zahrnuje úplné členství infrastruktury, s přihlašovací stránky, databáze členství a všechny kód, je třeba dát protokolu uživatele na váš web pomocí přihlašovacích údajů místního nebo ty z jiné lokality .
+Doporučený způsob, jak začít pracovat s noví zprostředkovatelé namísto použití kódu k povolení přihlášení z jiných webů, ale je použití nového **Starter Site** šablonu, která je součástí beta verzi 2 služby WebMatrix. **Starter Site** Šablona zahrnuje úplné členství infrastruktury, s přihlašovací stránky, databáze členství a veškerý kód, je potřeba nechat přihlášení uživatelů do vašeho webu pomocí pověření pro místní nebo z jiné lokality .
 
-#### <a name="how-to-enable-logins-using-the-oauth-and-openid-providers"></a>Postup povolení přihlášení pomocí OAuth a OpenID zprostředkovatelé
+#### <a name="how-to-enable-logins-using-the-oauth-and-openid-providers"></a>Povolení přihlášení pomocí OAuth a OpenID poskytovatele
 
-Tato část představuje příklad, jak umožnit uživatelům přihlášení z externí servery (Facebook, Twitter, Windows Live, Google a Yahoo) k lokalitě, která je založena na **Starter Site** šablony. Po vytvoření úvodní lokality, proveďte tento (podrobnosti použijte):
+Tato část poskytuje příklad toho, jak umožnit uživatelům přihlášení z externích webů (Facebook, Twitter, Windows Live, Google a Yahoo) k lokalitě, která je založena na **Starter Site** šablony. Po vytvoření první web, můžete postupujte (podrobnosti):
 
-- Weby, které používají OAuth vytvoření zprostředkovatele (Facebook, Twitter a Windows Live), aplikace na webu externího. To vám dává klíče aplikace, které budete potřebovat k vyvolání funkce přihlášení pro tyto lokality. Weby, které používají poskytovatele OpenID (Google, Yahoo) není nutné k vytvoření aplikace. Pro všechny tyto servery musí mít účet k přihlášení a vytvořit vývojář aplikace. 
+- Weby, které používají OAuth zprostředkovatele (Facebook, Twitter nebo Windows Live), vytvořit aplikaci na externí web. To vám dává klíče aplikace, které budete potřebovat k vyvolání funkce přihlášení pro tyto lokality. Pro servery, které využívají poskytovatele OpenID (Google, Yahoo) není nutné k vytvoření aplikace. Pro všechny tyto servery musí mít účet k přihlášení a k vytváření aplikací pro vývojáře. 
 
     > [!NOTE]
-    > Aplikace Windows Live přijímají pouze za provozu adresu URL pro funkčního webu, tak pro testování přihlášení nemůžete použít adresu URL místního webu.
-- Chcete-li zadat poskytovatele příslušný ověřovací upravit několik souborů ve vašem webu a odeslat přihlášení k webu, kterou chcete použít.
+    > Aplikace Windows Live přijímat pouze za provozu adresu URL pro webovou stránku, funkční, tak adresy URL místního webu nelze použít pro testování přihlášení.
+- Pokud chcete zadat poskytovatele příslušný ověřovací upravit několik souborů na vašem webu a odeslat přihlášení k webu, kterou chcete použít.
 
-**Chcete-li povolit přihlášení Google a Yahoo**:
+**Povolit Google a Yahoo přihlášení**:
 
-1. Ve vašem webu upravit  *\_AppStart.cshtml* stránky a přidejte následující dva řádky kódu v bloku kódu Razor po volání `WebSecurity.InitializeDatabaseConnection` metoda. Tento kód umožňuje poskytovatelům Google a Yahoo OpenID. 
+1. Na vašem webu, upravit  *\_AppStart.cshtml* stránku a přidejte následující dva řádky kódu v bloku kódu Razor po volání `WebSecurity.InitializeDatabaseConnection` metody. Tento kód povoluje zprostředkovatele Google a Yahoo OpenID. 
 
     [!code-css[Main](top-features-in-web-pages-2/samples/sample12.css)]
-2. V *~/Account/Login.cshtml* stránky, odeberte komentáře z následující `<fieldset>` blok kódu téměř na konci stránky. Chcete-li zrušte komentář kódu, odeberte `@*` znaky, které předcházet a postupujte podle pokynů `<fieldset>` bloku. Výsledný blok kódu vypadá takto:
+2. V *~/Account/Login.cshtml* stránce, komentářů z následující `<fieldset>` blok kódu na konci stránky. Zrušte komentář kódu, odeberte `@*` znaky, které předcházet a postupujte podle pokynů `<fieldset>` bloku. Výsledný blok kódu vypadá takto:
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample13.html)]
-3. Přidat `<input>` element pro Google nebo Yahoo zprostředkovatele, který má `<fieldset>` v *~/Account/Login.cshtml* stránky. Aktualizovaný `<fieldset>` skupiny s `<input>` prvky pro Google a Yahoo vypadá jako v následujícím příkladu: 
+3. Přidat `<input>` – element pro Google nebo Yahoo poskytovatele, který má `<fieldset>` skupiny *~/Account/Login.cshtml* stránky. Aktualizovaný `<fieldset>` skupiny s `<input>` prvky pro Google a Yahoo vypadá jako v následujícím příkladu: 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample14.html)]
-4. V *~/Account/AssociateServiceAccount.cshtml* přidejte `<input>` prvky pro Google nebo Yahoo k `<fieldset>` skupiny u konce souboru. Můžete zkopírovat stejné `<input>` prvky, které jste právě přidali `<fieldset>` v tématu *~/Account/Login.cshtml* stránky. 
+4. V *~/Account/AssociateServiceAccount.cshtml* stránce, přidejte `<input>` prvky pro Google nebo Yahoo k `<fieldset>` skupiny na konci souboru. Můžete zkopírovat stejné `<input>` prvky, které jste právě přidali `<fieldset>` tématu *~/Account/Login.cshtml* stránky. 
 
-    *~/Account/AssociateServiceAccount.cshtml* stránky v šabloně Starter Site lze použít, pokud chcete vytvořit stránku, na kterém uživatelé mohou přidružit více přihlášení z ostatních lokalit k jeden účet na vašem webu.
+    *~/Account/AssociateServiceAccount.cshtml* stránky v šabloně Starter Site lze použít, pokud chcete vytvořit stránku, na které uživatelé mohou přidružit více přihlášení z jiných webů pomocí jednoho účtu na vašem webu.
 
-Nyní můžete otestovat Google a Yahoo přihlášení.
+Nyní můžete otestovat přihlašovací údaje Google a Yahoo.
 
-1. Spustit *default.cshtml* stránku vašeho webu a zvolte **přihlásit** tlačítko.
-2. Na *přihlášení* stránky v **přihlásit pomocí jiné služby** vyberte buď **Google** nebo **Yahoo** tlačítko Odeslat. Tento příklad používá přihlášení Google. 
+1. Spustit *stránku default.cshtml* stránku vašeho webu a zvolte **přihlášení** tlačítko.
+2. Na *přihlášení* stránku, **přihlášení pomocí jiné služby** zvolte buď **Google** nebo **Yahoo** tlačítko Odeslat. Tento příklad používá přihlášení Google. 
 
-    Webová stránka přesměruje požadavek na přihlašovací stránku Google.
+    Webové stránky přesměruje požadavek na přihlašovací stránku služby Google.
 
-    [![topSeven-oauth-6](top-features-in-web-pages-2/_static/image18.png)](top-features-in-web-pages-2/_static/image17.png)
-3. Zadejte přihlašovací údaje pro existující účet Google.
-4. Pokud Google dotazem, zda chcete povolit Localhost použít informace z účtu, klikněte na tlačítko **povolit**.
+    [![topSeven. oauth 6](top-features-in-web-pages-2/_static/image18.png)](top-features-in-web-pages-2/_static/image17.png)
+3. Zadejte přihlašovací údaje pro účet Google.
+4. Pokud Google se zeptá, jestli chcete povolit Localhost, chcete-li použít informace z účtu, klikněte na tlačítko **povolit**.
 
-    Kód používá Google token k ověření uživatele a vrátí na tuto stránku na vašem webu. Tato stránka umožňuje uživatelům přidružení jejich Google přihlášení s existujícím účtem na vašem webu, nebo se můžete zaregistrovat nový účet na svém webu přidružit externí přihlášení s.
+    Kód používá Google token k ověření uživatele a vrátí na tuto stránku na vašem webu. Tato stránka umožňuje uživatelům přihlášení jejich Google přidružit účet na webu, nebo se můžete zaregistrovat nový účet na webu pro přidružení externí přihlášení s.
 
     [![topSeven-oauth-5](top-features-in-web-pages-2/_static/image20.png)](top-features-in-web-pages-2/_static/image19.png)
-5. Vyberte **přidružit** tlačítko. V prohlížeči vrátí na domovskou stránku vaší aplikace.
+5. Zvolte **přidružit** tlačítko. Prohlížeč se vrátí na domovskou stránku vaší aplikace.
 
     [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image22.png)](top-features-in-web-pages-2/_static/image21.png)
 
     [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image24.png)](top-features-in-web-pages-2/_static/image23.png)
 
-**Chcete-li povolit přihlášení Facebook**:
+**Povolit přihlášení Facebooku**:
 
-1. Přejděte na [Facebook vývojáři lokality](https://developers.facebook.com/apps) (protokolu případě, že jste již přihlášeni).
-2. Vyberte **vytvořit novou aplikaci** tlačítko a pak postupujte podle pokynů k pojmenování a vytvořit novou aplikaci.
-3. V části **vyberte, jak bude vaše aplikace integrovat Facebook**, vyberte **webu** části.
-4. Vyplňte **adresa URL webu** pole s adresou URL vašeho webu (například [ `http://www.example.com` ](http://www.example.com)). **Domény** pole je volitelné; můžete použít k ověření pro celou doménu (například *example.com*). 
+1. Přejděte [webu vývojáře služby Facebook](https://developers.facebook.com/apps) (v případě se přihlaste se ještě nepřihlásili).
+2. Zvolte **vytvořit novou aplikaci** tlačítko a pak postupujte podle výzev a pojmenujte a vytvořit novou aplikaci.
+3. V části **vyberte, jak se vaše aplikace bude integrovat s Facebook**, zvolte **webu** oddílu.
+4. Vyplňte **adresa URL webu** pole s adresou URL vašeho webu (například [ `http://www.example.com` ](http://www.example.com)). **Domény** pole je volitelné; může být využit k zajištění ověřování pro celou doménu (například *example.com*). 
 
     > [!NOTE]
-    > Pokud používáte lokalitu v místním počítači s adresou URL jako `http://localhost:12345` (kde číslo je číslem místního portu), přidáním této hodnoty **adresa URL webu** pole pro testování vaší lokality. Ale kdykoli se číslo portu změny místní lokality, budete muset aktualizovat **adresa URL webu** pole vaší aplikace.
-5. Vyberte **uložit změny** tlačítko.
-6. Vyberte **aplikace** znovu a poté zobrazte úvodní stránky pro vaši aplikaci.
-7. Kopírování **ID aplikace** a **tajný klíč aplikace** hodnoty pro vaši aplikaci a vložte je do dočasného textového souboru. Tyto hodnoty budou předat poskytovatele sítě Facebook v kódu webové stránky.
-8. Ukončení webu pro vývojáře Facebook.
+    > Pokud používáte v místním počítači pomocí adresy URL webu, jako jsou `http://localhost:12345` (kde číslo je číslo místního portu), můžete přidat tuto hodnotu **adresa URL webu** pole pro testování webu. Však kdykoli číslo portu změny vaší místní sítě, budete muset aktualizovat **adresa URL webu** pole vaší aplikace.
+5. Zvolte **uložit změny** tlačítko.
+6. Zvolte **aplikace** kartu znovu a potom zobrazit úvodní stránku pro vaši aplikaci.
+7. Kopírovat **ID aplikace** a **tajný kód aplikace** hodnoty pro vaši aplikaci a vložte je do dočasné textového souboru. Tyto hodnoty předá k poskytovateli služby Facebook v kódu vašeho webu.
+8. Ukončete webu pro vývojáře služby Facebook.
 
-Teď provedete změny dvě stránky ve vašem webu tak, aby uživatelé budou moci přihlásit do lokality pomocí účtů služby Facebook.
+Teď provedete změny dvě stránky na webu tak, aby uživatelé mohli přihlásit k webu pomocí svých účtů služby Facebook.
 
-1. Ve vašem webu upravit  *\_AppStart.cshtml* stránky a zrušte komentář kódu pro zprostředkovatele OAuth pro Facebook. Blok uncommented kódu vypadá takto: 
+1. Na vašem webu upravit  *\_AppStart.cshtml* stránce a zrušte komentář kódu pro zprostředkovatele OAuth pro Facebook. Blok neokomentovaném textu kódu vypadá takto: 
 
     [!code-xml[Main](top-features-in-web-pages-2/samples/sample15.xml)]
-2. Kopírování **ID aplikace** hodnotu z aplikace Facebook jako hodnotu `consumerKey` parametr (v uvozovkách).
-3. Kopírování **tajný klíč aplikace** hodnotu z aplikace Facebook, jako `consumerSecret` hodnota parametru.
+2. Kopírovat **ID aplikace** hodnotu z aplikace Facebook jako hodnotu `consumerKey` parametrů (v uvozovkách).
+3. Kopírování **tajný kód aplikace** hodnotu z aplikace Facebook, jako `consumerSecret` hodnotu parametru.
 4. Soubor uložte a zavřete.
-5. Upravit *~/Account/Login.cshtml* stránky a odebere komentáře z `<fieldset>` bloku téměř na konci stránky. Chcete-li zrušte komentář kódu, odeberte `@*` znaky, které předcházet a postupujte podle pokynů `<fieldset>` bloku. Blok kódu s komentáři odebrán vypadá takto: 
+5. Upravit *~/Account/Login.cshtml* stránce a komentářů z `<fieldset>` bloku na konci stránky. Zrušte komentář kódu, odeberte `@*` znaky, které předcházet a postupujte podle pokynů `<fieldset>` bloku. Blok kódu pomocí komentářů odebrány vypadá nějak takto: 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample16.html)]
 6. Soubor uložte a zavřete.
 
-Nyní můžete otestovat přihlášení k síti Facebook.
+Nyní můžete otestovat přihlášení k Facebooku.
 
-1. Spuštění tohoto webu *default.cshtml* stránce a vyberte položku **přihlášení** tlačítko.
-2. Na *přihlášení* stránky v **přihlásit pomocí jiné služby** zvolte **Facebook** ikonu. 
+1. Spuštění tohoto webu *stránku default.cshtml* stránky a zvolte **přihlášení** tlačítko.
+2. Na *přihlášení* stránku, **přihlášení pomocí jiné služby** zvolte **Facebook** ikonu. 
 
-    Webová stránka přesměruje požadavek na přihlašovací stránku služby Facebook.
+    Webové stránky přesměruje požadavek na přihlašovací stránku Facebooku.
 
-    [![topSeven-oauth-2](top-features-in-web-pages-2/_static/image26.png)](top-features-in-web-pages-2/_static/image25.png)
-3. Přihlaste se k účtu sítě Facebook. 
+    [![topSeven. oauth 2](top-features-in-web-pages-2/_static/image26.png)](top-features-in-web-pages-2/_static/image25.png)
+3. Přihlaste se ke Facebookový účet. 
 
-    Kód k vašemu ověření používá token služby Facebook a vrátí na stránky, kde je možné přidružit Facebook přihlašovací jméno vašeho webu přihlášení. Uživatelského jména nebo e-mailové adresy se naplní do **e-mailu** pole ve formuláři.
+    Kód používá token služby Facebook pro ověření a vrátí na stránku, kde můžete přidružit k přihlášení k Facebooku přihlašovací jméno vašeho webu. Uživatelského jména nebo e-mailové adresy se naplní do **e-mailu** pole ve formuláři.
 
     [![topSeven-oauth-5](top-features-in-web-pages-2/_static/image28.png)](top-features-in-web-pages-2/_static/image27.png)
-4. Vyberte **přidružit** tlačítko. 
+4. Zvolte **přidružit** tlačítko. 
 
-    Vrátí prohlížeči na domovskou stránku a jste přihlášeni.
+    Vrátí prohlížeči na domovskou stránku a jste přihlášení.
 
     [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image30.png)](top-features-in-web-pages-2/_static/image29.png)
 
-**Povolení služby Twitter přihlášení:** 
+**Pokud chcete povolit Twitteru přihlášení:** 
 
-1. Vyhledejte [Twitter vývojáři lokality](https://dev.twitter.com/).
-2. Vyberte **vytvořit aplikaci** propojit a přihlaste se k webu.
-3. Na **vytvořit aplikaci** formuláři, zadejte **název** a **popis** pole.
+1. Přejděte [webu vývojáře Twitteru](https://dev.twitter.com/).
+2. Zvolte **vytvořit aplikaci** odkaz a přihlaste se do lokality.
+3. Na **vytvořit aplikaci** formuláře, vyplňte **název** a **popis** pole.
 4. V **webu** pole, zadejte adresu URL vašeho webu (například [ `http://www.example.com` ](http://www.example.com)). 
 
     > [!NOTE]
-    > Pokud testujete váš web místně (pomocí adresy URL jako `http://localhost:12345`), služby Twitter nemusí přijmout adresu URL. Nicméně je možné použít místní smyčky IP adresu (například `http://127.0.0.1:12345`). Tato funkce zjednodušuje proces testování aplikace s místně. Však pokaždé, když číslo portu místní lokality změní, budete muset aktualizovat **webu** pole vaší aplikace.
-5. V **adresu URL zpětné volání** pole, zadejte adresu URL stránky ve vašem webu, kterou mají uživatelé se vraťte do po přihlášení do služby Twitter. Například uživatelé odeslat na domovskou stránku Starter Site (který rozpozná stav jejich přihlášení), zadejte stejnou adresu URL, kterou jste zadali v **webu** pole.
-6. Přijměte podmínky a vyberte **vytvořit aplikaci služby Twitter** tlačítko.
-7. Na **Moje aplikace** úvodní stránka, vyberte aplikaci, kterou jste vytvořili.
-8. Na **podrobnosti** , posuňte se dolů a klikněte na příkaz **vytvořit Moje přístup Token** tlačítko.
-9. Na **podrobnosti** kartě, zkopírujte **uživatelský klíč** a **uživatelský tajný klíč** hodnoty pro vaši aplikaci a vložte je do dočasného textového souboru. Tyto hodnoty budete předáte v kódu webové stránky k poskytovateli služby Twitter.
-10. Ukončení webu služby Twitter.
+    > Pokud testujete místně webu (pomocí adresy URL `http://localhost:12345`), Twitter, nemusí přijmout adresu URL. Nicméně je možné používat zpětnou smyčku místní IP adresu (například `http://127.0.0.1:12345`). To zjednodušuje proces testování vaší aplikace v místním prostředí. Ale pokaždé, když se mění číslo portu z místní lokality, bude nutné aktualizovat **webu** pole vaší aplikace.
+5. V **adresu URL zpětného volání** pole, zadejte adresu URL pro stránku na vašem webu, kterou mají uživatelé k vrácení po přihlášení na Twitteru. Například pokud chcete odeslat uživatelů na domovskou stránku Starter Site (který rozpozná stav jejich přihlášení), zadejte stejnou adresu URL, kterou jste zadali v **webu** pole.
+6. Přijměte podmínky, zvolte **vytvoření aplikace Twitter** tlačítko.
+7. Na **Moje aplikace** úvodní stránka, zvolte aplikaci, kterou jste vytvořili.
+8. Na **podrobnosti** , posuňte dolů a klikněte na příkaz **vytvořit My Access Token** tlačítko.
+9. Na **podrobnosti** kartu, zkopírujte **uživatelský klíč** a **uživatelský tajný klíč** hodnoty pro vaši aplikaci a vložte je do dočasné textového souboru. Tyto hodnoty budete předat poskytovatele Twitteru ve vašem kódu webu.
+10. Ukončení serveru Twitter.
 
-Nyní můžete měnit dvě stránky ve vašem webu tak, aby uživatelé budou moci přihlásit do lokality pomocí účtů služby Twitter.
+Teď provedete změny dvě stránky na webu tak, aby uživatelé se nebudou moct přihlásit k webu pomocí svých účtů na Twitteru.
 
-1. Ve vašem webu upravit  *\_AppStart.cshtml* stránky a zrušte komentář kódu pro zprostředkovatele služby Twitter OAuth. Blok uncommented kódu vypadá takto: 
+1. Na vašem webu upravit  *\_AppStart.cshtml* stránce a zrušte komentář kódu pro zprostředkovatele OAuth pro Twitter. Blok neokomentovaném textu kódu vypadá takto: 
 
     [!code-csharp[Main](top-features-in-web-pages-2/samples/sample17.cs)]
-2. Kopírování **uživatelský klíč** hodnotu z aplikace služby Twitter jako hodnotu `consumerKey` parametr (v uvozovkách).
-3. Kopírování **uživatelský tajný klíč** hodnotu z aplikace služby Twitter jako hodnotu `consumerSecret` parametr.
+2. Kopírovat **uživatelský klíč** hodnota Twitter application jako hodnotu `consumerKey` parametrů (v uvozovkách).
+3. Kopírovat **uživatelský tajný klíč** hodnota Twitter application jako hodnotu `consumerSecret` parametru.
 4. Soubor uložte a zavřete.
-5. Upravit *~/Account/Login.cshtml* stránky a odebere komentáře z `<fieldset>` bloku téměř na konci stránky. Chcete-li zrušte komentář kódu, odeberte `@*` znaky, které předcházet a postupujte podle pokynů `<fieldset>` bloku. Blok kódu s komentáři odebrán vypadá takto: 
+5. Upravit *~/Account/Login.cshtml* stránce a komentářů z `<fieldset>` bloku na konci stránky. Zrušte komentář kódu, odeberte `@*` znaky, které předcházet a postupujte podle pokynů `<fieldset>` bloku. Blok kódu pomocí komentářů odebrány vypadá nějak takto: 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample18.html)]
 6. Soubor uložte a zavřete.
 
-Nyní můžete otestovat přihlášení služby Twitter.
+Nyní můžete otestovat Twitteru přihlášení.
 
-1. Spustit *default.cshtml* stránku vašeho webu a zvolte **přihlášení** tlačítko.
-2. Na *přihlášení* stránky v **přihlásit pomocí jiné služby** zvolte **Twitter** ikonu. 
+1. Spustit *stránku default.cshtml* stránku vašeho webu a zvolte **přihlášení** tlačítko.
+2. Na *přihlášení* stránku, **přihlášení pomocí jiné služby** zvolte **Twitteru** ikonu. 
 
-    Webová stránka přesměruje požadavek na přihlašovací stránku služby Twitter pro aplikaci, kterou jste vytvořili.
+    Webové stránky přesměruje požadavek na stránku Twitteru přihlášení pro aplikaci, kterou jste vytvořili.
 
     [![topSeven-oauth-4](top-features-in-web-pages-2/_static/image32.png)](top-features-in-web-pages-2/_static/image31.png)
-3. Přihlaste se k účtu sítě Twitter.
-4. Kód používá token služby Twitter. k ověření uživatele a vrátí můžete na stránky, kde můžete přidružit vaše přihlášení pomocí účtu webu. Jméno nebo e-mailovou adresu se naplní do **e-mailu** pole ve formuláři.
+3. Přihlaste se ke účtu sítě Twitter.
+4. Tento kód používá token služby Twitter. k ověření uživatele a pak se vrátíte na stránku ve kterém můžete přidružit vaše přihlášení pomocí svého účtu Web. Jména nebo e-mailové adresy se naplní do **e-mailu** pole ve formuláři.
 
     [![topSeven-oauth-5](top-features-in-web-pages-2/_static/image34.png)](top-features-in-web-pages-2/_static/image33.png)
-5. Vyberte **přidružit** tlačítko. 
+5. Zvolte **přidružit** tlačítko. 
 
-    Vrátí prohlížeči na domovskou stránku a jste přihlášeni.
+    Vrátí prohlížeči na domovskou stránku a jste přihlášení.
 
     [![topSeven-oauth-3](top-features-in-web-pages-2/_static/image36.png)](top-features-in-web-pages-2/_static/image35.png)
 
 <a id="maphelper"></a>
-### <a name="adding-maps-using-the-maps-helper"></a>Přidání mapy využitím pomocné rutiny mapy
+### <a name="adding-maps-using-the-maps-helper"></a>Přidání map použití pomocné rutiny mapy
 
-Web Pages 2 obsahuje Tvorba knihovnu ASP.NET Web Helpers, což je balíček doplňků pro web webové stránky. Jedním z nich je komponenta mapování poskytované `Microsoft.Web.Helpers.Maps` třídy. Můžete použít `Maps` k vygenerování založené na adresu nebo na sadu zeměpisné šířky a délky souřadnice mapy. `Maps` Třída umožňuje volají přímo do oblíbených mapy moduly včetně Bing, Google, MapQuest a Yahoo.
+Web Pages 2 obsahuje Tvorba knihovnu ASP.NET Web Helpers, což je balíček doplňků pro web webové stránky. Jeden z nich je součástí mapování poskytované `Microsoft.Web.Helpers.Maps` třídy. Můžete použít `Maps` k vygenerování mapy založené na adresu nebo na sadu souřadnice zeměpisné šířky a délky. `Maps` Třídy volají přímo do oblíbených mapování modulů včetně Bing, Google, Yahoo a MapQuest umožňuje.
 
-Použití nového `Maps` třídy ve vašem webu, je nutné nejprve nainstalovat verzi 2 webové pomocné knihovny. Chcete-li to provést, přejděte na pokyny k instalaci aktuálně prodejní verze nástroje [knihovnu ASP.NET Web Helpers](https://go.microsoft.com/fwlink/?LinkId=202889#webhelpers) a nainstalujte verzi 2.
+Použití nového `Maps` třídy na vašem webu, musíte nejprve nainstalovat verzi 2 webové pomocné rutiny knihovny. Chcete-li to provést, přejděte na pokyny k instalaci na aktuálně vydanou verzi sady [knihovnu ASP.NET Web Helpers](https://go.microsoft.com/fwlink/?LinkId=202889#webhelpers) a nainstalujte verzi 2.
 
-Postup přidání mapování na stránku jsou stejné bez ohledu na to, které z modulů mapy volání. Stačí přidat odkaz na soubor JavaScript na stránku mapování a potom přidejte volání, který vykreslí `<script>` značky na stránku. Pak na stránku mapování volání, které chcete použít modul mapy.
+Kroky pro přidání mapování do stránky jsou stejné bez ohledu na to, které moduly mapy volání. Stačí přidat odkaz na soubor jazyka JavaScript na stránku mapování a potom přidejte volání, který vykreslí `<script>` značky na stránce. Pak na stránce mapování, volání modulu mapu, kterou chcete použít.
 
-Následující příklad ukazuje postup vytvoření stránky, který se vykreslí mapu založené na adresu a jinou stránku, který vykreslí mapu podle souřadnice zeměpisné šířky a délky. Příklad mapování adres používá službu mapy Google a příklad souřadnic mapování používá Bing Maps. Vezměte na vědomí následující prvky v kódu:
+Následující příklad ukazuje, jak vytvořit stránku, která vykreslí mapu, na základě adresy a jinou stránku, která vykreslí mapy podle souřadnic zeměpisné šířky a délky. Mapování adresy příkladu mapy Google a souřadnice mapování příkladu mapy Bing. Mějte na paměti následující prvky v kódu:
 
-- Volání `Assets.AddScript` v horní části se dvě stránky. Tato metoda přidá odkaz na *jquery 1.6.2.min.js* soubor, který je součástí **Starter Site** šablony a který je vyžadován na základě `Maps` třídy.
-- Volání `Assets.GetScripts` metoda v souboru rozložení. Tato metoda vykreslí `<script>` značky na dvě stránky mapování.
-- Volání `@Maps.GetGoogleHtml` a `@Maps.GetBingHtml` metody na stránkách mapování. Chcete-li mapování adresy, musíte zadat řetězec adresy. Pokud chcete mapovat souřadnice, je nutné předat zeměpisné šířky a délky souřadnice. Pro modul mapy Bing, je třeba předat také klíče (což získat zadarmo registrací v [Bing Maps vývojáři lokality](https://www.microsoft.com/maps/developers/web.aspx)). Metody pro jiné moduly mapy fungovat podobným způsobem (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
+- Volání `Assets.AddScript` v horní části na dvou stránkách mapování. Tato metoda přidá odkaz na *jquery 1.6.2.min.js* soubor, který je součástí **Starter Site** šablony a, který vyžaduje `Maps` třídy.
+- Volání `Assets.GetScripts` metody v souboru rozložení. Tato metoda vykreslí ještě `<script>` značku na dvou stránkách mapování.
+- Volání `@Maps.GetGoogleHtml` a `@Maps.GetBingHtml` metody na stránkách mapování. Pokud chcete namapovat adresu, musíte předat řetězec adresy. Převádějí, musíte předat zeměpisné šířky a délky souřadnice. Pro modul služby mapy Bing, je třeba předat také klíče (který získat zdarma registrací v programu na [webu vývojáře mapy Bing](https://www.microsoft.com/maps/developers/web.aspx)). Metody pro ostatní moduly mapy fungují podobným způsobem (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
 
 Chcete-li vytvořit mapování stránky:
 
-1. Vytvoření webu na základě **Starter Site** šablony.
-2. Vytvořte soubor s názvem *MapAddress.cshtml* v kořenovém adresáři serveru. Tato stránka bude Generovat mapu založené na adresu, která můžete předat.
-3. Zkopírujte následující kód do souboru, přepsání existujícího obsahu. 
+1. Vytvořte web na základě **Starter Site** šablony.
+2. Vytvořte soubor s názvem *MapAddress.cshtml* v kořenové složce webu. Tato stránka bude generovat mapy založené na adresu, která mu předáte.
+3. Zkopírujte následující kód do souboru, přepisování stávajícího obsahu. 
 
     [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample19.cshtml)]
-4. Vytvořte soubor s názvem  *\_MapLayout.cshtml* v kořenovém adresáři serveru. Tato stránka bude ke stránce rozložení pro dvě stránky mapování.
-5. Zkopírujte následující kód do souboru, přepsání existujícího obsahu. 
+4. Vytvořte soubor s názvem  *\_MapLayout.cshtml* v kořenové složce webu. Tato stránka bude na stránce rozložení pro dvě stránky mapování.
+5. Zkopírujte následující kód do souboru, přepisování stávajícího obsahu. 
 
     [!code-html[Main](top-features-in-web-pages-2/samples/sample20.html)]
-6. Vytvořte soubor s názvem *MapCoordinates.cshtml* v kořenovém adresáři serveru. Tato stránka bude Generovat mapu na základě sady souřadnic, které můžete předat.
-7. Zkopírujte následující kód do souboru, přepsání existujícího obsahu. 
+6. Vytvořte soubor s názvem *MapCoordinates.cshtml* v kořenové složce webu. Tato stránka bude generovat mapy na základě sady souřadnic, které můžete předat.
+7. Zkopírujte následující kód do souboru, přepisování stávajícího obsahu. 
 
     [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample21.cshtml)]
 
 Pro testování stránek mapování:
 
 1. Spuštění stránky *MapAddress.cshtml* souboru.
-2. Zadejte úplnou adresu řetězec včetně adresu, státu nebo oblasti a PSČ a potom vyberte **mapy ho** tlačítko. Stránka vykreslí mapu z Google Maps: 
+2. Zadejte úplnou adresu řetězec včetně ulici, stát nebo kraj a poštovní směrovací číslo a klikněte na tlačítko **mapy ho** tlačítko. Na stránce vykreslí mapování z mapy Google: 
 
     [![topseven-maphelper-1](top-features-in-web-pages-2/_static/image38.png)](top-features-in-web-pages-2/_static/image37.png)
-3. Najít sadu zeměpisné šířky a délky pro konkrétního umístění.
-4. Spuštění stránky *MapCoordinates.cshtml*. Zadejte souřadnice a pak vyberte **mapy ho** tlačítko. Stránka vykreslí mapu z mapy Bing: 
+3. Najdete sadu zeměpisné šířky a délky pro konkrétní lokalitu.
+4. Spuštění stránky *MapCoordinates.cshtml*. Zadejte souřadnice a potom klikněte **mapy ho** tlačítko. Na stránce vykreslí mapování z mapy Bing: 
 
     [![topseven-maphelper-2](top-features-in-web-pages-2/_static/image40.png)](top-features-in-web-pages-2/_static/image39.png)
 
 <a id="sidebyside"></a>
-### <a name="running-web-pages-applications-side-by-side"></a>Spouštění webových stránek aplikací vedle sebe
+### <a name="running-web-pages-applications-side-by-side"></a>Spuštění webové stránky aplikace vedle sebe
 
-Web Pages 2 navíc umožňuje spouštění aplikací vedle sebe. Díky tomu můžete i nadále spouštět aplikace Web Pages 1, vytvářet nové aplikace Web Pages 2 a spustit všechny z nich na stejném počítači.
+Web Pages 2 přidává možnost spouštět aplikace vedle sebe. Tímto způsobem můžete i nadále spouštět vaše aplikace Web Pages 1, vytvářet nové aplikace Web Pages 2 a spustit všechny z nich na stejném počítači.
 
-Zde jsou některé věci na mějte na paměti, když instalujete na používání beta verze 2 webových stránek pomocí služby WebMatrix:
+Zde jsou některé kroky, nezapomeňte při instalaci Beta 2 webových stránek pomocí služby WebMatrix:
 
-- Ve výchozím nastavení bude existující webové stránky aplikace v počítači spustit jako verze 2 aplikace. (Sestavení pro verze 2 jsou nainstalovány v mezipaměti GAC a použije se automaticky.)
-- Pokud chcete spustit a lokalitě používající verzi aplikace Web Pages 1 (namísto výchozí, jako v předchozím bodu), můžete nakonfigurovat k tomuto webu. Pokud váš web již nemá *web.config* souboru v kořenovém adresáři serveru, vytvořte novou a zkopírujte následující kód XML do ní, přepsání existujícího obsahu. Pokud lokalita již obsahuje *web.config* soubor, přidejte `<appSettings>` element stejný, jako je následující k `<configuration>` oddílu.
+- Ve výchozím nastavení bude existující aplikace Web Pages spouští jako aplikace verze 2 ve vašem počítači. (Sestavení pro verzi 2 jsou nainstalovány v GAC a použije automaticky.)
+- Pokud budete chtít spuštění webu pomocí verzi aplikace Web Pages 1 (místo výchozího, stejně jako v předchozím bodě), můžete nakonfigurovat lokality tak, aby to udělat. Pokud váš web už nemá *web.config* souboru v kořenovém adresáři serveru, vytvořte novou a zkopírujte následující kód XML do něj, přepisování stávajícího obsahu. Pokud web již obsahuje *web.config* přidejte `<appSettings>` prvky jako následující ten, který má `<configuration>` oddílu.
 
     [!code-xml[Main](top-features-in-web-pages-2/samples/sample22.xml)]
-  ' – Pokud nezadáte verzi v *web.config* soubor, lokalitu je nasadit jako webový server verze 2. (Verze 2 sestavení se zkopírují do *bin* složku v nasazené lokalitě.)
-- Nové aplikace, kterou vytvoříte pomocí šablony webů v Web Matrix verzi 2 Beta zahrnout sestavení verze 2 webové stránky na webu *bin* složky.
+  . – Pokud nezadáte verzi v *web.config* soubor, lokalitu je nasazen jako webový server verze 2. (Budou sestavení verze 2 se zkopírují do *bin* složky v nasazené lokality.)
+- Nové aplikace, kterou vytvoříte pomocí šablony webu v beta verzi 2 zahrnují budou sestavení verze 2 webové stránky na webu verzi Web Matrix *bin* složky.
 
-Obecně platí, můžete vždy řídit kterou verzi webové stránky pro použití s vaší lokality pomocí NuGet pro instalaci příslušné sestavení do lokality *bin* složky. Balíčky naleznete [NuGet.org](http://NuGet.org).
+Obecně platí, můžete vždy určit, kterou verzi webových stránek pomocí vašeho webu pomocí NuGet nainstalovat odpovídající sestavení na web *bin* složky. Balíčky, najdete v tématu [NuGet.org](http://NuGet.org).
 
 <a id="mobile"></a>
 ### <a name="rendering-pages-for-mobile-devices"></a>Vykreslování stránek pro mobilní zařízení
 
-Web Pages 2 umožňuje vytvářet vlastní zobrazení pro vykreslování obsah na mobilní telefon nebo jiné zařízení.
+Web Pages 2 umožňuje vytvářet vlastní zobrazení pro vykreslení obsahu na mobilní telefon nebo jiné zařízení.
 
-`System.Web.WebPages` Obor názvů obsahuje následující třídy, které umožňují pracovat s režimy zobrazení: `DefaultDisplayMode`, `DisplayInfo`, a `DisplayModes`. Můžete používat tyto třídy přímo a napsat kód, který vykreslí správné výstup pro konkrétní zařízení.
+`System.Web.WebPages` Obor názvů obsahuje následující třídy, které umožňují pracovat s režimy zobrazení: `DefaultDisplayMode`, `DisplayInfo`, a `DisplayModes`. Můžete přímo použít tyto třídy a napsat kód, který vykreslí správné výstup pro konkrétní zařízení.
 
-Alternativně můžete vytvořit stránek specifických pro zařízení s použitím vzor pojmenovávání souborů takto: <em>FileName.</em> <em>Mobile</em><em>.cshtml</em>. Například můžete vytvořit dvě verze stránky, jednu s názvem <em>MyFile.cshtml</em> a jednu s názvem <em>MyFile.Mobile.cshtml</em>. V době, kdy požadavky na mobilní zařízení spuštění <em>MyFile.cshtml</em>, webové stránky vykreslí obsah z <em>MyFile.Mobile.cshtml</em>. V opačném <em>MyFile.cshtml</em> je vykreslen.
+Alternativně můžete vytvořit stránek specifických pro zařízení s použitím vzoru pro pojmenovávání souborů následujícím způsobem: <em>FileName.</em> <em>Mobile</em><em>.cshtml</em>. Například můžete vytvořit dvě verze stránky, jednu s názvem <em>MyFile.cshtml</em> a jeden s názvem <em>MyFile.Mobile.cshtml</em>. V době, když mobilní zařízení požádá o spuštění <em>MyFile.cshtml</em>, Web Pages vykreslí obsah z <em>MyFile.Mobile.cshtml</em>. V opačném případě <em>MyFile.cshtml</em> vykreslením.
 
-Následující příklad ukazuje, jak můžete povolit mobilní vykreslování přidáním stránky obsahu pro mobilní zařízení. *Page1.cshtml* obsahuje obsah a bočním panelu navigace. *Page1.Mobile.cshtml* obsahuje stejný obsah, ale vynechá na bočním panelu.
+Následující příklad ukazuje, jak povolit mobilní vykreslování přidáním stránku obsahu pro mobilní zařízení. *Page1.cshtml* obsahuje obsah a bočním panelu navigace. *Page1.Mobile.cshtml* obsahuje stejný obsah, ale vynechá na bočním panelu.
 
-Sestavení a spuštění ukázkového kódu:
+Sestavení a spuštění vzorového kódu:
 
-1. V lokalitě webové stránky, vytvořte soubor s názvem *Page1.cshtml* a zkopírujte *Page1.cshtml* obsahu do ní z příkladu.
-2. Vytvořte soubor s názvem *Page1.Mobile.cshtml* a zkopírujte *Page1.Mobile.cshtml* obsahu do ní z příkladu. Všimněte si, že mobilní verzi stránce vynechá části navigace pro lepší vykreslování na menší obrazovce.
+1. V lokalitě webové stránky, vytvořte soubor s názvem *Page1.cshtml* a zkopírujte *Page1.cshtml* obsahu do něj jako v příkladu.
+2. Vytvořte soubor s názvem *Page1.Mobile.cshtml* a zkopírujte *Page1.Mobile.cshtml* obsahu do něj jako v příkladu. Všimněte si, že mobilní verzi stránce vynechá části navigace pro lepší vykreslování na obrazovce menší.
 3. Spustit prohlížeč pro stolní počítač a přejděte do *Page1.cshtml*.
-4. Spustit prohlížeč pro mobilní zařízení (nebo emulátoru mobilního zařízení) a přejděte do *Page1.cshtml*. Všimněte si, která vykreslí tentokrát webové stránky mobilní verzi stránky. 
+4. Spustit mobilní prohlížeče (nebo emulátoru mobilního zařízení) a přejděte do *Page1.cshtml*. Všimněte si, že, který vykreslí tentokrát webové stránky mobilní verze stránky. 
 
     > [!NOTE]
-    > K testování mobilních stránek, můžete použít simulátoru mobilních zařízení, která běží na stolním počítači. Tento nástroj umožňuje testovací webové stránky, jako by vypadal na mobilních zařízeních (to znamená, obvykle s mnohem menšími umožňuje zobrazit oblast). Jedním z příkladů simulátoru je [uživatele agenta přepínači rozšíření](http://addons.mozilla.org/en-us/firefox/addon/user-agent-switcher/) pro aplikaci Mozilla Firefox, která vám umožňuje emulovat různé mobilní prohlížeče z plochy verzi Firefox.
+    > K otestování mobilních stránek, můžete použít simulátor mobilní zařízení, na kterém běží na stolním počítači. Tento nástroj umožňuje testování webových stránek, jak by vypadala na mobilních zařízeních (to znamená, obvykle s mnohem menší umožňuje zobrazit oblast). Jedním z příkladů simulátoru je [doplňků uživatelského agenta přepínání](http://addons.mozilla.org/en-us/firefox/addon/user-agent-switcher/) pro Mozilla Firefox, která vám umožňuje emulovat různá mobilní prohlížeče v desktopové verzi Firefox.
 
 *Page1.cshtml*
 
@@ -482,26 +481,26 @@ Sestavení a spuštění ukázkového kódu:
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample24.html)]
 
-*Page1.cshtml* v prohlížeč pro stolní počítač:
+*Page1.cshtml* vykreslen v desktopovém prohlížeči:
 
 [![topseven-displaymodes-1](top-features-in-web-pages-2/_static/image42.png)](top-features-in-web-pages-2/_static/image41.png)
 
-*Page1.Mobile.cshtml* zobrazí v zobrazení Apple iPhone simulátoru v prohlížeči Firefox. I když požadavek je pro *Page1.cshtml*, vykreslí aplikace *Page1.Mobile.cshtml*.
+*Page1.Mobile.cshtml* zobrazí v zobrazení pro iPhone simulátor Apple v prohlížeči Firefox. I když je požadavek *Page1.cshtml*, vykreslení aplikace *Page1.Mobile.cshtml*.
 
 [![topseven-displaymodes-2](top-features-in-web-pages-2/_static/image44.png)](top-features-in-web-pages-2/_static/image43.png)
 
 <a id="resources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
-### <a name="aspnet-web-pages-1-resources"></a>ASP.NET Web Pages 1 prostředky
+### <a name="aspnet-web-pages-1-resources"></a>Webové stránky ASP.NET 1 prostředky
 
 > [!NOTE]
-> Většina programování webových stránek 1 a rozhraní API prostředky platit i 2 webové stránky.
+> Většina programování webových stránkách 1 a prostředkům API stále platí pro Web Pages 2.
 
-- [Úvod do rozhraní ASP.NET Web Pages programování](https://go.microsoft.com/fwlink/?LinkId=202890)
+- [Úvod do programování webových stránek ASP.NET](https://go.microsoft.com/fwlink/?LinkId=202890)
 
-### <a name="webmatrix-resources"></a>Služba WebMatrix prostředky
+### <a name="webmatrix-resources"></a>Prostředky služby WebMatrix
 
 - [Služba WebMatrix 2 co je nového](http://webmatrix.com/next)
-- [Web Microsoft WebMatrix](https://go.microsoft.com/fwlink/?LinkID=195076)
-- [Vývoj webů od verze Microsoft WebMatrix](https://msdn.microsoft.com/en-us/library/hh145669(v=VS.99).aspx)(obsahuje i délku ukázkovou aplikaci webové stránky)
+- [Microsoft Web služby WebMatrix](https://go.microsoft.com/fwlink/?LinkID=195076)
+- [Vývoj pro Web počínaje Microsoft WebMatrix](https://msdn.microsoft.com/en-us/library/hh145669(v=VS.99).aspx)(obsahuje komplexně ukázkovou aplikaci webové stránky)

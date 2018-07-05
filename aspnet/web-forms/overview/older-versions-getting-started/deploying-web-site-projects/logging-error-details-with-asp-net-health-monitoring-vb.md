@@ -1,159 +1,158 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
-title: Protokolování podrobnosti o chybě se stav ASP.NET (VB) | Microsoft Docs
+title: Protokolování podrobností o chybách pomocí monitorování (VB) stavu v ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
-description: Systém monitorování stavu společnosti Microsoft poskytuje snadný a přizpůsobit způsob do protokolu různé události web, včetně neošetřených výjimek. V tomto kurzu provede p...
+description: Systém monitorování stavu od Microsoftu poskytuje snadný a přizpůsobit způsob do protokolu různé webové události, včetně neošetřených výjimek. Tento kurz vás p...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
 ms.topic: article
 ms.assetid: 09a6c74e-936a-4c04-8547-5bb313a4e4a3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0a457d4b8773f0f4ed343f5005c76f48a5cc178f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1ed7b63989dc6ea7e46210a45612e2672a662177
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30888939"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382469"
 ---
-<a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Podrobnosti o chybě protokolování s stav ASP.NET (VB)
+<a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Protokolování podrobností o chybách pomocí monitorování (VB) stavu v ASP.NET
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si kód](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_VB.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_vb.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_VB.zip) nebo [stahovat PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_vb.pdf)
 
-> Systém monitorování stavu společnosti Microsoft poskytuje snadný a přizpůsobit způsob do protokolu různé události web, včetně neošetřených výjimek. Tento kurz vás provede nastavením stavu systému pro monitorování k protokolování neošetřených výjimek k databázi a vývojáři prostřednictvím e-mailovou zprávu.
+> Systém monitorování stavu od Microsoftu poskytuje snadný a přizpůsobit způsob do protokolu různé webové události, včetně neošetřených výjimek. Tento kurz vás provede nastavení stavu monitorování systému k protokolování neošetřených výjimek k databázi a upozornit vývojáře prostřednictvím e-mailovou zprávu.
 
 
 ## <a name="introduction"></a>Úvod
 
-Protokolování je užitečným nástrojem pro sledování stavu nasazení aplikace a pro všechny problémy, které mohou nastat diagnostice. Je obzvláště důležité k protokolování chyb, ke kterým došlo v době nasazení aplikace, takže lze napravit. `Error` Událost se vyvolá, vždy, když dojde k neošetřené výjimce v aplikaci ASP.NET; [předchozí kurzu](processing-unhandled-exceptions-vb.md) vám ukázal, jak chcete upozornit vývojář chybu a vytvořením obslužné rutiny události pro protokolujejípodrobnosti.`Error` událostí. Vytváření však `Error` obslužné rutiny události do protokolu podrobnosti k chybě a upozornění vývojář je zbytečné, jak tento úkol provést ASP. NET na *stavu systému pro monitorování*.
+Protokolování je užitečný nástroj pro monitorování stavu nasazení aplikace a diagnostikování potíží, které mohou nastat. Je obzvláště důležité k protokolování chyb, ke kterým dochází v nasazené aplikaci tak, aby lze napravit. `Error` Událost se vyvolá vždy, když dojde k neošetřené výjimce v aplikaci ASP.NET; [předchozím kurzu](processing-unhandled-exceptions-vb.md) jsme si ukázali, jak informovat vývojáře o chybě a protokolovat její podrobnosti tak, že vytvoříte obslužná rutina události `Error` událostí. Nicméně vytváření `Error` obslužnou rutinu události do protokolu podrobnosti chyby a upozornit vývojáře je zbytečné, protože tato úloha může provádět ASP. NET společnosti *systém monitorování stavu*.
 
-Stav systému pro monitorování bylo zavedeno v technologii ASP.NET 2.0 a slouží k monitorování stavu nasazené aplikace ASP.NET pomocí protokolování událostí, ke kterým došlo během doby platnosti žádosti nebo aplikace. Události zapsané podle stavu systému pro monitorování jsou označovány jako *události sledování stavu* nebo *webové události*a zahrnují:
+Stav monitorování systému byla zavedena v technologii ASP.NET 2.0 a je navržená tak, aby monitorovala nasazené aplikace v ASP.NET pomocí protokolování událostí, ke kterým dochází během životního cyklu požadavku nebo aplikace. Události zapsané podle stavu monitorování systému jsou označovány jako *událostech monitorování stavu* nebo *webové události*a zahrnují:
 
-- Události životního cyklu aplikace, například pokud se aplikace spustí nebo zastaví
+- Události životního cyklu aplikace, například když aplikace, spuštění nebo zastavení
 - Události zabezpečení, včetně neúspěšných pokusů o přihlášení a neúspěšné požadavky autorizace adresy URL
-- Chyby aplikace, včetně neošetřené výjimky, zobrazení stavu analýza výjimky, žádost o ověření výjimky a chyby při kompilaci mezi jiné typy chyb.
+- Chyby aplikace, včetně neošetřené výjimky, zobrazení stavu, analýza výjimek, žádost o ověření výjimky a chyby při kompilaci, mimo jiné typy chyb.
 
-Když stavu monitorování událost se vyvolá, můžete je zaznamenána do libovolný počet zadaný *protokolu zdroje*. Stav systému pro monitorování se dodává s protokolu zdrojů, které protokolovat webové události do databáze Microsoft SQL Server, do protokolu událostí systému Windows, nebo prostřednictvím e-mailovou zprávu, mimo jiné. Můžete také vytvořit vlastní zdroje protokolu.
+Když je vyvolána událost monitorování stavu můžete protokolovat do libovolného počtu zadané *protokolu zdroje*. Stav monitorování systému se dodává s zdroje protokolů, kteří se přihlašují k databázi serveru Microsoft SQL Server, do protokolu událostí Windows, nebo prostřednictvím e-mailovou zprávu, mimo jiné webové události. Můžete také vytvořit vlastní zdroje protokolů.
 
-Události protokoluje stav monitorování systému, společně s protokolu zdroje, používá, jsou definovány v `Web.config`. Zadání několika řádků kódu konfigurace můžete použít k protokolování neošetřených výjimek všechny k databázi a upozornit vás výjimky prostřednictvím e-mailu na sledování stavu.
+Události stavu systému sledování přihlásí, spolu s zdroje protokolů použít, jsou definovány v `Web.config`. Po zadání několika řádků kódu konfigurace můžete použít k přihlášení k databázi všechny neošetřené výjimky a upozornění na výjimky e-mailem monitorování stavu.
 
-## <a name="exploring-the-health-monitoring-systems-configuration"></a>Prohlížení stavu monitorování konfigurace systému
+## <a name="exploring-the-health-monitoring-systems-configuration"></a>Zkoumání monitorování systému konfigurace stavu
 
-Stav monitorování chování systému je definované informace o konfiguraci, který je umístěný ve [ `<healthMonitoring>` element](https://msdn.microsoft.com/library/2fwh2ss9.aspx) v `Web.config`. Tento konfigurační oddíl definuje mimo jiné, tři důležité následující informace:
+Stav monitorování chování systému je definován konfigurační informace, které se nachází v [ `<healthMonitoring>` element](https://msdn.microsoft.com/library/2fwh2ss9.aspx) v `Web.config`. Tento konfigurační oddíl definuje, mimo jiné následující tři důležité údaje informace:
 
-1. Sledování události stavu, je-li vyvolána, by se mělo protokolovat,
-2. Protokol zdrojů, a
-3. Jak každý stav monitorování událostí, které jsou definované v (1) je namapována na zdroji protokolu definované v (2).
+1. Monitorování událostí stavu, když aktivovaná, by se mělo protokolovat,
+2. Zdroje protokolů a
+3. Jak každý stav monitorování události definované v (1) je namapována na zdroje protokolů definované v (2).
 
-Tyto informace se specifikuje prostřednictvím tři podřízené položky konfigurace – elementy: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), a [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx), v uvedeném pořadí.
+Tyto informace se specifikuje prostřednictvím tři děti konfigurační prvky: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), a [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx)v uvedeném pořadí.
 
-Výchozí stav monitorování informace o konfiguraci systému najdete v `Web.config` souboru v `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` složky. Tyto informace o konfiguraci výchozí s některé značek odebrat jako stručný výtah je zobrazena níže:
+Výchozí stav monitorování informace o konfiguraci systému najdete v `Web.config` ve `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` složky. Tyto informace o konfiguraci výchozí některé značkami odebrána jako stručný výtah je zobrazena níže:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample1.xml)]
 
-Stav události týkající se monitorování jsou definovány v `<eventMappings>` element, který poskytuje lidské popisný název pro třídu události sledování stavu. Do výše uvedeného kódu `<eventMappings>` element přiřadí lidské popisný název "Všechny chyby" události typu sledování stavu `WebBaseErrorEvent` a název "selhání audity" stav monitorování událostí typu `WebFailureAuditEvent`.
+Stav monitorování události jsou definovány v `<eventMappings>` element, který poskytuje lidských – popisný název pro třídu událostech monitorování stavu. V kódu výše `<eventMappings>` element přiřadí událostí typu monitorování stavu lidských – popisný název "Všechny chyby" `WebBaseErrorEvent` a název "selhání auditů" stavy sledování událostí typu `WebFailureAuditEvent`.
 
-`<providers>` Element definuje zdrojů protokolu, bude mít lidské popisný název a zadání žádné informace o konfiguraci určitého zdroj protokolu. První `<add>` element definuje zprostředkovatele "EventLogProvider", které protokoly sledování událostí pomocí zadaného stavu `EventLogWebEventProvider` třídy. `EventLogWebEventProvider` Třída protokoluje události do protokolu událostí systému Windows. Druhý `<add>` element definuje "SqlWebEventProvider" poskytovatele, který protokoluje události do databáze Microsoft SQL Server prostřednictvím `SqlWebEventProvider` třídy. Konfigurace "SqlWebEventProvider" Určuje připojovací řetězec databáze (`connectionStringName`) mezi další možnosti konfigurace.
+`<providers>` Element definuje zdroje protokolů, jim lidských – popisný název a zadání jakékoli informace konfigurace pro konkrétní zdroj protokolu. První `<add>` element definuje "EventLogProvider" poskytovatele, které zanáší monitorování událostí s použitím zadaného stavu `EventLogWebEventProvider` třídy. `EventLogWebEventProvider` Třídy protokoluje události do protokolu událostí Windows. Druhá `<add>` element definuje "SqlWebEventProvider" poskytovatele, který protokoluje události do databáze Microsoft SQL Server prostřednictvím `SqlWebEventProvider` třídy. Konfigurace "SqlWebEventProvider" Určuje připojovací řetězec databáze (`connectionStringName`) mezi další možnosti konfigurace.
 
-`<rules>` Element mapy událostí uvedený v `<eventMappings>` element přihlásit zdroje `<providers>` elementu. Ve výchozím nastavení webové aplikace ASP.NET protokolu všechny neošetřené výjimky a auditování chyby do protokolu událostí systému Windows.
+`<rules>` Prvek mapuje události podle `<eventMappings>` element zdroje přihlásit `<providers>` elementu. Ve výchozím nastavení webové aplikace ASP.NET protokolovat všechny neošetřené výjimky a auditovat chyby do protokolu událostí Windows.
 
 ## <a name="logging-events-to-a-database"></a>Protokolování událostí do databáze
 
-Výchozí konfigurace systému pro sledování stavu můžete přizpůsobit na základě webové aplikace ve webové aplikaci přidáním `<healthMonitoring>` oddílu aplikace `Web.config` souboru. Můžete zahrnout další prvky v `<eventMappings>`, `<providers>`, a `<rules>` části pomocí `<add>` elementu. Odebrání konfigurace použít výchozí nastavení `<remove>` element, nebo použijte `<clear />` odebrat všechny výchozí hodnoty z jednoho z těchto částí. Nakonfigurujme kniha recenze webové aplikace do databáze Microsoft SQL Server pomocí protokolu všechny neošetřené výjimky `SqlWebEventProvider` třídy.
+Stav monitorování výchozí konfigurace systému je přizpůsobit na základě webové aplikace ve webové aplikaci tak, že přidáte `<healthMonitoring>` části aplikace `Web.config` souboru. Můžete zahrnout další elementy v `<eventMappings>`, `<providers>`, a `<rules>` oddíly s použitím `<add>` elementu. Odebrání konfigurace použít výchozí nastavení `<remove>` element, nebo použijte `<clear />` odebrat všechny výchozí hodnoty z jednoho z těchto oddílů. Nakonfigurujme recenzí webové aplikace do databáze serveru Microsoft SQL Server pomocí protokolu všechny neošetřené výjimky `SqlWebEventProvider` třídy.
 
-`SqlWebEventProvider` Třída je součástí stavu systému pro monitorování a protokoly událostí k zadané databázi systému SQL Server sledování stavu. `SqlWebEventProvider` Třída očekává, že zadaná databáze obsahuje uložené procedury s názvem `aspnet_WebEvent_LogEvent`. Tato uložená procedura je předán podrobnosti události a za úkol ukládání podrobnosti události. Dobrá zpráva je, že není potřeba vytvořit to uložené procedury ani tabulku pro ukládání podrobností události. Můžete přidat tyto objekty k databázi pomocí `aspnet_regsql.exe` nástroj.
+`SqlWebEventProvider` Třídy je součástí stavu systému sledování a protokolů událostí k zadané databázi systému SQL Server monitorování stavu. `SqlWebEventProvider` Třídy očekává, že zadaná databáze obsahuje uloženou proceduru s názvem `aspnet_WebEvent_LogEvent`. Tuto uloženou proceduru se předá podrobnosti o události a úkol s ukládáním podrobnosti o události. Dobrou zprávou je, že není nutné k vytvoření tohoto uložená procedura ani tabulku pro ukládání podrobnosti o události. Tyto objekty lze přidat do vaší databáze pomocí `aspnet_regsql.exe` nástroj.
 
 > [!NOTE]
-> `aspnet_regsql.exe` Nástroj se zabývá zpět [ *konfigurace na web, používá aplikace služby* kurzu](configuring-a-website-that-uses-application-services-vb.md) když jsme doplnili podporu pro ASP. NET na aplikační služby. V důsledku toho již obsahuje databázi recenze adresáře webu `aspnet_WebEvent_LogEvent` uložené procedury, která ukládá informace o události do tabulky s názvem `aspnet_WebEvent_Events`.
+> `aspnet_regsql.exe` Nástroj byl popsán v [ *konfigurace na webu, že používá aplikační služby* kurzu](configuring-a-website-that-uses-application-services-vb.md) když jsme přidali podporu pro ASP. SÍŤ pro aplikační služby. V důsledku toho již obsahuje databázi na webu knihy recenze `aspnet_WebEvent_LogEvent` uloženou proceduru, která ukládá informace o události do tabulky s názvem `aspnet_WebEvent_Events`.
 
 
-Jakmile máte nezbytné uložené procedury a tabulky, které jsou přidány k vaší databázi, zbývá dáte pokyn, aby k protokolování neošetřených výjimek všechny do databáze sledování stavu. Dosáhnout přidáním následující kód do vašeho webu `Web.config` souboru:
+Jakmile budete mít potřebné uložené procedury a tabulky přidá k vaší databázi, už jen zbývá dáte pokyn, aby k protokolování neošetřených výjimek všechny do databáze sledování stavu. To provést tak, že přidáte následující kód na váš web `Web.config` souboru:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample2.xml)]
 
-Stav monitorování konfigurace značek výše používá `<clear />` elementy vymazat sledování informace o konfiguraci z předem definovaných stavu `<eventMappings>`, `<providers>`, a `<rules>` oddíly. Pak přidá jeden záznam pro každý z těchto částí.
+Monitorování konfigurace značek výše používá stavu `<clear />` prvků vymazat sledování informací o konfiguraci z předem definovaných stavu `<eventMappings>`, `<providers>`, a `<rules>` oddíly. Pak přidá jednu položku na každý z těchto oddílů.
 
-- `<eventMappings>` Element definuje jeden stav monitorování události týkající se s názvem "Všechny chyby", která je vyvolána vždy, když dojde k neošetřené výjimce.
-- `<providers>` Element definuje jeden protokol zdroj s názvem "SqlWebEventProvider", který používá `SqlWebEventProvider` třídy. `connectionStringName` Atribut byla nastavena na "ReviewsConnectionString", což je název připojení k naší řetězce definované v `<connectionStrings>` oddílu.
+- `<eventMappings>` Prvek definuje jeden stav monitorování události zájmu s názvem "Všechny chyby", která je vyvolána pokaždé, když dojde k neošetřené výjimce.
+- `<providers>` Prvek definuje jeden protokol zdroj s názvem "SqlWebEventProvider", který používá `SqlWebEventProvider` třídy. `connectionStringName` Atribut je nastavená na "ReviewsConnectionString", což je název naší připojovací řetězec definovaný v `<connectionStrings>` části.
 - Nakonec &lt;pravidla&gt; element označuje, že když událost "Všechny chyby" ukáže, že se mají být protokolovány pomocí zprostředkovatele "SqlWebEventProvider".
 
-Tyto informace o konfiguraci dá pokyn, stav systému k protokolování neošetřených výjimek všechny k databázi recenze adresáře pro monitorování.
+Tyto informace o konfiguraci nastaví stav monitorování systému do protokolu všechny neošetřené výjimky databáze recenzí.
 
 > [!NOTE]
-> `WebBaseErrorEvent` Událost je aktivována pouze pro chyby serveru; není vyvolána pro chyby protokolu HTTP, třeba požadavek na zdroj technologie ASP.NET, který nebyl nalezen. Tím se liší od chování `HttpApplication` třídy `Error` událost, která je vyvolána pro server i chyby protokolu HTTP.
+> `WebBaseErrorEvent` Událost je aktivována pouze pro chyby serveru; není vyvolána pro chyby protokolu HTTP, třeba požadavek na zdroj technologie ASP.NET, který se nenachází. Tím se liší od chování `HttpApplication` třídy `Error` událost, která se vyvolá pro server a chyby protokolu HTTP.
 
 
-Informace o stavu systému v akci pro monitorování, přejděte na webovou stránku a generování běhová chyba navštivte stránky `Genre.aspx?ID=foo`. Zobrazí se příslušná chybová stránka – výjimka podrobnosti žlutý obrazovka smrti (Pokud návštěvou místně) nebo vlastní chybovou stránku (při návštěvě webu v produkčním prostředí). Stav systému pro monitorování na pozadí protokolovány informace o chybě databáze. By měl být jeden záznam v `aspnet_WebEvent_Events` tabulky (viz **obrázek 1**); tento záznam obsahuje informace o této chybě modulu runtime, který právě došlo k chybě.
+Pokud chcete zobrazit stav monitorování v akci, přejděte na webovou stránku a generovat Chyba za běhu návštěvou `Genre.aspx?ID=foo`. Měli byste vidět příslušná chybová stránka – výjimka podrobnosti žlutý obrazovky z smrti (při návštěvě místně) nebo vlastní chybové stránky (při návštěvě webu v produkčním prostředí). Systém monitorování stavu na pozadí protokolovány informace o chybě databáze. Měla by existovat jeden záznam v `aspnet_WebEvent_Events` tabulky (naleznete v tématu **obrázek 1**); tento záznam obsahuje informace o této chybě modulu runtime, že právě došlo k chybě.
 
 [![](logging-error-details-with-asp-net-health-monitoring-vb/_static/image2.png)](logging-error-details-with-asp-net-health-monitoring-vb/_static/image1.png)
 
 **Obrázek 1**: Podrobnosti o chybě byly protokolovány `aspnet_WebEvent_Events` tabulky  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-asp-net-health-monitoring-vb/_static/image3.png))
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-asp-net-health-monitoring-vb/_static/image3.png))
 
 ### <a name="displaying-the-error-log-in-a-web-page"></a>Zobrazení v protokolu chyb na webové stránce
 
-Stav systému pro monitorování s aktuální konfigurací webu, zaznamená všechny neošetřené výjimky k databázi. Sledování stavu však neposkytuje žádný mechanismus zobrazte protokol chyb prostřednictvím na webové stránce. Je však sestavení stránku ASP.NET, která zobrazuje tyto informace z databáze. (Jako ukážeme na okamžik, se můžete rozhodnout pro mít podrobnosti o chybě vám odeslán e-mailovou zprávu.)
+Aktuální konfigurací webu stav monitorování systému zaznamená všechny neošetřené výjimky do databáze. Monitorování stavu však neposkytuje žádný mechanismus zobrazte protokol chyb prostřednictvím webové stránky. Může ale vytvořit stránky ASP.NET, která zobrazuje tyto informace z databáze. (Jak uvidíme okamžik, můžete se rozhodnout obsahovat podrobnosti o chybě odesílat e-mailové zprávy.)
 
-Pokud vytvoříte taková stránka, zkontrolujte, zda že je provést kroky k Povolit jenom autorizovaným uživatelům, chcete-li zobrazit podrobnosti o chybě. Pokud váš web již aktivuje uživatelské účty se autorizačních pravidel adres URL můžete použít k omezení přístupu na stránku na určité uživatele nebo role. Další informace o tom, jak udělit nebo omezení přístupu k webovým stránkám na základě přihlášeného uživatele, najdete v části Moje [kurzy zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
+Pokud vytvoříte taková ještě stránka, zkontrolujte, zda že je provést postup, který umožňuje jenom Autorizovaní uživatelé, chcete-li zobrazit podrobnosti o chybě. Pokud váš web již využívá uživatelské účty autorizačních pravidel adres URL můžete použít k omezení přístupu ke stránce na určité uživatele nebo role. Další informace o tom, jak udělit nebo omezit přístup k webovým stránkám na základě přihlášeného uživatele, najdete v mé [kurzy o zabezpečení webu](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md).
 
 > [!NOTE]
-> Jsou zde popsány následné kurzu alternativní Chyba protokolování a oznámení systému s názvem ELMAH. ELMAH zahrnuje integrovanou mechanismus pro zobrazení v protokolu chyb z obou webové stránky a jako informačního kanálu RSS.
+> Následujícím kurzu zkoumá alternativní Chyba protokolování a oznámení systému s názvem ELMAH. ELMAH zahrnuje předdefinovaný mechanismus, chcete-li zobrazit v protokolu chyb z obou webové stránky a jako informačního kanálu RSS.
 
 
 ## <a name="logging-events-to-email"></a>Protokolování událostí k e-mailu
 
-Stav systému pro monitorování obsahuje poskytovatele zdroj protokolu, který "" zaprotokoluje událost e-mailové zprávě. Zdroj protokolu obsahuje stejné informace, která je zaznamenána do databáze v textu e-mailové zprávy. Tento zdroj protokolu můžete informovala, že vývojář stavu monitorování výskytu daných událostí.
+Stav monitorování systému zahrnuje poskytovatele zdroj protokolu, který "zaprotokoluje" událost do e-mailovou zprávu. Zdroj protokolu obsahuje stejné informace, která je zaznamenána do databáze v textu e-mailové zprávy. Upozornit vývojáře stavu monitorování výskytu daných událostí můžete použít tento zdroj protokolu.
 
-Umožňuje aktualizovat recenze kniha konfiguraci příslušného webu tak, aby obdržíme e-mailu vždy, když k výjimce dochází. K tomu je potřeba provést tři úkoly:
+Aktualizaci Pojďme recenzí konfiguraci příslušného webu tak, aby jsme dostávat e-mailu pokaždé, když výjimka nastane. K tomu potřeba provést tři úkoly:
 
-1. Konfigurace webové aplikace ASP.NET k odesílání e-mailu. Toho dosahuje tak, že určíte, jak se odesílají e-mailové zprávy prostřednictvím `<system.net>` konfigurační prvek. Další informace o odesílání e-mailové zprávy v aplikaci ASP.NET najdete v části [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) a [nejčastější dotazy týkající se System.Net.Mail](http://systemnetmail.com/).
-2. Zaregistrujte poskytovatele správy zdrojového protokolu e-mailu v `<providers>` elementu a
-3. Přidání položky do `<rules>` element, který mapuje událostí "Všechny chyby" poskytovatele správy zdrojového protokolu přidali v kroku (2).
+1. Konfigurace webové aplikace ASP.NET k odeslání e-mailu. To lze provést tak, že určíte, jak se odesílají e-mailové zprávy prostřednictvím `<system.net>` konfiguračního prvku. Další informace o odesílání e-mailové zprávy v aplikaci ASP.NET najdete [odesílání e-mailu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) a [nejčastější dotazy týkající se System.Net.Mail](http://systemnetmail.com/).
+2. Zaregistrovat poskytovatele e-mailu protokolu zdroje v `<providers>` elementu a
+3. Přidání položky do `<rules>` element, který se mapuje na přidali v kroku (2) poskytovatel správy zdrojových protokol událostí "Všechny chyby".
 
-Sledování systému stavu zahrnuje dvě třídy zprostředkovatele zdroj e-mailu protokolu: `SimpleMailWebEventProvider` a `TemplatedMailWebEventProvider`. [ `SimpleMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) odešle zprávu e-mailu ve formátu prostého textu, která zahrnuje události, podrobnosti a poskytuje málo přizpůsobení obsahu e-mailu. S [ `TemplatedMailWebEventProvider` třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) zadáte stránku ASP.NET, jejichž vykreslované značky se používá jako text e-mailové zprávy. [ `TemplatedMailWebEventProvider` Třída](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vám dává mnohem větší kontrolu nad obsah a formát e-mailové zprávy, ale vyžaduje trochu další předem práci, jako je nutné vytvořit stránku ASP.NET, který generuje tělo e-mailové zprávy. Tento kurz se zaměřuje na pomocí `SimpleMailWebEventProvider` třídy.
+Stav monitorování systému obsahuje dvě e-mailu protokolu zdrojový poskytovatel třídy: `SimpleMailWebEventProvider` a `TemplatedMailWebEventProvider`. [ `SimpleMailWebEventProvider` Třídy](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) odešle zprávu emaily s prostým textem, který obsahuje události podrobnosti a poskytuje trochu přizpůsobit e-mailu. S [ `TemplatedMailWebEventProvider` třídy](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) zadáte stránky technologie ASP.NET, jehož vykreslované značky se používá jako text e-mailové zprávy. [ `TemplatedMailWebEventProvider` Třídy](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) nabízí mnohem větší kontrolu nad obsah a formát e-mailové zprávy, ale vyžaduje trochu další předem fungují podle musíte vytvořit stránku ASP.NET, která generuje text e-mailové zprávy. Tento kurz se zaměřuje na použití `SimpleMailWebEventProvider` třídy.
 
-Aktualizovat stav monitorování systému `<providers>` element v `Web.config` souboru protokolu zdroj pro `SimpleMailWebEventProvider` třídy:
+Aktualizovat stav monitorování systému `<providers>` prvek v `Web.config` souboru zdroj protokolu zahrnout `SimpleMailWebEventProvider` třídy:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample3.xml)]
 
-Výše uvedený kód používá `SimpleMailWebEventProvider` třída jako poskytovatele správy zdrojového protokolu a přiřadí ji popisný název "EmailWebEventProvider". Kromě toho `<add>` atribut obsahuje další možnosti konfigurace, jako je například Komu a z adres e-mailové zprávy.
+Pomocí výše uvedeného kódu `SimpleMailWebEventProvider` třídu jako poskytovatel správy zdrojových protokolu a přiřadí ji popisný název "EmailWebEventProvider". Kromě toho `<add>` atribut obsahuje další možnosti konfigurace, jako je například hodnota do a z adres e-mailové zprávy.
 
-Se zdrojem e-mailu protokolu definované zbývá dáte pokyn, aby stav systému pro použití tohoto zdroje k "protokolování" neošetřené výjimky pro monitorování. To je možné udělat přidáním nové pravidlo v `<rules>` části:
+S definován zdroj e-mailu protokolu už jen zbývá dáte pokyn, aby stav monitorování systému budou používat tento zdroj "přihlásit" neošetřené výjimky. To lze provést tak, že přidáte nové pravidlo v `<rules>` části:
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample4.xml)]
 
-`<rules>` Část teď obsahuje dvě pravidla. První z nich, s názvem "Všechny chyby na e-mailu", odešle zdroj protokolu "EmailWebEventProvider" všechny neošetřené výjimky. Toto pravidlo má za následek odesílání podrobnosti o chybách na webu do zadané adresy. "Všechny chyby do databáze" pravidlo zaznamená podrobnosti o chybě do databáze lokality. V důsledku toho vždy, když dojde k neošetřené výjimce v lokalitě podrobnosti se obě přihlášení k databázi a odesílají do zadané e-mailovou adresu.
+`<rules>` Část nyní obsahuje dvě pravidla. První z nich, s názvem "Všechny chyby k e-mailu", odešle všechny neošetřené výjimky do zdroje "EmailWebEventProvider" protokolu. Toto pravidlo má účinek Odeslat podrobnosti o chybách na webu na zadané adrese. Pravidlo "Všechny chyby do databáze" protokoly podrobnosti o chybě pro databázi této lokality. V důsledku toho pokaždé, když dojde k neošetřené výjimce v lokalitě její podrobnosti jsou obě přihlášení k databázi a odeslány na zadanou e-mailovou adresu.
 
-**Obrázek 2** ukazuje vygenerovaných e-mailu `SimpleMailWebEventProvider` třídy při návštěvě `Genre.aspx?ID=foo`.
+**Obrázek 2** zobrazuje vygenerovaná e-mailu `SimpleMailWebEventProvider` třídy při návštěvě `Genre.aspx?ID=foo`.
 
 [![](logging-error-details-with-asp-net-health-monitoring-vb/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-vb/_static/image4.png)
 
-**Obrázek 2**: Podrobnosti o chybě jsou zasílány v e-mailové zprávy  
-([Kliknutím zobrazit obrázek v plné velikosti](logging-error-details-with-asp-net-health-monitoring-vb/_static/image6.png))
+**Obrázek 2**: The podrobnosti o chybě se odesílají v e-mailovou zprávu  
+([Kliknutím ji zobrazíte obrázek v plné velikosti](logging-error-details-with-asp-net-health-monitoring-vb/_static/image6.png))
 
 ## <a name="summary"></a>Souhrn
 
-Systém monitorování stavu ASP.NET je navržena k umožnění správci sledovat stav nasazených webových aplikací. Události monitorování stavu se vyvolá, když unfold určité akce, například při zastavení aplikace, pokud uživatel úspěšně přihlásí webu, nebo když dojde k neošetřené výjimce. Tyto události může být protokolovány libovolný počet zdrojů protokolu. Tento kurz vám ukázal, jak k databázi a prostřednictvím e-mailovou zprávu protokolu podrobnosti o neošetřených výjimek.
+Systém monitorování stavu technologie ASP.NET je navržena k umožnění můžou správci sledovat stav nasazených webových aplikací. Stav monitorování události jsou vyvolány při unfold určité akce, například když se aplikace zastaví, když úspěšně přihlášení uživatele webu, nebo když dojde k neošetřené výjimce. Tyto události je možné protokolovat libovolný počet zdroje protokolů. Tento kurz vám ukázal, jak protokolovat podrobnosti o neošetřené výjimky k databázi a prostřednictvím e-mailovou zprávu.
 
-Tento kurz se zaměřuje na použití k protokolování neošetřených výjimek, ale mějte na paměti, že monitorování stavu slouží k měření celkového stavu nasazené aplikace ASP.NET a obsahuje celou řadu událostí sledování stavu a protokolu zdroje není sledování stavu prozkoumali sem. Co je více, můžete vytvořit vlastní sledování událostí a protokolu zdrojů, stavu potřeby nastat. Pokud vás zajímá dozvědět další informace o sledování stavu, dobrý prvním krokem je pročtěte [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)na [sledování nejčastější dotazy týkající se stavu](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Následující, poraďte se [postupy: použití sledování stavu v technologii ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
+V tomto kurzu se zaměřují na použití k protokolování neošetřených výjimek, ale mějte na paměti, že monitorování stavu slouží k měření celkový stav nasazené aplikace v ASP.NET a zahrnuje celou řadu událostí monitorování stavu a protokolu zdrojů není monitorování stavu prozkoumali jste ji sem. Navíc můžete vytvořit vlastní sledování událostí a protokolu zdroje stavu potřeby by měl nastat. Pokud se chcete dozvědět více o monitorování stavu je dobrý první krok k pročtěte [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)společnosti [nejčastější dotazy k monitorování stavu](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Pod najdete [postupy: použití sledování stavu v ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ### <a name="further-reading"></a>Další čtení
 
-Další informace o tématech popsané v tomto kurzu najdete v následujících zdrojích informací:
+Další informace o tématech, které jsou popsané v tomto kurzu najdete na následujících odkazech:
 
-- [Přehled monitorování stavu technologie ASP.NET](https://msdn.microsoft.com/library/bb398933.aspx)
+- [Přehled monitorování stavu v ASP.NET](https://msdn.microsoft.com/library/bb398933.aspx)
 - [Konfigurace a přizpůsobení stav monitorování systému technologie ASP.NET](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
-- [Časté otázky – stavu monitorování v technologii ASP.NET 2.0](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [Postupy: Odeslání e-mailové oznámení o sledování stavu](https://msdn.microsoft.com/library/ms227553.aspx)
-- [Postupy: Použití sledování stavu technologie ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
-- [Stav monitorování technologie ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
+- [Časté otázky – sledování stavu v ASP.NET 2.0](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
+- [Postupy: Odesílání e-mailové oznámení o sledování stavu](https://msdn.microsoft.com/library/ms227553.aspx)
+- [Postupy: Použití sledování stavu v ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
+- [Sledování stavu v ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 > [!div class="step-by-step"]
 > [Předchozí](processing-unhandled-exceptions-vb.md)

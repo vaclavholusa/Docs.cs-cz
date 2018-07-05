@@ -1,90 +1,89 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
-title: Pomocí hodnoty řetězců dotazu pro filtrování dat pomocí vazby modelu a webových formulářů | Microsoft Docs
+title: Použití hodnot řetězce dotazu k filtrování dat pomocí vazby modelu a webových formulářů | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
+description: V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Data interakce díky vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
 ms.topic: article
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 03d20decf0eeff6062fbc6f8dd66f644b405c7cc
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 495489479ef912afcb89c267b56fb11e07f959ec
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886820"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374727"
 ---
-<a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>Hodnoty řetězců dotazu pro filtrování dat pomocí vazby modelu a webové formuláře
+<a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>Použití hodnot řetězce dotazu pro filtrování dat pomocí vazby modelu a webové formuláře
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Vazby modelu umožňuje dat interakce více jednoduché než plánování práce s daty objekty zdrojů (například ObjectDataSource nebo SqlDataSource). Tato řada začíná úvodní informace a přesune do dalších pokročilých konceptů v dalších kurzech.
+> V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Vazby modelu díky dat interakce více přímočaré než pracující s daty objektů zdroje (například ObjectDataSource nebo SqlDataSource). Tato série začíná úvodní materiály a přesune pokročilejších pojmech v budoucích kurzech.
 > 
-> Tento kurz ukazuje, jak předat hodnotu v řetězci dotazu a použít tuto hodnotu k načtení dat pomocí vazby modelu.
+> Tento kurz ukazuje, jak předat hodnotu v řetězci dotazu a tuto hodnotu použít k načtení dat pomocí vazby modelu.
 > 
-> V tomto kurzu vychází vytvořené v projektu [starší](retrieving-data.md) částí řady.
+> V tomto kurzu vychází z vytvořeného v projektu [starší](retrieving-data.md) části této série.
 > 
-> Můžete [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB. Kód ke stažení pracuje s Visual Studio 2012 nebo Visual Studio 2013. Používá šablony sady Visual Studio 2012, která se poněkud liší od šablony sady Visual Studio 2013 uvedené v tomto kurzu.
+> Je možné [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB. Ke stažení kódu funguje pomocí sady Visual Studio 2012 nebo Visual Studio 2013. Používá šablonu Visual Studio 2012, která se trochu liší od sady Visual Studio 2013 šablonu uvedenou v tomto kurzu.
 
 
-## <a name="what-youll-build"></a>Co budete sestavení
+## <a name="what-youll-build"></a>Co budete vytvářet
 
 V tomto kurzu budete:
 
-1. Přidat novou stránku zobrazíte zaregistrovaná kurzy pro student
-2. Načtení zaregistrovaná kurzy pro vybrané student založená na hodnotě v řetězci dotazu
+1. Přidejte novou stránku zobrazíte zaregistrovaná kurzy pro student
+2. Načíst zaregistrovaná kurzů pro vybranou studenty na základě hodnoty v řetězci dotazu
 3. Přidání hypertextového odkazu s hodnotou řetězce dotazu v zobrazení mřížky na novou stránku
 
-Kroky v tomto kurzu jsou dost podobné, co jste udělali v dříve [kurzu](sorting-paging-and-filtering-data.md) k filtrování zobrazených studenty na základě výběru uživatele v rozevíracím seznamu. V tomto kurzu jste použili **řízení** atribut v metodě vyberte, chcete-li určit, že hodnota parametru pochází z ovládacího prvku. V tomto kurzu budete používat **řetězce dotazu** atribut v metodě vyberte, chcete-li určit, že hodnota parametru pochází z řetězce dotazu.
+Kroky v tomto kurzu jsou velmi podobné co jste se naučili v předchozím [kurzu](sorting-paging-and-filtering-data.md) k filtrování zobrazených studenty na základě výběru uživatelem v rozevíracím seznamu. V tomto kurzu jste použili **ovládací prvek** atributu v metodě select k určení, že hodnota parametru pochází z ovládacího prvku. V tomto kurzu budete používat **QueryString** atributu v metodě select k určení, že hodnota parametru pochází z řetězce dotazu.
 
-## <a name="add-new-page-for-displaying-a-students-courses"></a>Přidat novou stránku pro zobrazení Studentova kurzy
+## <a name="add-new-page-for-displaying-a-students-courses"></a>Přidejte novou stránku pro zobrazení student získal kurzy
 
-Přidejte nový webový formulář, který používá stránky předlohy Site.master a název stránky **kurzy**.
+Přidat nový webový formulář používající stránku předlohy Site.master a pojmenujte stránku **kurzy**.
 
-V **Courses.aspx** soubor, přidejte zobrazení mřížky kurzy pro vybrané student.
+V **Courses.aspx** přidejte zobrazení mřížky kurzy pro vybrané studentů.
 
 [!code-aspx[Main](using-query-string-values-to-retrieve-data/samples/sample1.aspx)]
 
-## <a name="define-the-select-method"></a>Zadejte metodu vyberte
+## <a name="define-the-select-method"></a>Definování metody select
 
-V **Courses.aspx.cs**, přidáte vyberte metodu s názvem zadaným v zobrazení mřížky **metody SelectMethod** vlastnost. V této metodě budete zadejte dotaz pro načtení Studentova kurzy a určit, že parametr pochází z hodnoty řetězce dotazu se stejným názvem jako parametr.
+V **Courses.aspx.cs**, přidejte metody select s názvem zadaným v mřížkovém zobrazení **metoda SelectMethod** vlastnost. V této metodě budete definovat dotaz pro načtení student získal kurzy a určit, že parametr pochází z hodnotu řetězce dotazu se stejným názvem jako parametr.
 
 Nejprve je nutné přidat následující **pomocí** příkazy.
 
 [!code-csharp[Main](using-query-string-values-to-retrieve-data/samples/sample2.cs)]
 
-Potom si do Courses.aspx.cs přidejte následující kód:
+K Courses.aspx.cs, přidejte následující kód:
 
 [!code-csharp[Main](using-query-string-values-to-retrieve-data/samples/sample3.cs)]
 
-Atribut QueryString znamená, že hodnotu řetězce dotazu s názvem StudentID se automaticky přiřadí k parametr v této metodě.
+Atribut QueryString znamená, že hodnotu řetězce dotazu s názvem StudentID automaticky přiřazen k parametru v této metodě.
 
 ## <a name="add-hyperlink-with-query-string-value"></a>Přidání hypertextového odkazu s hodnotou řetězce dotazu
 
-V zobrazení mřížky na Students.aspx přidáte pole hypertextový odkaz, který odkazuje na novou stránku kurzy. Hypertextový odkaz bude obsahovat hodnotu řetězce dotazu s id Studentova.
+V zobrazení mřížky na Students.aspx přidáte pole hypertextového odkazu, který odkazuje na vaše nová stránka kurzů. Hypertextový odkaz bude obsahovat hodnotu řetězce dotazu s id studenta.
 
-V Students.aspx přidejte následující pole do sloupce zobrazení mřížky pod pole pro celkový počet kredity.
+V Students.aspx přidejte následující pole do sloupce zobrazení mřížky přímo pod pole pro celkový počet kredity.
 
 [!code-aspx[Main](using-query-string-values-to-retrieve-data/samples/sample4.aspx?highlight=7-8)]
 
-Spusťte aplikaci a Všimněte si, že zobrazení mřížky nyní zahrnuje odkaz kurzy.
+Spusťte aplikaci a Všimněte si, že zobrazení mřížky teď obsahuje odkaz na kurzy.
 
 ![Přidání hypertextového odkazu](using-query-string-values-to-retrieve-data/_static/image1.png)
 
-Když kliknete na jeden z odkazů, uvidíte této Studentova zaregistrovaná kurzy.
+Když kliknete na některý z odkazů, zobrazí se vám tento studentů zaregistrovaná kurzy.
 
 ![Zobrazit kurzy](using-query-string-values-to-retrieve-data/_static/image2.png)
 
 ## <a name="conclusion"></a>Závěr
 
-V tomto kurzu jste přidali odkaz s hodnotou řetězce dotazu. Tuto hodnotu řetězce dotazu jste použili pro hodnotu parametru metody select.
+V tomto kurzu jste přidali odkaz s hodnotou řetězce dotazu. Použít tuto hodnotu řetězce dotazu pro parametr metody select.
 
-V dalším [kurzu](adding-business-logic-layer.md), kód se přesune ze souborů kódu do vrstvy obchodní logiky a vrstva přístupu k datům.
+V dalším [kurzu](adding-business-logic-layer.md), kód se přesune z použití modelu code-behind soubory do vrstvy obchodní logiky a vrstva přístupu k datům.
 
 > [!div class="step-by-step"]
 > [Předchozí](integrating-jquery-ui.md)

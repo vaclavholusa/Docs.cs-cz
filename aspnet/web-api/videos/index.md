@@ -1,6 +1,6 @@
 ---
 uid: web-api/videos/index
-title: Rozhraní ASP.NET Web API videa | Microsoft Docs
+title: Rozhraní ASP.NET Web API videa | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,24 +9,23 @@ ms.date: 02/16/2012
 ms.topic: article
 ms.assetid: 8ed7e133-707b-43e6-bce4-e9d266935573
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/videos
 msc.type: book
-ms.openlocfilehash: cd78a8d3849c80730c6820115944c429f86116df
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd71ac21e156224efa61baf8c83f3974b1ab4fb9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26567034"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389525"
 ---
-<a name="aspnet-web-api-videos"></a>Rozhraní ASP.NET Web API videa
+<a name="aspnet-web-api-videos"></a>Videa o ASP.NET Web API
 ====================
-- [Přehled a Začínáme](getting-started/index.md)
+- [Přehled a začátek](getting-started/index.md)
 
-    - [Rozhraní ASP.NET Web API](getting-started/aspnet-web-api.md)
-    - [Rozhraní ASP.NET Web API, část 1: První webového rozhraní API](getting-started/your-first-web-api.md)
-    - [Rozhraní ASP.NET Web API, část 2: Získání dat](getting-started/getting-data.md)
-    - [Rozhraní ASP.NET Web API, část 3: Odstraňte a aktualizace](getting-started/delete-and-update.md)
-    - [Rozhraní ASP.NET Web API, část 4: Stránkování a dotazování](getting-started/paging-and-querying.md)
-    - [Rozhraní ASP.NET Web API, část 5: Vlastního ověřování](getting-started/custom-validation.md)
-    - [Rozhraní ASP.NET Web API, část 6: autorizace](getting-started/authorization.md)
+    - [Webové rozhraní API v ASP.NET](getting-started/aspnet-web-api.md)
+    - [Webové rozhraní API v ASP.NET, 1. část: První webové rozhraní API](getting-started/your-first-web-api.md)
+    - [Webové rozhraní API v ASP.NET, 2. část: Získání dat](getting-started/getting-data.md)
+    - [Webové rozhraní API v ASP.NET, 3. část: Odstranění a aktualizace](getting-started/delete-and-update.md)
+    - [Webové rozhraní API v ASP.NET, 4. část: Stránkování a tvorba dotazů](getting-started/paging-and-querying.md)
+    - [Webové rozhraní API v ASP.NET, 5. část: Vlastní ověřování](getting-started/custom-validation.md)
+    - [Webové rozhraní API v ASP.NET, 6. část: Autorizace](getting-started/authorization.md)

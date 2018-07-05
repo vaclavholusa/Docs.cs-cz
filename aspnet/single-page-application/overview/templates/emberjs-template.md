@@ -1,164 +1,163 @@
 ---
 uid: single-page-application/overview/templates/emberjs-template
-title: Šablona EmberJS | Microsoft Docs
+title: Šablona emberjs | Dokumentace Microsoftu
 author: xqiu
-description: EmberJS šablony
+description: Šablona emberjs
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 1fb7633aee288be648d4f9681b43c8911b7dbab9
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 1f5b005180fed15c51b36417cdcd6acc98123c9a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "26566344"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374163"
 ---
-<a name="emberjs-template"></a>EmberJS šablony
+<a name="emberjs-template"></a>Šablona emberjs
 ====================
 podle [Xinyang Qiu](https://github.com/xqiu)
 
-> Šablony MVC EmberJS se zapíše Nathan Totten, Thiago Santos a Xinyang Qiu.
+> Šablona Emberjs MVC je vytvořená systémem Nathan Totten Thiago Santos a Xinyang Qiu.
 > 
 > [Stažení šablony EmberJS MVC](https://go.microsoft.com/fwlink/?LinkId=282647)
 
 
-Šablona EmberJS SPA je navržená tak, aby začít rychle vytvářet interaktivní webové klientské aplikace pomocí EmberJS.
+Šablona EmberJS SPA je určena vám pomůžou začít rychle vytvářet interaktivní webové klientské aplikace s využitím EmberJS.
 
-"Jednostránkové aplikace" (SPA) je obecný termín pro webovou aplikaci, která načte jediné stránce HTML a pak aktualizuje dynamicky, místo načítání stránky, nové stránky. Po načtení úvodní stránky SPA komunikuje se serverem prostřednictvím požadavky AJAX.
+"Jednostránková aplikace" (SPA) je obecný termín pro webovou aplikaci, která načte jednu stránku HTML a následně aktualizuje dynamicky, místo načtení nové stránky na stránku. Po načtení počáteční stránky tato jednostránková aplikace komunikuje se serverem přes odesílání požadavků AJAX.
 
 ![](emberjs-template/_static/image1.png)
 
-AJAX není nic nového, ale existují ještě dnes JavaScript rozhraní, které usnadňují tvorbu a udržování rozsáhlé sofistikované SPA aplikace. Navíc standardu HTML 5 a CSS3 jsou usnadnit vytvoření bohaté uživatelská rozhraní.
+AJAX není nic nového, ale ještě dnes existují architektury JavaScriptu, které usnadňují tvorbu a udržování rozsáhlé sofistikované aplikace SPA. Navíc HTML 5 a CSS3 jsou to usnadňuje vytváření bohatých uživatelského rozhraní.
 
-Šablona SPA EmberJS používá [členskými](http://emberjs.com/) knihovna JavaScript pro zpracování aktualizace stránky z požadavky AJAX. Ember.js používá datové vazby k synchronizaci stránky s nejnovější data. Tímto způsobem, nemusíte psát kód, který provede JSON data a aktualizuje modelu DOM. Místo toho uveďte deklarativní atributy ve formátu HTML, který informování Ember.js jak data k dispozici.
+Používá šablona Emberjs SPA [členskými](http://emberjs.com/) JavaScript library pro zpracování aktualizace stránky AJAX požadavků. Ember.js používá datové vazby k synchronizaci na stránce s nejnovější data. Tímto způsobem nemusíte psát žádný kód, který vás provede JSON data a aktualizace modelu DOM. Místo toho kam si ukládáte deklarativních atributů ve formátu HTML, který Ember.js instrukce, jak data můžete prezentovat tak.
 
-Na straně serveru, je téměř shodné s šabloně EmberJS [kódem KnockoutJS SPA šablony](../introduction/knockoutjs-template.md). ASP.NET MVC používá k obsluze dokumentů HTML a ASP.NET Web API pro zpracování žádostí AJAX z klienta. Další informace o těchto aspektů šablony najdete v části [kódem KnockoutJS šablony](../introduction/knockoutjs-template.md) dokumentaci. Toto téma se zaměřuje na rozdíly mezi šablony Knockout a EmberJS šablony.
+Na straně serveru, je téměř stejný jako šablona emberjs [šablona KnockoutJS SPA](../introduction/knockoutjs-template.md). ASP.NET MVC používá k poskytování dokumentů HTML a ASP.NET Web API pro zpracování požadavků AJAX od klienta. Další informace o tyto aspekty šablony [šablona KnockoutJS](../introduction/knockoutjs-template.md) dokumentaci. Toto téma se zaměřuje na rozdíly mezi šablony Knockout a šablona emberjs.
 
-## <a name="create-an-emberjs-spa-template-project"></a>Vytvoření projektu EmberJS SPA šablony
+## <a name="create-an-emberjs-spa-template-project"></a>Vytvoření projektu šablona EmberJS SPA
 
-Stáhněte a nainstalujte šablony kliknutím na výše uvedené tlačítko Stáhnout. Možná budete muset restartovat Visual Studio.
+Stáhněte a nainstalujte šablony kliknutím na tlačítko Stáhnout výše. Můžete potřebovat restartovat Visual Studio.
 
-V **šablony** podokně, vyberte **nainstalovaných šablonách** a rozbalte **Visual C#** uzlu. V části **Visual C#**, vyberte **webové**. V seznamu šablon projektu, vyberte **webové aplikace ASP.NET MVC 4**. Název projektu a klikněte na tlačítko **OK**.
+V **šablony** vyberte **nainstalované šablony** a rozbalte **Visual C#** uzlu. V části **Visual C#** vyberte **webové**. V seznamu šablon projektu vyberte **webové aplikace ASP.NET MVC 4**. Pojmenujte projekt a klikněte na tlačítko **OK**.
 
 ![](emberjs-template/_static/image2.png)
 
-V **nový projekt** průvodci vyberte **Ember.js SPA projektu**.
+V **nový projekt** průvodce, vyberte **Ember.js SPA projektu**.
 
 ![](emberjs-template/_static/image4.png)
 
 ## <a name="emberjs-spa-template-overview"></a>Přehled šablon SPA EmberJS
 
-Šablona EmberJS používá kombinaci jQuery, Ember.js, Handlebars.js vytvořit smooth, interaktivní uživatelské rozhraní.
+Šablona emberjs používá kombinaci jQuery, Ember.js, Handlebars.js vytvořit plynulé a na interaktivní uživatelské rozhraní.
 
-Ember.js je knihovna JavaScript, která používá vzor MVC na straně klienta.
+Ember.js je knihovna jazyka JavaScript, která používá vzor MVC na straně klienta.
 
-- A *šablony*, napsané v jazyce ukázka Řídítka kola, popisuje uživatelské rozhraní aplikace. V režimu vydání [Řídítka kola kompilátoru](https://github.com/Myslik/csharp-ember-handlebars) se používá k sady a kompilaci Řídítka kola šablony.
-- A *modelu* ukládá data aplikací, který získá ze serveru (ToDo seznamy a položky ToDo).
-- A *řadič* uloží stav aplikace. Řadiče často prezentují data modelu odpovídající šablon.
-- A *zobrazení* překládá primitivní události z aplikace a předá tyto řadiče.
-- A *směrovač* spravuje stav aplikace, udržování synchronizace adresy URL a šablony.
+- A *šablony*napsaných v jazyce šablonování Handlebars, popisuje uživatelské rozhraní aplikace. V režimu vydání [Handlebars kompilátoru](https://github.com/Myslik/csharp-ember-handlebars) slouží k vytvoření balíčku a kompilaci handlebars šablony.
+- A *modelu* ukládá data aplikací, který získá ze serveru (ToDo seznamy a položky seznamu úkolů).
+- A *řadič* uloží stav aplikace. Kontrolery často prezentovat data modelu na odpovídající šablony.
+- A *zobrazení* přeloží primitivní události z aplikace a předává do kontroleru.
+- A *směrovače* spravuje stav aplikace, udržování synchronizace šablony a adresy URL.
 
-Kromě toho knihovny členskými dat slouží k synchronizaci objektů JSON (získaný ze serveru prostřednictvím rozhraní RESTful API) a modely klienta.
+Kromě toho knihovna členskými dat je možné synchronizovat objekty JSON (získané ze serveru prostřednictvím rozhraní RESTful API) a modely klienta.
 
-Šablona EmberJS SPA uspořádává skripty do osm vrstvy:
+Šablona EmberJS SPA slouží k uspořádání skripty do osm vrstvy:
 
-- webapi\_adapter.js, webapi\_serializer.js: rozšíření knihovny členskými dat pro práci s rozhraním ASP.NET Web API.
-- Scripts/Helpers.js: Definuje nový Řídítka členskými kola pomocné rutiny.
+- webapi\_adapter.js, webapi\_serializer.js: rozšiřuje knihovna členskými dat pro práci s rozhraním ASP.NET Web API.
+- Scripts/Helpers.js: Definuje novou členskými Handlebars pomocné rutiny.
 - Scripts/App.js: Vytvoří aplikaci a nakonfiguruje adaptéru a serializátor.
-- Aplikace, skripty nebomodely/\*.js: definuje modely.
-- Skripty nebo aplikace nebozobrazení/\*.js: definuje zobrazení.
-- Skripty/aplikace/řadiče nebo\*.js: definuje do řadičů.
-- Skripty a aplikace/směruje, Scripts/app/router.js: Definuje trasy.
-- Šablony /\*.hbs: definuje Řídítka kola šablony.
+- Skripty/aplikace/modely/\*js: definuje modely.
+- Skripty aaplikace/zobrazení/\*js: definuje zobrazení.
+- Skripty/aplikace/řadiče/\*js: definuje řadiče.
+- Skripty/aplikace/trasy, Scripts/app/router.js: Definuje trasy.
+- Šablony /\*.hbs: definuje handlebars šablony.
 
-Podívejme se na některé z těchto skriptů podrobněji.
+Pojďme se podívat na některé z těchto skriptů podrobněji.
 
 ## <a name="models"></a>Modely
 
-Modely jsou definovány ve složce aplikace, skripty nebo modely. Existují dva soubory modelu: todoItem.js a todoList.js.
+Tyto modely jsou definovány ve složce skripty/aplikace/modely. Existují dva soubory modelu: todoItem.js a todoList.js.
 
-**TODO.model.js** definuje modely na straně klienta (prohlížeč) pro seznamu úkolů. Existují dvě třídy modelu: todoItem a seznamu úkolů. V členskými jsou modely měly podtřídy DS. Model. Model může mít vlastnosti s atributy:
+**TODO.model.js** definuje modely (prohlížeč) na straně klienta pro seznamy úkolů. Existují dvě třídy modelu: todoItem a seznamu úkolů. V členskými modely jsou podtřídami DS. Model. Model může mít vlastnosti s atributy:
 
 [!code-javascript[Main](emberjs-template/samples/sample1.js)]
 
-Modely můžete definovat vztahy s jinými modely:
+Modely lze definovat vztahy s jinými modely:
 
 [!code-css[Main](emberjs-template/samples/sample2.css)]
 
-Modely můžete počítaný vlastnosti, které vytvořit vazbu na ostatní vlastnosti:
+Modely můžou mít vypočítané vlastnosti, kteří jsou navázáni na další vlastnosti:
 
 [!code-javascript[Main](emberjs-template/samples/sample3.js)]
 
-Modely může mít pozorovatel funkce, které jsou vyvolány, když se změní zjištěnou vlastnost:
+Modely mohou být pozorovatel funkce, které jsou vyvolány při změně zjištěné vlastnosti:
 
 [!code-javascript[Main](emberjs-template/samples/sample4.js)]
 
-## <a name="views"></a>zobrazení
+## <a name="views"></a>Zobrazení
 
-Zobrazení jsou definovány ve složce skripty nebo aplikace nebo zobrazení. Zobrazení překládá události z aplikace uživatelského rozhraní. Obslužné rutiny události můžete zpětné volání pro funkce řadiče nebo jednoduše kontextu dat volat přímo.
+Zobrazení jsou definovány ve složce skripty/aplikace/zobrazení. Zobrazení přeloží události z uživatelského rozhraní aplikace. Obslužné rutiny události můžete zpětné volání pro kontroler funkce nebo jednoduše datového kontextu volat přímo.
 
-Například následující kód je z views/TodoItemEditView.js. Definuje, událostí zpracování pro vstupní textové pole.
+Například následující kód je z views/TodoItemEditView.js. Definuje události u vstupního textového pole.
 
 [!code-javascript[Main](emberjs-template/samples/sample5.js)]
 
-## <a name="controller"></a>Řadiče
+## <a name="controller"></a>Kontroler
 
-Ve složce skripty/aplikace/řadiče jsou definovány v řadičích. Představují jeden model, rozšířit `Ember.ObjectController`:
+Kontrolery jsou definovány ve složce skripty/aplikace/řadiče. K reprezentaci jednoho modelu rozšíření `Ember.ObjectController`:
 
 [!code-javascript[Main](emberjs-template/samples/sample6.js)]
 
-Řadič může také představovat kolekce modelů rozšířením `Ember.ArrayController`. Například TodoListController představuje pole `todoList` objekty. Řadičem seřadí podle ID seznamu úkolů v sestupném pořadí:
+Kontroler může také představovat kolekce modelů rozšířením `Ember.ArrayController`. Například, TodoListController reprezentuje pole prvků `todoList` objekty. Kontroler se seřadí podle ID seznamu úkolů v sestupném pořadí:
 
 [!code-javascript[Main](emberjs-template/samples/sample7.js)]
 
-Řadičem definuje funkci s názvem `addTodoList`, který vytvoří nový seznam úkolů a přidá ji do pole. Informace o tom, jak tuto funkci volala, otevřete soubor šablony s názvem todoListTemplate.html ve složce šablony. Následující kód šablony váže tlačítko `addTodoList` funkce:
+Kontroler definuje funkci nazvanou `addTodoList`, který vytvoří nový seznam úkolů a přidá jej do pole. Pokud chcete zobrazit, jak tato funkce volána, otevřete soubor šablony s názvem todoListTemplate.html do složky šablony. Následující kód šablony vytvoří vazbu na tlačítko `addTodoList` funkce:
 
 [!code-html[Main](emberjs-template/samples/sample8.html)]
 
-Také obsahuje kontroler `error` vlastnosti, která obsahuje chybovou zprávu. Tady je kód šablony zobrazíte chybovou zprávu (také ve todoListTemplate.html):
+Také obsahuje kontroler `error` vlastnost, která obsahuje chybovou zprávu. Tady je kód šablony zobrazíte chybovou zprávu (také v todoListTemplate.html):
 
 [!code-html[Main](emberjs-template/samples/sample9.html)]
 
 ## <a name="routes"></a>Trasy
 
-Router.js definuje trasy a výchozí šablony, které chcete zobrazit, nastaví stav aplikací a odpovídá adresy URL trasy:
+Router.js trasy a výchozí šablonu pro zobrazení, nastaví stav aplikace, definuje a odpovídá adresy URL trasy:
 
 [!code-javascript[Main](emberjs-template/samples/sample10.js)]
 
-TodoListRoute.js načte data pro TodoListRoute přepsáním setupController funkce:
+TodoListRoute.js načte data pro TodoListRoute tak, že přepíšete setupController funkce:
 
 [!code-javascript[Main](emberjs-template/samples/sample11.js)]
 
-Členskými používá zásady vytváření názvů k přiřazení adres URL, názvy tras, řadiče a šablony. Další informace najdete v tématu [ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/) v dokumentaci EmberJS.
+Členskými používá konvence pojmenování k přiřazení adres URL, názvy tras, kontrolerů a šablony. Další informace najdete v tématu [ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/) v dokumentaci EmberJS.
 
 ## <a name="templates"></a>Šablony
 
-Složka šablon obsahuje čtyři šablony:
+Složka šablony obsahuje čtyři šablony:
 
-- Application.HBs: výchozí šablonu, která se zobrazí při spuštění aplikace.
+- Application.HBs: výchozí šablony, který je vykreslen při spuštění aplikace.
 - About.HBs: Šablona pro tuto trasu "/ o".
-- index.HBs: šablony pro kořenovou "/" trasy.
-- todoList.hbs: šablonu pro "/ todo" trasy.
-- \_navbar.HBs: Šablona definuje navigační nabídce.
+- index.HBs: šablony pro kořenovou trasy "/".
+- todoList.hbs: Šablona pro "/ todo" trasy.
+- \_navbar.HBs: Šablona definuje navigační nabídky.
 
-Šablona aplikací funguje jako hlavní stránky. Obsahuje záhlaví, zápatí a "{{výstupu}}" Chcete-li vložit další šablony v v závislosti na trasy. Další informace o šablonách aplikace v členskými najdete v tématu [ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/).
+Šablona aplikace funguje jako hlavní stránky. Obsahuje záhlaví, zápatí nebo "{{zásuvky}}" Vložit další šablony v v závislosti na trasy. Další informace o šablonách aplikací v členskými najdete v tématu [ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/).
 
-"/ TodoList" Šablona obsahuje dvou výrazů smyčky. Mimo smyčka je `{{#each controller}}`a uvnitř smyčka je `{{#each todos}}`. Následující kód ukazuje integrované `Ember.Checkbox` zobrazit, přizpůsobený `App.TodoItemEditView`a odkaz s `deleteTodo` akce.
+"/ Seznam úkolů" Šablona obsahuje dvou výrazů smyčky. Vnější smyčka je `{{#each controller}}`a uvnitř smyčka je `{{#each todos}}`. Následující kód ukazuje vestavěná `Ember.Checkbox` zobrazíte přizpůsobený `App.TodoItemEditView`a odkaz s `deleteTodo` akce.
 
 [!code-html[Main](emberjs-template/samples/sample12.html)]
 
-`HtmlHelperExtensions` Třídy, které jsou definované v Controllers/HtmlHelperExensions.cs, definuje pomocné rutiny funkce ukládat do mezipaměti a vložte šablonu souborů při **ladění** je nastaven na **true** v souboru Web.config. Tato funkce je volána ze souboru zobrazení ASP.NET MVC definované v Views/Home/App.cshtml:
+`HtmlHelperExtensions` Třídy definované v Controllers/HtmlHelperExensions.cs, definuje pomocnou rutinu funkce do mezipaměti a Vložit šablonu souborů při **ladění** je nastavena na **true** v souboru Web.config. Tato funkce je volána z definované v Views/Home/App.cshtml soubor zobrazení ASP.NET MVC:
 
 [!code-cshtml[Main](emberjs-template/samples/sample13.cshtml)]
 
-Voláno bez argumentů, vykreslí funkce všechny šablony soubory ve složce šablony. Můžete také zadat určitá šablona souboru nebo podsložku.
+Volat bez argumentů, vykreslí funkci všechny soubory šablon do složky šablony. Můžete také zadat podsložku nebo soubor konkrétní šablony.
 
-Když **ladění** je **false** v souboru Web.config, aplikace obsahuje položku sady "~/bundles/templates". Tuto položku sady je přidaný do BundleConfig.cs pomocí knihovny kompilátoru Řídítka kola:
+Když **ladění** je **false** v souboru Web.config, aplikace obsahuje položku sady "~/bundles/templates". Tato položka sady přidá BundleConfig.cs pomocí knihovny kompilátoru Handlebars:
 
 [!code-csharp[Main](emberjs-template/samples/sample14.cs)]

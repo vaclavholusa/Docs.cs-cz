@@ -1,159 +1,158 @@
 ---
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
-title: ASP.NET – webové stránky průvodce řešením potíží (Razor) | Microsoft Docs
+title: ASP.NET – webové stránky příručky pro řešení potíží (Razor) | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento článek popisuje problémy, které by mohly mít při práci s webových stránek ASP.NET (Razor) a některé navrhovanými řešeními. Verze softwaru ASP.NET Web Pag...
+description: Tento článek popisuje problémy, které můžete mít při práci s webových stránek ASP.NET (Razor) a některé doporučené řešení. Verze softwaru Úvo ASP.NET Web...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
 ms.topic: article
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: ec51169ccea0016712de3fdb28a16a174150a8bd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 48c0380af32038a1d916d1b99f7de0f918d1a74e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898507"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37373536"
 ---
-<a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET – webové stránky průvodce řešením potíží (Razor)
+<a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET – webové stránky příručky pro řešení potíží (Razor)
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek popisuje problémy, které by mohly mít při práci s webových stránek ASP.NET (Razor) a některé navrhovanými řešeními.
+> Tento článek popisuje problémy, které můžete mít při práci s webových stránek ASP.NET (Razor) a některé doporučené řešení.
 > 
 > ## <a name="software-versions"></a>Verze softwaru
 > 
 > 
-> - Rozhraní ASP.NET Web Pages (Razor) 3
+> - Webové stránky ASP.NET (Razor) 3
 >   
 > 
-> V tomto kurzu taky spolupracuje se službou ASP.NET Web Pages 2 a ASP.NET Web Pages 1.0.
+> V tomto kurzu se také pracuje s ASP.NET Web Pages 2 a ASP.NET Web Pages 1.0.
 
 
 Toto téma obsahuje následující oddíly:
 
 - [Problémy se spouštěním stránky](#Issues_Running_.cshtml_Pages)
-- [Problémy s kódu Razor](#IssuesWithRazorCode)
-- [Problémy s členství a zabezpečení](#membership)
-- [Problémy s e-mailem](#email)
+- [Problémy s kódem Razor](#IssuesWithRazorCode)
+- [Problémy se zabezpečením a členství](#membership)
+- [Problémy s odesláním e-mailu](#email)
 - [Další zdroje informací](#AdditionalResources)
 
-Obecné otázky, najdete v části [rozhraní ASP.NET Web Pages (Razor) – nejčastější dotazy](https://go.microsoft.com/fwlink/?LinkId=253000).
+Obecné dotazy najdete v tématu [webových stránek ASP.NET (Razor) – nejčastější dotazy](https://go.microsoft.com/fwlink/?LinkId=253000).
 
 <a id="Issues_Running_.cshtml_Pages"></a>
 ## <a name="issues-with-running-pages"></a>Problémy se spouštěním stránky
 
-Můžete zabránit celou řadu problémů *.cshtml* a *.vbhtml* stránky z správně spuštěna. V této části jsou uvedeny běžné chybové zprávy a pravděpodobně způsobí, že.
+Celou řadou potíží může zabránit *.cshtml* a *.vbhtml* stránky ve správném spuštění. Tato část uvádí běžné chybové zprávy a pravděpodobně způsobí, že.
 
 ### <a name="http-error-403---forbidden-access-is-denied"></a>Chyba protokolu HTTP 403 – Zakázáno: Přístup byl odepřen.
 
 *Nemáte oprávnění k zobrazení tohoto adresáře nebo stránky pomocí zadaných přihlašovacích údajů.*
 
-Této chybě může dojít, pokud server není spuštěn správnou verzi rozhraní .NET Framework. Ujistěte se, že počítač, který je spuštěný server (místně nebo vzdáleně) má alespoň nainstalované rozhraní .NET Framework 4. Také zajistěte, aby vlastní aplikace je nakonfigurovaná pro spuštění správnou verzi.
+K této chybě může dojít, pokud server není spuštěn správnou verzi rozhraní .NET Framework. Ujistěte se, že má počítač, na kterém běží server (místně nebo vzdáleně) alespoň nainstalované rozhraní .NET Framework 4. Také se ujistěte, že samotná aplikace je nakonfigurován ke spuštění správnou verzi.
 
-Pokud tento problém se zobrazí místně při práci ve službě WebMatrix, klikněte na tlačítko **lokality** pracovního prostoru a potom ve stromovém zobrazení, klikněte na tlačítko **nastavení**. V **vyberte verzi rozhraní .NET Framework** vyberte **.NET 4 (integrovaný režim)**. Pokud tato verze je už nastavené, zkuste spustit jako správce služby WebMatrix.
+Pokud tento problém se zobrazí místně při práci v nástroji WebMatrix, klikněte na tlačítko **lokality** prostoru a ve stromovém zobrazení klikněte na **nastavení**. V **vyberte verzi rozhraní .NET Framework** vyberte **.NET 4 (integrovaný režim)**. Pokud tato verze je již nastavena, zkuste spustit službu WebMatrix jako správce.
 
-Ověřte, zda kořenovém adresáři vašeho webu má alespoň jeden *.cshtml* souboru v ní.
+Ujistěte se, že kořenový web má alespoň jednu *.cshtml* soubor v ní.
 
-Pokud se zobrazí tato chyba, když webový server je na vzdáleném serveru, obraťte se na správce serveru. Ujistěte se, že server má rozhraní .NET Framework 4 nebo novější. Také se ujistěte, že je aplikace spuštěna ve fondu aplikací, který je nakonfigurován pro použití této verzi rozhraní.NET Framework.
+Pokud tato chyba se zobrazí, když je webový server na vzdáleném serveru, obraťte se na správce serveru. Ověřte, že server má rozhraní .NET Framework 4 nebo novější. Také se ujistěte, že aplikace běží ve fondu aplikací, který je nakonfigurovaný na tuto verzi rozhraní.NET Framework.
 
-Pokud budete mít kontrolu nad serveru, ujistěte se, že běží správnou verzi rozhraní .NET Framework. Může také zkuste opravit instalaci spuštěním `aspnet_regiis -iru` příkaz. (Například při instalaci služby IIS po instalaci rozhraní .NET Framework, služba IIS nebude správně konfigurován pro spuštění stránek ASP.NET.) Další informace najdete v tématu [ASP.NET IIS Registration Tool (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx).
+Pokud budete mít kontrolu nad serveru, ujistěte se, že běží správnou verzi rozhraní .NET Framework. Můžete se taky může snažit opravíte spuštěním instalace `aspnet_regiis -iru` příkazu. (Například, pokud nainstalujete službu IIS po instalaci rozhraní .NET Framework, služby IIS nebudě správně nakonfigurovaná pro spuštění stránky technologie ASP.NET.) Další informace najdete v tématu [ASP.NET IIS Registration Tool (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx).
 
 ### <a name="http-error-40314---forbidden"></a>Chyba protokolu HTTP 403.14 – zakázáno
 
-*Webový server je nakonfigurován tak, aby nezobrazovat obsah tohoto adresáře.*
+*Webový server je nakonfigurován na obsah tohoto adresáře v seznamu.*
 
-Této chybě může dojít v případě požadavku na prostředek, který je chráněn (jako *Web.config* soubor) nebo do složky, který je chráněný, který je (jako *aplikace\_Data* nebo *aplikace\_Kód*).
+K této chybě může dojít, pokud si vyžádáte prostředek, který je chráněný (stejně jako *Web.config* soubor) nebo který je ve složce, která je chráněná (jako *aplikace\_Data* nebo *aplikace\_Kód*).
 
 ### <a name="http-error-40417---not-found"></a>Chyba protokolu HTTP 404.17 – Nenalezeno
 
-*Požadovaný obsah pravděpodobně skript který nebude obslužnou rutinou statických souborů.*
+*Požadovaný obsah se zdá být skript a nebude obsluhuje statický soubor obslužnou rutinou.*
 
-Této chybě může dojít, pokud server není správně nakonfigurován pro používání rozhraní .NET Framework 4 nebo novější a proto nemůže rozpoznat kód v `@{ }` bloky. Naleznete v popisu výše pro *HTTP chyby 403 – Zakázáno: přístup byl odepřen*.
+K této chybě může dojít, pokud server není správně nakonfigurovaný pro použití rozhraní .NET Framework 4 nebo novější a proto nemůže rozpoznat kód v `@{ }` bloky. Naleznete v popisu výše pro *HTTP Chyba 403 – Zakázáno: přístup byl odepřen*.
 
-### <a name="http-error-4047---not-found"></a>Chyba protokolu HTTP 404.7 - nebyl nalezen
+### <a name="http-error-4047---not-found"></a>Chyba protokolu HTTP 404.7 – nebyl nalezen
 
-*Modul filtrování požadavků je nakonfigurován tak, aby odepřel příponu souboru*
+*Modul filtrování žádostí je konfigurován k odepření přípona souboru*
 
-Této chybě může dojít, pokud *.cshtml* nebo *.vbhtml* rozšíření byla explicitně zablokovaná na serveru. Příznakem tohoto problému je svou práci adresy URL, když není uvedena rozšíření, ale adresy URL, které zahrnují *.cshtml* nebo *.vbhtml* nefungují. Možných řešení je znovu povolit rozšíření na webu *Web.config* souboru. Následující příklad ukazuje, jak povolit *.cshtml* rozšíření.
+K této chybě může dojít, pokud *.cshtml* nebo *.vbhtml* rozšíření byl explicitně zakázán na serveru. Příznaky tohoto problému je, které pracují adresy URL, pokud neobsahují rozšíření, ale adresy URL, které zahrnují *.cshtml* nebo *.vbhtml* nefungují. Opětovné povolení rozšíření na webu je možné řešení *Web.config* souboru. Následující příklad ukazuje, jak povolit *.cshtml* rozšíření.
 
 [!code-xml[Main](aspnet-web-pages-razor-troubleshooting-guide/samples/sample1.xml?highlight=5-6)]
 
-### <a name="http-error-4048---not-found"></a>Chyba protokolu HTTP 404.8 - nebyla nalezena
+### <a name="http-error-4048---not-found"></a>Chyba protokolu HTTP 404.8 – nebyl nalezen
 
-*Modul filtrování požadavků je nakonfigurován tak, aby odepřel cestu v adrese URL, která obsahuje oddíl hiddensegment.*
+*Modul filtrování žádostí je konfigurován k odepření cestě v adrese URL, která obsahuje oddíl hiddenSegment.*
 
-Této chybě může dojít v případě požadavku na prostředek, který je chráněn (jako *Web.config* soubor) nebo do složky, který je chráněný, který je (jako *aplikace\_Data* nebo *aplikace\_Kód*).
+K této chybě může dojít, pokud si vyžádáte prostředek, který je chráněný (stejně jako *Web.config* soubor) nebo který je ve složce, která je chráněná (jako *aplikace\_Data* nebo *aplikace\_Kód*).
 
-### <a name="this-type-of-page-is-not-served-server-error-in--application"></a>Tento typ stránky není obsluhovat (Chyba serveru v aplikaci '/')
+### <a name="this-type-of-page-is-not-served-server-error-in--application"></a>Tento typ stránky není poskytováni (Chyba serveru v aplikaci "/")
 
-Naleznete v popisu výše pro 404.17 chyby protokolu HTTP.
+Naleznete v popisu výše pro HTTP 404.17 chyby.
 
 <a id="IssuesWithRazorCode"></a>
-## <a name="issues-with-razor-code"></a>Problémy s kódu Razor
+## <a name="issues-with-razor-code"></a>Problémy s kódem Razor
 
-### <a name="the-name-class-does-not-exist-in-the-current-context"></a>Název '*třída*' neexistuje v aktuálním kontextu
+### <a name="the-name-class-does-not-exist-in-the-current-context"></a>Název "*třídy*' neexistuje v aktuálním kontextu
 
-Často, který je důvod se zobrazí tato chyba `class` odkazy pomocné rutiny, ale pomocné rutiny není nainstalována. Například pokud se pokusíte použít pomocné rutiny, ale pokud nemáte nainstalovaný balíček z NuGet, zobrazí se tato chyba. Pomocí Galerie ve službě WebMatrix můžete najít a nainstalovat pomocné rutiny.
+Často, důvod se zobrazí tato chyba je, že `class` odkazy pomocné rutiny, ale pomocné rutiny není nainstalována. Například pokud se pokusíte použít pomocné rutiny, ale pokud jste nenainstalovali balíček z Nugetu, zobrazí se vám tato chyba. Pomocí Galerie ve službě WebMatrix můžete najít a nainstalovat pomocné rutiny.
 
-Pokud je nainstalován pomocné rutiny, ale stránce stále nerozpoznal ho, pokuste se přidat přidat `using` příkaz ke kódu. V `using` prohlášení, odkaz na obor názvů, který obsahuje pomocné rutiny. Například základní pomocné rutiny, které jsou v balíčku ASP.NET webové pomocné objekty jsou v `System.Web.Helpers` oboru názvů. V horní části stránky, kde chcete použít pomocné rutiny přidejte následující řádek:
+Pokud je nainstalovaná pomocné rutiny, ale stránce stále nerozpoznal ho, vyzkoušejte přidávání přidat `using` příkaz kódu. V `using` prohlášení, odkaz na obor názvů, který obsahuje pomocné rutiny. Například základní pomocné rutiny, které jsou součástí balíčku ASP.NET Web Helpers jsou v `System.Web.Helpers` oboru názvů. V horní části stránky, kde chcete použít pomocné rutiny přidejte následující řádek:
 
 `@using Microsoft.Web.Helpers;`
 
 <a id="membership"></a>
-## <a name="issues-with-security-and-membership"></a>Problémy s členství a zabezpečení
+## <a name="issues-with-security-and-membership"></a>Problémy se zabezpečením a členství
 
-Pokud používáte systém integrované zabezpečení (členství) na webových stránkách ASP.NET (Razor), mohou se vyskytnout následující problémy.
+Pokud používáte systém integrované zabezpečení (členství) na webových stránkách ASP.NET (Razor), může dojít k následujícím potížím.
 
-### <a name="to-call-this-method-the-membershipprovider-property-must-be-an-instance-of-extendedmembershipprovider"></a>Mohli volat tuto metodu, musí být vlastnost "Membership.Provider" instance "ExtendedMembershipProvider"
+### <a name="to-call-this-method-the-membershipprovider-property-must-be-an-instance-of-extendedmembershipprovider"></a>Vlastnost "Membership.Provider" mohli volat tuto metodu, musí být instance "ExtendedMembershipProvider"
 
-Tuto chybu můžete určit, že žádné `AspNetSqlMembershipProvider` třída je nakonfigurovaný. (Příznakem je, že lokality funguje bez problémů místně, ale vrátí tuto chybu při publikování serveru poskytovatele hostingu.) Jeden tohoto problému je explicitně povolit jednoduché členství vložením následujícího textu na web *Web.config* souboru:
+Tuto chybu můžete určit, že žádné `AspNetSqlMembershipProvider` třídy je nakonfigurované. (Příznakem je, že lokality funguje místně, ale vyvolá tuto chybu, když ji publikujete do serveru poskytovatele hostingu.) Jednu opravu tohoto problému je explicitně povolit jednoduché členství přidáním následujícího kódu na web *Web.config* souboru:
 
 [!code-xml[Main](aspnet-web-pages-razor-troubleshooting-guide/samples/sample2.xml?highlight=6)]
 
 <a id="email"></a>
-## <a name="issues-with-sending-email"></a>Problémy s e-mailem
+## <a name="issues-with-sending-email"></a>Problémy s odesláním e-mailu
 
-Problémy s e-mailem, může být náročné k ladění. Počáteční problém může být, že se nelze připojit k serveru SMTP. Pokud je připojení úspěšné, ASP.NET předá zprávu na SMTP server. Však může být problémy se zprávou sám sebe, který zabrání odeslání serveru SMTP.
+Chcete-li ladit může být náročné problémů s odesíláním e-mailu. Počáteční problém může být, že se nemůže připojit k serveru SMTP. Pokud je připojení úspěšné, ASP.NET předá zprávy na server SMTP. Může však být problémy s vlastní zprávě, který zabraňuje odeslání na server SMTP.
 
-Pokud vaše aplikace není úspěšně odeslat e-mailu, zkuste následující postup:
+Pokud vaše aplikace neodesílá úspěšně e-mailu, zkuste následující:
 
-- Název serveru SMTP je často něco podobného jako `smtp.provider.com` nebo `smtp.provider.net`. Pokud však publikování webu k poskytovateli hostingu, název serveru SMTP v daném okamžiku může být `localhost`. K této situaci dochází, protože když jste publikovali a vaše lokalita běží na serveru poskytovatele, SMTP server může být místní z hlediska vaší aplikace. Tuto změnu v hodnotě názvů serverů může znamenat, že budete muset změnit název serveru SMTP jako součást procesu publikování.
-- Číslo portu je obvykle 25. Ale někteří poskytovatelé vyžadovat použití portu 587 nebo některé port. Obraťte se na vlastníka serveru SMTP, jaké číslo portu se předpokládá, že použít.
-- Ujistěte se, že používáte správné přihlašovací údaje. Pokud váš web jste publikovali do poskytovatele hostitelských služeb, použijte přihlašovací údaje, které zprostředkovatel má konkrétně označil jsou e-mailu. Tyto přihlašovací údaje se může lišit od přihlašovacích údajů, které můžete použít k publikování.
-- Někdy vůbec nepotřebujete přihlašovací údaje. Pokud odesíláte e-mailu pomocí osobní poskytovatel internetových služeb, může poskytovatel e-mailu již znáte svoje přihlašovací údaje. Po publikování, možná budete muset použít jiné pověření než při testování v místním počítači.
-- Pokud váš poskytovatel e-mailu používá šifrování, nastavte `WebMail.EnableSsl` k `true`.
+- Název serveru SMTP je často něco jako `smtp.provider.com` nebo `smtp.provider.net`. Nicméně pokud publikování webu k poskytovateli hostingu, název serveru SMTP v tomto okamžiku může být `localhost`. K této situaci dochází, protože po publikování a vaše lokalita běží na serveru zprostředkovatele, může být místní z pohledu aplikace serveru SMTP. Tato změna názvů serverů může znamenat, že budete muset změnit název serveru SMTP jako součást procesu publikování.
+- Číslo portu je obvykle 25. Ale někteří poskytovatelé vyžadovat použití port 587 nebo některé další porty. Obraťte se na vlastníka SMTP server, jaké číslo portu očekávané použití.
+- Ujistěte se, že používáte správné přihlašovací údaje. Pokud k poskytovateli hostingu, které jste publikovali vašeho webu, použijte přihlašovací údaje, které zprostředkovatel má výslovně uvedeno, jsou určené pro e-mailu. Tyto přihlašovací údaje se může lišit od přihlašovací údaje, které můžete použít k publikování.
+- Někdy není nutné přihlašovací údaje vůbec. Pokud odesíláte e-mailu pomocí svého osobního poskytovatele internetových služeb, může být vašeho poskytovatele e-mailu už znáte svoje přihlašovací údaje. Po publikování, možná budete muset použít jiná pověření než při testování v místním počítači.
+- Pokud vašeho poskytovatele e-mailu používá šifrování, nastavit `WebMail.EnableSsl` k `true`.
 
-Pokud dojde k chybě při odesílání e-mailu, může se zobrazit zpráva standardní chyba ASP.NET, který vypadá takto:
+Pokud dojde k chybě odesílání e-mailů, může se zobrazit standardní technologie ASP.NET chybovou zprávu, která vypadá takto:
 
-![ASP.NET chybovou zprávu, když dojde k potížím s e-mailu](aspnet-web-pages-razor-troubleshooting-guide/_static/image1.png)
+![ASP.NET chybové zprávy, pokud dojde k nějakému problému s e-mailem](aspnet-web-pages-razor-troubleshooting-guide/_static/image1.png)
 
-Můžete také ladění potíží při odesílání e-mailu pomocí `try-catch` bloku, jako v následujícím příkladu. Při použití `try-catch` bloku ASP.NET nezobrazuje jeho standardní cíl chybové zprávy. Místo toho můžete zaznamenat chybu v `catch` část bloku.
+Můžete také ladit problémy s odesláním e-mailu pomocí `try-catch` bloku, jako v následujícím příkladu. Při použití `try-catch` blok ASP.NET nezobrazí její standardní chybové zprávy. Místo toho můžete zaznamenat chybu v `catch` části bloku.
 
 [!code-cshtml[Main](aspnet-web-pages-razor-troubleshooting-guide/samples/sample3.cshtml)]
 
-Nahraďte příslušnými hodnotami pro `your-SMTP-server-name`a tak dále. Některé chybové zprávy, které mohou být zobrazeny tímto způsobem zahrnují následující:
+Nahraďte příslušnými hodnotami pro `your-SMTP-server-name`, a tak dále. Některé chybové zprávy, které se můžou objevovat tímto způsobem, patří:
 
-- *Chyba při odesílání e-mailu.*
+- *Chyba při odeslání e-mailu.*
 
     -nebo-
 
-    *Pokus o připojení se nezdařila, protože připojená strana nereagovala správně po určitou dobu nebo navázané připojení se nezdařila, protože připojení hostitele se nepodařilo reagovat*
+    *Pokus o připojení se nezdařila, protože připojená strana neodpověděla řádně po určitou dobu nebo navázané připojení se nezdařila, protože připojený hostitel se nepodařilo odpovědět*
 
-    Tato chyba obvykle znamená, že aplikace se nemůže připojit k serveru SMTP. Zkontrolujte název serveru a číslo portu.
-- <em>Poštovní schránky k dispozici. Odpověď serveru: 5.1.0 &lt; someuser@invaliddomain &gt; odesílatele odmítl: Neplatný odesílatele domény</em>
+    Tato chyba obvykle znamená, že aplikace nelze připojit k serveru SMTP. Zkontrolujte název serveru a číslo portu.
+- <em>Poštovní schránka není k dispozici. Odpověď serveru: 5.1.0 &lt; someuser@invaliddomain &gt; odesílatele odmítnuta: Neplatný odesílatel domény</em>
 
     Tuto zprávu můžete určit, že `From` adresa není správná nebo chybí.
-- *Zadaný řetězec není ve formátu požadované pro e-mailovou adresu.*
+- *Zadaný řetězec není ve formátu vyžadovaném pro e-mailovou adresu.*
 
-    Tato chyba může znamenat, hodnota `To` nebo `From` vlastnosti nejsou rozpoznány jako e-mailové adresy. (ASP.NET nelze zkontrolovat, že e-mailová adresa je platná, pouze to je ve správném formátu, jako je třeba *name@domain.com*.)
+    Tato chyba může znamenat, která hodnota `To` nebo `From` vlastnosti nerozeznal jako e-mailové adresy. (Technologie ASP.NET nemůže zkontrolovat, že je platný, pouze že se je ve správném formátu, jako je třeba e-mailovou adresu *name@domain.com*.)
 
 > [!NOTE]
-> Odeberte kód, který se zobrazí chyba (`@errorMessage`) před publikováním stránky k lokalitě za provozu. Není vhodné tak, aby uživatelé zobrazit chybové zprávy, které jste získali ze serveru.
+> Odeberte kód, který se zobrazí chyba (`@errorMessage`) před publikováním na stránce živého webu. Není vhodné umožňuje uživatelům zobrazit chybové zprávy, které jste získali ze serveru.
 
 
 <a id="AdditionalResources"></a>
@@ -161,4 +160,4 @@ Nahraďte příslušnými hodnotami pro `your-SMTP-server-name`a tak dále. Něk
 
 [Webové stránky ASP.NET (Razor) – časté otázky](https://go.microsoft.com/fwlink/?LinkId=253000)
 
-[Služba WebMatrix a webové stránky ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix) fórum na webu technologie ASP.NET
+[Služba WebMatrix a webové stránky ASP.NET](https://forums.asp.net/1224.aspx/1?WebMatrix) fórum na webu ASP.NET

@@ -1,29 +1,28 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/index
-title: ASP.NET 4 - Enterprise nasazení Úvod | Microsoft Docs
+title: ASP.NET 4 – Úvod do nasazení v podniku | Dokumentace Microsoftu
 author: rick-anderson
-description: Tato sada kurzů popisuje nástroje a techniky, které můžete použít k nasazení webové aplikace v různých podnikových scénářích.
+description: Této sérii kurzů popisuje nástroje a techniky, které slouží k nasazování webových aplikací v různých podnikových scénářích.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
 ms.topic: article
 ms.assetid: 8e55d4a3-5f93-42b5-b053-4736c9152f11
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios
 msc.type: chapter
-ms.openlocfilehash: 049a7485473d53fb179d0d05f05c56e221a38ba8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 02dfaae5704cf9c96f67a291b5afb38dd6c43d8f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26568852"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378019"
 ---
-<a name="aspnet-4---enterprise-deployment-introduction"></a>ASP.NET 4 - nasazení Úvod Enterprise
+<a name="aspnet-4---enterprise-deployment-introduction"></a>ASP.NET 4 – Úvod do nasazení v podniku
 ====================
-> Tato sada kurzů popisuje nástroje a techniky, které můžete použít k nasazení webové aplikace v různých podnikových scénářích.
+> Této sérii kurzů popisuje nástroje a techniky, které slouží k nasazování webových aplikací v různých podnikových scénářích.
 
 
-- [Nasazení webové aplikace v podnikové scénáře použití sady Visual Studio 2010](deploying-web-applications-in-enterprise-scenarios.md)
-- [Podnikového nasazení webu: Přehled scénáře](enterprise-web-deployment-scenario-overview.md)
-- [Správa životního cyklu aplikací: Z vývojového do produkčního prostředí](application-lifecycle-management-from-development-to-production.md)
+- [Scénáře nasazení webových aplikací v podniku pomocí sady Visual Studio 2010](deploying-web-applications-in-enterprise-scenarios.md)
+- [Nasazení podnikového webu: Přehledný scénář](enterprise-web-deployment-scenario-overview.md)
+- [Správa životního cyklu aplikace: Od vývoje k ostrému provozu](application-lifecycle-management-from-development-to-production.md)

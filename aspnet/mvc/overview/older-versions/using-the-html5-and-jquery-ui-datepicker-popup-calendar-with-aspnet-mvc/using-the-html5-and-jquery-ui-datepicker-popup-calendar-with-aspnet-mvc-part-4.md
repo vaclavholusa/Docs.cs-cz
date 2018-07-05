@@ -1,102 +1,101 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
-title: Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 4 | Microsoft Docs
+title: Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 4 | Dokumentace Microsoftu
 author: Rick-Anderson
-description: V tomto kurzu naučit základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v MV ASP.NET...
+description: V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, šablony zobrazení a kalendářem jQuery uživatelského rozhraní prvkem datepicker v MV ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
 ms.topic: article
 ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: c6df727107b0a045341badefbf99eec773cd4eff
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 74bd88408c4d60032a1275aa9f8540cf710dac36
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874782"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380905"
 ---
-<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 4
+<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 4
 ====================
-podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> V tomto kurzu naučit základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v aplikaci ASP.NET MVC Web.
+> V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, šablony zobrazení a kalendářem jQuery UI datepicker v aplikaci MVC rozhraní ASP.NET Web.
 
 
-### <a name="adding-a-template-for-editing-dates"></a>Přidání šablony pro úpravy dat
+### <a name="adding-a-template-for-editing-dates"></a>Přidání šablony pro úpravu dat
 
-V této části vytvoříte šablonu pro úpravu dat, která bude použita, pokud rozhraní ASP.NET MVC zobrazí uživatelské rozhraní pro úpravy vlastnosti modelu, které jsou označené **datum** výčet [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut. Šablona vykreslí pouze datum; čas se nezobrazí. V šabloně budete používat [jQuery UI ovládací prvek Datepicker](http://jqueryui.com/demos/datepicker/) kalendářem poskytnout způsob, jak upravit data.
+V této části vytvoříte šablonu pro úpravu dat, která bude použita, pokud rozhraní ASP.NET MVC zobrazí uživatelské rozhraní pro úpravy vlastnosti modelu, které jsou označeny **datum** výčet [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut. Šablony budou vykreslovat pouze data; čas se nezobrazí. V šabloně použijete [jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/) překryvný kalendář poskytnout způsob, jak upravit data.
 
-Chcete-li začít, otevřete *Movie.cs* souboru a přidejte [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atribut s **datum** výčet `ReleaseDate` vlastnost, jak je znázorněno v následujícím kódu:
+Pokud chcete začít, otevřete *Movie.cs* a přidejte [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) atributem **datum** výčet `ReleaseDate` vlastnost, jak je znázorněno v následujícím kódu:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample1.cs)]
 
-Tento kód způsobí, že `ReleaseDate` pole, které chcete zobrazit bez čas v obou šablony zobrazení a úpravě šablony. Pokud vaše aplikace obsahuje *date.cshtml* šablony v *Views\Shared\EditorTemplates* složky nebo *Views\Movies\EditorTemplates* složku, že šablona slouží k vykreslení žádné `DateTime` vlastnost při úpravách. V opačném případě předdefinovaného systémového ukázka ASP.NET se zobrazí vlastnosti jako datum.
+Tento kód způsobí, že `ReleaseDate` pole, který se má zobrazit bez času v obou zobrazit šablony a upravte šablony. Pokud vaše aplikace obsahuje *date.cshtml* šablony v *views\shared\editortemplates za účelem nalezení* složky nebo *Views\Movies\EditorTemplates* složky, tato šablona se použije k vykreslení žádné `DateTime` vlastnost při úpravách. Jinak se zobrazí předdefinovaný systémový šablon ASP.NET vlastnost jako datum.
 
-Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci. Vyberte odkaz pro úpravy k ověření, že vstupní pole pro datum vydání se zobrazuje pouze datum.
+Stisknutím kláves CTRL + F5 spusťte aplikaci. Vyberte odkaz pro úpravy k ověření, že se vstupní pole pro datum vydání zobrazuje pouze datum.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image1.png)
 
-V **Průzkumníku řešení**, rozbalte *zobrazení* složky, rozbalte *sdílené* složku a potom klikněte pravým tlačítkem *Views\Shared\EditorTemplates* složky.
+V **Průzkumníka řešení**, rozbalte *zobrazení* složky, rozbalte *Shared* složku a potom klikněte pravým tlačítkem *views\shared\editortemplates za účelem nalezení* složky.
 
-Klikněte na tlačítko **přidat**a potom klikněte na **zobrazení**. **Přidat zobrazení** se zobrazí dialogové okno.
+Klikněte na tlačítko **přidat**a potom klikněte na tlačítko **zobrazení**. **Přidat zobrazení** zobrazí dialogové okno.
 
 V **název zobrazení** zadejte &quot;datum&quot;.
 
-Vyberte **vytvořit jako částečné zobrazení** zaškrtávací políčko. Ujistěte se, že **použít rozložení stránky předlohy** a **vytvořit zobrazení silného typu** nejsou zaškrtnutá políčka.
+Vyberte **vytvořit jako částečné zobrazení** zaškrtávací políčko. Ujistěte se, že **použít rozložení stránky předlohy** a **vytvoření zobrazení se silnými typy** nejsou zaškrtnutá políčka.
 
-Klikněte na tlačítko **přidat**. *Views\Shared\EditorTemplates\Date.cshtml* je šablona vytvořena.
+Klikněte na tlačítko **přidat**. *Views\Shared\EditorTemplates\Date.cshtml* šablona vytvořena.
 
 Přidejte následující kód, který *Views\Shared\EditorTemplates\Date.cshtml* šablony.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample2.cshtml)]
 
-První řádek deklaruje modelu, který má být `DateTime` typu. I když nemusíte deklarace typu modelu v upravit a zobrazit šablony, je osvědčeným postupem, abyste měli kompilaci kontrola modelu, je předaná do zobrazení. (Další výhodou je, že dostanete pak IntelliSense pro model v zobrazení v sadě Visual Studio.) Pokud není deklarovaný typ modelu, ASP.NET MVC považuje [dynamické](https://msdn.microsoft.com/library/dd264741.aspx) zadejte a neexistuje žádný kompilaci kontrola typu. Pokud je deklarovat modelu, který má být `DateTime` typu, stane silného typu.
+První řádek deklaruje modelu, který má být `DateTime` typu. I když není nutné deklarovat typ modelu v režimu úpravy a zobrazení šablony, je osvědčeným postupem tak, aby získáte kompilace kontroly modelu předávaný do zobrazení. (Další výhodou je, potom získá IntelliSense pro model v zobrazení v sadě Visual Studio.) Pokud není deklarovaný typ modelu, ASP.NET MVC považuje [dynamické](https://msdn.microsoft.com/library/dd264741.aspx) zadejte a neexistuje žádná kompilace kontroly typu. Pokud deklarujete modelu, který má být `DateTime` typ, stane se silnými typy.
 
-Druhý řádek je právě literálu jazyka HTML, který zobrazí &quot;pomocí šablony datum&quot; před pole pro datum. Použijete tento řádek dočasně ověřit, jestli se používá tato šablona datum.
+Druhý řádek je pouze literál značka jazyka HTML, který zobrazuje &quot;pomocí šablony datum&quot; před pole pro datum. Tento řádek dočasně budete používat k ověření, že tato šablona data používá.
 
-Další řádek je [Html.TextBox](https://msdn.microsoft.com/library/system.web.mvc.html.inputextensions.textbox.aspx) pomocné rutiny, který vykreslí `input` pole, které je v textovém poli. Třetí parametr pro pomocníka, který používá nastavení třídy pro textové pole k anonymní typ `datefield` a typ, který má `date`. (Protože `class` je vyhrazená v jazyce C#, budete muset použít `@` znak pro přepnutí `class` atribut analyzátoru jazyka C#.)
+Další řádek je [Html.TextBox](https://msdn.microsoft.com/library/system.web.mvc.html.inputextensions.textbox.aspx) pomocné rutiny, která vykresluje `input` pole, které je textové pole. Třetí parametr pro pomocné rutiny používá nastavení třídy pro textové pole anonymního typu `datefield` a typ, který má `date`. (Protože `class` je vyhrazeným v jazyce C#, budete muset použít `@` znak pro přepnutí `class` atribut v analyzátor jazyka C#.)
 
-`date` Typ je typ vstupu HTML5, umožňující podporou jazyka HTML5 prohlížečů k vykreslení ovládacího prvku Kalendář HTML5. Později přidáte určitého kódu JavaScript spojit ovládací prvek datepicker jQuery k `Html.TextBox` pomocí elementu `datefield` třídy.
+`date` Typ je typem vstupu HTML5 umožňující s ohledem na HTML5 prohlížeče k vykreslení ovládacího prvku Kalendář HTML5. Později přidáte určitého kódu JavaScript pro ovládací prvek datepicker jQuery pro připojení `Html.TextBox` pomocí elementu `datefield` třídy.
 
-Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci. Ověřte, zda `ReleaseDate` vlastnosti v zobrazení úpravy je pomocí šablony upravit, protože zobrazí šablony &quot;pomocí šablony datum&quot; těsně před `ReleaseDate` text vstupní pole, jak je vidět na tomto obrázku:
+Stisknutím kláves CTRL + F5 spusťte aplikaci. Můžete ověřit, že `ReleaseDate` vlastnost v zobrazení pro úpravy je pomocí šablony upravit, protože šablona zobrazuje &quot;pomocí šablony datum&quot; těsně před `ReleaseDate` text vstupní pole, jak je znázorněno na tomto obrázku:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image2.png)
 
-V prohlížeči zobrazte zdroj stránky. (Například pravým tlačítkem myši a vyberte **zobrazit zdroj**.) Následující příklad ukazuje některé z kódu pro stránku, ilustrující `class` a `type` atributy ve vykresleném HTML.
+V prohlížeči zobrazte zdroj stránky. (Například, klikněte pravým tlačítkem na stránku a vybrat **zobrazit zdroj**.) Následující příklad ukazuje některé z kódu pro na stránce ilustrující `class` a `type` atributy v zobrazený HTML.
 
 [!code-html[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample3.html)]
 
-Vraťte se do *Views\Shared\EditorTemplates\Date.cshtml* šablony a odebrat &quot;pomocí šablony datum&quot; značek. Dokončené šablony teď vypadá takto:
+Vraťte se na *Views\Shared\EditorTemplates\Date.cshtml* šablony a odebrat &quot;pomocí šablony datum&quot; značek. Dokončená šablona teď vypadá takto:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample4.cshtml)]
 
-### <a name="adding-a-jquery-ui-datepicker-popup-calendar-using-nuget"></a>Přidání kalendářem jQuery UI ovládací prvek Datepicker pomocí nástroje NuGet
+### <a name="adding-a-jquery-ui-datepicker-popup-calendar-using-nuget"></a>Přidání kalendáře jQuery UI Datepicker pomocí nástroje NuGet
 
-V této části přidáte [ovládací prvek datepicker uživatelského rozhraní jQuery](http://jqueryui.com/demos/datepicker/) kalendářem datum úpravy šablony. [JQuery UI](http://jqueryui.com/) knihovna poskytuje podporu pro animace, pokročilé důsledky a přizpůsobit pomůcky. Je založen na knihovna jQuery JavaScript. Kalendářem ovládací prvek datepicker umožňuje snadno a přirozené zadejte kalendářních dat pomocí kalendáře místo zadávání řetězec. Kalendářem také omezuje uživatelům právní data – položka běžného textu pro datum by umožňují zadejte něco podobného jako `2/33/1999` (únor 33rd, 1999), ale [ovládací prvek datepicker uživatelského rozhraní jQuery](http://jqueryui.com/demos/datepicker/) kalendářem neumožní, který.
+V této části přidáte [jQuery UI datepicker](http://jqueryui.com/demos/datepicker/) kalendáře datum úpravy šablony. [Uživatelské rozhraní jQuery](http://jqueryui.com/) knihovna poskytuje podporu pro animaci, pokročilé efekty a přizpůsobitelné pomůcky. Je nástavbou knihovna jQuery JavaScript. Překryvný kalendář s prvkem datepicker zajišťuje snadné a přirozené kalendářních pomocí kalendáře nemusí zadávat řetězec. Překryvný kalendář také uživatele omezuje na právní data – běžný text vstupu pro datum by umožňují zadat něco jako `2/33/1999` (únor 33rd, 1999), ale [jQuery UI datepicker](http://jqueryui.com/demos/datepicker/) překryvný kalendář, který neumožňuje.
 
-Nejprve budete muset nainstalovat knihovny uživatelského rozhraní jQuery. Kvůli tomu budete používat NuGet, který je Správce balíčků, který je součástí verze SP1 Visual Studio 2010 a Visual Web Developer.
+Nejprve je nutné nainstalovat knihovny uživatelského rozhraní jQuery. K tomuto účelu používáte NuGet, který je Správce balíčků, který je součástí verze SP1 Visual Studio 2010 a Visual Web Developer.
 
 V aplikaci Visual Web Developer z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven** a pak vyberte **spravovat balíčky NuGet**.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image3.png)
 
-Poznámka: Pokud **nástroje** nabídka se nezobrazí **Správce balíčků knihoven** příkaz, musíte nainstalovat NuGet podle pokynů [instalace NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) stránky Web NuGet.   
+Poznámka: Pokud **nástroje** nabídek nezobrazuje **Správce balíčků knihoven** příkaz, je potřeba nainstalovat NuGet podle pokynů v [instalace balíčků NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) stránky na webu NuGet.   
   
-Pokud používáte Visual Studio místo Visual Web Developer, z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven** a pak vyberte **přidat odkaz na balíček knihovny**.
+Pokud používáte Visual Studio místo aplikace Visual Web Developer z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven** a pak vyberte **přidat odkaz na balíček knihovny**.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image4.png)
 
-V **MVCMovie - spravovat balíčky NuGet** dialogové okno, klikněte **Online** kartě na levé straně a pak zadejte &quot;jQuery.UI&quot; do vyhledávacího pole. Vyberte j **dotazu uživatelského rozhraní pomůcek: ovládací prvek Datepicker**, vyberte **nainstalovat** tlačítko.
+V **MVCMovie – spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **Online** kartu na levé straně a pak zadejte &quot;jQuery.UI&quot; do vyhledávacího pole. Vyberte j **dotaz pomůcky: prvku Datepicker uživatelského rozhraní**a pak **nainstalovat** tlačítko.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image5.png)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image6.png)
 
-NuGet přidá tyto ladicí verze a minifikovaný verze jQuery základní uživatelské rozhraní a výběr data uživatelského rozhraní jQuery do projektu:
+NuGet do vašeho projektu přidá tyto ladicí verze a minifikovaný verze základní uživatelské rozhraní jQuery a výběr data uživatelské rozhraní jQuery:
 
 - *jquery.ui.core.js*
 - *jquery.ui.core.min.js*
@@ -105,79 +104,79 @@ NuGet přidá tyto ladicí verze a minifikovaný verze jQuery základní uživat
 
 Poznámka: Verze ladění (soubory bez *. min.js* rozšíření) jsou užitečné pro ladění, ale v produkční lokality, bude zahrnovat pouze minifikovaný verze.
 
-Chcete-li ve skutečnosti pomocí nástroje pro výběr data jQuery, vytvořte jQuery skript, který bude spojit widgetu kalendáře do šablony upravit. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši *skripty* složky a vyberte **přidat**, pak **nová položka**a potom **JScript Soubor**. Název souboru *DatePickerReady.js*.
+Pro výběr data jQuery skutečně používáte, je potřeba vytvořit jQuery skript, který se bude připojení kalendáře widgetu upravit šablonu. V **Průzkumníka řešení**, klikněte pravým tlačítkem na *skripty* a pak zvolte položku **přidat**, pak **nová položka**a potom **JScript Soubor**. Název souboru *DatePickerReady.js*.
 
 Přidejte následující kód, který *DatePickerReady.js* souboru:
 
 [!code-javascript[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample5.js)]
 
-Pokud si nejste obeznámeni s jQuery, následuje stručné vysvětlení to udělá: první řádek je &quot;jQuery připravené&quot; funkci, která je volána, když máte načíst všechny DOM elementy na stránce. Druhý řádek vybere všechny elementy DOM, které mají název třídy `datefield`, poté vyvolá `datepicker` funkci pro každý z nich. (Mějte na paměti, že jste přidali `datefield` třídy k *Views\Shared\EditorTemplates\Date.cshtml* šablony dříve v tomto kurzu.)
+Pokud nejste obeznámeni s jQuery, tady je stručné vysvětlení toho, co to dělá: první řádek je &quot;jQuery připravené&quot; funkce, která je volána, když jste načetli všechny elementy modelu DOM na stránce. Druhý řádek vybere všechny elementy modelu DOM, které mají název třídy `datefield`, potom se vyvolá `datepicker` funkce pro každý z nich. (Mějte na paměti, že jste přidali `datefield` třídu *Views\Shared\EditorTemplates\Date.cshtml* šablony dříve v tomto kurzu.)
 
-Dále otevřete *Views\Shared\\_Layout.cshtml* souboru. Je nutné přidat odkazy na následující soubory, které jsou všechny požadované, takže můžete použít nástroje pro výběr data:
+Dále otevřete *Views\Shared\\_Layout.cshtml* souboru. Je třeba přidat odkazy na následující soubory, které jsou všechny povinné, takže budete používat výběr data:
 
-- *Content/themes/base/jquery.ui.core.css*
+- *Content/Themes/Base/jQuery.UI.Core.CSS*
 - *Content/themes/base/jquery.ui.datepicker.css*
-- *Content/themes/base/jquery.ui.theme.css*
+- *Content/Themes/Base/jQuery.UI.theme.CSS*
 - *jquery.ui.core.min.js*
 - *jquery.ui.datepicker.min.js*
 - *DatePickerReady.js*
 
-Následující příklad ukazuje kód skutečný, měli byste přidat v dolní části `head` element v *Views\Shared\\_Layout.cshtml* souboru.
+Následující příklad ukazuje skutečný kód, měli byste přidat v dolní části `head` prvek *Views\Shared\\_Layout.cshtml* souboru.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample6.cshtml)]
 
-Kompletní `head` části je znázorněno zde:
+Kompletní `head` části je znázorněna zde:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample7.cshtml)]
 
-[Adresa URL obsahu pomocná](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.content.aspx) metoda převede cesta prostředku na absolutní cestu. Je nutné použít `@URL.Content` správně odkazovat na tyto prostředky když aplikace běží ve službě IIS.
+[Obsahu pomocný objekt adresy URL](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.content.aspx) metoda převede cestu prostředku na absolutní cestu. Je nutné použít `@URL.Content` správně odkazovat na tyto prostředky ve službě IIS je spuštěná aplikace.
 
-Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci. Vyberte odkaz pro úpravy a pak umístěte kurzor do **ReleaseDate** pole. Zobrazí se kalendářem jQuery uživatelského rozhraní.
+Stisknutím kláves CTRL + F5 spusťte aplikaci. Vyberte odkaz pro úpravy a umístěte kurzor do **ReleaseDate** pole. Zobrazí se kalendářem jQuery UI.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image7.png)
 
-Stejně jako většinu jQuery ovládací prvky umožňuje ovládací prvek datepicker hojně přizpůsobit. Informace najdete v tématu [Visual přizpůsobení: navrhování motiv uživatelského rozhraní jQuery](http://learn.jquery.com/jquery-ui/getting-started/#visual-customization-designing-a-jquery-ui-theme) na [jQuery UI](http://learn.jquery.com/jquery-ui/getting-started/) lokality.
+Stejně jako většinu ovládací prvky jQuery ovládací prvek datepicker vám umožní přizpůsobit neúmyslné. Informace najdete v tématu [Visual přizpůsobení: navrhování motiv uživatelského rozhraní jQuery](http://learn.jquery.com/jquery-ui/getting-started/#visual-customization-designing-a-jquery-ui-theme) na [uživatelské rozhraní jQuery](http://learn.jquery.com/jquery-ui/getting-started/) lokality.
 
-### <a name="supporting-the-html5-date-input-control"></a>Podpora jazyka HTML5 datum vstupního ovládacího prvku
+### <a name="supporting-the-html5-date-input-control"></a>Podpora HTML5 ovládacího prvku vstupní data
 
-Jako další prohlížeče podporují HTML5, budete chtít použít nativní HTML5 vstup, jako `date` elementu input a kalendáře jQuery UI nechcete použít. Můžete přidat logiku do vaší aplikace k automatickému využití ovládacích prvků HTML5, pokud je prohlížeč podporuje. Chcete-li to provést, nahraďte obsah *DatePickerReady.js* soubor s následující:
+Jako další prohlížeče podporují HTML5, budete chtít používat nativní HTML5, jako vstup `date` elementu input a nepoužívat kalendáře jQuery UI. Můžete přidat logiku pro vaši aplikaci automaticky používat ovládací prvky jazyka HTML5, pokud je prohlížeč podporuje. Chcete-li to provést, nahraďte obsah *DatePickerReady.js* souboru následujícím kódem:
 
 [!code-javascript[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample8.js)]
 
-První řádek tento skript používá Modernizr k ověřte, zda je vstupní datum HTML5 podporovat. Pokud se nepodporuje, výběr data uživatelského rozhraní jQuery je připojili místo. ([Modernizr](http://www.modernizr.com/docs/) je knihovna JavaScript open source, který zjišťuje dostupnost nativní implementace HTML5 a CSS3. Modernizr je součástí nové projekty ASP.NET MVC, které vytvoříte.)
+První řádek tento skript používá Modernizr ověřte, že je podporované vstupní data HTML5. Pokud není podporován, výběr data uživatelské rozhraní jQuery připojeno místo toho. ([Modernizr](http://www.modernizr.com/docs/) open source knihovnu JavaScript, který zjišťuje dostupnost nativní implementace jazyka HTML5 a CSS3. Modernizr je zahrnuta v nových projektech ASP.NET MVC, které vytvoříte.)
 
-Po provedení této změny, jej můžete otestovat pomocí prohlížeče, který podporuje HTML5, jako je například Opera 11. Spusťte aplikaci pomocí prohlížeče kompatibilní s HTML5 a upravte film položku. Řízení data HTML5 se používá namísto kalendářem jQuery uživatelského rozhraní:
+Po provedení této změny, takže ji můžete otestovat pomocí prohlížeče, který podporuje HTML5, jako je například Opera 11. Spusťte aplikaci pomocí prohlížeče kompatibilní s HTML5 a upravte položku video. Ovládací prvek datum HTML5 se používá namísto kalendářem jQuery UI:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image8.png)
 
-Vzhledem k tomu, že nové verze prohlížeče jsou postupně implementace HTML5, je dobrý způsob teď přidejte kód na váš web, která bude vyhovovat širokou škálu podporu jazyka HTML5. Například robustnější *DatePickerReady.js* skriptu je zobrazena níže umožňující podporu prohlížeče lokality pouze částečně podporující řízení data HTML5.
+Vzhledem k tomu, že nová verze prohlížečů jsou postupně implementace HTML5, dobrý nápad zatím je přidání kódu na web, který přizpůsobuje širokou škálu podporou HTML5. Například robustní více *DatePickerReady.js* skriptu je uveden níže, která umožňuje vašeho webu podpory prohlížečích jen částečně podpory HTML5 ovládacího prvku datum.
 
 [!code-javascript[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample9.js)]
 
-Tento skript vybere HTML5 `input` elementy typu `date` která plně nepodporují řízení data HTML5. Pro tyto elementy zachytí až kalendářem jQuery uživatelského rozhraní a poté změní `type` atribut z `date` k `text`. Změnou `type` atribut z `date` k `text`, nemá žádný částečné podporu data HTML5. Ještě více robustní *DatePickerReady.js* skriptu najdete na [JSFIDDLE](http://jsfiddle.net/XSTK8/15/).
+Tento skript vybere HTML5 `input` prvky typu `date` , která plně nepodporují HTML5 ovládacího prvku datum. Pro tyto elementy hooks nahoru kalendářem jQuery UI a pak se změní `type` atribut z `date` k `text`. Změnou `type` atribut z `date` k `text`, částečně se podporuje HTML5 data se odstraní. Ještě více robustní *DatePickerReady.js* skriptu lze nalézt v [JSFIDDLE](http://jsfiddle.net/XSTK8/15/).
 
-### <a name="adding-nullable-dates-to-the-templates"></a>Přidávání do šablony s možnou hodnotou Null kalendářních dat
+### <a name="adding-nullable-dates-to-the-templates"></a>Přidání data s možnou hodnotou NULL do šablon
 
-Pokud použijte jednu z existujících šablon datum a předat hodnotu null. datum, získáte Chyba spuštění. Chcete-li šablony datum robustnější, změníte jejich zpracování hodnot null. Pro podporu s možnou hodnotou Null kalendářních dat, změňte kód v *Views\Shared\DisplayTemplates\DateTime.cshtml* pro následující:
+Pokud použijte jednu z existujících šablon datum a předat hodnotu null datum, zobrazí se vám Chyba za běhu. Chcete-li datum šablony robustnější, změníte, jejich zpracování hodnot null. Pro podporu data s možnou hodnotou Null, změňte kód v *Views\Shared\DisplayTemplates\DateTime.cshtml* takto:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample10.cshtml)]
 
 Kód vrátí prázdný řetězec, když je model **null**.
 
-Změňte kód v *Views\Shared\EditorTemplates\Date.cshtml* soubor pro následující:
+Změňte kód v *Views\Shared\EditorTemplates\Date.cshtml* souboru následující:
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample11.cshtml)]
 
-Pokud tento kód používá, pokud model nemá hodnotu null, modelu `DateTime` hodnota se používá. Pokud model má hodnotu null, použije se místo toho aktuální datum.
+Když tento kód se spustí, pokud model nemá hodnotu null, modelu `DateTime` hodnota se používá. Pokud model má hodnotu null, použije se místo toho aktuální datum.
 
 ### <a name="wrapup"></a>Wrapup
 
-V tomto kurzu má popsaná základy objekty se šablonami za ASP.NET a ukazuje, jak používat kalendářem jQuery UI ovládací prvek datepicker v aplikaci ASP.NET MVC. Další informace zkuste tyto prostředky:
+V tomto kurzu zahrnují základy ASP.NET pomocnými objekty se a ukazuje, jak pomocí kalendářem jQuery UI datepicker v aplikaci ASP.NET MVC. Další informace vyzkoušejte tyto zdroje:
 
-- Informace o lokalizaci, najdete v části Rajeesh na blogu [ovládací prvek JQueryUI Datepicker v architektuře ASP.NET MVC](http://www.rajeeshcv.com/2010/02/jqueryui-datepicker-in-asp-net-mvc/).
-- Informace o jQuery UI najdete v tématu [jQuery UI](http://docs.jquery.com/UI).
-- Informace o tom, jak lokalizace ovládacího prvku ovládací prvek datepicker najdete v tématu [uživatelského rozhraní nebo ovládací prvek Datepicker/lokalizace](http://docs.jquery.com/UI/Datepicker/Localization).
-- Další informace o šablonách technologie ASP.NET MVC najdete v části řady blogu Brada Wilsona v [ASP.NET MVC 2 šablony](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). I když řady byla zapsána pro ASP.NET MVC 2, materiál stále platí pro aktuální verzi ASP.NET MVC.
+- Informace o lokalizaci, najdete v blogovém společnosti Rajeesh [JQueryUI prvkem Datepicker v architektuře ASP.NET MVC](http://www.rajeeshcv.com/2010/02/jqueryui-datepicker-in-asp-net-mvc/).
+- Informace o uživatelské rozhraní jQuery najdete v tématu [uživatelské rozhraní jQuery](http://docs.jquery.com/UI).
+- Informace o tom, jak lokalizovat ovládací prvek datepicker najdete v tématu [uživatelského rozhraní/ovládací prvek Datepicker/lokalizace](http://docs.jquery.com/UI/Datepicker/Localization).
+- Další informace o šablonách technologie ASP.NET MVC, najdete v řadě blogu Brada wilsona v příspěvku na [šablony ASP.NET MVC 2](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html). I když řady napsaný pro ASP.NET MVC 2, materiál je relevantní pro aktuální verzi technologie ASP.NET MVC.
 
 > [!div class="step-by-step"]
 > [Předchozí](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

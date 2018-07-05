@@ -1,62 +1,61 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
-title: Animace ovládacího prvku UpdatePanel (VB) | Microsoft Docs
+title: Animace ovládacího prvku UpdatePanel (VB) | Dokumentace Microsoftu
 author: wenz
-description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Pro obsah...
+description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Pro obsah...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 4c306a2c-92b6-4904-b70b-365b847334fe
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2c1114b74fd152a4ea85aa10850860f75573adee
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5f14a3297c2f3ddd6b0817cc8e46ac23b3a06c0b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873154"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37369713"
 ---
 <a name="animating-an-updatepanel-control-vb"></a>Animace ovládacího prvku UpdatePanel (VB)
 ====================
 podle [Christian Wenz](https://github.com/wenz)
 
-[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
+[Stáhněte si kód](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/UpdatePanelAnimation1.vb.zip) nebo [stahovat PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/updatepanelanimation1VB.pdf)
 
-> V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Pro obsah ovládacího prvku UpdatePanel speciální rozšiřujícího objektu existuje, která je založena na rozhraní animace: UpdatePanelAnimation. Tento kurz ukazuje, jak nastavit takové animace UpdatePanel.
+> Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Obsah prvku UpdatePanel speciální rozšiřující objekt existuje, která se spoléhá na rozhraní .NET framework animace: UpdatePanelAnimation. Tento kurz ukazuje, jak nastavit tyto animace ovládacího prvku UpdatePanel.
 
 
 ## <a name="overview"></a>Přehled
 
-V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Pro obsah `UpdatePanel`, existuje speciální rozšiřujícího objektu, který založena na rozhraní animace: `UpdatePanelAnimation`. Tento kurz ukazuje, jak nastavit takové animace pro `UpdatePanel`.
+Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Pro obsah `UpdatePanel`, speciální rozšiřující objekt existuje, která se spoléhá na rozhraní .NET framework animace: `UpdatePanelAnimation`. Tento kurz ukazuje, jak nastavit tyto animace pro `UpdatePanel`.
 
 ## <a name="steps"></a>Kroky
 
-Prvním krokem je jako obvykle zahrnují `ScriptManager` na stránce tak, aby se načíst knihovnu ASP.NET AJAX a dá se použít Toolkitu:
+Prvním krokem je jako obvykle zahrnují `ScriptManager` na stránce tak, aby je načtena knihovna ASP.NET AJAX a Control Toolkit je možné:
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample1.aspx)]
 
-Animace v tomto scénáři se použijí pro technologie ASP.NET `Wizard` umístěných v ovládací prvek webu `UpdatePanel`. Tři kroky (libovolný) poskytují dostatek možností pro aktivaci postback:
+Animace v tomto scénáři se použijí pro ASP.NET `Wizard` webový ovládací prvek umístěný v `UpdatePanel`. Tři kroky (libovolný) obsahují dostatek možnosti k aktivaci zpětného odeslání:
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample2.aspx)]
 
-Kód potřebné pro `UpdatePanelAnimationExtender` je velmi podobný kód používá pro ovládací prvek `AnimationExtender`. V `TargetControlID` atribut poskytujeme `ID` z `UpdatePanel` pro animaci; v rámci `UpdatePanelAnimationExtender` ovládací prvek, `<Animations>` element obsahuje kód XML pro animation(s). Je však jeden rozdíl: velikost události a obslužné rutiny událostí je omezená ve srovnání s `AnimationExtender`. Pro `UpdatePanels`, pouze dvě z nich neexistuje:
+Pro značky `UpdatePanelAnimationExtender` je velmi podobný značky použité pro ovládací prvek `AnimationExtender`. V `TargetControlID` atribut zajišťuje `ID` z `UpdatePanel` pro animaci; v rámci `UpdatePanelAnimationExtender` ovládací prvek, `<Animations>` element obsahuje kód XML pro animace. Ale není jedním z rozdílů: omezen objem událostí a obslužných rutin událostí ve srovnání s `AnimationExtender`. Pro `UpdatePanels`, pouze dva z nich neexistuje:
 
-- `<OnUpdated>` Když se aktualizovala UpdatePanel
-- `<OnUpdating>` Při spuštění UpdatePanel aktualizace
+- `<OnUpdated>` Pokud byl aktualizován prvku UpdatePanel
+- `<OnUpdating>` Aktualizuje se při spuštění prvku UpdatePanel
 
-V tomto scénáři nový obsah `UpdatePanel` (po postback) se objevovat se. Toto je nezbytné značek pro tento:
+V tomto scénáři, nový obsah `UpdatePanel` (po zpětném volání) se má vyblednout. To je nezbytné zápis, který:
 
 [!code-aspx[Main](animating-an-updatepanel-control-vb/samples/sample3.aspx)]
 
-Nyní vždy, když v rámci prvku UpdatePanel dojde k zpětné volání, nový obsah panelu objevovat se bez problémů.
+Nyní pokaždé, když se vyvolá se v rámci prvku UpdatePanel zpětné volání, nový obsah na panelu fade plynule.
 
 
-[![V dalším kroku průvodce je pozvolného vysouvání](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
+[![V dalším kroku průvodce se pozvolného](animating-an-updatepanel-control-vb/_static/image2.png)](animating-an-updatepanel-control-vb/_static/image1.png)
 
-V dalším kroku průvodce je pozvolného vysouvání ([Kliknutím zobrazit obrázek v plné velikosti](animating-an-updatepanel-control-vb/_static/image3.png))
+V dalším kroku průvodce se pozvolného ([kliknutím ji zobrazíte obrázek v plné velikosti](animating-an-updatepanel-control-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [Předchozí](changing-an-animation-using-client-side-code-vb.md)

@@ -1,29 +1,28 @@
 ---
 uid: web-forms/videos/aspnet-35/data-controls/the-listview-control
-title: Ovládacího prvku ListView | Microsoft Docs
+title: Ovládací prvek ListView | Dokumentace Microsoftu
 author: JoeStagner
-description: Vytvořením nového webu I se ukazují nové ListView – ovládací prvek. Protože ListView je datová jednotka, potřebujeme zdroj dat. Žádná data, můžete použít...
+description: Tím vytvoříte nový web, můžu vám ukáže nový ovládací prvek ListView. Vzhledem k tomu, ListView je datová jednotka, potřeba zdroje dat. Můžete používat data...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
 ms.topic: article
 ms.assetid: ab1bcde8-898b-487b-806a-4ced0f1284a2
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/data-controls/the-listview-control
 msc.type: video
-ms.openlocfilehash: 066bcc85b85a0d54d2a3d1f4cb4e3265e5bd2cce
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9640a7ca0534fb28b51ac9846a7cefd029bbeec4
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881942"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37398916"
 ---
-<a name="the-listview-control"></a>Ovládacího prvku ListView
+<a name="the-listview-control"></a>Ovládací prvek ListView
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-Vytvořením nového webu I se ukazují nové ListView – ovládací prvek. Protože ListView je datová jednotka, potřebujeme zdroj dat. Můžete použít libovolný zdroj dat: SQL, dat objektu, data propojení nebo XAML. Jako zdroj dat v tomto videu použiji blogu.
+Tím vytvoříte nový web, můžu vám ukáže nový ovládací prvek ListView. Vzhledem k tomu, ListView je datová jednotka, potřeba zdroje dat. Můžete použít libovolný zdroj dat: SQL, dat objektů, propojit data nebo XAML. Můj blog použiji jako zdroj dat v tomto videu.
 
 [&#9654;Podívejte se na video (10 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-listview-control)
 

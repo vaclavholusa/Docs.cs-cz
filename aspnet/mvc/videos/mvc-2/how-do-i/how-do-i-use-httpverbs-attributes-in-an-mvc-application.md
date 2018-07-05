@@ -1,31 +1,30 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application
-title: 'Jak na: použití HttpVerbs atributy v aplikaci MVC? | Microsoft Docs'
+title: 'Postup: použití atributů HttpVerbs v aplikaci MVC? | Dokumentace Microsoftu'
 author: rick-anderson
-description: V této video PEL Jan ukazuje, jak použít HttpVerbs atributy pro řízení přístupu k akce MVC. Nejprve se vytvoří ukázkovou aplikaci s co výchozí...
+description: V toto video pixelů na Chris ukazuje způsob použití atributů HttpVerbs pro řízení přístupu k akce MVC. Nejprve se vytvoří ukázkovou aplikaci s co výchozí...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/30/2009
 ms.topic: article
 ms.assetid: d2488a1d-0f3f-4994-8fbe-4f59b8c9503e
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application
 msc.type: video
-ms.openlocfilehash: 42817e712db0489f277ac65250b9c0f102088c0a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7319c89e01b2316c37c9d4bfc101ce9dd0f7c2ee
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869527"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37379031"
 ---
-<a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>Jak na: použití HttpVerbs atributy v aplikaci MVC?
+<a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>Postup: použití atributů HttpVerbs v aplikaci MVC?
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan ukazuje, jak použít HttpVerbs atributy pro řízení přístupu k akce MVC. Ukázková aplikace se nejdřív vytvoří s výchozí řadiče a zobrazení pro úpravy informace. Druhou akci indexu v dalším kroku se přidá do kontroleru, který má atribut HttpPost, který jej omezuje na volané jenom v případě, že se používá HTTP POST. Jako následné akce je atribut AcceptVerbs() implementovaný jako alternativní syntaxe pro Visual Studio 2008. Pak je popsána použití HttpVerbs brání bezpečnostní riziko spojené s pomocí HTTP GET Pokud chcete provést odstranění z odkazu.
+V toto video pixelů na Chris ukazuje způsob použití atributů HttpVerbs pro řízení přístupu k akce MVC. Ukázková aplikace nejprve se vytvoří s výchozí kontroler a zobrazení pro úpravy informací. Druhou akci indexu v dalším kroku se přidá do kontroleru, který má atribut HttpPost, který jej omezuje na volána pouze v případě, že se používá HTTP POST. Jako následnou akci je atribut AcceptVerbs() implementovaný jako alternativní syntaxi pro sadu Visual Studio 2008. Pak je popsána využívání HttpVerbs kvůli rizik zabezpečení spojených s použitím HTTP GET provést odstranění z odkazu.
 
-[&#9654;Podívejte se na video (16 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-httpverbs-attributes-in-an-mvc-application)
+[&#9654;Podívejte se na video (16 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-httpverbs-attributes-in-an-mvc-application)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-work-with-model-binders-in-an-mvc-application.md)

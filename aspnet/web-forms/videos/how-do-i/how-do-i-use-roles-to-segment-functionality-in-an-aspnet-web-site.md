@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site
-title: '[Jak na:] Pomocí role segmentu funkce na webu technologie ASP.NET | Microsoft Docs'
+title: '[Postup:] Použití rolí k segmentaci funkcí na webu ASP.NET | Dokumentace Microsoftu'
 author: rick-anderson
-description: V tomto videu se Jan PEL ukazují, jak chcete maximalizovat použití rolí na webu technologie ASP.NET po nastavení členství technologie ASP.NET. Nejdřív zjistěte, jak nastavit karta...
+description: V tomto videu se zobrazí Chris pixelů na tom, jak maximalizovat využití role na webu technologie ASP.NET po nastavení členství technologie ASP.NET. Nejdřív zjistěte, jak nastavit rol...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
 ms.topic: article
 ms.assetid: 9ac277a9-2149-4a51-b61b-a44ad0535267
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: 336660ed65939fa673b10fb81c3c8e171a7e3510
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 01d0ab2bae64d5260998fd2317133c26ae36bebb
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572263"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383523"
 ---
-<a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a>[Jak na:] Pomocí role segmentu funkce na webu technologie ASP.NET
+<a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a>[Postup:] Použití rolí k segmentaci funkcí na webu ASP.NET
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V tomto videu se Jan PEL ukazují, jak chcete maximalizovat použití rolí na webu technologie ASP.NET po nastavení členství technologie ASP.NET. Nejdřív zjistěte, jak nastavit role pomocí předdefinovaná role správce v sadě Visual Studio .NET. Zjistit, jak definovat role na základě obchodních potřeb přidružené k webu. Jakmile jsou role instalace postup struktury vašeho webu z hlediska složky a stránky hierarchii pro nejvíce efektivně umístění rolí a obchodní potřeby. Jako součást tohoto zjistit, jak použít atribut role v definování autorizace v souboru web.config spojené s každou složku. Zkontrolujte také, jak používat &lt;umístění&gt; elementu, který chcete použít nastavení autorizace do určitého umístění například stránky.
+V tomto videu se zobrazí Chris pixelů na tom, jak maximalizovat využití role na webu technologie ASP.NET po nastavení členství technologie ASP.NET. Nejdřív zjistěte, jak nastavit role pomocí předdefinovaná role správce v sadě Visual Studio .NET. Zjistit, jak definovat role na základě obchodních potřeb přidružené k webové stránce. Jakmile jsou role instalace zjistěte, jak strukturovat váš web z hlediska hierarchie složku a stránku co nejefektivněji přizpůsobí role a obchodní potřeby. Jako součást to zjistit, jak použít atribut role v definování autorizace v souboru web.config, které jsou spojené s každou složku. Viz také, jak používat &lt;umístění&gt; prvek, který chcete použít nastavení autorizace pro konkrétní umístění, jako je například stránka.
 
-[&#9654; Podívejte se na video (32 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site)
+[&#9654;Podívejte se na video (32 min)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site)

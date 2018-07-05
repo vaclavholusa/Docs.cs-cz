@@ -1,119 +1,118 @@
 ---
 uid: signalr/overview/deployment/using-signalr-with-azure-web-sites
-title: Pomocí funkce SignalR webové aplikace v Azure App Service | Microsoft Docs
+title: Použití aplikace SignalR s webovými aplikacemi ve službě Azure App Service | Dokumentace Microsoftu
 author: pfletcher
-description: Tento dokument popisuje, jak nakonfigurovat aplikaci SignalR, která běží na Microsoft Azure. V tomto kurzu použili verze softwaru, Visual Studio 2013 nebo Vis....
+description: Tento dokument popisuje, jak nakonfigurovat aplikaci s knihovnou SignalR, která běží na Microsoft Azure. V tomto kurzu použili verze softwaru, Visual Studio 2013 nebo Vis....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2015
 ms.topic: article
 ms.assetid: 2a7517a0-b88c-4162-ade3-9bf6ca7062fd
 ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 8386441690a3fb479ffb941ebd7c0b2f83870781
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dabf0f6cfed401e10d2c1134c260022d94c3ab92
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28043204"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389570"
 ---
-<a name="using-signalr-with-web-apps-in-azure-app-service"></a>Pomocí funkce SignalR webové aplikace v Azure App Service
+<a name="using-signalr-with-web-apps-in-azure-app-service"></a>Použití aplikace SignalR s webovými aplikacemi ve službě Azure App Service
 ====================
-podle [Patrik Fletcher](https://github.com/pfletcher)
+podle [Patrick Fletcher](https://github.com/pfletcher)
 
-> Tento dokument popisuje, jak nakonfigurovat aplikaci SignalR, která běží na Microsoft Azure.
+> Tento dokument popisuje, jak nakonfigurovat aplikaci s knihovnou SignalR, která běží na Microsoft Azure.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) nebo Visual Studio 2012
 > - .NET 4.5
-> - SignalR verze 2
-> - 2.3 Azure SDK pro Visual Studio 2013 nebo 2012
+> - Funkce SignalR verze 2
+> - Azure SDK 2.3 pro Visual Studio 2013 nebo 2012
 >   
 > 
 > 
-> ## <a name="questions-and-comments"></a>Dotazy a připomínky
+> ## <a name="questions-and-comments"></a>Otázky a komentáře
 > 
-> Prosím sdělit svůj názor na tom, jak líbilo tohoto kurzu a co jsme může zlepšit v komentářích v dolní části stránky. Pokud máte otázky, které přímo nesouvisejí s kurz, můžete je do příspěvku [fórum pro ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR), [StackOverflow.com](http://stackoverflow.com/), nebo [fóra Microsoft Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?category=windowsazureplatform).
+> Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR), [StackOverflow.com](http://stackoverflow.com/), nebo [fóra Microsoft Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?category=windowsazureplatform).
 
 
 ## <a name="table-of-contents"></a>Obsah
 
 - [Úvod](#introduction)
 - [Nasazení funkce SignalR webové aplikace do Azure App Service](#deploying)
-- [Povolení technologie WebSockets v Azure App Service](#websocket)
-- [Pomocí propojovacího rozhraní mezipaměť Redis systému Azure](#backplane)
+- [Povolení WebSockets ve službě Azure App Service](#websocket)
+- [Pomocí propojovací rozhraní Azure Redis Cache](#backplane)
 - [Další kroky](#nextsteps)
 
 <a id="introduction"></a>
 ## <a name="introduction"></a>Úvod
 
-Funkce SignalR technologie ASP.NET umožňuje uvést novou úroveň interaktivity mezi servery a webové nebo klientů .NET. Když jsou hostované v Azure, SignalR můžou aplikace využít vysoce dostupných, škálovatelných a původce prostředí, který běží v cloudu poskytuje.
+Funkce SignalR technologie ASP.NET je možné uvést novou úroveň interakce mezi serverem a web nebo klienty .NET. Když jsou hostované v Azure, SignalR můžou aplikace využít vysoce dostupných, škálovatelných a výkonných prostředí, který běží v cloudu poskytuje.
 
 <a id="deploying"></a>
 ## <a name="deploying-a-signalr-web-app-to-azure-app-service"></a>Nasazení funkce SignalR webové aplikace do Azure App Service
 
-SignalR nepřidá žádné konkrétní komplikace k nasazení aplikace do Azure a nasazení na místní server. Aplikace, která používá funkci SignalR může být hostovaný v Azure bez jakékoli změny v konfiguraci a další nastavení (přestože objekty WebSockets podporu najdete na webu [povolení technologie WebSockets v Azure App Service](#websocket) níže.) V tomto kurzu budete nasazovat aplikace vytvořené v [kurzu Začínáme](../getting-started/tutorial-getting-started-with-signalr.md) do Azure.
+Funkce SignalR nepřidává žádné konkrétní komplikací pro nasazení aplikace do Azure a nasazením na místním serveru. Aplikace, která používá SignalR je možné hostovat v Azure bez jakýchkoli změn v konfiguraci nebo jiná nastavení (i když protokoly Websocket podporu najdete na webu [WebSockets umožňuje ve službě Azure App Service](#websocket) níže.) Pro účely tohoto kurzu budete nasazovat aplikace vytvořená v [kurz Začínáme](../getting-started/tutorial-getting-started-with-signalr.md) do Azure.
 
-**Požadavky**
+**Požadované součásti**
 
 - Visual Studio 2013. Pokud nemáte Visual Studio, Visual Studio 2013 Express pro Web je součástí instalace sady Azure SDK.
-- [2.3 Azure SDK pro Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) nebo [2.3 Azure SDK pro sadu Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=323511).
-- K dokončení tohoto kurzu, potřebujete předplatné Azure. Můžete [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), nebo [si zaregistrovat zkušební předplatné](https://azure.microsoft.com/pricing/free-trial/).
+- [Azure SDK 2.3 pro Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) nebo [Azure SDK 2.3 pro sadu Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=323511).
+- K dokončení tohoto kurzu, budete potřebovat předplatné Azure. Je možné [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), nebo [si zaregistrovat zkušební předplatné](https://azure.microsoft.com/pricing/free-trial/).
 
 ### <a name="deploying-a-signalr-web-app-to-azure"></a>Nasazení funkce SignalR webové aplikace do Azure
 
-1. Dokončení [kurzu Začínáme](../getting-started/tutorial-getting-started-with-signalr.md), nebo stáhnout dokončení projektu ze [galerie kódů](https://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9).
-2. V sadě Visual Studio, vyberte **sestavení**, **publikování SignalR Chat**.
-3. V dialogovém okně "Publikovat Web" Vyberte "webů systému Windows Azure".
+1. Dokončení [kurz Začínáme](../getting-started/tutorial-getting-started-with-signalr.md), nebo stáhnout dokončený projekt z [Galerie kódu na](https://code.msdn.microsoft.com/SignalR-Getting-Started-b9d18aa9).
+2. V sadě Visual Studio, vyberte **sestavení**, **publikovat SignalR Chat**.
+3. V dialogovém okně "Publikovat Web" Vyberte "Windows Azure Web Sites".
 
-    ![Vyberte weby Azure](using-signalr-with-azure-web-sites/_static/image1.png)
-4. Pokud nejste přihlášení ke svému účtu Microsoft, klikněte na tlačítko **přihlásit...**  v dialogovém okně "Vyberte existující webový server" a přihlaste se.
+    ![Vyberte model weby Azure](using-signalr-with-azure-web-sites/_static/image1.png)
+4. Pokud nejste přihlášení k účtu Microsoft, klikněte na tlačítko **přihlásit...**  v dialogovém okně "Vyberte existující web" a přihlaste se.
 
-    ![Vyberte existující webovou stránku](using-signalr-with-azure-web-sites/_static/image2.png)    ![Přihlaste se k Azure](using-signalr-with-azure-web-sites/_static/image3.png)
-5. V dialogovém okně "Vyberte existující webový server", klikněte na tlačítko **nový**.
+    ![Vyberte existující web](using-signalr-with-azure-web-sites/_static/image2.png)    ![Přihlaste se k Azure](using-signalr-with-azure-web-sites/_static/image3.png)
+5. V dialogovém okně "Vyberte existující webovou stránku" klikněte na tlačítko **nový**.
 
     ![Nový web](using-signalr-with-azure-web-sites/_static/image4.png)
-6. V dialogovém okně "Při vytváření webu v systému Windows Azure" Zadejte jedinečným názvem aplikace. Vyberte oblast, která je nejblíže k vám v rozevírací nabídce oblast. Klikněte na tlačítko **vytvořit**.
+6. V dialogovém okně "Při vytváření webu v Windows Azure" Zadejte jedinečný název aplikace. Vyberte oblast co nejblíže k vám v rozevírací nabídce oblasti. Klikněte na tlačítko **vytvořit**.
 
-    ![Vytvořit web v Azure](using-signalr-with-azure-web-sites/_static/image5.png)
-7. V dialogovém okně "Publikovat Web", klikněte na tlačítko **publikovat**.
+    ![Vytvoření webu v Azure](using-signalr-with-azure-web-sites/_static/image5.png)
+7. V dialogovém okně "Publikovat Web" klikněte na tlačítko **publikovat**.
 
     ![publikování webu](using-signalr-with-azure-web-sites/_static/image6.png)
-8. Po dokončení publikování aplikace SignalR chatovací aplikace hostované v Azure App Service Web Apps se otevře v prohlížeči.
+8. Po dokončení publikování aplikace SignalR chatovací aplikaci hostované v Azure App Service Web Apps se otevře v prohlížeči.
 
-    ![Otevření v prohlížeči lokality](using-signalr-with-azure-web-sites/_static/image7.png)
+    ![Web se otevře v prohlížeči](using-signalr-with-azure-web-sites/_static/image7.png)
 
 <a id="websocket"></a>
-### <a name="enabling-websockets-on-azure-app-service-web-apps"></a>Povolení technologie WebSockets ve službě Azure App Service Web Apps
+### <a name="enabling-websockets-on-azure-app-service-web-apps"></a>Povolení WebSockets ve službě Azure App Service Web Apps
 
-Technologie WebSockets musí být explicitně povolená ve vaší webové aplikaci mají být použity v SignalR aplikace; jinak, bude třeba použít jiné protokoly (viz [přenosy a případech Přejít](../getting-started/introduction-to-signalr.md#transports) podrobnosti).
+Objekty Websocket je potřeba explicitně povolit ve webové aplikaci pro použití v aplikace SignalR. v opačném případě se použije jiné protokoly (viz [přenosy a náhrad](../getting-started/introduction-to-signalr.md#transports) podrobnosti).
 
-Chcete-li použít objekty WebSockets v Azure App Service Web Apps, povolte v části Konfigurace webové aplikace. K tomu, otevřete webovou aplikaci v [portálu pro správu Azure](https://manage.windowsazure.com/)a vyberte položku konfigurace.
+Chcete-li použít objekty Websocket na Azure App Service Web Apps, povolte v části Konfigurace webové aplikace. Chcete-li to provést, otevřete vaší webové aplikace v [portálu pro správu Azure](https://manage.windowsazure.com/)a vyberte konfigurovat.
 
 ![Karta Konfigurace](using-signalr-with-azure-web-sites/_static/image8.png)
 
-V horní části stránky konfigurace Ujistěte se, .NET 4.5 slouží pro vaši webovou aplikaci.
+V horní části stránky konfigurace zajistěte, aby používal rozhraní .NET 4.5 pro vaši webovou aplikaci.
 
 ![Nastavení rozhraní .NET framework verze 4.5](using-signalr-with-azure-web-sites/_static/image9.png)
 
-Na stránce konfigurace v **Websocket** nastavení, vyberte **na**.
+Na stránce konfigurace v **objekty Websocket** vyberte **na**.
 
-![Technologie WebSockets nastavení: na](using-signalr-with-azure-web-sites/_static/image10.png)
+![Nastavení objekty Websocket: na](using-signalr-with-azure-web-sites/_static/image10.png)
 
 V dolní části stránky konfigurace, vyberte **Uložit** uložte provedené změny.
 
 ![Uložit nastavení](using-signalr-with-azure-web-sites/_static/image11.png)
 
 <a id="backplane"></a>
-## <a name="using-the-azure-redis-cache-backplane"></a>Pomocí propojovacího rozhraní mezipaměť Redis systému Azure
+## <a name="using-the-azure-redis-cache-backplane"></a>Pomocí propojovací rozhraní Azure Redis Cache
 
-Pokud používáte více instancí pro vaši webovou aplikaci a uživatele těchto instancí muset vzájemné interakce (tak, aby, například chat zpráv vytvořených za jednu instanci dosáhnout uživatelů připojených k další instance), [Azure Redis Cache Propojovací rozhraní](../performance/scaleout-with-redis.md) musí být implementován v aplikaci.
+Pokud používáte více instancí pro vaši webovou aplikaci a uživatelé tyto instance musí komunikovat mezi sebou (tak, aby zprávy chatu vytvořené v jedné instanci může například dosáhnout uživatelé připojení k jiné instance), [Azure Redis Cache Propojovací rozhraní systému](../performance/scaleout-with-redis.md) musí být implementován ve vaší aplikaci.
 
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>Další kroky
 
-Další informace o webových aplikací ve službě Azure App Service naleznete v tématu [přehled Web Apps](https://azure.microsoft.com/documentation/articles/app-service-web-overview/).
+Další informace o Web Apps ve službě Azure App Service najdete v tématu [přehled Web Apps](https://azure.microsoft.com/documentation/articles/app-service-web-overview/).

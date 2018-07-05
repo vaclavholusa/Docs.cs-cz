@@ -1,40 +1,39 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/index
-title: Obraťte se na správce | Microsoft Docs
+title: Správce kontaktů | Dokumentace Microsoftu
 author: rick-anderson
-description: Jak vytvořit celou aplikaci obraťte se na správu od začátku ukončíte.
+description: Postup pro celou aplikaci kontakt správy od začátku na dokončení sestavení.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
 ms.topic: article
 ms.assetid: 6b0f1fd7-6768-4549-ae9c-be9131103c4d
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager
 msc.type: chapter
-ms.openlocfilehash: 1dfcaeef7f292a24f2ba191d965028f5c0f912e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 426ae37d8b1abfc2166a6402d010a4758efdf787
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26564061"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37390992"
 ---
-<a name="contact-manager"></a>Obraťte se na správce
+<a name="contact-manager"></a>Správce kontaktů
 ====================
-> Jak vytvořit celou aplikaci obraťte se na správu od začátku ukončíte.
+> Postup pro celou aplikaci kontakt správy od začátku na dokončení sestavení.
 
 
-- [Iterace #1 – Vytvoření aplikace (C#)](iteration-1-create-the-application-cs.md)
-- [Iterace #2 – zpřístupnění aplikace vypadat dobrý (C#)](iteration-2-make-the-application-look-nice-cs.md)
-- [Iterace #3 – přidat ověřování formuláře (C#)](iteration-3-add-form-validation-cs.md)
-- [Iterace #4 – zpřístupnění aplikace volně vázány (C#)](iteration-4-make-the-application-loosely-coupled-cs.md)
-- [Iterace #5 – vytvoření testování částí (C#)](iteration-5-create-unit-tests-cs.md)
-- [Iterace #6 – použijte testy řízený vývoj (C#)](iteration-6-use-test-driven-development-cs.md)
-- [Iterace #7 – přidat Ajax funkce (C#)](iteration-7-add-ajax-functionality-cs.md)
-- [Iterace #1 – Vytvoření aplikace (VB)](iteration-1-create-the-application-vb.md)
-- [Iterace #2 – zpřístupnění aplikace vypadat dobrý (VB)](iteration-2-make-the-application-look-nice-vb.md)
-- [Iterace #3 – ověřování formuláře přidat (VB)](iteration-3-add-form-validation-vb.md)
-- [Iterace #4 – zpřístupnění aplikace volně vázány (VB)](iteration-4-make-the-application-loosely-coupled-vb.md)
-- [Iterace #5 – vytvoření testování částí (VB)](iteration-5-create-unit-tests-vb.md)
-- [Iterace #6 – použijte testy řízený vývoj (VB)](iteration-6-use-test-driven-development-vb.md)
-- [Iterace #7 – funkce Ajax přidat (VB)](iteration-7-add-ajax-functionality-vb.md)
+- [Iterace č. 1 – vytvoření aplikace (C#)](iteration-1-create-the-application-cs.md)
+- [Iterace č. 2 – vylepšení vzhledu aplikace (C#)](iteration-2-make-the-application-look-nice-cs.md)
+- [Iterace č. 3 – přidání ověřovacího formuláře (C#)](iteration-3-add-form-validation-cs.md)
+- [Iterace č. 4 – vytvoření volně spárované aplikace (C#)](iteration-4-make-the-application-loosely-coupled-cs.md)
+- [Iterace č. 5 – vytvoření testů jednotek (C#)](iteration-5-create-unit-tests-cs.md)
+- [Iterace č. 6 – použití vývoje řízeného testy (C#)](iteration-6-use-test-driven-development-cs.md)
+- [Iterace č. 7– přidání funkcí Ajax (C#)](iteration-7-add-ajax-functionality-cs.md)
+- [Iterace č. 1 – vytvoření aplikace (VB)](iteration-1-create-the-application-vb.md)
+- [Iterace č. 2 – vylepšení vzhledu aplikace (VB)](iteration-2-make-the-application-look-nice-vb.md)
+- [Iterace č. 3 – přidání ověřovacího formuláře (VB)](iteration-3-add-form-validation-vb.md)
+- [Iterace č. 4 – vytvoření volně spárované aplikace (VB)](iteration-4-make-the-application-loosely-coupled-vb.md)
+- [Iterace č. 5 – vytvoření testů jednotek (VB)](iteration-5-create-unit-tests-vb.md)
+- [Iterace č. 6 – použití vývoje řízeného testy (VB)](iteration-6-use-test-driven-development-vb.md)
+- [Iterace č. 7 – přidání funkcí Ajax (VB)](iteration-7-add-ajax-functionality-vb.md)

@@ -1,38 +1,37 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/4-working-with-forms
-title: Práce s formuláře HTML na webech ASP.NET Web Pages (Razor) | Microsoft Docs
+title: Práce s formuláři HTML na webech ASP.NET Web Pages (Razor) | Dokumentace Microsoftu
 author: tfitzmac
-description: Formulář je část dokumentu HTML, kam jste umístili ovládací prvky vstup uživatele, jako textová pole, zaškrtněte políčka, přepínače a rozevírací seznamy. Použití formulářů shod...
+description: Formulář je část dokumentu HTML místo, kam dáte ovládací prvky vstupu uživatele, jako jsou textová pole, zaškrtávací políčka, přepínače a rozevírací seznamy. Použití formulářů co...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
 ms.topic: article
 ms.assetid: f3f4b8c8-e8f6-4474-ad94-69228a6c01ee
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8d52cb6406859c77687622b7a101cf67781b863d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/10/2018
-ms.locfileid: "28046427"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380344"
 ---
-<a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Práce s formuláře HTML na webech ASP.NET – webové stránky (Razor)
+<a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Práce s formuláři HTML v lokalitách rozhraní ASP.NET Web Pages (Razor)
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek popisuje, jak zpracovat formuláře HTML (u textových polí a tlačítka) při práci na webu technologie ASP.NET Web Pages (Razor).
+> Tento článek popisuje, jak zpracovat formuláře HTML (pomocí tlačítka a textová pole) při práci na webu rozhraní ASP.NET Web Pages (Razor).
 > 
-> **Získáte informace:** 
+> **Co se dozvíte:** 
 > 
 > - Jak vytvořit formuláře HTML.
-> - Jak si uživatelského vstupu z formuláře.
-> - Postup ověření vstupu uživatele.
-> - Postup obnovení hodnot formuláře po odeslání stránky.
+> - Jak číst uživatelského vstupu z formuláře.
+> - Jak ověřit vstup uživatele.
+> - Postup při obnovení hodnot formuláře po odeslání stránky.
 > 
-> Jsou to ASP.NET programování koncepty představené v článku:
+> Toto jsou ASP.NET programování koncepty představenými v tomto článku:
 > 
 > - `Request` Objektu.
 > - Ověření vstupu.
@@ -42,10 +41,10 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
 > 
-> - Rozhraní ASP.NET Web Pages (Razor) 3
+> - Webové stránky ASP.NET (Razor) 3
 >   
 > 
-> V tomto kurzu taky spolupracuje se službou ASP.NET Web Pages 2.
+> V tomto kurzu se také pracuje s ASP.NET Web Pages 2.
 
 
 ## <a name="creating-a-simple-html-form"></a>Vytvoření jednoduchého formuláře HTML
@@ -54,93 +53,93 @@ podle [tní FitzMacken](https://github.com/tfitzmac)
 2. V kořenové složce vytvořit webovou stránku s názvem *Form.cshtml* a zadejte následující kód:
 
     [!code-html[Main](4-working-with-forms/samples/sample1.html)]
-3. Spusťte stránku v prohlížeči. (Ve službě WebMatrix, v **soubory** pracovní prostor, klikněte pravým tlačítkem na soubor a pak vyberte **spustit v prohlížeči**.) Jednoduchý formulář s tři vstupní pole a **odeslání** je zobrazeno tlačítko.
+3. Spusťte v prohlížeči stránku. (V nástroji WebMatrix, v **soubory** pracovní prostor, klikněte pravým tlačítkem na soubor a pak vyberte **spustit v prohlížeči**.) Jednoduchý formulář s tři vstupní pole a **odeslat** je zobrazeno tlačítko.
 
-    ![Snímek obrazovky s tři textová pole formuláře.](4-working-with-forms/_static/image1.jpg)
+    ![Snímek obrazovky, formuláře s tři textová pole.](4-working-with-forms/_static/image1.jpg)
 
-    V tomto bodu, pokud kliknete **odeslání** tlačítko, nedojde k žádné akci. Chcete-li formuláře užitečné, budete muset přidat nějaký kód, který se spustí na serveru.
+    V tomto okamžiku, pokud kliknete **odeslat** tlačítko, nic se nestane. Aby formuláři užitečná, budete muset přidat nějaký kód, který se spustí na serveru.
 
-## <a name="reading-user-input-from-the-form"></a>Načítání vstupu uživatele z formuláře
+## <a name="reading-user-input-from-the-form"></a>Čtení uživatelského vstupu z formuláře
 
-Při zpracování formuláře, přidáte kód, který čte hodnoty odeslaná polí a nemá něco s nimi. Tento postup ukazuje, jak číst pole a uživatelský vstup, zobrazí na stránce. (V produkční aplikace, že obecně provádět zajímavějšího akce se vstupem uživatele. Můžete to udělat v článku o práci s databázemi.)
+Pro zpracování formuláře, přidáte kód, který čte hodnoty zadané pole a poté s nimi. Tento postup ukazuje, jak číst pole a uživatelský vstup, zobrazí na stránce. (V produkční aplikace, obvykle provedete zajímavější věci s uživatelským vstupem. Můžete to udělat v článku o práci s databázemi.)
 
-1. V horní části *Form.cshtml* souboru, zadejte následující kód:
+1. V horní části *Form.cshtml* soubor, zadejte následující kód:
 
     [!code-cshtml[Main](4-working-with-forms/samples/sample2.cshtml)]
 
-    Když uživatel poprvé požádá stránky, zobrazí se pouze prázdný formulář. Uživatel (který bude vám) doplní do formuláře a poté klikne na tlačítko **odeslání**. To odešle (příspěvky) vstupu uživatele na serveru. Ve výchozím nastavení, žádost přejde na stejné stránce (konkrétně, *Form.cshtml*).
+    Když uživatel poprvé požádá stránky, zobrazí se pouze prázdný formulář. Uživatel (což bude vám) vyplní ve formuláři a poté klikne na tlačítko **odeslat**. Odešle (příspěvků) uživatelský vstup k serveru. Ve výchozím nastavení, že se odesílá na stejnou stránku (konkrétně *Form.cshtml*).
 
-    Při odesílání stránky této doby se zobrazují hodnoty, které jste zadali nad formuláře:
+    Při odesílání stránky tentokrát zadané hodnoty se zobrazí přímo nad formuláře:
 
-    ![Snímek obrazovky, který zobrazuje hodnoty, které jste zadali na stránku.](4-working-with-forms/_static/image2.jpg)
+    ![Snímek obrazovky zobrazující hodnoty, které jste zadali na stránku.](4-working-with-forms/_static/image2.jpg)
 
-    Podívejte se na kód pro stránku. Prvním použití `IsPost` metoda k určení, zda je odeslání stránky &#8212; to znamená, zda uživatel klikli **odeslání** tlačítko. Pokud je to příspěvku na `IsPost` vrací hodnotu true. To je standardní způsob na webových stránkách ASP.NET k určení, zda pracujete s úvodního požadavku (požadavek GET) nebo zpětné volání (požadavek POST). (Další informace o GET a POST, najdete v části "HTTP GET a POST a IsPost Property" na bočním panelu v [Úvod k technologii ASP.NET Web Pages programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
+    Prohlédněte si kód pro stránku. Nejprve pomocí `IsPost` metodou ke zjištění, zda se odeslání stránky &#8212; to znamená, zda uživatel kliknutí **odeslat** tlačítko. Pokud je příspěvek, `IsPost` vrací hodnotu true. Toto je standardní způsob na webových stránkách ASP.NET k určení, zda pracujete s počáteční požadavek (požadavek GET) nebo zpětného odeslání (požadavek POST). (Další informace o GET a POST, najdete v části bočního panelu "HTTP GET a POST a IsPost vlastnost" v [Úvod do ASP.NET Web Pages programování pomocí syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
 
-    Teď se dostáváte hodnoty, které uživatel vyplněno z `Request.Form` objekt a umístí je do proměnných pro pozdější. `Request.Form` Objekt obsahuje všechny hodnoty, které byly odeslány s hledanou stránkou, každý se identifikovanou pomocí klíče. Klíč se o ekvivalent `name` atribut pole formuláře, které chcete číst. Například pro čtení `companyname` pole (textového pole), můžete použít `Request.Form["companyname"]`.
+    Teď získáte hodnoty, které uživatel vyplněno z `Request.Form` objektu a umístit je do proměnné na později. `Request.Form` Objekt obsahuje všechny hodnoty, které byly odeslány na stránce každé identifikované klíčem. Klíč je ekvivalentní k `name` atribut z pole formuláře, který chcete číst. Například pro čtení `companyname` pole (textové pole), můžete použít `Request.Form["companyname"]`.
 
-    Formulář hodnoty se uloží v `Request.Form` objektu jako řetězce. Proto když máte pro práci s hodnotou jako číslo nebo datum nebo jiný typ, budete muset převést řetězec na typu. V příkladu `AsInt` metodu `Request.Form` se používá k hodnotu pole zaměstnanci (který obsahuje počtu zaměstnanců) převést na celé číslo.
-2. Spusťte stránku v prohlížeči, vyplňte pole formuláře a klikněte na tlačítko **odeslání**. Na stránce zobrazuje hodnoty, které jste zadali.
+    Formuláře, hodnoty jsou uloženy v `Request.Form` objektu jako řetězce. Proto když je nutné pracovat s hodnotou jako číslo nebo datum nebo jiný typ, budete muset převést z řetězce na daný typ. V tomto příkladu `AsInt` metodu `Request.Form` se používá k převodu hodnoty pole zaměstnanci (který obsahuje počet zaměstnanců) na celé číslo.
+2. Spustit v prohlížeči stránku, vyplňte pole formuláře a klikněte na tlačítko **odeslat**. Na stránce se zobrazí hodnoty, které jste zadali.
 
 > [!TIP] 
 > 
 > <a id="SB_HTMLEncoding"></a>
 > ### <a name="html-encoding-for-appearance-and-security"></a>Kódování pro vzhled a zabezpečení v jazyce HTML
 > 
-> HTML má speciální používá pro znaků jako `<`, `>`, a `&`. Pokud se zobrazí tyto speciální znaky, kde se nepředpokládá, že poškodí vzhled a funkce webové stránky. Například v prohlížeči interpretuje `<` znak (Pokud je následované mezerou) jako začátek elementu HTML, jako je třeba `<b>` nebo `<input ...>`. Pokud v prohlížeči nerozpozná elementu, jednoduše zahodí řetězec, který začíná `<` dokud nedosáhne něco, znovu rozpozná. Samozřejmě to může způsobit některé divné vykreslování na stránce.
+> HTML obsahuje speciální znaky, jako je použití `<`, `>`, a `&`. Pokud se tyto speciální znaky nezobrazí, kde se očekává, že poškodí vzhled a funkce webové stránky. Třeba v prohlížeči interpretuje `<` znak (Pokud je následované mezerou) jako začátek elementu HTML, jako je třeba `<b>` nebo `<input ...>`. Pokud v prohlížeči nerozpozná elementu, jednoduše zahodí řetězec, který začíná `<` dokud nedosáhne něco, která znovu rozpozná. Samozřejmě to může způsobit nějaké divné vykreslování na stránce.
 > 
-> Kódování HTML nahradí kód, který prohlížeče interpretovat jako správný symbol tyto vyhrazené znaky. Například `<` se nahradí znak `&lt;` a `>` se nahradí znak `&gt;`. V prohlížeči vykreslí jako znaků, které chcete zobrazit tyto náhradní řetězce.
+> Kódování HTML nahradí kód, který prohlížeče interpretovat jako správný symbol těchto vyhrazených znaků. Například `<` nahradí znak `&lt;` a `>` nahradí znak `&gt;`. Prohlížeč zobrazí tyto řetězce pro nahrazování jako znaky, které chcete zobrazit.
 > 
-> Je vhodné používat kódování kdykoli zobrazit řetězce v jazyce HTML (vstup) jste získali od uživatele. Pokud to neuděláte, uživatel může pokusit o webovou stránku, spustit skript nebo dělejte něco jiného, ohrožuje zabezpečení vašeho webu nebo který je právě není to, co chcete získat. (To je zvlášť důležité, pokud trvat uživatelský vstup, uložte ho někde a zobrazit později &#8212; například jako komentář blog, zkontrolujte uživatele nebo něco podobného jako který.)
+> Je vhodné použít kódování vždy zobrazí řetězce v jazyce HTML (vstup), že jste získali od uživatele. Pokud to neuděláte, uživatel může pokusit o získání webové stránky ke spuštění škodlivých skriptů nebo provádět další činnosti, která ohrožuje zabezpečení vašeho webu nebo který je právě není to, co chcete. (To je zvlášť důležité, pokud přijímají uživatelský vstup, uložte ho někde a zobrazit později &#8212; , jako například komentář blogu, uživatel kontrolovat nebo něco jako, který.)
 > 
-> Aby se zabránilo tyto problémy, rozhraní ASP.NET Web Pages automaticky umístí kódování HTML jakýkoli text obsahu, které výstup z vašeho kódu. Například při zobrazení obsahu proměnné nebo výraz pomocí kódu, například `@MyVar`, rozhraní ASP.NET Web Pages automaticky kóduje výstup.
+> Aby se zabránilo tyto problémy, rozhraní ASP.NET Web Pages automaticky umístí kódování HTML jakýkoli text obsahu, který jste výstup z vašeho kódu. Například při zobrazení obsahu proměnné nebo výraz, který používá kód, jako `@MyVar`, rozhraní ASP.NET Web Pages Galerie automaticky kóduje výstup.
 
 
 ## <a name="validating-user-input"></a>Ověřování uživatelského vstupu
 
-Uživatelé provádět chyb. Požádejte, aby vyplnit pole a že zapomenete, nebo požádejte, aby zadat počet zaměstnanců a se místo toho zadejte název. Abyste měli jistotu, že formulář bylo vyplněno správně před jeho zpracování, ověření vstupu uživatele.
+Uživatelé dělat chyby. Požádejte ho, chcete-li vyplnit pole a zapomenou, nebo požádejte ho, chcete-li zadat počet zaměstnanců a jejich místo toho zadejte název. Pokud chcete mít jistotu, že formulář bylo vyplněno správně předtím, než ho zpracovat, ověřit vstup uživatele.
 
-Tento postup ukazuje, jak ověřit všechna pole tři formuláře a ujistěte se, že uživatel nebyl zůstat prázdné. Také zkontrolujte, zda je hodnota počtu zaměstnanců číslo. Pokud nejsou chyby, budete se zobrazí chybová zpráva, která uživateli říká, které hodnoty neproběhla úspěšně ověření.
+Tento postup ukazuje, jak ověřit všechna pole tři formuláře, abyste měli jistotu, že uživatel neměli nechat prázdné. Můžete také zkontrolujte, že hodnota počtu zaměstnanců číslo. Pokud chyby existují, vám zobrazí chybová zpráva, která uživateli říká, jaké hodnoty úspěšně ověření.
 
 1. V *Form.cshtml* souboru, první blok kódu nahraďte následujícím kódem: 
 
     [!code-cshtml[Main](4-working-with-forms/samples/sample3.cshtml)]
 
-    K ověření vstupu uživatele, můžete použít `Validation` pomocné rutiny. Registrace povinná pole voláním `Validation.RequireField`. Registrace jiné typy ověření voláním `Validation.Add` a zadání pole, které chcete ověřit a typ ověření provést.
+    Chcete-li ověření vstupu uživatele, použijte `Validation` pomocné rutiny. Zaregistrovat povinná pole voláním `Validation.RequireField`. Zaregistrovat jiné typy ověřování voláním `Validation.Add` a určením pole, které chcete ověřit a typ ověření, který má provést.
 
-    Při spuštění stránky ASP.NET se všemi ověřovacími pro vás. Můžete zkontrolovat výsledky voláním `Validation.IsValid`, která vrací hodnotu true, pokud se vše předán a NEPRAVDA, pokud žádné pole se nezdařilo ověření. Obvykle volání `Validation.IsValid` před provedením jakékoli zpracování na vstupu uživatele.
-2. Aktualizace `<body>` element přidáním tří volání `Html.ValidationMessage` metoda takto:
+    Při spuštění stránky technologie ASP.NET provede všemi ověřovacími za vás. Výsledky můžete zkontrolovat, že volání `Validation.IsValid`, která vrací hodnotu true, pokud vše, co předaný a false, pokud žádné pole se nepovedlo ověřit. Obvykle volání `Validation.IsValid` před provedením jakékoli zpracování na vstupu uživatele.
+2. Aktualizace `<body>` element tak, že přidáte tři volání `Html.ValidationMessage` metoda takto:
 
     [!code-cshtml[Main](4-working-with-forms/samples/sample4.cshtml?highlight=8,13,18)]
 
-    K zobrazení chybových zpráv ověření, můžete volat Html.`ValidationMessage` a předejte ji název pole, které chcete zprávu pro.
-3. Spuštění stránky. Nechte pole prázdné a klikněte na **odeslání**. Zobrazí chybové zprávy.
+    K zobrazení chybových zpráv ověření, můžete volat Html.`ValidationMessage` a předejte mu název pole, které chcete zprávu pro.
+3. Spuštění stránky. Ponechte pole prázdné a klikněte na tlačítko **odeslat**. Se zobrazí chybové zprávy.
 
-    ![Snímek obrazovky zobrazující chybové zprávy zobrazí, pokud není uživatelský vstup projít ověřením.](4-working-with-forms/_static/image3.jpg)
-4. Přidat řetězec (například "ABC") do **počet zaměstnanců** pole a klikněte na tlačítko **odeslání** znovu. Tentokrát uvidíte chybu, která označuje, že řetězec není ve správném formátu, a to, celé číslo.
+    ![Snímek obrazovky zobrazující zobrazí chybové zprávy, pokud není uživatelský vstup projít ověřením.](4-working-with-forms/_static/image3.jpg)
+4. Přidat do řetězce (například "ABC") **Employee Count** pole a klikněte na tlačítko **odeslat** znovu. Tentokrát se zobrazí chyba, která označuje, že řetězec není ve správném formátu, konkrétně, celé číslo.
 
-    ![Snímek obrazovky zobrazující chybové zprávy zobrazí, pokud uživatelé zadat řetězec pro pole zaměstnanci.](4-working-with-forms/_static/image4.jpg)
+    ![Snímek obrazovky zobrazující zobrazí chybové zprávy, pokud uživatelé zadat řetězec pro pole zaměstnanci.](4-working-with-forms/_static/image4.jpg)
 
-ASP.NET – webové stránky poskytuje další možnosti pro ověřování uživatelského vstupu, včetně možnost automaticky provádět ověření pomocí klientského skriptu, aby uživatelé získali okamžitou zpětnou vazbu v prohlížeči. Najdete v článku [další prostředky](#Additional_Resources) části později pro další informace.
+ASP.NET Web Pages poskytuje další možnosti pro ověřování uživatelských vstupů, včetně možnost automaticky provádět ověření pomocí klientského skriptu, aby uživatelé získali okamžitou zpětnou vazbu v prohlížeči. Najdete v článku [další prostředky](#Additional_Resources) části později pro další informace.
 
-## <a name="restoring-form-values-after-postbacks"></a>Obnovení po postback hodnot formuláře
+## <a name="restoring-form-values-after-postbacks"></a>Obnovení po postbacků hodnot formuláře
 
-Při testování stránky v předchozí části Možná jste si všimli, pokud jste měli k chybě ověření, vše, co že jste zadali (ne jenom neplatná data) byl pryč, jste museli znovu zadejte hodnoty pro všechna pole. To ukazuje bod důležité: po odeslání stránky, jeho zpracování a potom vykreslení stránky, stránka je znovu vytvořit od začátku. Jak už jste viděli, to znamená, že všechny hodnoty, které byly na stránce, pokud byla odeslána budou ztraceny.
+Při testování na stránce v předchozí části jste si možná všimli, pokud došlo k chybě ověřování, všechno, co že jste zadali (nejen neplatná data) byla pryč a bylo nutné znovu zadat hodnoty pro všechna pole. To znázorňuje důležité vzít: při odeslání stránky, zpracovat je a pak vykreslení stránky, na stránce je znovu vytvořit úplně od začátku. Jak už jste viděli, to znamená, že všechny hodnoty, které byly na stránce při odeslání budou ztraceny.
 
-Problém můžete vyřešit snadno, ale. Máte přístup k hodnotám, které byly odeslány (v `Request.Form` objektu, tak při vykreslení stránky, můžete vyplnit tyto hodnoty zpět do pole formuláře.
+Problém můžete vyřešit jednoduše, ale. Máte přístup k hodnotám, které byly předány (v `Request.Form` objektu, takže můžete přejít k vyplnění tyto hodnoty do polí formuláře při vykreslování stránky.
 
-1. V *Form.cshtml* souboru, nahraďte `value` atributy `<input>` elementů pomocí `value` atribut.: 
+1. V *Form.cshtml* souboru, nahradí `value` atributy `<input>` prvky pomocí `value` atribut.: 
 
     [!code-cshtml[Main](4-working-with-forms/samples/sample5.cshtml?highlight=13,19,25)]
 
-    `value` Atribut `<input>` elementy byla nastavena dynamicky načíst hodnotu pole z `Request.Form` objektu. Při prvním požadavku na stránku hodnoty `Request.Form` objekt jsou všechny prázdné. Toto je dobře, protože tímto způsobem formuláře je prázdná.
-2. Spusťte stránku v prohlížeči, vyplňte pole formuláře nebo zůstat prázdné a klikněte na tlačítko **odeslání**. Zobrazí se stránka, která zobrazuje odeslaná hodnoty.
+    `value` Atribut `<input>` prvky byla nastavena na hodnotu pole z dynamicky načíst `Request.Form` objektu. Při prvním požadavku na stránku hodnoty v `Request.Form` objektu jsou všechny prázdné. To je v pořádku, protože díky tomu je formulář prázdný.
+2. Spustit v prohlížeči stránku, přejít k vyplnění polí formuláře nebo ji ponechat prázdnou a klikněte na tlačítko **odeslat**. Zobrazí se stránka, která zobrazuje zadané hodnoty.
 
     ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Další prostředky
 
-- [1,001 způsoby, jak získat vstup od uživatelů webu](https://msdn.microsoft.com/library/ms971057.aspx)
-- [Pomocí formulářů a zpracování uživatelského vstupu](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
+- [1,001 způsoby, jak získat vstup z webových uživatelů](https://msdn.microsoft.com/library/ms971057.aspx)
+- [Pomocí formulářů a zpracování vstupu uživatele](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
 - [Ověřování uživatelských vstupů na webech s webovými stránkami ASP.NET](https://go.microsoft.com/fwlink/?LinkId=253002)
-- [Použití automatického dokončování v formuláře HTML](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)
+- [Pomocí automatické dokončování ve formulářích HTML](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)

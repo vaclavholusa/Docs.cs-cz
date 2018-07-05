@@ -1,45 +1,44 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
-title: 'Scénář: Konfigurace produkčním prostředí pro nasazení webu | Microsoft Docs'
+title: 'Scénář: Konfigurace provozního prostředí pro nasazení webu | Dokumentace Microsoftu'
 author: jrjlee
-description: Toto téma popisuje typické webové scénář nasazení pro produkční prostředí a popisuje úlohy, které potřebujete k dokončení pro nastavení podobné...
+description: Toto téma popisuje běžné webové scénář nasazení pro produkční prostředí a vysvětluje úlohy, které potřebujete k dokončení pro nastavení podobná...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
 ms.topic: article
 ms.assetid: 2e861511-450e-4752-a61e-4a01933f9b6e
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 4de5b1f20f3adcb53765c7cb9765c0d90a80e677
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ff9a1e7657852f37b3dc4fc1dbc4f6e78e6427cb
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882943"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37370345"
 ---
-<a name="scenario-configuring-a-production-environment-for-web-deployment"></a>Scénář: Konfigurace produkčním prostředí pro nasazení webu
+<a name="scenario-configuring-a-production-environment-for-web-deployment"></a>Scénář: Konfigurace provozního prostředí pro nasazení webu
 ====================
 podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Toto téma popisuje typické webové scénář nasazení pro produkční prostředí a popisuje úlohy, které potřebujete k dokončení pro nastavení prostředí podobné.
+> Toto téma popisuje běžné webové scénář nasazení pro produkční prostředí a vysvětluje úlohy, které potřebujete k dokončení pro nastavení prostředí podobné.
 
 
-V provozním prostředí je konečným cílem pro webové aplikace nebo webu. Pomocí tohoto bodu aplikace byly testování, byla nasazena do pracovního prostředí a je připraven k "přejděte za provozu." Charakteristiky produkčního prostředí můžou široce lišit podle podstatu a účel webového obsahu, velikosti vaší organizace, cílovou skupinu a spoustu dalších faktorů. Ve scénáři s podnikovém měřítku produkčním prostředí může mít tyto vlastnosti:
+Produkčním prostředí je konečný cíl pro webovou aplikaci nebo Web. Pomocí tohoto bodu aplikace prošel testování, nasazení do přípravného prostředí a je připravená "za provozu." Charakteristiky produkčním prostředí může značně lišit podle povahu a účel webového obsahu, velikost vaší organizace, cílovou skupinu a spoustu dalších faktorů. Ve scénáři podnikové úrovni produkčním prostředí může mít tyto charakteristiky:
 
-- V prostředí se skládá z několika Vyrovnávání zatížení webové servery a jeden nebo více databázové servery, často se clustering převzetí služeb při selhání a zrcadlení databáze.
-- Pokud prostředí je přístupný z Internetu, je pravděpodobně být oddělené z vaší interní sítě. Může být v jiné podsíti v hraniční síti, může být v jiné doméně a může být na infrastruktuře zcela jinou síť.
-- Vývojáři a účty procesu sestavení serveru je vysoce nepravděpodobné, že oprávnění správce na provozních serverech.
-- Na základě méně často než testu nebo pracovní nasazení se nasadí změny aplikace.
+- Prostředí se skládá z více s vyrovnáváním zatížení webové servery a jeden nebo více databázových serverů, často a obsahují clustering převzetí služeb při selhání a zrcadlení databáze.
+- Pokud prostředí je přístupem k Internetu, bude pravděpodobně odděleni od vaší interní síti. To může být v jiné podsíti v hraniční síti, může být v jiné doméně a může být na zcela jiné síťové infrastruktury.
+- Vývojáři a účty sestavovací server procesu jsou vysoce nepravděpodobné, že máte oprávnění správce na provozních serverech.
+- Změny aplikace se nasadí na základě méně často než testů nebo přípravných nasazení.
 
 > [!NOTE]
-> Škálování databáze nasazení více serverů je nad rámec tohoto kurzu. Další informace o této oblasti, přečtěte si [SQL Server Books Online](https://technet.microsoft.com/library/ms130214.aspx).
+> Horizontální navýšení kapacity nasazení databáze na více serverech je nad rámec tohoto kurzu. Další informace o této oblasti, obraťte se prosím [SQL Server Books Online](https://technet.microsoft.com/library/ms130214.aspx).
 
 
-Například v našem [kurz scénář](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), server Team Build obsahuje definice sestavení, které umožňují uživatelům sestavte řešení, obraťte se na správce a nasadit ji do pracovního prostředí v jediném kroku. Když je aplikace připravená k nasazení do produkčního prostředí, a to z důvodu omezení způsobené požadavky na zabezpečení a síťové infrastruktury, správce produkčního prostředí musíte ručně zkopírovat webového balíčku na produkční webový server a importovat ji pomocí Správce Internetové informační služby (IIS).
+Například v našem [kurz scénář](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), Team Build server zahrnuje definice sestavení, které umožňují uživateli vytvořit řešení Správce kontaktů a nasazení do přípravného prostředí v jediném kroku. Když je aplikace připravená k nasazení do produkčního prostředí, z důvodu omezení stanovené požadavky na zabezpečení a síťové infrastruktury, musíte ručně zkopírovat webový balíček do produkční webový server a importovat správce produkčního prostředí ji pomocí Správce Internetové informační služby (IIS).
 
 ![](scenario-configuring-a-production-environment-for-web-deployment/_static/image1.png)
 
@@ -47,18 +46,18 @@ Například v našem [kurz scénář](../deploying-web-applications-in-enterpris
 
 V tomto scénáři můžete odvodit z analýzu požadavky na nasazení tyto skutečnosti:
 
-- Z důvodu omezení zabezpečení a konfiguraci sítě nelze nakonfigurovat produkčního prostředí pro podporu jedním kliknutím nebo automatické nasazení. Offline nasazení je pouze přijatelná přístup v tomto scénáři.
-- V provozním prostředí obsahuje více webových serverů, takže webové farmy Framework (WFF) můžete použít k vytvoření serverové farmy. Použití tohoto přístupu, stačí pouze importovat aplikaci na jednom webovém serveru (primární server) a replikují se tak WFF nasazení na všechny další webové servery v provozním prostředí.
+- Z důvodu omezení zabezpečení a konfiguraci sítě nelze nakonfigurovat produkčního prostředí pro podporu nasazení jedním kliknutím nebo automatizované. Offline nasazení je jediné možné přístup v tomto scénáři.
+- V provozním prostředí obsahuje více webových serverů, takže webové farmy Framework (WFF) můžete použít k vytvoření serverové farmy. Tento přístup správce jenom je potřeba importovat aplikaci na jednom webovém serveru (primární server) a WFF replikuje nasazení na všech ostatních serverech web v provozním prostředí.
 
 Tato témata poskytují všechny informace, které potřebujete k dokončení těchto úloh:
 
-- [Vytvoření serverové farmy pomocí rozhraní Web Farm Framework](configuring-a-database-server-for-web-deploy-publishing.md). Toto téma popisuje, jak vytvořit a nakonfigurovat serverové farmy používající WFF, takže produkty webové platformy a součásti, nastavení konfigurace a weby a aplikace se replikují napříč více Vyrovnávání zatížení sítě webových serverů.
-- [Konfigurace webového serveru pro nasazení webu publikování (Offline nasazení)](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Toto téma popisuje, jak sestavit webový server umožňující správci importujte a nasaďte webových balíčků ručně, od čisté sestavení Windows Server 2008 R2.
-- [Konfigurovat databázový Server pro publikování nasazení webu](configuring-a-database-server-for-web-deploy-publishing.md). Toto téma popisuje postup konfigurace databázový server pro podporu nasazení od výchozí instalaci systému SQL Server 2008 R2 a vzdáleného přístupu.
+- [Vytvoření serverové farmy pomocí rozhraní Web Farm Framework](configuring-a-database-server-for-web-deploy-publishing.md). Toto téma popisuje, jak vytvořit a nakonfigurovat serverové farmy používající WFF, takže produkty webové platformy a komponenty, nastavení konfigurace a weby a aplikace se replikují napříč více s vyrovnáváním zatížení webových serverů.
+- [Konfigurace webového serveru pro nasazení webu (Offline nasazení) publikování](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md). Toto téma popisuje, jak vytvořit webový server, která umožňuje správcům importovat a nasazení webových balíčků ručně, počínaje čisté sestavení systému Windows Server 2008 R2.
+- [Konfigurovat databázový Server pro publikování nasazeného webu](configuring-a-database-server-for-web-deploy-publishing.md). Toto téma popisuje, jak konfigurovat databázový server pro podporu vzdáleného přístupu a nasazení, od výchozí instalaci systému SQL Server 2008 R2.
 
 ## <a name="further-reading"></a>Další čtení
 
-Pokyny týkající se konfigurace typické vývojáře testovacím prostředí najdete v tématu [scénář: Konfigurace testovací prostředí pro nasazení webu](scenario-configuring-a-test-environment-for-web-deployment.md). Pokyny týkající se konfigurace typické pracovní prostředí najdete v tématu [scénář: Konfigurace pracovní prostředí pro nasazení webu](scenario-configuring-a-staging-environment-for-web-deployment.md).
+Pokyny ke konfiguraci testovacího prostředí typické pro vývojáře najdete v tématu [scénář: Konfigurace testovací prostředí pro nasazení webu](scenario-configuring-a-test-environment-for-web-deployment.md). Pokyny k nastavení typické přípravné prostředí, najdete v části [scénář: Konfigurace pracovní prostředí pro nasazení webu](scenario-configuring-a-staging-environment-for-web-deployment.md).
 
 > [!div class="step-by-step"]
 > [Předchozí](scenario-configuring-a-staging-environment-for-web-deployment.md)

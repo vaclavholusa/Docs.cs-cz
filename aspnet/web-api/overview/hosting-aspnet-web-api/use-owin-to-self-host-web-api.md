@@ -1,31 +1,30 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api
-title: Hostování na vlastním rozhraní ASP.NET Web API 2 pomocí OWIN | Microsoft Docs
+title: Použití rozhraní OWIN k samoobslužnému hostování webového rozhraní API 2 ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
-description: Tento kurz ukazuje, jak k hostování webové rozhraní API ASP.NET v konzolové aplikaci, pomocí k hostování na vlastním rozhraní Web API OWIN. Spustit nástroj webové rozhraní pro rozhraní .NET (OWIN) d...
+description: Tento kurz ukazuje, jak hostovat v konzolové aplikaci, používá OWIN k samoobslužnému hostování webového rozhraní API rozhraní ASP.NET Web API. Otevřít Web Interface pro .NET (OWIN) d...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2013
 ms.topic: article
 ms.assetid: a90a04ce-9d07-43ad-8250-8a92fb2bd3d5
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: fda0db8155c3303907331a690af35f619b589154
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 73757b50c15c6c65dbde4b61179b2d453673cfad
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26566395"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389557"
 ---
-<a name="use-owin-to-self-host-aspnet-web-api-2"></a>Hostování na vlastním rozhraní ASP.NET Web API 2 pomocí OWIN
+<a name="use-owin-to-self-host-aspnet-web-api-2"></a>Použití rozhraní OWIN k samoobslužnému hostování webového rozhraní API 2 ASP.NET
 ====================
 podle [Kanchan Mehrotra](https://twitter.com/kanchanmeh)
 
-> Tento kurz ukazuje, jak k hostování webové rozhraní API ASP.NET v konzolové aplikaci, pomocí k hostování na vlastním rozhraní Web API OWIN.
+> Tento kurz ukazuje, jak hostovat v konzolové aplikaci, používá OWIN k samoobslužnému hostování webového rozhraní API rozhraní ASP.NET Web API.
 > 
-> [Otevřete Web Interface pro .NET](http://owin.org) (OWIN) definuje abstrakci mezi .NET webové servery a webové aplikace. OWIN oddělí webové aplikace ze serveru, takže je ideální pro samoobslužné webové aplikace v vlastní proces mimo službu IIS hostování OWIN.
+> [Otevřete Web Interface pro .NET](http://owin.org) (OWIN) definuje abstrakce mezi .NET webové servery a webové aplikace. OWIN odpojí webové aplikace ze serveru, který je ideální pro webové aplikace ve vašem vlastním procesu mimo službu IIS s vlastním hostováním OWIN.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
@@ -35,12 +34,12 @@ podle [Kanchan Mehrotra](https://twitter.com/kanchanmeh)
 
 
 > [!NOTE]
-> Úplný zdrojový kód najdete v tomto kurzu v [aspnet.codeplex.com](https://aspnet.codeplex.com/SourceControl/latest#Samples/WebApi/OwinSelfhostSample/ReadMe.txt).
+> Úplný zdrojový kód můžete najít v tomto kurzu na [aspnet.codeplex.com](https://aspnet.codeplex.com/SourceControl/latest#Samples/WebApi/OwinSelfhostSample/ReadMe.txt).
 
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-Na **soubor** nabídky, klikněte na tlačítko **nový**, pak klikněte na tlačítko **projektu**. Z **nainstalovaných šablonách**, v části Visual C#, klikněte na **Windows** a pak klikněte na **konzolové aplikace**. Název projektu "OwinSelfhostSample" a klikněte na tlačítko **OK**.
+Na **souboru** nabídky, klikněte na tlačítko **nový**, pak klikněte na tlačítko **projektu**. Z **nainstalované šablony**, v části Visual C#, klikněte na tlačítko **Windows** a potom klikněte na tlačítko **konzolovou aplikaci**. Pojmenujte projekt "OwinSelfhostSample" a klikněte na tlačítko **OK**.
 
 [![](use-owin-to-self-host-web-api/_static/image2.png)](use-owin-to-self-host-web-api/_static/image1.png)
 
@@ -50,37 +49,37 @@ Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků knihoven
 
 `Install-Package Microsoft.AspNet.WebApi.OwinSelfHost`
 
-Nainstaluje balíček selfhost WebAPI OWIN a všechny požadované balíčky OWIN.
+Tím se nainstaluje balíček selfhost WebAPI OWIN a všechny požadované balíčky OWIN.
 
 [![](use-owin-to-self-host-web-api/_static/image4.png)](use-owin-to-self-host-web-api/_static/image3.png)
 
 ## <a name="configure-web-api-for-self-host"></a>Konfigurace webového rozhraní API pro hostování na vlastním serveru
 
-V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **přidat** / **třída** pro přidání nové třídy. Název třídy `Startup`.
+V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **přidat** / **třídy** přidání nové třídy. Název třídy `Startup`.
 
 ![](use-owin-to-self-host-web-api/_static/image5.png)
 
-Všechny často používaný kód v tomto souboru nahraďte následujícím textem:
+Nahraďte všechny často používaný kód v tomto souboru následujícím kódem:
 
 [!code-csharp[Main](use-owin-to-self-host-web-api/samples/sample1.cs)]
 
-## <a name="add-a-web-api-controller"></a>Přidat řadič webové rozhraní API
+## <a name="add-a-web-api-controller"></a>Přidat kontroler rozhraní Web API
 
-V dalším kroku přidejte třídu kontroleru webového rozhraní API. V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **přidat** / **třída** pro přidání nové třídy. Název třídy `ValuesController`.
+Dále přidejte třídu kontroleru webového rozhraní API. V Průzkumníku řešení klikněte pravým tlačítkem na projekt a vyberte **přidat** / **třídy** přidání nové třídy. Název třídy `ValuesController`.
 
-Všechny často používaný kód v tomto souboru nahraďte následujícím textem:
+Nahraďte všechny často používaný kód v tomto souboru následujícím kódem:
 
 [!code-csharp[Main](use-owin-to-self-host-web-api/samples/sample2.cs)]
 
-## <a name="start-the-owin-host-and-make-a-request-using-httpclient"></a>Spuštění hostitele OWIN a podání žádosti o pomocí položky HttpClient
+## <a name="start-the-owin-host-and-make-a-request-using-httpclient"></a>Spuštění hostitele OWIN a vytvoříte žádost o pomocí položky HttpClient
 
-Nahraďte všechny často používaný kód v souboru Program.cs následujícím textem:
+Nahraďte všechny často používaný kód v souboru Program.cs následujícími způsoby:
 
 [!code-csharp[Main](use-owin-to-self-host-web-api/samples/sample3.cs)]
 
 ## <a name="running-the-application"></a>Spuštění aplikace
 
-Ke spuštění aplikace, stisknutím klávesy F5 v sadě Visual Studio. Výstup by měl vypadat takto:
+Spusťte aplikaci stisknutím klávesy F5 v sadě Visual Studio. Výstup by měl vypadat takto:
 
 [!code-console[Main](use-owin-to-self-host-web-api/samples/sample4.cmd)]
 
@@ -88,6 +87,6 @@ Ke spuštění aplikace, stisknutím klávesy F5 v sadě Visual Studio. Výstup 
 
 ## <a name="additional-resources"></a>Další prostředky
 
-[Přehled Katana projektu](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)
+[Přehled projektu Katana](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)
 
-[Hostitel rozhraní ASP.NET Web API roli pracovního procesu systému Azure](host-aspnet-web-api-in-an-azure-worker-role.md)
+[Hostování webového rozhraní API ASP.NET v roli pracovního procesu Azure](host-aspnet-web-api-in-an-azure-worker-role.md)

@@ -1,86 +1,85 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12
-title: 'Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nastavení oprávnění složky - 6 12 | Microsoft Docs'
+title: 'Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: nastavení oprávnění složky – 6 12 | Dokumentace Microsoftu'
 author: tdykstra
-description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného...
+description: Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET, která obsahuje databázi systému SQL Server Compact pomocí Visual samostatného projektu webové aplikace...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
 ms.topic: article
 ms.assetid: cd03a188-e947-4f55-9bda-b8bce201d8c6
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 573e75221a1c0018bded7544e584b0c75f47d607
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 17910952e78418ef9e5b80efb04b5fe1e70c11bf
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "30887262"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385308"
 ---
-<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-setting-folder-permissions---6-of-12"></a>Nasazení webové aplikace ASP.NET SQL Server Compact pomocí sady Visual Studio nebo Visual Web Developer: nastavení oprávnění složky - 6 12
+<a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-setting-folder-permissions---6-of-12"></a>Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: nastavení oprávnění složky – 6 12
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhněte si úvodní projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
+[Stáhnout počáteční projekt](http://code.msdn.microsoft.com/Deploying-an-ASPNET-Web-4e31366b)
 
-> Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET projektu webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web. Visual Studio 2010 můžete také použít při instalaci aktualizace Publikovat Web. Úvod do řady, najdete v části [z prvního kurzu řady](deployment-to-a-hosting-provider-introduction-1-of-12.md).
+> Tato série kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace, která obsahuje databázi systému SQL Server Compact pomocí sady Visual Studio 2012 RC nebo Visual Studio Express 2012 RC pro Web. Můžete také použít Visual Studio 2010 při instalaci aktualizace Publikovat Web. Úvod do řady, naleznete v tématu [z prvního kurzu této série](deployment-to-a-hosting-provider-introduction-1-of-12.md).
 > 
-> Kurz, který ukazuje nasazení funkce zavedená po vydání sady Visual Studio 2012 RC, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit do Azure App Service Web Apps, naleznete v části [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
+> Kurz ukazuje nasazení funkce zavedená po verzi RC sady Visual Studio 2012, ukazuje, jak nasadit edicích systému SQL Server než SQL Server Compact a ukazuje, jak nasadit do Azure App Service Web Apps, najdete v tématu [nasazení webu ASP.NET pomocí sady Visual Studio](../../deployment/visual-studio-web-deployment/introduction.md).
 
 
 ## <a name="overview"></a>Přehled
 
-V tomto kurzu nastavíte oprávnění ke složce pro *Elmah* složky v nasazené webové lokality, aby aplikace můžete vytvářet soubory protokolu v této složce.
+V tomto kurzu nastavíte oprávnění ke složce pro *Elmah* složky v nasazené webové lokality tak, aby aplikace můžete vytvořit soubory protokolu v této složce.
 
-Při testování webové aplikace v sadě Visual Studio pomocí vývojového serveru Visual Studio (Cassini), aplikace bude spuštěna pod svou identitu. Jsou s největší pravděpodobností správce ve svém vývojovém počítači a mají úplná oprávnění udělat nic, aby všechny soubory v libovolné složky. Ale pokud je aplikace spuštěna v rámci služby IIS, běží pod identitou definované pro fond aplikací, který je přiřazen lokalitě. Toto je obvykle účet definovaná systémem, který má omezená oprávnění. Ve výchozím nastavení má ke čtení a oprávnění ke spouštění vaší webové aplikace souborů a složek, ale nemá oprávnění k zápisu.
+Při testování webové aplikace v sadě Visual Studio pomocí vývojového serveru Visual Studio (Cassini), aplikace bude spuštěna pod svou identitu. Jsou pravděpodobně správce na počítači pro vývoj a máte úplná oprávnění k ničemu k jakémukoli souboru v jakékoli složce. Ale pokud je aplikace spuštěna v rámci služby IIS, spuštění pod identitou definované pro fond aplikací, který je přiřazen lokalitě. Toto je obvykle účet definovaná systémem, který má omezená oprávnění. Ve výchozím nastavení má ke čtení a spouštěcích oprávnění k souborům a složkám webové aplikace, ale nemá oprávnění k zápisu.
 
-Pokud vaše aplikace vytvoří nebo soubory aktualizací, které je společného potřebujete ve webových aplikacích, to všechno bude problém. V aplikaci Contoso univerzity Elmah vytvoří soubory XML ve *Elmah* složky a uložte informace o chybách. I když nepoužijete něco podobného jako Elmah, může váš web umožní uživatelům nahrání souborů nebo provádět další úlohy, které zapisovat data do složky ve vaší lokalitě.
+To stává problémem, pokud se vytváří vaše aplikace nebo aktualizace souborů, což je běžný potřebujete ve webových aplikacích. V aplikaci Contoso University Elmah vytvoří soubory XML *Elmah* složky, aby bylo možné uložit podrobnosti o chybách. I v případě, že nepoužíváte něco jako Elmah, může váš web umožnit uživatelům nahrávat soubory nebo provádět další úlohy, které budou zapisovat data do složky na vašem webu.
 
-Upozornění: Pokud se zobrazí chybové hlášení, nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [řešení potíží s stránky](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).
+Připomenutí: Pokud se zobrazí chybová zpráva nebo něco nefunguje tak, jak absolvovat kurz, nezapomeňte se podívat [stránka o řešení problémů](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12.md).
 
-## <a name="testing-error-logging-and-reporting"></a>Testování Chyba protokolování a vytváření sestav
+## <a name="testing-error-logging-and-reporting"></a>Testování protokolování a vykazováním chyb
 
-Pokud chcete zobrazit, jak aplikace nebude fungovat správně ve službě IIS (i když ho nebyla při jeho testování v sadě Visual Studio), může způsobit chybu, která by za normálních okolností protokolování Elmah a pak otevřete v protokolu chyb Elmah a zobrazit podrobnosti. Pokud Elmah se nepodařilo vytvořit soubor XML a ukládání podrobnosti o chybě, zobrazí zprávu o chybách prázdný.
+Pokud chcete zobrazit, jak aplikace nebude fungovat správně ve službě IIS (i když udělal při testování v sadě Visual Studio), může způsobit chybu, která by obvykle protokoluje pomocí knihovny Elmah a pak otevřete v protokolu chyb Elmah zobrazíte podrobnosti. Pokud Elmah se nepodařilo vytvořit soubor XML a ukládat podrobnosti o chybě, zobrazí zprávu o chybách prázdný.
 
-Otevřete prohlížeč a přejděte na `http://localhost/ContosoUniversity`, a potom si vyžádají neplatná adresa URL jako *Studentsxxx.aspx*. Zobrazí stránka generována chyba místo *GenericErrorPage.aspx* stránky, protože `customErrors` nastavení v souboru Web.config je "RemoteOnly" a se službou IIS místně:
+Otevřete prohlížeč a přejděte na `http://localhost/ContosoUniversity`, a potom si vyžádají neplatnou adresu URL jako *Studentsxxx.aspx*. Zobrazí se stránka generována chyba místo *GenericErrorPage.aspx* stránce, protože `customErrors` nastavení v souboru Web.config je "RemoteOnly" a se službou IIS místně:
 
 [![Error_page_Test](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image2.png)](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image1.png)
 
-Teď spustit *Elmah.axd* zobrazíte zprávy o chybách. Zobrazí prázdný chybovou stránku protokolu, protože Elmah se nepodařilo vytvořit soubor XML v *Elmah* složky:
+Nyní spusťte *Elmah.axd* zobrazíte zprávy o chybách. Vidíte prázdný chybovou stránku protokolu, protože se nepodařilo vytvořit soubor XML v Elmah *Elmah* složky:
 
 [![Error_log_page_empty](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image4.png)](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image3.png)
 
-## <a name="setting-write-permission-on-the-elmah-folder"></a>Nastavení oprávnění k zápisu do složky Elmah
+## <a name="setting-write-permission-on-the-elmah-folder"></a>Nastavení oprávnění pro zápis ve složce Elmah
 
-Oprávnění složky můžete nastavit ručně nebo jej lze vytvořit automatické součást procesu nasazení. Díky tomu automatické vyžaduje komplexní MSBuild kódu a vzhledem k tomu, že máte jenom k tomu při prvním nasazení, v tomto kurzu pouze ukazuje, jak provést ručně. (Informace o tom, aby tuto část procesu nasazení najdete v tématu [nastavení oprávnění k publikování webu](http://sedodream.com/2011/11/08/SettingFolderPermissionsOnWebPublish.aspx) na blogu Sayed Hashimi.)
+Můžete nastavit oprávnění pro složky ručně nebo můžete si je automatickou součástí procesu nasazení. Díky tomu je automatické vyžaduje složitější kód MSBuild a vzhledem k tomu, že budete muset udělat při prvním nasazení, v tomto kurzu pouze ukazuje, jak to provést ručně. (Informace o tom, jak provést tuto část procesu nasazení najdete v tématu [nastavení oprávnění k publikování webu](http://sedodream.com/2011/11/08/SettingFolderPermissionsOnWebPublish.aspx) na blogu Sayed Hashimi.)
 
-V **Průzkumníka Windows**, přejděte na *C:\inetpub\wwwroot\ContosoUniversity*. Klikněte pravým tlačítkem myši *Elmah* složky, vyberte **vlastnosti**a pak vyberte **zabezpečení** kartě.
+V **Windows Explorer**, přejděte na *C:\inetpub\wwwroot\ContosoUniversity*. Klikněte pravým tlačítkem myši *Elmah* složky, vyberte **vlastnosti**a pak vyberte **zabezpečení** kartu.
 
 [![Elmah_folder_Properties_Security_tab](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image6.png)](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image5.png)
 
-(Pokud nevidíte **DefaultAppPool** v **skupiny nebo jméno uživatele** seznamu, pravděpodobně použijete jiné metody než verze zadaná v tomto kurzu nastavení služby IIS a ASP.NET 4 ve vašem počítači. V takovém případě zjistí, jaké identity používá fond aplikací, které jsou přiřazené k aplikaci univerzity Contoso a udělení oprávnění k zápisu pro danou identitu. V tématech o identity fondu aplikací na konci tohoto kurzu.)
+(Pokud se nezobrazí **DefaultAppPool** v **skupiny nebo jméno uživatele** seznamu, pravděpodobně používáte nějaké jiné metody než verze zadaná v tomto kurzu k nastavení služby IIS a ASP.NET 4 ve vašem počítači. V takovém případě zjistěte, jaké identita se používá fond aplikací přiřazené k aplikaci Contoso University a udělení oprávnění k zápisu do této identity. V tématech o identity fondu aplikací součásti na konci tohoto kurzu.)
 
-Klikněte na tlačítko **upravit**. V **oprávnění pro Elmah** dialogové okno, vyberte **DefaultAppPool**a potom vyberte **zápisu** zaškrtávací políčko **povolit** sloupec.
+Klikněte na tlačítko **upravit**. V **oprávnění pro Elmah** dialogu **DefaultAppPool**a pak vyberte **zápisu** zaškrtávací políčko **povolit** sloupce.
 
 [![Permissions_for_Elmah_dialog_box](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image8.png)](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image7.png)
 
-Klikněte na tlačítko **OK** v obou dialogových oknech.
+Klikněte na tlačítko **OK** v obou polích dialogového okna.
 
-## <a name="retesting-error-logging-and-reporting"></a>Opětovném testování Chyba protokolování a vytváření sestav
+## <a name="retesting-error-logging-and-reporting"></a>Opakované chyby protokolování a vytváření sestav
 
-Test způsobuje chybu znovu stejným způsobem (žádost o špatné adresy URL) a spusťte **protokolu chyb** stránky. Tentokrát chyba se zobrazí na stránce.
+Otestujte způsobí chybu znovu stejným způsobem (žádost o špatné adresy URL) a spusťte **v protokolu chyb** stránky. Tentokrát na stránce se zobrazí chyba.
 
 [![Elmah_Error_Log_page_Test](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image10.png)](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12/_static/image9.png)
 
-Můžete také potřebovat oprávnění k zápisu *aplikace\_Data* složky vzhledem k tomu, že máte systém SQL Server Compact soubory databáze v této složce a chcete mít možnost aktualizovat data v těchto databází. V takovém případě však můžete nemusíte provádět žádné další vzhledem k tomu, že proces nasazení automaticky nastaví oprávnění k zápisu na *aplikace\_Data* složky.
+Budete také potřebovat oprávnění k zápisu na *aplikace\_Data* složky vzhledem k tomu, že máte SQL Server Compact soubory databáze v této složce a chcete aktualizovat data v těchto databázích. V takovém případě však není nutné provádět žádné další vzhledem k tomu, že proces nasazení automaticky nastaví oprávnění k zápisu na *aplikace\_Data* složky.
 
-Teď jste dokončili všechny úlohy, které jsou potřebné k získání univerzity společnosti Contoso ve službě IIS správně funguje v místním počítači. V další kurz bude mít webu, které jsou veřejně dostupné po nasazení do hostujícího zprostředkovatele.
+Teď jste dokončili všechny úkoly, které jsou nezbytné pro uvedení University společnosti Contoso ve službě IIS správně funguje na místním počítači. V dalším kurzu kterou zpřístupníte webu veřejně nasazením k poskytovateli hostingu.
 
 ## <a name="more-information"></a>Další informace
 
-V tomto příkladu se poměrně zřejmé důvod, proč nebylo možné uložit soubory protokolu Elmah. Služba IIS trasování můžete použít v případech, kdy je příčinou problém není tak zřejmé; v tématu [řešení potíží s požadavky pomocí trasování chybných ve službě IIS 7](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis) na webu IIS.net.
+V tomto příkladu se důvod, proč nebylo možné uložit soubory protokolu Elmah poměrně jasné. V případech, kde není to zřejmé; příčinu problému můžete použít trasování služby IIS Zobrazit [řešení potíží s požadavky pomocí trasování neúspěšných ve službě IIS 7](https://www.iis.net/learn/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis) na webu IIS.net.
 
 Další informace o tom, jak udělit oprávnění k identity fondu aplikací najdete v tématu [identity fondu aplikací součásti](https://www.iis.net/learn/manage/configuring-security/application-pool-identities) a [zabezpečený obsah ve službě IIS prostřednictvím systému seznamy ACL v souborech](https://www.iis.net/learn/get-started/planning-for-security/secure-content-in-iis-through-file-system-acls) na webu IIS.net.
 

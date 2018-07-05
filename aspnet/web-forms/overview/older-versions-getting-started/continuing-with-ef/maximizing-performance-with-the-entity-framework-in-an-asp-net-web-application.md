@@ -1,196 +1,195 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
-title: Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace ASP.NET | Microsoft Docs
+title: Dosažení maximálního výkonu se sadou Entity Framework 4.0 v ASP.NET 4 webové aplikace | Dokumentace Microsoftu
 author: tdykstra
-description: Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený Začínáme s řadou kurz Entity Framework 4.0. I...
+description: V této sérii kurzů staví na Contoso University webovou aplikaci, která se vytvořila Začínáme s Entity Framework 4.0 série kurzů. I...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
 ms.topic: article
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: b85645eebf2822b33df944692736ea9d9b69b9aa
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a83c225d563f54885941474998ccb6186e4a0b4f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891409"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388555"
 ---
-<a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Tím se maximalizuje výkon s rozhraní Entity Framework 4.0 4 webové aplikace technologie ASP.NET
+<a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Dosažení maximálního výkonu se sadou Entity Framework 4.0 v ASP.NET 4 webové aplikace
 ====================
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-> Tento kurz řady staví na webové aplikace Contoso univerzity, který byl vytvořený [Začínáme s Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) kurz řady. Pokud nebyla dokončena starší kurzy, jako výchozí bod pro účely tohoto kurzu můžete [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , kterou by jste vytvořili. Můžete také [stažení aplikace](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) vytvořené dokončení kurzu řady. Pokud máte dotazy týkající se kurzy, můžete je do příspěvku [ASP.NET Entity Framework fórum](https://forums.asp.net/1227.aspx).
+> V této sérii kurzů staví na Contoso University webovou aplikaci, která se vytvořila [Začínáme s Entity Framework 4.0](https://asp.net/entity-framework/tutorials#Getting%20Started) série kurzů. Pokud nebyla dokončena v předchozích kurzech, jako výchozí bod pro účely tohoto kurzu můžete [stáhnout aplikaci](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) , kterou by jste vytvořili. Můžete také [stáhnout aplikaci](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) , který vytvoří kompletní série kurzů. Pokud máte dotazy týkající se těchto kurzů, můžete je publikovat [fórum ASP.NET Entity Framework](https://forums.asp.net/1227.aspx).
 
 
-V tomto kurzu předchozí jste viděli způsobu řešení konfliktů souběžnosti. Tento kurz ukazuje možnosti pro zvýšení výkonu webové aplikace ASP.NET, který používá rozhraní Entity Framework. Dozvíte několik metod pro maximalizaci výkonu nebo pro diagnostikování problémů s výkonem.
+V předchozím kurzu jste viděli, jak zpracování konfliktů souběžnosti. Tento kurz ukazuje možnosti pro zlepšení výkonu webové aplikace ASP.NET, která používá Entity Framework. Dozvíte několik metod pro dosažení maximálního výkonu, nebo pro diagnostiku problémů s výkonem.
 
-Informace uvedené v následujících částech je mohly být užitečné v mnoha rozličných scénářů:
+Informace uvedené v následujících částech by mohla být užitečná v širokou řadu scénářů:
 
 - Efektivní načtěte související data.
 - Správa stavu zobrazení.
 
-Informace uvedené v následujících částech může být užitečné, pokud máte jednotlivé dotazy, že existuje problémy s výkonem:
+Informace uvedené v následující části mohou být užitečné, pokud máte jednotlivé dotazy této k dispozici problémy s výkonem:
 
 - Použití `NoTracking` merge – možnost.
-- Předem zkompilujte dotazů LINQ.
-- Zkontrolujte příkazů dotazů odeslal do databáze.
+- Před kompilací dotazů LINQ.
+- Prozkoumejte query příkazy, odeslané do databáze.
 
-Informace uvedené v následující části je potenciálně užitečné pro aplikace, které mají velmi velké datové modely:
+Informace uvedené v následující části je potenciálně užitečné pro aplikace, které mají velmi velkých datových modelů:
 
-- Předběžnému generování zobrazení.
+- Předem vygenerujte zobrazení.
 
 > [!NOTE]
-> Výkon webové aplikace je ovlivňován mnoha faktory, včetně například velikost požadavku a odpovědi dat, rychlosti dotazů databáze, kolik požadavky, že můžete server fronty a jak rychle může obsluhovat a to i účinnost žádné knihovny klientských skriptů, které používáte. Pokud výkon, je důležité v aplikaci, nebo pokud testování nebo role experience ukazuje, že není dostatečný výkon aplikace, postupujte podle normální protokol pro optimalizaci výkonu. Měření k určení, kde dochází k kritické body a pak Adresujte oblastí, kterým budou mít největší vliv na výkon aplikací.
+> Je celá řada faktorů, včetně řadí velikosti dat požadavků a odpovědí, rychlost databázových dotazů, kolik požadavků, že server lze zařadit do fronty a jak rychle můžete služby a dokonce efektivitu žádné vliv na výkon webové aplikace skript klienta knihovny, které je možné, že používáte. Pokud výkon je velmi důležité ve vaší aplikaci nebo testování nebo role experience systému ukazuje, že není vyhovující výkon aplikace, měli byste postupovat podle normální protokol pro optimalizaci výkonu. Měření k určení, kde dochází k kritické body výkonu a pak Adresujte oblastí, které budou mít největší vliv na výkon aplikací.
 > 
-> Toto téma se zaměřuje především na způsobům, ve kterém můžete potenciálně zlepšit výkon konkrétně rozhraní Entity Framework technologie ASP.NET. Návrhy tady jsou užitečné, pokud zjistíte, že přístup k datům je jednou z kritická místa výkonu ve vaší aplikaci. S výjimkou toho, jak je uvedeno, metody popsané v tomto poli by se neměla považovat &quot;osvědčené postupy&quot; obecně – řada z nich jsou vhodné pouze ve výjimečných situacích nebo na adresu velmi konkrétní typy kritické body.
+> Toto téma se zaměřuje především na způsoby, ve kterém může potenciálně zvýšit výkon konkrétně Entity Framework v technologii ASP.NET. Návrhy Zde jsou užitečné, pokud zjistíte, že přístup k datům je jedním z kritické body výkonu ve vaší aplikaci. S výjimkou toho, jak je uvedeno, je zde vysvětleno metody by neměly být zahrnuté &quot;osvědčené postupy&quot; obecně – řada z nich jsou vhodné pouze ve výjimečných případech nebo na adresu velmi konkrétní typy kritické body výkonu.
 
 
-Pokud chcete spustit tento kurz, spuštění sady Visual Studio a otevřete Contoso univerzity webovou aplikaci, kterou jste pracovali v předchozí kurzu.
+Zahájit kurz, spusťte sadu Visual Studio a otevřete webové aplikace Contoso University, kterým jste pracovali v předchozím kurzu.
 
-## <a name="efficiently-loading-related-data"></a>Efektivní načítání související Data
+## <a name="efficiently-loading-related-data"></a>Efektivní načítání souvisejících dat
 
-Aby rozhraní Entity Framework můžete načíst související data do navigační vlastnosti entity několika způsoby:
+Existuje několik způsobů, Entity Framework mohou načíst související data do navigační vlastnosti entity:
 
-- *Opožděného načítání*. Když je nejdřív přečíst entity, není načíst související data. Ale při prvním pokusu o přístup k navigační vlastnost, lze data potřebná pro tuto navigační vlastnost je automaticky načte. To vede k více dotazů odeslal do databáze – jednu pro samotné entity a jeden musí načíst pokaždé, když související data pro entitu. 
+- *Opožděné načtení*. Pokud entita je nejdřív přečíst, související data nebude načten. Ale při prvním pokusu o přístup k vlastnosti navigace data požadovaná pro tuto navigační vlastnost je automaticky načte. Výsledkem je více dotazy odeslané do databáze – jeden pro samotné entity a jeden pokaždé, když související data entity musí být načten. 
 
     [![Image05](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-*Přes načítání*. Při čtení je entita, související data načtena společně s jeho. To obvykle vede jednoho připojení dotaz, který načte všechna data, která je potřeba. Zadejte přes načítání pomocí `Include` metoda, jak jste jste viděli již v těchto kurzech.
+*Předběžné načítání*. Při čtení entity související data načíst společně. Obvykle v důsledku jednoho spojení dotaz, který zkopíruje všechna data, který je nezbytný. Předběžné načítání určíte pomocí `Include` metodu, jak jste se seznámili s již v těchto kurzech.
 
 [![Image07](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
-- *Explicitní načítání*. Toto je podobná opožděného načítání, s tím rozdílem, že je explicitně načíst související data v kódu; není provedena automaticky při přístupu k navigační vlastnosti. Načíst související data ručně pomocí `Load` metoda navigační vlastnost pro kolekce, nebo můžete použít `Load` metoda vlastnost referenčního pro vlastnosti, které mají jednoho objektu. (Například volání `PersonReference.Load` metoda načíst `Person` vlastnost navigace `Department` entity.)
+- *Explicitní načtení*. To se podobá opožděné načtení, s tím rozdílem, že explicitně načíst související data v kódu. je tomu tak není automaticky při přístupu k vlastnosti navigace. Načíst související data ručně pomocí `Load` metoda navigační vlastnost pro kolekce, nebo můžete použít `Load` metoda referenční vlastnosti pro vlastnosti, které obsahují jeden objekt. (Například volání `PersonReference.Load` metodu pro načtení `Person` navigační vlastnost `Department` entity.)
 
     [![Image06](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
-Vzhledem k tomu, že nemáte načíst okamžitě hodnoty vlastností, opožděného načítání a explicitní načítání jsou obě známou taky jako *odložené načítání*.
+Protože jejich není okamžitě hodnoty vlastností, opožděné načtení a explicitní načtení se obě označují jako *odložené načítání*.
 
-Opožděného načítání je výchozí chování v kontextu objektu, která byla vygenerována v designeru. Pokud otevřete *SchoolModel.Designer.cs* soubor, který definuje třídu objektu kontextu, zjistíte tři metody konstruktoru a každý z nich obsahuje následující příkaz:
+Opožděné načtení je výchozí chování pro generovaný návrhářem kontextu objektu. Pokud otevřete *SchoolModel.Designer.cs* soubor, který definuje třídu objektů kontextu, najdete tu tři metody konstruktoru a každý z nich obsahuje následující příkaz:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample1.cs)]
 
-Obecně platí Pokud víte, je třeba souvisejících dat pro každou entitu, které načtené, přes načítání nabízí nejlepší výkon, protože je obvykle efektivnější než samostatné dotazy pro každé entity načíst jediný dotaz odeslal do databáze. Na druhé straně, pokud budete potřebovat pro přístup k navigační vlastnosti entity jen zřídka, nebo jenom pro malá může být sadu entit, opožděného načítání nebo explicitní načítání efektivnější, protože přes načítání by získat víc dat, než budete potřebovat.
+Obecně platí Pokud víte, musíte souvisejících dat pro každou entitu, které načtené, nemůžou dočkat, až načítání nabízí nejlepší výkon, protože je obvykle efektivnější než samostatné dotazy pro každou entitu načíst jednoho dotazu odeslaného do databáze. Na druhou stranu, pokud potřebujete jenom zřídka přístup k navigační vlastnosti entity, nebo jenom pro malé sadu entit, opožděné načtení nebo explicitní načtení může být mnohem efektivnější, protože nemůžou dočkat, až načítání by byl načten více dat, než potřebujete.
 
-Ve webové aplikaci opožděného načítání může být poměrně málo hodnota přesto provést, protože provést akce uživatele, které ovlivňují potřebu souvisejících dat v prohlížeči, který nemá připojení k kontext objektu, který vykreslí stránku. Na druhé straně když jste databind ovládacího prvku, obvykle víte, jaká data je třeba a proto je obecně osvědčené zvolit přes načítání nebo odložené načítání na základě co je vhodná v každém scénáři.
+Ve webové aplikaci opožděné načtení může být poměrně málo hodnota i přesto, protože provedou uživatelské akce, které ovlivňují potřebu souvisejících dat v prohlížeči, která nemá připojení ke kontextu objektu, který vykreslí stránku. Na druhé straně když jste databind ovládací prvek, obvykle víte, jaká data potřebujete a proto je obvykle osvědčené zvolit předběžné načítání nebo odložené načítání na základě co je vhodné pro jednotlivé scénáře.
 
-Kromě toho může u ovládacího prvku pomocí objektu entity, po uvolnění objektu kontextu, má. V takovém případě dojde k selhání pokusu o opožděné zatížení navigační vlastnost. Je zřejmé, které se zobrazí chybová zpráva: &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
+Kromě toho ovládací prvek databound použít objekt entity po vyřazení objektu kontextu. V takovém případě se pokus o opožděné načtení navigační vlastnost selže. Je jasné, které se zobrazí chybová zpráva: &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
 
-`EntityDataSource` Řízení zakáže opožděného načítání ve výchozím nastavení. Pro `ObjectDataSource` řízení, které používáte pro aktuální kurz (nebo pokud máte přístup k objektu kontextu z kódu stránky), existuje několik způsobů, které můžete provést opožděného načítání ve výchozím nastavení zakázaná. Ji můžete vypnout, pokud doložit kontextu objektu. Například přidejte následující řádek na konstruktor metodu `SchoolRepository` třídy:
+`EntityDataSource` Ovládacího prvku ve výchozím nastavení zakáže opožděné načtení. Pro `ObjectDataSource` ovládací prvek, že používáte aktuální kurzu (nebo Pokud přistupujete kontextu objektu z kódu stránky), existuje několik způsobů, jak můžete provést opožděné načtení ve výchozím nastavení zakázané. Můžete jej zakázat při vytváření instance kontextu objektu. Například přidejte následující řádek na konstruktor metodu `SchoolRepository` třídy:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample2.cs)]
 
-Pro aplikace společnosti Contoso univerzity provedete kontext objektu automaticky zakázat opožděného načítání tak, aby tato vlastnost nemá být nastavit vždy, když je vytvořena instance kontextu.
+Aplikace Contoso University provede automaticky vypnout opožděné načtení, tak, aby tato vlastnost nebude muset nastavit vždy, když je vytvořena instance kontextu kontextu objektu.
 
-Otevřete *SchoolModel.edmx* dat model, klikněte na návrhovou plochu a potom v podokně vlastností nastavte **povoleno opožděného načítání** vlastnost `False`. Uložte a zavřete datový model.
+Otevřít *SchoolModel.edmx* dat model, klikněte na návrhové ploše a potom v podokně vlastností nastavte **opožděné načtení povoleno** vlastnost `False`. Uložte a zavřete datový model.
 
 [![Image04](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image8.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image7.png)
 
 ## <a name="managing-view-state"></a>Správa stavu zobrazení
 
-Chcete-li provést aktualizaci funkce, musí webová stránka ASP.NET ukládat původní hodnoty vlastností entity při vykreslení stránky. Během zpracování ovládacího prvku zpětné volání můžete znovu vytvořit původního stavu entity a volání entity `Attach` metoda než při použití změn a volání `SaveChanges` metoda. Ve výchozím nastavení použijte ovládací prvky webových formulářů ASP.NET datových zobrazení stavu k uložení původní hodnoty. Zobrazení stavu však může ovlivnit výkon, protože je uložený v skrytá pole, které podstatně zvýšit velikost stránky, která se odešle do a z prohlížeče.
+Aby bylo možné poskytovat aktualizace funkce, webové stránky ASP.NET uložit původní hodnoty vlastností entity při vykreslení stránky. Během zpracování ovládací prvek postbacku můžete znovu vytvořit původní stav entity a volat entity `Attach` metody před použitím změn a volání `SaveChanges` metody. Ve výchozím nastavení používají ovládací prvky webových formulářů ASP.NET dat zobrazení stavu k uložení původní hodnoty. Stav zobrazení však může ovlivnit výkon, protože je uložený v skrytá pole, které může významně zvětšit velikost stránky, která se odešle do a z prohlížeče.
 
-Techniky pro správu zobrazení stavu nebo alternativy, jako je například stav relace nejsou jedinečné pro rozhraní Entity Framework, tak v tomto kurzu není přejděte do tohoto tématu podrobně. Další informace najdete v článku odkazy na konci tohoto kurzu.
+Techniky pro správu stavu zobrazení, nebo alternativy, jako je například stav relace nejsou jedinečné Entity Framework, tak v tomto kurzu není přejít na toto téma podrobně. Další informace najdete v odkazech na konci tohoto kurzu.
 
-Však verze 4 technologie ASP.NET poskytuje nový způsob práce se stav zobrazení, kterou by si měl vědět každý vývojář ASP.NET aplikací webových formulářů: `ViewStateMode` vlastnost. Tato vlastnost můžete nastavit na úrovni stránka nebo ovládací prvek, a umožňuje zakázat stav zobrazení ve výchozím nastavení pro stránku a povolit pouze pro ovládací prvky, které je třeba ji.
+Nicméně 4 verzi technologie ASP.NET poskytuje nový způsob práce se stav zobrazení, které byste měli vědět každý vývojář technologie ASP.NET webové formuláře aplikací: `ViewStateMode` vlastnost. Tato vlastnost lze nastavit na úrovni stránky nebo ovládací prvek a umožňuje zakázat zobrazení stavu ve výchozím nastavení pro stránku a povolit pouze pro ovládací prvky, které potřebujete.
 
-Pro aplikace, kde je důležité výkonu je vhodné vždy zakázat stav zobrazení na úrovni stránky a povolit pouze pro ovládací prvky, které je vyžadují. Velikost stav zobrazení na stránkách společnosti Contoso univerzity by být podstatně snížena touto metodou, ale pokud chcete zjistit, jak to funguje, uděláte ho *Instructors.aspx* stránky. Tato stránka obsahuje mnoho ovládacích prvků, včetně `Label` ovládací prvek, který obsahuje zobrazení stavu zakázáno. Žádná z ovládacích prvků na této stránce ve skutečnosti musí být povolen stav zobrazení. ( `DataKeyNames` Vlastnost `GridView` řízení Určuje stav, který musí být zachovaná mezi postback, ale tyto hodnoty jsou uchovány v řízení stavu, který nemá vliv `ViewStateMode` vlastnost.)
+Vhodné pro aplikace, kde je nejdůležitější výkon, je vždy zakázat stav zobrazení na úrovni stránky a povolit pouze pro ovládací prvky, které je vyžadují. Velikost zobrazení stavu na stránkách společnosti Contoso University nebude možné snížit podstatně touto metodou, ale pokud chcete zobrazit, jak to funguje, budete používat ho *Instructors.aspx* stránky. Tuto stránku obsahuje mnoho ovládacích prvků, včetně `Label` ovládací prvek, který se má zobrazit stav Zakázáno. Žádné ovládací prvky na této stránce ve skutečnosti je potřeba mít povolen stav zobrazení. ( `DataKeyNames` Vlastnost `GridView` ovládací prvek určuje stav, který je třeba udržovat mezi jednotlivými zpětnými odesláními, ale tyto hodnoty jsou uloženy v stav ovládacího prvku, který nemá vliv `ViewStateMode` vlastnosti.)
 
-`Page` – Direktiva a `Label` značky ovládacího prvku aktuálně podobá následujícímu příkladu:
+`Page` Směrnice a `Label` aktuálně značky ovládacího prvku se podobá následujícímu příkladu:
 
 [!code-aspx[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample3.aspx)]
 
 Proveďte následující změny:
 
-- Přidat `ViewStateMode="Disabled"` k `Page` – direktiva.
+- Přidat `ViewStateMode="Disabled"` k `Page` směrnice.
 - Odebrat `ViewStateMode="Disabled"` z `Label` ovládacího prvku.
 
-Kód nyní podobá následujícímu příkladu:
+Značky teď vypadá podobně jako v následujícím příkladu:
 
 [!code-aspx[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample4.aspx)]
 
-Stav zobrazení je nyní zakázán pro všechny ovládací prvky. Pokud přidáte později ovládacího prvku, který potřebuje používat stav zobrazení, je potřeba udělat je zahrnout `ViewStateMode="Enabled"` atribut pro ovládací prvek.
+Stav zobrazení je teď zakázané pro všechny ovládací prvky. Pokud chcete později přidat ovládací prvek, který se musí použít stav zobrazení, všechno, co potřebujete udělat je zahrnout `ViewStateMode="Enabled"` atribut pro ovládací prvek.
 
 ## <a name="using-the-notracking-merge-option"></a>Pomocí možnosti sloučení NoTracking
 
-Když kontextu objektu načte řádky databáze, vytvoří objekty entity, které představují je ve výchozím nastavení je také sleduje tyto objekty entity pomocí jeho správce stavu objektu. Tato data sledování funguje jako mezipaměť a používá se při aktualizaci entity. Protože webová aplikace má obvykle instance kontextu krátkodobou objektů, dotazy často vracející data, která nemusí být sledovat, protože kontext objektu, který čte je uvolní před žádné entity, které je používají znovu nebo aktualizovat.
+Když kontextu objektu načte řádky databáze, vytvoří objekty entity, které představují je ve výchozím nastavení také sleduje tyto objekty entity pomocí jeho správce stavu objektu. Tato data sledování funguje jako mezipaměť a používá se při aktualizaci entity. Protože webová aplikace obvykle má instance kontextu krátkodobých objektů, dotazy často vracející data, která není nutné ke sledování, protože objekt kontextu, který čte je uvolní předtím, než se znovu použít některý z entity, které načte nebo aktualizuje.
 
-Rozhraní Entity Framework, můžete zadat, zda kontext objektu sleduje objekty entity nastavením *merge – možnost*. Můžete nastavit možnost sloučení pro jednotlivé dotazy nebo sady entit. Pokud jste nastavili pro sadu entit, to znamená, že nastavujete výchozí možnost sloučení pro všechny dotazy, které jsou vytvořené pro tuto sadu entit.
+V rozhraní Entity Framework, můžete určit, zda kontext objektu sleduje nastavením objekty entity *merge – možnost*. Můžete nastavit možnost sloučení pro jednotlivé dotazy nebo sady entit. Pokud ji nastavíte pro sadu entit, to znamená, že nastavujete výchozí možnost sloučení pro všechny dotazy, které jsou vytvořeny pro tuto sadu entit.
 
-Pro aplikace společnosti Contoso univerzity sledování není vyžadován pro všechny sad entit, které přístup z úložiště, abyste mohli nastavit možnosti sloučení `NoTracking` pro tyto sady entit, když doložit kontext objektu v třídě úložiště. (Všimněte si, že v tomto kurzu možnost sloučení nebude mít nastavení znatelný vliv na výkon aplikace. `NoTracking` Nejspíš aby zlepšení výkonu pozorovatelné pouze v některých scénářích vysokoobjemový data.)
+Aplikace Contoso University, není potřeba sledování pro všechny sady entit, které lze používat z úložiště, abyste mohli nastavit možnost sloučení `NoTracking` pro tyto sady entit, když vytvoříte instanci objektu kontextu v třídě úložiště. (Všimněte si, že v tomto kurzu se nastavení možnosti sloučení nemá znatelný vliv na výkon vaší aplikace. Tím `NoTracking` možnosti se budou pravděpodobně uskutečňovat zlepšení výkonu pozorovatelných pouze v určitých scénářích dat velkého.)
 
-Ve složce DAL, otevřete *SchoolRepository.cs* souboru a přidejte konstruktor metodu, která nastaví možnost sloučení pro entity nastaví, zda má přístup k úložišti:
+Ve složce DAL otevřete *SchoolRepository.cs* a přidejte metodu konstruktor, který nastaví možnost sloučení pro sady entit, nemá přístup k úložišti:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample5.cs)]
 
-## <a name="pre-compiling-linq-queries"></a>Předem kompilace dotazů LINQ
+## <a name="pre-compiling-linq-queries"></a>Předem kompilaci dotazů LINQ
 
-Při prvním rozhraní Entity Framework provede dotaz Entity SQL v rámci dobu životnosti danou `ObjectContext` instance, bude trvat delší dobu kompilace dotazu. Výsledek kompilace je uložené v mezipaměti, což znamená, že následné spuštění dotazu jsou mnohem rychlejší. Dotazy LINQ podle podobný vzor, s tím rozdílem, že některé práce potřebné ke kompilaci dotazu se provádí pokaždé, když je proveden dotaz. Jinými slovy pro dotazy LINQ ve výchozím nastavení všechny výsledky kompilace se ukládá do mezipaměti.
+Při prvním Entity Framework provede dotaz Entity SQL v rámci životnosti daný `ObjectContext` instance, bude trvat nějakou dobu kompilace dotazu. Výsledek kompilace je uložené v mezipaměti, což znamená, že jsou mnohem rychlejší, protože další spuštění dotazu. Dotazy LINQ podle podobný vzorec, s tím rozdílem, že určitou část práce potřebné ke kompilaci dotazu se provádí při každém spuštění dotazu. Jinými slovy pro LINQ dotazy, ve výchozím nastavení všechny výsledky kompilace jsou uložené v mezipaměti.
 
-Pokud máte dotaz LINQ, který chcete spustit opakovaně existence kontextu objektu, můžete napsat kód, který způsobí, že všechny výsledky kompilace ukládat do mezipaměti při prvním spuštění dotazu LINQ.
+Pokud máte dotaz LINQ, který plánujete spouštět opakovaně běžný kontextu objektu, můžete napsat kód, který způsobí, že všechny výsledky kompilace do mezipaměti při prvním spuštění dotazu LINQ.
 
-Jako ilustraci, Uděláte to pro dvě `Get` metody v `SchoolRepository` třída, z nichž jeden neberou žádné parametry ( `GetInstructorNames` metoda) a ten, který nevyžaduje parametr ( `GetDepartmentsByAdministrator` metoda). Tyto metody jako platném nyní ve skutečnosti není nutné kompilovat, protože nejsou dotazů LINQ:
+Jako ukázku, provedete to pro dva `Get` metody v `SchoolRepository` tříd, z nichž jeden nepřijímá žádné parametry ( `GetInstructorNames` metoda) a ten, který vyžaduje parametr ( `GetDepartmentsByAdministrator` – metoda). Tyto metody jak se stát nyní ve skutečnosti není potřeba kompilovat, protože nejsou dotazů LINQ:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample6.cs)]
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample7.cs)]
 
-Však tak, aby můžete vyzkoušet kompilované dotazy, můžete budete pokračovat, jako by to měla byla zapsána jako následující dotazy LINQ:
+Ale tak, aby si můžete vyzkoušet kompilované dotazy, které budete pokračovat, jako by tyto napsán jako následující dotazy LINQ:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample8.cs)]
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample9.cs)]
 
-Co je uvedené výše a spusťte aplikaci ověřte, že funguje před pokračováním může změnit kód v těchto metod. Ale podle následujících pokynů pustíme přímo do vytváření předem kompilovaném jejich verze.
+Můžete změnit kód v těchto metodách na co má uvedené výše a spuštění aplikace pro ověření, zda funguje než budete pokračovat. Ale v následujících pokynech rovnou do vytváření Předkompilovaná verze.
 
-Vytvořit soubor třídy v *DAL* složky, pojmenujte ji *SchoolEntities.cs*a existujícího kódu nahraďte následujícím kódem:
+Vytvořit soubor třídy v *DAL* složky, pojmenujte ho *SchoolEntities.cs*a nahraďte existující kód následujícím kódem:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample10.cs)]
 
-Tento kód vytvoří částečné třídu, která rozšiřuje třídu automaticky generovaný kontext. Třídu zahrnuje dvě kompilované dotazů LINQ pomocí `Compile` metodu `CompiledQuery` třídy. Vytvoří také metody, které můžete použít k volání dotazy. Uložte a zavřete tento soubor.
+Tento kód vytvoří částečnou třídu, která rozšiřuje třídu automaticky generovaný kontext. Částečné třídy obsahuje dvě kompilované dotazy LINQ pomocí `Compile` metodu `CompiledQuery` třídy. Vytvoří také metody, které můžete použít k volání dotazy. Uložte a zavřete tento soubor.
 
-Vedle *SchoolRepository.cs*, změňte existující `GetInstructorNames` a `GetDepartmentsByAdministrator` metody v úložišti třídy tak, aby volání kompilované dotazy:
+Dále v *SchoolRepository.cs*, změňte existující `GetInstructorNames` a `GetDepartmentsByAdministrator` metody v úložišti třídy tak, aby volání kompilované dotazy:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample11.cs)]
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample12.cs)]
 
-Spustit *Departments.aspx* a ověřte, že bude fungovat jako předtím. `GetInstructorNames` Metoda je volána k naplnění rozevíracího seznamu správce a `GetDepartmentsByAdministrator` metoda je volána, když kliknete na tlačítko **aktualizace** abyste ověřili, že žádné lektorem správce více než jednoho oddělení.
+Spustit *Departments.aspx* stránku a zkontrolujte, jestli funguje stejně jako dříve. `GetInstructorNames` Metoda je volána k naplnění rozevíracího seznamu správce a `GetDepartmentsByAdministrator` metoda je volána při kliknutí na **aktualizace** ověří, že žádné kurzů vedených je správcem více než jednoho oddělení.
 
 [![Image03](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image10.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image9.png)
 
-V aplikaci Contoso univerzity pouze chcete zjistit, jak to udělat, protože by zlepšení měřitelný výkon výkonu jste předem kompilovaném dotazy. Předem kompilování dotazů LINQ přidat úroveň složitost kódu, proto se ujistěte, že můžete udělat jenom pro dotazy, které ve skutečnosti představují kritické body ve vaší aplikaci.
+Jste předem kompilovaných dotazů v aplikaci Contoso University pouze se dozvíte, jak to provést, není, protože by mohly zlepšit zlepšení života na zemi výkonu. Předkompilace dotazů LINQ přidat úroveň složitosti kódu, proto se ujistěte, že můžete provést pouze pro dotazy, které ve skutečnosti představují problémových míst výkonu v aplikaci.
 
-## <a name="examining-queries-sent-to-the-database"></a>Zkoumání dotazy odeslal do databáze
+## <a name="examining-queries-sent-to-the-database"></a>Zkoumání odeslání dotazů do databáze
 
-Pokud jste příčin problémů s výkonem, někdy je užitečné vědět přesný příkazy SQL, které rozhraní Entity Framework odesílá do databáze. Pokud pracujete s `IQueryable` objekt, je použít jeden způsob, jak to udělat `ToTraceString` metoda.
+Pokud zkoumáte problémy s výkonem, někdy je užitečné vědět přesné příkazy SQL, které odesílá Entity Framework do databáze. Pokud pracujete s `IQueryable` objektu, provedete to jedním ze způsobů je použít `ToTraceString` metody.
 
-V *SchoolRepository.cs*, změňte kód v `GetDepartmentsByName` metoda tak, aby odpovídaly v následujícím příkladu:
+V *SchoolRepository.cs*, změňte kód v `GetDepartmentsByName` metoda odpovídat následujícímu příkladu:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample13.cs)]
 
-`departments` Proměnná musí být převedena `ObjectQuery` typu, protože `Where` metoda na konci předchozího řádku vytvoří `IQueryable` objektu; bez `Where` metody přetypování nebude nutné.
+`departments` Proměnná musí být přetypovat na `ObjectQuery` zadejte pouze, protože `Where` metoda na konci na každém řádku vždy vytvoří `IQueryable` objektu; bez `Where` metody přetypování by být nutné.
 
-Nastavit zarážky `return` řádek a spusťte *Departments.aspx* stránky v ladicím programu. Pokud jste průchodu zarážkou, podívejte se `commandText` proměnné v **místní hodnoty –** okno a použijte vizualizér text (lupy v **hodnotu** sloupec) k zobrazení jeho hodnoty v **Text vizualizér** okno. Zobrazí celý příkaz SQL, která je výsledkem tento kód:
+Nastavit zarážku na `return` řádek a spusťte *Departments.aspx* stránky v ladicím programu. Pokud dostanete k zarážce, podívejte se `commandText` proměnné v **lokální** okno a použijte vizualizátor textu (na lupu v **hodnotu** sloupce) zobrazíte její hodnotu **Vizualizátor textu** okna. Můžete zobrazit celý příkaz SQL, která je výsledkem tento kód:
 
 [![Image08](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image12.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image11.png)
 
-Jako alternativu funkci IntelliTrace v nástroji Visual Studio Ultimate poskytuje způsob, jak zobrazit příkazy SQL, které jsou generované rozhraní Entity Framework, která nevyžaduje měnit kód nebo dokonce nastavit zarážky.
+Jako alternativu funkcí technologie IntelliTrace v sadě Visual Studio Ultimate poskytuje způsob, jak zobrazit příkazy SQL vygenerovaným rozhraním Entity Framework, která nevyžaduje, můžete změnit váš kód nebo dokonce nastavit zarážku.
 
 > [!NOTE]
 > Následující postupy můžete provést pouze v případě, že máte Visual Studio Ultimate.
 
 
-Obnovit původní kód `GetDepartmentsByName` metoda a potom spusťte *Departments.aspx* stránky v ladicím programu.
+Obnovit původní kód v `GetDepartmentsByName` metodu a poté spusťte *Departments.aspx* stránky v ladicím programu.
 
-V sadě Visual Studio, vyberte **ladění** nabídky, pak **IntelliTrace**a potom **události IntelliTrace**.
+V sadě Visual Studio, vyberte **ladění** nabídce a potom **IntelliTrace**a potom **události IntelliTrace**.
 
 [![Image11](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image14.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image13.png)
 
-V **IntelliTrace** okně klikněte na tlačítko **přerušení všech**.
+V **IntelliTrace** okna, klikněte na tlačítko **příkaz Pozastavit vše**.
 
 [![Image12](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image16.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image15.png)
 
@@ -198,74 +197,74 @@ V **IntelliTrace** okně klikněte na tlačítko **přerušení všech**.
 
 [![Image09](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image18.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image17.png)
 
-Klikněte **ADO.NET** řádku. Rozšiřuje tak, aby zobrazovalo text příkazu:
+Klikněte na tlačítko **ADO.NET** řádku. Rozšiřuje zobrazit text příkazu:
 
 [![Image10](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image20.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image19.png)
 
-Celý příkaz textový řetězec můžete zkopírovat do schránky z **místní hodnoty –** okno.
+Celý příkaz textový řetězec můžete zkopírovat do schránky z **lokální** okna.
 
-Předpokládejme, že jste pracovali s databází s více tabulek, vztahy a sloupců než jednoduché `School` databáze. Je možné, že dotaz, který shromažďuje všechny informace, je nutné v jediném `Select` příkazu, který obsahuje více `Join` klauzule stane příliš složité pro efektivní práci. V takovém případě můžete přejít z eager načítání explicitní načítání Zjednodušte dotaz.
+Předpokládejme, že jste pracovali s databází s další tabulky, vztahy a sloupců, než jednoduché `School` databáze. Můžete se setkat dotaz, který shromažďuje všechny informace potřebné v jediném `Select` příkazu, který obsahuje více `Join` klauzule stane příliš složitý k zajištění efektivní práce. V takovém případě můžete přepnout z eager načítání pro explicitní načtení pro zjednodušení dotazu.
 
-Zkuste například změna kódu v `GetDepartmentsByName` metoda v *SchoolRepository.cs*. Aktuálně v tom, že metoda máte dotaz objekt, který má `Include` metody `Person` a `Courses` navigační vlastnosti. Nahraďte `return` příkaz s kódem, který provádí explicitní načítání, jak je znázorněno v následujícím příkladu:
+Například, zkuste změnit kód v `GetDepartmentsByName` metoda *SchoolRepository.cs*. Aktuálně v tom, že metoda máte dotaz objektu, který má `Include` metody `Person` a `Courses` navigační vlastnosti. Nahradit `return` příkaz s kódem, který provádí explicitní načtení, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample14.cs)]
 
-Spustit *Departments.aspx* stránky v ladicím programu a kontrola **IntelliTrace** okno znovu jako předtím. Nyní kde byl jediný dotaz před, se zobrazí dlouho pořadí z nich.
+Spustit *Departments.aspx* stránce v ladicím programu a zkontrolujte **IntelliTrace** okno znovu jako jste to udělali dříve. Nyní tam, kde byla jednoho dotazu, uvidíte dlouhá pořadí z nich.
 
 [![Image13](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image22.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image21.png)
 
-Klikněte na první **ADO.NET** řádku zobrazíte, co se stalo komplexní dotaz můžete prohlížet dříve.
+Klikněte na první **ADO.NET** řádku naleznete v tématu co se stalo s komplexní dotaz můžete prohlížet dříve.
 
 [![Image14](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image24.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image23.png)
 
-Dotaz z oddělení se stal jednoduchou `Select` dotaz bez `Join` klauzule, ale je následován samostatné dotazy, které načíst související kurzy a správce, pomocí sady dva dotazy pro každé oddělení vrácený původní dotaz.
+Dotaz z oddělení stal jednoduchý `Select` dotazu bez `Join` klauzule, ale je následována samostatné dotazy, které načítají související kurzy a správce, používáte sadu dva dotazy pro každé oddělení vrácený původní dotaz.
 
 > [!NOTE]
-> Pokud necháte opožděného načítání povoleno, vzor, který zde, zobrazí se stejný dotaz opakuje tolikrát, kolikrát, může být výsledkem opožděného načítání. Vzor, který obvykle budete chtít vyhnout se související data opožděného načítání pro každý řádek v primární tabulce. Pokud ověříte, že jeden spojení dotazu je příliš složitý účinný, by obvykle možné zlepšit výkon v takových případech změnou primární dotaz, který bude použit přes načítání.
+> Pokud opožděné načtení povoleno, vzor, který se zobrazí tady pomocí stejného dotazu opakuje tolikrát, kolikrát, může dojít z opožděné načtení. Vzor, který obvykle chcete se vyhnout se opožděné načtení souvisejících dat pro každý řádek v primární tabulce. Pokud jste ověřili, že jeden spojení dotazu je příliš složitý pro je efektivní, by obvykle mohli zlepšit výkon v takových případech změnou primární dotaz, který bude použit předběžné načítání.
 
 
-## <a name="pre-generating-views"></a>Předběžnému generování zobrazení
+## <a name="pre-generating-views"></a>Předem generování zobrazení
 
-Když `ObjectContext` nejprve vytvořit objekt v nové doméně aplikace, rozhraní Entity Framework vytvoří sadu tříd, které používá pro přístup k databázi. Tyto třídy, se nazývají *zobrazení*, a pokud máte velké datový model, generování tato zobrazení můžou zdržet webu odpověď na první požadavek pro stránku po inicializaci novou doménu aplikace. Vytvořením zobrazení v době kompilace spíše než v době běhu může snížit Tato prodleva prvního požadavku.
+Když `ObjectContext` prvním vytvoření objektu v nové doméně aplikace, Entity Framework generuje sadu tříd, které používá pro přístup k databázi. Tyto třídy se nazývají *zobrazení*, a pokud máte velké datový model, generuje tato zobrazení zpozdit na webu odpověď na první žádost o stránku po inicializaci nové aplikační doméně. Toto zpoždění první žádosti můžete snížit vytváření zobrazení v době kompilace místo v době běhu.
 
 > [!NOTE]
-> Pokud aplikace nemá velmi velký datový model, nebo pokud ji máte model velkého množství dat, ale nejste zajímá problémy s výkonem, který má vliv pouze úplně první požadavek na stránku po recyklaci služby IIS, můžete tuto část přeskočit. Vytvoření nedojde pokaždé, když instanci můžete vytvořit zobrazení `ObjectContext` objekt, protože zobrazení jsou uložené v mezipaměti v doméně aplikace. Proto pokud se často recyklace aplikace ve službě IIS, velmi málo požadavků stránky by těžit z předem vygenerovaných zobrazení.
+> Pokud aplikace nemá modelu velmi velkých objemů dat, nebo pokud ho máte modelu velkých objemů dat, ale nejste obavy o problém s výkonem, který má vliv pouze úplně první požadavek na stránku po recyklaci služby IIS, můžete tuto část přeskočit. Zobrazení vytváření nestane pokaždé, když vytvoříte instanci `ObjectContext` objektu, protože zobrazení jsou ukládány do mezipaměti v doméně aplikace. Proto pokud se často recyklace aplikace ve službě IIS, velmi málo žádostí stránek je výhodná předem vygenerovaných zobrazení.
 
 
-Můžete předběžnému generování zobrazení pomocí *EdmGen.exe* nástroj příkazového řádku nebo pomocí *Text šablony transformace Toolkit* šablony (T4). V tomto kurzu budete používat šablony T4.
+Můžete předem vygenerovat zobrazení pomocí *EdmGen.exe* nástroj příkazového řádku nebo pomocí *Toolkit transformace šablony textu* šablony (T4). V tomto kurzu použijete šablonu T4.
 
-V *DAL* složky, přidejte do souboru pomocí **textové šablony** šablony (je pod **Obecné** uzel v **nainstalovaných šablonách** seznamu), a pojmenujte ji *SchoolModel.Views.tt*. Existující kód v souboru nahraďte následujícím kódem:
+V *DAL* složky, přidejte do souboru pomocí **textové šablony** šablony (je v části **Obecné** uzlu v **nainstalované šablony** seznamu), a pojmenujte ho *SchoolModel.Views.tt*. Nahraďte stávající kód v souboru následujícím kódem:
 
 [!code-csharp[Main](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/samples/sample15.cs)]
 
-Vygeneruje zobrazení pro tento kód *.edmx* souboru, který je umístěný ve stejné složce jako šablona a který má stejný název jako soubor šablony. Například pokud je název souboru šablony *SchoolModel.Views.tt*, bude hledat soubor datového modelu s názvem *SchoolModel.edmx*.
+Tento kód vytvoří zobrazení pro *edmx* soubor, který je umístěný ve stejné složce jako šablona a který má stejný název jako soubor šablony. Například, pokud je název souboru šablony *SchoolModel.Views.tt*, bude hledat soubor modelu dat s názvem *SchoolModel.edmx*.
 
-Uložte soubor a potom klikněte pravým tlačítkem na soubor v **Průzkumníku řešení** a vyberte **spustit nástroj pro vlastní**.
+Uložte soubor a pak klikněte pravým tlačítkem na soubor v **Průzkumníka řešení** a vyberte **spustit vlastní nástroj**.
 
 [![Image02](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image26.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image25.png)
 
-Visual Studio vytvoří soubor kód, který vytvoří zobrazení, která se nazývá *SchoolModel.Views.cs* založený na šabloně. (Možná jste si všimli, kód soubor je vytvořen i před výběrem **spustit nástroj pro vlastní**, jakmile bude uložen soubor šablony.)
+Visual Studio generuje soubor kódu, který vytvoří zobrazení, který se nazývá *SchoolModel.Views.cs* založený na šabloně. (Možná jste si všimli, že soubor kódu se generuje ještě dřív, než vyberete **spustit vlastní nástroj**, co nejdříve uložte soubor šablony.)
 
 [![Image01](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image28.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image27.png)
 
-Teď můžete aplikaci spustit a ověřte, že funguje jako předtím.
+Teď můžete spustit aplikaci a zkontrolujte, jestli funguje stejně jako dříve.
 
-Další informace o předem vygenerovaných zobrazení najdete v následujících zdrojích informací:
+Další informace o předem vygenerovaných zobrazení naleznete na následujících odkazech:
 
-- [Postupy: předběžnému generování zobrazení za účelem zlepšení výkonu dotazů](https://msdn.microsoft.com/library/bb896240.aspx) na webu MSDN. Vysvětluje, jak používat `EdmGen.exe` nástroj příkazového řádku k předběžnému generování zobrazení.
-- [Izolace výkonu předkompilované nebo vedlejší-generated zobrazení v rozhraní Entity Framework 4](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) na Windows Server AppFabric poradní tým blogu.
+- [Postupy: předem vygenerovat zobrazení ke zlepšení výkonu dotazů](https://msdn.microsoft.com/library/bb896240.aspx) na webové stránce MSDN. Vysvětluje způsob používání `EdmGen.exe` předem vygenerovat zobrazení nástroje příkazového řádku.
+- [Izolaci výkonu pomocí Předkompilovaná/Předprodukčním-generated zobrazení v rozhraní Entity Framework 4](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) na blogu Windows Server AppFabric zákaznického poradního týmu.
 
-Tím dokončíte Úvod ke zlepšení výkonu ve webové aplikaci ASP.NET, který používá rozhraní Entity Framework. Další informace naleznete v následujících materiálech:
+Dokončení tohoto postupu Úvod ke zlepšení výkonu ve webové aplikaci ASP.NET, která používá Entity Framework. Další informace naleznete v následujících materiálech:
 
-- [Faktory ovlivňující výkon (rozhraní Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) na webu MSDN.
-- [Související s výkonem příspěvcích na blogu týmu Entity Framework](https://blogs.msdn.com/b/adonet/archive/tags/performance/).
-- [EF sloučení možnosti a kompilované dotazy](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx). Příspěvek blogu, který vysvětluje neočekávané chování kompilované dotazy a merge možnosti, jako `NoTracking`. Pokud budete chtít použít kompilované dotazy nebo upravit nastavení možnosti sloučení v aplikaci, přečtěte si nejprve tuto.
-- [Entity Framework související odešle blog in the Data a modelování poradní tým](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/). Zahrnuje příspěvcích na kompilované dotazy a pomocí Visual Studio 2010 profileru ke zjišťování problémů s výkonem.
-- [Entity Framework fórum vlákno s Rady, jak ke zlepšení výkonu vysoce složitých dotazů](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
-- [Doporučení pro správu stavu ASP.NET](https://msdn.microsoft.com/library/z1hkazw7.aspx).
-- [Použitím rozhraní Entity Framework a ObjectDataSource: vlastní stránkování](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx). Příspěvek blogu, který je založený na ContosoUniversity aplikace vytvořené v těchto kurzech vysvětlují, jak implementovat stránkování v *Departments.aspx* stránky.
+- [Důležité informace o výkonu (Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) na webové stránce MSDN.
+- [Související s výkonem příspěvky na blogu týmu Entity Framework](https://blogs.msdn.com/b/adonet/archive/tags/performance/).
+- [Možnosti a kompilované dotazy sloučit EF](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx). Blogový příspěvek, který vysvětluje neočekávané chování kompilované dotazy a sloučení možnosti, jako `NoTracking`. Pokud máte v plánu použít kompilované dotazy nebo s nastavením možností sloučení v aplikaci, přečtěte si nejprve tuto.
+- [Entity Framework související příspěvky v blogu Data a modelování zákaznického poradního týmu](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/). Zahrnuje příspěvky na kompilované dotazy a použít Visual Studio 2010 Profiler ke zjištění problémů s výkonem.
+- [Vlákna ve fóru Entity Framework s Rady, jak ke zlepšení výkonu velice složitých dotazů](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
+- [Doporučení pro řízení stavu ASP.NET](https://msdn.microsoft.com/library/z1hkazw7.aspx).
+- [Použití rozhraní Entity Framework a ObjectDataSource: vlastní stránkování](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx). Blogový příspěvek, který staví na ContosoUniversity aplikace vytvořené v těchto kurzech vysvětlují, jak implementovat stránkování v *Departments.aspx* stránky.
 
-V dalším kurzu zkontroluje některé důležité vylepšení na rozhraní Entity Framework, které nově jsou v verze 4.
+V dalším kurzu kontroly některá důležitá vylepšení rozhraní Entity Framework, které jsou nové ve verzi 4.
 
 > [!div class="step-by-step"]
 > [Předchozí](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)

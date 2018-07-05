@@ -1,117 +1,116 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: Změnit primární klíč pro uživatele v identitě ASP.NET Identity | Microsoft Docs
+title: Změna primárního klíče pro uživatele v identitě ASP.NET | Dokumentace Microsoftu
 author: tfitzmac
-description: Ve Visual Studiu 2013 se výchozí webová aplikace používá hodnotu řetězce pro klíč pro uživatelské účty. ASP.NET Identity umožňuje změnit typ...
+description: Výchozí webová aplikace v sadě Visual Studio 2013, používá řetězcovou hodnotu pro klíč pro uživatelské účty. ASP.NET Identity umožňuje změnit typ...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2014
 ms.topic: article
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 79812efb4de2461fad3765d6005bbd20393e62b2
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 20e6b86f50a6ea62f188ae592e0b302c7ef77177
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "26563773"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37373325"
 ---
-<a name="change-primary-key-for-users-in-aspnet-identity"></a>Změnit primární klíč pro uživatele v identitě ASP.NET Identity
+<a name="change-primary-key-for-users-in-aspnet-identity"></a>Změna primárního klíče uživatelů v ASP.NET Identity
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Ve Visual Studiu 2013 se výchozí webová aplikace používá hodnotu řetězce pro klíč pro uživatelské účty. ASP.NET Identity umožňuje změnit typ klíče podle požadavků vaší data. Můžete například změnit typ klíče z řetězce na celé číslo.
+> Výchozí webová aplikace v sadě Visual Studio 2013, používá řetězcovou hodnotu pro klíč pro uživatelské účty. ASP.NET Identity umožňuje změnit typ klíče pro splnění požadavků na data. Můžete například změnit typ klíče z řetězce na celé číslo.
 > 
-> Toto téma ukazuje, jak spustit s výchozí webové aplikace a změňte klíč účtu uživatele na celé číslo. Stejné změny můžete použít k implementaci libovolného typu klíč ve vašem projektu. Ukazuje, jak tyto změny provést ve výchozím nastavení webové aplikace, ale může použít podobné úpravy vlastní aplikace. Zobrazuje změny potřebné při práci s MVC nebo webového formuláře.
+> Toto téma ukazuje, jak začít s výchozí webové aplikace změňte klíč účtu uživatele na celé číslo. Stejné změny můžete použít k implementaci libovolného typu klíče ve vašem projektu. Ukazuje, jak tyto změny ve výchozí webové aplikace, ale můžete použít podobné změny do vlastní aplikace. Zobrazuje změny potřebné při práci s MVC nebo webového formuláře.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
 > 
 > 
-> - Visual Studio 2013 s aktualizací 2 (nebo novější)
+> - Visual Studio 2013 s aktualizací Update 2 (nebo novější)
 > - ASP.NET Identity 2.1 nebo novější
 
 
-K provedení kroků v tomto kurzu, musí mít Visual Studio 2013 Update 2 (nebo novější) a webové aplikace vytvořené z šablony webové aplikace ASP.NET. Šablona změnit ve verzi Update 3. Toto téma ukazuje, jak změnit šablonu v Update 2 a Update 3.
+K provedení kroků v tomto kurzu, musíte mít Visual Studio 2013 Update 2 (nebo novější) a webové aplikace ze šablony webové aplikace ASP.NET. Šablona změnit ve verzi Update 3. Toto téma ukazuje, jak změnit šablonu v aktualizaci Update 2 a Update 3.
 
 Toto téma obsahuje následující oddíly:
 
-- [Změnit typ klíče v třídu Identity uživatelů](#userclass)
-- [Přidat vlastní třídy Identity, které používají typ klíče](#customclass)
-- [Změna kontextu třídy a uživatel správce chcete použít typ klíče](#context)
-- [Změna konfigurace spuštění používat typ klíče](#startup)
-- [Pro MVC s aktualizací 2 změňte AccountController předat typ klíče](#mvcupdate2)
-- [Pro MVC s aktualizací 3 změňte AccountController a ManageController předávat typ klíče](#mvcupdate3)
-- [Pro webových formulářů s aktualizací 2 změňte účet stránky předat typ klíče](#webformsupdate2)
-- [Pro webových formulářů s aktualizací 3 změňte účet stránky předat typ klíče](#webformsupdate3)
+- [Změnit typ klíče ve třídě Identity uživatele](#userclass)
+- [Přidat vlastní Identity třídy, které používají typ klíče](#customclass)
+- [Změna správce kontextu třídy a uživatel použít typ klíče](#context)
+- [Změna konfigurace spuštění použít typ klíče](#startup)
+- [MVC s aktualizací Update 2 změňte AccountController předat typ klíče](#mvcupdate2)
+- [Pro rozhraní MVC s aktualizací Update 3 změňte AccountController a ManageController předávat typ klíče](#mvcupdate3)
+- [Webové formuláře s aktualizací Update 2 změňte účet stránky předat typ klíče](#webformsupdate2)
+- [Webové formuláře s aktualizací Update 3 změňte účet stránky předat typ klíče](#webformsupdate3)
 - [Spuštění aplikace](#run)
 - [Další prostředky](#other)
 
 <a id="userclass"></a>
-## <a name="change-the-type-of-the-key-in-the-identity-user-class"></a>Změnit typ klíče v třídu Identity uživatelů
+## <a name="change-the-type-of-the-key-in-the-identity-user-class"></a>Změnit typ klíče ve třídě Identity uživatele
 
-Ve vašem projektu vytvořené z šablony webové aplikace ASP.NET určíte, že třídě ApplicationUser používat celé pro klíč pro uživatelské účty. IdentityModels.cs, změňte třídě ApplicationUser dědění z IdentityUser, která má typ **int** pro obecný parametr TKey. Také předáte názvy tři vlastní třídy, které nebyly dosud implementována.
+V projektu ze šablony webové aplikace ASP.NET určíte, že třídy uživatelů používat celého čísla pro klíč pro uživatelské účty. V IdentityModels.cs, změňte třídy uživatelů dědit z IdentityUser, která má typ **int** pro obecný parametr TKey. Můžete také předat názvy tři vlastní třídu, která dosud nebyla implementována.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample1.cs?highlight=1-2)]
 
-Změnili jste typ klíče, ale ve výchozím nastavení, zbývající aplikace stále předpokládá, že klíč je řetězec. Je třeba explicitně určit typ klíče v kódu, který předpokládá řetězec.
+Změnili jste typ klíče, ale ve výchozím nastavení, zbytek aplikace stále se předpokládá, že klíč je řetězec. Musíte explicitně uvést typ klíče v kódu, která přijímá řetězec.
 
-V **ApplicationUser** třídy, změňte **GenerateUserIdentityAsync** tak, aby zahrnoval int, jak je znázorněno v následující zvýrazněný kód. Tato změna není nutné u projektů webové formuláře se šablonou Update 3.
+V **ApplicationUser** tříd, změnit **GenerateUserIdentityAsync** tak, aby zahrnoval int, jak je znázorněno v následující zvýrazněný kód. Tato změna není nezbytné pro projekty webových formulářů pomocí šablony s aktualizací Update 3.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample2.cs?highlight=2)]
 
 <a id="customclass"></a>
-## <a name="add-customized-identity-classes-that-use-the-key-type"></a>Přidat vlastní třídy Identity, které používají typ klíče
+## <a name="add-customized-identity-classes-that-use-the-key-type"></a>Přidat vlastní Identity třídy, které používají typ klíče
 
-Další Identity třídy, jako je například IdentityUserRole, IdentityUserClaim, IdentityUserLogin, IdentityRole, objektu UserStore, úložiště RoleStore, jsou stále nastavit tak, aby použije klíč pro řetězec. Vytvořte nové verze těchto tříd, které zadejte celé číslo pro klíč. Není potřeba poskytnout mnohem implementaci kódu v těchto tříd, především právě nastavujete int jako klíč.
+Ostatní Identity třídy, jako je například IdentityUserRole IdentityUserClaim, IdentityUserLogin, IdentityRole, úložiště UserStore, úložiště RoleStore, jsou stále nastavení používat s klíčem řetězce. Vytvořte nové verze těchto tříd, které určuje celé číslo pro klíč. Není potřeba poskytovat spoustu implementační kód v těchto tříd, především právě nastavujete int jako klíč.
 
-IdentityModels.cs souboru přidejte následující třídy.
+Přidejte následující třídy do souboru IdentityModels.cs.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample3.cs)]
 
 <a id="context"></a>
-## <a name="change-the-context-class-and-user-manager-to-use-the-key-type"></a>Změna kontextu třídy a uživatel správce chcete použít typ klíče
+## <a name="change-the-context-class-and-user-manager-to-use-the-key-type"></a>Změna správce kontextu třídy a uživatel použít typ klíče
 
-V IdentityModels.cs, změňte definici **ApplicationDbContext** přizpůsobit třídu do nové třídy a **int** klíče, jak je znázorněno v zvýrazněný kód.
+V IdentityModels.cs, změňte definici **ApplicationDbContext** třídě do nové vlastní třídy a **int** klíče, jak je znázorněno v zvýrazněný kód.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample4.cs?highlight=1-2)]
 
-Parametr ThrowIfV1Schema již není platný v konstruktoru. Změňte konstruktoru, nesplňuje ThrowIfV1Schema hodnotu.
+Parametr ThrowIfV1Schema již není platný v konstruktoru. Konstruktor měnit, takže nepředává ThrowIfV1Schema hodnotu.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample5.cs)]
 
-Otevřete IdentityConfig.cs a změňte **ApplicationUserManger** třídu se má použít nový uživatel uložit třídu pro zachování dat a **int** klíče.
+Otevřete IdentityConfig.cs a změňte **ApplicationUserManger** třídu použít nový uživatel ukládání třídy pro zachování dat a **int** klíče.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample6.cs?highlight=1,3,12,14,32,37,48)]
 
-V šabloně Update 3 musíte změnit ApplicationSignInManager třídy.
+V šabloně s aktualizací Update 3 je nutné změnit ApplicationSignInManager třídy.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample7.cs?highlight=1)]
 
 <a id="startup"></a>
-## <a name="change-start-up-configuration-to-use-the-key-type"></a>Změna konfigurace spuštění používat typ klíče
+## <a name="change-start-up-configuration-to-use-the-key-type"></a>Změna konfigurace spuštění použít typ klíče
 
-V Startup.Auth.cs nahraďte kód funkce OnValidateIdentity, jak je znázorněno dole. Všimněte si, že definici getUserIdCallback analyzuje hodnotu řetězce na celé číslo.
+V Startup.Auth.cs nahraďte kód funkce OnValidateIdentity znázorněno dole. Všimněte si, že definice getUserIdCallback analyzuje řetězcovou hodnotu na celé číslo.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample8.cs?highlight=7-12)]
 
-Pokud váš projekt nerozpoznává obecnou implementaci **reprezentuje GetUserId** metody, budete muset aktualizovat balíček ASP.NET Identity NuGet s verzí 2.1
+Pokud projekt nebyl rozpoznán obecnou implementaci **GetUserId** metody, budete muset aktualizovat balíček NuGet identit technologie ASP.NET na verzi 2.1
 
-Provedli jste mnoho změn infrastruktury třídy používané ASP.NET Identity. Pokud se pokusíte kompilace projektu, si všimnete mnoho chyb. Naštěstí zbývající chyby jsou podobné. Identity – třída očekává celé číslo klíče, ale řadič (nebo webového formuláře) je předávání hodnotu řetězce. V každém případě je potřeba převést řetězec na a celé číslo při volání **reprezentuje GetUserId&lt;int&gt;**. Můžete buď fungovat prostřednictvím z kompilace v seznamu chyb nebo postupujte podle níže změny.
+Provedli jste velké množství změn infrastruktury třídy používané ASP.NET Identity. Pokud se pokusíte kompilaci projektu, můžete si všimnout velké množství chyb. Naštěstí zbývající chyby jsou podobné. Třída Identity očekává celé číslo pro klíč, ale kontroler (nebo webového formuláře) předává hodnotu řetězce. V obou případech je potřeba převést z celé číslo a řetězec voláním **GetUserId&lt;int&gt;**. Můžete projít seznam chyb v kompilaci nebo postupujte podle níže uvedených změny.
 
-Zbývající změny závisí na typu projektu vytváříte a aktualizace, které jste nainstalovali v sadě Visual Studio. Můžete přejít přímo na odpovídající část prostřednictvím následujících odkazů
+Zbývající změny závisí na typu projektu při vytváření a aktualizace, které jste nainstalovali v sadě Visual Studio. Můžete přejít přímo do příslušné části prostřednictvím následujících odkazů
 
-- [Pro MVC s aktualizací 2 změňte AccountController předat typ klíče](#mvcupdate2)
-- [Pro MVC s aktualizací 3 změňte AccountController a ManageController předávat typ klíče](#mvcupdate3)
-- [Pro webových formulářů s aktualizací 2 změňte účet stránky předat typ klíče](#webformsupdate2)
-- [Pro webových formulářů s aktualizací 3 změňte účet stránky předat typ klíče](#webformsupdate3)
+- [MVC s aktualizací Update 2 změňte AccountController předat typ klíče](#mvcupdate2)
+- [Pro rozhraní MVC s aktualizací Update 3 změňte AccountController a ManageController předávat typ klíče](#mvcupdate3)
+- [Webové formuláře s aktualizací Update 2 změňte účet stránky předat typ klíče](#webformsupdate2)
+- [Webové formuláře s aktualizací Update 3 změňte účet stránky předat typ klíče](#webformsupdate3)
 
 <a id="mvcupdate2"></a>
-## <a name="for-mvc-with-update-2-change-the-accountcontroller-to-pass-the-key-type"></a>Pro MVC s aktualizací 2 změňte AccountController předat typ klíče
+## <a name="for-mvc-with-update-2-change-the-accountcontroller-to-pass-the-key-type"></a>MVC s aktualizací Update 2 změňte AccountController předat typ klíče
 
-Otevřete soubor AccountController.cs. Budete muset změnit následující metody.
+Otevřete soubor AccountController.cs. Je třeba změnit následující metody.
 
 **ConfirmEmail** – metoda
 
@@ -140,9 +139,9 @@ Otevřete soubor AccountController.cs. Budete muset změnit následující metod
 Teď můžete [spusťte aplikaci](#run) a registraci nového uživatele.
 
 <a id="mvcupdate3"></a>
-## <a name="for-mvc-with-update-3-change-the-accountcontroller-and-managecontroller-to-pass-the-key-type"></a>Pro MVC s aktualizací 3 změňte AccountController a ManageController předávat typ klíče
+## <a name="for-mvc-with-update-3-change-the-accountcontroller-and-managecontroller-to-pass-the-key-type"></a>Pro rozhraní MVC s aktualizací Update 3 změňte AccountController a ManageController předávat typ klíče
 
-Otevřete soubor AccountController.cs. Budete muset změnit metodu.
+Otevřete soubor AccountController.cs. Je třeba změnit následující metodu.
 
 **ConfirmEmail** – metoda
 
@@ -152,7 +151,7 @@ Otevřete soubor AccountController.cs. Budete muset změnit metodu.
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample16.cs?highlight=4)]
 
-Otevřete soubor ManageController.cs. Budete muset změnit následující metody.
+Otevřete soubor ManageController.cs. Je třeba změnit následující metody.
 
 **Index** – metoda
 
@@ -182,7 +181,7 @@ Otevřete soubor ManageController.cs. Budete muset změnit následující metody
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample23.cs?highlight=3,8)]
 
-**Změna hesla byla** – metoda
+**Metodu ChangePassword** – metoda
 
 [!code-csharp[Main](change-primary-key-for-users-in-aspnet-identity/samples/sample24.cs?highlight=10,13)]
 
@@ -209,9 +208,9 @@ Otevřete soubor ManageController.cs. Budete muset změnit následující metody
 Teď můžete [spusťte aplikaci](#run) a registraci nového uživatele.
 
 <a id="webformsupdate2"></a>
-## <a name="for-web-forms-with-update-2-change-account-pages-to-pass-the-key-type"></a>Pro webových formulářů s aktualizací 2 změňte účet stránky předat typ klíče
+## <a name="for-web-forms-with-update-2-change-account-pages-to-pass-the-key-type"></a>Webové formuláře s aktualizací Update 2 změňte účet stránky předat typ klíče
 
-Pro webových formulářů s aktualizací 2 budete muset změnit na následujících stránkách.
+Webové formuláře s aktualizací Update 2 budete muset změnit na následujících stránkách.
 
 **Confirm.aspx.CX**
 
@@ -228,9 +227,9 @@ Pro webových formulářů s aktualizací 2 budete muset změnit na následujíc
 Teď můžete [spusťte aplikaci](#run) a registraci nového uživatele.
 
 <a id="webformsupdate3"></a>
-## <a name="for-web-forms-with-update-3-change-account-pages-to-pass-the-key-type"></a>Pro webových formulářů s aktualizací 3 změňte účet stránky předat typ klíče
+## <a name="for-web-forms-with-update-3-change-account-pages-to-pass-the-key-type"></a>Webové formuláře s aktualizací Update 3 změňte účet stránky předat typ klíče
 
-Pro webových formulářů s aktualizací 3 budete muset změnit na následujících stránkách.
+Webové formuláře s aktualizací Update 3 budete muset změnit na následujících stránkách.
 
 **Confirm.aspx.CX**
 
@@ -267,16 +266,16 @@ Pro webových formulářů s aktualizací 3 budete muset změnit na následujíc
 <a id="run"></a>
 ## <a name="run-application"></a>Spuštění aplikace
 
-Dokončení všechny požadované změny pro výchozí šablony webové aplikace. Spusťte aplikaci a zaregistrovat nového uživatele. Po registraci uživatele, si všimnete, že AspNetUsers tabulka obsahuje sloupec Id, který je celé číslo.
+Dokončili jste všechny požadované změny pro výchozí šablony webové aplikace. Spusťte aplikaci a zaregistrovat nového uživatele. Po registraci uživatele, můžete si všimnout, že AspNetUsers tabulka obsahuje sloupec Id, který je celé číslo.
 
 ![nový primární klíč](change-primary-key-for-users-in-aspnet-identity/_static/image1.png)
 
-Pokud jste předtím vytvořili ASP.NET Identity tabulky pomocí jiného primárního klíče, budete muset provést další změny. Pokud je to možné odstraňte stávající databázi. Databáze bude znovu vytvořena s správné návrhu při spuštění webové aplikace a přidat nového uživatele. Pokud se odstranění není možné, spustit migrace code first, chcete-li změnit tabulky. Ale nový primární klíč celé číslo nebude nastavit jako vlastnost SQL IDENTITY v databázi. Je nutné ručně nastavit sloupec Id jako IDENTITY.
+Pokud jste předtím vytvořili ASP.NET Identity tabulky s primárním klíčem jiný, budete muset provést některé další změny. Pokud je to možné odstraňte existující databázi. Databáze bude potřeba znovu vytvořit pomocí správného návrhu při spuštění webové aplikace a přidání nového uživatele. Pokud odstranění není možné, spustit migrace code first, chcete-li změnit tabulky. Ale nový primární klíč celého čísla nebude nastavit jako vlastnost SQL IDENTITY v databázi. Sloupec Id je nutné ručně nastavit jako identita.
 
 <a id="other"></a>
 ## <a name="other-resources"></a>Další zdroje
 
 - [Přehled poskytovatelů vlastního úložiště pro ASP.NET Identity](overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [Migrace stávajícího webu z členství SQL na ASP.NET Identity](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [Migrace dat Universal zprostředkovatele členství a uživatelské profily mají být ASP.NET Identity](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
-- [Ukázková aplikace](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt) se změněné primárním klíčem
+- [Migrace dat od univerzálního zprostředkovatele pro členství a uživatelských profilů na ASP.NET Identity](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
+- [Ukázková aplikace](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt) změněné primárního klíče

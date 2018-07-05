@@ -1,138 +1,137 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
-title: Aktualizace, odstraňování a vytváření dat pomocí vazby modelu a webové formuláře | Microsoft Docs
+title: Aktualizace, odstraňování a vytváření data pomocí vazby modelu a webových formulářů | Dokumentace Microsoftu
 author: tfitzmac
-description: Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Interakce dat umožňuje vazby modelu další přímo-...
+description: V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Data interakce díky vazby modelu další přímo-...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
 ms.topic: article
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: e6536f7858afde5faf3aedd34f3cbe95c5ed0d53
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b6cafe29d1cb46061a8743cbee62a7ffec6be990
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885842"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393873"
 ---
-<a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>Aktualizace, odstraňování a vytváření dat pomocí vazby modelu a webové formuláře
+<a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>Aktualizace, odstraňování a vytváření data pomocí vazby modelu a webové formuláře
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento kurz řady ukazuje základní aspekty projektu webových formulářů ASP.NET pomocí vazby modelu. Vazby modelu umožňuje dat interakce více jednoduché než plánování práce s daty objekty zdrojů (například ObjectDataSource nebo SqlDataSource). Tato řada začíná úvodní informace a přesune do dalších pokročilých konceptů v dalších kurzech.
+> V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Vazby modelu díky dat interakce více přímočaré než pracující s daty objektů zdroje (například ObjectDataSource nebo SqlDataSource). Tato série začíná úvodní materiály a přesune pokročilejších pojmech v budoucích kurzech.
 > 
-> Tento kurz ukazuje, jak vytvářet, aktualizovat a odstraňovat data s vazby modelu. Bude nastavte následující vlastnosti:
+> Tento kurz ukazuje, jak vytvářet, aktualizovat a odstranit data pomocí vazby modelu. Bude nastavte následující vlastnosti:
 > 
 > - Metoda DeleteMethod
-> - Metodu InsertMethod
+> - Metoda InsertMethod
 > - Metoda UpdateMethod
 > 
-> Tyto vlastnosti zobrazí název metody, která zpracovává odpovídající operaci. V rámci této metody poskytují logiku pro interakci s daty.
+> Tyto vlastnosti zobrazí název metody, která zpracovává odpovídající operace. V rámci této metody poskytují logiku pro interakci s daty.
 > 
-> V tomto kurzu vychází projektu vytvořeného v prvním [část](retrieving-data.md) řady.
+> V tomto kurzu vychází z projektu vytvořeného v prvním [část](retrieving-data.md) řady.
 > 
-> Můžete [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB. Kód ke stažení pracuje s Visual Studio 2012 nebo Visual Studio 2013. Používá šablony sady Visual Studio 2012, která se poněkud liší od šablony sady Visual Studio 2013 uvedené v tomto kurzu.
+> Je možné [Stáhnout](https://go.microsoft.com/fwlink/?LinkId=286116) dokončený projekt v jazyce C# nebo VB. Ke stažení kódu funguje pomocí sady Visual Studio 2012 nebo Visual Studio 2013. Používá šablonu Visual Studio 2012, která se trochu liší od sady Visual Studio 2013 šablonu uvedenou v tomto kurzu.
 
 
-## <a name="what-youll-build"></a>Co budete sestavení
+## <a name="what-youll-build"></a>Co budete vytvářet
 
 V tomto kurzu budete:
 
-1. Přidání šablony dynamických dat.
+1. Přidání šablon dynamických dat
 2. Povolit aktualizaci a odstraňování dat prostřednictvím metody vazby modelu
-3. Použít pravidla ověření - povolit vytváření nový záznam v databázi
+3. Použít pravidla validace dat – povolit při vytvoření nového záznamu v databázi
 
-## <a name="add-dynamic-data-templates"></a>Přidání šablony dynamických dat.
+## <a name="add-dynamic-data-templates"></a>Přidání šablon dynamických dat
 
-K poskytování nejlepších výsledků a minimalizovat kód opakování, budete používat dynamická data šablony. Dynamická data předem připravených šablon můžete snadno integrovat do existující lokalitu pomocí instalace balíčku NuGet.
+Pokud chcete poskytovat nejlepší uživatelské prostředí a minimalizovat opakování kódu, budete používat dynamická data šablony. Vám umožní snadnou integraci dynamických dat předem připravené šablony do existující lokalitu pomocí instalace balíčku NuGet.
 
 Z **spravovat balíčky NuGet**, nainstalujte **DynamicDataTemplatesCS**.
 
-![Šablony dynamických dat.](updating-deleting-and-creating-data/_static/image1.png)
+![dynamické datové šablony](updating-deleting-and-creating-data/_static/image1.png)
 
-Všimněte si, že váš projekt nyní obsahuje složku s názvem **DynamicData**. V této složce zjistíte šablony, které budou automaticky použita pro dynamické ovládacích prvků v webových formulářů.
+Všimněte si, že váš projekt nyní obsahuje složku s názvem **DynamicData**. V této složce najdete šablony, které budou automaticky použita pro dynamické ovládací prvky ve webových formulářů.
 
-![Dynamická data složky](updating-deleting-and-creating-data/_static/image2.png)
+![Složka dynamických dat](updating-deleting-and-creating-data/_static/image2.png)
 
 ## <a name="enable-updating-and-deleting"></a>Povolit aktualizace a odstranění
 
-Uživatelé budou moct aktualizovat a odstranit záznamy v databázi je velmi podobný procesu pro načítání dat. V **metody UpdateMethod** a **metody DeleteMethod** vlastnosti, zadejte názvy metod, které provádí tyto operace. Ovládací rutina GridView můžete také zadat automatické generování upravit a odstranit tlačítka. Následující zvýrazněný kód ukazuje dodatky GridView kódu.
+Povolení uživatelům aktualizovat a odstraňovat záznamy v databázi je velmi podobný procesu pro načítání dat. V **UpdateMethod** a **DeleteMethod** vlastnosti, zadejte názvy metod, které provádějí tyto operace. Pomocí ovládacího prvku GridView můžete také zadat automatické generování upravit a odstranit tlačítka. Následující zvýrazněný kód ukazuje budou přidány do kódu ovládacího prvku GridView.
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample1.aspx?highlight=4-5)]
 
-V souboru kódu na pozadí, přidat, pomocí příkazu pro **System.Data.Entity.Infrastructure**.
+V souboru kódu na pozadí přidat sadu pomocí příkazu pro **System.Data.Entity.Infrastructure**.
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample2.cs)]
 
-Pak přidejte následující aktualizace a odstranění metody.
+Potom přidejte následující aktualizace a odstranění metody.
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample3.cs)]
 
-**TryUpdateModel** metoda platí odpovídající hodnoty vázané na data z webového formuláře pro datová položka. Datové položky se načítají podle hodnota parametru id.
+**TryUpdateModel** metoda platí odpovídající hodnoty vázané na data z webového formuláře pro datovou položku. Položku dat načte na základě hodnoty parametru id.
 
 ## <a name="enforce-validation-requirements"></a>Vynutit požadavky na ověření
 
-Vynutí použité pro vlastnosti FirstName, LastName a rok ve třídě Student atributy ověření se automaticky při aktualizaci data. Ovládací prvky DynamicField přidat klientských a serverových validátory na základě atributů ověření. Vlastnosti FirstName a LastName se vyžaduje. FirstName nesmí překročit 20 znaků a LastName nemůže být delší než 40 znaků. Rok musí být platná hodnota pro výčet AcademicYear.
+Ověření atributy, které jste použili k vlastnostem FirstName, LastName a rok ve třídě Student automaticky vynucuje při aktualizaci data. Ovládací prvky DynamicField přidat klientských a serverových validátory na základě atributů ověření. Vlastnosti FirstName a LastName jsou povinné. Jméno nemůže být delší než 20 znaků a příjmení nemůže být delší než 40 znaků. Rok musí být platná hodnota pro výčet AcademicYear.
 
-Pokud uživatel je v rozporu mezi požadavky na ověřování, aktualizace nebude pokračovat. Pokud chcete zobrazit chybová zpráva, přidání ovládacího prvku ValidationSummary výše GridView. Chcete-li zobrazit chyby ověření z vazby modelu, nastavte **ShowModelStateErrors** vlastnost nastavena na hodnotu **true**. 
+Pokud uživatel je v rozporu mezi požadavky na ověřování, aktualizace nebude pokračovat. Pokud chcete zobrazit chybová zpráva, přidejte ovládací prvek souhrnu ověření nad prvku GridView. Chcete-li zobrazit chyby ověření z vazby modelu, nastavte **ShowModelStateErrors** vlastnost nastavena na hodnotu **true**. 
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample4.aspx)]
 
-Spusťte webovou aplikaci a aktualizovat a odstranit všechny záznamy.
+Spusťte webovou aplikaci a aktualizovat a odstraní všechny záznamy.
 
-![Aktualizace dat](updating-deleting-and-creating-data/_static/image3.png)
+![aktualizace dat](updating-deleting-and-creating-data/_static/image3.png)
 
-Všimněte si, když v režimu úprav hodnotu pro vlastnost rok automaticky vykresleno jako rozevíracího seznamu. Vlastnost roku je hodnota výčtu a šablona dynamických dat pro hodnotu výčtu určuje rozevíracího seznamu pro úpravy. Tato šablona můžete najít tak, že otevřete **– výčet\_Edit.ascx** souboru v **DynamicData**/**FieldTemplates** složky.
+Při v režimu úprav hodnotu pro vlastnost rok automaticky takto rozevírací seznam, Všimněte si, že. Vlastnost Year je hodnota výčtu a šablona dynamických dat pro hodnotu výčtu určí rozevírací seznam pro úpravy. Tuto šablonu lze najít otevřením **výčet\_Edit.ascx** soubor **DynamicData**/**FieldTemplates** složky.
 
-Pokud jste zadali platné hodnoty, aktualizace se úspěšně dokončí. Pokud porušují mezi požadavky na ověřování, aktualizace nebude pokračovat a chybová zpráva se zobrazí nad mřížky.
+Pokud zadáte platné hodnoty, aktualizace se úspěšně dokončí. Pokud porušují jeden z těchto požadavků ověřování, aktualizace nebude pokračovat a je nad mřížkou zobrazí chybová zpráva.
 
 ![Chybová zpráva](updating-deleting-and-creating-data/_static/image4.png)
 
 ## <a name="add-new-records"></a>Přidat nové záznamy
 
-Ovládací prvek GridView nezahrnuje **metodu InsertMethod** vlastnost a nelze jej proto použít pro přidávání nového záznamu s vazby modelu. Můžete najít vlastnost v metodu InsertMethod **FormView**, **DetailsView**, nebo **ListView** ovládací prvky. V tomto kurzu použijete v ovládacím prvku FormView přidejte nový záznam.
+Ovládací prvek GridView nezahrnuje **InsertMethod** vlastnost a nelze jej proto použít pro přidání nového záznamu s vazbou modelu. Můžete najít vlastnost InsertMethod **FormView**, **DetailsView**, nebo **ListView** ovládacích prvků. V tomto kurzu použijete ovládacího prvku FormView přidáte nový záznam.
 
-Nejprve přidejte odkaz na novou stránku, kterou vytvoříte pro přidávání nového záznamu. Nad ValidationSummary přidejte:
+Nejprve přidejte odkaz na novou stránku, kterou vytvoříte pro přidání nového záznamu. Nad ValidationSummary přidejte:
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample5.aspx)]
 
-Nový odkaz se zobrazí v horní části obsahu pro studenty stránku.
+Nový odkaz se zobrazí v horní části stránky obsahu pro studenty stránky.
 
-![nové propojení](updating-deleting-and-creating-data/_static/image5.png)
+![Nový odkaz](updating-deleting-and-creating-data/_static/image5.png)
 
-Pak přidejte nový webový formulář pomocí hlavní stránky a pojmenujte ji **AddStudent**. Vyberte Site.Master jako stránky předlohy.
+Pak přidejte nový webový formulář používající stránku předlohy a pojmenujte ho **AddStudent**. Vyberte Site.Master jako stránky předlohy.
 
-Učiní polí pro přidání nové student pomocí **DynamicEntity** ovládacího prvku. Ovládací prvek DynamicEntity vykreslí této upravovat vlastnosti ve třídě zadaná ve vlastnosti typ položky. Vlastnost StudentID byla označena **[ScaffoldColumn(false)]** atribut, není vykreslen. MainContent zástupného textu stránky AddStudent přidejte následující kód.
+Vykreslí se pole pro přidání nového studenta pomocí **DynamicEntity** ovládacího prvku. Ovládací prvek DynamicEntity vykreslí této upravitelné vlastnosti třídy zadaná ve vlastnosti ItemType. Vlastnost StudentID byl označen atributem **[ScaffoldColumn(false)]** atribut, takže není vykresleno. V zástupném symbolu MainContent AddStudent stránky přidejte následující kód.
 
 [!code-aspx[Main](updating-deleting-and-creating-data/samples/sample6.aspx)]
 
-V souboru kódu na pozadí (AddStudent.aspx.cs), přidejte **pomocí** údajů **ContosoUniversityModelBinding.Models** oboru názvů.
+V souboru kódu na pozadí (AddStudent.aspx.cs) přidejte **pomocí** příkaz **ContosoUniversityModelBinding.Models** oboru názvů.
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample7.cs)]
 
-Pak přidejte následující metody, které určete, jak chcete-li vložit nový záznam a obslužné rutiny události pro tlačítko Storno.
+Potom přidejte následující metody k určení jak vložit nový záznam a obslužnou rutinu události pro tlačítko Storno.
 
 [!code-csharp[Main](updating-deleting-and-creating-data/samples/sample8.cs)]
 
-Všechny změny uložte.
+Uložte všechny změny.
 
-Spustit webovou aplikaci a vytvořit nový student.
+Spusťte webovou aplikaci a vytvoření nového objektu student.
 
-![Přidat nový student](updating-deleting-and-creating-data/_static/image6.png)
+![Přidání nového studenta](updating-deleting-and-creating-data/_static/image6.png)
 
-Klikněte na tlačítko **vložit** a Všimněte si vytvořil nový student.
+Klikněte na tlačítko **vložit** a Všimněte si, že se vytvořila nová studentů.
 
-![Nový student zobrazení](updating-deleting-and-creating-data/_static/image7.png)
+![zobrazení nového objektu student](updating-deleting-and-creating-data/_static/image7.png)
 
 ## <a name="conclusion"></a>Závěr
 
-V tomto kurzu jste povolili, aktualizaci, odstranění a vytvoření data. Můžete zajistit, že ověření pravidla se používají při interakci s daty.
+V tomto kurzu jste povolili aktualizaci, odstranění a vytvoření data. Můžete zajistit, že ověřovací pravidla se použijí při interakci s daty.
 
-V dalším [kurzu](sorting-paging-and-filtering-data.md) této série povolíte řazení, stránkování a filtrování dat.
+V dalším [kurzu](sorting-paging-and-filtering-data.md) v této sérii, vám umožní řazení, stránkování a filtrování dat.
 
 > [!div class="step-by-step"]
 > [Předchozí](retrieving-data.md)

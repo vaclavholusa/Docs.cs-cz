@@ -1,41 +1,40 @@
 ---
 uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
-title: ASP.NET Web Pages referenční dokumentace rozhraní API rychlé (Razor) | Microsoft Docs
+title: Webové stránky ASP.NET (Razor) – rozhraní API rychlé odkazy | Dokumentace Microsoftu
 author: tfitzmac
-description: Tato stránka obsahuje seznam s běžně používané objekty, vlastnosti a metody pro programování webových stránek ASP.NET se syntaxí Razor stručný příklady.
+description: Tato stránka obsahuje seznam s krátkou příklady z nejčastěji používaných objektů, vlastnosti a metody pro programování rozhraní ASP.NET Web Pages se syntaxí Razor.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
 ms.topic: article
 ms.assetid: 4001cb9b-3bfd-4ace-8a89-1561d8421e2c
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 5f9d84f4d453583d7d4eae12e4fc510275255616
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3bf706cefe5302cf1085e0f814dc6654e42ae917
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897581"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378660"
 ---
-<a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET Web Pages referenční dokumentace rozhraní API rychlé (Razor)
+<a name="aspnet-web-pages-razor-api-quick-reference"></a>Webové stránky ASP.NET (Razor) – rozhraní API rychlé odkazy
 ====================
-podle [tní FitzMacken](https://github.com/tfitzmac)
+podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tato stránka obsahuje seznam s běžně používané objekty, vlastnosti a metody pro programování webových stránek ASP.NET se syntaxí Razor stručný příklady.
+> Tato stránka obsahuje seznam s krátkou příklady z nejčastěji používaných objektů, vlastnosti a metody pro programování rozhraní ASP.NET Web Pages se syntaxí Razor.
 > 
-> Popisy, které jsou označené jako "(v2)" byly zavedeny v rozhraní ASP.NET Web Pages verze 2.
+> Popisy označené "(v2)" byla zavedena v rozhraní ASP.NET Web Pages verze 2.
 > 
-> Referenční dokumentace rozhraní API, najdete v článku [ASP.NET Web Pages referenční dokumentaci k nástroji](https://go.microsoft.com/fwlink/?LinkId=208659) na webu MSDN.
+> Referenční dokumentace rozhraní API najdete v článku [ASP.NET Web Pages referenční dokumentaci](https://go.microsoft.com/fwlink/?LinkId=208659) na webové stránce MSDN.
 > 
 > ## <a name="software-versions"></a>Verze softwaru
 > 
 > 
-> - Rozhraní ASP.NET Web Pages (Razor) 3
+> - Webové stránky ASP.NET (Razor) 3
 >   
 > 
-> V tomto kurzu funguje taky s ASP.NET Web Pages 2 a ASP.NET Web Pages 1.0 (s výjimkou funkcí označena v2).
+> V tomto kurzu se také pracuje s ASP.NET Web Pages 2 a ASP.NET Web Pages 1.0 (s výjimkou funkce označené v2).
 
 
 Tato stránka obsahuje referenční informace pro následující:
@@ -50,98 +49,98 @@ Tato stránka obsahuje referenční informace pro následující:
 
 ### `AppState[key], AppState[index],App`
 
-Obsahuje data, která může být sdílen všechny stránky v aplikaci. Můžete použít dynamická `App` vlastnost, která má přístup ke stejným datům, jako v následujícím příkladu:
+Obsahuje data, která můžete sdílet jakékoli stránky v aplikaci. Můžete použít dynamické `App` vlastnost přístup ke stejným datům, jako v následujícím příkladu:
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample1.html)]
 
 ### `AsBool(), AsBool(true|false)`
 
-Převede řetězcovou hodnotu na logickou hodnotu (true nebo false). Vrátí hodnotu false nebo pro určenou hodnotu, pokud řetězec nepředstavuje true nebo false.
+Převede řetězcovou hodnotu na logickou hodnotu (true/false). Vrátí hodnotu false nebo zadanou hodnotu, pokud řetězec nepředstavuje true nebo false.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample2.cs)]
 
 ### `AsDateTime(), AsDateTime(value)`
 
-Převede hodnotu řetězce na datum a čas. Vrátí `DateTime.MinValue` nebo pro určenou hodnotu, pokud řetězec nepředstavuje datum a čas.
+Převede řetězcové hodnoty data a času. Vrátí `DateTime.MinValue` nebo zadanou hodnotu, pokud řetězec nepředstavuje datum/čas.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample3.cs)]
 
 ### `AsDecimal(), AsDecimal(value)`
 
-Převede řetězcovou hodnotu na desítkovou hodnotu. Vrátí 0,0 nebo pro určenou hodnotu, pokud řetězec nepředstavuje desítkovou hodnotu.
+Převede řetězcovou hodnotu na desítkovou hodnotu. Vrátí 0,0 nebo pokud řetězec nepředstavuje desítkovou hodnotu zadanou hodnotu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample4.cs)]
 
 ### `AsFloat(), AsFloat(value)`
 
-Převede hodnotu řetězce na typ float. Vrátí 0,0 nebo pro určenou hodnotu, pokud řetězec nepředstavuje desítkovou hodnotu.
+Převede řetězcovou hodnotu plovoucí desetinnou čárkou. Vrátí 0,0 nebo pokud řetězec nepředstavuje desítkovou hodnotu zadanou hodnotu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample5.cs)]
 
 ### `AsInt(), AsInt(value)`
 
-Převede řetězcovou hodnotu na celé číslo. Vrátí hodnotu 0 nebo pro určenou hodnotu, pokud řetězec nepředstavuje celé číslo.
+Převede řetězcovou hodnotu na celé číslo. Vrátí hodnotu 0 nebo zadanou hodnotu, pokud řetězec nepředstavuje celé číslo.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample6.cs)]
 
 ### `Href(path [, param1 [, param2]])`
 
-Vytvoří adresu URL kompatibilních s prohlížeči z místního souboru cestu, části volitelné další cesty.
+Vytvoří adresu URL pro kompatibilní s prohlížečem z místní cesta k souboru, s částmi volitelné další cestu.
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample7.cshtml)]
 
 ### `Html.Raw(value)`
 
-Vykreslí *hodnotu* jako značka HTML místo vykreslením výstupu jako kódovaný jazykem HTML.
+Vykreslí *hodnota* jako značka HTML místo vykreslením výstupu jako kódu HTML.
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample8.cshtml)]
 
 ### `IsBool(), IsDateTime(), IsDecimal(), IsFloat(), IsInt()`
 
-Vrátí hodnotu true Pokud hodnotu lze převést z řetězce na zadaný typ.
+Vrátí true, pokud hodnotu lze převést z řetězce na zadaný typ.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample9.cs)]
 
 ### `IsEmpty()`
 
-Vrátí hodnotu true Pokud objekt nebo proměnná nemá žádnou hodnotu.
+Vrátí true, pokud objekt nebo proměnná nemá žádnou hodnotu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample10.cs)]
 
 ### `IsPost`
 
-Vrátí hodnotu true Pokud je požadavek POST. (Počáteční požadavky jsou obvykle GET).
+Vrátí true, pokud je žádost POST. (Původní požadavky jsou obvykle GET).
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample11.cs)]
 
 ### `Layout`
 
-Určuje cestu ke stránce rozložení pro použití na tuto stránku.
+Určuje cestu ke stránce rozložení chcete použít pro tuto stránku.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample12.html)]
 
 ### `PageData[key], PageData[index],Page`
 
-Obsahuje data sdílená mezi stránky, stránkami rozložení a částečnými stránkami v aktuální žádosti. Můžete použít dynamická `Page` vlastnost, která má přístup ke stejným datům, jako v následujícím příkladu:
+Obsahuje data sdílená mezi stránky, stránkami rozložení a částečnými stránkami aktuálního požadavku. Můžete použít dynamické `Page` vlastnost přístup ke stejným datům, jako v následujícím příkladu:
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample13.html)]
 
 ### `RenderBody()`
 
-(Rozložení stránky) Vykreslí obsah stránky obsahu, která se nenachází v žádné části s názvem.
+(Rozložení stránky) Vykreslí obsah stránky obsahu, který se nenachází v libovolné pojmenovaných oddílů.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample14.cs)]
 
 ### `RenderPage(path, values)`  
 `RenderPage(path[,param1 [, param2]])`
 
-Vykreslí stránku obsahu pomocí zadané cesty a volitelné doplňující data. Můžete získat hodnoty parametrů navíc z `PageData` pozice (třeba 1) nebo klíče (Příklad 2).
+Vykreslí stránku obsahu pomocí zadané cesty a volitelné doplňující data. Můžete získat hodnoty nadbytečné parametry z `PageData` pozice (např. 1) nebo klíče (např. 2).
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample15.js)]
 
 ### `RenderSection(sectionName [, required = true|false])`
 
-(Rozložení stránky) Vykreslí obsah oddíl, který má název. Nastavit *požadované* na hodnotu false, aby oddíl volitelné.
+(Rozložení stránky) Vykreslí obsah oddíl, který má název. Nastavte *požadované* na hodnotu false, aby oddíl nepovinný.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample16.js)]
 
@@ -153,26 +152,26 @@ Získá nebo nastaví hodnotu souboru cookie HTTP.
 
 ### `Request.Files[key]`
 
-Získá soubory, které byly odeslány v aktuální žádosti.
+Získá soubory, které byly odeslány v aktuální požadavek.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample18.js)]
 
 ### `Request.Form[key]`
 
-Získá data, která byla ve formuláři odeslány (jako řetězce). `Request[key]` kontroluje, jak `Request.Form` a `Request.QueryString` kolekce.
+Získá data, která byla publikována ve formě (jako řetězce). `Request[key]` kontroluje i `Request.Form` a `Request.QueryString` kolekce.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample19.cs)]
 
 ### `Request.QueryString[key]`
 
-Získá data, která byla zadaná v řetězci dotazu adresy URL. `Request[key]` kontroluje, jak `Request.Form` a `Request.QueryString` kolekce.
+Získá data, která byla zadaná v řetězci dotazu adresy URL. `Request[key]` kontroluje i `Request.Form` a `Request.QueryString` kolekce.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample20.cs)]
 
 ### `Request.Unvalidated(key)`  
 `Request.Unvalidated().QueryString|Form|Cookies|Headers[key]`
 
-Zakáže selektivně žádosti o ověření pro form element, hodnoty řetězce dotazu, soubor cookie nebo hodnotu hlavičky. Ověření žádosti je ve výchozím nastavení povolené a zabrání uživatelům v publikování kódu nebo jiný potenciálně nebezpečný obsah.
+Ověření pro element formuláře, hodnoty řetězce dotazu, soubor cookie nebo hodnotu hlavičky požadavku selektivně zakáže. Žádost o ověření je ve výchozím nastavení povolené a zabrání uživatelům v publikování značky nebo další potenciálně nebezpečný obsah.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample21.cs)]
 
@@ -184,25 +183,25 @@ Přidá do odpovědi hlavičku HTTP serveru.
 
 ### `Response.OutputCache(seconds [, sliding] [, varyByParams])`
 
-Ukládá do mezipaměti výstup stránky po určitou dobu. Volitelně můžete nastavit *klouzavé* resetovat vypršení časového limitu na každé stránce přístup a *varyByParams* pro ukládání do mezipaměti různé verze stránky pro každý řetězec jiný dotaz v požadavku stránky.
+Ukládá do mezipaměti výstup stránky na určitou dobu. Volitelně můžete nastavit *klouzavé* resetovat vypršení časového limitu na každé stránce přístup a *varyByParams* pro ukládání do mezipaměti různé verze stránky pro každý řetězec dotazu v žádosti o stránku.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample23.js)]
 
 ### `Response.Redirect(path)`
 
-Přesměruje požadavek prohlížeče do nového umístění.
+Přesměruje žádost prohlížeče na nové umístění.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample24.js)]
 
 ### `Response.SetStatus(httpStatusCode)`
 
-Nastaví stavový kód protokolu HTTP, který je odesláno prohlížeči.
+Nastaví stavový kód HTTP odeslané do prohlížeče.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample25.cs)]
 
 ### `Response.WriteBinary(data [, mimetype])`
 
-Zapíše obsah *data* do odpovědi volitelné typu MIME.
+Zapíše obsah *dat* do odpovědi pomocí volitelného typu MIME.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample26.js)]
 
@@ -220,13 +219,13 @@ Zapíše obsah souboru do odpovědi.
 
 ### `Server.HtmlDecode(htmlText)`
 
-Dekóduje řetězec, který není kódován jazykem HTML.
+Dekóduje řetězec kódovaný jazykem HTML.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample29.cs)]
 
 ### `Server.HtmlEncode(text)`
 
-Kóduje řetězce pro vykreslování v kódu HTML.
+Zakóduje řetězec pro vykreslování v kódu HTML.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample30.cs)]
 
@@ -244,7 +243,7 @@ Dekóduje text z adresy URL.
 
 ### `Server.UrlEncode(text)`
 
-Zakóduje text uvést v adrese URL.
+Zakóduje text do adresy URL.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample33.cs)]
 
@@ -256,7 +255,7 @@ Získá nebo nastaví hodnotu, která existuje, dokud uživatel nezavře prohlí
 
 ### `ToString()`
 
-Zobrazí řetězcovou reprezentaci objektu hodnoty.
+Zobrazí řetězec představující hodnotu objektu.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample35.html)]
 
@@ -274,33 +273,33 @@ Změní heslo pro zadaného uživatele.
 
 ### `WebSecurity.ConfirmAccount(accountConfirmationToken)`
 
-Potvrdí na účtu pomocí účtu potvrzovací token.
+Potvrzuje se tím účet pomocí účtu potvrzovacím tokenem.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample38.cs)]
 
 ### `WebSecurity.CreateAccount(userName, password`  
  `[, requireConfirmationToken = true|false])`
 
-Vytvoří nový uživatelský účet pomocí zadaného uživatelského jména a hesla. Pokud chcete vyžadovat potvrzovací token, předá hodnotu true pro *requireConfirmationToken.*
+Vytvoří nový uživatelský účet pomocí zadaného uživatelského jména a hesla. Tak, aby vyžadovala potvrzovací token, předejte hodnotu true pro *requireConfirmationToken.*
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample39.cs)]
 
 ### `WebSecurity.CurrentUserId`
 
-Získá identifikátor celé číslo pro aktuálně přihlášeného uživatele.
+Získá identifikátor celočíselné aktuálně přihlášeného uživatele.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample40.cs)]
 
 ### `WebSecurity.CurrentUserName`
 
-Získá název pro aktuálně přihlášeného uživatele.
+Získá název aktuálně přihlášeného uživatele.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample41.cs)]
 
 ### `WebSecurity.GeneratePasswordResetToken(username`  
  `[, tokenExpirationInMinutesFromNow])`
 
-Generuje token pro resetování hesla, který lze poslat e-mailem uživateli, aby uživatel můžete resetovat heslo.
+Generuje token resetování hesla, který můžete poslat v e-mailu uživatele tak, aby uživatel můžete resetovat heslo.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample42.cs)]
 
@@ -312,19 +311,19 @@ Vrátí ID uživatele uživatelského jména.
 
 ### `WebSecurity.IsAuthenticated`
 
-Vrátí hodnotu true Pokud je aktuální uživatel je přihlášen.
+Vrátí true, pokud je aktuální uživatel přihlášen.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample44.cs)]
 
 ### `WebSecurity.IsConfirmed(userName)`
 
-Vrátí hodnotu true Pokud je uživatel potvrzený (například prostřednictvím e-mail s potvrzením.).
+Vrátí true, pokud byl uživatel potvrzen (například přes e-mail s potvrzením).
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample45.cs)]
 
 ### `WebSecurity.IsCurrentUser(userName)`
 
-Vrátí hodnotu true Pokud aktuální uživatelské jméno odpovídá zadanému uživatelskému jménu.
+Vrátí true, pokud aktuální uživatelské jméno odpovídá zadanému uživatelskému jménu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample46.cs)]
 
@@ -336,13 +335,13 @@ Přihlásí uživatele v nastavením ověřovací token v souboru cookie.
 
 ### `WebSecurity.Logout()`
 
-Zaznamená uživatele odhlašování odebráním tokenu souboru cookie pro ověřování.
+Protokoly out uživatele tak, že odeberete token souboru cookie pro ověřování.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample48.css)]
 
 ### `WebSecurity.RequireAuthenticatedUser()`
 
-Pokud není uživatel ověřen, nastaví stav protokolu HTTP na 401 (Neautorizováno).
+Pokud uživatel není ověřen, nastaví stav protokolu HTTP na 401 (Neautorizováno).
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample49.css)]
 
@@ -361,7 +360,7 @@ Pokud má aktuální uživatel není uživatel určený parametrem *uživatelsk�
 
 ### `WebSecurity.ResetPassword(passwordResetToken,newPassword)`
 
-Pokud je platný token pro resetování hesla, změní heslo uživatele k nové heslo.
+Pokud je platný token pro resetování hesla, změní heslo uživatele na nové heslo.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample52.css)]
 
@@ -370,13 +369,13 @@ Pokud je platný token pro resetování hesla, změní heslo uživatele k nové 
 
 ### `Database.Execute(SQLstatement [,parameters]`
 
-Provede *SQLstatement* (s volitelné parametry) jako je například vložení, DELETE nebo UPDATE a vrací počet příslušné záznamy.
+Spustí *Příkaz_sql* (s volitelnými parametry) například vložit, odstranit nebo aktualizovat a vrátí počet záznamů ovlivněný.
 
 [!code-sql[Main](asp-net-web-pages-api-reference/samples/sample53.sql)]
 
 ### `Database.GetLastInsertId()`
 
-Vrátí sloupec identity z naposledy vloženého řádku.
+Vrátí sloupec identity naposledy vloženého řádku.
 
 [!code-sql[Main](asp-net-web-pages-api-reference/samples/sample54.sql)]
 
@@ -389,25 +388,25 @@ Otevře se soubor zadaná databáze nebo databáze pomocí pojmenovaného připo
 
 ### `Database.OpenConnectionString(connectionString)`
 
-Otevře se v databázi pomocí připojovacího řetězce. (Tím se liší od `Database.Open`, který používá název připojovacího řetězce.)
+Otevře se v databázi pomocí připojovacího řetězce. (Tím se liší od `Database.Open`, která využívá název připojovacího řetězce.)
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample56.cs)]
 
 ### `Database.Query(SQLstatement[,parameters])`
 
-Dotazuje databázi pomocí *SQLstatement* (volitelně předávání parametrů) a vrátí výsledky jako kolekce.
+Dotazuje databázi pomocí *Příkaz_sql* (volitelně předávání parametrů) a vrátí výsledky jako kolekci.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample57.html)]
 
 ### `Database.QuerySingle(SQLstatement [, parameters])`
 
-Provede *SQLstatement* (s volitelné parametry) a vrátí jeden záznam.
+Spustí *Příkaz_sql* (s volitelnými parametry) a vrátí jeden záznam.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample58.cs)]
 
 ### `Database.QueryValue(SQLstatement [, parameters])`
 
-Provede *SQLstatement* (s volitelné parametry) a vrátí jednu hodnotu.
+Spustí *Příkaz_sql* (s volitelnými parametry) a vrátí jednu hodnotu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample59.cs)]
 
@@ -416,25 +415,25 @@ Provede *SQLstatement* (s volitelné parametry) a vrátí jednu hodnotu.
 
 ### `Analytics.GetGoogleHtml(webPropertyId)`
 
-Vykreslí kód jazyka JavaScript Google Analytics pro zadané ID.
+Vykreslí kód jazyka JavaScript v Google Analytics pro zadané ID.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample60.js)]
 
 ### `Analytics.GetStatCounterHtml(project,security)`
 
-Vykreslí kód StatCounter Analytics JavaScript zadaného projektu.
+Vykreslí kód Analytics StatCounter jazyka JavaScript pro zadaný projekt.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample61.css)]
 
 ### `Analytics.GetYahooHtml(account)`
 
-Vykreslí kód Yahoo Analytics JavaScript pro zadaný účet.
+Vykreslí kód Analytics Yahoo jazyka JavaScript pro zadaný účet.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample62.js)]
 
 ### `Bing.SearchBox([boxWidth])`
 
-Hledání předá do služby Bing. Chcete-li zadat webový server a název vyhledávacího pole hledání, můžete nastavit `Bing.SiteUrl` a `Bing.SiteTitle` vlastnosti. Za normálních okolností nastavte tyto vlastnosti  *\_AppStart* stránky.
+Předá vyhledávání Bingu. Chcete-li určit lokalitu pro účely vyhledávání a název vyhledávacího pole, můžete nastavit `Bing.SiteUrl` a `Bing.SiteTitle` vlastnosti. Obvykle nastavte tyto vlastnosti  *\_AppStart* stránky.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample63.html)]
 
@@ -456,21 +455,21 @@ Přidá do grafu legendu.
  `[, axisLabel] [, legend] [, markerStep] [, xValue]`  
  `[, xField] [, yValues] [, yFields] [, options])`
 
-Přidá do grafu řady hodnot.
+Přidává řadu hodnot do grafu.
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample67.cshtml)]
 
 ### `Crypto.Hash(string [, algorithm])`  
 `Crypto.Hash(bytes [, algorithm])`
 
-Vrátí hodnotu hash pro zadaná data. Výchozí algoritmus `sha256`.
+Vrátí hodnotu hash pro zadaná data. Výchozí algoritmus je `sha256`.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample68.html)]
 
 ### `Facebook.LikeButton(href [, buttonLayout] [, showFaces] [, width] [, height]`   
  `[, action] [, font] [, colorScheme] [, refLabel])`
 
-Umožňuje uživatelům Facebook se připojte k stránky.
+Umožňuje uživatelům Facebooku připojení na stránky.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample69.js)]
 
@@ -483,14 +482,14 @@ Vykreslí uživatelského rozhraní pro nahrávání souborů.
 
 ### `GamerCard.GetHtml(gamerTag)`
 
-Vykreslí zadaný Xbox hráči značku.
+Vykreslí zadané značky hráče Xbox.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample71.js)]
 
 ### `Gravatar.GetHtml(email [, imageSize] [, defaultImage] [, rating]`  
  `[, imageExtension] [, attributes])`
 
-Vykreslí zadané e-mailovou adresu pro Gravatar bitovou kopii.
+Vykreslí obraz Gravatar zadané e-mailových adres.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample72.css)]
 
@@ -502,7 +501,7 @@ Převede datový objekt na řetězec ve formátu JavaScript Object Notation (JSO
 
 ### `Json.Decode(string)`
 
-Převede řetězec vstupní zakódovaná ve formátu JSON na datový objekt, který můžete iterace v nebo můžete vložit do databáze.
+Převede vstupní řetězec kódovaný ve formátu JSON na datový objekt, který může iterovat nebo vložit do databáze.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample74.cs)]
 
@@ -515,25 +514,25 @@ Vykreslí sociálních sítí odkazuje pomocí zadaný název a volitelný adres
 
 ### `ModelStateDictionary.AddError(key, errorMessage)`
 
-Přidruží chybovou zprávu pole formuláře. Použití `ModelState` pomocné rutiny pro přístup k tomuto členu.
+Přidruží chybovou zprávu s polem formuláře. Použití `ModelState` pomocná rutina pro přístup k tomuto členu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample76.cs)]
 
 ### `ModelStateDictionary.AddFormError(errorMessage)`
 
-Přidruží chybovou zprávu formuláře. Použití `ModelState` pomocné rutiny pro přístup k tomuto členu.
+Přidruží chybovou zprávu s formuláři. Použití `ModelState` pomocná rutina pro přístup k tomuto členu.
 
 [!code-powershell[Main](asp-net-web-pages-api-reference/samples/sample77.ps1)]
 
 ### `ModelStateDictionary.IsValid`
 
-Vrátí hodnotu true Pokud nejsou žádné chyby ověření. Použití `ModelState` pomocné rutiny pro přístup k tomuto členu.
+Vrátí true, pokud nejsou žádné chyby ověření. Použití `ModelState` pomocná rutina pro přístup k tomuto členu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample78.cs)]
 
 ### `ObjectInfo.Print(value [, depth] [, enumerationLength])`
 
-Vykreslí vlastnosti a hodnoty objekt a všechny podřízené objekty.
+Vykreslí vlastnosti a hodnoty objektu a všech podřízených objektů.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample79.css)]
 
@@ -546,7 +545,7 @@ Vykreslí ověřovací test nástroje reCAPTCHA.
 ### `ReCaptcha.PublicKey`  
  `ReCaptcha.PrivateKey`
 
-Nastaví veřejné a soukromé klíče pro službu nástroje reCAPTCHA. Za normálních okolností nastavte tyto vlastnosti  *\_AppStart* stránky.
+Nastaví veřejného a privátního klíče pro služby nástroje reCAPTCHA. Obvykle nastavte tyto vlastnosti  *\_AppStart* stránky.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample81.css)]
 
@@ -564,55 +563,55 @@ Vykreslí stavové informace o rozhraní ASP.NET Web Pages.
 
 ### `Twitter.Profile(twitterUserName)`
 
-Vykreslí Twitter datového proudu pro zadaného uživatele.
+Vykreslí Twitteru datového proudu pro zadaného uživatele.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample84.js)]
 
 ### `Twitter.Search(searchQuery)`
 
-Vykreslí Twitter datového proudu pro zadaný hledaný text.
+Vykreslí Twitteru datového proudu pro zadaný hledaný text.
 
 [!code-xml[Main](asp-net-web-pages-api-reference/samples/sample85.xml)]
 
 ### `Video.Flash(filename [, width, height])`
 
-Vykreslí Flash přehrávání videa pro zadaného souboru s volitelné šířku a výšku.
+Vykreslí Flash přehrávač videa pro zadaný soubor s volitelné šířku a výšku.
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample86.cshtml)]
 
 ### `Video.MediaPlayer(filename [, width, height])`
 
-Vykreslí Windows Media player pro zadaného souboru s volitelné šířku a výšku.
+Vykreslí Windows Media player pro zadaný soubor s volitelné šířku a výšku.
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample87.cshtml)]
 
 ### `Video.Silverlight(filename, width, height)`
 
-Vykreslí přehrávač Silverlight pro zadaný *.xap* soubor s požadované šířku a výšku.
+Vykreslí přehrávač Silverlight pro zadaný rozbočovač *.xap* soubor se požadovaná šířka a výška.
 
 [!code-cshtml[Main](asp-net-web-pages-api-reference/samples/sample88.cshtml)]
 
 ### `WebCache.Get(key)`
 
-Vrací objekt určeného *klíč*, nebo hodnota null, pokud objekt nebyl nalezen.
+Vrátí objekt definovaný podle objektu *klíč*, nebo hodnota null, pokud objekt nebyl nalezen.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample89.cs)]
 
 ### `WebCache.Remove(key)`
 
-Odebere objekt určeného *klíč* z mezipaměti.
+Odebere objekt definovaný podle objektu *klíč* z mezipaměti.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample90.cs)]
 
 ### `WebCache.Set(key, value [, minutesToCache] [, slidingExpiration])`
 
-Vloží *hodnotu* do mezipaměti pod názvem určeného *klíč*.
+Vloží *hodnotu* do mezipaměti v rámci určeného parametrem *klíč*.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample91.html)]
 
 ### `WebGrid(data)`
 
-Vytvoří nový `WebGrid` pomocí dat z dotazu.
+Vytvoří novou `WebGrid` pomocí dat z dotazu.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample92.cs)]
 
@@ -624,7 +623,7 @@ Vykreslí značku pro zobrazení dat v tabulce jazyka HTML.
 
 ### `WebGrid.Pager()`
 
-Vykreslí pager pro `WebGrid` objektu.
+Vykreslí stránkování pro `WebGrid` objektu.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample94.html)]
 
@@ -636,26 +635,26 @@ Načte obrázek ze zadané cesty.
 
 ### `WebImage.AddImagesWatermark(image)`
 
-Přidá zadanou bitovou kopii jako vodoznak.
+Přidá zadanou image jako vodoznak.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample96.cs)]
 
 ### `WebImage.AddTextWatermark(text)`
 
-Přidá zadaný text do bitové kopie.
+Přidá zadaný text do obrázku.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample97.cs)]
 
 ### `WebImage.FlipHorizontal()`  
 `WebImage.FlipVertical()`
 
-Převrátí bitovou kopii vodorovně nebo svisle.
+Převrátí obrázek vodorovně nebo svisle.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample98.css)]
 
 ### `WebImage.GetImageFromRequest()`
 
-Načte obrázek při odeslání bitovou kopii na stránku během nahrávání souborů.
+Načte bitovou kopii při publikování image na stránku při nahrávání souboru.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample99.cs)]
 
@@ -674,13 +673,13 @@ Otočí obrázek vlevo nebo vpravo.
 
 ### `WebImage.Save(path [, imageFormat])`
 
-Uloží obrázek na zadanou cestu.
+Obrázek uloží do zadané cesty.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample102.js)]
 
 ### `WebMail.Password`
 
-Nastaví heslo pro SMTP server. Za normálních okolností, můžete tuto vlastnost nastavit v  *\_AppStart* stránky.
+Nastaví heslo pro SMTP server. Za normálních okolností byste tuto vlastnost nastavit  *\_AppStart* stránky.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample103.cs)]
 
@@ -693,13 +692,13 @@ Odešle e-mailovou zprávu.
 
 ### `WebMail.SmtpServer`
 
-Nastaví název serveru SMTP. Za normálních okolností, můžete tuto vlastnost nastavit v<em>\_AppStart</em> stránky.
+Nastaví název serveru SMTP. Za normálních okolností byste tuto vlastnost nastavit<em>\_AppStart</em> stránky.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample105.html)]
 
 ### `WebMail.UserName`
 
-Nastaví uživatelské jméno pro SMTP server. Za normálních okolností byste měli nastavit tuto vlastnost v  *\_AppStart* stránky.
+Nastaví uživatelské jméno pro SMTP server. Obvykle tuto vlastnost měli nastavit  *\_AppStart* stránky.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample106.html)]
 
@@ -720,25 +719,25 @@ Nastaví uživatelské jméno pro SMTP server. Za normálních okolností byste 
 
 ### `Validation.Add(field, validationType)`
 
-(v2) Zaregistruje element vstupu uživatele pro zadaný typ ověření.
+(v2) Zaregistruje element vstupu uživatele pro zadaný typ ověřování.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample109.js)]
 
 ### `Validation.ClassFor(field)`
 
-(v2) Dynamicky vykreslí atributy třídy CSS pro ověřování na straně klienta, tak, že chybových zpráv ověření. (Vyžaduje odkazovat na příslušné klientského skriptu knihovny a definování tříd CSS.)
+(v2) Dynamicky vykreslí atributy třídy šablony stylů CSS pro ověřování na straně klienta, aby lze formátovat chybových zpráv ověření. (Vyžaduje odkazovat na knihovny příslušný skript klienta a definovat třídy šablony stylů CSS.)
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample110.html)]
 
 ### `Validation.For(field)`
 
-(v2) Umožňuje ověření na straně klienta pro vstupní pole uživatele. (Vyžaduje odkazovat na knihovny odpovídající klientského skriptu.)
+(v2) Umožňuje ověřování na straně klienta pro uživatele vstupní pole. (Vyžaduje, že odkazujete na příslušný skript klienta knihovny.)
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample111.html)]
 
 ### `Validation.IsValid()`
 
-(v2) Pokud vrátí hodnotu true všechny elementy vstupu uživatele, které jsou registrovaných pro ověření obsahovat platné hodnoty.
+(v2) Vrátí true, pokud všechny elementy vstupu uživatele, které jsou registrovaných pro ověření obsahovat platné hodnoty.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample112.cs)]
 
@@ -750,7 +749,7 @@ Nastaví uživatelské jméno pro SMTP server. Za normálních okolností byste 
 
 ### `Validation.RequireFields(field1[, field12, field3, ...])`
 
-(v2) Určuje, že uživatelé musí zadat hodnoty pro jednotlivé elementy vstupu uživatele. Tato metoda neumožňuje zadat vlastní chybové zprávy.
+(v2) Určuje, že uživatelé musí zadat hodnoty pro jednotlivé elementy vstupu uživatele. Tato metoda neumožňuje zadat vlastní chybovou zprávu.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample114.html)]
 
@@ -765,6 +764,6 @@ Nastaví uživatelské jméno pro SMTP server. Za normálních okolností byste 
 `Validator.StringLength(length)`  
 `Validator.Url([error message])`
 
-(v2) Určuje ověřovací test, při použití `Validation.Add` metoda.
+(v2) Určuje ověřovací test, pokud použijete `Validation.Add` metody.
 
 [!code-javascript[Main](asp-net-web-pages-api-reference/samples/sample115.js)]

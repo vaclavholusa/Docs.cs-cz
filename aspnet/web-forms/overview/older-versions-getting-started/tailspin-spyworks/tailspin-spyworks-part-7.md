@@ -1,227 +1,226 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
-title: 'Část 7: Přidávání funkcí | Microsoft Docs'
+title: '7. část: Přidání funkcí | Dokumentace Microsoftu'
 author: JoeStagner
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet revie...
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet revie...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
 ms.topic: article
 ms.assetid: 50223ee9-11b9-4cf3-bca2-e2f10bf471f3
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 17f068155f6726047901e2f7d580d375a4e07c87
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 8cdde10981835877e5ac2f65860010920a68d0a2
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30888390"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389173"
 ---
-<a name="part-7-adding-features"></a>Část 7: Přidání funkcí
+<a name="part-7-adding-features"></a>7. část: Přidání funkcí
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-> Tailspin Spyworks ukazuje, jak neobvykle jednoduché je vytvoření efektivní a škálovatelné aplikace pro platformu .NET. Zobrazuje vypnout používání skvělé nové funkce v rozhraní ASP.NET 4 k sestavení online úložiště, včetně nákupy, najdete v článku věnovaném a správu.
+> Tailspin Spyworks ukazuje, jak mimořádně jednoduché je vytvářet výkonné a škálovatelné aplikace pro platformu .NET. Zobrazuje vypnout použití skvělých nových funkcí v technologii ASP.NET 4 k sestavení nebo online úložiště, včetně nákupu, Pokladna a správu.
 > 
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet kontrolní, recenzemi produktů a "Oblíbené položky" a "také zakoupených" uživatelské ovládací prvky.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 7 přidává další funkce, jako je například účet revize, recenzemi produktů a "Oblíbené položky" a "také zakoupené" uživatelské ovládací prvky.
 
 
-## <a id="_Toc260221673"></a>  Přidávání funkcí
+## <a id="_Toc260221673"></a>  Přidání funkce
 
-Když uživatelé procházet naše katalogu, umístěte položek do nákupního košíku a dokončete proces najdete v článku věnovaném, se, že počet podpora funkce, že jsme bude obsahovat vylepšit náš web neexistují.
+I když můžou uživatelé procházet náš katalog, umístěte položky do nákupního košíku a dokončete proces platby u pokladny, jsou že počet podpůrné funkce zavedeme vylepšit náš web.
 
-1. Zkontrolujte účet (seznam objednávky umístěn a zobrazit podrobnosti.)
-2. Přidejte nějaký kontextu konkrétní obsah na stránku front.
-3. Přidání funkce tak, aby uživatelé zkontrolujte produktů v katalogu.
-4. Vytvoření uživatelského ovládacího prvku zobrazení oblíbených položek a místo, které řídí na stránce front.
-5. Vytvoření uživatelského ovládacího prvku "Také zakoupili" a přidejte na stránku podrobností produktu.
-6. Přidat a obraťte se na stránku.
+1. Účet kontroly (seznamu objednávek umístit a zobrazit podrobnosti.)
+2. Přidejte nějaký obsah konkrétní kontext na přední stránce.
+3. Přidáte funkci, která umožní uživatelům revize produktů v katalogu.
+4. Vytvoření uživatelského ovládacího prvku se zobrazí na přední stránce oblíbených položek a místo, které řídí.
+5. Vytvořte uživatelský ovládací prvek "Také zakoupili" a přidejte na stránku podrobností produktu.
+6. Přidat kontakt stránky.
 7. Přidat o stránce.
-8. Globální chyby
+8. Globální zpracování chyb
 
-## <a id="_Toc260221674"></a>  Zkontrolujte účet
+## <a id="_Toc260221674"></a>  Účet kontroly
 
-Ve složce "Účet" vytvořte dvě stránky .aspx jednu s názvem OrderList.aspx a dalších pojmenované OrderDetails.aspx
+Ve složce "Účet" vytvořte dvě stránky ASPX, jednu s názvem OrderList.aspx a dalších pojmenované OrderDetails.aspx
 
-OrderList.aspx využije funkci GridView a EntityDataSoure ovládacích prvků, podobně jako dříve máme.
+OrderList.aspx bude využívat ovládací prvky GridView a EntityDataSoure podobně, jako máme k dispozici dříve.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample1.aspx)]
 
-EntityDataSoure vybere záznamy v tabulce filtrováno uživatelské jméno (viz WhereParameter), který jsme nastavena v proměnné relace, když uživateli přihlášení je.
+EntityDataSoure vybírá záznamy v tabulce objednávky filtrované podle uživatelského jména (viz WhereParameter), které jsme si nastavili v proměnné relace při uživateli přihlášení uživatele.
 
-Všimněte si také tyto parametry v HyperlinkField prvku GridView:
+Všimněte si také v HyperlinkField prvku GridView. Tyto parametry:
 
 [!code-xml[Main](tailspin-spyworks-part-7/samples/sample2.xml)]
 
-Tyto zadejte odkaz na zobrazení podrobností pořadí pro každý produkt zadat jako parametr řetězce dotazu na stránku OrderDetails.aspx pole OrderID.
+Tyto zadejte odkaz na mohli zobrazit podrobnosti pro jednotlivé produkty, které zadáte jako parametr řetězce dotazu na stránku OrderDetails.aspx pole OrderID.
 
 ## <a id="_Toc260221675"></a>  OrderDetails.aspx
 
-Ovládací prvek EntityDataSource budeme používat pro přístup k objednávky a FormView zobrazují data pořadí a jiné EntityDataSource s GridView pro zobrazení všech pořadí položek řádku.
+Ovládací prvek EntityDataSource budeme používat pro přístup k objednávky a FormView zobrazují data objednávky a jiné EntityDataSource s GridView pro zobrazení položek řádku všechny objednávky.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample3.aspx)]
 
-V souboru kódu za (OrderDetails.aspx.cs) máme dvě málo bity housekeeping.
+V souboru kódu za (OrderDetails.aspx.cs) máme dva bity malý údržbu.
 
-Nejprve musíme Ujistěte se, že Rozpis objednávek vždy získá OrderId.
+Nejdřív potřebujeme Ujistěte se, že OrderDetails vždy získá OrderId.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample4.cs)]
 
-Také potřebujeme k výpočtu a celkový počet položek řádku pořadí zobrazení.
+Musíme také vypočítávají a zobrazují celkový počet položek řádku pořadí.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample5.cs)]
 
-## <a id="_Toc260221676"></a>  Domovská stránka
+## <a id="_Toc260221676"></a>  Na domovské stránce
 
 Přidejme nějaký statický obsah na stránku Default.aspx.
 
-Nejprve budete vytvořit složku "Obsah" a v něm složku obrázků (a I bude obsahovat obrázek, který se použije na domovské stránce).
+Nejprve vytvoříte složku "Obsah" a v něm složku obrázky (a jsem bude obsahovat obrázek, který se použije na domovské stránce.)
 
-Do dolní zástupného textu stránky Default.aspx přidejte následující kód.
+V dolní části zástupný symbol stránku Default.aspx přidejte následující kód.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample6.aspx)]
 
-## <a id="_Toc260221677"></a>  Recenzemi produktů
+## <a id="_Toc260221677"></a>  Revize produktu
 
-Nejprve přidáme tlačítko s odkazem na formulář, který jsme můžete použít k zadání kontrolu produktu.
+Nejdřív přidáme tlačítko s odkazem na formulář, který jsme můžete použít k zadání recenze produktu.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample7.aspx)]
 
 ![](tailspin-spyworks-part-7/_static/image1.jpg)
 
-Všimněte si, že jsme předali ProductID v řetězci dotazu
+Všimněte si, že jsme v řetězci dotazu prochází ProductID
 
-Další přidejme stránku s názvem ReviewAdd.aspx
+Další přidáme stránku s názvem ReviewAdd.aspx
 
-Tato stránka bude používat sadu ovládacího prvku ASP.NET AJAX. Pokud jste již neučinili, si můžete stáhnout z [DevExpress](http://devexpress.com/act) a pokyny o nastavení sady nástrojů pro použití se sadou Visual Studio zde [ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
+Tato stránka bude používat ASP.NET AJAX Control Toolkit. Pokud jste tak ještě neučinili, můžete ji stáhnout [DevExpress](http://devexpress.com/act) a pokyny o nastavení sady nástrojů pro použití se službou Visual Studio zde [ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
 
-V režimu návrhu přetáhněte ovládací prvky a validátory z panelu nástrojů a sestavení formuláře podobná té následující.
+V režimu návrhu přetáhněte z panelu nástrojů ovládacích prvků a validátory a podobná té následující formulář vytvářet.
 
 ![](tailspin-spyworks-part-7/_static/image2.jpg)
 
-Zápis bude vypadat přibližně takto.
+Značky budou vypadat asi takhle nějak.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample8.aspx)]
 
-Teď, když jsme můžete zadat recenze, umožňuje zobrazit tyto recenze na stránce produktu.
+Teď můžeme zadat revize, vám umožní zobrazit tyto kontroly na stránce produktu.
 
-Tento kód přidejte na stránku ProductDetails.aspx.
+Přidejte tento kód na stránku ProductDetails.aspx.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample9.aspx)]
 
-Spuštěné aplikace teď a přejdete na produkt zobrazuje informace o produktu včetně zákaznické recenze.
+Spuštění naší aplikace teď a přejdete do produktu se zobrazí informace o produktech, včetně zapracováním připomínek zákazníků.
 
 ![](tailspin-spyworks-part-7/_static/image3.jpg)
 
-## <a id="_Toc260221678"></a>  Oblíbené položky ovládacího prvku (vytvoření uživatelské ovládací prvky)
+## <a id="_Toc260221678"></a>  Oblíbené položky ovládacího prvku (vytváření uživatelských ovládacích prvků)
 
-Chcete-li zvýšit prodej na svém webu přidáme několik funkcí do oblíbených nebo souvisejících produktů "sugestivní prodává".
+Za účelem zvýšení prodeje na webové stránce přidáme několik funkcí "sugestivní sell" Oblíbené nebo souvisejících produktů.
 
-První z těchto funkcí bude seznam oblíbenější produktu v našem katalog produktů.
+První z těchto funkcí bude zahrnovat další oblíbené produktu v našich katalog produktů.
 
-Vytvoříme "Uživatelského ovládacího prvku" zobrazíte nejlépe prodávané položky na domovské stránce naše aplikace. Vzhledem k tomu, že to bude ovládacího prvku, jsme ji používat na libovolné stránce jednoduše přetahování a vkládání v návrháři Visual Studio na žádné stránce, které jsme jako ovládací prvek.
+Vytvoříme "Uživatelský ovládací prvek" k zobrazení nejvyšší prodeje položky na domovské stránce naši aplikaci. Vzhledem k tomu, že to bude ovládací prvek, jsme jednoduše přetahováním ovládací prvek v návrháři aplikace Visual Studio stránku, který budeme používat na libovolné stránce.
 
-V Průzkumníku řešení sady Visual Studio klikněte pravým tlačítkem na název řešení a vytvořte nový adresář s názvem "Ovládacích prvků". I když není nezbytné k tomu, nám pomůže zachovat naše projektu uspořádané podle vytváření všechny naše uživatelské ovládací prvky v adresáři "Ovládacích prvků".
+V Průzkumníku řešení sady Visual Studio klikněte pravým tlačítkem myši na název řešení a vytvořte nový adresář s názvem "Prvky". I když není potřeba udělat, bude pomůžeme našem projektu uspořádané podle vytváření všech našich uživatelské ovládací prvky v adresáři "Ovládací prvky".
 
-Klikněte pravým tlačítkem na složku, ovládací prvky a zvolte "Nová položka":
+Klikněte pravým tlačítkem na složku Ovládací prvky a zvolte možnost "Nová položka":
 
 ![](tailspin-spyworks-part-7/_static/image4.jpg)
 
-Zadejte název pro naše řízení "PopularItems". Všimněte si, že přípona souboru pro uživatelské ovládací prvky .ascx není .aspx.
+Zadejte název pro naše ovládací prvek "PopularItems". Všimněte si, že přípona souboru pro uživatelské ovládací prvky .ascx není .aspx.
 
-Naše oblíbených položek uživatelský ovládací prvek bude definován následujícím způsobem.
+Naše Oblíbené položky uživatelský ovládací prvek bude definovaná následujícím způsobem.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample10.aspx)]
 
-Tady používáme metodu, kterou jsme nepoužili ještě v této aplikaci. Používáme ovládacím prvku repeater a místo použití prvku zdroje dat jsme se do výsledků dotazu LINQ to Entities vazbu ovládacím prvku opakovače.
+Tady používáme metoda, kterou jsme nepoužili ještě v této aplikaci. Používáme ovládací prvek repeater a namísto použití ovládací prvek zdroje dat jsme provádíte navázání ovládacím prvku opakovače s výsledky dotazu LINQ to Entities.
 
-V kódu naše řízení to následujícím způsobem.
+V kódu naše ovládací prvek provedeme to následujícím způsobem.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample11.cs)]
 
-Všimněte si také tohoto důležité řádku v horní části značky naše ovládacího prvku.
+Všimněte si také tato důležité řádku v horní části kódu naše ovládacího prvku.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample12.aspx)]
 
-Vzhledem k tomu většinou oblíbených položek nebude změna na základě minutu na minutu přidáme direktivu bolavými zlepšit výkon aplikace. Tato direktiva způsobí, že kód ovládací prvky, který lze spustit pouze když vyprší platnost výstup z mezipaměti ovládacího prvku. Jinak se použije v mezipaměti verzi výstupu ovládacího prvku.
+Vzhledem k tomu, že Nejoblíbenější položky nebudou měnit na základě minut na minutu můžeme přidat direktivu bolavými ke zlepšení výkonu našich aplikací. Tato direktiva způsobí, že kód ovládacích prvků na spustit pouze když vyprší platnost výstup z mezipaměti ovládacího prvku. V opačném případě se použije verze uložené v mezipaměti ovládacího prvku výstupu.
 
-Nyní všechny, které se musí provést je zahrňte do naší stránce s Default.aspc naše nový ovládací prvek.
+Nyní je vše, co musíme udělat zahrňte naši stránku Default.aspc náš nový ovládací prvek.
 
-Použití přetažení umístit instanci ovládacího prvku ve sloupci otevřete v našem výchozího formuláře.
+Použití přetažení umístit ve sloupci otevřít v našem formuláři výchozí instanci ovládacího prvku.
 
 ![](tailspin-spyworks-part-7/_static/image5.jpg)
 
-Nyní když jsme spuštění aplikace na domovskou stránku, zobrazí se většinou oblíbených položek.
+Nyní když jsme spuštění aplikace na domovské stránce zobrazí Oblíbené položky.
 
 ![](tailspin-spyworks-part-7/_static/image6.jpg)
 
-## <a id="_Toc260221679"></a>  "Taky zakoupili" řízení (uživatelské ovládací prvky s parametry)
+## <a id="_Toc260221679"></a>  "Také zakoupili" ovládací prvek (uživatelské ovládací prvky s parametry)
 
-Druhý uživatelský ovládací prvek, který vytvoříme bude trvat sugestivní prodávané na další úroveň přidáním kontextu specifické podobě.
+Druhý uživatelský ovládací prvek, který vytvoříme bude trvat sugestivní prodej na vyšší úroveň přidáním specifičnosti kontextu.
 
-Logika pro vypočítat nejvyšší položky "Také zakoupili" je netriviální.
+Logika pro výpočet "Také zakoupili" položky na nejvyšší úrovni je netriviální.
 
-Naše "Také zakoupili" řízení bude vyberte záznamy Rozpis objednávek (dřív pořídili) pro aktuálně vybrané ProductID a získat OrderIDs pro každý jedinečný pořadí, která se nachází.
+Naše "Také zakoupili" ovládací prvek bude vyberte záznamy OrderDetails (jste dříve zakoupili) pro aktuálně vybrané ProductID a získejte OrderIDs pro každý jedinečných pořadí, ve kterém se nachází.
 
-Potom jsme vybere al produkty z těchto objednávek a součet množství zakoupili. Jsme budete seřadit tento součet objemu produktů a zobrazit prvních pět položek.
+Pak bude vybereme al produktů ze všech objednávek a množství zakoupených součet. Vytvoříme řadit tento součet množství produktů a zobrazte prvních pět položek.
 
-S ohledem na složitost tuto logiku, bude tento algoritmus implementaci jako uložené procedury.
+Vzhledem ke složitosti tuto logiku, jsme jako uloženou proceduru implementuje tento algoritmus.
 
-T-SQL pro uloženou proceduru je následující.
+T-SQL pro úložnou proceduru vypadá takto.
 
 [!code-sql[Main](tailspin-spyworks-part-7/samples/sample13.sql)]
 
-Všimněte si, že tuto uloženou proceduru (SelectPurchasedWithProducts) existovalo v databázi jsme obsažen v naší aplikaci a jsme generování Entity Data Model, který jsme zadali kromě tabulky a zobrazení, které jsme potřeby datového modelu Entity by měla obsahovat tuto uloženou proceduru.
+Všimněte si, že tuto uloženou proceduru (SelectPurchasedWithProducts) existoval v databázi, když jsme zahrnuli v naší aplikaci a jsme generování modelu Entity Data Model, který jsme zadali kromě tabulky a zobrazení, které jsme potřebovali, modelu Entity Data Model tuto uloženou proceduru by měla obsahovat.
 
-Pro přístup k uloženou proceduru z datového modelu Entity musíme import funkce.
+Pro přístup k uloženou proceduru z modelu Entity Data Model potřebujeme import funkce.
 
-Dvakrát klikněte na datový Model Entity v Průzkumníku řešení otevřete v návrháři a otevřít prohlížeč modelu, potom klikněte pravým tlačítkem myši v návrháři a vyberte možnost "Přidat funkce Import".
+Dvakrát klikněte na datový Model Entity v Průzkumníku řešení otevřete v návrháři a otevřít prohlížeč modelu pak v Návrháři klikněte pravým tlačítkem a vyberte "Přidání importované funkce".
 
 ![](tailspin-spyworks-part-7/_static/image1.png)
 
-Tím se otevře dialogové okno.
+Tím se otevře toto dialogové okno.
 
 ![](tailspin-spyworks-part-7/_static/image2.png)
 
-Vyplňte pole, jak můžete vidět výše, výběr "SelectPurchasedWithProducts" a používat název procedury pro název naše importované funkce.
+Vyplňte pole, jak vidíte výše, vyberete "SelectPurchasedWithProducts" a použijte název procedury pro název naší importované funkce.
 
 Klikněte na tlačítko "Ok".
 
-Má to neudělali, které jsme můžete jednoduše programu proti uloženou proceduru jako jsme může jiné položky v modelu.
+Udělání to, které můžete jednoduše programujeme uloženou proceduru jako jsme může být jakoukoli jinou položku v modelu.
 
-Ano v našem složce "Ovládací prvky" vytvořte nový uživatelský ovládací prvek s názvem AlsoPurchased.ascx.
+Tedy ve složce naše "Řídí" vytvořte nový uživatelský ovládací prvek s názvem AlsoPurchased.ascx.
 
-Kód pro tento ovládací prvek bude vypadat dobře obeznámeni do ovládacího prvku PopularItems.
+Značky pro tento ovládací prvek bude velmi povědomá do ovládacího prvku PopularItems.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample14.aspx)]
 
-Pozoruhodný rozdíl je, že vzhledem k tomu, že k vykreslení položky se budou lišit podle produktu, nejsou ukládání výstupu.
+Významný rozdíl spočívá v tom, která nejsou ukládání do vyrovnávací paměti výstup vzhledem k tomu, že k vykreslení položky se budou lišit podle produktu.
 
-ProductId bude "vlastnost" do ovládacího prvku.
+ProductId bude "vlastnosti" do ovládacího prvku.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample15.cs)]
 
-V obslužná rutina ovládacího prvku událost PreRender jsme rychlost tři věci.
+V obslužné rutině ovládacího prvku událost PreRender jsme rychlost udělat tři věci.
 
-1. Ujistěte se, že je nastaven ProductID.
-2. Viděli, zda jsou všechny produkty, které byly zakoupeny aktuální publikací.
-3. Výstup některé položky určené v #. 2.
+1. Ujistěte se, že je nastavena ProductID.
+2. Zkontrolujte, jestli všechny produkty, které jste zakoupili s aktuálním předplatným.
+3. Výstupní některé položky, jak je stanoveno v #2.
 
-Všimněte si, jak je snadné volání uložené procedury prostřednictvím modelu.
+Všimněte si, jak snadné je volat úložnou proceduru prostřednictvím modelu.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample16.cs)]
 
-Po určení, že jsou "také zakoupili" jsme do výsledků vrácených dotazem jednoduše vazbu opakovače.
+Po určení, která existuje "také nakupujete" jsme můžete jednoduše vytvořit vazbu opakovače s výsledky vrácené dotazem.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample17.cs)]
 
-Pokud všechny položky "také zakoupili" nebyly budete jednoduše zobrazujeme dalších oblíbených položek z našich katalogu.
+Pokud se všechny položky "také zakoupili" nebyly budete jednoduše zobrazují další oblíbené položky z našich katalogu.
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample18.cs)]
 
-Zobrazit položky "Také zakoupili", otevřete stránku ProductDetails.aspx a přetáhněte ovládací prvek AlsoPurchased v Průzkumníku řešení tak, aby se zobrazí v této pozici ve značkách.
+Chcete-li zobrazit položky "Také koupit", otevřete stránku ProductDetails.aspx a přetáhněte ovládací prvek AlsoPurchased z Průzkumníka řešení, aby se zobrazovala na této pozici v kódu.
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample19.aspx)]
 
@@ -229,11 +228,11 @@ Tím se vytvoří odkaz na ovládací prvek v horní části stránky ProductDet
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample20.aspx)]
 
-Vzhledem k tomu, že AlsoPurchased uživatelského ovládacího prvku vyžaduje číslo ProductId jsme se nastavit vlastnost ProductID naše ovládacího prvku pomocí příkazu zkušební verze na aktuální položku modelu dat stránky.
+Protože AlsoPurchased uživatelský ovládací prvek vyžaduje ProductId číslo nastavíme vlastnost ProductID naše ovládacího prvku pomocí příkazu zkušební verze na aktuální položku modelu data stránky.
 
 ![](tailspin-spyworks-part-7/_static/image3.png)
 
-Pokud jsme sestavit a spustit nyní a přejděte do produktu jsme viděli položky, které "Také zakoupili".
+Když jsme sestavit a spustit nyní a přejděte do produktu vidíme položky "Také zakoupili".
 
 ![](tailspin-spyworks-part-7/_static/image7.jpg)
 

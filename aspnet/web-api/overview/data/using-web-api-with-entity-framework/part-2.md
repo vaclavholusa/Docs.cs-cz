@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-2
-title: Přidat modely a řadičů | Microsoft Docs
+title: Přidání modelů a Kontrolerů | Dokumentace Microsoftu
 author: MikeWasson
 description: ''
 ms.author: aspnetcontent
@@ -9,88 +9,87 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: 88908ff8-51a9-40eb-931c-a8139128b680
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 015bb9698d81387d03ea8f9629316fb53232e708
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f127f239bcc665f71976bb34f6d3387f8e0b72a7
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879579"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393134"
 ---
-<a name="add-models-and-controllers"></a>Přidání řadiče a modely
+<a name="add-models-and-controllers"></a>Přidání modelů a Kontrolerů
 ====================
-podle [Wasson Jan](https://github.com/MikeWasson)
+podle [Mike Wasson](https://github.com/MikeWasson)
 
-[Stáhněte si dokončený projekt](https://github.com/MikeWasson/BookService)
+[Stáhnout dokončený projekt](https://github.com/MikeWasson/BookService)
 
-V této části přidáte třídy modelu, které definují entity databáze. Potom přidáte řadiče webového rozhraní API, které provádění operací CRUD tyto entity.
+V této části přidáte tříd modelu, které definují entity databáze. Potom přidáte kontrolerů rozhraní Web API, které provádějí operace CRUD s těmito entitami.
 
 ## <a name="add-model-classes"></a>Přidání třídy modelu
 
-V tomto kurzu vytvoříme databázi pomocí "Code First" přístup k Entity Framework (EF). S Code First zápisu třídy jazyka C#, které odpovídají tabulkách databáze a EF vytvoří databázi. (Další informace najdete v tématu [Entity Framework vývoj přístupy](https://msdn.microsoft.com/library/ms178359%28v=vs.110%29.aspx#dbfmfcf).)
+V tomto kurzu vytvoříme databázi s použitím "Code First" přístup do Entity Framework (EF). S Code First třídy jazyka C#, které odpovídají zapíšete do databázové tabulky a EF vytvoří databázi. (Další informace najdete v tématu [vývojové přístupy s Entity Framework](https://msdn.microsoft.com/library/ms178359%28v=vs.110%29.aspx#dbfmfcf).)
 
-Začneme definováním naše objektů domény jako POCOs (prostý starý CLR objekty). Vytvoříme POCOs následující:
+Začneme tak, že definujete naše objektů domény jako POCOs (prostý staré CLR objekty). Vytvoříme POCOs následující:
 
 - Autor
-- Adresáře
+- Knihy
 
-V Průzkumníku řešení klikněte pravým tlačítkem složku modely. Vyberte **přidat**, pak vyberte **třída**. Název třídy `Author`.
+V Průzkumníku řešení klikněte pravým tlačítkem myši klikněte na složku modely. Vyberte **přidat**a pak vyberte **třídy**. Název třídy `Author`.
 
 ![](part-2/_static/image1.png)
 
-Všechny standardní kód Author.cs nahraďte následujícím kódem.
+Často používaný kód v Author.cs nahraďte následujícím kódem.
 
 [!code-csharp[Main](part-2/samples/sample1.cs)]
 
-Přidejte jinou třídu s názvem `Book`, s následujícím kódem.
+Přidejte další třídu s názvem `Book`, následujícím kódem.
 
 [!code-csharp[Main](part-2/samples/sample2.cs)]
 
-Rozhraní Entity Framework použije tyto modely k vytvoření databázové tabulky. Pro každý model `Id` vlastnost bude sloupec primárního klíče tabulky databáze.
+Entity Framework pomocí těchto modelů vytvoření databázových tabulek. Pro každý model `Id` vlastnost se stane sloupec primárního klíče tabulky databáze.
 
-Ve třídě adresáře `AuthorId` definuje cizí klíč do `Author` tabulky. (Pro jednoduchost, I mě za předpokladu, že každý seznam má jeden Autor.) Třída kniha také obsahuje vlastnost navigace, která má související `Author`. Navigační vlastnost lze použít pro přístup k související `Author` v kódu. Další informace o navigačních vlastností v rámci 4, říci [zpracování vztahy entit](part-4.md).
+Ve třídě adresáře `AuthorId` definuje cizí klíč do `Author` tabulky. (Pro jednoduchost, můžu jsem za předpokladu, že jednotlivé knihy má jeden Autor.) Kniha třída také obsahuje vlastnosti navigace použít k související `Author`. Můžete použít navigační vlastnost pro přístup k související `Author` v kódu. Další informace o vlastnosti navigace v části 4, řeknu [zpracování relací prvků](part-4.md).
 
-## <a name="add-web-api-controllers"></a>Přidat Kontrolerů webové rozhraní API
+## <a name="add-web-api-controllers"></a>Přidat Kontrolerů webového rozhraní API
 
-V této části přidáme řadiče webového rozhraní API, které podporují operace CRUD (vytvářet, číst, aktualizovat a odstranit). V řadičích použije ke komunikaci s vrstva databáze Entity Framework.
+V této části přidáme kontrolerů rozhraní Web API, které podporují operace CRUD (vytváření, čtení, aktualizace a odstranění). Kontrolery pomocí Entity Framework komunikovat s databázové vrstvě.
 
-Nejprve můžete odstranit soubor Controllers/ValuesController.cs. Tento soubor obsahuje řadič příklad webového rozhraní API, ale nebudete ho potřebovat pro účely tohoto kurzu.
+Nejprve můžete odstranit soubor Controllers/ValuesController.cs. Tento soubor obsahuje kontroler Web API příklad, ale nepotřebujete ho pro účely tohoto kurzu.
 
 ![](part-2/_static/image2.png)
 
-V dalším kroku sestavte projekt. Generování uživatelského rozhraní Web API používá k nalezení třídy modelu, proto potřebuje kompilované sestavení reflexe.
+V dalším kroku sestavení projektu. Generování uživatelského rozhraní webového rozhraní API používá reflexi k nalezení tříd modelu, proto musí zkompilovaného sestavení.
 
-V Průzkumníku řešení klikněte pravým tlačítkem na složku řadiče. Vyberte **přidat**, pak vyberte **řadič**.
+V Průzkumníku řešení klikněte pravým tlačítkem myši na složku řadiče. Vyberte **přidat**a pak vyberte **řadič**.
 
 ![](part-2/_static/image3.png)
 
-V **přidat vygenerované uživatelské rozhraní** dialogovém okně, vyberte možnost "Web API 2 řadiče s akcemi používající rozhraní Entity Framework". Klikněte na tlačítko **přidat**.
+V **přidat vygenerované uživatelské rozhraní** dialogového okna, vyberte možnost "webového rozhraní API 2 kontroler s akcemi používající nástroj Entity Framework". Klikněte na tlačítko **přidat**.
 
 ![](part-2/_static/image4.png)
 
-V **přidat kontroler** dialogové okno, postupujte takto:
+V **přidat kontroler** dialogového okna, postupujte takto:
 
-1. V **třída modelu** rozevíracího seznamu, vyberte `Author` třídy. (Pokud ho uvedené v rozevírací nabídce nevidíte, ujistěte se, že jste vytvořili projekt.)
-2. Zkontrolujte "Použít asynchronní akce kontroleru".
-3. Ponechejte pole název řadiče jako &quot;AuthorsController&quot;.
-4. Klikněte na tlačítko plus (+) vedle tlačítko **třída kontextu dat**.
+1. V **třída modelu** rozevírací seznam, vyberte `Author` třídy. (Pokud se nezobrazuje v rozevíracím seznamu nezobrazí, ujistěte se, že jste sestavili projekt.)
+2. Zkontrolujte "Použití asynchronní akce kontroleru".
+3. Nechte název tak řadič jako &quot;AuthorsController&quot;.
+4. Klikněte na tlačítko plus (+) vedle tlačítka **třída kontextu dat**.
 
 ![](part-2/_static/image5.png)
 
-V **nový kontext dat** dialogové okno, ponechte výchozí název a klikněte na tlačítko **přidat**.
+V **nový kontext dat.** dialogového okna, ponechte výchozí název a klikněte na **přidat**.
 
 ![](part-2/_static/image6.png)
 
-Klikněte na tlačítko **přidat** k dokončení **přidat kontroler** dialogové okno. Dialogové okno přidá dvě třídy do projektu:
+Klikněte na tlačítko **přidat** Dokončit **přidat kontroler** dialogového okna. Dialog přidá dvě třídy do projektu:
 
-- `AuthorsController` Definuje kontroleru webového rozhraní API. Řadičem implementuje rozhraní REST API, který klienti používat k provádění operací CRUD v seznamu autoři.
-- `BookServiceContext` Spravuje objekty entity za běhu, včetně vyplnění objekty s daty z databáze, sledování změn a zachování dat pro databázi. Dědí z `DbContext`.
+- `AuthorsController` Definuje kontroler Web API. Kontroler implementuje rozhraní REST API, kterou klienti používají k provádění operací CRUD u seznamu autoři.
+- `BookServiceContext` Spravuje objekty entity za běhu, který obsahuje naplnění objekty s daty z databáze, řešení change tracking a zachovává data do databáze. Dědí z `DbContext`.
 
 ![](part-2/_static/image7.png)
 
-V tomto okamžiku znovu sestavte projekt. Nyní absolvovat stejný postup pro přidání řadič rozhraní API pro `Book` entity. Tentokrát vyberte `Book` pro třídu modelu, vyberte existující `BookServiceContext` třída pro třídy kontextu dat. (Nevytvářejte nový kontext data.) Klikněte na tlačítko **přidat** pro přidání řadiče.
+V tomto okamžiku projekt znovu sestavte. Nyní absolvovat stejný postup, chcete-li přidat kontroler API pro `Book` entity. Tentokrát vyberte `Book` pro třídu modelu a vyberte existující `BookServiceContext` třída pro třídy datového kontextu. (Nevytvářejte nový kontext dat.) Klikněte na tlačítko **přidat** přidat kontroler.
 
 ![](part-2/_static/image8.png)
 

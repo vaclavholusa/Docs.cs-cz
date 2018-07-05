@@ -1,28 +1,27 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/index
-title: MutuallyExclusiveCheckbox | Microsoft Docs
+title: MutuallyExclusiveCheckbox | Dokumentace Microsoftu
 author: rick-anderson
-description: Tento kurz ukazuje, jak vytvořit zaškrtávací políčka, které fungují jako přepínačů pomocí ovládacího prvku MutuallyExclusiveCheckbox (vzájemně se vylučuje), ale který může být...
+description: Tento kurz ukazuje, jak pomocí ovládacího prvku MutuallyExclusiveCheckbox vytvoření zaškrtávací políčka, které fungují jako přepínací tlačítka (vzájemně se vylučujících), ale, může být...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
 ms.topic: article
 ms.assetid: f3f8ccad-2bb3-4cf7-94bf-24b184d987dc
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox
 msc.type: chapter
-ms.openlocfilehash: bea70dbaeb855c586cc0180511c454bf4ffd6e5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c7369d24d0067152ac5445de504b0d5485422331
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26567442"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376533"
 ---
 <a name="mutuallyexclusivecheckbox"></a>MutuallyExclusiveCheckbox
 ====================
-> Tento kurz ukazuje, jak vytvořit zaškrtávací políčka, které fungují jako přepínačů pomocí ovládacího prvku MutuallyExclusiveCheckbox (vzájemně se vylučuje), ale který lze úplně vymazat.
+> Tento kurz ukazuje, jak pomocí ovládacího prvku MutuallyExclusiveCheckbox vytvoření zaškrtávací políčka, které fungují jako přepínací tlačítka (vzájemně se vylučujících), ale, který může být úplně vymazat.
 
 
-- [Vytváření vzájemně se vylučuje zaškrtávací políčka (C#)](creating-mutually-exclusive-checkboxes-cs.md)
-- [Vytváření vzájemně se vylučuje políček (VB)](creating-mutually-exclusive-checkboxes-vb.md)
+- [Vytvoření vzájemně se vylučujících zaškrtávacích políček (C#)](creating-mutually-exclusive-checkboxes-cs.md)
+- [Vytvoření vzájemně se vylučujících zaškrtávacích políček (VB)](creating-mutually-exclusive-checkboxes-vb.md)

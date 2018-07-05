@@ -1,92 +1,91 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
-title: Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 1 | Microsoft Docs
+title: Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 1 | Dokumentace Microsoftu
 author: Rick-Anderson
-description: V tomto kurzu naučit základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v MV ASP.NET...
+description: V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, šablony zobrazení a kalendářem jQuery uživatelského rozhraní prvkem datepicker v MV ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
 ms.topic: article
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 408b99c9ad4fbc8487e585ebed3183f9aedc9c10
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 16747bd74df14172ca5eeb5c2e54edb2e930e758
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870684"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37388737"
 ---
-<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Použití jazyka HTML5 a kalendáře jQuery UI DatePicker s architekturou ASP.NET MVC – část 1
+<a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 1
 ====================
-podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson](https://github.com/Rick-Anderson)
 
-> V tomto kurzu naučit základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a kalendářem jQuery UI ovládací prvek datepicker v aplikaci ASP.NET MVC Web.
+> V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, šablony zobrazení a kalendářem jQuery UI datepicker v aplikaci MVC rozhraní ASP.NET Web.
 
 
-V tomto kurzu naučit, základní informace o tom, jak pracovat s editor šablon, zobrazení šablon a jQuery [uživatelského rozhraní ovládací prvek datepicker kalendářem](http://plugins.jquery.com/project/datepicker) v aplikaci ASP.NET MVC Web. V tomto kurzu můžete použít Microsoft Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer&quot;), což je bezplatnou verzi sady Microsoft Visual Studio, nebo pokud už máte, můžete použít Visual Studio 2010 SP1.
+V tomto kurzu se seznámíte se základy práce pomocí editoru šablon, zobrazení šablon a jQuery [kalendář automaticky otevírané okno prvkem datepicker v uživatelském rozhraní](http://plugins.jquery.com/project/datepicker) v aplikaci MVC rozhraní ASP.NET Web. Pro účely tohoto kurzu můžete použít Microsoft Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer&quot;), což je bezplatná verze sady Microsoft Visual Studio, nebo pokud už máte, který můžete použít Visual Studio 2010 SP1.
 
-Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Kliknutím na následující odkaz můžete nainstalovat všechny z nich: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadovaný software pomocí následujících odkazů:
+Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Nainstalujte všechny z nich kliknutím na následující odkaz: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadovaný software pomocí následujících odkazů:
 
 - [Visual Studio Web Developer Express SP1 požadavky](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
-- [Aktualizace nástrojů rozhraní ASP.NET MVC 3](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
-- [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(podporu runtime + nástroje)
+- [ASP.NET MVC 3 nástroje Update](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
+- [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(podpora modulu runtime a nástroje)
 
-Pokud používáte Visual Studio 2010 místo Visual Web Developer, nainstalujte součásti kliknutím na následující odkaz: [požadavky sady Visual Studio 2010](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
+Pokud používáte Visual Studio 2010 namísto Visual Web Developer, nainstalujte příslušné požadované součásti po kliknutí na následující odkaz: [požadavky sady Visual Studio 2010](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack).
 
-Tento kurz předpokládá, že jste dokončili [Začínáme s MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) kurzu nebo že jste obeznámeni s vývojem pro rozhraní ASP.NET MVC. V tomto kurzu začíná dokončený projekt z [Začínáme s MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) kurzu.
+V tomto kurzu se předpokládá dokončení [Začínáme s MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) kurzu nebo že jste obeznámeni s vývojem pro ASP.NET MVC. Tento kurz pracuje s dokončený projekt z [Začínáme s MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) kurzu.
 
-Tento kurz ukazuje kód v jazyce C#. Ale [starter projektu](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800) a dokončený projekt jsou taky dostupné v jazyce Visual Basic.
+Tento kurz ukazuje kód v jazyce C#. Ale [počáteční projekt](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800) a dokončené projektu jsou také k dispozici v jazyce Visual Basic.
 
-Projekt sady Visual Studio se zdrojovým kódem C# a Visual Basic je k dispozici v tomto tématu: [Stáhnout](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800).
+Projekt sady Visual Studio se zdrojovým kódem jazyka C# a Visual Basic je k dispozici v tomto tématu: [Stáhnout](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800).
 
-### <a name="what-youll-build"></a>Co budete sestavení
+### <a name="what-youll-build"></a>Co budete vytvářet
 
-Bude potřeba přidat šablony (konkrétně upravit a zobrazit šablony) pro jednoduchou aplikaci seznamu film, který byl vytvořen v [Začínáme s MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) kurzu. Taky se přidá [ovládací prvek datepicker uživatelského rozhraní jQuery](http://jqueryui.com/demos/datepicker/) kalendářem zjednodušit proces zadávání data. Následující snímek obrazovky ukazuje změně aplikace s jQuery UI ovládací prvek datepicker kalendářem zobrazí.
+Přidejte šablony (konkrétně, úpravy a zobrazení šablony) pro jednoduchou aplikaci film výpis, který byl vytvořen v [Začínáme s MVC 3](../getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3.md) kurzu. Taky se přidá [jQuery UI datepicker](http://jqueryui.com/demos/datepicker/) překryvný kalendář pro zjednodušení procesu zadávání data. Na následujícím snímku obrazovky je vidět změny aplikace s jQuery UI datepicker překryvný kalendář zobrazen.
 
 ![dokončení jQuery](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image1.png)
 
-### <a name="skills-youll-learn"></a>Dovedností, které se dozvíte
+### <a name="skills-youll-learn"></a>Dovednosti, které se dozvíte
 
 Zde je, co se dozvíte:
 
-- Použití atributů z [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů řízení formátu dat, jakmile se zobrazí a pokud je v režimu úprav.
+- Použití atributů z [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) obor názvů pro řídit formát data, jakmile se zobrazí a pokud je v režimu úprav.
 - Postup vytvoření šablon (Upravit a zobrazit šablony) k řízení formátování data.
-- Postup přidání [ovládací prvek datepicker uživatelského rozhraní jQuery](http://jqueryui.com/demos/datepicker/) jako způsob, jak zadejte datová pole.
+- Postup přidání [jQuery UI datepicker](http://jqueryui.com/demos/datepicker/) jako způsob, jak zadat datová pole.
 
 ### <a name="getting-started"></a>Začínáme
 
-Pokud ještě nemáte aplikace film výpis z projektu starter, stáhněte ho pomocí následujícího odkazu: [Stáhnout](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800). V Průzkumníku Windows, klikněte pravým tlačítkem myši *MvcMovie.zip* soubor a vyberte **vlastnosti**. V **MvcMovie.zip vlastnosti** dialogové okno, vyberte **Odblokovat**. (Odblokování brání upozornění zabezpečení, která nastane, když se pokusíte použít *.zip* souboru, který jste stáhli z webu.)
+Pokud ještě nemáte výpisu film aplikaci počáteční projekt, stáhněte si ho pomocí následujícího odkazu: [Stáhnout](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800). V Průzkumníku Windows, klikněte pravým tlačítkem myši *MvcMovie.zip* a vyberte možnost **vlastnosti**. V **MvcMovie.zip vlastnosti** dialogu **Odblokovat**. (Odblokování brání upozornění zabezpečení, ke které dojde při pokusu o použití *ZIP* soubor, který jste stáhli z webu.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 
-Klikněte pravým tlačítkem myši *MvcMovie.zip* soubor a vyberte **Extrahovat vše** soubor rozbalit. V aplikaci Visual Web Developer nebo Visual Studio 2010, otevřete *MvcMovieCS\_TU.sln* souboru.
+Klikněte pravým tlačítkem myši *MvcMovie.zip* a vyberte možnost **Extrahovat vše** dekomprimovat soubor. V aplikaci Visual Web Developer nebo Visual Studio 2010, otevřete *MvcMovieCS\_TU.sln* souboru.
 
-V **Průzkumníku řešení**, dvakrát klikněte *Views\Shared\\_Layout.cshtml* ho otevřete. Změna `H1` hlavička ze **filmová aplikace MVC** k **film jQuery**. Stiskněte klávesu CTRL + F5 a spusťte aplikaci a klikněte na tlačítko **Domů** karta, která přebírá, abyste `Index` metoda film řadiče. Můžete vyzkoušet na aplikaci, vyberte **upravit** odkaz a **podrobnosti** odkaz pro jednu z videa. Všimněte si, že se v indexu, upravit, a zobrazení podrobností, datum vydání a ceny jsou vhodně formátovaná:
+V **Průzkumníka řešení**, dvakrát klikněte *Views\Shared\\_Layout.cshtml* ho otevřete. Změnit `H1` záhlaví z **filmová aplikace MVC** k **film jQuery**. Stisknutím kláves CTRL + F5 spusťte aplikaci a klikněte na tlačítko **Domů** kartu, která vás přesměruje na `Index` metody kontroleru video. Vyzkoušet si aplikaci, vyberte **upravit** odkaz a **podrobnosti** odkaz pro jeden z videa. Všimněte si, že v indexu, upravit, a hezky formátovaný zobrazení podrobností, datum vydání a cena:
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image3.png)
 
-Formátování kalendářního data a cenu je výsledkem použití [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut u vlastnosti `Movie` třídy.
+Formátování pro datum a cena je výsledkem použití [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) atribut vlastnosti `Movie` třídy.
 
-Otevřete *Movie.cs* souborů a komentář `DisplayFormat` atributu u `ReleaseDate` a `Price` vlastnosti. Výsledná `Movie` třída vypadá takto:
+Otevřít *Movie.cs* souboru a nastavte komentář `DisplayFormat` atribut na `ReleaseDate` a `Price` vlastnosti. Výsledná `Movie` třídy vypadá takto:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample1.cs)]
 
-Stisknutím kláves CTRL + F5 znovu spusťte aplikaci a vyberte **Domů** k zobrazení seznamu video. Tentokrát datum vydání se zobrazuje datum a čas a pole Cena přestane zobrazovat symbolu měny. Změny v `Movie` třída zrušila dobrý formátování, které jste předtím viděli, ale budete to opravíme za chvíli.
+Stisknutím kláves CTRL + F5 znovu spusťte aplikaci a vyberte **Domů** kartu k zobrazení seznamu video. Tentokrát datum vydání zobrazuje datum a čas, a cena pole již neukazuje symbol měny. Vaše změna `Movie` třídy zrušila nice formátování, které jste viděli dříve, ale opravíte to za chvíli.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image4.png)
 
-### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>Pomocí atributu DataAnnotations DataType zadat datový typ
+### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>Pomocí atributu DataAnnotations DataType určit typ dat
 
-Nahraďte komentované `DisplayFormat` atribut pro `ReleaseDate` vlastnost s [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut, pomocí `Date` – výčet. Nahradit `DisplayFormat` atribut pro `Price` vlastnost s [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut znovu, tento současně pomocí `Currency` – výčet. Toto je dokončený kód v vypadá takto:
+Nahradit komentované `DisplayFormat` atribut pro `ReleaseDate` vlastnost s [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut, pomocí `Date` výčtu. Nahradit `DisplayFormat` atribut pro `Price` vlastnost s [datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut znovu, tento pomocí `Currency` výčtu. Je to, jak vypadá Dokončený kód:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-Spusťte aplikaci. Nyní datum vydání a vlastnosti ceny jsou správně formátovány (které používá odpovídající formáty data a měna). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut poskytuje typ metadat pro předdefinované ASP.NET MVC šablony tak, aby pole vykreslení ve správném formátu. Pomocí `DataType` atribut je vhodnější než použít `DisplayFormat` atribut, který byl původně v kódu, protože `DataType` atribut díky modelu čisticí a flexibilnější pro účely jako mezinárodní prostředí.
+Spusťte aplikaci. Nyní datum vydání a vlastnosti ceny jsou správný formát (které používá odpovídající formáty data a měna). [Datový typ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) atribut poskytuje typ metadat pro integrované technologie ASP.NET MVC šablony tak, aby pole vykreslení ve správném formátu. Použití `DataType` atribut je vhodnější než použít `DisplayFormat` atribut, který byl původně v kódu, protože `DataType` atribut díky modelu přehlednější a zvýšení flexibility pro účely jako internacionalizace.
 
-V další části se zobrazí, jak vytvořit vlastní šablony zobrazíte datová pole.
+V další části uvidíte, jak vytvořit vlastní šablony pro zobrazení datových polí.
 
 > [!div class="step-by-step"]
 > [Next](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)

@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet
-title: Použití registrace nástroje ASP.NET IIS ke konfiguraci technologie ASP.NET | Microsoft Docs
+title: Použití registračního nástroje ASP.NET IIS ke konfiguraci ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
-description: V této video PEL Jan ukazuje, jak použít nástroj pro registraci aplikace ASP.NET IIS ke konfiguraci technologie ASP.NET. Nejdříve si projděte jak přípony souborů jsou mapované na ASP.NET v...
+description: V toto video pixelů na Chris ukazuje způsob použití ASP.NET IIS Registration Tool konfigurace technologie ASP.NET. Nejdříve si projděte zpřístupněných přípony souborů pro technologii ASP.NET...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2008
 ms.topic: article
 ms.assetid: 2565839b-30b8-45e1-946e-34fffe940c48
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet
 msc.type: video
-ms.openlocfilehash: 858af6023f227001426a832f8a7f7f258e03cc9b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 590fb504d1bf2b5e7a68b6898715c0c18c447025
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26572071"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395149"
 ---
-<a name="how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet"></a>Jak používat nástroj ASP.NET IIS Registration konfigurace ASP.NET
+<a name="how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet"></a>Použití registračního nástroje ASP.NET IIS ke konfiguraci ASP.NET
 ====================
-podle [PEL Jan](https://twitter.com/chrispels)
+podle [Chris pixelů na](https://twitter.com/chrispels)
 
-V této video PEL Jan ukazuje, jak použít nástroj pro registraci aplikace ASP.NET IIS ke konfiguraci technologie ASP.NET. První najdete v části Jak přípony souborů jsou mapované na ASP.NET ve Správci služby IIS na základě globální a webové lokality ve webové lokality. Tyto mapy skriptů zajišťují základ pro konfigurace jednotlivých aplikací technologie ASP.NET pro spuštění pod určitou verzi rozhraní .NET Framework. V dalším kroku najdete v části Jak aspnet\_regiis.exe, nástroj příkazového řádku nástroj pro registraci služby IIS je specifická pro každou verzi rozhraní .NET Framework a jak ho lze použít pro různé úkoly, jako je určení toho, jaké verze technologie ASP.NET se instaluje do počítače a co Aplikace ASP.NET jsou namapované na tuto verzi. Potom zjistěte, jak nainstalovat a odinstalovat ASP.NET v počítači pomocí nástroje pro registraci. Také další informace o použití nástroje pro registraci instalovat, odinstalovat nebo aktualizovat více aplikací prostředí ASP.NET pro konkrétní verzi rozhraní .NET Framework. Například zjistit, jak nainstalovat technologii ASP.NET 2.0 a aktualizovat ma skriptu
+V toto video pixelů na Chris ukazuje způsob použití ASP.NET IIS Registration Tool konfigurace technologie ASP.NET. Nejdříve si projděte zpřístupněných přípony souborů ve Správci služby IIS na základě lokality globální a webového serveru ve webové technologie ASP.NET. Tyto mapy skriptů zajišťují základ pro konfiguraci jednotlivých aplikací technologie ASP.NET pro spuštění pod určitou verzi rozhraní .NET Framework. V dalším kroku naleznete v tématu Jak aspnet\_regiis.exe, nástroje příkazového řádku registrační nástroj služby IIS, je specifická pro každou verzi rozhraní .NET Framework a jak ho lze použít pro různé úkoly, jako je určení, jaké verze technologie ASP.NET jsou nainstalovány v počítači a co Aplikace ASP.NET se mapují na tuto verzi. Pak zjistěte, jak nainstalovat a odinstalaci technologie ASP.NET v počítači pomocí nástroje pro registraci. Také informace o používání nástroje pro registraci k instalaci, odinstalaci nebo aktualizovat více aplikací prostředí ASP.NET pro konkrétní verzi rozhraní .NET Framework. Například zjistit, jak nainstalovat technologii ASP.NET 2.0 a aktualizovat skript ma
 
-[&#9654; Podívejte se na video (27 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet)
+[&#9654;Podívejte se na video (27 minut)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet)

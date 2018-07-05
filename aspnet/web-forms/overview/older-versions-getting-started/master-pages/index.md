@@ -1,46 +1,45 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/index
-title: ASP.NET 3.5 - stránky webových formulářů hlavní | Microsoft Docs
+title: ASP.NET 3.5 – stránky předlohy webových formulářů | Dokumentace Microsoftu
 author: rick-anderson
-description: Jak vytvořit a použít k vytvoření konzistentního rozložení v aplikace webových formulářů ASP.NET hlavní stránky a stránky obsahu.
+description: Jak vytvořit a použít k vytvoření konzistentního rozložení v aplikace webových formulářů ASP.NET stránky předlohy a stránky obsahu.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/04/2011
 ms.topic: article
 ms.assetid: bc30f0ec-cf8f-4a33-9eee-513be872ac9c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages
 msc.type: chapter
-ms.openlocfilehash: 7db12550902920339d3bbacdf0a13b2081edc580
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 00997b1794d403ece941adc70ebef7ac44dd0227
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26569716"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367711"
 ---
-<a name="aspnet-35---web-forms-master-pages"></a>ASP.NET 3.5 - hlavního webového formuláře
+<a name="aspnet-35---web-forms-master-pages"></a>ASP.NET 3.5 – stránky předlohy webových formulářů
 ====================
-> Jak vytvořit a použít k vytvoření konzistentního rozložení v aplikace webových formulářů ASP.NET hlavní stránky a stránky obsahu.
+> Jak vytvořit a použít k vytvoření konzistentního rozložení v aplikace webových formulářů ASP.NET stránky předlohy a stránky obsahu.
 
 
-- [Vytvoření webu rozložení pomocí stránky předlohy (C#)](creating-a-site-wide-layout-using-master-pages-cs.md)
-- [Více ContentPlaceHolders a výchozí obsah (C#)](multiple-contentplaceholders-and-default-content-cs.md)
-- [Zadáte název, značky Meta a dalších hlavičky HTML stránka předlohy (C#)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
-- [Adresy URL v hlavní stránky (C#)](urls-in-master-pages-cs.md)
-- [ID ovládacího prvku pojmenování v obsahu stránky (C#)](control-id-naming-in-content-pages-cs.md)
-- [Interakci se stránkou předlohy ze stránky obsahu (C#)](interacting-with-the-master-page-from-the-content-page-cs.md)
-- [Interakci s stránky obsahu ze stránky předlohy (C#)](interacting-with-the-content-page-from-the-master-page-cs.md)
-- [Hlavní stránky a ASP.NET AJAX (C#)](master-pages-and-asp-net-ajax-cs.md)
-- [Určení stránky předlohy prostřednictvím kódu programu (C#)](specifying-the-master-page-programmatically-cs.md)
-- [Vnořené hlavní stránky (C#)](nested-master-pages-cs.md)
-- [Vytvoření webu rozložení pomocí stránky předlohy (VB)](creating-a-site-wide-layout-using-master-pages-vb.md)
-- [Více ContentPlaceHolders a výchozí obsah (VB)](multiple-contentplaceholders-and-default-content-vb.md)
-- [Zadáte název, značky Meta a dalších hlavičky HTML stránka předlohy (VB)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)
-- [Adresy URL v hlavní stránky (VB)](urls-in-master-pages-vb.md)
-- [ID ovládacího prvku pojmenování v obsahu stránky (VB)](control-id-naming-in-content-pages-vb.md)
-- [Interakci se stránkou předlohy ze stránky obsahu (VB)](interacting-with-the-master-page-from-the-content-page-vb.md)
-- [Interakci s stránky obsahu ze stránky předlohy (VB)](interacting-with-the-content-page-from-the-master-page-vb.md)
-- [AJAX stránky předlohy a ASP.NET (VB)](master-pages-and-asp-net-ajax-vb.md)
-- [Určení stránky předlohy prostřednictvím kódu programu (VB)](specifying-the-master-page-programmatically-vb.md)
-- [Vnořené hlavní stránky (VB)](nested-master-pages-vb.md)
+- [Vytvoření rozložení platného pro celý web pomocí stránek předlohy (C#)](creating-a-site-wide-layout-using-master-pages-cs.md)
+- [Několik prvků ContentPlaceHolder a výchozí obsah (C#)](multiple-contentplaceholders-and-default-content-cs.md)
+- [Zadání názvu, metaznaček a dalších hlaviček HTML na stránce předlohy (C#)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs.md)
+- [Adresy URL stránek předloh (C#)](urls-in-master-pages-cs.md)
+- [Pojmenovávání ID ovládacích prvků na stránkách obsahu (C#)](control-id-naming-in-content-pages-cs.md)
+- [Interakce stránky obsahu se stránkou předlohy (C#)](interacting-with-the-master-page-from-the-content-page-cs.md)
+- [Interakce stránky předlohy se stránkou obsahu (C#)](interacting-with-the-content-page-from-the-master-page-cs.md)
+- [Stránky předlohy a ASP.NET AJAX (C#)](master-pages-and-asp-net-ajax-cs.md)
+- [Programové určení stránky předlohy (C#)](specifying-the-master-page-programmatically-cs.md)
+- [Vložené hlavní stránky (C#)](nested-master-pages-cs.md)
+- [Vytvoření rozložení platného pro celý web pomocí stránek předlohy (VB)](creating-a-site-wide-layout-using-master-pages-vb.md)
+- [Několik prvků ContentPlaceHolder a výchozí obsah (VB)](multiple-contentplaceholders-and-default-content-vb.md)
+- [Zadání názvu, metaznaček a dalších hlaviček HTML na stránce předlohy (VB)](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb.md)
+- [Adresy URL stránek předloh (VB)](urls-in-master-pages-vb.md)
+- [Pojmenovávání ID ovládacích prvků na stránkách obsahu (VB)](control-id-naming-in-content-pages-vb.md)
+- [Interakce stránky obsahu se stránkou předlohy (VB)](interacting-with-the-master-page-from-the-content-page-vb.md)
+- [Interakce stránky předlohy se stránkou obsahu (VB)](interacting-with-the-content-page-from-the-master-page-vb.md)
+- [Stránky předlohy a ASP.NET AJAX (VB)](master-pages-and-asp-net-ajax-vb.md)
+- [Programové určení stránky předlohy (VB)](specifying-the-master-page-programmatically-vb.md)
+- [Vložené hlavní stránky (VB)](nested-master-pages-vb.md)

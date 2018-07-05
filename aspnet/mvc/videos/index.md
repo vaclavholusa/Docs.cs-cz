@@ -1,6 +1,6 @@
 ---
 uid: mvc/videos/index
-title: Videa | Microsoft Docs
+title: Video | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,15 +9,14 @@ ms.date: 06/24/2011
 ms.topic: article
 ms.assetid: e618c37c-68f3-49aa-9fda-f86cb3b578b9
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos
 msc.type: book
-ms.openlocfilehash: 03e8129816a2fb8b9261618207b0e1795fb7cf23
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: df273de2c2d4499995ae022240fa8e37402216e9
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29152960"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37383757"
 ---
 <a name="videos"></a>Videa
 ====================
@@ -50,7 +49,7 @@ ms.locfileid: "29152960"
         - [ASP.NET MVC: 10minutové technické video pro vývojáře](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
         - [Vrácení dat ve formátu JSON na volání AJAX ve webové aplikaci ASP.NET MVC](mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
         - [Práce s daty v částečných zobrazeních ASP.NET MVC](mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-        - [Implementace modely zobrazení ke správě dat pro zobrazení v rozhraní ASP.NET MVC](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+        - [Implementace modelů zobrazení kvůli správě dat v zobrazeních ASP.NET MVC](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
         - [Vytvoření vlastní pomocné rutiny HTML pro aplikaci MVC](mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
         - [Práce s vazači modelu v aplikaci MVC](mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application.md)
         - [Použití atributů HttpVerbs v aplikaci MVC](mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
@@ -95,7 +94,7 @@ ms.locfileid: "29152960"
         - [Prezentace ASP.NET MVC – část 16: Opakování členství s OpenID](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
         - [Prezentace ASP.NET MVC – část 17: Pokladna s Jeffem Atwoodem](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
         - [Prezentace ASP.NET MVC – část 18: Vytvoření prostředí](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-        - [ASP.NET MVC Storefront část 19: Zpracování objednávky s pracovním postupem prostředí Windows](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+        - [Prezentace ASP.NET MVC – část 19: Zpracování objednávek pracovním postupem Windows](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
         - [Prezentace ASP.NET MVC – část 19a: Pokračování pracovního postupu Windows](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
         - [Prezentace ASP.NET MVC – část 20: Přihlášení](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
         - [Prezentace ASP.NET MVC – část 21: Správa objednávek a přizpůsobení](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

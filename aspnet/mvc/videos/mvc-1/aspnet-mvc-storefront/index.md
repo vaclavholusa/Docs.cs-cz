@@ -1,27 +1,26 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/index
-title: ASP.NET MVC výkladní skříň | Microsoft Docs
+title: Prezentace ASP.NET MVC | Dokumentace Microsoftu
 author: rick-anderson
-description: ASP.NET MVC Storefront Startovní sady
+description: ASP.NET MVC prezentace Starter Kit
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
 ms.topic: article
 ms.assetid: 296b3a7a-483d-4937-ba2f-3f9c1319616a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront
 msc.type: chapter
-ms.openlocfilehash: 78b42135d38918fb1d5c1d7a9dcdae1da9b660f1
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 9dcd17dc7599e9a38ebf72b32c1cb1df63ad1973
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29153239"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37368548"
 ---
-<a name="aspnet-mvc-storefront"></a>Výkladní skříň rozhraní ASP.NET MVC
+<a name="aspnet-mvc-storefront"></a>Prezentace ASP.NET MVC
 ====================
-> ASP.NET MVC Storefront Startovní sady
+> ASP.NET MVC prezentace Starter Kit
 
 
 - [Prezentace ASP.NET MVC – část 1: Architektura a celkový přehled](aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
@@ -42,7 +41,7 @@ ms.locfileid: "29153239"
 - [Prezentace ASP.NET MVC – část 16: Opakování členství s OpenID](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 - [Prezentace ASP.NET MVC – část 17: Pokladna s Jeffem Atwoodem](aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
 - [Prezentace ASP.NET MVC – část 18: Vytvoření prostředí](aspnet-mvc-storefront-part-18-creating-an-experience.md)
-- [ASP.NET MVC Storefront část 19: Zpracování objednávky s pracovním postupem prostředí Windows](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+- [Prezentace ASP.NET MVC – část 19: Zpracování objednávek pracovním postupem Windows](aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 - [Prezentace ASP.NET MVC – část 19a: Pokračování pracovního postupu Windows](aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
 - [Prezentace ASP.NET MVC – část 20: Přihlášení](aspnet-mvc-storefront-part-20-logging.md)
 - [Prezentace ASP.NET MVC – část 21: Správa objednávek a přizpůsobení](aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

@@ -1,61 +1,60 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
-title: ASP.NET MVC 4 modely a přístup k datům | Microsoft Docs
+title: ASP.NET MVC 4 – modely a přístup k datům | Dokumentace Microsoftu
 author: rick-anderson
-description: 'Poznámka: Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o architektuře ASP.NET MVC. Pokud jste nepoužili ASP.NET MVC před, doporučujeme si projít ASP.NET MVC 4...'
+description: 'Poznámka: Tento praktického testovacího prostředí se předpokládá, že máte základní znalosti ASP.NET MVC. Pokud jste ještě nepoužívali ASP.NET MVC před, doporučujeme si projít ASP.NET MVC 4...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
 ms.topic: article
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 88b3316b116962dd35031f4b971dbfe31ed0e010
-ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
+ms.openlocfilehash: afc03d87431632bbb3ab59241de0edb4bb7af12d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34306735"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371126"
 ---
-# <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 modely a přístup k datům
+# <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 – modely a přístup k datům
 
-Podle [webové táborech Team](https://twitter.com/webcamps)
+podle [Campy Web týmu](https://twitter.com/webcamps)
 
-[Stažení webové táborech cvičení Kit](https://aka.ms/webcamps-training-kit)
+[Stáhněte si Web Campy školení Kit](https://aka.ms/webcamps-training-kit)
 
-Toto testovací prostředí Hands-on předpokládá, že máte základní znalosti o **ASP.NET MVC**. Pokud jste nepoužili **ASP.NET MVC** před, doporučujeme si projít **ASP.NET MVC 4 Základy** Hands-on testovacího prostředí.
+Tohoto praktického testovacího prostředí předpokládá, že máte základní znalosti o **ASP.NET MVC**. Pokud jste ještě nepoužívali **ASP.NET MVC** před, doporučujeme si projít **základy ASP.NET MVC 4** praktického testovacího prostředí.
 
-Tato laboratoř vás provede procesem vylepšení a nových funkcí popsaných výše použitím malých změn na ukázkové webové aplikaci ve zdrojové složce zadané.
+Tato laboratoř vás provede vylepšení a nových funkcí popsaných dříve použitím menší změny na ukázkovou webovou aplikaci ve zdrojové složce k dispozici.
 
 > [!NOTE]
-> Všechny ukázky kódu a fragmenty kódu jsou součástí webové táborech školení sady, k dispozici na [verze Microsoft-webové/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Projekt specifické pro toto testovací prostředí je k dispozici na [ASP.NET MVC 4 modely a přístup k datům](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess).
+> Všechny ukázky kódu a fragmenty kódu jsou součástí této webové Campy školicí sady, k dispozici na [verzích Microsoft-Web/WebCampTrainingKit](https://aka.ms/webcamps-training-kit). Projekt specifické pro toto testovací prostředí je k dispozici na [ASP.NET MVC 4 modely a přístup k datům](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess).
 
-V **ASP.NET MVC Základy** Hands-on testovací prostředí, můžete mít byla předávání pevně dat z řadičů šablon zobrazení. Ale, aby bylo možné vytvořit skutečné webové aplikace, můžete chtít použít skutečné databázi.
+V **základy ASP.NET MVC** praktického testovacího prostředí, budete mít se předávání pevně zakódované dat z řadičů zobrazit šablony. Ale, aby bylo možné sestavit aplikace skutečný webu, můžete chtít použít skutečné databázi.
 
-Toto testovací prostředí Hands-on vám ukáže, jak používat databázový stroj, aby bylo možné ukládají a načítají data potřebná pro aplikaci služby obchodu Hudba. Provést tuto akci, bude začínat existující databázi a z něj vytvořit datového modelu Entity. V tomto testovacím prostředí bude vyhovovat **Database First** přístup a taky **Code First** přístup.
+Použití databázového stroje, aby bylo možné ukládat a načítat data potřebná pro aplikace Music Store se zobrazí tohoto praktického testovacího prostředí. Chcete-li provést tuto akci, bude začínat existující databázi a vytvoření modelu Entity Data Model z něj. V tomto testovacím prostředí, se bude splňovat **Database First** přístup také **Code First** přístup.
 
-Ale můžete také použít **Model First** přístupu, vytvořte stejný model pomocí nástroje a potom z něj generovat databázi.
+Ale můžete také použít **první Model** přístup, vytvořit stejný model pomocí nástrojů a pak z něj vygenerovala databáze.
 
-![První vs databáze. Model první](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs. Nejprve modelu")
+![První vs databáze. Model první](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs. První model")
 
-*První vs databáze. Nejprve modelu*
+*První vs databáze. První model*
 
-Po generování modelu, budou správné úpravy v StoreController poskytnout zobrazení úložiště dat získaných z databáze, místo použití pevně data. Nebudete muset provádět všechny změny šablony zobrazení protože StoreController se vrátí stejné ViewModels zobrazení šablony, ale tentokrát data budou pocházet z databáze.
+Po vygenerování modelu, budou v StoreController poskytnout dat získaných z databáze, místo použití pevně zakódované data Store zobrazení správné nastavení. Nebudete muset provádět změny do zobrazení šablon vzhledem k tomu, že StoreController se vrací stejný modely ViewModels do zobrazení šablon, ale tentokrát data budou přicházet z databáze.
 
 **Přístupu Code First**
 
-Code First přístup umožňuje definovat model z kódu bez generování tříd, které jsou obecně kombinaci s rozhraní.
+Přístupu Code First umožňuje definovat model z kódu bez generování třídy, které jsou obvykle svázány s použitím rozhraní framework.
 
-V kódu nejprve objekty modelu jsou definovány s POCOs, &quot;prostý staré objekty CLR&quot;. POCOs jsou jednoduché prostý třídy, které mají žádné dědičnosti a neimplementuje rozhraní. Jsme může automaticky generovat databázi z nich nebo můžeme použít existující databázi a generovat mapování třídy z kódu.
+V kódu nejprve modelu objekty jsou definovány pomocí POCOs, &quot;prostý starší objekty CLR&quot;. POCOs jsou jednoduché prostý třídy, které jste žádné dědičnosti a neimplementují rozhraní. Databázi jsme můžete vygenerovat automaticky z nich, nebo můžeme použít stávající databázi a generovat mapování tříd z kódu.
 
-Výhody použití tohoto přístupu je, aby zůstala modelu nezávisle trvalost framework (v tomto případě Entity Framework), jak POCOs třídy nejsou kombinaci s rozhraní mapování.
+Výhody použití tohoto přístupu je, že zůstane modelu nezávisle na stálost framework (v tomto případě Entity Framework), jako POCOs třídy nejsou doplňuje rozhraní mapování.
 
 > [!NOTE]
-> Toto testovací prostředí je založena na technologii ASP.NET MVC 4 a verzi Hudba úložiště ukázkovou aplikaci přizpůsobit a minimalizuje podle pouze funkce uvedené v tomto testovacím prostředí Hands-On.
+> Toto testovací prostředí je založena na technologii ASP.NET MVC 4 a verzi vzorové aplikace Music Store přizpůsobit a minimalizaci podle pouze funkce, které jsou zobrazené ve tohoto praktického testovacího prostředí.
 > 
-> Pokud chcete prozkoumat celek **Hudba úložiště** aplikace najdete ji v [MVC. Hudba úložiště](https://github.com/evilDave/MVC-Music-Store).
+> Pokud chcete prozkoumat celé **Music Store** aplikace se nachází v [MVC. Music Store](https://github.com/evilDave/MVC-Music-Store).
 
 
 <a id="Prerequisites"></a>
@@ -65,7 +64,7 @@ Výhody použití tohoto přístupu je, aby zůstala modelu nezávisle trvalost 
 
 Musíte mít následující položky k dokončení tohoto testovacího prostředí:
 
-- [Microsoft Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) nebo i vyšší (čtení [příloha A](#AppendixA) pokyny o tom, jak ji nainstalovat).
+- [Microsoft Visual Studio Express 2012 pro Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) nebo i vyšší (čtení [příloha A](#AppendixA) pokyny k jeho instalaci).
 
 <a id="Setup"></a>
 
@@ -74,9 +73,9 @@ Musíte mít následující položky k dokončení tohoto testovacího prostřed
 
 **Instalace fragmenty kódu**
 
-Pro usnadnění práce většinu kódu, který bude spravovat podél toto testovací prostředí je k dispozici jako fragmenty kódu v sadě Visual Studio. K instalaci fragmenty kódu spustit **.\Source\Setup\CodeSnippets.vsi** souboru.
+Pro usnadnění práce velkou část kódu, které budete spravovat podél tohoto testovacího prostředí je k dispozici jako fragmenty kódu sady Visual Studio. K instalaci spustit fragmenty kódu **.\Source\Setup\CodeSnippets.vsi** souboru.
 
-Pokud si nejste obeznámeni s fragmenty kódu Visual Studio a chcete se dozvíte, jak používat, můžete odkazovat na příloze z tohoto dokumentu &quot; [fragmenty kódu pomocí příloha C:](#AppendixC)&quot;.
+Pokud nejste obeznámeni s fragmenty kódu Visual Studio a chcete další informace o jejich použití, najdete dodatku z tohoto dokumentu &quot; [fragmenty kódu pomocí příloha C:](#AppendixC)&quot;.
 
 * * *
 
@@ -85,14 +84,14 @@ Pokud si nejste obeznámeni s fragmenty kódu Visual Studio a chcete se dozvíte
 <a id="Exercises"></a>
 ## <a name="exercises"></a>Cvičení
 
-Toto testovací prostředí Hands-on se skládá ve cvičeních následující:
+Podle následující praktická cvičení se skládá tohoto praktického testovacího prostředí:
 
 1. [Cvičení 1: Přidání databáze](#Exercise1)
 2. [Cvičení 2: Vytvoření databáze pomocí Code First](#Exercise2)
-3. [Cvičení 3: Dotaz na databázi s parametry](#Exercise3)
+3. [Cvičení 3: Dotazování na databázi s parametry](#Exercise3)
 
 > [!NOTE]
-> Každý úkol je přiložena **End** složku obsahující výsledné řešení by si měly opatřit po dokončení cvičeních. Toto řešení můžete použít jako vodítko, pokud potřebujete další pomoc při procházení cvičeních.
+> Se sadou každý cvičení **koncové** složku, která obsahuje výsledný řešení byste měli získat po dokončení cvičení. Toto řešení můžete použít jako vodítko, pokud potřebujete další pomoc prostřednictvím praktická cvičení.
 
 
 Odhadovaný čas dokončení tohoto testovacího prostředí: **35 minut**.
@@ -102,93 +101,93 @@ Odhadovaný čas dokončení tohoto testovacího prostředí: **35 minut**.
 <a id="Exercise_1_Adding_a_Database"></a>
 ### <a name="exercise-1-adding-a-database"></a>Cvičení 1: Přidání databáze
 
-V tomto cvičení se dozvíte, jak přidat databáze s tabulkami aplikace MusicStore k řešení, aby bylo možné využívat jeho data. Jakmile databáze je generována s modelem a k řešení přidat, upraví třídě StoreController zobrazit šablonu poskytnout dat získaných z databáze, místo pevně definovaných hodnot.
+V tomto cvičení se dozvíte, jak přidat databázi s tabulkami aplikace MusicStore k řešení, aby bylo možné využívat svoje data. Jakmile databáze je generována s modelem a přidán do řešení, upravíte třídy StoreController poskytli šablonu zobrazení s daty z databáze, místo pevně definovaných hodnot.
 
 <a id="Ex1Task1"></a>
 
 <a id="Task_1_-_Adding_a_Database"></a>
 #### <a name="task-1---adding-a-database"></a>Úloha 1 – přidání databáze
 
-V této úloze budete přidávat již vytvořené databáze s hlavní tabulky MusicStore aplikace k řešení.
+V této úloze přidá již vytvořené databáze s hlavním tabulkami MusicStore aplikace do řešení.
 
-1. Otevřete **začít** řešení nacházející se v **zdroj/Ex1-AddingADatabaseDBFirst/počáteční/** složky.
+1. Otevřít **začít** řešení nachází v **zdroj/Ex1-AddingADatabaseDBFirst/počáteční/** složky.
 
-   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   1. Budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídky a vybereme **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogového okna, klikněte na tlačítko **obnovení** aby bylo možné stáhnout chybějící balíčky.
    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
       > [!NOTE]
-      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
-2. Přidat **MvcMusicStore** soubor databáze. V tomto testovacím prostředí Hands-on budete používat již vytvořené databáze názvem **MvcMusicStore.mdf**. To lze provést, klikněte pravým tlačítkem na **aplikace\_Data** složku, přejděte na příkaz **přidat** a pak klikněte na **existující položka**. Přejděte do **\Source\Assets** a vyberte **MvcMusicStore.mdf** souboru.
+      > Jednou z výhod pomocí nástroje NuGet je, že není nutné dodávat všechny knihovny ve vašem projektu, zmenšení velikosti projektu. Pomocí nástroje NuGet zadáním verze balíčku v souboru Packages.config, budete moct stáhnout požadované knihovny při prvním spuštění projektu. To je důvod, proč budete muset projít tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+2. Přidat **MvcMusicStore** databázový soubor. Ve tohoto praktického testovacího prostředí, budete používat již vytvořené databázi s názvem **MvcMusicStore.mdf**. Pokud chcete udělat, klikněte pravým tlačítkem na **aplikace\_Data** složku, přejděte na **přidat** a potom klikněte na tlačítko **existující položku**. Přejděte do **\Source\Assets** a vyberte **MvcMusicStore.mdf** souboru.
 
-    ![Přidat existující položku](aspnet-mvc-4-models-and-data-access/_static/image2.png "přidání existující položky")
+    ![Přidání existující položky](aspnet-mvc-4-models-and-data-access/_static/image2.png "přidat existující položku")
 
-    *Přidání existující položky*
+    *Přidat existující položku*
 
     ![Soubor databáze MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image3.png "MvcMusicStore.mdf databázový soubor")
 
-    *Soubor databáze MvcMusicStore.mdf*
+    *MvcMusicStore.mdf databázový soubor*
 
-    Databáze byla přidána do projektu. I v případě, že databáze se nachází uvnitř řešení, se můžete dotazovat a aktualizovat ji jako byla hostované v jiné databázi serveru.
+    Databáze je přidaný do projektu. I v případě, že databáze nachází v řešení, můžete dotazovat a aktualizovat ji podle hostovaný v jiném databázovém serveru.
 
-    ![MvcMusicStore databáze v Průzkumníku řešení](aspnet-mvc-4-models-and-data-access/_static/image4.png "MvcMusicStore databáze v Průzkumníku řešení")
+    ![MvcMusicStore databázi v Průzkumníku řešení](aspnet-mvc-4-models-and-data-access/_static/image4.png "MvcMusicStore databázi v Průzkumníku řešení")
 
-    *MvcMusicStore databáze v Průzkumníku řešení*
-3. Ověřte připojení k databázi. Chcete-li to provést, dvakrát klikněte na **MvcMusicStore.mdf** k navázání připojení.
+    *MvcMusicStore databázi v Průzkumníku řešení*
+3. Ověření připojení k databázi. Chcete-li to provést, dvakrát klikněte na **MvcMusicStore.mdf** k navázání připojení.
 
-    ![Připojení k MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image5.png "připojení k MvcMusicStore.mdf")
+    ![Připojení k MvcMusicStore.mdf](aspnet-mvc-4-models-and-data-access/_static/image5.png "propojíte MvcMusicStore.mdf")
 
     *Připojení k MvcMusicStore.mdf*
 
 <a id="Ex1Task2"></a>
 
 <a id="Task_2_-_Creating_a_Data_Model"></a>
-#### <a name="task-2---creating-a-data-model"></a>Úloha 2 – vytváření datového modelu
+#### <a name="task-2---creating-a-data-model"></a>Úloha 2 – Vytvoření datového modelu
 
-V této úloze vytvoří datový model pro interakci s databází přidali v předchozí úloze.
+V této úloze vytvoříte datový model pro interakci s databází přidali v předchozím úkolu.
 
-1. Vytvoření datového modelu, která bude představovat databáze. Chcete-li to provést, v Průzkumníku řešení klikněte pravým tlačítkem **modely** složku, přejděte na příkaz **přidat** a pak klikněte na **novou položku**. V **přidat novou položku** dialogovém okně, vyberte **Data** šablony a potom **ADO.NET Entity Data Model** položky. Změňte název modelu dat **StoreDB.edmx** a klikněte na tlačítko **přidat**.
+1. Vytvoření datového modelu, která bude představovat databáze. Chcete-li to provést, v Průzkumníku řešení klikněte pravým tlačítkem **modely** složku, přejděte na příkaz **přidat** a potom klikněte na tlačítko **nová položka**. V **přidat novou položku** dialogového okna, vyberte **Data** šablony a potom **datový Model Entity ADO.NET** položky. Změňte název modelu dat na **StoreDB.edmx** a klikněte na tlačítko **přidat**.
 
-    ![Přidání StoreDB ADO.NET Entity Data Model](aspnet-mvc-4-models-and-data-access/_static/image6.png "přidání StoreDB ADO.NET Entity Data Model")
+    ![Přidání datového modelu ADO.NET Entity StoreDB](aspnet-mvc-4-models-and-data-access/_static/image6.png "přidání StoreDB ADO.NET Entity Data Model")
 
     *Přidání StoreDB ADO.NET Entity Data Model*
-2. **Entity Data Model Wizard** se zobrazí. Tento průvodce vás provede vytvoření vrstvy modelu. Vzhledem k tomu, že model by měl být na základě vytvořit existující databáze recentyl přidat, vyberte **generování z databáze** a klikněte na tlačítko **Další**.
+2. **Průvodce datovým modelem Entity** se zobrazí. Tento průvodce vás provede vytvořením modelu vrstvy. Protože model by měl vytvořit podle existující databáze recentyl přidali, vyberte **Generovat z databáze** a klikněte na tlačítko **Další**.
 
-    ![Výběr obsah modelu](aspnet-mvc-4-models-and-data-access/_static/image7.png "výběr obsah modelu")
+    ![Výběr obsahu modelu](aspnet-mvc-4-models-and-data-access/_static/image7.png "výběr obsahu modelu")
 
-    *Výběr obsah modelu*
-3. Vzhledem k tomu, že chcete generovat model z databáze, musíte zadat připojení používat. Klikněte na tlačítko **nové připojení**.
+    *Výběr modelu obsahu*
+3. Protože jsou generování modelu z databáze, je potřeba zadat připojení se má používat. Klikněte na tlačítko **nové připojení**.
 4. Vyberte **soubor databáze Microsoft SQL Server** a klikněte na tlačítko **pokračovat**.
 
-    ![Vyberte zdroj dat](aspnet-mvc-4-models-and-data-access/_static/image8.png "vybrat zdroj dat")
+    ![Zvolit zdroj dat](aspnet-mvc-4-models-and-data-access/_static/image8.png "zvolit zdroj dat")
 
-    *Vyberte zdroj dat dialogové okno*
+    *Vyberte zdroj dat dialogového okna*
 5. Klikněte na tlačítko **Procházet** a vyberte databázi **MvcMusicStore.mdf** jste vyhledali v **aplikace\_Data** složky a klikněte na tlačítko **OK**.
 
     ![Vlastnosti připojení](aspnet-mvc-4-models-and-data-access/_static/image9.png "vlastnosti připojení")
 
     *Vlastnosti připojení*
-6. Generovaná třída by měla mít stejný název jako připojovací řetězec entity, takže změňte její název **MusicStoreEntities** a klikněte na tlačítko **Další**.
+6. Generované třídy by měly mít stejný název jako připojovací řetězec entity, proto změňte její název na **MusicStoreEntities** a klikněte na tlačítko **Další**.
 
-    ![Výběr datové připojení](aspnet-mvc-4-models-and-data-access/_static/image10.png "vybrat datové připojení")
+    ![Výběr datové připojení](aspnet-mvc-4-models-and-data-access/_static/image10.png "volba připojení dat")
 
     *Výběr datové připojení*
-7. Vyberte objekty databáze, které chcete použít. Entity Model používat jenom databázové tabulky, vyberte **tabulky** možnost a ujistěte se, že **zahrnout do modelu sloupce cizích klíčů** a **množně nebo singularizovat generované názvy objektů** jsou vybrané možnosti. Změňte Model Namespace k **MvcMusicStore.Model** a klikněte na tlačítko **Dokončit**.
+7. Zvolte objekty databáze, které chcete použít. Jako Entity Model se použít jenom databázové tabulky, vyberte **tabulky** možnosti a ujistěte se, že **zahrnout do modelu sloupce cizích klíčů** a **Pluralize jednotné nebo množné číslo vygenerována názvy objektů** jsou vybrané možnosti. Změňte Model Namespace k **MvcMusicStore.Model** a klikněte na tlačítko **Dokončit**.
 
-    ![Výběr databázové objekty](aspnet-mvc-4-models-and-data-access/_static/image11.png "výběr databázové objekty")
+    ![Volba databázové objekty](aspnet-mvc-4-models-and-data-access/_static/image11.png "výběr databázových objektů")
 
-    *Výběr databázové objekty*
+    *Volba databázové objekty*
 
     > [!NOTE]
-    > Pokud se zobrazí dialogové okno upozornění zabezpečení, klikněte na tlačítko **OK** spustit šablonu a vygenerovat třídy pro model entity.
-8. Diagramu entity pro databázi se zobrazí, když se vytvoří samostatnou třídu, která mapuje každou tabulku do databáze. Například **alb** budou odpovídat tabulky **Album** třídy, kde bude každý sloupec v tabulce mapovat vlastnosti třídy. To vám umožní pro dotazování a práce s objekty, které představují řádků v databázi.
+    > Pokud se zobrazí dialogové okno upozornění zabezpečení, klikněte na tlačítko **OK** danou šablonou spustit a generovat třídy pro model entity.
+8. Diagramu entity pro databáze se zobrazí, když se vytvoří samostatné třídy, která mapuje každé tabulky do databáze. Například **alb** tabulky budou mít stejné **alba** třídy, ve kterém bude každý sloupec v tabulce mapovat na vlastnosti třídy. To vám umožní dotazovat a práci s objekty, které představují řádků v databázi.
 
-    ![Entity diagram](aspnet-mvc-4-models-and-data-access/_static/image12.png "diagramu Entity")
+    ![Entity diagram](aspnet-mvc-4-models-and-data-access/_static/image12.png "Entity diagram")
 
     *Entity diagram*
 
     > [!NOTE]
-    > Šablony T4 (.tt) spustit kód vygenerovat třídy entity a přepíše existující třídy se stejným názvem. V tomto příkladu třídy &quot;Album&quot;, &quot;Genre&quot; a &quot;umělcem&quot; měla přepsat generovaného kódu.
+    > Šablony T4 (.tt) spustit kód pro generování tříd entit a přepíše existující třídy se stejným názvem. V tomto příkladu třídy &quot;alba&quot;, &quot;žánr&quot; a &quot;interpreta&quot; byly přepsat vygenerovaný kód.
 
 
 <a id="Ex1Task3"></a>
@@ -196,54 +195,54 @@ V této úloze vytvoří datový model pro interakci s databází přidali v př
 <a id="Task_3_-_Building_the_Application"></a>
 #### <a name="task-3---building-the-application"></a>Úloha 3 – vytvoření aplikace
 
-V této úloze bude zaškrtnete, i když generování modelu odebraly **Album**, **Genre** a **umělcem** třídy modelu, sestavení projektu úspěšně pomocí nové třídy datového modelu.
+V této úloze bude zaškrtnete, i když generování modelu odebraly **alba**, **žánr** a **interpreta** tříd modelu projektu sestavení úspěšně pomocí nové tříd datových modelů.
 
-1. Sestavení projektu výběrem **sestavení** položky nabídky a pak **sestavení MvcMusicStore**.
+1. Sestavte projekt výběrem **sestavení** položky nabídky a pak **sestavení MvcMusicStore**.
 
     ![Sestavení projektu](aspnet-mvc-4-models-and-data-access/_static/image13.png "sestavení projektu")
 
     *Sestavení projektu*
-2. Sestavení projektu úspěšně. Proč to stále funguje? Funguje, protože tabulky databáze, které mají pole obsahující vlastnosti, které jste používali v odstraněné třídy **Album** a **Genre**.
+2. Úspěšně se sestavení projektu. Proč to pořád funguje? To funguje, protože databázové tabulky obsahuje pole, která zahrnují vlastnosti, které jste používali ve třídách odebrané **alba** a **žánr**.
 
-    ![Sestavení bylo úspěšné](aspnet-mvc-4-models-and-data-access/_static/image14.png "sestavení bylo úspěšné")
+    ![Sestavení proběhlo úspěšně](aspnet-mvc-4-models-and-data-access/_static/image14.png "sestavení proběhlo úspěšně")
 
-    *Sestavení bylo úspěšné*
-3. Při návrháře zobrazí entity ve formátu diagramu, jsou skutečně třídy jazyka C#. Rozbalte **StoreDB.edmx** uzlu v Průzkumníku řešení a potom **StoreDB.tt**, zobrazí se nové generovaného entity.
+    *Sestavení bylo úspěšné.*
+3. Návrhář zobrazí entity ve formátu diagramu, ale jsou ve skutečnosti třídy jazyka C#. Rozbalte **StoreDB.edmx** uzlu v Průzkumníku řešení a potom **StoreDB.tt**, zobrazí se nové entity vygenerované.
 
-    ![Generované soubory](aspnet-mvc-4-models-and-data-access/_static/image15.png "generované soubory")
+    ![Generované soubory](aspnet-mvc-4-models-and-data-access/_static/image15.png "generovaných souborů")
 
     *Generované soubory*
 
 <a id="Ex1Task4"></a>
 
 <a id="Task_4_-_Querying_the_Database"></a>
-#### <a name="task-4---querying-the-database"></a>Úloha 4 – dotazování databáze
+#### <a name="task-4---querying-the-database"></a>Úloha 4 – dotazování na databázi
 
-V této úloze tak, aby místo použití pevně zakódované data, se bude dotazovat databáze načíst informace o aktualizujte StoreController třídy.
+V této úloze budete aktualizovat StoreController třídy tak, aby místo použití pevně zakódované data, dotáže se na databázi a načte informace.
 
-1. Otevřete **Controllers\StoreController.cs** a přidejte následující pole do třídy pro uložení instance **MusicStoreEntities** třídy s názvem **storeDB**:
+1. Otevřít **Controllers\StoreController.cs** a přidejte následující pole do třídy pro uložení instance **MusicStoreEntities** třídu s názvem **storeDB**:
 
-    (Code fragment kódu - *modely a přístup k datům - Ex1 storeDB*)
+    (Fragment - kódu *modely a přístup k datům – Ex1 storeDB*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
-2. **MusicStoreEntities** třída zpřístupňuje vlastnost kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení Genre se všemi **alb**.
+2. **MusicStoreEntities** třída zveřejňuje vlastnosti kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení žánr se všemi **alb**.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex1 úložiště Procházet*)
+    (Fragment - kódu *modely a přístup k datům – procházení Store Ex1*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
     > [!NOTE]
-    > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
+    > Používáte funkce .NET volá **LINQ** (jazyka integrované dotazu) k zápisu výrazy dotazu silného typu pomocí těchto kolekcí – které spustí kód na databázi a vrátí objekty, které můžete naprogramovat proti.
     > 
-    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
-3. Aktualizace **Index** metody akce k načtení všech žánry.
+    > Další informace o dotazech technologie LINQ, navštivte prosím [web msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+3. Aktualizace **Index** metody akce k načtení všech žánrů.
 
-    (Code fragment kódu - *modely a Data Access – Index úložiště Ex1*)
+    (Fragment - kódu *modely a přístup k datům – Ex1 Store Index*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
-4. Aktualizace **Index** metody akce k načtení všech žánry a transformace kolekce do seznamu.
+4. Aktualizace **Index** metody akce k načtení všech žánry a transformovat kolekci do seznamu.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex1 úložiště GenreMenu*)
+    (Fragment - kódu *modely a přístup k datům – Ex1 Store GenreMenu*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
 
@@ -252,61 +251,61 @@ V této úloze tak, aby místo použití pevně zakódované data, se bude dotaz
 <a id="Task_5_-_Running_the_Application"></a>
 #### <a name="task-5---running-the-application"></a>Úloha 5: spuštění aplikace
 
-V této úloze zkontroluje se, že na stránce Index úložiště se nyní zobrazí žánry uloženy v databázi místo pevně zakódované ty, které jsou. Není třeba měnit zobrazit šablonu, protože **StoreController** vrací stejné entity jako předtím, ale tentokrát data budou pocházet z databáze.
+V této úloze zkontroluje, že Store indexovou stránku se teď budou zobrazovat žánry uložených v databázi namísto pevně zakódované značky. Není nutné měnit zobrazit šablonu, protože **StoreController** vrací stejné entity jako předtím, ale tentokrát data budou přicházet z databáze.
 
 1. Znovu sestavte řešení a stiskněte klávesu **F5** ke spuštění aplikace.
-2. Projekt se spustí na domovské stránce. Ověřte, že v nabídce **žánry** již není seznamu pevně zakódované a přímo načtena data z databáze.
+2. Projekt se spustí na domovské stránce. Ověřte, že v nabídce **žánry** už není pevně zakódované seznamu a data se načtou přímo z databáze.
 
     ![BrowsingGenresFromDataBase](aspnet-mvc-4-models-and-data-access/_static/image16.png)
 
     *Procházení žánry z databáze*
-3. Nyní přejděte do jakékoli genre a ověřte, zda že alb budou naplněny z databáze.
+3. Teď přejděte do jakékoli žánr a ověřte, že že alb budou naplněny z databáze.
 
-    ![Procházení alb z databáze](aspnet-mvc-4-models-and-data-access/_static/image17.png "procházení alb z databáze")
+    ![Z databáze procházení alb](aspnet-mvc-4-models-and-data-access/_static/image17.png "procházení alb z databáze")
 
     *Procházení alb z databáze*
 
 <a id="Exercise2"></a>
 
 <a id="Exercise_2_Creating_a_Database_Using_Code_First"></a>
-### <a name="exercise-2-creating-a-database-using-code-first"></a>Cvičení 2: Vytvoření databáze nejdřív pomocí kódu
+### <a name="exercise-2-creating-a-database-using-code-first"></a>Cvičení 2: Vytvoření databáze nejprve pomocí kódu
 
-V tomto cvičení se dozvíte, jak použít Code First přístup k vytvoření databáze s tabulkami aplikace MusicStore a jak pro přístup k jeho data.
+V tomto cvičení se dozvíte, jak vytvořit databázi s tabulkami aplikace MusicStore pomocí přístupu Code First a jak přistupovat k jeho datům.
 
-Po vygenerování modelu upravíte StoreController poskytnout dat získaných z databáze, místo použití hodnot pevně zakódované zobrazit šablonu.
+Po vygenerování modelu upravíte StoreController poskytnout dat získaných z databáze, místo hodnot pevně zakódované zobrazit šablonu.
 
 > [!NOTE]
-> Pokud jste dokončili cvičení 1 a už pracovali s databáze prvním přístupem, se teď Další informace o získání stejné výsledky s jiným procesem. Úlohy, které jsou společné s cvičení 1 bylo označeno k usnadnění vaší čtení. Pokud jste nedokončili prověření 1, ale chtěli dozvědět Code First přístup, můžete spustit z tohoto cvičení a získat úplné vysvětlení tohoto tématu.
+> Pokud dokončení cvičení 1 a už pracovali s Database First přístup, se teď naučíte stejné výsledky s jiným procesem. Úlohy, které jsou společné s cvičení 1 byly označeny pro usnadnění vaší čtení. Pokud jste nedokončili vykonávat 1 ale chtěli dozvědět přístupu Code First, můžete spustit z tohoto cvičení a získat úplné vysvětlení tohoto tématu.
 
 
 <a id="Ex2Task1"></a>
 
 <a id="Task_1_-_Populating_Sample_Data"></a>
-#### <a name="task-1---populating-sample-data"></a>Úloha 1 - naplnění ukázková Data
+#### <a name="task-1---populating-sample-data"></a>Úloha 1 – naplnění ukázkových dat
 
-V této úloze bude naplnit databázi s ukázkovými daty při výchozímu vytvoření pomocí Code First.
+V této úloze naplníte databázi s ukázkovými daty při výchozímu vytvořené využitím založeno na kódu.
 
-1. Otevřete **začít** řešení nacházející se v **zdroj/Ex2-CreatingADatabaseCodeFirst/počáteční/** složky. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
+1. Otevřít **začít** řešení nachází v **zdroj/Ex2-CreatingADatabaseCodeFirst/počáteční/** složky. V opačném případě může nadále používat **End** řešení získat provedením předchozím cvičení.
 
-   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   1. Pokud jste otevřeli zadaných **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídky a vybereme **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogového okna, klikněte na tlačítko **obnovení** aby bylo možné stáhnout chybějící balíčky.
    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
       > [!NOTE]
-      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
-2. Přidat **SampleData.cs** do souboru **modely** složky. To lze provést, klikněte pravým tlačítkem na **modely** složku, přejděte na příkaz **přidat** a pak klikněte na **existující položka**. Přejděte do **\Source\Assets** a vyberte **SampleData.cs** souboru.
+      > Jednou z výhod pomocí nástroje NuGet je, že není nutné dodávat všechny knihovny ve vašem projektu, zmenšení velikosti projektu. Pomocí nástroje NuGet zadáním verze balíčku v souboru Packages.config, budete moct stáhnout požadované knihovny při prvním spuštění projektu. To je důvod, proč budete muset projít tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+2. Přidat **SampleData.cs** do souboru **modely** složky. Pokud chcete udělat, klikněte pravým tlačítkem na **modely** složku, přejděte na příkaz **přidat** a potom klikněte na tlačítko **existující položku**. Přejděte do **\Source\Assets** a vyberte **SampleData.cs** souboru.
 
-    ![Ukázková data naplnit kódu](aspnet-mvc-4-models-and-data-access/_static/image18.png "ukázkových dat naplnit kódu")
+    ![Ukázková data naplnit kód](aspnet-mvc-4-models-and-data-access/_static/image18.png "kód naplnění ukázkových dat")
 
     *Ukázková data naplnit kódu*
-3. Otevřete **Global.asax.cs** souboru a přidejte následující *pomocí* příkazy.
+3. Otevřít **Global.asax.cs** soubor a přidejte následující *pomocí* příkazy.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 globální direktiv Using Asax*)
+    (Fragment - kódu *modely a přístup k datům – Ex2 globální direktivy using Asax*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
-4. V **aplikace\_Start()** metoda přidejte následující řádek k nastavení inicializátoru databáze.
+4. V **aplikace\_Start()** metody přidejte následující řádek nastavit inicializátor databáze.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 globální Asax SetInitializer*)
+    (Fragment - kódu *modely a přístup k datům – globální Asax SetInitializer Ex2*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
 
@@ -315,44 +314,44 @@ V této úloze bude naplnit databázi s ukázkovými daty při výchozímu vytvo
 <a id="Task_2_-_Configuring_the_connection_to_the_Database"></a>
 #### <a name="task-2---configuring-the-connection-to-the-database"></a>Úloha 2 – konfigurace připojení k databázi
 
-Teď, když databáze jste už přidali do našich projektu, budete psát **Web.config** souboru připojovací řetězec.
+Teď, když jste už přidali do databáze na našem projektu, budete psát **Web.config** souboru připojovací řetězec.
 
-1. Přidat připojovací řetězec v **Web.config**. Uděláte to tak, že otevřete **Web.config** v kořenu projektu a nahraďte připojovací řetězec s názvem objekt DefaultConnection se tento řádek ve **&lt;connectionStrings&gt;** části:
+1. Přidat připojovací řetězec na **Web.config**. Chcete-li to mohli udělat, otevřete **Web.config** v kořenu projektu a nahraďte připojovací řetězec s názvem možnost DefaultConnection se tento řádek v **&lt;connectionStrings&gt;** části:
 
     ![Umístění souboru Web.config](aspnet-mvc-4-models-and-data-access/_static/image19.png "umístění souboru Web.config")
 
-    *umístění souboru Web.config*
+    *Umístění souboru Web.config*
 
     [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
 
 <a id="Ex2Task3"></a>
 
 <a id="Task_3_-_Working_with_the_Model"></a>
-#### <a name="task-3---working-with-the-model"></a>Úloha 3 – práci s modelem
+#### <a name="task-3---working-with-the-model"></a>Úloha 3 – práce s modelem
 
-Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s databázových tabulek. V této úloze vytvoříte třídu, která propojí do databáze s Code First. Mějte na paměti, že je existující třídy modelu objektů POCO, které by měl být upraven.
+Teď, když jste už nakonfigurovali připojení k databázi, bude propojovat modelu s tabulkami databáze. V této úloze vytvoříte třídu, která se propojí s databáze s Code First. Mějte na paměti, že je existující třídy modelu POCO, který by měl být upraven.
 
 > [!NOTE]
-> Pokud jste dokončili cvičení 1, Všimněte si, že se tento krok provést pomocí průvodce. Pomocí tohoto postupu Code First, ručně vytvoříte třídy, které budou propojené s dat entity.
+> Pokud jste dokončili cvičení 1, Všimněte si, že byl tento krok provést pomocí průvodce. Tímto způsobem Code First, vytvořte ručně třídy, které budou připojeny k datovým entitám.
 
-1. Otevřete třídu modelu objektů POCO **Genre** z **modely** projektu složky a obsahovat identifikátor. Použít interní vlastnost s názvem **GenreId**.
+1. Otevřete třídu modelu POCO **žánr** z **modely** složce projektu a obsahovat identifikátor. Použijte int vlastnost s názvem **GenreId**.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 kód první Genre*)
+    (Fragment - kódu *modely a přístup k datům – první žánr Ex2 kód*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
     > [!NOTE]
-    > Pro práci s Code First názvů, třídy Genre musí mít vlastnost primárního klíče, který bude automaticky zjistit.
+    > Pro práci s Code First vytváření názvů, třída rozšířením podle tematických musí mít vlastnost primárního klíče, který bude automaticky zjistit.
     > 
-    > Další informace o první pravidla týkající se kódu v tomto [článku na webu msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
-2. Nyní otevřete třídu modelu objektů POCO **Album** z **modely** projektu složky a zahrnují cizí klíče, vytvoření vlastností s názvy **GenreId** a  **ArtistId**. Tato třída už máte **GenreId** pro primární klíč.
+    > Další informace o první konvence kódu v tomto [článku na webu msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+2. Nyní, otevřete třídu modelu POCO **alba** z **modely** složce projektu a zahrnují cizí klíče, vytvoření vlastnosti s názvy **GenreId** a  **ArtistId**. Tato třída již **GenreId** pro primární klíč.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 kód prvního alba*)
+    (Fragment - kódu *modely a přístup k datům – první alba Ex2 kód*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
-3. Otevřete třídu modelu objektů POCO **umělcem** a zahrnout **ArtistId** vlastnost.
+3. Otevřete třídu modelu POCO **interpreta** a zahrnout **ArtistId** vlastnost.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 kód první umělcem*)
+    (Fragment - kódu *modely a přístup k datům – první interpreta Ex2 kód*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
 4. Klikněte pravým tlačítkem myši **modely** složky projektu a vyberte **přidat | Třída**. Název souboru **MusicStoreEntities.cs**. Potom klikněte na **přidat.**
@@ -361,57 +360,57 @@ Teď, když už jste nakonfigurovali připojení k databázi, propojíte model s
 
     *Přidání nové položky*
 
-    ![Přidání class2](aspnet-mvc-4-models-and-data-access/_static/image21.png "přidávání class2")
+    ![Přidávání class2](aspnet-mvc-4-models-and-data-access/_static/image21.png "přidávání class2")
 
     *Přidání třídy*
-5. Třída jste právě vytvořili, otevřete **MusicStoreEntities.cs**a přidají obory názvů **System.Data.Entity** a **System.Data.Entity.Infrastructure**.
+5. Otevřete třídu, kterou jste právě vytvořili, **MusicStoreEntities.cs**a obory názvů **System.Data.Entity** a **System.Data.Entity.Infrastructure**.
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
-6. Nahraďte deklaraci třídy rozšířit **DbContext** – třída: deklarovat veřejné **DBSet** a přepsání **OnModelCreating** metoda. Po provedení tohoto kroku budete mít domény třídu, která odkaz modelu pomocí rozhraní Entity Framework. Aby bylo možné provést, nahraďte kód třídy následující:
+6. Nahraďte deklaraci třídy pro rozšíření **DbContext** třídy: deklarovat veřejnou **DBSet** a přepsat **OnModelCreating** metody. Po provedení tohoto kroku získáte doménovou třídou, která propojí váš model s rozhraním Entity Framework. Aby bylo možné provést, nahraďte kód třídy následujícími způsoby:
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 kód první MusicStoreEntities*)
+    (Fragment - kódu *modely a přístup k datům – první MusicStoreEntities kód Ex2*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
 > [!NOTE]
-> S platformou Entity Framework **DbContext** a **DBSet** bude moci dotazovat třídu objektů POCO Genre. Tím, že rozšíří **OnModelCreating** metoda, určíte v **kód** mapovány Genre do databázové tabulky. Další informace o DBContext a DBSet najdete v tomto článku msdn: [odkaz](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+> S Entity Framework **DbContext** a **DBSet** budete moci dotaz na třídu POCO žánr. Tím, že rozšíří **OnModelCreating** metoda, zadáváte v **kód** mapovány žánr do databázové tabulky. Další informace o kontext databáze a DBSet najdete v článku na webu msdn: [odkaz](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
 <a id="Task_4_-_Querying_the_Database"></a>
-#### <a name="task-4---querying-the-database"></a>Úloha 4 – dotazování databáze
+#### <a name="task-4---querying-the-database"></a>Úloha 4 – dotazování na databázi
 
-V této úloze bude aktualizace třídy pro StoreController tak, aby místo použití pevně zakódované dat, načte se z databáze.
+V této úloze budete aktualizovat StoreController třídy tak, aby místo použití pevně zakódované dat, načte se z databáze.
 
 > [!NOTE]
 > Tato úloha je společné s cvičení 1.
 > 
-> Pokud jste dokončili cvičení 1 Všimněte si tyto kroky jsou stejné v obou přístupů (první databáze nebo nejprve Code). Liší se v tom, jak data jsou spojena s modelem, ale přístup k data entity je ještě transparentní z řadiče.
+> Pokud jste dokončili cvičení 1 se nezapomeňte tyto kroky jsou stejné v obou metod (první databáze nebo kód nejprve). Jsou odlišné v jak se data propojené s modelem, ale přístup k datovým entitám se ještě transparentní z kontroleru.
 
 
-1. Otevřete **Controllers\StoreController.cs** a přidejte následující pole do třídy pro uložení instance **MusicStoreEntities** třídy s názvem **storeDB**:
+1. Otevřít **Controllers\StoreController.cs** a přidejte následující pole do třídy pro uložení instance **MusicStoreEntities** třídu s názvem **storeDB**:
 
-    (Code fragment kódu - *modely a přístup k datům - Ex1 storeDB*)
+    (Fragment - kódu *modely a přístup k datům – Ex1 storeDB*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
-2. **MusicStoreEntities** třída zpřístupňuje vlastnost kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení Genre se všemi **alb**.
+2. **MusicStoreEntities** třída zveřejňuje vlastnosti kolekce pro každou tabulku v databázi. Aktualizace **Procházet** metody akce k načtení žánr se všemi **alb**.
 
-    (Code fragment kódu - *modely a přístup k datům - procházet úložiště Ex2*)
+    (Fragment - kódu *modely a přístup k datům – procházení Store Ex2*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
     > [!NOTE]
-    > Používáte funkce .NET názvem **LINQ** (language-integrated query) pro zápis výrazy silného typu dotazů vůči tyto kolekce – které bude spouštění kódu v databázi a vrátit objekty, které můžete naprogramovat proti.
+    > Používáte funkce .NET volá **LINQ** (jazyka integrované dotazu) k zápisu výrazy dotazu silného typu pomocí těchto kolekcí – které spustí kód na databázi a vrátí objekty, které můžete naprogramovat proti.
     > 
-    > Další informace o LINQ, naleznete [webu msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
-3. Aktualizace **Index** metody akce k načtení všech žánry.
+    > Další informace o dotazech technologie LINQ, navštivte prosím [web msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
+3. Aktualizace **Index** metody akce k načtení všech žánrů.
 
-    (Code fragment kódu - *modely a Data Access – Index úložiště Ex2*)
+    (Fragment - kódu *modely a přístup k datům – Ex2 Store Index*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
-4. Aktualizace **Index** metody akce k načtení všech žánry a transformace kolekce do seznamu.
+4. Aktualizace **Index** metody akce k načtení všech žánry a transformovat kolekci do seznamu.
 
-    (Code fragment kódu - *modely a přístup k datům - Ex2 úložiště GenreMenu*)
+    (Fragment - kódu *modely a přístup k datům – Ex2 Store GenreMenu*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
 
@@ -420,103 +419,103 @@ V této úloze bude aktualizace třídy pro StoreController tak, aby místo pou�
 <a id="Task_5_-_Running_the_Application"></a>
 #### <a name="task-5---running-the-application"></a>Úloha 5: spuštění aplikace
 
-V této úloze zkontroluje se, že na stránce Index úložiště se nyní zobrazí žánry uloženy v databázi místo pevně zakódované ty, které jsou. Není třeba měnit zobrazit šablonu, protože **StoreController** vrací stejné **StoreIndexViewModel** jako předtím, ale tentokrát budou pocházet data z databáze.
+V této úloze zkontroluje, že Store indexovou stránku se teď budou zobrazovat žánry uložených v databázi namísto pevně zakódované značky. Není nutné měnit zobrazit šablonu, protože **StoreController** vrací stejný **StoreIndexViewModel** stejně jako předtím, ale tentokrát budou data přicházet z databáze.
 
 1. Znovu sestavte řešení a stiskněte klávesu **F5** ke spuštění aplikace.
-2. Projekt se spustí na domovské stránce. Ověřte, že v nabídce **žánry** již není seznamu pevně zakódované a přímo načtena data z databáze.
+2. Projekt se spustí na domovské stránce. Ověřte, že v nabídce **žánry** už není pevně zakódované seznamu a data se načtou přímo z databáze.
 
     ![BrowsingGenresFromDataBase](aspnet-mvc-4-models-and-data-access/_static/image22.png)
 
     *Procházení žánry z databáze*
-3. Nyní přejděte do jakékoli genre a ověřte, zda že alb budou naplněny z databáze.
+3. Teď přejděte do jakékoli žánr a ověřte, že že alb budou naplněny z databáze.
 
-    ![Procházení alb z databáze](aspnet-mvc-4-models-and-data-access/_static/image23.png "procházení alb z databáze")
+    ![Z databáze procházení alb](aspnet-mvc-4-models-and-data-access/_static/image23.png "procházení alb z databáze")
 
     *Procházení alb z databáze*
 
 <a id="Exercise3"></a>
 
 <a id="Exercise_3_Querying_the_Database_with_Parameters"></a>
-### <a name="exercise-3-querying-the-database-with-parameters"></a>Cvičení 3: Dotaz na databázi s parametry
+### <a name="exercise-3-querying-the-database-with-parameters"></a>Cvičení 3: Dotazování na databázi s parametry
 
-V tomto cvičení se dozvíte, jak k dotazování databáze pomocí parametrů a jak používat službu Shaping výsledků dotazu, funkce, která snižuje počet databáze přistupuje k načítání dat v efektivnější.
+V tomto cvičení se dozvíte, jak zadávat dotazy na databázi pomocí parametrů a jak používat tvarování výsledku dotazu, funkce, která snižuje počet databázi přistupuje k načítání dat v efektivnější.
 
 > [!NOTE]
-> Další informace o Shaping výsledek dotazu naleznete na následujícím [článku na webu msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
+> Další informace o strukturování výsledku dotazu, navštivte následující [článku na webu msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
 
 <a id="Ex3Task1"></a>
 
 <a id="Task_1_-_Modifying_StoreController_to_Retrieve_Albums_from_Database"></a>
-#### <a name="task-1---modifying-storecontroller-to-retrieve-albums-from-database"></a>Úloha 1 – změny StoreController alb načíst z databáze
+#### <a name="task-1---modifying-storecontroller-to-retrieve-albums-from-database"></a>Úloha 1 - změna StoreController alb načíst z databáze
 
-V této úloze se změní **StoreController** třídy pro přístup k databázi načíst alb z konkrétní genre.
+V této úloze se změní **StoreController** třídy pro přístup do databáze načíst z konkrétní žánr alb.
 
-1. Otevřete **začít** řešení nacházející se v **Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin** složky, pokud chcete použít první kód nebo **Source\ EX3. QueryingTheDatabaseWithParametersDBFirst\Begin** složky, pokud chcete použít první databáze. Jinak, může pokračovat, pomocí **End** řešení získat provedením předchozím cvičení.
+1. Otevřít **začít** umístění řešení **Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin** složky, pokud chcete použít přístup Code-First nebo **Source\ EX3. QueryingTheDatabaseWithParametersDBFirst\Begin** složky, pokud chcete použít první databázi přístup. V opačném případě může nadále používat **End** řešení získat provedením předchozím cvičení.
 
-   1. Pokud jste otevřeli poskytnutého **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídku a vyberte **spravovat balíčky NuGet**.
-   2. V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **obnovení** Chcete-li stáhnout chybějící balíčky.
+   1. Pokud jste otevřeli zadaných **začít** řešení, budete muset stáhnout některé chybějící balíčky NuGet než budete pokračovat. Chcete-li to provést, klikněte na tlačítko **projektu** nabídky a vybereme **spravovat balíčky NuGet**.
+   2. V **spravovat balíčky NuGet** dialogového okna, klikněte na tlačítko **obnovení** aby bylo možné stáhnout chybějící balíčky.
    3. Nakonec sestavte řešení kliknutím **sestavení** | **sestavit řešení**.
 
       > [!NOTE]
-      > Jednou z výhod použití NuGet je, že nemáte pro odeslání všech knihoven v projektu, zmenšení velikosti projektu. Napájení nástroje NuGet zadáním verze balíčku v souboru Packages.config, nebudete moct stáhnout všechny požadované knihovny při prvním spuštění projektu. Z tohoto důvodu je nutné provést tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
-2. Otevřete **StoreController** třída změnit **Procházet** metody akce. Chcete-li to provést, v **Průzkumníku řešení**, rozbalte **řadiče** složku a dvojím kliknutím **StoreController.cs**.
-3. Změna **Procházet** metody akce k načtení alb pro konkrétní genre. Chcete-li to provést, nahraďte následujícím kódem:
+      > Jednou z výhod pomocí nástroje NuGet je, že není nutné dodávat všechny knihovny ve vašem projektu, zmenšení velikosti projektu. Pomocí nástroje NuGet zadáním verze balíčku v souboru Packages.config, budete moct stáhnout požadované knihovny při prvním spuštění projektu. To je důvod, proč budete muset projít tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
+2. Otevřít **StoreController** třídy změnit **Procházet** metody akce. Chcete-li to provést, v **Průzkumníka řešení**, rozbalte **řadiče** složky a dvojím kliknutím **StoreController.cs**.
+3. Změnit **Procházet** metody akce k načtení alb pro konkrétní žánr. Chcete-li to provést, nahraďte následujícím kódem:
 
-    (Code fragment kódu - *modely a přístup k datům - EX3. StoreController BrowseMethod*)
+    (Fragment - kódu *modely a přístup k datům – EX3. StoreController BrowseMethod*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
 > [!NOTE]
-> K naplnění kolekce entit, budete muset použít **zahrnout** metoda k určení, můžete obnovit alb příliš. Můžete použít. **Single()** rozšíření v technologii LINQ protože v takovém případě je očekávána pouze jedna genre pro album. **Single()** metoda přebírá jako parametr, který v tomto případě Určuje jeden objekt Genre tak, aby jeho název odpovídá definovanou hodnotu výrazu Lambda.
+> K naplnění kolekce entit, budete muset použít **zahrnout** metodu k určení, které chcete načíst alb příliš. Můžete použít. **Metoda Single()** rozšíření v technologii LINQ vzhledem k tomu, že v tomto případě se očekává pouze jeden žánr pro alba. **Metoda Single()** metoda má výraz Lambda jako parametr, který v tomto případě Určuje jeden objekt žánr tak, aby jeho název odpovídá hodnota definovaná.
 > 
-> Bude využít výhod funkce, která umožňuje určit další, které chcete také načíst, když je načíst objekt Genre entit v relaci. Tato funkce je volána **Shaping výsledek dotazu**a umožňuje snížit počet pokusů, které jsou potřebné pro přístup k databázi k načtení informací. V tomto scénáři můžete předem načíst alba pro Genre je načíst.
+> Bude využít výhod funkce, která umožňuje určit další související entity, které chcete načíst i když je načten objekt žánr. Tato funkce se nazývá **tvarování výsledek dotazu**a umožňuje zkrátit dobu potřebnou pro přístup do databáze k načtení informací. V tomto scénáři budete chtít předběžného načítání pro žánr načtete alb.
 > 
-> Dotaz obsahuje **Genres.Include (&quot;alb&quot;)** k označení, že chcete také související alb. Výsledkem bude efektivnější aplikaci, vzhledem k tomu, že ho načte Genre a Album data v požadavku jedné databáze.
+> Dotaz obsahuje **Genres.Include (&quot;alb&quot;)** k označení, má také související alb. Výsledkem bude aplikace efektivnější, protože ho se načtou data žánr a alb v požadavku izolované databáze.
 
 <a id="Ex3Task2"></a>
 
 <a id="Task_2_-_Running_the_Application"></a>
 #### <a name="task-2---running-the-application"></a>Úloha 2 – spuštění aplikace
 
-V této úloze se spustit aplikaci a načtení alb konkrétní genre z databáze.
+V této úloze se spustit aplikaci a alb konkrétní žánr načíst z databáze.
 
-1. Stiskněte klávesu **F5** ke spuštění aplikace.
-2. Projekt se spustí na domovské stránce. Změňte adresu URL na **/úložiště/procházet? genre = Pop** k ověření, že výsledky jsou načítány z databáze.
+1. Stisknutím klávesy **F5** ke spuštění aplikace.
+2. Projekt se spustí na domovské stránce. Změňte adresu URL na **/Store/procházet? žánr = Pop** k ověření, že se výsledky načtou z databáze.
 
-    ![Procházení podle genre](aspnet-mvc-4-models-and-data-access/_static/image24.png "procházení podle genre")
+    ![Procházení podle žánru](aspnet-mvc-4-models-and-data-access/_static/image24.png "procházením podle žánru")
 
-    *Procházení/úložiště/procházet? genre = Pop*
+    *Procházení/Store/procházet? žánr = Pop*
 
 <a id="Ex3Task3"></a>
 
 <a id="Task_3_-_Accessing_Albums_by_Id"></a>
 #### <a name="task-3---accessing-albums-by-id"></a>Úloha 3 – přístup k alb podle Id
 
-V této úloze bude opakujte předchozí postup k získání alb podle jejich Id.
+V této úloze bude opakujte předchozí postup pro získání alb podle jejich Id.
 
-1. Zavřete prohlížeč v případě potřeby se vraťte do sady Visual Studio. Otevřete **StoreController** třída změnit **podrobnosti** metody akce. Chcete-li to provést, v **Průzkumníku řešení**, rozbalte **řadiče** složku a dvojím kliknutím **StoreController.cs**.
-2. Změna **podrobnosti** metoda akce se načíst podrobnosti o alb na základě jejich **Id**. Chcete-li to provést, nahraďte následujícím kódem:
+1. Zavřete prohlížeč v případě potřeby se vraťte do sady Visual Studio. Otevřít **StoreController** třídy změnit **podrobnosti** metody akce. Chcete-li to provést, v **Průzkumníka řešení**, rozbalte **řadiče** složky a dvojím kliknutím **StoreController.cs**.
+2. Změnit **podrobnosti** metody akce k načtení podrobností alb na základě jejich **Id**. Chcete-li to provést, nahraďte následujícím kódem:
 
-    (Code fragment kódu - *modely a přístup k datům - EX3. StoreController DetailsMethod*)
+    (Fragment - kódu *modely a přístup k datům – EX3. StoreController DetailsMethod*)
 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
 
 <a id="Ex3Task4"></a>
 
 <a id="Task_4_-_Running_the_Application"></a>
-#### <a name="task-4---running-the-application"></a>Úloha 4 – spuštění aplikace
+#### <a name="task-4---running-the-application"></a>Úloha 4 – spouštění aplikace
 
-V této úloze se spustit aplikaci ve webovém prohlížeči a získat podrobnosti o album podle jejich Id.
+V této úloze spusťte aplikaci ve webovém prohlížeči a získání podrobných informací o alba podle jejich Id.
 
-1. Stiskněte klávesu **F5** ke spuštění aplikace.
-2. Projekt se spustí na domovské stránce. Změňte adresu URL na **/Store/Details/51** nebo žánry Procházet a vyberte album k ověření, že výsledky jsou načítány z databáze.
+1. Stisknutím klávesy **F5** ke spuštění aplikace.
+2. Projekt se spustí na domovské stránce. Změňte adresu URL na **/Store/Details/51** nebo žánry procházením vyberte alba k ověření, že se výsledky načtou z databáze.
 
     ![Procházení podrobností](aspnet-mvc-4-models-and-data-access/_static/image25.png "procházení podrobností")
 
     *Procházení /Store/Details/51*
 
 > [!NOTE]
-> Kromě toho můžete nasadit tuto aplikaci do následující weby systému Windows Azure [příloha B: publikování aplikace ASP.NET MVC 4 pomocí nástroje nasazení webu](#AppendixB).
+> Kromě toho můžete nasadit tuto aplikaci následující weby Windows Azure [příloha B: publikování aplikace ASP.NET MVC 4 pomocí nasazení webu](#AppendixB).
 
 * * *
 
@@ -525,130 +524,130 @@ V této úloze se spustit aplikaci ve webovém prohlížeči a získat podrobnos
 <a id="Summary"></a>
 ## <a name="summary"></a>Souhrn
 
-Pomocí dokončení tohoto testovacího prostředí Hands-on jste se naučili základy modely ASP.NET MVC a přístup k datům, pomocí **Database First** přístup a taky **Code First** přístup:
+Za dokončení tohoto praktického testovacího prostředí jste se naučili základy ASP.NET MVC modely a přístup k datům, pomocí **Database First** přístup také **Code First** přístup:
 
-- Jak přidat databáze do řešení, aby bylo možné využívat svá data
-- Postup aktualizace řadičů poskytnout šablon zobrazení dat získaných z databáze místo pevně jeden
-- Postup dotazování databáze pomocí parametrů
-- Jak používat dotazu výsledek tvarování, funkce, která snižuje počet přístupům do databáze, načítání dat v efektivnější
-- Jak používat první databáze a Code First přístupy v Microsoft Entity Framework propojení databáze s modelem
+- Jak do řešení přidat databáze, aby bylo možné využívat svoje data
+- Postup aktualizace řadiče poskytnout dat získaných z databáze místo pevně zakódované zobrazení šablony
+- Jak dotazovat databázi pomocí parametrů
+- Použití dotazu výsledek tvarování, funkce, která snižuje počet přístupů databáze, načítání dat v efektivnější způsob
+- Použití Database First a Code First pracuje Microsoft Entity Framework, která propojí databázi s modelem
 
 <a id="AppendixA"></a>
 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>Příloha A: instalaci sady Visual Studio Express 2012 pro Web
 
-Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiný &quot;Express&quot; pomocí verze **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Následující pokyny vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
+Můžete nainstalovat **Microsoft Visual Studio Express 2012 pro Web** nebo jiném &quot;Express&quot; verzí pomocí **[instalačního programu webové platformy Microsoft](https://www.microsoft.com/web/downloads/platform.aspx)**. Postupujte podle následujících pokynů vás provede kroky potřebné k instalaci *Visual studio Express 2012 pro Web* pomocí *instalačního programu webové platformy Microsoft*.
 
-1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produktu &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
-2. Klikněte na **nyní nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
-3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** zahájíte instalaci.
+1. Přejděte na [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169). Případně, pokud jste již nainstalovali instalačního programu webové platformy, můžete otevřít a vyhledejte produkt &quot; <em>Visual Studio Express 2012 pro Web se sadou Windows Azure SDK</em>&quot;.
+2. Klikněte na **nainstalovat**. Pokud nemáte **instalačního programu webové platformy** budete přesměrováni na stáhněte a nainstalujte ji jako první.
+3. Jednou **instalačního programu webové platformy** je otevřený, klikněte na tlačítko **nainstalovat** spustit instalační program.
 
-    ![Nainstalovat Visual Studio Express](aspnet-mvc-4-models-and-data-access/_static/image26.png "nainstalovat Visual Studio Express")
+    ![Instalace sady Visual Studio Express](aspnet-mvc-4-models-and-data-access/_static/image26.png "instalace sady Visual Studio Express")
 
-    *Nainstalovat Visual Studio Express*
-4. Číst všechny produkty se licence a podmínky a klikněte na tlačítko **souhlasím** pokračujte.
+    *Instalace sady Visual Studio Express*
+4. Čtení všech produktů licence a podmínky a klikněte na tlačítko **souhlasím** pokračujte.
 
-    ![Vyjádření souhlasu s podmínkami licence](aspnet-mvc-4-models-and-data-access/_static/image27.png)
+    ![Přijetí podmínek licence](aspnet-mvc-4-models-and-data-access/_static/image27.png)
 
-    *Vyjádření souhlasu s podmínkami licence*
+    *Přijetí podmínek licence*
 5. Počkejte na dokončení procesu stahování a instalaci.
 
     ![Průběh instalace](aspnet-mvc-4-models-and-data-access/_static/image28.png)
 
     *Průběh instalace*
-6. Po dokončení instalace, klikněte na tlačítko **Dokončit**.
+6. Až instalace skončí, klikněte na tlačítko **Dokončit**.
 
     ![Instalace byla dokončena.](aspnet-mvc-4-models-and-data-access/_static/image29.png)
 
     *Instalace byla dokončena.*
-7. Klikněte na tlačítko **ukončení** ukončíte instalační program webové platformy.
-8. Chcete-li spustit nástroj Visual Studio Express pro Web, přejděte na **spustit** obrazovky a začít psát &quot; **VS Express**&quot;, klikněte na **VS Express pro Web** dlaždice.
+7. Klikněte na tlačítko **ukončovací** zavřete instalačního programu webové platformy.
+8. Chcete-li spustit nástroj Visual Studio Express for Web, přejděte **Start** obrazovky a začít psát &quot; **VS Express**&quot;, klikněte na **VS Express for Web** dlaždice.
 
-    ![VS Express pro Web dlaždice](aspnet-mvc-4-models-and-data-access/_static/image30.png)
+    ![VS Express for Web dlaždice](aspnet-mvc-4-models-and-data-access/_static/image30.png)
 
-    *VS Express pro Web dlaždice*
+    *VS Express for Web dlaždice*
 
 <a id="AppendixB"></a>
 
 <a id="Appendix_B_Publishing_an_ASPNET_MVC_4_Application_using_Web_Deploy"></a>
-## <a name="appendix-b-publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Příloha B: publikování aplikace ASP.NET MVC 4 pomocí nástroje nasazení webu
+## <a name="appendix-b-publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Příloha B: publikování aplikace ASP.NET MVC 4 pomocí nasazení webu
 
-Tento dodatek vám ukáže, jak vytvořit nový web z portálu Windows Azure Management Portal a publikovat aplikace, kterou jste získali podle testovacím prostředí, využívat výhod nasazení webu publikování funkce poskytované služby Windows Azure.
+Tento dodatek se ukazují, jak vytvořit nový web z portálu správy Windows Azure a publikovat aplikace, kterou jste získali podle testovacího prostředí, využít Webdeploy funkce publikování ve Windows Azure k dispozici.
 
 <a id="ApxBTask1"></a>
 
 <a id="Task_1_-_Creating_a_New_Web_Site_from_the_Windows_Azure_Portal"></a>
-#### <a name="task-1---creating-a-new-web-site-from-the-windows-azure-portal"></a>Úloha 1 – Vytvoření nového webu ze systému Windows Azure Portal
+#### <a name="task-1---creating-a-new-web-site-from-the-windows-azure-portal"></a>Úloha 1 – Vytvoření nového webu z Windows webu Azure Portal
 
-1. Přejděte na [Windows Azure Management Portal](https://manage.windowsazure.com/) a přihlaste se pomocí přihlašovacích údajů společnosti Microsoft, které jsou spojené s vaším předplatným.
+1. Přejděte [Windows Azure Management Portal](https://manage.windowsazure.com/) a přihlaste se pomocí přihlašovacích údajů Microsoft spojených s vaším předplatným.
 
     > [!NOTE]
-    > S Windows Azure můžete bezplatné hostování 10 webů ASP.NET a pak škálujte podle rozšiřujícího se provozu. Můžete si zaregistrovat [zde](http://aka.ms/aspnet-hol-azure).
+    > Windows Azure můžete zadarmo hostovat 10 webů ASP.NET a pak škálujte podle rozšiřujícího se provozu. Můžete se zaregistrovat [tady](http://aka.ms/aspnet-hol-azure).
 
     ![Přihlaste se k portálu Windows Azure](aspnet-mvc-4-models-and-data-access/_static/image31.png "Přihlaste se k portálu Windows Azure")
 
-    *Přihlaste se k Windows Azure Management Portal*
+    *Přihlaste se k portálu pro správu Azure Windows*
 2. Klikněte na tlačítko **nový** na panelu příkazů.
 
     ![Vytvoření nového webu](aspnet-mvc-4-models-and-data-access/_static/image32.png "vytváření nového webu")
 
     *Vytvoření nového webu*
-3. Klikněte na tlačítko **výpočetní** | **webu**. Potom vyberte **rychle vytvořit** možnost. Zadejte adresu URL k dispozici pro nový web a klikněte na tlačítko **vytvoření webu**.
+3. Klikněte na tlačítko **Compute** | **webu**. Potom vyberte **rychlé vytvoření** možnost. Zadejte adresu URL k dispozici pro nový web a klikněte na tlačítko **vytvořit web**.
 
     > [!NOTE]
-    > Web systému Windows Azure je hostitel pro spouštění v cloudu, ve kterém můžete řídit a spravovat webovou aplikaci. Možnost rychle vytvořit můžete nasadit hotové webové aplikace na Windows Azure web z mimo portál. Postup pro nastavení databáze neobsahuje.
+    > Hostitel pro webovou aplikaci spuštěnou v cloudu, který může řídit a spravovat je web Windows Azure. Možnost rychle vytvořit můžete nasadit hotové webové aplikace na Windows Azure web z mimo portál. Nezahrnuje kroky pro vytvoření databáze.
 
     ![Vytvoření nového webu pomocí metody rychlého vytvoření](aspnet-mvc-4-models-and-data-access/_static/image33.png "vytváření nového webu pomocí metody rychlého vytvoření")
 
     *Vytvoření nového webu pomocí metody rychlého vytvoření*
-4. Počkejte, dokud nové **webu** je vytvořena.
-5. Po vytvoření webu klikněte na odkaz v části **URL** sloupce. Zkontrolujte, zda je funkční nový web.
+4. Počkejte, dokud nové **webu** se vytvoří.
+5. Po vytvoření webové stránky, klikněte na odkaz v části **URL** sloupce. Zkontrolujte, jestli funguje nový web.
 
-    ![Procházení na nový web](aspnet-mvc-4-models-and-data-access/_static/image34.png "procházení na nový web")
+    ![Na nový web](aspnet-mvc-4-models-and-data-access/_static/image34.png "přechodu na nový web")
 
     *Procházení na nový web*
 
-    ![Webový server spuštěn](aspnet-mvc-4-models-and-data-access/_static/image35.png "webu systémem")
+    ![Spuštění webu](aspnet-mvc-4-models-and-data-access/_static/image35.png "spuštění webové stránky")
 
-    *Spuštění webu*
-6. Přejděte zpět na portál a klikněte na název webu v části **název** sloupec pro zobrazení stránky pro správu.
+    *Spuštění webové stránky*
+6. Přejděte zpět na portál a klikněte na název webové stránky v části **název** sloupec, který se zobrazí na stránkách správy.
 
-    ![Otevření stránky Správa webu](aspnet-mvc-4-models-and-data-access/_static/image36.png "otevření stránek správu webového serveru")
+    ![Otevřete správu webových stránek](aspnet-mvc-4-models-and-data-access/_static/image36.png "otevřete správu webových stránek")
 
-    *Otevření stránek správu webového serveru*
-7. V **řídicí panel** v části **rychlého přehledu** klikněte na položku **stažení profilu publikování** odkaz.
+    *Otevřete správu webových stránek*
+7. V **řídicí panel** stránce v části **rychlý přehled** klikněte na tlačítko **stáhnout profil publikování** odkaz.
 
     > [!NOTE]
-    > *Profilu publikování* obsahuje všechny informace požadované pro publikování webové aplikace na web služby Windows Azure pro každou metodu povoleno publikace. Profil publikování obsahuje adresy URL, přihlašovací údaje uživatele a řetězců databází, které jsou potřebné k připojení k a ověřování na základě těchto koncových bodů, pro které je metoda publikace povolena. **Microsoft WebMatrix 2**, **Microsoft Visual Studio Express pro Web** a **sadu Microsoft Visual Studio 2012** podporu čtení publikační profily k automatické konfiguraci těchto programů pro publikování webové aplikace na weby služby Windows Azure.
+    > *Profil publikování* obsahuje všechny informace požadované pro publikování webových aplikací na webu Windows Azure pro každou metodu povoleno publikování. Profil publikování obsahuje adresy URL, přihlašovací údaje uživatele a databázové řetězce požadované k připojení a ověřování na základě jednotlivých koncových bodů, u kterých je povolena metoda publikace. **Microsoft WebMatrix 2**, **Microsoft Visual Studio Express for Web** a **Microsoft Visual Studio 2012** podporují čtení publikační profily k automatizaci konfigurace z těchto programů pro publikování webových aplikací na Windows Azure websites.
 
-    ![Na webu stažení profilu publikování](aspnet-mvc-4-models-and-data-access/_static/image37.png "stahování webové stránky profilu publikování")
+    ![Stahování webové stránky publikovat profil](aspnet-mvc-4-models-and-data-access/_static/image37.png "stahování webové stránky profil publikování")
 
     *Na webu stažení profilu publikování*
-8. Stáhněte si soubor profil publikování do vhodného umístění. Dále v tomto cvičení uvidíte jak používat tento soubor k publikování webové aplikace na weby systému Windows Azure ze sady Visual Studio.
+8. Stáhněte si soubor profilu publikování do vhodného umístění. Dále v tomto cvičení uvidíte jak publikovat webovou aplikaci na weby Windows Azure ze sady Visual Studio pomocí tohoto souboru.
 
-    ![Ukládání souboru profilu publikování](aspnet-mvc-4-models-and-data-access/_static/image38.png "ukládání profilu publikování")
+    ![Ukládání souboru profilu publikování](aspnet-mvc-4-models-and-data-access/_static/image38.png "ukládá se profil publikování")
 
-    *Ukládání souboru profilu publikování*
+    *Ukládá se profil publikování*
 
 <a id="ApxBTask2"></a>
 
 <a id="Task_2_-_Configuring_the_Database_Server"></a>
 #### <a name="task-2---configuring-the-database-server"></a>Úloha 2 – konfigurování serveru databáze
 
-Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vytvořit databázi SQL server. Pokud chcete nasadit jednoduchou aplikaci, která nepoužívá systém SQL Server může tuto úlohu přeskočit.
+Pokud vaše aplikace využívá SQL Server databáze, budete muset vytvořit server služby SQL Database. Pokud chcete nasadit jednoduchou aplikaci, která nepoužívá SQL Server může tuto úlohu přeskočit.
 
-1. Budete potřebovat databázi SQL serveru pro ukládání databázi aplikace. Databáze SQL servery můžete zobrazit ze svého předplatného na portál Windows Azure Management **databází Sql** | **servery** | **serveru Řídicí panel**. Pokud nemáte server vytvořeno, můžete vytvořit jeden pomocí **přidat** tlačítka na panelu příkazů. Poznamenejte si **název serveru a adresa URL, správce přihlašovací jméno a heslo**, jako je použijete v další úkoly. Nevytvářejte databáze ještě, jak bude vytvořen v pozdější fázi.
+1. Pro uložení databáze aplikace budete potřebovat databázi SQL serveru. Servery SQL Database můžete zobrazit ze svého předplatného na portálu správy Windows Azure na **databází Sql** | **servery** | **serveru Řídicí panel**. Pokud nemáte server vytvořili, můžete vytvořit jednu **přidat** tlačítko na panelu příkazů. Poznamenejte si **název serveru a adresu URL, správce přihlašovací jméno a heslo**, jak je použijete v další úkoly. Nevytvářet databáze, protože vytvoří se v pozdější fázi.
 
-    ![Řídicí panel serveru databáze SQL](aspnet-mvc-4-models-and-data-access/_static/image39.png "řídicího panelu serveru databáze SQL")
+    ![Řídicí panel serveru SQL Database](aspnet-mvc-4-models-and-data-access/_static/image39.png "řídicího panelu serveru SQL Database")
 
-    *Řídicí panel serveru databáze SQL*
-2. V dalším úkolem budete testovat připojení k databázi ze sady Visual Studio, proto je nutné zahrnout místní IP adresa serveru seznamu **povolené IP adresy**. To lze provést, klikněte na tlačítko **konfigurace**, vyberte IP adresu z **aktuální IP adresa klienta** a vkládání na **počáteční IP adresa** a **Koncová IP adresa** textová pole a kliknutím ![add-client-ip-address-ok-button](aspnet-mvc-4-models-and-data-access/_static/image40.png) tlačítko.
+    *Řídicí panel serveru SQL Database*
+2. V dalším úkolem budete testovat připojení k databázi ze sady Visual Studio z tohoto důvodu je nutné zahrnout místní IP adresa serveru seznamu **povolené IP adresy**. Chcete-li to mohli udělat, klikněte na tlačítko **konfigurovat**, vyberte IP adresu z **aktuální IP adresa klienta** a vložte ho na **počáteční IP adresa** a **Koncová IP adresa** textová pole a klikněte na tlačítko ![add-client-ip-address-ok-button](aspnet-mvc-4-models-and-data-access/_static/image40.png) tlačítko.
 
-    ![Přidávání IP adresy klienta](aspnet-mvc-4-models-and-data-access/_static/image41.png)
+    ![Přidat IP adresu klienta](aspnet-mvc-4-models-and-data-access/_static/image41.png)
 
-    *Přidávání IP adresy klienta*
-3. Jednou **IP adresa klienta** je povolené IP adresy do seznamu, klikněte na **Uložit** potvrďte změny.
+    *Přidat IP adresu klienta*
+3. Jednou **IP adresa klienta** je přidat do povolených IP adres klikněte na tlačítko na **Uložit** potvrďte provedené změny.
 
     ![Potvrzení změn](aspnet-mvc-4-models-and-data-access/_static/image42.png)
 
@@ -657,98 +656,98 @@ Pokud vaše aplikace využívá systému SQL Server, databáze, budete muset vyt
 <a id="ApxBTask3"></a>
 
 <a id="Task_3_-_Publishing_an_ASPNET_MVC_4_Application_using_Web_Deploy"></a>
-#### <a name="task-3---publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Úloha 3 – publikování aplikace ASP.NET MVC 4 pomocí nástroje nasazení webu
+#### <a name="task-3---publishing-an-aspnet-mvc-4-application-using-web-deploy"></a>Úloha 3 – publikování aplikace ASP.NET MVC 4 pomocí nasazení webu
 
-1. Přejděte zpět na ASP.NET MVC 4 řešení. V **Průzkumníku řešení**, klikněte pravým tlačítkem na webový projekt a vyberte **publikovat**.
+1. Vraťte se do řešení ASP.NET MVC 4. V **Průzkumníka řešení**, klikněte pravým tlačítkem na webový projekt a vyberte **publikovat**.
 
     ![Publikování aplikace](aspnet-mvc-4-models-and-data-access/_static/image43.png "publikování aplikace")
 
-    *Publikování webu*
-2. Umožňuje naimportujte profil publikování, který jste uložili v první úloze.
+    *Publikování na webu*
+2. Importujte profil publikování, který jste uložili v první úloze.
 
     ![Import profilu publikování](aspnet-mvc-4-models-and-data-access/_static/image44.png "import profilu publikování")
 
-    *Import profilu publikování*
-3. Klikněte na tlačítko **ověření připojení**. Po dokončení ověření klikněte na tlačítko **Další**.
+    *Import publikačního profilu*
+3. Klikněte na tlačítko **ověřit připojení**. Po dokončení ověření klikněte na tlačítko **Další**.
 
     > [!NOTE]
-    > Ověření je hotová, jakmile se zobrazí zelené zaškrtnutí zobrazí vedle tlačítko ověřit připojení.
+    > Ověření bylo dokončeno, jakmile se zobrazí zelené zaškrtnutí vedle tlačítka ověřit připojení.
 
-    ![Ověření připojení](aspnet-mvc-4-models-and-data-access/_static/image45.png "ověřování připojení")
+    ![Ověřuje se připojení](aspnet-mvc-4-models-and-data-access/_static/image45.png "ověřuje se připojení")
 
-    *Ověření připojení*
-4. V **nastavení** v části **databáze** části, klikněte na tlačítko vedle připojení databáze textové pole (tj. **objekt DefaultConnection**).
+    *Ověřuje se připojení*
+4. V **nastavení** stránce v části **databází** klikněte na tlačítko vedle textového pole připojení k databázi (to znamená **objekt DefaultConnection**).
 
     ![Konfigurace nasazení webu](aspnet-mvc-4-models-and-data-access/_static/image46.png "konfigurace nasazení webu")
 
     *Konfigurace nasazení webu*
-5. Připojení k databázi nakonfigurujte následujícím způsobem:
+5. Konfigurace připojení k databázi následujícím způsobem:
 
-   - V **název serveru** zadejte vaše databáze SQL serveru adresu URL pomocí *tcp:* předponu.
+   - V **název serveru** zadejte vaše pomocí adresy URL databáze SQL serveru *tcp:* předponu.
    - V **uživatelské jméno** zadejte vaše přihlašovací jméno správce serveru.
-   - V **heslo** zadejte přihlašovací heslo správce serveru.
+   - V **heslo** zadejte heslo pro přihlašovací jméno správce serveru.
    - Zadejte nový název databáze.
 
      ![Konfigurace cílový připojovací řetězec](aspnet-mvc-4-models-and-data-access/_static/image47.png "konfigurace cílový připojovací řetězec")
 
      *Konfigurace cílový připojovací řetězec*
-6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze, klikněte na tlačítko **Ano**.
+6. Pak klikněte na tlačítko **OK**. Po zobrazení výzvy k vytvoření databáze klikněte na **Ano**.
 
-    ![Vytvoření databáze](aspnet-mvc-4-models-and-data-access/_static/image48.png "vytváření řetězec databáze")
+    ![Vytvoření databáze](aspnet-mvc-4-models-and-data-access/_static/image48.png "vytvoření řetězce databáze")
 
     *Vytvoření databáze*
-7. Připojovací řetězec, který budete používat pro připojení k databázi SQL v systému Windows Azure je uvedené v rámci textbox výchozí připojení. Pak klikněte na tlačítko **Další**.
+7. Připojovací řetězec, který budete používat pro připojení k databázi SQL ve službě Windows Azure se zobrazí v textovém poli výchozí připojení. Pak klikněte na tlačítko **Další**.
 
-    ![Připojovací řetězec odkazující na databázi SQL](aspnet-mvc-4-models-and-data-access/_static/image49.png "připojovací řetězec odkazující na databázi SQL")
+    ![Připojovací řetězec odkazující na SQL Database](aspnet-mvc-4-models-and-data-access/_static/image49.png "připojovací řetězec odkazující na SQL Database")
 
-    *Připojovací řetězec odkazující na databázi SQL*
-8. V **Preview** klikněte na tlačítko **publikovat**.
+    *Připojovací řetězec odkazující na SQL Database*
+8. V **ve verzi Preview** klikněte na **publikovat**.
 
     ![Publikování webové aplikace](aspnet-mvc-4-models-and-data-access/_static/image50.png "publikování webové aplikace")
 
     *Publikování webové aplikace*
-9. Jakmile proces publikování dokončí, otevře se výchozí prohlížeč publikované webové stránky.
+9. Až se proces publikování dokončí, otevře se váš výchozí prohlížeč publikovaného webu.
 
 <a id="AppendixC"></a>
 
 <a id="Appendix_C_Using_Code_Snippets"></a>
 ## <a name="appendix-c-using-code-snippets"></a>Příloha C: používání fragmentů kódu
 
-S fragmenty kódu máte všechny kód, který je nutné na dosah ruky. Dokument testovacího prostředí vás bude informovat přesně Pokud můžete, jak je znázorněno na následujícím obrázku.
+Pomocí fragmentů kódu máte všechny kód, který je třeba na dosah ruky. Testovací prostředí dokumentu zjistíte přesně kdy je můžete využít, jak je znázorněno na následujícím obrázku.
 
-![Používání fragmentů kódu v sadě Visual Studio pro vložení kódu do projektu](aspnet-mvc-4-models-and-data-access/_static/image51.png "fragmenty kódu pomocí sady Visual Studio pro vložení kódu do projektu")
+![Používání fragmentů kódu sady Visual Studio pro vložení kódu do projektu](aspnet-mvc-4-models-and-data-access/_static/image51.png "pomocí sady Visual Studio fragmenty kódu pro vložení kódu do projektu")
 
-*Používání fragmentů kódu v sadě Visual Studio pro vložení kódu do projektu*
+*Používání fragmentů kódu sady Visual Studio pro vložení kódu do projektu*
 
-***Chcete-li přidat fragment kódu pomocí klávesnice (C# pouze)***
+***Chcete-li přidat fragment kódu pomocí klávesnice (C# jenom)***
 
 1. Umístěte kurzor, kam chcete vložit kód.
-2. Začněte psát název fragmentu kódu (bez mezery nebo spojovníky).
-3. Podívejte se na jako IntelliSense zobrazí odpovídající fragmenty názvy.
-4. Vyberte správný fragment kódu (nebo ponechte zadáním dokud je vybraný název celý fragmentu).
-5. Stisknutím klávesy Tab dvakrát můžete vložit fragment v umístění kurzoru.
+2. Začněte psát název fragmentu kódu (bez mezer nebo pomlčky).
+3. Podívejte se na jako IntelliSense zobrazí odpovídající názvy fragmenty kódu.
+4. Vyberte správný fragment kódu (nebo pokračujte v psaní dokud nebude vybraný celý fragment název).
+5. Stiskněte klávesu Tabulátor dvakrát pro vložení fragmentu do umístění kurzoru.
 
-![Začněte psát název fragmentu](aspnet-mvc-4-models-and-data-access/_static/image52.png "začněte psát název fragmentu kódu")
+![Začněte psát název fragmentu kódu](aspnet-mvc-4-models-and-data-access/_static/image52.png "začněte psát název fragmentu kódu")
 
 *Začněte psát název fragmentu kódu*
 
-![Stisknutím klávesy Tab vyberte fragmentu zvýrazněná](aspnet-mvc-4-models-and-data-access/_static/image53.png "stisknutím klávesy Tab vyberte zvýrazněný fragmentu kódu")
+![Stiskněte klávesu Tab k vybrání fragmentu zvýrazněné](aspnet-mvc-4-models-and-data-access/_static/image53.png "stisknutím klávesy Tab k výběru zvýrazněné fragment kódu")
 
-*Stisknutím klávesy Tab vyberte zvýrazněný fragmentu kódu*
+*Stiskněte klávesu Tab k výběru zvýrazněné fragment kódu*
 
-![Stisknutím klávesy Tab znovu a fragmentu rozšíří](aspnet-mvc-4-models-and-data-access/_static/image54.png "stisknutím klávesy Tab znovu a fragmentu bude rozšiřovat.")
+![Stisknutím klávesy Tab znovu a fragment kódu se rozbalí](aspnet-mvc-4-models-and-data-access/_static/image54.png "znovu stisknutím klávesy Tab a fragment kódu se rozbalí.")
 
-*Stisknutím klávesy Tab znovu a fragmentu bude rozšiřovat.*
+*Stisknutím klávesy Tab znovu a fragment kódu se rozbalí.*
 
 ***Chcete-li přidat fragment kódu pomocí myši (C#, Visual Basic a XML)*** 1. Klikněte pravým tlačítkem na místo, kam chcete vložit fragment kódu.
 
-1. Vyberte **Vložit fragment** následuje **Moje fragmenty kódu**.
-2. Vyberte relevantní fragment kódu ze seznamu, kliknutím na.
+1. Vyberte **Vložit fragment** následovaný **Moje fragmenty kódu**.
+2. Kliknutím na vyberte relevantní fragment kódu ze seznamu.
 
-![Klikněte pravým tlačítkem, kam chcete vložit fragment kódu a vyberte Vložit fragment](aspnet-mvc-4-models-and-data-access/_static/image55.png "klikněte pravým tlačítkem, kam chcete vložit fragment kódu a vyberte Vložit fragment")
+![Klikněte pravým tlačítkem, ve které chcete vložit fragment kódu a vyberte Vložit fragment](aspnet-mvc-4-models-and-data-access/_static/image55.png "klikněte pravým tlačítkem, ve které chcete vložit fragment kódu a vyberte Vložit fragment")
 
-*Klikněte pravým tlačítkem myši, kam chcete vložit fragment kódu a vyberte Vložit fragment*
+*Klikněte pravým tlačítkem na, ve které chcete vložit fragment kódu a vyberte Vložit fragment*
 
-![Vyberte relevantní fragment kódu ze seznamu, kliknutím na](aspnet-mvc-4-models-and-data-access/_static/image56.png "vyberte relevantní fragment kódu ze seznamu, kliknutím na")
+![Vyberte si relevantní fragment kódu ze seznamu, kliknutím na](aspnet-mvc-4-models-and-data-access/_static/image56.png "relevantní fragment kódu ze seznamu vyberte kliknutím na")
 
-*Vyberte relevantní fragment kódu ze seznamu, kliknutím na*
+*Vyberte si relevantní fragment kódu ze seznamu, kliknutím na*

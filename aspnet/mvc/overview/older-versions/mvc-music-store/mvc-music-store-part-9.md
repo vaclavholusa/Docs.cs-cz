@@ -1,165 +1,164 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
-title: 'Část 9: Registrace a ověření | Microsoft Docs'
+title: '9. část: Registrace a pokladna | Dokumentace Microsoftu'
 author: jongalloway
-description: Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 9 popisuje registraci a ověření.
+description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 9 pokrývá registrace a pokladna.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
 ms.topic: article
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: e7e83b70f2508b6dfc0c078b992747a76e4d0ff2
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 935729be0dce790c6fce2e2e982ee063318d64dd
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30870112"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367003"
 ---
-<a name="part-9-registration-and-checkout"></a>Část 9: Registrace a ověření
+<a name="part-9-registration-and-checkout"></a>9. část: Registrace a pokladna
 ====================
 podle [Jon Galloway](https://github.com/jongalloway)
 
-> Úložiště Hudba MVC je kurz aplikace, která představuje a vysvětluje krok za krokem, jak používat rozhraní ASP.NET MVC a Visual Studio pro vývoj webů.  
+> MVC Music Store jde o kurz, který se seznámíte, podrobné postupy pro vývoj pro web pomocí ASP.NET MVC a sady Visual Studio.  
 >   
-> Úložiště Hudba MVC je implementace úložiště lightweight ukázkové, který prodává hudebních alb online a implementuje základní Správa serveru, přihlášení uživatele a nákupního košíku funkce.  
+> Music Store MVC je jednoduché ukázku implementace úložiště prodává hudebních alb online, který implementuje správu základního webu, přihlášení uživatele a nákupního košíku funkce.  
 >   
-> Tento kurz řady podrobnosti všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Hudba úložiště. Část 9 popisuje registraci a ověření.
+> V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 9 pokrývá registrace a pokladna.
 
 
-V této části se budeme vytvářet CheckoutController, která bude shromažďovat kupujícímu adresy a platebních údajů. Jsme bude od uživatelů zaregistrujte se na náš web před odhlašuje, aby tento řadič bude vyžadovat autorizace vyžadovat.
+V této části budeme vytvářet CheckoutController, která bude shromažďovat adresu zákazník a platební údaje. Začneme vyžadovat uživatelům registrovat před rezervace, takže tento řadič bude vyžadovat ověření.
 
-Uživatelé budou přejděte do procesu najdete v článku věnovaném z jejich nákupní košík kliknutím na tlačítko "Ověření".
+Uživatelé přejdete na proces platby u pokladny z jejich nákupního košíku klepnutím na tlačítko "Rezervace".
 
 ![](mvc-music-store-part-9/_static/image1.jpg)
 
-Pokud uživatel není přihlášen, se zobrazí výzva k.
+Pokud uživatel není přihlášen, zobrazí se výzva k.
 
 ![](mvc-music-store-part-9/_static/image1.png)
 
-Po úspěšném přihlášení uživatele jsou pak uvedeny adresy a platebních zobrazení.
+Po úspěšném přihlášení uživatele se zobrazí zobrazení adres a platba.
 
 ![](mvc-music-store-part-9/_static/image2.png)
 
-Jakmile budou mít vyplněno formuláře a odeslána pořadí, budou se zobrazovat na potvrzovací obrazovce a pořadí.
+Jakmile máte formuláři vyplněný a odesláním objednávky, se bude zobrazovat na potvrzovací obrazovce objednávky.
 
 ![](mvc-music-store-part-9/_static/image3.png)
 
-Při pokusu o zobrazení pořadí neexistující nebo pořadí, které nepatří do vám zobrazí zobrazení chyb.
+Při pokusu o zobrazení pořadí neexistující nebo pořadí, které nepatří uživateli se zobrazí zobrazení chyb.
 
 ![](mvc-music-store-part-9/_static/image4.png)
 
-## <a name="migrating-the-shopping-cart"></a>Migrace nákupní košík
+## <a name="migrating-the-shopping-cart"></a>Migrace nákupního košíku
 
-Nákupní proces je anonymní, když uživatel klikne na tlačítko Checkout, bude nutné registrace a přihlášení. Uživatelé budou předpokládají, že uchováváme jejich nákupní košík informací mezi návštěvy, takže je potřeba přidružit nákupní košík informace uživatele, když po dokončení registrace nebo přihlášení.
+Během procesu nákupu je anonymní, když uživatel klikne na tlačítko rezervovat, je třeba k registraci a přihlášení. Uživatelé se očekávají, že budeme udržovat své nákupní košík informací mezi návštěvy, takže bude potřeba po dokončení registrace nebo přihlášení nákupního košíku informace přidruží k uživateli.
 
-Jedná se ve skutečnosti velmi jednoduché k účelu, protože naše třída ShoppingCart již má metodu, která budou všechny položky v košíku aktuální přidružit k uživatelskému jménu. Právě jsme potřeba volat tuto metodu, když uživatel dokončení registrace nebo přihlášení.
+Jde ve skutečnosti velmi jednoduchý postup, jak naše ShoppingCart třída již má metodu, která se přidruží ke všech položek v košíku aktuální uživatelské jméno. Právě jsme potřeba volat tuto metodu, když uživatel dokončí registraci nebo přihlášení.
 
-Otevřete **AccountController** třídu, která jsme přidali, když jsme se nastavení členství a autorizace. Přidat pak pomocí příkazu odkazující na MvcMusicStore.Models, přidejte následující metodu MigrateShoppingCart:
+Otevřít **AccountController** třídu, která jsme přidali jsme byly nastavení členství a ověřování. Přidat pak pomocí příkazu odkazující na MvcMusicStore.Models, přidejte následující metodu MigrateShoppingCart:
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample1.cs)]
 
-Potom upravte akce post přihlášení k volání MigrateShoppingCart po ověření uživatele, jak je uvedeno níže:
+Dále upravte akci po přihlášení k volání MigrateShoppingCart po ověření uživatele, jak je znázorněno níže:
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample2.cs)]
 
-Ujistěte se, stejné změnu registru post akce ihned po úspěšném vytvoření účtu uživatele:
+Proveďte stejnou změnu do registru odeslat akci, ihned po úspěšném vytvoření účtu uživatele:
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample3.cs)]
 
-Je to – nyní se anonymní nákupní košík automaticky převede na uživatelský účet po úspěšné registraci nebo přihlášení.
+Je to – teď je anonymní nákupního košíku se automaticky přesunou do uživatelského účtu po úspěšné registraci nebo přihlášení.
 
-## <a name="creating-the-checkoutcontroller"></a>Vytváření CheckoutController
+## <a name="creating-the-checkoutcontroller"></a>Vytváří CheckoutController
 
-Klikněte pravým tlačítkem na složku řadiče a přidejte nový řadič do projektu s názvem CheckoutController pomocí šablony prázdný kontroler.
+Klikněte pravým tlačítkem na složku řadiče a přidejte nový kontroler do projektu s názvem CheckoutController pomocí šablony prázdný kontroler.
 
 ![](mvc-music-store-part-9/_static/image5.png)
 
-Nejprve přidejte atribut autorizovat nad deklaraci třídy Controller budou muset uživatelé zaregistrovat, teprve pak najdete v článku věnovaném:
+Nejprve přidejte atribut Authorize nad deklaraci třídy Kontroleru budou muset uživatelé zaregistrovat rezervaci:
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample4.cs)]
 
-*Poznámka: Toto je podobná změny, které jsme dříve provedené StoreManagerController, ale v takovém případě atribut autorizovat vyžaduje, aby se uživatel v roli správce. V Kontroleru najdete v článku věnovaném jsme se nutnosti být uživatel přihlášen, ale nejsou vyžadující, aby být správci.*
+*Poznámka: Toto je podobný změnu, kterou jsme dříve provedené StoreManagerController, ale v takovém případě vyžadován atribut ověřit, že se uživatel v roli správce. V Kontroleru Checkout jsme už by být přihlášeni uživatele ale nejsou by se správci.*
 
-Z důvodu zjednodušení jsme nebude zabývajících se informace o platebních v tomto kurzu. Místo toho jsme se umožnit uživatelům rezervovat pomocí propagační kód. Tento propagační kód použití konstant s názvem PromoCode jsme se uloží.
+Z důvodu zjednodušení společnost Microsoft nebude pracující s platební informace v tomto kurzu. Místo toho jsme se povolení uživatele, aby pomocí propagační kód. Jsme tento propagační kód pomocí konstanta s názvem PromoCode uloží.
 
-Jako StoreController jsme budete pole pro uložení instance třídy MusicStoreEntities s názvem storeDB deklarovat. Aby bylo možné použít třídy MusicStoreEntities, budeme muset přidat, pomocí příkazu pro obor názvů MvcMusicStore.Models. Horní naše najdete v článku věnovaném řadiče se zobrazí níže.
+Stejně jako v StoreController jsme budete deklarovat pole pro uložení instance třídy MusicStoreEntities s názvem storeDB. Aby bylo možné použít třídy MusicStoreEntities, budeme muset přidat, pomocí příkazu pro obor názvů MvcMusicStore.Models. Horní Checkout kontroleru se zobrazí pod.
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample5.cs)]
 
-CheckoutController bude mít řadič takto:
+CheckoutController bude mít následující akce kontroleru:
 
-**AddressAndPayment (metoda GET)** zobrazí formulář umožňuje, aby uživatel zadal své informace.
+**AddressAndPayment (metodu GET)** zobrazí formulář umožňuje uživateli zadat informace o jejich.
 
-**AddressAndPayment (metodu POST)** se ověření vstupu a pořadí zpracování.
+**AddressAndPayment (metodu POST)** ověření vstupu, který se zpracování objednávky.
 
-**Dokončení** se zobrazí po uživatel úspěšně dokončil proces checkout. Toto zobrazení bude obsahovat uživatele pořadové číslo, jako potvrzení.
+**Kompletní** zobrazí poté, co uživatel úspěšně dokončil proces platby u pokladny. Toto zobrazení bude obsahovat uživatele pořadové číslo, s potvrzením.
 
-Nejprve umožňuje AddressAndPayment přejmenujte akce kontroleru indexu (který byl vygenerován při jsme vytvořili řadičem). Tato akce kontroleru právě zobrazí formulář najdete v článku věnovaném, není třeba žádné informace o modelu.
+Nejprve do AddressAndPayment přejmenujme akce kontroleru indexu (který se vygeneroval při jsme vytvořili kontroleru). Tato akce kontroleru zobrazí pouze formulář checkout, nevyžaduje žádné informace o modelu.
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample6.cs)]
 
-Naše metodu AddressAndPayment POST bude postupovat podle stejného vzoru jsme použili v StoreManagerController: pokusí přijměte odeslání formuláře a dokončení objednávky a znovu zobrazit formulář, pokud se nezdaří.
+Naše metodu AddressAndPayment POST bude postupují stejným způsobem jsme použili v StoreManagerController: pokusí přijmout odeslání formuláře a dokončení objednávky a znovu zobrazte formulář, pokud se nezdaří.
 
-Po ověření vstupu z formuláře splňuje požadavky naše ověření pořadí, jsme hodnotu formuláře PromoCode zkontrolujte přímo. Za předpokladu, že je vše v pořádku, že jsme se s pořadím uložit aktualizované informace, řekněte ShoppingCart objekt k dokončení procesu pořadí a přesměrování na dokončení akce.
+Po ověření vstupu formuláře nesplňuje naše požadavky na ověření pro objednávky, jsme se přímo zkontrolujte hodnotu PromoCode formuláře. Za předpokladu, že je všechno správně, že jsme se uloží aktualizované informace s pořadím, řekněte ShoppingCart objektu k dokončení procesu objednávání a přesměrování na dokončení akce.
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample7.cs)]
 
-Po úspěšném dokončení procesu najdete v článku věnovaném uživatelé přesměrováni na akce dokončení kontroleru. Tato akce provede kontrolu jednoduché k ověření, že pořadí skutečně patří do přihlášeného uživatele před zobrazením pořadové číslo jako potvrzení.
+Po úspěšném dokončení procesu registrace budete přesměrováni na akce kontroleru kompletní uživatelů. Tato akce provede jednoduchou kontrolu pro ověření, že pořadí ve skutečnosti patří do přihlášeného uživatele před zobrazením pořadové číslo jako potvrzení.
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample8.cs)]
 
-*Poznámka: Zobrazení chyb byl automaticky vytvořen pro nás ve složce /Views/Shared když jsme začali projektu.*
+*Poznámka: Zobrazení chyb byl automaticky vytvořen pro nás ve složce /Views/Shared když jsme začali s projektu.*
 
-Kód dokončení CheckoutController vypadá takto:
+Kompletní kód CheckoutController vypadá takto:
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample9.cs)]
 
 ## <a name="adding-the-addressandpayment-view"></a>Přidání zobrazení AddressAndPayment
 
-Nyní vytvoříme AddressAndPayment zobrazení. Klikněte pravým tlačítkem na jednu z akcí AddressAndPayment řadiče a přidat zobrazení s názvem AddressAndPayment, který je silného typu jako pořadí a používá šablony upravit, jak je uvedeno níže.
+Teď vytvoříme AddressAndPayment zobrazení. Klikněte pravým tlačítkem na jednu z akcí kontroleru AddressAndPayment a přidat zobrazení s názvem AddressAndPayment, což je silně typováno jako pořadí a používá šablonu upravit, jak je znázorněno níže.
 
 ![](mvc-music-store-part-9/_static/image6.png)
 
-Toto zobrazení se budou používat dva postupy jsme se podívali na při vytváření zobrazení StoreManagerEdit:
+Toto zobrazení způsobí, že použití dvou technik zvažovali jsme i při vytváření zobrazení StoreManagerEdit:
 
-- Chcete-li zobrazit pole formuláře pro model pořadí použijeme Html.EditorForModel()
-- Jsme využije ověřovacích pravidel pomocí atributů ověření třídu pořadí
+- Použijeme Html.EditorForModel() k zobrazení polí formuláře pro model pořadí
+- Společnost Microsoft bude využívat ověřovacích pravidel pomocí atributů ověření třídu pořadí
 
-Začneme aktualizací formuláře kód, který použije Html.EditorForModel(), následuje další textové pole pro tento propagační kód. Kód dokončení pro zobrazení AddressAndPayment jsou uvedeny níže.
+Začneme aktualizací kód formuláře, který použije Html.EditorForModel(), za nímž následuje další textové pole pro propagační kód. Kompletní kód AddressAndPayment zobrazení je uveden níže.
 
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample10.cshtml)]
 
-## <a name="defining-validation-rules-for-the-order"></a>Definice ověřovacích pravidel pro pořadí
+## <a name="defining-validation-rules-for-the-order"></a>Definování pravidel ověřování pro pořadí
 
-Teď, když je naše zobrazení nastavili, jsme nastaví ověřovacích pravidel pro náš model pořadí jako jsme to udělali dřív Album modelu. Klikněte pravým tlačítkem na složku modely a přidejte třídu s názvem pořadí. Kromě ověření atributy, které jsme použili dříve alba také použijeme regulární výraz k ověření e-mailovou adresu uživatele.
+Teď, když náš zobrazení je nastaven, nastavíme ověřovacích pravidel pro náš model pořadí jako jsme to udělali dříve alba modelu. Klikněte pravým tlačítkem na složku modely a přidejte třídu pojmenovanou pořadí. Kromě ověřování atributů, které jsme použili dříve alba také použijeme regulární výraz k ověření e-mailovou adresu uživatele.
 
 [!code-csharp[Main](mvc-music-store-part-9/samples/sample11.cs)]
 
-Probíhá pokus o odeslání formuláře s chybějící nebo neplatné informace se nyní zobrazí chybovou zprávu pomocí ověřování na straně klienta.
+Pokus o odeslání formuláře s chybějící nebo neplatné informace se nyní zobrazí chybovou zprávu pomocí ověřování na straně klienta.
 
 ![](mvc-music-store-part-9/_static/image7.png)
 
-V pořádku máme Hotovo většinu práce pevný pro proces najdete v článku věnovaném; právě máme několik pravděpodobnost a končí na dokončení. Je potřeba přidat dvě jednoduché zobrazení a musíme postará o předání informací košíku během procesu přihlášení.
+Dobře jsme provedli většinu těžkou práci pro proces platby u pokladny; stačilo několik číslům umocněným na druhou a končí na dokončení. Je potřeba přidat dvě jednoduché zobrazení a musíme starat o předání košíku informace během procesu přihlášení.
 
-## <a name="adding-the-checkout-complete-view"></a>Přidání zobrazení najdete v článku věnovaném dokončení
+## <a name="adding-the-checkout-complete-view"></a>Přidání Checkout úplné zobrazení
 
-Dokončení najdete v článku věnovaném zobrazení je poměrně jednoduché jako potřebuje pouze pro zobrazení ID pořadí. Klikněte pravým tlačítkem na akce dokončení kontroleru a přidat zobrazení s názvem dokončeno, což je silného typu jako typ int.
+Rezervace kompletní přehled je docela jednoduché, protože potřebuje pouze k zobrazení ID objednávky. Klikněte pravým tlačítkem na akce kontroleru kompletní a přidat zobrazení s názvem dokončeno, což je silně typováno jako celé číslo
 
 ![](mvc-music-store-part-9/_static/image8.png)
 
-Nyní budeme aktualizovat zobrazení kód, který zobrazí ID pořadí, jak je uvedeno níže.
+Nyní aktualizujeme zobrazit kód pro zobrazení ID objednávky, jak je znázorněno níže.
 
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample12.cshtml)]
 
-## <a name="updating-the-error-view"></a>Aktualizace zobrazení chyb
+## <a name="updating-the-error-view"></a>Aktualizace zobrazení The chyb
 
-Výchozí šablony zahrnuje zobrazení chyb ve sdílené složce, zobrazení, aby bylo možné ho znovu použít jinde v lokalitě. Toto zobrazení chyba obsahuje chybu velmi jednoduchý a nepoužívá náš web rozložení, takže jsme ji budete aktualizovat.
+Výchozí šablona zahrnuje zobrazení chyb ve sdílené složce zobrazení tak, aby se dá znovu použít jinde v lokalitě. Toto zobrazení chyba obsahuje chybu velmi jednoduchý a nepoužívá náš web rozložení, abychom vám ho aktualizovat.
 
-Vzhledem k tomu, že toto je obecná chyba stránky, je velmi jednoduchý obsah. Budete zahrnuta zprávu a odkaz přejít na předchozí stránku v historii, pokud chce uživatel zkuste akci znovu.
+Protože toto je stránka obecné chybě, je velmi jednoduchý obsah. Budete zahrnujeme zprávu a odkaz přejděte na předchozí stránku v historii, pokud chce uživatel znovu opakujte akci.
 
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample13.cshtml)]
 

@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
-title: '[Jak na:] Pomocí ovládacích prvků ASP.NET AJAX MaskedEdit? | Microsoft Docs'
+title: '[Postup:] Pomocí ovládacích prvků technologie ASP.NET AJAX MaskedEdit? | Dokumentace Microsoftu'
 author: JoeStagner
-description: Ovládací prvek ASP.NET AJAX Toolkit poskytuje ovládacího prvku MaskedEdit a řízení MaskedEditValidator, které vzájemně spolupracují na řádku, styl a ověření d...
+description: ASP.NET AJAX Control Toolkit poskytuje MaskedEdit control a MaskedEditValidator ovládacího prvku, které spolupracují se výzva, styl a ověřit d...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2007
 ms.topic: article
 ms.assetid: 806a8bfe-54be-4c96-8ffd-66303cc2b2f9
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
 msc.type: video
-ms.openlocfilehash: e79d8517028337b0693234dd28d6c0903c12e2f6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b725819313eae960ba96847d0a8db00668eb7ed0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882228"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392552"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[Jak na:] Pomocí ovládacích prvků ASP.NET AJAX MaskedEdit?
+<a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[Postup:] Pomocí ovládacích prvků technologie ASP.NET AJAX MaskedEdit?
 ====================
-podle [Stagner Jan](https://github.com/JoeStagner)
+podle [Joe Stagner](https://github.com/JoeStagner)
 
-ASP.NET AJAX Control Toolkit poskytuje ovládacího prvku MaskedEdit a MaskedEditValidator řízení, které vzájemně spolupracují a řádku, styl a ověřit data, která uživatel zadá v textovém poli. To umožňuje uživateli poskytnout okamžitou visual zpětnou vazbu na tom, zda zadaná data platného typu a formátu webové stránky.
+ASP.NET AJAX Control Toolkit poskytuje MaskedEdit control a MaskedEditValidator ovládacího prvku, které spolupracují na řádku, styl a ověřit data, která uživatel zadá v textovém poli. To umožňuje webovou stránku, aby uživatel poskytnout okamžitou vizuální zpětnou vazbu na to, zda zadaná data je platný typ a formát.
 
-[&#9654;Podívejte se na video (17 minuty)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-maskededit-controls)
+[&#9654;Podívejte se na video (17 min)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-maskededit-controls)
 
 > [!div class="step-by-step"]
 > [Předchozí](how-do-i-use-the-aspnet-ajax-dropdown-control.md)

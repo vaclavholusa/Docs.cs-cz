@@ -1,70 +1,69 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-cs
-title: Provádění několik animací po sobě navzájem (C#) | Microsoft Docs
+title: Postupné provedení několika animací (C#) | Dokumentace Microsoftu
 author: wenz
-description: V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace. Umožňuje spustit severa...
+description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Umožňuje spustit severa...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 7dc02b18-2b5d-4844-b7c5-cbd818477163
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 836f0bba890a03e74ae62c2df029b7525b34275c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 49d33ee28984981c7757f14fe7c16fb2dc8f744e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871401"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362148"
 ---
-<a name="executing-several-animations-after-each-other-c"></a><span data-ttu-id="0d144-104">Provádění několik animací po sobě navzájem (C#)</span><span class="sxs-lookup"><span data-stu-id="0d144-104">Executing Several Animations after Each Other (C#)</span></span>
+<a name="executing-several-animations-after-each-other-c"></a><span data-ttu-id="c6b8c-104">Postupné provedení několika animací (C#)</span><span class="sxs-lookup"><span data-stu-id="c6b8c-104">Executing Several Animations after Each Other (C#)</span></span>
 ====================
-<span data-ttu-id="0d144-105">podle [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="0d144-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="c6b8c-105">podle [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="c6b8c-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="0d144-106">[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.cs.zip) nebo [stáhnout PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="0d144-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.cs.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3CS.pdf)</span></span>
+<span data-ttu-id="c6b8c-106">[Stáhněte si kód](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.cs.zip) nebo [stahovat PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="c6b8c-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation3.cs.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation3CS.pdf)</span></span>
 
-> <span data-ttu-id="0d144-107">V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace.</span><span class="sxs-lookup"><span data-stu-id="0d144-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="0d144-108">Umožňuje spustit několik animací jedna po druhé.</span><span class="sxs-lookup"><span data-stu-id="0d144-108">It allows to run several animations one after the other.</span></span>
+> <span data-ttu-id="c6b8c-107">Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="c6b8c-108">Umožňuje spuštění několika animací jednu po druhé.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-108">It allows to run several animations one after the other.</span></span>
 
 
-<span data-ttu-id="0d144-109">V sadě nástrojů ovládacího prvku ASP.NET AJAX ovládacího prvku animace není právě ovládací prvek ale celé rozhraní pro přidání do ovládacího prvku animace.</span><span class="sxs-lookup"><span data-stu-id="0d144-109">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="0d144-110">Umožňuje spustit několik animací jedna po druhé.</span><span class="sxs-lookup"><span data-stu-id="0d144-110">It allows to run several animations one after the other.</span></span>
+<span data-ttu-id="c6b8c-109">Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-109">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="c6b8c-110">Umožňuje spuštění několika animací jednu po druhé.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-110">It allows to run several animations one after the other.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="0d144-111">Kroky</span><span class="sxs-lookup"><span data-stu-id="0d144-111">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="c6b8c-111">Kroky</span><span class="sxs-lookup"><span data-stu-id="c6b8c-111">Steps</span></span>
 
-<span data-ttu-id="0d144-112">První řadě zahrnují `ScriptManager` na stránce; potom knihovny ASP.NET AJAX je načtena, aby bylo možné použít Toolkitu:</span><span class="sxs-lookup"><span data-stu-id="0d144-112">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="c6b8c-112">Za prvé, zahrnout `ScriptManager` na stránce; potom technologie ASP.NET AJAX je načíst knihovnu, což umožňuje použití Control Toolkit:</span><span class="sxs-lookup"><span data-stu-id="c6b8c-112">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](executing-several-animations-after-each-other-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="0d144-113">Animace se použijí na panel textu, který vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="0d144-113">The animation will be applied to a panel of text which looks like this:</span></span>
+<span data-ttu-id="c6b8c-113">Animace se použijí pro panel text, který vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="c6b8c-113">The animation will be applied to a panel of text which looks like this:</span></span>
 
 [!code-aspx[Main](executing-several-animations-after-each-other-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="0d144-114">Související třídy CSS pro panel definovat barvu pozadí dobrý a také nastavit pevnou šířku pro panel:</span><span class="sxs-lookup"><span data-stu-id="0d144-114">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
+<span data-ttu-id="c6b8c-114">V přidružené třídy šablony stylů CSS pro panel definovat barvu pozadí nice a také nastavit Pevná šířka panelu:</span><span class="sxs-lookup"><span data-stu-id="c6b8c-114">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
 
 [!code-css[Main](executing-several-animations-after-each-other-cs/samples/sample3.css)]
 
-<span data-ttu-id="0d144-115">Poté, přidejte `AnimationExtender` na stránku, poskytuje `ID`, `TargetControlID` atribut a povinný údaj `runat="server":`</span><span class="sxs-lookup"><span data-stu-id="0d144-115">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server":`</span></span>
+<span data-ttu-id="c6b8c-115">Pak přidejte `AnimationExtender` na stránku, poskytování `ID`, `TargetControlID` atribut a povinný údaj `runat="server":`</span><span class="sxs-lookup"><span data-stu-id="c6b8c-115">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server":`</span></span>
 
 [!code-aspx[Main](executing-several-animations-after-each-other-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="0d144-116">V rámci `<Animations>` uzlu, použijte `<OnLoad>` ke spuštění animací, jakmile byla úplným načtením stránky.</span><span class="sxs-lookup"><span data-stu-id="0d144-116">Within the `<Animations>` node, use `<OnLoad>` to run the animations once the page has been fully loaded.</span></span> <span data-ttu-id="0d144-117">Obecně platí `<OnLoad>` přijímá pouze jeden animace.</span><span class="sxs-lookup"><span data-stu-id="0d144-117">Generally, `<OnLoad>` only accepts one animation.</span></span> <span data-ttu-id="0d144-118">Rozhraní framework animace umožňuje připojení k několika animace do jednoho pomocí `<Sequence>` elementu.</span><span class="sxs-lookup"><span data-stu-id="0d144-118">The Animation framework allows you to join several animations into one using the `<Sequence>` element.</span></span> <span data-ttu-id="0d144-119">Všechny animace v rámci `<Sequence>` jsou prováděny jedna po druhé.</span><span class="sxs-lookup"><span data-stu-id="0d144-119">All animations within `<Sequence>` are executed one after the other.</span></span> <span data-ttu-id="0d144-120">Tady je je možné kód pro `AnimationExtender` řízení, nejprve Příprava širší panelu a pak snížení jeho výšku:</span><span class="sxs-lookup"><span data-stu-id="0d144-120">Here is the a possible markup for the `AnimationExtender` control, first making the panel wider and then decreasing its height:</span></span>
+<span data-ttu-id="c6b8c-116">V rámci `<Animations>` uzlu, použijte `<OnLoad>` ke spuštění animací, jakmile úplným načtením stránky.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-116">Within the `<Animations>` node, use `<OnLoad>` to run the animations once the page has been fully loaded.</span></span> <span data-ttu-id="c6b8c-117">Obecně platí `<OnLoad>` přijímá pouze jeden animace.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-117">Generally, `<OnLoad>` only accepts one animation.</span></span> <span data-ttu-id="c6b8c-118">Animace framework umožňuje připojit k několika animací do jednoho pomocí `<Sequence>` elementu.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-118">The Animation framework allows you to join several animations into one using the `<Sequence>` element.</span></span> <span data-ttu-id="c6b8c-119">Všechny animace v rámci `<Sequence>` jsou spuštěný jeden po druhém.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-119">All animations within `<Sequence>` are executed one after the other.</span></span> <span data-ttu-id="c6b8c-120">Tady je možné značky `AnimationExtender` ovládací prvek, nejprve Příprava panelu širší a zmenšení výšku:</span><span class="sxs-lookup"><span data-stu-id="c6b8c-120">Here is the a possible markup for the `AnimationExtender` control, first making the panel wider and then decreasing its height:</span></span>
 
 [!code-aspx[Main](executing-several-animations-after-each-other-cs/samples/sample5.aspx)]
 
-<span data-ttu-id="0d144-121">Při spuštění tohoto skriptu panelu první získá širší a pak menší.</span><span class="sxs-lookup"><span data-stu-id="0d144-121">When you run this script, the panel first gets wider and then smaller.</span></span>
+<span data-ttu-id="c6b8c-121">Při spuštění tohoto skriptu panelu první získá širší a potom menší.</span><span class="sxs-lookup"><span data-stu-id="c6b8c-121">When you run this script, the panel first gets wider and then smaller.</span></span>
 
 
-<span data-ttu-id="0d144-122">[![Nejprve je vyšší šířku](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="0d144-122">[![First the width is increased](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)</span></span>
+<span data-ttu-id="c6b8c-122">[![Nejprve je vyšší šířku](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="c6b8c-122">[![First the width is increased](executing-several-animations-after-each-other-cs/_static/image2.png)](executing-several-animations-after-each-other-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="0d144-123">Nejprve je vyšší šířku ([Kliknutím zobrazit obrázek v plné velikosti](executing-several-animations-after-each-other-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="0d144-123">First the width is increased ([Click to view full-size image](executing-several-animations-after-each-other-cs/_static/image3.png))</span></span>
+<span data-ttu-id="c6b8c-123">Nejprve je vyšší šířku ([kliknutím ji zobrazíte obrázek v plné velikosti](executing-several-animations-after-each-other-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="c6b8c-123">First the width is increased ([Click to view full-size image](executing-several-animations-after-each-other-cs/_static/image3.png))</span></span>
 
 
-<span data-ttu-id="0d144-124">[![Pak je zmenšit výšku](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="0d144-124">[![Then the height is decreased](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)</span></span>
+<span data-ttu-id="c6b8c-124">[![Pak je snížení výšky](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="c6b8c-124">[![Then the height is decreased](executing-several-animations-after-each-other-cs/_static/image5.png)](executing-several-animations-after-each-other-cs/_static/image4.png)</span></span>
 
-<span data-ttu-id="0d144-125">Pak je zmenšit výšku ([Kliknutím zobrazit obrázek v plné velikosti](executing-several-animations-after-each-other-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="0d144-125">Then the height is decreased ([Click to view full-size image](executing-several-animations-after-each-other-cs/_static/image6.png))</span></span>
+<span data-ttu-id="c6b8c-125">Pak se sníží výška ([kliknutím ji zobrazíte obrázek v plné velikosti](executing-several-animations-after-each-other-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="c6b8c-125">Then the height is decreased ([Click to view full-size image](executing-several-animations-after-each-other-cs/_static/image6.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="0d144-126">[Předchozí](executing-several-animations-at-the-same-time-cs.md)
-> [další](animation-depending-on-a-condition-cs.md)</span><span class="sxs-lookup"><span data-stu-id="0d144-126">[Previous](executing-several-animations-at-the-same-time-cs.md)
+> <span data-ttu-id="c6b8c-126">[Předchozí](executing-several-animations-at-the-same-time-cs.md)
+> [další](animation-depending-on-a-condition-cs.md)</span><span class="sxs-lookup"><span data-stu-id="c6b8c-126">[Previous](executing-several-animations-at-the-same-time-cs.md)
 [Next](animation-depending-on-a-condition-cs.md)</span></span>

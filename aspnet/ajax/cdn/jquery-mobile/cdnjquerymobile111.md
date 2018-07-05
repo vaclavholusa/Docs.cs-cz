@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-mobile/cdnjquerymobile111
-title: jQuery Mobile 1.1.1 na Microsoft Ajax CDN | Microsoft Docs
+title: jQuery Mobile 1.1.1 ve službě Microsoft Ajax CDN | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,19 +9,18 @@ ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: 1252d4fa-e900-45fe-bc32-87b0af33b51c
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile111
 msc.type: content
-ms.openlocfilehash: 38f40e30e74e2a5f7e640caf89b70764a747fd47
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ad3388d4e8972cf896096cf08e621899891b7ef8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30071145"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37362230"
 ---
-<a name="jquery-mobile-111-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="94687-102">jQuery Mobile 1.1.1 na Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="94687-102">jQuery Mobile 1.1.1 on the Microsoft Ajax CDN</span></span>
+<a name="jquery-mobile-111-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="00944-102">jQuery Mobile 1.1.1 ve službě Microsoft Ajax CDN</span><span class="sxs-lookup"><span data-stu-id="00944-102">jQuery Mobile 1.1.1 on the Microsoft Ajax CDN</span></span>
 ====================
-<span data-ttu-id="94687-103">Knihovny jQuery Mobile 1.1.1 zahrnuje následující soubory:</span><span class="sxs-lookup"><span data-stu-id="94687-103">The jQuery Mobile 1.1.1 library includes the following files:</span></span>
+<span data-ttu-id="00944-103">Knihovna jQuery Mobile 1.1.1 zahrnuje následující soubory:</span><span class="sxs-lookup"><span data-stu-id="00944-103">The jQuery Mobile 1.1.1 library includes the following files:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile.structure-1.1.1.css
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css

@@ -4,19 +4,16 @@ title: Přidání a reakce na tlačítek do ovládacího prvku GridView (C#) | D
 author: rick-anderson
 description: V tomto kurzu podíváme na tom, jak přidat vlastní tlačítka na šablonu a k polím ovládacího prvku GridView nebo prvku DetailsView. Konkrétně jsme budete pří...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/13/2006
-ms.topic: article
 ms.assetid: 128fdb5f-4c5e-42b5-b485-f3aee90a8e38
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 25e9574a861d23579ce1a18da895159d47881457
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 92743d252e6d8895ac1bff104456ec5874202ec9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368590"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804743"
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>Přidání a reakce na tlačítek do ovládacího prvku GridView (C#)
 ====================

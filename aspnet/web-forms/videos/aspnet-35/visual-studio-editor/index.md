@@ -4,19 +4,16 @@ title: Editor sady Visual Studio | Dokumentace Microsoftu
 author: rick-anderson
 description: Tato série videí se dozvíte, nové funkce editoru sady Visual Studio 2008, včetně rozšířenou podporu pro JavaScript a CSS.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: 8d424d7b-5206-4790-a068-36d01c05ceb0
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor
 msc.type: chapter
-ms.openlocfilehash: 898840b04a0e9b59c22c76cb812b2cab047e8ff4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f95d82d65f41436576741c1dc5ea4279ac086193
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392062"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834045"
 ---
 <a name="visual-studio-editor"></a>Editor sady Visual Studio
 ====================

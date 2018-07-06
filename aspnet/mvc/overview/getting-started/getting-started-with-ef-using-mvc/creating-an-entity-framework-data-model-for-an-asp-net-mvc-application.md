@@ -4,19 +4,16 @@ title: Začínáme s Entity Framework 6 Code First pomocí MVC 5 | Dokumentace M
 author: tdykstra
 description: 'Je k dispozici novější verze této sérii: Začínáme s ASP.NET Core a Entity Framework Core pomocí sady Visual Studio 2015. Contoso Universi...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/22/2015
-ms.topic: article
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1b8d78954746cd6908f9ca9c2a51591f45fa01f7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f03ddcf7dcc8b5d20c5459a7fb0015ab20f340c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403097"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837166"
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>Začínáme s Entity Framework 6 Code First pomocí MVC 5
 ====================

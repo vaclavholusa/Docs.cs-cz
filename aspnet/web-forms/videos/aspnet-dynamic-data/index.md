@@ -4,19 +4,16 @@ title: Dynamická Data technologie ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak vytvořit automaticky generovaný aplikací, které automaticky vědět, jak se přístup k datům pomocí dynamických dat ASP.NET.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: cd51e6c4-6ff9-419d-8ac8-a39b79d63c78
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
-ms.openlocfilehash: 41af0473822efb6cdde5087df317b30126dc0bc8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c847b8de7e45447be337940e71b87d57911d17f5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374789"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841481"
 ---
 <a name="aspnet-dynamic-data"></a>Dynamická Data technologie ASP.NET
 ====================

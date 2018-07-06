@@ -4,19 +4,16 @@ title: Zlepšení výkonu ukládáním výstupní mezipaměti (C#) | Dokumentace
 author: microsoft
 description: V tomto kurzu se dozvíte, jak můžete výrazně vylepšit výkon webových aplikací ASP.NET MVC s využitím ukládání výstupu do mezipaměti. Budete...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/27/2009
-ms.topic: article
 ms.assetid: 521c9117-81cd-4d8d-9d96-0256dc7bf50f
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 81349f37d861e79ff4d95962c275a96576d0455b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 26e65cb5f0e256d4ca819dfde4a748f00d56f08e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372482"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832539"
 ---
 <a name="improving-performance-with-output-caching-c"></a>Zlepšení výkonu ukládáním výstupů do mezipaměti (C#)
 ====================

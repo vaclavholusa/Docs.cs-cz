@@ -4,19 +4,16 @@ title: Migrace na ASP.NET Identity | Dokumentace Microsoftu
 author: rick-anderson
 description: Migrace na ASP.NET Identity od jiných zprostředkovatelů členství
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/02/2013
-ms.topic: article
 ms.assetid: 4a54fee1-d064-4d67-837a-87143a9205fd
-ms.technology: ''
 msc.legacyurl: /identity/overview/migrations
 msc.type: chapter
-ms.openlocfilehash: 08559ad6324e1adbbe3005c188966809bdc22534
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6ba0c5752ba979d52350cd5fbc532e1c9926d41a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391784"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832893"
 ---
 <a name="migrating-to-aspnet-identity"></a>Migrace na ASP.NET Identity
 ====================

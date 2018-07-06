@@ -4,19 +4,16 @@ title: Jak na to s LINQ | Dokumentace Microsoftu
 author: rick-anderson
 description: Tato série videí vás provede všechno, co potřebujete vědět o zdokonalování v použití LINQ jako webový vývojář.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/24/2012
-ms.topic: article
 ms.assetid: 11b3547a-7c4f-4849-8e27-3cfbe255034e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq
 msc.type: chapter
-ms.openlocfilehash: 8fa6ed08de31f6c78a76b161f9478e281bc03850
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e2146d0f4062c48c8d9d188d20a2ff14477a589e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401283"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832889"
 ---
 <a name="how-do-i-with-linq"></a>Jak na to s LINQ
 ====================

@@ -4,19 +4,16 @@ title: '[Postup:] Pomocí ovládacího prvku ASP.NET AJAX NoBot? | Dokumentace M
 author: JoeStagner
 description: Ovládací prvek NoBot z technologie ASP.NET AJAX Control Toolkit pomáhá zabránit určitých typech neoprávněného přístupu k webovým aplikacím. V tomto videu jsme naleznete v tématu Jak...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/29/2007
-ms.topic: article
 ms.assetid: 15282963-2ec5-4013-b6bc-f1fcf272818e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-nobot-control
 msc.type: video
-ms.openlocfilehash: 6b0fb59988b69746514c56bad148da036aedc303
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 56276b427197459c916361c3f5652491e1f175c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398981"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811857"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-nobot-control"></a>[Postup:] Pomocí ovládacího prvku ASP.NET AJAX NoBot?
 ====================

@@ -4,19 +4,16 @@ title: 'Postup: použití směrování s webovými formuláři ASP.NET? | Dokume
 author: rick-anderson
 description: Chris pixelů na toto video ukazuje, jak implementovat směrování webových formulářů v technologii ASP.NET 4. Nejprve je mapování adresy URL p porovnání koncept směrování adresy URL...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/15/2010
-ms.topic: article
 ms.assetid: a3ab6cd9-8f71-4b73-9336-21c0de078269
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: 8ef8edd68d9918817df564227d1f37716d49d132
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4b570df24b7a931b3853c5117a29d405ca8ecf24
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383448"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830199"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a>Postup: použití směrování s webovými formuláři ASP.NET?
 ====================

@@ -4,19 +4,16 @@ title: '[Postup:] Použití podmíněné vlastnosti UpdateMode ovládacího prvk
 author: JoeStagner
 description: Ovládacího prvku UpdatePanel technologie ASP.NET AJAX zahrnuje vlastnost UpdateMode nastavena vlastnost, která může být nastavená na "Always" nebo "Podmínky". Výchozí hodnota je vždy, v takovém případě UpdatePan...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/01/2007
-ms.topic: article
 ms.assetid: 10b5bad3-4c18-464f-9454-0b3e60b7b8be
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-conditional-updatemode-of-the-updatepanel
 msc.type: video
-ms.openlocfilehash: a63c5687e52dd89e1a967bdd7d0dd0539e32ff37
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 04b37874bcbdd580edc9182b54eecc9a6f77cb61
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397380"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826802"
 ---
 <a name="how-do-i-use-the-conditional-updatemode-of-the-updatepanel"></a>[Postup:] Použití podmíněné vlastnosti UpdateMode ovládacího prvku UpdatePanel?
 ====================

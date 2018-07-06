@@ -4,19 +4,16 @@ title: Vytvoření modelu Entity Framework při testování rozhraní ASP.NET We
 author: tfitzmac
 description: Tento průvodce a aplikace ukazují, jak vytvořit testy jednotek pro aplikace webového rozhraní API 2, která používá Entity Framework. Ukazuje, jak změnit...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/13/2013
-ms.topic: article
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f1ff2fda85a6d56a6bbb76b1bff740301ab0c70d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: dc50965a2757defb254d05f0b8a5fd46a90dc75f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371866"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804393"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Vytvoření modelu Entity Framework při testování rozhraní ASP.NET Web API 2
 ====================

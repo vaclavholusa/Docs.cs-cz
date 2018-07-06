@@ -4,19 +4,16 @@ title: 'Úvod do ASP.NET pro vývojáře v JSP: Vítejte v ASP.NET 2.0 | Dokumen
 author: microsoft
 description: Tato relace se zaměřuje na základní informace nezbytné k pochopení technologie ASP.NET a jak ASP.NET integruje do rozhraní .NET Framework a Microsoft IIS.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/25/2006
-ms.topic: article
 ms.assetid: 1a95474a-a897-4ba1-b372-8a112cb324ba
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/migrating/intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20
 msc.type: video
-ms.openlocfilehash: 38c7c42c248fe9f6c06852d1d580c2fdb42fd5d8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 66e6814098cbeecacfd7cf29b177025a66d9d3a7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391751"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840849"
 ---
 <a name="intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20"></a>Úvod do ASP.NET pro vývojáře v JSP: Vítejte v ASP.NET 2.0
 ====================

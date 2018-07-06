@@ -4,19 +4,16 @@ title: Ověření požadavku – obrana před Skriptovými útoky | Dokumentace 
 author: rick-anderson
 description: Tento dokument popisuje žádosti o ověření funkce technologie ASP.NET, pokud ve výchozím nastavení, aplikace nebude zpracování nekódovaného submitt obsahu HTML...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
-ms.technology: ''
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 783fb1ae27d88f9c6d6d3484d26d3e206e7f2fba
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0dfbfcae70792c57d530fc5e6fb73f8f96ec6e02
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372926"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809742"
 ---
 <a name="request-validation---preventing-script-attacks"></a>Ověření požadavku – obrana před Skriptovými útoky
 ====================

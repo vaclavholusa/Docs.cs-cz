@@ -4,19 +4,16 @@ title: Nasazení databáze (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Nasazení webové aplikace ASP.NET zahrnuje získání potřebné soubory a prostředky z vývojového prostředí do produkčního prostředí. Pro da...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 96ac3e69-04c7-4917-ad06-5f8968c3fbf1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3dc5e9b4e189929b2b898b997b7577a623bdc8a7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c49b963cb5cfc40d8a0b03eb3ca722e3b789eab2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381319"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836272"
 ---
 <a name="deploying-a-database-vb"></a>Nasazení databáze (VB)
 ====================

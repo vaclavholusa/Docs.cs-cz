@@ -4,19 +4,16 @@ title: Další informace o datových typech sloupců a dalších vlastností | D
 author: microsoft
 description: Začátečníky systému SQL Server bude zkoumat integritu dat, další typy dat, které se má použít pro co a vyhnout běžným nástrahám datového typu.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/22/2006
-ms.topic: article
 ms.assetid: 8fcd3402-1711-4f19-b0cc-b91edfe285fc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/sql-2005/more-about-column-data-types-and-other-properties
 msc.type: video
-ms.openlocfilehash: a96226aaa43eeeff653ac8f246f00fceb6c85c46
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b08d64353a5b4f1eb165e7e5eb1a79160ec5c254
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364333"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826906"
 ---
 <a name="more-about-column-data-types-and-other-properties"></a>Další informace o datových typech sloupců a dalších vlastností
 ====================

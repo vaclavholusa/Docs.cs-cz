@@ -4,19 +4,16 @@ title: Nasazení webu ASP.NET pomocí sady Visual Studio | Dokumentace Microsoft
 author: rick-anderson
 description: V této sérii kurzů ukazuje, jak vytvořit webovou aplikaci ASP.NET, který používá systém SQL Server (nikoli SQL Server Compact) dostupných přes internet nasazením t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: e733027a-525f-47ae-b1c0-2e5ecf6677aa
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
-ms.openlocfilehash: e37e9df6121df86c6f1093fa95b3aad512a03345
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1bba3984b8e412938d5678206ac15d1df8793afb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361643"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806937"
 ---
 <a name="aspnet-web-deployment-using-visual-studio"></a>Nasazení webu ASP.NET pomocí sady Visual Studio
 ====================

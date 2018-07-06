@@ -4,19 +4,16 @@ title: Boj s roboty (VB) | Dokumentace Microsoftu
 author: wenz
 description: Automatizované robotů sádra webové protokoly a další weby s nevyžádanou poštou, odesílání formulářů komentář bez nutnosti zásahu uživatele. Ovládací prvek NoBot v Con technologie ASP.NET AJAX...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f919d130cc97b5f892cc01d58a0bcba790a98e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e79a973f721c1feeddb00ecbf9d6a76786afb4bb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362515"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833440"
 ---
 <a name="fighting-bots-vb"></a>Boj s roboty (VB)
 ====================

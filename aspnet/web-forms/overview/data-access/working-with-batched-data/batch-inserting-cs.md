@@ -4,19 +4,16 @@ title: Dávkové vkládání (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Zjistěte, jak vložit více záznamů databáze v rámci jedné operace. Ve vrstvě uživatelského rozhraní rozšíříme prvku GridView, aby uživatel mohl zadat více n...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 347cd862afc70fa9e3386246ae14d989c5de1ba6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9979a991935d97ef7c3b2ac62666da318b95d063
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370318"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829056"
 ---
 <a name="batch-inserting-c"></a>Dávkové vkládání (C#)
 ====================

@@ -4,19 +4,16 @@ title: Použití nabídky HoverMenu s ovládacím prvkem Repeater (C#) | Dokumen
 author: wenz
 description: 'Nabídky HoverMenu ovládacího prvku AJAX Control Toolkit obsahuje efekt jednoduché místní: při umístění ukazatele myši nad prvkem, automaticky otevíraného okna se zobrazí v specifi...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e7700e7b-edc3-4183-a713-70e507cc7490
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 309cd64d8b62505c1546317a8aced7f50048af0c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f3135eb52bab1550b1c89dd6ce62044640e80198
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384691"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831994"
 ---
 <a name="using-hovermenu-with-a-repeater-control-c"></a>Použití nabídky HoverMenu s ovládacím prvkem Repeater (C#)
 ====================

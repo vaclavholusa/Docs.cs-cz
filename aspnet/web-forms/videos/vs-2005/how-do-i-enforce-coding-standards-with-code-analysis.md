@@ -4,19 +4,16 @@ title: '[Postup:] Vynucení programovacích standardů analýzy kódu? | Dokumen
 author: rick-anderson
 description: V aplikaci Visual Studio Team System mají přesné řízení pravidla analýzy kódu, které se vztahují na projekty knihovny tříd, webových projektů a co zdrojového kódu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/09/2007
-ms.topic: article
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: b8e68c88ae059e47ca3224adcb957ff745c7bf4d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6a3260c4427cb3f895da29a1b280c71333e87faa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381965"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832264"
 ---
 <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[Postup:] Vynucení programovacích standardů analýzy kódu?
 ====================

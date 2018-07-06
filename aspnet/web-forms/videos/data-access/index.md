@@ -4,19 +4,16 @@ title: Přístup k datům | Dokumentace Microsoftu
 author: rick-anderson
 description: Postup vytvoření vrstvy přístupu dat (DAL).
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: a923735c-2d34-456c-8327-40aa62a4c1d6
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access
 msc.type: chapter
-ms.openlocfilehash: 3d05494e4094c23046b42535aa978354c0b1b3c5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a739beb2050975e60d43b8db0526aec8197b6f03
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372690"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804576"
 ---
 <a name="data-access"></a>Přístup k datům
 ====================

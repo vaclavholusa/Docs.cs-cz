@@ -4,19 +4,16 @@ title: '[Postup:] Použít projekt webové nasazení sady Visual Studio 2008 | D
 author: rick-anderson
 description: V tomto videu pixelů na Chris ukazuje, jak vytvářet projekty nasazení s jemnější stupeň kontroly nad jak pomocí doplňku Visual Studio 2008 webové nasazení...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/11/2008
-ms.topic: article
 ms.assetid: 9517a342-e414-4c93-b0a6-5b52b391c908
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-project
 msc.type: video
-ms.openlocfilehash: 651d27d94d6fae61b4d2468faab57a569c303f58
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 183ac4543fb294ca9815ec99f4c8c017fe637e8f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391823"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803480"
 ---
 <a name="how-do-i-use-a-visual-studio-2008-web-deployment-project"></a>[Postup:] Použít projekt webové nasazení sady Visual Studio 2008
 ====================

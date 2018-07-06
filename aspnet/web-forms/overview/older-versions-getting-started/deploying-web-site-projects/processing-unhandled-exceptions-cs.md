@@ -4,19 +4,16 @@ title: Zpracování neošetřených výjimek (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Pokud dojde k chybě za běhu na webovou aplikaci v produkčním prostředí je důležité informovat vývojáře a protokolovat chyby tak, aby může být zjištěna v la...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: 5bc1afd5-2484-4528-b158-ab218ba150e8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 784290f1390668518ad88df9d38b60c0179a5923
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 07272a10ac9b1ddf3afd6b089b05a3f071834efe
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371853"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832626"
 ---
 <a name="processing-unhandled-exceptions-c"></a>Zpracování neošetřených výjimek (C#)
 ====================

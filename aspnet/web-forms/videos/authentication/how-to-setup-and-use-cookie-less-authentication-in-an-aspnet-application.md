@@ -4,19 +4,16 @@ title: Jak nastavit a používat ověřování bez souborů Cookie v aplikaci AS
 author: JoeStagner
 description: Joe Stagner využívá předchozí ukázky kódu ukazují, jak používat ověřování bez souborů cookie. Další informace o této ukázce se nachází kurz...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2008
-ms.topic: article
 ms.assetid: 10ba9106-514c-4776-8277-9c31312ceed2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application
 msc.type: video
-ms.openlocfilehash: 7524055dc310c1ec845d8d838b785e255416d043
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e3966897996f52e086e8a8d6c3a0a1447cb18f04
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362288"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838812"
 ---
 <a name="how-to-setup-and-use-cookie-less-authentication-in-an-aspnet-application"></a>Postup instalace a používání ověřování bez souborů Cookie v aplikaci ASP.NET
 ====================

@@ -4,19 +4,16 @@ title: Vytvoření a použití pomocné rutiny v ASP.NET Web Pages lokality (Raz
 author: tfitzmac
 description: Tento článek popisuje, jak vytvořit pomocné rutiny na webu rozhraní ASP.NET Web Pages (Razor). Pomocné rutiny je opětovně použitelnou komponentu, která obsahuje kód a značky výkonu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/17/2014
-ms.topic: article
 ms.assetid: 46bff772-01e0-40f0-9ae6-9e18c5442ee6
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 5e73beabf973a20335112a0d7dc5ecb6b8817744
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c2edc10e01f4d2358dd0b0bdf450348f01eb2bfa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394609"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811896"
 ---
 <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>Vytvoření a použití pomocné rutiny na webu technologie ASP.NET Web Pages (Razor)
 ====================

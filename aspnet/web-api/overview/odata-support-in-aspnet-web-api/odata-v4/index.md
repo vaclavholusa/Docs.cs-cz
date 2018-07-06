@@ -4,19 +4,16 @@ title: Podpora v rozhraní ASP.NET Web API OData v4 | Dokumentace Microsoftu
 author: rick-anderson
 description: Pomocí rozhraní ASP.NET Web API k vytvoření koncových bodů, které podporují OData verze 4.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2014
-ms.topic: article
 ms.assetid: bb807fdd-0bd8-43d0-b068-e88de7e5fd87
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4
 msc.type: chapter
-ms.openlocfilehash: 0015d83c1de4a19f062cb76389f6c2026d79979b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b5511abf1e5b7018df41d61656a07c7f13f5ff14
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377227"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837283"
 ---
 <a name="supporting-odata-v4-in-aspnet-web-api"></a>Podpora v rozhraní ASP.NET Web API OData v4
 ====================

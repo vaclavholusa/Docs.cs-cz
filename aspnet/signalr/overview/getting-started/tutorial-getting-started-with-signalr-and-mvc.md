@@ -4,19 +4,16 @@ title: 'Kurz: Začínáme s knihovnou SignalR 2 a MVC 5 | Dokumentace Microsoftu
 author: pfletcher
 description: Tento kurz ukazuje použití funkcí SignalR 2 technologie ASP.NET k vytvoření aplikace pro chatování v reálném čase. Přidáte funkci SignalR k aplikaci MVC 5 a vytvořit zobrazení chat...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: 80bfe5fb-bdfc-41fe-ac43-2132e5d69fac
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 903319040c9ac938cea5dce2e6579d88e0d80bb5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4a4c013ff047f18f9d9b88595af7951577f3f200
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384048"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838647"
 ---
 <a name="tutorial-getting-started-with-signalr-2-and-mvc-5"></a>Kurz: Začínáme s knihovnou SignalR 2 a MVC 5
 ====================

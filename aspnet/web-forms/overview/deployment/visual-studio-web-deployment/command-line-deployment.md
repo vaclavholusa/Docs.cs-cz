@@ -4,19 +4,16 @@ title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení příkazov�
 author: tdykstra
 description: V této sérii kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo k poskytovateli hostingu třetích stran, podle usin...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 5673a4733257fae88fb66a3da43dfceb98c3b37a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f079beabccd253ff13c19d3192181ddbdf00b3bf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390871"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830964"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení příkazového řádku
 ====================

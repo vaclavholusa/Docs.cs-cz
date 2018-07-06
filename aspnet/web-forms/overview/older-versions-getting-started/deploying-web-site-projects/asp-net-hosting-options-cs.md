@@ -4,19 +4,16 @@ title: Technologie ASP.NET, který je hostitelem – možnosti (C#) | Dokumentac
 author: rick-anderson
 description: Webové aplikace ASP.NET jsou obvykle navrženy, vytvořili a otestovat v místním vývojovém prostředí a musí být nasazeny produkčního prostředí o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 89a1d2bc-fdfd-4c5c-a3b0-49a08baaf63a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 843db9bd1216c14d31f6fd7c142951a17849d7c2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 12d4e0e4332cf611e304799155b45f5d668da8f6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399221"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804184"
 ---
 <a name="aspnet-hosting-options-c"></a>Možnosti hostování v technologii ASP.NET (C#)
 ====================

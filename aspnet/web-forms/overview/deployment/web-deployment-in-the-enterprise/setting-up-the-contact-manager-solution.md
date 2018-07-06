@@ -4,19 +4,16 @@ title: Nastavení řešení Správce kontaktů | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma popisuje, jak stáhnout a nakonfigurovat řešení Správce kontaktů spouštět místně na pracovní stanici vývojáře.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 200b973c-776b-4a9b-9e82-39fda6120a52
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: a7675a793909ec4d95164ee47a3a43f73600c5bc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 479dbb8d2edbe9fb953ea9e1312ffb8fdbd3e2fe
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366686"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802128"
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Nastavení řešení Správce kontaktů
 ====================

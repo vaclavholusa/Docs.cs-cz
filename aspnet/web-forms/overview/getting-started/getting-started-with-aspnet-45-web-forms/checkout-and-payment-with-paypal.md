@@ -4,19 +4,16 @@ title: Pokladna a platba přes PayPal | Dokumentace Microsoftu
 author: Erikre
 description: V této sérii kurzů se seznámíte se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a službu Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/08/2014
-ms.topic: article
 ms.assetid: 664ec95e-b0c9-4f43-a39f-798d0f2a7e08
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: e516bcccdecce72d4fa6c705b0227ce873429e3c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3299da33a68f02ac1b3ffe7c037d06d8ece9455e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386660"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835628"
 ---
 <a name="checkout-and-payment-with-paypal"></a>Pokladna a platba přes PayPal
 ====================

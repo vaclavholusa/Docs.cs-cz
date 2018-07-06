@@ -4,19 +4,16 @@ title: '[Postup:] Použití vlastnosti Reponse.Filter k nahrazení kódu HTML na
 author: rick-anderson
 description: V pixelů na toto video Chris ukazuje způsob použití vlastnosti Reponse.Filter zachytí a alter odesílané do stránku HTML. Ukázkovou stránku se nejprve vytvoří w...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/29/2009
-ms.topic: article
 ms.assetid: 3e5ae74a-9798-47d8-a2b3-0d8ad42dd4bc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: f871a3969da21a22bfe10e3a85f43db3e0e522e8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bf1936e5710b67185977f71bea03240e6c6abf41
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382358"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808100"
 ---
 <a name="how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page"></a>[Postup:] Použití vlastnosti Reponse.Filter k nahrazení kódu HTML na stránce ASP.NET
 ====================

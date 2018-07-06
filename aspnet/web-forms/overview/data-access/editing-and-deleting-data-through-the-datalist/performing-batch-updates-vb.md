@@ -4,19 +4,16 @@ title: Provádění dávkových aktualizací (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Zjistěte, jak vytvořit plně neupravovatelné kde jsou všechny položky v prvku DataList režim úprav a jehož hodnoty mohou být uloženy po kliknutí na tlačítko Aktualizovat vše na...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/30/2006
-ms.topic: article
 ms.assetid: 8dac22a7-91de-4e3b-888f-a4c438b03851
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a877bcc5b26965d59065aa17959643b66a5c4484
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6d6575e5f13441c38c5d7c74c8b5136a5206ffa9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388488"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803892"
 ---
 <a name="performing-batch-updates-vb"></a>Provádění dávkových aktualizací (VB)
 ====================

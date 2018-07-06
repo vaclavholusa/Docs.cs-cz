@@ -4,19 +4,16 @@ title: '6. část: Používání datových poznámek k ověření modelu | Dokum
 author: jongalloway
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 6. část se věnuje anotacemi dat pro Model V...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/21/2011
-ms.topic: article
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: ca0ac2ca909f838f1c91e6cc01b8aafa90c0b193
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 10884f569f0f5d95517b73daab31fbd269a4726a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397650"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825950"
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>6. část: Používání datových poznámek k ověření modelu
 ====================

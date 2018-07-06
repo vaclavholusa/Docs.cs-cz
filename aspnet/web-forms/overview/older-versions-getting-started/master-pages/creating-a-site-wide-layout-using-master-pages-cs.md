@@ -4,19 +4,16 @@ title: Vytvoření rozložení platného pro celý web pomocí stránek předloh
 author: rick-anderson
 description: Tomto kurzu se dozvíte základní informace o stránku předlohy. A to, co jsou hlavní stránky, jak funguje jeden vytvořit stránku předlohy, jaké jsou obsahu místo zástupné znaky, jak funguje jeden cr...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/21/2008
-ms.topic: article
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cea5894b269209326391de49003ec1d19c8e87f2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cf9264f6569fe1a5c0369b17a2358c5207cad6ad
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398547"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829269"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Vytvoření rozložení platného pro celý web pomocí stránek předlohy (C#)
 ====================

@@ -4,19 +4,16 @@ title: 'Správa životního cyklu aplikace: Od vývoje k ostrému provozu | Doku
 author: jrjlee
 description: Toto téma ukazuje, jak fiktivní společnost spravuje nasazení webové aplikace ASP.NET prostřednictvím testu, přípravného a produkčního prostředí jako pamětích...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: fdd51d2b6836c7fed04132f7c05bbede772d21e0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 47af9504bdef294b987cdd23ab1bcefbeadd4681
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362807"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808976"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a>Správa životního cyklu aplikace: Od vývoje k ostrému provozu
 ====================

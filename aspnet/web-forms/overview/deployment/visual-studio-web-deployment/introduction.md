@@ -4,19 +4,16 @@ title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod | Dokumentace M
 author: tdykstra
 description: V této sérii kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace Azure App Service Web Apps nebo jiného poskytovatele hostitelských služeb, za použití V...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: 24ad086d-865e-433c-9ac9-05f1a553da16
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: ad06639db9c5de78fb9926c7ab00e348bcbb20cb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 11e6f6a695b4e98cf5d061ca3c3197922e971644
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382553"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828348"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: Úvod
 ====================

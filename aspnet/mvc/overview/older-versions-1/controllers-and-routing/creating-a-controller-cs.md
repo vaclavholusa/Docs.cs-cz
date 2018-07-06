@@ -4,19 +4,16 @@ title: Vytvoření Kontroleru (C#) | Dokumentace Microsoftu
 author: StephenWalther
 description: V tomto kurzu Stephen Walther ukazuje, jak přidat řadič do aplikace ASP.NET MVC.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: 719d50d4-2305-454c-98b4-bae64937c48f
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4477418be589af7b9127c7b7373a128a6867bf11
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3b3b663f76b6271a213e5980756ba63372ef6fe9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399435"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804262"
 ---
 <a name="creating-a-controller-c"></a>Vytvoření Kontroleru (C#)
 ====================

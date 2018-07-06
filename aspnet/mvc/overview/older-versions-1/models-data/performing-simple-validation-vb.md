@@ -4,19 +4,16 @@ title: Provedení jednoduchého ověření (VB) | Dokumentace Microsoftu
 author: StephenWalther
 description: Zjistěte, jak provést ověření v aplikaci ASP.NET MVC. V tomto kurzu se zavádí Stephen Walther vám stav modelu a pomocná rutina pro ověření HTML...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: df6cf4b7-0bb3-4c4e-b17a-bd78a759a6bc
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 26900229630b25affe21a5bb801ef0247711d26b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8320e87cb4ef418fe5c8308b9dacceb5d6bbac8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399458"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830782"
 ---
 <a name="performing-simple-validation-vb"></a>Provedení jednoduchého ověření (VB)
 ====================

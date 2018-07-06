@@ -4,19 +4,16 @@ title: '[Postup:] Použít technologie ASP.NET AJAX – Extender FilteredTextbox
 author: JoeStagner
 description: Zjistěte, jak po ruce extender FilteredTextbox technologie ASP.NET AJAX umožňuje vývojářům definovat znaků, které může uživatel zadat do ovládacího prvku textového pole.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/31/2007
-ms.topic: article
 ms.assetid: 919b509c-37e8-4765-92a4-70277bd87269
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-filteredtextbox-extender
 msc.type: video
-ms.openlocfilehash: a4c9d36a411e413d479764ba8aa23125eb5939f3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4f24f569d163fe7639aa24d2e499b68a5d13ca73
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392565"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804592"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-filteredtextbox-extender"></a>[Postup:] Použít technologie ASP.NET AJAX – Extender FilteredTextbox?
 ====================

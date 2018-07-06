@@ -4,19 +4,16 @@ title: Pokročilá témata pro rozhraní ASP.NET Web API | Dokumentace Microsoft
 author: rick-anderson
 description: Pokročilejší témata pro vývoj pro ASP.NET Web API, až poté, co jste se seznámili se základy.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/23/2014
-ms.topic: article
 ms.assetid: 7404a0f1-52f7-410c-abd0-c96bab52d217
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/advanced
 msc.type: chapter
-ms.openlocfilehash: ae17bdbebf1d8fc0c6e42da2bbe96e260b0523ae
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 49c6f7b4efd824f2fe5382894c78bb7d13f7a27a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381568"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833579"
 ---
 <a name="advanced-topics-for-aspnet-web-api"></a>Pokročilá témata pro rozhraní ASP.NET Web API
 ====================

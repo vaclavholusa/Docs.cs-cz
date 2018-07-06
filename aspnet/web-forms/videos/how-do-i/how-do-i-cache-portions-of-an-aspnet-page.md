@@ -4,19 +4,16 @@ title: '[Postup:] Částí stránky ASP.NET do mezipaměti | Dokumentace Microso
 author: rick-anderson
 description: V toto video pixelů na Chris ukazuje, jak jeden nebo více částí stránky ASP.NET do mezipaměti implementací OutputCache u uživatelských ovládacích prvků na stránce. Nejprve je potřeba...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/12/2009
-ms.topic: article
 ms.assetid: b20b2b30-a557-4567-8e27-56f1e04235e2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: d619f04691fcc5aae9902f8102613c068bec28f4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 795dd88b5f45acefcdb4dffabce1285071b68092
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373059"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838329"
 ---
 <a name="how-do-i-cache-portions-of-an-aspnet-page"></a>[Postup:] Mezipaměť částí stránky ASP.NET
 ====================

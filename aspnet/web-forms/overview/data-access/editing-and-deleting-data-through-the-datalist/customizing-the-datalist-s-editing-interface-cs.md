@@ -4,19 +4,16 @@ title: Úpravy prvku DataList uživatele úpravy rozhraní (C#) | Dokumentace Mi
 author: rick-anderson
 description: V tomto kurzu vytvoříme podrobnější editační rozhraní pro DataList, takový, který obsahuje DropDownLists a zaškrtávací políčko.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/30/2006
-ms.topic: article
 ms.assetid: a5d13067-ddfb-4c36-8209-0f69fd40e45c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/customizing-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f1af8086fd65f09df3bdb8b5547f7aa779c1f984
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c76e3bc46c7d38140320834a27ec7710d289e7d3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388669"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826115"
 ---
 <a name="customizing-the-datalists-editing-interface-c"></a>Přizpůsobení rozhraní pro úpravy prvku DataList (C#)
 ====================

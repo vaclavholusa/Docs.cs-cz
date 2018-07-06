@@ -4,19 +4,16 @@ title: Škálování aplikace SignalR službou Azure Service Bus | Dokumentace M
 author: MikeWasson
 description: Verze softwaru použít v této verzi tématu Visual Studio 2013 .NET 4.5 SignalR 2 dřívější verze tohoto tématu pro funkci SignalR 1.x verzi tohoto tématu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: ce1305f9-30fd-49e3-bf38-d0a78dfb06c3
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: a9e5d59c1b9120a32fabe55b4864d861040bcd67
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 0aaed1d6235688563a446a6834b5188dc9e45aff
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369147"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808846"
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>Škálování aplikace SignalR službou Azure Service Bus
 ====================

@@ -4,19 +4,16 @@ title: '[Postup:] Testy jednotek v nasazené databázi? | Dokumentace Microsoftu
 author: pjhacker
 description: Pokud vaše aplikace ASP.NET je nakonfigurovat pro nasazení databáze spolu s webovou stránku, jak můžete ověřit, že byla nasazena instance platnou databázi?...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2007
-ms.topic: article
 ms.assetid: 83792674-f769-4c9a-889b-701cfc52de8b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-run-unit-tests-against-a-deployed-database
 msc.type: video
-ms.openlocfilehash: c82222a2ab77e6821af631d90be051cec0ac73cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e624a46a4ff01eb63dccbe282f3a12ddd0793abb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374592"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831551"
 ---
 <a name="how-do-i-run-unit-tests-against-a-deployed-database"></a>[Postup:] Testy jednotek v nasazené databázi?
 ====================

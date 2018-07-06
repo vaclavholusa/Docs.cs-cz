@@ -4,19 +4,16 @@ title: Přidání zobrazení (C#) | Dokumentace Microsoftu
 author: Rick-Anderson
 description: V tomto kurzu se seznámíte se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, což je...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: abc7c78d-cb09-4a4c-a887-61bc401d40e3
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: e9496f801024bd2d4a135eefbb79b162017197b7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 4a4eacfdcb0b53da377e9b6812a7ce50aa94b551
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366213"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831703"
 ---
 <a name="adding-a-view-c"></a>Přidání zobrazení (C#)
 ====================

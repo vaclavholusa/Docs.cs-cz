@@ -1,6 +1,8 @@
-[Visual Studio pro Windows](https://www.microsoft.com/net/download/windows).  
-Vyberte **ASP.NET a webové vývoj** zatížení.
+[Visual Studio 2017 verze 15.7.3 nebo novější](https://www.microsoft.com/net/download/windows) s následujícími sadami funkcí:
+
+* **Vývoj pro ASP.NET a web**
+* **Vývoj pro různé platformy .NET core**
 
 ::: moniker range=">= aspnetcore-2.1"
-[.NET core 2.1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300)
+[Sady SDK .NET core 2.1 nebo novější](https://www.microsoft.com/net/download/windows)
 ::: moniker-end

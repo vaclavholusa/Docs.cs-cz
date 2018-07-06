@@ -4,19 +4,16 @@ title: Programové určení stránky předlohy (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Vyhledá v nastavení obsahu stránky hlavní stránku prostřednictvím kódu programu přes PreInit obslužné rutiny události.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/28/2008
-ms.topic: article
 ms.assetid: 0edcd653-f24a-41aa-aef4-75f868fe5ac2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d9962004d0bcd816d7fccaac1db5a3e8d3b8e2b9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0c84462487426fc50888708baeedd2fb50983ce3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369467"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814838"
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>Programové určení stránky předlohy (VB)
 ====================

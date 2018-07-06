@@ -4,19 +4,16 @@ title: Ukládání do mezipaměti dat při spuštění aplikace (C#) | Dokumenta
 author: rick-anderson
 description: V jakékoli webové aplikaci se některá data často používat a některá data zřídka. Můžeme vylepšit výkon naší aplikace b ASP.NET...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: 22ca8efa-7cd1-45a7-b9ce-ce6eb3b3ff95
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 01f80353e3f871606d022b01c98b0d36d15d2379
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fdc24f215238a0c44e40a3fcc087230565efa52b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370475"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829765"
 ---
 <a name="caching-data-at-application-startup-c"></a>Ukládání dat do mezipaměti při spuštění aplikace (C#)
 ====================

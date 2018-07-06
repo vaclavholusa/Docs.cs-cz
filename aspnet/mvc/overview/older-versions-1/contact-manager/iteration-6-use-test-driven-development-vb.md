@@ -4,19 +4,16 @@ title: 'Iterace #6 – použití vývoje řízeného (VB) | Dokumentace Microsof
 author: microsoft
 description: V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: e1fd226f-3f8e-4575-a179-5c75b240333d
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3b55bb689a5a6dfdb07b02a7d595244f886f0fd2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f5ef03c76d1ecc72cffdeed6f8dcd1b5e39d859d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377243"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829264"
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a>Iterace #6 – použití vývoje řízeného (VB)
 ====================

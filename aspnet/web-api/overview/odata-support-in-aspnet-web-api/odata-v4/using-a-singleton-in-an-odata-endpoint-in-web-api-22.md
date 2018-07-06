@@ -4,19 +4,16 @@ title: Vytvoření jednoho prvku v OData v4 použití rozhraní Web API 2.2 | Do
 author: rick-anderson
 description: Toto téma ukazuje, jak definovat typ singleton v koncový bod OData v Web API 2.2.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/27/2014
-ms.topic: article
 ms.assetid: 4064ab14-26ee-4d5c-ae58-1bdda525ad06
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 3ae9b23fae356e387a011a190119d760dc46d022
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: baccfed79949ae4efd45395bed3ad0058549cb4c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390924"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830513"
 ---
 <a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>Vytvoření jednoho prvku v OData v4 použití rozhraní Web API 2.2
 ====================

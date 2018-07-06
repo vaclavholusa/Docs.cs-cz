@@ -4,19 +4,16 @@ title: Prezentace ASP.NET MVC | Dokumentace Microsoftu
 author: rick-anderson
 description: ASP.NET MVC prezentace Starter Kit
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/28/2011
-ms.topic: article
 ms.assetid: 296b3a7a-483d-4937-ba2f-3f9c1319616a
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront
 msc.type: chapter
-ms.openlocfilehash: 9dcd17dc7599e9a38ebf72b32c1cb1df63ad1973
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 26620c4a4c2dff774bd87bbecf2a9ae2416f7b53
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368548"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830012"
 ---
 <a name="aspnet-mvc-storefront"></a>Prezentace ASP.NET MVC
 ====================

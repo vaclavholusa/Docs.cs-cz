@@ -4,19 +4,16 @@ title: Vytvoření ovládacího prvku Rating (C#) | Dokumentace Microsoftu
 author: wenz
 description: Mnoho webů z elektronického obchodování na komunitní weby, nabízí svým uživatelům míra články nebo položky. To obvykle vyžaduje některé kódování úsilí, ale pracujeme...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 969fb28f-2bff-4fc4-b24a-27f5e2534a37
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7be954a73c6c08bca9992aacf6ad529bc61c9247
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 67c66d2a28a247493a0b1ea67e15935c27af80ae
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389583"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830951"
 ---
 <a name="creating-a-rating-control-c"></a>Vytvoření ovládacího prvku Rating (C#)
 ====================

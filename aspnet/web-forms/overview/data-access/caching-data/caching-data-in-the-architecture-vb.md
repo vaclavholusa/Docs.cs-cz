@@ -4,19 +4,16 @@ title: Ukládání do mezipaměti dat v architektuře (VB) | Dokumentace Microso
 author: rick-anderson
 description: V předchozím kurzu jsme zjistili, jak používat ukládání do mezipaměti v prezentační vrstvě. V tomto kurzu jsme zjistěte, jak využít výhod našich vrstvami architectu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: 5e189dd7-f4f9-4f28-9b3a-6cb7d392e9c7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7776fb01d31d9f84e57de2d5d899726b52c26d19
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8431c2b516a1a41f1d096b1bdb1071cc8a5ab66
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401997"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835370"
 ---
 <a name="caching-data-in-the-architecture-vb"></a>Ukládání dat do mezipaměti v architektuře (VB)
 ====================

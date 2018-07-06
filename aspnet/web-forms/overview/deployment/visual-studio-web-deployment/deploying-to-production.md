@@ -4,19 +4,16 @@ title: 'Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkč
 author: tdykstra
 description: V této sérii kurzů se dozvíte, jak nasadit (publikovat) technologie ASP.NET webové aplikace do Azure App Service Web Apps nebo k poskytovateli hostingu třetích stran, podle usin...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: 416438a1-3b2f-4d27-bf53-6b76223c33bf
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 5bc39162bc53dc27230f8ccc55266212a51b6380
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a91feedb9ac09b2a70ca256c72d312a1e78ecbc8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369642"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827874"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: nasazení do produkčního prostředí
 ====================

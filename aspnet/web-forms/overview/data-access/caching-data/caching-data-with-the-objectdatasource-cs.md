@@ -4,19 +4,16 @@ title: Ukládání do mezipaměti dat ovládacím prvkem ObjectDataSource (C#) |
 author: rick-anderson
 description: Ukládání do mezipaměti může znamenat, že rozdíl mezi stránky pomalá a rychlé webové aplikace. Tento kurz je první ze čtyř, které využívají podrobný pohled na ukládání do mezipaměti v technologii ASP.NET...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: bd87413c-8160-4520-a8a2-43b555c4183a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 149ef94edfdf83832f1ec8a80859045e798a3ee6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f6ca84dc11eb8ecd03aee91198e74b723cfdce7c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374189"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803042"
 ---
 <a name="caching-data-with-the-objectdatasource-c"></a>Ukládání dat do mezipaměti ovládacím prvkem ObjectDataSource (C#)
 ====================

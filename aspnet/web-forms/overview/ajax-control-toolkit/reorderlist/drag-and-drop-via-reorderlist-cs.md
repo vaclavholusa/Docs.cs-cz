@@ -4,19 +4,16 @@ title: Přetáhnout myší reorderlist (C#) | Dokumentace Microsoftu
 author: wenz
 description: Ovládacím prvkem ReorderList ovládacího prvku AJAX Control Toolkit poskytuje seznam, který může být přeuspořádány uživatelem pomocí přetažení. Aktuální pořadí položek v seznamu se...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 6350ee8e-11d6-4aff-b51c-942878014835
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 59f88787e7794e9c7bd391ae3e8cea538b446f7d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6c31e1e9b88d07fb4fe2881ac24b7c9c10126c96
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389108"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803714"
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a>Přetáhnout myší reorderlist (C#)
 ====================

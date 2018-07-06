@@ -4,19 +4,16 @@ title: Pomocí rozhraní ASP.NET Web API 1 s Entity Framework 5 | Dokumentace Mi
 author: rick-anderson
 description: Jak vytvořit aplikaci webového rozhraní API 1, která používá Entity Framework pro databáze trvalosti.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/16/2014
-ms.topic: article
 ms.assetid: b380c940-84c4-4e4a-980a-fa69986e919b
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5
 msc.type: chapter
-ms.openlocfilehash: 8947c642e7b9260759f75f819688b077ab51b362
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 952d6e6e86bed30419a12024b813fd363bee6ddf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376517"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835525"
 ---
 <a name="using-aspnet-web-api-1-with-entity-framework-5"></a>Pomocí rozhraní ASP.NET Web API 1 s Entity Framework 5
 ====================

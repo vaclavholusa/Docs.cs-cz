@@ -4,19 +4,16 @@ title: Migrace dat od univerzálního zprostředkovatele pro členství a uživa
 author: rustd
 description: Tento kurz popisuje kroky, které jsou potřebné k migraci uživatelů a role data a data uživatelského profilu vytvořeného Universal Providers existující aplikaci...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/13/2013
-ms.topic: article
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
-ms.technology: ''
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: dce27af273adb45c1ad8f07790c98d2fa5862f67
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1f685e676d3ca4eeb64f48f0df7212402a9f6f5f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377957"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810031"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>Migrace dat od univerzálního zprostředkovatele pro členství a uživatelských profilů na ASP.NET Identity (C#)
 ====================

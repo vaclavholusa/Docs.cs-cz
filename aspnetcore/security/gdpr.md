@@ -1,120 +1,120 @@
 ---
-title: Podpora ochrany nařízení (GDPR) obecné Data v ASP.NET Core
+title: General Data Protection Regulation (GDPR) podporují v ASP.NET Core
 author: rick-anderson
-description: Naučte se přístup k bodům rozšíření GDPR ve webové aplikaci ASP.NET Core.
+description: Zjistěte, jak získat přístup k GDPR Rozšiřovací body ve webové aplikaci ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/29/2018
 uid: security/gdpr
-ms.openlocfilehash: c986eeca572eecb43e76d56dbc5cb872a9dff6b2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 10384d2abad7692d45f2be19f3ba7f8f8e8c3e17
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277635"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832027"
 ---
-# <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>Podpora Evropa obecné Data Protection nařízení (GDPR) v ASP.NET Core
+# <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>Podpora EU obecného Regulation (GDPR) v ASP.NET Core
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Základní technologie ASP.NET poskytuje rozhraní API a šablony, které vám pomůžou splňovat některé [Evropa obecné Data Protection nařízení (GDPR)](https://www.eugdpr.org/) požadavky:
+ASP.NET Core nabízí rozhraní API a šablony, které vám pomohou splnit některé [EU obecného Regulation (GDPR)](https://www.eugdpr.org/) požadavky:
 
-* Šablony projektů zahrnují body rozšíření a provizorní značek, které můžete nahradit zásady používání souborů cookie a osobních údajů.
-* Funkce souhlasu soubor cookie umožňuje požádat o (a sledovat) souhlasu od uživatelů pro ukládání osobní údaje. Pokud uživatel nedala souhlas shromažďování dat a aplikace je nastaven s [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded) k `true`, nebude odeslána nepotřebných souborů cookie v prohlížeči.
-* Soubory cookie může být označen jako nezbytné. Základní soubory cookie jsou odesílány do prohlížeče, i v případě, že nedala souhlas uživatele a sledování je zakázaná.
-* [Soubory cookie TempData a relace](#tempdata) nejsou funkční, když je zakázáno sledování.
-* [Spravovat Identity](#pd) stránka obsahuje odkaz na stažení a odstranění dat uživatele.
+* Šablony projektů zahrnout Rozšiřovací body a provizorní kód, který můžete nahradit ochrany osobních údajů a zásady použití souborů cookie.
+* Souhlas funkci soubor cookie umožňuje požádat o (a sledovat) souhlas uživatele pro ukládání osobních údajů. Pokud uživatel nevyjádřil souhlas shromažďování dat a k němu má aplikace [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded) nastavena na `true`, které není nezbytné soubory cookie se neodesílají do prohlížeče.
+* Soubory cookie, může být označený jako důležité. Základní cookie se odesílají do prohlížeče, i v případě, že uživatel nevyjádřil a sledování je vypnuté.
+* [Soubory cookie TempData a relace](#tempdata) nejsou funkční při sledování je vypnuté.
+* [Spravovat Identity](#pd) stránka obsahuje odkaz ke stažení a odstranění dat uživatele.
 
-[Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) můžete testovat většinu GDPR rozšíření bodů a přidat do šablony ASP.NET Core 2.1 rozhraní API. Najdete v článku [ReadMe](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) soubor pro testování pokyny.
+[Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) umožňuje testování většinu Rozšiřovací body podle nařízení GDPR a přidali rozhraní API pro ASP.NET Core 2.1 šablony. Zobrazit [ReadMe](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) souboru pokynů.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="aspnet-core-gdpr-support-in-template-generated-code"></a>Podpora GDPR ASP.NET Core v šabloně generovaného kódu
+## <a name="aspnet-core-gdpr-support-in-template-generated-code"></a>ASP.NET Core podpory nařízení GDPR v šabloně generovaného kódu
 
-Stránky Razor a MVC projekty vytvořené pomocí šablony projektu zahrnují následující podporu GDPR:
+Stránky Razor a MVC projekty vytvořené pomocí šablony projektu zahrnují následující podpory nařízení GDPR:
 
 * [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions) a [UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy) se nastavují v `Startup`.
 * *_CookieConsentPartial.cshtml* [částečné zobrazení](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper).
-* *Pages/Privacy.cshtml* nebo *Home/Privacy.cshtml* zobrazení stránky podrobností zásady ochrany osobních údajů pro váš web poskytuje. *_CookieConsentPartial.cshtml* souboru generuje odkaz na stránce o ochraně osobních údajů.
-* Pro aplikace vytvořené s jednotlivých uživatelských účtů, spravovat stránka obsahuje odkazy na stažení a odstranění [osobních uživatelských dat](#pd).
+* *Pages/Privacy.cshtml* stránky nebo *Views/Home/Privacy.cshtml* zobrazení obsahuje stránku, kterou chcete podrobnosti o zásadách ochrany osobních údajů vašeho webu. *_CookieConsentPartial.cshtml* souboru vytvoří odkaz na stránku o ochraně osobních údajů.
+* U aplikací vytvořených pomocí jednotlivých uživatelských účtů, Správa stránka obsahuje odkazy na stažení a odstranění [osobní údaje](#pd).
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions a UseCookiePolicy
 
-[CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions) jsou v inicializovat `Startup` třída `ConfigureServices` metoda:
+[CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions) jsou inicializovány v `Startup.ConfigureServices`:
 
 [!code-csharp[Main](gdpr/sample/Startup.cs?name=snippet1&highlight=14-20)]
 
-[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy) je volána `Startup` třída `Configure` metoda:
+[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy) je volána `Startup.Configure`:
 
-[!code-csharp[Main](gdpr/sample/Startup.cs?name=snippet1&highlight=49)]
+[!code-csharp[](gdpr/sample/Startup.cs?name=snippet1&highlight=49)]
 
-### <a name="cookieconsentpartialcshtml-partial-view"></a>_CookieConsentPartial.cshtml částečné zobrazení
+### <a name="cookieconsentpartialcshtml-partial-view"></a>_CookieConsentPartial.cshtml částečného zobrazení
 
 *_CookieConsentPartial.cshtml* částečné zobrazení:
 
-[!code-html[Main](gdpr/sample/RP/Pages/Shared/_CookieConsentPartial.cshtml)]
+[!code-html[](gdpr/sample/RP/Pages/Shared/_CookieConsentPartial.cshtml)]
 
-Toto částečné:
+Tato části:
 
-* Získá stav sledování pro uživatele. Pokud aplikace je nakonfigurovaná tak, aby vyžadovala souhlasu musí uživatel souhlasit, než lze sledovat soubory cookie. Pokud se vyžaduje souhlas, chrome souhlasu souboru cookie vyřešen nad vytvořené v navigačním panelu *Pages/Shared/_Layout.cshtml* souboru.
-* Poskytuje HTML `<p>` element pro shrnutí ochrany osobních údajů a souborů cookie použít zásady.
-* Obsahuje odkaz na *Pages/Privacy.cshtml* kde můžete podrobností zásady ochrany osobních údajů vaší lokality.
+* Získá stav sledování pro uživatele. Pokud aplikace je nakonfigurovaná tak, aby vyžadovala souhlasu, musí uživatel souhlasit předtím, než lze sledovat soubory cookie. Pokud se vyžaduje souhlas, panelu souhlasu souboru cookie vyřešen v horní navigační panel vytvořené *_Layout.cshtml* souboru.
+* Poskytuje HTML `<p>` element slouží ke shrnutí vašich osobních údajů a soubory cookie použít zásady.
+* Obsahuje odkaz na stránku o ochraně osobních údajů nebo zobrazení, ve kterém můžete podrobně popisují zásady ochrany osobních údajů vašeho webu.
 
 ## <a name="essential-cookies"></a>Základní soubory cookie
 
-Pokud nebylo uděleno souhlasu, jenom soubory cookie označena nezbytné odešlou do prohlížeče. Následující kód vytvoří soubor cookie základní:
+Pokud neudělil souhlas jenom soubory cookie označené základní odešlou do prohlížeče. Následující kód provede základní cookie:
 
 [!code-csharp[Main](gdpr/sample/RP/Pages/Cookie.cshtml.cs?name=snippet1&highlight=5)]
 
 <a name="tempdata"></a>
 
-## <a name="tempdata-provider-and-session-state-cookies-are-not-essential"></a>Soubory cookie stav Tempdata zprostředkovatele a relace nejsou nezbytně nutné
+## <a name="tempdata-provider-and-session-state-cookies-are-not-essential"></a>Soubory cookie stavu Tempdata zprostředkovatele a relace nejsou nezbytně nutné
 
-[Tempdata zprostředkovatele](xref:fundamentals/app-state#tempdata) souboru cookie, není podstatné. Pokud sledování je zakázán, zprostředkovatel Tempdata není funkční. Povolit zprostředkovatele Tempdata, když je zakázáno sledování, označte TempData soubor cookie jako důležité `ConfigureServices`:
+[Tempdata poskytovatele](xref:fundamentals/app-state#tempdata) souboru cookie není podstatné. Pokud sledování je vypnuté, zprostředkovatel Tempdata není funkční. K povolení zprostředkovatele Tempdata při sledování je vypnuté, označte TempData soubor cookie jako důležité pro `Startup.ConfigureServices`:
 
 [!code-csharp[Main](gdpr/sample/RP/Startup.cs?name=snippet1)]
 
-[Stav relace](xref:fundamentals/app-state) souborů cookie nejsou nezbytně nutné. Stav relace není funkční, když je zakázáno sledování.
+[Stav relace](xref:fundamentals/app-state) soubory cookie nejsou nezbytně nutné. Stav relace není funkční, při sledování je vypnuté.
 
 <a name="pd"></a>
 
-## <a name="personal-data"></a>Osobní data
+## <a name="personal-data"></a>Osobní údaje
 
-ASP.NET Core aplikací vytvořených v jednotlivých uživatelských účtů zahrnují kód pro stažení a odstranění osobní data.
+Aplikace ASP.NET Core s jednotlivými uživatelskými účty vytvořené zahrnout kód ke stažení a odstranění osobních údajů.
 
-Vyberte uživatelské jméno a potom vyberte **osobní data**:
+Vyberte uživatelské jméno a pak vyberte **osobní údaje**:
 
-![Spravovat osobní data stránky](gdpr/_static/pd.png)
+![Spravovat stránky osobních údajů](gdpr/_static/pd.png)
 
 Poznámky:
 
-* Ke generování `Account/Manage` kódu, najdete v části [Identity vygenerované uživatelské rozhraní](xref:security/authentication/scaffold-identity).
-* Odstraňte a stáhnout pouze dopad výchozí identifikační údaje. Aplikace vytvořit vlastní uživatelská data musí být rozšířené na odstranění nebo stahování dat vlastní uživatele. Problém Githubu [postup přidání nebo odstranění vlastní uživatelská data na identitu](https://github.com/aspnet/Docs/issues/6226) sleduje navrhované článku o vytvoření vlastní/odstranění/stahování vlastní uživatelská data. Pokud chcete tohoto tématu nastavovat, ponechejte úspěch reakce na problém.
+* Ke generování `Account/Manage` kódu naleznete v tématu [vygenerované uživatelské rozhraní Identity](xref:security/authentication/scaffold-identity).
+* Odstranění a stažení pouze dopad výchozí identifikační údaje. Aplikace, které vytvořit vlastní uživatelská data musí být rozšířené na odstranění a stažení vlastní uživatelská data. Další informace najdete v tématu [přidat, stahování a odstranit vlastní uživatelská data na identitu](xref:security/authentication/add-user-data).
 * Uložit tokeny pro daného uživatele, které jsou uložené v tabulce databáze Identity `AspNetUserTokens` se odstraní při odstranění uživatele prostřednictvím kaskádové odstranění chování kvůli [cizí klíč](https://github.com/aspnet/Identity/blob/release/2.1/src/EF/IdentityUserContext.cs#L152).
 
 ## <a name="encryption-at-rest"></a>Šifrování v klidovém stavu
 
-Některé databáze a úložiště mechanismy umožňují šifrování v klidovém stavu. Šifrování v klidovém stavu:
+Některé databáze a úložiště mechanismy povolit šifrování v klidovém stavu. Šifrování v klidovém stavu:
 
-* Automaticky šifruje uložená data.
-* Šifruje bez konfigurace, programování nebo jiné pracovní pro software, který přistupuje k datům.
-* Je nejjednodušší a nejbezpečnější možnost.
-* Umožňuje spravovat klíče a šifrování databáze.
+* Uložená data automaticky šifruje.
+* Šifruje bez konfigurace, programování a další práci pro software, který přistupuje k datům.
+* Nejsnadnější a nejbezpečnější způsob je.
+* Umožňuje databáze, kterou chcete spravovat klíče a šifrování.
 
 Příklad:
 
-* Microsoft SQL a Azure SQL poskytují [transparentní šifrování dat](/sql/relational-databases/security/encryption/transparent-data-encryption) (TDE).
-* [SQL Azure ve výchozím nastavení šifruje databáze](https://azure.microsoft.com/updates/newly-created-azure-sql-databases-encrypted-by-default/)
-* [Ve výchozím nastavení jsou zašifrované Azure BLOB, soubory, Table a Queue Storage](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/).
+* Microsoft SQL a Azure SQL poskytují [transparentního šifrování dat](/sql/relational-databases/security/encryption/transparent-data-encryption) (TDE).
+* [SQL Azure ve výchozím nastavení šifruje databázi](https://azure.microsoft.com/updates/newly-created-azure-sql-databases-encrypted-by-default/)
+* [Ve výchozím nastavení jsou zašifrovány Azure objekty BLOB, soubory, tabulky a fronty úložiště](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/).
 
-Pro databáze, které neposkytují integrované šifrování v klidovém stavu nebudete moct pomocí šifrování disku lze zadat stejnou úroveň ochrany. Příklad:
+Pro databáze, které neposkytují integrované šifrování v klidovém stavu budete moci použít šifrování disku k poskytnutí stejnou úroveň ochrany. Příklad:
 
 * [Nástroj BitLocker pro systém Windows Server](/windows/security/information-protection/bitlocker/bitlocker-how-to-deploy-on-windows-server)
 * Linux:
   * [eCryptfs](https://launchpad.net/ecryptfs)
   * [EncFS](https://github.com/vgough/encfs).
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
 * [Microsoft.com/GDPR](https://www.microsoft.com/en-us/trustcenter/Privacy/GDPR)

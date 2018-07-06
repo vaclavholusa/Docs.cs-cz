@@ -4,19 +4,16 @@ title: '[Postup:] Vytvoření a volání jednoduché webové služby v technolog
 author: rick-anderson
 description: V pixelů na toto video Chris vám ukáže jak vytvořit webovou službu v technologii ASP.NET a poté zavolejte službu z jiného webu technologie ASP.NET. Nejdřív zjistěte, jak vytvořit...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2008
-ms.topic: article
 ms.assetid: 34464109-4968-4eee-a1b1-5601cc853125
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-and-call-a-simple-web-service-in-aspnet
 msc.type: video
-ms.openlocfilehash: bce11025b652ca2d8097a4517937b8365dc1f5d8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3f69b4a7223aa1cbbfe1633d384acf8d5e405beb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383536"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836156"
 ---
 <a name="how-do-i-create-and-call-a-simple-web-service-in-aspnet"></a>[Postup:] Vytvoření a volání jednoduché webové služby v ASP.NET
 ====================

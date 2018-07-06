@@ -4,19 +4,16 @@ title: '1. část: Soubor -> Nový projekt | Dokumentace Microsoftu'
 author: JoeStagner
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. 1. část obsahuje přehled a soubor/nový projekt.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: 15d4652b-d5aa-4172-b186-2c7f96ba316d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 8c346e88277b6cf43676f7c6b58f9679a591d634
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1c8ba561745c9c02b5513e326b4739ec97338393
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388208"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825684"
 ---
 <a name="part-1-file--new-project"></a>1. část: Soubor -> Nový projekt
 ====================

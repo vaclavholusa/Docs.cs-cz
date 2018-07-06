@@ -4,19 +4,16 @@ title: ASP.NET 4 – nasazení webu s SQL serverem Compact pomocí sady Visual S
 author: rick-anderson
 description: V této sérii kurzů ukazuje, jak vytvořit webovou aplikaci ASP.NET, která používá SQL Server Compact dostupné přes internet nasazením třetích stran h...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/29/2011
-ms.topic: article
 ms.assetid: 6798c7e4-f08e-4802-9fa5-443f67d5df62
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider
 msc.type: chapter
-ms.openlocfilehash: 899c55526eec068663e390e11973afc300828b6b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7a41221e4e7327659ffd6822d5ce61500ced70a6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368160"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829506"
 ---
 <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4 – nasazení webu s SQL serverem Compact pomocí sady Visual Studio
 ====================

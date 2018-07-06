@@ -4,19 +4,16 @@ title: ASP.NET MVC uživatelského rozhraní, rozložení a motivy | Dokumentace
 author: rick-anderson
 description: Syntaxe Razor a jak ho použít k zobrazení informací v zobrazeních (V MVC).
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/10/2011
-ms.topic: article
 ms.assetid: 786e452d-c0d6-45fb-85eb-22c820304667
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/views
 msc.type: chapter
-ms.openlocfilehash: b8fcf4aa24e728a3e208421bce6c9ef2252c81a9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 03b371a4de4442d00e396687849951823bb2facc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368496"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833547"
 ---
 <a name="aspnet-mvc-ui-layouts-and-themes"></a>ASP.NET MVC uživatelského rozhraní, rozložení a motivy
 ====================

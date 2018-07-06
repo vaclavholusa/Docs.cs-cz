@@ -4,19 +4,16 @@ title: ASP.NET 4 rychlé spuštění – selektivní stav zobrazení
 author: JoeStagner
 description: V tomto videu se dozvíte o ViewStateMode vlastnost, která vám umožní zakázat zobrazení stavu ve výchozím nastavení a potom ji povolit pouze pro ovládací prvky tohoto requi...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/11/2009
-ms.topic: article
 ms.assetid: ad960512-65f3-4439-ab68-0862cdd7943e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/performance/aspnet-4-quick-hit-selective-view-state
 msc.type: video
-ms.openlocfilehash: 8e6af8dca94027f8e0bee6a7608f2ddf53c32033
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 62444feedaee211b969cb629859e11384d1c6a5b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374821"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37801796"
 ---
 <a name="aspnet-4-quick-hit---selective-view-state"></a>ASP.NET 4 "Rychlé zasáhnout" - selektivní stav zobrazení
 ====================

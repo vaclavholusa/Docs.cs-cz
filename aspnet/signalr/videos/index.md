@@ -4,22 +4,19 @@ title: Videa o ASP.NET SignalR | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/12/2012
-ms.topic: article
 ms.assetid: c0ea52a3-7497-4204-88c6-91591ac1a6b2
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/videos
 msc.type: book
-ms.openlocfilehash: 9da04aa8ee29d5c43117688ca7c25197e04734a0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7aba02fa6f31a6f23c740c22a380a079fb14274e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367752"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837578"
 ---
-<a name="aspnet-signalr-videos"></a><span data-ttu-id="20d32-102">Videa o ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="20d32-102">ASP.NET SignalR Videos</span></span>
+<a name="aspnet-signalr-videos"></a><span data-ttu-id="be139-102">Videa o ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="be139-102">ASP.NET SignalR Videos</span></span>
 ====================
-- [<span data-ttu-id="20d32-103">Videa o ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="20d32-103">ASP.NET SignalR Videos</span></span>](getting-started/index.md)
+- [<span data-ttu-id="be139-103">Videa o ASP.NET SignalR</span><span class="sxs-lookup"><span data-stu-id="be139-103">ASP.NET SignalR Videos</span></span>](getting-started/index.md)
 
-    - [<span data-ttu-id="20d32-104">SignalR a webové sokety</span><span class="sxs-lookup"><span data-stu-id="20d32-104">SignalR and Web Sockets</span></span>](getting-started/signalr-and-web-sockets.md)
+    - [<span data-ttu-id="be139-104">SignalR a webové sokety</span><span class="sxs-lookup"><span data-stu-id="be139-104">SignalR and Web Sockets</span></span>](getting-started/signalr-and-web-sockets.md)

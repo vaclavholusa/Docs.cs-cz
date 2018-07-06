@@ -4,19 +4,16 @@ title: Vlastní tlačítka v ovládacích prvcích DataList a Repeater (C#) | Do
 author: rick-anderson
 description: V tomto kurzu vytvoříme rozhraní, které používá Repeateru seznam kategorií v systému s každou kategorii poskytuje možnost zobrazit jeho associ...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/13/2006
-ms.topic: article
 ms.assetid: 1f42e332-78dc-438b-9e35-0c97aa0ad929
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 802f52e8e4e1ca1addec3321503ac92474ffd6b8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 04dc12ed20fcda0b4074add065022c42343e5ffc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369483"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822118"
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>Vlastní tlačítka v ovládacích prvcích DataList a Repeater (C#)
 ====================

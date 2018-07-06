@@ -4,19 +4,16 @@ title: Vložení nového záznamu ze zápatí prvku GridView (C#) | Dokumentace 
 author: rick-anderson
 description: Zatímco ovládacím prvku GridView neposkytuje integrovanou podporu pro vložení nového záznamu dat, v tomto kurzu ukazuje, jak rozšířit GridView zahrnout...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2007
-ms.topic: article
 ms.assetid: 49545652-98af-46ba-9dbc-9ab529805d9b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3f402d98a12c7da10d97744bbbd33e204275e93c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3ce1c1ea83d2fc50d7cf9ab6cb64d1e76307c74b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381848"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830500"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-c"></a>Vložení nového záznamu ze zápatí prvku GridView (C#)
 ====================

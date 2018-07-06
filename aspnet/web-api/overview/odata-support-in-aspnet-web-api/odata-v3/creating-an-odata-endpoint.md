@@ -4,19 +4,16 @@ title: Vytvoření koncového bodu OData v3 s webovým rozhraním API 2 | Dokume
 author: MikeWasson
 description: Open Data Protocol (OData) je protokol data access pro web. OData nabízí jednotné způsob, jak strukturovat data, zadávat dotazy na data a manipulaci s daty...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/25/2014
-ms.topic: article
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: bcf089003cfb4233fd2aa70cf669972de46c27b1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 67a41f37a09d089336dc96d393f929e56661c4f8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362587"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813701"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Vytvoření koncového bodu OData v3 s webovým rozhraním API 2
 ====================

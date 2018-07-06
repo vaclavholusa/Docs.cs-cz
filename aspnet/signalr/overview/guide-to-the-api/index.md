@@ -4,19 +4,16 @@ title: Funkce SignalR pokyny k rozhraní API | Dokumentace Microsoftu
 author: rick-anderson
 description: Dokumentace o tom, jak použít rozhraní API pro rozbočovače SignalR. Povolení rozhraní API naleznete v tématu na kartě zabezpečení.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/19/2014
-ms.topic: article
 ms.assetid: af69e8d2-efdd-4d0b-9bbc-95353a65c0db
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/guide-to-the-api
 msc.type: chapter
-ms.openlocfilehash: 49ba47847fa7973012fa8c0eff54625a3af1da04
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9d06ceafb9bdcddc3329f447934b8b5da44fd44b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388512"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831920"
 ---
 <a name="signalr-guide-to-the-api"></a>Funkce SignalR pokyny k rozhraní API
 ====================

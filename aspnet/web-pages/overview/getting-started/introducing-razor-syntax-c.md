@@ -4,19 +4,16 @@ title: Úvod k programování v rozhraní ASP.NET Web používající syntaxi Ra
 author: tfitzmac
 description: Tato kapitola obsahuje přehled programování s webovými stránkami ASP.NET pomocí syntaxe Razor. ASP.NET je technologie od Microsoftu pro spouštění dynamického webového pa...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/07/2014
-ms.topic: article
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 6e0af63ffab5ce1a4d582cbe1e9456da20df2b64
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 22985b71d39d93b8ad42ee923b872846f2fafa99
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363400"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814298"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Úvod k programování v rozhraní ASP.NET Web používající syntaxi Razor (C#)
 ====================

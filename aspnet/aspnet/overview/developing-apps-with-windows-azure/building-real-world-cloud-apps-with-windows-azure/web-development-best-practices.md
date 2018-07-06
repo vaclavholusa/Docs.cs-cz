@@ -4,19 +4,16 @@ title: Web osvědčené postupy pro vývoj (vytváření skutečných cloudovýc
 author: MikeWasson
 description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: f31798032c3b690fcb6dfa8326580255f3412826
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 054fcad387608e136e8171f5d511ee7af1082bd0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371035"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824426"
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Osvědčené postupy při vývoji webové (vytváření skutečných cloudových aplikací s Azure)
 ====================

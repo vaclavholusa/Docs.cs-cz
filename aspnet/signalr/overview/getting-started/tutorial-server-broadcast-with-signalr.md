@@ -4,19 +4,16 @@ title: 'Kurz: Serverové vysílání s knihovnou SignalR 2 | Dokumentace Microso
 author: tdykstra
 description: Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá ASP.NET SignalR 2 pro zajištění všesměrového vysílání funkce serveru. Server vysílání znamená, že commun...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/13/2014
-ms.topic: article
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: ff1eeee407ac7628afd587ca8b9102d0191ea356
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0e86fbea9c5668e20fce7a494c76c52f9c089c09
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367923"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820694"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Kurz: Serverové vysílání s knihovnou SignalR 2
 ====================
@@ -196,7 +193,7 @@ Chcete pouze jedna instance třídy StockTicker ke spuštění na serveru, takž
 
 ### <a name="register-the-signalr-route"></a>Zaregistrujte směrování funkce SignalR
 
-Server musí znát adresu URL, která je pro zachycení a přístupem k systému SignalR. Chcete-li provést, přidejte a třídy pro spuštění OWIN.
+Server musí znát adresu URL, která je pro zachycení a přístupem k systému SignalR. K tomu, přidejte třídu OWIN při spuštění:
 
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a potom klikněte na tlačítko **přidat | Třídy pro spuštění OWIN**. Název třídy **Startup.cs**.
 2. Nahraďte kód v **Startup.cs** následujícím kódem.

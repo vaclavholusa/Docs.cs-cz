@@ -4,19 +4,16 @@ title: Směrování adres URL | Dokumentace Microsoftu
 author: Erikre
 description: V této sérii kurzů se seznámíte se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a službu Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/08/2014
-ms.topic: article
 ms.assetid: 4f4bf092-c400-471f-a876-78fda0417890
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 556ef01304d0b5a3cca3606d71ef055ce4b2dc5c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 968517100275822071e2101a4cfb978320f222f2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389147"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822713"
 ---
 <a name="url-routing"></a>Směrování adres URL
 ====================

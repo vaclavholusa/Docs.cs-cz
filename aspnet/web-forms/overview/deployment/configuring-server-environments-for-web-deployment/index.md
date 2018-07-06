@@ -4,19 +4,16 @@ title: ASP.NET 4 – organizace nasazení řady 2 konfigurace serverů | Dokumen
 author: rick-anderson
 description: Tomto kurzu se dozvíte, jak nastavit prostředí server pro podporu jedním kliknutím, nebo automatizované, nasazení webu a publikování v různých různých scen...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/16/2012
-ms.topic: article
 ms.assetid: 489b414b-2322-4385-8638-04e08c0b6c90
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment
 msc.type: chapter
-ms.openlocfilehash: a617d209ec1482bfe7e9ebcf54bb734f395f8f4a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e305c5225ed37c179ff12a3df0cd95bc77bf0655
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384726"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825234"
 ---
 <a name="aspnet-4---enterprise-deployment-series-2-configuring-servers"></a>ASP.NET 4 – organizace nasazení řady 2 konfigurace serverů
 ====================

@@ -4,19 +4,16 @@ title: Použití parametrizovaných dotazů s ovládacím prvkem SqlDataSource (
 author: rick-anderson
 description: V tomto kurzu jsme naše pohled na ovládacím prvkem SqlDataSource pokračovat a zjistěte, jak definovat parametrizované dotazy. Parametry lze zadat obě decla...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2007
-ms.topic: article
 ms.assetid: e322f34c-83b7-41ea-ab65-ab1e0bdcc609
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fd6361d7b8981b7caee996ff3af165416af860a7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fd4964bbdfe7662513025086a6cc3a59a6d63782
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395483"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813812"
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>Použití parametrizovaných dotazů s ovládacím prvkem SqlDataSource (VB)
 ====================

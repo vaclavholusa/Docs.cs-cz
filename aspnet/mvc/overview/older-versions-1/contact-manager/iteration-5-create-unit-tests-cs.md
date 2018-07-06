@@ -4,19 +4,16 @@ title: 'Iterace #5 – vytvoření testů jednotek (C#) | Dokumentace Microsoftu
 author: microsoft
 description: V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6466e7332e0e11420a0e99c77a87a7cddc0e34e2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0da88a67f788be211c4aa7b909106e9dab9960f3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372401"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805999"
 ---
 <a name="iteration-5--create-unit-tests-c"></a>Iterace #5 – vytvoření testů jednotek (C#)
 ====================

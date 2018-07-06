@@ -4,19 +4,16 @@ title: Adresy URL stránek předloh (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Řeší, jak můžete přerušit adresy URL na hlavní stránce kvůli soubor předlohové stránky se v jiném adresáři relativní než stránku obsahu. Prohledá probíhá přenesení změn...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2008
-ms.topic: article
 ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dcbd066a55fed3dd6c79e8a091e61449f85531b0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 827c471074fbfeb049613f5cc5ffb82937284f00
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398385"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821557"
 ---
 <a name="urls-in-master-pages-c"></a>Adresy URL stránek předloh (C#)
 ====================

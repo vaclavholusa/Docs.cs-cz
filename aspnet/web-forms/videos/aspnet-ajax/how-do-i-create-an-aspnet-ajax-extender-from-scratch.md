@@ -4,19 +4,16 @@ title: '[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender? | Dokumenta
 author: rick-anderson
 description: Informace o vytvoření extenderu ASP.NET AJAX pro standardní serverový ovládací prvek ASP.NET. Jsme se zobrazí postup, chcete-li přidat vlastnosti na straně serveru a jazyka JavaScript na straně klienta...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/01/2007
-ms.topic: article
 ms.assetid: 526b4ec1-4a80-4fae-bf0d-af5cb78f5d02
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-create-an-aspnet-ajax-extender-from-scratch
 msc.type: video
-ms.openlocfilehash: b759c7a9924e633679d91e7a38e7db7e470f23a2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4e82ac4351e7af361140d38f79fb3a1bfde5834a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382420"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810066"
 ---
 <a name="how-do-i-create-an-aspnet-ajax-extender-from-scratch"></a>[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender?
 ====================

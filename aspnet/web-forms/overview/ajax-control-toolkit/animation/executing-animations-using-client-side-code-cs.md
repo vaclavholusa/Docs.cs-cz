@@ -4,19 +4,16 @@ title: Spuštění animací klientským kódem (C#) | Dokumentace Microsoftu
 author: wenz
 description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Spuštění animace...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 0270e0df-6fde-4a8f-a2cb-2cacc55143f2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b58579a2a3b4849a69337600492e2b1a69175513
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ae8c4df3c5852e9ee95f6184a86059859c56b128
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389123"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824555"
 ---
 <a name="executing-animations-using-client-side-code-c"></a>Spuštění animací klientským kódem (C#)
 ====================

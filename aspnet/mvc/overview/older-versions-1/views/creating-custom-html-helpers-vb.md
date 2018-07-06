@@ -4,19 +4,16 @@ title: Vytvoření vlastních pomocných rutin HTML (VB) | Dokumentace Microsoft
 author: microsoft
 description: Cílem tohoto kurzu je předvést, jak můžete vytvořit vlastní pomocné rutiny HTML, který vám pomůže v rámci zobrazení v rozhraní MVC. S využitím pomocné rutiny HTML...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/07/2008
-ms.topic: article
 ms.assetid: f96f4800-19ef-44c0-b457-55e777eb5de8
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1f4a6afc62eb23d4591d515e973298da4630f9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ed3f86d3f316d3e1630c6008c20c72c31d7864da
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396595"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821522"
 ---
 <a name="creating-custom-html-helpers-vb"></a>Vytvoření vlastních pomocných rutin HTML (VB)
 ====================

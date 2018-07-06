@@ -4,19 +4,16 @@ title: Visual Studio 2010 rychlé přístupů - imperativní syntaxe jazyka Java
 author: JoeStagner
 description: V tomto videu se dozvíte imperativní syntaxe jazyka JavaScript pro ovládací prvky na straně klienta Microsoft.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/16/2009
-ms.topic: article
 ms.assetid: d4df6c61-9ca2-4e7c-8b65-749847f15d2c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/ajax/aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls
 msc.type: video
-ms.openlocfilehash: 0f7cdd10ce8515aa6ed8aad22deefcf6fa60d995
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9c00958a9832a393492b67fef198d9cd9b8fe2c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383487"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836678"
 ---
 <a name="aspnet-4-quick-hit---imperative-javascript-syntax-for-microsoft-client-side-controls"></a>Ovládací prvky technologie ASP.NET 4 "Rychlé zasáhnout" - imperativní syntaxe jazyka JavaScript pro Microsoftu na straně klienta
 ====================

@@ -4,19 +4,16 @@ title: Ukládání dalších informací o uživatelích (C#) | Dokumentace Micro
 author: rick-anderson
 description: V tomto kurzu jsme tuto otázku odpovědět sestavením aplikace vyloženě návštěv. Přitom se podíváme na různé možnosti pro modeli...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/18/2008
-ms.topic: article
 ms.assetid: 1642132a-1ca5-4872-983f-ab59fc8865d3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 201215683253afc0c6521e1bef56685d8487d7c7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5b73a19758c420f09d178ebd395d5c89ad493505
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398848"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819825"
 ---
 <a name="storing-additional-user-information-c"></a>Ukládání dalších informací o uživatelích (C#)
 ====================

@@ -4,19 +4,16 @@ title: Povolení operací CRUD v ASP.NET Web API 1 | Dokumentace Microsoftu
 author: MikeWasson
 description: Tento kurz ukazuje, jak podporovat operace CRUD v rámci protokolu HTTP služby pomocí rozhraní ASP.NET Web API. Verze softwaru používaných kurz Visual Studio 2012 Web přístupový bod...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/28/2012
-ms.topic: article
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: 1658e120225cd3c9425168238981133c96ff398a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 4ea9d4ce9a14e77fa1a63ee82bc1447b6e41378c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402925"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814359"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>Povolení operací CRUD v ASP.NET Web API 1
 ====================

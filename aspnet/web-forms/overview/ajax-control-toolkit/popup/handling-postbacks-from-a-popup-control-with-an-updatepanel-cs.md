@@ -4,19 +4,16 @@ title: Zpracování postbacků extenderu Popupcontrol ovládacím prvkem UpdateP
 author: wenz
 description: Zařízení extender PopupControl v sadou nástrojů AJAX Control Toolkit nabízí snadný způsob, jak aktivovat automaticky otevíraného okna, když se aktivuje jiný ovládací prvek. Zvláštní pozornost je třeba vzít...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 758ed5eef32be0fb596d8b9dbf903729816746bd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9fdf2821e005bfcb691134bb6994c01fa72b7abd
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377970"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815379"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>Zpracování postbacků extenderu Popupcontrol ovládacím prvkem UpdatePanel (C#)
 ====================

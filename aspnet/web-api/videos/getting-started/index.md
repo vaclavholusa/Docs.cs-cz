@@ -4,19 +4,16 @@ title: Přehled ASP.NET Web API a získat úvodní videa | Dokumentace Microsoft
 author: rick-anderson
 description: Toto je sérii videí, které vám pomůžou začít s rozhraním ASP.NET Web API.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/16/2012
-ms.topic: article
 ms.assetid: 1c7cc326-04f5-4578-bf62-a7d381f380f7
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/videos/getting-started
 msc.type: chapter
-ms.openlocfilehash: fc44cf0bc05276b54869eba30b7b502c9532e61e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 19977942be69bff357084b0a6297b3affa477323
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376520"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818774"
 ---
 <a name="aspnet-web-api-overview-and-getting-started-videos"></a>Přehled ASP.NET Web API a získat úvodní videa
 ====================

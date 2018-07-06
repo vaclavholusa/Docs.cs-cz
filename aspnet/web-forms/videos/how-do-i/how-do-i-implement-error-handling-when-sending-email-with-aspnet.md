@@ -4,19 +4,16 @@ title: '[Postup:] Implementace zpracování chyb při odesílání e-mailů s te
 author: rick-anderson
 description: Pixelů na Chris ukazuje, jak implementovat zpracování chyb při odesílání e-mailu s technologií ASP.NET. Mu vytvoří webovou stránku ASP.NET k odeslání e-mailu, se dozvíte, jak nakonfigurovat & lt....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/06/2008
-ms.topic: article
 ms.assetid: c02ffd50-aa19-4cdc-b1bf-760989979a61
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
 msc.type: video
-ms.openlocfilehash: 9a49e51ccdb3781e6c77e815d74202755eca7a3e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ebe6f451cad2ba4a9311b5882337b637de7f381e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384842"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814724"
 ---
 <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[Postup:] Implementace zpracování chyb při odesílání e-mailu v ASP.NET
 ====================

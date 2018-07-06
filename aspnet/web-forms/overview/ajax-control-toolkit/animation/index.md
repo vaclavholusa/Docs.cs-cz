@@ -4,19 +4,16 @@ title: Animace | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz ukazuje postupy při vytváření animací pomocí ovládacího prvku animace a animace framework.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/11/2011
-ms.topic: article
 ms.assetid: 90b3a37e-2694-41c4-8b10-d6893b53a9d4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation
 msc.type: chapter
-ms.openlocfilehash: 4d450df1f924856c84ca8259a679e1e79b13cc8e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4a0df66863ba766cd6bf68c2ed7e7a7970442975
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390915"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820915"
 ---
 <a name="animation"></a>Animace
 ====================

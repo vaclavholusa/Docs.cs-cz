@@ -4,19 +4,16 @@ title: Zpracování výjimek na úrovni knihoven BLL a DAL (VB) | Dokumentace Mi
 author: rick-anderson
 description: V tomto kurzu se podíváme tactfully zpracování výjimky vyvolána během pracovního postupu aktualizace upravitelné DataList.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/30/2006
-ms.topic: article
 ms.assetid: ca665073-b379-4239-9404-f597663ca65e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0655f73b63f3eae72a866c912589779a8ccc7664
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1aee5c26bfbbbc46c2151a56fed60057930cba80
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400561"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814249"
 ---
 <a name="handling-bll--and-dal-level-exceptions-vb"></a>Zpracování výjimek na úrovni knihoven BLL a DAL (VB)
 ====================

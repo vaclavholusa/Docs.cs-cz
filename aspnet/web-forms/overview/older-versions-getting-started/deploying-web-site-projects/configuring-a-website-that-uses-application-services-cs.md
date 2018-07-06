@@ -4,19 +4,16 @@ title: Konfigurace webu, který používá aplikační služby (C#) | Dokumentac
 author: rick-anderson
 description: Verze technologie ASP.NET 2.0 zavedené řadě aplikačních služeb, které jsou součástí rozhraní .NET Framework a slouží jako sadu stavebních bloků služby, které yo...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 1e33d1c6-3f9f-4c26-81e2-2a8f8907bb05
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 27c91868d46b6040a25b8cb83480bf83081fc98c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9bbf6d84c3ca25a3476901ec3d7996d5ca197446
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399091"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837649"
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>Konfigurace webu, který používá aplikační služby (C#)
 ====================

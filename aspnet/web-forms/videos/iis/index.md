@@ -4,19 +4,16 @@ title: Obecné tipy pro IIS | Dokumentace Microsoftu
 author: rick-anderson
 description: Postup konfigurace služby IIS pro práci s aplikací ASP.NET.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: 0078ceb6-3447-4ce4-90c2-d0e013ebc000
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/iis
 msc.type: chapter
-ms.openlocfilehash: e23ed829a51a7408ddea2d1e7ba107c072e5a8ec
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 525a506f7733d80e158d0c0669b05bc169e4e25a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378508"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811906"
 ---
 <a name="general-iis-tips"></a>Obecné tipy pro IIS
 ====================

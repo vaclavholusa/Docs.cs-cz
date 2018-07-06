@@ -4,19 +4,16 @@ title: Vytvoření tříd modelu pomocí Entity Framework (C#) | Dokumentace Mic
 author: microsoft
 description: V tomto kurzu se dozvíte, jak používat technologie ASP.NET MVC s Entity Framework společnosti Microsoft. Zjistíte, jak používat průvodce Entity k vytvoření ADO.NET Entity Da...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/27/2009
-ms.topic: article
 ms.assetid: 61644169-e8b1-45dd-bf96-9c2301b69879
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd94c3dd39fc83f0d412f3e646c237b58819bd11
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8b88aaaae21323fe3e3e8548cc04110c9caafef7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363439"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808139"
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a>Vytvoření tříd modelu pomocí Entity Framework (C#)
 ====================

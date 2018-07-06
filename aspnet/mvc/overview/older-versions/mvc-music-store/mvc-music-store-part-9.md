@@ -4,19 +4,16 @@ title: '9. část: Registrace a pokladna | Dokumentace Microsoftu'
 author: jongalloway
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 9 pokrývá registrace a pokladna.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/21/2011
-ms.topic: article
 ms.assetid: d65c5c2b-a039-463f-ad29-25cf9fb7a1ba
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: 935729be0dce790c6fce2e2e982ee063318d64dd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e521e30cb820d834d57c87538b869861a536657b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367003"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812870"
 ---
 <a name="part-9-registration-and-checkout"></a>9. část: Registrace a pokladna
 ====================

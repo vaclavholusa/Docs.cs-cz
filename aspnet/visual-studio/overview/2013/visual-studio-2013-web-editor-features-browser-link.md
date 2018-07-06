@@ -4,19 +4,16 @@ title: Visual Studio 2013 funkce webového editoru – Browser Link | Dokumentac
 author: shanselman
 description: Scott Hanselman ukazuje Browser Link ve Visual Studiu 2013, které umožňuje obousměrnou komunikaci mezi Visual Studio a více propojených prohlížečů...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: 45bf07c6-145f-435e-a703-3233e710d528
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-browser-link
 msc.type: video
-ms.openlocfilehash: 630ef9bf0e74f2a1a20678e25467f858016c062b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 68191368d497d1735b9be237e83838dee349fbcb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379829"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841368"
 ---
 <a name="visual-studio-2013-web-editor-features---browser-link"></a>Visual Studio 2013 funkce webového editoru – Browser Link
 ====================

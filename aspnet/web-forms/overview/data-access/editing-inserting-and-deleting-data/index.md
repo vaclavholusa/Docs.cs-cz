@@ -4,19 +4,16 @@ title: Úprava, vkládání a odstranění dat | Dokumentace Microsoftu
 author: rick-anderson
 description: V těchto kurzech uvidíte, jak namapovat metody ovládacího prvku ObjectDataSource metody knihoven BLL a konfigurace ovládacího prvku GridView, DetailsView a FormView co...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: 9fc60498-ced4-47c6-b2cf-8d464e6aeef8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data
 msc.type: chapter
-ms.openlocfilehash: d8acd5baffeb0aab86d741304b407eb106cbe3f2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0fc5d7b97626ef580d1ca6cf8a42ea84ae23a9da
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370310"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822293"
 ---
 <a name="editing-inserting-and-deleting-data"></a>Úprava, vkládání a odstranění dat
 ====================

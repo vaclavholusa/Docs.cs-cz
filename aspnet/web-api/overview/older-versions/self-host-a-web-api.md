@@ -4,19 +4,16 @@ title: Hostování na vlastním rozhraní ASP.NET Web API 1 (C#) | Dokumentace M
 author: MikeWasson
 description: Rozhraní ASP.NET Web API nevyžaduje, aby služba IIS. Webové rozhraní API můžete samoobslužné hostování ve vlastním procesu hostitele. Tento kurz ukazuje postupy při hostování webového rozhraní API uvnitř applic konzoly...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/26/2012
-ms.topic: article
 ms.assetid: be5ab1e2-4140-4275-ac59-ca82a1bac0c1
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 28ba54acd7947a1c837fb5f73b292901e6b19260
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 50681dcd89dfed480cf343f753371af384fd3e68
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376255"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811734"
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>Hostování na vlastním rozhraní ASP.NET Web API 1 (C#)
 ====================

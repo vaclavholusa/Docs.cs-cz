@@ -4,19 +4,16 @@ title: '[Postup:] Přidání funkcí ASP.NET AJAX na stávající webovou aplika
 author: JoeStagner
 description: Zjistěte, jak snadno přidat funkce Microsoft ASP.NET AJAX do stávající aplikace ASP.NET. Toto video ukazuje, že není nutné změnit váš slouží...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/26/2007
-ms.topic: article
 ms.assetid: 5ef4c879-aa90-4492-859b-d4568b87bab3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-add-aspnet-ajax-features-to-an-existing-web-application
 msc.type: video
-ms.openlocfilehash: 28185177ce8ad219149c8b9e4d488200ae3f484b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fbdbdae576944e24f2effb42f7e9c1200de6c31c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374860"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814770"
 ---
 <a name="how-do-i-add-aspnet-ajax-features-to-an-existing-web-application"></a>[Postup:] Přidání funkcí ASP.NET AJAX na stávající webovou aplikaci?
 ====================

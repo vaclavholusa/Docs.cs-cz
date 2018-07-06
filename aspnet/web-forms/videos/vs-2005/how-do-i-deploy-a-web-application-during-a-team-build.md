@@ -4,19 +4,16 @@ title: '[Postup:] Nasazení webové aplikace během týmového sestavení? | Dok
 author: pjhacker
 description: Toto video ukazuje, jak vytvořit nové týmové sestavení a nasazení webové aplikace jako součást procesu sestavení. Vidíme, včetně deploym...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/01/2007
-ms.topic: article
 ms.assetid: 3c81ee94-4561-4267-864d-2656b33d95c9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-deploy-a-web-application-during-a-team-build
 msc.type: video
-ms.openlocfilehash: 04b2e5fb5d720ad41847e96700fb10ecc2002d57
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f4fc140947c28c54e02967a6611bbe59576e3ada
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384326"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823145"
 ---
 <a name="how-do-i-deploy-a-web-application-during-a-team-build"></a>[Postup:] Nasazení webové aplikace během týmového sestavení?
 ====================

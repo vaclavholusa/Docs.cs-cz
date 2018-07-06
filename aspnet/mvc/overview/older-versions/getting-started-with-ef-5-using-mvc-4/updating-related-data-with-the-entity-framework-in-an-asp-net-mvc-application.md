@@ -4,19 +4,16 @@ title: Aktualizace souvisejících dat s Entity Framework v aplikaci ASP.NET MVC
 author: tdykstra
 description: Contoso University ukázkovou webovou aplikaci ukazuje postup vytvoření aplikace ASP.NET MVC 4 pomocí Entity Framework 5 Code First a sady Visual Studio...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: 7871dc05-2750-470f-8b4c-3a52511949bc
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: dde9d5022823b252e59949144e3021a53c0bdd3a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e85162f58ed9826132db8bd854914a14709f709d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371668"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809430"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Aktualizace souvisejících dat s Entity Framework v aplikaci ASP.NET MVC (6 10)
 ====================

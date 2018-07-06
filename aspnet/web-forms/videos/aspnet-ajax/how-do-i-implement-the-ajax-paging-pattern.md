@@ -4,19 +4,16 @@ title: '[Postup:] Implementace stránkovacího vzorce AJAX? | Dokumentace Micros
 author: JoeStagner
 description: V tomto videu jsme dozvíte, jak pomocí technologie ASP.NET AJAX implementace stránkovacího vzorce, které umožní aplikaci technologie ASP.NET k dispozici velký objem dat jako bein...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/06/2007
-ms.topic: article
 ms.assetid: deba7d7e-3da2-48a1-8a9e-49c36c4bcc39
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-paging-pattern
 msc.type: video
-ms.openlocfilehash: 6de4ae3b7ca13b31a654b2062e9223084dc7d486
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 133b96b739ce266d197ecec61643b3d1fe137bc8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376226"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809787"
 ---
 <a name="how-do-i-implement-the-ajax-paging-pattern"></a>[Postup:] Implementace stránkovacího vzorce AJAX?
 ====================

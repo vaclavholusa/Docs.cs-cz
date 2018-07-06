@@ -4,19 +4,16 @@ title: Ovládací prvky zdroje dat | Dokumentace Microsoftu
 author: microsoft
 description: DataGrid – ovládací prvek technologie ASP.NET 1.x označené skvělé zlepšení v přístupu k datům ve webových aplikacích. Však nebyl jako uživatelsky přívětivé, jako by byly...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2005
-ms.topic: article
 ms.assetid: 78fd0e92-f9c6-4e96-a5e9-0375b307a828
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 225e23c0e7f4c2f4b8a54ee3c07e2614e9ba1038
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 15a09e8ac7da6d23216a92863ae7ce6db7ecd57a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388448"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809349"
 ---
 <a name="data-source-controls"></a>Ovládací prvky zdroje dat
 ====================

@@ -4,19 +4,16 @@ title: Starší verze – MVC 1 a 2 | Dokumentace Microsoftu
 author: rick-anderson
 description: Materiály pro výuku programování MVC 1 a 2.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/10/2014
-ms.topic: article
 ms.assetid: 1506f70f-6919-45bd-8c75-a17aff77510c
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1
 msc.type: chapter
-ms.openlocfilehash: 2daaa592cf887af9bd608fa9d9993f28f45fb838
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 80d59628c8986c1d7a48093e6dcb8ec9c2c7ebb2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370036"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810895"
 ---
 <a name="older-versions---mvc-1-and-2"></a>Starší verze – MVC 1 a 2
 ====================

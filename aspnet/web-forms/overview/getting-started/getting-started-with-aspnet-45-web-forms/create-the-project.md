@@ -4,19 +4,16 @@ title: Vytvoření projektu | Dokumentace Microsoftu
 author: Erikre
 description: V této sérii kurzů se seznámíte se základy vytváření aplikace webových formulářů ASP.NET pomocí technologie ASP.NET 4.5 a službu Microsoft Visual Studio Express 2013 pro jsme...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/08/2014
-ms.topic: article
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: e5d6fa312ce0375eee5ca456aaea9f088d806cfc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 81d3b07fa0710d03bc350b93a02f7d3aba2bb684
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384485"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814666"
 ---
 <a name="create-the-project"></a>Vytvoření projektu
 ====================

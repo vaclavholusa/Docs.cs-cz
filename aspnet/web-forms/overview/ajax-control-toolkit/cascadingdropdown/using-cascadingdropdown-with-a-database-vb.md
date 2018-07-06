@@ -4,19 +4,16 @@ title: Použití ovládacího prvku CascadingDropDown s databází (VB) | Dokume
 author: wenz
 description: Sada nástrojů AJAX Control Toolkit ovládacího prvku CascadingDropDown rozšiřuje ovládací prvek DropDownList tak, aby se změny v jedné DropDownList zatížení související hodnoty v anoth...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 97a3d33c-c856-43f3-8acb-f1ccbc48221a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b90fc8975b6158da838ad6449537a27847650376
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 48e52fce4e26ec08403c3d86a4c3f85c103baa82
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386731"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824228"
 ---
 <a name="using-cascadingdropdown-with-a-database-vb"></a>Použití ovládacího prvku CascadingDropDown s databází (VB)
 ====================

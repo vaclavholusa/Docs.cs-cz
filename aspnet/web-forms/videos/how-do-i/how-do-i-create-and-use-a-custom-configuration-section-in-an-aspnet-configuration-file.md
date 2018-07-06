@@ -4,19 +4,16 @@ title: '[Postup:] Vytvoření a použití vlastního konfiguračního oddílu v 
 author: rick-anderson
 description: V tomto videu se zobrazí Chris pixelů na tom, jak rozšířit standardní sadu konfiguračních nastavení technologie ASP.NET s vlastní elementy XML konfigurace. Nejdříve si projděte jak...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/16/2008
-ms.topic: article
 ms.assetid: fa9ed773-cceb-49d0-a939-5a9e6bbae00f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file
 msc.type: video
-ms.openlocfilehash: 2061a47ffe17b9f637104923bfea962e30f0b537
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 75621262205fae79c09e9a14900e7de6fb53c3e1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384917"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810605"
 ---
 <a name="how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file"></a>[Postup:] Vytvoření a použití vlastního konfiguračního oddílu v konfiguračním souboru ASP.NET
 ====================

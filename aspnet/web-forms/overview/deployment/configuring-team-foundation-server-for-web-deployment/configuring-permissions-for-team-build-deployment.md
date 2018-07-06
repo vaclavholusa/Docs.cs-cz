@@ -35,7 +35,7 @@ Při instalaci služby Team Foundation Server (TFS) 2010 sestavení, zadejte ide
 Úkoly nasazení, které vyžadují ověřování Windows a plánujete automatizovat pomocí Team Build, bude spuštěna s použitím identity služby sestavení. V důsledku toho budete muset udělit identitu služby sestavení jakékoli požadovaná oprávnění pro vaše webové servery a databázové servery.
 
 > [!NOTE]
-> Účet Network Service používá účet počítače pro ověření do jiných počítačů. Účty počítače mít podobu * [název domény]\[název počítače] ***$**&#x2014;například **FABRIKAM\TFSBUILD$**. V důsledku toho pokud je sestavovací služba spuštěná, používat identitu síťové služby, byste měli udělit libovolné požadovaná oprávnění pro identitu účtu počítače pro váš server sestavení.
+> Účet Network Service používá účet počítače pro ověření do jiných počítačů. Účty počítače mít podobu *[název domény]\[název počítače]* **$**&#x2014;například **FABRIKAM\TFSBUILD$**. V důsledku toho pokud je sestavovací služba spuštěná, používat identitu síťové služby, byste měli udělit libovolné požadovaná oprávnění pro identitu účtu počítače pro váš server sestavení.
 
 
 ## <a name="configuring-web-server-permissions"></a>Konfigurace oprávnění webového serveru

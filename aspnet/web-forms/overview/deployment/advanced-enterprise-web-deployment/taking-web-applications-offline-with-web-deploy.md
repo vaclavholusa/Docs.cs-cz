@@ -145,7 +145,7 @@ Následující postup ukazuje, jak přidat *. wpp.targets* soubor do projektu we
 1. Otevřete řešení v sadě Visual Studio 2010.
 2. V **Průzkumníka řešení** okna, klikněte pravým tlačítkem na uzel projektu webové aplikace (například **ContactManager.Mvc**), přejděte na **přidat**a potom klikněte na tlačítko **Nová položka**.
 3. V **přidat novou položku** dialogové okno, vyberte **soubor XML** šablony.
-4. V **název** zadejte *[název projektu] ***.wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a potom klikněte na tlačítko **přidat**.
+4. V **název** zadejte *[název projektu]* **.wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a potom klikněte na tlačítko **přidat**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 

@@ -1,191 +1,190 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
-title: Principy modely, zobrazení a Kontrolery (C#) | Microsoft Docs
+title: Principy modelů, zobrazení a Kontrolerů (C#) | Dokumentace Microsoftu
 author: StephenWalther
-description: Nerozumíte o modely, zobrazení a Kontrolery? V tomto kurzu Stephen Walther vás seznámí s různé části aplikaci ASP.NET MVC.
+description: Ztrácíte přehled o modelů, zobrazení a Kontrolerů? V tomto kurzu Stephen Walther vás seznámí s různé části aplikace ASP.NET MVC.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
 ms.topic: article
 ms.assetid: 87313792-0a96-4caf-89fc-1457d54e5c1e
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9c9a0cbbf6f786944d7892fbb14859939f21bdd5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.openlocfilehash: f5cf39e4652a3e487dcd79b2cf887efb992c2107
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26564607"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376906"
 ---
-<a name="understanding-models-views-and-controllers-c"></a>Principy modely, zobrazení a Kontrolery (C#)
+<a name="understanding-models-views-and-controllers-c"></a>Principy modelů, zobrazení a Kontrolerů (C#)
 ====================
 podle [Stephen Walther](https://github.com/StephenWalther)
 
-> Nerozumíte o modely, zobrazení a Kontrolery? V tomto kurzu Stephen Walther vás seznámí s různé části aplikaci ASP.NET MVC.
+> Ztrácíte přehled o modelů, zobrazení a Kontrolerů? V tomto kurzu Stephen Walther vás seznámí s různé části aplikace ASP.NET MVC.
 
 
-V tomto kurzu poskytuje souhrnné informace o architektuře ASP.NET MVC modely, zobrazení a kontrolery. Jinými slovy, vysvětluje M', V "a C' v architektuře ASP.NET MVC.
+Tento kurz obsahuje podrobný přehled ASP.NET MVC modelů, zobrazení a kontrolerů. Jinými slovy, najdete v něm M ", V" a jazyka C "v architektuře ASP.NET MVC.
 
-Po přečtení tohoto kurzu, byste měli porozumět, jak fungují společně různé části aplikaci ASP.NET MVC. Také byste měli porozumět, jak architektuře aplikace ASP.NET MVC se liší od aplikace webových formulářů ASP.NET nebo aplikace Active Server Pages.
+Po přečtení tohoto kurzu, měli byste porozumět, jak fungují společně různé části aplikace ASP.NET MVC. Měli byste porozumět, jak architektury aplikace ASP.NET MVC se liší od aplikace webových formulářů ASP.NET nebo aplikace ASP.
 
 ## <a name="the-sample-aspnet-mvc-application"></a>Ukázkovou aplikaci ASP.NET MVC
 
-Výchozí šablony sady Visual Studio pro vytváření webových aplikací ASP.NET MVC zahrnuje velmi jednoduché ukázkové aplikace, která slouží k pochopení různých součástí aplikace ASP.NET MVC. Můžeme využít této jednoduché aplikace v tomto kurzu.
+Výchozí šablony sady Visual Studio pro vytváření webových aplikací ASP.NET MVC zahrnuje jednoduchost ukázkové aplikace, která slouží k pochopení různé části aplikace ASP.NET MVC. Můžeme využít výhod této jednoduché aplikace najdete v tomto kurzu.
 
-Můžete vytvořit novou aplikaci ASP.NET MVC pomocí šablony MVC spuštěním Visual Studio 2008 a vyberete možnost nabídky soubor, New Project (viz obrázek 1). V dialogovém okně Nový projekt, vyberte svůj oblíbený programovací jazyk v části typy projektů (Visual Basic a C#) a vyberte **webové aplikace ASP.NET MVC** v rámci šablony. Klikněte na tlačítko OK.
-
-
-[![Dialogové okno Nový projekt](understanding-models-views-and-controllers-cs/_static/image1.jpg)](understanding-models-views-and-controllers-cs/_static/image1.png)
-
-**Obrázek 01**: dialogové okno Nový projekt ([Kliknutím zobrazit obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image2.png))
+Vytvoření nové aplikace ASP.NET MVC pomocí šablony MVC spuštěním sady Visual Studio 2008 a vyberte možnost nabídky soubor, nový projekt (viz obrázek 1). V dialogovém okně Nový projekt, vyberte vašem oblíbeném programovacím jazyce podle typů projektu (Visual Basic nebo C#) a vyberte **webové aplikace ASP.NET MVC** v rámci šablony. Klikněte na tlačítko OK.
 
 
-Při vytváření nové aplikace ASP.NET MVC **vytvoření projektu testování částí** otevře se dialogové okno (viz obrázek 2). Tento dialog umožňuje vytvoření samostatné projektu ve vašem řešení pro testování vašich aplikací ASP.NET MVC. Vyberte možnost **Ne, nevytvářejte projektu testování částí** a klikněte na **OK** tlačítko.
+[![Dialogové okno nového projektu](understanding-models-views-and-controllers-cs/_static/image1.jpg)](understanding-models-views-and-controllers-cs/_static/image1.png)
+
+**Obrázek 01**: dialogové okno nového projektu ([kliknutím ji zobrazíte obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image2.png))
 
 
-[![Vytvořte jednotku Test – dialogové okno](understanding-models-views-and-controllers-cs/_static/image2.jpg)](understanding-models-views-and-controllers-cs/_static/image3.png)
-
-**Obrázek 02**: dialogové okno Vytvořit testovací jednotky ([Kliknutím zobrazit obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image4.png))
+Při vytváření nové aplikace ASP.NET MVC **vytvořit projekt testování částí** se zobrazí dialogové okno (viz obrázek 2). Tento dialog umožňuje vytvořit samostatný projekt v řešení pro testování vašich aplikací ASP.NET MVC. Vyberte možnost **Ne, nevytvářejte projekt testování částí** a klikněte na tlačítko **OK** tlačítko.
 
 
-Aplikace je vytvořena po nové rozhraní ASP.NET MVC. Zobrazí se několik složek a souborů v okně Průzkumníka řešení. Konkrétně se zobrazí tři složky s názvem modely, zobrazení a Kontrolery. Jak vám může uhodnout z názvy složek, tyto složky obsahují soubory pro implementaci modely, zobrazení a kontrolery.
+[![Vytvořte testovací jednotky dialogové okno](understanding-models-views-and-controllers-cs/_static/image2.jpg)](understanding-models-views-and-controllers-cs/_static/image3.png)
 
-Pokud rozbalíte složce řadiče, měli byste vidět soubor s názvem AccountController.cs a soubor s názvem HomeController.cs. Pokud rozbalíte složce zobrazení, měli byste vidět tři podsložky s názvem účet domů a sdílený. Pokud rozbalíte Domovská složka, se zobrazí dva další soubory s názvem About.aspx a Index.aspx (viz obrázek 3). Tyto soubory tvoří ukázkovou aplikaci součástí výchozí šablony ASP.NET MVC.
-
-
-[![Okno Průzkumník řešení](understanding-models-views-and-controllers-cs/_static/image3.jpg)](understanding-models-views-and-controllers-cs/_static/image5.png)
-
-**Obrázek 03**: okno Průzkumníka řešení ([Kliknutím zobrazit obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image6.png))
+**Obrázek 02**: dialogové okno Vytvoření testu jednotek ([kliknutím ji zobrazíte obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image4.png))
 
 
-Ukázkovou aplikaci můžete spustit výběrem možnosti nabídky **ladit, spustit ladění**. Alternativně můžete stisknutím klávesy F5.
+Aplikace se vytvoří po nové technologie ASP.NET MVC. Zobrazí se několik složek a souborů v okně Průzkumník řešení. Zejména uvidíte tři složky s názvem modelů, zobrazení a Kontrolerů. Jak může uhodnout z názvy složek, tyto složky obsahují soubory pro implementaci modelů, zobrazení a kontrolerů.
 
-Při prvním spuštění aplikace ASP.NET, se zobrazí dialogové okno Obrázek 4, který se doporučuje povolit režim ladění. Klikněte na tlačítko OK a bude aplikace spuštěna.
-
-
-[![Ladění není povoleno dialogové okno](understanding-models-views-and-controllers-cs/_static/image4.jpg)](understanding-models-views-and-controllers-cs/_static/image7.png)
-
-**Obrázek 04**: ladění není povoleno dialogové okno ([Kliknutím zobrazit obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image8.png))
+Pokud rozbalíte složce řadiče, měli byste vidět soubor s názvem AccountController.cs a soubor s názvem HomeController.cs. Pokud rozbalíte složce zobrazení, měli byste vidět tři podsložky s názvem účtu, Home a sdílené. Pokud rozbalíte domovské složky, zobrazí se vám dva další soubory s názvem About.aspx a Index.aspx (viz obrázek 3). Tyto soubory tvoří ukázkové aplikace je součástí výchozí šablony ASP.NET MVC.
 
 
-Když spustíte aplikaci ASP.NET MVC, Visual Studio spustí aplikaci ve webovém prohlížeči. Ukázkové aplikace se skládá z pouze dvě stránky: indexovou stránku a o stránky. Při prvním spuštění aplikace, zobrazí se stránka indexu (viz obrázek 5). Můžete přejít na stránku o kliknutím na odkaz nabídce v horní části napravo od aplikace.
+[![V okně Průzkumník řešení](understanding-models-views-and-controllers-cs/_static/image3.jpg)](understanding-models-views-and-controllers-cs/_static/image5.png)
+
+**Obrázek 03**: okně Průzkumníka řešení ([kliknutím ji zobrazíte obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image6.png))
+
+
+Ukázkovou aplikaci můžete spustit tak, že vyberete možnost nabídky **ladit, spustit ladění**. Alternativně můžete stisknutím klávesy F5.
+
+Při prvním spuštění aplikace ASP.NET, zobrazí se dialogové okno na obrázku 4, která se doporučuje, abyste povolili režimu ladění. Klikněte na tlačítko OK a bude aplikace spuštěna.
+
+
+[![Ladění není povoleno dialogového okna](understanding-models-views-and-controllers-cs/_static/image4.jpg)](understanding-models-views-and-controllers-cs/_static/image7.png)
+
+**Obrázek 04**: ladění není povoleno dialogového okna ([kliknutím ji zobrazíte obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image8.png))
+
+
+Při spuštění aplikace ASP.NET MVC, Visual Studio spustí aplikaci ve webovém prohlížeči. Ukázková aplikace se skládá pouze dvě stránky: indexovou stránku a na stránce o. Při prvním spuštění aplikace, zobrazí se stránka indexu (viz obrázek 5). Můžete přejít na stránku o kliknutím na odkaz nabídce v horní části přímo z aplikace.
 
 
 [![Index stránky](understanding-models-views-and-controllers-cs/_static/image10.png)](understanding-models-views-and-controllers-cs/_static/image9.png)
 
-**Obrázek 05**: indexovou stránku ([Kliknutím zobrazit obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image11.png))
+**Obrázek 05**: indexovou stránku ([kliknutím ji zobrazíte obrázek v plné velikosti](understanding-models-views-and-controllers-cs/_static/image11.png))
 
 
-Všimněte si, adresy URL v adresním řádku prohlížeče. Například když kliknete na odkaz nabídky o, adresu URL v adresním řádku prohlížeče, které se změní na **/domácí/o**.
+Všimněte si, že adresy URL do adresního řádku prohlížeče. Například když kliknete na odkaz o nabídce, adresy URL v adresním řádku prohlížeče se změní na **/Home/About**.
 
-Pokud zavřete okno prohlížeče a vrátit se k sadě Visual Studio, nebudete moci vyhledat soubor s domovskou cesta/o. Soubory neexistují. Jak je to možné?
+Pokud zavřete okno prohlížeče a vraťte se do sady Visual Studio, nebudete mít k nalezení souboru s domovem cesta/o. Soubory neexistují. Jak je to možné?
 
-## <a name="a-url-does-not-equal-a-page"></a>Adresa URL se nerovná stránky
+## <a name="a-url-does-not-equal-a-page"></a>Adresa URL se nerovná stránku
 
-Při sestavování tradiční aplikace webových formulářů ASP.NET nebo aplikace Active Server Pages je souvislosti mezi adresu URL a na stránce. Pokud budete požadovat stránku s názvem SomePage.aspx ze serveru, pak měl lépe existovat stránky na disk s názvem SomePage.aspx. Pokud soubor SomePage.aspx neexistuje, dojde ugly **404 - Stránka nebyla nalezena** chyby.
+Při sestavování tradiční aplikace webových formulářů ASP.NET nebo Active Server Pages aplikace existuje shoda mezi adresy URL a na stránce. Pokud jste požádali o stránku s názvem SomePage.aspx ze serveru, pak měli lépe existovat stránku na disk s názvem SomePage.aspx. Pokud se soubor SomePage.aspx neexistuje, dojde bez zbytečných prvků **404 – Stránka nebyla nalezena** chyby.
 
-Při vytváření aplikace ASP.NET MVC, spočívá v tom souvztažnost mezi adresu URL, kterou zadáte do adresního řádku prohlížeče a soubory, které můžete najít ve vaší aplikaci. V aplikaci ASP.NET MVC odpovídá adrese URL akce kontroleru místo na disku na stránce.
+Při sestavování aplikace ASP.NET MVC, naproti tomu neexistuje žádná souvislost mezi adresu URL, kterou zadáte do panelu Adresa v prohlížeči a soubory, které můžete najít ve vaší aplikaci. V aplikaci ASP.NET MVC adresa URL odpovídá místo na disku na stránce akce kontroleru.
 
-V tradiční aplikaci ASP.NET nebo ASP prohlížeče požadavek mapovaný na stránky. V aplikaci ASP.NET MVC naopak požadavků prohlížeče jsou namapované na akce kontroleru. Aplikace webových formulářů ASP.NET je zaměřená na obsah. Aplikace ASP.NET MVC spočívá v tom, zaměřená na aplikace logiky.
+V tradiční aplikace ASP.NET nebo ASP prohlížeč požadavek mapovaný na stránky. V aplikaci ASP.NET MVC naproti tomu prohlížeč požadavky se mapují na akce kontroleru. Aplikace webových formulářů technologie ASP.NET je zaměřené na obsah. Aplikace ASP.NET MVC, je naopak zaměřenou na logiku aplikace.
 
 ## <a name="understanding-aspnet-routing"></a>Vysvětlení směrování ASP.NET
 
-Získá žádost prohlížeče namapované na akce kontroleru prostřednictvím funkce rozhraní ASP.NET volat *směrování ASP.NET*. Směrování ASP.NET používá rozhraní ASP.NET MVC pro *trasy* příchozí požadavky na akce kontroleru.
+Získá mapovat žádost prohlížeče na akce kontroleru prostřednictvím funkce technologie ASP.NET framework, volá se, *směrování ASP.NET*. Směrování ASP.NET používá rozhraní ASP.NET MVC do *trasy* příchozí požadavky na akce kontroleru.
 
-Směrování ASP.NET používá směrovací tabulku pro zpracování příchozích požadavků. Tato tabulka trasy se vytvoří při prvním spuštění webové aplikace. Směrovací tabulka je instalační program v souboru Global.asax. Výchozí soubor MVC Global.asax je součástí výpis 1.
+Směrovací tabulku směrování ASP.NET používá ke zpracování příchozích požadavků. Tato tabulka trasy se vytvoří při prvním spuštění vaší webové aplikace. Směrovací tabulky se nastavení v souboru Global.asax. Výchozí soubor MVC Global.asax je součástí výpis 1.
 
 **Výpis 1 - Global.asax**
 
 [!code-csharp[Main](understanding-models-views-and-controllers-cs/samples/sample1.cs)]
 
-Při prvním spuštění aplikace ASP.NET, aplikace\_Start() metoda je volána. V výpis 1 Tato metoda volá metodu RegisterRoutes() a RegisterRoutes() metoda vytvoří výchozí směrovací tabulka.
+Když poprvé spustí aplikace technologie ASP.NET, aplikace\_volání metody Start(). Ve výpisu 1 Tato metoda volá metodu RegisterRoutes() a metoda RegisterRoutes() vytvoří výchozí směrovací tabulka.
 
-Výchozí směrovací tabulka se skládá z jednoho z nich. Této výchozí trase všechny příchozí požadavky dělí do tří segmenty (segment adresy URL je nic mezi lomítka). První segment se mapuje na název řadiče, druhý segment je namapovaná na název akce a poslední segment je namapována na parametr předaný akci s názvem ID.
+Výchozí směrovací tabulka se skládá z jednoho z nich. Všechny příchozí požadavky této výchozí trase rozdělí do tří segmentů (segment adresy URL se něco mezi lomítka). První segment se mapuje na název kontroleru, druhý segment se mapuje na název akce a posledního segmentu je namapována na parametr předaný akce s názvem ID.
 
-Zvažte například následující adresu URL:
+Představte si třeba následující adresu URL:
 
-/ Produktu/podrobnosti/3
+/ Produkt/podrobnosti/3
 
-Tato adresa URL rozdělena na tři parametry takto:
+Tato adresa URL je analyzován do tří parametrů takto:
 
-Řadič = produktu
+Kontroler = produktu
 
 Akce = podrobnosti
 
 ID = 3
 
-Výchozí trasy definované v souboru Global.asax obsahuje výchozí hodnoty pro všechny tři parametry. Je výchozí řadič Domů, výchozí akce je Index a výchozí hodnota Id je prázdný řetězec. Tyto výchozí hodnoty na paměti zvažte, jak je analyzována na následující adrese URL:
+Výchozí trasy definované v souboru Global.asax obsahuje výchozí hodnoty pro všemi třemi parametry. Je výchozí kontroler Home, výchozí akce je Index a výchozí hodnota Id je prázdný řetězec. U tyto výchozí hodnoty na paměti zvažte, jak je analyzován na následující adrese URL:
 
 / Zaměstnance
 
-Tato adresa URL rozdělena na tři parametry takto:
+Tato adresa URL je analyzován do tří parametrů takto:
 
-Řadič = zaměstnance
+Kontroler = zaměstnance
 
-Akce = indexu
-
-ID =
-
-Nakonec otevřete aplikaci ASP.NET MVC bez nutnosti zadávat libovolná adresa URL (například `http://localhost`) a adresa URL je analyzována takto:
-
-Řadič = Domů
-
-Akce = indexu
+Akce = Index
 
 ID =
 
-Žádost se směruje na Index() akce v třídě HomeController.
+Nakonec otevřete aplikaci ASP.NET MVC bez poskytnutí libovolnou adresu URL (například `http://localhost`) pak adresa URL se zpracuje tímto způsobem:
+
+Kontroler = Home
+
+Akce = Index
+
+ID =
+
+Požadavek se přesměruje na akci Index() HomeController třídy.
 
 ## <a name="understanding-controllers"></a>Vysvětlení Kontrolerů
 
-Řadič slouží k řízení způsobu, jakým uživatel pracuje s aplikaci MVC. Řadič obsahuje logiku toku řízení pro aplikaci ASP.NET MVC. Řadič Určuje, jaké odpověď k odeslání zpět na uživatele, když uživatel provede žádost prohlížeče.
+Kontroler je zodpovědná za řízení tak, jak uživatel komunikuje s aplikaci MVC. Kontroler obsahuje logiku řízení toku pro aplikace ASP.NET MVC. Kontroler Určuje, jaké odpověď k odeslání zpět na uživatele, když uživatel provede požadavek prohlížeče.
 
-Řadič je právě třídy (například třída Visual Basic a C#). Ukázkové aplikace ASP.NET MVC zahrnuje řadič HomeController.cs umístěný ve složce řadiče. Obsah souboru HomeController.cs je uveden v výpis 2.
+Kontroler je právě třídy (například třídy jazyka Visual Basic nebo C#). Ukázka aplikace ASP.NET MVC zahrnuje řadič HomeController.cs ve složce řadiče. Obsah souboru HomeController.cs je uveden v informacích 2.
 
 **Výpis 2 - HomeController.cs**
 
 [!code-csharp[Main](understanding-models-views-and-controllers-cs/samples/sample2.cs)]
 
-Všimněte si, že HomeController má dvě metody s názvem Index() a About(). Tyto dvě metody odpovídají dvě akce vystavené kontroleru. Adresa URL/Home nebo Index vyvolá metodu HomeController.Index() a adresy URL/Home nebo o vyvolá metodu HomeController.About().
+Všimněte si, HomeController má dvě metody s názvem Index() a About(). Tyto dvě metody odpovídají dvě akce vystavené kontroleru. Adresa URL/Home/Index vyvolá metodu HomeController.Index() a adresy URL/Home/o vyvolá metodu HomeController.About().
 
-Všechny veřejná metoda v kontroleru je k dispozici jako akce kontroleru. Budete muset to velmi opatrně. To znamená, že všechny veřejná metoda obsažené v řadič může vyvolat každý, kdo má přístup k Internetu zadáním správné adresy URL do prohlížeče.
+Všechny veřejné metody v kontroleru je vystavena jako akce kontroleru. Musíte být opatrní při to. To znamená, že všechny veřejné metody obsažené v kontroleru, každý, kdo má přístup k Internetu jde vyvolat zadáním správné adresy URL do prohlížeče.
 
 ## <a name="understanding-views"></a>Principy zobrazení
 
-Dva řadiče akce vystavené třídě HomeController Index() a About(), jak vrátit zobrazení. Zobrazení obsahuje kód HTML a obsah, který je odesláno prohlížeči. Zobrazení je ekvivalentem stránky při práci s aplikaci ASP.NET MVC.
+Akce dvě kontroleru vystavené třídu HomeController Index() a About(), jak vrátit zobrazení. Zobrazení obsahuje kód HTML a obsah, který je odesláno prohlížeči. Zobrazení je ekvivalentem stránky při práci s aplikací ASP.NET MVC.
 
-Je třeba vytvořit zobrazení na správné místo. Akce HomeController.Index() vrátí zobrazení umístěný v následující cestě:
+Je třeba vytvořit zobrazení na správném místě. Akce HomeController.Index() vrátí zobrazení nachází v následujícím umístění:
 
 \Views\Home\Index.aspx
 
-Akce HomeController.About() vrátí zobrazení umístěný v následující cestě:
+Akce HomeController.About() vrátí zobrazení nachází v následujícím umístění:
 
 \Views\Home\About.aspx
 
-Obecně platí Pokud chcete vrátit zobrazení pro akce kontroleru, bude nutné vytvořit podsložku ve složce zobrazení se stejným názvem jako řadiči. V rámci podsložku musíte vytvořit soubor .aspx se stejným názvem jako akce kontroleru.
+Obecně platí Pokud budete chtít vrátit zobrazení pro akce kontroleru, musíte vytvořit podsložku ve složce zobrazení se stejným názvem jako řadiče. V podsložce musíte vytvořit soubor .aspx se stejným názvem jako akce kontroleru.
 
-Soubor v výpis 3 obsahuje About.aspx zobrazení.
+Soubor výpisu 3 obsahuje About.aspx zobrazení.
 
-**Výpis 3 – About.aspx**
+**Výpis 3 - About.aspx**
 
 [!code-aspx[Main](understanding-models-views-and-controllers-cs/samples/sample3.aspx)]
 
-Pokud budete ignorovat v prvním řádku výpis 3, se skládá z standardní HTML většinu zbytek zobrazení. Obsah zobrazení můžete upravit tak, že zadáte všechny HTML, který chcete v tomto poli.
+Pokud budete ignorovat prvního řádku v zobrazení 3, většina ostatních zobrazení se skládá z standardní HTML. Obsah zobrazení můžete upravit tak, že zadáte veškeré kódování HTML, který chcete, aby zde.
 
-Zobrazení je velmi podobná stránce Active Server Pages nebo webových formulářů ASP.NET. Zobrazení může obsahovat obsah HTML a skripty. Skripty můžete napsat v vaše oblíbené .NET programovací jazyk (například C# nebo Visual Basic .NET). Pomocí skriptů zobrazíte dynamický obsah, jako jsou data databáze.
+Zobrazení je velmi podobný stránky ASP nebo ASP.NET webové formuláře. Zobrazení může obsahovat obsah ve formátu HTML a skripty. Napíšete skripty v oblíbeném .NET programovací jazyk (například C# nebo Visual Basic .NET). Pomocí skriptů zobrazují dynamický obsah, jako je například dat z databáze.
 
-## <a name="understanding-models"></a>Principy modely
+## <a name="understanding-models"></a>Principy modelů
 
-Mít jsme probrali řadiče a mít jsme probrali zobrazení. Poslední téma, která potřebujeme k zabývat se modelů. Co je MVC model?
+Mít jsme probírali řadiče a mít jsme probírali zobrazení. Poslední téma, které potřebujeme fattica je modely. Co je MVC model?
 
-MVC model obsahuje všechny vaše aplikace logiky, která není obsažen v zobrazení nebo kontroleru. Model musí obsahovat všechny vaše obchodní logiku aplikace, logiku ověření a logiku přístup k databázi. Například pokud používáte Microsoft Entity Framework pro přístup k vaší databázi, pak vytvoříte vaší třídy rozhraní Entity Framework (souboru .edmx) ve složce modelů.
+MVC model obsahuje všechny vaše aplikační logiky, která není součástí zobrazení nebo kontroleru. Model by měl obsahovat všechny vaše obchodní logiky aplikace, logiku ověřování a logiky přístupu k databázi. Například pokud Microsoft Entity Framework používají pro přístup k vaší databázi, potom by vytvoříte třídy Entity Framework (soubor .edmx) ve složce modely.
 
-Zobrazení by měl obsahovat pouze logiku související generování uživatelského rozhraní. Řadič by měly obsahovat jenom úplné minimum logiku potřebnou k vrátí pravého zobrazení nebo přesměruje uživatele na další akci (řízení toku). Všem ostatním musí být obsažené v modelu.
+Zobrazení může obsahovat pouze logiku související generování uživatelského rozhraní. Kontroler může obsahovat jenom úplné minimální logiku potřebnou k vrácení z druhého zobrazení nebo přesměrovat uživatele na jinou akci (řízení toku). Všechno ostatní, měly by být součástí modelu.
 
-Obecně platí by měla zajistit fat modely a tenké řadiče. Vaše řadiče metody by měly obsahovat jenom pár řádků kódu. Akce kontroleru získá příliš fat, měli zvážit, přesunutí logiku na nové třídy ve složce modelů.
+Obecně platí je nutné snažit pro fat modely a tenké kontrolery. Vaše metody kontroleru by měl obsahovat jenom pár řádků kódu. Získá příliš fat-akce kontroleru, pak zvažte přesunutí logiky na novou třídu ve složce modely.
 
 ## <a name="summary"></a>Souhrn
 
-V tomto kurzu k dispozici nejvyšší úrovni přehled různých součástí ASP.NET MVC webové aplikace. Jste se dozvěděli, jak směrování ASP.NET mapuje příchozí požadavky na prohlížeč pro určitý kontroler akce. Jste se dozvěděli, jak řadiče orchestraci, jak se zobrazení vrátí do prohlížeče. Nakonec jste zjistili, jak modely obsahovat obchodní aplikace, ověřování a logiku přístup k databázi.
+V tomto kurzu vám poskytuje základní přehled různých součástí ASP.NET MVC webové aplikace. Jste se naučili, jak směrování ASP.NET mapuje příchozí požadavky na prohlížeč pro určitý kontroler akce. Jste se naučili, jak orchestrovat řadiče jak zobrazení se vrátí do prohlížeče. Nakonec jste zjistili, jak modely obsahovat obchodní aplikace, ověření a logiky přístupu k databázi.

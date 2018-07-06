@@ -1,127 +1,126 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
-title: 'Nasazení webu Enterprise: Přehled scénářů | Microsoft Docs'
+title: 'Nasazení podnikového webu: Přehled scénářů | Dokumentace Microsoftu'
 author: jrjlee
-description: Tato sada kurzy používá ukázkové řešení s úrovní realistické složitější, společně s scénář nasazení fiktivních enterprise, k poskytování ref...
+description: Této sérii kurzů používá ukázkové řešení s realistické úroveň složitosti, společně s scénáři nasazení fiktivní organizace k poskytování ref...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
 ms.topic: article
 ms.assetid: aa862153-4cd8-4e33-beeb-abf502c6664f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 20f6e206d6aa4bebb4936246468f5ada0e213236
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: 47bd0a0f7b71a6069d573f1454583cdb832f6b4c
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30890018"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37366074"
 ---
-<a name="enterprise-web-deployment-scenario-overview"></a>Podnikového nasazení webu: Přehled scénáře
+<a name="enterprise-web-deployment-scenario-overview"></a>Nasazení podnikového webu: Přehled scénářů
 ====================
 podle [Jason Lee](https://github.com/jrjlee)
 
 [Stáhnout PDF](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> Tato sada kurzy používá ukázkové řešení s úrovní realistické složitější, společně s scénář nasazení fiktivních enterprise, a zadejte odkaz na implementaci a dát úlohy a návody pro běžné kontextu. Toto téma popisuje kurz scénář a zavádí ukázkové řešení.
+> Této sérii kurzů používá ukázkové řešení s realistické úroveň složitosti, společně s scénář nasazení fiktivní organizace, a zadejte referenční implementaci a poskytnout úkoly a návody pro běžné kontextu. Toto téma popisuje scénář tohoto kurzu a zavádí ukázkové řešení.
 
 
 ## <a name="scenario-description"></a>Popis scénáře
 
-Společnost Fabrikam, Inc., fiktivní společnosti, je vytvoření řešení, které umožňuje vzdálené týmy prodeje, ukládání a načítání kontaktních informací z webové rozhraní.
+Fiktivní společnosti Fabrikam, Inc., je vytváření řešení, které umožňuje vzdálené prodejní týmy, ukládání a načítání informací z webového rozhraní.
 
-Procesy Application Lifecycle Management (ALM) společnosti Fabrikam, Inc. vyžadovat řešení pro nasazení do tří serverových prostředích v různých fázích vývoje softwaru:
+Procesy správy životního cyklu aplikací (ALM) společnosti Fabrikam, Inc. vyžadovat, aby řešení k nasazení do tří serverových prostředích v různých fázích procesu vývoje softwaru:
 
-- Vývojáře testu nebo "izolovaného prostoru" prostředí.
-- Na základě intranetu pracovní prostředí.
-- Internetový produkčního prostředí.
+- Test nebo "izolovaném prostoru" prostředí pro vývojáře.
+- Intranetoví pracovní prostředí.
+- Produkční prostředí, přístupem k Internetu.
 
-Každý z těchto prostředí má jinou konfiguraci a požadavky na zabezpečení a každý z čeho výzvy jedinečný nasazení.
+Každá z těchto prostředí obsahuje různé konfigurace a požadavky na zabezpečení a každá představuje problémy při nasazení jedinečný.
 
 ### <a name="the-fabrikam-inc-server-infrastructure"></a>Společnost Fabrikam, Inc. Server infrastruktury
 
-Toto je podrobný vývoj a nasazení infrastruktury společnosti Fabrikam, Inc.
+Toto je základní infrastruktury vývoje a nasazení společnosti Fabrikam, Inc.
 
 ![](enterprise-web-deployment-scenario-overview/_static/image1.png)
 
-Pracovní stanice developer, zdrojové infrastruktuře ovládací prvek, developer testovacího prostředí a pracovní prostředí, ve kterém jsou všechny umístěny v síti intranet v rámci domény Fabrikam.net. Produkčním prostředí se nachází na hraniční síti (označované také jako DMZ, demilitarizovaná zóna a monitorovaná podsíť), která je izolovaná od sítě intranet bránou firewall. Toto je běžný scénář nasazení: obvykle izolovat internetového webových serverů z vaší interní server infrastruktury prostřednictvím brány firewall nebo servery brány.
+Vývojářské pracovní stanice, zdrojové infrastruktuře ovládacího prvku, testovací prostředí pro vývojáře a testovací prostředí, které se všechny nacházejí v síti intranet v rámci domény Fabrikam.net. Produkčním prostředí se nachází v hraniční síti (označované také jako DMZ, demilitarizovaná zóna a monitorovaná podsíť), což je izolovaná od sítě intranet bránou firewall. Toto je běžný scénář nasazení: obvykle izolovat vaše internetové webové servery z vaší interní server infrastruktury prostřednictvím brány firewall nebo serverů bran.
 
 V tomto příkladu:
 
-- Na server Team Foundation Server (TFS) 2010 s samostatné sestavení serveru poskytuje zdrojového kódu a funkce průběžnou integraci (konfigurace).
-- Testovací prostředí vývojáře zahrnuje webového serveru Internetové informační služby (IIS) 7.5 a databázový server SQL Server 2008 R2.
-- V provozním prostředí obsahuje více webových serverů služby IIS 7.5 synchronizovány se serverem webové farmy Framework (WFF) řadiče, společně s databázový server SQL Server 2008 R2. V praxi může databázový server použít clustering nebo zrcadlení ke zlepšení škálovatelnosti a dostupnosti.
-- Je pracovní prostředí je určena pro co nejblíže replikovat konfiguraci produkčního prostředí.
-- Zásad izolace sítě a brány firewall nepovoluje direct, automatické nasazení z intranetu na hraniční síti.
+- Server Team Foundation Server (TFS) 2010 se serverem samostatné sestavení poskytuje správy zdrojového kódu a funkce kontinuální integrace (CI).
+- Testovací prostředí pro vývojáře zahrnuje webového serveru Internetové informační služby (IIS) 7.5 a databázový server SQL Server 2008 R2.
+- V provozním prostředí obsahuje více webových serverů služby IIS 7.5 synchronizovány se serverem kontroleru webové farmy Framework (WFF), společně s databázový server SQL Server 2008 R2. V praxi serveru databáze pomocí clusteringu nebo zrcadlení zlepšit škálovatelnost a dostupnost.
+- Pracovní prostředí slouží k replikaci konfigurace provozního prostředí co nejpřesněji.
+- Zásady izolace sítě a brány firewall nedovolují s přímým přístupem a automatizované nasazení z intranetu do hraniční sítě.
 
-Konfiguraci každé z těchto prostředí je podrobně popsaná v další v druhé kurzu [konfigurace serveru prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md).
+Konfigurace každého z těchto prostředí je podrobněji popsaný v druhé části kurzu [konfigurace serveru prostředí pro nasazení webu](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md).
 
-### <a name="team-roles-for-alm"></a>Tým role pro ALM
+### <a name="team-roles-for-alm"></a>Týmové role pro ALM
 
-Tito uživatelé se účastní vytváření, správa, vytváření a publikování řešení obraťte se na správce:
+Tito uživatelé jsou součástí vytváření, správa, vytváření a publikování řešení Správce kontaktů:
 
-- Matt Hink je webový vývojář aplikace společnosti Fabrikam, Inc. Je součástí týmu, který vyvinuté pomocí sady Visual Studio 2010 řešení obraťte se na správce. Matt má úplná práva správce na serverech v testovacím prostředí vývojáře, která umožní mu nakonfigurovat prostředí tak, aby podle svých potřeb. Má také přístup uživatelů k Visual Studio 2010 TFS instance, kde uloží zdrojového kódu pro řešení obraťte se na správce.
-- Rob Walters je správce serveru pro společnost Fabrikam A.s. vývojový tým. Rob má přístup pro správu na serveru TFS, takže může nakonfigurovat všechny aspekty sady TFS a Team Build. Rob také má přístupová oprávnění k testovací a pracovní webové servery a funguje jako správce databáze (DBA) pro servery databáze testovacích a přípravných prostředí. Rob nakonfiguroval Team Build na serveru TFS k vykonávání těchto úkolů:
+- Matt Hink je webový vývojář aplikace společnosti Fabrikam, Inc. Je součástí týmu, který řešení Správce kontaktů vyvinuté pomocí sady Visual Studio 2010. Matt má úplná práva správce na serverech v testovacím prostředí pro vývojáře, které vám umožní ho nakonfigurujte prostředí tak, aby podle svých potřeb. Má také přístup uživatelů k instanci Visual Studio 2010 TFS, kde uloží zdrojový kód pro řešení Správce kontaktů.
+- Rob Walters je správce serveru pro vývojový tým společnosti Fabrikam, Inc. Rob má přístup správce na serveru TFS tak, aby mohl konfigurovat všechny aspekty TFS a týmového sestavení. Rob také má přístupová oprávnění k testování a pracovní webové servery a funguje jako správce databáze (DBA) pro databázové servery v testovací a přípravná prostředí. Rob nakonfiguroval Team Build na serveru TFS k provádění těchto úkolů:
 
-    - Sestavení a spouštění testování částí v aplikaci vždy, když uživatel zkontroluje v souboru do sady TFS. Tomu se říká položek konfigurace.
-    - Obraťte se na správce aplikace pro testovací prostředí nasadíte automaticky, jakmile se aplikace úspěšně projde testy jednotek. To zahrnuje publikování databáze na testovací servery v původním nasazení a všechny aktualizace do databáze po počátečním nasazení.
-    - Nasazení obraťte se na správce aplikace pro pracovní prostředí v procesu krokování.
-    - Vytvořte webový balíček, který správce webového serveru a správce databáze můžete použít k publikování aplikace do produkčního prostředí.
-- Lisa Andrews je zodpovědná za nasazení aplikací na produkční servery společnosti Fabrikam, Inc., správce serveru. Uživatel má přístup pro čtení ke sdílené složce, kde TFS Team Build ukládá balíčku pro nasazení webu po sestavení aplikace obraťte se na správce. Uživatel má také přístup správce pro provozní webové servery tak, aby Jana můžete nasadit aplikace do produkčního prostředí. Kromě toho uživatel funguje jako DBA, kdo nasazuje databáze a aktualizace databáze na serveru databáze v provozním prostředí.
+    - Sestavte a spusťte testy jednotek v aplikaci pokaždé, když se uživatel vrátí do souboru na server TFS. Tomu se říká CI.
+    - Nasazení aplikace Správce kontaktů do testovacího prostředí automaticky, jakmile se aplikace úspěšně projde testy jednotek. Jedná se o publikování databáze na testovací servery na počáteční nasazení a všechny aktualizace databáze po počátečním nasazení.
+    - Nasaďte aplikaci Správce kontaktů do přípravného prostředí do jednoho kroku procesu.
+    - Vytvořte webový balíček, který správce webového serveru a DBA lze použít k publikování aplikace do produkčního prostředí.
+- Lisa Andrews je zodpovědná za nasazení aplikací na provozních serverech společnosti Fabrikam, Inc. správce serveru. Uživatel má přístup pro čtení ke sdílené složce, kam TFS Team Build ukládá balíčku pro nasazení webu po sestavení aplikace Správce kontaktů. Uživatel má také přístup správce pro provozní webové servery tak, aby si můžete nasadit aplikaci do produkčního prostředí. Kromě toho uživatel funguje jako DBA, kdo nasazuje databází a aktualizace databáze pro databázový server v provozním prostředí.
 
 <a id="_The_Contact_Manager"></a>
 
-### <a name="the-contact-manager-solution"></a>Obraťte se na správce řešení
+### <a name="the-contact-manager-solution"></a>Řešení Správce kontaktů
 
-Obraťte se na správce řešení je navrženo tak, aby uživatelé registrovaný, přihlášený přidávání a úprava kontaktních informací prostřednictvím webového rozhraní. Řešení obraťte se na správce se skládá ze čtyř jednotlivých projektů:
+Obraťte se na správce řešení je navržena tak, aby registrovaná, přihlášeného uživatele přidat nebo upravit kontaktní údaje prostřednictvím webového rozhraní. Řešení Správce kontaktů skládá ze čtyř jednotlivé projekty:
 
 ![](enterprise-web-deployment-scenario-overview/_static/image2.png)
 
-- **ContactManager.Mvc**. Toto je projekt webové aplikace technologie ASP.NET MVC3, která představuje vstupní bod pro řešení. Nabízí některé funkce základní webové aplikace, jako jsou nabízí uživatelům možnost vytvářet a prohlížet kontaktní údaje. Aplikace spoléhá na službu Windows Communication Foundation (WCF) ke správě kontakty a databázi služeb aplikace ASP.NET ke správě ověřování a autorizace.
-- **ContactManager.Database**. Toto je databázového projektu sady Visual Studio 2010. Projekt definuje schéma pro databázi, aby úložiště kontaktní údaje.
-- **ContactManager.Service**. Toto je projekt webové služby WCF. Zpřístupňuje WCF koncový bod, který umožňuje volajícím provádět vytvořit, získat, aktualizovat a odstranit operace v databázi obraťte se na správce. Služba závisí na obraťte se na správce databáze a ContactManager.Common.dll sestavení.
-- **ContactManager.Common**. Toto je projektu knihovny tříd. Služby WCF spoléhá na typy definované v tomto sestavení.
+- **ContactManager.Mvc**. Toto je projekt webové aplikace ASP.NET MVC3, která představuje vstupní bod pro řešení. Nabízí některé funkce základní webové aplikace, jako jsou zároveň uživatelům poskytují možnost vytvářet a zobrazovat kontaktní údaje. Aplikace se spoléhá na službu Windows Communication Foundation (WCF) pro správu kontaktů a databázi služeb aplikaci ASP.NET ke správě ověřování a autorizace.
+- **ContactManager.Database**. Toto je databázový projekt sady Visual Studio 2010. Projekt definuje schéma pro databázi, že úložiště kontaktní údaje.
+- **ContactManager.Service**. Toto je projekt webové služby WCF. WCF zpřístupňuje koncový bod, který umožňuje volajícím provádět vytvořit, načíst, aktualizace a odstranění (CRUD) operací v databázi Správce kontaktů. Služba závisí na databázi Správce kontaktů a ContactManager.Common.dll sestavení.
+- **ContactManager.Common**. Toto je projekt knihovny tříd. Služba WCF spoléhá na typy definované v tomto sestavení.
 
-Úplný přehled o řešení a jeho požadavky na nasazení je součástí z prvního kurzu této série [nasazení webu v podnikové síti](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md).
+Z prvního kurzu této série se poskytuje úplný přehled řešení a jeho požadavky na nasazení [nasazení webu v podniku](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md).
 
 <a id="_Deployment_Tasks"></a>
 
 ## <a name="deployment-tasks"></a>Úlohy nasazení
 
-Existuje několik různých úloh potřebných k nasazení aplikací do různých prostředí ve velkých organizacích. Toto jsou klíčové úlohy, které se týkají kurzů k:
+Existují několik různých úloh potřebných k nasazení aplikací do různých prostředí ve velké organizaci. Toto jsou klíčové úkoly, které jsou určené kurzy:
 
 ![](enterprise-web-deployment-scenario-overview/_static/image3.png)
 
-Tady je seznam jednotlivých kroků v procesu nasazení z pohledu uživatelů popsané dříve v tomto dokumentu:
+Tady je seznam jednotlivých kroků v procesu nasazení z pohledu uživatele je popsáno dříve v tomto dokumentu:
 
-1. Všichni členové týmu, projděte si obraťte se na správce řešení v sadě Visual Studio 2010 k určení klíče nasazení požadavky a problémy.
-2. Matt Hink může nasadit řešení obraťte se na správce přímo z pracovní stanice vývojáře pro vývojáře testovací prostředí, které mají proveďte test počáteční logiku nasazení.
+1. Všichni členové týmu, projděte si řešení Správce kontaktů v sadě Visual Studio 2010 k určení klíče nasazení požadavky a problémy.
+2. Matt Hink můžou nasadit do testovacího prostředí pro vývojáře, provádět počáteční test logiky nasazení řešení Správce kontaktů přímo z pracovní stanice pro vývojáře.
 3. Matt Hink přidá aplikaci do správy zdrojového kódu v sadě TFS.
-4. Rob Walters vytvoří různé definice sestavení, obraťte se na správce řešení v Team Build. Jednu definici sestavení používá CI k nasazení řešení do testovacího prostředí vývojáře vždy, když uživatel zkontroluje v nový kód. Jinou definici sestavení umožňuje uživatelům aktivační událost nasazení pro pracovní prostředí podle potřeby.
-5. Pokaždé, když uživatel vrátí nový kód, Team Build automaticky vytvoří komponenty řešení, spustí testy jednotek a nasadí řešení do testovacího prostředí vývojáře Pokud sestavení bylo úspěšné a předejte jí testů jednotek.
-6. Když uživatel spustí nasazování do pracovní prostředí, je řešení zabalené a nasazení v jedné kroku procesu. Tento proces vytvoří také balíček pro ruční nasazení do produkčního prostředí.
+4. Rob Walters vytváří různé definice sestavení pro řešení Správce kontaktů v Team Build. K nasazení řešení do testovacího prostředí pro vývojáře, pokaždé, když se uživatel vrátí nový kód používá jednu definici sestavení CI. Jiné definice sestavení umožňuje uživatelům aktivační události nasazení do přípravného prostředí podle potřeby.
+5. Pokaždé, když uživatel vrátí nový kód, Team Build automaticky vytvoří komponenty řešení, spustí testy jednotek a nasadí řešení pro testovací prostředí pro vývojáře je-li sestavení úspěšné a testy jednotek prošly.
+6. Když uživatel spustí nasazení do přípravného prostředí, řešení zabalit a nasadit v procesu krokování. Tento proces také vygeneruje balíček pro ruční nasazení do produkčního prostředí.
 7. Lisa Andrews nasadí aplikaci do produkčního prostředí ručně importováním webového balíčku vytvořili v kroku 6.
 
-### <a name="key-deployment-issues"></a>Problémy při nasazení klíče
+### <a name="key-deployment-issues"></a>Problémy s nasazením klíče
 
-Obraťte se na správce řešení a scénář společnosti Fabrikam, Inc., zvýrazněte různé běžné problémy a výzvy, které se můžete setkat při nasazování komplexní řešení podnikovém měřítku. Příklad:
+Řešení Správce kontaktů a scénář společnosti Fabrikam, Inc. zvýraznění různé běžné problémy a výzvy, které mohou nastat, když nasazujete složitá řešení na podnikové úrovni. Příklad:
 
-- Abyste mohli nasadit projekty do několika prostředích, jako je vývojáře nebo testovací prostředí, musíte, pracovní platformy a produkční servery. Řešení je potřeba nasadit pomocí různých konfiguračních nastavení pro každé prostředí.
-- Je třeba nasadit více závislých projektů současně v rámci jednoho kroku nebo automatizované procesu sestavení a nasazení.
-- Potřebujete mít možnost pro nasazení jednotky z automatizovaného procesu. Například chcete použít CI postup nasazení webové aplikace do pracovního prostředí při vrácení se změnami nový kód.
-- Musíte být schopni řídit proces nasazení a nastavení proměnných pro nasazení mimo aplikaci Visual Studio, protože vývojáři pravděpodobně nebudou mít správné konfiguraci nastavení nebo potřebná pověření pro každé cílové prostředí.
-- Potřebujete nasadit na základě schématu databázové projekty a zachovat stávající data na následné nasazení.
-- Je třeba nasadit databáze členství na základě ad hoc bez nasazení data účtu uživatele. Také musíte aktualizovat schéma databáze členství nasazené bez ztráty stávajících dat účtu uživatele.
-- Budete muset určité soubory nebo složky vyloučit při nasazení obsahu pro různé cílové prostředí.
+- Musíte být schopni nasadit projekty do různých prostředí, jako je pro vývojáře nebo testovací prostředí, pracovní platformy a produkční servery. Řešení musí být nasazený s jinou konfiguraci nastavení pro každé prostředí.
+- Je třeba nasadit více závislých projektů současně jako součást jednoho kroku nebo automatizovaného sestavení a nasazení procesu.
+- Potřebujete mít možnost pro nasazení jednotky z automatizovaného procesu. Například chcete použít procesu CI k nasazení webové aplikace do přípravného prostředí při nového kódu se změnami.
+- Musíte být schopni řízení procesu nasazení a nastavení nasazení proměnných mimo aplikaci Visual Studio, jak vývojáři je nepravděpodobné, že máte správnou konfiguraci nastavení nebo potřebné přihlašovací údaje pro každé cílové prostředí.
+- Budete muset nasadit projekty založené na schématu databáze a zachovat stávající data na další nasazení.
+- Potřebujete k nasazení databází členství na základě ad hoc bez nasazení zásady dat účtu uživatele. Také budete muset aktualizovat schéma databáze členství v nasazeném bez ztráty stávajících dat účtu uživatele.
+- Je třeba vyloučit určité soubory nebo složky při nasazení obsahu do různých cílových prostředích.
 
-Kromě toho Správa nasazení, když jsou často a přírůstkové aktualizace vyvolá si některé další běžné problémy. Příklad:
+Kromě toho Správa nasazení jsou časté a přírůstkové aktualizace vyvolá si některé další běžné problémy. Příklad:
 
-- Pokaždé, když vývojář změnami nový kód pro spuštění testů jednotek. Chcete nasadit řešení, pokud kód projde testy jednotek.
-- Když nasadíte webovou aplikaci k pracovním nebo produkčním prostředí, které chcete přesměrovat uživatele do *aplikace\_offline.htm* soubor po dobu trvání procesu nasazení.
-- Chcete protokolovat aktivity nasazení. Proces nasazení by měli poslat e-mailové oznámení o úspěšném nebo neúspěšném nasazení určeným příjemcům.
-- Pokud automatického nasazení selže, proces nasazení by měl opakovat aktuální nasazení nebo místo toho nasadit předchozí webového balíčku.
+- Pokaždé, když vývojář vrátí nový kód pro spuštění testů jednotek. Chcete nasadit řešení, pokud kód projde testy jednotek.
+- Když nasadíte webovou aplikaci pro testovací nebo produkční prostředí, kterou chcete přesměrovat uživatele na *aplikace\_offline.htm* soubor po dobu trvání procesu nasazení.
+- Chcete se přihlásit aktivity nasazení. Proces nasazení by měli poslat e-mailová oznámení o úspěšném nebo neúspěšném nasazení do určeným příjemcům.
+- Pokud automatizované nasazení se nezdaří, procesu nasazení by měl pokusem o aktuálním nasazení nebo místo toho nasadit předchozí webového balíčku.
 
 > [!div class="step-by-step"]
 > [Předchozí](deploying-web-applications-in-enterprise-scenarios.md)

@@ -1,111 +1,110 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-vb
-title: Pomocí ovládacích prvků Toolkit řízení AJAX a řízení Extender (VB) | Microsoft Docs
+title: Pomocí ovládacích prvků AJAX Control Toolkit ovládacích prvků a extenderů (VB) | Dokumentace Microsoftu
 author: microsoft
-description: Informace o postupu přidání ovládacích prvků sadu ovládacích prvků AJAX a rozšíření na stránky ASP.NET.
+description: Informace o přidání ovládacích prvků AJAX Control Toolkit a zařízení Extender na stránky ASP.NET.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
 ms.topic: article
 ms.assetid: 763650a9-ffde-46a9-b779-7a9145dd5d88
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 080dd65677d80fb75ab37a20f6c385a38af4e353
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: 1fa23eb878bec3266441c092038befd08fdaa11a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30873037"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37361911"
 ---
-<a name="using-ajax-control-toolkit-controls-and-control-extenders-vb"></a>Pomocí ovládacích prvků Toolkit řízení AJAX a řízení Extender (VB)
+<a name="using-ajax-control-toolkit-controls-and-control-extenders-vb"></a>Pomocí ovládacích prvků AJAX Control Toolkit ovládacích prvků a extenderů (VB)
 ====================
 podle [Microsoft](https://github.com/microsoft)
 
-> Informace o postupu přidání ovládacích prvků sadu ovládacích prvků AJAX a rozšíření na stránky ASP.NET.
+> Informace o přidání ovládacích prvků AJAX Control Toolkit a zařízení Extender na stránky ASP.NET.
 
 
-Toolkitu AJAX obsahuje sadu ovládacích prvků a řízení rozšíření. V tomto kurzu stručný zjistěte, jak přidat ovládací prvky a Extender ovládacího prvku do stránky ASP.NET.
+Sada nástrojů AJAX Control Toolkit obsahuje sadu ovládacích prvků a extenderů ovládacích prvků. V tomto kurzu (BRIEF) se dozvíte, jak přidat ovládací prvky a ovládací prvek extenderů ke stránce ASP.NET.
 
 > [!NOTE] 
 > 
-> Pokyny k instalaci Toolkitu AJAX a přidání Toolkitu AJAX do sady nástrojů Visual Studio nebo Visual Web Developer naleznete v kurzu [začít pracovat s Toolkitu AJAX](get-started-with-the-ajax-control-toolkit-vb.md).
+> Pokyny k instalaci sadou nástrojů AJAX Control Toolkit a sadou nástrojů AJAX Control Toolkit přidává do panelu nástrojů Visual Studio nebo Visual Web Developer naleznete v kurzu [Začínáme se sadou nástrojů AJAX Control Toolkit](get-started-with-the-ajax-control-toolkit-vb.md).
 
 
-## <a name="using-ajax-control-toolkit-controls"></a>Použití ovládacích prvků Toolkit AJAX ovládací prvek
+## <a name="using-ajax-control-toolkit-controls"></a>Pomocí ovládacích prvků AJAX Control Toolkit
 
-Ovládací prvek sadu ovládacích prvků AJAX funguje stejně jako normální ovládací prvek ASP.NET. Můžete přetáhnout ovládací prvek z panelu nástrojů na stránky ASP.NET. Ovládací prvek můžete přidat na stránku v návrhovém zobrazení nebo zobrazení zdroje.
+Ovládací prvek AJAX Control Toolkit funguje stejně jako normální ovládací prvek technologie ASP.NET. Přetáhněte ovládací prvek z panelu nástrojů na stránce ASP.NET. Přidejte ovládací prvek na stránce v zobrazení návrhu nebo v zobrazení zdroje.
 
-Při použití ovládacích prvků z Toolkitu AJAX je jeden speciální požadavek. Stránka musí obsahovat ovládací prvek ScriptManager. Ovládací prvek ScriptManager zodpovídá za včetně všechny nezbytné JavaScript vyžaduje sadu ovládacích prvků AJAX ovládací prvky.
+Jestli používáte ovládací prvky z sadou nástrojů AJAX Control Toolkit je speciální požadavků. Stránka musí obsahovat ovládací prvek ScriptManager. Ovládací prvek ScriptManager je zodpovědná za všechny nezbytné JavaScript vyžaduje ovládacích prvků AJAX Control Toolkit včetně.
 
-Například na kartě AJAX Control Toolkit obsahuje ovládací prvek s názvem ovládacího prvku Editor. Tento ovládací prvek zobrazí bohatě vybavený editor HTML. Použijte následující postup přidání ovládacího prvku Editor na stránku:
+Například karta sada nástrojů AJAX Control Toolkit obsahuje ovládací prvek s názvem ovládací prvek editoru. Tento ovládací prvek zobrazuje bohaté možnosti editoru jazyka HTML. Postupujte podle těchto kroků přidejte ovládací prvek editoru na stránku:
 
 1. Vytvořit novou stránku ASP.NET s názvem ShowEditor.aspx
-2. V panelu nástrojů vyberte ovládací prvek ScriptManager from beneath karty rozšíření AJAX a přetáhněte ovládacího prvku na stránku.
-3. Vyberte ovládací prvek Editor from beneath kartě sadu ovládacích prvků AJAX v panelu nástrojů a přetáhněte ovládací prvek na stránce (viz obrázek 1). Návrhář by měl vypadat jako na obrázku 2.
-4. Spusťte web tak, že vyberete možnost nabídky **ladit, spustit ladění** nebo stiskne klávesu F5.
-5. Měli byste vidět stránky na obrázku 3.
+2. Vyberte ovládací prvek ScriptManager from beneath na kartě Rozšíření AJAX v sadě nástrojů a přetáhněte ovládací prvek na stránce.
+3. Vyberte ovládací prvek editoru from beneath sadou nástrojů AJAX Control Toolkit kartu na panelu nástrojů a přetáhněte ovládací prvek na stránce (viz obrázek 1). Návrhář by měl vypadat jako na obrázku 2.
+4. Spustit web tak, že vyberete možnost nabídky **ladit, spustit ladění** nebo stisknutí klávesy F5.
+5. Měli byste vidět stránku na obrázku 3.
 
 
-[![Výběr ovládacího prvku HTML Editor](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image1.png)
+[![Vyberte ovládací prvek editoru HTML](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image1.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image1.png)
 
-**Obrázek 01**: výběr ovládacího prvku HTML Editor ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image2.png))
-
-
-[![Návrháři sady Visual Studio s ovládací prvek ScriptManager a úpravy](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image3.png)
-
-**Obrázek 02**: návrháři sady Visual Studio s ovládací prvek ScriptManager a úpravy ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image4.png))
+**Obrázek 01**: vyberete ovládací prvek editoru HTML ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image2.png))
 
 
-[![Stránka DisplayEditor.aspx](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image5.png)
+[![Návrhář Visual Studio ovládacímu prvku ScriptManager a úpravy](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image2.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image3.png)
 
-**Obrázek 03**: stránka DisplayEditor.aspx ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image6.png))
+**Obrázek 02**: Návrhář Visual Studio ovládacímu prvku ScriptManager a úpravy ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image4.png))
 
 
-## <a name="using-ajax-control-toolkit-control-extenders"></a>Pomocí AJAX řízení Toolkit řízení Extender
+[![Na stránce DisplayEditor.aspx](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image3.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image5.png)
 
-Toolkitu AJAX také obsahuje Extender ovládacího prvku. Jak naznačuje název rozšiřujícího objektu ovládacího prvku rozšiřuje funkce existujícího ovládacího prvku. Například rozšiřujícího objektu ovládacího prvku ConfirmButton rozšiřuje standardního ovládacího prvku tlačítko ASP.NET. Zařízení extender změní chování s ovládací prvek tlačítko tak, aby na tlačítko se zobrazí dialogové okno potvrzení po kliknutí na tlačítko.
+**Obrázek 03**: The DisplayEditor.aspx stránky ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image6.png))
 
-Ovládací prvek rozšiřujícího objektu, stejně jako ovládací prvek sadu ovládacích prvků AJAX vyžaduje ovládací prvek ScriptManager. Ovládací prvek ScriptManager musí přidat na stránku, než začnete používat ovládací prvek Extender na stránce.
 
-Postupujte podle těchto kroků pro použití rozšíření ConfirmButton ovládacího prvku:
+## <a name="using-ajax-control-toolkit-control-extenders"></a>Použití jazyka AJAX Toolkit ovládací prvek extenderů
+
+Sada nástrojů AJAX Control Toolkit obsahuje také ovládací prvek extenderů. Jak název napovídá, – extender ovládacího prvku rozšiřuje funkce existujícího ovládacího prvku. Například zařízení extender ConfirmButton ovládací prvek rozšiřuje standardní ovládací prvek tlačítko technologie ASP.NET. Zařízení extender změní chování s ovládací prvek tlačítka tak, aby na tomto tlačítku zobrazí potvrzovací dialogové okno po kliknutí.
+
+Extender ovládacího prvku, stejně jako ovládací prvek AJAX Control Toolkit vyžaduje ovládací prvek ScriptManager. Než začnete používat ovládací prvek extenderů na stránce, musíte přidat ovládací prvek ScriptManager na stránku.
+
+Následujícím postupem použít zařízení extender ConfirmButton ovládacího prvku:
 
 1. Vytvořit novou stránku ASP.NET s názvem ShowConfirmButton.aspx
-2. Přidáte ovládací prvek ScriptManager na stránku přetažením ovládacího prvku na stránce from beneath karty rozšíření AJAX.
-3. Přidáte standardního ovládacího prvku tlačítko na stránku přetažením tlačítko from beneath standardní karta v panelu nástrojů na plochu návrháře.
-4. Klikněte **přidat rozšiřujícího objektu** úloh možnost (viz obrázek 4).
-5. V dialogovém okně Zvolit rozšíření, vyberte ConfirmButtonExtender (viz obrázek 5) a klikněte na tlačítko OK.
-6. Vyberte ovládací prvek tlačítko v návrháři a rozbalte Extender, Button1\_ConfirmButtonExtender uzlu v okně vlastností (viz obrázek 6). Přiřadí hodnotu *skutečně?* ConfirmText vlastnosti.
+2. Přidání ovládacího prvku ScriptManager na stránce přetažením ovládací prvek na stránce from beneath na kartě Rozšíření AJAX.
+3. Přidejte ovládací prvek standardní tlačítko na stránce přetažením tlačítko from beneath standardní kartu na panelu nástrojů na plochu návrháře.
+4. Klikněte na tlačítko **přidat zařízení Extender** úloh možnost (viz obrázek 4).
+5. V dialogovém okně Zvolit rozšíření vyberte ConfirmButtonExtender (viz obrázek 5) a klikněte na tlačítko OK.
+6. Vyberte ovládací prvek tlačítko v návrháři a rozbalte zařízení Extender Button1\_ConfirmButtonExtender uzel v okně Vlastnosti (viz obrázek 6). Přiřaďte hodnotu *skutečně?* ConfirmText vlastnosti.
 7. Spuštění stránky tak, že vyberete možnost nabídky **ladit, spustit ladění** nebo stiskněte klávesu F5.
 
 
-[![Možnost Přidat rozšiřujícího objektu úlohy](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image7.png)
+[![Možnost přidat rozšíření úloh](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image4.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image7.png)
 
-**Obrázek 04**: rozšiřujícího objektu přidat úloha možnost ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image8.png))
+**Obrázek 04**: možnost úloh pro přidání zařízení Extender ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image8.png))
 
 
-[![Výběr rozšiřujícího objektu ovládacího prvku ConfirmButton](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image9.png)
+[![Výběr zařízení extender ConfirmButton ovládacího prvku](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image5.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image9.png)
 
-**Obrázek 05**: výběr rozšiřujícího objektu ovládacího prvku ConfirmButton ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image10.png))
+**Obrázek 05**: výběr – extender ConfirmButton ovládacího prvku ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image10.png))
 
 
 [![Nastavení vlastnosti ConfirmButton](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image6.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image11.png)
 
-**Obrázek 06**: nastavení vlastnosti ConfirmButton ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image12.png))
+**Obrázek 06**: nastavení vlastnosti ConfirmButton ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image12.png))
 
 
-Po otevření stránky, měli byste vidět tlačítko. Když kliknete na tlačítko, zobrazí dialogové okno pro potvrzení na obrázku 7.
+Po otevření stránky, měli byste vidět tlačítko. Až kliknete na tlačítko, zobrazí potvrzovací dialogové okno na obrázku 7.
 
 
 [![Zobrazení dialogového okna potvrzení](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image7.jpg)](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image13.png)
 
-**Obrázek 07**: zobrazení dialogového okna potvrzení ([Kliknutím zobrazit obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image14.png))
+**Obrázek 07**: zobrazení dialogového okna potvrzení ([kliknutím ji zobrazíte obrázek v plné velikosti](using-ajax-control-toolkit-controls-and-control-extenders-vb/_static/image14.png))
 
 
-Všimněte si, že obvykle není přetažení rozšiřujícího objektu ovládacího prvku na stránku. Místo toho použít **přidat rozšiřujícího objektu** úloh možnost Přidat extender do ovládacího prvku, který jste už přidali na stránku. Všimněte si kromě toho nastavit řízení rozšiřujícího objektu vlastnosti otevřením seznamu vlastností pro ovládací prvek rozšiřovanou.
+Všimněte si, že je obvykle není přetáhnout – extender ovládacího prvku na stránku. Místo toho použít **přidat zařízení Extender** úlohy přidat rozšiřující ovládací prvek, který jste už přidali na stránku. Všimněte si kromě toho, že nastavíte ovládacího prvku vlastnosti rozšíření tak, že otevřete okno vlastností pro ovládací prvek se rozšiřuje.
 
-Jeden ovládací prvek ASP.NET můžete rozšířit pomocí více Extender ovládacího prvku. Seznam vlastností ovládacího prvku rozšiřovanou zobrazí seznam všech Extender ovládací prvek přidružený k ovládacímu prvku.
+Jeden ovládací prvek ASP.NET, je možné rozšířit pomocí více zařízení Extender ovládacího prvku. Seznam vlastností pro ovládací prvek se rozšiřuje se zobrazí všechny ovládací prvek extenderů přidružený k ovládacímu prvku.
 
 > [!div class="step-by-step"]
 > [Předchozí](get-started-with-the-ajax-control-toolkit-vb.md)

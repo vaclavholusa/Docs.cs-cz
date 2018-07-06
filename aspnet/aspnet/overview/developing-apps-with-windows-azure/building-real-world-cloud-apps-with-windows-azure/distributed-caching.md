@@ -1,116 +1,115 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
-title: Distribuované ukládání do mezipaměti (vytváření reálných cloudových aplikací s Azure) | Microsoft Docs
+title: Distribuované ukládání do mezipaměti (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
-description: Cloudové aplikace skutečné World sestavení s Azure elektronická kniha je založena na prezentace vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které můžete mu...
+description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/20/2015
 ms.topic: article
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 3600200f9bb705ccf66c859547668bdf8e89d97a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: f92d9a00ce3cc723643f4f8077bb4308f5d8089e
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868669"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37365643"
 ---
-<a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Distribuované ukládání do mezipaměti (vytváření reálných cloudových aplikací s Azure)
+<a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>Distribuované ukládání do mezipaměti (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Karel Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [tní Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
 
-[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronická kniha](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
+[Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
-> **Vytváření reálného světa cloudových aplikací s Azure** elektronická kniha je založena na prezentaci vyvinuté Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám mohou pomoci být úspěšná, vývoj webových aplikací pro cloud. Informace o elektronická kniha najdete v tématu [první kapitoly](introduction.md).
+> **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
 
-Předchozích kapitol hledá v přechodná chyba zpracování a ukládání do mezipaměti jako strategie jistič uvedených. Tato kapitola obsahuje další informace o ukládání do mezipaměti, kdy ji obecné vzory pro používání, použít včetně a implementaci v Azure.
+Předchozí kapitoly zvažovali zpracování přechodných chyb a uvedených ukládání do mezipaměti jako strategii jističe. Tato kapitola obsahuje další informace o ukládání do mezipaměti, kdy se má použít, běžných vzorů pro jeho použití, včetně a jak implementovat v Azure.
 
-## <a name="what-is-distributed-caching"></a>Co je distribuován ukládání do mezipaměti
+## <a name="what-is-distributed-caching"></a>Co je distribuované ukládání do mezipaměti
 
-Mezipaměť poskytuje vysokou propustnost, nízkou latencí přístup k datům nejčastěji používanou aplikací, tím, že ukládání dat v paměti. Pro cloudové aplikace je velmi užitečné typ mezipaměti distribuované mezipaměti, což znamená, že data nejsou uložená v paměti jednotlivých webový server, ale na jiné cloudové prostředky, a data uložená v mezipaměti, která je k dispozici pro všechny servery, webové aplikace (nebo jiné cloudové virtuální počítače této ar e používá aplikace).
+Mezipaměť poskytuje vysokou propustnost, nízkou latenci přístupu k datům běžně používanou aplikací, ukládání dat v paměti. Pro cloudové aplikace je nejužitečnější typ mezipaměti distribuované mezipaměti, což znamená, že data nejsou uložená v paměti jednotlivých webový server, ale na další cloudové prostředky a data uložená v mezipaměti je k dispozici pro všechny servery pro webové aplikace (nebo jiné cloudové virtuální počítače této ar Elektronická aplikace používá).
 
-![Diagram zobrazující více webových serverů přístup ke stejné servery mezipaměti](distributed-caching/_static/image1.png)
+![Diagram zobrazující více webových serverů, které nepřistupují na servery stejné mezipaměti](distributed-caching/_static/image1.png)
 
-Když aplikace škáluje přidáním nebo odebráním serverů, nebo když jsou servery nahradit z důvodu chyb nebo upgradů, data uložená v mezipaměti zůstává přístupný pro každý server, který spouští aplikace.
+Při škálování aplikace přidáním nebo odebráním servery nebo servery se nahradí kvůli upgradu nebo chyby, data uložená v mezipaměti zůstává přístupný pro každý server, na kterém běží aplikace.
 
-Vyhnout přístup k datům vysokou latencí úložiště dat, může ukládání do mezipaměti výrazně zlepšit odezvu aplikací. Načítání dat z mezipaměti je například mnohem rychlejší než načítání z relační databáze.
+Přístup k vysoké latenci data do trvalého úložiště dat se vyhnout, můžete ukládání do mezipaměti výrazně zlepšit odezvu aplikace. Načítání dat z mezipaměti je například mnohem rychlejší než jejich načtení z relační databáze.
 
-Tím se snižuje straně výhody ukládání do mezipaměti, provoz do úložiště dat, což může vést k nižší náklady, pokud jsou sazbách za odchozí data poplatky za úložiště dat trvalé.
+Na straně výhody ukládání do mezipaměti snižuje náklady přenosy do úložiště trvalých dat, to ale může způsobit snížení nákladů při odchozí přenos dat do trvalého úložiště dat.
 
 ## <a name="when-to-use-distributed-caching"></a>Kdy použít distribuované ukládání do mezipaměti
 
-Ukládání do mezipaměti funguje nejvhodnější pro aplikace úlohy, proveďte další čtení než zápis dat, a když datový model podporuje organizace klíč/hodnota, která používáte k ukládání a načítání dat v mezipaměti. Je také užitečnější při aplikace uživatelé sdílet spoustu dalších běžných dat; v případě, že každý uživatel většinou načte data jedinečné pro tohoto uživatele například mezipaměti nebude zadejte jako řadu výhod. Příklad, kdy ukládání do mezipaměti může být velmi užitečné je katalog produktů, protože data nemění příliš často a všem zákazníkům před sebou stejná data.
+Ukládání do mezipaměti funguje nejlépe pro úlohy aplikací, udělat více čtení než zápisu dat, a pokud datový model podporuje organizace klíč/hodnota, který použijete k ukládání a načítání dat v mezipaměti. Je také užitečnější, pokud aplikace uživatelů sdílí mnoho společných dat; například mezipaměť neposkytuje tolik výhody, pokud každý uživatel obvykle načítá data, které jsou jedinečné pro daného uživatele. Příklad, kdy ukládání do mezipaměti může být velmi užitečné je katalog produktů, protože se data nemění příliš často a všem zákazníkům je vaším cílem stejná data.
 
-Výhodou ukládání do mezipaměti se stane stále měřitelné více škáluje aplikace, omezení propustnosti a latence zpoždění trvalé úložiště jsou více omezení na aplikace celkový výkon. Však může implementovat, ukládání do mezipaměti z jiných důvodů než i výkon. Pro data, která nemusí být perfektně aktuální, když se zobrazí uživateli přístup do mezipaměti může sloužit jako jistič pro v případě je úložiště dat neodpovídá nebo není k dispozici.
+Výhody ukládání do mezipaměti bude stále měřitelné Čím aplikaci škáluje, více omezení na výpočetní výkon jsou omezení propustnosti a latence zpoždění do trvalého úložiště dat. Však může implementovat, ukládání do mezipaměti z jiných důvodů než i výkon. Pro data, která nemusí být zcela aktuální, když se zobrazí uživateli přístup do mezipaměti může sloužit jako jističe pro při do trvalého úložiště dat. neodpovídá nebo není k dispozici.
 
-## <a name="popular-cache-population-strategies"></a>Strategie naplnění oblíbených mezipaměti
+## <a name="popular-cache-population-strategies"></a>Oblíbené mezipaměti naplňování strategií
 
-Aby bylo možné načíst data z mezipaměti, budete muset uložit existuje nejdřív. Existuje několik strategií pro získávání dat, který je nutné do mezipaměti:
+Aby bylo možné načíst data z mezipaměti, budete muset uložit existuje nejprve. Existuje několik strategií, jak získat data, která je nutné do mezipaměti:
 
-- Na vyžádání / vyhraďte do mezipaměti
+- Na vyžádání / doplňováním mezipaměti
 
-    Aplikace se pokusí načíst data z mezipaměti a když mezipaměti nemá data ("nenalezeno"), aplikace ukládá data do mezipaměti, tak, že bude k dispozici další čas. Nalezne dalším spuštění aplikace se pokusí získat stejná data, co hledají v mezipaměti ("nalezený"). Pokud chcete zabránit načítání data uložená v mezipaměti, který se změnil na databázi, platnost mezipaměti při provádění změn do úložiště dat.
-- Datová oznámení pozadí
+    Aplikace se pokusí načíst data z mezipaměti a když mezipaměti nemá data ("miss"), ale aplikace ukládá data v mezipaměti tak, že bude k dispozici příštím. Příště se aplikace pokusí získat stejná data, zjistí, co hledají v mezipaměti ("zasáhnout"). Pokud chcete zabránit, načítají se data uložená v mezipaměti, která se změnila na databázi, zneplatnění mezipaměti při provádění změn do úložiště dat.
+- Datová oznámení na pozadí
 
-    Pozadí služby nabízet data do mezipaměti v pravidelných intervalech a aplikace, vždycky si z mezipaměti. Tento postup funguje dobře s vysokou latencí zdroje dat, které nevyžadují vždy vrátí nejnovější data.
-- Jistič
+    Služby na pozadí nabízení dat do mezipaměti v pravidelných intervalech a aplikace vždy si z mezipaměti. Tento přístup skvěle funguje s vysokou latencí zdroje dat, které nevyžadují vždy vrátí nejnovější data.
+- Jističe
 
-    Aplikace obvykle komunikuje přímo s úložištěm dat, ale pokud je úložiště dat trvalé dostupnosti problémy, aplikace získá data z mezipaměti. Data může byly uvedeny v mezipaměti pomocí vyhrazené mezipaměti nebo pozadí data nabízené strategie. Toto je chybu zpracování strategie spíše než strategie pro zlepšení výkonu.
+    Aplikace obvykle komunikuje přímo s do trvalého úložiště dat. ale problémů s dostupností po do trvalého úložiště dat. aplikace načítá data z mezipaměti. Data mohou byla pozastavena do mezipaměti pomocí vyhrazené mezipaměti nebo strategie nabízených dat na pozadí. Toto je chyba zpracování strategie spíše než strategii pro zlepšení výkonu.
 
-Chcete-li zachovat data v mezipaměti aktuální, můžete odstranit položky související mezipaměti, pokud vaše aplikace vytvoří, aktualizace, nebo odstraní data. Pokud pro vaši aplikaci se někdy získat data, která jsou mírně zastaralá se nic neděje, můžete spolehnout na čas vypršení platnosti konfigurovat lze nastavit omezení na stáří mezipaměti data mohou být.
+Aby bylo možné zachovat data v mezipaměti aktuální, můžete odstranit položky související mezipaměti, pokud vaše aplikace vytvoří, aktualizuje, nebo odstraní data. Pokud je v pořádku pro vaši aplikaci někdy získat data, která je mírně zastaralá, můžete se spolehnout na čas konfigurovatelné vypršení platnosti lze nastavit omezení na data můžou být stáří mezipaměti.
 
-Můžete nakonfigurovat absolutní vypršení platnosti (množství času, protože položku mezipaměti, která byla vytvořena) nebo klouzavé vypršení platnosti (množství čas od posledního přístupu k položce mezipaměti). Absolutní vypršení platnosti se používá, když jsou v závislosti na mechanismu vypršení platnosti mezipaměti zabránit vzniku příliš zastaralá data. V aplikaci opravte ji a budeme budete ručně vyřazení mezipaměti zastaralé položky a použijeme klouzavé vypršení platnosti zachovat aktuální data v mezipaměti. Bez ohledu na zásady vypršení platnosti, který zvolíte bude do mezipaměti automaticky vyřazení nejstarší položky (minimálně nedávno použité nebo hodnoty nejdelšího Nepoužití.), po dosažení limitu paměti do mezipaměti.
+Můžete nakonfigurovat absolutní vypršení platnosti (množství času, od vytvoření položky v mezipaměti) nebo klouzavé vypršení platnosti (množství času od posledního přístupu k položce mezipaměti). Absolutní vypršení platnosti se používá, když jsou v závislosti na mechanismu vypršení platnosti mezipaměti, chcete-li zabránit přílišnému zastarávání. V aplikaci Fix It jsme budete ručně vyčistit položky v mezipaměti zastaralá a použijeme klouzavé vypršení platnosti pro nejaktuálnější data uchovávat v mezipaměti. Bez ohledu na to, že zásada vypršení platnosti, kterou zvolíte bude do mezipaměti automaticky vyřazovat nejstarší položky (nejméně naposledy použité nebo LRU), při dosažení limitu paměti do mezipaměti.
 
-## <a name="sample-cache-aside-code-for-fix-it-app"></a>Ukázkový kód mezipaměti vyhraďte opravte ji aplikace
+## <a name="sample-cache-aside-code-for-fix-it-app"></a>Vzorový kód s doplňováním mezipaměti pro aplikace Fix It
 
-V následující vzorový kód jsme mezipaměti proveďte nejprve kontrolu při načítání úlohy opravte ji. Pokud je úloha nalezených v mezipaměti, vrátíme. Pokud není nalezen, jsme získat z databáze a uloží jej v mezipaměti. By provedené změny k přidání ukládání do mezipaměti na `FindTaskByIdAsync` jsou vyznačené metoda.
+V následujícím ukázkovém kódu jsme mezipaměti proveďte nejprve kontrolu při načítání úloh Fix It. Pokud se úloha nenajde v mezipaměti, se vrací. Pokud není nalezen, můžeme ho získat z databáze a ukládání do mezipaměti. Změny žádným přidání ukládání do mezipaměti `FindTaskByIdAsync` metody jsou zvýrazněné.
 
 [!code-csharp[Main](distributed-caching/samples/sample1.cs?highlight=5,9-11,13-15,19)]
 
-Při aktualizaci nebo odstranění úlohy opravte ji, budete muset zrušit platnost úloh (odebrat) uložené v mezipaměti. V opačném budoucí pokusí přečíst, že tento úkol bude nadále získat stará data z mezipaměti.
+Při aktualizaci nebo odstranění úkolu Fix It, budete muset zneplatnit úkolů (odebrat) v mezipaměti. V opačném případě budoucnosti se pokusí přečíst, že tuto úlohu nadále dostávat stará data z mezipaměti.
 
 [!code-csharp[Main](distributed-caching/samples/sample2.cs?highlight=7)]
 
-Toto jsou ukázky pro ilustraci jednoduché ukládání do mezipaměti kódu; ukládání do mezipaměti nebyla implementována v ke stažení projektu opravte ji.
+Toto jsou ukázky, které ukazují jednoduchý kód ukládání do mezipaměti; ukládání do mezipaměti není implementovaná v ke stažení projektu opravit ho.
 
 ## <a name="azure-caching-services"></a>Ukládání do mezipaměti služby Azure
 
-Azure nabízí následující služby ukládání do mezipaměti: [Azure Redis Cache](https://msdn.microsoft.com/library/dn690523.aspx) a [Azure spravované Cache](https://msdn.microsoft.com/library/dn386094.aspx). Azure Redis cache je založená na oblíbených [otevřít zdroj Redis Cache](http://redis.io/) a je první volbou pro většinu ukládání do mezipaměti scénáře.
+Azure nabízí následující služby ukládání do mezipaměti: [Azure Redis Cache](https://msdn.microsoft.com/library/dn690523.aspx) a [Azure Managed Cache](https://msdn.microsoft.com/library/dn386094.aspx). Azure Redis cache je založená na oblíbené [projektu open source mezipaměti redis cache](http://redis.io/) a je první volbu pro většinu ukládání do mezipaměti scénáře.
 
 <a id="sessionstate"></a>
-## <a name="aspnet-session-state-using-a-cache-provider"></a>Pomocí zprostředkovatele mezipaměti stavu relace ASP.NET
+## <a name="aspnet-session-state-using-a-cache-provider"></a>Pomocí mezipaměť zprostředkovatele stavu relace ASP.NET
 
-Jak je uvedeno v [webové vývoj osvědčené postupy kapitoly](web-development-best-practices.md), osvědčeným postupem je vyhýbat se používání stavu relace. Pokud vaše aplikace vyžaduje stav relace, další osvědčený postup se vyhnete výchozího zprostředkovatele v paměti vzhledem k tomu, který neumožňuje horizontální navýšení kapacity (více instancí webového serveru). Umožňuje poskytovatele stavu relace ASP.NET SQL Server lokality, která běží na více webových serverů k používání stavu relace, ale jeho vznikly náklady vysokou latencí ve srovnání s poskytovatele v paměti. Nejlepším řešením, pokud máte se používání stavu relace je pro použití poskytovatele mezipaměti, například [poskytovatele stavu relace pro Azure Cache](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx).
+Jak je uvedeno v [webového vývoje osvědčené postupy kapitoly](web-development-best-practices.md), osvědčeným postupem je vyhýbat se použití stavu relace. Pokud vaše aplikace vyžaduje stav relace, další osvědčeným postupem je se vyhnout výchozího zprostředkovatele v paměti, protože, který neumožňuje škálování na více systémů (více instancí webového serveru). Zprostředkovatel stavu relací ASP.NET SQL serveru umožňuje lokalitu, která běží na více webových serverů k používání stavu relace, ale budou vám účtovány s vysokou latencí náklady v porovnání s poskytovatelem služby v paměti. Nejlepší řešení, pokud máte používání stavu relace je použití zprostředkovatele mezipaměti, jako [zprostředkovatel stavu relací pro Azure Cache](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx).
 
 ## <a name="summary"></a>Souhrn
 
-Už víte, jak může aplikace opravte implementovat ukládání do mezipaměti za účelem zlepšení doba odezvy a škálovatelnost a umožňuje aplikaci pokračovat jako odpovídající pro operace čtení, když databáze není k dispozici. V [další kapitoly](queue-centric-work-pattern.md) ukážeme, jak dále zlepšit škálovatelnost a vytvoření aplikace pokračovat jako odpovídající pro operace zápisu.
+Už víte, aplikace Fix It implementace ukládání do mezipaměti za účelem zlepšení doby odezvy a škálovatelnost a k tomu, aby aplikace, aby mohli zůstat responzivní pro operace čtení, pokud je databáze není k dispozici. V [další kapitolu](queue-centric-work-pattern.md) vám ukážeme, jak dál vylepšit škálovatelnost a aby se aplikace nadále reagovat pro operace zápisu.
 
 ## <a name="resources"></a>Prostředky
 
-Další informace o ukládání do mezipaměti najdete v následujících materiálech.
+Další informace o ukládání do mezipaměti najdete v následující prostředky.
 
 Dokumentace
 
-- [Mezipaměť Azure](https://msdn.microsoft.com/library/gg278356.aspx). Oficiální dokumentace MSDN na ukládání do mezipaměti v Azure.
-- [Microsoft Patterns and Practices - Azure pokyny](https://msdn.microsoft.com/library/dn568099.aspx). Najdete pokyny ukládání do mezipaměti a doplňováním mezipaměti.
-- [Bezporuchový: Pokyny pro odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper matolin Mercuri, Ulrich Homann a Andrew Townhill. Najdete v části na ukládání do mezipaměti.
-- [Osvědčené postupy pro návrh rozsáhlých služeb v cloudu Azure služeb](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). W. Dokument White paper moduly SIMM značky a Michael Thomassy. Najdete v části na distribuované ukládání do mezipaměti.
-- [Distribuované ukládání do mezipaměti na cestě k škálovatelnost](https://msdn.microsoft.com/magazine/dd942840.aspx). Starší článek Časopis MSDN (2009), ale jasně napsané Úvod k distribuované ukládání do mezipaměti obecně; Klient se přepne do větší hloubky než na ukládání do mezipaměti části Dokumenty white paper bezporuchový a osvědčené postupy.
+- [Mezipaměť Azure](https://msdn.microsoft.com/library/gg278356.aspx). Oficiální dokumentaci MSDN na ukládání do mezipaměti v Azure.
+- [Microsoft Vzory a postupy – doprovodné materiály k Azure](https://msdn.microsoft.com/library/dn568099.aspx). Zobrazit pokyny k ukládání do mezipaměti a model s doplňováním mezipaměti.
+- [Bezporuchový: Pokyny, odolné cloudové architektury](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Dokument White paper Marc Mercuri, Ulrich Homann a Andrew Townhill. V části na ukládání do mezipaměti.
+- [Osvědčené postupy pro navrhování rozsáhlých služeb v Azure Cloud Services](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). W. Dokument White paper Mark Simms a Michael Thomassy. V části na distribuované ukládání do mezipaměti.
+- [Distribuované ukládání do mezipaměti na cestě k škálovatelnost](https://msdn.microsoft.com/magazine/dd942840.aspx). Starší článku MSDN Magazine (2009), ale obsahuje jasně písemné Úvod do distribuované ukládání do mezipaměti. Přejde do větší hloubky, než na ukládání do mezipaměti části Dokumenty white paper bezporuchový a osvědčené postupy.
 
 Videa
 
-- [Bezporuchový: Vytváření škálovatelné, odolné cloudové služby](https://channel9.msdn.com/Series/FailSafe). Řada devět částí Ulrich Homann, Mercuri matolin a moduly SIMM značky. Představuje 400 úroveň zobrazení o tom, jak architektury cloudových aplikací. Tato řada se zaměřuje na teoreticky a důvody, proč; Další podrobnosti postupy najdete v tématu sestavování velkých řadu podle moduly SIMM značky. Přečtěte si diskuzi ukládání do mezipaměti v díl 3 počínaje 1:24:14.
-- [Vytváření Big: Poučení vyplývající z Azure zákazníků – část I](https://channel9.msdn.com/Events/Build/2012/3-029). Simon Davies popisuje distribuované ukládání do mezipaměti začínající na 46:00. Podobně jako u řady bezporuchový ale přejde do další postupy podrobnosti. Prezentaci byl zadán 31. října 2012, takže nepokrývá ukládání do mezipaměti služby Web Apps v Azure App Service, která byla zavedena v 2013.
+- [Bezporuchový: Sestavování škálovatelných, odolných cloudových služeb](https://channel9.msdn.com/Series/FailSafe). Ulrich Homann, Marc Mercuri a Mark Simms devět částí série. Představuje 400 úroveň zobrazení o tom, jak navrhovat cloudových aplikací. Tato série se zaměřuje na teorií a důvody, proč; Další postupy podrobnosti najdete v tématu Vytváření velký řady podle Mark Simms. Viz ukládání do mezipaměti diskuze v epizodě 3 počínaje 1:24:14.
+- [Vytváření Big: Získané od zákazníků Azure – část I](https://channel9.msdn.com/Events/Build/2012/3-029). Simon Davies distribuované ukládání do mezipaměti počínaje 46:00 Tento článek popisuje. Podobně jako řady bezporuchový ale přejde do další postupy podrobnosti. Prezentace byl zadán 31. října 2012, takže nezahrnuje službu ukládání do mezipaměti služby Web Apps ve službě Azure App Service, která byla zavedena v 2013.
 
 Ukázka kódu
 
-- [Základy služby ve službě Azure Cloud](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ukázkovou aplikaci, která implementuje distribuované ukládání do mezipaměti. Naleznete v příspěvku blogu doprovodné [cloudové služby základy – základní informace o ukládání do mezipaměti](https://blogs.msdn.com/b/windowsazure/archive/2013/10/03/cloud-service-fundamentals-caching-basics.aspx).
+- [Cloud Service Fundamentals v Azure](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649). Ukázkovou aplikaci, která implementuje distribuované ukládání do mezipaměti. Najdete v doprovodných blogovém příspěvku [Cloud Service Fundamentals – základní informace o ukládání do mezipaměti](https://blogs.msdn.com/b/windowsazure/archive/2013/10/03/cloud-service-fundamentals-caching-basics.aspx).
 
 > [!div class="step-by-step"]
 > [Předchozí](transient-fault-handling.md)

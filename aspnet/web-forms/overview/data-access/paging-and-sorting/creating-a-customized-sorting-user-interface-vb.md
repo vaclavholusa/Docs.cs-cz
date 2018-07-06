@@ -1,205 +1,204 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
-title: Vytváření vlastní řazení uživatelské rozhraní (VB) | Microsoft Docs
+title: Vytvoření vlastního uživatelského rozhraní pro řazení (VB) | Dokumentace Microsoftu
 author: rick-anderson
-description: Při zobrazení dlouhý seznam seřazený dat, může být velmi užitečné k seskupení souvisejících dat zavedením oddělovač řádků. V tomto kurzu ukážeme, jak vytvořit...
+description: Při zobrazování dlouhý seznam řazení dat, může být velmi užitečná k seskupení souvisejících dat zavedením oddělovač řádků. V tomto kurzu uvidíme jak vytv...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
 ms.topic: article
 ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 35144907aceda6ece56d91b24aba15ef951ed99a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: 27ff1efb47f8e74c3b9f090af646229a9121661b
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30892670"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37394557"
 ---
-<a name="creating-a-customized-sorting-user-interface-vb"></a>Vytváření vlastní řazení uživatelské rozhraní (VB)
+<a name="creating-a-customized-sorting-user-interface-vb"></a>Vytvoření vlastního uživatelského rozhraní pro řazení (VB)
 ====================
 podle [Scott Meisnerová](https://twitter.com/ScottOnWriting)
 
-[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_VB.exe) nebo [stáhnout PDF](creating-a-customized-sorting-user-interface-vb/_static/datatutorial27vb1.pdf)
+[Stáhněte si ukázkovou aplikaci](http://download.microsoft.com/download/9/c/1/9c1d03ee-29ba-4d58-aa1a-f201dcc822ea/ASPNET_Data_Tutorial_27_VB.exe) nebo [stahovat PDF](creating-a-customized-sorting-user-interface-vb/_static/datatutorial27vb1.pdf)
 
-> Při zobrazení dlouhý seznam seřazený dat, může být velmi užitečné k seskupení souvisejících dat zavedením oddělovač řádků. V tomto kurzu vidíte vytvoření takové řazení uživatelské rozhraní.
+> Při zobrazování dlouhý seznam řazení dat, může být velmi užitečná k seskupení souvisejících dat zavedením oddělovač řádků. V tomto kurzu uvidíme, jak vytvořit takové řazení uživatelské rozhraní.
 
 
 ## <a name="introduction"></a>Úvod
 
-Při zobrazení dlouhý seznam seřazen data tam, kde jsou pouze několik různých hodnot ve sloupci seřazená, koncový uživatel může být obtížné rozpoznat, kdy, přesně, hranice rozdíl dojít k. Například jsou 81 produkty v databázi, ale pouze devět volby různé kategorie (osm jedinečný kategorií a `NULL` možnost). Podívejte se uživatele, který má zájem o zkoumání produkty, které spadají pod ryby kategorii. Ze stránky, která uvádí *všechny* produktů v jednom GridView uživatele rozhodnout, je jeho nejvhodnější seřadit výsledky podle kategorií, které budou seskupeny dohromady všechny ryby produkty společně. Po řazení podle kategorie, uživatel pak musí hunt prostřednictvím seznamu, vyhledávání kde produkty seskupené ryby začínat a končit. Vzhledem k tomu, že výsledky jsou seřazené podle abecedy podle název kategorie hledání produkty ryby není složité, ale stále vyžaduje úzce kontrolu seznamu položek v mřížce.
+Při zobrazování dlouhý seznam seřadit data tam, kde existují jenom na několik různých hodnot ve sloupci seřazený, koncový uživatel možná pro vás bude obtížné rozpoznat, kdy přesně, hranice rozdíl dojde k. Existují třeba 81 produktů v databázi, ale pouze devět volby jinou kategorii (osm kategorií jedinečný plus `NULL` možnost). Podívejte se na uživatele, kteří chtějí při zkoumání produkty, které spadají do kategorie ryby. Ze stránky, která obsahuje seznam *všechny* produktů v jediné prvek GridView uživateli rozhodnout, je její nejvhodnější seřadit výsledky podle kategorií, které se seskupit dohromady ryby produkty. Po seřazení podle kategorie, uživatel pak musí hunt prostřednictvím seznamu hledání kde produkty seskupené ryby počáteční a koncové. Protože výsledky jsou seřazené podle abecedy podle názvu kategorie hledání ryby produkty není obtížné, ale stále vyžaduje úzce skenování seznamu položek v mřížce.
 
-Chcete-li pomoci odhalit hranice mezi seřazené skupiny, využívat mnoho webů uživatelské rozhraní, které přidá oddělovač mezi takové skupiny. Oddělovače, jako jsou zobrazené na obrázku 1 umožňuje uživatelům rychleji najít konkrétní skupinu a určit její hranice, a také zjistit, jaké odlišné skupiny existovat v datech.
-
-
-[![Každá skupina kategorie je jednoznačně identifikovat.](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
-
-**Obrázek 1**: každou kategorii skupina je jednoznačně identifikuje ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image3.png))
+Chcete-li pomoci odhalit hranice mezi skupinami seřazený, využívat mnoho webů uživatelské rozhraní, které přidá oddělovač mezi tyto skupiny. Oddělovače, jako jsou ty zobrazené na obrázku 1 umožňuje uživatelům rychle najít konkrétní skupinu a identifikovat jeho hranice, jakož i zjistit, jaké odlišné skupiny existují v datech.
 
 
-V tomto kurzu vidíte vytvoření takové řazení uživatelské rozhraní.
+[![Každá skupina kategorie je jasně identifikovat.](creating-a-customized-sorting-user-interface-vb/_static/image2.png)](creating-a-customized-sorting-user-interface-vb/_static/image1.png)
 
-## <a name="step-1-creating-a-standard-sortable-gridview"></a>Krok 1: Vytvoření GridView standardní, řazení
+**Obrázek 1**: každá skupina kategorie je jasně identifikovat ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image3.png))
 
-Před nám prozkoumat postup posílení GridView zajistit rozšířené řazení rozhraní, umožní s nejprve vytvořit GridView standardní, řazení, které jsou uvedeny produkty. Začněte otevřením `CustomSortingUI.aspx` stránku `PagingAndSorting` složky. Přidat GridView na stránku, nastavte jeho `ID` vlastnost `ProductList`a navázat jej nové ObjectDataSource. Konfigurace ObjectDataSource používat `ProductsBLL` třídu s `GetProducts()` metoda pro výběr záznamů.
 
-V dalším kroku nakonfigurujte GridView tak, aby obsahoval pouze `ProductName`, `CategoryName`, `SupplierName`, a `UnitPrice` BoundFields a vlastnost CheckBoxField zastaveny. Nakonec, nakonfigurujte GridView pro podporu řazení zaškrtnutím políčka Povolit řazení v GridView s inteligentním (nebo nastavením jeho `AllowSorting` vlastnost `true`). Po provedení těchto doplňky `CustomSortingUI.aspx` stránky, deklarativní by měl vypadat podobně jako následující:
+V tomto kurzu uvidíme, jak vytvořit takové řazení uživatelské rozhraní.
+
+## <a name="step-1-creating-a-standard-sortable-gridview"></a>Krok 1: Vytvoření standardní, seřaditelných GridView
+
+Předtím, než se podíváme na tom, jak rozšířit prvku GridView a poskytuje rozšířené řazení rozhraní, umožňují s nejprve vytvořit standardní, seřaditelných GridView, který obsahuje seznam produktů. Začněte otevřením `CustomSortingUI.aspx` stránku `PagingAndSorting` složky. Přidejte na stránku GridView, nastavte jeho `ID` vlastnost `ProductList`a jeho vazbu na nového prvku ObjectDataSource. Konfigurace ObjectDataSource používat `ProductsBLL` třída s `GetProducts()` metodu pro výběr záznamů.
+
+V dalším kroku nakonfigurujte prvku GridView, tak, aby obsahoval pouze `ProductName`, `CategoryName`, `SupplierName`, a `UnitPrice` BoundFields a třídě CheckBoxField ukončena. A konečně, nakonfigurujte GridView pro podporu třídění zaškrtnutím políčka Povolit řazení v prvku GridView s inteligentním (nebo nastavením jeho `AllowSorting` vlastnost `true`). Po provedení těchto doplňky `CustomSortingUI.aspx` stránce deklarativní by měl vypadat nějak takto:
 
 
 [!code-aspx[Main](creating-a-customized-sorting-user-interface-vb/samples/sample1.aspx)]
 
-Chcete-li zobrazit naše průběh doposud v prohlížeči chvíli trvat. Obrázek 2 ukazuje řazení GridView při jeho data jsou seřazená podle kategorie v abecedním pořadí.
+Za chvíli doposud zobrazit náš postup v prohlížeči. Obrázek 2 ukazuje seřaditelné GridView při jeho data je seřazený podle kategorií v abecedním pořadí.
 
 
-[![Rutina GridView řazení s dat je seřazené podle kategorie](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
+[![Řazení ovládacího prvku GridView s Data jsou seřazená podle kategorie](creating-a-customized-sorting-user-interface-vb/_static/image5.png)](creating-a-customized-sorting-user-interface-vb/_static/image4.png)
 
-**Obrázek 2**: řazení GridView s dat je seřazené podle kategorie ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image6.png))
-
-
-## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>Krok 2: Zkoumat techniky pro přidání oddělovač řádků
-
-S Obecné, řazení GridView dokončení jen zbývá moct přidat oddělovač řádků v GridView před každou jedinečnou skupinu seřazená. Ale jak můžete tyto řádky vloženy do GridView? V podstatě jsme potřebovat k iteraci v rámci GridView s řádky, určete, kde probíhat rozdíly mezi hodnotami v seřazený sloupec a poté přidejte příslušný oddělovač řádků. Pokud přemýšlíte o tento problém, nejspíš přirozené někde spočívá řešení v GridView s `RowDataBound` obslužné rutiny události. Jak již bylo zmíněno [vlastní formátování dat na základě po](../custom-formatting/custom-formatting-based-upon-data-vb.md) kurzu této obslužné rutiny události se běžně používá, pokud formátování na úrovni řádků v závislosti na data řádku s. Ale `RowDataBound` obslužné rutiny události není v tomto řešení jako řádky nelze přidat do GridView prostřednictvím kódu programu z této obslužné rutiny události. Rutina GridView s `Rows` kolekce, ve skutečnosti je jen pro čtení.
-
-Chcete-li přidat další řádky k GridView jsme k dispozici tři možnosti:
-
-- Přidat tyto řádky oddělovače metadata na skutečná data, která je vázána na GridView
-- Po GridView byla svázána se data, přidejte další `TableRow` instance, které chcete GridView s řízení kolekce
-- Vytvořit vlastní serverové ovládací prvek, který rozšiřuje prvek GridView a přepíše tyto metody, která je zodpovědná za vytváření strukturu GridView s
-
-Vytvoření ovládacího prvku vlastního serveru by je nejlepším postupem podle potřeby tato funkce byla v mnoha webových stránek nebo napříč několika weby. Ale by za následek s bit kódu a důkladné průzkum do depths GridView s vnitřní strukturu a funkci. Proto není popíšeme tuto možnost pro účely tohoto kurzu.
-
-Další dva možnosti přidání oddělovač řádků na skutečná data je vázána na GridView a manipulace s nimi GridView s kontrolní kolekcí po jeho byla vázána – jinak útokům problém a si zasloužila se zabývat.
-
-## <a name="adding-rows-to-the-data-bound-to-the-gridview"></a>Přidání řádků k datům vázána na GridView
-
-Když GridView vázán na zdroj dat, vytvoří `GridViewRow` pro každý záznam zdroj dat vrátil. Proto můžete vložíme potřebné oddělovač řádků přidáním oddělovače záznamy ke zdroji dat před vazby k GridView. Obrázek 3 znázorňuje tento koncept.
+**Obrázek 2**: seřaditelné prvku GridView s Data jsou seřazená podle kategorie ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image6.png))
 
 
-![Jednoho technika, zahrnuje přidání oddělovač řádků ke zdroji dat](creating-a-customized-sorting-user-interface-vb/_static/image7.png)
+## <a name="step-2-exploring-techniques-for-adding-the-separator-rows"></a>Krok 2: Zkoumání techniky pro přidání oddělovač řádků
 
-**Obrázek 3**: jeden technika, zahrnuje přidání oddělovač řádků ke zdroji dat
+Pomocí obecného, seřaditelných GridView kompletní už jen zbývá umožnit přidání oddělovač řádků v prvku GridView, před každou skupinu jedinečné seřazené. Ale jak můžete tyto řádky vloženy do prvku GridView? V podstatě jsme potřebovat k iteraci v rámci ovládacího prvku GridView s řádky, určete, kdy dojde k rozdíly mezi hodnotami v seřazený sloupec a pak přidejte řádek odpovídající oddělovače. Pokud uvažujete o tomto problému, vypadá to přirozené někde najdete řešení v prvku GridView s `RowDataBound` obslužné rutiny události. Jak jsme probírali v [vlastní formátování založené na Data](../custom-formatting/custom-formatting-based-upon-data-vb.md) výukový program, tato obslužná rutina události se obvykle používá při formátování na úrovni řádků podle data řádku s. Ale `RowDataBound` obslužná rutina události není řešení tady, protože řádků nelze přidat do prvku GridView prostřednictvím kódu programu z této obslužné rutiny události. GridView s `Rows` kolekce, ve skutečnosti je jen pro čtení.
+
+Chcete-li přidat další řádky GridView máme tři možnosti:
+
+- Přidejte tyto řádky oddělovač metadat na skutečná data, která je vázána k prvku GridView.
+- Po prvku GridView byl vázán na data, přidat další `TableRow` instance prvku GridView s ovládací prvek kolekce
+- Vytvořit vlastní serverový ovládací prvek, který rozšiřuje ovládacím prvku GridView a přepíše tyto metody zodpovědný za vytváření struktury s GridView
+
+Vytváří vlastní serverový ovládací prvek by nejlepším řešením, pokud tato funkce byla potřeba na mnoho webových stránkách nebo přes několik webů. Ale to by znamenalo hodně kódu a důkladným průzkum do hlubin vnitřní činnost GridView s. Proto jsme nebere v úvahu tuto možnost pro účely tohoto kurzu.
+
+Další dvě možnosti přidávání oddělovač řádků, abyste se skutečná data vázaná na prvku GridView a manipulace s nimi kolekce ovládací prvek GridView s po jeho byl vázán – jinak útoku problém a si zasloužila diskusi.
+
+## <a name="adding-rows-to-the-data-bound-to-the-gridview"></a>Přidání řádků do Data vázaná na prvku GridView.
+
+Když prvku GridView je vázán na zdroj dat, vytvoří se `GridViewRow` pro každý záznam vrácených zdrojem dat. Proto jsme můžete vložit potřebné oddělovač řádků přidáním oddělovač záznamů ke zdroji dat před jeho vazbu na prvku GridView. Obrázek 3 ilustruje tento koncept.
 
 
-Použít oddělovače záznamy termín do uvozovek a protože neexistuje žádný záznam speciální oddělovače; Místo toho jsme musí nějakým způsobem příznak, které konkrétní záznam ve zdroji dat slouží jako oddělovač místo normální data v řádku. Pro našich ukázkách, jsme re vazby `ProductsDataTable` instance GridView, který se skládá z `ProductRows`. Jsme může příznak záznam jako oddělovače řádek nastavením jeho `CategoryID` vlastnost `-1` (protože takové hodnota se nedal neexistuje normálně).
+![Jedna z technik zahrnuje přidání oddělovač řádků do zdroje dat.](creating-a-customized-sorting-user-interface-vb/_static/image7.png)
 
-Abyste mohli využívat tato technika d musíme proveďte následující kroky:
+**Obrázek 3**: jedna z technik zahrnuje přidání oddělovač řádků do zdroje dat.
 
-1. Načítání dat pro vazbu GridView prostřednictvím kódu programu ( `ProductsDataTable` instance)
+
+Protože neexistuje žádný záznam speciální oddělovače; používám oddělovač záznamů výraz v uvozovkách Místo toho nám, které konkrétní záznam ve zdroji dat slouží jako oddělovač spíše než normální datovém řádku musí nějakým způsobem příznak. Pro naše příklady, můžeme znovu vazby `ProductsDataTable` instance prvku GridView, který se skládá z `ProductRows`. Záznam jsme mohou označit jako oddělovač řádků nastavením jeho `CategoryID` vlastnost `-1` (protože takové hodnotu se nám t obvykle existují).
+
+Aby se začala používat tuto techniku d musíme proveďte následující kroky:
+
+1. Načítání prostřednictvím kódu programu data k vytvoření vazby prvku GridView ( `ProductsDataTable` instance)
 2. Řazení dat podle GridView s `SortExpression` a `SortDirection` vlastnosti
-3. Iterace `ProductsRows` v `ProductsDataTable`, kteří hledají kde ležet rozdíly v seřazený sloupec
-4. V každé skupině hranic, vložit záznam oddělovače `ProductsRow` instance do DataTable, ten, který je s `CategoryID` nastavena na `-1` (nebo libovolnou označení byl rozhodnuto označit záznam jako oddělovače záznam)
-5. Po vložení oddělovač řádků, prostřednictvím kódu programu vazby dat k GridView
+3. Iterovat přes `ProductsRows` v `ProductsDataTable`, kteří hledají kde být rozdíly v seřazený sloupec
+4. V každé skupině hranic vložit záznam oddělovač `ProductsRow` instance do objektu DataTable, ten, který je s `CategoryID` nastavena na `-1` (nebo jakékoli označení bylo rozhodnuto k označení záznam jako oddělovač záznam)
+5. Po vložení oddělovač řádků, prostřednictvím kódu programu vytvořit vazbu dat do prvku GridView.
 
-Kromě těchto pět kroků d také je potřeba zadat obslužné rutiny události pro GridView s `RowDataBound` událostí. Zde jsme d každý zkontrolujte `DataRow` a určit, jestli bylo oddělovač řádek, jeden jejichž `CategoryID` bylo nastavení `-1`. Pokud ano, jsme d pravděpodobně chtít upravit jeho formátování nebo text zobrazovaný v buňky.
+Kromě těchto pět kroků, d také potřebujeme pro poskytování obslužnou rutinu události pro prvek GridView s `RowDataBound` událostí. Tady, d zkontrolujeme každý `DataRow` a určit, zda byla oddělovač řádků, jeden jehož `CategoryID` nastavení `-1`. Pokud ano, můžeme d pravděpodobně chtít nastavit formátování nebo textu zobrazeného v buňky.
 
-Touto technikou pro vložení řazení skupině hranic vyžaduje trochu další práci, než uvedených výše, jako je třeba také zadat obslužné rutiny události pro GridView s `Sorting` události a pravidelně sledovat z `SortExpression` a `SortDirection` hodnoty.
+Pomocí této techniky pro vkládání řazení skupině hranic vyžaduje trochu více práce než uvedené výše, musíte také zadat obslužnou rutinu události pro prvek GridView s `Sorting` sledovat události a zachovat `SortExpression` a `SortDirection` hodnoty.
 
-## <a name="manipulating-the-gridview-s-control-collection-after-it-s-been-databound"></a>Manipulace GridView s řízení kolekci po jeho s generována
+## <a name="manipulating-the-gridview-s-control-collection-after-it-s-been-databound"></a>Manipulace GridView s řídit kolekce po něm s byla
 
-Místo zasílání zpráv data před vazby k GridView, přidáme oddělovač řádků *po* data byla svázána se GridView. Proces vázání dat vytvoří rutina GridView s řízení hierarchie, která ve skutečnosti je jednoduše a `Table` instance tvořený bude kolekce řádků, z nichž každý se skládá z kolekce buněk. Konkrétně GridView s kontrolní kolekcí obsahuje `Table` objekt v jeho kořenové `GridViewRow` (který je odvozen z `TableRow` – třída) pro každý záznam v `DataSource` vázána na GridView a `TableCell` objekt v každé `GridViewRow` instance pro každé datové pole v `DataSource`.
+Místo zasílání zpráv data před jeho vazbu na prvku GridView, můžeme přidat oddělovač řádků *po* data byla svázána se prvku GridView. Proces vytváření datových vazeb sestavení hierarchie ovládací prvek GridView s, která ve skutečnosti je jednoduše a `Table` instance skládá z kolekce řádků, z nichž každý se skládá z kolekce buněk. Konkrétně obsahuje kolekci ovládací prvek GridView s `Table` objektu na jeho kořenové složky, `GridViewRow` (který je odvozen z `TableRow` třída) pro každý záznam v `DataSource` vázán na prvku GridView a `TableCell` objektu v každé `GridViewRow` instance pro každé datové pole v `DataSource`.
 
-Pokud chcete přidat oddělovač řádků mezi každou skupinou řazení, jsme tuto hierarchii ovládací prvek upravit přímo po vytvoření. Jsme jistotu hierarchii ovládacích prvků s GridView vytvořila naposledy o dobu, kterou vykreslení stránky. Proto tento přístup přepsání `Page` třídu s `Render` metody okamžiku hierarchii GridView s posledním ovládacích prvků aktualizovala a obsahovala potřebné oddělovač řádků. Tento proces je znázorněný na obrázku 4.
-
-
-[![Alternativní postup manipuluje hierarchii GridView s ovládacích prvků](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
-
-**Obrázek 4**: alternativní postup manipuluje s GridView hierarchii ovládacích prvků ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image10.png))
+Pro přidání řádků oddělovač mezi každou skupinu řazení, jsme tento ovládací prvek hierarchie manipulovat přímo po jeho vytvoření. Můžeme být jisti, zda byl vytvořen hierarchii ovládací prvek GridView s naposledy v době, kdy vykreslení stránky. Proto, přepíše tento přístup `Page` třída s `Render` metoda v tomto okamžiku hierarchii poslední ovládací prvek GridView s aktualizováno, aby zahrnovalo potřebné oddělovač řádků. Obrázek 4 ukazuje tento proces.
 
 
-V tomto kurzu používáme tento pozdější přístup k přizpůsobení řazení činnost koncového uživatele.
+[![Alternativní postup manipuluje hierarchii ovládací prvek GridView s](creating-a-customized-sorting-user-interface-vb/_static/image9.png)](creating-a-customized-sorting-user-interface-vb/_static/image8.png)
+
+**Obrázek 4**: alternativní postup manipuluje s GridView hierarchii ovládacích prvků ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image10.png))
+
+
+V tomto kurzu použijeme tento druhý přístup k přizpůsobení řazení činnosti koncového uživatele.
 
 > [!NOTE]
-> Kód I m prezentace v tomto kurzu vychází z v příkladu v [Teemu Keiski](http://aspadvice.com/blogs/joteke/default.aspx) s položku blogu, [přehrávání Bit s seskupení řazení GridView](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx).
+> Kód mi m prezentace v tomto kurzu je založen na ukázkové chatovací v [Teemu Keiski](http://aspadvice.com/blogs/joteke/default.aspx) s blogu, [přehrávání Bit s seskupení řazení ovládacího prvku GridView](http://aspadvice.com/blogs/joteke/archive/2006/02/11/15130.aspx).
 
 
-## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>Krok 3: Přidání oddělovač řádků do hierarchii GridView s ovládacích prvků
+## <a name="step-3-adding-the-separator-rows-to-the-gridview-s-control-hierarchy"></a>Krok 3: Přidání oddělovač řádků do hierarchie s ovládacího prvku GridView
 
-Vzhledem k tomu, že chceme po byla vytvořena a vytvořit naposledy při návštěvě této stránky hierarchii řízení přidat oddělovač řádků hierarchii GridView s ovládacích prvků, chceme k provedení tohoto přidání na konci životního cyklu stránky, ale před skutečným GridView c hierarchie obrazit řídicí vykreslena do kódu HTML. Je nejnovější možné bod, ve kterém jsme se dá dosáhnout `Page` třídu s `Render` událost, která jsme můžete přepsat v našem třídy kódu pomocí následující podpis metody:
+Protože chceme po hierarchii ovládací prvek byl vytvořen a vytvořen naposledy na tuto stránku navštivte přidat oddělovač řádků do hierarchie s ovládacího prvku GridView, chceme provést toto přidání na konci cyklu stránky, ale před skutečné c GridView hierarchie pro ojů bylo vykresleno do kódu HTML. Je poslední bod je to možné, jakou jsme toho dosáhli `Page` třída s `Render` událost, která nám můžete přepsat v našich použití modelu code-behind třídy pomocí následující podpis metody:
 
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample2.vb)]
 
-Když `Page` třídu s původní `Render` metoda je volána `base.Render(writer)` jednotlivých ovládacích prvků na stránce bude vykreslen, generování značek na základě jejich hierarchie ovládacího prvku. Proto je nutné, aby obě říkáme `base.Render(writer)`tak, aby vykreslení stránky hierarchii před voláním řízení a že jsme manipulaci GridView s `base.Render(writer)`tak, aby byly přidány oddělovač řádků do hierarchie s řízení GridView dříve, než se s byl vykreslen.
+Když `Page` třída s původní `Render` vyvolání metody `base.Render(writer)` všech ovládacích prvků na stránce bude vykreslen, generování kódu na základě jejich hierarchie ovládacího prvku. Proto je nutné, že oba říkáme `base.Render(writer)`, takže se zobrazí na stránce a budeme pracovat s GridView s řízení hierarchie před voláním `base.Render(writer)`tak, aby do hierarchie ovládací prvek GridView s dříve, než byly přidány oddělovač řádků s byl vykreslen.
 
-Vložení záhlaví skupiny řazení musíme nejprve zkontrolujte, zda uživatel vyžaduje řadit data. Ve výchozím nastavení nejsou seřazené obsah s GridView, a proto jsme nejsou zobrazeny t muset zadávat žádnou skupinu řazení hlavičky.
+Řazení skupiny záhlaví vložení musíme nejprve zkontrolujte, že uživatel požaduje, aby data seřadit. Ve výchozím nastavení nejsou seřazené s obsah ovládacího prvku GridView a proto jsme zadávat t musíte zadat jakákoli skupina řazení záhlaví.
 
 > [!NOTE]
-> Pokud chcete GridView, který se má seřadit podle určitého sloupce při prvním načtení stránky, volání GridView s `Sort` metoda při první návštěvě stránky (ale ne na následné postback). K tomu, přidejte toto volání v `Page_Load` obslužné rutiny události v rámci `if (!Page.IsPostBack)` podmíněného. Odkazovat zpět [stránkování a řazení dat sestavy](paging-and-sorting-report-data-vb.md) kurz informace pro další informace o `Sort` metoda.
+> Pokud chcete, který se má seřadit podle konkrétního sloupce při prvním načtení stránky prvku GridView, zavolejte GridView s `Sort` metoda při první návštěvě stránky (ale ne na následné postbacky). K tomu přidat toto volání v `Page_Load` obslužné rutiny události v rámci `if (!Page.IsPostBack)` podmíněný. Vraťte se do [stránkování a řazení dat sestavy](paging-and-sorting-report-data-vb.md) kurz informace pro další informace o `Sort` metody.
 
 
-Za předpokladu, že data byla seřazená, naše další úlohy je určit, jaké sloupec data byla seřazená podle a pak ke kontrole řádky hledá rozdíly v tomto sloupci s hodnoty. Následující kód zajišťuje, že data seřazení a vyhledá sloupec, podle kterého data seřazená:
+Za předpokladu, že bylo seřazeno data, naše dalším krokem je určit, jaké sloupce dat byl seřazen podle a pak prohledávání řádků hledáte rozdíly v daném sloupci s hodnoty. Následující kód zajistí, že data seřazení a najde sloupec, podle kterého bylo seřazeno data:
 
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample3.vb)]
 
-Pokud má GridView ještě být seřazen, rutina GridView s `SortExpression` nebude nebyla nastavena vlastnost. Proto chceme jenom přidat oddělovač řádků, pokud je tato vlastnost má určitou hodnotu. Pokud ano, potřebujeme další určit index sloupce, podle kterého se data seřazená. To lze provést ve smyčce přes GridView s `Columns` kolekce, hledání pro sloupec, jehož `SortExpression` vlastnost rovná GridView s `SortExpression` vlastnost. Kromě index sloupce s jsme také získat `HeaderText` vlastnosti, která se používá při zobrazení oddělovač řádků.
+Pokud má prvku GridView ještě být seřazeny, GridView s `SortExpression` vlastnost nebude byla nastavena. Proto pouze chceme přidat oddělovač řádků, pokud tato vlastnost má některá z hodnot. Pokud ano, potřebujeme dále určit index sloupce, podle kterého se data seřadit. To se provádí ve smyčce GridView s `Columns` shromažďování, vyhledávání pro sloupec, jehož `SortExpression` vlastnost rovná GridView s `SortExpression` vlastnost. Kromě index sloupce s jsme také vzít `HeaderText` vlastnost, která se používá při zobrazování oddělovač řádků.
 
-S indexem sloupce data jsou seřazená posledním krokem je vytvoření výčtu řádky GridView. Pro každý řádek je potřeba určit, zda hodnota s seřazený sloupec se liší od předchozí řádek s seřadit sloupec s hodnotu. Pokud ano, musíme vložit nový `GridViewRow` instance do ovládacího prvku hierarchie. To se provádí následujícím kódem:
+S indexem sloupce, podle kterého má řazení proběhnout data je posledním krokem je výčet řádků z prvku GridView. Pro každý řádek potřebujeme k určení, zda hodnota s seřazený sloupec se liší od předchozí hodnotu s s seřazený sloupec řádku. Pokud ano, musíme vložit nový `GridViewRow` instanci na hierarchii ovládacího prvku. To lze provést následujícím kódem:
 
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample4.vb)]
 
-Tento kód spustí prostřednictvím kódu programu odkazem `Table` objekt nalezen na nejnižší úrovni hierarchie ovládacího prvku s GridView a vytvořit řetězec proměnné s názvem `lastValue`. `lastValue` se používá k porovnání aktuální hodnota sloupce s seřadit řádek s předchozí řádek s hodnotou. Další, rutina GridView s `Rows` je vytvořena kolekce a pro každý řádek hodnotu seřazený sloupec je uložená v `currentValue` proměnné.
+Tento kód spustí programově odkazováním `Table` objektu najít v kořenovém adresáři hierarchii ovládací prvek GridView s a vytvoření řetězcové proměnné s názvem `lastValue`. `lastValue` Umožňuje porovnat aktuální hodnota sloupce s řazení řádků s předchozí řádek s hodnotou. Další, GridView s `Rows` výčtu kolekce a pro každý řádek je uložená hodnota seřazený sloupec v `currentValue` proměnné.
 
 > [!NOTE]
-> K určení hodnoty sloupce s seřadit konkrétního řádku používám buňky s `Text` vlastnost. Tento postup funguje dobře pro BoundFields, ale nebude fungovat podle potřeby pro TemplateFields, CheckBoxFields a tak dále. Podíváme postup účet pro alternativní GridView pole za chvíli.
+> Chcete-li zjistit hodnotu sloupce s seřazené konkrétního řádku používám buňky s `Text` vlastnost. Tento postup funguje dobře pro BoundFields, ale nebude fungovat podle potřeby vlastností TemplateField CheckBoxFields a tak dále. Podíváme se na postup pro alternativní pole ovládacího prvku GridView účet za chvíli.
 
 
-`currentValue` a `lastValue` proměnné jsou potom porovná. Pokud se liší, je potřeba přidat nový řádek oddělovače hierarchii ovládacích prvků. Toho dosahuje tak, že určíte index `GridViewRow` v `Table` objekt s `Rows` kolekce, vytváření nových `GridViewRow` a `TableCell` instancí a následným přidáním `TableCell` a `GridViewRow` do ovládací prvek hierarchie.
+`currentValue` a `lastValue` proměnné jsou pak porovnána. Pokud se liší potřebujeme přidat nový řádek oddělovač hierarchii ovládacích prvků. To lze provést tak, že určíte index `GridViewRow` v `Table` objektu s `Rows` kolekce, vytváří se nová `GridViewRow` a `TableCell` instancí a následným přidáním `TableCell` a `GridViewRow` k ovládací prvek hierarchie.
 
-Všimněte si, že oddělovač řádků s jedinou `TableCell` je naformátován tak, aby ho zahrnuje celou šířku GridView, je formátován pomocí `SortHeaderRowStyle` třídy CSS a jeho `Text` vlastnost tak, že zobrazuje skupině řazení název (například kategorie) a Hodnota s skupiny (například nápoje). Nakonec `lastValue` se aktualizuje na hodnotu `currentValue`.
+Všimněte si, že oddělovač řádků s jedinou `TableCell` je formátováno tak, že pokrývá celou šířku prvku GridView, je naformátována pomocí `SortHeaderRowStyle` třídu šablony stylů CSS a má jeho `Text` tak, že zobrazuje skupině řazení název vlastnosti (například kategorie) a Hodnota s skupiny (například nápoje). Nakonec `lastValue` se aktualizuje na hodnotu `currentValue`.
 
-Třída CSS použitá k formátování řazení řádek záhlaví skupiny `SortHeaderRowStyle` je třeba zadat v `Styles.css` souboru. Můžete použít libovolnou nastavení stylů odvoláním proti vám; Mohu použít následující:
+Třídu šablony stylů CSS použitý pro řazení řádek záhlaví skupiny `SortHeaderRowStyle` musí být zadaná v `Styles.css` souboru. Nebojte se využít odvolat jakékoliv nastavení stylu pro vás. Můžu použít následující:
 
 
 [!code-css[Main](creating-a-customized-sorting-user-interface-vb/samples/sample5.css)]
 
-Aktuální kód, přidá rozhraní řazení záhlaví skupiny řazení při řazení podle libovolné BoundField (viz obrázek 5, který ukazuje snímek při řazení podle dodavatele). Pokud však řazení podle jiný typ pole (například Třída CheckBoxField nebo TemplateField), záhlaví skupiny řazení jsou nikde nalezen (viz obrázek 6).
+S aktuálním kódem řazení rozhraní přidá řazení skupiny záhlaví při řazení podle libovolné Vlastnost BoundField (viz obrázek 5, který ukazuje snímek obrazovky při řazení podle dodavatele). Ale při řazení podle jiný typ pole (například třídě CheckBoxField nebo TemplateField), řazení skupiny záhlaví nejsou nikde najít (viz obrázek 6).
 
 
-[![Řazení rozhraní obsahuje záhlaví skupiny řazení při řazení podle BoundFields](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
+[![Řazení rozhraní zahrnuje seřadit a seskupit záhlaví při řazení podle BoundFields](creating-a-customized-sorting-user-interface-vb/_static/image12.png)](creating-a-customized-sorting-user-interface-vb/_static/image11.png)
 
-**Obrázek 5**: řazení rozhraní zahrnuje řazení skupiny záhlaví při řazení podle BoundFields ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image13.png))
-
-
-[![Záhlaví skupiny řazení nejsou chybí při řazení Vlastnost CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
-
-**Obrázek 6**: jsou záhlaví skupiny řazení chybí při řazení Vlastnost CheckBoxField ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image16.png))
+**Obrázek 5**: The řazení rozhraní zahrnuje řazení skupiny záhlaví při řazení podle BoundFields ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image13.png))
 
 
-Z důvodu při řazení pomocí třídy CheckBoxField chybí záhlaví skupiny řazení totiž kód aktuálně používá jenom `TableCell` s `Text` vlastnosti k určení hodnoty seřazený sloupec pro každý řádek. Pro CheckBoxFields `TableCell` s `Text` vlastnost je řetězec prázdný; místo toho je k dispozici prostřednictvím ovládacího prvku políčko Web, který se nachází v rámci hodnota `TableCell` s `Controls` kolekce.
+[![Záhlaví skupiny řazení jsou chybějící při řazení třídě CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image15.png)](creating-a-customized-sorting-user-interface-vb/_static/image14.png)
 
-Pro zpracování pole jiného typu než BoundFields, musíme posílení kód kde `currentValue` proměnné je přiřazena k Zkontrolujte existenci zaškrtávací políčko v `TableCell` s `Controls` kolekce. Místo použití `currentValue = gvr.Cells(sortColumnIndex).Text`, nahraďte tento kód následujícím kódem:
+**Obrázek 6**: záhlaví skupiny řazení jsou chybějící při řazení třídě CheckBoxField ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image16.png))
+
+
+Z důvodu při řazení podle třídě CheckBoxField chybí záhlaví řazení skupin je vzhledem k tomu kód aktuálně používá pouze `TableCell` s `Text` vlastnosti k určení hodnoty seřazený sloupec pro každý řádek. Pro CheckBoxFields `TableCell` s `Text` vlastnosti je prázdný řetězec; místo toho je k dispozici prostřednictvím ovládacího prvku zaškrtávací políčko Web, který se nachází v rámci hodnoty `TableCell` s `Controls` kolekce.
+
+Pro zpracování pole typů jiných než BoundFields, potřebujeme k posílení kód kam `currentValue` proměnná je přiřazená k provedení kontroly existence zaškrtávací políčko ve `TableCell` s `Controls` kolekce. Namísto použití `currentValue = gvr.Cells(sortColumnIndex).Text`, nahraďte tento kód následujícím kódem:
 
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample6.vb)]
 
-Tento kód prozkoumá seřazený sloupec `TableCell` pro aktuální řádek k určení, zda jsou všechny ovládací prvky v `Controls` kolekce. Pokud existují, a je první ovládací prvek zaškrtávací políčko, `currentValue` proměnná je nastavená na hodnotu Ano nebo Ne, v závislosti na zaškrtávací políčko s `Checked` vlastnost. Jinak hodnota je převzata z `TableCell` s `Text` vlastnost. Tato logika je možné replikovat pro zpracování řazení pro všechny TemplateFields, který může existovat v GridView.
+Tento kód prozkoumá seřazený sloupec `TableCell` pro aktuální řádek určí, jestli jsou všechny ovládací prvky v `Controls` kolekce. Pokud existuje a je první ovládací prvek zaškrtávací políčko, `currentValue` proměnná je nastavená na Ano nebo Ne, v závislosti na zaškrtávací políčko s `Checked` vlastnost. V opačném případě hodnota je převzata z `TableCell` s `Text` vlastnost. Tuto logiku je možné replikovat do zpracování řazení pro všechny vlastností TemplateField, které mohou existovat v prvku GridView.
 
-Výše uvedený kód uveďte záhlaví skupiny řazení jsou teď při řazení pomocí třídy CheckBoxField zastaveny (viz obrázek 7).
+Výše uvedené přidání kódu, hlaviček skupiny řazení jsou teď k dispozici při řazení ve třídě CheckBoxField ukončena (viz obrázek 7).
 
 
-[![Záhlaví skupiny řazení se nyní nachází při řazení Vlastnost CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
+[![Záhlaví skupiny řazení nejsou nyní k dispozici při řazení třídě CheckBoxField](creating-a-customized-sorting-user-interface-vb/_static/image18.png)](creating-a-customized-sorting-user-interface-vb/_static/image17.png)
 
-**Obrázek 7**: záhlaví skupiny řazení se nyní nachází při řazení Vlastnost CheckBoxField ([Kliknutím zobrazit obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image19.png))
+**Obrázek 7**: záhlaví skupiny řazení nejsou nyní k dispozici při řazení třídě CheckBoxField ([kliknutím ji zobrazíte obrázek v plné velikosti](creating-a-customized-sorting-user-interface-vb/_static/image19.png))
 
 
 > [!NOTE]
-> Pokud máte produkty s `NULL` hodnoty pro databáze `CategoryID`, `SupplierID`, nebo `UnitPrice` pole, tyto hodnoty se zobrazí jako prázdné řetězce v GridView ve výchozím nastavení znamená text řádku s oddělovač pro tyto produkty s `NULL`hodnoty se čtou jako kategorie: (to znamená, že s žádný název po kategorie: jako s kategorie: nápoje). Pokud chcete hodnoty zobrazené Zde můžete nastavit buď BoundFields [ `NullDisplayText` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) na text, které chcete zobrazit, nebo můžete přidat příkaz podmíněného v metodě vykreslení při přiřazování `currentValue` pro oddělovač řádek s `Text` vlastnost.
+> Pokud máte produkty s `NULL` hodnoty pro databáze `CategoryID`, `SupplierID`, nebo `UnitPrice` pole, tyto hodnoty se zobrazí jako prázdné řetězce v prvku GridView. ve výchozím nastavení, což znamená text řádku s oddělovač pro tyto produkty s `NULL`hodnoty se číst jako kategorie: (to znamená, existovat s žádný název podle kategorie: kategorie, jako jsou: nápoje). Pokud chcete hodnoty zobrazené Zde můžete nastavit buď BoundFields [ `NullDisplayText` vlastnost](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) textu, které chcete zobrazit nebo podmíněného příkazu můžete přidat do metody vykreslení při přiřazování `currentValue` pro oddělovače řádek s `Text` vlastnost.
 
 
 ## <a name="summary"></a>Souhrn
 
-GridView nezahrnuje mnoho předdefinovaných možností pro přizpůsobení řazení rozhraní. Nicméně s bit nízké úrovně kódu je možné upravit hierarchii GridView s ovládacích prvků k vytvoření více přizpůsobené rozhraní s. V tomto kurzu jsme viděli, jak přidat řádek oddělovače skupiny řazení pro řazení GridView, které snadněji identifikuje odlišné skupiny a tyto skupiny hranic. Další příklady vlastní řazení rozhraní, podívejte se na [Scott Guthrie](https://weblogs.asp.net/scottgu/) s [několik ASP.NET 2.0 GridView řazení tipy a triky](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx) položku blogu.
+GridView nezahrnuje řadu integrovaných možností pro přizpůsobení rozhraní pro řazení. Nicméně s hodně kódem nízké úrovně je možné upravit hierarchii ovládací prvek GridView s k vytvoření více přizpůsobit rozhraní s. V tomto kurzu jsme viděli, jak přidat řádek oddělovače skupiny řazení pro seřaditelné prvku GridView, snadněji identifikující odlišné skupiny a tyto skupiny hranic. Další příklady vlastní řazení rozhraní, projděte si [Scott Guthrie](https://weblogs.asp.net/scottgu/) s [několik ASP.NET 2.0 GridView řazení tipy a triky](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx) blogu.
 
-Radostí programování!
+Všechno nejlepší programování!
 
 ## <a name="about-the-author"></a>O autorovi
 
-[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a zakladatele z [4GuysFromRolla.com](http://www.4guysfromrolla.com), pracuje s technologií Microsoft Web od 1998. Scott funguje jako nezávislé poradce, trainer a zapisovače. Jeho nejnovější seznam k [ *Edice nakladatelství Sams naučit sami technologii ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Dosažitelný v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím svého blogu, který najdete na [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
+[Scott Meisnerová](http://www.4guysfromrolla.com/ScottMitchell.shtml), Autor sedm ASP/ASP.NET knih a Zakladatel [4GuysFromRolla.com](http://www.4guysfromrolla.com), má práce s Microsoft webových technologiích od roku 1998. Scott funguje jako nezávislý konzultant, trainer a zapisovače. Jeho nejnovější knihy [ *Edice nakladatelství Sams naučit sami ASP.NET 2.0 za 24 hodin*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco). Může být dosáhl v [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) nebo prostřednictvím jeho blogu, který lze nalézt v [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET).
 
 > [!div class="step-by-step"]
 > [Předchozí](sorting-custom-paged-data-vb.md)

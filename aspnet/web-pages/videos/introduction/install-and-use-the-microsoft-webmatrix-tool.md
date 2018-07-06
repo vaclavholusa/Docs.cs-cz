@@ -4,19 +4,16 @@ title: Instalace a použití nástroje Microsoft WebMatrix | Dokumentace Microso
 author: rick-anderson
 description: 1. část vám představí službu WebMatrix a jak nainstalovat a používat ho.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/12/2011
-ms.topic: article
 ms.assetid: c0087185-82eb-40fd-b3fd-9d0c6937ee9a
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/videos/introduction/install-and-use-the-microsoft-webmatrix-tool
 msc.type: video
-ms.openlocfilehash: cafb1d1bb18fff43943d1238ea23887e5746b10c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 376f6365af02f820f1b1b6f670ca93cb3b22edd7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379125"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804643"
 ---
 <a name="install-and-use-the-microsoft-webmatrix-tool"></a>Instalace a použití nástroje Microsoft WebMatrix
 ====================

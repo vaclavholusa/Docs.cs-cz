@@ -4,19 +4,16 @@ title: Stránky předlohy a navigace na webu (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Jeden běžné charakteristiky uživatelsky přívětivé webů je, ke kterým mají konzistentní vzhledem k aplikacím, webu stránku rozložení a navigace schéma. V tomto kurzu snaží y...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 022801d8-a327-4d0c-8780-6094c9cee00d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c823421a6b934951dd08656b48801c3d26247c5c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d00e535445551a7cfe2d4c46be36abccea31c770
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372041"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810812"
 ---
 <a name="master-pages-and-site-navigation-vb"></a>Stránky předlohy a navigace na webu (VB)
 ====================

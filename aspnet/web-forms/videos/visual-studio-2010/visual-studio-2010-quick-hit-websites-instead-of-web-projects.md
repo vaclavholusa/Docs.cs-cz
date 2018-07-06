@@ -4,19 +4,16 @@ title: Visual Studio 2010 rychlé přístupů k – weby místo webových projek
 author: JoeStagner
 description: V tomto videu se dozvíte o Visual Studio IDE úvodní stránku změny, které ovlivňují, jak vytvořit nebo otevřít weby.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/11/2009
-ms.topic: article
 ms.assetid: 87d4e436-6a38-4851-818d-84417782ed75
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/visual-studio-2010/visual-studio-2010-quick-hit-websites-instead-of-web-projects
 msc.type: video
-ms.openlocfilehash: 7de528285247ae8c6020d89dc42abd0d7afe0d65
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: aa79c1740a7b2866ec284b517951bdd3a03594f1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398495"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837951"
 ---
 <a name="visual-studio-2010-quick-hit---websites-instead-of-web-projects"></a>Visual Studio 2010 "Rychlé zasáhnout" - weby místo webových projektů
 ====================

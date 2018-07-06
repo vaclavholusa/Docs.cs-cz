@@ -4,19 +4,16 @@ title: Předání dat stránkám předlohy pro zobrazení (VB) | Dokumentace Mic
 author: microsoft
 description: Cílem tohoto kurzu je vysvětlují, jak můžete předat data z kontroleru na hlavní stránku zobrazení. Prozkoumáme dvou strategií pro předávání dat k zobrazení m...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e70f15d98101336dbef31b4f9d8b958632e46c01
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2daab1e8596035c1a70fb0f86ba752837d468ef2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388514"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822241"
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>Předání dat stránkám předlohy pro zobrazení (VB)
 ====================

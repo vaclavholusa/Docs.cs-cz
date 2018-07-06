@@ -4,19 +4,16 @@ title: Použití vlastností TemplateField v ovládacím prvku DetailsView (VB) 
 author: rick-anderson
 description: Stejné vlastností TemplateField možnosti dostupné v prvku GridView jsou také k dispozici pomocí ovládacího prvku DetailsView. V tomto kurzu zobrazíme jednoho produktu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 0b91d5f8-127d-4f6a-b204-f2e2b35ef703
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 29a73a5f22048cf3a80d9f7d23c0a4a7b89882f0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5a994df097148428779c9e219ed08247d47ea1a5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365390"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821732"
 ---
 <a name="using-templatefields-in-the-detailsview-control-vb"></a>Použití vlastností TemplateField v ovládacím prvku DetailsView (VB)
 ====================

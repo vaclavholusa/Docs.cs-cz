@@ -4,19 +4,16 @@ title: 'Úvod do ASP.NET pro vývojáře v JSP: vytváření aplikací | Dokumen
 author: microsoft
 description: Toto webové vysílání zkoumá podobnosti a rozdíly mezi vytváření webové aplikace v ASP.NET 2.0 a vytvoříte pomocí Javy.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/25/2006
-ms.topic: article
 ms.assetid: 826b9a37-0bc3-4405-92fb-d8dc87db195e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/migrating/intro-to-aspnet-for-jsp-developers-building-applications
 msc.type: video
-ms.openlocfilehash: c6bd2c4547dccc82fe342dd961f733fd13c05fba
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4b1ba4010185a8c8fe08b6fdc059af504a48327e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372511"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839645"
 ---
 <a name="intro-to-aspnet-for-jsp-developers-building-applications"></a>Úvod do ASP.NET pro vývojáře v JSP: sestavování aplikací
 ====================

@@ -4,19 +4,16 @@ title: Aplikace ASP.NET zamítla přístup k adresářům služby IIS | Dokument
 author: rick-anderson
 description: Tento dokument White Paper popisuje, co musíte udělat, pokud požadavek na vaše aplikace ASP.NET vrátí chyba "přístup byl odepřen do DirectoryName. Nepovedlo se s...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
-ms.technology: ''
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: 22868738e02472f5f433c729967ac324131a0fdc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4853ee29d2468c4b67375123c5b2ec15089fe09b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383059"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842407"
 ---
 <a name="aspnet-denied-access-to-iis-directories"></a>Aplikace ASP.NET zamítla přístup k adresářům služby IIS
 ====================

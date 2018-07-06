@@ -4,19 +4,16 @@ title: Vytváření aplikací verze 3.5 | Dokumentace Microsoftu
 author: rick-anderson
 description: Základy vytváření aplikací webových formulářů ASP.NET.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: 20060b05-3c1b-41ca-9621-4434ba233adc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-35-applications
 msc.type: chapter
-ms.openlocfilehash: 223a54303094162cb2cc5b6da2b8548418ca5bb8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 56674ef24d2cba94facb0f02ff59c8f10fd76c4b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364530"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819702"
 ---
 <a name="building-35-applications"></a>Vytváření aplikací verze 3.5
 ====================

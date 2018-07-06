@@ -4,19 +4,16 @@ title: '[Postup:] Použijte ovládací prvky technologie ASP.NET AJAX klientské
 author: JoeStagner
 description: Ukazuje programovací prostředí na straně klienta pomocí skriptů a ovládací prvky z Klientská knihovna ASP.NET AJAX. Klientské ovládací prvky přidat akce, behavio...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/30/2007
-ms.topic: article
 ms.assetid: 04204f69-4c73-4219-982d-9c58d510118e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-client-library-controls
 msc.type: video
-ms.openlocfilehash: 8d729cad16300a8a8a93abfb48604a37e51aef4d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 57afbfb397257e17a91254997d07616c57c11e59
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402652"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837734"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-client-library-controls"></a>[Postup:] Použijte ovládací prvky technologie ASP.NET AJAX klientské knihovny?
 ====================

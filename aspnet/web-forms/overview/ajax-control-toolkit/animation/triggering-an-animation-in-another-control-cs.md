@@ -4,19 +4,16 @@ title: Aktivace animace jiného ovládacího prvku (C#) | Dokumentace Microsoftu
 author: wenz
 description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Obecně platí, spouští se...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 37473217062b48a1e7829efcf07015be12e0c650
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a7eeb522ae982cd5a84aa9c8e4228871c8c78440
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375116"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810799"
 ---
 <a name="triggering-an-animation-in-another-control-c"></a>Aktivace animace jiného ovládacího prvku (C#)
 ====================

@@ -4,19 +4,16 @@ title: Nejčastější rozdíly mezi vývojovou a provozní (C#) konfigurací | 
 author: rick-anderson
 description: V předchozích kurzech jsme nasadili našeho webu tak, že zkopírujete všechny relevantní soubory z vývojového prostředí do produkčního prostředí. Ale můžu...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 721a5c37-7e21-48e0-832e-535c6351dcae
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c88a74d2135503f310c2822eefc60dd93607f34
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5b3476cdb25a0fc87ce233d7e26de094a0b7b17c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399078"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808905"
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>Běžné konfigurace rozdíly mezi vývojovou a provozní (C#)
 ====================

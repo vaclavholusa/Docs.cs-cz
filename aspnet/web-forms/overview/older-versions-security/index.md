@@ -4,19 +4,16 @@ title: Starší verze – zabezpečení | Dokumentace Microsoftu
 author: rick-anderson
 description: Témata zabezpečení, ověřování a autorizace pro technologii ASP.NET 4 a starší aplikace webových formulářů.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/18/2014
-ms.topic: article
 ms.assetid: 2f952638-6b1f-48b6-b019-1c5d1e9ab746
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
-ms.openlocfilehash: 727e99ca9f0c781691e839440d4c70df1ac58839
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a2ab1157a9c6ecf3e27ac4685c6aaef54a176d84
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397442"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814676"
 ---
 <a name="older-versions---security"></a>Starší verze – zabezpečení
 ====================

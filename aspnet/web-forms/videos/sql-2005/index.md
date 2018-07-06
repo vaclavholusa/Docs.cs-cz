@@ -4,19 +4,16 @@ title: SQL 2005 | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak pracovat s SQL Server Express pro přidání možností databáze do vaší aplikace ASP.NET.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: cf0b487c-f387-46dd-b3bc-6b3c4af17c9c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
-ms.openlocfilehash: 68e832ca368c03631159aa5cf4a369172861b39d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 86f3799786b583bc6361a163acc59423adc48a5f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396995"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809655"
 ---
 <a name="sql-2005"></a>SQL 2005
 ====================

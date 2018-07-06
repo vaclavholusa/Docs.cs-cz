@@ -4,19 +4,16 @@ title: Spuštění okna Modální místní nabídky serverovým kódem (VB) | Do
 author: wenz
 description: Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Některé scénáře však vyžadují tento t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 36ca81d7-906d-4db2-952b-add18a4ff421
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ea5149e9dece5393bb4c431bfc440a745611496d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 52eec262a9241aa7b11cbb892bdf2142c7a2b83a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362836"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822765"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-vb"></a>Spuštění okna Modální místní nabídky serverovým kódem (VB)
 ====================

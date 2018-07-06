@@ -4,19 +4,16 @@ title: Začínáme s EF 5 pomocí MVC 4 | Dokumentace Microsoftu
 author: rick-anderson
 description: Základní informace o používání Entity Framework 5 pro zobrazení a úprava dat v aplikaci ASP.NET MVC 4.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/26/2013
-ms.topic: article
 ms.assetid: 5bd2e5db-8053-459e-9246-08731a4c8036
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4
 msc.type: chapter
-ms.openlocfilehash: c48097f987cfec6ed34f4172debef0302688fcc8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 105b25bce64315c612012957da99225e67a57611
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389299"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810360"
 ---
 <a name="getting-started-with-ef-5-using-mvc-4"></a>Začínáme s EF 5 pomocí MVC 4
 ====================

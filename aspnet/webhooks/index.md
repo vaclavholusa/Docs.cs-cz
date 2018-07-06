@@ -4,17 +4,14 @@ title: 'Webhooky ASP.NET: Přehled | Dokumentace Microsoftu'
 author: rick-anderson
 description: Úvod do ASP.NET – Webhooky.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/17/2012
-ms.topic: article
 ms.assetid: 5e2843f0-f499-448f-a712-33d4e9858321
-ms.technology: ''
-ms.openlocfilehash: abb24398f6db3b01921e314a4288294fed41a5ef
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1dbac40847aa0eb7733c480f182ae3e4c51a925c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380319"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810376"
 ---
 # <a name="aspnet-webhooks-overview"></a>Přehled ASP.NET – Webhooky
 

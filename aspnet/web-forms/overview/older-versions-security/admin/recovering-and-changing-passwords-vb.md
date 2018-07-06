@@ -4,19 +4,16 @@ title: Obnovení a změna hesel (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Technologie ASP.NET obsahuje dva webové ovládací prvky pro pomoc s obnovením a změna hesel. Ovládací prvek PasswordRecovery umožňuje návštěvník k obnovení jeho ztráty pa...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2008
-ms.topic: article
 ms.assetid: f9adcb5d-6d70-4885-a3bf-ed95efb4da1a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 68b70708904a46e31639331bbfd0dd31240ea421
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bb52204b58bcdbb3d03390868e52b8a6f74df5e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393993"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822904"
 ---
 <a name="recovering-and-changing-passwords-vb"></a>Obnovení a změna hesel (VB)
 ====================

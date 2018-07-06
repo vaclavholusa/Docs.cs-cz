@@ -4,19 +4,16 @@ title: Ovládací prvek ID pojmenování stránkách obsahu (VB) | Dokumentace M
 author: rick-anderson
 description: Ilustruje způsob ovládacích prvků ContentPlaceHolder sloužit jako pojmenování kontejnerů a proto ujistěte se, prostřednictvím kódu programu pracovat s ovládacím prvkem obtížné (prostřednictvím FindConrol)...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2008
-ms.topic: article
 ms.assetid: dbb024a6-f043-4fc5-ad66-56556711875b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1b922fb230169824659222da0b9504ec38c36d8a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 500f0e729ee73382ba05d38ed0a0bdba2c3c1e11
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387709"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808334"
 ---
 <a name="control-id-naming-in-content-pages-vb"></a>ID ovládacího prvku pojmenování stránkách obsahu (VB)
 ====================

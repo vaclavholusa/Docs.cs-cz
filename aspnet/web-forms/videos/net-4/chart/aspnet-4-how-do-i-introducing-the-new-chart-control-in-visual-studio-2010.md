@@ -4,19 +4,16 @@ title: 'Postup: Představení nového ovládacího prvku grafu v sadě Visual St
 author: rick-anderson
 description: Dochází k mnoha nadšení nad službou bezprostřední verzi sady Microsoft Visual Studio 2010 a rozhraní .NET Framework 4.0. Mezi mnoho nových funkcí je technologie ASP.NET...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/08/2010
-ms.topic: article
 ms.assetid: 77b9f76c-0c38-4525-bf1b-581c19e127ab
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010
 msc.type: video
-ms.openlocfilehash: 3d5c5e23c4f2d704d4884151fad708a0fb9a2ebe
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 59fc7080fd521fec0a6617e1875266d34f5e466b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378566"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812197"
 ---
 <a name="how-do-i-introducing-the-new-chart-control-in-visual-studio-2010"></a>Postup: Představení nového ovládacího prvku grafu v sadě Visual Studio 2010
 ====================

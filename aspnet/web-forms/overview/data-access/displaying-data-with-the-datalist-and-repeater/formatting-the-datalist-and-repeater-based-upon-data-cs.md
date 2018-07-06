@@ -4,19 +4,16 @@ title: Formátování ovládacích prvků DataList a Repeater na základě dat (
 author: rick-anderson
 description: V tomto kurzu jsme projdete kroky příklady, jak jsme formát vzhled ovládacích prvků DataList a Repeater ovládací prvky, buď pomocí funkce formátování se...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/13/2006
-ms.topic: article
 ms.assetid: 83e3d759-82b8-41e6-8d62-f0f4b3edec41
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bc595064de2910dc25077d0241ef9a150fdd4cd1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cfb23a65c288ed155625a1f8a4d7db1330ab2407
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368337"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840255"
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>Formátování ovládacích prvků DataList a Repeater na základě dat (C#)
 ====================

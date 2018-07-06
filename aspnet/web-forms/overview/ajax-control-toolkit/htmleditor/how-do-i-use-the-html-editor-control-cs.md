@@ -4,19 +4,16 @@ title: Použití ovládací prvek editoru HTML (C#) | Dokumentace Microsoftu
 author: microsoft
 description: HTMLEditor je ovládací prvek ASP.NET AJAX, který umožňuje snadno vytvářet a upravovat obsah ve formátu HTML pomocí tlačítek na panelu nástrojů.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2009
-ms.topic: article
 ms.assetid: f47e6224-c2e5-4472-b069-b6c7b6115200
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef8fba82a77ed570c800dce0b1c1378fd36ea56
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 775cb113ea11e582806b0bd9397778cff6761940
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397616"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809404"
 ---
 <a name="how-do-i-use-the-html-editor-control-c"></a>Použití ovládací prvek editoru HTML (C#)
 ====================

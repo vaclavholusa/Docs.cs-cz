@@ -4,19 +4,16 @@ title: 'Jak mohu: přizpůsobit zpracování chyb pro ovládacího prvku UpdateP
 author: rick-anderson
 description: Když dojde k chybě během zpracování zpětného odeslání aktivované prvku UpdatePanel technologie ASP.NET AJAX, PageRequestManager na straně klienta se zobrazí upozornění (. možnost NE...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/18/2009
-ms.topic: article
 ms.assetid: 28bd411b-e708-4eab-baed-76981d6cd0dc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 116366377d2c6b27cb2394ac089848c91110bd4f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f297d7bf916b0fedc6b26bd19dd8e9d35569af74
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367600"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807538"
 ---
 <a name="how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel"></a>Jak mohu: přizpůsobit zpracování chyb pro ovládacího prvku UpdatePanel technologie ASP.NET AJAX
 ====================

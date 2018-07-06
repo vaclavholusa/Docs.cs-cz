@@ -4,19 +4,16 @@ title: Hodnocení | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz ukazuje, jak pomocí ovládacího prvku hodnocení umožňuje uživatelům zadat hodnocení pro články nebo položky.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: 2af1ffb5-c6a6-40fa-b431-1e03190dedfd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating
 msc.type: chapter
-ms.openlocfilehash: 46c495af4cc0fcb7802277631cc0524104edaed2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4efee954c872947a5169154886c18c12562da904
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361659"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810266"
 ---
 <a name="rating"></a>Hodnocení
 ====================

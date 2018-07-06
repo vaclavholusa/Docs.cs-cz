@@ -4,29 +4,26 @@ title: Použití objektu DynamicControl v ListView a DetailsView | Dokumentace M
 author: shanselman
 description: Toto video porovnává stejné aplikace napsané dvakrát, jednou s dynamickými daty a jednou bez. V procesu, přidejte atribut DynamicControl objekty do ListView...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/08/2008
-ms.topic: article
 ms.assetid: 816175a2-47b1-49ba-b346-cfb1ee33096a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls
 msc.type: video
-ms.openlocfilehash: 610b47895b4f85f60985e66fe90f9bb378fe59a6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 97498c43ceb778554715e345eea96ee934bb93c3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400610"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822804"
 ---
-<a name="how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls"></a><span data-ttu-id="4d69a-105">Použití objektu DynamicControl v ListView a DetailsView</span><span class="sxs-lookup"><span data-stu-id="4d69a-105">How Do I Use a DynamicControl in ListView and DetailsView Controls?</span></span>
+<a name="how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls"></a><span data-ttu-id="69b11-105">Použití objektu DynamicControl v ListView a DetailsView</span><span class="sxs-lookup"><span data-stu-id="69b11-105">How Do I Use a DynamicControl in ListView and DetailsView Controls?</span></span>
 ====================
-<span data-ttu-id="4d69a-106">podle [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="4d69a-106">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="69b11-106">podle [Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="69b11-106">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-<span data-ttu-id="4d69a-107">Toto video porovnává stejné aplikace napsané dvakrát, jednou s dynamickými daty a jednou bez.</span><span class="sxs-lookup"><span data-stu-id="4d69a-107">This video compares the same application written twice, once with Dynamic Data and once without.</span></span> <span data-ttu-id="4d69a-108">V procesu, přidáte **DynamicControl** objektů **ListView** a **DetailsView** ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="4d69a-108">In the process, you add **DynamicControl** objects to **ListView** and **DetailsView** controls.</span></span>
+<span data-ttu-id="69b11-107">Toto video porovnává stejné aplikace napsané dvakrát, jednou s dynamickými daty a jednou bez.</span><span class="sxs-lookup"><span data-stu-id="69b11-107">This video compares the same application written twice, once with Dynamic Data and once without.</span></span> <span data-ttu-id="69b11-108">V procesu, přidáte **DynamicControl** objektů **ListView** a **DetailsView** ovládacích prvků.</span><span class="sxs-lookup"><span data-stu-id="69b11-108">In the process, you add **DynamicControl** objects to **ListView** and **DetailsView** controls.</span></span>
 
-[<span data-ttu-id="4d69a-109">&#9654;Podívejte se na video (5 minut).</span><span class="sxs-lookup"><span data-stu-id="4d69a-109">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls)
+[<span data-ttu-id="69b11-109">&#9654;Podívejte se na video (5 minut).</span><span class="sxs-lookup"><span data-stu-id="69b11-109">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="4d69a-110">[Předchozí](how-do-i-display-unknown-datatypes.md)
-> [další](getting-started-with-dynamic-data.md)</span><span class="sxs-lookup"><span data-stu-id="4d69a-110">[Previous](how-do-i-display-unknown-datatypes.md)
+> <span data-ttu-id="69b11-110">[Předchozí](how-do-i-display-unknown-datatypes.md)
+> [další](getting-started-with-dynamic-data.md)</span><span class="sxs-lookup"><span data-stu-id="69b11-110">[Previous](how-do-i-display-unknown-datatypes.md)
 [Next](getting-started-with-dynamic-data.md)</span></span>

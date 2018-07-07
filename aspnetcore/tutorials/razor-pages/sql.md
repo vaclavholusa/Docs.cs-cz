@@ -1,23 +1,23 @@
 ---
 title: Práce s SQL Server LocalDB a ASP.NET Core
 author: rick-anderson
-description: Vysvětluje práci s SQL Server LocalDB a ASP.NET Core.
+description: Vysvětluje, práci s SQL Server LocalDB a ASP.NET Core.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 1fd86fb61b7f5ddb760992ac10f9bee43ab831cf
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 255faf12064aa424d51fb6faa801884c474bd288
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272140"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889480"
 ---
 # <a name="work-with-sql-server-localdb-and-aspnet-core"></a>Práce s SQL Server LocalDB a ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://twitter.com/joeaudette) 
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Joe Audette](https://twitter.com/joeaudette) 
 
-`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
+`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty se záznamy v databázi. Kontext databáze je zaregistrován [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda ve *Startup.cs* souboru:
 
 ::: moniker range="= aspnetcore-2.0"
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
@@ -27,43 +27,43 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://t
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
 
-Další informace o metodách `ConfigureServices`, najdete v části:
+Další informace o metodách `ConfigureServices`, naleznete v tématu:
 
-* [Podpora Evropa obecné Data Protection nařízení (GDPR) v ASP.NET Core](xref:security/gdpr) pro `CookiePolicyOptions`.
+* [Podpora EU obecného Regulation (GDPR) v ASP.NET Core](xref:security/gdpr) pro `CookiePolicyOptions`.
 * [SetCompatibilityVersion](xref:fundamentals/startup#setcompatibilityversion-for-aspnet-core-mvc)
 
 ::: moniker-end
 
-ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appSettings.JSON určený* souboru. Hodnota názvu pro databázi (`Database={Database name}`) se budou lišit pro vygenerovaný kód. Hodnota názvu je libovolný.
+ASP.NET Core [konfigurace](xref:fundamentals/configuration/index) systému čtení `ConnectionString`. Pro místní vývoj, získá připojovací řetězec z *appsettings.json* souboru. Hodnota názvu databáze (`Database={Database name}`) se bude lišit pro vygenerovaný kód. Hodnota názvu je volitelný.
 
 [!code-json[](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
 
-Když nasadíte aplikaci k testu nebo produkčním serveru, můžete použít proměnné prostředí nebo jiný přístup k nastavení připojovacího řetězce k skutečné systému SQL Server. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace.
+Když nasadíte aplikaci na testovacím nebo produkčním serveru, můžete použít proměnné prostředí nebo jiné přístup se nastavit připojovací řetězec na skutečný SQL Server. Zobrazit [konfigurace](xref:fundamentals/configuration/index) Další informace.
 
-## <a name="sql-server-express-localdb"></a>Databáze SQL Server Express LocalDB
+## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-LocalDB je Odlehčená verze SQL serveru Express databázového stroje je cílová pro vývoj programu. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není žádná komplexní konfigurace. Ve výchozím nastavení, vytvoří databáze LocalDB "\*.mdf" soubory *C: či uživatelů nebo\<uživatele\>*  adresáře.
+LocalDB je Odlehčená verze SQL serveru Express databázového stroje, která je určená pro vývoj v programu. LocalDB spustí na vyžádání a běží v uživatelském režimu, takže není bez složité konfigurace. Ve výchozím nastavení, vytvoří databázi LocalDB "\*.mdf" soubory *C:/uživatele/\<uživatele\>*  adresáře.
 
 <a name="ssox"></a>
 * Z **zobrazení** nabídce otevřete **Průzkumník objektů systému SQL Server** (SSOX).
 
   ![Nabídka Zobrazit](sql/_static/ssox.png)
 
-* Klikněte pravým tlačítkem na `Movie` tabulky a vyberte **Návrhář zobrazení**:
+* Klikněte pravým tlačítkem na `Movie` tabulce a vybrat **Návrhář zobrazení**:
 
-  ![Otevřete v tabulce film kontextové nabídky](sql/_static/design.png)
+  ![Kontextová nabídka otevřít na tabulky Movie](sql/_static/design.png)
 
-  ![Tabulka film otevřít v Návrháři](sql/_static/dv.png)
+  ![Otevřít v Návrháři tabulky Movie](sql/_static/dv.png)
 
-Poznámka: na ikonu klíče do `ID`. Ve výchozím nastavení vytvoří EF vlastnost s názvem `ID` pro primární klíč.
+Poznámka: na ikonu klíče vedle `ID`. Ve výchozím nastavení, EF vytvoří vlastnost s názvem `ID` pro primární klíč.
 
-* Klikněte pravým tlačítkem na `Movie` tabulky a vyberte **Data zobrazení**:
+* Klikněte pravým tlačítkem na `Movie` tabulce a vybrat **Data zobrazení**:
 
-  ![Tabulka film otevřete zobrazení dat v tabulce](sql/_static/vd22.png)
+  ![Otevřít zobrazení tabulky dat tabulky Movie](sql/_static/vd22.png)
 
-## <a name="seed-the-database"></a>Počáteční hodnoty databáze
+## <a name="seed-the-database"></a>Přidání dat do databáze
 
-Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného kódu nahraďte následujícím textem:
+Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného kódu nahraďte následujícím kódem:
 
 ::: moniker range="= aspnetcore-2.0"
 
@@ -77,7 +77,7 @@ Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného k
 
 ::: moniker-end
 
-Pokud jsou všechny filmy v databázi, vrátí inicializátoru počáteční hodnoty a jsou přidány žádné filmy.
+Pokud jsou všechny filmy v databázi, vrátí inicializátoru pro dosazení hodnot a jsou přidány žádné video.
 
 ```csharp
 if (context.Movie.Any())
@@ -86,13 +86,13 @@ if (context.Movie.Any())
 }
 ```
 <a name="si"></a>
-### <a name="add-the-seed-initializer"></a>Přidat inicializátoru počáteční hodnoty
+### <a name="add-the-seed-initializer"></a>Přidat inicializační výraz počáteční hodnoty
 
-V *Program.cs*, změnit `Main` metoda proveďte následující:
+V *Program.cs*, změnit `Main` metoda můžete provádět následující:
 
-* Zjištění instance kontextu DB z kontejneru pro vkládání závislostí.
-* Volejte metodu počáteční hodnoty, předání kontextu.
-* Kontext Dispose po dokončení metodu počáteční hodnoty.
+* Instance kontextu databáze získáte z kontejneru pro vkládání závislostí.
+* Volejte metodu počáteční hodnoty předání kontextu.
+* Kontext Dispose po dokončení počáteční hodnoty metody.
 
 Následující kód ukazuje aktualizovaný *Program.cs* souboru.
 
@@ -108,31 +108,31 @@ Následující kód ukazuje aktualizovaný *Program.cs* souboru.
 
 ::: moniker-end
 
-Produkční aplikace nebude volání `Database.Migrate`. Přidá do kód který předchází aby následující výjimky při `Update-Database` nebyl spuštěn:
+Produkční aplikace by volat `Database.Migrate`. Přidá se do předchozí kód, aby se zabránilo následující výjimku při `Update-Database` nebyl spuštěn:
 
-SqlException: Nelze otevřít databázi "RazorPagesMovieContext-21" požadovaný v přihlášení. Přihlášení se nezdařilo.
-Přihlášení uživatele, uživatelské jméno, se nezdařilo.
+SqlException: Databázi "RazorPagesMovieContext 21" požadovaný v přihlášení nelze otevřít. Přihlášení se nezdařilo.
+Přihlašovací jméno uživatele 'jméno uživatele' se nezdařilo.
 
 ### <a name="test-the-app"></a>Testování aplikace
 
-* Odstraňte všechny záznamy v databázi. To lze provést pomocí odstranění odkazy v prohlížeči nebo z [SSOX](xref:tutorials/razor-pages/new-field#ssox)
-* Vynutit aplikace k chybě při inicializaci (volání metody v `Startup` třída), spustí metodu počáteční hodnoty. Pokud chcete vynutit inicializace, IIS Express musí být zastavena a restartována. Můžete to provést pomocí některé z následujících postupů:
+* Odstraníte všechny záznamy z databáze. To lze provést pomocí odstranit odkazy v prohlížeči nebo z [SSOX](xref:tutorials/razor-pages/new-field#ssox)
+* Se aplikace inicializuje (volat metody ve `Startup` třídy), spustí seed – metoda. Pokud chcete vynutit inicializace, služba IIS Express musí zastavit, restartovat. Provést s některou z následujících postupů:
 
-  * Klikněte pravým tlačítkem na hlavním panelu ikonu IIS Express systému v oznamovací oblasti a klepněte na **ukončení** nebo **zastavit lokality**:
+  * Klikněte pravým tlačítkem na službu IIS Express systému na hlavním panelu ikonu v oznamovací oblasti a klepněte na **ukončovací** nebo **zastavení webu**:
 
     ![Služba IIS Express ikonu na hlavním panelu](../first-mvc-app/working-with-sql/_static/iisExIcon.png)
 
     ![Kontextové nabídky](sql/_static/stopIIS.png)
 
-    * Pokud VS byly spuštěny v režimu bez ladění, stisknutím klávesy F5 spusťte v režimu ladění.
-    * Pokud VS byly spuštěny v režimu ladění, zastavení ladicího programu a stisknutím klávesy F5.
+    * Pokud VS byly spuštěny v režimu bez ladění, stiskněte klávesu F5 ke spuštění v režimu ladění.
+    * Pokud jste používali zastavení ladicího programu VS v režimu ladění a stisknutím klávesy F5.
    
-Aplikace zobrazuje dosazená data:
+Aplikace bude zobrazovat dosazená data:
 
-![Otevřete v prohlížeči Chrome zobrazující data film filmová aplikace](sql/_static/m55.png)
+![Otevřít v prohlížeči Chrome ukazující data o filmech aplikace Movie](sql/_static/m55.png)
 
-V dalším kurzu se vyčistit prezentaci dat.
+V dalším kurzu se vyčistit prezentace data.
 
 > [!div class="step-by-step"]
-> [Předchozí: Vygeneroval stránky Razor](xref:tutorials/razor-pages/page)
-> [Další: aktualizace stránky](xref:tutorials/razor-pages/da1)
+> [Předchozí: Generované uživatelské rozhraní pro stránky Razor](xref:tutorials/razor-pages/page)
+> [Další: aktualizace stránek](xref:tutorials/razor-pages/da1)

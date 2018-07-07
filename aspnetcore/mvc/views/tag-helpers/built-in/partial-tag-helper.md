@@ -5,14 +5,14 @@ description: Zjišťování ASP.NET Core částečné pomocné rutiny značky a 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 04/13/2018
+ms.date: 07/06/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: 0a8caf09d1764278da4a0566844b0efaf4eeb567
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 2272b2ecdd6f2b0a759356b1f03dd5c495ea1c91
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433867"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889100"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>Pomocná rutina částečné značky v ASP.NET Core
 
@@ -81,7 +81,17 @@ V předchozím kódu `IsNumberReadOnly` nastavena na hodnotu klíče `true` a p�
 
 V tomto příkladu hodnota `ViewData["IsNumberReadOnly"]` Určuje, zda *číslo* zobrazí pole jako jen pro čtení.
 
+## <a name="migrate-from-an-html-helper"></a>Migrace ze pomocné rutiny HTML
+
+Zvažte následující příklad asynchronní pomocné rutiny HTML. Kolekce produktů provést iteraci a zobrazit. Za `PartialAsync` první parametr metody, *_ProductPartial.cshtml* načtení částečné zobrazení. Instance `Product` model částečného zobrazení předán pro vazbu.
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Products.cshtml?name=snippet_HtmlHelper&highlight=3)]
+
+Následující pomocná rutina částečné značky dosáhne stejné chování jako asynchronní vykreslování `PartialAsync` pomocné rutiny HTML. `model` Atributu je přiřazena `Product` instanci modelu pro vazbu na částečné zobrazení.
+
+[!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Products.cshtml?name=snippet_TagHelper&highlight=3)]
+
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Částečná zobrazení](xref:mvc/views/partial)
-* [Slabě typované data (ViewData, atribut ViewData a objekt ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)
+* <xref:mvc/views/partial>
+* <xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag>

@@ -5,12 +5,12 @@ description: Zjistěte, jak nakonfigurovat poskytovatelé vlastního úložišt�
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: d7baa8ed142a7d3337adceff2dc93274604bde4c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831333"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889165"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastního úložiště pro ASP.NET Core Identity
 
@@ -51,7 +51,7 @@ Vytvoření vlastního poskytovatele úložiště, vytvořte zdroj dat, vrstva p
 
 Při vytváření nové instance objektu `UserManager` nebo `RoleManager` zadejte typ třídy uživatele a předat jako argument instanci třídy úložiště. Tento přístup umožňuje pružný vaše vlastní třídy ASP.NET Core. 
 
-[Změna konfigurace aplikace pro použití nového poskytovatele úložiště](#reconfigure-app-to-use-new-storage-provider) ukazuje, jak vytvořit instanci `UserManager` a `RoleManager` s vlastní úložiště.
+[Změna konfigurace aplikace pro použití nového poskytovatele úložiště](#reconfigure-app-to-use-a-new-storage-provider) ukazuje, jak vytvořit instanci `UserManager` a `RoleManager` s vlastní úložiště.
 
 ## <a name="aspnet-core-identity-stores-data-types"></a>ASP.NET Core Identity ukládá datové typy
 

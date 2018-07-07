@@ -4,14 +4,14 @@ author: ardalis
 description: Zjistěte, jak je částečné zobrazení zobrazení, který je vykreslen v rámci jiného zobrazení a pokud byste měli použít ve aplikace ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/02/2018
+ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 6e9a3dae613251e6580d0bbb314c11064d08f5ba
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 9f90ce39929d0dbc216b47d76d652c1fca866ec2
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433880"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889113"
 ---
 # <a name="partial-views-in-aspnet-core"></a>Částečná zobrazení v ASP.NET Core
 
@@ -42,7 +42,7 @@ Na stránce komplexní skládá z několika logických částí je užitečné p
 
 Částečná zobrazení jsou vytvořeny jako regulární zobrazení&mdash;tak, že vytvoříte *.cshtml* soubor *zobrazení* složky. Neexistuje žádné sémantické rozdíly mezi částečné zobrazení a zobrazení regulární; však jejich se vykreslují odlišně. Máte zobrazení, které se vrátí přímo kontroleru [ViewResult](/dotnet/api/microsoft.aspnetcore.mvc.viewresult), a stejnou zobrazení lze použít jako částečné zobrazení. Hlavní rozdíl mezi vykreslení zobrazení a částečné zobrazení je, že částečná zobrazení nespouštět *soubor _ViewStart.cshtml*. Spuštění regulárního zobrazení *soubor _ViewStart.cshtml*. Další informace o *soubor _ViewStart.cshtml* v [rozložení](xref:mvc/views/layout)).
 
-Jako konvence, názvy souborů částečné zobrazení často začínat `_`. Není to vyžadováno, ale pomáhá vizuálně odlišili od pravidelných zobrazení částečné zobrazení.
+Jako konvence, názvy souborů částečné zobrazení často začínat `_`. Tyto zásady vytváření názvů není vyžadováno, ale pomáhá vizuálně odlišili od pravidelných zobrazení částečné zobrazení.
 
 ## <a name="reference-a-partial-view"></a>Odkaz na částečné zobrazení
 
@@ -56,7 +56,7 @@ Pomocná rutina částečné značky vyžaduje ASP.NET Core 2.1 nebo novější.
 
 [!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_PartialTagHelper)]
 
-Další informace naleznete v tématu <xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper>.
+Další informace naleznete v tématu <xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper>.
 
 ::: moniker-end
 
@@ -66,11 +66,11 @@ Při použití pomocné rutiny HTML, nejlepším postupem je použití [PartialA
 
 [!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_PartialAsync)]
 
-Můžete také vykreslení částečného zobrazení s [RenderPartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartialasync). Tato metoda nevrací výsledek. Jejich streamování vykresleného výstupu přímo do odpovědi. Protože metoda nevrací výsledek, musí být volána v rámci bloku kódu Razor:
+Alternativně můžete vykreslení částečného zobrazení s [RenderPartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartialasync). Tato metoda nevrací výsledek. Jejich streamování vykresleného výstupu přímo do odpovědi. Protože metoda nevrací výsledek, musí být volána v rámci bloku kódu Razor:
 
 [!code-cshtml[](partial/sample/PartialViewsSample/Views/Home/Discovery.cshtml?name=snippet_RenderPartialAsync)]
 
-Protože streamování výsledek přímo, `RenderPartialAsync` může líp fungovat v některých scénářích. Ale je doporučeno, abyste používali `PartialAsync`.
+Protože streamování výsledek přímo, `RenderPartialAsync` může líp fungovat v některých scénářích. Však doporučuje používat `PartialAsync`.
 
 ### <a name="synchronous-html-helper"></a>Synchronní pomocné rutiny HTML
 
@@ -78,6 +78,16 @@ Protože streamování výsledek přímo, `RenderPartialAsync` může líp fungo
 
 > [!IMPORTANT]
 > Pokud vaše zobrazení musí spustit kód, použijte [zobrazení komponenty](xref:mvc/views/view-components) místo částečné zobrazení.
+
+::: moniker range=">= aspnetcore-2.1"
+
+V ASP.NET Core 2.1 nebo novější, volání `Partial` nebo `RenderPartial` vede upozornění analyzátor. Například použití `Partial` provede následující upozornění:
+
+> Použití IHtmlHelper.Partial může způsobit zablokování aplikace. Zvažte použití `<partial>` pomocné rutiny značky nebo `IHtmlHelper.PartialAsync`.
+
+Nahraďte volání `@Html.Partial` s `@await Html.PartialAsync` nebo pomocná rutina částečné značky. Další informace o migraci pomocná rutina částečné značky najdete v tématu [migrace ze pomocné rutiny HTML](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper#migrate-from-an-html-helper).
+
+::: moniker-end
 
 ## <a name="partial-view-discovery"></a>Částečné zobrazení zjišťování
 

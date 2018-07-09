@@ -4,19 +4,16 @@ title: Konfigurace nastavení připojení a příkaz úrovně vrstvy přístupu 
 author: rick-anderson
 description: Objekty TableAdapter v datové sadě zadán automaticky postará o připojení k databázi, vydávání příkazů a naplnění DataTable s výsledky...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/03/2007
-ms.topic: article
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0b9b1f1341416f92ab1df4f338bbdbcd753fbae4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 835f17c35d85658a855072bf6d9355fdae9f63ab
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389622"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837834"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>Konfigurace nastavení připojení a příkaz úrovně vrstvy přístupu k datům (C#)
 ====================

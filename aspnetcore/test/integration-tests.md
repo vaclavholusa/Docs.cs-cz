@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 2893ff41a104b4bef1277675afaf7dd1c758ecd6
-ms.sourcegitcommit: 79d2457989fc5b08925582dab0f1511ab11ad741
+ms.openlocfilehash: e18c5704c9d4db9669d8f831f1b556d1723a0fc1
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37347249"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894163"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Integrační testy v ASP.NET Core
 
@@ -71,7 +71,7 @@ Integrační testy podle posloupnost událostí, které zahrnují obvyklého *us
 1. Testovací klient serveru se vytvoří odesílat žádosti do aplikace.
 1. *Uspořádat* provádí se krok testu: aplikace pro testy připraví žádost.
 1. *Act* provádí se krok testu: klient odešle žádost a obdrží odpověď.
-1. *Assert* provádí se krok testu: *skutečné* odpovědi je ověřen jako *předat* nebo *selhání* na základě *očekávání*  odpovědi.
+1. *Assert* provádí se krok testu: *skutečné* odpovědi je ověřen jako *předat* nebo *selhání* na základě *očekávání * odpovědi.
 1. Proces pokračuje, dokud všechny testy jsou spouštěny.
 1. Výsledky testů jsou hlášeny.
 
@@ -96,10 +96,16 @@ Není k dispozici téměř žádný rozdíl mezi konfigurace pro testy aplikace 
 
 Musí se projekt testů:
 
-* Mít odkaz na balíček pro [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/).
-* Použití sady SDK webové v souboru projektu (`<Project Sdk="Microsoft.NET.Sdk.Web">`).
+* Odkazovat na následujících balíčků:
+  - [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
+  - [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
+* Zadejte Web SDK v souboru projektu (`<Project Sdk="Microsoft.NET.Sdk.Web">`). Při odkazování na sadu SDK webové vyžádáním [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app).
 
-Tyto prerequesities si můžete prohlédnout ve [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/). Zkontrolujte *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* souboru.
+Tyto požadavky si můžete prohlédnout ve [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/). Zkontrolujte *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* souboru. Tato ukázková aplikace používá [xUnit](https://xunit.github.io/) rozhraní pro testování a [AngleSharp](https://anglesharp.github.io/) analyzátor knihovny, tak také odkazuje na ukázkovou aplikaci:
+
+* [xunit](https://www.nuget.org/packages/xunit/)
+* [xunit.Runner.VisualStudio](https://www.nuget.org/packages/xunit.runner.visualstudio/)
+* [AngleSharp](https://www.nuget.org/packages/AngleSharp/)
 
 ## <a name="basic-tests-with-the-default-webapplicationfactory"></a>Základní testy s výchozím WebApplicationFactory
 

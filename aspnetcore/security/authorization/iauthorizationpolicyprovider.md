@@ -1,50 +1,50 @@
 ---
-title: Zprostředkovatelé zásad autorizace v ASP.NET Core
+title: Poskytovatelé zásad autorizace v ASP.NET Core
 author: mjrousos
-description: Naučte se používat vlastní IAuthorizationPolicyProvider v aplikaci ASP.NET Core dynamicky generovat zásad autorizace.
+description: Další informace o použití vlastních IAuthorizationPolicyProvider v aplikaci ASP.NET Core pro dynamické generování zásad autorizace.
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: 218d7a495655598046671093c0cfe7b9622aca5e
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 6e46172ec8c5271ffcbad87e4ea5cc98465b78b0
+ms.sourcegitcommit: 41d3c4b27309d56f567fd1ad443929aab6587fb1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077599"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37910247"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>Vlastní zprostředkovatelé zásad autorizace pomocí IAuthorizationPolicyProvider v ASP.NET Core 
 
-Podle [Rousos Jan](https://github.com/mjrousos)
+Podle [Mike Rousos](https://github.com/mjrousos)
 
-Obvykle při použití [na základě zásad autorizace](xref:security/authorization/policies), zásady, které jsou registrovány voláním `AuthorizationOptions.AddPolicy` jako součást konfigurace služby autorizace. V některých případech nemusí být možné (nebo žádoucí) k registraci všech zásad autorizace tímto způsobem. V takových případech můžete použít vlastní `IAuthorizationPolicyProvider` řídit, jak jsou zadány zásad autorizace.
+Obvykle při použití [autorizace na základě zásad](xref:security/authorization/policies), zásady jsou registrované pomocí volání `AuthorizationOptions.AddPolicy` jako součást konfigurace služby ověření. V některých případech nemusí být možné (nebo žádoucí) k registraci všech zásad autorizace tímto způsobem. V takových případech můžete použít vlastní `IAuthorizationPolicyProvider` řídit, jak jsou dodávány zásad autorizace.
 
-Příklady situací, kde vlastní [IAuthorizationPolicyProvider](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider) můžou být užitečné, patří:
+Uvedené příklady situací, kdy vlastní [IAuthorizationPolicyProvider](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider) může být užitečná, patří:
 
-* Pomocí služby externí zajistit vyhodnocení zásad.
-* Pomocí velkého rozsahu zásad (pro jiné místnosti čísla nebo stáří, např.), takže nemá smysl přidat každé jednotlivé autorizace zásadou `AuthorizationOptions.AddPolicy` volání.
-* Vytváření zásad za běhu na základě informací v externího zdroje dat (např. databáze) nebo určení požadavků na autorizaci dynamicky prostřednictvím jiný mechanismus.
+* K poskytování hodnocení zásad pomocí externí služby.
+* Pomocí velkého rozsahu zásad (pro jiné místnosti čísla nebo ve věku, například), proto nemá smysl pro přidání jednotlivých zásad jednotlivé autorizace pomocí `AuthorizationOptions.AddPolicy` volání.
+* Vytváření zásad za běhu na základě informací v externího zdroje dat (třeba databáze) nebo určení požadavků na povolení dynamicky prostřednictvím jiného mechanismu.
 
 ## <a name="customizing-policy-retrieval"></a>Přizpůsobení načtení zásad
 
-Aplikace ASP.NET Core používat provádění `IAuthorizationPolicyProvider` rozhraní k načtení zásad autorizace. Ve výchozím nastavení [DefaultAuthorizationPolicyProvider](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider) je zaregistrován a použít. `DefaultAuthorizationPolicyProvider` Vrátí zásady z `AuthorizationOptions` součástí `IServiceCollection.AddAuthorization` volání.
+Aplikace ASP.NET Core pomocí implementace `IAuthorizationPolicyProvider` rozhraní k načtení zásad autorizace. Ve výchozím nastavení [DefaultAuthorizationPolicyProvider](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider) je zaregistrované a použít. `DefaultAuthorizationPolicyProvider` Vrátí zásad `AuthorizationOptions` součástí `IServiceCollection.AddAuthorization` volání.
 
-Toto chování můžete přizpůsobit tak, že zaregistrujete jiné `IAuthorizationPolicyProvider` implementace v dané aplikaci [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru. 
+Toto chování můžete přizpůsobit tak, že zaregistrujete jiný `IAuthorizationPolicyProvider` implementace aplikace [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru. 
 
 `IAuthorizationPolicyProvider` Rozhraní obsahuje dvě rozhraní API:
 
-* [GetPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getpolicyasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider_GetPolicyAsync_System_String_) vrátí zásad autorizace pro daného názvu.
-* [GetDefaultPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getdefaultpolicyasync?view=aspnetcore-2.0) vrátí výchozí zásady autorizace (zásady používané pro `[Authorize]` atributy bez zadanou zásadu). 
+* [GetPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getpolicyasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider_GetPolicyAsync_System_String_) vrátí zásad autorizace pro daný název.
+* [GetDefaultPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getdefaultpolicyasync?view=aspnetcore-2.0) vrátí výchozí zásady autorizace (zásady používané pro `[Authorize]` atributy bez zásad zadaný). 
 
-Implementací tato dvě rozhraní API můžete přizpůsobit, jak jsou uvedeny zásad autorizace.
+Implementací těchto dvou rozhraní API můžete přizpůsobit, jak jsou k dispozici zásad autorizace.
 
-## <a name="parameterized-authorize-attribute-example"></a>Parametry autorizovat příklad atribut
+## <a name="parameterized-authorize-attribute-example"></a>Parametrizované autorizovat příkladu atribut
 
-Jeden scénář kde `IAuthorizationPolicyProvider` je užitečné, je povolení vlastní `[Authorize]` atributy, jejichž požadavky závisí na parametr. Například v [na základě zásad autorizace](xref:security/authorization/policies) dokumentace, základě stáří ("AtLeast21") zásad byla použita jako ukázka. Pokud jiný řadič akce v aplikaci má být k dispozici pro uživatele *různých* stáří, může být užitečné používat mnoho různých zásad na základě věku. Místo registrace všechny jiné na základě stáří zásadách, které aplikace bude nutné v `AuthorizationOptions`, můžete vygenerovat zásad dynamicky pomocí vlastní `IAuthorizationPolicyProvider`. Chcete-li pomocí zásady jednodušší, může opatřit poznámkami akce s atributem autorizace jako `[MinimumAgeAuthorize(20)]`.
+Jeden scénář kde `IAuthorizationPolicyProvider` je užitečné, je povolení vlastní `[Authorize]` atributy, jehož požadavky na závisí na parametru. Například v [autorizace na základě zásad](xref:security/authorization/policies) dokumentaci, založené na stáří ("AtLeast21") zásady byl použit jako ukázku. Pokud jiný kontroler akce v aplikaci by měla být k dispozici uživatelům *různých* ve věku, může být užitečné používat mnoho různých zásad na základě věku. Místo registrace všechny různé věkové zásady, které aplikace se musí v `AuthorizationOptions`, můžete vygenerovat zásad dynamicky pomocí vlastní `IAuthorizationPolicyProvider`. Chcete-li pomocí zásad jednodušší, může opatřit poznámkami akce s atributem vlastní autorizace jako `[MinimumAgeAuthorize(20)]`.
 
-## <a name="custom-authorization-attributes"></a>Autorizace vlastní atributy
+## <a name="custom-authorization-attributes"></a>Atributy vlastní autorizace
 
-Zásady autorizace jsou identifikovány jejich názvy. Vlastní `MinimumAgeAuthorizeAttribute` popsané dříve musí mapování argumenty na řetězec, který slouží k načtení odpovídající zásada autorizace. Můžete k tomu odvozené z `AuthorizeAttribute` a provádění `Age` vlastnost wrap `AuthorizeAttribute.Policy` vlastnost.
+Zásady autorizace se identifikují podle svých názvů. Vlastní `MinimumAgeAuthorizeAttribute` popsané dříve je potřeba namapovat argumenty do řetězce, který slouží k načtení odpovídajících zásad autorizace. Uděláte to tak odvozený od `AuthorizeAttribute` a provádění `Age` wrap vlastnost `AuthorizeAttribute.Policy` vlastnost.
 
 ```CSharp
 internal class MinimumAgeAuthorizeAttribute : AuthorizeAttribute
@@ -72,9 +72,9 @@ internal class MinimumAgeAuthorizeAttribute : AuthorizeAttribute
 }
 ```
 
-Tento typ atributu je `Policy` řetězec založený na předponě pevně (`"MinimumAge"`) a celé předaná prostřednictvím konstruktoru.
+Tento typ atribut má `Policy` řetězce na základě pevně zakódované předpony (`"MinimumAge"`) a celé číslo předané prostřednictvím konstruktoru.
 
-Můžete provést u akce v stejným způsobem jako ostatní `Authorize` atributy s tím rozdílem, že bude trvat celé jako parametr.
+Můžete provést u akce stejným způsobem jako ostatní `Authorize` atributy s tím rozdílem, že přijímá jako parametr celé číslo.
 
 ```CSharp
 [MinimumAgeAuthorize(10)]
@@ -83,13 +83,13 @@ public IActionResult RequiresMinimumAge10()
 
 ## <a name="custom-iauthorizationpolicyprovider"></a>Vlastní IAuthorizationPolicyProvider
 
-Vlastní `MinimumAgeAuthorizeAttribute` usnadňuje požadavek zásady autorizace pro všechny minimálním stářím potřeby. Další problém vyřešit, je zajistit se, že zásady autorizace, jsou k dispozici pro všechny tyto různé stáří. To je, kdy `IAuthorizationPolicyProvider` je užitečné.
+Vlastní `MinimumAgeAuthorizeAttribute` usnadňuje žádosti o zásady autorizace pro žádné minimální stáří požadovaného. Další problém vyřešit, je zajistit, že zásady ověřování jsou k dispozici pro všechny tyto různé věkové kategorie. Tady `IAuthorizationPolicyProvider` je užitečné.
 
-Při použití `MinimumAgeAuthorizationAttribute`, názvy zásad autorizace bude vyhovovat vzoru `"MinimumAge" + Age`, takže vlastní `IAuthorizationPolicyProvider` měl generovat zásad autorizace podle:
+Při použití `MinimumAgeAuthorizationAttribute`, názvy zásad autorizace se řídí vzorem `"MinimumAge" + Age`, takže vlastní `IAuthorizationPolicyProvider` by měl generovat zásad autorizace podle:
 
-* Analýza stáří z název zásady.
+* Analýza věk z název zásady.
 * Pomocí `AuthorizationPolicyBuilder` vytvořit nový `AuthorizationPolicy`
-* Přidávání požadavků zásad podle věk pomocí `AuthorizationPolicyBuilder.AddRequirements`. V dalších scénářích, můžete použít `RequireClaim`, `RequireRole`, nebo `RequireUserName` místo.
+* Přidávání požadavků zásad založené na věk pomocí `AuthorizationPolicyBuilder.AddRequirements`. V jiných scénářích může používat `RequireClaim`, `RequireRole`, nebo `RequireUserName` místo.
 
 ```CSharp
 internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
@@ -115,40 +115,40 @@ internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
 }
 ```
 
-## <a name="multiple-authorization-policy-providers"></a>Několik poskytovatelů zásad autorizace
+## <a name="multiple-authorization-policy-providers"></a>Více poskytovatelů zásad autorizace
 
-Při použití vlastní `IAuthorizationPolicyProvider` implementace, mějte na paměti, který ASP.NET Core používá jenom jednu instanci `IAuthorizationPolicyProvider`. Pokud vlastního zprostředkovatele není schopen poskytnout zásady autorizace pro názvy všech zásad, se musí vrátit k poskytovatele zálohování. Názvy zásad mohou zahrnovat ty, které pocházejí z výchozí zásady pro `[Authorize]` atributy bez názvu.
+Při použití vlastní `IAuthorizationPolicyProvider` implementace, mějte na paměti, který ASP.NET Core využívá jenom jednu instanci `IAuthorizationPolicyProvider`. Pokud vlastního zprostředkovatele není schopna poskytnout zásady autorizace pro názvy všech zásad, ji by měl vrátit zpět k poskytovatelem zálohování. Názvy zásad může zahrnovat ty, které pocházejí z výchozí zásady pro `[Authorize]` atributy bez názvu.
 
-Zvažte například, že aplikace zásady vlastní stáří i tradičnější načtení zásad na základě rolí. Tyto aplikace použít poskytovatele zásad autorizace který:
+Představte si třeba, že aplikace zásady vlastní stáří a tradičnější načtení zásad na základě rolí. Takové aplikace může používat poskytovatele zásad autorizace, které:
 
 * Pokusí se analyzovat názvy zásad. 
-* Volání do zprostředkovatele jinou zásadu (jako je `DefaultAuthorizationPolicyProvider`), pokud název zásady neobsahuje stáří.
+* Volání do jiné zásady zprostředkovatele (jako je `DefaultAuthorizationPolicyProvider`), pokud neobsahuje název zásady stáří.
 
 ## <a name="default-policy"></a>Výchozí zásady
 
-Kromě zásady s názvem autorizace, vlastní `IAuthorizationPolicyProvider` musí implementovat `GetDefaultPolicyAsync` zajistit zásad autorizace pro `[Authorize]` atributy bez zadaný název zásad.
+Kromě toho, že zásady s názvem autorizace, vlastní `IAuthorizationPolicyProvider` musí implementovat `GetDefaultPolicyAsync` poskytnout zásady autorizace pro `[Authorize]` atributy bez zadaný název zásad.
 
-V mnoha případech tento atribut autorizace pouze vyžaduje ověřeného uživatele, umožní vám provádět potřebné zásadou volání `RequireAuthenticatedUser`:
+V mnoha případech se tento atribut autorizace vyžaduje pouze ověřeného uživatele, abyste měli nezbytné zásad voláním `RequireAuthenticatedUser`:
 
 ```CSharp
 public Task<AuthorizationPolicy> GetDefaultPolicyAsync() => 
     Task.FromResult(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build());
 ```
 
-Stejně jako u všech aspektů vlastní `IAuthorizationPolicyProvider`, tuto možnost můžete upravit, podle potřeby. V některých případech:
+Stejně jako u všech aspektů vlastní `IAuthorizationPolicyProvider`, si ho můžete přizpůsobit, podle potřeby. V některých případech:
 
-* Výchozí zásady autorizace se možná nepoužívají.
-* Načítání výchozí zásady se dají delegovat na zálohu `IAuthorizationPolicyProvider`.
+* Výchozí autorizační zásady nemusí používat.
+* Načítají se výchozí zásady se dají delegovat na záložní `IAuthorizationPolicyProvider`.
 
 ## <a name="using-a-custom-iauthorizationpolicyprovider"></a>Pomocí vlastních IAuthorizationPolicyProvider
 
-Použít vlastní zásady ze `IAuthorizationPolicyProvider`, musíte:
+Použití vlastních zásad ze `IAuthorizationPolicyProvider`, musíte:
 
-* Zaregistrujte příslušný `AuthorizationHandler` typy pomocí vkládání závislostí (popsané v [na základě zásad autorizace](xref:security/authorization/policies#authorization-handlers)), stejně jako u všech scénářích na základě zásad autorizace.
-* Zaregistrovat vlastní `IAuthorizationPolicyProvider` typu v kolekci služby vkládání závislostí aplikace (v `Startup.ConfigureServices`) k nahrazení výchozího zásad zprostředkovatele.
+* Zaregistrujte příslušný `AuthorizationHandler` typy s injektáž závislostí (popsané v [autorizace na základě zásad](xref:security/authorization/policies#authorization-handlers)), stejně jako u všech scénářích ověřování na základě zásad.
+* Zaregistrovat vlastní `IAuthorizationPolicyProvider` typ v kolekci služby injektáž závislostí aplikace (v `Startup.ConfigureServices`) Chcete-li nahradit výchozí poskytovatel zásad.
 
 ```CSharp
 services.AddTransient<IAuthorizationPolicyProvider, MinimumAgePolicyProvider>();
 ```
 
-Dokončení vlastní `IAuthorizationPolicyProvider` ukázka je dostupná v [úložiště GitHub aspnet/AuthSamples](https://github.com/aspnet/AuthSamples/tree/dev/samples/CustomPolicyProvider).
+Kompletní vlastní `IAuthorizationPolicyProvider` ukázka je k dispozici v [úložiště GitHub aspnet/AuthSamples](https://github.com/aspnet/AuthSamples/tree/master/samples/CustomPolicyProvider).

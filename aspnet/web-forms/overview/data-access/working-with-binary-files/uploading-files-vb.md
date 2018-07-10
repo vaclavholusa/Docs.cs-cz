@@ -132,7 +132,7 @@ Všimněte si, že žádná z nich vrácena dotazy `Categories` tabulky s `Pictu
 Začněte přidáním těchto dvou sloupců `CategoriesDataTable`. Klikněte pravým tlačítkem na `CategoriesDataTable` s záhlaví, v místní nabídce vyberte možnost Přidat a pak zvolte možnosti sloupce. Tím se vytvoří nový `DataColumn` v objektu DataTable s názvem `Column1`. Přejmenujte tento sloupec na `Picture`. V okně Vlastnosti nastavte `DataColumn` s `DataType` vlastnost `System.Byte[]` (nejedná se o možnost v rozevíracím seznamu, je potřeba zadat ho v).
 
 
-[![Vytvoření obrázku s názvem DataColumn, jejichž datový typ je System.Byte]](uploading-files-vb/_static/image6.gif)](uploading-files-vb/_static/image7.png)
+[![Vytvoření obrázku s názvem DataColumn, jejichž datový typ je System.Byte](uploading-files-vb/_static/image6.gif)](uploading-files-vb/_static/image7.png)
 
 **Obrázek 6**: vytvoření `DataColumn` pojmenované `Picture` jehož `DataType` je `System.Byte[]` ([kliknutím ji zobrazíte obrázek v plné velikosti](uploading-files-vb/_static/image8.png))
 

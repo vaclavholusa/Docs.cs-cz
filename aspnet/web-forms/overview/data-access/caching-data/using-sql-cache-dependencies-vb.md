@@ -4,19 +4,16 @@ title: Použití závislostí mezipaměti SQL (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Nejjednodušší strategií ukládání do mezipaměti je umožnit data uložená v mezipaměti vyprší po zadaném časovém období. Ale tento jednoduchý přístup znamená, že data uložená v mezipaměti maintai...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 74692fb7018cd75e29afc6d5852caddfdac1ed06
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 7929966d9eb82994b9d427d0c3fd7f08c41212fc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379842"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821642"
 ---
 <a name="using-sql-cache-dependencies-vb"></a>Použití závislostí mezipaměti SQL (VB)
 ====================

@@ -4,19 +4,16 @@ title: Na dvou stránkách (C#) filtrování záznamů Master/Detail | Dokumenta
 author: rick-anderson
 description: V tomto kurzu jsme vám tento model implementovat použitím GridView seznam dodavatelů v databázi. Každý řádek dodavatele v prvku GridView, bude obsahovat Vie...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 552d2d50-fe73-4153-9a7f-2b379bec4625
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 48102f64b1ec832774d9b41258503937dae4f4d5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 13f5a13ac33ec9dfbff1952bc3bbb4dc951ab139
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373117"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823976"
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>Na dvou stránkách (C#) filtrování záznamů Master/Detail
 ====================

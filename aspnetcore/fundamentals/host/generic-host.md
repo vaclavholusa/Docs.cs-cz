@@ -7,18 +7,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: ce2a540cc7a63f61075c9c01759f67531171e1e1
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
-ms.translationtype: HT
+ms.openlocfilehash: 879f31a5916646a4d63f9f503173dc9ff4c53434
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889152"
+ms.locfileid: "37894150"
 ---
 # <a name="net-generic-host"></a>Obecný hostitele .NET
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-Konfigurace aplikací .NET a spouštění *hostitele*. Hostitel je zodpovědný za spouštění a životního cyklu správy aplikací. Toto téma obsahuje obecný hostitele ASP.NET Core ([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder)), což je užitečné pro hostování aplikací, které není zpracovávají požadavky HTTP. Pro pokrytí webového hostitele ([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)), najdete v článku [webového hostitele](xref:fundamentals/host/web-host) tématu.
+Konfigurace aplikací .NET a spouštění *hostitele*. Hostitel je zodpovědný za spouštění a životního cyklu správy aplikací. Toto téma obsahuje obecný hostitele ASP.NET Core ([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder)), což je užitečné pro hostování aplikací, které není zpracovávají požadavky HTTP. Pro pokrytí webového hostitele ([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)), najdete v článku <xref:fundamentals/host/web-host>.
 
 Cílem obecný hostitele je oddělit kanálu HTTP z hostitele webového rozhraní API umožňující širší škálu scénářů hostitele. Zasílání zpráv, úlohy na pozadí a další úlohy jiným protokolem než HTTP podle obecného hostitele, který je výhodné společné funkce, jako jsou konfigurace, injektáž závislostí (DI) a protokolování.
 
@@ -58,7 +58,7 @@ Konfigurace hostitele Tvůrce je vytvořen zavoláním [ConfigureHostConfigurati
 
 Konfigurace proměnných prostředí není přidán ve výchozím nastavení. Volání [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) na tvůrce hostitele a nakonfigurujte hostitele z proměnných prostředí. `AddEnvironmentVariables` přijímá volitelný uživatelsky definovanou předponu. Ukázková aplikace používá předponou `PREFIX_`. Předpona, která se odebere, když jsou proměnné prostředí načteny. Když je ukázková aplikace hostitel nakonfigurovaný, hodnotu proměnné prostředí pro `PREFIX_ENVIRONMENT` stane hodnota konfigurace hostitele `environment` klíč.
 
-Během vývoje. při použití [sady Visual Studio](https://www.visualstudio.com/) nebo spuštěním aplikace s `dotnet run`, lze nastavit proměnné prostředí *Properties/launchSettings.json* souboru. V [Visual Studio Code](https://code.visualstudio.com/), lze nastavit proměnné prostředí *.vscode/launch.json* souboru během vývoje. Další informace najdete v tématu [používání více prostředí](xref:fundamentals/environments).
+Během vývoje. při použití [sady Visual Studio](https://www.visualstudio.com/) nebo spuštěním aplikace s `dotnet run`, lze nastavit proměnné prostředí *Properties/launchSettings.json* souboru. V [Visual Studio Code](https://code.visualstudio.com/), lze nastavit proměnné prostředí *.vscode/launch.json* souboru během vývoje. Další informace naleznete v tématu <xref:fundamentals/environments>.
 
 `ConfigureHostConfiguration` můžete volat vícekrát s přičítáním výsledky. Hostitel používá kterékoli z těchto možností nastaví hodnotu poslední.
 
@@ -76,6 +76,21 @@ Příklad `HostBuilder` konfiguraci pomocí `ConfigureHostConfiguration`:
 ### <a name="extension-method-configuration"></a>Konfigurace metody rozšíření
 
 Metody rozšíření jsou volány v `IHostBuilder` implementace nakonfigurujte obsahu kořenové certifikáty a prostředí.
+
+#### <a name="application-key-name"></a>Klíč aplikace (název)
+
+[IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) vlastnost nastaven z konfigurace hostitele během vytváření hostitele. Pokud chcete explicitně nastavit hodnotu, použijte [HostDefaults.ApplicationKey](/dotnet/api/microsoft.extensions.hosting.hostdefaults.applicationkey):
+
+**Klíč**: applicationName  
+**Typ**: *řetězec*  
+**Výchozí**: název sestavení obsahující vstupní bod aplikace.  
+**Sada s použitím**: `UseSetting`  
+**Proměnná prostředí**: `<PREFIX_>APPLICATIONKEY` (`<PREFIX_>` je [volitelné a uživatelem definovanými](#configuration-builder))
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting(WebHostDefaults.ApplicationKey, "CustomApplicationName")
+```
 
 #### <a name="content-root"></a>Obsah kořenové
 
@@ -140,7 +155,7 @@ Přesunutí souborů nastavení do výstupního adresáře, zadejte soubory nast
 
 [ConfigureServices](/dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices) přidá do aplikace služeb [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru. `ConfigureServices` můžete volat vícekrát s přičítáním výsledky.
 
-Hostovanou službu je třída s atributem logiky úloh na pozadí, který implementuje [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) rozhraní. Další informace najdete v tématu [s hostovanými službami úloh na pozadí](xref:fundamentals/host/hosted-services) tématu.
+Hostovanou službu je třída s atributem logiky úloh na pozadí, který implementuje [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) rozhraní. Další informace naleznete v tématu <xref:fundamentals/host/hosted-services>.
 
 [Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/) používá `AddHostedService` metodu rozšíření k přidání služby pro události doby života `LifetimeEventsHostedService`a úlohu na pozadí vypršel časový limit `TimedHostedService`, do aplikace:
 
@@ -390,7 +405,7 @@ public class MyClass
 }
 ```
 
-Další informace najdete v tématu [používání více prostředí](xref:fundamentals/environments).
+Další informace naleznete v tématu <xref:fundamentals/environments>.
 
 ## <a name="iapplicationlifetime-interface"></a>IApplicationLifetime rozhraní
 
@@ -429,5 +444,5 @@ public class MyClass
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Úlohy na pozadí s hostovanými službami](xref:fundamentals/host/hosted-services)
+* <xref:fundamentals/host/hosted-services>
 * [Hostování úložiště ukázek na Githubu](https://github.com/aspnet/Hosting/tree/release/2.1/samples)

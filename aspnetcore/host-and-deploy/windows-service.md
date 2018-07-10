@@ -1,33 +1,33 @@
 ---
-title: Jádro ASP.NET hostitele ve službě Windows
+title: Hostitele ASP.NET Core ve službě Windows
 author: guardrex
 description: Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Windows.
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 718cc83bb29c0cff323853d22c107e00616b1dd1
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: bce09a500160f0bf13926786d277f8b1e88c1bf8
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126232"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894254"
 ---
-# <a name="host-aspnet-core-in-a-windows-service"></a>Jádro ASP.NET hostitele ve službě Windows
+# <a name="host-aspnet-core-in-a-windows-service"></a>Hostitele ASP.NET Core ve službě Windows
 
-Podle [Luke Latham](https://github.com/guardrex) a [tní Dykstra](https://github.com/tdykstra)
+Podle [Luke Latham](https://github.com/guardrex) a [Petr Dykstra](https://github.com/tdykstra)
 
-Aplikace ASP.NET Core může být hostovaný v systému Windows bez použití služby IIS jako [služba systému Windows](/dotnet/framework/windows-services/introduction-to-windows-service-applications). Pokud je hostováno jako služby systému Windows, aplikace může automaticky spustit po restartování počítače a dojde k chybě bez nutnosti lidského zásahu.
+Aplikace ASP.NET Core je možné hostovat na Windows bez použití služby IIS jako [Windows Service](/dotnet/framework/windows-services/introduction-to-windows-service-applications). Pokud hostovaný jako služba Windows, aplikace může automaticky spuštění po restartování a dojde k chybě, které nevyžaduje zásah člověka.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="get-started"></a>Začínáme
 
-Následující minimální změny jsou nezbytné pro nastavení existujícího projektu ASP.NET Core spuštění ve službě:
+K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě jsou nezbytné následující minimální změny:
 
 1. V souboru projektu:
 
-   1. Ověřte přítomnost identifikátor runtime nebo ho přidat do  **\<PropertyGroup >** cílové rozhraní, která obsahuje:
+   1. Ověřte existenci identifikátor modulu runtime nebo ho přidat do  **\<PropertyGroup >** , který obsahuje Cílová architektura:
       ```xml
       <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -40,7 +40,7 @@ Následující minimální změny jsou nezbytné pro nastavení existujícího p
 
    * Volání [hostitele. RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice) místo `host.Run`.
 
-   * Pokud kód volá `UseContentRoot`, cesta k aplikaci je publikována umístění Místo použití `Directory.GetCurrentDirectory()`.
+   * Volání [UseContentRoot](xref:fundamentals/host/web-host#content-root) a cesta k aplikaci pro publikování umístění, namísto použití `Directory.GetCurrentDirectory()`.
 
      ::: moniker range=">= aspnetcore-2.0"
 
@@ -54,25 +54,25 @@ Následující minimální změny jsou nezbytné pro nastavení existujícího p
 
      ::: moniker-end
 
-1. Publikování aplikace. Použití [dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování se Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles).
+1. Publikování aplikace. Použití [dotnet publikovat](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování pro Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles).
 
-   K publikování ukázkové aplikace z příkazového řádku, spusťte následující příkaz v okně konzoly ze složky projektu:
+   Chcete-li publikovat ukázkovou aplikaci z příkazového řádku, spusťte následující příkaz v okně konzoly ze složky projektu:
 
    ```console
    dotnet publish --configuration Release
    ```
 
-1. Použití [sc.exe](https://technet.microsoft.com/library/bb490995) nástroj příkazového řádku k vytvoření služby. `binPath` Hodnota je cesta ke spustitelnému souboru aplikace, která zahrnuje název spustitelného souboru. **Mezera mezi znaménkem rovnosti a uvozovky na začátku cesta je požadovaná.**
+1. Použití [sc.exe](https://technet.microsoft.com/library/bb490995) nástroj příkazového řádku vytvořte službu. `binPath` Hodnota je cesta ke spustitelnému souboru aplikace, která zahrnuje název spustitelného souboru. **Mezera mezi znaménko rovná se a znak uvozovek na začátek cesty je povinný.**
 
    ```console
    sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
    ```
 
-   Pro službu publikovaná ve složce projektu, použijte cestu k *publikování* složku pro vytvoření služby. Služba je v následujícím příkladu:
+   Služby se publikují do složky projektu, použijte cestu k *publikovat* složku pro vytvoření služby. Služba je v následujícím příkladu:
 
    * S názvem **Moje_služba**.
-   * Publikovaná *c:\\my_services\\AspNetCoreService\\bin\\verze\\&lt;TARGET_FRAMEWORK&gt;\\publikování* složky.
-   * Reprezentována aplikaci spustitelný soubor s názvem *AspNetCoreService.exe*.
+   * Publikování *c:\\my_services\\AspNetCoreService\\bin\\vydání\\&lt;TARGET_FRAMEWORK&gt;\\publikovat* složky.
+   * Reprezentována spustitelné aplikaci s názvem *AspNetCoreService.exe*.
 
    Otevřete příkazové okno s oprávněními správce a spusťte následující příkaz:
 
@@ -81,71 +81,71 @@ Následující minimální změny jsou nezbytné pro nastavení existujícího p
    ```
    
    > [!IMPORTANT]
-   > Zajistěte, aby místo nachází mezi `binPath=` argument a její hodnotu.
+   > Ujistěte se, že je k dispozici mezi prostor `binPath=` argument a její hodnotu.
    
-   K publikování a spuštění služby v jiné složce:
+   Publikovat a spustit službu z jiné složky:
    
-   1. Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkaz.
-   1. Vytvoření služby pomocí `sc.exe` příkaz pomocí cesty ke složce výstup. Zahrnout název spustitelného souboru procesu služby k zadané cestě `binPath`.
+   1. Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkazu.
+   1. Vytvoření služby s `sc.exe` příkazu cesta k výstupní složce. Zahrnout název spustitelného souboru služby na cestě k dispozici na `binPath`.
 
-1. Spusťte službu s `sc start <SERVICE_NAME>` příkaz.
+1. Spusťte službu pomocí `sc start <SERVICE_NAME>` příkazu.
 
-   Spusťte službu ukázkové aplikace, použijte následující příkaz:
+   Spustit službu ukázkové aplikace, použijte následující příkaz:
 
    ```console
    sc start MyService
    ```
 
-   Příkaz přijímá několik sekund, spusťte službu.
+   Příkaz trvá několik sekund se spustit službu.
 
-1. `sc query <SERVICE_NAME>` Příkaz lze použít ke kontrole stavu služby určit její stav:
+1. `sc query <SERVICE_NAME>` Příkaz je možné zkontrolovat stav služby k určení stavu:
 
    * `START_PENDING`
    * `RUNNING`
    * `STOP_PENDING`
    * `STOPPED`
 
-   Použijte následující příkaz a zkontrolujte stav služby ukázkové aplikaci:
+   Použijte následující příkaz a zkontrolujte stav služby app service vzorku:
 
    ```console
    sc query MyService
    ```
 
-1. Pokud služba je v `RUNNING` stav a pokud služba je webová aplikace, vyhledejte aplikaci v jeho cestu (ve výchozím nastavení, `http://localhost:5000`, který přesměruje na `https://localhost:5001` při použití [HTTPS přesměrování Middleware](xref:security/enforcing-ssl)).
+1. Pokud je služba v `RUNNING` stavu a pokud je služba webové aplikace, procházet aplikace, její cesta (ve výchozím nastavení, `http://localhost:5000`, který přesměruje `https://localhost:5001` při použití [HTTPS přesměrování Middleware](xref:security/enforcing-ssl)).
 
-   Ukázka app service, vyhledat aplikaci v `http://localhost:5000`.
+   Aplikační služba ukázkového procházet aplikace na adrese `http://localhost:5000`.
 
-1. Zastavte službu s `sc stop <SERVICE_NAME>` příkaz.
+1. Zastavit službu s `sc stop <SERVICE_NAME>` příkazu.
 
-   Následující příkaz zastaví službu ukázkové aplikaci:
+   Následující příkaz zastaví aplikační služba ukázkového:
 
    ```console
    sc stop MyService
    ```
 
-1. Po chvíli trvat kdykoli zastavit službu, odinstalujte službu s `sc delete <SERVICE_NAME>` příkaz.
+1. Po krátké prodlevě zastavit službu, odinstalujte službu s `sc delete <SERVICE_NAME>` příkazu.
 
-   Zkontrolujte stav služby ukázkové aplikaci:
+   Postup kontroly stavu aplikační služba ukázkového:
 
    ```console
    sc query MyService
    ```
 
-   Když služba ukázkové aplikace je v `STOPPED` stavu, odinstalujte službu ukázkové aplikace použijte následující příkaz:
+   Pokud je aplikační služba ukázkového v `STOPPED` stavu, použijte následující příkaz pro odinstalaci aplikační služba ukázkového:
 
    ```console
    sc delete MyService
    ```
 
-## <a name="provide-a-way-to-run-outside-of-a-service"></a>Zadejte způsob, jak spustit mimo službu
+## <a name="provide-a-way-to-run-outside-of-a-service"></a>Poskytují způsob, jak běží mimo službu
 
-Je snazší testování a ladění při spuštění mimo službu, takže se obvykle přidávat kód, který volá `RunAsService` pouze za určitých podmínek. Například můžete spouštět aplikace jako konzolové aplikace s `--console` argument příkazového řádku nebo pokud je připojen ladicí program:
+Usnadňuje testování a ladění, když se provozují mimo službu, takže je obvyklý přidáte kód, který volá `RunAsService` pouze za určitých podmínek. Například aplikace může běžet jako aplikace konzoly v jazyce `--console` argument příkazového řádku nebo pokud je připojen ladicí program:
 
 ::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
 
-Vzhledem k tomu, že konfigurace ASP.NET Core vyžaduje páry název hodnota pro argumenty příkazového řádku, `--console` přepínače se odebere před argumenty do [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder).
+Vzhledem k tomu, že konfigurace ASP.NET Core vyžaduje páry název hodnota pro argumenty příkazového řádku, `--console` přepínač byl předtím, než jsou předány argumenty [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder).
 
 ::: moniker-end
 
@@ -155,7 +155,7 @@ Vzhledem k tomu, že konfigurace ASP.NET Core vyžaduje páry název hodnota pro
 
 ::: moniker-end
 
-## <a name="handle-stopping-and-starting-events"></a>Zpracování ukončení a spuštění události
+## <a name="handle-stopping-and-starting-events"></a>Zpracování, spouštění a zastavování události
 
 Pro zpracování [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarting), [OnStarted](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstarted), a [OnStopping](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice.onstopping) události, proveďte následující další změny:
 
@@ -163,11 +163,11 @@ Pro zpracování [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsse
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-2. Vytvoření metody rozšíření pro [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost) , předá vlastní `WebHostService` k [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run):
+2. Vytvořit metodu rozšíření pro [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost) , který předá vlastní `WebHostService` k [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run):
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-3. V `Program.Main`, zavolejte metodu nové rozšíření, `RunAsCustomService`, místo [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice):
+3. V `Program.Main`, zavolat novou metodu rozšíření `RunAsCustomService`, namísto [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice):
 
    ::: moniker range=">= aspnetcore-2.0"
 
@@ -181,14 +181,14 @@ Pro zpracování [OnStarting](/dotnet/api/microsoft.aspnetcore.hosting.windowsse
 
    ::: moniker-end
 
-Pokud vlastní `WebHostService` kódu vyžaduje službu z vkládání závislostí (například protokolovač), získat ze [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) vlastnost:
+Pokud vlastní `WebHostService` kód vyžaduje službu z injektáž závislostí (jako je například protokolování), získat ze [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) vlastnost:
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
 
-## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro vyrovnávání zatížení
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro nástroj pro vyrovnávání zatížení
 
-Služby, které interakci s požadavky z Internetu nebo podnikové síti a jsou za proxy server nebo službu Vyrovnávání zatížení může vyžadovat další konfiguraci. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
+Služby, které interakci s žádostí z Internetu nebo podnikové síti a jsou za proxy nebo nástroj pro vyrovnávání zatížení může vyžadovat dodatečnou konfiguraci. Další informace najdete v tématu [konfigurace ASP.NET Core práci se servery proxy a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="kestrel-endpoint-configuration"></a>Konfigurace koncového bodu kestrel
 
-Informace o konfiguraci koncového bodu Kestrel, včetně konfigurace protokolu HTTPS a SNI podporu, najdete v části [konfigurace koncového bodu Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration).
+Informace týkající se konfigurace koncového bodu Kestrel, včetně konfigurace protokolu HTTPS a podpory SNI, naleznete v tématu [konfigurace koncového bodu Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration).

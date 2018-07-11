@@ -4,19 +4,16 @@ title: Tailspin Spyworks – zobrazení nákupního košíku | Dokumentace Micro
 author: JoeStagner
 description: Joe Stagner ukazuje, jak v ukázkové aplikaci webových formulářů Tailspin Spyworks zobrazení nákupního košíku.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/29/2010
-ms.topic: article
 ms.assetid: 665d7ffe-3d96-4afc-a1d8-5330ae819764
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-display-shopping-cart
 msc.type: video
-ms.openlocfilehash: 50a0d2adbb9e8d967999b6ac8750438778f19770
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: babec48da9d4be5785316ebe435d15c0fe5895f9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398469"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817470"
 ---
 <a name="tailspin-spyworks---display-shopping-cart"></a>Tailspin Spyworks – zobrazení nákupního košíku
 ====================

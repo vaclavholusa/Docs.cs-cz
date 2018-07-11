@@ -4,19 +4,16 @@ title: '[Postup:] Implementace příkazových tlačítek u jednotlivých polože
 author: rick-anderson
 description: V tomto videu se zobrazí Chris pixelů na způsob zpracování událostí spojených s ovládacím prvkem tlačítko v každé položce ovládací prvek vázaný na data jako ovládací prvek ListView. První...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/24/2008
-ms.topic: article
 ms.assetid: b883989d-4735-478e-ab56-411a2ed98f73
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-command-buttons-for-individual-items
 msc.type: video
-ms.openlocfilehash: b1e310db54912785d3af66009b4b4650e9ec60f6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3dbb82e6de7100c51764f11f0a9ad72eed26cf99
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384375"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815931"
 ---
 <a name="how-do-i-implement-command-buttons-for-individual-items"></a>[Postup:] Implementace příkazových tlačítek u jednotlivých položek
 ====================

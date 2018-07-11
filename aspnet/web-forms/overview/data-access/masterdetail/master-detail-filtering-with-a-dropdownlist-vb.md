@@ -4,19 +4,16 @@ title: Ovládacím prvkem DropDownList (VB) filtrování záznamů Master/Detail
 author: rick-anderson
 description: V tomto kurzu uvidíme, jak zobrazit hlavní záznamy v ovládací prvek DropDownList a podrobnosti vybrané položky seznamu v GridView.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: ea44717e-ab2e-46cd-a692-e4a9c0de194c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d15348812abf88fa35485c0d3415b2683225b6b5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a1bd1a20950376244c1d461d139f3eee6bc9a9cc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386692"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816253"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>Ovládacím prvkem DropDownList (VB) filtrování záznamů Master/Detail
 ====================

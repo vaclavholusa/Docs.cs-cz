@@ -4,19 +4,16 @@ title: Technologie ASP.NET (VB) možnosti hostování | Dokumentace Microsoftu
 author: rick-anderson
 description: Webové aplikace ASP.NET jsou obvykle navrženy, vytvořili a otestovat v místním vývojovém prostředí a musí být nasazeny produkčního prostředí o...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 492f5ae2-bad7-4107-89a9-f04a9525dee7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0977548ce56ad8dba2dc677ae4958fd4c040bb57
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 68f12de0b459c01ecf766e09144364a64e2d69d3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399114"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817707"
 ---
 <a name="aspnet-hosting-options-vb"></a>Možnosti hostování v technologii ASP.NET (VB)
 ====================

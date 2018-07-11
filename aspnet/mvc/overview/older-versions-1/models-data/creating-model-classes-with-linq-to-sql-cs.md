@@ -4,19 +4,16 @@ title: Vytvoření tříd modelu pomocí LINQ to SQL (C#) | Dokumentace Microsof
 author: microsoft
 description: Cílem tohoto kurzu je vysvětlit jednu z metod vytvoření tříd modelu pro aplikace ASP.NET MVC. V tomto kurzu se dozvíte, jak sestavit model c...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/07/2008
-ms.topic: article
 ms.assetid: f84b4a16-e8bb-49e8-87a0-1832879a3501
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 01a8443326807ff784999288761de85b6ea976b9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 35fa1e882268eaa1bfbd3589c8173e853ad5c5a7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395357"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815847"
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>Vytvoření tříd modelu pomocí LINQ to SQL (C#)
 ====================

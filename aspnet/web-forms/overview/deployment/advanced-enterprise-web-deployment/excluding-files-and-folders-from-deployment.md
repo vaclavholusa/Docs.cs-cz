@@ -4,19 +4,16 @@ title: Vyloučení souborů a složek z nasazení | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma popisuje, jak můžete vyloučit soubory a složky z balíčku pro nasazení webu při sestavení a zabalení webové aplikace.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: f4cc2d40-6a78-429b-b06f-07d000d4caad
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c50352d423f41f84677dbf048e74088214340f3a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 33eecfea86842a93eac705e7823f1eba9519670e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382579"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816675"
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>Vyloučení souborů a složek z nasazení
 ====================
@@ -95,7 +92,7 @@ Následující postup ukazuje, jak přidat *. wpp.targets* soubor do projektu we
 1. Otevřete řešení v sadě Visual Studio 2010.
 2. V **Průzkumníka řešení** okna, klikněte pravým tlačítkem na uzel projektu webové aplikace (například **ContactManager.Mvc**), přejděte na **přidat**a potom klikněte na tlačítko **Nová položka**.
 3. V **přidat novou položku** dialogové okno, vyberte **soubor XML** šablony.
-4. V **název** zadejte *[název projektu] ***.wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a potom klikněte na tlačítko **přidat**.
+4. V **název** zadejte *[název projektu]* **.wpp.targets** (například **ContactManager.Mvc.wpp.targets**) a potom klikněte na tlačítko **přidat**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 

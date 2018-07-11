@@ -4,19 +4,16 @@ title: 'Postup: práce s adresami URL při směrování ASP.NET? | Dokumentace M
 author: rick-anderson
 description: Chris pixelů na toto video ukazuje, jak určení adres URL webu, který využívá směrování ASP.NET. Nejprve webová stránka je vytvořena a směrování je definována do hlavní knihy...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/15/2010
-ms.topic: article
 ms.assetid: 08f9d0a7-cfa0-4914-a672-8a64295d7ba8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-work-with-urls-in-aspnet-routing
 msc.type: video
-ms.openlocfilehash: 14af9797d916dbda307ce158f50da2ad0bac6e9a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 12b1b0bc41365b480c0104c1a1b00fa5ef515137
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364242"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818550"
 ---
 <a name="how-do-i-work-with-urls-in-aspnet-routing"></a>Postup: práce s adresami URL při směrování ASP.NET?
 ====================

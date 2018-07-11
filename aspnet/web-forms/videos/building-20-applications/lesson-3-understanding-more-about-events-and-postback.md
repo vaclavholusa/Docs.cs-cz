@@ -4,19 +4,16 @@ title: '[Lekce 3:]  Principy událostí a postbacku | Dokumentace Microsoftu'
 author: microsoft
 description: V této lekci se dozvíte, jak lze události ve vašem kódu a jak reagovat pokaždé, když dojde k těmto událostem.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/28/2005
-ms.topic: article
 ms.assetid: 59f0bccd-b604-47fa-a42b-71d8ab187bd2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-3-understanding-more-about-events-and-postback
 msc.type: video
-ms.openlocfilehash: c54c91f9aec9898296d68f4f81c4197daba32934
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 83e6581fbbb53df8038006a755ebaf2293baac6b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372971"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818605"
 ---
 <a name="lesson-3--understanding-more-about-events-and-postback"></a>[Lekce 3:]  Orientujte ve více událostí a postbacku
 ====================

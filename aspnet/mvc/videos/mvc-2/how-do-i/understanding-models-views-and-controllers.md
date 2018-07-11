@@ -4,19 +4,16 @@ title: Principy modelů, zobrazení a Kontrolerů | Dokumentace Microsoftu
 author: StephenWalther
 description: Ztrácíte přehled o modelů, zobrazení a Kontrolerů? V tomto kurzu Stephen Walther vás seznámí s různé části aplikace ASP.NET MVC.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/20/2008
-ms.topic: article
 ms.assetid: 10b39a66-091b-4719-8283-7ef3e671a32b
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/understanding-models-views-and-controllers
 msc.type: video
-ms.openlocfilehash: 25557d14e32bbf589d9313400e7daac540d17e8e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 31dee449aab99bcfab20ed62379fc3f194530f59
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377562"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817733"
 ---
 <a name="understanding-models-views-and-controllers"></a>Principy modelů, zobrazení a Kontrolerů
 ====================

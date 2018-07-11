@@ -1,7 +1,7 @@
-V tomto kurzu se dozvíte, jaké vývoj webů ASP.NET MVC jádra s kontrolery a zobrazení. Stránky Razor je nový alternativní v technologii ASP.NET Core 2.0 nebo novější, na stránce programovací model, který usnadňuje vytváření webového uživatelského rozhraní, snazší a zvýšit produktivitu. Doporučujeme vám, že zkusíte [stránky Razor](xref:tutorials/razor-pages/razor-pages-start) kurz před verze MVC. Kurz Razor stránky:
+V tomto kurzu se dozvíte, jaké vývoj webové aplikace ASP.NET Core MVC s použitím kontrolerů a zobrazení. Stránky Razor se nové alternativní v ASP.NET Core 2.0 nebo novější, na stránce programovací model, který umožňuje vytváření webového uživatelského rozhraní jednodušší a produktivnější. Doporučujeme vám vyzkoušet [Razor Pages](xref:tutorials/razor-pages/razor-pages-start) kurz dříve než ve verzi MVC. Kurz pro stránky Razor:
 
-* Je žádoucí pro nový vývoj aplikací.
-* Je snazší postupujte podle.
-* Popisuje další funkce.
+* Je upřednostňovaný způsob pro nový vývoj aplikací.
+* Je usnadňuje její sledování.
+* Zahrnuje další funkce.
 
-Pokud se rozhodnete v tomto kurzu přes [stránky Razor](xref:tutorials/razor-pages/razor-pages-start) verze, dejte nám vědět, proč v [potíže Githubu](https://github.com/aspnet/Docs/issues/6146).
+Pokud se rozhodnete v tomto kurzu přes [Razor Pages](xref:tutorials/razor-pages/razor-pages-start) verze, dejte nám vědět, proč v [tento problém Githubu](https://github.com/aspnet/Docs/issues/6146).

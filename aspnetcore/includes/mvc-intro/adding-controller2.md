@@ -2,62 +2,62 @@ Nahraďte obsah *Controllers/HelloWorldController.cs* následujícím kódem:
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_1)]
 
-Každý `public` metoda v kontroleru je možné volat jako koncový bod HTTP. V ukázce výše obě metody vrátí řetězec.  Poznámka: před každou metodu komentáře.
+Každý `public` metoda v kontroleru je volatelná jako koncový bod HTTP. V příkladu výše obě metody vrací řetězec.  Poznámka: před každou metodu komentáře.
 
-Koncový bod HTTP je targetable adresy URL ve webové aplikaci, například `http://localhost:1234/HelloWorld`a kombinuje protokol použitý: `HTTP`, umístění v síti webového serveru (včetně TCP port): `localhost:1234` a cílový identifikátor URI `HelloWorld`.
+Koncový bod HTTP, jako je targetable adresy URL ve webové aplikaci `http://localhost:1234/HelloWorld`a kombinuje protokol použitý: `HTTP`, umístění v síti webového serveru (včetně TCP port): `localhost:1234` a cílový identifikátor URI `HelloWorld`.
 
-První komentář stavy, jedná se [HTTP GET](https://www.w3schools.com/tags/ref_httpmethods.asp) metody, která je volána připojením "/HelloWorld/" pro základní adresu URL. Určuje druhý komentář [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) metody, která je volána připojením "/ HelloWorld/Vítá /" na adresu URL. Později v tomto kurzu použijete modul generování uživatelského rozhraní pro generování `HTTP POST` metody.
+První komentář stavy, jedná se [HTTP GET](https://www.w3schools.com/tags/ref_httpmethods.asp) metody, která je volána "/HelloWorld/" připojením k základní adrese URL. Určuje druhý komentář [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) metody, která je volána přidáním "/ HelloWorld/uvítací /" na adresu URL. Později v tomto kurzu použijete modul generování uživatelského rozhraní k vygenerování `HTTP POST` metody.
 
-Spuštění aplikace v režimu bez ladění a připojte "HelloWorld" na cestu v panelu Adresa. `Index` Metoda vrátí řetězec.
+Spusťte aplikaci v režimu bez ladění a připojit "HelloWorld" na cestu v panelu Adresa. `Index` Metoda vrátí hodnotu typu string.
 
-![Okno prohlížeče zobrazující odpověď aplikací tohoto objektu je můj výchozí akci.](~/tutorials/first-mvc-app/adding-controller/_static/hell1.png)
+![Okno prohlížeče zobrazující reakce aplikace na tohoto objektu je Moje výchozí akce](~/tutorials/first-mvc-app/adding-controller/_static/hell1.png)
 
-Rozhraní MVC volá třídy controller (a metody akce v nich), v závislosti na adresy URL příchozích. Výchozí hodnota [směrování URL logic](xref:mvc/controllers/routing) používá MVC používá tento formát pro určení kódu, která bude vyvolána:
+MVC volá třídy kontroleru (a metody akce v nich) v závislosti na příchozí adrese URL. Výchozí hodnota [logiku směrování URL](xref:mvc/controllers/routing) používá MVC používá tento formát pro určení kódu, který má být vyvolán:
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-Nastavení formátu pro směrování v `Configure` metoda v *Startup.cs* souboru.
+Nastavení formátu pro směrování `Configure` metoda ve *Startup.cs* souboru.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 
-Při spuštění aplikace a useanymigrationsubnet všechny segmenty adres URL, výchozí hodnota řadičem "Domů" a "Index" metoda zadaný v řádku šablony uvedených výše.
+Při spuštění aplikace a nechcete zadat všechny segmenty adres URL, použije se výchozí kontroler "Home" a "Index" metoda podle šablony řádek zvýrazněný výš.
 
-První segment adresy URL určuje třídy kontroleru ke spuštění. Proto `localhost:xxxx/HelloWorld` se mapuje `HelloWorldController` třídy. Druhá část adresy URL, který určuje metody akce v třídě. Proto `localhost:xxxx/HelloWorld/Index` by způsobilo `Index` metodu `HelloWorldController` třídy ke spuštění. Všimněte si, že jste museli vyhledejte `localhost:xxxx/HelloWorld` a `Index` byla volána metoda ve výchozím nastavení. Důvodem je, že `Index` je výchozí metodou, který bude volán na řadič, pokud není výslovně zadán název metody. Třetí součást segment adresy URL ( `id`) je pro data trasy. Zobrazí se data trasy později v tomto kurzu.
+První segment adresy URL určuje třída kontroleru pro spuštění. Takže `localhost:xxxx/HelloWorld` mapuje `HelloWorldController` třídy. Druhá část segment adresy URL určí metodu akce v třídě. Takže `localhost:xxxx/HelloWorld/Index` by způsobilo `Index` metodu `HelloWorldController` má třída spustit. Všimněte si, že jste museli procházet `localhost:xxxx/HelloWorld` a `Index` byla volána metoda ve výchozím nastavení. Důvodem je, že `Index` je výchozí metodou, která bude volána na řadiči, pokud nebyl explicitně zadán název metody. Třetí část segment adresy URL ( `id`) je pro data trasy. Zobrazí se vám data trasy, která dále v tomto kurzu.
 
-Přejděte do `http://localhost:xxxx/HelloWorld/Welcome`. `Welcome` Metoda spustí a vrátí řetězec "Toto je metoda úvodní akce...". Pro tuto adresu URL, že je řadič `HelloWorld` a `Welcome` je metoda akce. Nebyly použity `[Parameters]` součástí ještě adresu URL.
+Přejděte do `http://localhost:xxxx/HelloWorld/Welcome`. `Welcome` Metoda spustí a vrátí řetězec "Toto je metoda úvodní akce...". Pro tuto adresu URL kontroleru je `HelloWorld` a `Welcome` je metoda akce. Nebyly použity `[Parameters]` část adresy URL ještě.
 
-![Okno prohlížeče zobrazující odpověď aplikací tohoto objektu je metoda úvodní akce](~/tutorials/first-mvc-app/adding-controller/_static/welcome.png)
+![Okno prohlížeče zobrazující reakce aplikace na tohoto objektu je metoda úvodní akce](~/tutorials/first-mvc-app/adding-controller/_static/welcome.png)
 
-Upravte kód, který předat některé informace o parametrech z adresy URL kontroleru. Například `/HelloWorld/Welcome?name=Rick&numtimes=4`. Změna `Welcome` tak, aby zahrnoval dva parametry, jak je znázorněno v následujícím kódu. 
+Upravte kód předat některé informace o parametrech z adresy URL kontroleru. Například `/HelloWorld/Welcome?name=Rick&numtimes=4`. Změnit `Welcome` tak, aby zahrnoval dva parametry, jak je znázorněno v následujícím kódu. 
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_2)]
 
 Předchozí kód:
 
-* Používá funkci volitelný parametr C# k označení, že `numTimes` parametr výchozí hodnotu 1, pokud pro tento parametr není předána žádná hodnota.
+* Volitelný parametr funkce jazyka C# používá k označení, že `numTimes` parametr výchozí hodnotu 1, pokud není pro tento parametr předána žádná hodnota.
 * Používá`HtmlEncoder.Default.Encode` k ochraně aplikace před zlými úmysly vstup (konkrétně JavaScript). 
-* Používá [interpolované řetězce](/dotnet/articles/csharp/language-reference/keywords/interpolated-strings).
+* Používá [interpolovaných řetězců](/dotnet/articles/csharp/language-reference/keywords/interpolated-strings).
 
-Spuštění aplikace a přejděte do:
+Spusťte aplikaci a přejděte do:
 
    `http://localhost:xxxx/HelloWorld/Welcome?name=Rick&numtimes=4`
 
-(Nahraďte xxxx vaše číslo portu.) Můžete použít různé hodnoty pro `name` a `numtimes` v adrese URL. MVC [model vazby](xref:mvc/models/model-binding) systému automaticky mapuje pojmenované parametry z řetězce dotazu v panelu Adresa parametry ve své metodě. V tématu [vazby modelu](xref:mvc/models/model-binding) Další informace.
+(Nahradit xxxx číslem portu.) Můžete vyzkoušet různé hodnoty pro `name` a `numtimes` v adrese URL. MVC [vazby modelu](xref:mvc/models/model-binding) systém automaticky mapují pojmenované parametry z řetězce dotazu do adresního řádku parametrům ve své metodě. Zobrazit [vazby modelu](xref:mvc/models/model-binding) Další informace.
 
-![Okno prohlížeče zobrazující odpověď aplikace z Hello Rick, je NumTimes: 4](~/tutorials/first-mvc-app/adding-controller/_static/rick4.png)
+![Okno prohlížeče zobrazující odpověď aplikace Hello Rick, je NumTimes: 4](~/tutorials/first-mvc-app/adding-controller/_static/rick4.png)
 
-Na obrázku výš, segment adresy URL (`Parameters`) se nepoužívá, `name` a `numTimes` parametry se jí předávají jako [řetězce dotazu](https://wikipedia.org/wiki/Query_string). `?` (Otazník) v výše uvedenou adresu URL je oddělovač a postupujte podle řetězce dotazu. `&` Odděluje řetězce dotazu.
+Na obrázku výš, segment adresy URL (`Parameters`) se nepoužívá, `name` a `numTimes` parametry jsou předány jako [řetězce dotazu](https://wikipedia.org/wiki/Query_string). `?` (Otazník) v adrese URL výše je oddělovač a postupujte podle řetězce dotazu. `&` Odděluje řetězce dotazu.
 
-Nahraďte `Welcome` metoda následujícím kódem:
+Nahradit `Welcome` metodu s následujícím kódem:
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_3)]
 
 Spusťte aplikaci a zadejte následující adresu URL:  `http://localhost:xxx/HelloWorld/Welcome/3?name=Rick`
 
-![Okno prohlížeče zobrazující odpověď aplikace z Hello Rick, ID: 3](~/tutorials/first-mvc-app/adding-controller/_static/rick_routedata.png)
+![Okno prohlížeče zobrazující odpověď aplikace Hello Rick, ID: 3](~/tutorials/first-mvc-app/adding-controller/_static/rick_routedata.png)
 
-Tentokrát třetí segment adresy URL odpovídá parametru trasy `id`. `Welcome` Metoda obsahuje parametr `id` odpovídající zadaným šablony adresa URL `MapRoute` metoda. Konci `?` (v `id?`) označuje `id` parametr je nepovinný.
+Tentokrát třetí segment adresy URL odpovídající parametr trasa `id`. `Welcome` Metody obsahuje parametr `id` odpovídající šablony do adresy URL `MapRoute` metoda. Koncové `?` (v `id?`) označuje, `id` parametr je nepovinný.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 
-V těchto příkladech řadičem má byla to část "VC" MVC – to znamená, zobrazení a kontroler fungovat. Řadičem přímo vrací HTML. Obecně nechcete, aby řadiče vrácení HTML přímo, vzhledem k tomu, který se stane velmi náročná code a údržbu. Místo toho můžete obvykle použít samostatný soubor šablony zobrazení syntaxe Razor při generování odpovědi HTML. Můžete to udělat v dalším kurzu.
+V těchto příkladech kontroleru je to "VC" část MVC – to znamená, zobrazení a kontroler fungovat. Kontroler přímo vrací HTML. Obecně nechcete řadiče vrácení HTML přímo, protože, který se stane velmi náročný kód a udržovat. Místo toho budete obvykle používat samostatný soubor šablony zobrazení Razor ke generování odpovědi HTML. Můžete to udělat v dalším kurzu.

@@ -4,4 +4,4 @@ Pokud dojde k chybě:
  'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll' 
   because it is being used by another process.
   ```
-Visual Studio ukončete a spusťte příkaz znovu.
+Ukončení sady Visual Studio a spusťte příkaz znovu.

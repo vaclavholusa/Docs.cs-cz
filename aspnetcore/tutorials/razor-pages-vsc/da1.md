@@ -1,17 +1,17 @@
 ---
-title: Aktualizovat generovaného stránky
+title: Aktualizovat generované stránky
 author: rick-anderson
-description: Aktualizujte generovaného stránky s lepší zobrazení.
+description: Aktualizujte generované stránky s lepší zobrazení.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages-vsc/da1
 ms.openlocfilehash: bba08cd6197d977be762b59a9377eac005880e33
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279338"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38145981"
 ---
 [!INCLUDE [model1](../../includes/RP/da1.md)]
 
@@ -19,4 +19,4 @@ ms.locfileid: "36279338"
 
 > [!div class="step-by-step"]
 > [Předchozí: Práce s SQLlite](xref:tutorials/razor-pages-vsc/sql)
-> [přidat vyhledávání](xref:tutorials/razor-pages/search)
+> [vyhledávání přidat](xref:tutorials/razor-pages/search)

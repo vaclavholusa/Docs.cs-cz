@@ -7,11 +7,11 @@ ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
 ms.openlocfilehash: 22e9c982921cc03d89506e18ff99bf481027dda6
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077657"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38216210"
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
 
@@ -19,7 +19,7 @@ ms.locfileid: "37077657"
 
 1. Nainstalujte [!INCLUDE [](~/includes/2.1-SDK.md)].
 
-2. Vytvoření projektu ASP.NET Core. Otevřete příkazové okno a zadejte následující příkaz:
+2. Vytvoření projektu aplikace ASP.NET Core. Otevřete příkazové okno a zadejte následující příkaz:
 
     ```console
     dotnet new webapp -o aspnetcoreapp
@@ -68,13 +68,13 @@ ms.locfileid: "37077657"
     dotnet run
     ```
 
-5. Přejděte do [ http://localhost:5001 ](http://localhost:5001).  Klikněte na tlačítko **přijmout** přijměte zásady ochrany osobních údajů a souborů cookie. Tato aplikace nepodporuje uchovává osobní údaje.
+5. Přejděte do [ http://localhost:5001 ](http://localhost:5001).  Klikněte na tlačítko **přijmout** přijměte zásady ochrany osobních údajů a soubory cookie. Tato aplikace nemá uchovává osobní údaje.
 
-6. Otevřete *Pages/About.cshtml* a upravovat stránky s následující zvýrazněný kód:
+6. Otevřít *Pages/About.cshtml* a upravovat na stránce s následující zvýrazněný kód:
 
     [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
-7. Přejděte do [ http://localhost:5001/About ](http://localhost:5001/About) a ověřte, změny se projeví.
+7. Přejděte do [ http://localhost:5001/About ](http://localhost:5001/About) a ověřte změny jsou zobrazeny.
 
 [!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
 
@@ -101,7 +101,7 @@ ms.locfileid: "37077657"
 
 4. Přejděte do [ http://localhost:5000 ](http://localhost:5000).
 
-5. Otevřete *Pages/About.cshtml* a upravte stránku a zobrazí se zpráva "Hello, world! Je čas na serveru @DateTime.Now":
+5. Otevřít *Pages/About.cshtml* a upravovat na stránce zobrazí zprávu "Hello, world! Je čas na serveru @DateTime.Now":
 
     [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
@@ -113,7 +113,7 @@ ms.locfileid: "37077657"
 
 ::: moniker range="<= aspnetcore-1.1"
 
-1. Instalace .NET Core **instalační program sady SDK** pro sadu SDK 1.0.4 z [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
+1. Nainstalovat sadu .NET Core **instalační program sady SDK** pro sadu SDK 1.0.4 z [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
 
 2. Vytvořte složku pro nový projekt ASP.NET Core.
 
@@ -124,7 +124,7 @@ ms.locfileid: "37077657"
    cd aspnetcoreapp
    ```
 
-3. Pokud jste nainstalovali novější verze sady SDK na váš počítač, vytvořte *global.json* soubor a vyberte 1.0.4 SDK.
+3. Pokud nainstalujete novější verze sady SDK na svém počítači vytvořte *global.json* vyberte 1.0.4 SDK.
 
    ```json
    {
@@ -150,7 +150,7 @@ ms.locfileid: "37077657"
    dotnet run
    ```
 
-   [Dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz sestavení aplikace nejprve v případě potřeby.
+   [Dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz sestaví aplikaci nejprve v případě potřeby.
 
 7. Přejděte do `http://localhost:5000`.
 

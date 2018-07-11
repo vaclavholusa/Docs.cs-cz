@@ -1,7 +1,7 @@
-Je k dispozici aktualizovaná verze tohoto kurzu [sem](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/start-mvc) pomocí nejnovější verze [Visual Studio.](https://www.visualstudio.com) Nový kurz používá [ASP.NET MVC základní](https://docs.microsoft.com/aspnet/core/mvc/), který poskytuje **mnoho** vylepšení oproti tohoto kurzu.
+Je k dispozici aktualizovaná verze tohoto kurzu [tady](https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/start-mvc) pomocí nejnovější verze [sady Visual Studio.](https://www.visualstudio.com) Nové kurz používá [ASP.NET Core MVC](https://docs.microsoft.com/aspnet/core/mvc/), která poskytuje **mnoho** vylepšení oproti v tomto kurzu.
 
-V tomto kurzu se dozvíte, jaké ASP.NET MVC jádra s kontrolery a zobrazení. Stránky Razor je nový alternativní v aplikaci ASP.NET 2.0 jádra, na stránce programovací model, který usnadňuje vytváření webového uživatelského rozhraní, snazší a zvýšit produktivitu. Doporučujeme vám, že zkusíte [stránky Razor](https://docs.microsoft.com/aspnet/core/mvc/razor-pages) kurz před verze MVC. Kurz Razor stránky:
+V tomto kurzu se naučíte ASP.NET Core MVC s kontrolerů a zobrazení. Stránky Razor se nové alternativní v ASP.NET Core 2.0, na stránce programovací model, který umožňuje vytváření webového uživatelského rozhraní jednodušší a produktivnější. Doporučujeme vám vyzkoušet [Razor Pages](https://docs.microsoft.com/aspnet/core/mvc/razor-pages) kurz dříve než ve verzi MVC. Kurz pro stránky Razor:
 
-* Je snazší postupujte podle.
-* Popisuje další funkce.
-* Je žádoucí pro nový vývoj aplikací.
+* Je usnadňuje její sledování.
+* Zahrnuje další funkce.
+* Je upřednostňovaný způsob pro nový vývoj aplikací.

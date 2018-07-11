@@ -1,10 +1,10 @@
-V tomto kurzu se dozvíte, jaké technologie ASP.NET MVC jádra a Entity Framework Core s kontrolery a zobrazení. Stránky Razor je nový alternativní v aplikaci ASP.NET 2.0 jádra, na stránce programovací model, který usnadňuje vytváření webového uživatelského rozhraní, snazší a zvýšit produktivitu. Doporučujeme, abyste [stránky Razor](xref:data/ef-rp/intro) kurz přes verze MVC. Kurz Razor stránky:
+V tomto kurzu se naučíte ASP.NET, MVC Core a Entity Framework Core s kontrolerů a zobrazení. Stránky Razor se nové alternativní v ASP.NET Core 2.0, na stránce programovací model, který umožňuje vytváření webového uživatelského rozhraní jednodušší a produktivnější. Doporučujeme, abyste [Razor Pages](xref:data/ef-rp/intro) kurz přes verze MVC. Kurz pro stránky Razor:
 
-* Je snazší postupujte podle.
-* Poskytuje další EF základní osvědčené postupy.
-* Používá efektivnější dotazy.
+* Je usnadňuje její sledování.
+* Poskytuje další EF Core osvědčené postupy.
+* Používá účinnější dotazy.
 * Je více aktuální pomocí nejnovější rozhraní API.
-* Popisuje další funkce.
-* Je žádoucí pro nový vývoj aplikací.
+* Zahrnuje další funkce.
+* Je upřednostňovaný způsob pro nový vývoj aplikací.
 
-Pokud se rozhodnete v tomto kurzu přes [stránky Razor](xref:data/ef-rp/intro) verze, dejte nám vědět, proč v [potíže Githubu](https://github.com/aspnet/Docs/issues/6146).
+Pokud se rozhodnete v tomto kurzu přes [Razor Pages](xref:data/ef-rp/intro) verze, dejte nám vědět, proč v [tento problém Githubu](https://github.com/aspnet/Docs/issues/6146).

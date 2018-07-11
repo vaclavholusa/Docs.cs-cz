@@ -1,37 +1,37 @@
-# <a name="add-search-to-an-aspnet-core-mvc-app"></a>Přidejte do aplikace ASP.NET MVC základní vyhledávání
+# <a name="add-search-to-an-aspnet-core-mvc-app"></a>Přidání vyhledávání do aplikace ASP.NET Core MVC
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V této části můžete přidat možnosti vyhledávání `Index` metody akce, která umožňuje vyhledávání filmy podle *genre* nebo *název*.
+V této části můžete přidat možnosti vyhledávání do `Index` metody akce, která umožňuje hledat filmy podle *žánr* nebo *název*.
 
-Aktualizace `Index` metoda následujícím kódem:
+Aktualizace `Index` metodu s následujícím kódem:
 <!--
 [!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 -->
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_1stSearch)]
 
-První řádek `Index` metoda akce vytvoří [LINQ](/dotnet/standard/using-linq) dotazu a vyberte filmy:
+První řádek `Index` vytvoří metodu akce [LINQ](/dotnet/standard/using-linq) dotaz pro výběr videa:
 
 ```csharp
 var movies = from m in _context.Movie
              select m;
 ```
 
-Dotaz je *pouze* definované v tomto okamžiku, má **není** byly spuštěny s databází.
+Dotaz je *pouze* definované v tomto okamžiku, má **není** byly spuštěny v rámci databáze.
 
-Pokud `searchString` parametr obsahuje řetězec, filmy dotazu je změněno na filtrování na základě hodnoty řetězec pro hledání:
+Pokud `searchString` parametr obsahuje řetězec, dotaz filmy je upravit tak, aby filtrování na základě hodnoty hledaný řetězec:
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_SearchNull2)]
 
-`s => s.Title.Contains()` Je výše uvedený kód [výrazu Lambda](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Lambdas se používají v na základě metod [LINQ](/dotnet/standard/using-linq) dotazuje jako argumenty pro standardní dotaz operátor metody, jako [kde](/dotnet/api/system.linq.enumerable.where) metoda nebo `Contains` (používá se ve výše uvedeném kódu). Dotazy LINQ nebudou provedeny, když tyto jste definovány nebo když se změnil voláním metody `Where`, `Contains` nebo `OrderBy`. Místo toho je odložen spuštění dotazu.  To znamená, že je zpožděno vyhodnocení výrazu, dokud jeho zjištěné hodnota je ve skutečnosti vstupní přes nebo `ToListAsync` metoda je volána. Další informace o provádění odložené dotazů najdete v tématu [provádění dotazu](/dotnet/framework/data/adonet/ef/language-reference/query-execution).
+`s => s.Title.Contains()` Je výše uvedený kód [výraz Lambda](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions). Výrazy lambda se používají v založených na volání metody [LINQ](/dotnet/standard/using-linq) dotazuje jako argumenty pro standardní metody operátoru dotazu, jako [kde](/dotnet/api/system.linq.enumerable.where) metoda nebo `Contains` (používá se ve výše uvedeném kódu). Dotazy LINQ nejsou provedeny, když máte definovány, nebo data jejich voláním metody `Where`, `Contains` nebo `OrderBy`. Místo toho provádění dotazu je odloženo.  To znamená, že vyhodnocení výrazu je odloženo jeho očekávané hodnoty ve skutečnosti procházen nebo `ToListAsync` metoda je volána. Další informace o odložený dotaz, naleznete v tématu [provádění dotazu](/dotnet/framework/data/adonet/ef/language-reference/query-execution).
 
-Poznámka: [obsahuje](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) metoda běží v databázi, není ve výše uvedeném kódu c#. Rozlišování velkých a malých písmen na dotaz závisí na databázi a kolace. Na serveru SQL Server [obsahuje](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) mapuje [SQL LIKE](/sql/t-sql/language-elements/like-transact-sql), což je malá a velká písmena. V SQLlite s výchozí kolace, je velká a malá písmena.
+Poznámka: [obsahuje](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) metoda je spuštěna na databáze, není ve výše uvedeném kódu c#. Rozlišování velikosti písmen u dotazu, závisí na databázi a kolace. Na serveru SQL Server [obsahuje](/dotnet/api/system.data.objects.dataclasses.entitycollection-1.contains) mapuje na [SQL LIKE](/sql/t-sql/language-elements/like-transact-sql), což je malá a velká písmena. V SQLlite s výchozí kolace je velká a malá písmena.
 
-Přejděte na `/Movies/Index`. Připojit řetězec dotazu, jako `?searchString=Ghost` na adresu URL. Filtrované filmy jsou zobrazeny.
+Přejděte na `/Movies/Index`. Připojte řetězec dotazu jako `?searchString=Ghost` na adresu URL. Zobrazují se filtrované filmy.
 
-![Zobrazení indexu](~/tutorials/first-mvc-app/search/_static/ghost.png)
+![Index zobrazení](~/tutorials/first-mvc-app/search/_static/ghost.png)
 
-Pokud změníte podpis `Index` metoda tak, aby měl parametr s názvem `id`, `id` bude shodovat s nepovinný parametr `{id}` zástupný symbol pro výchozí směruje sada v *Startup.cs*.
+Pokud se změní podpis `Index` metoda může mít parametr s názvem `id`, `id` bude odpovídat nepovinný parametr `{id}` zástupný symbol pro výchozí trasy sady v *Startup.cs*.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]

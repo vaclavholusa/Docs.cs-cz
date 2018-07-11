@@ -1,23 +1,23 @@
 ---
-title: Začínáme s ASP.NET Core Razor stránky v kódu Visual Studio
+title: Začínáme s ASP.NET Core Razor Pages ve Visual Studio Code
 author: rick-anderson
-description: Přečtěte si základní informace o vytváření webové aplikace ASP.NET Core Razor stránky s kódem jazyka Visual Studio.
+description: Naučte se základy vytváření webovou aplikaci ASP.NET Core Razor Pages s Visual Studio Code.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 uid: tutorials/razor-pages-vsc/razor-pages-start
 ms.openlocfilehash: b1f1dcc1401d707cff79f3269ab70b900e9fc21c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275938"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38123380"
 ---
-# <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Začínáme s ASP.NET Core Razor stránky v kódu Visual Studio
+# <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Začínáme s ASP.NET Core Razor Pages ve Visual Studio Code
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V tomto kurzu se dozvíte, jaké základní informace o vytváření webové aplikace ASP.NET Core Razor stránky. Doporučujeme, abyste dokončení [Úvod do stránky Razor](xref:razor-pages/index) před zahájením tohoto kurzu. Stránky Razor je doporučeným způsobem, jak sestavit uživatelského rozhraní pro webové aplikace v ASP.NET Core.
+V tomto kurzu se naučíte se základy vytváření webové aplikace ASP.NET Core Razor Pages. Doporučujeme je provést [Úvod do stránky Razor](xref:razor-pages/index) před zahájením tohoto kurzu. Stránky Razor je doporučený způsob sestavení uživatelského rozhraní pro webové aplikace v ASP.NET Core.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -49,7 +49,7 @@ dotnet run
 
 ::: moniker-end
 
-Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu stránky Razor. Otevřete prohlížeč na http://localhost:5000 zobrazíte aplikace.
+Předchozí příkazy použití [rozhraní příkazového řádku .NET Core](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu pro stránky Razor. Otevřete prohlížeč na http://localhost:5000 zobrazení aplikace.
 
 ![Index nebo Domovská stránka](../razor-pages/razor-pages-start/_static/home.png)
 
@@ -57,16 +57,16 @@ Předchozí příkazy použijte [.NET Core rozhraní příkazového řádku](htt
 
 ## <a name="open-the-project"></a>Otevřete projekt
 
-Stiskněte kombinaci kláves Ctrl + C vypnutí aplikace.
+Stisknutím kláves Ctrl + C vypnout aplikaci.
 
-Visual Studio Code (kód VS), vyberte **soubor > Otevřít složku**a pak vyberte *RazorPagesMovie* složky.
+Visual Studio Code (VS Code), vyberte **soubor > Otevřít složku**a pak vyberte *RazorPagesMovie* složky.
 
-- Vyberte **Ano** k **varování** zpráva "požadované prostředky pro sestavení a ladění chybí 'RazorPagesMovie'. Přidat jejich?"
+- Vyberte **Ano** k **upozornit** zpráva "požadované prostředky pro vytvoření a odladění chybí"RazorPagesMovie". Přidáním?"
 - Vyberte **obnovení** k **informace** zpráva "Neexistují nevyřešené závislosti".
 
-### <a name="launch-the-app"></a>Spusťte aplikaci
+### <a name="launch-the-app"></a>Spuštění aplikace
 
-Stisknutím kombinace kláves Ctrl + F5 a spusťte aplikaci bez ladění. Můžete také z **ladění** nabídce vyberte možnost **spustit bez ladění**.
+Stisknutím kláves Ctrl + F5 spusťte aplikaci bez ladění. Alternativně z **ladění** nabídce vyberte možnost **spustit bez ladění**.
 
 V dalším kurzu přidáme modelu do projektu. 
 

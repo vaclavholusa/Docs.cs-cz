@@ -1,41 +1,41 @@
 ---
-title: Microsoft.AspNetCore.App metapackage pro ASP.NET Core 2.1 a novější
+title: Microsoft.AspNetCore.App Microsoft.aspnetcore.all pro ASP.NET Core 2.1 nebo novější
 author: Rick-Anderson
-description: Microsoft.AspNetCore.App metapackage zahrnuje všechny podporované balíčků ASP.NET Core a Entity Framework Core.
+description: Microsoft.aspnetcore.All Microsoft.AspNetCore.App zahrnuje všechny podporované balíčky ASP.NET Core a Entity Framework Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: 4840d0a7536b1e9d8da835690b285ac2074967f5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e82c219635bbbebe1d6f5639308490c37361b286
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277469"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952952"
 ---
-# <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Microsoft.AspNetCore.App metapackage pro ASP.NET Core 2.1
+# <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Microsoft.AspNetCore.App Microsoft.aspnetcore.all pro ASP.NET Core 2.1
 
-Tato funkce vyžaduje ASP.NET Core, 2,1 a novější cílení na rozhraní .NET Core 2.1 nebo novější.
+Tato funkce vyžaduje ASP.NET Core 2.1 a vyšší, cílení na .NET Core 2.1 nebo novější.
 
-[Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) [metapackage](/dotnet/core/packages#metapackages) pro ASP.NET Core:
+[Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) [Microsoft.aspnetcore.all](/dotnet/core/packages#metapackages) pro ASP.NET Core:
 
-* Nezahrnuje závislosti třetích stran s výjimkou [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/), [Remotion.Linq](https://www.nuget.org/packages/Remotion.Linq/), a [IX asynchronní](https://www.nuget.org/packages/System.Interactive.Async/). Tyto závislosti 3. stran se považují za nezbytné pro zajištění architektury hlavní funkce funkce.
-* Zahrnuje všechny podporované balíčky tým ASP.NET Core kromě těch, které obsahují závislosti třetích stran (jiné než uvedené výše).
-* Zahrnuje všechny podporované balíčky tým Entity Framework Core kromě těch, které obsahují závislosti třetích stran (jiné než uvedené výše).
+* Nezahrnuje závislostí třetích stran, s výjimkou [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/), [Remotion.Linq](https://www.nuget.org/packages/Remotion.Linq/), a [IX asynchronní](https://www.nuget.org/packages/System.Interactive.Async/). Tyto závislosti 3rd třetích stran jsou nezbytné k zajištění funkcí funkce hlavní rozhraní.
+* Zahrnuje všechny podporované balíčky týmem ASP.NET Core s výjimkou těch, které obsahují závislostí třetích stran (jiné než uvedené výše).
+* Zahrnuje všechny podporované balíčky týmem Entity Framework Core s výjimkou těch, které obsahují závislostí třetích stran (jiné než uvedené výše).
 
-Všechny funkce ASP.NET Core 2.1 a novější a Entity Framework Core 2.1 a vyšší jsou součástí `Microsoft.AspNetCore.App` balíčku. Výchozí šablony cílení na ASP.NET Core 2.1 projektu a později tento balíček použít. Doporučujeme aplikace cílené na ASP.NET Core, 2,1 a novější a Entity Framework Core 2.1 a později `Microsoft.AspNetCore.App` balíčku.
+Všechny funkce technologie ASP.NET Core 2.1 nebo novější a Entity Framework Core 2.1 a vyšší jsou součástí `Microsoft.AspNetCore.App` balíčku. Výchozí šablony cílení ASP.NET Core 2.1 projektu a později tento balíček použít. Doporučujeme aplikace ASP.NET Core 2.1 nebo novější a Entity Framework Core 2.1 a později použít `Microsoft.AspNetCore.App` balíčku.
 
-Číslo verze `Microsoft.AspNetCore.App` metapackage představuje ASP.NET Core verze a verze Entity Framework Core.
+Číslo verze `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all představuje verzi technologie ASP.NET Core a Entity Framework Core verze.
 
-Pomocí `Microsoft.AspNetCore.App` metapackage poskytuje verze omezení, které chrání aplikace:
+Použití `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all poskytuje omezení verze, které chrání vaše aplikace:
 
-* Pokud je balíček zahrnuté, který má přenositelné (ne direct) závislost na balíček v `Microsoft.AspNetCore.App`a tato čísla verze se liší, NuGet dojde k chybě.
-* Další balíčky přidat do vaší aplikace nelze změnit verzi balíčků, které jsou součástí `Microsoft.AspNetCore.App`.
-* Verze konzistence zajišťuje spolehlivé prostředí. `Microsoft.AspNetCore.App` byla navržená tak, aby se zabránilo kombinace netestované verze související služby bits se použít společně ve stejné aplikaci.
+* Pokud je součástí balíčku, který obsahuje přechodné (ne přímým přístupem) závislost na balíčku v `Microsoft.AspNetCore.App`a tato čísla verze se liší, NuGet dojde k chybě.
+* Další balíčky, přidá do vaší aplikace nelze změnit verzi balíčky, které jsou součástí `Microsoft.AspNetCore.App`.
+* Verze konzistence zajišťuje spolehlivé prostředí. `Microsoft.AspNetCore.App` účelem je zabránit kombinace netestované verze související bitů, které jsou právě používány společně ve stejné aplikaci.
 
-Aplikace, které používají `Microsoft.AspNetCore.App` metapackage automaticky využít sdílené rozhraní ASP.NET Core. Při použití `Microsoft.AspNetCore.App` metapackage, **žádné** prostředky z odkazované balíčky ASP.NET Core NuGet nasazených aplikací &mdash; sdílené rozhraní ASP.NET Core obsahuje tyto prostředky. Prostředky v rámci sdílené jsou předkompilovaných ke zlepšení času spuštění aplikace. Další informace najdete v tématu "sdílený framework" v [.NET Core distribuční balení](/dotnet/core/build/distribution-packaging).
+Aplikace, které používají `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all automaticky využít sdílené architektuře ASP.NET Core. Při použití `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all, **žádné** nasazení se aplikace používají prostředky z balíčků odkazovaných ASP.NET Core NuGet&mdash;sdílené architektuře ASP.NET Core obsahuje tyto prostředky. Prostředky v rámci sdílené předkompilovány zlepšit dobu spuštění aplikace. Další informace najdete v tématu "sdílené architektuře" [vytváření distribučních balíčků .NET Core](/dotnet/core/build/distribution-packaging).
 
-Následující *.csproj* odkazů na soubor projektu `Microsoft.AspNetCore.App` metapackage pro ASP.NET Core:
+Následující projekt odkazy na soubory `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all pro ASP.NET Core a představuje typické ASP.NET Core 2.1 šablony:
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -45,25 +45,14 @@ Následující *.csproj* odkazů na soubor projektu `Microsoft.AspNetCore.App` m
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
   </ItemGroup>
 
 </Project>
-
 ```
 
-Předchozí kód představuje typické ASP.NET Core 2.1 a novější šablony. Neurčuje číslo verze `Microsoft.AspNetCore.App` balíček odkaz. Pokud není zadána verze, [implicitní](https://github.com/dotnet/core/blob/master/release-notes/1.0/sdk/1.0-rc3-implicit-package-refs.md) je sadou SDK, který je určená verze `Microsoft.NET.Sdk.Web`. Doporučujeme, abyste spoléhat na implicitní verze určeného sady SDK a není explicitně nastavení číslo verze na odkaz na balíček. Můžete nechat v Githubu komentář [diskusní pro verzi implicitní Microsoft.AspNetCore.App](https://github.com/aspnet/Docs/issues/6430).
+Číslo verze na `Microsoft.AspNetCore.App` nemá odkaz **není** zaručit, že tato verze sdíleného framework se použije. Předpokládejme například, že verze `2.1.1` není zadána, ale `2.1.3` je nainstalována. V takovém případě aplikace používá `2.1.3`. Však není doporučena, můžete zakázat chování vpřed (opravy a/nebo menší). Další informace o chování vpřed verze balíčku, naleznete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
 
-Implicitní verze je nastaveno na `major.minor.0` pro přenosné aplikace. Mechanismus úplné dopředné sdílený framework se spustí aplikace na nejnovější verzi kompatibilní mezi nainstalovaných sdílené architektury. Pokud chcete zajistit, že se stejnou verzí se používá v vývoj, testování a provozním, zkontrolujte, jestli že je stejnou verzi nástroje sdílený framework nainstalované ve všech prostředích. Pro vlastní aplikace, číslo verze implicitní nastavena na `major.minor.patch` sdílený Framework dodávat v sadě SDK nainstalované.
+`Microsoft.AspNetCore.App` [Microsoft.aspnetcore.all](/dotnet/core/packages#metapackages) není tradiční balíček, který je aktualizována z NuGet. Podobně jako `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` představuje sdílený modul runtime, který má zpracovat mimo NuGet sémantiku speciální správy verzí. Další informace najdete v tématu [balíčky, metabalíčky a architektury](/dotnet/core/packages).
 
-Zadání číslo verze na `Microsoft.AspNetCore.App` nemá odkaz na **není** zaručit, že tato verze sdílený framework nastavení bude vybrána. Předpokládejme například, je určená verze "2.1.1", ale je nainstalována "2.1.3". V takovém případě aplikace bude používat "2.1.3". I když není doporučeno, můžete zakázat dopředné posunutí (opravy a/nebo menší). Další informace o hostiteli dotnet úplné dopředné a postup konfigurace své chování najdete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
-
-`Microsoft.AspNetCore.App` [Metapackage](/dotnet/core/packages#metapackages) není tradiční balíček, který je aktualizována z NuGet. Podobně jako `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` představuje sdílený modul runtime, který se má zpracovat mimo NuGet sémantiku speciální správu verzí. Další informace najdete v tématu [balíčky, metapackages a architektur](/dotnet/core/packages).
-
-`<Project Sdk` musí být nastavena na `Microsoft.NET.Sdk.Web` použití implicitní verze `Microsoft.AspNetCore.App`.  Když `<Project Sdk="Microsoft.NET.Sdk">` se používá, jsou generovány následující upozornění:
-
-*Upozornění NU1604: Závislosti projektu Microsoft.AspNetCore.App neobsahuje (včetně). dolní mez. Zahrňte dolní hranice verze závislosti zajistit obnovení konzistentní výsledky.*
-
-*Upozornění NU1602: [Název projektu] neposkytuje pro závislosti Microsoft.AspNetCore.App (včetně). dolní mez. Přibližná nejlepší shody třídy Microsoft.AspNetCore.App 2.1.0 byl vyřešen.*
-
-Pokud vaše aplikace už dřív použili `Microsoft.AspNetCore.All`, najdete v části [migrace z Microsoft.AspNetCore.All na Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate).
+Pokud vaše aplikace už dřív použili `Microsoft.AspNetCore.All`, naleznete v tématu [migrace z metabalíček na Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate).

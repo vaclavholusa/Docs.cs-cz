@@ -1,8 +1,8 @@
-# <a name="work-with-sqlite-in-an-aspnet-core-razor-pages-app"></a>Práce s SQLite v ASP.NET Core Razor stránky aplikace
+# <a name="work-with-sqlite-in-an-aspnet-core-razor-pages-app"></a>Práce s SQLite v ASP.NET Core Razor Pages aplikace
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty záznamy v databázi. Kontext databáze není zaregistrována [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda v *Startup.cs* souboru:
+`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty se záznamy v databázi. Kontext databáze je zaregistrován [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda ve *Startup.cs* souboru:
 
 [!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
 
@@ -10,19 +10,19 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [SQLite](https://www.sqlite.org/) webu stavy:
 
-> SQLite je samostatná, vysoká spolehlivost, embedded, plně funkční, veřejné domény, databázový stroj SQL. SQLite je nejpoužívanější databázový stroj na světě.
+> SQLite je samostatná, vysokou spolehlivost, embedded, plně vybavené, veřejné domény, databázový stroj SQL. SQLite je nejpoužívanější databázového stroje na světě.
 
-Existuje mnoho nástroje třetích stran, si můžete stáhnout spravovat a zobrazovat databáze SQLite. Následující obrázek je z [DB prohlížeče pro SQLite](http://sqlitebrowser.org/). Pokud máte nástroj Oblíbené SQLite, co se vám líbí o něm ponechte komentář.
+Celá řada nástrojů třetích stran, které si můžete stáhnout, spravovat a zobrazovat databázi SQLite. Následující obrázek je z [DB prohlížeč pro SQLite](http://sqlitebrowser.org/). Pokud máte oblíbený nástroj SQLite, na co se vám líbí o něm komentář.
 
-![DB prohlížeče pro SQLite zobrazující film db](../../tutorials/first-mvc-app-xplat/working-with-sql/_static/dbb.png)
+![Prohlížeč DB pro SQLite zobrazující film db](../../tutorials/first-mvc-app-xplat/working-with-sql/_static/dbb.png)
 
-## <a name="seed-the-database"></a>Počáteční hodnoty databáze
+## <a name="seed-the-database"></a>Přidání dat do databáze
 
-Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného kódu nahraďte následujícím textem:
+Vytvořte novou třídu s názvem `SeedData` v *modely* složky. Generovaného kódu nahraďte následujícím kódem:
 
 [!code-csharp[](code/Models/SeedData.cs)]
 
-Pokud jsou všechny filmy v databázi, vrátí inicializátoru počáteční hodnoty.
+Pokud jsou všechny filmy v databázi, vrátí inicializátoru pro dosazení hodnot.
 
 ```csharp
 if (context.Movie.Any())
@@ -32,14 +32,14 @@ if (context.Movie.Any())
 ```
 
 <a name="si"></a>
-### <a name="add-the-seed-initializer"></a>Přidat inicializátoru počáteční hodnoty
+### <a name="add-the-seed-initializer"></a>Přidat inicializační výraz počáteční hodnoty
 
-Přidat inicializátoru počáteční hodnoty do `Main` metoda v *Program.cs* souboru:
+Přidat inicializační výraz počáteční hodnoty `Main` metodu *Program.cs* souboru:
 
 [!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Program.cs)]
 
 ### <a name="test-the-app"></a>Testování aplikace
 
-Odstraňte všechny záznamy v databázi (tak, aby metoda počáteční hodnoty spuštěno). Zastavení a spuštění aplikace počáteční hodnoty databáze.
+Všechny záznamy z databáze odstraníte, (aby se spustí metodu počáteční hodnota). Zastavení a spuštění aplikace k přidání dat do databáze.
 
-Aplikace zobrazuje dosazená data.
+Aplikace zobrazí dosazená data.

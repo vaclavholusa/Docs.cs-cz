@@ -1,2 +1,2 @@
 > [!NOTE]
-> Tento dokument podrobně popisuje nejnovější verzi ASP.NET Core SignalR. Najdete v článku [SignalR 1.x dokumentaci](/aspnet/signalr/) pro verzi rozhraní ASP.NET.
+> Tento dokument obsahuje podrobnosti o nejnovější verzi funkce SignalR technologie ASP.NET Core. Zobrazit [SignalR 1.x dokumentaci](/aspnet/signalr/) pro verzi rozhraní ASP.NET Framework.

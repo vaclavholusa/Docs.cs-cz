@@ -1,20 +1,20 @@
 ---
-title: Stránky Razor ASP.NET Core EF základní – kurz řady
+title: ASP.NET Core Razor Pages s EF Core – série kurzů
 author: rick-anderson
 description: ''
 ms.author: riande
 ms.date: 03/15/2017
 uid: data/ef-rp/index
-ms.openlocfilehash: 56d317e4334ee006c8b52163594e2850c11d23d7
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 1e8d38ba3db014c68717f90b7216dc84a9c496a8
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36960863"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938362"
 ---
-# <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a>Stránky Razor ASP.NET Core EF základní – kurz řady
+# <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a>ASP.NET Core Razor Pages s EF Core – série kurzů
 
-Tato série kurzů učí, jak vytvářet stránky ASP.NET Core Razor webové aplikace, které používají základní Entity Framework (EF) pro přístup k datům.
+Tato série kurzů se naučíte k vytváření webových aplikací ASP.NET Core Razor Pages, které používají základní Entity Framework (EF) pro přístup k datům.
 
 1. [Začínáme](xref:data/ef-rp/intro)
 1. [Operace vytvoření, čtení, aktualizace a odstranění](xref:data/ef-rp/crud)

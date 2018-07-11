@@ -1,1 +1,1 @@
-Webové aplikace Contoso univerzity ukazuje, jak vytvářet stránky Razor webové aplikace pomocí EF jádra a sady Visual Studio. Informace o kurzu řady najdete v tématu [první kurz](xref:data/ef-rp/intro).
+Webové aplikace Contoso University ukazuje, jak vytvářet webové aplikace stránky Razor pomocí EF Core a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [první kurz](xref:data/ef-rp/intro).

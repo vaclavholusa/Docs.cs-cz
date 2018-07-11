@@ -1,5 +1,5 @@
-Finální verzi... /Cu a... /cuFinal obsahovat více Dokončený kód.
+Konečná verze... /Cu a... /cuFinal obsahovat více Dokončený kód.
 
-Wwwroot kopírováním z... /Cu/ nebo z nového projektu stránky Razor.
+Zkopírujte wwwroot z... /Cu/ nebo z nového projektu pro stránky Razor.
 
 Spustit `dotnet ef database update`

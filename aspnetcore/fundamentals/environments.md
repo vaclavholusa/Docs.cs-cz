@@ -5,12 +5,12 @@ description: Zjistěte, jak řídit chování aplikace napříč několika prost
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 8983a0ce81beb16d68c799d30bfbfce6e7b693b1
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: b0e001b50ada85a183590fbee1ad1f3b895004d5
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433945"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938430"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Používání více prostředí v ASP.NET Core
 
@@ -111,7 +111,7 @@ Následující kód JSON ukazuje tři profily *launchSettings.json* souboru:
 
 Při spuštění aplikace s [dotnet spustit](/dotnet/core/tools/dotnet-run), první profil s `"commandName": "Project"` se používá. Hodnota `commandName` specifikuje webový server ke spuštění. `commandName` může být jedna z následujících akcí:
 
-* IIS Express
+* Služba IIS Express
 * IIS
 * Projekt (které spustí Kestrel)
 
@@ -159,16 +159,16 @@ Při použití [Visual Studio Code](https://code.visualstudio.com/), proměnné 
 }
 ```
 
-A *.vscode/launch.json* soubor v projektu pro není čtení při spuštění aplikace s `dotnet run` stejným způsobem jako *Properties/launchSettings.json*. Zobrazit *konfigurace podle prostředí* Další informace.
+A *.vscode/launch.json* soubor v projektu pro není čtení při spuštění aplikace s `dotnet run` stejným způsobem jako *Properties/launchSettings.json*. Při spuštění aplikace ve vývoji, která nemá *launchSettings.json* souboru buď nastavit prostředí pomocí proměnné prostředí nebo argument příkazového řádku k `dotnet run` příkazu.
 
 ### <a name="production"></a>Produkční
 
-Na základě prostředí při spuštění třídy a metody Při spuštění aplikace ASP.NET Core třídu pro spuštění bootstraps aplikace.
+Produkčním prostředí by měl být povolen maximalizace zabezpečení, výkon a odolnost aplikace. Některé obecná nastavení, které se liší od vývoje patří:
 
-* Pokud  existuje třída, pro, který se nazývá třídy :
-* WebHostBuilder.UseStartupTStartup  přepíše konfigurační oddíly funkce.
-* Konfigurace a ConfigureServices podpory verzí specifických pro prostředí formu  a :
-* IHostingEnvironment.EnvironmentName
+* Ukládání do mezipaměti.
+* Prostředky na straně klienta jsou spojeny minifikovaný a potenciálně obsluhovat z CDN.
+* Chyba diagnostiky stránek zakázána.
+* Chybové stránky povolena.
 * Produkční protokolování a monitorování povoleno. Například [Application Insights](/azure/application-insights/app-insights-asp-net-core).
 
 ## <a name="set-the-environment"></a>Nastavení prostředí
@@ -248,13 +248,121 @@ Zobrazit [konfigurace podle prostředí](xref:fundamentals/configuration/index#c
 
 ## <a name="environment-based-startup-class-and-methods"></a>Na základě prostředí při spuštění třídy a metody
 
-Při spuštění aplikace ASP.NET Core [třídu pro spuštění](xref:fundamentals/startup) bootstraps aplikace. Pokud `Startup{EnvironmentName}` existuje třída, pro, který se nazývá třídy `EnvironmentName`:
+### <a name="startup-class-conventions"></a>Při spuštění třídy konvence
 
-[!code-csharp[](environments/sample/EnvironmentsSample/StartupDev.cs?name=snippet&highlight=1)]
+Při spuštění aplikace ASP.NET Core [třídu pro spuštění](xref:fundamentals/startup) bootstraps aplikace. Aplikace můžete definovat zvláštní `Startup` třídy pro různá prostředí (například `StartupDevelopment`) a odpovídající `Startup` třídy je vybrané v době běhu. Třídy, jejichž přípona názvu odpovídá aktuální prostředí je nastaveno jako prioritní. Pokud odpovídající `Startup{EnvironmentName}` třídy nenajde, `Startup` třída se používá.
 
-[WebHostBuilder.UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) přepíše konfigurační oddíly funkce.
+K implementaci založeném na prostředí `Startup` třídy, vytvoří `Startup{EnvironmentName}` třídy pro každé prostředí, které se používají a záložní `Startup` třídy:
 
-[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) podpory verzí specifických pro prostředí formu `Configure{EnvironmentName}` a `Configure{EnvironmentName}Services`:
+```csharp
+// Startup class to use in the Development environment
+public class StartupDevelopment
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+    }
+}
+
+// Startup class to use in the Production environment
+public class StartupProduction
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+    }
+}
+
+// Fallback Startup class
+// Selected if the environment doesn't match a Startup{EnvironmentName} class
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+    }
+}
+```
+
+Použití [UseStartup (IWebHostBuilder, String)](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usestartup) přetížení, které přijímá název sestavení:
+
+::: moniker range=">= aspnetcore-2.1"
+
+```csharp
+public static void Main(string[] args)
+{
+    CreateWebHostBuilder(args).Build().Run();
+}
+
+public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+{
+    var assemblyName = typeof(Startup).GetTypeInfo().Assembly.FullName;
+
+    return WebHost.CreateDefaultBuilder(args)
+        .UseStartup(assemblyName);
+}
+```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+```csharp
+public static void Main(string[] args)
+{
+    CreateWebHost(args).Run();
+}
+
+public static IWebHost CreateWebHost(string[] args)
+{
+    var assemblyName = typeof(Startup).GetTypeInfo().Assembly.FullName;
+
+    return WebHost.CreateDefaultBuilder(args)
+        .UseStartup(assemblyName)
+        .Build();
+}
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var assemblyName = typeof(Startup).GetTypeInfo().Assembly.FullName;
+
+        var host = new WebHostBuilder()
+            .UseStartup(assemblyName)
+            .Build();
+
+        host.Run();
+    }
+}
+```
+
+::: moniker-end
+
+### <a name="startup-method-conventions"></a>Po spuštění metody konvence
+
+[Konfigurace](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) podpory verzí specifických pro prostředí formu `Configure<EnvironmentName>` a `Configure<EnvironmentName>Services`:
 
 [!code-csharp[](environments/sample/EnvironmentsSample/Startup.cs?name=snippet_all&highlight=15,51)]
 

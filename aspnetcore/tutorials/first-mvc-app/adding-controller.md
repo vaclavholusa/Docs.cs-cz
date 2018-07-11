@@ -1,35 +1,35 @@
 ---
-title: Přidat řadič do aplikace ASP.NET MVC jádra
+title: Přidání kontroleru aplikace ASP.NET Core MVC
 author: rick-anderson
-description: Zjistěte, jak přidat řadič do jednoduchou aplikaci ASP.NET MVC jádra.
+description: Zjistěte, jak přidat řadič jednoduchou aplikaci ASP.NET Core MVC.
 ms.author: riande
 ms.date: 02/28/2017
 uid: tutorials/first-mvc-app/adding-controller
-ms.openlocfilehash: bf4ac33103d525194524e7578902e6f985dbe7c2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5686c4de6960e49714b822200212ea66cfa4b37c
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276588"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938417"
 ---
-# <a name="add-a-controller-to-an-aspnet-core-mvc-app"></a>Přidat řadič do aplikace ASP.NET MVC jádra
+# <a name="add-a-controller-to-an-aspnet-core-mvc-app"></a>Přidání kontroleru aplikace ASP.NET Core MVC
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [!INCLUDE [adding-controller1](~/includes/mvc-intro/adding-controller1.md)]
 
-* V **Průzkumníku řešení**, klikněte pravým tlačítkem na **řadiče > Přidat > novou položku**
+* V **Průzkumníka řešení**, klikněte pravým tlačítkem na **řadiče > Přidat > Nová položka**
 
 ![Kontextové nabídky](adding-controller/_static/add_controller.png)
 
 * Vyberte **třídy Kontroleru**
 * V **přidat novou položku** dialogové okno, zadejte **HelloWorldController**.
 
-![Přidat řadič MVC a pojmenujte ji](adding-controller/_static/ac.png)
+![Přidat kontroler MVC s názvem](adding-controller/_static/ac.png)
 
 [!INCLUDE [adding-controller2](~/includes/mvc-intro/adding-controller2.md)]
 
-V sadě Visual Studio v režimu bez ladění (Ctrl + F5), nemusíte vytvářet aplikace po změně kódu. Stačí uložit soubor aktualizujte webový prohlížeč a tyto změny zobrazily.
+V sadě Visual Studio v režimu bez ladění (Ctrl + F5), nepotřebujete k sestavení aplikace po změně kódu. Stačí uložit soubor aktualizujte svůj prohlížeč a zobrazí se změny.
 
 > [!div class="step-by-step"]
 > [Předchozí](start-mvc.md)

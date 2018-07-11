@@ -1,11 +1,11 @@
 <a name="cs"></a>
-### <a name="add-a-database-connection-string"></a>Přidat připojovací řetězec databáze
+### <a name="add-a-database-connection-string"></a><span data-ttu-id="fd915-101">Přidat připojovací řetězec databáze</span><span class="sxs-lookup"><span data-stu-id="fd915-101">Add a database connection string</span></span>
 
-Přidat připojovací řetězec k *appSettings.JSON určený* souboru.
+<span data-ttu-id="fd915-102">Přidat připojovací řetězec pro *appsettings.json* souboru.</span><span class="sxs-lookup"><span data-stu-id="fd915-102">Add a connection string to the *appsettings.json* file.</span></span>
 
 [!code-json[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/appsettings_SQLite.json?highlight=8-10)]
 
 <a name="reg"></a>
-###  <a name="register-the-database-context"></a>Zaregistrovat kontext databáze
+###  <a name="register-the-database-context"></a><span data-ttu-id="fd915-103">Zaregistrujte kontext databáze</span><span class="sxs-lookup"><span data-stu-id="fd915-103">Register the database context</span></span>
 
-Zaregistrovat kontext databáze s [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru *Startup.cs* souboru.
+<span data-ttu-id="fd915-104">Zaregistrovat kontext databáze s [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru *Startup.cs* souboru.</span><span class="sxs-lookup"><span data-stu-id="fd915-104">Register the database context with the [dependency injection](xref:fundamentals/dependency-injection) container in the *Startup.cs* file.</span></span>

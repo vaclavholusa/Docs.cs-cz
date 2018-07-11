@@ -1,15 +1,15 @@
 <a name="scaffold"></a>
-### <a name="scaffold-the-movie-model"></a>Vygenerované uživatelské rozhraní film modelu
+### <a name="scaffold-the-movie-model"></a><span data-ttu-id="d3597-101">Vygenerované uživatelské rozhraní Video modelu</span><span class="sxs-lookup"><span data-stu-id="d3597-101">Scaffold the Movie model</span></span>
 
-* Spusťte následující z příkazového řádku (v adresáři projektu, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory):
+* <span data-ttu-id="d3597-102">Spusťte následující příkaz z příkazového řádku (v adresáři projektu, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory):</span><span class="sxs-lookup"><span data-stu-id="d3597-102">Run the following from the command line (in the project directory that contains the *Program.cs*, *Startup.cs*, and *.csproj* files):</span></span>
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
   ```
 
-Pokud dojde k chybě:
+<span data-ttu-id="d3597-103">Pokud dojde k chybě:</span><span class="sxs-lookup"><span data-stu-id="d3597-103">If you get the error:</span></span>
   ```
 No executable found matching command "dotnet-aspnet-codegenerator"
   ```
 
-Otevřete příkazové prostředí do adresáře projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
+<span data-ttu-id="d3597-104">Otevřete příkazové okno k adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).</span><span class="sxs-lookup"><span data-stu-id="d3597-104">Open a command shell to the project directory (The directory that contains the *Program.cs*, *Startup.cs*, and *.csproj* files).</span></span>

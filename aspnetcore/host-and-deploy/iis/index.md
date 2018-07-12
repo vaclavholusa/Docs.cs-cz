@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: f35fbbbf7d04b041565e76d3cc6b9822f1056e50
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 96a4403653e474bb056374909b3ee66998bc99be
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824536"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992812"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
@@ -108,7 +108,7 @@ Zabránit transformace na sadu Web SDK *web.config* souboru, použijte  **\<IsTr
 
 Při zakazování Web SDK z transformaci souboru *processPath* a *argumenty* by měl být ručně nastavit vývojářem. Další informace najdete v tématu [odkaz Konfigurace modul ASP.NET Core](xref:host-and-deploy/aspnet-core-module).
 
-### <a name="webconfig-file-location"></a>umístění souboru Web.config
+### <a name="webconfig-file-location"></a>Umístění souboru Web.config
 
 Chcete-li vytvořit reverzního proxy serveru mezi službou IIS a Kestrel server *web.config* soubor musí být k dispozici v obsahu kořenové cestě (obvykle aplikace základní cesta) nasazené aplikace. Jedná se o stejné umístění jako fyzická cesta webu služby IIS k dispozici. *Web.config* soubor je vyžadován v kořenovém adresáři aplikace, aby se daly publikovat víc aplikací pomocí nasazení webu.
 
@@ -177,7 +177,7 @@ Povolit **konzolu pro správu IIS** a **webové služby**.
    
    Zabránit instalaci x86 instalačního programu balíčků na x x64 OS, spusťte instalační program z příkazového řádku správce s přepínačem `OPT_NO_X86=1`.
 
-1. Restartování systému nebo spuštění **net stop byla /y** následovaný **net start w3svc** z příkazového řádku. Restartování služby IIS převezme změnu systému cesta od Instalační služby.
+1. Restartování systému nebo spuštění **net stop byla /y** následovaný **net start w3svc** z příkazového řádku. Restartování služby IIS příjmem změnu systému provedené CESTU, která je proměnná prostředí, instalační služby.
 
 > [!NOTE]
 > Informace o sdílenou konfiguraci aplikaci IIS najdete v tématu [modul ASP.NET Core s sdílenou konfiguraci aplikaci IIS](xref:host-and-deploy/aspnet-core-module#aspnet-core-module-with-an-iis-shared-configuration).

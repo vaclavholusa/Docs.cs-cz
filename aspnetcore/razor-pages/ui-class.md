@@ -1,35 +1,35 @@
 ---
-title: Opakovaně použitelné uživatelské rozhraní Razor v knihovny tříd ASP.NET Core
+title: Opakovaně použitelné Razor uživatelského rozhraní v knihovnách tříd pomocí ASP.NET Core
 author: Rick-Anderson
 description: Vysvětluje, jak vytvářet opakovaně použitelné uživatelské rozhraní Razor v knihovně tříd.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 04/31/2018
+ms.date: 07/21/2018
 uid: razor-pages/ui-class
-ms.openlocfilehash: a4806e5b85a1f4a12ed7e2c9f2ce680ae9f14d4d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8190302a15670b0a7474445f7b11d4cba46981db
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291540"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992851"
 ---
-# <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvořte opakovaně použitelné uživatelské rozhraní v projektu knihovny tříd Razor ASP.NET Core.
+# <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvoření opakovaně použitelné uživatelské rozhraní v ASP.NET Core pomocí projektu knihovny tříd Razor.
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Zobrazení syntaxe Razor, stránky, řadiče, stránka modely [zobrazení součásti](xref:mvc/views/view-components), a datové modely jde integrovat přímo do knihovny tříd Razor (RCL). RCL můžete zabalené a znovu použít. Aplikace může obsahovat RCL a přepsání, zobrazení a stránky, které obsahuje. Když najde zobrazení, částečná zobrazení nebo stránky Razor ve webové aplikaci a RCL, kód Razor (*.cshtml* souboru) ve webové aplikaci, dostane přednost.
+Zobrazení syntaxe Razor, stránky, řadiče, stránka modely [zobrazení součástí](xref:mvc/views/view-components), a datových modelů může být sestaven do knihovny tříd Razor (RCL). RCL můžete zabalit a znovu použít. Aplikace můžete zahrnout RCL a přepsání, zobrazení a stránky, které obsahuje. Při zobrazení, částečná zobrazení nebo stránky Razor se nachází v webové aplikace a RCL kód Razor (*.cshtml* soubor) na webu aplikace má přednost.
 
 Tato funkce vyžaduje [!INCLUDE[](~/includes/2.1-SDK.md)]
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/ui-class/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/ui-class/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="create-a-class-library-containing-razor-ui"></a>Vytvoření knihovny tříd obsahující Razor uživatelského rozhraní
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* Ze sady Visual Studio **soubor** nabídce vyberte možnost **nový** > **projektu**.
-* Vyberte **webové aplikace ASP.NET Core**.
-* Název knihovny (například "RazorClassLib") > **OK**. Abyste se vyhnuli kolize názvů souboru s knihovnou generované zobrazení, ujistěte se, není název knihovny končit `.Views`.
+* Ze sady Visual Studio **souboru** nabídce vyberte možnost **nový** > **projektu**.
+* Vyberte **webová aplikace ASP.NET Core**.
+* Název knihovny (například "RazorClassLib") > **OK**. Aby se zabránilo kolize názvů souborů s knihovnou generované zobrazení, ujistěte se ale nekončí název knihovny v `.Views`.
 * Ověřte **ASP.NET Core 2.1** nebo novější je vybrána.
 * Vyberte **knihovny tříd Razor** > **OK**.
 
@@ -41,42 +41,41 @@ Z příkazového řádku, spusťte `dotnet new razorclasslib`. Příklad:
 dotnet new razorclasslib -o RazorUIClassLib
 ```
 
-Další informace najdete v tématu [dotnet nové](/dotnet/core/tools/dotnet-new). Abyste se vyhnuli kolize názvů souboru s knihovnou generované zobrazení, ujistěte se, není název knihovny končit `.Views`.
+Další informace najdete v tématu [dotnet nové](/dotnet/core/tools/dotnet-new). Aby se zabránilo kolize názvů souborů s knihovnou generované zobrazení, ujistěte se ale nekončí název knihovny v `.Views`.
 
 ------
 Přidáte soubory Razor RCL.
 
-Doporučujeme, abyste RCL obsahu přejděte v *oblasti* složky. 
+Doporučujeme RCL v obsahu Přejít *oblasti* složky.
 
-
-## <a name="referencing-razor-class-library-content"></a>Odkazování na obsah knihovny Razor – třída
+## <a name="referencing-razor-class-library-content"></a>Odkazování na obsah knihovny tříd Razor
 
 RCL lze odkazovat pomocí:
 
-* Balíček NuGet. V tématu [balíčky NuGet vytváření](/nuget/create-packages/creating-a-package) a [dotnet. Přidejte balíček](/dotnet/core/tools/dotnet-add-package) a [vytvoření a publikování balíčku NuGet](/nuget/quickstart/create-and-publish-a-package-using-visual-studio).
-* *{Název projektu} .csproj*. V tématu [dotnet – přidat odkaz](/dotnet/core/tools/dotnet-add-reference).
+* Balíček NuGet. V tématu [balíčky NuGet vytváření](/nuget/create-packages/creating-a-package) a [se příkaz dotnet add package](/dotnet/core/tools/dotnet-add-package) a [vytvoření a publikování balíčku NuGet](/nuget/quickstart/create-and-publish-a-package-using-visual-studio).
+* *{ProjectName} .csproj*. Zobrazit [dotnet-přidat odkaz na](/dotnet/core/tools/dotnet-add-reference).
 
-## <a name="walkthrough-create-a-razor-class-library-project-and-use-from-a-razor-pages-project"></a>Návod: Vytvoření projektu knihovny tříd Razor a použít z projektu stránky Razor
+## <a name="walkthrough-create-a-razor-class-library-project-and-use-from-a-razor-pages-project"></a>Návod: Vytvoření projektu knihovny tříd Razor a používat z projektu pro stránky Razor
 
-Si můžete stáhnout [dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/ui-class/samples) a otestovat ji spíš než její vytvoření. Stažení ukázkové obsahuje další kód a odkazy, které usnadňují testování projektu. Můžete ponechat zpětné vazby v [potíže Githubu](https://github.com/aspnet/Docs/issues/6098) s komentáře na stažení ukázky a podrobné pokyny.
+Můžete stáhnout [dokončený projekt](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/ui-class/samples) a otestovat ho namísto jeho vytvoření. Vzorku ke stažení obsahuje další kódu a odkazy, které usnadňuje testování projektu. Zanecháte zpětnou vazbu v [tento problém Githubu](https://github.com/aspnet/Docs/issues/6098) s komentáře na stažení ukázky a podrobné pokyny.
 
-### <a name="test-the-download-app"></a>Testování stažení aplikace
+### <a name="test-the-download-app"></a>Testování aplikace ke stažení
 
-Pokud nebyly staženy dokončené aplikace a by místo vytvoření projektu návod, pokračujte [další části](#create-a-razor-class-library).
+Pokud jste nestáhli dokončené aplikace a by místo toho vytvořte projekt návodu, pokračujte [další části](#create-a-razor-class-library).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-Otevřete *.sln* souborů v sadě Visual Studio. Spusťte aplikaci.
+Otevřít *.sln* souboru v sadě Visual Studio. Spusťte aplikaci.
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-Z příkazového řádku v *rozhraní příkazového řádku* directory sestavení RCL a webové aplikace.
+Z příkazového řádku v *rozhraní příkazového řádku* adresáře, vytvářet RCL a webové aplikace.
 
 ``` CLI
 dotnet build
 ```
 
-Přesunout do *WebApp1* adresáře a spusťte aplikaci:
+Přesunout *WebApp1* adresáře a spusťte aplikaci:
 
 ``` CLI
 dotnet run
@@ -87,36 +86,18 @@ Postupujte podle pokynů v [WebApp1 testu](#test)
 
 ## <a name="create-a-razor-class-library"></a>Vytvoření knihovny tříd Razor
 
-V této části se vytvoří Razor třídu knihovny (RCL). RCL jsou přidány soubory Razor.
+V této části se vytvoří knihovny tříd Razor (RCL). Soubory Razor jsou přidány do RCL.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 Vytvoření projektu RCL:
 
-* Ze sady Visual Studio **soubor** nabídce vyberte možnost **nový** > **projektu**.
-* Vyberte **webové aplikace ASP.NET Core**.
-* Název aplikace **RazorUIClassLib**.
+* Ze sady Visual Studio **souboru** nabídce vyberte možnost **nový** > **projektu**.
+* Vyberte **webová aplikace ASP.NET Core**.
+* Pojmenujte aplikaci **RazorUIClassLib** > **OK**.
 * Ověřte **ASP.NET Core 2.1** nebo novější je vybrána.
 * Vyberte **knihovny tříd Razor** > **OK**.
-
-Vytvoření stránky Razor webové aplikace:
-
-* Z **Průzkumníku řešení**, klikněte pravým tlačítkem na řešení > **přidat** >  **nový projekt**.
-* Vyberte **webové aplikace ASP.NET Core**.
-* Název aplikace **WebApp1**.
-* Ověřte **ASP.NET Core 2.1** nebo novější je vybrána.
-* Vyberte **webovou aplikaci** > **OK**.
-
-### <a name="add-razor-files-and-folders-to-the-project"></a>Přidejte Razor soubory a složky, do projektu.
-
-* Přidání souboru nástroje Razor částečné zobrazení s názvem *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml*.
-* Nahraďte kód v *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml* následujícím kódem:
-
-[!code-html[Main](ui-class/samples/cli/RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml)]
-
-* Kopírování *soubor _ViewStart.cshtml* soubor z projekt WebApp1 *RazorUIClassLib/Areas/MyFeature/Pages/_ViewStart.cshtml*.
-
-  [Viewstart](xref:mvc/views/layout#running-code-before-each-view) soubor je vyžadován pro použití rozložení stránky Razor projektu.
+* Přidejte do ní soubor částečného zobrazení Razor *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml*.
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
@@ -131,12 +112,14 @@ dotnet new viewstart -o RazorUIClassLib/Areas/MyFeature/Pages
 Předchozí příkazy:
 
 * Vytvoří `RazorUIClassLib` knihovny tříd Razor (RCL).
-* Vytvoří stránku _Message Razor a přidává ji k RCL. `-np` Parametr vytvoří stránku bez `PageModel`.
-* Vytvoří [viewstart](xref:mvc/views/layout#running-code-before-each-view) souboru a přidá ho RCL.
+* Vytvoří stránku Razor _TEXT a přidá jej RCL. `-np` Parametr vytvoří, aniž by `PageModel`.
+* Vytvoří [viewstart](xref:mvc/views/layout#running-code-before-each-view) soubor a přidá jej RCL.
 
-Soubor viewstart je potřeba použít rozložení stránky Razor projektu (která je přidána v další části).
+Soubor viewstart zadat rozložení stránek Razor projektu (která se přidá v další části).
 
-Aktualizace stránky Razor:
+------
+
+### <a name="add-razor-files-and-folders-to-the-project"></a>Přidání Razor souborů a složek do projektu.
 
 * Nahraďte kód v *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml* následujícím kódem:
 
@@ -146,7 +129,7 @@ Aktualizace stránky Razor:
 
 [!code-html[Main](ui-class/samples/cli/RazorUIClassLib/Areas/MyFeature/Pages/Page1.cshtml)]
 
-`@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers` je potřeba použít částečné zobrazení (`<partial name="_Message" />`). Místo včetně `@addTagHelper` direktivy, můžete přidat *_ViewImports.cshtml* souboru. Příklad:
+`@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers` je potřeba používat částečné zobrazení (`<partial name="_Message" />`). Místo včetně `@addTagHelper` direktiv, můžete přidat *_ViewImports.cshtml* souboru. Příklad:
 
 ``` CLI
 dotnet new viewimports -o RazorUIClassLib/Areas/MyFeature/Pages
@@ -154,7 +137,7 @@ dotnet new viewimports -o RazorUIClassLib/Areas/MyFeature/Pages
 
 Další informace o viewimports najdete v tématu [import sdílených direktivy](xref:mvc/views/layout#importing-shared-directives)
 
-* Sestavení knihovny tříd se ověřit, zda že nejsou žádné chyby kompilátoru:
+* Sestavení knihovny tříd pro ověření, že zde nejsou žádné chyby kompilátoru:
 
 ``` CLI
 dotnet build RazorUIClassLib
@@ -162,23 +145,29 @@ dotnet build RazorUIClassLib
 
 Výstup sestavení obsahuje *RazorUIClassLib.dll* a *RazorUIClassLib.Views.dll*. *RazorUIClassLib.Views.dll* obsahuje kompilovaný obsah Razor.
 
-------
-
-### <a name="use-the-razor-ui-library-from-a-razor-pages-project"></a>Použití knihovny uživatelského rozhraní Razor z projektu stránky Razor
+### <a name="use-the-razor-ui-library-from-a-razor-pages-project"></a>Použití knihovny uživatelského rozhraní Razor z projektu pro stránky Razor
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* Z **Průzkumníku řešení**, klikněte pravým tlačítkem na **WebApp1** a vyberte **nastavit jako spouštěný projekt**.
-* Z **Průzkumníku řešení**, klikněte pravým tlačítkem na **WebApp1** a vyberte **sestavení závislosti** > **závislosti projektu**.
+Vytvoření webové aplikace stránky Razor:
+
+* Z **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení > **přidat** >  **nový projekt**.
+* Vyberte **webová aplikace ASP.NET Core**.
+* Pojmenujte aplikaci **WebApp1**.
+* Ověřte **ASP.NET Core 2.1** nebo novější je vybrána.
+* Vyberte **webovou aplikaci** > **OK**.
+
+* Z **Průzkumníka řešení**, klikněte pravým tlačítkem na **WebApp1** a vyberte **nastavit jako spouštěný projekt**.
+* Z **Průzkumníka řešení**, klikněte pravým tlačítkem na **WebApp1** a vyberte **závislosti sestavení** > **závislosti projektu**.
 * Zkontrolujte **RazorUIClassLib** jako závislost **WebApp1**.
-* Z **Průzkumníku řešení**, klikněte pravým tlačítkem na **WebApp1** a vyberte **přidat** > **odkaz**.
-* V **správce odkazů** dialogové okno, zkontrolujte **RazorUIClassLib** > **OK**.
+* Z **Průzkumníka řešení**, klikněte pravým tlačítkem na **WebApp1** a vyberte **přidat** > **odkaz**.
+* V **správce odkazů** dialogové okno Kontrola **RazorUIClassLib** > **OK**.
 
 Spusťte aplikaci.
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-Vytvoření stránky Razor webové aplikace a řešení obsahující stránky Razor aplikace a knihovny tříd Razor:
+Vytvoření webová aplikace Razor Pages a soubor řešení, který obsahuje aplikace Razor Pages a knihovny tříd Razor:
 
 ```console
 dotnet new webapp -o WebApp1
@@ -201,16 +190,16 @@ dotnet run
 
 <a name="test"></a>
 
-### <a name="test-webapp1"></a>Test WebApp1
+### <a name="test-webapp1"></a>WebApp1 testu
 
-Ověřte, zda že je používán knihovny tříd Razor uživatelského rozhraní.
+Ověřte, že se používá knihovny tříd Razor uživatelského rozhraní.
 
 * Přejděte do `/MyFeature/Page1`.
 
 ## <a name="override-views-partial-views-and-pages"></a>Přepsání, zobrazení, částečná zobrazení a stránky
 
-Když najde zobrazení, částečná zobrazení nebo stránky Razor ve webové aplikace a knihovny tříd Razor, kód Razor (*.cshtml* souboru) ve webové aplikaci, dostane přednost. Například přidejte *WebApp1/Areas/MyFeature/Pages/Page1.cshtml* k WebApp1, a Page1 v WebApp1 má přednost Page1in knihovny tříd Razor.
+Při zobrazení, částečná zobrazení nebo stránky Razor se nachází v webové aplikace a knihovny tříd Razor, kód Razor (*.cshtml* soubor) na webu aplikace má přednost. Například přidejte *WebApp1/Areas/MyFeature/Pages/Page1.cshtml* k WebApp1, a Page1 v WebApp1 přednost Page1in knihovny tříd Razor.
 
-Při stahování ukázka přejmenovat *WebApp1, oblasti nebo MyFeature2* k *WebApp1, oblasti nebo MyFeature* k testování přednost před.
+Ve vzorku ke stažení, přejmenujte *WebApp1/oblasti/MyFeature2* k *WebApp1/oblasti/MyFeature* otestovat prioritu.
 
-Kopírování *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml* částečné zobrazení k *WebApp1/Areas/MyFeature/Pages/Shared/_Message.cshtml*. Aktualizujte kód označující nové umístění. Sestavení a spuštění aplikace k ověření, že verze aplikace s částečným je používán.
+Kopírovat *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml* částečné zobrazení k *WebApp1/Areas/MyFeature/Pages/Shared/_Message.cshtml*. Aktualizace značky k označení nového umístění. Sestavení a spuštění aplikace a zkontrolujte, že verze aplikace s částečným se používá.

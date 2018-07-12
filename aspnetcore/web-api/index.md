@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: web-api/index
-ms.openlocfilehash: 84e4a51a8a8ab031752ef054cba834bd202a4927
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 0ff0bbc629930666d46247d6c1257fac8bfaf7c2
+ms.sourcegitcommit: 260abb706ed17f07a53288d8a0c3e69fc13e7468
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894212"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38966806"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core
 
@@ -87,7 +87,7 @@ Zdrojový atribut vazby definuje umístění, ve kterém není nalezena hodnota 
 
 Bez `[ApiController]` atribut, vytvoření vazby zdroje nejsou explicitně definovány atributy. V následujícím příkladu `[FromQuery]` atribut označuje, že `discontinuedOnly` je zadána hodnota parametru v řetězci dotazu v adrese URL požadavku:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_BindingSourceAttributes&highlight=2)]
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_BindingSourceAttributes&highlight=3)]
 
 Odvozená pravidla se použijí pro zdroje dat výchozí parametry akce. Tato pravidla konfigurace zdroje připojení, v opačném případě budete pravděpodobně pro ruční použití na parametry akce. Atributy zdroje vazby chovají následovně:
 

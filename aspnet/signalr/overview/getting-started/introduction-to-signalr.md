@@ -8,15 +8,18 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 4c34f99674a8213966c44aa434a0e00690b30f44
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2f4353e88287f0716967362e255d94df0c522475
+ms.sourcegitcommit: 260abb706ed17f07a53288d8a0c3e69fc13e7468
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820185"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38966741"
 ---
 <a name="introduction-to-signalr"></a>Úvod ke knihovně SignalR
 ====================
+
+Je k dispozici aktualizovaná verze tohoto kurzu [tady](/aspnet/core/tutorials/signalr) pomocí nejnovější verze sady Visual Studio. Nové kurz používá [ASP.NET Core](/aspnet/core/), která nabízí mnoho vylepšení v porovnání s v tomto kurzu.
+
 podle [Patrick Fletcher](https://github.com/pfletcher)
 
 > Tento článek popisuje, co je SignalR a některé z řešení, která byla navržena k vytvoření. 

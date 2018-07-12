@@ -1,4 +1,4 @@
-Pokud aplikace vyžaduje několik poskytovatelů, řetězu rozšiřující metody zprostředkovatele za [AddAuthentication](/dotnet/api/microsoft.extensions.dependencyinjection.authenticationservicecollectionextensions.addauthentication):
+Pokud aplikace vyžaduje několik zprostředkovatelů, zřetězení rozšiřující metody zprostředkovatele za [AddAuthentication](/dotnet/api/microsoft.extensions.dependencyinjection.authenticationservicecollectionextensions.addauthentication):
 
 ```csharp
 services.AddAuthentication()

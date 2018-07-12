@@ -5,12 +5,12 @@ description: Zjistěte, jak řídit chování aplikace napříč několika prost
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: b0e001b50ada85a183590fbee1ad1f3b895004d5
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 3394113de37da2571ab6398405751961117f12d2
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938430"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992870"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Používání více prostředí v ASP.NET Core
 
@@ -204,19 +204,50 @@ set ASPNETCORE_ENVIRONMENT=Development
 $Env:ASPNETCORE_ENVIRONMENT = "Development"
 ```
 
-Tyto příkazy platit jenom pro aktuální okno. Při zavření okna `ASPNETCORE_ENVIRONMENT` nastavení obnoví na výchozí nastavení nebo počítač hodnotu. Chcete-li nastavit hodnotu globálně ve Windows, otevřete **ovládací panely** > **systému** > **Upřesnit nastavení systému** a přidat nebo upravit `ASPNETCORE_ENVIRONMENT`hodnotu:
+Tyto příkazy platit jenom pro aktuální okno. Při zavření okna `ASPNETCORE_ENVIRONMENT` nastavení obnoví na výchozí nastavení nebo počítač hodnotu.
 
-![Systémové rozšířené vlastnosti](environments/_static/systemsetting_environment.png)
+K nastavení hodnoty globálně ve Windows, použijte jednu z následujících postupů:
 
-![Proměnná prostředí základní ASPNET](environments/_static/windows_aspnetcore_environment.png)
+* Otevřít **ovládací panely** > **systému** > **Upřesnit nastavení systému** a přidat nebo upravit `ASPNETCORE_ENVIRONMENT` hodnotu:
+
+  ![Systémové rozšířené vlastnosti](environments/_static/systemsetting_environment.png)
+
+  ![Proměnná prostředí základní ASPNET](environments/_static/windows_aspnetcore_environment.png)
+
+* Otevřete příkazový řádek pro správu a použít `setx` příkazu nebo otevření příkazového řádku pro správu Powershellu a použití `[Environment]::SetEnvironmentVariable`:
+
+  **Příkazový řádek**
+
+  ```console
+  setx ASPNETCORE_ENVIRONMENT=Development /M
+  ```
+
+  `/M` Přepínač označuje k nastavení proměnné prostředí na úrovni systému. Pokud `/M` nastaví proměnnou prostředí pro uživatelský účet, přepínač se nepoužívá.
+
+  **PowerShell**
+
+  ```powershell
+  [Environment]::SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development", "Machine")
+  ```
+
+  `Machine` Označuje hodnotu možnosti k nastavení proměnné prostředí na úrovni systému. Pokud se změní hodnotu možnosti na `User`, je nastavit proměnné prostředí pro uživatelský účet.
+
+Když `ASPNETCORE_ENVIRONMENT` proměnnou prostředí je nastavit globálně, projeví se `dotnet run` v jakékoli okno příkazového řádku otevřené po je hodnota nastavena.
 
 **web.config**
 
-Najdete v článku *nastavení proměnných prostředí* část [odkaz Konfigurace modul ASP.NET Core](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) tématu.
+Nastavit `ASPNETCORE_ENVIRONMENT` proměnné prostředí s *web.config*, najdete v článku *nastavení proměnných prostředí* část <xref:host-and-deploy/aspnet-core-module#setting-environment-variables>. Když `ASPNETCORE_ENVIRONMENT` nastavení proměnné prostředí s *web.config*, jeho hodnota se přepíše nastavení na úrovni systému.
 
 **Na jeden fond aplikací služby IIS**
 
-Nastavení proměnných prostředí pro jednotlivé aplikace spuštěné v izolované fondy aplikací (podporované ve službě IIS 10.0 a novější), najdete v článku *AppCmd.exe příkaz* část [proměnné prostředí &lt; environmentVariables&gt; ](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) tématu.
+Chcete-li nastavit `ASPNETCORE_ENVIRONMENT` proměnné prostředí pro aplikace běžící v izolované fondu aplikací (podporované službou IIS 10.0 nebo vyšší), najdete v tématu *AppCmd.exe příkaz* část [proměnné prostředí &lt; environmentVariables&gt; ](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) tématu. Když `ASPNETCORE_ENVIRONMENT` nastavení proměnné prostředí pro fond aplikací, jeho hodnota se přepíše nastavení na úrovni systému.
+
+> [!IMPORTANT]
+> Při hostování aplikace v IIS a přidání nebo změně `ASPNETCORE_ENVIRONMENT` prostředí proměnné, použijte jednu z následujících přístupů k mají novou hodnotu vyzvednou aplikace:
+>
+> * Restartování fondu aplikací vaší aplikace.
+> * Spustit `net stop was /y` následovaný `net start w3svc` z příkazového řádku.
+> * Restartujte server.
 
 ### <a name="macos"></a>macOS
 
@@ -244,7 +275,7 @@ Pro distribuce Linuxu, použijte `export` příkazu na příkazovém řádku pro
 
 ### <a name="configuration-by-environment"></a>Konfigurace podle prostředí
 
-Zobrazit [konfigurace podle prostředí](xref:fundamentals/configuration/index#configuration-by-environment) Další informace.
+Zobrazit *konfigurace podle prostředí* část <xref:fundamentals/configuration/index#configuration-by-environment>.
 
 ## <a name="environment-based-startup-class-and-methods"></a>Na základě prostředí při spuštění třídy a metody
 

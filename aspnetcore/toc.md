@@ -18,7 +18,6 @@
 ### [Přidání vyhledávání](xref:tutorials/razor-pages/search)
 ### [Přidání nového pole](xref:tutorials/razor-pages/new-field)
 ### [Přidání ověřování](xref:tutorials/razor-pages/validation)
-### [Nahrání souborů](xref:tutorials/razor-pages/uploading-files)
 ## [Vytvoření webové aplikace SignalR, která pracuje v reálném čase](xref:tutorials/signalr)
 ## [Vytvoření webové aplikace SignalR pomocí TypeScriptu](xref:tutorials/signalr-typescript-webpack)
 ## [Vytvoření webové aplikace MVC](tutorials/first-mvc-app/index.md)
@@ -159,6 +158,7 @@
 ## [Metody filtrování pro Razor Pages](xref:razor-pages/filter)
 ## [Vytvoření knihovny tříd Razor](xref:razor-pages/ui-class)
 ## [Směrování a aplikační konvence](xref:razor-pages/razor-pages-conventions)
+## [Nahrání souborů na stránku Razor](xref:razor-pages/upload-files)
 ## [Sada Razor SDK](xref:razor-pages/sdk)
 
 # [MVC](xref:mvc/overview)

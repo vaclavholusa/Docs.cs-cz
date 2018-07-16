@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvářet, číst, aktualizovat, odstranit pomocí EF
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: dfc79964cc4f15851b42822bb97d14800f54b878
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0a8d386104d9c62f37d0a94e66344d3f1e23bae9
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216363"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063348"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - CRUD - 2, 8
 
@@ -236,9 +236,9 @@ Testování, odstranění.
 
 ## <a name="common-errors"></a>Běžné chyby
 
-Student/Home nebo jiné odkazy nefungují:
+Student/Index nebo jiné odkazy nefungují:
 
-Ověřte stránky Razor obsahuje správný `@page` směrnice. Například by The Student/domovské stránky Razor **není** obsahovat šablonu trasy:
+Ověřte stránky Razor obsahuje správný `@page` směrnice. Například by měl u stránky Razor Student/Index **není** obsahovat šablonu trasy:
 
 ```cshtml
 @page "{id:int}"

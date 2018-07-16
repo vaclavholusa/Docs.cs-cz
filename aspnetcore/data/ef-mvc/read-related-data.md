@@ -5,12 +5,12 @@ description: V tomto kurzu budete čtení a zobrazení souvisejících dat – t
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: d5c9b665a80003ef5029754d7ad1780b3254e97e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: a310c9e4b9cec6e2ab2477461f395c9bbd3fa364
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216291"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063283"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC s EF Core – čtení souvisejících dat – 6 10
 
@@ -155,7 +155,7 @@ Můžete použít `Single` metody na kolekci, když víte, kolekce budou mít po
 Namísto:
 
 ```csharp
-.Where(I => i.ID == id.Value).Single()
+.Where(i => i.ID == id.Value).Single()
 ```
 
 Dále pokud jste vybrali kurz, vybrané kurzu se načte z seznam kurzů v zobrazení modelu. Potom zobrazení modelu `Enrollments` s registrací entity z tohoto kurzu je načtena vlastnost `Enrollments` navigační vlastnost.

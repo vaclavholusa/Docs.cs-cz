@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 92e1f4a735488ec8a6221486a90ebf3f0b0c4204
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 285d74c0d12e3aca4d8c33d39467dfda02712993
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938310"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063257"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -84,8 +84,8 @@ Výchozí kompatibilitu pro ASP.NET Core 2.1 a vyšší 2.x aplikace, které pro
 
 Následující kód nastaví režim kompatibility ASP.NET Core 2.1, s výjimkou následujícího chování:
 
-* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
 
 [!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
 
@@ -94,7 +94,7 @@ Pro aplikace, dojde k rozbíjející změny chování, pomocí příslušné kom
 * Umožňuje použít nejnovější verzi a vyjádřit výslovný nesouhlas zvláštní nejnovější změny chování.
 * Získáte čas na aktualizaci aplikace, funguje s nejnovějšími změnami.
 
-[MvcOptions](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) komentáře zdrojové třídy mají dobrou vysvětlení co změnil a proč změny jsou vylepšení pro většinu uživatelů.
+[MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) komentáře zdrojové třídy mají dobrou vysvětlení co změnil a proč změny jsou vylepšení pro většinu uživatelů.
 
 V některé budoucí datum, bude [verze technologie ASP.NET Core 3.0](https://github.com/aspnet/Home/wiki/Roadmap). Ve verzi 3.0 se odebere staré chování podporuje přepínače kompatibility. Domníváme, že se že jedná pozitivní změny, které téměř všechny uživatele. Zavedením teď tyto změny, mohou nyní využívat většinu aplikací a ostatní bude mít čas aktualizovat aplikace.
 

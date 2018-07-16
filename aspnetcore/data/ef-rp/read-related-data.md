@@ -5,12 +5,12 @@ description: V tomto kurzu čtení a zobrazení souvisejících dat – to zname
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 4e0aa7151cc54f666202458ba60500a7c04f5ebb
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: fa3147cc4ad121784911eef802e04ca91f16448f
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38138251"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063309"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat – 6 8
 
@@ -74,19 +74,11 @@ Chcete-li zobrazit název přiřazený oddělení v seznamu kurzů:
 * Spusťte následující příkaz:
 
   ```console
+  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
 
 Předchozí příkaz scaffold `Course` modelu. Otevřete projekt v sadě Visual Studio.
-
-Sestavte projekt. Sestavení generuje chyby, jako je následující:
-
-`1>Pages/Courses/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Course' and no extension method 'Course' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- Globálně změnit `_context.Course` k `_context.Courses` (to znamená, přidejte k "s" `Course`). 7 výskyty jsou vyhledána a aktualizovat.
 
 Otevřít *Pages/Courses/Index.cshtml.cs* a prozkoumejte `OnGetAsync` metody. Předběžné načítání pro zadaný modul generování uživatelského rozhraní `Department` navigační vlastnost. `Include` Metody určuje předběžné načítání.
 

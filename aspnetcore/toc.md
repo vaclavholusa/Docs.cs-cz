@@ -258,6 +258,8 @@
 ### [JavaScript API](/javascript/api/?view=signalr-js-latest)
 
 ## [Konfigurace](xref:signalr/configuration)
+## [Ověřování a autorizace](xref:signalr/authn-and-authz)
+## [Důležité informace o zabezpečení](xref:signalr/security)
 ## [Protokol centra MessagePack](xref:signalr/messagepackhubprotocol)
 ## [Streamování](xref:signalr/streaming)
 ## [Rozdíly mezi verzemi SignalR](xref:signalr/version-differences)

@@ -287,6 +287,7 @@
 ### [Nástroje sady Visual Studio pro Docker](xref:host-and-deploy/docker/visual-studio-tools-for-docker)
 ### [Publikování do image Dockeru](https://azure.microsoft.com/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker/)
 ## [Konfigurace proxy a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer)
+## [Hostování ve webové farmě](xref:host-and-deploy/web-farm)
 ## [Publikační profily v sadě Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [Adresářová struktura](xref:host-and-deploy/directory-structure)
 ## [Referenční informace k běžným chybám u služeb Azure App Service a IIS](xref:host-and-deploy/azure-iis-errors-reference)

@@ -1,47 +1,47 @@
 ---
 title: Vazby modelu v ASP.NET Core
-author: rachelappel
-description: Zjistěte, jak mapuje vazby modelu v aplikaci ASP.NET MVC základní data z požadavků HTTP pro parametry metody akce.
+author: tdykstra
+description: Zjistěte, jak vazby modelu v ASP.NET Core MVC mapují data požadavků HTTP na parametry metod akce.
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
-ms.author: rachelap
+ms.author: tdykstra
 ms.date: 01/22/2018
 uid: mvc/models/model-binding
-ms.openlocfilehash: 4c1cfddf82e077e22e9069777393bc5e6086de83
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 200e2c22e02ec9e24b7cdb3883cf6f2f93f2f4b7
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278382"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095730"
 ---
 # <a name="model-binding-in-aspnet-core"></a>Vazby modelu v ASP.NET Core
 
 Podle [Rachel Appel](https://github.com/rachelappel)
 
-## <a name="introduction-to-model-binding"></a>Úvod do modelu vazby
+## <a name="introduction-to-model-binding"></a>Úvod do vazby modelu
 
-Vazby modelu v aplikaci ASP.NET MVC základní mapuje data z požadavků HTTP pro parametry metody akce. Parametry může být jednoduché typy, jako je například řetězce, celá čísla nebo obtékaných objektů, nebo mohou být komplexní typy. Toto je skvělé funkce MVC, protože mapování příchozích dat na protějšek je často opakovaných scénář, bez ohledu na velikost a složitost dat. MVC řeší tento problém tím, že poskytuje rychle abstrakci vazby, takže vývojáři nemusí zachovat přepisování trochu odlišná verze tohoto stejný kód v každé aplikace. Zápis vlastního textu na typ převaděče kód je zdlouhavé a tím zvyšuje i pravděpodobnost chyby.
+Vazby modelu v ASP.NET Core MVC mapují data požadavků HTTP na parametry metod akce. Parametry mohou být jednoduché typy, jako jsou řetězce, celá čísla nebo float, nebo mohou být komplexní typy. Totiž skvělou funkcí služby MVC mapování příchozích dat protějšek je často opakovaných scénář, bez ohledu na velikost a složitost dat. MVC tento problém řeší tím abstrahovat vazby hned, aby vývojáři nemuseli kvůli zachovat přepisování trochu odlišná verze tohoto stejného kódu v každé aplikaci. Zápis vlastní text, který má typ převaděče kód je únavné a náchylné k chybám.
 
-## <a name="how-model-binding-works"></a>Jak funguje vazby modelu
+## <a name="how-model-binding-works"></a>Princip vazby modelu
 
-Když MVC obdrží požadavek HTTP, nasměruje ho do určité akce metodu řadiče. Určuje, která metoda akce ke spuštění na základě toho, co je v datech trasy a hodnot z požadavku HTTP se váže k této metodě akce parametry. Zvažte například následující adresu URL:
+Když MVC obdrží požadavek HTTP, nasměruje ho do metody konkrétní akce kontroleru. Určuje, jakou metodu akce spouštět až na to, co je v datech trasy a potom naváže hodnoty z požadavku HTTP na parametry této metodě akce. Představte si třeba následující adresu URL:
 
 `http://contoso.com/movies/edit/2`
 
-Vzhledem k tomu, že šablona trasy vypadá to, `{controller=Home}/{action=Index}/{id?}`, `movies/edit/2` směruje `Movies` řadiče a jeho `Edit` metody akce. Přijme také volitelný parametr názvem `id`. Kód pro metodu akce by měl vypadat přibližně takto:
+Vzhledem k tomu, že šablona trasy vypadá takto, `{controller=Home}/{action=Index}/{id?}`, `movies/edit/2` směruje `Movies` řadič a jeho `Edit` metody akce. Také přijímá volitelný parametr s názvem `id`. Kód pro metodu akce by měl vypadat přibližně takto:
 
 ```csharp
 public IActionResult Edit(int? id)
    ```
 
-Poznámka: Řetězců v trasu adresy URL nejsou velká a malá písmena.
+Poznámka: Řetězce v trasu adresy URL nejsou velká a malá písmena.
 
-MVC se pokusí vytvořit vazbu data žádosti k parametrům akce podle názvu. MVC bude vyhledávat hodnoty pro každý parametr pomocí názvu parametru a názvy jeho veřejné nastavit vlastnosti. V předchozím příkladu je jedinou akcí parametr s názvem `id`, který MVC váže hodnotu s tímto názvem v hodnoty trasy. Kromě hodnoty trasy MVC vytvoří vazbu dat z různých částí žádosti a dělá to tak, aby sada. Níže je seznam zdrojů dat v pořadí, ve kterém vazby modelu vypadá prostřednictvím je:
+MVC se pokusí vytvořit vazbu data požadavku na parametry akce podle názvu. MVC bude hledat hodnoty pro každý parametr pomocí názvu parametru a názvy jeho veřejné nastavitelné vlastnosti. V předchozím příkladu je parametr jedinou akcí s názvem `id`, který MVC váže hodnotu s názvem v hodnoty trasy. Kromě hodnoty trasy MVC vytvoří vazbu mezi data z různých částí žádosti a provádí se v určitém pořadí. Níže je seznam zdrojů dat v pořadí, ve kterém vazby modelu vypadá přes ně:
 
-1. `Form values`: Toto jsou hodnot formuláře, které přejděte v požadavku HTTP využívající metodu POST. (včetně požadavků jQuery POST).
+1. `Form values`: Toto jsou hodnot formuláře, které najdete v požadavku HTTP pomocí metody POST. (včetně požadavků jQuery POST).
 
-2. `Route values`: Sada hodnot trasy poskytované [směrování](xref:fundamentals/routing)
+2. `Route values`: Sadu hodnot trasy poskytované [směrování](xref:fundamentals/routing)
 
-3. `Query strings`: Část řetězec dotazu identifikátoru URI.
+3. `Query strings`: Řetězec část dotazu identifikátoru URI.
 
 <!-- DocFX BUG
 The link works but generates an error when building with DocFX
@@ -49,67 +49,67 @@ The link works but generates an error when building with DocFX
 [Routing](xref:fundamentals/routing)
 -->
 
-Poznámka: Formuláře hodnoty, data trasy a dotazů řetězce se ukládají jako dvojice název hodnota.
+Poznámka: Tvoří hodnoty, data směrování a dotazů řetězce se ukládají jako dvojice název hodnota.
 
-Vzhledem k tomu, že vazby modelu žádali klíč s názvem `id` a není nic s názvem `id` v hodnot formuláře, přesune do vyhledávání pro tento klíč hodnoty trasy. V našem příkladu je nalezena shoda. Vázání a hodnota je převést na celé číslo 2. Stejné žádosti pomocí úpravy (řetězec id) by převést na řetězec "2".
+Vzhledem k tomu vyzváni vazby modelu pro klíč s názvem `id` a nic s názvem `id` hodnoty formulář přesune do hodnoty trasy pro daný klíč hledání. V našem příkladu je shoda. Vázání a hodnota je převedena na celé číslo. 2. Stejný požadavek pomocí úpravy (id řetězce) by převést na řetězec "2".
 
-Pokud v příkladu jednoduché typy. V MVC jednoduché typy jsou všechny .NET primitivní typ nebo typ pomocí převaděče typu řetězec. Kdyby parametru metody akce třídy, jako `Movie` typu, který obsahuje jednoduché a komplexní typy jako vhodně vlastností MVC model vazby budou nadále jej zpracovat. Reflexe a rekurze používá procházení vlastnosti komplexních typů hledání shody. Vazby modelu hledá vzoru *parameter_name.property_name* k vytvoření vazby na vlastnosti. Pokud se nenajde odpovídající hodnoty tohoto formuláře, pokusí se vytvořit vazbu pomocí název vlastnosti. Pro tyto typy jako `Collection` typy, vazby modelu hledá shod, který se *parameter_name [index]* nebo právě *[index]*. Model vazby vyhodnotí `Dictionary` podobně typy žádostí o *parameter_name [klíč]* nebo právě *[klíč]*, pokud jsou klíče jednoduché typy. Klíče, které jsou podporovány odpovídat názvům pole HTML a značky Pomocníci vygenerované stejný typ modelu. To umožňuje odezvy hodnoty tak, aby pole formuláře zůstaly vyplněný se vstupem uživatele pro jejich pohodlí, například když vázaných dat z vytvořit nebo upravit neproběhla úspěšně ověření.
+Pokud v příkladu jednoduché typy. V aplikaci MVC jednoduché typy jsou všechny primitivní typ formátu .NET nebo typ s konvertor typu řetězec. Parametr metody akce, jako byly třídu `Movie` typ, který obsahuje jednoduché a komplexní typy jako krásně vlastnosti, MVC model vazby budou nadále ji zpracovat. Reflexe a rekurze používá k procházení vlastnosti komplexní typy hledání shody. Vazby modelu hledá vzor *parameter_name.property_name* k vázání hodnot vlastností. Pokud se nenajde odpovídající hodnoty tohoto formuláře, pokusí se vytvořit vazbu pomocí názvu vlastnosti. Pro tyto typy, jako `Collection` typy vazby modelu hledá odpovídající *parameter_name [index]* nebo jen *[index]*. Model vazba zpracuje `Dictionary` typy podobně s žádostí o *parameter_name [klíč]* nebo jen *[klíč]*, jako jsou klíče jednoduché typy. Klíče, které jsou podporovány odpovídat názvům pole HTML a pomocných rutin značek, které jsou generovány pro stejný typ modelu. To umožňuje verzemi hodnoty tak, aby pole formuláře vyplněné se vstupem uživatele pro jejich pohodlí, například při zůstat vázaných dat od vytvoření nebo úprava úspěšně ověření.
 
-V pořadí pro vazbu provést třídu musí mít veřejný výchozí konstruktor a člen vázat musí být veřejné vlastnosti s možností zápisu. Pokud vazba modelu se stane, že třída bude vytvořena pouze pomocí výchozí veřejný konstruktor, můžete nastavit vlastnosti.
+Pro vazbu, která se provede třídy musí mít veřejný výchozí konstruktor a člen vázat musí být zapisovatelný veřejné vlastnosti. Pokud vazba modelu se stane, že třída bude vytvořen pouze pomocí veřejný výchozí konstruktor, můžete nastavit vlastnosti.
 
-Když vazbu parametru vazby modelu zastaví hledá hodnoty s tímto názvem a jeho přejde k další parametr vazby. Výchozí chování vazby modelu, jinak hodnota nastaví parametrů na výchozí hodnoty v závislosti na jejich typu:
+Při vazbu parametru vazby modelu zastaví hledání pro hodnoty s tímto názvem a se přejde k další parametr vazby. V opačném případě výchozí chování vazby modelu nastaví na výchozí hodnoty v závislosti na jejich typu parametry:
 
 * `T[]`: S výjimkou produktů pole typu `byte[]`, vazba nastaví parametry typu `T[]` k `Array.Empty<T>()`. Pole typu `byte[]` jsou nastaveny na `null`.
 
-* Odkazové typy: Vazba vytvoří instanci třídy s výchozím konstruktorem bez nastavení vlastností. Však model vazby sady `string` parametry `null`.
+* Typy odkazu: Vazby vytvoří instanci třídy s výchozím konstruktorem bez nastavování vlastností. Model však vazba sady `string` parametry `null`.
 
-* Typy s možnou hodnotou NULL: Typy s možnou hodnotou Null jsou nastaveny na `null`. V předchozím příkladu model vazby sady `id` k `null` vzhledem k tomu, že je typu `int?`.
+* Typy připouštějící hodnotu NULL: Typy s možnou hodnotou Null jsou nastaveny na `null`. V příkladu výše, model vazby sady `id` k `null` vzhledem k tomu, že je typu `int?`.
 
-* Typy hodnot: Použití hodnot Null typy hodnot typu `T` jsou nastaveny na `default(T)`. Vazby modelu bude třeba nastavit parametr `int id` na hodnotu 0. Zvažte použití ověření modelu nebo typy s možnou hodnotou Null, namísto spoléhání na výchozí hodnoty.
+* Typy hodnot: Typy neumožňující hodnotu typu `T` jsou nastaveny na `default(T)`. Vazby modelu bude třeba nastavit parametr `int id` na hodnotu 0. Zvažte použití ověření modelu nebo typů s povolenou hodnotou Null, spíše než spoléhání se na výchozí hodnoty.
 
-Pokud vazba se nezdaří, nebude MVC vyvolána chyba. Všechny akce, která přijímá vstup uživatele by se mělo zjistit `ModelState.IsValid` vlastnost.
+Pokud se vazba se nezdaří, MVC nevyvolá chybu. Zkontrolujte všechny akce, která přijímá vstup uživatele `ModelState.IsValid` vlastnost.
 
-Poznámka: Každý záznam v kontroleru `ModelState` vlastnost je `ModelStateEntry` obsahující `Errors` vlastnost. Je málokdy potřeba dotazování tuto kolekci sami. Místo nich se používá `ModelState.IsValid`.
+Poznámka: Každá položka v kontroleru `ModelState` je vlastnost `ModelStateEntry` obsahující `Errors` vlastnost. Je zřídka nezbytné k této kolekci dotazování sami. Místo nich se používá `ModelState.IsValid`.
 
-Kromě toho existují některé speciální datové typy, které MVC nutné vzít v úvahu při provádění vazby modelu:
+Kromě toho jsou některé speciální datové typy, které MVC nutné vzít v úvahu při provádění vazby modelu:
 
-* `IFormFile`, `IEnumerable<IFormFile>`: Jeden nebo více odeslané soubory, které jsou součástí požadavku HTTP.
+* `IFormFile`, `IEnumerable<IFormFile>`: Jeden nebo více nahraných souborů, které jsou součástí požadavku HTTP.
 
-* `CancellationToken`: Sloužící ke zrušení aktivity v asynchronní řadiče.
+* `CancellationToken`: Používá se pro zrušení aktivity v asynchronní řadiče.
 
-Tyto typy mohou být vázány na parametry akce nebo vlastnosti na typ třídy.
+Tyto typy mohou být vázány na parametry akce nebo vlastností typu třídy.
 
-Po dokončení vazby modelu [ověření](validation.md) dojde. Vazby modelu výchozí dobře funguje pro velká většina vývojové scénáře. Je také rozšiřitelný, pokud máte jedinečné potřeby předdefinované chování můžete přizpůsobit.
+Po dokončení, vazby modelu [ověření](validation.md) vyvolá. Vazby modelu výchozí dobře funguje pro většinu scénářů vývoje. Je také rozšiřitelný, pokud máte jedinečné požadavky můžete přizpůsobit předdefinované chování.
 
 ## <a name="customize-model-binding-behavior-with-attributes"></a>Přizpůsobení chování vazby modelu s atributy
 
-MVC obsahuje několik atributů, které můžete použít k přímé jeho výchozí chování vazby modelu do jiného zdroje. Například můžete určit, zda vazby je vyžadováno pro vlastnost, nebo pokud ji by se nikdy nemělo stát vůbec pomocí `[BindRequired]` nebo `[BindNever]` atributy. Alternativně můžete přepsat výchozí zdroj dat a zadejte zdroj dat vazač modelu. Níže je seznam atributů vazby modelu:
+MVC obsahuje několik atributů, které vám umožní směrovat její výchozí chování vazby modelu do jiného zdroje. Například můžete určit, jestli se vyžaduje pro vlastnost vazby, nebo pokud jej by nemělo nikdy dojít vůbec pomocí `[BindRequired]` nebo `[BindNever]` atributy. Alternativně můžete přepsat výchozí zdroj dat a určete zdroj dat vazače modelu. Tady je seznam atributů vazby modelu:
 
-* `[BindRequired]`: Tento atribut přidá chybu stavu modelu, pokud vazba nebyla vytvořena.
+* `[BindRequired]`: Tento atribut přidá chyby stavu modelu, pokud vazba nebyla vytvořena.
 
-* `[BindNever]`: Informuje vazač modelu pro nikdy vazbu pro tento parametr.
+* `[BindNever]`: Přikáže vazač modelu pro nikdy vazbu pro tento parametr.
 
-* `[FromHeader]`, `[FromQuery]`, `[FromRoute]`, `[FromForm]`: Použijte tyto zadat zdroj přesný vazby, kterou chcete použít.
+* `[FromHeader]`, `[FromQuery]`, `[FromRoute]`, `[FromForm]`: Tyto slouží k určení zdroje připojení přesně chcete použít.
 
-* `[FromServices]`: Tento atribut používá [vkládání závislostí](../../fundamentals/dependency-injection.md) pro svázání parametrů ze služeb.
+* `[FromServices]`: Tento atribut používá [injektáž závislostí](../../fundamentals/dependency-injection.md) pro svázání parametrů ze služby.
 
-* `[FromBody]`: Pomocí nakonfigurované formátovací moduly vázat data z textu požadavku. Formátovací modul je vybrána, založené na typ obsahu požadavku.
+* `[FromBody]`: Použijte nakonfigurované formátovacích modulů k vytvoření vazby dat z textu požadavku. Formátovací modul se určí typ obsahu požadavku.
 
-* `[ModelBinder]`: Používaná k přepsání výchozí vazač modelu, vazba zdroje a název.
+* `[ModelBinder]`: Používá se k přepsání výchozí vazač modelu, zdroj vazby a název.
 
-Atributy jsou velmi užitečné nástroje, když potřebujete přepsat výchozí chování vazby modelu.
+Atributy jsou velmi užitečné nástroje při budete muset změnit výchozí chování vazby modelu.
 
-## <a name="bind-formatted-data-from-the-request-body"></a>Vytvoření vazby formátovaných dat z textu žádosti
+## <a name="bind-formatted-data-from-the-request-body"></a>Vytvoření vazby formátovaných dat z textu požadavku
 
-Žádost o data mohou pocházet v různých formátech, včetně JSON, XML a mnohé další. Při použití atributu [FromBody] k označení, že chcete vazby parametru na data v textu požadavku, aplikace MVC používá nakonfigurované sadu formátovacích modulů pro zpracování dat požadavku na základě jeho obsahu typu. Ve výchozím nastavení aplikace MVC zahrnuje `JsonInputFormatter` třídy pro zpracování dat JSON, ale můžete přidat další formátovacích modulů pro zpracování XML a dalších vlastních formátů.
+Data žádosti můžou mít širokou škálu formátů, včetně JSON, XML a mnohé další. Při použití atributu [FromBody] k označení, že chcete svázat parametr s daty v textu požadavku aplikace MVC používá nakonfigurovanou sadu formátovacích modulů pro zpracování žádosti o data na základě jeho typu obsahu. Ve výchozím nastavení obsahuje MVC `JsonInputFormatter` třídy pro zpracování dat JSON, ale můžete přidat další formátovacích modulů pro zpracování XML a dalších vlastních formátů.
 
 > [!NOTE]
-> Může existovat maximálně jeden parametr na každou akci označených pomocí `[FromBody]`. ASP.NET Core MVC runtime deleguje je zodpovědností čtení datový proud požadavku k formátování. Jakmile datový proud požadavku je pro čtení pro parametr, není obecně možné číst datový proud požadavku znovu pro vazby dalších `[FromBody]` parametry.
+> Může existovat maximálně jeden parametr na akce, které jsou vybaveny `[FromBody]`. Runtime ASP.NET Core MVC deleguje na starost datový proud požadavku pro čtení k formátování. Jakmile datový proud požadavku je pro čtení pro parametr, není obecně možné číst datový proud požadavku znovu pro vazbu druhé `[FromBody]` parametry.
 
 > [!NOTE]
 > `JsonInputFormatter` Je výchozí formátování a je založena na [Json.NET](https://www.newtonsoft.com/json).
 
-Vybere vstupní formátování na základě technologie ASP.NET [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) záhlaví a typ parametru, pokud je atribut u ní zadáno jinak. Pokud chcete použít XML nebo jiného formátu je nutné ho nakonfigurovat v *Startup.cs* soubor, ale budete chtít nejdřív mají získat odkaz na `Microsoft.AspNetCore.Mvc.Formatters.Xml` pomocí nástroje NuGet. Spuštění kódu by měl vypadat přibližně takto:
+Vybere vstupní formátovacích modulů na základě technologie ASP.NET [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) záhlaví a typ parametru, pokud neexistuje atribut použitý k jeho zadání jinak. Pokud chcete použít XML nebo jiný formát je nutné ji nakonfigurovat v *Startup.cs* soubor, ale nejdřív muset získat odkaz na `Microsoft.AspNetCore.Mvc.Formatters.Xml` pomocí nástroje NuGet. Spouštěcí kód by měl vypadat přibližně takto:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -119,8 +119,8 @@ public void ConfigureServices(IServiceCollection services)
    }
 ```
 
-Kód na *Startup.cs* soubor obsahuje `ConfigureServices` metoda s `services` argument můžete použít k vytvoření služeb pro aplikace ASP.NET. V ukázce přidáváme formátovací modul XML jako služba, která bude poskytovat MVC pro tuto aplikaci. `options` Argument předaný `AddMvc` metoda umožňuje přidávat a spravovat filtry, formátování a další možnosti systému z MVC po spuštění aplikace. Následně použít `Consumes` atribut třídy kontroleru nebo metod akce pro práci s formátem chcete.
+Kód v *Startup.cs* obsahuje soubor `ConfigureServices` metodu s `services` argument můžete použít k vytvoření služby pro aplikace ASP.NET. V příkladu přidáváme formátovací modul XML jako služba, která bude poskytovat MVC pro tuto aplikaci. `options` Argument předaný `AddMvc` metoda umožňuje přidávat a spravovat filtry, formátování a další možnosti systému z MVC po spuštění aplikace. Následně použít `Consumes` atribut třídy kontroler nebo akce metody pro práci s formátem chcete.
 
-### <a name="custom-model-binding"></a>Vazby vlastní modelu
+### <a name="custom-model-binding"></a>Vlastní vazba modelu
 
-Vazby modelu můžete rozšířit vytvořením vlastní vazače modelů vlastní. Další informace o [vazby modelu vlastní](../advanced/custom-model-binding.md).
+Psaní vlastních vazače vlastního modelu, můžete rozšířit vazby modelu. Další informace o [vlastní vazba modelu](../advanced/custom-model-binding.md).

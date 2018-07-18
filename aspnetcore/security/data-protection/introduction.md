@@ -1,77 +1,81 @@
 ---
 title: Ochrana dat ASP.NET Core
 author: rick-anderson
-description: Další informace o konceptu ochrany dat a principy návrhu rozhraní API ASP.NET Core Data Protection.
+description: Další informace o konceptu ochranu dat a principy návrhu rozhraní API ASP.NET Core Data Protection.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/introduction
-ms.openlocfilehash: c043de3fc472357c0722a5a736d7e811f1b77002
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 29a2bbef6f2fd9b61541173af143926ca82bfad7
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273907"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095692"
 ---
 # <a name="aspnet-core-data-protection"></a>Ochrana dat ASP.NET Core
 
-Webové aplikace často potřebují k ukládání dat citlivé na zabezpečení. Windows poskytuje rozhraní DPAPI pro aplikací klasické pracovní plochy, ale to není vhodná pro webové aplikace. Zásobník ochrany dat ASP.NET Core poskytují jednoduchý a snadno použitelný API kryptografických vývojář může použít k ochraně dat, včetně správy klíčů a otočení.
+Webové aplikace často potřebují ukládat citlivá data. Windows poskytuje rozhraní DPAPI pro desktopové aplikace, ale to není vhodná pro webové aplikace. Zásobník ochrany dat ASP.NET Core poskytují jednoduché a snadno se používá API kryptografické vývojáři mohou využít k ochraně dat, včetně správu a rotaci klíčů.
 
-Zásobník ochrany dat ASP.NET Core slouží k sloužit jako dlouhodobé náhradou &lt;machineKey&gt; element technologie ASP.NET 1.x - 4.x. Byla navržená tak, aby vyřešit řadu nedostatků starý kryptografický zásobníku při současném poskytování out-of-the-box řešení pro většinu případů použití, které moderní aplikace jsou setkat.
+Zásobník ochrany dat ASP.NET Core je navržená sloužící jako dlouhodobé náhrada za &lt;machineKey&gt; element v technologii ASP.NET 1.x – 4.x. Bylo navrženo řeší řadu nedostatků starý kryptografický zásobníku současně jako out-of-the-box řešení pro většinu případů použití, které jsou pravděpodobně dojde k moderní aplikace.
 
-## <a name="problem-statement"></a>Stanovení problému
+## <a name="problem-statement"></a>Popis problému
 
-Příkaz celkový problém, můžete stručně uvedená v jedné větě: je nutné zachovat důvěryhodné informace pro pozdější načtení, ale I nedůvěřujete mechanismus trvalosti. V podmínkách webové to může být zapsána jako "Potřebuji odezvy důvěryhodného stavu prostřednictvím nedůvěryhodného klienta."
+Příkaz celkový problém může stručně uvedeny v jedné větě: je potřeba zachovat důvěryhodné informace pro pozdější načtení, ale není důvěřovat mechanismus trvalosti. V podmínkách web to může být napsán jako "Potřebuji round-trip důvěryhodného stavu pomocí nedůvěryhodného klienta."
 
-Kanonický příklad tohoto objektu je soubor cookie pro ověřování nebo nosiče tokenu. Generuje server "Jsem Groot a mít oprávnění xyz" token a předá ho do klienta. Někdy v budoucnu nevypnete Klient nabídne tento token zpět na server, ale server potřebuje nějaký druh záruku, že klient nebyl forged token. Proto první požadavek: pravosti (také známa jako integritu, zfalšování kontroly pravopisu systému).
+Canonical příkladem tohoto je soubor cookie pro ověřování nebo nosný token. Generuje server "Jsem Groot a mít oprávnění xyz" token a předá ho do klienta. V některé budoucí datum nabídne klientovi tento token zpět na server, ale je nutné nějaký druh ujištění, že klient nebyl založených na zfalšovaných token. Proto první požadavek: pravosti (označovaný také jako integritu, kontroly pravopisu proti).
 
-Vzhledem k tomu, že trvalého stavu je důvěryhodný pro server, Očekáváme, že tento stav může obsahovat informace, které jsou specifické pro provozní prostředí. To může být ve tvaru cestu k souboru, oprávnění, popisovač nebo nepřímý odkaz na jiné a některé další část dat specifickou pro server. Tyto informace by neměl být poskytnuty obecně nedůvěryhodného klienta. Proto požadavek na druhý: utajení.
+Protože trvalého stavu je důvěryhodný pro server, Očekáváme, že tento stav může obsahovat informace, které jsou specifické pro provozní prostředí. To může být ve tvaru cestu k souboru, oprávnění, popisovač nebo jiných nepřímý odkaz nebo některé jiné části data specifická pro server. Tyto informace obecně by neměl být poskytnuty nedůvěryhodného klienta. Proto druhý požadavek: utajení.
 
-Nakonec od moderní aplikace jsou komponentizované, co jste viděli je, budou jednotlivé komponenty chcete využít tento systém bez ohledu na ostatní součásti v systému. Například pokud součást tokenu nosiče používá tento zásobníku, ho pracovat bez rušení mechanismus anti-proti útokům CSRF, která by mohla využívat se stejným zásobníkem. Proto požadavek na konečné: izolace.
+Nakonec od moderních aplikací jsou komponentní, co jsme viděli je, že jednotlivé komponenty se chcete využít tento systém bez ohledu na ostatní součásti v systému. Například pokud komponenta tokenu nosiče používá tento zásobník, měla pracovat bez rušení anti-CSRF mechanismus, které by mohly používat se stejným zásobníkem. Proto poslední požadavek: izolace.
 
-Můžeme poskytnout další omezení chcete-li zúžit rozsah naše požadavky. Předpokládáme, že jsou všechny služby, které pracují v rámci cryptosystem stejně důvěryhodné a že data nemusí být generována nebo využívat mimo služby v našem přímou kontrolu. Kromě toho je nutné, operace jsou tak rychlý jako možné vzhledem k tomu, že každý požadavek pro webovou službu projít cryptosystem jeden či více krát. Díky tomu symetrické šifrování ideální pro náš scénář a jsme slevy asymetrické šifrování, dokud například čas, který je potřeba.
+Abyste mohli zúžit rozsah, naše požadavky můžete zajišťuje další omezení. Předpokládáme, že jsou všechny služby, které pracují v rámci cryptosystem stejně důvěryhodné a že data nemusí generovat ani spotřebované mimo tyto služby a za naše přímou kontrolu. Kromě toho požadujeme, aby operace jsou co nejrychleji, protože každý požadavek na webovou službu projít cryptosystem jednou nebo vícekrát. Díky tomu symetrické šifrování ideální pro náš scénář a asymetrické šifrování jsme získat slevu až do takové čas, který je nezbytný.
 
 ## <a name="design-philosophy"></a>Filosofie návrhu tříd
 
-Spuštění tím, že určíte problémy s existující zásobníku. Jakmile jsme měli který, jsme názory povahu existující řešení a dospělo k závěru, že žádné existující řešení poměrně měl možnostem, které jsme žádá o. Potom jsme analyzovány řešení založené na několik hlavních zásad.
+Začali jsme díky identifikaci problémů s existující zásobníku. Jakmile jsme měli, který jsme názory na šířku existující řešení a dospělo k závěru, že žádné existující řešení úplně měli možností, které jsme chtěli. Potom jsme navržené řešení založené na několika hlavní principy.
 
-* Systém by měl nabízejí zjednodušení konfigurace. V ideálním případě systém by bez nutnosti konfigurace a vývojáři mohou dosáhl základů systémem. V situacích, kdy je potřeba nakonfigurovat konkrétní aspekt (například klíče úložiště) vývojáři by měla přihlédnout k provedení těchto konkrétní konfigurace jednoduché.
+* Systém by měl nabídnout zjednodušení konfigurace. V ideálním případě by být systém bez nutnosti konfigurace a vývojáři můžou pusťte se do práce. V situacích, kdy je potřeba nakonfigurovat konkrétní aspekty (jako jsou klíče úložiště) vývojáři by měl zvážit tyto konkrétní konfigurace maximálně jednoduché.
 
-* Nabízí jednoduché rozhraní API určených. Rozhraní API by měl být snadno použitelné správně a obtížně použitelný nesprávně.
+* Nabízí jednoduché rozhraní API určené uživatelům. Rozhraní API by měla být snadno použitelné správně a obtížně použitelnou nesprávně.
 
-* Vývojáři by neměl další zásady správy klíčů. Systém by měla řídit výběr algoritmus a životnosti klíče jménem pro vývojáře. V ideálním případě by měl vývojář nikdy i mít přístup k nezpracované materiál klíče.
+* Principy správy klíčů by neměl informace pro vývojáře. Systém by měl zpracovat algoritmus výběru a životnosti klíče jménem pro vývojáře. Vývojář v ideálním případě měli mít nikdy i přístup k nezpracované materiál klíče.
 
-* Klíčů by měly být chráněné v klidovém stavu, pokud je to možné. Systém by měl zjistit mechanismus ochrany odpovídající výchozí a použít automaticky.
+* Klíče by měly být chráněné v klidovém stavu, pokud je to možné. Systém by měl zjistit mechanismus odpovídající výchozí ochranu a použijte ji automaticky.
 
-S těmito zásadami pamatovat vyvinuli jednoduchý, [snadno použitelný](xref:security/data-protection/using-data-protection) data protection zásobníku.
+Pomocí těchto zásad v úvahu Vyvinuli jsme proto představují jednoduchou, [snadno použitelné](xref:security/data-protection/using-data-protection) data protection zásobníku.
 
-Ochrana dat ASP.NET Core rozhraní API nejsou primárně určený pro neomezené trvalost důvěrné datové části. Další technologie, jako [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) a [Azure Rights Management](https://docs.microsoft.com/rights-management/) jsou vhodnější ve scénáři neomezené úložiště, a mají možnosti odpovídajícím způsobem silné správy klíčů. Ale nutné dodat, není nic zakazují vývojář pomocí funkce Ochrana dat ASP.NET Core rozhraní API pro dlouhodobou ochranu důvěrných údajů.
+Ochranu dat ASP.NET Core API nejsou určené především pro neomezenou trvalost důvěrné datových částí. Jiné technologie, jako je [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) a [Azure Rights Management](https://docs.microsoft.com/rights-management/) jsou vhodnější pro scénář neomezené úložiště, a mají možnosti odpovídajícím způsobem silné správu klíčů. Ale nutné dodat, není nic zakazují vývojář pro dlouhodobou ochranu důvěrných dat pomocí data protection API ASP.NET Core.
 
 ## <a name="audience"></a>Cílová skupina
 
-Systém ochrany dat je rozdělené do pěti hlavní balíčky. Různé aspekty tato rozhraní API cíle tři hlavní cílové skupiny;
+Systém ochrany dat je rozdělena do pěti hlavní balíčky. Tři hlavní oslovovat; cílové různé aspekty těchto rozhraní API
 
-1. [Příjemce rozhraní API přehled](xref:security/data-protection/consumer-apis/overview) cílové aplikace a framework vývojáři.
+1. [Přehled rozhraní API příjemců](xref:security/data-protection/consumer-apis/overview) cílit na vývojáři aplikace a rozhraní framework.
 
-   "Nechci Další informace o tom, jak funguje v zásobníku nebo o tom, jak je nakonfigurovaný. Jednoduše chcete provádět některé operace v jako jednoduchý takovým způsobem, který nejdříve s velkou pravděpodobností úspěšně pomocí rozhraní API."
+   "Nechci se nyní Další informace o tom, jak funguje zásobníku nebo jeho konfiguraci. Jednoduše chci provést některé operace v jednoduché způsobem nejvíce s velkou pravděpodobností používání rozhraní API úspěšně."
 
-2. [Rozhraní API pro konfiguraci](xref:security/data-protection/configuration/overview) cílové aplikace vývojáři a správci systému.
+2. [Rozhraní API pro konfiguraci](xref:security/data-protection/configuration/overview) cílit na vývojáře aplikací a správce systému.
 
-   "Potřebuji systém ochrany dat říct, že Moje prostředí vyžaduje nastavení nebo jiné než výchozí cesty."
+   "Potřebuji systém ochrany dat říct, že Moje prostředí vyžaduje jiné než výchozí cesty nebo nastavení."
 
-3. Rozšiřitelnost vývojáři cílové rozhraní API starosti implementace vlastních zásad. Využití těchto rozhraní API by omezena na velmi zřídka a došlo, vývojáři vědět zabezpečení.
+3. Rozšiřitelnost vývojáři cílové rozhraní API starosti implementace vlastních zásad. Použití těchto rozhraní API by omezena na výjimečné situace a zkušenosti vývojáře používající zabezpečení.
 
-   "Potřebuji nahradit komponentu celý v rámci systému, protože chování skutečně jedinečné požadavky. Chci se další uncommonly používaných částí plochy rozhraní API k sestavení modulu plug-in, který splňuje mé požadavky."
+   "Potřebuji nahradit celý komponenty v rámci systému, protože mám stane skutečně jedinečná chování požadavky. Souhlasím s posíláním další uncommonly použít části plochy rozhraní API k vytvoření modulu plug-in, který splňuje mé požadavky."
 
-## <a name="package-layout"></a>Balíček rozložení
+## <a name="package-layout"></a>Rozložení balíčku
 
 Zásobník ochrany dat se skládá z pěti balíčky.
 
-* Microsoft.AspNetCore.DataProtection.Abstractions obsahuje základní rozhraní IDataProtectionProvider a IDataProtector. Obsahuje taky užitečné rozšiřující metody, které mohou pomoci práci s těmito typy (například přetížení IDataProtector.Protect). Najdete v části příjemce rozhraní pro další informace. Pokud někdo jiný zodpovídá za vytvoření instance systému ochrany dat a jednoduše spotřebovávají rozhraní API, budete chtít odkaz Microsoft.AspNetCore.DataProtection.Abstractions.
+* Microsoft.AspNetCore.DataProtection.Abstractions obsahuje základní IDataProtectionProvider a IDataProtector rozhraní. Obsahuje také užitečné rozšiřující metody, které vám můžou pomoct práci s těmito typy (například přetížení IDataProtector.Protect). V části příjemce rozhraní pro další informace. Pokud někomu jinému zodpovídá za vytvoření instance systému ochrany dat a jsou jednoduše používat rozhraní API, budete chtít odkaz Microsoft.AspNetCore.DataProtection.Abstractions.
 
-* Microsoft.AspNetCore.DataProtection obsahuje základní implementace systému ochrany dat, včetně základních kryptografických operací, správu klíčů, konfigurace a rozšíření. Pokud jste zodpovědný za vytváření instancí systému ochrany dat (například přidáním do IServiceCollection) nebo změnou nebo rozšíření své chování, budete chtít odkaz Microsoft.AspNetCore.DataProtection.
+* Microsoft.AspNetCore.DataProtection obsahuje základní implementaci systému ochrany dat, včetně základních kryptografických operací, správu klíčů, konfigurace a rozšíření. Pokud jste za vytvoření instance systému ochrany dat (například zvýšení ho IServiceCollection) nebo úpravě nebo rozšiřování své chování, budete chtít odkaz Microsoft.AspNetCore.DataProtection.
 
-* Microsoft.AspNetCore.DataProtection.Extensions obsahuje další rozhraní API, které vývojáři mohou být užitečné, ale které nepatří do základní balíček. Například tento balíček obsahuje jednoduché "doložit systému odkazující na adresář konkrétní úložiště klíčů se žádné nastavení vkládání závislostí" rozhraní API (Další informace o). Také obsahuje rozšiřující metody pro omezení délky trvání chráněných datových částí (Další informace o).
+* Microsoft.AspNetCore.DataProtection.Extensions obsahuje další rozhraní API vývojáři můžou být užitečné, ale které nepatří do balíčku core. Například tento balíček obsahuje jednoduché "vytvořit instanci systém odkazuje na konkrétní úložiště klíčů adresář se žádné nastavení injektáž závislostí" rozhraní API (Další informace). Také obsahuje rozšiřující metody pro omezení životnosti chráněných datových částí (Další informace).
 
-* Microsoft.AspNetCore.DataProtection.SystemWeb lze nainstalovat do stávající aplikaci ASP.NET 4.x přesměrování jeho &lt;machineKey&gt; na místo toho použijte novým zásobníkem ochrany dat operací. V tématu [kompatibility](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) Další informace.
+* Microsoft.AspNetCore.DataProtection.SystemWeb lze nainstalovat do stávající aplikace ASP.NET 4.x přesměrovat její &lt;machineKey&gt; operace místo toho použít nový zásobník ochrany dat. Zobrazit [kompatibility](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) Další informace.
 
-* Microsoft.AspNetCore.Cryptography.KeyDerivation poskytuje implementaci pro hashování rutiny hesel PBKDF2 a mohou být využívána systémy, které je třeba zpracovat uživatelská hesla bezpečně. V tématu [hodnoty Hash hesla](xref:security/data-protection/consumer-apis/password-hashing) Další informace.
+* Microsoft.AspNetCore.Cryptography.KeyDerivation poskytuje implementaci pro hashování rutina PBKDF2 hesel a mohou být využívána systémy, které je potřeba zpracovat uživatelská hesla zabezpečeně. Zobrazit [hodnoty Hash hesla](xref:security/data-protection/consumer-apis/password-hashing) Další informace.
+
+## <a name="additional-resources"></a>Další zdroje
+
+<xref:host-and-deploy/web-farm>

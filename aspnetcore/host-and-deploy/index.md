@@ -1,77 +1,81 @@
 ---
-title: Hostování a nasazení základní technologie ASP.NET
+title: Hostitelství a nasazení ASP.NET Core
 author: rick-anderson
-description: Zjistěte, jak nastavit hostitelská prostředí a nasazení aplikací ASP.NET Core.
+description: Zjistěte, jak nastavit hostitelská prostředí a nasazení aplikace ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
 ms.date: 08/07/2017
 uid: host-and-deploy/index
-ms.openlocfilehash: 31444475e39a12d526dd624bb508770429e414ca
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e62b68c4cfad29bb8bea3b9fbb2c231a4afeccea
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277147"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095665"
 ---
-# <a name="host-and-deploy-aspnet-core"></a>Hostování a nasazení základní technologie ASP.NET
+# <a name="host-and-deploy-aspnet-core"></a>Hostitelství a nasazení ASP.NET Core
 
 Obecný postup nasazení aplikace ASP.NET Core do hostitelského prostředí:
 
 * Publikujte aplikaci do složky na hostitelském serveru.
-* Nastavte správce procesu, který se spustí aplikace při žádosti o doručení a restartování aplikace po jeho spadne nebo se server nerestartuje.
-* V případě potřeby konfiguraci reverzní proxy server nastavte reverzní proxy server, který předává požadavky na aplikaci.
+* Nastavte správce procesu, který se spustí aplikace při žádosti o doručení a restartuje aplikaci poté, co ho dojde k chybě nebo se server nerestartuje.
+* Pokud se požaduje konfigurace reverzního proxy serveru, nastavení reverzní proxy server, který předává požadavky do aplikace.
 
 ## <a name="publish-to-a-folder"></a>Publikovat do složky
 
-[Dotnet publikování](/dotnet/articles/core/tools/dotnet-publish) rozhraní příkazového řádku příkaz kompilovaný kód aplikace a zkopíruje soubory potřebné ke spuštění aplikace do *publikování* složky. Při nasazení ze sady Visual Studio [dotnet publikování](/dotnet/core/tools/dotnet-publish) kroku dojde automaticky před soubory se zkopírují do cíle nasazení.
+[Dotnet publikovat](/dotnet/articles/core/tools/dotnet-publish) příkazu rozhraní příkazového řádku zkompiluje kód aplikace a zkopíruje soubory potřebné ke spuštění aplikace do *publikovat* složky. Při nasazení ze sady Visual Studio [dotnet publikovat](/dotnet/core/tools/dotnet-publish) kroku dojde automaticky před soubory se zkopírují do cíle nasazení.
 
 ### <a name="folder-contents"></a>Obsah složky
 
-*Publikování* složka obsahuje *.exe* a *.dll* soubory pro aplikaci, její závislosti a volitelně modul runtime rozhraní .NET.
+*Publikovat* složka obsahuje *.exe* a *.dll* souborů pro aplikace, jeho závislosti a volitelně modul .NET runtime.
 
-.NET Core aplikace lze publikovat jako *nezávislý* nebo *framework závislé* aplikace. Pokud je aplikace samostatná, *.dll* soubory, které obsahují modul runtime rozhraní .NET jsou součástí *publikování* složky. Pokud je aplikace závislá framework, soubory modulu runtime rozhraní .NET nejsou zahrnuté, protože aplikace obsahuje odkaz na verzi rozhraní .NET, který je nainstalován na serveru. Výchozí model nasazení je závislá na framework. Další informace najdete v tématu [nasazení aplikace .NET Core](/dotnet/articles/core/deploying/index).
+Aplikace .NET Core můžete publikovat jako *samostatná* nebo *závisí na architektuře* aplikace. Pokud je samostatná, aplikace *.dll* soubory, které obsahují modul .NET runtime jsou součástí *publikovat* složky. Pokud je aplikace závisí na architektuře, nejsou zahrnuté soubory modulu runtime .NET, protože aplikace obsahuje odkaz na verzi rozhraní .NET, která je nainstalována na serveru. Výchozí model nasazení je závisí na architektuře. Další informace najdete v tématu [nasazení aplikace .NET Core](/dotnet/articles/core/deploying/index).
 
-Kromě *.exe* a *.dll* soubory, *publikování* složky pro aplikace ASP.NET Core obvykle obsahuje konfigurační soubory, statické prostředky a zobrazení MVC. Další informace najdete v tématu [adresářovou strukturu](xref:host-and-deploy/directory-structure).
+Kromě *.exe* a *.dll* soubory, *publikovat* složku pro aplikace ASP.NET Core obvykle obsahuje konfigurační soubory, statických prostředků a zobrazení MVC. Další informace najdete v tématu [adresářovou strukturu](xref:host-and-deploy/directory-structure).
 
-## <a name="set-up-a-process-manager"></a>Nastavení správce procesu
+## <a name="set-up-a-process-manager"></a>Nastavit správce procesu
 
-Aplikace ASP.NET Core je konzolovou aplikaci, která musí být spuštěna, když server se spustí a restartovat, pokud ji dojde k chybě. Automatizovat spustí a restartování, proces manager je potřeba. Nejběžnější správci proces pro ASP.NET Core jsou:
+Aplikace ASP.NET Core je konzolová aplikace, které musí být spuštěna, když na server se spustí a restartovaný, pokud ho dojde k chybě. Chcete-li automatizovat spustí a restartuje, je potřeba správce procesu. Nejběžnější vedoucí proces pro ASP.NET Core jsou:
 
 * Linux
-  * [Nginx](xref:host-and-deploy/linux-nginx)
+  * [Server Nginx](xref:host-and-deploy/linux-nginx)
   * [Apache](xref:host-and-deploy/linux-apache)
 * Windows
-  * [SLUŽBY IIS](xref:host-and-deploy/iis/index)
+  * [SLUŽBA IIS](xref:host-and-deploy/iis/index)
   * [Windows Service](xref:host-and-deploy/windows-service)
 
 ## <a name="set-up-a-reverse-proxy"></a>Nastavit reverzní proxy server
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový server, [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) slouží jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je Kestrel po některé předběžné zpracování.
+Pokud aplikace využívá [Kestrel](xref:fundamentals/servers/kestrel) webový server [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) může sloužit jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je na Kestrel po některé předběžného zpracování.
 
-Buď konfiguraci&mdash;s nebo bez reverzní proxy server&mdash;je platný a podporované konfigurace hostování pro technologii ASP.NET Core 2.0 nebo novější. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
+Buď konfiguraci&mdash;s nebo bez něj reverzní proxy server&mdash;je platný a podporované konfigurace pro hostování pro ASP.NET Core 2.0 nebo novější. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Pokud aplikace používá [Kestrel](xref:fundamentals/servers/kestrel) webový server a bude přístup k Internetu, použijte [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je Kestrel po některé předběžné zpracování. Hlavním důvodem pro používání reverzní proxy server je zabezpečení. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel?tabs=aspnetcore1x#when-to-use-kestrel-with-a-reverse-proxy).
+Pokud aplikace využívá [Kestrel](xref:fundamentals/servers/kestrel) webový server a budou zveřejněny na Internetu, použijte [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), nebo [IIS](xref:host-and-deploy/iis/index) jako reverzní proxy server. Reverzní proxy server přijímá požadavky HTTP z Internetu a předává je na Kestrel po některé předběžného zpracování. Hlavním důvodem pro pomocí reverzního proxy je zabezpečení. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel?tabs=aspnetcore1x#when-to-use-kestrel-with-a-reverse-proxy).
 
 ---
 
-## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro vyrovnávání zatížení
+## <a name="proxy-server-and-load-balancer-scenarios"></a>Proxy server a scénáře pro nástroj pro vyrovnávání zatížení
 
-Další konfigurace může být potřeba pro aplikace, které jsou hostovány za proxy servery a nástroje pro vyrovnávání zatížení. Bez další konfigurace nemusí aplikace mít přístup k schématu (HTTP či HTTPS) a IP adresu vzdáleného kde žádost pochází. Další informace najdete v tématu [konfigurace ASP.NET Core k práci s proxy servery a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
+Další konfigurace může být nezbytný pro aplikací hostovaných za službou proxy servery a nástroje pro vyrovnávání zatížení. Bez další konfigurace nemusí aplikaci mít přístup k schématu (HTTP/HTTPS) a Vzdálená IP adresa původu žádost. Další informace najdete v tématu [konfigurace ASP.NET Core práci se servery proxy a nástroje pro vyrovnávání zatížení](xref:host-and-deploy/proxy-load-balancer).
 
 ## <a name="using-visual-studio-and-msbuild-to-automate-deployment"></a>Pomocí sady Visual Studio a nástroje MSBuild k automatizaci nasazení
 
-Nasazení často vyžaduje další úkoly kromě kopírování výstupu z [dotnet publikování](/dotnet/core/tools/dotnet-publish) na server. Například může další soubory, které vyžaduje nebo vyloučit z *publikování* složky. Visual Studio použije nástroje MSBuild pro nasazení webu a MSBuild lze přizpůsobit udělat celou řadu dalších úloh během nasazení. Další informace najdete v tématu [profily publikování v sadě Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) a [pomocí nástroje MSBuild a Team Foundation Build](http://msbuildbook.com/) adresáře.
+Nasazení často vyžaduje další úkoly kromě kopírování výstup z [dotnet publikovat](/dotnet/core/tools/dotnet-publish) na server. Například může být nutné nebo vyloučeny ze dalších souborů *publikovat* složky. Visual Studio používá MSBuild pro nasazení webu a je možné přizpůsobit MSBuild k provádění mnoha jiných úloh během nasazování. Další informace najdete v tématu [publikační profily v sadě Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles) a [pomocí nástroje MSBuild a Team Foundation Build](http://msbuildbook.com/) knihy.
 
-Pomocí [funkci Publikovat Web](xref:tutorials/publish-to-azure-webapp-using-vs) nebo [integrovanou podporu Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment), aplikace se dá nasadit přímo ze sady Visual Studio na Azure App Service. Visual Studio Team Services podporuje [průběžné nasazování do služby Azure App Service](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts).
+S použitím [funkci Publikovat Web](xref:tutorials/publish-to-azure-webapp-using-vs) nebo [integrovanou podporu Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment), aplikace se dají nasadit přímo z Visual Studio do služby Azure App Service. Visual Studio Team Services podporuje [průběžné nasazování do služby Azure App Service](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts).
 
-## <a name="publishing-to-azure"></a>Publikování do služby Azure
+## <a name="publishing-to-azure"></a>Publikování do Azure
 
-V tématu [publikování webové aplikace ASP.NET Core Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny o tom, jak publikovat aplikaci do Azure pomocí sady Visual Studio. Aplikace lze také publikovat na Azure z [příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli).
+Zobrazit [publikovat webovou aplikaci ASP.NET Core do služby Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny o tom, jak publikovat aplikaci do Azure pomocí sady Visual Studio. Aplikace můžete publikovat také do Azure z [příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli).
+
+## <a name="host-in-a-web-farm"></a>Hostování ve webové farmě
+
+Informace o konfiguraci pro hostování aplikací ASP.NET Core v prostředí webové farmy (například nasazení více instancí vaší aplikace pro zajištění škálovatelnosti), najdete v části <xref:host-and-deploy/web-farm>.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-Informace o používání Docker jako hostitelské prostředí najdete v tématu [hostitele ASP.NET Core aplikací v nástroji Docker](xref:host-and-deploy/docker/index).
+Informace o použití Dockeru jako hostitelské prostředí najdete v tématu [hostitele ASP.NET Core aplikace v Dockeru](xref:host-and-deploy/docker/index).

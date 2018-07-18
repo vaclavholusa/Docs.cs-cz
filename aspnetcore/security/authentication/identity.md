@@ -5,12 +5,12 @@ description: Pomocí Identity aplikace v ASP.NET Core. Obsahuje požadavky na he
 ms.author: riande
 ms.date: 01/24/2018
 uid: security/authentication/identity
-ms.openlocfilehash: c231a7619a4433ce004342ce68564e4c3892e702
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 50ddb96000e6a3f9e1762e9bb3e1f215f20d4356
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829299"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095636"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
@@ -199,7 +199,8 @@ Zobrazit [konfigurace](#pw) ukázku, která nastavuje minimální požadavky.
 
 ## <a name="next-steps"></a>Další kroky
 
-* [Migrace ověřování a identita](xref:migration/identity)
-* [Potvrzení účtu a obnovení hesla](xref:security/authentication/accconfirm)
-* [Dvoufaktorové ověřování přes SMS](xref:security/authentication/2fa)
-* [Facebook, Google a externí zprostředkovatel ověřování](xref:security/authentication/social/index)
+* <xref:migration/identity>
+* <xref:security/authentication/accconfirm>
+* <xref:security/authentication/2fa>
+* <xref:security/authentication/social/index>
+* <xref:host-and-deploy/web-farm>

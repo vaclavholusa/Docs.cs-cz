@@ -1,28 +1,28 @@
 ---
-title: Konfigurace ASP.NET Core SignalR
-author: rachelappel
-description: Informace o konfiguraci aplikace ASP.NET Core SignalR.
+title: Konfigurace jádra SignalR technologie ASP.NET
+author: tdykstra
+description: Zjistěte, jak nakonfigurovat aplikace SignalR technologie ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/30/2018
 uid: signalr/configuration
-ms.openlocfilehash: 167b8828efd093d755aeb1c91e080dbd22b5d485
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: fac0226c939f4cf446c876b1c0b359d6c5b9dfd3
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36962452"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095399"
 ---
-# <a name="aspnet-core-signalr-configuration"></a>Konfigurace ASP.NET Core SignalR
+# <a name="aspnet-core-signalr-configuration"></a>Konfigurace jádra SignalR technologie ASP.NET
 
-## <a name="jsonmessagepack-serialization-options"></a>Serializace JSON nebo MessagePack možnosti
+## <a name="jsonmessagepack-serialization-options"></a>Serializace JSON/MessagePack možnosti
 
-Funkce SignalR technologie ASP.NET Core podporuje dva protokoly pro kódování zpráv: [JSON](https://www.json.org/) a [MessagePack](https://msgpack.org/index.html). Každý protokol obsahuje možnosti konfigurace serializace.
+Funkce SignalR technologie ASP.NET Core pro kódování zpráv podporuje dva protokoly: [JSON](https://www.json.org/) a [MessagePack](https://msgpack.org/index.html). Všechny protokoly, které obsahuje možnosti konfigurace serializace.
 
-Serializace JSON se dá konfigurovat na serveru pomocí [ `AddJsonProtocol` ](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol) metoda rozšíření, které lze přidat po [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) v vaší `Startup.ConfigureServices` metoda. `AddJsonProtocol` Metoda přebírá delegáta, který obdrží `options` objektu. [ `PayloadSerializerSettings` ](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) Vlastnost na tento objekt je JSON.NET `JsonSerializerSettings` objekt, který můžete použít ke konfiguraci serializace argumentů a návratové hodnoty. Najdete v článku [JSON.NET dokumentace](https://www.newtonsoft.com/json/help/html/Introduction.htm) další podrobnosti.
+Serializace JSON lze nastavit na serveru pomocí [ `AddJsonProtocol` ](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol) metody rozšíření, které mohou být přidány po [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) v vaše `Startup.ConfigureServices` metody. `AddJsonProtocol` Metoda přijímá delegát, který přijímá `options` objektu. [ `PayloadSerializerSettings` ](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) Vlastnost k tomuto objektu je JSON.NET `JsonSerializerSettings` objekt, který můžete použít ke konfiguraci serializace argumenty a návratové hodnoty. Najdete v článku [JSON.NET dokumentaci](https://www.newtonsoft.com/json/help/html/Introduction.htm) další podrobnosti.
 
-Jako příklad ke konfiguraci serializátoru, který je pro použití názvy vlastností "PascalCase" místo "camelCase" výchozí názvy, použijte následující kód:
+Jako příklad konfigurace serializátoru, který chcete použít místo výchozí názvy "camelCase", "PascalCase" názvy vlastností, pomocí následujícího kódu:
 
 ```csharp
 services.AddSignalR()
@@ -32,7 +32,7 @@ services.AddSignalR()
     });
 ```
 
-V klientovi .NET stejné `AddJsonHubProtocol` metoda rozšíření existuje v [HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder). `Microsoft.Extensions.DependencyInjection` Oboru názvů musí být importovány na resolve – metoda rozšíření:
+V klientovi .NET, stejné `AddJsonHubProtocol` – metoda rozšíření existuje v [HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder). `Microsoft.Extensions.DependencyInjection` Obor názvů musí být importován do resolve – metoda rozšíření:
 
 ```csharp
 // At the top of the file:
@@ -47,14 +47,14 @@ var connection = new HubConnectionBuilder()
 ```
 
 > [!NOTE]
-> Není možné nakonfigurovat serializace JSON v JavaScript klienta v tuto chvíli.
+> Není možné konfigurovat pomocí serializace JSON klienta jazyka JavaScript v tuto chvíli.
 
-### <a name="messagepack-serialization-options"></a>Možnosti serializace MessagePack
+### <a name="messagepack-serialization-options"></a>MessagePack možnosti serializace
 
-Tím, že poskytuje delegáta, kterého lze nakonfigurovat MessagePack serializace [AddMessagePackProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.msgpackprotocoldependencyinjectionextensions.addmessagepackprotocol) volání. V tématu [MessagePack v systému SignalR](xref:signalr/messagepackhubprotocol) další podrobnosti.
+Poskytnutím delegáta, kterého lze nakonfigurovat MessagePack serializace [AddMessagePackProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.msgpackprotocoldependencyinjectionextensions.addmessagepackprotocol) volání. Zobrazit [MessagePack v knihovně SignalR](xref:signalr/messagepackhubprotocol) další podrobnosti.
 
 > [!NOTE]
-> Není možné nakonfigurovat MessagePack serializace v JavaScript klienta v tuto chvíli.
+> Není možné konfigurovat MessagePack serializace pomocí jazyka JavaScript klienta v tuto chvíli.
 
 ## <a name="configure-server-options"></a>Konfigurovat možnosti serveru
 
@@ -62,12 +62,12 @@ Následující tabulka popisuje možnosti pro konfiguraci rozbočovače SignalR:
 
 | Možnost | Popis |
 | ------ | ----------- |
-| `HandshakeTimeout` | Pokud klient není v rámci tohoto intervalu odešle zprávu počáteční handshake, je připojení ukončeno. |
-| `KeepAliveInterval` | Pokud server neodeslal zprávu v rámci tento interval, je automaticky odeslána zpráva ping nechat otevřené připojení. |
-| `SupportedProtocols` | Protokolů podporovaných toto centrum. Ve výchozím nastavení jsou povolené všechny protokoly, které jsou registrované na serveru, ale protokoly můžete odebrat z tohoto seznamu zakázat konkrétními protokoly pro jednotlivé rozbočovače. |
-| `EnableDetailedErrors` | Pokud `true`, podrobné zprávy o výjimkách se vrátíte na klienty, pokud je vyvolána výjimka v metodě rozbočovače. Výchozí hodnota je `false`, jak tyto zprávy o výjimkách mohou obsahovat citlivé údaje. |
+| `HandshakeTimeout` | Pokud klient nebude odeslat zprávu handshake počáteční v tomto časovém intervalu, je připojení ukončeno. |
+| `KeepAliveInterval` | Pokud server není v rámci tohoto intervalu odeslal zprávu, je automaticky odeslána zpráva příkazu ping na udržení připojení otevřeného. |
+| `SupportedProtocols` | Protokolů podporovaných toto centrum. Ve výchozím nastavení jsou povolené všechny protokoly, které jsou registrované na serveru, ale protokolů lze odebrat z tohoto seznamu zakázat konkrétní protokoly pro jednotlivé rozbočovače. |
+| `EnableDetailedErrors` | Pokud `true`, podrobné zprávy o výjimkách se vrátí ke klientům, když dojde k výjimce v metodě rozbočovače. Výchozí hodnota je `false`, jak tyto zprávy o výjimkách mohou obsahovat citlivé údaje. |
 
-Možnosti lze konfigurovat pro všechny rozbočovače tím, že poskytuje delegáta možnosti na `AddSignalR` volání v `Startup.ConfigureServices`.
+Možnosti je možné nakonfigurovat pro všechna centra poskytnutím delegáta možnosti k `AddSignalR` volání v `Startup.ConfigureServices`.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -80,7 +80,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Možnosti pro jednoho rozbočovače přepsat globální možností v `AddSignalR` a dá se nakonfigurovat pomocí [ `AddHubOptions<T>` ](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions):
+Možnosti pro jedno centrum přepsat globální možnosti uvedené v `AddSignalR` a dá se nakonfigurovat pomocí [ `AddHubOptions<T>` ](/dotnet/api/microsoft.extensions.dependencyinjection.huboptionsdependencyinjectionextensions.addhuboptions):
 
 ```csharp
 services.AddSignalR().AddHubOptions<MyHub>(options =>
@@ -89,42 +89,42 @@ services.AddSignalR().AddHubOptions<MyHub>(options =>
 }
 ```
 
-Použití `HttpConnectionDispatcherOptions` nakonfigurovat upřesňující nastavení související s přenosy a správa vyrovnávací paměti. Tyto možnosti jsou nakonfigurované pomocí předání delegáta, kterého [ `MapHub<T>` ](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub).
+Použití `HttpConnectionDispatcherOptions` konfigurace upřesňujících nastavení související s přenosy a správa vyrovnávací paměti. Tyto možnosti jsou nakonfigurované pomocí předání delegáta, kterého [ `MapHub<T>` ](/dotnet/api/microsoft.aspnetcore.signalr.hubroutebuilder.maphub).
 
 | Možnost | Popis |
 | ------ | ----------- |
-| `ApplicationMaxBufferSize` | Maximální počet bajtů přijatých z klienta, serveru vyrovnávací paměti. Zvýšení hodnoty tuto umožňuje serveru přijímat větší zprávy, ale může mít negativní vliv na využití paměti. Výchozí hodnota je 32KB. |
-| `AuthorizationData` | Seznam [ `IAuthorizeData` ](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizedata) objekty používané k určení, pokud je klient autorizaci k připojení k rozbočovači. Ve výchozím nastavení, to je naplněnou hodnotami `Authorize` atributy použité u třídy rozbočovače. |
-| `TransportMaxBufferSize` | Maximální počet bajtů odeslaných aplikací, vyrovnávací paměti serveru. Zvýšení hodnoty tuto umožňuje serveru odesílat větší zprávy, ale může mít negativní vliv na využití paměti. Výchozí hodnota je 32KB. |
-| `Transports` | Bitová maska s `HttpTransportType` hodnoty, které můžete omezit přenosy klienta můžete použít pro připojení. Ve výchozím nastavení jsou povolené všechny přenosy. |
+| `ApplicationMaxBufferSize` | Maximální počet bajtů přijatých z klienta, který vyrovnávací paměti serveru. Zvýšení hodnoty tuto umožňuje serveru pro příjem větší zprávy, ale může mít negativní vliv na využití paměti. Výchozí hodnota je 32KB. |
+| `AuthorizationData` | Seznam [ `IAuthorizeData` ](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizedata) objekty sloužící k určení, pokud je klient autorizaci k připojení k rozbočovači. Ve výchozím nastavení, to je naplněnou hodnotami `Authorize` atributy použité u třídy rozbočovače. |
+| `TransportMaxBufferSize` | Maximální počet bajtů odeslaných aplikace, která vyrovnávací paměti serveru. Zvýšení hodnoty tuto umožňuje serveru odesílat větší zprávy, ale může mít negativní vliv na využití paměti. Výchozí hodnota je 32KB. |
+| `Transports` | Bitová maska z `HttpTransportType` hodnoty, které můžete omezit přenosy klienta můžete použít pro připojení. Ve výchozím nastavení jsou povolené všechny přenosy. |
 | `LongPolling` | Další možnosti specifické pro dlouhé dotazování přenosu. |
-| `WebSockets` | Další možnosti specifické pro objekty WebSockets přenosu. |
+| `WebSockets` | Další možnosti specifické pro přenos objekty Websocket. |
 
-Dlouhé dotazování přenosu má další možnosti, které lze nakonfigurovat pomocí `LongPolling` vlastnost:
-
-| Možnost | Popis |
-| ------ | ----------- |
-| `PollTimeout` | Maximální množství času server čeká na zprávu k odeslání do klienta před ukončením žádost o jeden dotazování. Snížení hodnoty způsobí, že klient k vydání nové žádosti o dotazování častěji. Výchozí hodnota je 90 sekund. |
-
-Přenos protokolu WebSocket obsahuje další možnosti, které lze nakonfigurovat pomocí `WebSockets` vlastnost:
+Dlouhý interval dotazování přenosu má další možnosti, které lze konfigurovat pomocí `LongPolling` vlastnost:
 
 | Možnost | Popis |
 | ------ | ----------- |
-| `CloseTimeout` | Po zavření serveru, pokud se klientovi nepodaří zavřete v rámci tohoto intervalu, připojení bylo ukončeno. |
-| `SubProtocolSelector` | Delegát, který můžete použít k nastavení `Sec-WebSocket-Protocol` na hodnotu vlastní hlavičky. Delegát přijímá hodnoty požadavku klienta jako vstup a zpět požadovanou hodnotu. |
+| `PollTimeout` | Maximální množství času na server čeká na zprávu k odeslání do klienta před ukončením žádosti o jednotné hlasování. Snížení hodnoty způsobí, že klient k vydávání nových žádostí o dotazování častěji. Výchozí hodnota je 90 sekund. |
 
-## <a name="configure-client-options"></a>Konfigurace možností klienta
+Přenos pomocí protokolu WebSocket má další možnosti, které lze konfigurovat pomocí `WebSockets` vlastnost:
 
-Možnosti klienta lze nakonfigurovat podle `HubConnectionBuilder` typu (k dispozici v rozhraní .NET a JavaScript klientů), stejně jako na `HubConnection` sám sebe.
+| Možnost | Popis |
+| ------ | ----------- |
+| `CloseTimeout` | Po zavření serveru, pokud se klientovi nepodaří zavřete v tomto časovém intervalu, připojení se ukončí. |
+| `SubProtocolSelector` | Delegát, který je možné nastavit `Sec-WebSocket-Protocol` vlastní hodnoty záhlaví. Delegát přijme hodnoty vyžádané klientem jako vstup a měl by vrátit na požadovanou hodnotu. |
+
+## <a name="configure-client-options"></a>Konfigurovat možnosti klienta
+
+Možnosti klienta lze nakonfigurovat podle `HubConnectionBuilder` typ (k dispozici v rozhraní .NET a JavaScript klientech), stejně jako na `HubConnection` samotný.
 
 ### <a name="configure-logging"></a>Konfigurace protokolování
 
-Protokolování je nastaveno v rozhraní .NET klienta pomocí `ConfigureLogging` metoda. Protokolování zprostředkovatelé a filtry lze registrovat stejným způsobem, jako jsou na serveru. Najdete v článku [protokolování v ASP.NET Core](xref:fundamentals/logging/index#how-to-add-providers) Další informace naleznete v dokumentaci.
+Protokolování je nakonfigurován v klientu .NET pomocí `ConfigureLogging` metody. Protokolování poskytovatelů a filtry můžete zaregistrovat stejně, jako jsou na serveru. Zobrazit [protokolování v ASP.NET Core](xref:fundamentals/logging/index#how-to-add-providers) Další informace naleznete v dokumentaci.
 
 > [!NOTE]
-> Chcete-li zaregistrovat zprostředkovatelé protokolování, je nutné nainstalovat nezbytných balíčků. Najdete v článku [integrované protokolování zprostředkovatelé](xref:fundamentals/logging/index#built-in-logging-providers) části dokumentace pro úplný seznam.
+> Aby bylo možné zaregistrovat poskytovatele protokolování, je nutné nainstalovat potřebné balíčky. Najdete v článku [vestavěné protokolování poskytovatelé](xref:fundamentals/logging/index#built-in-logging-providers) část dokumentace pro úplný seznam.
 
-Například konzole protokolování povolit, nainstalujte `Microsoft.Extensions.Logging.Console` balíček NuGet. Volání `AddConsole` metoda rozšíření:
+Například pokud chcete povolit protokolování konzoly, nainstalujte `Microsoft.Extensions.Logging.Console` balíček NuGet. Volání `AddConsole` – metoda rozšíření:
 
 ```csharp
 var connection = new HubConnectionBuilder()
@@ -136,7 +136,7 @@ var connection = new HubConnectionBuilder()
     .Build();
 ```
 
-V klientovi JavaScript podobné `configureLogging` metoda existuje. Zadejte `LogLevel` hodnotu, která určuje minimální úroveň protokolu zprávy a pokuste se vytvořit. Protokoly se zapisují do okna konzoly prohlížeče.
+V klientovi JavaScript podobný `configureLogging` metody existuje. Zadejte `LogLevel` hodnotu, která minimální úroveň zprávy protokolu k vytvoření. Protokoly se zapisují do okna konzoly prohlížeče.
 
 ```javascript
 let connection = new signalR.HubConnectionBuilder()
@@ -146,25 +146,25 @@ let connection = new signalR.HubConnectionBuilder()
 ```
 
 > [!NOTE]
-> Pokud chcete zakázat protokolování zcela, zadejte `signalR.LogLevel.None` v `configureLogging` metoda.
+> Chcete-li zakázat protokolování úplně, zadejte `signalR.LogLevel.None` v `configureLogging` metody.
 
-Úrovně protokolu dostupných pro klienta JavaScript jsou uvedeny níže. Nastavení úrovně protokolu na jednu z těchto hodnot umožňuje protokolování zpráv v **nebo vyšší** této úrovni.
+K dispozici ke klientovi JavaScript úrovně protokolu jsou uvedené níže. Protokolování zpráv při nastavení na úrovni protokolu na jednu z těchto hodnot umožňuje **nebo vyšší** dané úrovni.
 
-| Úroveň | Popis |
+| úroveň | Popis |
 | ----- | ----------- |
-| `None` | Jsou protokolovány žádné zprávy. |
-| `Critical` | Zprávy, které indikují chybu v celé aplikaci. |
-| `Error` | Zprávy, které indikují chybu v aktuální operace. |
-| `Warning` | Zprávy, které indikují nezávažné problém. |
+| `None` | Jsou zaznamenány žádné zprávy. |
+| `Critical` | Zprávy, které indikují chybu celé aplikace. |
+| `Error` | Zprávy, které indikují chybu aktuální operaci. |
+| `Warning` | Zprávy, které označují méně závažné potíže. |
 | `Information` | Informační zprávy. |
-| `Debug` | Diagnostické zprávy pro ladění. |
-| `Trace` | Velmi podrobné diagnostické zprávy určené pro diagnostikování konkrétní problémy. |
+| `Debug` | Diagnostické zprávy je užitečné pro ladění. |
+| `Trace` | Velmi podrobné diagnostické zprávy, které jsou navržené pro diagnostiku specifické problémy. |
 
-### <a name="configure-allowed-transports"></a>Konfigurace povolené přenosy
+### <a name="configure-allowed-transports"></a>Nakonfigurovat povolené přenosy
 
-Přenosy systém signalr se dá nakonfigurovat v `WithUrl` volání (`withUrl` v jazyce JavaScript). Bitové operace OR hodnoty `HttpTransportType` slouží k omezení klientovi použít pouze zadané přenosy. Ve výchozím nastavení jsou povolené všechny přenosy.
+Přenosy systém signalr se dá nakonfigurovat v `WithUrl` volání (`withUrl` v JavaScriptu). Bitový OR hodnoty `HttpTransportType` slouží k omezení klienta používat pouze zadaný přenosy. Ve výchozím nastavení jsou povolené všechny přenosy.
 
-Například zakázat přenos Server-Sent události, ale povolte objekty WebSockets a dlouhé dotazování připojení:
+Například zakázat přenos Server-Sent události, ale povolte připojení objekty Websocket a dlouhý interval dotazování:
 
 ```csharp
 var connection = new HubConnectionBuilder()
@@ -172,7 +172,7 @@ var connection = new HubConnectionBuilder()
     .Build();
 ```
 
-V klientovi JavaScript, jsou přenosy nakonfigurované nastavením `transport` na zadaný pro objekt možnosti `withUrl`:
+V klientovi JavaScript přenosy jsou nakonfigurovány tak, že nastavíte `transport` na objekt možnosti poskytnuté `withUrl`:
 
 ```javascript
 let connection = new signalR.HubConnectionBuilder()
@@ -182,7 +182,7 @@ let connection = new signalR.HubConnectionBuilder()
 
 ### <a name="configure-bearer-authentication"></a>Konfigurace ověřování nosiče
 
-Pokud chcete zadat data ověřování společně s požadavky SignalR, použijte `AccessTokenProvider` možnost (`accessTokenFactory` v jazyce JavaScript) k určení funkci, která vrátí požadované přístupový token. V rozhraní .NET klienta, je předaná tento token přístupu jako HTTP "Ověřování nosiče" tokenu (pomocí `Authorization` záhlaví s typem `Bearer`). V klientovi JavaScript přístupový token slouží jako token nosiče **s výjimkou** v určitých případech, kdy prohlížeč rozhraní API omezit schopnosti uplatňovat hlavičky (konkrétně v Server-Sent události a WebSockets žádostí). V těchto případech je přístupový token zadaný jako hodnota řetězce dotazu `access_token`.
+Pokud chcete poskytnout ověřovací data spolu s knihovnou SignalR požadavky, použijte `AccessTokenProvider` možnost (`accessTokenFactory` v JavaScriptu) k určení funkce, která vrací požadovaný přístupový token. V klientovi .NET Tento přístupový token předaný jako HTTP "Ověřování nosiče" token (použití `Authorization` záhlaví s typem `Bearer`). V klientovi JavaScript přístupový token se používá jako nosný token **s výjimkou** v několika případech, kdy prohlížeč rozhraní API omezit schopnosti uplatňovat hlavičky (konkrétně v Server-Sent události a protokoly Websocket požadavky). V těchto případech je přístupový token k dispozici jako hodnotu řetězce dotazu `access_token`.
 
 V klientovi .NET `AccessTokenProvider` možnost lze zadat pomocí možnosti delegáta v `WithUrl`:
 
@@ -196,7 +196,7 @@ var connection = new HubConnectionBuilder()
     .Build();
 ```
 
-V klientovi JavaScript přístupový token nakonfiguroval nastavení `accessTokenFactory` pole možnosti objektu ve `withUrl`:
+V klientovi JavaScript přístupový token je nakonfigurovaný tak, že nastavíte `accessTokenFactory` na objekt možnosti v `withUrl`:
 
 ```javascript
 let connection = new signalR.HubConnectionBuilder()
@@ -210,38 +210,38 @@ let connection = new signalR.HubConnectionBuilder()
     .build();
 ```
 
-### <a name="configure-timeout-and-keep-alive-options"></a>Nakonfigurujte časový limit a udržování možnosti
+### <a name="configure-timeout-and-keep-alive-options"></a>Konfigurace časového limitu a udržování možnosti
 
-Další možnosti pro konfiguraci časového limitu a udržování chování jsou k dispozici na `HubConnection` samotného objektu:
+Další možnosti pro konfiguraci časového limitu a zachování chování, které jsou k dispozici na `HubConnection` samotného objektu:
 
-| Možnost rozhraní .NET | JavaScript – možnost | Popis |
+| .NET – možnost | Možnost jazyka JavaScript | Popis |
 | ----------- | ----------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | Časový limit aktivity serveru. Pokud server není v tomto intervalu odeslal jakékoli zprávy, klient považuje server odpojí a aktivační události `Closed` událostí (`onclose` v jazyce JavaScript). |
-| `HandshakeTimeout` | Nejde konfigurovat | Časový limit pro počáteční server handshake. Pokud server není v tomto intervalu odeslání odpovědi handshake, klient zruší metody handshake a aktivační události `Closed` událostí (`onclose` v jazyce JavaScript). |
+| `ServerTimeout` | `serverTimeoutInMilliseconds` | Časový limit pro aktivity serveru. Pokud nějaká zpráva nebyla v tomto intervalu odeslané serverem, klient bude považovat za server odpojen a aktivační události `Closed` událostí (`onclose` v JavaScriptu). |
+| `HandshakeTimeout` | Nejde konfigurovat | Časový limit pro počáteční server handshake. Pokud server není v tomto intervalu odeslání odpovědi handshake, klient zruší handshake a aktivační události `Closed` událostí (`onclose` v JavaScriptu). |
 
-V klientovi .NET, časový limit hodnoty jsou specifikované jako `TimeSpan` hodnoty. V klientovi JavaScript jsou hodnoty časového limitu zadané jako čísla. Čísla, která představují hodnoty času v milisekundách.
+V klientovi .NET jsou zadané hodnoty časového limitu jako `TimeSpan` hodnoty. V klientovi JavaScript jsou hodnoty časového limitu zadané jako čísla. Čísla udávají hodnoty času v milisekundách.
 
 ### <a name="configure-additional-options"></a>Konfigurace dalších možností
 
-Další možnosti se dá nakonfigurovat v `WithUrl` (`withUrl` v jazyce JavaScript) metodu `HubConnectionBuilder`:
+Další možnosti se dá nakonfigurovat v `WithUrl` (`withUrl` v JavaScriptu) metoda `HubConnectionBuilder`:
 
-| Možnost rozhraní .NET | JavaScript – možnost | Popis |
+| .NET – možnost | Možnost jazyka JavaScript | Popis |
 | ----------- | ----------------- | ----------- |
-| `AccessTokenProvider` | `accessTokenFactory` | Funkce vrátí řetězec, který je k dispozici jako token nosiče ověřování v požadavky HTTP. |
-| `SkipNegotiation` | `skipNegotiation` | Tuto možnost nastavíte na `true` k vyjednávání krok přeskočit. **Podporována pouze v případě technologie WebSockets přenosu je pouze povolené přenos**. Toto nastavení nelze povolit, pokud používáte službu Azure SignalR. |
-| `ClientCertificates` | Nejde konfigurovat * | Kolekce odeslat k ověřování žádostí o certifikáty protokolu TLS. |
-| `Cookies` | Nejde konfigurovat * | Kolekce souborů cookie HTTP k odeslání s každou žádostí HTTP. |
-| `Credentials` | Nejde konfigurovat * | Přihlašovací údaje odeslat spolu s každou žádost HTTP. |
-| `CloseTimeout` | Nejde konfigurovat * | Pouze objekty WebSockets. Maximální množství času klient počká po zavření pro server, aby vzali na vědomí žádosti o uzavření. Pokud server není v tuto chvíli vědomí ukončení, se klient neodpojí. |
-| `Headers` | Nejde konfigurovat * | Slovník další hlavičky protokolu HTTP k odeslání s každou žádostí HTTP. |
-| `HttpMessageHandlerFactory` | Nejde konfigurovat * | Delegát, který lze nakonfigurovat, nebo nahrazení `HttpMessageHandler` používá k odesílání požadavků HTTP. Nepoužívá se pro připojení protokolu WebSocket. Tento delegát musí vracet hodnotu než null a obdrží výchozí hodnota jako parametr. Buď změňte nastavení na této výchozí hodnotu a vrátit nebo vrátit úplně nové `HttpMessageHandler` instance. |
-| `Proxy` | Nejde konfigurovat * | Proxy server HTTP pro použití při odesílání požadavků HTTP. |
-| `UseDefaultCredentials` | Nejde konfigurovat * | Nastavte tuto logickou hodnotu k odeslání výchozí pověření pro požadavky HTTP a objekty WebSockets. To umožňuje použití ověřování systému Windows. |
-| `WebSocketConfiguration` | Nejde konfigurovat * | Delegát, který můžete použít ke konfiguraci dalších možností protokolu WebSocket. Obdrží instanci [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions) , můžete použít ke konfiguraci možností. |
+| `AccessTokenProvider` | `accessTokenFactory` | Funkce vrátí řetězec, který je k dispozici jako token nosiče ověřování v požadavcích HTTP. |
+| `SkipNegotiation` | `skipNegotiation` | Nastavte na `true` přeskočit krok vyjednávání. **Podporuje jenom při přenosu objekty Websocket je jediný povolený přenos**. Toto nastavení není možné při použití služby Azure SignalR. |
+| `ClientCertificates` | Nejde konfigurovat * | Kolekce certifikáty TLS odeslat k ověření požadavků. |
+| `Cookies` | Nejde konfigurovat * | Kolekce souborů cookie protokolu HTTP k odeslání při každé žádosti protokolu HTTP. |
+| `Credentials` | Nejde konfigurovat * | Přihlašovací údaje pro odesílání při každé žádosti protokolu HTTP. |
+| `CloseTimeout` | Nejde konfigurovat * | Pouze objekty Websocket. Maximální množství času, klient počká po uzavření pro server a potvrďte žádosti o uzavření. Pokud server není v tuto chvíli Potvrdit uzavření, klient neodpojí. |
+| `Headers` | Nejde konfigurovat * | Slovník další hlavičky protokolu HTTP k odeslání při každé žádosti protokolu HTTP. |
+| `HttpMessageHandlerFactory` | Nejde konfigurovat * | Delegát, který lze použít ke konfiguraci nebo nahradit `HttpMessageHandler` používaný k odesílání požadavků HTTP. Není možné použít u připojení pomocí protokolu WebSocket. Tento delegát musí vrátit nenulovou hodnotu, a přijímá jako parametr výchozí hodnotu. Upravte nastavení podle této výchozí hodnoty a vrácení nebo vrátit úplně nové `HttpMessageHandler` instance. |
+| `Proxy` | Nejde konfigurovat * | Proxy server HTTP při odesílání požadavků HTTP. |
+| `UseDefaultCredentials` | Nejde konfigurovat * | Nastavte tuto logickou hodnotu k odeslání výchozí přihlašovací údaje pro požadavky HTTP a Websocket. To umožňuje použití ověřování Windows. |
+| `WebSocketConfiguration` | Nejde konfigurovat * | Delegát, který slouží k nakonfigurování dalších možností protokolu WebSocket. Obdrží instanci [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions) , který lze použít ke konfiguraci možností. |
 
-Možnosti, které jsou označené hvězdičkou (*) nejsou konfigurovatelné v klientovi JavaScript z důvodu omezení v prohlížeči rozhraní API.
+Možnosti s hvězdičkou (*) nejsou konfigurovatelné v klientovi JavaScript z důvodu omezení v prohlížeči rozhraní API.
 
-V rozhraní .NET klientovi tyto možnosti mohou být upravena delegáta možnosti poskytované `WithUrl`:
+V klientovi .NET tyto možnosti je možné upravovat prostřednictvím delegáta možnosti poskytnuté `WithUrl`:
 
 ```csharp
 var connection = new HubConnectionBuilder()
@@ -253,7 +253,7 @@ var connection = new HubConnectionBuilder()
     .Build();
 ```
 
-V klientovi JavaScript, tyto možnosti lze zadat do objekt jazyka JavaScript poskytované `withUrl`:
+V klientovi JavaScript tyto možnosti lze zadat v objektu jazyka JavaScript poskytuje k `withUrl`:
 
 ```javascript
 let connection = new signalR.HubConnectionBuilder()

@@ -1,22 +1,20 @@
 ---
 title: Začínáme s funkce SignalR technologie ASP.NET Core
-author: rachelappel
+author: tdykstra
 description: V tomto kurzu vytvoříte aplikaci pomocí nástroje SignalR pro ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 6b8222ee04573ca7157b4e1125ed5a4453b2b9a9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 83be28b30cf06eeea37e8d76b3f6444ffd9a10e8
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830552"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095488"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>Začínáme s funkce SignalR technologie ASP.NET Core
-
-Podle [Rachel Appel](https://twitter.com/rachelappel)
 
 V tomto kurzu se naučíte se základy vytváření aplikace v reálném čase pomocí nástroje SignalR pro ASP.NET Core.
 
@@ -39,14 +37,14 @@ Nainstalujte následující software:
 
 * [.NET core SDK 2.1 nebo novější](https://www.microsoft.com/net/download/all)
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) verze 15.7.3 nebo novější s **vývoj pro ASP.NET a web** pracovního vytížení
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [.NET core SDK 2.1 nebo novější](https://www.microsoft.com/net/download/all)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js)
 
 -----
 
@@ -71,7 +69,7 @@ Visual Studio obsahuje `Microsoft.AspNetCore.SignalR` balíček, který obsahuje
     npm install @aspnet/signalr
     ```
 
-4. Vytvořte novou složku s názvem "signalr" uvnitř *lib* složku ve vašem projektu. Kopírovat *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  do této složky.
+4. Vytvořte novou složku s názvem "signalr" uvnitř *wwwroot/lib* složku ve vašem projektu. Kopírovat *signalr.js* souboru z *node_modules\\ @aspnet\signalr\dist\browser*  do této složky.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 

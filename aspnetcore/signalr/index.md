@@ -1,17 +1,17 @@
 ---
 title: Funkce SignalR technologie ASP.NET Core
-author: rachelappel
+author: tdykstra
 description: Objevte témata, která se týkají funkce SignalR technologie ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.date: 07/03/2018
 uid: signalr/index
-ms.openlocfilehash: 5c5c8c9af159a187cdb5c6be38dc3249addae597
-ms.sourcegitcommit: 32626efaa7316c9b283c96be6516e637d548c5e5
+ms.openlocfilehash: b150ec08638503db5b377b4357516d64e49ed653
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025469"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095363"
 ---
 # <a name="aspnet-core-signalr"></a>Funkce SignalR technologie ASP.NET Core
 

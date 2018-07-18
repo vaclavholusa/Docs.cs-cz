@@ -1,43 +1,43 @@
 ---
-title: Rozdíly mezi SignalR a ASP.NET Core SignalR
-author: rachelappel
-description: Rozdíly mezi SignalR a ASP.NET Core SignalR
+title: Rozdíly mezi SignalR a funkce SignalR technologie ASP.NET Core
+author: tdykstra
+description: Rozdíly mezi SignalR a funkce SignalR technologie ASP.NET Core
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.date: 06/30/2018
 uid: signalr/version-differences
-ms.openlocfilehash: fd314d93333bd159aef4bb4863be50c646809cf0
-ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
+ms.openlocfilehash: 6ed7e2e1ecadef08d71c4d7a7c3469738d07bcda
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090176"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095005"
 ---
-# <a name="differences-between-signalr-and-aspnet-core-signalr"></a>Rozdíly mezi SignalR a ASP.NET Core SignalR
+# <a name="differences-between-signalr-and-aspnet-core-signalr"></a>Rozdíly mezi SignalR a funkce SignalR technologie ASP.NET Core
 
-Jádro ASP.NET SignalR není kompatibilní s klientů nebo serverů pro ASP.NET SignalR. Tento článek podrobné informace o funkcích, které byly odebrány nebo změněny v ASP.NET Core SignalR.
+Funkce SignalR technologie ASP.NET Core není kompatibilní s klientů nebo serverů pro funkci SignalR technologie ASP.NET. Tento článek podrobně popisuje funkce, které byly odstraněny nebo změněny v knihovně SignalR technologie ASP.NET Core.
 
 ## <a name="feature-differences"></a>Rozdíly ve funkcích
 
 ### <a name="automatic-reconnects"></a>Automatické připojování
 
-Automatické připojování již nejsou podporovány. Dříve SignalR se pokusil připojit k serveru, pokud připojení bylo zrušeno. Nyní, pokud je klient odpojen uživatel musí explicitně zahájení nového připojení, aby bylo možné znovu připojit.
+Automatické připojování již nejsou podporovány. Dříve SignalR pokusil připojit k serveru, pokud připojení bylo zrušeno. Když teď aplikaci filled klient je odpojen, uživatel musí explicitně spustit nové připojení, pokud se chcete znovu připojit.
 
 ### <a name="protocol-support"></a>Podpora protokolu
 
-Funkce SignalR technologie ASP.NET Core podporuje JSON, stejně jako nový binární protokol na základě [MessagePack](xref:signalr/messagepackhubprotocol). Kromě toho můžete vytvořit vlastní protokoly.
+Funkce SignalR technologie ASP.NET Core podporuje JSON, jakož i nové binární protokol založený na [MessagePack](xref:signalr/messagepackhubprotocol). Kromě toho je možné vytvářet vlastní protokoly.
 
 ## <a name="differences-on-the-server"></a>Rozdíly na serveru
 
-Jsou součástí na straně serveru knihovny SignalR `Microsoft.AspNetCore.App` balíček, který je součástí **webové aplikace ASP.NET Core** šablonu pro projekty MVC i Razor.
+Jsou součástí serverové knihovny SignalR `Microsoft.AspNetCore.App` balíček, který je součástí **webové aplikace ASP.NET Core** šablony pro projekty Razor a MVC.
 
-SignalR je middlewaru ASP.NET Core, musí být nakonfigurované voláním `AddSignalR` v `Startup.ConfigureServices`.
+SignalR je middleware ASP.NET Core, musí se nakonfigurovat voláním `AddSignalR` v `Startup.ConfigureServices`.
 
 ```csharp
 services.AddSignalR();
 ```
 
-Konfigurace směrování, mapy trasy k rozbočovačům uvnitř `UseSignalR` volání metody `Startup.Configure` metoda.
+Konfigurace směrování, mapování tras k rozbočovačům uvnitř `UseSignalR` volání metody `Startup.Configure` metoda.
 
 ```csharp
 app.UseSignalR(routes =>
@@ -46,44 +46,44 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions-now-required"></a>Trvalé relace nyní vyžadován
+### <a name="sticky-sessions-now-required"></a>Nyní vyžaduje rychlé relace
 
-Z důvodu jak šlo Škálováním na více systémů v předchozích verzích nástroje SignalR mohou klienti znovu připojit a odesílání zpráv na libovolný server ve farmě. Z důvodu změn modelu Škálováním na více systémů, a také nejsou podporovány připojování to už není podporovaná. Teď Jakmile se klient připojí k serveru je potřeba ho k interakci se stejný server po dobu trvání připojení.
+Z důvodu jak horizontální navýšení kapacity již dříve pracovali v předchozích verzích nástroje SignalR klienti znovu připojit a odesílání zpráv na libovolný server ve farmě. Z důvodu změny na model horizontální navýšení kapacity, jakož i nenabízí připojování to se už nepodporuje. Teď Jakmile se klient připojí k serveru je potřeba pracovat stejném serveru po dobu trvání připojení.
 
-### <a name="single-hub-per-connection"></a>Jednoho rozbočovače za připojení
+### <a name="single-hub-per-connection"></a>Jedno Centrum za připojení
 
-V základní funkce SignalR technologie ASP.NET je jednodušší připojení modelu. Vytváří se připojení přímo do jednoho rozbočovače, nikoli jednoho připojení používá sdílet přístup k více rozbočovače.
+Funkce SignalR technologie ASP.NET Core je zjednodušený model připojení. Připojení jsou provedeny přímo do jednoho rozbočovače, nikoli jednoho připojení používá sdílet přístup k více rozbočovače.
 
 ### <a name="streaming"></a>Streamování
 
-SignalR nyní podporuje [streamovaných dat užitečné](xref:signalr/streaming) z rozbočovače klientovi.
+Teď podporuje funkci SignalR [streamovaná data](xref:signalr/streaming) z rozbočovače klientovi.
 
 ### <a name="state"></a>Stav
 
-Umožňuje předat libovolný stavu mezi klienty a rozbočovače (často říká HubState) byl odebrán, a také podporu pro zprávy o průběhu. V tuto chvíli není žádné protějšku proxy rozbočovače.
+Umožňuje předat libovolný stav mezi klienty a centrum (často označované jako HubState) byla odebrána a také podporu pro zprávy o průběhu. V tuto chvíli není nevyskytují proxy rozbočovače.
 
 ## <a name="differences-on-the-client"></a>Rozdíly v klientovi
 
 ### <a name="typescript"></a>TypeScript
 
-Verze ASP.NET Core SignalR je napsána v [TypeScript](https://www.typescriptlang.org/). Můžete napsat v jazyce JavaScript nebo TypeScript při použití [JavaScript klienta](xref:signalr/javascript-client).
+ASP.NET Core verzi knihovny SignalR je napsána v [TypeScript](https://www.typescriptlang.org/). Můžete psát v jazyce JavaScript nebo TypeScript při použití [javascriptový klient](xref:signalr/javascript-client).
 
-### <a name="the-javascript-client-is-hosted-at-npmhttpswwwnpmjscom"></a>Klient pro JavaScript je hostovaná v [npm](https://www.npmjs.com/)
+### <a name="the-javascript-client-is-hosted-at-npmhttpswwwnpmjscom"></a>JavaScript klienta je hostovaná na [npm](https://www.npmjs.com/)
 
-V předchozích verzích se zjišťovala JavaScript klienta prostřednictvím balíčku NuGet v sadě Visual Studio. Pro základní verze [ @aspnet/signalr balíčku npm](https://www.npmjs.com/package/@aspnet/signalr) obsahuje knihoven jazyka JavaScript. Není součástí tohoto balíčku **webové aplikace ASP.NET Core** šablony. Pomocí npm získat a nainstalovat `@aspnet/signalr` balíčku npm.
+V předchozích verzích klienta JavaScript byl získán prostřednictvím balíčku NuGet v sadě Visual Studio. Verze jádra [ @aspnet/signalr balíčku npm](https://www.npmjs.com/package/@aspnet/signalr) obsahuje knihovny jazyka JavaScript. Není součástí tohoto balíčku **webové aplikace ASP.NET Core** šablony. Získejte a nainstalujte pomocí npm `@aspnet/signalr` balíčku npm.
 
 ```console
 npm init -y
 npm install @aspnet/signalr
 ```
 
-### <a name="jquery"></a>JQuery
+### <a name="jquery"></a>jQuery
 
-Závislost na jQuery byla odebrána, ale projekty můžete nadále používat jQuery.
+Závislost na jQuery byla odebrána, ale projekty můžete dál používat jQuery.
 
-### <a name="javascript-client-method-syntax"></a>Syntaxe jazyka JavaScript klienta – metoda
+### <a name="javascript-client-method-syntax"></a>Syntaxe využívající metody JavaScript klienta
 
-Syntaxe jazyka JavaScript došlo ke změně z předchozí verze funkce signalr. Místo použití `$connection` objektu, vytvořte připojení pomocí `HubConnectionBuilder` rozhraní API.
+Syntaxe jazyka JavaScript byl změněn z předchozí verze funkce SignalR. Místo použití `$connection` objektu, vytvořte pomocí připojení `HubConnectionBuilder` rozhraní API.
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -101,21 +101,21 @@ connection.on("ReceiveMessage", (user, message) => {
 });
 ```
 
-Po vytvoření metodu klienta, spusťte připojení rozbočovače. Řetězec `catch` metodou protokolu nebo zpracování chyb.
+Po vytvoření metody klienta, spusťte připojení rozbočovače. Řetězce `catch` metodou protokolu nebo zpracování chyb.
 
 ```javascript
 connection.start().catch(err => console.error(err.toString()));
 ```
 
-### <a name="hub-proxies"></a>Proxy rozbočovače
+### <a name="hub-proxies"></a>Proxy servery hub
 
-Proxy centra jsou generovány, nebude automaticky. Místo toho je název metody předána do `invoke` rozhraní API jako řetězec.
+Proxy servery hub už nebude automaticky generovány. Místo toho název metody je předán `invoke` rozhraní API jako řetězec.
 
-### <a name="net-and-other-clients"></a>Rozhraní .NET a další klienti
+### <a name="net-and-other-clients"></a>.NET a další klienti
 
-`Microsoft.AspNetCore.SignalR.Client` Balíček NuGet obsahuje klientské knihovny .NET pro ASP.NET Core SignalR.
+`Microsoft.AspNetCore.SignalR.Client` Balíček NuGet obsahuje klientské knihovny .NET pro funkci SignalR technologie ASP.NET Core.
 
-Použití `HubConnectionBuilder` k vytvoření a vytvoření instance připojení k rozbočovači.
+Použití `HubConnectionBuilder` vytvářet a sestavovat instanci, připojení k rozbočovači.
 
 ```csharp
 connection = new HubConnectionBuilder()

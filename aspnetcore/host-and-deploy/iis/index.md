@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 96a4403653e474bb056374909b3ee66998bc99be
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 607bdb7ee830c9a3bbb83ca2aec4661772a285b2
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992812"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095837"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
@@ -168,9 +168,8 @@ Povolit **konzolu pro správu IIS** a **webové služby**.
 
 1. Nainstalujte *sady hostování rozhraní .NET Core* v hostitelském systému. Nainstaluje sady .NET Core Runtime, knihovny .NET Core a [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). Modul vytváří reverzní proxy server mezi službou IIS a Kestrel server. Pokud systém nemá připojení k Internetu, získejte a nainstalujte [Microsoft Visual C++ 2015 Redistributable](https://www.microsoft.com/download/details.aspx?id=53840) před instalací sady hostování rozhraní .NET Core.
 
-   1. Přejděte [.NET všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
-   1. V **Runtime** sloupci tabulky, ze seznamu vyberte nejnovější runtime .NET Core – ve verzi preview (**X.Y Runtime (vX.Y.Z) stáhne**). Má nejnovější modul runtime **aktuální** popisek. Pokud máte v úmyslu pracovat s softwaru ve verzi preview, vyhněte se modul runtime se slovem "náhled" nebo "rc" (verze Release Candidate) v jeho textu odkazu.
-   1. V modulu runtime .NET Core v části stránce pro stažení **Windows**, vyberte **hostování instalační program sady** odkaz ke stažení *sady hostování rozhraní .NET Core* Instalační služby.
+   1. Přejděte [stránky pro stažení rozhraní .NET](https://www.microsoft.com/net/download/windows).
+   1. V části **.NET Core**, vyberte **stáhnout .NET Core Runtime** vedle **spuštění aplikace** popisek. Spustitelný soubor instalačního programu obsahuje slovo "hostování" v názvu souboru (například *dotnet hostování-2.1.2-win.exe*).
    1. Spusťte instalační program na serveru.
 
    **Důležité!** Pokud před službou IIS instalovanou sadou hostování, je nutné opravit instalaci sady. Spusťte instalační program sady hostování znovu po instalaci služby IIS.

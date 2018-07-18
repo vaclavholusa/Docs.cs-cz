@@ -1,68 +1,68 @@
 ---
 title: Publikování ASP.NET Core SignalR aplikace do webové aplikace Azure
-author: rachelappel
+author: tdykstra
 description: Publikování ASP.NET Core SignalR aplikace do webové aplikace Azure
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/20/2018
 uid: signalr/publish-to-azure-web-app
-ms.openlocfilehash: 0d98c6b24b9695c0af0170173f13902bac5f55ed
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b0126771a9ba3a28a7af14adf5b5959c7591e5fb
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271915"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095291"
 ---
-# <a name="publish-an-aspnet-core-signalr-app-to-an-azure-web-app"></a>Publikování ASP.NET Core SignalR aplikace do webové aplikace Azure
+# <a name="publish-an-aspnet-core-signalr-app-to-an-azure-web-app"></a>Publikování ASP.NET Core aplikace SignalR pro webovou aplikaci Azure
 
-[Webové aplikace Azure](/azure/app-service/app-service-web-overview) je [Microsoft cloud computing](https://azure.microsoft.com/) služby platformu pro hostování webových aplikací, včetně ASP.NET Core.
+[Služba Azure Web Apps](/azure/app-service/app-service-web-overview) je [Microsoft cloud computingu](https://azure.microsoft.com/) služba platformy pro hostování webových aplikací, včetně ASP.NET Core.
 
 > [!NOTE]
-> Tento článek se týká k publikování aplikace ASP.NET Core SignalR ze sady Visual Studio. Navštivte [SignalR služby pro Azure](https://azure.microsoft.com/en-gb/services/signalr-service?) pro další informace o používání SignalR v Azure.
+> Tento článek se týká publikování aplikace SignalR technologie ASP.NET Core v sadě Visual Studio. Navštivte [služby SignalR pro Azure](https://azure.microsoft.com/en-gb/services/signalr-service?) Další informace o použití aplikace SignalR v Azure.
 
 ## <a name="publish-the-app"></a>Publikování aplikace
 
-Visual Studio poskytuje integrované nástroje pro publikování do webové aplikace Azure. Visual Studio Code uživatel může použít [rozhraní příkazového řádku Azure](/cli/azure) příkazy k publikování aplikace do Azure. Tento článek se zabývá publikování pomocí nástrojů v sadě Visual Studio. Publikování aplikace pomocí příkazového řádku Azure CLI, najdete v části [publikovat aplikaci ASP.NET Core do Azure pomocí nástroje příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli).
+Visual Studio obsahuje integrované nástroje pro publikování do webové aplikace Azure. Můžete použít Visual Studio Code uživatele [rozhraní příkazového řádku Azure](/cli/azure) příkazy k publikování aplikací do Azure. Tento článek se týká publikování pomocí nástrojů v sadě Visual Studio. Publikování aplikace pomocí Azure CLI, najdete v článku [publikování aplikace ASP.NET Core do Azure pomocí nástrojů příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli).
 
-Klikněte pravým tlačítkem na projekt v **Průzkumníku řešení** a vyberte **publikovat**. Potvrďte, že **vytvořit nový** se změnami **vyberte cíl publikování** dialogové okno a vyberte **publikovat**.
+Klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **publikovat**. Ujistěte se, že **vytvořit nový** se změnami **vyberte cíl publikování** dialogového okna a vyberte **publikovat**.
 
-![Vybrat publikovat cíl](publish-to-azure-web-app/_static/pick-publish-target-dialog.png)
+![Cíl publikování výběru](publish-to-azure-web-app/_static/pick-publish-target-dialog.png)
 
-Zadejte následující informace v **vytvořit službu App Service** dialogové okno a vyberte **vytvořit**.
+Zadejte následující informace **vytvořit službu App Service** dialogového okna a vyberte **vytvořit**.
 
 | Položka | Popis |
 | ---- | ----------- |
-| **Název aplikace.** | Jedinečný název aplikace. |
-| **Předplatné** | Předplatné Azure, který používá aplikace. |
-| **Skupiny prostředků** | Skupina souvisejících prostředků, do kterých patří aplikace.  |
-| **Hostování plán** | Cenový plán pro webovou aplikaci. |
+| **Název aplikace** | Jedinečný název aplikace. |
+| **Předplatné** | Předplatné Azure, které aplikace používá. |
+| **Skupina prostředků** | Skupina souvisejících prostředků, do kterých patří aplikace.  |
+| **Plán hostování** | Cenový plán pro webovou aplikaci. |
 
-![Vytvoření služby app service](publish-to-azure-web-app/_static/create-app-service-dialog.png)
+![Vytvořit službu app service](publish-to-azure-web-app/_static/create-app-service-dialog.png)
 
 Visual Studio dokončí následující úkoly:
 
 * Vytvoří profil publikování obsahující nastavení publikování.
-* Vytvoří nebo použije existující *webové aplikace Azure* s zadané podrobnosti.
+* Vytvoří nebo použije existující *webové aplikace Azure* pomocí zadané podrobnosti.
 * Publikuje aplikace.
-* Spustí prohlížeč, se publikované webové aplikace načíst.
+* Spustí prohlížeč, s publikovanou webovou aplikaci načíst.
 
-Všimněte si formát adresy URL pro aplikaci je *{aplikace} .azurewebsites .net*. Například aplikaci s názvem `SignalRChattR` má adresu URL, která vypadá jako `https://signalrchattr.azurewebsites.net`.
+Všimněte si, že formát adresy URL pro aplikaci je *{aplikace} .azurewebsites .net*. Například aplikaci s názvem `SignalRChattR` má adresu URL, která vypadá jako `https://signalrchattr.azurewebsites.net`.
 
-Pokud dojde k chybě HTTP 502.2, přečtěte si téma [verze preview nasazení základní technologie ASP.NET do služby Azure App Service](xref:host-and-deploy/azure-apps/index) jeho řešení.
+Pokud dojde k chybě HTTP 502.2, přečtěte si téma [verze preview nasazení ASP.NET Core do služby Azure App Service](xref:host-and-deploy/azure-apps/index) k jeho vyřešení.
 
 ## <a name="configure-signalr-web-app"></a>Konfigurace funkce SignalR webové aplikace
 
-Aplikace ASP.NET Core SignalR, které jsou publikovány jako webové aplikace Azure musí mít [směrování žádostí na aplikace spřažení](https://en.wikipedia.org/wiki/Application_Request_Routing) povolena. [Technologie WebSockets](xref:fundamentals/websockets) by měla povoleno, umožňuje přenos Websocket funkce.
+ASP.NET Core SignalR apps, které jsou zveřejněné jako webová aplikace Azure musí mít [spřažení směrování žádostí na aplikace](https://en.wikipedia.org/wiki/Application_Request_Routing) povolena. [Protokoly Websocket](xref:fundamentals/websockets) by měla být zapnutá, povolit přenos objekty Websocket na funkci.
 
-Na portálu Azure přejděte do **nastavení aplikace** pro vaši webovou aplikaci. Nastavit **Websocket** k **na**a ověřte **směrování žádostí na aplikace spřažení** je **na**.
+Na webu Azure Portal, přejděte na **nastavení aplikace** pro vaši webovou aplikaci. Nastavte **objekty Websocket** k **na**a ověřte **spřažení směrování žádostí na aplikace** je **na**.
 
-![Azure nastavení webové aplikace na portálu Azure](publish-to-azure-web-app/_static/azure-web-app-settings.png)
+![Nastavení Azure webové aplikace na webu Azure Portal](publish-to-azure-web-app/_static/azure-web-app-settings.png)
 
- Technologie WebSockets a ostatní přenosy [jsou omezeny na plán aplikační služby na základě](/azure/azure-subscription-service-limits#app-service-limits).
+ Protokoly Websocket a ostatní přenosy [jsou omezené podle plánu služby App Service](/azure/azure-subscription-service-limits#app-service-limits).
 
-## <a name="related-resources"></a>Související informační zdroje
+## <a name="related-resources"></a>Související prostředky
 
-* [Publikování aplikace ASP.NET Core do Azure pomocí nástroje příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli?tabs=windows)
+* [Publikování aplikace ASP.NET Core do Azure pomocí nástrojů příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli?tabs=windows)
 * [Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
-* [Hostování a nasazení aplikací ASP.NET Core Preview v Azure](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)
+* [Hostitelství a nasazení aplikací v ASP.NET Core ve verzi Preview v Azure](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)

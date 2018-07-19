@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 07/21/2018
 uid: razor-pages/ui-class
-ms.openlocfilehash: 8190302a15670b0a7474445f7b11d4cba46981db
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 4252cfc5824b6078012cf9ff34968977229faf0d
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992851"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123779"
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvoření opakovaně použitelné uživatelské rozhraní v ASP.NET Core pomocí projektu knihovny tříd Razor.
 
@@ -46,7 +46,7 @@ Další informace najdete v tématu [dotnet nové](/dotnet/core/tools/dotnet-new
 ------
 Přidáte soubory Razor RCL.
 
-Doporučujeme RCL v obsahu Přejít *oblasti* složky.
+Šablony ASP.NET Core předpokládat RCL obsah je *oblasti* složky. V tématu [rozložení stránek RCL](#afs) k vytvoření obsahu v RCL, který zpřístupňuje `~/Pages` spíše než `~/Areas/Pages`.
 
 ## <a name="referencing-razor-class-library-content"></a>Odkazování na obsah knihovny tříd Razor
 
@@ -203,3 +203,22 @@ Při zobrazení, částečná zobrazení nebo stránky Razor se nachází v webo
 Ve vzorku ke stažení, přejmenujte *WebApp1/oblasti/MyFeature2* k *WebApp1/oblasti/MyFeature* otestovat prioritu.
 
 Kopírovat *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml* částečné zobrazení k *WebApp1/Areas/MyFeature/Pages/Shared/_Message.cshtml*. Aktualizace značky k označení nového umístění. Sestavení a spuštění aplikace a zkontrolujte, že verze aplikace s částečným se používá.
+
+<a name="afs"></a>
+
+### <a name="rcl-pages-layout"></a>Rozložení stránek RCL
+
+K odkazování RCL obsah, jako by šlo součástí složce stránky webové aplikace, vytvořte projekt RCL s následující strukturou souboru:
+
+* *RazorUIClassLib/stránky*
+* *RazorUIClassLib/stránek/Shared*
+
+Předpokládejme, že *RazorUIClassLib/stránek/Shared* obsahuje dva soubory částečné *_Header.cshtml* a *_Footer.cshtml*. <partial> Značky může být přidán do *_Layout.cshtml* souboru: 
+  
+```
+  <body>
+    <partial name="_Header">
+    @RenderBody()
+    <partial name="_Footer">
+  </body>
+```

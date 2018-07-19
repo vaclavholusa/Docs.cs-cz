@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: ef1b226d673d18ec333c35f193dbe6bd21e54225
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2807560484d03122ed68ee3efb49a50e45150e12
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842912"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123798"
 ---
 <a name="ui-and-navigation"></a>Uživatelské rozhraní a navigace
 ====================
@@ -164,7 +164,7 @@ V tomto kurzu se změní vzhled a chování aplikace Wingtip Toys nahrazením so
 3. Přejmenovat *bootstrap.min.css* k *bootstrap original.min.css*.
 4. V **Průzkumníka řešení**, klikněte pravým tlačítkem myši *obsahu* a pak zvolte položku **otevřít složku v Průzkumníku souborů**.  
    Zobrazí se v Průzkumníku souborů. Do tohoto umístění se uloží stažené bootstrap soubory šablon stylů CSS.
-5. V prohlížeči přejděte na [ http://Bootswatch.com ](http://bootswatch.com/).
+5. V prohlížeči přejděte na [ https://bootswatch.com/3/ ](https://bootswatch.com/3/).
 6. Přejděte okno prohlížeče, dokud se nezobrazí Cerulean motiv. 
 
     ![Uživatelské rozhraní a navigace - Cerulean motiv](ui_and_navigation/_static/image5.png)

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/14/2017
 uid: performance/caching/distributed
-ms.openlocfilehash: 861664fcad576c11abe052837b72367eb2b9479a
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 9c41a6e008045231bd2e1c1f53a9161e11daafa9
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095678"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123837"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>Práce s distribuovanou mezipamětí v ASP.NET Core
 
@@ -79,12 +79,13 @@ Následující kód z *Startup.cs* ukazuje, nastaví se hodnota:
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
-> [!NOTE]
-> Protože `IDistributedCache` je nakonfigurovaný v `ConfigureServices` metoda, je k dispozici na `Configure` metodu jako parametr. Přidání jako parametr vám umožní nakonfigurované instance má být poskytnuta prostřednictvím DI.
+Protože `IDistributedCache` je nakonfigurovaný v `ConfigureServices` metoda, je k dispozici na `Configure` metodu jako parametr. Přidání jako parametr vám umožní nakonfigurované instance má být poskytnuta prostřednictvím DI.
 
 ## <a name="using-a-redis-distributed-cache"></a>Použití Redis distribuované mezipaměti
 
 [Redis](https://redis.io/) je úložiště otevřít zdroj dat v paměti, což se často používá jako distribuované mezipaměti. Můžete používat místně, a můžete nakonfigurovat [Azure Redis Cache](https://azure.microsoft.com/services/cache/) pro vaše aplikace ASP.NET Core hostovaných v Azure. Nakonfiguruje aplikaci ASP.NET Core pomocí implementace mezipaměti `RedisDistributedCache` instance.
+
+Mezipaměti Redis vyžaduje [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis/)
 
 Konfigurace Redis implementace v `ConfigureServices` a k němu přístup v kódu vaší aplikace můžete si vyžádat instance `IDistributedCache` (viz výše uvedený kód).
 
@@ -92,8 +93,7 @@ Ve vzorovém kódu `RedisCache` implementace se používá, když je server nako
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
-> [!NOTE]
-> K instalaci Redis na místním počítači, nainstalujte chocolatey balíček [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) a spusťte `redis-server` z příkazového řádku.
+K instalaci Redis na místním počítači, nainstalujte chocolatey balíček [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) a spusťte `redis-server` z příkazového řádku.
 
 ## <a name="using-a-sql-server-distributed-cache"></a>SQL Server pomocí distribuované mezipaměti
 

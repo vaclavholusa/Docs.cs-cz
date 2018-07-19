@@ -8,12 +8,12 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 090bb58f762302e0f58db7b8c005fe584e5ec419
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4e72804593c07318af8cc577f9d43ab96be4de05
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827372"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123785"
 ---
 <a name="bundling-and-minification"></a>Sdružování a Minifikace
 ====================
@@ -69,7 +69,7 @@ V následující tabulce jsou uvedeny několik důležitých rozdílů mezi jedn
 | **Přijata KB** | 388.51 | 530 | 36% |
 | **Čas načtení** | 510 MS | 780 MS | 53% |
 
-Odeslané bajty došlo k výraznému snížení s sdružování prohlížeče jsou poměrně podrobné s hlavičky protokolu HTTP, které se vztahují na požadavky. Snížení přijatých bajtů není tak velké, protože největší soubory (*Scripts\jquery-ui-1.8.11.min.js* a *Scripts\jquery-1.7.1.min.js*) jsou již minifikovaný. Poznámka: Časování na ukázkový program používá [Fiddler](http://www.fiddler2.com/fiddler2/) nástroj pro simulaci pomalou síť. (Z Fiddler **pravidla** nabídce vyberte možnost **výkonu** pak **simulovat rychlostí**.)
+Odeslané bajty došlo k výraznému snížení s sdružování prohlížeče jsou poměrně podrobné s hlavičky protokolu HTTP, které se vztahují na požadavky. Přijaté bajty snížení není velké protože největší soubory (*skripty\\jquery-ui-1.8.11.min.js* a *skripty\\jquery 1.7.1.min.js*) jsou již minifikovaný . Poznámka: Časování na ukázkový program používá [Fiddler](http://www.fiddler2.com/fiddler2/) nástroj pro simulaci pomalou síť. (Z Fiddler **pravidla** nabídce vyberte možnost **výkonu** pak **simulovat rychlostí**.)
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>Ladění spojeny a Minifikovaný jazyka JavaScript
 
@@ -79,7 +79,7 @@ Snadno ladit JavaScript ve vývojovém prostředí (kde [prvek compilation](http
 2. Vyberte sadu obsahující funkce JavaScriptu, který chcete ladit pomocí tlačítka pro prostředky.  
     ![](bundling-and-minification/_static/image4.png)
 3. Formátování minifikovaný jazyka JavaScript tak, že vyberete **tlačítko konfigurace** ![](bundling-and-minification/_static/image5.png)a pak vyberete **formát JavaScript**.
-4. V **hledání skriptu** t vstupního pole, vyberte název funkce, který chcete ladit. Na následujícím obrázku **AddAltToImg** jste zadali v **hledání skriptu** t vstupního pole.  
+4. V **skript vyhledávání** vstupní pole, vyberte název funkce, který chcete ladit. Na následujícím obrázku **AddAltToImg** jste zadali v **skript vyhledávání** vstupního pole.  
     ![](bundling-and-minification/_static/image6.png)
 
 Další informace o ladění pomocí nástroje pro vývojáře F12, najdete v článku na webu MSDN [pomocí vývojářských nástrojů F12 k ladění chyby JavaScriptu](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx).
@@ -107,15 +107,15 @@ Chcete-li povolit sdružování a minifikace, nastavte `debug` hodnotu "false". 
 
 V této části vytvoříme ASP.NET MVC projekt tak, aby zkontrolovat sdružování a minifikace. Nejprve vytvořte nový projekt ASP.NET MVC internet s názvem **MvcBM** beze změny některý z výchozí hodnoty.
 
-Otevřít *aplikace\_Start\BundleConfig.cs* souboru a zkoumat `RegisterBundles` metodu, která se používá k vytváření, registrace a konfigurace sady. Následující kód ukazuje část `RegisterBundles` metody.
+Otevřít *aplikace\\\_Start\\BundleConfig.cs* souboru a zkoumat `RegisterBundles` metodu, která se používá k vytváření, registrace a konfigurace sady. Následující kód ukazuje část `RegisterBundles` metody.
 
 [!code-csharp[Main](bundling-and-minification/samples/sample5.cs)]
 
 Předchozí kód vytvoří novou sadu JavaScript s názvem *~/bundles/jquery* , který obsahuje všechny příslušné (, které je ladění nebo ale ne minifikovaný. *vsdoc*) soubory *skripty* složku, která odpovídá řetězci zástupný znak "~/Scripts/jquery-{version} .js". Pro technologii ASP.NET MVC 4, to znamená, že s konfiguraci ladění, soubor *jquery 1.7.1.js* se přidají do sady. V konfiguraci vydané verze *jquery 1.7.1.min.js* budou přidány. Vytváření prostředků framework následuje několik běžné konvence jako například:
 
-- Výběrem možnosti ".min" soubor pro vydání, pokud existují "FileX.min.js" a "FileX.js".
+- Výběr souboru ".min" pro uvolnění při *FileX.min.js* a *FileX.js* existovat.
 - Výběr verze bez ".min" pro ladění.
-- Ignoruje se "-vsdoc" soubory (například jquery-1.7.1 – vsdoc.js), které jsou používány pouze v IntelliSense.
+- Ignoruje se "-vsdoc" soubory (například *jquery. 1.7.1 vsdoc.js*), které jsou používány pouze technologie IntelliSense.
 
 `{version}` Zástupný znak porovnání uvedené výše se používá pro automatické vytvoření svazku jQuery s příslušnou verzi jQuery ve vaší *skripty* složky. V tomto příkladu pomocí zástupný znak poskytuje následující výhody:
 
@@ -134,7 +134,7 @@ Zatímco ve verzi režimu a ladicí verzi jQuery se načtou místně v režimu l
 
 ## <a name="creating-a-bundle"></a>Vytvoření svazku
 
-[Sady](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) třídy `Include` metoda přijímá pole řetězců, kde je každý řetězec virtuální cesty k prostředku. Následující kód z metody RegisterBundles v *aplikace\_Start\BundleConfig.cs* soubor ukazuje, jak více souborů jsou přidány k sadě:
+[Sady](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) třídy `Include` metoda přijímá pole řetězců, kde je každý řetězec virtuální cesty k prostředku. Následující kód z `RegisterBundles` metodu *aplikace\\\_Start\\BundleConfig.cs* soubor ukazuje, jak více souborů jsou přidány k sadě:
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
@@ -142,7 +142,7 @@ Zatímco ve verzi režimu a ladicí verzi jQuery se načtou místně v režimu l
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
-Sady jsou odkazovány v zobrazení pomocí metody vykreslení ( `Styles.Render` pro šablony stylů CSS a `Scripts.Render` pro jazyk JavaScript). Následující kód z *Views\Shared\\_Layout.cshtml* soubor ukazuje, jak odkazovat na výchozí zobrazení projektu ASP.NET internet sady šablon stylů CSS a JavaScriptu.
+Sady jsou odkazovány v zobrazení pomocí metody vykreslení (`Styles.Render` pro šablony stylů CSS a `Scripts.Render` pro jazyk JavaScript). Následující kód z *zobrazení\\Shared\\\_Layout.cshtml* soubor ukazuje, jak odkazovat na výchozí zobrazení projektu ASP.NET internet sady šablon stylů CSS a JavaScriptu.
 
 [!code-cshtml[Main](bundling-and-minification/samples/sample10.cshtml?highlight=5-6,11)]
 
@@ -156,10 +156,10 @@ Virtuální cesta zadaná v `Include` metoda a hledání vzorku v `IncludeDirect
 
 Vezměte v úvahu projekt s následující soubory jazyka JavaScript:
 
-- *Scripts\Common\AddAltToImg.js*
-- *Scripts\Common\ToggleDiv.js*
-- *Scripts\Common\ToggleImg.js*
-- *Scripts\Common\Sub1\ToggleLinks.js*
+- *Skripty\\běžné\\AddAltToImg.js*
+- *Skripty\\běžné\\ToggleDiv.js*
+- *Skripty\\běžné\\ToggleImg.js*
+- *Skripty\\běžné\\Sub1\\ToggleLinks.js*
 
 ![dir imag](bundling-and-minification/_static/image7.png)
 
@@ -167,13 +167,13 @@ Soubory přidané do sady pomocí zástupného znaku, jak je znázorněno v nás
 
 | **Volání** | **Soubory přidané nebo výjimce** |
 | --- | --- |
-| Zahrnout ("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Zahrnout ("~/Scripts/Common/\*.js") | *AddAltToImg.js*, *ToggleDiv.js*, *ToggleImg.js* |
 | Zahrnout ("~/Scripts/Common/T\*.js") | Neplatný vzor došlo k výjimce. Zástupný znak je povolena pouze u předpony nebo přípony. |
 | Zahrnout ("~/Scripts/Common/\*og.\*") | Neplatný vzor došlo k výjimce. Je povolený jenom jeden zástupný znak. |
-| "Zahrnout (" ~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
-| "Zahrnout (" ~/Scripts/Common/\*") | Neplatný vzor došlo k výjimce. Čistě zástupný segment není platný. |
-| IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
-| IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
+| Zahrnout ("~/Scripts/Common/T\*") | *ToggleDiv.js*, *ToggleImg.js* |
+| Zahrnout ("~/Scripts/Common/\*") | Neplatný vzor došlo k výjimce. Čistě zástupný segment není platný. |
+| IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js*, *ToggleImg.js* |
+| IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js*, *ToggleImg.js*, *ToggleLinks.js* |
 
 Každý soubor explicitně přidáte k sadě je obecně upřednostňované přes zástupnými znaky načítání souborů z následujících důvodů:
 
@@ -183,7 +183,7 @@ Každý soubor explicitně přidáte k sadě je obecně upřednostňované přes
 
     [!code-csharp[Main](bundling-and-minification/samples/sample12.cs)]
 
-  Selektor zástupný znak "\*.css" přináší do každého souboru CSS ve složce, včetně *Content\themes\base\jquery.ui.all.css* souboru. *Jquery.ui.all.css* soubor importuje další soubory šablon stylů CSS.
+  Selektor zástupný znak "\*.css" přináší do každého souboru CSS ve složce, včetně *obsahu\\motivy\\základní\\jquery.ui.all.css* souboru. *Jquery.ui.all.css* soubor importuje další soubory šablon stylů CSS.
 
 ## <a name="bundle-caching"></a>Vytvoření balíčku ukládání do mezipaměti
 
@@ -195,7 +195,7 @@ Na následujícím obrázku **ukládání do mezipaměti** kartu podokna Fiddler
 
 Žádost   
 `http://localhost/MvcBM_time/bundles/AllMyScripts?v=r0sLDicvP58AIXN_mc3QdyVvVj5euZNzdsa2N1PKvb81`  
- je pro sadu **AllMyScripts** a obsahuje pár řetězec dotazu **v = r0sLDicvP58AIXN\_mc3QdyVvVj5euZNzdsa2N1PKvb81**. Řetězec dotazu **v** má hodnotu token, který je jedinečný identifikátor sloužící k ukládání do mezipaměti. Tak dlouho, dokud nedojde ke změně sady, bude vyžadovat aplikace ASP.NET **AllMyScripts** sady prostředků pomocí tohoto tokenu. Pokud změn v souboru v sadě, optimalizační rozhraní technologie ASP.NET se vygenerovat nový token, zajištění, že požadavky na prohlížeč pro sadu získá nejnovější sady.
+ je pro sadu **AllMyScripts** a obsahuje pár řetězec dotazu **v = r0sLDicvP58AIXN\\\_mc3QdyVvVj5euZNzdsa2N1PKvb81**. Řetězec dotazu **v** má hodnotu token, který je jedinečný identifikátor sloužící k ukládání do mezipaměti. Tak dlouho, dokud nedojde ke změně sady, bude vyžadovat aplikace ASP.NET **AllMyScripts** sady prostředků pomocí tohoto tokenu. Pokud změn v souboru v sadě, optimalizační rozhraní technologie ASP.NET se vygenerovat nový token, zajištění, že požadavky na prohlížeč pro sadu získá nejnovější sady.
 
 Je-li spustit nástroje pro vývojáře IE9 F12 a přejděte na stránku dříve načtená, IE nesprávně ukazuje podmíněné požadavků GET na každá sada a server vrací HTTP 304. Si můžete přečíst, proč IE9 má potíže s zjištění, zda Podmíněný požadavek byl proveden v příspěvku na blogu [použití sítě CDN a Expires ke zlepšení výkonu webu](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx).
 
@@ -203,13 +203,13 @@ Je-li spustit nástroje pro vývojáře IE9 F12 a přejděte na stránku dříve
 
 Sdružování a minifikace framework poskytuje mechanismus pro zpracování zprostředkující jazyků, jako [SCSS](http://sass-lang.com/), [Sass](http://sass-lang.com/), [méně](http://www.dotlesscss.org/) nebo [Coffeescript ](http://coffeescript.org/)a použití transformací, jako je připravenost k minifikaci výslednou sadu. Chcete-li například přidat [.less](http://www.dotlesscss.org/) soubory do projektu MVC 4:
 
-1. Vytvořte složku pro méně obsah. V následujícím příkladu *Content\MyLess* složky.
+1. Vytvořte složku pro méně obsah. V následujícím příkladu *obsahu\\MyLess* složky.
 2. Přidat [.less](http://www.dotlesscss.org/) balíček NuGet **bez tečky** do projektu.  
     ![Instalace bez tečky NuGet](bundling-and-minification/_static/image9.png)
 3. Přidat třídu, která implementuje [IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx) rozhraní. Pro transformace .less přidejte následující kód do vašeho projektu.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. Vytvořit sadu s méně soubory `LessTransform` a [CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx) transformace. Přidejte následující kód, který `RegisterBundles` metoda ve *aplikace\_Start\BundleConfig.cs* souboru.
+4. Vytvořit sadu s méně soubory `LessTransform` a [CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx) transformace. Přidejte následující kód, který `RegisterBundles` metoda ve *aplikace\\_spustit\\BundleConfig.cs* souboru.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. Přidejte následující kód všech zobrazení, která odkazuje na menší sadu.
@@ -228,11 +228,11 @@ Omezení prohlížeče šest souběžných připojení za každý název hostite
 
 Sady by měly být rozdělené podle stránky, které potřebujete. Například výchozí šablony ASP.NET MVC pro aplikaci internet vytvoří svazek sad ověřování jQuery odděleně od jQuery. Protože výchozí zobrazení vytvořené žádný vstup a neprovede odeslání hodnoty, jejich nezahrnují sady ověřování.
 
-`System.Web.Optimization` Obor názvů je implementována v System.Web.Optimization.DLL. Využívá knihovna WebGrease (WebGrease.dll) pro možnosti připravenost k minifikaci, která dále používá Antlr3.Runtime.dll.
+`System.Web.Optimization` Obor názvů je implementována v *System.Web.Optimization.dll*. Využívá knihovna WebGrease (*WebGrease.dll*) pro možnosti připravenost k minifikaci, který pak používá *Antlr3.Runtime.dll*.
 
 *Používám Twitteru rychlé příspěvky a sdílet odkazy. Tento popisovač Twitteru je*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 
-## <a name="additional-resources"></a>Další prostředky
+## <a name="additional-resources"></a>Další zdroje
 
 - Video:[sdružování a optimalizace](https://channel9.msdn.com/Events/aspConf/aspConf/Bundling-and-Optimizing) podle [Howard Dierking](https://twitter.com/#!/howard_dierking)
 - [Přidání optimalizaci webů do webových stránek webu](https://blogs.msdn.com/b/rickandy/archive/2012/08/15/adding-web-optimization-to-a-web-pages-site.aspx).

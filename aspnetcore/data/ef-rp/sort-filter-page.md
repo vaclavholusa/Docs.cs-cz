@@ -5,12 +5,12 @@ description: V tomto kurzu přidáte řazení, filtrování a stránkování fun
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: fce524a5cb386fbf286907be42e920be13115ca6
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 86321538f02ccf1a36ee9e50729e63e007f10327
+ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216275"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39146894"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – řazení, filtrování, stránkování – 3 z 8
 
@@ -210,7 +210,7 @@ Pokud hledaný řetězec se změní při stránkování, stránky se resetuje na
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
 
-Dvě otazníky v `PaginatedList.CreateAsync` představují [operátoru nulového sjednocení](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator). Operátoru nulového sjednocení definuje výchozí hodnotu pro typ připouštějící hodnotu Null. Výraz `(pageIndex ?? 1)` znamená, že návratová hodnota z `pageIndex` Pokud má hodnotu. Pokud `pageIndex` nebude mít hodnotu, vrátí se 1.
+Dvě otazníky v `PaginatedList.CreateAsync` představují [operátoru nulového sjednocení](/dotnet/csharp/language-reference/operators/null-conditional-operator). Operátoru nulového sjednocení definuje výchozí hodnotu pro typ připouštějící hodnotu Null. Výraz `(pageIndex ?? 1)` znamená, že návratová hodnota z `pageIndex` Pokud má hodnotu. Pokud `pageIndex` nebude mít hodnotu, vrátí se 1.
 
 ## <a name="add-paging-links-to-the-student-razor-page"></a>Přidat odkazy stránkování na studenta stránky Razor
 

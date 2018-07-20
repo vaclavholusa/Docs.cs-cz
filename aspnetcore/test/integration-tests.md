@@ -71,7 +71,7 @@ Integrační testy podle posloupnost událostí, které zahrnují obvyklého *us
 1. Testovací klient serveru se vytvoří odesílat žádosti do aplikace.
 1. *Uspořádat* provádí se krok testu: aplikace pro testy připraví žádost.
 1. *Act* provádí se krok testu: klient odešle žádost a obdrží odpověď.
-1. *Assert* provádí se krok testu: *skutečné* odpovědi je ověřen jako *předat* nebo *selhání* na základě *očekávání * odpovědi.
+1. *Assert* provádí se krok testu: *skutečné* odpovědi je ověřen jako *předat* nebo *selhání* na základě *očekávání*  odpovědi.
 1. Proces pokračuje, dokud všechny testy jsou spouštěny.
 1. Výsledky testů jsou hlášeny.
 

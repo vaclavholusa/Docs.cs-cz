@@ -5,12 +5,12 @@ description: V tomto kurzu přidáte řazení, filtrování a stránkování fun
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 86321538f02ccf1a36ee9e50729e63e007f10327
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: ee5a0dae41ba0afba518f0bd6fbd379fdbbfb1c1
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39146894"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202611"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – řazení, filtrování, stránkování – 3 z 8
 
@@ -161,7 +161,7 @@ V současné době vyberete řazení odkaz záhlaví sloupce filtru hodnotu **hl
 
 V této části `PaginatedList` je vytvořená třída pro podporu stránkování. `PaginatedList` Třídy používá `Skip` a `Take` příkazy k filtrování dat na serveru, místo získávání všech řádků v tabulce. Následující obrázek znázorňuje tlačítka stránkování.
 
-![Studenti index stránky s odkazy stránkování](sort-filter-page/_static/paging.png)
+![studenti indexová stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Ve složce projektu vytvořit `PaginatedList.cs` následujícím kódem:
 
@@ -263,8 +263,6 @@ Aktualizace *Pages/About.cshtml.cs* souboru následujícím kódem:
 [!code-csharp[](intro/samples/cu21/Pages/About.cshtml.cs)]
 
 Příkaz LINQ skupiny studentů entity podle data registrace, vypočítá počet entit v každé skupině a ukládá výsledky v kolekci `EnrollmentDateGroup` zobrazit objekty modelu.
-
-Poznámka: LINQ `group` příkaz není aktuálně podporován EF Core. V předchozím kódu jsou vráceny všechny záznamy studentů z SQL serveru. `group` Příkaz je použít v aplikaci pro stránky Razor, ne na serveru SQL Server. EF Core 2.1 bude podporovat tento LINQ `group` operátor a seskupení probíhá na serveru SQL. Zobrazit [relační: Podpora překladu GroupBy() SQL](https://github.com/aspnet/EntityFrameworkCore/issues/2341). [EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap) se bude vydán se sadou .NET Core 2.1. Další informace najdete v tématu [.NET Core – plán](https://github.com/dotnet/core/blob/master/roadmap.md).
 
 ### <a name="modify-the-about-razor-page"></a>Upravit o stránky Razor
 

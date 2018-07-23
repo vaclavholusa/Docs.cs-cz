@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 0d35de827ca6fea530229f1ef263ea7b9351e5ad
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: ea3f26f9377715ea27f19908932d2dcf3cfcbea6
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992825"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202598"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidání ověřování do stránky ASP.NET Core Razor
 
@@ -38,7 +38,7 @@ Aktualizace `Movie` třídy výhod `Required`, `StringLength`, `RegularExpressio
 
 ::: moniker range=">= aspnetcore-2.1"
 
-[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRatingDA.cs)]
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRatingDA.cs?name=snippet1)]
 
 ::: moniker-end
 
@@ -157,7 +157,7 @@ Následující kód ukazuje kombinace atributů na jednom řádku:
 
 Zobrazit [publikovat webovou aplikaci ASP.NET Core do služby Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny o tom, jak tuto aplikaci můžete publikovat do Azure.
 
-Děkujeme vám za dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětnou vazbu. [Začínáme s MVC a EF Core](xref:data/ef-mvc/intro) je vynikající postupujte až v tomto kurzu.
+Děkujeme vám za dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětnou vazbu. [Začínáme s Razor Pages a EF Core](xref:data/ef-rp/intro) je vynikající postupujte až v tomto kurzu.
 
 ## <a name="additional-resources"></a>Další zdroje
 

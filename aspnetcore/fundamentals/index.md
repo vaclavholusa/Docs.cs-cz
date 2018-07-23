@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 07/02/2018
 uid: fundamentals/index
-ms.openlocfilehash: 33786bf78567a1aa12a1ac97d44d1a596ec4c3be
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 30c456685ce26522faff9b58fbd2977ad2f2869a
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144973"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202624"
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
@@ -191,6 +191,12 @@ Další informace najdete v tématu [požádat o funkce](xref:fundamentals/reque
 Úlohy na pozadí jsou implementovány jako *hostovaných služeb*. Hostovanou službu je třída s atributem logiky úloh na pozadí, který implementuje [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) rozhraní.
 
 Další informace najdete v tématu [s hostovanými službami úloh na pozadí](xref:fundamentals/host/hosted-services).
+
+## <a name="access-httpcontext"></a>Přístup k objektu HttpContext
+
+Přístup `HttpContext` prostřednictvím [IHttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor) rozhraní a jeho výchozí implementace [HttpContextAccessor](/dotnet/api/microsoft.aspnetcore.http.httpcontextaccessor).
+
+Další informace naleznete v tématu <xref:fundamentals/httpcontext>.
 
 ## <a name="open-web-interface-for-net-owin"></a>Open Web Interface pro .NET (OWIN)
 

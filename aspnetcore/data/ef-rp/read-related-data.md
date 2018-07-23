@@ -5,12 +5,12 @@ description: V tomto kurzu čtení a zobrazení souvisejících dat – to zname
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: fa3147cc4ad121784911eef802e04ca91f16448f
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: bcea6aa6018a937979b8e0aaa2edcdd96da41559
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063309"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202676"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat – 6 8
 
@@ -168,7 +168,7 @@ Spusťte aplikaci a přejděte na stránku Instruktoři.
 
 Nahraďte *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 
-[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,20-99)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/Index1.cshtml.cs?name=snippet_all&highlight=2,18-99)]
 
 `OnGetAsync` Metoda přijímá data volitelné trasy pro ID vybrané instruktorem.
 
@@ -298,11 +298,11 @@ Aktualizujte stránku a vybrat instruktorem. Vyberte kurzu zobrazíte seznam reg
 
 `Single` Můžete předat metodě `Where` podmínku namísto volání metody `Where` metoda samostatně:
 
-[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21,28-29)]
+[!code-csharp[](intro/samples/cu/Pages/Instructors/IndexSingle.cshtml.cs?name=snippet_single&highlight=21-22,30-31)]
 
 Předchozí `Single` přístup nabízí v porovnání s použitím žádné výhody `Where`. Někteří vývojáři raději `Single` přistupovat ke stylu.
 
-## <a name="explicit-loading"></a>Explicitní načtení
+## <a name="explicit-loading"></a>explicitní načtení
 
 Aktuální kód určuje předběžné načítání pro `Enrollments` a `Students`:
 

@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/30/2018
 uid: signalr/configuration
-ms.openlocfilehash: fac0226c939f4cf446c876b1c0b359d6c5b9dfd3
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f5a345795f17dafd482e359e77a151d5b0a15688
+ms.sourcegitcommit: 8b68e144aab75374af52605a71717c77345a28b2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095399"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39182587"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>Konfigurace jádra SignalR technologie ASP.NET
 
@@ -62,7 +62,7 @@ Následující tabulka popisuje možnosti pro konfiguraci rozbočovače SignalR:
 
 | Možnost | Popis |
 | ------ | ----------- |
-| `HandshakeTimeout` | Pokud klient nebude odeslat zprávu handshake počáteční v tomto časovém intervalu, je připojení ukončeno. |
+| `HandshakeTimeout` | Pokud klient nebude odeslat zprávu handshake počáteční v tomto časovém intervalu, je připojení ukončeno. Toto je upřesňující nastavení, by měla být změněna pouze v případě chyby časového limitu handshake dochází z důvodu závažné sítích s latencí. Další podrobnosti o procesu najdete v článku [specifikace protokolu rozbočovače SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
 | `KeepAliveInterval` | Pokud server není v rámci tohoto intervalu odeslal zprávu, je automaticky odeslána zpráva příkazu ping na udržení připojení otevřeného. |
 | `SupportedProtocols` | Protokolů podporovaných toto centrum. Ve výchozím nastavení jsou povolené všechny protokoly, které jsou registrované na serveru, ale protokolů lze odebrat z tohoto seznamu zakázat konkrétní protokoly pro jednotlivé rozbočovače. |
 | `EnableDetailedErrors` | Pokud `true`, podrobné zprávy o výjimkách se vrátí ke klientům, když dojde k výjimce v metodě rozbočovače. Výchozí hodnota je `false`, jak tyto zprávy o výjimkách mohou obsahovat citlivé údaje. |
@@ -216,10 +216,10 @@ Další možnosti pro konfiguraci časového limitu a zachování chování, kte
 
 | .NET – možnost | Možnost jazyka JavaScript | Popis |
 | ----------- | ----------------- | ----------- |
-| `ServerTimeout` | `serverTimeoutInMilliseconds` | Časový limit pro aktivity serveru. Pokud nějaká zpráva nebyla v tomto intervalu odeslané serverem, klient bude považovat za server odpojen a aktivační události `Closed` událostí (`onclose` v JavaScriptu). |
-| `HandshakeTimeout` | Nejde konfigurovat | Časový limit pro počáteční server handshake. Pokud server není v tomto intervalu odeslání odpovědi handshake, klient zruší handshake a aktivační události `Closed` událostí (`onclose` v JavaScriptu). |
+| `ServerTimeout` | `serverTimeoutInMilliseconds` | Časový limit pro aktivity serveru. Pokud server není v tomto intervalu odeslal zprávu, klient bude považovat za server odpojen a aktivační události `Closed` událostí (`onclose` v JavaScriptu). |
+| `HandshakeTimeout` | Nejde konfigurovat | Časový limit pro počáteční server handshake. Pokud server není v tomto intervalu odeslání odpovědi handshake, klient zruší handshake a aktivační události `Closed` událostí (`onclose` v JavaScriptu). Toto je upřesňující nastavení, by měla být změněna pouze v případě chyby časového limitu handshake dochází z důvodu závažné sítích s latencí. Další podrobnosti o procesu najdete v článku [specifikace protokolu rozbočovače SignalR](https://github.com/aspnet/SignalR/blob/master/specs/HubProtocol.md). |
 
-V klientovi .NET jsou zadané hodnoty časového limitu jako `TimeSpan` hodnoty. V klientovi JavaScript jsou hodnoty časového limitu zadané jako čísla. Čísla udávají hodnoty času v milisekundách.
+V klientovi .NET jsou zadané hodnoty časového limitu jako `TimeSpan` hodnoty. V klientovi JavaScript jsou zadané hodnoty časového limitu jako číslo určující dobu trvání v milisekundách.
 
 ### <a name="configure-additional-options"></a>Konfigurace dalších možností
 

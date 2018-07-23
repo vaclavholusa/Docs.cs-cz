@@ -8,12 +8,12 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 6af4990f726bfcd0c45eb6991418661f9b8ccbf6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f36b73aac2e7844367e1e52b2c721bfe6b3575e2
+ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824703"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39138516"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Vytvoření aplikace ASP.NET MVC 5 s Facebook, Twitter, LinkedIn a Google OAuth2 přihlašování (C#)
 ====================
@@ -162,55 +162,6 @@ Pro připojení k zprostředkovatele ověřování, jako je Google nebo Facebook
 > [!WARNING]
 > Aktuální Facebook OAuth2 ověřování najdete v tématu [ověřování konfigurace služby Facebook](/aspnet/core/security/authentication/social/facebook-logins)
 
-Pro ověřování Facebook OAuth2 budete muset zkopírovat do svého projektu některá nastavení z aplikace, kterou vytvoříte na Facebooku.
-
-1. V prohlížeči přejděte na [ https://developers.facebook.com/apps ](https://developers.facebook.com/apps) a přihlaste se tak, že zadáte svoje přihlašovací údaje služby Facebook.
-2. Pokud ještě nejste zaregistrovaní jako vývojář Facebook, klikněte na tlačítko **zaregistrujte se jako vývojář** a postupujte podle pokynů k registraci.
-3. Na **aplikace** klikněte na tlačítko **vytvořit novou aplikaci**.
-
-    ![Vytvoření nové aplikace](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
-4. Zadejte **název aplikace** a **kategorie**, pak klikněte na tlačítko **vytvořit aplikaci**.
-
-    <strong>Aplikace Namespace</strong> je součástí adresy URL, která vaše aplikace bude používat pro přístup k aplikaci Facebook pro ověřování (například https\://apps.facebook.com/{App Namespace}). Pokud nezadáte <strong>aplikace Namespace</strong>, <strong>ID aplikace</strong> se použije pro adresu URL. <strong>ID aplikace</strong> je dlouhý systémem generované číslo, které se zobrazí v dalším kroku.
-
-    ![Vytvořit novou aplikaci dialogového okna](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
-5. Odešlete kontrola zabezpečení Standardní.
-
-    ![Kontrola zabezpečení](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image24.png)
-6. Vyberte **nastavení** pro levé nabídek![ Panel nabídek Facebooku pro vývojáře](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image25.png)
-7. Na **základní** nastavení části stránky vyberte **přidat platformy** k určení, že přidáváte webovou aplikaci. ![Základní nastavení](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image26.png)
-8. Vyberte **webu** z možností platformy.  
-  
-    ![Možnosti platformy](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image27.png)
-9. Poznamenejte si vaše **ID aplikace** a **tajný kód aplikace** tak, aby později v tomto kurzu můžete přidat i do vaší aplikace MVC. Přidejte také adresu URL vašeho webu (`https://localhost:44300/`) a otestujte aplikaci MVC. Přidejte také **E-mail kontaktu**. Vyberte **uložit změny**.   
-
-    ![Stránce s podrobnostmi o základních aplikací](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image28.png)
-
-    > [!NOTE]
-    > Všimněte si, že pouze bude možné provést ověření pomocí e-mailový alias, které jste zaregistrovali. Ostatní uživatele a testovací účty, nebude možné registrovat. Můžete udělit přístup účty jiných Facebooku do aplikace v síti Facebook **role pro vývojáře** kartu.
-10. V sadě Visual Studio, otevřete *aplikace\_Start\Startup.Auth.cs*.
-11. Zkopírujte a vložte **AppId** a **tajný kód aplikace** do `UseFacebookAuthentication` metody. **AppId** a **tajný kód aplikace** hodnoty zobrazené níže jsou uvedeny ukázky a nebude fungovat.
-
-    [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample3.cs?highlight=33-35,38-39)]
-12. Klikněte na tlačítko **uložit změny**.
-13. Stisknutím klávesy **CTRL + F5** ke spuštění aplikace.
-
-
-Vyberte **přihlášení** pro zobrazení přihlašovací stránky. Klikněte na tlačítko **Facebook** pod **přihlášení pomocí jiné služby.**
-
-Zadejte svoje přihlašovací údaje služby Facebook.
-
-![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image29.png)
-
-Zobrazí výzva k udělení oprávnění pro aplikaci pro přístup k veřejným profilem a seznamů přátel.
-
-![Podrobnosti o aplikaci pro Facebook](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image30.png)
-
-Jste nyní přihlášeni. Nyní můžete zaregistrovat tento účet v aplikaci.
-
-![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image31.png)
-
-Při registraci, bude položka přidána do *uživatelé* tabulce členství databáze členství.
 
 <a id="mdb"></a>
 ## <a name="examine-the-membership-data"></a>Prozkoumejte Data členství

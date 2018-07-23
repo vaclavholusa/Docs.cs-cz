@@ -1056,7 +1056,7 @@ Toto vydání [getbootstrap.com](http://getbootstrap.com "getbootstrap.com") boo
 
 ### <a name="bootstrap-touchcarousel-releases-on-the-cdn"></a>Spuštění TouchCarousel vydané verze v síti CDN
 
-Toto vydání [ https://github.com/ixisio/bootstrap-touch-carousel ] (https://github.com/ixisio/bootstrap-touch-carousel " https://github.com/ixisio/bootstrap-touch-carousel ") Bootstrap TouchCarousel verzích jsou hostované v síti CDN:
+Toto vydání [https://github.com/ixisio/bootstrap-touch-carousel](https://github.com/ixisio/bootstrap-touch-carousel "https://github.com/ixisio/bootstrap-touch-carousel") Bootstrap TouchCarousel verzích jsou hostované v síti CDN:
 
 #### <a name="bootstrap-touchcarousel-version-080"></a>Zavedení TouchCarousel verze 0.8.0
 
@@ -1067,7 +1067,7 @@ Toto vydání [ https://github.com/ixisio/bootstrap-touch-carousel ] (https://gi
 
 ### <a name="hammerjs-releases-on-the-cdn"></a>Verze hammer.js v síti CDN
 
-Toto vydání [ http://hammerjs.github.io/ ] (http://hammerjs.github.io/ " http://hammerjs.github.io/ ") Hammer.js verzích jsou hostované v síti CDN:
+Toto vydání [http://hammerjs.github.io/](http://hammerjs.github.io/ "http://hammerjs.github.io/") Hammer.js verzích jsou hostované v síti CDN:
 
 #### <a name="hammerjs-version-204"></a>Hammer.js version 2.0.4
 

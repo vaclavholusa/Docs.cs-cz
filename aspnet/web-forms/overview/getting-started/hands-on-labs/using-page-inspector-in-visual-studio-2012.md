@@ -333,7 +333,7 @@ V této úloze se dozvíte, jak používat funkce Page Inspector v kontextu, kte
     ![Kontrola prvky](using-page-inspector-in-visual-studio-2012/_static/image29.png "kontrola elementy")
 
     *Kontrola elementy*
-7. Klikněte na tlačítko **přepnout režim kontroly** tlačítko (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.] (using-page-inspector-in-visual-studio-2012/_static/image30.png "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.") ), umístěný na kartách nástroj Page Inspector, chcete-li zakázat kurzor.
+7. Klikněte na tlačítko **přepnout režim kontroly** tlačítko (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.](using-page-inspector-in-visual-studio-2012/_static/image30.png "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.") ), umístěný na kartách nástroj Page Inspector, chcete-li zakázat kurzor.
 8. Vyberte **HTML** karet zobrazit další kód HTML, vykreslení v prohlížeči nástroj Page Inspector.
 9. V kódu HTML vyhledejte položky seznamu s odkazem medvídek a vyberte ho.
 

@@ -1,88 +1,84 @@
 ---
-title: Zprostředkovatele úložiště klíčů v základní technologie ASP.NET
+title: Zprostředkovatelé úložiště klíčů v ASP.NET Core
 author: rick-anderson
-description: Další informace o zprostředkovatele úložiště klíčů v základní technologie ASP.NET a konfiguraci umístění úložiště klíčů.
+description: Další informace o poskytovatele úložiště klíčů v ASP.NET Core a jak konfigurovat umístění úložiště klíčů.
 ms.author: riande
-ms.date: 01/14/2017
+ms.date: 07/16/2018
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 432c2690f216325470bbea9b974ea772bcdc39ed
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 74d62e88b40cfcefb81d699a5aba2665c56ac51a
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273766"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219261"
 ---
-# <a name="key-storage-providers-in-aspnet-core"></a>Zprostředkovatele úložiště klíčů v základní technologie ASP.NET
+# <a name="key-storage-providers-in-aspnet-core"></a>Zprostředkovatelé úložiště klíčů v ASP.NET Core
 
-<a name="data-protection-implementation-key-storage-providers"></a>
+Systém ochrany dat [využívá mechanismus zjišťování ve výchozím nastavení](xref:security/data-protection/configuration/default-settings) k určení, kde by měl trvalé kryptografických klíčů. Vývojář můžete přepsat výchozí mechanismus pro zjišťování a ručně zadejte jeho umístění.
 
-Ve výchozím nastavení systému ochrany dat [využívá Heuristika](xref:security/data-protection/configuration/default-settings) k určení, kde by měl natrvalo materiál kryptografické klíče. Vývojář může přepsat heuristiky a ručně zadejte jeho umístění.
-
-> [!NOTE]
-> Pokud zadáte umístění služby explicitní trvalost klíče, bude systém ochrany dat zrušit šifrování klíče výchozí v rest mechanismus, který poskytuje heuristiky, tak klíče zašifruje už v klidovém stavu. Je doporučeno, můžete kromě [zadejte mechanismus explicitní šifrování klíče](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers) aplikacích v produkčním prostředí.
-
-Systém ochrany dat se dodává s několik poskytovatelů úložiště klíčů v poli.
+> [!WARNING]
+> Pokud chcete zadat umístění služby explicitní trvalost klíče, systém ochrany dat deregisters výchozí šifrování klíčů v rest mechanismus, takže klíče jsou už v klidovém stavu zašifrovaná. Doporučujeme vám dále [zadejte mechanismus explicitní šifrování klíče](xref:security/data-protection/implementation/key-encryption-at-rest) pro nasazení v produkčním prostředí.
 
 ## <a name="file-system"></a>Systém souborů
 
-Očekáváme, že mnoho aplikace bude používat klíče úložiště založené na systému souborů. Chcete-li nakonfigurovat tuto funkci, volejte [PersistKeysToFileSystem](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection/DataProtectionBuilderExtensions.cs) rutiny konfigurace, jak je uvedeno níže. Zadejte `DirectoryInfo` odkazující na úložiště, které se má uložit klíče.
+Chcete-li konfigurovat klíče úložiště založené na systému souborů, zavolejte [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) konfigurace rutiny, jak je znázorněno níže. Zadejte [DirectoryInfo](/dotnet/api/system.io.directoryinfo) bude odkazovat na úložiště ukládat klíče:
 
 ```csharp
-sc.AddDataProtection()
-       // persist keys to a specific directory
-       .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
-   ```
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
+}
+```
 
-`DirectoryInfo` Může ukazovat na adresář v místním počítači, nebo můžete přejít do složky ve sdílené síťové složce. Pokud přejdete do adresáře v místním počítači (a tento scénář je, že jenom aplikace v místním počítači, bude třeba použít toto úložiště), zvažte použití [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) k šifrování klíče v klidovém stavu. V opačném případě zvažte použití [certifikát X.509](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) k šifrování klíče v klidovém stavu.
+`DirectoryInfo` Může odkazovat na adresáře na místním počítači, nebo můžete přejít do složky ve sdílené síťové složce. Pokud přejdete do adresáře v místním počítači (a tento scénář je, že jenom aplikace v místním počítači vyžaduje přístup k použití tohoto úložiště), zvažte použití [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) (on Windows) k šifrování klíčů v klidovém stavu. V opačném případě zvažte použití [certifikát X.509](xref:security/data-protection/implementation/key-encryption-at-rest) šifrování klíčů v klidovém stavu.
 
 ## <a name="azure-and-redis"></a>Azure a Redis
 
-`Microsoft.AspNetCore.DataProtection.AzureStorage` a `Microsoft.AspNetCore.DataProtection.Redis` balíčky povolit ukládání klíče ochrany dat v Azure Storage nebo mezipaměti Redis. Klíče můžete sdílet mezi několika instancí webové aplikace. Aplikace ASP.NET Core můžete sdílet soubory cookie pro ověřování nebo ochrany proti útokům CSRF napříč několika servery. Pokud chcete konfigurovat v Azure, volání jednoho z [PersistKeysToAzureBlobStorage](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection.AzureStorage/AzureDataProtectionBuilderExtensions.cs) přetížení, jak je uvedeno níže.
+[Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/) a [Microsoft.AspNetCore.DataProtection.Redis](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Redis/) balíčky povolit ukládání klíče ochrany dat v Azure Storage nebo Azure Redis cache. Klíče mohou být sdíleny napříč několika instancemi webové aplikace. Aplikace můžete sdílet soubory cookie pro ověřování nebo CSRF ochrany napříč několika servery. Pokud chcete nakonfigurovat zprostředkovatele služby Azure Blob Storage, volání jednoho z [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage) přetížení:
 
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddDataProtection()
         .PersistKeysToAzureBlobStorage(new Uri("<blob URI including SAS token>"));
-
-    services.AddMvc();
 }
 ```
 
-Viz také [Azure testovacího kódu](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/AzureBlob/Program.cs).
+Ke konfiguraci na Redis zavoláním jednoho z [PersistKeysToRedis](/dotnet/api/microsoft.aspnetcore.dataprotection.redisdataprotectionbuilderextensions.persistkeystoredis) přetížení:
 
-Pokud chcete konfigurovat na Redis, volání jednoho z [PersistKeysToRedis](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection.Redis/RedisDataProtectionBuilderExtensions.cs) přetížení, jak je uvedeno níže.
-
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    // Connect to Redis database.
     var redis = ConnectionMultiplexer.Connect("<URI>");
     services.AddDataProtection()
         .PersistKeysToRedis(redis, "DataProtection-Keys");
-
-    services.AddMvc();
 }
 ```
 
-Najdete následující informace:
+Další informace naleznete v následujících tématech:
 
-- [StackExchange.Redis ConnectionMultiplexer](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
-- [Mezipaměť Redis systému Azure](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
-- [Redis testovacího kódu](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/Redis/Program.cs).
+* [StackExchange.Redis ConnectionMultiplexer](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
+* [Azure Redis Cache](/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
+* [Ukázky ASPNET/DataProtection](https://github.com/aspnet/DataProtection/samples)
 
 ## <a name="registry"></a>Registru
 
-Aplikace v některých případech nemusí mít oprávnění k zápisu do systému souborů. Představte si třeba situaci, kdy aplikace běží jako účet služby virtual (jako je identita fondu aplikací na w3wp.exe). V těchto případech může správce zřizuje klíč registru, který je vhodné ACLed identitu účtu služby. Volání [PersistKeysToRegistry](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection/DataProtectionBuilderExtensions.cs) rutiny konfigurace, jak je uvedeno níže. Zadejte `RegistryKey` odkazující na umístění pro uložení kryptografického klíče nebo hodnoty.
+**Platí jenom pro nasazení Windows.**
+
+Aplikace v některých případech nemusí mít oprávnění k zápisu do systému souborů. Představte si třeba situaci, ve kterém je aplikace spuštěna jako účet virtuální služby (například *w3wp.exe*pro identitu fondu aplikací). V těchto případech můžete zřizovat správce klíč registru, který je přístupný pro identitu účtu služby. Volání [PersistKeysToRegistry](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystoregistry) rozšiřující metoda, jak je znázorněno níže. Zadejte [RegistryKey](/dotnet/api/microsoft.aspnetcore.dataprotection.repositories.registryxmlrepository.registrykey) odkazující na umístění pro uložení kryptografických klíčů:
 
 ```csharp
-   sc.AddDataProtection()
-       // persist keys to a specific location in the system registry
-       .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
-   ```
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
+}
+```
 
-Pokud používáte systémového registru jako vhodný mechanismus trvalosti, zvažte použití [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) k šifrování klíče v klidovém stavu.
+> [!IMPORTANT]
+> Doporučujeme používat [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) šifrování klíčů v klidovém stavu.
 
-## <a name="custom-key-repository"></a>Vlastní úložiště klíčů
+## <a name="custom-key-repository"></a>Vlastní klíče úložiště
 
-Pokud v poli mechanismy nejsou vhodné, vývojáře můžete určit vlastní mechanismu trvalosti klíče pomocí vlastní `IXmlRepository`.
+Pokud nejsou integrované mechanismy vhodné, Vývojář můžete zadat vlastní mechanismus trvalost klíče poskytnutím vlastní [IXmlRepository](/dotnet/api/microsoft.aspnetcore.dataprotection.repositories.ixmlrepository).

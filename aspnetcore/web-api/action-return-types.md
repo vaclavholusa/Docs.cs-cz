@@ -4,14 +4,14 @@ author: scottaddie
 description: Další informace o použití různé metody návratové typy akcí kontroleru v ASP.NET Core Web API.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/21/2018
+ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 422db97da222fb5e742e1d8e6ae410edc90dbc18
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: 82d18d866d4d18613cccb950b2f30ae81bd749de
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "36273553"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220609"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>Návratové typy akcí kontroleru v rozhraní Web API ASP.NET Core
 
@@ -21,14 +21,19 @@ Podle [Scott Addie](https://github.com/scottaddie)
 
 ASP.NET Core nabízí že následující možnosti pro akce kontroleru webového rozhraní API vrací typy:
 
-::: moniker range="<= aspnetcore-2.0"
-* [Konkrétní typ](#specific-type)
-* [IActionResult](#iactionresult-type)
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 * [Konkrétní typ](#specific-type)
 * [IActionResult](#iactionresult-type)
 * [ActionResult\<T >](#actionresultt-type)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+* [Konkrétní typ](#specific-type)
+* [IActionResult](#iactionresult-type)
+
 ::: moniker-end
 
 Tento dokument vysvětluje, kdy je nejvhodnější použít každý návratový typ.
@@ -70,12 +75,25 @@ V předchozí akci, se vrátí stavový kód 400, pokud selže ověření modelu
 Předchozí akce další známé návratový kód je 201, který je generován [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) Pomocná metoda. V této cestě `Product` je vrácen objekt.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="actionresultt-type"></a>ActionResult\<T > typ
 
 ASP.NET Core 2.1 přináší [ActionResult\<T >](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) návratový typ pro akce kontroleru webového rozhraní API. Umožňuje návratový typ odvozený od [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) nebo se vraťte [konkrétní typ](#specific-type). `ActionResult<T>` nabízí následující výhody oproti [IActionResult typ](#iactionresult-type):
 
-* [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) atributu `Type` vlastnost je možné vyloučit z replikace.
+* [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) atributu `Type` vlastnost je možné vyloučit z replikace. Například `[ProducesResponseType(200, Type = typeof(Product))]` je zjednodušenou `[ProducesResponseType(200)]`. Očekávaný návratový typ je odvozen namísto z akce `T` v `ActionResult<T>`.
 * [Implicitní přetypování operátory](/dotnet/csharp/language-reference/keywords/implicit) podporu převodu obou `T` a `ActionResult` k `ActionResult<T>`. `T` převede na [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult), což znamená, že `return new ObjectResult(T);` je zjednodušenou `return T;`.
+
+C# nepodporuje operátory implicitní přetypování na rozhraní. V důsledku toho je potřeba použít převod rozhraní do konkrétního typu implementujícího typ `ActionResult<T>`. Například použití `IEnumerable` nebude fungovat v následujícím příkladu:
+
+    ```csharp
+    [HttpGet]
+    public ActionResult<IEnumerable<Product>> Get()
+    {
+        return _repository.GetProducts();
+    }
+    ```
+
+Jedna možnost, chcete-li vyřešit předchozí kód je vrátit `_repository.GetProducts().ToList();`.
 
 Většinu akcí mít návratový typ konkrétní. Neočekávané podmínky může dojít během provádění akce, ve kterém případ konkrétní typ nevrátí. Vstupní parametr akce může například selhat ověření modelu. V takovém případě je běžné vrátí odpovídající `ActionResult` typ místo konkrétního typu.
 
@@ -100,10 +118,11 @@ Pokud selže ověření modelu [chybného požadavku](/dotnet/api/microsoft.aspn
 
 > [!TIP]
 > K ASP.NET Core 2.1 je povolená odvození zdroj vazby parametrů akce, když je doplněn třídu kontroleru `[ApiController]` atribut. Komplexní typ parametry jsou automaticky svázán pomocí textu požadavku. V důsledku toho předchozí akce `product` parametr není explicitně opatřen poznámkou [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) atribut.
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Akce kontroleru](xref:mvc/controllers/actions)
-* [Ověření modelu](xref:mvc/models/validation)
-* [Stránek nápovědy webového rozhraní API pomocí Swaggeru](xref:tutorials/web-api-help-pages-using-swagger)
+* <xref:mvc/controllers/actions>
+* <xref:mvc/models/validation>
+* <xref:tutorials/web-api-help-pages-using-swagger>

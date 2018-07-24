@@ -5,12 +5,12 @@ description: V tomto kurzu čtení a zobrazení souvisejících dat – to zname
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bcea6aa6018a937979b8e0aaa2edcdd96da41559
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: bb1d087a5449c6e26c40e572d161dd9644ac2323
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202676"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219339"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat – 6 8
 
@@ -69,14 +69,19 @@ Chcete-li zobrazit název přiřazený oddělení v seznamu kurzů:
 <a name="scaffold"></a>
 ### <a name="scaffold-the-course-model"></a>Vygenerované uživatelské rozhraní modelu kurzu
 
-* Ukončení sady Visual Studio.
-* Otevřete okno příkazového řádku v adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
-* Spusťte následující příkaz:
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+Postupujte podle pokynů v [generování uživatelského rozhraní modelu student](xref:data/ef-rp/intro#scaffold-the-student-model) a použít `Course` pro třídu modelu.
+
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
+ Spusťte následující příkaz:
 
   ```console
-  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
+
+------
 
 Předchozí příkaz scaffold `Course` modelu. Otevřete projekt v sadě Visual Studio.
 
@@ -150,21 +155,21 @@ V *SchoolViewModels* složku, vytvořte *InstructorIndexData.cs* následujícím
 
 ### <a name="scaffold-the-instructor-model"></a>Vygenerované uživatelské rozhraní modelu instruktorem
 
-* Ukončení sady Visual Studio.
-* Otevřete okno příkazového řádku v adresáři projektu (adresář, který obsahuje *Program.cs*, *Startup.cs*, a *.csproj* soubory).
-* Spusťte následující příkaz:
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+Postupujte podle pokynů v [generování uživatelského rozhraní modelu student](xref:data/ef-rp/intro#scaffold-the-student-model) a použít `Instructor` pro třídu modelu.
+
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+
+ Spusťte následující příkaz:
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
   ```
 
-Předchozí příkaz scaffold `Instructor` modelu. Otevřete projekt v sadě Visual Studio.
+------
 
-Sestavte projekt. Sestavení generuje chyby.
-
-Globálně změnit `_context.Instructor` k `_context.Instructors` (to znamená, přidejte k "s" `Instructor`). 7 výskyty jsou vyhledána a aktualizovat.
-
-Spusťte aplikaci a přejděte na stránku Instruktoři.
+Předchozí příkaz scaffold `Instructor` modelu. Spusťte aplikaci a přejděte na stránku Instruktoři.
 
 Nahraďte *Pages/Instructors/Index.cshtml.cs* následujícím kódem:
 

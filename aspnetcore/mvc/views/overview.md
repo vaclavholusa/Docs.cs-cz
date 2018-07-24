@@ -1,67 +1,67 @@
 ---
-title: Zobrazení v jádro ASP.NET MVC
+title: Zobrazení v ASP.NET Core MVC
 author: ardalis
-description: Zjistěte, jak pracovat zobrazení prezentace dat aplikace a interakce uživatelů v aplikaci ASP.NET MVC jádra.
+description: Zjistěte, jak zpracovat zobrazení prezentace dat aplikace a interakce uživatelů v ASP.NET Core MVC.
 ms.author: riande
 ms.date: 12/12/2017
 uid: mvc/views/overview
-ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 276540a5d77b1d65119d1b2104508d77f45d5588
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278346"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219365"
 ---
-# <a name="views-in-aspnet-core-mvc"></a>Zobrazení v jádro ASP.NET MVC
+# <a name="views-in-aspnet-core-mvc"></a>Zobrazení v ASP.NET Core MVC
 
 Podle [Steve Smith](https://ardalis.com/) a [Luke Latham](https://github.com/guardrex)
 
-Tento dokument popisuje zobrazení použitých v aplikacích ASP.NET MVC jádra. Informace na stránkách Razor najdete v tématu [Úvod do stránky Razor](xref:razor-pages/index).
+Tento dokument popisuje zobrazení použít v aplikacích ASP.NET Core MVC. Informace o stránky Razor, naleznete v tématu [Úvod do stránky Razor](xref:razor-pages/index).
 
-Ve vzoru Model-View-Controller (MVC) *zobrazení* zpracovává data aplikace prezentace a uživatelské interakce. Zobrazení je šablony HTML s vložených [kódu Razor](xref:mvc/views/razor). Značka Razor je kód, který komunikuje s kódu HTML, který vytvoří webovou stránku, která je odeslána do klienta.
+V modelu Model-View-Controller (MVC) *zobrazení* aplikace data prezentace a uživatelské interakce zpracovává. Zobrazení je šablonu HTML s vloženými [kód Razor](xref:mvc/views/razor). Kód Razor je kód, který komunikuje s kódu HTML, který vytvoří webovou stránku, která je odeslána do klienta.
 
-V aplikaci ASP.NET MVC jádra, jsou zobrazení *.cshtml* soubory, které používají [programovací jazyk C#](/dotnet/csharp/) v kódu Razor. Obvykle jsou seskupené zobrazit soubory do složky s názvem pro jednotlivé aplikace [řadiče](xref:mvc/controllers/actions). Složky jsou uložené v *zobrazení* složku v kořenovém adresáři aplikace:
+V ASP.NET Core MVC se zobrazeními *.cshtml* soubory, které používají [programovací jazyk C#](/dotnet/csharp/) v kódu Razor. Obvykle jsou seskupené zobrazit soubory do složky s názvem pro jednotlivé aplikace [řadiče](xref:mvc/controllers/actions). Složky jsou uložené v *zobrazení* složku v kořenovém adresáři aplikace:
 
-![Zobrazení složky v řešení pro Průzkumníka Visual Studio je otevřený s otevřený a zobrazit soubory About.cshtml, Contact.cshtml a Index.cshtml Domovská složka](overview/_static/views_solution_explorer.png)
+![Zobrazení složky řešení Průzkumníka Visual Studio je otevřený a nabízí domovské složky otevřete zobrazení soubory About.cshtml Contact.cshtml a Index.cshtml](overview/_static/views_solution_explorer.png)
 
-*Domů* je reprezentována řadiče *Domů* složky uvnitř *zobrazení* složky. *Domů* složka obsahuje zobrazení pro *o*, *kontaktujte*, a *Index* webové stránky (domovské stránce). Když uživatel požádá o, jednu z těchto tří webových stránkách akce kontroleru v *Domů* řadič určit, který tři zobrazení, které se používá k sestavení a vrátí webové stránky pro uživatele.
+*Domů* kontroleru je reprezentována *Domů* složky uvnitř *zobrazení* složky. *Domů* složka obsahuje zobrazení pro *o*, *kontakt*, a *Index* webové stránky (domovské stránky). Když si uživatel vyžádá jednu z těchto tří webových stránek, akce kontroleru v *Domů* řadič určit, který tři zobrazení, které se používá k sestavení a vrátit na webové stránce uživateli.
 
-Použití [rozložení](xref:mvc/views/layout) k poskytování části konzistentní webové stránky a snížit opakování kódu. Rozložení často obsahují záhlaví, navigace a nabídky prvky a zápatí. Záhlaví a zápatí obvykle obsahuje často používaný kód pro mnoho elementy metadata a odkazy na prostředky skriptu a stylu. Rozložení umožňuje vyhnout se tento často používaný kód v zobrazení.
+Použití [rozložení](xref:mvc/views/layout) k zajištění konzistentní webové části a omezení opakování kódu. Rozložení často obsahují záhlaví, prvky navigace a nabídky a zápatí. Záhlaví a zápatí obvykle obsahuje často používaný kód pro mnoho prvků metadata a odkazy na skript a styl prostředky. Rozložení umožňuje vyhnout se tento často používaný kód v zobrazení.
 
-[Částečná zobrazení](xref:mvc/views/partial) snížit zdvojení kódu pomocí správy opakovaně použitelné součásti zobrazení. Například je užitečné pro biografii Autor na web blogu, který se zobrazí v několik zobrazení částečné zobrazení. Vytváření biografii je obyčejnou zobrazení obsahu a nevyžaduje kód provést, aby bylo možné vytvořit obsahu pro webovou stránku. Autor biografii obsah není k dispozici na zobrazení ve samostatně, vazby modelu, takže použití částečné zobrazení pro tento typ obsahu je ideální.
+[Částečná zobrazení](xref:mvc/views/partial) snížení dojde k duplikaci kódu pomocí správy opakovaně použitelné součásti zobrazení. Například je užitečné pro Autor životopis na webu, blogu, který se zobrazí několik zobrazení částečného zobrazení. Vytváření životopis je běžné zobrazení obsahu a nevyžaduje, aby kód provést, aby vytvoření obsahu pro webovou stránku. Autor životopis obsah je dostupný zobrazením vazby modelu samostatně, takže použití částečné zobrazení pro tento typ obsahu je ideální.
 
-[Zobrazit součásti](xref:mvc/views/view-components) jsou podobná částečné zobrazení, protože umožňují snížit opakovaných kód, ale jsou vhodné pro zobrazení obsahu, který vyžaduje kód pro spuštění na serveru k vykreslení webovou stránku. Zobrazení součásti jsou užitečné při vykreslené obsah vyžaduje interakci databáze, například pro web nákupní košík. Zobrazení součásti nejsou omezena na modelu vazby k vytvoření výstupu webovou stránku.
+[Zobrazení komponenty](xref:mvc/views/view-components) jsou podobná částečné zobrazení, umožňují omezení opakování kódu, ale jsou vhodné pro zobrazení obsahu, který vyžaduje kód pro spuštění na serveru k vykreslení na webovou stránku. Zobrazení komponenty jsou užitečné, když vykreslovaný obsah vyžaduje interakci databáze, například pro webovou stránku nákupní košík. Komponenty zobrazení nejsou omezeni na vazby modelu, aby bylo možné generovat výstup webové stránky.
 
 ## <a name="benefits-of-using-views"></a>Výhody použití zobrazení
 
-Zobrazení nápovědy k vytvoření [oddělení obavy (SoC) návrhu](http://deviq.com/separation-of-concerns/) v aplikaci MVC oddělením kód rozhraní uživatelů z dalších částí aplikace. Následující SoC návrhu, bude vaše aplikace modulární, který nabízí několik výhod:
+Zobrazení nápovědy k navázání [návrhu oddělení otázky (SoC)](http://deviq.com/separation-of-concerns/) v rámci aplikace MVC oddělením značky uživatelského rozhraní od jiných částí aplikace. Podle SoC návrh umožňuje aplikaci modulární, který poskytuje několik výhod:
 
-* Tato aplikace je snazší správa, protože je lépe uspořádány. Zobrazení jsou obecně seskupené podle funkce aplikace. Díky tomu je snazší najít související zobrazení při práci na funkce.
-* Součástí aplikace jsou volně vázány. Můžete vytvářet a aktualizovat zobrazení aplikace odděleně od komponenty obchodní logiku a data access. Zobrazení aplikace můžete upravit aniž byste museli mít aktualizovat dalších částí aplikace.
-* Aby bylo jednodušší testování části uživatelského rozhraní aplikace, protože zobrazení jsou samostatné jednotky.
-* Kvůli lepší organizaci je méně pravděpodobné, že budete ať už náhodně opakování části uživatelského rozhraní.
+* Aplikace je snazší Údržba, protože je líp uspořádané. Zobrazení jsou obecně seskupené podle funkcí aplikace. Díky tomu je snazší najít související zobrazení při práci na funkci.
+* Součástí aplikace jsou volně vázány. Můžete vytvářet a aktualizovat zobrazení aplikace nezávisle na součásti obchodní logiku a data access. Zobrazení aplikace můžete změnit bez nutnosti nutně aktualizovat ostatní části aplikace.
+* Je snazší testování části uživatelského rozhraní aplikace, protože zobrazení jsou samostatné jednotky.
+* Kvůli lepší organizaci je méně pravděpodobné, že omylem opakováním části uživatelského rozhraní.
 
 ## <a name="creating-a-view"></a>Vytvoření zobrazení
 
-Zobrazení, které jsou specifické pro určitý kontroler jsou vytvořené v *zobrazení / [ControllerName]* složky. Zobrazení, které jsou sdíleny mezi řadiče jsou umístěny v *zobrazení a sdílených* složky. Pokud chcete vytvořit zobrazení, přidejte nový soubor a poskytněte stejný název jako jeho přidruženému kontroleru akce s *.cshtml* příponu souboru. Vytvoření zobrazení, která odpovídá *o* akce v *Domů* řadič, vytvořit *About.cshtml* souboru v *zobrazení Domů*složky:
+Zobrazení, které jsou specifické pro určitý kontroler vytvářejí *zobrazení / [parametr ControllerName]* složky. Zobrazení, která jsou sdílena mezi řadiče jsou umístěny v *zobrazení/Shared* složky. Vytvoření zobrazení, přidejte nový soubor a poskytněte stejný název jako akcí k přidruženému kontroleru se *.cshtml* příponu souboru. Vytvoření zobrazení, která odpovídá *o* v akci *Domů* vytvoření kontroleru, *About.cshtml* ve *zobrazení Domů*složky:
 
 [!code-cshtml[](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
-*Syntaxe Razor* značek začíná `@` symbol. Spusťte příkazy jazyka C# tím, že umístíte C# kódu v rámci [bloky kódu Razor](xref:mvc/views/razor#razor-code-blocks) nastavit ve složených závorkách (`{ ... }`). Například najdete v sekci přiřazení "O" `ViewData["Title"]` uvedené výše. Můžete zobrazit hodnoty v kódu HTML hodnotu s odkazem jednoduše `@` symbol. Zobrazit obsah `<h2>` a `<h3>` prvků uvedených výše.
+*Razor* značek začíná `@` symbol. Spusťte příkazy jazyka C# tak, že C# kódu v rámci [bloky kódu Razor](xref:mvc/views/razor#razor-code-blocks) nastavit ve složených závorkách (`{ ... }`). Příklad najdete v sekci přiřazení "O" `ViewData["Title"]` uvedené výše. Můžete jednoduše odkazující na hodnotu s zobrazit hodnoty v kódu HTML `@` symbol. Zobrazit obsah `<h2>` a `<h3>` prvků uvedených výše.
 
-Zobrazení obsahu uvedené výše je jenom část celé webové stránky, které je vykresleno do uživatele. Zbytek rozložení stránky a dalších běžných aspektů zobrazení jsou určené v jiných souborů zobrazení. Další informace najdete v tématu [rozložení tématu](xref:mvc/views/layout).
+Zobrazit obsah výše uvedené je pouze část celé webové stránky, které je vykresleno pro uživatele. Zbývající rozložení stránky a dalších běžných aspektů zobrazení jsou uvedeny v dalších souborů zobrazení. Další informace najdete v tématu [rozložení tématu](xref:mvc/views/layout).
 
-## <a name="how-controllers-specify-views"></a>Jak určit řadiče zobrazení
+## <a name="how-controllers-specify-views"></a>Jak určit kontrolerů zobrazení
 
-Zobrazení jsou obvykle vrácené z akce jako [ViewResult](/dotnet/api/microsoft.aspnetcore.mvc.viewresult), který je typem [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult). Můžete vytvořit a vrátí metodu akce `ViewResult` přímo, ale neprovádí běžně. Vzhledem k tomu, že většina řadičů dědí [řadič](/dotnet/api/microsoft.aspnetcore.mvc.controller), jednoduše použijte `View` Pomocná metoda vrátit `ViewResult`:
+Zobrazení jsou obvykle vrácená z akce, jako je [ViewResult](/dotnet/api/microsoft.aspnetcore.mvc.viewresult), což je typ [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult). Můžete vytvořit a vrátí metodu akce `ViewResult` přímo, ale neprovádí běžně. Protože většina řadičů dědit z [řadič](/dotnet/api/microsoft.aspnetcore.mvc.controller), jednoduše použít `View` pomocnou metodu se vraťte `ViewResult`:
 
 *HomeController.cs*
 
 [!code-csharp[](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
 
-Po návratu tato akce *About.cshtml* zobrazení zobrazen v poslední části vykresleno jako na následující webové stránce:
+Po návratu tato akce *About.cshtml* zobrazení je znázorněno v předchozí části se vykreslí jako na následující webové stránce:
 
-![O stránku v prohlížeči Edge](overview/_static/about-page.png)
+![O stránku zpracovanou v prohlížeči Microsoft Edge](overview/_static/about-page.png)
 
 `View` Pomocná metoda má několik přetížení. Volitelně můžete zadat:
 
@@ -70,7 +70,7 @@ Po návratu tato akce *About.cshtml* zobrazení zobrazen v poslední části vyk
   ```csharp
   return View("Orders");
   ```
-* A [modelu](xref:mvc/models/model-binding) mají být předána do zobrazení:
+* A [modelu](xref:mvc/models/model-binding) k předání do zobrazení:
 
   ```csharp
   return View(Orders);
@@ -83,59 +83,59 @@ Po návratu tato akce *About.cshtml* zobrazení zobrazen v poslední části vyk
 
 ### <a name="view-discovery"></a>Zobrazení zjišťování
 
-Když akce vrátí zobrazení, proces se nazývá *zobrazení zjišťování* proběhne. Tento proces určuje, který soubor zobrazení se používá na základě názvu zobrazení. 
+Po návratu akce zobrazení, proces se nazývá *zobrazení zjišťování* probíhá. Tento proces Určuje soubor, který zobrazení se používá na základě názvu zobrazení. 
 
-Výchozí chování `View` – metoda (`return View();`) je lze vrátit zobrazení se stejným názvem jako metodu akce, ve kterém je volána. Například *o* `ActionResult` název metody řadiče se používá k hledání pro zobrazení soubor s názvem *About.cshtml*. Nejprve hledá modulu runtime v *zobrazení / [ControllerName]* složka pro zobrazení. Pokud se nenajde odpovídající zobrazení, vyhledávání *sdílené* složka pro zobrazení.
+Výchozí chování `View` – metoda (`return View();`) je vrátit zobrazení s názvem, ze kterého je volána metoda akce. Například *o* `ActionResult` název metody kontroleru se používá k zobrazení souboru s názvem vyhledat *About.cshtml*. Nejprve, modul runtime hledá v *zobrazení / [parametr ControllerName]* složku pro zobrazení. Pokud se nenajde odpovídající zobrazení, hledá *Shared* složku pro zobrazení.
 
-Není důležité, pokud se implicitně vrátíte `ViewResult` s `return View();` nebo explicitně předat název zobrazení má `View` metoda s `return View("<ViewName>");`. V obou případech zobrazení zjišťování hledá odpovídající soubor zobrazení v tomto pořadí:
+Nebude vadit, když se implicitně vrátit `ViewResult` s `return View();` nebo explicitně předávat název zobrazení, který má `View` metodu s `return View("<ViewName>");`. V obou případech zobrazení zjišťování vyhledá odpovídající soubor zobrazení v tomto pořadí:
 
    1. *Views/\[ControllerName]/\[ViewName].cshtml*
    1. *Views/Shared/\[ViewName].cshtml*
 
-Místo názvu zobrazení se dá zadat cestu k zobrazení souboru. Pokud používáte absolutní cestu spouštění v kořenovém adresáři aplikace (volitelně od verze "/" nebo "~ /"), *.cshtml* musí být zadán rozšíření:
+Místo názvu zobrazení lze zadat cestu k souboru zobrazení. Pokud se používá absolutní cesta od kořenové aplikace (volitelně můžete od verze "/" nebo "~ /"), *.cshtml* rozšíření je nutné zadat:
 
 ```csharp
 return View("Views/Home/About.cshtml");
 ```
 
-Relativní cesta můžete použít také k určení zobrazení v různých adresářích bez *.cshtml* rozšíření. Uvnitř `HomeController`, můžete se vrátit *Index* zobrazení vaší *spravovat* zobrazení s relativní cesta:
+Můžete také použít relativní cestu k určení zobrazení v různých adresářích bez *.cshtml* rozšíření. Uvnitř `HomeController`, můžete se vrátit *Index* zobrazení vaší *spravovat* zobrazení s relativní cestou:
 
 ```csharp
 return View("../Manage/Index");
 ```
 
-Podobně můžete určit, na aktuální adresář konkrétní řadič se ". /" předpony:
+Podobně můžete určit aktuální adresář konkrétní řadič se ". /" předpona:
 
 ```csharp
 return View("./About");
 ```
 
-[Částečná zobrazení](xref:mvc/views/partial) a [zobrazení součásti](xref:mvc/views/view-components) použijte mechanismy pro zjišťování podobné (ale ne identické).
+[Částečná zobrazení](xref:mvc/views/partial) a [zobrazení součástí](xref:mvc/views/view-components) pomocí mechanismů zjišťování podobný (ale nejsou identické).
 
-Můžete přizpůsobit výchozí konvenci pro způsob zobrazení se nacházejí v rámci aplikace s použitím vlastní [IViewLocationExpander](/dotnet/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander).
+Můžete přizpůsobit výchozí konvence pro způsob zobrazení se nachází v rámci aplikace s použitím vlastní [IViewLocationExpander](/dotnet/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander).
 
-Zobrazení zjišťování spoléhá na hledání zobrazit soubory podle názvu souboru. Pokud podkladový systém souborů je velká a malá písmena, názvy zobrazení jsou pravděpodobně velká a malá písmena. Pro kompatibilitu mezi operační systémy malá a velká písmena mezi kontroleru a akce a přidružené zobrazení složky a názvy souborů. Pokud dojde k chybě, která soubor zobrazení nebyl nalezen při práci s systém souborů malá a velká písmena, potvrďte, že mezi požadované zobrazení souboru a název souboru skutečné zobrazení odpovídá malá a velká písmena.
+Zobrazení zjišťování spoléhá na hledání zobrazit soubory podle názvu souboru. Pokud podkladový systém souborů je velká a malá písmena, zobrazit názvy jsou pravděpodobně malá a velká písmena. Z důvodu kompatibility v operačních systémech rozlišovat velikost písmen mezi kontroleru a akce názvy a přidružené zobrazení složek a souborů. Pokud narazíte na chybu při práci se systémem souborů s rozlišením velkých nebyl nalezen soubor zobrazení, potvrzení, že malých a velkých písmen odpovídá mezi požadované zobrazení souboru a název souboru skutečné zobrazení.
 
-Postupujte podle osvědčený postup, uspořádání strukturu souborů pro zobrazení tak, aby odrážela vztahy mezi řadiče, akce a zobrazení udržovatelnosti a srozumitelnější.
+Dodržíte osvědčený postup uspořádání struktura souborů pro zobrazení tak, aby odrážely vztahy mezi kontrolerů, akce a zobrazení udržovatelnost a srozumitelnější.
 
-## <a name="passing-data-to-views"></a>Předávání dat zobrazení
+## <a name="passing-data-to-views"></a>Předání dat pro zobrazení
 
-Předejte data do zobrazení několika přístupy:
+Předejte data do zobrazení pomocí několik přístupů:
 
-* Data silného typu: viewmodel
+* Data se silnými typy: viewmodel
 * Slabě typovaná dat
-  - `ViewData` (`ViewDataAttribute`)
-  - `ViewBag`
+  * `ViewData` (`ViewDataAttribute`)
+  * `ViewBag`
 
-### <a name="strongly-typed-data-viewmodel"></a>Silného typu dat (viewmodel)
+### <a name="strongly-typed-data-viewmodel"></a>Dat silného typu (viewmodel)
 
-Většina robustní přístupu slouží k zadání [modelu](xref:mvc/models/model-binding) typu v zobrazení. Tento model se často označuje jako *viewmodel*. Instance typu viewmodel předáte do zobrazení z akce.
+Se nejrobustnější zadává [modelu](xref:mvc/models/model-binding) typ v zobrazení. Tento model se často označuje jako *viewmodel*. Předejte instanci typu viewmodel do zobrazení z akce.
 
-Použití viewmodel k předávání dat do zobrazení umožňuje zobrazit využívat výhod *silné* kontrola typu. *Silného typování* (nebo *silného typu*) znamená, že všechny proměnné a konstanta nemá explicitně definovaný typ (například `string`, `int`, nebo `DateTime`). V době kompilace se kontroluje platnost typy používané v zobrazení.
+Použití viewmodel k předávání dat k zobrazení umožňuje zobrazit výhod *silné* kontroly typu. *Silné typování* (nebo *silného typu*) znamená, že všechny proměnné a konstanty má typ, který explicitně definovány (například `string`, `int`, nebo `DateTime`). Platnost typy používané v zobrazení je zaškrtnuté políčko v době kompilace.
 
-[Visual Studio](https://www.visualstudio.com/vs/) a [Visual Studio Code](https://code.visualstudio.com/) seznamu členů silně typované třídy pomocí funkci [IntelliSense](/visualstudio/ide/using-intellisense). Pokud chcete zobrazit vlastnosti viewmodel, zadejte název proměnné pro viewmodel následovaný tečkou (`.`). To umožňuje rychlejší psaní kódu s méně chyby.
+[Visual Studio](https://www.visualstudio.com/vs/) a [Visual Studio Code](https://code.visualstudio.com/) seznam členů tříd se silnými typy použití funkce volána [IntelliSense](/visualstudio/ide/using-intellisense). Pokud chcete zobrazit vlastnosti viewmodel, zadejte název proměnné pro viewmodel následovaných tečkou (`.`). To vám umožňuje napsat kód rychleji s menším množstvím chyb.
 
-Zadejte model pomocí `@model` – direktiva. Použití modelu s `@Model`:
+Zadat pomocí modelu `@model` směrnice. Použití modelu s `@Model`:
 
 ```cshtml
 @model WebApplication1.ViewModels.Address
@@ -168,7 +168,7 @@ public IActionResult Contact()
 }
 ```
 
-Neexistují žádná omezení na modelu typy, které můžete zadat do zobrazení. Doporučujeme používat viewmodels prostý staré CLR objektů POCO () s minimální nebo žádnou chování (metody) definované. Obvykle jsou viewmodel třídy buď uložena v *modely* složku nebo samostatné *ViewModels* složku v kořenovém adresáři aplikace. *Adresu* viewmodel použít v předchozím příkladu je objektů POCO viewmodel, uložené v souboru s názvem *Address.cs*:
+Neexistují žádná omezení na typy modelů, které zadáte do zobrazení. Doporučujeme používat modely viewmodels prostý staré CLR objektů POCO s minimální nebo nulovou chování (metody) definované. Obvykle jsou tříd viewmodel buď uloženy v *modely* složku nebo samostatné *modely ViewModels* složku v kořenovém adresáři aplikace. *Adresu* viewmodel použitých v příkladu výše je viewmodel POCO, uloží se do souboru s názvem *Address.cs*:
 
 ```csharp
 namespace WebApplication1.ViewModels
@@ -184,31 +184,31 @@ namespace WebApplication1.ViewModels
 }
 ```
 
-Nic brání použití stejné tříd pro vaše viewmodel typy a typy modelu vaší firmy. Použití samostatných modelů však umožňuje zobrazení k odlišení nezávisle z obchodní logiku a data přístup částí aplikace. Oddělení modely a viewmodels také nabízí výhody zabezpečení při použití modelů [model vazby](xref:mvc/models/model-binding) a [ověření](xref:mvc/models/validation) pro data odesílaná do aplikace uživatelem.
+Nic neumožňuje použití stejné třídy pro viewmodel typů a typů modelu vaší firmy. Použití samostatných modelů však umožňuje zobrazení se liší od obchodní logiku a data nezávisle na sobě přístupu k částem vaší aplikace. Oddělení modely a modely viewmodels také nabízí výhody zabezpečení při použití modelů [vazby modelu](xref:mvc/models/model-binding) a [ověření](xref:mvc/models/validation) pro data odesílaná do aplikace uživatelem.
 
 <a name="VD_VB"></a>
 
-### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>Slabě typované dat (ViewData, ViewData atribut a ViewBag)
+### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>Slabě typované data (ViewData, atribut ViewData a objekt ViewBag)
 
-`ViewBag` *není k dispozici na stránkách Razor.*
+`ViewBag` *není k dispozici v stránky Razor.*
 
-Kromě zobrazení silného typu zobrazení mají přístup k *slabě typované* (také nazývané *volného typu*) shromažďování dat. Na rozdíl od silné typy *slabé typy* (nebo *ztrátě typy*) znamená, že jste si deklarovat explicitně typu dat, který používáte. Shromažďování dat o slabě typované můžete použít pro předávání malé množství dat a deaktivovat kontrolery a zobrazení.
+Kromě zobrazení se silnými typy, zobrazení je k dispozici přístup k *slabě typované* (také nazývané *volně psaný*) shromažďování dat o. Na rozdíl od silné typy *slabé typy* (nebo *dojde ke snížení typy*) znamená, že je nemusíte deklarovat explicitně typu dat, které používáte. Shromažďování dat o slabě typované můžete použít pro předávání malých objemů dat do a z kontrolerů a zobrazení.
 
 | Předávání dat mezi...                        | Příklad                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------ |
-| Řadiče a zobrazení                             | Naplnění rozevíracího seznamu, s daty.                                          |
+| Kontrolerem a zobrazením                             | Naplnění rozevíracího seznamu s daty.                                          |
 | Zobrazení a [rozložení zobrazení](xref:mvc/views/layout)   | Nastavení  **\<title >** obsahu elementu v zobrazení rozložení ze zobrazení souboru.  |
-| [Částečné zobrazení](xref:mvc/views/partial) a zobrazení | Pomůcku, která zobrazuje data v závislosti na webové stránky, uživatel si vyžádal.      |
+| [Částečné zobrazení](xref:mvc/views/partial) a zobrazení | Widget, který zobrazuje data založená na webové stránce, která uživatel si vyžádal.      |
 
-Tuto kolekci lze odkazovat pomocí buď `ViewData` nebo `ViewBag` vlastnosti kontrolery a zobrazení. `ViewData` Vlastnost je slovník slabě typované objektů. `ViewBag` Vlastnost je obálku kolem `ViewData` poskytuje dynamické vlastnosti základní `ViewData` kolekce.
+Tato kolekce může být odkazováno prostřednictvím buď `ViewData` nebo `ViewBag` vlastnosti kontrolerů a zobrazení. `ViewData` Vlastnost je slovník slabě typované objekty. `ViewBag` Vlastnost představuje obálku kolem `ViewData` poskytující dynamické vlastnosti pro základní `ViewData` kolekce.
 
-`ViewData` a `ViewBag` jsou vyřešeny dynamicky za běhu. Vzhledem k tomu, že nemáte nabízejí kontrolu typu kompilaci, jak jsou obecně více náchylné než použití viewmodel. Z tohoto důvodu někteří vývojáři radši chtěli použít minimálně nebo nikdy `ViewData` a `ViewBag`.
+`ViewData` a `ViewBag` jsou vyřešeny dynamicky za běhu. Protože nenabízejí kontrolu typu za kompilace, obě jsou obecně více náchylné než při použití viewmodel. Z tohoto důvodu někteří vývojáři dáváte přednost minimálně nebo vůbec `ViewData` a `ViewBag`.
 
 <a name="VD"></a>
 
 **ViewData**
 
-`ViewData` je [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) objekt přistupovat prostřednictvím `string` klíče. Řetězec dat lze ukládat a používat přímo bez nutnosti přetypování, ale musíte vysílat dalších `ViewData` objekt hodnoty pro konkrétní typy při extrahování je. Můžete použít `ViewData` předání dat z řadiče zobrazení a v zobrazeních, včetně [částečná zobrazení](xref:mvc/views/partial) a [rozložení](xref:mvc/views/layout).
+`ViewData` je [objektu ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) přistupuje prostřednictvím objektu `string` klíče. Řetězcová data můžete ukládat a používat přímo bez nutnosti přetypování, ale musíte přetypovat jiné `ViewData` hodnot na konkrétní typy objektu při jejich extrakci. Můžete použít `ViewData` k předání dat z řadiče, zobrazeními a v zobrazeních, včetně [částečná zobrazení](xref:mvc/views/partial) a [rozložení](xref:mvc/views/layout).
 
 Tady je příklad, který nastavuje hodnoty pozdrav a adresy `ViewData` v akci:
 
@@ -247,11 +247,12 @@ Práce s daty v zobrazení:
 ```
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **Atribut viewData**
 
-Jiná možnost, která používá [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) je [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). Vlastnosti v kontrolerech a modelech stránky Razor označených pomocí `[ViewData]` jejich hodnoty uložené a načíst ze slovníku.
+Další možností, které používá [objektu ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) je [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). Upravené vlastnosti v kontrolerech a modelech stránky Razor pomocí `[ViewData]` hodnoty uložené a načten ze slovníku.
 
-V následujícím příkladu obsahuje řadičem domovské `Title` vlastnost označených pomocí `[ViewData]`. `About` Metoda nastaví název o zobrazení:
+V následujícím příkladu obsahuje kontroler Home `Title` vlastnost upravené pomocí `[ViewData]`. `About` Metody nastavuje název o zobrazení:
 
 ```csharp
 public class HomeController : Controller
@@ -275,7 +276,7 @@ V zobrazení o přístup `Title` vlastnost jako vlastnost modelu:
 <h1>@Model.Title</h1>
 ```
 
-V rozložení je název číst ze slovníku ViewData:
+Název je v rozložení pro čtení ze slovníku ViewData:
 
 ```cshtml
 <!DOCTYPE html>
@@ -284,13 +285,14 @@ V rozložení je název číst ze slovníku ViewData:
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
-**ViewBag**
+**Objekt ViewBag**
 
-`ViewBag` *není k dispozici na stránkách Razor.*
+`ViewBag` *není k dispozici v stránky Razor.*
 
-`ViewBag` je [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) objekt, který poskytuje dynamické přístup k objektům, které jsou uložené v `ViewData`. `ViewBag` může být pohodlnější můžete pracovat, protože nevyžaduje přetypování. Následující příklad ukazuje, jak používat `ViewBag` se stejné výsledky jako pomocí `ViewData` výše:
+`ViewBag` je [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) poskytující dynamické přístup k objektům, které jsou uložené v `ViewData`. `ViewBag` může být vhodnější pro práci s, protože nevyžaduje přetypování. Následující příklad ukazuje, jak používat `ViewBag` s stejný výsledek jako při použití `ViewData` výše:
 
 ```csharp
 public IActionResult SomeAction()
@@ -319,13 +321,13 @@ public IActionResult SomeAction()
 </address>
 ```
 
-**Pomocí ViewData a ViewBag současně**
+**Použití slovníku ViewData a objekt ViewBag současně**
 
-`ViewBag` *není k dispozici na stránkách Razor.*
+`ViewBag` *není k dispozici v stránky Razor.*
 
-Vzhledem k tomu `ViewData` a `ViewBag` odkazovat na stejnou základní `ViewData` kolekce, můžete je používat `ViewData` a `ViewBag` a kombinovat a párovat mezi nimi při čtení a zápis hodnoty.
+Protože `ViewData` a `ViewBag` odkazovat na stejnou základní `ViewData` kolekce, je možné použít jak `ViewData` a `ViewBag` a kombinovat a párovat mezi nimi při čtení a zápisu hodnoty.
 
-Nastavit název pomocí `ViewBag` a popis pomocí `ViewData` v horní části *About.cshtml* zobrazení:
+Sada s použitím názvu `ViewBag` a popis použití `ViewData` v horní části *About.cshtml* zobrazení:
 
 ```cshtml
 @{
@@ -335,7 +337,7 @@ Nastavit název pomocí `ViewBag` a popis pomocí `ViewData` v horní části *A
 }
 ```
 
-Při čtení vlastností ale reverse použití `ViewData` a `ViewBag`. V *_Layout.cshtml* souboru, získat název pomocí `ViewData` a získat pomocí popis `ViewBag`:
+Čtení vlastností, ale reverse použití `ViewData` a `ViewBag`. V *_Layout.cshtml* soubor, pomocí názvu získat `ViewData` a získat popis použití `ViewBag`:
 
 ```cshtml
 <!DOCTYPE html>
@@ -348,7 +350,7 @@ Při čtení vlastností ale reverse použití `ViewData` a `ViewBag`. V *_Layou
 
 Mějte na paměti, že řetězce nevyžadují přetypování pro `ViewData`. Můžete použít `@ViewData["Title"]` bez přetypování.
 
-Pomocí obou `ViewData` a `ViewBag` ve stejnou dobu funguje, jako nepodporuje kombinace a porovnávání čtení a zápisu vlastnosti. Následující kód je vykreslen:
+Použitím `ViewData` a `ViewBag` ve stejný čas funguje, jako kombinace a porovnávání čtení a zápis do vlastnosti. Vykreslení následující značky:
 
 ```html
 <!DOCTYPE html>
@@ -359,25 +361,25 @@ Pomocí obou `ViewData` a `ViewBag` ve stejnou dobu funguje, jako nepodporuje ko
     ...
 ```
 
-**Souhrnné informace o rozdílech mezi ViewData a ViewBag**
+**Souhrnné informace o rozdílech mezi ViewData a objekt ViewBag**
 
- `ViewBag` není k dispozici na stránkách Razor.
+ `ViewBag` není k dispozici v stránky Razor.
 
 * `ViewData`
-  * Odvozená z [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary), takže má slovník vlastností, které mohou být užitečné, například `ContainsKey`, `Add`, `Remove`, a `Clear`.
-  * Klíče ve slovníku jsou řetězce, takže je povolen prázdný znak. Příklad: `ViewData["Some Key With Whitespace"]`
-  * Jakýkoli typ jinými než `string` musíte vysílat v zobrazení použít `ViewData`.
+  * Je odvozen od [objektu ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary), takže má slovníkové vlastnosti, které mohou být užitečné, například `ContainsKey`, `Add`, `Remove`, a `Clear`.
+  * Klíče ve slovníku jsou řetězce, proto je povolen prázdný znak. Příklad: `ViewData["Some Key With Whitespace"]`
+  * Jakýkoli typ jiný než `string` musíte přetypovat v zobrazení a použití `ViewData`.
 * `ViewBag`
-  * Odvozená z [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata), takže umožňuje vytváření dynamických vlastností pomocí zápisu s tečkou (`@ViewBag.SomeKey = <value or object>`), a není vyžadováno žádné přetypování. Syntaxe `ViewBag` umožňuje rychlejší pro přidání do kontrolery a zobrazení.
-  * Jednodušší zkontrolujte hodnoty null. Příklad: `@ViewBag.Person?.Name`
+  * Je odvozen od [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata), takže umožňuje vytváření dynamických vlastností pomocí zápisu s tečkou (`@ViewBag.SomeKey = <value or object>`), a není nutná žádná přetypování. Syntaxe `ViewBag` umožňuje rychlejší pro přidání do kontrolerů a zobrazení.
+  * Jednodušší kontrola hodnot null. Příklad: `@ViewBag.Person?.Name`
 
-**Kdy použít ViewData nebo ViewBag**
+**Použití slovníku ViewData nebo objekt ViewBag**
 
-Obě `ViewData` a `ViewBag` jsou rovnoměrně platný přístupy k předání malé množství dat mezi kontrolery a zobrazení. Volba používané podle preference. Můžete kombinovat a párovat `ViewData` a `ViewBag` objekty, ale kód je snazší ke čtení a udržovat s jedním ze způsobů použít konzistentně. Obou přístupů jsou přeložit dynamicky za běhu a proto náchylné k způsobuje chyby za běhu. Vyhněte se některé vývojové týmy je.
+Obě `ViewData` a `ViewBag` jsou rovnoměrně platný přístupy k předání malé množství dat mezi kontrolerů a zobrazení. Volba používané podle předvoleb. Můžete kombinovat a párovat `ViewData` a `ViewBag` objekty, ale kód je jednodušší číst a spravovat s jedním z přístupů používány konzistentně. Oba přístupy jsou vyřešené dynamicky za běhu a proto náchylná k způsobující chyby za běhu. Některé vývojové týmy jim vyhnout.
 
 ### <a name="dynamic-views"></a>Dynamické zobrazení
 
-Typ zobrazení, která není deklarovat model pomocí `@model` , ale dostatek instanci modelu předán do je (například `return View(Address);`) může odkazovat na instanci vlastnosti dynamicky:
+Zobrazení, která není deklarovat modelu zadejte pomocí `@model` , ale dostatek instanci modelu předaný k nim (například `return View(Address);`) můžete odkazovat na instanci vlastnosti dynamicky:
 
 ```cshtml
 <address>
@@ -387,12 +389,12 @@ Typ zobrazení, která není deklarovat model pomocí `@model` , ale dostatek in
 </address>
 ```
 
-Tato funkce nabízí flexibilitu ale nenabízí kompilace ochrany ani IntelliSense. Pokud vlastnost neexistuje, webová stránka generování selže za běhu.
+Tato funkce nabízí flexibilitu, ale nenabízí ochrany kompilace ani IntelliSense. Pokud vlastnost neexistuje, webové stránky generování nezdaří za běhu.
 
-## <a name="more-view-features"></a>Více zobrazení funkcí
+## <a name="more-view-features"></a>Další zobrazení funkcí
 
-[Značka pomocné rutiny](xref:mvc/views/tag-helpers/intro) snadno přidat chování na straně serveru do existující značky HTML. Pomocí značky Pomocníci zabraňuje nemusíte psát vlastní kód nebo pomocné rutiny v rámci zobrazení. Značka pomocníků se použijí jako atributy prvků HTML a ignorují podle editory, které nelze zpracovat. To umožňuje upravit a vykreslit zobrazení Kód v různých nástrojů.
+[Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují snadno přidat chování na straně serveru k existující značky HTML. Použití pomocných rutin značek Polly nemusíte psát vlastní kód nebo pomocné rutiny v rámci zobrazení. Pomocné rutiny značek se použijí jako atributy prvků HTML a jsou ignorovány ve editorů, které nelze zpracovat. To umožňuje upravit a vykreslení zobrazení kódu v různých nástrojů.
 
-Generování vlastní značky HTML můžete dosáhnout s mnoho předdefinovaných pomocné rutiny HTML. Složitější logiku uživatelského rozhraní lze provádět pomocí [zobrazení součásti](xref:mvc/views/view-components). Zobrazení součásti zadejte stejné SoC kterých řadiče a nabídnout zobrazení. Se může eliminovat potřebu akcemi a zobrazeními, které pracují s daty používá společné prvky uživatelského rozhraní.
+Generování vlastní značky HTML lze nastavit pomocí mnoho integrovaných pomocných rutin HTML. Složitější logiku uživatelského rozhraní může být zpracována [komponenty zobrazení](xref:mvc/views/view-components). Zobrazení komponenty poskytují stejné SoC tohoto řadiče a nabídnout zobrazení. Odstraňují potřebu akcemi a zobrazeními, které pracují s daty používá společné prvky uživatelského rozhraní.
 
-Například mnoho dalších aspektů ASP.NET Core, zobrazení podporu [vkládání závislostí](xref:fundamentals/dependency-injection), povolení services [vloženy do zobrazení](xref:mvc/views/dependency-injection).
+Stejně jako mnoho dalších aspektů ASP.NET Core, zobrazení podporu [injektáž závislostí](xref:fundamentals/dependency-injection), umožní službám být [vloženy do zobrazení](xref:mvc/views/dependency-injection).

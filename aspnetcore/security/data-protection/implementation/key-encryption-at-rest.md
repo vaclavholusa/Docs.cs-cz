@@ -1,108 +1,133 @@
 ---
-title: Šifrování klíče v klidovém stavu uložených v ASP.NET Core
+title: Šifrování klíčů v klidovém stavu uložených v ASP.NET Core
 author: rick-anderson
-description: Další podrobnosti implementace ochrany dat ASP.NET Core klíče šifrování v klidovém stavu.
+description: Přečtěte si podrobnosti implementace ochrany dat ASP.NET Core klíče šifrování v klidovém stavu.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 07/16/2018
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: c733540bbee2d48ab45cf2b230b7be1ee07fb146
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 52c3137dbe467096364b42430c92aecc7c15e313
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274697"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219287"
 ---
-# <a name="key-encryption-at-rest-in-aspnet-core"></a><span data-ttu-id="23258-103">Šifrování klíče v klidovém stavu uložených v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="23258-103">Key encryption at rest in ASP.NET Core</span></span>
+# <a name="key-encryption-at-rest-in-aspnet-core"></a><span data-ttu-id="a8f4c-103">Šifrování klíčů v klidovém stavu uložených v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="a8f4c-103">Key encryption at rest in ASP.NET Core</span></span>
 
-<a name="data-protection-implementation-key-encryption-at-rest"></a>
+<span data-ttu-id="a8f4c-104">Systém ochrany dat [využívá mechanismus zjišťování ve výchozím nastavení](xref:security/data-protection/configuration/default-settings) k určení jak kryptografické klíče by měla být v klidovém stavu zašifrovaná.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-104">The data protection system [employs a discovery mechanism by default](xref:security/data-protection/configuration/default-settings) to determine how cryptographic keys should be encrypted at rest.</span></span> <span data-ttu-id="a8f4c-105">Vývojář můžete přepsat mechanismus zjišťování a ručně zadat, jak by měl být klíčů v klidovém stavu zašifrovaná.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-105">The developer can override the discovery mechanism and manually specify how keys should be encrypted at rest.</span></span>
 
-<span data-ttu-id="23258-104">Ve výchozím nastavení systému ochrany dat [využívá Heuristika](xref:security/data-protection/configuration/default-settings) k určení jak kryptografických materiál klíče by měla být v zašifrované podobě.</span><span class="sxs-lookup"><span data-stu-id="23258-104">By default, the data protection system [employs a heuristic](xref:security/data-protection/configuration/default-settings) to determine how cryptographic key material should be encrypted at rest.</span></span> <span data-ttu-id="23258-105">Vývojář můžete přepsat heuristiky a ručně zadat, jak klíče by měla být v zašifrované podobě.</span><span class="sxs-lookup"><span data-stu-id="23258-105">The developer can override the heuristic and manually specify how keys should be encrypted at rest.</span></span>
+> [!WARNING]
+> <span data-ttu-id="a8f4c-106">Pokud zadáte explicitní [klíče trvalého umístění](xref:security/data-protection/implementation/key-storage-providers), systém pro ochranu dat deregisters výchozí šifrování klíčů v mechanismu rest.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-106">If you specify an explicit [key persistence location](xref:security/data-protection/implementation/key-storage-providers), the data protection system deregisters the default key encryption at rest mechanism.</span></span> <span data-ttu-id="a8f4c-107">Klíče jsou v důsledku toho již šifrují při nečinnosti.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-107">Consequently, keys are no longer encrypted at rest.</span></span> <span data-ttu-id="a8f4c-108">Doporučujeme vám [zadejte mechanismus explicitní šifrování klíče](xref:security/data-protection/implementation/key-encryption-at-rest) pro nasazení v produkčním prostředí.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-108">We recommend that you [specify an explicit key encryption mechanism](xref:security/data-protection/implementation/key-encryption-at-rest) for production deployments.</span></span> <span data-ttu-id="a8f4c-109">Šifrování v klidovém stavu mechanismus možnosti jsou popsané v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-109">The encryption-at-rest mechanism options are described in this topic.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="23258-106">Pokud zadáte explicitní klíče šifrování v mechanismus rest, bude systém ochrany dat zrušení registrace výchozího mechanismu úložiště klíčů, které poskytuje heuristiky.</span><span class="sxs-lookup"><span data-stu-id="23258-106">If you specify an explicit key encryption at rest mechanism, the data protection system will deregister the default key storage mechanism that the heuristic provided.</span></span> <span data-ttu-id="23258-107">Je nutné [zadejte mechanismus explicitní úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers), jinak systému ochrany dat, nebude možné spustit.</span><span class="sxs-lookup"><span data-stu-id="23258-107">You must [specify an explicit key storage mechanism](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers), otherwise the data protection system will fail to start.</span></span>
+::: moniker range=">= aspnetcore-2.1"
 
-<a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
+## <a name="azure-key-vault"></a><span data-ttu-id="a8f4c-110">Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="a8f4c-110">Azure Key Vault</span></span>
 
-<span data-ttu-id="23258-108">Systém ochrany dat se dodává s tři mechanismy šifrovací klíče v poli.</span><span class="sxs-lookup"><span data-stu-id="23258-108">The data protection system ships with three in-box key encryption mechanisms.</span></span>
-
-## <a name="windows-dpapi"></a><span data-ttu-id="23258-109">Windows DPAPI</span><span class="sxs-lookup"><span data-stu-id="23258-109">Windows DPAPI</span></span>
-
-<span data-ttu-id="23258-110">*Tento mechanismus je k dispozici pouze v systému Windows.*</span><span class="sxs-lookup"><span data-stu-id="23258-110">*This mechanism is available only on Windows.*</span></span>
-
-<span data-ttu-id="23258-111">Pokud se používá rozhraní Windows DPAPI, materiál klíče, bude se šifrovat prostřednictvím [CryptProtectData](https://msdn.microsoft.com/library/windows/desktop/aa380261(v=vs.85).aspx) před byly trvalé do úložiště.</span><span class="sxs-lookup"><span data-stu-id="23258-111">When Windows DPAPI is used, key material will be encrypted via [CryptProtectData](https://msdn.microsoft.com/library/windows/desktop/aa380261(v=vs.85).aspx) before being persisted to storage.</span></span> <span data-ttu-id="23258-112">Rozhraní DPAPI je příslušným šifrovacím mechanismus pro data, která budou nikdy číst mimo aktuální počítač (přestože je možné zálohovat tyto klíče až do služby Active Directory, zjistit [DPAPI a cestovní profily](https://support.microsoft.com/kb/309408/#6)).</span><span class="sxs-lookup"><span data-stu-id="23258-112">DPAPI is an appropriate encryption mechanism for data that will never be read outside of the current machine (though it's possible to back these keys up to Active Directory; see [DPAPI and Roaming Profiles](https://support.microsoft.com/kb/309408/#6)).</span></span> <span data-ttu-id="23258-113">Pro příklad konfigurace DPAPI šifrovací klíče na rest.</span><span class="sxs-lookup"><span data-stu-id="23258-113">For example to configure DPAPI key-at-rest encryption.</span></span>
+<span data-ttu-id="a8f4c-111">Pro ukládání klíčů v [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), nakonfigurujte systém s [ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault) v `Startup` třídy:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-111">To store keys in [Azure Key Vault](https://azure.microsoft.com/services/key-vault/), configure the system with [ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault) in the `Startup` class:</span></span>
 
 ```csharp
-sc.AddDataProtection()
-    // only the local user account can decrypt the keys
-    .ProtectKeysWithDpapi();
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToAzureBlobStorage(new Uri("<blobUriWithSasToken>"))
+        .ProtectKeysWithAzureKeyVault("<keyIdentifier>", "<clientId>", "<clientSecret>");
+}
 ```
 
-<span data-ttu-id="23258-114">Pokud `ProtectKeysWithDpapi` je volána bez parametrů, pouze aktuální uživatelský účet systému Windows může dekódovat trvalou materiál klíče.</span><span class="sxs-lookup"><span data-stu-id="23258-114">If `ProtectKeysWithDpapi` is called with no parameters, only the current Windows user account can decipher the persisted key material.</span></span> <span data-ttu-id="23258-115">Volitelně můžete zadat, že libovolný uživatelský účet v počítači (nikoli pouze aktuální uživatelský účet) měl být schopný dekódovat materiál klíče, jak je znázorněno následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="23258-115">You can optionally specify that any user account on the machine (not just the current user account) should be able to decipher the key material, as shown in the below example.</span></span>
+<span data-ttu-id="a8f4c-112">Další informace najdete v tématu [Konfigurace ochrany dat ASP.NET Core: ProtectKeysWithAzureKeyVault](xref:security/data-protection/configuration/overview#protectkeyswithazurekeyvault).</span><span class="sxs-lookup"><span data-stu-id="a8f4c-112">For more information, see [Configure ASP.NET Core Data Protection: ProtectKeysWithAzureKeyVault](xref:security/data-protection/configuration/overview#protectkeyswithazurekeyvault).</span></span>
+
+::: moniker-end
+
+## <a name="windows-dpapi"></a><span data-ttu-id="a8f4c-113">Windows DPAPI</span><span class="sxs-lookup"><span data-stu-id="a8f4c-113">Windows DPAPI</span></span>
+
+<span data-ttu-id="a8f4c-114">**Platí jenom pro nasazení Windows.**</span><span class="sxs-lookup"><span data-stu-id="a8f4c-114">**Only applies to Windows deployments.**</span></span>
+
+<span data-ttu-id="a8f4c-115">Při použití rozhraní Windows DPAPI materiál klíče je zašifrovaný pomocí [CryptProtectData](/windows/desktop/api/dpapi/nf-dpapi-cryptprotectdata) před se ukládají do úložiště.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-115">When Windows DPAPI is used, key material is encrypted with [CryptProtectData](/windows/desktop/api/dpapi/nf-dpapi-cryptprotectdata) before being persisted to storage.</span></span> <span data-ttu-id="a8f4c-116">Rozhraní DPAPI je mechanismus příslušným šifrovacím pro data, která se vůbec nečte mimo aktuální počítač (i když je možné zálohovat tyto klíče do služby Active Directory, naleznete v tématu [DPAPI a cestovní profily](https://support.microsoft.com/kb/309408/#6)).</span><span class="sxs-lookup"><span data-stu-id="a8f4c-116">DPAPI is an appropriate encryption mechanism for data that's never read outside of the current machine (though it's possible to back these keys up to Active Directory; see [DPAPI and Roaming Profiles](https://support.microsoft.com/kb/309408/#6)).</span></span> <span data-ttu-id="a8f4c-117">Pokud chcete nakonfigurovat šifrování DPAPI klíč v klidovém stavu, volání jednoho z [ProtectKeysWithDpapi](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithdpapi) rozšiřující metody:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-117">To configure DPAPI key-at-rest encryption, call one of the [ProtectKeysWithDpapi](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithdpapi) extension methods:</span></span>
 
 ```csharp
-sc.AddDataProtection()
-    // all user accounts on the machine can decrypt the keys
-    .ProtectKeysWithDpapi(protectToLocalMachine: true);
+public void ConfigureServices(IServiceCollection services)
+{
+    // Only the local user account can decrypt the keys
+    services.AddDataProtection()
+        .ProtectKeysWithDpapi();
+}
 ```
 
-## <a name="x509-certificate"></a><span data-ttu-id="23258-116">Certifikát X.509</span><span class="sxs-lookup"><span data-stu-id="23258-116">X.509 certificate</span></span>
-
-<span data-ttu-id="23258-117">*Tento mechanismus není k dispozici na `.NET Core 1.0` nebo `1.1`.*</span><span class="sxs-lookup"><span data-stu-id="23258-117">*This mechanism isn't available on `.NET Core 1.0` or `1.1`.*</span></span>
-
-<span data-ttu-id="23258-118">Pokud vaše aplikace je rozdělena mezi více počítačů, může být vhodné pro distribuci sdíleného certifikátu X.509 mezi počítači a konfigurace aplikací k použití tohoto certifikátu pro šifrování klíče v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="23258-118">If your application is spread across multiple machines, it may be convenient to distribute a shared X.509 certificate across the machines and to configure applications to use this certificate for encryption of keys at rest.</span></span> <span data-ttu-id="23258-119">Níže najdete příklad.</span><span class="sxs-lookup"><span data-stu-id="23258-119">See below for an example.</span></span>
+<span data-ttu-id="a8f4c-118">Pokud `ProtectKeysWithDpapi` je zavolán bez parametrů, pouze pro aktuální uživatelský účet Windows může dešifrovat trvalý kanál klíč.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-118">If `ProtectKeysWithDpapi` is called with no parameters, only the current Windows user account can decipher the persisted key ring.</span></span> <span data-ttu-id="a8f4c-119">Volitelně můžete zadat, že nějakému uživatelskému účtu počítače (nejen aktuální uživatelský účet) možné dešifrovat aktualizační kanál, který klíč:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-119">You can optionally specify that any user account on the machine (not just the current user account) be able to decipher the key ring:</span></span>
 
 ```csharp
-sc.AddDataProtection()
-    // searches the cert store for the cert with this thumbprint
-    .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
+public void ConfigureServices(IServiceCollection services)
+{
+    // All user accounts on the machine can decrypt the keys
+    services.AddDataProtection()
+        .ProtectKeysWithDpapi(protectToLocalMachine: true);
+}
 ```
 
-<span data-ttu-id="23258-120">Z důvodu omezení rozhraní .NET Framework jsou podporovány pouze certifikáty s CAPI privátních klíčů.</span><span class="sxs-lookup"><span data-stu-id="23258-120">Due to .NET Framework limitations only certificates with CAPI private keys are supported.</span></span> <span data-ttu-id="23258-121">V tématu [šifrování založené na certifikátech s Windows DPAPI-NG](#data-protection-implementation-key-encryption-at-rest-dpapi-ng) níže možná řešení těchto omezení.</span><span class="sxs-lookup"><span data-stu-id="23258-121">See [Certificate-based encryption with Windows DPAPI-NG](#data-protection-implementation-key-encryption-at-rest-dpapi-ng) below for possible workarounds to these limitations.</span></span>
+::: moniker range=">= aspnetcore-2.0"
 
-<a name="data-protection-implementation-key-encryption-at-rest-dpapi-ng"></a>
+## <a name="x509-certificate"></a><span data-ttu-id="a8f4c-120">Certifikát X.509</span><span class="sxs-lookup"><span data-stu-id="a8f4c-120">X.509 certificate</span></span>
 
-## <a name="windows-dpapi-ng"></a><span data-ttu-id="23258-122">Windows DPAPI-NG</span><span class="sxs-lookup"><span data-stu-id="23258-122">Windows DPAPI-NG</span></span>
-
-<span data-ttu-id="23258-123">*Tento mechanismus je k dispozici pouze v systému Windows 8 nebo Windows Server 2012 a novější.*</span><span class="sxs-lookup"><span data-stu-id="23258-123">*This mechanism is available only on Windows 8 / Windows Server 2012 and later.*</span></span>
-
-<span data-ttu-id="23258-124">Počínaje Windows 8, operační systém podporuje rozhraní DPAPI-NG (také nazývané CNG DPAPI).</span><span class="sxs-lookup"><span data-stu-id="23258-124">Beginning with Windows 8, the operating system supports DPAPI-NG (also called CNG DPAPI).</span></span> <span data-ttu-id="23258-125">Microsoft rozložen jeho scénáři použití následujícím způsobem.</span><span class="sxs-lookup"><span data-stu-id="23258-125">Microsoft lays out its usage scenario as follows.</span></span>
-
-   <span data-ttu-id="23258-126">Cloud computing ale často vyžaduje že být dešifrován na jiném tohoto obsahu šifrované na jednom počítači.</span><span class="sxs-lookup"><span data-stu-id="23258-126">Cloud computing, however, often requires that content encrypted on one computer be decrypted on another.</span></span> <span data-ttu-id="23258-127">Proto počínaje Windows 8, Microsoft rozšířené na nápad použití relativně jednoduché rozhraní API pro zahrnovat scénářích cloudu.</span><span class="sxs-lookup"><span data-stu-id="23258-127">Therefore, beginning with Windows 8, Microsoft extended the idea of using a relatively straightforward API to encompass cloud scenarios.</span></span> <span data-ttu-id="23258-128">Toto nové rozhraní API, volá rozhraní DPAPI-NG, umožňuje bezpečně sdílet tajné klíče (klíče, hesla, materiál klíče) a zprávy a chrání je na sadu objektů, které lze použít k odemknutí je na různých počítačích po správné ověření a autorizaci.</span><span class="sxs-lookup"><span data-stu-id="23258-128">This new API, called DPAPI-NG, enables you to securely share secrets (keys, passwords, key material) and messages by protecting them to a set of principals that can be used to unprotect them on different computers after proper authentication and authorization.</span></span>
-
-   <span data-ttu-id="23258-129">Z [o CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)</span><span class="sxs-lookup"><span data-stu-id="23258-129">From [About CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)</span></span>
-
-<span data-ttu-id="23258-130">Objekt je kódovaná jako popisovač pravidla ochrany.</span><span class="sxs-lookup"><span data-stu-id="23258-130">The principal is encoded as a protection descriptor rule.</span></span> <span data-ttu-id="23258-131">Vezměte v úvahu následujícím příkladu, který šifruje materiál klíče tak, aby pouze připojený k doméně uživatele se zadaným identifikátorem SID mohly dešifrovat materiál klíče.</span><span class="sxs-lookup"><span data-stu-id="23258-131">Consider the below example, which encrypts key material such that only the domain-joined user with the specified SID can decrypt the key material.</span></span>
+<span data-ttu-id="a8f4c-121">Pokud aplikace je rozdělena mezi více počítačů, může být vhodné sdíleného certifikátu X.509 distribuovat napříč počítači a konfiguraci prostředí aplikace, které používají certifikát pro šifrování klíčů v klidovém stavu:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-121">If the app is spread across multiple machines, it may be convenient to distribute a shared X.509 certificate across the machines and configure the hosted apps to use the certificate for encryption of keys at rest:</span></span>
 
 ```csharp
-sc.AddDataProtection()
-    // uses the descriptor rule "SID=S-1-5-21-..."
-    .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
-    flags: DpapiNGProtectionDescriptorFlags.None);
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
+}
 ```
 
-<span data-ttu-id="23258-132">Je také bez parametrů přetížení `ProtectKeysWithDpapiNG`.</span><span class="sxs-lookup"><span data-stu-id="23258-132">There's also a parameterless overload of `ProtectKeysWithDpapiNG`.</span></span> <span data-ttu-id="23258-133">Toto je metoda užitečný pro zadání pravidlo "SID dolování =", kde dolování je SID aktuální uživatelský účet systému Windows.</span><span class="sxs-lookup"><span data-stu-id="23258-133">This is a convenience method for specifying the rule "SID=mine", where mine is the SID of the current Windows user account.</span></span>
+<span data-ttu-id="a8f4c-122">Z důvodu omezení rozhraní .NET Framework se podporují pouze certifikáty s CAPI privátních klíčů.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-122">Due to .NET Framework limitations, only certificates with CAPI private keys are supported.</span></span> <span data-ttu-id="a8f4c-123">Podívejte se níže uvedený obsah možná řešení na těchto omezení.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-123">See the content below for possible workarounds to these limitations.</span></span>
+
+::: moniker-end
+
+## <a name="windows-dpapi-ng"></a><span data-ttu-id="a8f4c-124">Windows DPAPI-NG</span><span class="sxs-lookup"><span data-stu-id="a8f4c-124">Windows DPAPI-NG</span></span>
+
+<span data-ttu-id="a8f4c-125">**Tento mechanismus je k dispozici pouze v systému Windows 8 nebo Windows Server 2012 nebo novější.**</span><span class="sxs-lookup"><span data-stu-id="a8f4c-125">**This mechanism is available only on Windows 8/Windows Server 2012 or later.**</span></span>
+
+<span data-ttu-id="a8f4c-126">Od verze Windows 8, operační systém Windows podporuje rozhraní DPAPI-NG (také nazývané CNG DPAPI).</span><span class="sxs-lookup"><span data-stu-id="a8f4c-126">Beginning with Windows 8, Windows OS supports DPAPI-NG (also called CNG DPAPI).</span></span> <span data-ttu-id="a8f4c-127">Další informace najdete v tématu [o rozhraní DPAPI CNG](/windows/desktop/SecCNG/cng-dpapi).</span><span class="sxs-lookup"><span data-stu-id="a8f4c-127">For more information, see [About CNG DPAPI](/windows/desktop/SecCNG/cng-dpapi).</span></span>
+
+<span data-ttu-id="a8f4c-128">Objekt zabezpečení je zakódován jako pravidla popisovač ochrany.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-128">The principal is encoded as a protection descriptor rule.</span></span> <span data-ttu-id="a8f4c-129">V následujícím příkladu, který volá [ProtectKeysWithDpapiNG](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithdpaping)pouze uživatel připojený k doméně se zadaným identifikátorem SID mohly dešifrovat aktualizační kanál, který klíč:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-129">In the following example that calls [ProtectKeysWithDpapiNG](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithdpaping), only the domain-joined user with the specified SID can decrypt the key ring:</span></span>
 
 ```csharp
-sc.AddDataProtection()
-    // uses the descriptor rule "SID={current account SID}"
-    .ProtectKeysWithDpapiNG();
-```
-
-<span data-ttu-id="23258-134">V tomto scénáři je zodpovědný za distribuci šifrovací klíče, který používá rozhraní DPAPI NG operace řadič domény AD.</span><span class="sxs-lookup"><span data-stu-id="23258-134">In this scenario, the AD domain controller is responsible for distributing the encryption keys used by the DPAPI-NG operations.</span></span> <span data-ttu-id="23258-135">Cílový uživatel bude moci dešifrovat šifrovaná data z libovolného počítače připojeného k doméně (za předpokladu, že je proces spuštěný v rámci své identity).</span><span class="sxs-lookup"><span data-stu-id="23258-135">The target user will be able to decipher the encrypted payload from any domain-joined machine (provided that the process is running under their identity).</span></span>
-
-## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a><span data-ttu-id="23258-136">Šifrování založené na certifikátech s Windows DPAPI-NG</span><span class="sxs-lookup"><span data-stu-id="23258-136">Certificate-based encryption with Windows DPAPI-NG</span></span>
-
-<span data-ttu-id="23258-137">Pokud používáte systém na Windows 8.1 nebo Windows Server 2012 R2 nebo novější, můžete použít Windows DPAPI-NG k provedení na základě certifikátu šifrování, i když aplikace běží na .NET Core.</span><span class="sxs-lookup"><span data-stu-id="23258-137">If you're running on Windows 8.1 / Windows Server 2012 R2 or later, you can use Windows DPAPI-NG to perform certificate-based encryption, even if the application is running on .NET Core.</span></span> <span data-ttu-id="23258-138">Abyste mohli využívat tohoto objektu, použijte řetězce popisovače pravidla "certifikát = HashId:thumbprint", kde je kryptografický otisk kódováním šestnáctkově SHA1 kryptografický otisk certifikátu pro použití.</span><span class="sxs-lookup"><span data-stu-id="23258-138">To take advantage of this, use the rule descriptor string "CERTIFICATE=HashId:thumbprint", where thumbprint is the hex-encoded SHA1 thumbprint of the certificate to use.</span></span> <span data-ttu-id="23258-139">Níže najdete příklad.</span><span class="sxs-lookup"><span data-stu-id="23258-139">See below for an example.</span></span>
-
-```csharp
-sc.AddDataProtection()
-    // searches the cert store for the cert with this thumbprint
-    .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0",
+public void ConfigureServices(IServiceCollection services)
+{
+    // Uses the descriptor rule "SID=S-1-5-21-..."
+    services.AddDataProtection()
+        .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
         flags: DpapiNGProtectionDescriptorFlags.None);
+}
 ```
 
-<span data-ttu-id="23258-140">Všechny aplikace, která je na tomto úložišti odkazoval musí být spuštěné na Windows 8.1 nebo Windows Server 2012 R2 nebo novější, abyste mohli dekódovat tento klíč.</span><span class="sxs-lookup"><span data-stu-id="23258-140">Any application which is pointed at this repository must be running on Windows 8.1 / Windows Server 2012 R2 or later to be able to decipher this key.</span></span>
+<span data-ttu-id="a8f4c-130">K dispozici je také na bez parametrů přetížení `ProtectKeysWithDpapiNG`.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-130">There's also a parameterless overload of `ProtectKeysWithDpapiNG`.</span></span> <span data-ttu-id="a8f4c-131">Pomocí této metody usnadnění práce můžete zadat pravidlo "SID = {CURRENT_ACCOUNT_SID}", kde *CURRENT_ACCOUNT_SID* je SID aktuálního uživatelského účtu Windows:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-131">Use this convenience method to specify the rule "SID={CURRENT_ACCOUNT_SID}", where *CURRENT_ACCOUNT_SID* is the SID of the current Windows user account:</span></span>
 
-## <a name="custom-key-encryption"></a><span data-ttu-id="23258-141">Vlastní šifrovací klíče</span><span class="sxs-lookup"><span data-stu-id="23258-141">Custom key encryption</span></span>
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Use the descriptor rule "SID={current account SID}"
+    services.AddDataProtection()
+        .ProtectKeysWithDpapiNG();
+}
+```
 
-<span data-ttu-id="23258-142">Pokud v poli mechanismy nejsou vhodné, vývojáře můžete určit vlastní mechanismus šifrování pomocí klíče pomocí vlastní `IXmlEncryptor`.</span><span class="sxs-lookup"><span data-stu-id="23258-142">If the in-box mechanisms are not appropriate, the developer can specify their own key encryption mechanism by providing a custom `IXmlEncryptor`.</span></span>
+<span data-ttu-id="a8f4c-132">V tomto scénáři je zodpovědný za distribuci šifrovací klíče použité operacemi DPAPI NG řadič domény AD.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-132">In this scenario, the AD domain controller is responsible for distributing the encryption keys used by the DPAPI-NG operations.</span></span> <span data-ttu-id="a8f4c-133">Cílový uživatel může dešifrovat šifrovaná data z libovolného počítače připojeného k doméně (za předpokladu, že je proces spuštěn pod svou identitu).</span><span class="sxs-lookup"><span data-stu-id="a8f4c-133">The target user can decipher the encrypted payload from any domain-joined machine (provided that the process is running under their identity).</span></span>
+
+## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a><span data-ttu-id="a8f4c-134">Šifrování na základě certifikátů s Windows DPAPI-NG</span><span class="sxs-lookup"><span data-stu-id="a8f4c-134">Certificate-based encryption with Windows DPAPI-NG</span></span>
+
+<span data-ttu-id="a8f4c-135">Pokud aplikace běží na Windows 8.1 nebo Windows Server 2012 R2 nebo novější, můžete použít Windows DPAPI-NG k provedení na základě certifikátů šifrování.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-135">If the app is running on Windows 8.1/Windows Server 2012 R2 or later, you can use Windows DPAPI-NG to perform certificate-based encryption.</span></span> <span data-ttu-id="a8f4c-136">Použití řetězce popisovače pravidla "certifikát = HashId:THUMBPRINT", kde *kryptografický OTISK* je hexadecimální zakódovaná SHA1 kryptografický otisk certifikátu:</span><span class="sxs-lookup"><span data-stu-id="a8f4c-136">Use the rule descriptor string "CERTIFICATE=HashId:THUMBPRINT", where *THUMBPRINT* is the hex-encoded SHA1 thumbprint of the certificate:</span></span>
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2...B5AEA2A9BD2575A0",
+            flags: DpapiNGProtectionDescriptorFlags.None);
+}
+```
+
+<span data-ttu-id="a8f4c-137">Libovolná aplikace nasměrovaného na tato úložiště musí běžet na Windows 8.1 nebo Windows Server 2012 R2 nebo novějším k dešifrování klíče.</span><span class="sxs-lookup"><span data-stu-id="a8f4c-137">Any app pointed at this repository must be running on Windows 8.1/Windows Server 2012 R2 or later to decipher the keys.</span></span>
+
+## <a name="custom-key-encryption"></a><span data-ttu-id="a8f4c-138">Vlastní šifrovací klíče</span><span class="sxs-lookup"><span data-stu-id="a8f4c-138">Custom key encryption</span></span>
+
+<span data-ttu-id="a8f4c-139">Pokud nejsou integrované mechanismy vhodné, Vývojář můžete zadat vlastní mechanismus šifrování klíče poskytnutím vlastní [IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor).</span><span class="sxs-lookup"><span data-stu-id="a8f4c-139">If the in-box mechanisms aren't appropriate, the developer can specify their own key encryption mechanism by providing a custom [IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor).</span></span>

@@ -1,88 +1,84 @@
 ---
-title: Zprostředkovatele úložiště klíčů v základní technologie ASP.NET
+title: Zprostředkovatelé úložiště klíčů v ASP.NET Core
 author: rick-anderson
-description: Další informace o zprostředkovatele úložiště klíčů v základní technologie ASP.NET a konfiguraci umístění úložiště klíčů.
+description: Další informace o poskytovatele úložiště klíčů v ASP.NET Core a jak konfigurovat umístění úložiště klíčů.
 ms.author: riande
-ms.date: 01/14/2017
+ms.date: 07/16/2018
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 432c2690f216325470bbea9b974ea772bcdc39ed
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 74d62e88b40cfcefb81d699a5aba2665c56ac51a
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273766"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219261"
 ---
-# <a name="key-storage-providers-in-aspnet-core"></a><span data-ttu-id="e3e60-103">Zprostředkovatele úložiště klíčů v základní technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="e3e60-103">Key storage providers in ASP.NET Core</span></span>
+# <a name="key-storage-providers-in-aspnet-core"></a><span data-ttu-id="f9766-103">Zprostředkovatelé úložiště klíčů v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f9766-103">Key storage providers in ASP.NET Core</span></span>
 
-<a name="data-protection-implementation-key-storage-providers"></a>
+<span data-ttu-id="f9766-104">Systém ochrany dat [využívá mechanismus zjišťování ve výchozím nastavení](xref:security/data-protection/configuration/default-settings) k určení, kde by měl trvalé kryptografických klíčů.</span><span class="sxs-lookup"><span data-stu-id="f9766-104">The data protection system [employs a discovery mechanism by default](xref:security/data-protection/configuration/default-settings) to determine where cryptographic keys should be persisted.</span></span> <span data-ttu-id="f9766-105">Vývojář můžete přepsat výchozí mechanismus pro zjišťování a ručně zadejte jeho umístění.</span><span class="sxs-lookup"><span data-stu-id="f9766-105">The developer can override the default discovery mechanism and manually specify the location.</span></span>
 
-<span data-ttu-id="e3e60-104">Ve výchozím nastavení systému ochrany dat [využívá Heuristika](xref:security/data-protection/configuration/default-settings) k určení, kde by měl natrvalo materiál kryptografické klíče.</span><span class="sxs-lookup"><span data-stu-id="e3e60-104">By default the data protection system [employs a heuristic](xref:security/data-protection/configuration/default-settings) to determine where cryptographic key material should be persisted.</span></span> <span data-ttu-id="e3e60-105">Vývojář může přepsat heuristiky a ručně zadejte jeho umístění.</span><span class="sxs-lookup"><span data-stu-id="e3e60-105">The developer can override the heuristic and manually specify the location.</span></span>
+> [!WARNING]
+> <span data-ttu-id="f9766-106">Pokud chcete zadat umístění služby explicitní trvalost klíče, systém ochrany dat deregisters výchozí šifrování klíčů v rest mechanismus, takže klíče jsou už v klidovém stavu zašifrovaná.</span><span class="sxs-lookup"><span data-stu-id="f9766-106">If you specify an explicit key persistence location, the data protection system deregisters the default key encryption at rest mechanism, so keys are no longer encrypted at rest.</span></span> <span data-ttu-id="f9766-107">Doporučujeme vám dále [zadejte mechanismus explicitní šifrování klíče](xref:security/data-protection/implementation/key-encryption-at-rest) pro nasazení v produkčním prostředí.</span><span class="sxs-lookup"><span data-stu-id="f9766-107">It's recommended that you additionally [specify an explicit key encryption mechanism](xref:security/data-protection/implementation/key-encryption-at-rest) for production deployments.</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="e3e60-106">Pokud zadáte umístění služby explicitní trvalost klíče, bude systém ochrany dat zrušit šifrování klíče výchozí v rest mechanismus, který poskytuje heuristiky, tak klíče zašifruje už v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="e3e60-106">If you specify an explicit key persistence location, the data protection system will deregister the default key encryption at rest mechanism that the heuristic provided, so keys will no longer be encrypted at rest.</span></span> <span data-ttu-id="e3e60-107">Je doporučeno, můžete kromě [zadejte mechanismus explicitní šifrování klíče](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers) aplikacích v produkčním prostředí.</span><span class="sxs-lookup"><span data-stu-id="e3e60-107">It's recommended that you additionally [specify an explicit key encryption mechanism](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers) for production applications.</span></span>
+## <a name="file-system"></a><span data-ttu-id="f9766-108">Systém souborů</span><span class="sxs-lookup"><span data-stu-id="f9766-108">File system</span></span>
 
-<span data-ttu-id="e3e60-108">Systém ochrany dat se dodává s několik poskytovatelů úložiště klíčů v poli.</span><span class="sxs-lookup"><span data-stu-id="e3e60-108">The data protection system ships with several in-box key storage providers.</span></span>
-
-## <a name="file-system"></a><span data-ttu-id="e3e60-109">Systém souborů</span><span class="sxs-lookup"><span data-stu-id="e3e60-109">File system</span></span>
-
-<span data-ttu-id="e3e60-110">Očekáváme, že mnoho aplikace bude používat klíče úložiště založené na systému souborů.</span><span class="sxs-lookup"><span data-stu-id="e3e60-110">We anticipate that many apps will use a file system-based key repository.</span></span> <span data-ttu-id="e3e60-111">Chcete-li nakonfigurovat tuto funkci, volejte [PersistKeysToFileSystem](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection/DataProtectionBuilderExtensions.cs) rutiny konfigurace, jak je uvedeno níže.</span><span class="sxs-lookup"><span data-stu-id="e3e60-111">To configure this, call the [PersistKeysToFileSystem](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection/DataProtectionBuilderExtensions.cs) configuration routine as shown below.</span></span> <span data-ttu-id="e3e60-112">Zadejte `DirectoryInfo` odkazující na úložiště, které se má uložit klíče.</span><span class="sxs-lookup"><span data-stu-id="e3e60-112">Provide a `DirectoryInfo` pointing to the repository where keys should be stored.</span></span>
+<span data-ttu-id="f9766-109">Chcete-li konfigurovat klíče úložiště založené na systému souborů, zavolejte [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) konfigurace rutiny, jak je znázorněno níže.</span><span class="sxs-lookup"><span data-stu-id="f9766-109">To configure a file system-based key repository, call the [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) configuration routine as shown below.</span></span> <span data-ttu-id="f9766-110">Zadejte [DirectoryInfo](/dotnet/api/system.io.directoryinfo) bude odkazovat na úložiště ukládat klíče:</span><span class="sxs-lookup"><span data-stu-id="f9766-110">Provide a [DirectoryInfo](/dotnet/api/system.io.directoryinfo) pointing to the repository where keys should be stored:</span></span>
 
 ```csharp
-sc.AddDataProtection()
-       // persist keys to a specific directory
-       .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
-   ```
-
-<span data-ttu-id="e3e60-113">`DirectoryInfo` Může ukazovat na adresář v místním počítači, nebo můžete přejít do složky ve sdílené síťové složce.</span><span class="sxs-lookup"><span data-stu-id="e3e60-113">The `DirectoryInfo` can point to a directory on the local machine, or it can point to a folder on a network share.</span></span> <span data-ttu-id="e3e60-114">Pokud přejdete do adresáře v místním počítači (a tento scénář je, že jenom aplikace v místním počítači, bude třeba použít toto úložiště), zvažte použití [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) k šifrování klíče v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="e3e60-114">If pointing to a directory on the local machine (and the scenario is that only applications on the local machine will need to use this repository), consider using [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) to encrypt the keys at rest.</span></span> <span data-ttu-id="e3e60-115">V opačném případě zvažte použití [certifikát X.509](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) k šifrování klíče v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="e3e60-115">Otherwise consider using an [X.509 certificate](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) to encrypt keys at rest.</span></span>
-
-## <a name="azure-and-redis"></a><span data-ttu-id="e3e60-116">Azure a Redis</span><span class="sxs-lookup"><span data-stu-id="e3e60-116">Azure and Redis</span></span>
-
-<span data-ttu-id="e3e60-117">`Microsoft.AspNetCore.DataProtection.AzureStorage` a `Microsoft.AspNetCore.DataProtection.Redis` balíčky povolit ukládání klíče ochrany dat v Azure Storage nebo mezipaměti Redis.</span><span class="sxs-lookup"><span data-stu-id="e3e60-117">The `Microsoft.AspNetCore.DataProtection.AzureStorage` and `Microsoft.AspNetCore.DataProtection.Redis` packages allow storing your data protection keys in Azure Storage or a Redis cache.</span></span> <span data-ttu-id="e3e60-118">Klíče můžete sdílet mezi několika instancí webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="e3e60-118">Keys can be shared across several instances of a web app.</span></span> <span data-ttu-id="e3e60-119">Aplikace ASP.NET Core můžete sdílet soubory cookie pro ověřování nebo ochrany proti útokům CSRF napříč několika servery.</span><span class="sxs-lookup"><span data-stu-id="e3e60-119">Your ASP.NET Core app can share authentication cookies or CSRF protection across multiple servers.</span></span> <span data-ttu-id="e3e60-120">Pokud chcete konfigurovat v Azure, volání jednoho z [PersistKeysToAzureBlobStorage](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection.AzureStorage/AzureDataProtectionBuilderExtensions.cs) přetížení, jak je uvedeno níže.</span><span class="sxs-lookup"><span data-stu-id="e3e60-120">To configure on Azure, call one of the [PersistKeysToAzureBlobStorage](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection.AzureStorage/AzureDataProtectionBuilderExtensions.cs) overloads as shown below.</span></span>
-
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
+}
 ```
+
+<span data-ttu-id="f9766-111">`DirectoryInfo` Může odkazovat na adresáře na místním počítači, nebo můžete přejít do složky ve sdílené síťové složce.</span><span class="sxs-lookup"><span data-stu-id="f9766-111">The `DirectoryInfo` can point to a directory on the local machine, or it can point to a folder on a network share.</span></span> <span data-ttu-id="f9766-112">Pokud přejdete do adresáře v místním počítači (a tento scénář je, že jenom aplikace v místním počítači vyžaduje přístup k použití tohoto úložiště), zvažte použití [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) (on Windows) k šifrování klíčů v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="f9766-112">If pointing to a directory on the local machine (and the scenario is that only apps on the local machine require access to use this repository), consider using [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) (on Windows) to encrypt the keys at rest.</span></span> <span data-ttu-id="f9766-113">V opačném případě zvažte použití [certifikát X.509](xref:security/data-protection/implementation/key-encryption-at-rest) šifrování klíčů v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="f9766-113">Otherwise, consider using an [X.509 certificate](xref:security/data-protection/implementation/key-encryption-at-rest) to encrypt keys at rest.</span></span>
+
+## <a name="azure-and-redis"></a><span data-ttu-id="f9766-114">Azure a Redis</span><span class="sxs-lookup"><span data-stu-id="f9766-114">Azure and Redis</span></span>
+
+<span data-ttu-id="f9766-115">[Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/) a [Microsoft.AspNetCore.DataProtection.Redis](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Redis/) balíčky povolit ukládání klíče ochrany dat v Azure Storage nebo Azure Redis cache.</span><span class="sxs-lookup"><span data-stu-id="f9766-115">The [Microsoft.AspNetCore.DataProtection.AzureStorage](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.AzureStorage/) and [Microsoft.AspNetCore.DataProtection.Redis](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Redis/) packages allow storing data protection keys in Azure Storage or a Redis cache.</span></span> <span data-ttu-id="f9766-116">Klíče mohou být sdíleny napříč několika instancemi webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="f9766-116">Keys can be shared across several instances of a web app.</span></span> <span data-ttu-id="f9766-117">Aplikace můžete sdílet soubory cookie pro ověřování nebo CSRF ochrany napříč několika servery.</span><span class="sxs-lookup"><span data-stu-id="f9766-117">Apps can share authentication cookies or CSRF protection across multiple servers.</span></span> <span data-ttu-id="f9766-118">Pokud chcete nakonfigurovat zprostředkovatele služby Azure Blob Storage, volání jednoho z [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage) přetížení:</span><span class="sxs-lookup"><span data-stu-id="f9766-118">To configure the Azure Blob Storage provider, call one of the [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage) overloads:</span></span>
+
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddDataProtection()
         .PersistKeysToAzureBlobStorage(new Uri("<blob URI including SAS token>"));
-
-    services.AddMvc();
 }
 ```
 
-<span data-ttu-id="e3e60-121">Viz také [Azure testovacího kódu](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/AzureBlob/Program.cs).</span><span class="sxs-lookup"><span data-stu-id="e3e60-121">See also the [Azure test code](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/AzureBlob/Program.cs).</span></span>
+<span data-ttu-id="f9766-119">Ke konfiguraci na Redis zavoláním jednoho z [PersistKeysToRedis](/dotnet/api/microsoft.aspnetcore.dataprotection.redisdataprotectionbuilderextensions.persistkeystoredis) přetížení:</span><span class="sxs-lookup"><span data-stu-id="f9766-119">To configure on Redis, call one of the [PersistKeysToRedis](/dotnet/api/microsoft.aspnetcore.dataprotection.redisdataprotectionbuilderextensions.persistkeystoredis) overloads:</span></span>
 
-<span data-ttu-id="e3e60-122">Pokud chcete konfigurovat na Redis, volání jednoho z [PersistKeysToRedis](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection.Redis/RedisDataProtectionBuilderExtensions.cs) přetížení, jak je uvedeno níže.</span><span class="sxs-lookup"><span data-stu-id="e3e60-122">To configure on Redis, call one of the [PersistKeysToRedis](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection.Redis/RedisDataProtectionBuilderExtensions.cs) overloads as shown below.</span></span>
-
-```
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    // Connect to Redis database.
     var redis = ConnectionMultiplexer.Connect("<URI>");
     services.AddDataProtection()
         .PersistKeysToRedis(redis, "DataProtection-Keys");
-
-    services.AddMvc();
 }
 ```
 
-<span data-ttu-id="e3e60-123">Najdete následující informace:</span><span class="sxs-lookup"><span data-stu-id="e3e60-123">See the following for more information:</span></span>
+<span data-ttu-id="f9766-120">Další informace naleznete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="f9766-120">For more information, see the following topics:</span></span>
 
-- [<span data-ttu-id="e3e60-124">StackExchange.Redis ConnectionMultiplexer</span><span class="sxs-lookup"><span data-stu-id="e3e60-124">StackExchange.Redis ConnectionMultiplexer</span></span>](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
-- [<span data-ttu-id="e3e60-125">Mezipaměť Redis systému Azure</span><span class="sxs-lookup"><span data-stu-id="e3e60-125">Azure Redis Cache</span></span>](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
-- <span data-ttu-id="e3e60-126">[Redis testovacího kódu](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/Redis/Program.cs).</span><span class="sxs-lookup"><span data-stu-id="e3e60-126">[Redis test code](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/Redis/Program.cs).</span></span>
+* [<span data-ttu-id="f9766-121">StackExchange.Redis ConnectionMultiplexer</span><span class="sxs-lookup"><span data-stu-id="f9766-121">StackExchange.Redis ConnectionMultiplexer</span></span>](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
+* [<span data-ttu-id="f9766-122">Azure Redis Cache</span><span class="sxs-lookup"><span data-stu-id="f9766-122">Azure Redis Cache</span></span>](/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
+* [<span data-ttu-id="f9766-123">Ukázky ASPNET/DataProtection</span><span class="sxs-lookup"><span data-stu-id="f9766-123">aspnet/DataProtection samples</span></span>](https://github.com/aspnet/DataProtection/samples)
 
-## <a name="registry"></a><span data-ttu-id="e3e60-127">Registru</span><span class="sxs-lookup"><span data-stu-id="e3e60-127">Registry</span></span>
+## <a name="registry"></a><span data-ttu-id="f9766-124">Registru</span><span class="sxs-lookup"><span data-stu-id="f9766-124">Registry</span></span>
 
-<span data-ttu-id="e3e60-128">Aplikace v některých případech nemusí mít oprávnění k zápisu do systému souborů.</span><span class="sxs-lookup"><span data-stu-id="e3e60-128">Sometimes the app might not have write access to the file system.</span></span> <span data-ttu-id="e3e60-129">Představte si třeba situaci, kdy aplikace běží jako účet služby virtual (jako je identita fondu aplikací na w3wp.exe).</span><span class="sxs-lookup"><span data-stu-id="e3e60-129">Consider a scenario where an app is running as a virtual service account (such as w3wp.exe's app pool identity).</span></span> <span data-ttu-id="e3e60-130">V těchto případech může správce zřizuje klíč registru, který je vhodné ACLed identitu účtu služby.</span><span class="sxs-lookup"><span data-stu-id="e3e60-130">In these cases, the administrator may have provisioned a registry key that's appropriate ACLed for the service account identity.</span></span> <span data-ttu-id="e3e60-131">Volání [PersistKeysToRegistry](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection/DataProtectionBuilderExtensions.cs) rutiny konfigurace, jak je uvedeno níže.</span><span class="sxs-lookup"><span data-stu-id="e3e60-131">Call the [PersistKeysToRegistry](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/src/Microsoft.AspNetCore.DataProtection/DataProtectionBuilderExtensions.cs) configuration routine as shown below.</span></span> <span data-ttu-id="e3e60-132">Zadejte `RegistryKey` odkazující na umístění pro uložení kryptografického klíče nebo hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e3e60-132">Provide a `RegistryKey` pointing to the location where cryptographic keys/values should be stored.</span></span>
+<span data-ttu-id="f9766-125">**Platí jenom pro nasazení Windows.**</span><span class="sxs-lookup"><span data-stu-id="f9766-125">**Only applies to Windows deployments.**</span></span>
+
+<span data-ttu-id="f9766-126">Aplikace v některých případech nemusí mít oprávnění k zápisu do systému souborů.</span><span class="sxs-lookup"><span data-stu-id="f9766-126">Sometimes the app might not have write access to the file system.</span></span> <span data-ttu-id="f9766-127">Představte si třeba situaci, ve kterém je aplikace spuštěna jako účet virtuální služby (například *w3wp.exe*pro identitu fondu aplikací).</span><span class="sxs-lookup"><span data-stu-id="f9766-127">Consider a scenario where an app is running as a virtual service account (such as *w3wp.exe*'s app pool identity).</span></span> <span data-ttu-id="f9766-128">V těchto případech můžete zřizovat správce klíč registru, který je přístupný pro identitu účtu služby.</span><span class="sxs-lookup"><span data-stu-id="f9766-128">In these cases, the administrator can provision a registry key that's accessible by the service account identity.</span></span> <span data-ttu-id="f9766-129">Volání [PersistKeysToRegistry](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystoregistry) rozšiřující metoda, jak je znázorněno níže.</span><span class="sxs-lookup"><span data-stu-id="f9766-129">Call the [PersistKeysToRegistry](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystoregistry) extension method as shown below.</span></span> <span data-ttu-id="f9766-130">Zadejte [RegistryKey](/dotnet/api/microsoft.aspnetcore.dataprotection.repositories.registryxmlrepository.registrykey) odkazující na umístění pro uložení kryptografických klíčů:</span><span class="sxs-lookup"><span data-stu-id="f9766-130">Provide a [RegistryKey](/dotnet/api/microsoft.aspnetcore.dataprotection.repositories.registryxmlrepository.registrykey) pointing to the location where cryptographic keys should be stored:</span></span>
 
 ```csharp
-   sc.AddDataProtection()
-       // persist keys to a specific location in the system registry
-       .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
-   ```
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
+}
+```
 
-<span data-ttu-id="e3e60-133">Pokud používáte systémového registru jako vhodný mechanismus trvalosti, zvažte použití [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) k šifrování klíče v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="e3e60-133">If you use the system registry as a persistence mechanism, consider using [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) to encrypt the keys at rest.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="f9766-131">Doporučujeme používat [rozhraní Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) šifrování klíčů v klidovém stavu.</span><span class="sxs-lookup"><span data-stu-id="f9766-131">We recommend using [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) to encrypt the keys at rest.</span></span>
 
-## <a name="custom-key-repository"></a><span data-ttu-id="e3e60-134">Vlastní úložiště klíčů</span><span class="sxs-lookup"><span data-stu-id="e3e60-134">Custom key repository</span></span>
+## <a name="custom-key-repository"></a><span data-ttu-id="f9766-132">Vlastní klíče úložiště</span><span class="sxs-lookup"><span data-stu-id="f9766-132">Custom key repository</span></span>
 
-<span data-ttu-id="e3e60-135">Pokud v poli mechanismy nejsou vhodné, vývojáře můžete určit vlastní mechanismu trvalosti klíče pomocí vlastní `IXmlRepository`.</span><span class="sxs-lookup"><span data-stu-id="e3e60-135">If the in-box mechanisms are not appropriate, the developer can specify their own key persistence mechanism by providing a custom `IXmlRepository`.</span></span>
+<span data-ttu-id="f9766-133">Pokud nejsou integrované mechanismy vhodné, Vývojář můžete zadat vlastní mechanismus trvalost klíče poskytnutím vlastní [IXmlRepository](/dotnet/api/microsoft.aspnetcore.dataprotection.repositories.ixmlrepository).</span><span class="sxs-lookup"><span data-stu-id="f9766-133">If the in-box mechanisms aren't appropriate, the developer can specify their own key persistence mechanism by providing a custom [IXmlRepository](/dotnet/api/microsoft.aspnetcore.dataprotection.repositories.ixmlrepository).</span></span>

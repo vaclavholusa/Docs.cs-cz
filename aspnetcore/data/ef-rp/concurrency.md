@@ -5,15 +5,13 @@ description: Tento kurz ukazuje, jak řešit konflikty při více uživatelů ak
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: c6ec07eb7bf484490bd7730edc44bf2d89e8fb2a
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: ff9e52df63f9c9f47ee659a68beb28b773a114a1
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38150480"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202689"
 ---
-en-us /
-
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - souběžnosti - 8 8
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Petr Dykstra](https://github.com/tdykstra), a [Jan Macek P](https://twitter.com/thereformedprog)
@@ -54,17 +52,21 @@ Optimistického řízení souběžnosti zahrnuje následující možnosti:
 
 * Můžete sledovat, které vlastnosti uživatele byl změněn a aktualizovat pouze odpovídající sloupce v databázi.
 
-  Ve scénáři bude ztracena žádná data. Různé vlastnosti byly aktualizovány dva uživatelé. Při příštím někdo přejde z anglické oddělení, zobrazí se Jana a John's na změny. Tato metoda aktualizace může snížit počet konflikty, ke kterým může dojít ke ztrátě. Tento přístup: * nemůže zamezení ztrátě dat, pokud dojde ke změně konkurenční na stejnou vlastnost.
-        * Je obecně není praktické ve webové aplikaci. Vyžaduje udržování významné stavu, aby bylo možné udržovat přehled o všech načtených hodnoty a nové hodnoty. Zachování velké množství stavu může ovlivnit výkon aplikace.
-        * Může zvýšení složitosti aplikace ve srovnání s detekce souběžnosti s entitou.
+  Ve scénáři bude ztracena žádná data. Různé vlastnosti byly aktualizovány dva uživatelé. Při příštím někdo přejde z anglické oddělení, zobrazí se Jana a John's na změny. Tato metoda aktualizace může snížit počet konflikty, ke kterým může dojít ke ztrátě. Tento přístup:
+ 
+  * Nelze nedošlo ke ztrátě dat, pokud dojde ke změně konkurenční na stejnou vlastnost.
+  * Není obecně praktické ve webové aplikaci. Vyžaduje udržování významné stavu, aby bylo možné udržovat přehled o všech načtených hodnoty a nové hodnoty. Zachování velké množství stavu může ovlivnit výkon aplikace.
+  * Můžete zvýšit složitost aplikace ve srovnání s detekce souběžnosti s entitou.
 
 * Můžete nechat John's na změnu Jana změna přepsána.
 
   Při příštím někdo přejde z anglické oddělení, zobrazí se 9/1/2013 a počet získaných $350,000.00 hodnotu. Tento přístup se nazývá *Wins, klient* nebo *poslední ve službě Wins* scénář. (Všechny hodnoty z klienta přednost co je v úložišti.) Pokud tak učiníte nemusíte vytvářet kód pro zpracování souběžnosti, Wins, klient probíhá automaticky.
 
-* John's na změnu může zabránit aktualizují v databázi. Obvykle by aplikace: * zobrazí chybovou zprávu.
-        * Zobrazit aktuální stav dat.
-        * Povolit uživateli, který chcete znovu použít změny.
+* John's na změnu může zabránit aktualizují v databázi. Obvykle by aplikace:
+
+  * Zobrazí chybovou zprávu.
+  * Zobrazit aktuální stav dat.
+  * Povolit uživateli, který chcete znovu použít změny.
 
   Tento postup se nazývá *Store Wins* scénář. (Hodnoty úložiště dat přednost hodnoty odeslány klientem.) Implementace služby Wins Store scénář v tomto kurzu. Tato metoda zajišťuje, že se žádné změny přepsán, aniž by uživatel se zobrazí upozornění.
 
@@ -144,7 +146,7 @@ Předchozí příkazy:
 * Přidá *migrace / {čas stamp}_RowVersion.cs* souboru migrace.
 * Aktualizace *Migrations/SchoolContextModelSnapshot.cs* souboru. Tato aktualizace přidává následující zvýrazněný kód do `BuildModel` metody:
 
-[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
+  [!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
 
 * Spuštění migrace k aktualizaci databáze.
 
@@ -210,7 +212,7 @@ Následující zvýrazněný kód nastaví `RowVersion` z databáze načíst hod
 
 `ModelState.Remove` Příkazu se totiž `ModelState` má starý `RowVersion` hodnotu. Na stránce Razor `ModelState` hodnota pole má přednost před hodnoty vlastností modelu Pokud jsou obě přítomny.
 
-## <a name="update-the-edit-page"></a>Potom při volání , Entity Framework aktualizuje všechny sloupce řádek databáze, protože kontext nemá žádný způsob, jak zjistit vlastnosti, které jste změnili.
+## <a name="update-the-edit-page"></a>Aktualizace stránky pro úpravu
 
 Aktualizace *Pages/Departments/Edit.cshtml* následujícím kódem:
 

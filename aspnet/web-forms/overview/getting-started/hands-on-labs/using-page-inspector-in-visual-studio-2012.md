@@ -142,7 +142,7 @@ V této úloze se dozvíte, jak používat nástroj Page Inspector v rámci proj
     ![Inspectingelements](using-page-inspector-in-visual-studio-2012/_static/image6.png)
 
     *Kontrola elementy*
-7. Klikněte na tlačítko **přepnout režim kontroly** tlačítko (![vyberte kartu HTML k zobrazení kódu HTML, vykreslení v prohlížeči nástroj Page Inspector.] (using-page-inspector-in-visual-studio-2012/_static/image7.png "Vyberte kartu HTML k zobrazení kódu HTML, vykreslení v prohlížeči nástroj Page Inspector.") ) Chcete-li zakázat kurzor.
+7. Klikněte na tlačítko **přepnout režim kontroly** tlačítko (![vyberte kartu HTML k zobrazení kódu HTML, vykreslení v prohlížeči nástroj Page Inspector.](using-page-inspector-in-visual-studio-2012/_static/image7.png "Vyberte kartu HTML k zobrazení kódu HTML, vykreslení v prohlížeči nástroj Page Inspector.") ) Chcete-li zakázat kurzor.
 8. Vyberte **HTML** karet zobrazit další kód HTML, vykreslení v prohlížeči nástroj Page Inspector.
 9. V kódu HTML vyhledejte položky seznamu s odkazem medvídek a vyberte ho.
 

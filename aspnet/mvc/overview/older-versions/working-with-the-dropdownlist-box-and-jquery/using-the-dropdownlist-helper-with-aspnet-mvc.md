@@ -8,12 +8,12 @@ ms.date: 01/12/2012
 ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 9f16c01515bde80d3994618d26818c2d93f69d87
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6dbffe715990de5c0b3b834e354379e414925816
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828374"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219053"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>Použití pomocné rutiny DropDownList s ASP.NET MVC
 ====================
@@ -190,7 +190,7 @@ Otevřít *Views\Home\MultiSelectCountry.cshtml* a přidejte `htmlAttributes` pa
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-Ve výše uvedeném kódu, přidáváme atributu HTML a hodnota atributu `class = "chzn-select"`. Znaku @ před třída nemá nic společného s zobrazovací modul Razor. `class` je [– klíčové slovo jazyka C#](https://msdn.microsoft.com/library/x53a06bb.aspx). Klíčová slova jazyka C# nelze použít jako identifikátory, pokud patří mezi ně jako předponu. V příkladu výše `@class` je platný identifikátor, ale **třídy** není, protože **třídy** je klíčové slovo.
+Ve výše uvedeném kódu, přidáváme atributu HTML a hodnota atributu `class = "chzn-select"`. \@ Znak předchozí třídy nemá nic společného s zobrazovací modul Razor. `class` je [– klíčové slovo jazyka C#](https://msdn.microsoft.com/library/x53a06bb.aspx). Klíčová slova jazyka C# nelze použít jako identifikátory, pokud ovšem neobsahují \@ jako předponu. V příkladu výše `@class` je platný identifikátor, ale **třídy** není, protože **třídy** je klíčové slovo.
 
 Přidat odkazy *Chosen/chosen.jquery.js* a *Chosen/chosen.css* soubory. *Chosen/chosen.jquery.js* a implementuje funkčně modulu plug-in zvolená. *Chosen/chosen.css* soubor obsahuje stylu. Přidat tyto odkazy do dolní části *Views\Home\MultiSelectCountry.cshtml* souboru. Následující kód ukazuje, jak odkazovat na modul plug-in zvolená.
 

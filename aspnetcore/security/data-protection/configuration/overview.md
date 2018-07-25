@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/17/2017
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: f3cac3541ffe633886f82cec8180a219272c24d6
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: fd3e5dff114c81eae07186e735a15314d984dcc3
+ms.sourcegitcommit: 5338b1ed9e2ef225ab565d6cba072b474fd9324d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095597"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243107"
 ---
 # <a name="configure-aspnet-core-data-protection"></a>Konfigurace ochrany dat ASP.NET Core
 
@@ -84,7 +84,44 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+::: moniker range=">= aspnetcore-2.1"
+
+V ASP.NET Core 2.1 nebo novější, můžete zadat [X509Certificate2](/dotnet/api/system.security.cryptography.x509certificates.x509certificate2) k [ProtectKeysWithCertificate](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithcertificate), jako jsou certifikát načíst ze souboru:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(@"\\server\share\directory\"))
+        .ProtectKeysWithCertificate(
+            new X509Certificate2("certificate.pfx", "password"));
+}
+```
+
+::: moniker-end
+
 V tématu [klíč šifrování v Rest](xref:security/data-protection/implementation/key-encryption-at-rest) Další příklady a diskuse o mechanismy integrovaný šifrovací klíče.
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="unprotectkeyswithanycertificate"></a>UnprotectKeysWithAnyCertificate
+
+V ASP.NET Core 2.1 nebo novější, můžete Rotování certifikátů a klíčů v klidovém stavu pomocí pole dešifrovat [X509Certificate2](/dotnet/api/system.security.cryptography.x509certificates.x509certificate2) certifikáty [UnprotectKeysWithAnyCertificate](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.unprotectkeyswithanycertificate):
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(@"\\server\share\directory\"))
+        .ProtectKeysWithCertificate(
+            new X509Certificate2("certificate.pfx", "password"));
+        .UnprotectKeysWithAnyCertificate(
+            new X509Certificate2("certificate_old_1.pfx", "password_1"),
+            new X509Certificate2("certificate_old_2.pfx", "password_2"));
+}
+```
+
+::: moniker-end
 
 ## <a name="setdefaultkeylifetime"></a>SetDefaultKeyLifetime
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 22e9c982921cc03d89506e18ff99bf481027dda6
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 7ab9f303d74786c4ac76f002d0f2c66371e78cb8
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "38216210"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228579"
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
 
@@ -25,7 +25,7 @@ ms.locfileid: "38216210"
     dotnet new webapp -o aspnetcoreapp
     ```
 
-    [! Zahrnout [] (~/includes/webapp-alias-notice.md) [](~/includes/webapp-alias-notice.md)]
+    [!INCLUDE [](~/includes/webapp-alias-notice.md)]
 
 3. Důvěřujete certifikátu vývoj HTTPS:
 
@@ -35,11 +35,11 @@ ms.locfileid: "38216210"
     dotnet dev-certs https --trust
     ```
 
-    The preceding command displays the following dialog:
+   Ve výstupu předchozího příkazu se zobrazí následující dialogové okno:
 
-    ![Security warning dialog](_static/cert.png)
+   ![Dialogové okno upozornění zabezpečení](_static/cert.png)
 
-    Select **Yes** if you agree to trust the development certificate.
+   Vyberte **Ano** Pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
@@ -47,18 +47,15 @@ ms.locfileid: "38216210"
     dotnet dev-certs https --trust
     ```
 
-    The preceding command displays the following message:
+   Ve výstupu předchozího příkazu se zobrazí následující zpráva:
 
-    *Trusting the HTTPS development certificate was requested. If the certificate is not already trusted we will run the following command:*
-    `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`
-    *This command might prompt you for your password to install the certificate on the system keychain.
-    Password:*
+   *Byla vyžádána důvěřující vývojářský certifikát HTTPS. Pokud certifikát není důvěryhodný provedeme následující příkaz:* `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'` *tento příkaz vás může vyzvat k zadání hesla k instalaci certifikátu v řetězci klíčů systému.    Heslo:*
 
-    Enter your password if you agree to trust the development certificate.
+   Zadejte svoje heslo, pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-    See the documentation for your Linux distribution on how to trust the HTTPS development certificate
+   <a name="see-the-documentation-for-your-linux-distribution-on-how-to-trust-the-https-development-certificate"></a>O tom, jak důvěřovat certifikátu protokolu HTTPS vývoj naleznete v dokumentaci k vaší distribuci Linuxu
 ---
 
 4. Spuštění aplikace:

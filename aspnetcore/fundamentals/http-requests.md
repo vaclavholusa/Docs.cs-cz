@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/23/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 0aca2b260e787f9b8aa0846bcccef2b33f372ee6
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: 87424eaea499ba7ece1e5ef88649fcbb2e297635
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220583"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320652"
 ---
 # <a name="initiate-http-requests"></a>Iniciování požadavků HTTP
 
@@ -24,6 +24,8 @@ Podle [Glenn Condron](https://github.com/glennc), [Ryanem Nowak](https://github.
 * Kodifikuje koncept odchozí middleware prostřednictvím delegování obslužné rutiny ve `HttpClient` a rozšíření pro middleware založený na Polly výhod, které poskytuje.
 * Spravuje sdružování a dobu života základní `HttpClientMessageHandler` instancí se vyhnout běžným potížím DNS, ke kterým dochází při správě ručně `HttpClient` životnosti.
 * Přidá prostředí konfigurovat protokolování (prostřednictvím `ILogger`) pro všechny požadavky odeslané prostřednictvím klientů, které jsou vytvořeny procesem.
+
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>Požadavky
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 6aded9525a0abd31dec8441c7fba60d8845c7d93
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: d7e60c0f615841461a17b093bffe5fb3f82f8616
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938238"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332272"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
@@ -103,11 +103,11 @@ Jinou metodou přijímá řetězec typ a formát obsahu:
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-Je také přesměrovat a znovu provést metody rozšíření. Metoda přesměrování odesílá *302 Found* stavový kód na straně klienta:
+Existují také přesměrovat a znovu provést metody rozšíření. Metoda přesměrování odesílá *302 Found* stavový kód na straně klienta a přesměruje klienta do šablony adresy URL zadané umístění. Šablona může obsahovat `{0}` zástupný symbol pro stavový kód. Adresy URL začínající `~` před základní cesty. Adresa URL, která nezačíná `~` je použitá.
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-Znovu spustit metodu vrátí původní stavový kód klienta ale také spustí obslužnou rutinu pro adresu URL přesměrování:
+Znovu spustit metodu vrátí původní kód stavu klienta a určuje, že tělo odpovědi by měl být vygenerován znovu spuštěním kanálu požadavku pomocí alternativní cesty. Tato cesta může obsahovat `{0}` zástupný symbol pro kód stavu:
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");

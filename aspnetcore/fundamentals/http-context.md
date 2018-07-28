@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/27/2018
 uid: fundamentals/httpcontext
-ms.openlocfilehash: 6b932d40aa501e7f046c67dc8f2edaae78531213
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: ee185cd30af51fa6ee9a4d23ea60a56ec1b76c8d
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320668"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332285"
 ---
 # <a name="access-httpcontext-in-aspnet-core"></a>Přístup k objektu HttpContext v ASP.NET Core
 
@@ -42,7 +42,6 @@ public class AboutModel : PageModel
 Zobrazení syntaxe Razor vystavit `HttpContext` přímo prostřednictvím [RazorPage.Context](/dotnet/api/microsoft.aspnetcore.mvc.razor.razorpage.context#Microsoft_AspNetCore_Mvc_Razor_RazorPage_Context) vlastnost pro zobrazení. Následující příklad načte aktuální uživatelské jméno v intranetu aplikaci pomocí ověřování Windows:
 
 ```cshtml
-
 @{
     var username = Context.User.Identity.Name;
 }

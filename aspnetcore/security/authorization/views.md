@@ -1,31 +1,31 @@
 ---
-title: Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra
+title: Autorizace na základě zobrazení v ASP.NET Core MVC
 author: rick-anderson
-description: Tento dokument ukazuje, jak využívat službu autorizace uvnitř zobrazení syntaxe Razor rozhraní ASP.NET Core a vložit.
+description: Tento dokument ukazuje, jak vložit a využívat službu ověřování v rámci zobrazení o ASP.NET Core Razor.
 ms.author: riande
 ms.date: 10/30/2017
 uid: security/authorization/views
-ms.openlocfilehash: f25bab61afc93ff14bfd9c36d95a6d2e54b06dfb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e497c41d4dca29fed8733f18cf727804e3f06d8c
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277807"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342533"
 ---
-# <a name="view-based-authorization-in-aspnet-core-mvc"></a><span data-ttu-id="e47e5-103">Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra</span><span class="sxs-lookup"><span data-stu-id="e47e5-103">View-based authorization in ASP.NET Core MVC</span></span>
+# <a name="view-based-authorization-in-aspnet-core-mvc"></a><span data-ttu-id="8848d-103">Autorizace na základě zobrazení v ASP.NET Core MVC</span><span class="sxs-lookup"><span data-stu-id="8848d-103">View-based authorization in ASP.NET Core MVC</span></span>
 
-<span data-ttu-id="e47e5-104">Vývojář často chce zobrazení, skrytí nebo v opačném případě upravte uživatelského rozhraní na základě aktuální identity uživatele.</span><span class="sxs-lookup"><span data-stu-id="e47e5-104">A developer often wants to show, hide, or otherwise modify a UI based on the current user identity.</span></span> <span data-ttu-id="e47e5-105">Můžete přístup ke službě ověřování v rámci zobrazení MVC prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection#fundamentals-dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="e47e5-105">You can access the authorization service within MVC views via [dependency injection](xref:fundamentals/dependency-injection#fundamentals-dependency-injection).</span></span> <span data-ttu-id="e47e5-106">Chcete-li vložit služby autorizace do zobrazení Razor, použijte `@inject` – direktiva:</span><span class="sxs-lookup"><span data-stu-id="e47e5-106">To inject the authorization service into a Razor view, use the `@inject` directive:</span></span>
+<span data-ttu-id="8848d-104">Vývojáři často chce zobrazení skrytí nebo jinak upravit uživatelské rozhraní založené na aktuální identitu uživatele.</span><span class="sxs-lookup"><span data-stu-id="8848d-104">A developer often wants to show, hide, or otherwise modify a UI based on the current user identity.</span></span> <span data-ttu-id="8848d-105">Přistupujete k povolení služby v rámci zobrazení MVC prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="8848d-105">You can access the authorization service within MVC views via [dependency injection](xref:fundamentals/dependency-injection).</span></span> <span data-ttu-id="8848d-106">Chcete-li vložit do zobrazení Razor autorizační službu, použijte `@inject` – direktiva:</span><span class="sxs-lookup"><span data-stu-id="8848d-106">To inject the authorization service into a Razor view, use the `@inject` directive:</span></span>
 
 ```cshtml
 @using Microsoft.AspNetCore.Authorization
 @inject IAuthorizationService AuthorizationService
 ```
 
-<span data-ttu-id="e47e5-107">Pokud chcete službu ověřování v každé zobrazení, umístit `@inject` direktivy do *_ViewImports.cshtml* soubor *zobrazení* adresáře.</span><span class="sxs-lookup"><span data-stu-id="e47e5-107">If you want the authorization service in every view, place the `@inject` directive into the *_ViewImports.cshtml* file of the *Views* directory.</span></span> <span data-ttu-id="e47e5-108">Další informace najdete v tématu [vkládání závislostí do zobrazení](xref:mvc/views/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="e47e5-108">For more information, see [Dependency injection into views](xref:mvc/views/dependency-injection).</span></span>
+<span data-ttu-id="8848d-107">Pokud chcete službu ověřování v každé zobrazení, umístěte `@inject` směrnice do *_ViewImports.cshtml* soubor *zobrazení* adresáře.</span><span class="sxs-lookup"><span data-stu-id="8848d-107">If you want the authorization service in every view, place the `@inject` directive into the *_ViewImports.cshtml* file of the *Views* directory.</span></span> <span data-ttu-id="8848d-108">Další informace najdete v tématu [injektáž závislostí do zobrazení](xref:mvc/views/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="8848d-108">For more information, see [Dependency injection into views](xref:mvc/views/dependency-injection).</span></span>
 
-<span data-ttu-id="e47e5-109">Používat službu vloženého autorizace k vyvolání `AuthorizeAsync` v úplně stejně, jako by kontrolovat při [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span><span class="sxs-lookup"><span data-stu-id="e47e5-109">Use the injected authorization service to invoke `AuthorizeAsync` in exactly the same way you would check during [resource-based authorization](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span></span>
+<span data-ttu-id="8848d-109">Použití service vložené autorizace k vyvolání `AuthorizeAsync` přesně stejným způsobem by kontroly během [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span><span class="sxs-lookup"><span data-stu-id="8848d-109">Use the injected authorization service to invoke `AuthorizeAsync` in exactly the same way you would check during [resource-based authorization](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="e47e5-110">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="e47e5-110">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="8848d-110">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="8848d-110">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```cshtml
 @if ((await AuthorizationService.AuthorizeAsync(User, "PolicyName")).Succeeded)
@@ -34,7 +34,7 @@ ms.locfileid: "36277807"
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="e47e5-111">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="e47e5-111">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="8848d-111">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="8848d-111">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```cshtml
 @if (await AuthorizationService.AuthorizeAsync(User, "PolicyName"))
@@ -45,9 +45,9 @@ ms.locfileid: "36277807"
 
 ---
 
-<span data-ttu-id="e47e5-112">V některých případech bude prostředek zobrazení modelu.</span><span class="sxs-lookup"><span data-stu-id="e47e5-112">In some cases, the resource will be your view model.</span></span> <span data-ttu-id="e47e5-113">Vyvolání `AuthorizeAsync` v úplně stejně, jako by kontrolovat při [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span><span class="sxs-lookup"><span data-stu-id="e47e5-113">Invoke `AuthorizeAsync` in exactly the same way you would check during [resource-based authorization](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span></span>
+<span data-ttu-id="8848d-112">V některých případech bude prostředek modelu zobrazení.</span><span class="sxs-lookup"><span data-stu-id="8848d-112">In some cases, the resource will be your view model.</span></span> <span data-ttu-id="8848d-113">Vyvolání `AuthorizeAsync` přesně stejným způsobem by kontroly během [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span><span class="sxs-lookup"><span data-stu-id="8848d-113">Invoke `AuthorizeAsync` in exactly the same way you would check during [resource-based authorization](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="e47e5-114">ASP.NET základní 2.x</span><span class="sxs-lookup"><span data-stu-id="e47e5-114">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="8848d-114">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="8848d-114">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```cshtml
 @if ((await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit)).Succeeded)
@@ -57,7 +57,7 @@ ms.locfileid: "36277807"
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="e47e5-115">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="e47e5-115">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="8848d-115">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="8848d-115">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```cshtml
 @if (await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit))
@@ -69,7 +69,7 @@ ms.locfileid: "36277807"
 
 ---
 
-<span data-ttu-id="e47e5-116">V předchozí kód model předán jako prostředek, kterou má provést vyhodnocení zásad v úvahu.</span><span class="sxs-lookup"><span data-stu-id="e47e5-116">In the preceding code, the model is passed as a resource the policy evaluation should take into consideration.</span></span>
+<span data-ttu-id="8848d-116">V předchozím kódu modelu je předán jako prostředek, které by měl provést vyhodnocení zásad v úvahu.</span><span class="sxs-lookup"><span data-stu-id="8848d-116">In the preceding code, the model is passed as a resource the policy evaluation should take into consideration.</span></span>
 
 > [!WARNING]
-> <span data-ttu-id="e47e5-117">Nemusíte spoléhat na přepnutím viditelnost prvků uživatelského rozhraní aplikace jako jedinou autorizace kontroly.</span><span class="sxs-lookup"><span data-stu-id="e47e5-117">Don't rely on toggling visibility of your app's UI elements as the sole authorization check.</span></span> <span data-ttu-id="e47e5-118">Skrytí elementu uživatelského rozhraní nemusí úplně zamezit přístupu k jeho přidruženému kontroleru akce.</span><span class="sxs-lookup"><span data-stu-id="e47e5-118">Hiding a UI element may not completely prevent access to its associated controller action.</span></span> <span data-ttu-id="e47e5-119">Představte si třeba tlačítko v předchozím fragmentu kódu.</span><span class="sxs-lookup"><span data-stu-id="e47e5-119">For example, consider the button in the preceding code snippet.</span></span> <span data-ttu-id="e47e5-120">Uživatele můžete vyvolat `Edit` metody akce, pokud uživatel zná prostředků relativní adresa URL je */Document/Edit/1*.</span><span class="sxs-lookup"><span data-stu-id="e47e5-120">A user can invoke the `Edit` action method if he or she knows the relative resource URL is */Document/Edit/1*.</span></span> <span data-ttu-id="e47e5-121">Z tohoto důvodu `Edit` metoda akce proveďte vlastní kontroly autorizace.</span><span class="sxs-lookup"><span data-stu-id="e47e5-121">For this reason, the `Edit` action method should perform its own authorization check.</span></span>
+> <span data-ttu-id="8848d-117">Není využívají přepínání viditelnosti prvků uživatelského rozhraní aplikace jako jediný autorizace kontrolu.</span><span class="sxs-lookup"><span data-stu-id="8848d-117">Don't rely on toggling visibility of your app's UI elements as the sole authorization check.</span></span> <span data-ttu-id="8848d-118">Skrytí prvku uživatelského rozhraní nemusí zabránit zcela přístup k přidruženému kontroleru akcí.</span><span class="sxs-lookup"><span data-stu-id="8848d-118">Hiding a UI element may not completely prevent access to its associated controller action.</span></span> <span data-ttu-id="8848d-119">Představte si třeba tlačítko v předchozím fragmentu kódu.</span><span class="sxs-lookup"><span data-stu-id="8848d-119">For example, consider the button in the preceding code snippet.</span></span> <span data-ttu-id="8848d-120">Uživatel může vyvolat `Edit` metody akce, pokud uživatel zná zdroj relativní adresa URL je */Document/Edit/1*.</span><span class="sxs-lookup"><span data-stu-id="8848d-120">A user can invoke the `Edit` action method if he or she knows the relative resource URL is */Document/Edit/1*.</span></span> <span data-ttu-id="8848d-121">Z tohoto důvodu `Edit` metoda akce se má provést vlastní kontroly autorizace.</span><span class="sxs-lookup"><span data-stu-id="8848d-121">For this reason, the `Edit` action method should perform its own authorization check.</span></span>

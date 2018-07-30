@@ -1,91 +1,91 @@
 ---
-title: Co je nového v technologii ASP.NET Core 2.1
+title: Co je nového v ASP.NET Core 2.1
 author: isaac2004
-description: Další informace o nových funkcích v ASP.NET Core 2.1.
+description: Informace o nových funkcích v ASP.NET Core 2.1.
 monikerRange: = aspnetcore-2.1
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: aspnetcore-2.1
-ms.openlocfilehash: 3dcd4e726c51830b626f5132ab9ee620364bcc14
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: f113e990d8b8f3eb80def0d18e301d930e58e596
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077593"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320678"
 ---
-# <a name="whats-new-in-aspnet-core-21"></a>Co je nového v technologii ASP.NET Core 2.1
+# <a name="whats-new-in-aspnet-core-21"></a>Co je nového v ASP.NET Core 2.1
 
-V tomto článku klade důraz nejvýznamnějších změn v ASP.NET Core 2.1, s odkazy na příslušné dokumentaci.
+Tento článek se soustředí na nejdůležitější změny v ASP.NET Core 2.1 s odkazy na relevantní dokumentaci.
 
 ## <a name="signalr"></a>SignalR
 
-SignalR jsou přepsána pro ASP.NET Core 2.1. Jádro ASP.NET SignalR zahrnuje množství vylepšení:
+Přepsali jsme SignalR pro ASP.NET Core 2.1. Funkce SignalR technologie ASP.NET Core zahrnuje celou řadu vylepšení:
 
-* Zjednodušený model Škálováním na více systémů.
-* Nový klient JavaScript se žádné jQuery závislostí.
-* Nový kompaktní binární protokol podle MessagePack.
+* Zjednodušený model horizontální navýšení kapacity.
+* Nový klient JavaScriptu se žádné jQuery závislostí.
+* Nové kompaktní binární protokol založený na MessagePack.
 * Podpora pro vlastní protokoly.
-* Nový model datových proudů odpovědi.
-* Podpora pro klienty založené na úplné objekty WebSockets.
+* Nový model datového proudu odpovědi.
+* Podpora pro klienty založené na úplné objekty Websocket.
 
-Další informace najdete v tématu [ASP.NET Core SignalR](xref:signalr/index).
+Další informace najdete v tématu [funkce SignalR technologie ASP.NET Core](xref:signalr/index).
 
 ## <a name="razor-class-libraries"></a>Knihovny tříd Razor
 
-ASP.NET Core 2.1 usnadňuje sestavení a zahrnout Razor na základě uživatelského rozhraní v knihovně a sdílet mezi více projektů. Nové Razor SDK umožňuje vytvářet soubory Razor do projektu knihovny tříd, které můžete zabalené do balíčku NuGet. Zobrazení a stránky v knihovnách se automaticky zjistí a aplikace se dá přepsat. Díky integraci Razor kompilace do sestavení:
+ASP.NET Core 2.1 usnadňuje sestavení a zahrnout do knihovny uživatelského rozhraní založeného na Razor a sdílejte ji napříč více projektů. Nová sada Razor SDK umožňuje sestavování Razor soubory do projektu knihovny tříd, který se dá zabalit do balíčku NuGet. Zobrazení a stránky v knihovnách se automaticky zjišťují a může být přepsána aplikace. Díky integraci Razor kompilace do sestavení:
 
-* Doba spuštění aplikace je výrazně rychlejší.
-* Rychlé aktualizace zobrazení syntaxe Razor a stránky v době běhu jsou stále k dispozici jako součást pracovního postupu iterativní vývoj.
+* Čas spuštění aplikace je výrazně rychlejší.
+* Rychlé aktualizace zobrazení syntaxe Razor a stránky v době běhu jsou stále k dispozici jako součást pracovního postupu iterativního vývoje.
 
 Další informace najdete v tématu [vytvářet opakovaně použitelné uživatelské rozhraní pomocí projektu knihovny tříd Razor](xref:razor-pages/ui-class).
 
 ## <a name="identity-ui-library--scaffolding"></a>Knihovna uživatelského rozhraní identity & generování uživatelského rozhraní
 
-Poskytuje ASP.NET Core 2.1 [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:razor-pages/ui-class). Aplikace, které zahrnují Identity můžete použít nové Identity scaffolder selektivně přidat zdrojový kód obsažené v Identity Razor třídu knihovny (RCL). Můžete chtít generovat zdrojový kód, abyste mohli upravit kód a změnit chování. Například může vyzvat scaffolder ke generování kódu použít v registraci. Generovaného kódu mají přednost před stejný kód v Identity RCL.
+ASP.NET Core 2.1 poskytuje [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:razor-pages/ui-class). Aplikace, které zahrnují Identity můžete použít nový generátor Identity selektivně Přidání zdrojového kódu obsažen v knihovně Razor třídu (RCL) Identity. Můžete chtít vygenerování zdrojového kódu, abyste mohli upravit kód a změnit chování. Například může dát pokyn generátor pro generování kódu při registraci. Generovaného kódu mají přednost před stejný kód v Identity RCL.
 
-Aplikace, které provádějí **není** zahrnují ověřování můžete použít scaffolder Identity k přidání balíčku RCL Identity. Máte možnost výběru Identity kódu má být vygenerován.
+Aplikací, které toho **není** zahrnout ověřování můžete použít Generátor Identity a přidejte příslušný balíček RCL Identity. Máte možnost výběru Identity kód chcete vygenerovat.
 
-Další informace najdete v tématu [Identity vygenerované uživatelské rozhraní v projektů ASP.NET Core](xref:security/authentication/scaffold-identity).
+Další informace najdete v tématu [Identity vygenerované uživatelské rozhraní v projektech ASP.NET Core](xref:security/authentication/scaffold-identity).
 
 ## <a name="https"></a>HTTPS
 
-S vyšší zaměřit na zabezpečení a ochrana osobních údajů je důležité povolit HTTPS pro webové aplikace. Vynucení HTTPS se stává stále striktní na webu. Servery, které nepoužívají HTTPS, jsou považovány za nezabezpečené. K vynucení, že webových funkcí produktu musí používat z kontextu zabezpečení jsou spouštění prohlížeče (chromu, Mozilla). [GDPR](xref:security/gdpr) vyžaduje použití protokolu HTTPS k ochrany osobních údajů uživatele. Při použití protokolu HTTPS v produkčním prostředí je rozhodující, pomocí protokolu HTTPS v vývoj pomáhají zabránit problémům v nasazení (například nezabezpečené odkazy). ASP.NET Core 2.1 zahrnuje množství vylepšení, které usnadňují používání protokolu HTTPS v vývoj a konfigurace protokolu HTTPS v produkčním prostředí. Další informace najdete v tématu [vynutit HTTPS](xref:security/enforcing-ssl).
+Větší zaměření na zabezpečení a ochrana osobních údajů povolení HTTPS pro web apps je důležité. Vynucení protokolu HTTPS se stává stále více striktní na webu. Servery, které nechcete používat protokol HTTPS se považují za nezabezpečené. K vynucení, webové funkce musí být volána ze zabezpečeného kontextu spuštění prohlížeče (chromu, Mozilla). [GDPR](xref:security/gdpr) vyžaduje použití protokolu HTTPS do ochrany osobních údajů uživatele. Při použití protokolu HTTPS v produkčním prostředí je velmi důležité, pomocí protokolu HTTPS ve vývoji pomáhají zabránit problémům v nasazení (například nezabezpečené odkazy). ASP.NET Core 2.1 zahrnuje množství vylepšení, které usnadňují používání protokolu HTTPS ve vývoji a konfigurace protokolu HTTPS v produkčním prostředí. Další informace najdete v tématu [vynucení HTTPS](xref:security/enforcing-ssl).
 
 ### <a name="on-by-default"></a>Na ve výchozím nastavení
 
-Usnadňuje vývoj zabezpečeného webu HTTPS nyní ve výchozím nastavení zapnutá. Od verze 2.1, Kestrel naslouchá na `https://localhost:5001` při místní vývojový certifikát nachází. Vývojový certifikát se vytvoří:
+K usnadnění vývoje zabezpečeného webu, je teď ve výchozím nastavení povolenou komunikací HTTPS. Od verze 2.1, Kestrel naslouchá na `https://localhost:5001` Pokud je k dispozici certifikát pro místní vývoj. Certifikát pro vývoj se vytvoří:
 
-* V rámci prostředí prvního spuštění .NET Core SDK, při použití sady SDK pro první.
-* Ručně pomocí nové `dev-certs` nástroj.
+* Jako součást první spuštění prostředí .NET Core SDK, při použití sady SDK pro první.
+* Ručně pomocí nového `dev-certs` nástroj.
 
-Spustit `dotnet dev-certs https --trust` certifikátu důvěřovat.
+Spustit `dotnet dev-certs https --trust` důvěřovat certifikátům.
 
 ### <a name="https-redirection-and-enforcement"></a>Přesměrování protokolu HTTPS a vynucení
 
-Webové aplikace obvykle nutné naslouchání protokolu HTTP a HTTPS, ale pak přesměruje veškerý provoz protokolu HTTP na HTTPS. V 2.1 specializované middleware přesměrování protokolu HTTPS, který inteligentně přesměruje na základě přítomnosti konfigurace nebo je zavedený porty vázané serveru.
+Webové aplikace obvykle potřebují naslouchání protokolu HTTP a HTTPS, ale pak přesměrovat všechen provoz protokolu HTTP na HTTPS. V 2.1 specializované middleware přesměrování HTTPS, které inteligentně přesměruje na základě přítomnosti konfigurace nebo je zavedený vázaných portů.
 
-Použití protokolu HTTPS lze dále vynutit pomocí [HTTP striktní přenosu zabezpečení protokolu (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts). HSTS dá pokyn prohlížeče vždy přístup k webu přes HTTPS. ASP.NET Core 2.1 přidá HSTS middleware, který podporuje možnosti pro maximální stáří, subdomény, a HSTS přednačtení seznamu.
+Použití protokolu HTTPS lze dále vynutit použití [HTTP striktní přenosu zabezpečení protokolu (HSTS)](xref:security/enforcing-ssl#http-strict-transport-security-protocol-hsts). HSTS instruuje prohlížeče vždy přístup k webu přes protokol HTTPS. ASP.NET Core 2.1 přidá HSTS middleware, který podporuje možnosti pro maximální stáří, subdomén, a HSTS předběžné načtení seznamu.
 
 ### <a name="configuration-for-production"></a>Konfigurace pro produkční prostředí
 
-V produkčním prostředí musí být explicitně nakonfigurovaný protokol HTTPS. V 2.1 výchozí schéma konfigurace pro konfiguraci protokolu HTTPS pro Kestrel přidala. Aplikace může být nakonfigurován k používání:
+V produkčním prostředí musí být explicitně nakonfigurován protokol HTTPS. V 2.1 výchozí konfigurace schématu konfigurace HTTPS pro Kestrel přidala. Aplikace je možné nakonfigurovat na použití:
 
-* Víc koncových bodů včetně adres URL. Další informace najdete v tématu [Kestrel webového serveru implementace: konfigurace koncového bodu](xref:fundamentals/servers/kestrel#endpoint-configuration).
+* Více koncových bodů včetně adresy URL. Další informace najdete v tématu [Kestrel webového serveru implementace: konfigurace koncového bodu](xref:fundamentals/servers/kestrel#endpoint-configuration).
 * Certifikát, který se má použít pro protokol HTTPS ze souboru na disku nebo z úložiště certifikátů.
 
 ## <a name="gdpr"></a>GDPR
 
-Základní technologie ASP.NET poskytuje rozhraní API a šablony, které vám pomůžou splňovat některé [Evropa obecné Data Protection nařízení (GDPR)](https://www.eugdpr.org/) požadavky. Další informace najdete v tématu [GDPR podporovat v ASP.NET Core](xref:security/gdpr). A [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) ukazuje způsob použití a umožňuje testovat většinu GDPR rozšíření bodů a přidat do šablony ASP.NET Core 2.1 rozhraní API.
+ASP.NET Core nabízí rozhraní API a šablony, které vám pomohou splnit některé [EU obecného Regulation (GDPR)](https://www.eugdpr.org/) požadavky. Další informace najdete v tématu [podpory nařízení GDPR v ASP.NET Core](xref:security/gdpr). A [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) ukazuje způsob použití a umožňuje testovat Většina rozhraní API přidat do šablony ASP.NET Core 2.1 a GDPR Rozšiřovací body.
 
-## <a name="integration-tests"></a>Integrace testů
+## <a name="integration-tests"></a>Integrační testy
 
-Nový balíček uvádíme, že test zjednodušuje vytváření a spouštění. [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/) balíček zpracovává následující úlohy:
+Nový balíček je zavedená, že test zjednodušují vytváření a spouštění. [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/) balíček provádí následující úlohy:
 
-* Zkopíruje soubor závislosti (*\*.deps*) z otestované aplikace do testovacího projektu *bin* složky.
-* Nastaví kořenu obsahu na kořenového projektu otestované aplikace, aby statické soubory a stránek/zobrazení se našly při provádění testů.
-* Poskytuje [WebApplicationFactory](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) třída pro zjednodušení zavádění otestované aplikace s [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver).
+* Zkopíruje soubor závislostí (*\*.deps*) z otestované aplikace do testovacího projektu *bin* složky.
+* Nastaví obsahu kořenové do kořenového adresáře projektu testované aplikace, aby statické soubory a stránky a zobrazení se našly při spouštění testů.
+* Poskytuje [WebApplicationFactory](/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1) tříd zjednodušení spuštění testované aplikaci pomocí [TestServer](/dotnet/api/microsoft.aspnetcore.testhost.testserver).
 
-Tento test používá [xUnit](https://xunit.github.io/) zkontrolujte, že indexovou stránku načte se stavovým kódem úspěch a s správnou hlavičku Content-Type:
+Následující test používá [xUnit](https://xunit.github.io/) zkontrolujte, že načte indexovou stránku s stavový kód úspěchu a správné hlavičky Content-Type:
 
 ```csharp
 public class BasicTests
@@ -112,56 +112,56 @@ public class BasicTests
 }
 ```
 
-Další informace najdete v tématu [integrace testy](xref:test/integration-tests) tématu.
+Další informace najdete v tématu [integrační testy](xref:test/integration-tests) tématu.
 
-## <a name="apicontroller-actionresult"></a>[Objektu ApiController], ActionResult
+## <a name="apicontroller-actionresultt"></a>[Objektu ApiController], ActionResult\<T >
 
-ASP.NET Core 2.1 přidá nový programovací konvence, které usnadňují sestavení vyčištění a popisný webových rozhraní API. `ActionResult<T>` je k přidání nového typu umožňuje aplikacím vracet typ odpovědi nebo jiné akce výsledek (podobně jako IActionResult), při stále označující typ odpovědi. `[ApiController]` Atribut přidala také jako způsob, jak můžete vyjádřit výslovný souhlas konvence specifické pro webové rozhraní API a chování.
+ASP.NET Core 2.1 přidá nový programovací vytváření názvů usnadňují čisté a popisný webová rozhraní API. `ActionResult<T>` je přidán nový typ umožňuje aplikacím vracet typ odpovědi nebo jiné akce výsledek (podobně jako IActionResult), při stále označující typ odpovědi. `[ApiController]` Atribut se také přidal jako způsob, jak vyjádřit výslovný souhlas s konvencí specifických pro webové rozhraní API a chování.
 
-Další informace najdete v tématu [sestavení webového rozhraní API pomocí ASP.NET Core](xref:web-api/index).
+Další informace najdete v tématu [vytvářet webová rozhraní API pomocí ASP.NET Core](xref:web-api/index).
 
 ## <a name="ihttpclientfactory"></a>IHttpClientFactory
 
-ASP.NET Core 2.1 obsahuje novou `IHttpClientFactory` služba, která usnadňuje konfigurace a využívat instancí `HttpClient` v aplikacích. `HttpClient` již obsahuje koncept delegování obslužných rutin, které může být propojena pro odchozí požadavky HTTP. Objekt factory:
+ASP.NET Core 2.1 obsahuje nový `IHttpClientFactory` služba, která usnadňuje konfiguraci a využití instancí `HttpClient` v aplikacích. `HttpClient` již obsahuje koncept delegování obslužné rutiny, které by mohly být propojeny pro odchozí požadavky HTTP. Objekt pro vytváření:
 
-* Díky registrace instancí `HttpClient` za intuitivnější pojmenované klienta.
-* Implementuje Polly obslužná rutina, která umožňuje Polly zásady, které se používají pro opakování, CircuitBreakers atd.
+* Díky registraci instance `HttpClient` za mnohem intuitivnější pojmenované klienta.
+* Implementuje Polly obslužnou rutinu, která umožňuje Polly zásad se použije pro opakování, CircuitBreakers atd.
 
-Další informace najdete v tématu [zahájit požadavků HTTP](xref:fundamentals/http-requests).
+Další informace najdete v tématu [zahájit požadavky HTTP](xref:fundamentals/http-requests).
 
 ## <a name="kestrel-transport-configuration"></a>Konfigurace kestrel přenosu
 
-Ve verzi ASP.NET Core 2.1 Kestrel na výchozí přenos je už podle Libuv ale na spravované sokety. Další informace najdete v tématu [Kestrel webového serveru implementace: Konfigurace přenosu](xref:fundamentals/servers/kestrel#transport-configuration).
+Verze technologie ASP.NET Core 2.1 Kestrel pro výchozí přenos je již podle Libuv ale místo toho podle spravované sokety. Další informace najdete v tématu [Kestrel webového serveru implementace: Konfigurace přenosu](xref:fundamentals/servers/kestrel#transport-configuration).
 
-## <a name="generic-host-builder"></a>Tvůrce obecné hostitele
+## <a name="generic-host-builder"></a>Tvůrce obecný hostitele
 
-Obecný Tvůrce hostitele (`HostBuilder`) byla zavedena. Tohoto Tvůrce lze použít pro aplikace, které nejsou zpracování požadavků HTTP (zasílání zpráv, úlohy na pozadí, atd.).
+Obecný Tvůrce hostitele (`HostBuilder`) byl zaveden. Tento Tvůrce lze použít pro aplikace, které není zpracovávají požadavky HTTP (zasílání zpráv, úlohy na pozadí, atd.).
 
-Další informace najdete v tématu [obecné hostitele .NET](xref:fundamentals/host/generic-host).
+Další informace najdete v tématu [obecný hostitele .NET](xref:fundamentals/host/generic-host).
 
-## <a name="updated-spa-templates"></a>Aktualizované šablony SPA
+## <a name="updated-spa-templates"></a>Aktualizace šablon SPA
 
-Šablony jedné stránky aplikace pro úhlová reagují, a reagují s Redux se aktualizují používat struktury standardní projektu a sestavení systémy pro každou platformu.
+Jednostránková aplikace šablony pro Angular, React a React s Reduxem se aktualizují, aby používat standardní projekt struktury a systémy pro každé rozhraní, sestavení.
 
-Úhlová šablona je založená na úhlová rozhraní příkazového řádku a reagují šablony jsou založeny na vytvořit aplikaci reagují.
-Další informace najdete v tématu [šablony jedné stránky aplikace pomocí ASP.NET Core](xref:spa/index).
+Angular šablona je založena na Angular CLI a šablon React jsou založeny na vytvoření aplikace react.
+Další informace najdete v tématu [šablony jednostránkové aplikace pomocí ASP.NET Core](xref:spa/index).
 
-## <a name="razor-pages-search-for-razor-assets"></a>Stránky Razor vyhledejte prostředky Razor
+## <a name="razor-pages-search-for-razor-assets"></a>Stránky Razor vyhledávat Razor
 
-V 2.1 vyhledejte stránky Razor Razor prostředky (například rozložení a částečné.) v následujících adresářích v uvedeném pořadí:
+2.1 stránky Razor vyhledejte Razor prostředků (např. rozložení a částečných zobrazení) v následujících adresářích v uvedeném pořadí:
 
-1. Aktuální stránky složce.
+1. Aktuální složce stránky.
 1. *Řetězec/Pages/sdílené /*
 1. */Views/sdílené /*
 
 ## <a name="razor-pages-in-an-area"></a>Stránky Razor v oblasti.
 
-Teď podporují řešení stránky Razor [oblasti](xref:mvc/controllers/areas). Pokud chcete zobrazit příklad oblastech, vytvořte novou webovou aplikaci stránky Razor s jednotlivých uživatelských účtů. Stránky Razor webové aplikace s jednotlivých uživatelských účtů zahrnuje */Areas/Identity/Pages*.
+Teď podporují stránky Razor [oblasti](xref:mvc/controllers/areas). Chcete-li zobrazit příklad oblasti, vytvořte nová webová aplikace Razor Pages s jednotlivými uživatelskými účty. Webové aplikace stránky Razor pomocí jednotlivých uživatelských účtů zahrnuje */Areas/Identity/Pages*.
 
-## <a name="migrate-from-20-to-21"></a>Migrace z 2.0 na 2.1
+## <a name="migrate-from-20-to-21"></a>Migrace z verze 2.0 na verzi 2.1
 
-V tématu [migraci ze základní technologie ASP.NET 2.0 na 2.1](xref:migration/20_21).
+Zobrazit [migrovat z ASP.NET Core 2.0 k 2.1](xref:migration/20_21).
 
 ## <a name="additional-information"></a>Další informace
 
-Úplný seznam změn, najdete v článku [poznámky k verzi ASP.NET Core 2.1](https://github.com/aspnet/Home/releases/tag/2.1.0).
+Úplný seznam změn, najdete v článku [poznámky k verzi pro ASP.NET Core 2.1](https://github.com/aspnet/Home/releases/tag/2.1.0).

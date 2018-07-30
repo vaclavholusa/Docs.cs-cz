@@ -5,12 +5,12 @@ description: Další informace o protokolovacího rozhraní v ASP.NET Core. Obje
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 0181566aeab1fa055435ac90887c019eef52878c
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: f629b062afb5c17cd05040a9ef0281aa7121aabc
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228634"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320749"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -56,7 +56,7 @@ Chcete-li použít poskytovatele, zavolejte poskytovatele `Add<ProviderName>` me
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-Povolí protokolování pomocí výchozí šablony projektu [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) metody:
+Výchozí šablona projektu umožňuje protokolování zprostředkovatele konzoly a ladění pomocí volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) metody rozšíření v *Program.cs*:
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -77,11 +77,21 @@ ASP.NET Core [injektáž závislostí](xref:fundamentals/dependency-injection) (
 
 ::: moniker-end
 
-Zjistíte informace o jednotlivých [vestavěné protokolování zprostředkovatele](#built-in-logging-providers) a obsahuje odkazy na [zprostředkovatele přihlášení třetí strany](#third-party-logging-providers) dále v tomto článku.
+Další informace o [vestavěné protokolování poskytovatelé](#built-in-logging-providers) a odkazy na [zprostředkovatele přihlášení třetí strany](#third-party-logging-providers) dále v tomto článku.
 
-## <a name="settings-file-configuration"></a>Konfigurace nastavení souboru
+## <a name="configuration"></a>Konfigurace
 
-Každý z předchozích příkladů v [Přidání poskytovatelů](#how-to-add-providers) načte zprostředkovatele konfigurace protokolování z část `Logging` části souborů s nastavením aplikace. Následující příklad ukazuje obsah typické *appsettings. Development.JSON* souboru:
+Zprostředkovatel konfigurace protokolování poskytuje jeden nebo více poskytovatelů konfigurace:
+
+* Formáty souborů (INI, JSON a XML).
+* Argumenty příkazového řádku.
+* Proměnné prostředí.
+* Objekty .NET v paměti.
+* Nešifrované [manažera tajných](xref:security/app-secrets) úložiště.
+* Uložení šifrovaného uživatelského, jako například [Azure Key Vault](xref:security/key-vault-configuration).
+* Vlastní zprostředkovatelé (nainstalované nebo vytváření).
+
+Například konfigurace protokolování běžně poskytované `Logging` části souborů s nastavením aplikace. Následující příklad ukazuje obsah typické *appsettings. Development.JSON* souboru:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -122,6 +132,8 @@ Každý z předchozích příkladů v [Přidání poskytovatelů](#how-to-add-pr
 `LogLevel` klíče představují názvy protokolů. `Default` Klíč platí do protokolů, které nejsou výslovně uvedena. Hodnota představuje [úrovně protokolování](#log-level) použitý pro daný protokol.
 
 ::: moniker-end
+
+Informace o implementaci zprostředkovatele konfigurace najdete v tématu <xref:fundamentals/configuration/index>.
 
 ## <a name="sample-logging-output"></a>Ukázkový výstup protokolování
 
@@ -436,7 +448,7 @@ Následující kód umožní obory pro zprostředkovatele konzoly:
 > [!NOTE]
 > Konfigurace `IncludeScopes` možnost protokolovací nástroj konzoly je nutné povolit protokolování na základě oboru.
 >
-> `IncludeScopes` můžete nakonfigurovat přes *appsettings* konfigurační soubory. Další informace najdete v tématu [konfigurační soubor nastavení](#settings-file-configuration) oddílu.
+> Informace o konfiguraci, najdete v článku [konfigurace](#Configuration) oddílu.
 
 ::: moniker-end
 

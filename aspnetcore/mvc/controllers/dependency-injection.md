@@ -1,48 +1,48 @@
 ---
-title: Vkládání závislostí do řadičů v ASP.NET Core
+title: Injektáž závislostí do kontrolerů v ASP.NET Core
 author: ardalis
-description: Zjistit, jak řadiče ASP.NET Core MVC žádostí závislé explicitně prostřednictvím jejich konstruktory pomocí vkládání závislostí v ASP.NET Core.
+description: Zjistěte, jak ASP.NET Core MVC řadiče vyžádat jejich závislosti explicitně prostřednictvím jejich konstruktory s injektáž závislostí v ASP.NET Core.
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 23c91a4363223a135c50ceca51e6af22ed69fe3b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276448"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342130"
 ---
-# <a name="dependency-injection-into-controllers-in-aspnet-core"></a>Vkládání závislostí do řadičů v ASP.NET Core
+# <a name="dependency-injection-into-controllers-in-aspnet-core"></a>Injektáž závislostí do kontrolerů v ASP.NET Core
 
 <a name="dependency-injection-controllers"></a>
 
 Podle [Steve Smith](https://ardalis.com/)
 
-Kontrolery MVC ASP.NET Core měli požádat o jejich závislosti explicitně prostřednictvím jejich konstruktory. V některých případech akce jednotlivých kontroleru může vyžadovat služba a nemusí mít smysl k požadavku na úrovni kontroleru. V takovém případě je také možné vložit služby jako parametr v metodě akce.
+Kontrolery ASP.NET Core MVC by měl požádat o jejich závislosti explicitně prostřednictvím jejich konstruktory. V některých případech akce jednotlivých kontroleru může vyžadovat služby a nemusí mít smysl požadavku na úrovni kontroleru. V takovém případě můžete vložit službu jako parametr v metodě akce.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="dependency-injection"></a>Vkládání závislostí
+## <a name="dependency-injection"></a>Injektáž závislostí
 
-Vkládání závislostí je technika, který následuje [závislostí inverzi Princip](http://deviq.com/dependency-inversion-principle/), povolení pro aplikace, musí se skládat z volně párované moduly. Má integrovanou podporu pro ASP.NET Core [vkládání závislostí](../../fundamentals/dependency-injection.md), což usnadňuje aplikace pro testování a údržbu.
+Injektáž závislostí je technika, která následuje [závislost inverzi Princip](http://deviq.com/dependency-inversion-principle/), což pro aplikace se skládá z volně propojených modulů. Má integrovanou podporu pro ASP.NET Core [injektáž závislostí](../../fundamentals/dependency-injection.md), což usnadňuje aplikace pro testování a udržovat.
 
-## <a name="constructor-injection"></a>Vkládání – konstruktor
+## <a name="constructor-injection"></a>Vkládání konstruktor
 
-ASP.NET Core integrovanou podporu pro vkládání závislostí na základě konstruktor rozšiřuje na řadiče MVC. Stačí přidat typ služby k řadiči jako parametr konstruktoru, se pokusí přeložit typu pomocí jeho vytvořené v kontejneru služby ASP.NET Core. Služby jsou obvykle, ale ne vždy definovány, pomocí rozhraní. Například pokud aplikace obsahuje obchodní logiky, která závisí na aktuální čas, můžete vložit službu, která načte dobu (nikoli nezakódovávejte ho), který by umožnil testy předávat implementace, které používají nastavit čas.
+ASP.NET Core integrovanou podporu pro vkládání závislostí na základě konstruktoru rozšiřuje na kontrolery MVC. Pouhým přidáním typ služby k řadiči jako parametr konstruktoru, ASP.NET Core se pokus o vyřešení tohoto typu pomocí jeho sestavení v kontejneru služby. Služby jsou obvykle, ale ne vždy definovány, pomocí rozhraní. Například pokud aplikace obsahuje obchodní logiky, která závisí na aktuální čas, můžete vložit službu, která načte čas (nezadávejte napevno-ji), který by umožnilo testy a zajistěte tak předání implementace, které používají nastavit čas.
 
 [!code-csharp[](dependency-injection/sample/src/ControllerDI/Interfaces/IDateTime.cs)]
 
 
-Implementace rozhraní tohoto typu tak, aby používala systémové hodiny v době běhu je jednoduchá:
+Je triviální implementace rozhraní jako je ten tak, aby používala systémové hodiny za běhu:
 
 [!code-csharp[](dependency-injection/sample/src/ControllerDI/Services/SystemDateTime.cs)]
 
 
-S tímto na místě můžete použít službu v kontroleru. V takovém případě jsme přidali některé logiku `HomeController` `Index` metodu pro zobrazení pohlednice uživateli podle denní dobu.
+Díky tomu na místě můžete použít službu v kontroleru. V tomto případě jsme přidali nějaké logiky do `HomeController` `Index` metodu pro zobrazení pozdrav uživateli na základě času dne.
 
 [!code-csharp[](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=8,10,12,17,18,19,20,21,22,23,24,25,26,27,28,29,30&range=1-31,51-52)]
 
-Pokud jsme spustit nyní aplikaci, jsme pravděpodobně dojde k chybě:
+Pokud provozujeme aplikace nyní, jsme se pravděpodobně dojde k chybě:
 
 ```
 An unhandled exception occurred while processing the request.
@@ -51,21 +51,21 @@ InvalidOperationException: Unable to resolve service for type 'ControllerDI.Inte
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
 ```
 
-K této chybě dojde, když jsme nenakonfigurovali služby v `ConfigureServices` metoda v našich `Startup` třídy. Chcete-li určit, který požaduje pro `IDateTime` by se měly vyřešit pomocí instance `SystemDateTime`, přidejte zvýrazněný řádek v seznamu níže na vaše `ConfigureServices` metoda:
+K této chybě dochází, když jsme neprovedli konfiguraci služby ve službě `ConfigureServices` metoda v našich `Startup` třídy. K určení, že žádosti pro `IDateTime` měla být vyřešena pomocí instance `SystemDateTime`, přidejte zvýrazněný řádek v ukázce níže na vaše `ConfigureServices` metody:
 
 [!code-csharp[](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=4&range=26-27,42-44)]
 
 > [!NOTE]
-> Tato konkrétní službu může být implementovaná pomocí některé z možností několik různých doba platnosti (`Transient`, `Scoped`, nebo `Singleton`). V tématu [vkládání závislostí](../../fundamentals/dependency-injection.md) pochopit, jak každá z těchto možností oboru ovlivní chování služby.
+> Tento konkrétní službu může implementovat některou z několika možností různé doby života (`Transient`, `Scoped`, nebo `Singleton`). Zobrazit [injektáž závislostí](../../fundamentals/dependency-injection.md) pochopit, jak každá z těchto možností oboru ovlivní chování služby.
 
-Jakmile služba byla nakonfigurována, spuštění aplikace a přechodu na domovskou stránku měli zobrazení založené na čase zprávy podle očekávání:
+Jakmile služba byla nakonfigurována, spuštění aplikace a přejdete na domovskou stránku by měla zobrazit zprávy podle času podle očekávání:
 
-![Server pozdravu](dependency-injection/_static/server-greeting.png)
+![Pozdrav serveru](dependency-injection/_static/server-greeting.png)
 
 >[!TIP]
-> Najdete v části [testování řadiče logiku](testing.md) Další informace o explicitní žádost o závislosti [ http://deviq.com/explicit-dependencies-principle/ ](http://deviq.com/explicit-dependencies-principle/) v řadiče usnadňuje kód pro testování.
+> V tématu [testovací kontroler logiku](testing.md) se naučíte explicitní žádost o závislosti [ http://deviq.com/explicit-dependencies-principle/ ](http://deviq.com/explicit-dependencies-principle/) v řadiče usnadňuje kód pro testování.
 
-Vkládání předdefinovaných závislostí ASP.NET Core podporuje mít jenom jeden konstruktor pro třídy, které žádají o služby. Pokud máte více než jeden konstruktor, může dojít, s oznámením o výjimce:
+Vkládání předdefinovaných závislostí ASP.NET Core podporuje s pouze jediný konstruktor třídy žádosti o služby. Pokud máte více než jeden konstruktor, můžete být s oznámením výjimce:
 
 ```
 An unhandled exception occurred while processing the request.
@@ -74,31 +74,31 @@ InvalidOperationException: Multiple constructors accepting all given argument ty
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
 ```
 
-Jako zobrazí se chybová zpráva, můžete vyřešit potíže s právě jeden konstruktor. Můžete také [nahraďte podpoře vkládání závislostí výchozí implementace třetích stran](../../fundamentals/dependency-injection.md#replacing-the-default-services-container), řadu které budou podporovat několik konstruktorů.
+Jak uvádí chybová zpráva, můžete opravit tento problém s použitím jediný konstruktor. Můžete také [nahraďte výchozí kontejner vkládání závislostí třetích stran implementace](xref:fundamentals/dependency-injection#default-service-container-replacement), řadu, které podporují víc konstruktorů.
 
 ## <a name="action-injection-with-fromservices"></a>Vkládání akce s FromServices
 
-Někdy nepotřebujete služby pro více než jednu akci v rámci vašeho řadiče. V takovém případě má smysl vložení služby jako parametr pro metodu akce. K tomu je potřeba označení parametr s atributem `[FromServices]` jak je vidět tady:
+Někdy není nutné služba pro více než jednu akci v rámci vašeho kontroleru. V takovém případě může být vhodné vložit službu jako parametr do metody akce. Uděláte to pomocí označení parametr s atributem `[FromServices]` jak je znázorněno zde:
 
 [!code-csharp[](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=1&range=33-38)]
 
-## <a name="accessing-settings-from-a-controller"></a>Přístup k nastavení z řadiče
+## <a name="accessing-settings-from-a-controller"></a>Přístup k nastavení z Kontroleru
 
-Přístup k aplikaci nebo konfigurace nastavení z v kontroleru je běžný vzor. Tento přístup má použít vzor možnosti popsané v [konfigurace](xref:fundamentals/configuration/index). Nastavení obecně by neměl žádosti přímo z vašeho řadiče pomocí vkládání závislostí. Lepším řešením je požadavek `IOptions<T>` instance, kde `T` je třída konfigurace budete potřebovat.
+Přístup k aplikaci nebo konfigurace nastavení z v rámci kontroleru je běžný vzor. Tento přístup měli použít možnosti vzor, podle [konfigurace](xref:fundamentals/configuration/index). Obecně by neměl požadovat nastavení přímo z řadiče pomocí vkládání závislostí. Lepším řešením je žádost `IOptions<T>` instance, kde `T` je třída konfigurace budete potřebovat.
 
-Chcete-li pracovat s vzoru možnosti, vytvořte třídu, která představuje možnosti, jako je tato:
+Pro práci s možností vzoru, musíte vytvořit třídu, která představuje možnosti, jako je například tento:
 
 [!code-csharp[](dependency-injection/sample/src/ControllerDI/Model/SampleWebSettings.cs)]
 
-Pak budete muset nakonfigurovat aplikaci, aby používá možnosti model a přidat vaší třídě konfigurace ke kolekci služby v `ConfigureServices`:
+Pak je potřeba nakonfigurovat aplikaci pro použití možnosti modelu a přidat do kolekce služby ve své třídě configuration `ConfigureServices`:
 
 [!code-csharp[](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=3,4,5,6,9,16,19&range=14-44)]
 
 > [!NOTE]
-> V seznamu nahoře, jsme konfigurujete aplikaci číst nastavení ze souboru formátu JSON. Zcela v kódu, můžete také nakonfigurovat nastavení, které se zobrazí ve výše uvedeném komentáři kódu. V tématu [konfigurace](xref:fundamentals/configuration/index) pro další možnosti konfigurace.
+> V seznamu výše jsme se konfigurace aplikace pro čtení nastavení ze souboru ve formátu JSON. Můžete také nakonfigurovat nastavení zcela v kódu, jak je uvedeno ve výše uvedeném komentářem kódu. Zobrazit [konfigurace](xref:fundamentals/configuration/index) pro další možnosti konfigurace.
 
-Jakmile jste určili objekt silného typu konfigurace (v tomto případě `SampleWebSettings`) a jeho přidání ke kolekci služby můžete žádosti ji ze všech Kontroleru nebo metodě akce tím, že požádá o instanci `IOptions<T>` (v tomto případě `IOptions<SampleWebSettings>`) . Následující kód ukazuje, jak jeden vyžadují nastavení z řadiče:
+Po zadání objekt konfigurace silného typu (v tomto případě `SampleWebSettings`) a jeho přidání do kolekce služeb, můžete vyžádejte si ho z jakékoli Kontroleru nebo metodě akce požaduje instanci `IOptions<T>` (v tomto případě `IOptions<SampleWebSettings>`) . Následující kód ukazuje, jak jeden požadovat nastavení z kontroleru:
 
 [!code-csharp[](./dependency-injection/sample/src/ControllerDI/Controllers/SettingsController.cs?highlight=3,5,7&range=7-22)]
 
-Následující možnosti vzor umožňuje nastavení a konfiguraci, chcete-li být odděleno od sebe navzájem a zajišťuje kontroleru je následující [oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/), protože nepotřebuje vědět, jak a kde najít nastavení informace. Také umožňuje kontroleru usnadňují testování částí [testování logiku řadič](testing.md), protože žádné [statické plevami](http://deviq.com/static-cling/) nebo přímé vytváření instancí třídy nastavení v rámci třídy kontroleru.
+Následující vzorek možnosti umožňuje nastavení a konfigurace odděleném od sebe a zajišťuje následující kontroler [oddělení oblastí zájmu](http://deviq.com/separation-of-concerns/), protože nepotřebuje vědět, jak a kde najít nastavení informace. Také udržuje kontroler usnadňuje testování částí [testovací kontroler logiku](testing.md), protože neexistuje žádný [statické plevami](http://deviq.com/static-cling/) nebo přímé vytvoření instance třídy nastavení v rámci třídy kontroleru.

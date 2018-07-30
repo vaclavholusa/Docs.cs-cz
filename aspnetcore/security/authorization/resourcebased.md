@@ -1,37 +1,37 @@
 ---
-title: Ověření na základě prostředků v ASP.NET Core
+title: Autorizace na základě prostředků v ASP.NET Core
 author: scottaddie
-description: Zjistěte, jak implementovat autorizace na základě prostředků v aplikaci ASP.NET Core při atribut autorizovat nestačí.
+description: Zjistěte, jak implementovat ověřování na základě prostředků v aplikaci ASP.NET Core atribut Authorize nestačí.
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/07/2017
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 577af3ba45361aec715a49fa59b9ec9869ced851
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6a110a69c58d5e20a15198378510486daec3d452
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273344"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342286"
 ---
-# <a name="resource-based-authorization-in-aspnet-core"></a>Ověření na základě prostředků v ASP.NET Core
+# <a name="resource-based-authorization-in-aspnet-core"></a>Autorizace na základě prostředků v ASP.NET Core
 
-Strategie autorizace závisí na prostředek přistupuje. Vezměte v úvahu dokument, který má vlastnost autora. K aktualizaci dokumentu je povoleno pouze autora. V důsledku toho dokumentu musí načíst z úložiště dat, než dojde k vyhodnocení autorizace.
+Strategii autorizace závisí na prostředek, ke kterému přistupujete. Vezměte v úvahu dokument, který má vlastnost Autor. Pouze autor můžou aktualizovat dokument. V důsledku toho dokumentu musí načíst z úložiště dat, než dojde k vyhodnocení autorizace.
 
-Před datové vazby a před spuštěním obslužná rutina stránky nebo akce, který načte dokumentu dojde k vyhodnocení atribut. Z těchto důvodů, deklarativní autorizace pomocí `[Authorize]` atribut nestačí. Místo toho můžete vyvolat metodu vlastní autorizace&mdash;styl známé jako imperativní autorizace.
+Před datové vazby a před spuštěním obslužná rutina stránky nebo akci, která načte dokument dojde k vyhodnocení atribut. Z těchto důvodů, deklarativní autorizace pomocí `[Authorize]` atribut nestačí. Místo toho můžete vyvolat vlastní autorizační metoda&mdash;styl označované jako imperativní autorizace.
 
-Použití [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample)) prozkoumat funkce popsané v tomto tématu.
+Použití [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample)) a prozkoumejte funkce popsané v tomto tématu.
 
-[Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace](xref:security/authorization/secure-data) obsahuje ukázkovou aplikaci, která používá ověřování založené na prostředcích.
+[Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data) obsahuje ukázkovou aplikaci, která používá ověřování založené na resource.
 
-## <a name="use-imperative-authorization"></a>Použít imperativní autorizace
+## <a name="use-imperative-authorization"></a>Použití imperativní autorizace
 
-Autorizace je implementovaný jako [IAuthorizationService](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) služby a je zaregistrován v kolekci služby v rámci `Startup` třídy. Služba je k dispozici prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) obslužné rutiny stránky nebo akce.
+Autorizace je implementovaný jako [služby IAuthorizationService](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) služby a je registrován v kolekci služby v rámci `Startup` třídy. Služba je k dispozici prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection) obslužných rutin stránky nebo provádět akce.
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Controllers/DocumentController.cs?name=snippet_IAuthServiceDI&highlight=6)]
 
-`IAuthorizationService` má dva `AuthorizeAsync` přetížení metody: přijímá jeden prostředek a název zásady a dalších přijetí prostředek a seznam požadavků pro vyhodnocení.
+`IAuthorizationService` má dva `AuthorizeAsync` přetížení metody: jedna přijímá prostředku a název zásady a druhý přijímá prostředku a seznam všech požadavků k vyhodnocení.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 Task<AuthorizationResult> AuthorizeAsync(ClaimsPrincipal user,
@@ -57,12 +57,12 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
 
 <a name="security-authorization-resource-based-imperative"></a>
 
-V následujícím příkladu je prostředek, který nelze zabezpečit načten do vlastní `Document` objektu. `AuthorizeAsync` Přetížení je volána k určení, zda má aktuální uživatel může zadaný dokument upravovat. Vlastní zásady autorizace "EditPolicy" je rozdělen do rozhodnutí. V tématu [vlastní na základě zásad autorizace](xref:security/authorization/policies) Další informace o vytváření zásad autorizace.
+V následujícím příkladu je prostředek, který má být zabezpečeny načten do vlastní `Document` objektu. `AuthorizeAsync` Přetížení je vyvoláno pro zjištění, zda má aktuální uživatel může upravit zadaný dokument. Vlastní zásady autorizace "EditPolicy" je rozdělen do rozhodnutí. Zobrazit [vlastní autorizace na základě zásad](xref:security/authorization/policies) pro další informace o vytváření zásad autorizace.
 
 > [!NOTE]
-> Následující kód ukázky předpokládá, že byla spuštěna ověřování a sadu `User` vlastnost.
+> Následující kód ukázky předpokládají bylo spuštěno ověřování a nastavení `User` vlastnost.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/Edit.cshtml.cs?name=snippet_DocumentEditHandler)]
 
@@ -74,9 +74,9 @@ V následujícím příkladu je prostředek, který nelze zabezpečit načten do
 
 ## <a name="write-a-resource-based-handler"></a>Zápis obslužné rutiny založené na prostředcích
 
-Zápis obslužné rutiny pro ověření na základě prostředků není výrazně liší od [zápis obslužné rutiny prostý požadavky](xref:security/authorization/policies#security-authorization-policies-based-authorization-handler). Vytvořte třídu vlastní požadavek a implementovat třídu obslužné rutiny požadavku. Třídu obslužné rutiny určuje požadavek i typ prostředku. Například obslužnou rutinu využitím `SameAuthorRequirement` požadavek a `Document` prostředků vypadá takto:
+Zápis obslužné rutiny pro ověřování na základě prostředku se výrazně liší od [zápis obslužné rutiny jednoduché požadavky](xref:security/authorization/policies#security-authorization-policies-based-authorization-handler). Vytvořit vlastní požadavek třídy a implementovat třídu obslužné rutiny požadavku. Třída obslužné rutiny určuje požadavky a typ prostředku. Například obslužnou rutinu využitím `SameAuthorRequirement` požadavek a `Document` prostředků vypadá takto:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
 
@@ -86,19 +86,19 @@ Zápis obslužné rutiny pro ověření na základě prostředků není výrazn�
 
 ---
 
-Požadavek a obslužné rutiny v registru `Startup.ConfigureServices` metoda:
+Registrovat požadavku a obslužné rutiny v `Startup.ConfigureServices` metody:
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Startup.cs?name=snippet_ConfigureServicesSample&highlight=3-7,9)]
 
 ### <a name="operational-requirements"></a>Provozní požadavky
 
-Pokud provádíte rozhodnutí podle výstupy operace CRUD (vytvořit, číst, Update, Delete), použijte [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) pomocná třída. Tato třída umožňuje zapisovat jeden obslužné rutině místo jednotlivých tříd pro každý typ operace. Pokud chcete použít, zadejte některé názvy operace:
+Pokud jste už rozhodování na základě výsledků operace CRUD (vytváření, čtení, Update, Delete), použijte [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) pomocná třída. Tato třída umožňuje zapisovat jedna obslužná rutina namísto jednotlivých tříd pro každý typ operace. Pro použití je třeba zadejte názvy některé operace:
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_OperationsClass)]
 
-Obslužná rutina je implementovaná následujícím způsobem pomocí `OperationAuthorizationRequirement` požadavek a `Document` prostředků:
+Obslužná rutina je implementován takto, pomocí `OperationAuthorizationRequirement` požadavek a `Document` prostředků:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
 
@@ -108,23 +108,23 @@ Obslužná rutina je implementovaná následujícím způsobem pomocí `Operatio
 
 ---
 
-Obslužná rutina předchozí ověří pomocí prostředku, identitu uživatele a požadavek na operaci `Name` vlastnost.
+Předchozí obslužná rutina ověří pomocí prostředku, identitu uživatele a požadavek na operaci `Name` vlastnost.
 
-Chcete-li volání obslužné rutiny provozní prostředků, zadejte operaci při vyvolání `AuthorizeAsync` v obslužné rutině stránky nebo akce. Následující příklad určuje, zda ověřený uživatel může zadaný dokument zobrazit.
+Volání obslužné rutiny provozní prostředků, zadejte operaci při vyvolání `AuthorizeAsync` v obslužné rutině stránky nebo akce. Následující příklad určuje, zda chcete-li zobrazit poskytnutý dokument smí obsahovat ověřeného uživatele.
 
 > [!NOTE]
-> Následující kód ukázky předpokládá, že byla spuštěna ověřování a sadu `User` vlastnost.
+> Následující kód ukázky předpokládají bylo spuštěno ověřování a nastavení `User` vlastnost.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/View.cshtml.cs?name=snippet_DocumentViewHandler&highlight=10-11)]
 
-Pokud autorizace úspěšné, vrátí se na stránce pro zobrazení dokumentu. Pokud autorizace selže, ale uživatel ověřen, vrácení `ForbidResult` informuje veškerý middleware ověřování, který autorizace se nezdařila. A `ChallengeResult` se vám při ověřování musí být provedeno. Pro klienty interaktivní prohlížeče může být vhodné přesměruje uživatele na přihlašovací stránku.
+Pokud autorizace úspěšná, vrátí se stránka pro zobrazení dokumentu. Pokud autorizace selže, ale uživatel je ověřen, vrací `ForbidResult` informuje veškerý middleware ověřování, který autorizace se nezdařila. A `ChallengeResult` je vrácena při ověřování musí být provedeno. Pro klienty prohlížeče interaktivní může být vhodné přesměruje uživatele na přihlašovací stránku.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentViewAction&highlight=11-12)]
 
-Pokud autorizace úspěšné, vrátí se zobrazení pro dokument. Pokud autorizace selže, vrácení `ChallengeResult` informuje veškerý middleware ověřování, autorizace se nezdařila, a middleware může trvat odpovídající odpověď. Odpovídající odpověď může být vrátí stavový kód 401 nebo 403. Pro klienty interaktivní prohlížeče to může znamenat přesměrovat uživatele na přihlašovací stránku.
+Pokud autorizace úspěšná, vrátí se zobrazení pro dokument. Pokud se ověření nezdaří, vrátí `ChallengeResult` informuje veškerý middleware ověřování, autorizace se nezdařila a middleware může trvat odpovídající odpověď. Stavový kód 401 nebo 403 může vrací odpovídající odpověď. Pro klienty prohlížeče interaktivní může to znamenat přesměruje uživatele na přihlašovací stránku.
 
 ---

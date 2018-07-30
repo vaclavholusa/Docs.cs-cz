@@ -7,20 +7,18 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/25/2018
 uid: signalr/introduction
-ms.openlocfilehash: bc6f25c3f35e7fb0c2c68220697f2e0fdc6a9958
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 2fff24609caf7592bad763a077288990a29617aa
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095386"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342546"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>Úvod do ASP.NET Core SignalR
 
-Podle [Rachel Appel](https://twitter.com/rachelappel)
-
 ## <a name="what-is-signalr"></a>Co je SignalR?
 
-Funkce SignalR technologie ASP.NET Core je knihovna, která zjednodušuje přidávání funkce webu v reálném čase do aplikací. Funkce webu v reálném čase umožňuje okamžitě kódu na straně serveru předávaný obsah do klientů.
+Funkce SignalR technologie ASP.NET Core je open source knihovna, která zjednodušuje přidávání funkce webu v reálném čase do aplikací. Funkce webu v reálném čase umožňuje okamžitě kódu na straně serveru předávaný obsah do klientů.
 
 Vhodnými kandidáty pro funkci SignalR:
 
@@ -31,27 +29,32 @@ Vhodnými kandidáty pro funkci SignalR:
 
 Funkce SignalR poskytuje rozhraní API pro vytváření server klient [vzdálených volání procedur (RPC)](https://wikipedia.org/wiki/Remote_procedure_call). Vzdálených volání procedur volají funkce JavaScript na klientských počítačích z kódu .NET Core na straně serveru.
 
-Funkce SignalR technologie ASP.NET Core:
+Tady jsou některé funkce SignalR technologie ASP.NET Core:
 
 * Správa připojení automaticky zpracovává.
-* Umožňuje všesměrové vysílání zpráv do všech připojených klientů současně. Například chatovací místnosti.
-* Umožňuje odesílání zpráv do konkrétních klientů nebo skupiny klientů.
-* Open source v [Githubu](https://github.com/aspnet/signalr).
-* Škálovatelné.
+* Odešle zprávy do všech připojených klientů současně. Například chatovací místnosti.
+* Odešle zprávy do konkrétních klientů nebo skupiny klientů.
+* Škálování zpracování rostoucí provoz.
 
-Připojení mezi klientem a serverem je trvalé, na rozdíl od připojení HTTP.
+Zdroj je hostován v [SignalR úložišti na Githubu](https://github.com/aspnet/signalr).
 
 ## <a name="transports"></a>Přenosy
 
-Funkce SignalR přehledů přes několik technik pro vytváření aplikací webu v reálném čase. [Protokoly Websocket](https://tools.ietf.org/html/rfc7118) je optimální přenosu, ale jiné postupů, jako jsou události Server-Sent a dlouhý interval dotazování se dá použít při ty nejsou k dispozici. Bude automaticky rozpoznávat a inicializovat příslušné přenosu na základě funkcí podporován na serveru a klienta SignalR.
+Funkce SignalR podporuje několik postupů pro zpracování komunikaci v reálném čase:
+
+* [Webové sokety](https://tools.ietf.org/html/rfc7118)
+* Události odeslané serverem
+* Dlouhým dotazováním
+
+Funkce SignalR automaticky vybere nejlepší metody přenosu, který je v rámci funkce serveru a klienta.
 
 ## <a name="hubs"></a>Rozbočovače
 
-Rozbočovače SignalR používá ke komunikaci mezi klienty a servery.
+Používá funkci SignalR *rozbočovače* ke komunikaci mezi klienty a servery.
 
-Centrum je základní kanál, který umožňuje klientem a serverem pro volání metod na sobě navzájem. Funkce SignalR zpracovává odeslání přes hranice počítač automaticky, umožňuje klientům volání metod na serveru jako snadno jako místní metody a naopak. Rozbočovače povolit předávání silného typu parametrů k metodám, což umožňuje vazby modelu. Funkce SignalR poskytuje dva protokoly integrované centra: textového protokolu na základě JSON a binární protokol založený na [MessagePack](https://msgpack.org/).  MessagePack obvykle vytvoří zpráv menší než při použití formátu JSON. Starší prohlížeče musí podporovat [XHR úrovně 2](https://caniuse.com/#feat=xhr2) k zajištění podpory protokolu MessagePack.
+Centrum je základní kanál, který umožňuje klienta a serveru, volání metod na sobě navzájem. Funkce SignalR zpracovává odeslání přes hranice počítač automaticky, umožňuje klientům volání metod na serveru a naopak. Typově silné parametry můžete předat do metody, což umožňuje vazby modelu. Funkce SignalR poskytuje dva protokoly integrované centra: textového protokolu na základě JSON a binární protokol založený na [MessagePack](https://msgpack.org/).  MessagePack vytváří obecně menší zprávy ve srovnání s JSON. Starší prohlížeče musí podporovat [XHR úrovně 2](https://caniuse.com/#feat=xhr2) k zajištění podpory protokolu MessagePack.
 
-Odesílání zpráv pomocí aktivní přenos volání rozbočovače kód na straně klienta. Zprávy obsahují název a parametry metody na straně klienta. Objekty, které jako parametry metody jsou deserializaci pomocí nakonfigurovaný protokol. Klient se pokusí shodovat s názvem metody v kódu na straně klienta. Když nastane shoda, metoda klienta spouští pomocí deserializovat parametr data.
+Rozbočovače pro volání kód na straně klienta zasílání zpráv, které obsahují název a parametry metody na straně klienta. Objekty, které jako parametry metody jsou deserializaci pomocí nakonfigurovaný protokol. Klient se pokusí shodovat s názvem metody v kódu na straně klienta. Když klient najde shodu, volá metodu a předá data deserializovaný parametrů.
 
 ## <a name="additional-resources"></a>Další zdroje
 

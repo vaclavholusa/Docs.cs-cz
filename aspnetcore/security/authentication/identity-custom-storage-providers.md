@@ -5,12 +5,12 @@ description: Zjistěte, jak nakonfigurovat poskytovatelé vlastního úložišt�
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
+ms.openlocfilehash: 7fb64f0b911c11750946697d782488c2107a3637
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889165"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342520"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastního úložiště pro ASP.NET Core Identity
 
@@ -41,7 +41,7 @@ dotnet new webapi -au Individual
 
 ## <a name="the-aspnet-core-identity-architecture"></a>Architektura ASP.NET Core Identity
 
-ASP.NET Core Identity se skládá z tříd pojmenovanou manažerů a úložiště. *Správci* jsou základní třídy, které vývojář aplikace používá k provádění operací, jako je například vytváření Identity user. *Úložiště* jsou třídy nižší úrovně, které určují, jak jsou entity, jako jsou uživatelé a role, trvalé. Postupujte podle úložišť [použitému vzoru úložišť](http://deviq.com/repository-pattern/) a jsou úzce svázány s mechanismus trvalosti. Správci jsou oddělené od úložiště, což znamená, že nahradíte mechanismu trvalosti beze změny kódu aplikace (s výjimkou konfigurace).
+ASP.NET Core Identity se skládá z tříd pojmenovanou manažerů a úložiště. *Správci* jsou základní třídy, které vývojář aplikace používá k provádění operací, jako je například vytváření Identity user. *Úložiště* jsou třídy nižší úrovně, které určují, jak jsou entity, jako jsou uživatelé a role, trvalé. Postupujte podle úložišť [použitému vzoru úložišť](xref:fundamentals/repository-pattern) a jsou úzce svázány s mechanismus trvalosti. Správci jsou oddělené od úložiště, což znamená, že nahradíte mechanismu trvalosti beze změny kódu aplikace (s výjimkou konfigurace).
 
 Následující diagram znázorňuje, jak webová aplikace komunikuje s správce, zatímco úložiště interakci s vrstvy přístupu k datům.
 

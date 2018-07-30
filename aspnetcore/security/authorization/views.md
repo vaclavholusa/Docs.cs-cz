@@ -1,31 +1,31 @@
 ---
-title: Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra
+title: Autorizace na základě zobrazení v ASP.NET Core MVC
 author: rick-anderson
-description: Tento dokument ukazuje, jak využívat službu autorizace uvnitř zobrazení syntaxe Razor rozhraní ASP.NET Core a vložit.
+description: Tento dokument ukazuje, jak vložit a využívat službu ověřování v rámci zobrazení o ASP.NET Core Razor.
 ms.author: riande
 ms.date: 10/30/2017
 uid: security/authorization/views
-ms.openlocfilehash: f25bab61afc93ff14bfd9c36d95a6d2e54b06dfb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e497c41d4dca29fed8733f18cf727804e3f06d8c
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277807"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342533"
 ---
-# <a name="view-based-authorization-in-aspnet-core-mvc"></a>Ověření na základě zobrazení v rozhraní ASP.NET MVC jádra
+# <a name="view-based-authorization-in-aspnet-core-mvc"></a>Autorizace na základě zobrazení v ASP.NET Core MVC
 
-Vývojář často chce zobrazení, skrytí nebo v opačném případě upravte uživatelského rozhraní na základě aktuální identity uživatele. Můžete přístup ke službě ověřování v rámci zobrazení MVC prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection#fundamentals-dependency-injection). Chcete-li vložit služby autorizace do zobrazení Razor, použijte `@inject` – direktiva:
+Vývojáři často chce zobrazení skrytí nebo jinak upravit uživatelské rozhraní založené na aktuální identitu uživatele. Přistupujete k povolení služby v rámci zobrazení MVC prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection). Chcete-li vložit do zobrazení Razor autorizační službu, použijte `@inject` – direktiva:
 
 ```cshtml
 @using Microsoft.AspNetCore.Authorization
 @inject IAuthorizationService AuthorizationService
 ```
 
-Pokud chcete službu ověřování v každé zobrazení, umístit `@inject` direktivy do *_ViewImports.cshtml* soubor *zobrazení* adresáře. Další informace najdete v tématu [vkládání závislostí do zobrazení](xref:mvc/views/dependency-injection).
+Pokud chcete službu ověřování v každé zobrazení, umístěte `@inject` směrnice do *_ViewImports.cshtml* soubor *zobrazení* adresáře. Další informace najdete v tématu [injektáž závislostí do zobrazení](xref:mvc/views/dependency-injection).
 
-Používat službu vloženého autorizace k vyvolání `AuthorizeAsync` v úplně stejně, jako by kontrolovat při [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
+Použití service vložené autorizace k vyvolání `AuthorizeAsync` přesně stejným způsobem by kontroly během [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```cshtml
 @if ((await AuthorizationService.AuthorizeAsync(User, "PolicyName")).Succeeded)
@@ -45,9 +45,9 @@ Používat službu vloženého autorizace k vyvolání `AuthorizeAsync` v úpln�
 
 ---
 
-V některých případech bude prostředek zobrazení modelu. Vyvolání `AuthorizeAsync` v úplně stejně, jako by kontrolovat při [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
+V některých případech bude prostředek modelu zobrazení. Vyvolání `AuthorizeAsync` přesně stejným způsobem by kontroly během [autorizace na základě prostředků](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```cshtml
 @if ((await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit)).Succeeded)
@@ -69,7 +69,7 @@ V některých případech bude prostředek zobrazení modelu. Vyvolání `Author
 
 ---
 
-V předchozí kód model předán jako prostředek, kterou má provést vyhodnocení zásad v úvahu.
+V předchozím kódu modelu je předán jako prostředek, které by měl provést vyhodnocení zásad v úvahu.
 
 > [!WARNING]
-> Nemusíte spoléhat na přepnutím viditelnost prvků uživatelského rozhraní aplikace jako jedinou autorizace kontroly. Skrytí elementu uživatelského rozhraní nemusí úplně zamezit přístupu k jeho přidruženému kontroleru akce. Představte si třeba tlačítko v předchozím fragmentu kódu. Uživatele můžete vyvolat `Edit` metody akce, pokud uživatel zná prostředků relativní adresa URL je */Document/Edit/1*. Z tohoto důvodu `Edit` metoda akce proveďte vlastní kontroly autorizace.
+> Není využívají přepínání viditelnosti prvků uživatelského rozhraní aplikace jako jediný autorizace kontrolu. Skrytí prvku uživatelského rozhraní nemusí zabránit zcela přístup k přidruženému kontroleru akcí. Představte si třeba tlačítko v předchozím fragmentu kódu. Uživatel může vyvolat `Edit` metody akce, pokud uživatel zná zdroj relativní adresa URL je */Document/Edit/1*. Z tohoto důvodu `Edit` metoda akce se má provést vlastní kontroly autorizace.

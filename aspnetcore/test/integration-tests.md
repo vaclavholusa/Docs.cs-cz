@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: e18c5704c9d4db9669d8f831f1b556d1723a0fc1
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 2a5adafd30aeca163063ea76857378e97163d0b9
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894163"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342078"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Integrační testy v ASP.NET Core
 
@@ -292,7 +292,7 @@ SUT je systém zpráv pro stránky Razor s následujícími charakteristikami:
 
 &#8224;Téma EF [Test s InMemory](/ef/core/miscellaneous/testing/in-memory), vysvětluje, jak používat databázi v paměti pro testy s použitím MSTest. Toto téma používá [xUnit](https://xunit.github.io/) rozhraní pro testování. Koncepty testu a testovací implementace napříč různými testovacími architektury jsou podobné, ale nejsou identické.
 
-I když se aplikace nepoužívá [použitému vzoru úložišť](http://martinfowler.com/eaaCatalog/repository.html) a není efektivní příklad [pracovní jednotka (UoW)](https://martinfowler.com/eaaCatalog/unitOfWork.html), stránky Razor podporuje tyto způsoby vývoje. Další informace najdete v tématu [návrh vrstvy trvalosti infrastruktury](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), a [testovacího kontroléru Logika](/aspnet/core/mvc/controllers/testing) (ukázka implementuje vzor úložiště).
+I když se aplikace nepoužívá [použitému vzoru úložišť](xref:fundamentals/repository-pattern) a není efektivní příklad [pracovní jednotka (UoW)](https://martinfowler.com/eaaCatalog/unitOfWork.html), stránky Razor podporuje tyto způsoby vývoje. Další informace najdete v tématu [návrh vrstvy trvalosti infrastruktury](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [implementace úložiště a jednotky pracovních vzorů v aplikaci ASP.NET MVC](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), a [testovacího kontroléru Logika](/aspnet/core/mvc/controllers/testing) (ukázka implementuje vzor úložiště).
 
 ### <a name="test-app-organization"></a>Testování aplikace organizace
 

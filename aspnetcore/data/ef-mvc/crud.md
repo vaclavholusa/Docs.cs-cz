@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: bc02ee6933634cc5987dbc3fcf57b0cce5a93bef
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 1c724da918640c514acbc24c390de4e735f8bf49
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216258"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342429"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC s EF Core – CRUD - 2 z 10
 
@@ -25,7 +25,7 @@ Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet webové a
 V předchozím kurzu jste vytvořili aplikaci MVC, která ukládá a zobrazuje data pomocí rozhraní Entity Framework a SQL Server LocalDB. V tomto kurzu zkontrolujete a přizpůsobit CRUD (vytváření, čtení, aktualizace nebo odstranění) kód, který generování uživatelského rozhraní MVC se automaticky vytvoří za vás do kontrolerů a zobrazení.
 
 > [!NOTE]
-> Je běžnou praxí pro implementaci vzoru úložiště chcete-li vytvořit vrstvu HAL mezi řadiči a vrstva přístupu k datům. Na tyto kurzy byly jednoduché a zaměřují se na vyučují způsob použití rozhraní Entity Framework samotné, nepoužívejte úložišť. Informace o úložištích s EF najdete v tématu [poslední kurz v této sérii](advanced.md).
+> To je běžný postup k implementaci [použitému vzoru úložišť](xref:fundamentals/repository-pattern) Chcete-li vytvořit vrstvu HAL mezi řadiči a vrstva přístupu k datům. Na tyto kurzy byly jednoduché a zaměřují se na vyučují způsob použití rozhraní Entity Framework samotné, nepoužívejte úložišť. Informace o úložištích s EF najdete v tématu [poslední kurz v této sérii](advanced.md).
 
 V tomto kurzu budete pracovat následujících webových stránek:
 

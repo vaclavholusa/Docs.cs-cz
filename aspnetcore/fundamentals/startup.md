@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 285d74c0d12e3aca4d8c33d39467dfda02712993
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: a576f3840e66fc4ed877f7575aa3f3e36b37ae4d
+ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063257"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39356747"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -34,10 +34,13 @@ Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.Asp
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-`Startup` Konstruktoru třídy přijímá závislosti definované tímto hostitelem. Běžně [injektáž závislostí](xref:fundamentals/dependency-injection) do `Startup` třída je vložení:
+Webového hostitele obsahuje některé služby, které jsou k dispozici na `Startup` konstruktoru třídy. Aplikace přidá další služby prostřednictvím `ConfigureServices`. Hostitelské i aplikaci služby jsou pak k dispozici v `Configure` a v celé aplikaci.
+
+Běžně [injektáž závislostí](xref:fundamentals/dependency-injection) do `Startup` třída je vložení:
 
 * [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) konfigurace služby pro prostředí.
-* [Parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) konfigurace aplikace při spuštění.
+* [Parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) načíst konfiguraci.
+* [Implementaci třídy ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) pro vytváření protokolovacího nástroje v `Startup.ConfigureServices`.
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
@@ -65,7 +68,7 @@ Funkce, které vyžadují značné instalační program, existují `Add[Service]
 
 <a name="setcompatibilityversion"></a>
 
-### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>SetCompatibilityVersion pro ASP.NET Core MVC 
+### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>SetCompatibilityVersion pro ASP.NET Core MVC
 
 `SetCompatibilityVersion` Metoda umožňuje aplikacím vyjádřit výslovný souhlas nebo výslovný nesouhlas s potenciálně rozbíjející změny chování zavedené v ASP.NET MVC Core 2.1 +. Potenciálně rozbíjející změny chování jsou obecně v způsob, jakým se chová subsystému MVC a jak **kódu** je volána modulem runtime. Vyjádření výslovného souhlasu, získáte nejnovější chování a dlouhodobé chování ASP.NET Core.
 
@@ -73,14 +76,14 @@ Následující kód nastaví režim kompatibility ASP.NET Core 2.1:
 
 [!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
 
-Doporučujeme, abyste testování aplikace pomocí nejnovější verze (`CompatibilityVersion.Version_2_1`). Předpokládáme, že většina aplikací nebudou mít nejnovější změny chování pomocí nejnovější verze. 
+Doporučujeme, abyste testování aplikace pomocí nejnovější verze (`CompatibilityVersion.Version_2_1`). Předpokládáme, že většina aplikací nebudou mít nejnovější změny chování pomocí nejnovější verze.
 
 Aplikace, které volají `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)` chráněná před potenciálně rozbíjející změny chování zavedené v ASP.NET Core 2.1 MVC a novější verze 2.x. Tato ochrana:
 
 * Se nevztahují na všechny změny, 2.1 nebo novější, je určen potenciálně rozbíjející změny v chování modulu runtime ASP.NET Core v subsystému MVC.
 * Nevztahuje se na další hlavní verze.
 
-Výchozí kompatibilitu pro ASP.NET Core 2.1 a vyšší 2.x aplikace, které provádějí **není** volání `SetCompatibilityVersion` je 2.0 kompatibility. To znamená, že není volání `SetCompatibilityVersion` je stejný jako volání funkce `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`.
+Výchozí kompatibilitu pro ASP.NET Core 2.1 a vyšší 2.x aplikací, které toho **není** volání `SetCompatibilityVersion` je 2.0 kompatibility. To znamená, že není volání `SetCompatibilityVersion` je stejný jako volání funkce `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`.
 
 Následující kód nastaví režim kompatibility ASP.NET Core 2.1, s výjimkou následujícího chování:
 
@@ -96,13 +99,9 @@ Pro aplikace, dojde k rozbíjející změny chování, pomocí příslušné kom
 
 [MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) komentáře zdrojové třídy mají dobrou vysvětlení co změnil a proč změny jsou vylepšení pro většinu uživatelů.
 
-V některé budoucí datum, bude [verze technologie ASP.NET Core 3.0](https://github.com/aspnet/Home/wiki/Roadmap). Ve verzi 3.0 se odebere staré chování podporuje přepínače kompatibility. Domníváme, že se že jedná pozitivní změny, které téměř všechny uživatele. Zavedením teď tyto změny, mohou nyní využívat většinu aplikací a ostatní bude mít čas aktualizovat aplikace.
+V některé budoucí datum, bude [verze technologie ASP.NET Core 3.0](https://github.com/aspnet/Home/wiki/Roadmap). Ve verzi 3.0 se odebere staré chování podporuje přepínače kompatibility. Domníváme, že se že jedná pozitivní změny, které téměř všechny uživatele. Zavedením teď tyto změny, mohou nyní využívat většinu aplikací a ostatní bude mít čas aktualizovat svoje aplikace.
 
 ::: moniker-end
-
-## <a name="services-available-in-startup"></a>K dispozici v při spuštění služby
-
-Webového hostitele obsahuje některé služby, které jsou k dispozici na `Startup` konstruktoru třídy. Aplikace přidá další služby prostřednictvím `ConfigureServices`. Hostitelské i aplikaci služby jsou pak k dispozici v `Configure` a v celé aplikaci.
 
 ## <a name="the-configure-method"></a>Konfigurovat – metoda
 
@@ -161,9 +160,9 @@ Pořadí spuštění middlewaru je nastavena podle pořadí podle `IStartupFilte
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Hostování](xref:fundamentals/host/index)
-* [Používání více prostředí](xref:fundamentals/environments)
-* [Middleware](xref:fundamentals/middleware/index)
-* [Protokolování](xref:fundamentals/logging/index)
-* [Konfigurace](xref:fundamentals/configuration/index)
+* <xref:fundamentals/host/index>
+* <xref:fundamentals/environments>
+* <xref:fundamentals/middleware/index>
+* <xref:fundamentals/logging/index>
+* <xref:fundamentals/configuration/index>
 * [Třída StartupLoader: metoda FindStartupType (odkaz na zdroj)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

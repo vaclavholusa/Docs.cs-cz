@@ -5,12 +5,12 @@ description: Další informace o protokolovacího rozhraní v ASP.NET Core. Obje
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: f629b062afb5c17cd05040a9ef0281aa7121aabc
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: 5d31c5609c0e98a81d76ce0581f1c63f349d14d0
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320749"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342468"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -34,7 +34,7 @@ Informace o protokolování stdout při hostování za nástrojem službou IIS n
 
 ## <a name="how-to-create-logs"></a>Jak vytvořit protokoly
 
-Chcete-li vytvořit protokoly, implementovat [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) objektu z [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru:
+Chcete-li vytvořit protokoly, implementovat [ILogger&lt;TCategoryName&gt; ](/dotnet/api/microsoft.extensions.logging.ilogger-1) objektu z [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru:
 
 [!code-csharp[](index/sample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
 

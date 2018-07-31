@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvářet, číst, aktualizovat, odstranit pomocí EF
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 0a8d386104d9c62f37d0a94e66344d3f1e23bae9
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: e3a0ec2e21ae9e9eeaae1eb7c17f1604897fb6f9
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063348"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342455"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - CRUD - 2, 8
 
@@ -24,7 +24,7 @@ Podle [Petr Dykstra](https://github.com/tdykstra), [Jan Macek P](https://twitter
 
 V tomto kurzu, vygenerované CRUD (vytváření, čtení, aktualizace nebo odstranění) se zkontroluje a vlastní kód.
 
-Chcete-li minimalizovat složitost a ponechat tyto kurzy, zaměřuje na EF Core, EF Core kód slouží v modelech stránky. Někteří vývojáři použít model služby vrstvy nebo úložiště v vytvořit abstraktní vrstvu mezi uživatelského rozhraní (stránky Razor) a vrstva přístupu k datům.
+Chcete-li minimalizovat složitost a ponechat tyto kurzy, zaměřuje na EF Core, EF Core kód slouží v modelech stránky. Někteří vývojáři používat vrstvu služby nebo [použitému vzoru úložišť](xref:fundamentals/repository-pattern) v vytvořit abstraktní vrstvu mezi uživatelského rozhraní (stránky Razor) a vrstva přístupu k datům.
 
 V tomto kurzu, vytvořit, upravit, odstranit a podrobnosti stránky Razor *Student* jsou zkoumány složky.
 
@@ -165,7 +165,7 @@ Pomocí `StudentVM` vyžaduje [CreateVM.cshtml](https://github.com/aspnet/Docs/t
 
 V Razor Pages `PageModel` odvozené třídy je model zobrazení.
 
-## <a name="update-the-edit-page"></a>Potom při volání , Entity Framework aktualizuje všechny sloupce řádek databáze, protože kontext nemá žádný způsob, jak zjistit vlastnosti, které jste změnili.
+## <a name="update-the-edit-page"></a>Aktualizace stránky pro úpravu
 
 Aktualizace modelu stránce pro stránky pro úpravu. Hlavní změny jsou zvýrazněny:
 
@@ -181,13 +181,13 @@ Změny kódu jsou podobná stránka vytvořit s několika výjimkami:
 
 Vytvořte a upravte několik entit studentů.
 
-## <a name="entity-states"></a>Pokud je vylepšení výkonu v aplikaci s velkým objemem prioritu, se můžete vyhnout nepotřebných dotazů SQL vytvoření instance Student entity pomocí jenom primární klíčové hodnoty a pak nastavení stavu entity .
+## <a name="entity-states"></a>Stavy entity
 
 Kontext databáze uchovává informace o, jestli jsou synchronizované s jejich odpovídajících řádků v databázi entity v paměti. Informace o kontextu synchronizace DB Určuje, co se stane, když [SaveChangesAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) je volána. Například při vytvoření nové entity je předán [AddAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.addasync) metoda, která stav entity je nastavený na [přidané](/dotnet/api/microsoft.entityframeworkcore.entitystate#Microsoft_EntityFrameworkCore_EntityState_Added). Když `SaveChangesAsync` nazývá databáze kontextu vydá příkaz INSERT jazyka SQL.
 
 Entity mohou být v jednom z [následující stavy](/dotnet/api/microsoft.entityframeworkcore.entitystate):
 
-* `Added`: Entita ještě neexistuje v databázi. V `SaveChanges`Views/Student/Delete.cshtml, přidejte mezi h2 záhlaví a záhlaví h3 chybovou zprávu, jak je znázorněno v následujícím příkladu:
+* `Added`: Entita ještě neexistuje v databázi. `SaveChanges` Metoda vydá příkaz INSERT.
 
 * `Unchanged`: Je nutné uložit s touto entitou žádné změny. Entita má tento stav, když je pro čtení z databáze.
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 4fd0cc881eff3b1bbdfdf51e223d0fd42051c31d
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: 4aded0b87ca14a5c09844cc378efb1ac0c12a289
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320736"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342153"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Hostitele ASP.NET Core ve službě Windows
 
@@ -82,7 +82,7 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
 
      ::: moniker-end
 
-1. Publikování aplikace. Použití [dotnet publikovat](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování pro Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles).
+1. Publikování aplikace. Použití [dotnet publikovat](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování pro Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles). Při používání sady Visual Studio, vyberte **FolderProfile**.
 
    Chcete-li publikovat ukázkovou aplikaci z příkazového řádku, spusťte následující příkaz v okně konzoly ze složky projektu:
 
@@ -96,16 +96,19 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
    sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
    ```
 
-   Služby se publikují do složky projektu, použijte cestu k *publikovat* složku pro vytvoření služby. Služba je v následujícím příkladu:
+   Služby se publikují do složky projektu, použijte cestu k *publikovat* složku pro vytvoření služby. V následujícím příkladu:
 
-   * S názvem **Moje_služba**.
-   * Publikování *c:\\my_services\\AspNetCoreService\\bin\\vydání\\&lt;TARGET_FRAMEWORK&gt;\\publikovat* složky.
-   * Reprezentována spustitelné aplikaci s názvem *AspNetCoreService.exe*.
+   * Projekt se nachází v `c:\my_services\AspNetCoreService` složky.
+   * Projekt, se publikují v `Release` konfigurace.
+   * Moniker cílového rozhraní (TFM) je `netcoreapp2.1`.
+   * Identifikátor modulu Runtime (RID) je `win7-x64`.
+   * Je název spustitelné aplikace *AspNetCoreService.exe*.
+   * Služba má název **Moje_služba**.
 
-   Otevřete příkazové okno s oprávněními správce a spusťte následující příkaz:
+   Příklad:
 
    ```console
-   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\<TARGET_FRAMEWORK>\publish\AspNetCoreService.exe"
+   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
    ```
    
    > [!IMPORTANT]
@@ -113,7 +116,7 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
    
    Publikovat a spustit službu z jiné složky:
    
-   1. Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkazu.
+      1. Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkazu. Pokud používáte Visual Studio, nakonfigurujte **cílové umístění** v **FolderProfile** publikovat stránku vlastností před výběrem **publikovat** tlačítko.
    1. Vytvoření služby s `sc.exe` příkazu cesta k výstupní složce. Zahrnout název spustitelného souboru služby na cestě k dispozici na `binPath`.
 
 1. Spusťte službu pomocí `sc start <SERVICE_NAME>` příkazu.

@@ -141,6 +141,7 @@
 ### [Kestrel](xref:fundamentals/servers/kestrel)
 ### [Modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
 ### [HTTP.sys](xref:fundamentals/servers/httpsys)
+## [Vzor úložiště](xref:fundamentals/repository-pattern)
 ## [Globalizace a lokalizace](xref:fundamentals/localization)
 ### [Konfigurace lokalizačních souborů Portable Object pomocí Orchard Core](xref:fundamentals/portable-object-localization)
 ## [Iniciování požadavků HTTP](xref:fundamentals/http-requests)

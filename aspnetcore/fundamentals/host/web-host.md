@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 8b72376ae4cb608c4df0cf516288188cff862b36
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 476795645b0430962b61f7a61de29d5d1819602b
+ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894241"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39356711"
 ---
 # <a name="aspnet-core-web-host"></a>Webového hostitele ASP.NET Core
 
@@ -320,6 +320,24 @@ I když výchozí hodnota konfigurace je prázdný řetězec, hostování při s
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting(WebHostDefaults.HostingStartupAssembliesKey, "assembly1;assembly2")
+```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+### <a name="https-port"></a>HTTPS Port
+
+Nastavení přesměrování portu HTTPS. Použít v [vynucování HTTPS](xref:security/enforcing-ssl).
+
+**Klíč**: https_port **typ**: *řetězec*
+**výchozí**: výchozí hodnota není nastavená.
+**Sada s použitím**: `UseSetting` 
+ **proměnnou prostředí**: `ASPNETCORE_HTTPS_PORT`
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting("https_port", "8080")
 ```
 
 ::: moniker-end

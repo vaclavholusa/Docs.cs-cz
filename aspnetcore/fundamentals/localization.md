@@ -5,12 +5,12 @@ description: Zjistěte, jak ASP.NET Core nabízí služby a middleware pro lokal
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 9647b605d4b9a23b365085e3677fb0e9b93f0da4
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 87df1b8cf57509ddf80ce845d85a9b3f30673c35
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37434010"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396231"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -29,6 +29,8 @@ Lokalizace aplikací zahrnuje následující:
 2. Zadejte lokalizované prostředky pro jazyky a jazykové verze, kterou podporujete
 
 3. Implementovat strategii vyberte jazykovou verzi pro každý požadavek
+
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="make-the-apps-content-localizable"></a>Aby lokalizovatelný obsah aplikace
 

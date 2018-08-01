@@ -2,18 +2,18 @@
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 title: 'Iterace #4 – vytvoření volně spárované aplikace (VB) | Dokumentace Microsoftu'
 author: microsoft
-description: V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Pro...
+description: V této iterace čtvrtý můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Pro...
 ms.author: aspnetcontent
 ms.date: 02/20/2009
 ms.assetid: 92c70297-4430-4e4e-919a-9c2333a8d09a
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 246069902e67d3d901bbd40e950198825a5ab01d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 68e7ebf987d03139f63ae9b06a712366a9679bc3
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804669"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39395958"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>Iterace #4 – vytvoření volně spárované aplikace (VB)
 ====================
@@ -21,7 +21,7 @@ podle [Microsoft](https://github.com/microsoft)
 
 [Stáhnout kód](iteration-4-make-the-application-loosely-coupled-vb/_static/contactmanager_4_vb1.zip)
 
-> V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
+> V této iterace čtvrtý můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
 
 
 ## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>Vytvoření aplikace pro správu kontaktů ASP.NET MVC (VB)
@@ -36,7 +36,7 @@ Vytváříme aplikaci přes více iterací. S každou iterací zvyšujeme postup
 
 - Iterace #3 – Přidání ověřovacího formuláře. Ve třetí iterace přidáme ověření základní formulář. Můžeme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také ověření e-mailových adres a telefonních čísel.
 
-- Iterace #4 – vytvoření volně spárované aplikace. V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
+- Iterace #4 – vytvoření volně spárované aplikace. V této iterace čtvrtý můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
 
 - Iterace #5 – vytvoření testů jednotek. V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro naše řadiče a logiku ověřování.
 

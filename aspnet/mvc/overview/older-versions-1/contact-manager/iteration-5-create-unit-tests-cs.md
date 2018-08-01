@@ -8,12 +8,12 @@ ms.date: 02/20/2009
 ms.assetid: 28ad8f80-b8a5-444e-b478-8b15a846060c
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0da88a67f788be211c4aa7b909106e9dab9960f3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bd0d9efce178235128453c218222533d1fb11f73
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805999"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39395971"
 ---
 <a name="iteration-5--create-unit-tests-c"></a>Iterace #5 – vytvoření testů jednotek (C#)
 ====================
@@ -36,7 +36,7 @@ Vytváříme aplikaci přes více iterací. S každou iterací zvyšujeme postup
 
 - Iterace #3 – Přidání ověřovacího formuláře. Ve třetí iterace přidáme ověření základní formulář. Můžeme zabránit neoprávněným osobám v odeslání formuláře bez dokončení vyžadovaná pole formuláře. Také ověření e-mailových adres a telefonních čísel.
 
-- Iterace #4 – vytvoření volně spárované aplikace. V této třetí iterace můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
+- Iterace #4 – vytvoření volně spárované aplikace. V této iterace čtvrtý můžeme využít několik způsobů návrhu v softwaru k bylo snazší spravovat a upravovat aplikace Správce kontaktů. Například Refaktorovat jsme naši aplikaci pomocí vzoru úložiště a vzor vkládání závislostí.
 
 - Iterace #5 – vytvoření testů jednotek. V páté iteraci jsme snadněji naší aplikace spravovat a upravovat tak, že přidáte testy jednotek. Jsme napodobení našich tříd datových modelů a vytváření testů jednotek pro naše řadiče a logiku ověřování.
 

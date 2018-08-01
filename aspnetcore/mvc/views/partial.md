@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 983f3caae34b21b46d8f556e70673cf3c97abbd3
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 7cb20fc30609adad83cb40e91316da115817f035
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938456"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378680"
 ---
 # <a name="partial-views-in-aspnet-core"></a>Částečná zobrazení v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend), [Rick Anderson](https://twitter.com/RickAndMSFT), a [Scott Sauber](https://twitter.com/scottsauber)
 
-ASP.NET Core MVC podporuje částečné zobrazení, které jsou užitečné ke sdílení opakovaně použitelných částí webových stránek v různých zobrazení.
+ASP.NET Core podporuje částečné zobrazení. Částečná zobrazení umožňují sdílet opakovaně použitelné součásti webových stránek mezi různá zobrazení.
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
@@ -35,8 +35,7 @@ Například technologie ASP.NET Core 2.1 **webovou aplikaci** zahrnuje šablony 
 
 Na stránce komplexní skládá z několika logických částí je užitečné pro práci s jako vlastní částečné zobrazení jednotlivých prostředků. Izolovaně od zbytku stránky lze zobrazit jednotlivé stránky. Zobrazení samotné stránky bude jednodušší, protože obsahuje pouze celkovou strukturu stránky a volání k vykreslení částečného zobrazení.
 
-> [!TIP]
-> Postupujte podle [není opakujte sami Princip](https://deviq.com/don-t-repeat-yourself/) v zobrazení.
+Kontrolery architektury ASP.NET Core MVC mít [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) metodu, která je volána z metody akce. Stránky Razor nemají žádný ekvivalent `PartialView` metody.
 
 ## <a name="declare-partial-views"></a>Deklarujte částečné zobrazení
 

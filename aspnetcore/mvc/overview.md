@@ -1,91 +1,91 @@
 ---
 title: Přehled ASP.NET Core MVC
 author: ardalis
-description: Zjistěte, jak je bohaté rozhraní pro vytváření webových aplikací ASP.NET MVC jádra a rozhraní API pomocí Model-View-Controller návrh vzor.
+description: Zjistěte, jak ASP.NET Core MVC je bohatou architekturu pro vytváření webových aplikací a rozhraní API pomocí Model-View-Controller návrhu.
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: aca34f91e8c7efaa34263ddf830b1662a2518969
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272589"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378635"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
 Podle [Steve Smith](https://ardalis.com/)
 
-Jádro ASP.NET MVC je bohaté rozhraní pro vytváření webových aplikací a rozhraní API pomocí Model-View-Controller návrh vzor.
+ASP.NET Core MVC je bohatou architekturu pro vytváření webových aplikací a rozhraní API pomocí Model-View-Controller návrhu.
 
 ## <a name="what-is-the-mvc-pattern"></a>Co je vzor MVC?
 
-Vzor architektury Model-View-Controller (MVC) rozděluje aplikace do tří hlavních skupin součástí: modely, zobrazení a Kontrolery. Tento vzor pomáhá zajistit [oddělené oblasti zájmu](http://deviq.com/separation-of-concerns/). Pomocí tohoto vzoru, se směrují požadavky uživatelů na řadič, která zajišťuje pro práci s modelem provádět akce uživatele nebo načíst výsledky dotazů. Řadičem vybere zobrazení pro uživatele a poskytuje Model data, která vyžaduje.
+Vzor architektury Model-View-Controller (MVC) rozděluje aplikace do tří hlavních skupin součástí: modelů, zobrazení a Kontrolerů. Tento model pomáhá zajistit [oddělení oblastí zájmu](http://deviq.com/separation-of-concerns/). Použití tohoto modelu, jsou uživatelské požadavky směrovány do Kontroleru, který je zodpovědný za práci s modelem k provádění akcí uživatele a/nebo načíst výsledky dotazů. Kontroler vybere zobrazení tak, aby pro uživatele a poskytuje s daty modelu, které vyžaduje.
 
-Následující diagram znázorňuje třemi hlavními komponentami a ty, které odkazují jiné:
+Následující diagram znázorňuje tři hlavní komponenty a ty, které odkazují na ty ostatní:
 
 ![Vzor MVC](overview/_static/mvc.png)
 
-Tato vymezení odpovědnosti umožňuje škálovat aplikaci z hlediska složitost, protože je jednodušší code, ladit a testovat (model, zobrazení nebo řadič) něčeho, co má jediné úlohy (a odpovídá [jeden zásady odpovědnosti ](http://deviq.com/single-responsibility-principle/)). Je obtížné aktualizace, testování a ladění kódu, který má závislosti rozloženy dva nebo víc z těchto tří oblastí. Například logiku uživatelského rozhraní se obvykle změnit častěji, než obchodní logiku. Pokud kód a obchodní logiku prezentace jsou sloučeny do jednoho objektu, musíte změnit objekt obsahující obchodní logiku pokaždé, když se změní uživatelské rozhraní. To často představuje chyby a vyžaduje opakované zkoušky obchodní logiky po každé změně minimální uživatelské rozhraní.
+Tento vymezení odpovědnosti umožňuje škálovat aplikace z hlediska složitost, protože je to snazší pro kódování, ladění a testování (model, zobrazení nebo řadič) něco, co má jedné úlohy (a řídí se [jedné zásadě odpovědnosti ](http://deviq.com/single-responsibility-principle/)). Je obtížnější aktualizace, testování a ladění kódu, který má závislosti rozdělené mezi dva nebo více z těchto tří oblastí. Například logiku uživatelského rozhraní obvykle Chcete-li změnit častěji než obchodní logiku. Pokud prezentaci kódu a obchodní logiky jsou sloučeny do jednoho objektu, musí být objekt, který obsahuje logiku upravena pokaždé, když se změní uživatelské rozhraní. To často představuje chyby a vyžaduje opakované obchodní logiky po každé změně minimální uživatelské rozhraní.
 
 > [!NOTE]
-> Zobrazení a kontroler závisí na modelu. Model však závisí na zobrazení ani kontroleru. To je jedno z klíčových výhod oddělení. Toto rozdělení umožňuje modelu, který má být vytvořeny a testovány nezávislé vizuální prezentaci.
+> Zobrazení a kontroler závisí na modelu. Ale model závisí na zobrazení ani kontroleru. Toto je jedna z klíčových výhod tohoto oddělení. Toto oddělení umožňuje nezávisle na vizuální prezentace modelu, který má být sestaví a otestují.
 
 ### <a name="model-responsibilities"></a>Model odpovědnosti
 
-Modelu v aplikaci MVC představuje stav aplikace a veškeré obchodní logiky nebo operace, které by měli provádět ho. Obchodní logika by měl zapouzdřený v modelu, společně s žádné implementační logika pro uchování stavu aplikace. Zobrazení silného typu obvykle používat typy ViewModel navržený tak, aby obsahují data pro zobrazení v tomto zobrazení. Správce vytvoří a naplní tyto instance ViewModel z modelu.
+Model v aplikaci MVC představuje stav aplikace a veškeré obchodní logiky nebo operací, které by měl provádět ji. Obchodní logika by měl zapouzdřené v modelu, spolu s žádné implementační logika pro uchování stavu aplikace. Zobrazení silného typu obvykle používají typy ViewModel navržené tak, aby obsahovala data pro zobrazení v tomto zobrazení. Správce vytvoří a naplní tyto instance ViewModel z modelu.
 
 > [!NOTE]
-> K uspořádání modelu v aplikaci, která používá architekturní vzor MVC mnoha způsoby. Další informace o některých [různé druhy modelu typy](http://deviq.com/kinds-of-models/).
+> Existuje mnoho způsobů, jak uspořádat modelu v aplikaci, která používá vzor architektury MVC. Další informace o některých [různé druhy typů modelu](http://deviq.com/kinds-of-models/).
 
 ### <a name="view-responsibilities"></a>Zobrazit odpovědnosti
 
-Zobrazení jsou zodpovědní za prezentací obsahu v uživatelském rozhraní. Používají [zobrazovací modul Razor](#razor-view-engine) pro vložení kódu .NET do kódu HTML. Musí být minimální logiku v zobrazeních a veškeré logiky v nich by se měly týkat prezentací obsah. Pokud zjistíte, třeba provádět značnou část logiky v zobrazení souborů, aby bylo možné zobrazit data z komplexní model, zvažte použití [zobrazení součást](views/view-components.md), ViewModel, nebo zobrazit šablonu pro zjednodušení zobrazení.
+Zobrazení jsou zodpovědný za prezentování obsah prostřednictvím uživatelského rozhraní. Používají [zobrazovací modul Razor](#razor-view-engine) pro vložení kódu .NET v kódu HTML. By měl být minimální logiku v zobrazeních a jakékoli logiky v nich by se měly týkat předkládání obsahu. Pokud zjistíte, třeba provádět spoustu logiky v zobrazení souborů k zobrazení dat z komplexní model, zvažte použití [zobrazení komponenty](views/view-components.md), ViewModel, nebo zobrazit šablonu pro zjednodušení zobrazení.
 
-### <a name="controller-responsibilities"></a>Odpovědnosti řadiče
+### <a name="controller-responsibilities"></a>Odpovědnosti kontroleru
 
-Kontrolery jsou komponenty, které zpracovávají interakci s uživatelem, pracují s modelem a konečně vybírají vykreslené zobrazení. V aplikaci MVC zobrazení pouze zobrazuje informace; kontroler zpracovává a reaguje na vstup uživatele a interakce. Ve vzoru MVC řadičem je počáteční vstupní bod a je odpovědná za výběr modelu typy pro práci s a které zobrazení k vykreslení (proto jeho název – se určuje, jak aplikaci reagovat na daný požadavek).
+Kontrolery jsou komponenty, které zpracovávají interakci s uživatelem, pracují s modelem a konečně vybírají vykreslené zobrazení. V aplikaci MVC zobrazení pouze zobrazuje informace; kontroler zpracovává a reaguje na vstup uživatele a interakce. Ve vzoru MVC kontroleru je počáteční vstupní bod a je zodpovědný za výběrem kterém modelu typy pro práci s a které zobrazení k vykreslení (proto jeho název – určuje způsob reakce aplikace na daný požadavek).
 
 > [!NOTE]
-> Řadiče by neměl být ztěžuje příliš moc odpovědnosti. Pokud chcete zachovat řadiče logiku stal příliš složité, použijte [jeden zásady odpovědnosti](http://deviq.com/single-responsibility-principle/) na obchodní logiku nabízené z kontroleru a do modelu domény.
+> Kontrolery by neměl příliš složité podle příliš mnoho odpovědností. Chcete-li zachovat logice kontroleru stal zbytečně složité, použijte [jedné zásadě odpovědnost](http://deviq.com/single-responsibility-principle/) nabízených obchodní logiku z kontroleru a do modelu domény.
 
 >[!TIP]
-> Pokud zjistíte, že vaše akce kontroleru často provádějí stejné typy akcí, můžete podle [nemusíte sami opakujte Princip](http://deviq.com/don-t-repeat-yourself/) přesunutím těchto běžné akce do [filtry](#filters).
+> Pokud zjistíte, že vaše akce kontroleru často provádějí stejné typy akcí, můžete postupovat podle [Neopakovat sami Princip](http://deviq.com/don-t-repeat-yourself/) přesunutím tyto běžné akce do [filtry](#filters).
 
-## <a name="what-is-aspnet-core-mvc"></a>Co je technologie ASP.NET MVC jádra
+## <a name="what-is-aspnet-core-mvc"></a>Co je ASP.NET Core MVC
 
-Rozhraní MVC ASP.NET Core je zdroj lightweight, otevřete intenzivního prezentační architektura optimalizovaný pro použití s ASP.NET Core.
+Rozhraní ASP.NET Core MVC je jednoduchý, open source, s možností intenzivního testování prezentační platforma optimalizovaná pro použití s ASP.NET Core.
 
-Jádro ASP.NET MVC poskytuje na základě vzory způsob, jak vytvářet dynamické weby, která umožňuje čistou oddělené oblasti zájmu. Poskytuje úplnou kontrolu nad značek, podporuje vývoj TDD popisný a využívá nejnovější webové standardy.
+ASP.NET Core MVC nabízí na základě vzorů způsob tvorby dynamických webů, která umožňuje jasně oddělit oblasti zájmu. Dává vám plnou kontrolu nad značkami, podporuje vývoj TDD skvěle a využívá nejnovější webové standardy.
 
 ## <a name="features"></a>Funkce
 
-Jádro ASP.NET MVC zahrnuje následující položky:
+ASP.NET Core MVC zahrnuje následující položky:
 
 * [Směrování](#routing)
 * [Vazby modelu](#model-binding)
 * [Ověření modelu](#model-validation)
-* [Vkládání závislostí](../fundamentals/dependency-injection.md)
+* [Injektáž závislostí](../fundamentals/dependency-injection.md)
 * [Filtry](#filters)
 * [Oblasti](#areas)
 * [Webová rozhraní API](#web-apis)
-* [Možnosti testování](#testability)
+* [Testovatelnosti](#testability)
 * [Zobrazovací modul Razor](#razor-view-engine)
 * [Zobrazení se silnými typy](#strongly-typed-views)
 * [Pomocné rutiny značek](#tag-helpers)
-* [Zobrazení součásti](#view-components)
+* [Komponenty zobrazení](#view-components)
 
 ### <a name="routing"></a>Směrování
 
-ASP.NET MVC základní je postavený na [směrování ASP.NET Core](../fundamentals/routing.md), výkonné komponenta mapování adres URL, která umožňuje vytvářet aplikace, které mají srozumitelné a dohledatelné adresy URL. To umožňuje definovat vaší aplikace vzory mapování adres URL které fungují dobře u optimalizaci pro vyhledávací weby (SEO) a pro generování odkazů, bez ohledu na tom, jak jsou uspořádány soubory na vašem webovém serveru. Můžete definovat pomocí syntaxi šablony pohodlný trasy, která podporuje hodnotu omezení trasy, výchozích hodnot a volitelné hodnoty trasy.
+ASP.NET Core MVC je postavený na [směrování ASP.NET Core](../fundamentals/routing.md), výkonné komponenta mapování adres URL, která vám umožní vytvářet aplikace, které mají srozumitelné a dohledatelné adresy URL. To vám umožní definovat vaší aplikace vzory mapování adres URL, které fungují dobře u optimalizace pro vyhledávací weby (SEO) a pro generování odkazů, bez ohledu na způsob uspořádání souborů na webovém serveru. Můžete definovat pomocí syntaxe šablony vhodné trasy, která podporuje hodnotu omezení trasy, výchozí nastavení a volitelné hodnoty trasy.
 
-*Založené na konvenci směrování* umožňuje globálně určit adresu URL formáty, které vaše aplikace přijímá a jak každou z těchto formátů mapuje metodu konkrétní akce na zadaný kontroler. Po přijetí příchozího požadavku modulu Směrování analyzuje adresu URL a odpovídá jednomu z definovaných formátech adres URL a pak zavolá metodu akce přidruženého kontroleru.
+*Směrování na základě úmluvy* umožňuje můžete globálně zadat adresu URL, která formátuje aplikace přijímá a jak každou z těchto formátů mapuje na metodu konkrétní akce na zadaný kontroler. Po přijetí příchozího požadavku modulu Směrování analyzuje adresu URL a odpovídá jednomu z definovaných formátech adres URL a pak zavolá metodu akce k přidruženému kontroleru.
 
 ```csharp
 routes.MapRoute(name: "Default", template: "{controller=Home}/{action=Index}/{id?}");
 ```
 
-*Atribut směrování* umožňuje zadat informace o směrování podle architekturu řadiče a akce s atributy, které definují trasy vaší aplikace. To znamená, že budou vedle kontroleru a akce, ke kterému jsou přidružené umístěny definic trasy.
+*Atribut směrování* umožňuje zadat informace o směrování podle upravení kontrolery a akce s atributy, které definují trasy vaší aplikace. To znamená, že vedle kontroleru a akce, které jsou přidružené jsou umístěné vaše definice trasy.
 
 ```csharp
 [Route("api/[controller]")]
@@ -101,15 +101,15 @@ public class ProductsController : Controller
 
 ### <a name="model-binding"></a>Vazby modelu
 
-Jádro ASP.NET MVC [model vazby](models/model-binding.md) převede na objekty, které může zpracovat řadičem dat žádostí klienta (hodnot formuláře, data trasy, parametrů řetězce dotazu, hlaviček protokolu HTTP). V důsledku toho řadič logiky nemá udělat práci při zjištění data na příchozí žádost; jednoduše má data jako parametry pro její metody akce.
+ASP.NET Core MVC [vazby modelu](models/model-binding.md) převede dat o žádostech klientů (hodnot formuláře, data směrování, parametry řetězce dotazu, hlavičky protokolu HTTP) na objekty, které dokáže zpracovat kontroleru. V důsledku toho nemusí být proveďte práci ve zjištění příchozí žádosti o data; logice kontroleru už má data jako parametry pro její metody akce.
 
 ```csharp
 public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null) { ... }
    ```
 
-### <a name="model-validation"></a>ověření modelu
+### <a name="model-validation"></a>Ověření modelu
 
-ASP.NET MVC základní podporuje [ověření](models/validation.md) podle architekturu modelu objektu s atributy ověření dat poznámky. Atributy ověření se kontroluje na straně klienta, než hodnoty jsou odeslány na server, jakož i na serveru před akce kontroleru je volána.
+Podporuje ASP.NET Core MVC [ověření](models/validation.md) pomocí upravení váš objekt modelu s atributy ověření dat poznámky. Atributy ověření nebyly zvoleny na straně klienta před hodnoty jsou odeslány na server, jakož i na serveru před akce kontroleru je volána.
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -142,13 +142,13 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
 }
 ```
 
-Rozhraní framework zpracovává ověřování data požadavku na klientovi i na serveru. Ověření logiku určenou na typech modelu, přidá se do vykreslené zobrazení jako nerušivý poznámky a je požadováno v prohlížeči s [jQuery ověření](https://jqueryvalidation.org/).
+Rozhraní framework zpracovává ověřování data žádosti na straně klienta i na serveru. Ověřovací logiku určenou pro typy modelu se přidá do vykreslené zobrazení jako nerušivý poznámky a je požadováno v prohlížeči pomocí [jQuery ověření](https://jqueryvalidation.org/).
 
-### <a name="dependency-injection"></a>Vkládání závislostí
+### <a name="dependency-injection"></a>Injektáž závislostí
 
-Má integrovanou podporu pro ASP.NET Core [vkládání závislostí (DI)](../fundamentals/dependency-injection.md). V aplikaci ASP.NET MVC jádra [řadiče](controllers/dependency-injection.md) můžete žádost o potřebných službám pomocí jejich konstruktory, což jim umožní postupujte podle [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/).
+Má integrovanou podporu pro ASP.NET Core [injektáž závislostí (DI)](../fundamentals/dependency-injection.md). V ASP.NET Core MVC [řadiče](controllers/dependency-injection.md) můžete žádost o potřebné služby prostřednictvím jejich konstruktory, takže se budou dodržovat [explicitní závislosti Princip](http://deviq.com/explicit-dependencies-principle/).
 
-Můžete také použít aplikaci [vkládání závislostí v zobrazení souborů](views/dependency-injection.md)pomocí `@inject` – direktiva:
+Vaše aplikace může také používat [injektáž závislostí v zobrazení souborů](views/dependency-injection.md), použije `@inject` – direktiva:
 
 ```cshtml
 @inject SomeService ServiceName
@@ -165,8 +165,7 @@ Můžete také použít aplikaci [vkládání závislostí v zobrazení souborů
 
 ### <a name="filters"></a>Filtry
 
-[Filtry](controllers/filters.md) pomoci vývojářům zapouzdření mezi vyjímání obavy, jako je zpracování výjimek nebo autorizace. Filtry povolit spuštění vlastní před a po zpracování logiky pro metody akce a může být nakonfigurována pro spuštění v určitých bodech, v rámci spouštěcí kanál pro daný požadavek. Filtry lze použít k řadiče nebo akce jako atributy (nebo můžete spustit globálně). Několik filtry (například `Authorize`) jsou zahrnuty v rozhraní framework.
-
+[Filtry](controllers/filters.md) pomoci vývojářům zapouzdření vyskytující aspekty, jako je zpracování výjimek nebo autorizace. Filtry povolit spuštění vlastní logiku provedení před instrumentací a následného zpracování metody akce a může být nakonfigurován pro spouštění v určitých bodech, v rámci spuštění kanálu pro daný požadavek. Filtry lze použít u řadičů nebo akce, jako atributy (nebo je možné spustit globálně). Několik filtrů (například `Authorize`) jsou zahrnuty v rozhraní framework. `[Authorize]` je atribut, který se používá k vytvoření filtry autorizace MVC.
 
 ```csharp
 [Authorize]
@@ -176,23 +175,23 @@ Můžete také použít aplikaci [vkládání závislostí v zobrazení souborů
 
 ### <a name="areas"></a>Oblasti
 
-[Oblasti](controllers/areas.md) poskytnout způsob, jak oddílu velké ASP.NET Core MVC webové aplikace do menších funkční seskupení. Oblast je strukturu MVC uvnitř aplikace. V projektu MVC logické součásti jako Model, Kontroleru a zobrazení jsou uchovány v různých složkách a konvence pojmenování aplikace MVC používá k vytvoření vztahu mezi těmito součástmi. Pro velké aplikace může být výhodné oddílu aplikace na samostatné vysoké úrovni oblasti funkcí. Pro instanci elektronické obchodování aplikace s více organizačních jednotek, jako je například checkout, fakturace a vyhledávání atd. Každý z těchto jednotek mají své vlastní logickou součástí zobrazení, řadiče a modely.
+[Oblasti](controllers/areas.md) poskytují způsob, jak rozdělit velké aplikace ASP.NET Core MVC Web na menší funkční seskupení. Oblast je struktury MVC uvnitř aplikace. V projektu aplikace MVC logické komponenty, jako jsou modelu, Kontroleru a zobrazení jsou uloženy v různých složkách a aplikace MVC používá konvence pojmenování a vytvořit tak relaci mezi těmito součástmi. Pro velké aplikace může být výhodné rozdělit na samostatné vysoké úrovně funkční oblasti aplikace. Například e-commerce aplikace s několika obchodními jednotkami, jako je například checkout, fakturace a vyhledávání atd. Každá z těchto jednotek mít své vlastní logickou součástí zobrazení, kontrolerů a modely.
 
 ### <a name="web-apis"></a>Webová rozhraní API
 
-Kromě toho, představuje vynikající platformu pro tvorbu webů, má technologie ASP.NET MVC základní podpory pro vytváření webových rozhraní API. Můžete vytvářet služby, které využity širokou škálou klientů včetně prohlížečů a mobilních zařízení.
+Kromě toho, že skvělé platforma pro vytváření webů, ASP.NET Core MVC má skvělou podporu pro vytváření webových rozhraní API. Můžete vytvářet služby, které se širokou škálou klientů včetně prohlížečů a mobilních zařízení.
 
-Rozhraní framework zahrnuje podporu pro vyjednávání obsahu HTTP s integrovanou podporu pro [formátování dat](xref:web-api/advanced/formatting) jako XML nebo JSON. Zápis [vlastní formátování](xref:web-api/advanced/custom-formatters) přidání podpory pro vlastní formáty.
+Rozhraní zahrnuje podporu pro vyjednávání obsahu HTTP s integrovanou podporou pro [formátování dat](xref:web-api/advanced/formatting) jako JSON nebo XML. Zápis [vlastní formátovací moduly](xref:web-api/advanced/custom-formatters) přidání podpory pro vlastní formáty.
 
-Povolení podpory pro hypermédií pomocí generování odkazů. Snadno povolit podporu pro [(CORS) pro sdílení prostředků různého původu](http://www.w3.org/TR/cors/) tak, aby webová rozhraní API můžete sdílet mezi několika webových aplikací.
+Použijte generování povolení podpory pro hypermédiích. Snadno povolit podporu pro [prostředků mezi zdroji (CORS) pro sdílení obsahu](http://www.w3.org/TR/cors/) tak, aby vaše webová rozhraní API mohou být sdíleny napříč více webových aplikací.
 
-### <a name="testability"></a>Možnosti testování
+### <a name="testability"></a>Testovatelnosti
 
-Použití rozhraní framework rozhraní a vkládání závislostí proveďte ho vhodným testování částí a funkcí (např. TestHost a InMemory zprostředkovatele Entity Framework), které zahrnuje rozhraní [integrace testy](xref:test/integration-tests) rychlý a snadno také. Další informace o [testování řadiče logiku](controllers/testing.md).
+Použití rozhraní framework rozhraní a vkládání závislostí usnadňují skvěle se hodí pro testování částí a funkcí (třeba TestHost a InMemory zprostředkovatele pro Entity Framework), které obsahuje rozhraní [integrační testy](xref:test/integration-tests) rychlý a Snadné také. Další informace o [testování logice kontroleru](controllers/testing.md).
 
 ### <a name="razor-view-engine"></a>Zobrazovací modul Razor
 
-[Zobrazení ASP.NET MVC základní](views/overview.md) použít [zobrazovací modul Razor](views/razor.md) k vykreslení zobrazení. Syntaxe Razor je compact, výrazovou a plynulá práce šablony značek jazyk pro definování zobrazení pomocí vloženého kódu jazyka C#. Syntaxe Razor je používaný k dynamickému generování webového obsahu na serveru. Ještě jednou je možné kombinovat kódu serveru s obsah na straně klienta a kódu.
+[ASP.NET Core MVC zobrazení](views/overview.md) použít [zobrazovací modul Razor](views/razor.md) k vykreslení zobrazení. Razor je šablona compact, výrazový a plynulé značkovací jazyk pro definování zobrazení pomocí vloženého kódu jazyka C#. Razor se používá k dynamickému generování webového obsahu na serveru. Čistě je možné kombinovat kódu serveru s obsahem na straně klienta a kód.
 
 ```text
 <ul>
@@ -202,13 +201,13 @@ Použití rozhraní framework rozhraní a vkládání závislostí proveďte ho 
 </ul>
 ```
 
-Pomocí zobrazovací modul Razor můžete definovat [rozložení](views/layout.md), [částečná zobrazení](views/partial.md) a replaceable oddílů.
+Pomocí zobrazovací modul Razor můžete definovat [rozložení](views/layout.md), [částečná zobrazení](views/partial.md) a nahraditelné oddílů.
 
 ### <a name="strongly-typed-views"></a>Zobrazení se silnými typy
 
-Zobrazení MVC Razor můžete být silného typu podle modelu. Řadiče můžete předat povolení zobrazení tak, aby měl kontrolu typu a podporu technologie IntelliSense zobrazení silného typu modelu.
+Zobrazení MVC Razor může být silného typu závislosti na modelu. Řadiče můžete předat model silného typu zobrazení povolení zobrazení kontrolu typu a podporu technologie IntelliSense.
 
-Například následující zobrazení vykreslí modelu typu `IEnumerable<Product>`:
+Například následující zobrazení vykreslí model typu `IEnumerable<Product>`:
 
 ```cshtml
 @model IEnumerable<Product>
@@ -220,11 +219,11 @@ Například následující zobrazení vykreslí modelu typu `IEnumerable<Product
 </ul>
 ```
 
-### <a name="tag-helpers"></a>Pomocníci značky
+### <a name="tag-helpers"></a>Pomocné rutiny značek
 
-[Značka pomocné rutiny](views/tag-helpers/intro.md) povolit kód straně serveru k účasti ve vytváření a vykreslení elementů HTML v souborech Razor. Značka pomocné rutiny můžete použít k definování vlastní značky (například `<environment>`) nebo chcete změnit chování stávající značky (například `<label>`). Pomocníci značka vytvořit vazbu na konkrétní elementy na základě názvu elementu a jeho atributy. Poskytují výhod vykreslování na straně serveru při zachování stále HTML prostředí pro úpravy.
+[Pomocné rutiny značky](views/tag-helpers/intro.md) povolit kód na straně serveru k účasti na vytváření a vykreslování prvků HTML v souborech Razor. Pomocné rutiny značek můžete použít k definování vlastní značky (například `<environment>`) nebo chcete změnit chování existující značky (například `<label>`). Pomocné rutiny značek svázat konkrétní prvky podle názvu elementu a jeho atributy. Poskytují výhod vykreslování na straně serveru stále zachováním HTML prostředí pro úpravy.
 
-Existuje mnoho předdefinovaných značky pomocníci pro běžné úlohy -, jako je například vytváření formulářů, odkazy, načítání prostředků a další - a i další dostupné ve veřejných úložišť GitHub a jako NuGet balíčky. Pomocníci značky vytvořené v C# a jejich cílových elementů HTML na základě název elementu, název atributu nebo nadřazené značky. Například předdefinovaná LinkTagHelper lze vytvořit odkaz `Login` akce `AccountsController`:
+Existuje mnoho integrovaných pomocných rutin značek pro běžné úlohy – například vytváření formulářů, odkazy, načítání prostředků a další – a ještě větší počet je dostupný ve veřejných úložištích GitHub a jako NuGet balíčky. Pomocné rutiny značek jsou vytvořené v jazyce C# a cílí na základě název elementu, atributu nebo nadřazené značky elementů HTML. Například předdefinované LinkTagHelper slouží k vytvoření odkazu `Login` akce `AccountsController`:
 
 ```cshtml
 <p>
@@ -233,7 +232,7 @@ Existuje mnoho předdefinovaných značky pomocníci pro běžné úlohy -, jako
 </p>
 ```
 
-`EnvironmentTagHelper` Slouží k zobrazení (například nezpracovanou nebo minifikovaný) založených na prostředí runtime, jako je například vývoj, pracovním nebo produkčním zahrnout jiné skripty:
+`EnvironmentTagHelper` Je možné zahrnout jiné skripty v zobrazení (například raw nebo minifikovaný) založených na prostředí modulu runtime, vývoj, přípravném nebo produkčním prostředí:
 
 ```cshtml
 <environment names="Development">
@@ -247,8 +246,8 @@ Existuje mnoho předdefinovaných značky pomocníci pro běžné úlohy -, jako
 </environment>
 ```
 
-Pomocníci značky poskytují HTML-friendly vývojového prostředí a bohaté prostředí technologie IntelliSense pro vytvoření značky HTML a syntaxe Razor. Většina předdefinované značky Pomocníci cíli stávající elementy HTML a poskytuje serverové atributy elementu.
+Pomocné rutiny značek poskytuje vývojové prostředí podporou HTML a bohaté prostředí IntelliSense pro vytváření značky HTML a syntaxe Razor. Většina integrovaných pomocných rutin značek cílit na stávající elementy HTML a poskytovat na straně serveru atributy pro element.
 
-### <a name="view-components"></a>Zobrazení součásti
+### <a name="view-components"></a>Komponenty zobrazení
 
-[Zobrazit součásti](views/view-components.md) umožňují balíček logiku vykreslování a opakovaně ji používat v celé aplikaci. Jsou podobná [částečná zobrazení](views/partial.md), ale přidružené logiky.
+[Zobrazení komponenty](views/view-components.md) umožňují balíček logiky vykreslování a znovu ji použít v celé aplikaci. Jsou podobné [částečná zobrazení](views/partial.md), ale s přidružené logiky.

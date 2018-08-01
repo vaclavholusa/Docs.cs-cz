@@ -3,14 +3,14 @@ title: Ověření modelu v ASP.NET Core MVC
 author: tdykstra
 description: Další informace o ověření modelu v ASP.NET Core MVC.
 ms.author: riande
-ms.date: 12/18/2016
+ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 9c2ba1c1fad3ac077a886b3465142acfd4d639af
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095824"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378664"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v ASP.NET Core MVC
 
@@ -118,7 +118,7 @@ Zobrazení s správné odkazy skriptu JavaScript musí mít nastavené pro ově�
 
 [!code-cshtml[](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
-[JQuery Nerušivý ověření](https://github.com/aspnet/jquery-validation-unobtrusive) skript je vlastní Microsoft front-endu knihovnu, která staví na oblíbené [jQuery ověřit](https://jqueryvalidation.org/) modulu plug-in. Bez jQuery Nerušivý ověřování, bude muset kód stejnou logiku ověřování na dvou místech: jednou v atributů ověření na straně serveru na vlastnosti projektu a poté znovu v skripty na straně klienta (příklady pro architekturu jQuery ověřením vaší [ `validate()` ](https://jqueryvalidation.org/validate/) metoda ukazuje, jak komplexní to může být). Místo toho MVC [pomocných rutin značek](xref:mvc/views/tag-helpers/intro) a [pomocných rutin HTML](xref:mvc/views/overview) budou moct používat atributy ověření a metadata z vlastnosti modelu k vykreslení HTML 5 typu [datové atributy](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) v elementy formuláře, které vyžadují ověřování. MVC vygeneruje `data-` atributy pro předdefinované a vlastní atributy. jQuery Nerušivý ověření pak analyzuje tez `data-` atributy a předá logiku jQuery ověřit efektivně "kopírování" logiku ověřování na straně serveru do klienta. Zobrazení chyb ověřování na straně klienta, použití pomocných rutin značek relevantní, jak je znázorněno zde:
+[JQuery Nerušivý ověření](https://github.com/aspnet/jquery-validation-unobtrusive) skript je vlastní Microsoft front-endu knihovnu, která staví na oblíbené [jQuery ověřit](https://jqueryvalidation.org/) modulu plug-in. Bez jQuery Nerušivý ověřování, bude muset kód stejnou logiku ověřování na dvou místech: jednou v atributů ověření na straně serveru na vlastnosti projektu a poté znovu v skripty na straně klienta (příklady pro architekturu jQuery ověřením vaší [ `validate()` ](https://jqueryvalidation.org/validate/) metoda ukazuje, jak komplexní to může být). Místo toho MVC [pomocných rutin značek](xref:mvc/views/tag-helpers/intro) a [pomocných rutin HTML](xref:mvc/views/overview) budou moct používat atributy ověření a metadata z vlastnosti modelu k vykreslení HTML 5 typu [datové atributy](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) v elementy formuláře, které vyžadují ověřování. MVC vygeneruje `data-` atributy pro předdefinované a vlastní atributy. pak analyzuje jQuery Nerušivý ověření `data-` atributy a předá logiku jQuery ověřit efektivně "kopírování" logiku ověřování na straně serveru do klienta. Zobrazení chyb ověřování na straně klienta, použití pomocných rutin značek relevantní, jak je znázorněno zde:
 
 [!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
@@ -208,11 +208,11 @@ Atributy, které toto rozhraní implementují můžete přidat do generované po
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-Ověření nerušivého používá data v `data-` atributy se mají zobrazit chybové zprávy. Nicméně jQuery nebude vědět o pravidlech nebo zprávy, dokud je nepřidáte do prvku jQuery `validator` objektu. To je ukázáno v následujícím příkladu, který přidá metodu s názvem `classicmovie` obsahující kód pro ověření vlastního klienta do jQuery `validator` objektu. Vysvětlení metodu unobtrusive.adapters.add najdete [zde](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)
+Ověření nerušivého používá data v `data-` atributy se mají zobrazit chybové zprávy. Nicméně jQuery nebude vědět o pravidlech nebo zprávy, dokud je nepřidáte do prvku jQuery `validator` objektu. To je ukázáno v následujícím příkladu, který přidá vlastní `classicmovie` způsob ověření klienta jQuery `validator` objektu. Vysvětlení `unobtrusive.adapters.add` metodu, najdete v článku [Nerušivý ověření klienta v architektuře ASP.NET MVC](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html).
 
-[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
+[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?name=snippet_UnobtrusiveValidation)]
 
-JQuery má teď informace k provedení vlastního ověření jazyka JavaScript, jakož i chybová zpráva se zobrazí, pokud tento ověřovací kód vrátí hodnotu false.
+S předchozím kódu `classicmovie` metoda provádí ověřování na straně klienta na film datum vydání. Chybová zpráva se zobrazí, pokud metoda vrátí `false`.
 
 ## <a name="remote-validation"></a>Vzdálené ověření
 
@@ -222,11 +222,14 @@ Implementace vzdáleného ověřování ve dvou krocích. Nejprve musíte označ
 
 [!code-csharp[](validation/sample/User.cs?range=7-8)]
 
-Druhý krok je uvedení kód pro ověření v odpovídající metody akce, jak jsou definovány v `[Remote]` atribut. Podle jQuery ověřit [ `remote()` ](https://jqueryvalidation.org/remote-method/) metoda dokumentaci:
+Druhý krok je uvedení kód pro ověření v odpovídající metody akce, jak jsou definovány v `[Remote]` atribut. Podle jQuery ověřit [vzdálené](https://jqueryvalidation.org/remote-method/) metoda dokumentaci odpovědi serveru musí být řetězec formátu JSON, který je buď:
 
-> Odpověď serverside musí být řetězec formátu JSON, který musí být `"true"` pro platné prvky a může být `"false"`, `undefined`, nebo `null` neplatné elementy pomocí výchozí chybovou zprávu. Pokud odpověď serverside je řetězec, např. `"That name is already taken, try peter123 instead"`, zobrazí se tento řetězec jako vlastní chybovou zprávu místo výchozího.
+* `"true"` pro platné prvky.
+* `"false"`, `undefined`, nebo `null` neplatné elementy pomocí výchozí chybovou zprávu.
 
-Definice `VerifyEmail()` metoda řídí následujícími pravidly, jak je znázorněno níže. Vrátí Chyba ověřování zpráv, pokud se používá e-mailu, nebo `true` Pokud e-mailu je zdarma a zabalí výsledek `JsonResult` objektu. Na straně klienta můžete použít vrácené hodnoty pak pokračujte v případě potřeby zobrazí chybu.
+Pokud odpověď serveru je řetězec (například `"That name is already taken, try peter123 instead"`), řetězec se zobrazí jako vlastní chybovou zprávu místo výchozí řetězec.
+
+Definice `VerifyEmail` metoda řídí následujícími pravidly, jak je znázorněno níže. Vrátí Chyba ověřování zpráv, pokud se používá e-mailu, nebo `true` Pokud e-mailu je zdarma a zabalí výsledek `JsonResult` objektu. Na straně klienta můžete použít vrácené hodnoty pak pokračujte v případě potřeby zobrazí chybu.
 
 [!code-csharp[](validation/sample/UsersController.cs?range=19-28)]
 
@@ -243,7 +246,7 @@ Nyní když uživatelé zadají e-mailu, JavaScript v zobrazení zavolá vzdále
 Nyní když uživatelé zadat křestní jméno a příjmení, JavaScript:
 
 * Díky vzdálené volání zobrazíte, pokud je už zabraný tohoto dvojice názvů.
-* Pokud je už zabraný dvojici, zobrazí se chybová zpráva. 
+* Pokud je už zabraný dvojici, zobrazí se chybová zpráva.
 * Pokud ne, uživatel odešle formulář.
 
 Pokud je potřeba ověřit dvě nebo více polí s `[Remote]` atribut, je uvádíte jako seznam oddělený čárkami. Například, chcete-li přidat `MiddleName` nastavena vlastnost modelu, `[Remote]` atributu, jak je znázorněno v následujícím kódu:

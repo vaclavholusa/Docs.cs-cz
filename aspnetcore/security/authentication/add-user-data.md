@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 6/16/2018
 uid: security/authentication/add-user-data
-ms.openlocfilehash: ecd0e6d1c71b24309fab70fbb06af7731463bb0e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 6f583d65460803c816bf1ccd314216952710cd55
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38215932"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378612"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>Přidání, stáhněte si a odstranit vlastní uživatelská data na identitu v projektu aplikace ASP.NET Core
 
@@ -61,8 +61,8 @@ dotnet new webapp -o WebApp1
   * Vyberte následující soubory, které chcete přepsat:
     * **Účtu/registrace**
     * **Účet a správa/indexu**
-  * Vyberte **+** tlačítko pro vytvoření nového **třída kontextu dat**. Přijmout typ (**WebApp1.Models.WebApp1Context** Pokud jste projekt pojmenovali **WebApp1**).
-  * Vyberte **+** tlačítko pro vytvoření nového **třídu uživatelů**. Přijmout typ (**WebApp1User** Pokud jste projekt pojmenovali **WebApp1**) > **přidat**.
+  * Vyberte **+** tlačítko pro vytvoření nového **třída kontextu dat**. Přijmout typ (**WebApp1.Models.WebApp1Context** Pokud je název projektu **WebApp1**).
+  * Vyberte **+** tlačítko pro vytvoření nového **třídu uživatelů**. Přijmout typ (**WebApp1User** Pokud je název projektu **WebApp1**) > **přidat**.
 * Vyberte **přidat**.
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
@@ -108,7 +108,7 @@ Postupujte podle pokynů v [migrace, UseAuthentication a rozložení](xref:secur
 
 ## <a name="add-custom-user-data-to-the-identity-db"></a>Přidat vlastní uživatelská data do databáze Identity
 
-Aktualizace `IdentityUser` odvozené třídy s vlastními vlastnostmi. Pokud váš projekt WebApp1 pojmenujete, má název souboru *Areas/Identity/Data/WebApp1User.cs*. Aktualizace souboru následujícím kódem:
+Aktualizace `IdentityUser` odvozené třídy s vlastními vlastnostmi. Pokud jste projekt WebApp1, má název souboru *Areas/Identity/Data/WebApp1User.cs*. Aktualizace souboru následujícím kódem:
 
 [!code-csharp[Main](add-user-data/sample/Areas/Identity/Data/WebApp1User.cs)]
 

@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 07/21/2018
 uid: razor-pages/ui-class
-ms.openlocfilehash: 4252cfc5824b6078012cf9ff34968977229faf0d
-ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
+ms.openlocfilehash: 1f0ef59ce3f3294d6a3bde015ca34800770b1be4
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39123779"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378674"
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>Vytvoření opakovaně použitelné uživatelské rozhraní v ASP.NET Core pomocí projektu knihovny tříd Razor.
 
@@ -32,6 +32,10 @@ Tato funkce vyžaduje [!INCLUDE[](~/includes/2.1-SDK.md)]
 * Název knihovny (například "RazorClassLib") > **OK**. Aby se zabránilo kolize názvů souborů s knihovnou generované zobrazení, ujistěte se ale nekončí název knihovny v `.Views`.
 * Ověřte **ASP.NET Core 2.1** nebo novější je vybrána.
 * Vyberte **knihovny tříd Razor** > **OK**.
+
+Knihovny tříd Razor má následující soubor projektu:
+
+[!code-xml[Main](ui-class/samples/cli/RazorUIClassLib/RazorUIClassLib.csproj)]
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 

@@ -21,32 +21,15 @@ Zkontrolujte *Pages/Movies/Index.cshtml.cs* Model stránky:
 
 Stránky Razor jsou odvozeny z `PageModel`. Podle konvence `PageModel`-odvozené třídy se nazývá `<PageName>Model`. Konstruktor používá [injektáž závislostí](xref:fundamentals/dependency-injection) přidáte `MovieContext` na stránku. Vygenerované stránky postupovat podle tohoto vzoru. Zobrazit [asynchronní kód](xref:data/ef-rp/intro#asynchronous-code) Další informace o asynchronní programování s Entity Framework.
 
-Po odeslání žádosti pro stránku, `OnGetAsync` metoda vrátí seznam hodnot filmy pro stránky Razor. `OnGetAsync` nebo `OnGet` je volán na stránku Razor k inicializaci stavu stránky. V takovém případě `OnGetAsync` získá seznam filmy a zobrazí je. 
+Po odeslání žádosti pro stránku, `OnGetAsync` metoda vrátí seznam hodnot filmy pro stránky Razor. `OnGetAsync` nebo `OnGet` je volán na stránku Razor k inicializaci stavu stránky. V takovém případě `OnGetAsync` získá seznam filmy a zobrazí je.
 
 Když `OnGet` vrátí `void` nebo `OnGetAsync` vrátí`Task`, žádná vrácená metoda se používá. Pokud je návratový typ `IActionResult` nebo `Task<IActionResult>`, musí být zadaný příkaz return. Například *Pages/Movies/Create.cshtml.cs* `OnPostAsync` metody:
 
-<!-- TODO - replace with snippet
-[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
- -->
-
-```csharp
-public async Task<IActionResult> OnPostAsync()
-{
-    if (!ModelState.IsValid)
-    {
-        return Page();
-    }
-
-    _context.Movie.Add(Movie);
-    await _context.SaveChangesAsync();
-
-    return RedirectToPage("./Index");
-}
-```
+[!code-csharp[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Pages/Movies/Create.cshtml.cs?name=snippet)]
 
 Zkontrolujte *Pages/Movies/Index.cshtml* stránky Razor:
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
 
 Razor můžete přejít z HTML do jazyka C# nebo do kódu specifické pro syntaxi Razor. Když `@` následuje symbol [Razor rezervované klíčové slovo](xref:mvc/views/razor#razor-reserved-keywords), bude přecházet do kódu specifické pro Razor, jinak bude přecházet do jazyka C#.
 
@@ -63,7 +46,7 @@ Prozkoumejte výrazu lambda použít v následujících pomocné rutiny HTML:
 <a name="md"></a>
 ### <a name="the-model-directive"></a>@model – Direktiva
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
 `@model` Direktiva Určuje typ modelu předané do stránky Razor. V předchozím příkladu `@model` řádek provede `PageModel`-odvozené třídy, které jsou k dispozici pro stránky Razor. Model se používá v `@Html.DisplayNameFor` a `@Html.DisplayName` [pomocných rutin HTML](/aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs#understanding-html-helpers) na stránce.
 
@@ -76,7 +59,7 @@ Prozkoumejte výrazu lambda použít v následujících pomocné rutiny HTML:
 
 Vezměte v úvahu následující kód:
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-999)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-6&highlight=4-999)]
 
 Předchozí zvýrazněný kód je příkladem Razor převádějí do jazyka C#. `{` a `}` znaky, uzavřete blok kódu jazyka C#.
 
@@ -84,7 +67,7 @@ Předchozí zvýrazněný kód je příkladem Razor převádějí do jazyka C#. 
 
 ::: moniker range="= aspnetcore-2.0"
 
-Vlastnost "Title" se používá v *Pages/_Layout.cshtml* souboru. Následující kód ukazuje několik prvních řádků tohoto *Pages/_Layout.cshtml* souboru.
+Vlastnost "Title" se používá v *Pages/Shared/_Layout.cshtml* souboru. Následující kód ukazuje několik prvních řádků tohoto *Pages/Shared/_Layout.cshtml* souboru.
 
 ::: moniker-end
 
@@ -94,7 +77,7 @@ Vlastnost "Title" se používá v *Pages/Shared/_Layout.cshtml* souboru. Násled
 
 ::: moniker-end
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-999)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/NU/_Layout1.cshtml?highlight=6-999)]
 
 Na řádku `@*Markup removed for brevity.*@` je komentáře syntaxe Razor. Na rozdíl od komentáře HTML (`<!-- -->`), klient se nebude posílat komentáře syntaxe Razor.
 
@@ -105,15 +88,15 @@ Spusťte aplikaci a otestovat odkazů v projektu (**Domů**, **o**, **kontakt**,
 
 `Layout` Je nastavena *Pages/_ViewStart.cshtml* souboru:
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
 
-Předchozí kód nastaví soubor rozložení *Pages/_Layout.cshtml* pro všechny soubory Razor pod *stránky* složky. Zobrazit [rozložení](xref:razor-pages/index#layout) Další informace.
+Předchozí kód nastaví soubor rozložení *Pages/Shared/_Layout.cshtml* pro všechny soubory Razor pod *stránky* složky. Zobrazit [rozložení](xref:razor-pages/index#layout) Další informace.
 
 ### <a name="update-the-layout"></a>Aktualizace rozložení
 
-Změnit `<title>` prvek *Pages/_Layout.cshtml* souboru použijte kratší řetězec.
+Změnit `<title>` prvek *Pages/Shared/_Layout.cshtml* souboru použijte kratší řetězec.
 
-[!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
+[!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=1-6&highlight=6)]
 
 Vyhledejte následující element anchor v *Pages/_Layout.cshtml* souboru.
 

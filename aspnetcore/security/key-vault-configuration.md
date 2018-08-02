@@ -1,172 +1,175 @@
 ---
 title: Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 author: guardrex
-description: Další informace o použití konfigurace zprostředkovatele služby Azure klíč trezoru pro konfiguraci aplikace pomocí dvojice název hodnota načíst za běhu.
+description: Zjistěte, jak nakonfigurovat aplikaci pomocí dvojice název hodnota v době běhu načteny pomocí zprostředkovatele konfigurace trezoru klíčů Azure.
 ms.author: riande
-ms.date: 08/09/2017
+ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 433a9cee917a36ff7aa950dbe2a631d127c74821
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6474b9f5cb9e441854565a7891c4aac7f781c810
+ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273434"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39410127"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
-Podle [Luke Latham](https://github.com/guardrex) a [Andrew Stanton-Nurse](https://github.com/anurse)
+Podle [Luke Latham](https://github.com/guardrex) a [Andrew Stanton sestry](https://github.com/anurse)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Zobrazit nebo stáhnout ukázkový kód pro 2.x:
+Zobrazení nebo stažení ukázkového kódu pro 2.x:
 
-* [Základní ukázka](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) ([stažení](xref:tutorials/index#how-to-download-a-sample))-čte tajný hodnoty do aplikace.
-* [Název klíče předponu ukázkové](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čtení tajný hodnoty pomocí předpony název klíče, který představuje verzi aplikace, což vám umožní načíst jinou sadu tajný hodnoty pro každou verzi aplikace.
+* [Základní ukázka](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čte hodnoty tajných kódů do aplikace.
+* [Ukázkový název klíče předponu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čtení hodnoty tajných kódů pomocí předpony název klíče, který představuje verzi jazyka aplikace, které vám umožní načíst jinou sadu hodnoty tajných kódů pro každou verzi aplikace.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Zobrazit nebo stáhnout ukázkový kód pro 1.x:
+Zobrazení nebo stažení ukázkového kódu pro 1.x:
 
-* [Základní ukázka](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x) ([stažení](xref:tutorials/index#how-to-download-a-sample))-čte tajný hodnoty do aplikace.
-* [Název klíče předponu ukázkové](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čtení tajný hodnoty pomocí předpony název klíče, který představuje verzi aplikace, což vám umožní načíst jinou sadu tajný hodnoty pro každou verzi aplikace.
+* [Základní ukázka](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čte hodnoty tajných kódů do aplikace.
+* [Ukázkový název klíče předponu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x) ([stažení](xref:tutorials/index#how-to-download-a-sample)) – čtení hodnoty tajných kódů pomocí předpony název klíče, který představuje verzi jazyka aplikace, které vám umožní načíst jinou sadu hodnoty tajných kódů pro každou verzi aplikace.
 
 ---
 
-Tento dokument vysvětluje, jak používat [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) poskytovatele konfigurace pro načtení hodnoty konfigurace aplikace z Azure Key Vault tajných klíčů. Azure Key Vault je Cloudová služba, která pomáhá chránit kryptografické klíče a tajné klíče používané aplikace a služby. Řízení přístupu k citlivým konfigurační data mezi obvyklé scénáře patří a splňuje požadavek na FIPS 140-2 Level 2 ověřit moduly hardwarového zabezpečení (HSM) při ukládání konfigurační data. Tato funkce je k dispozici pro aplikace, které cílí ASP.NET Core 1.1 nebo vyšší.
+Tento dokument popisuje, jak používat [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) poskytovatel konfigurace pro načtení hodnoty konfigurace aplikace z Azure Key Vault tajných kódů. Azure Key Vault je Cloudová služba, která pomáhá chránit kryptografické klíče a tajné klíče používané aplikacemi a službami. Řízení přístupu k citlivým konfigurační data patří běžné scénáře a splňuje požadavek na FIPS 140-2 úrovně 2 ověřit modulů hardwarového zabezpečení (HSM) při ukládání konfigurační data. Tato funkce je k dispozici pro aplikace, které cílí ASP.NET Core 1.1 nebo vyšší.
 
 ## <a name="package"></a>Balíček
 
-Chcete-li použít poskytovatele, přidejte odkaz na [Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/) balíčku.
+Pokud chcete použít poskytovatele, přidejte odkaz na [Microsoft.Extensions.Configuration.AzureKeyVault](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureKeyVault/) balíčku.
 
-## <a name="application-configuration"></a>Konfigurace aplikace
+## <a name="app-configuration"></a>Konfigurace aplikace
 
-Můžete si prostudovat zprostředkovatele s [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples). Po vytvoření trezoru klíčů a vytvoření tajných klíčů v trezoru, ukázkových aplikací bezpečně načíst tajný hodnoty do jejich konfigurace a jejich zobrazení na webových stránkách.
+Můžete prozkoumat zprostředkovatele s [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples). Po vytvoření služby key vault a vytvořte tajných kódů v trezoru, ukázkové aplikace bezpečně načtení hodnoty tajných kódů do jejich konfigurace a jejich zobrazení na webových stránkách.
 
-Zprostředkovatel je přidán do `ConfigurationBuilder` s `AddAzureKeyVault` rozšíření. V ukázkových aplikací rozšíření používá tři načíst z hodnoty konfigurace *appSettings.JSON určený* souboru.
+Zprostředkovatel se přidá do konfigurace aplikace s `AddAzureKeyVault` rozšíření. V ukázkových aplikací, rozšíření používá tři načteny z hodnot konfigurace *appsettings.json* souboru.
 
 | Nastavení aplikace    | Popis                    | Příklad                                      |
 | -------------- | ------------------------------ | -------------------------------------------- |
-| `Vault`        | Název Azure Key Vault           | contosovault                                 |
+| `Vault`        | Název služby Azure Key Vault           | contosovault                                 |
 | `ClientId`     | Id aplikace Azure Active Directory  | 627e911e-43cc-61d4-992e-12db9c81b413         |
 | `ClientSecret` | Klíč aplikace Azure Active Directory | g58K3dtg59o1Pa+e59v2Tx829w6VxTB2yv9sv/101di= |
 
 [!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1)]
 
-## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>Vytvoření trezoru klíčů tajných klíčů a načítání hodnoty konfigurace (basic – ukázka)
+## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>Vytvoření tajných kódů služby key vault a načítání hodnot konfigurací (ukázka basic)
 
-1. Vytvoření trezoru klíčů a nastavení Azure Active Directory (Azure AD) pro aplikaci následující pokyny v [Začínáme s Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
-   * Přidat tajné klíče do trezoru klíčů pomocí [modulu PowerShell trezoru klíč AzureRM](/powershell/module/azurerm.keyvault) dostupné z [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Portál azure](https://portal.azure.com/). Tajné klíče byly vytvořeny jako buď *ruční* nebo *certifikát* tajných klíčů. *Certifikát* tajné klíče jsou certifikáty používané aplikace a služby, ale nejsou podporovány ve zprostředkovateli konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
-     * Jednoduché tajné klíče jsou vytvořené jako dvojice název hodnota. Azure Key Vault názvů tajných klíčů jsou omezeny na alfanumerické znaky a spojovníky.
-     * Hierarchická hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač v ukázce. Použití dvojteček, které se obvykle používají pro vymezení části z podklíč v [konfigurace ASP.NET Core](xref:fundamentals/configuration/index), nejsou povoleny v názvů tajných klíčů. Proto jsou dvě pomlčky používá a vzájemně zaměněny pro dvojtečkou při těchto tajných klíčů jsou načteny do konfigurace aplikace.
-     * Vytvořte dvě *ruční* tajných klíčů s následující páry název hodnota. První tajný klíč je jednoduchý název a hodnotu a druhý tajný klíč vytvoří tajná hodnota s části a podklíč v tajný název:
+1. Vytvoření služby key vault a nastavení Azure Active Directory (Azure AD) pro aplikaci následující pokyny v [Začínáme s Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
+   * Přidávání tajných kódů pomocí služby key vault [modulu AzureRM Key Vault prostředí PowerShell](/powershell/module/azurerm.keyvault) k dispozici [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Webu azure Portal](https://portal.azure.com/). Tajné kódy jsou vytvořeny jako buď *ruční* nebo *certifikát* tajných kódů. *Certifikát* tajné kódy jsou certifikáty pro použití aplikacemi a službami, ale nepodporuje zprostředkovatele konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
+     * Jednoduché tajné kódy jsou vytvořeny jako dvojice název hodnota. Azure Key Vault tajný názvy jsou omezené na alfanumerické znaky a pomlčky.
+     * Hierarchické hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač v ukázce. Použití dvojteček, které se obvykle používají pro vymezení část z podklíč v [konfigurace ASP.NET Core](xref:fundamentals/configuration/index), nejsou povoleny v názvů tajných klíčů. Proto jsou použít dvě pomlčky a má Prohodit pro dvojtečkou tajné klíče jsou načtena do konfigurace aplikace.
+     * Pak vytvoříte další dva *ruční* tajných kódů pomocí následující dvojice název hodnota. První tajný kód je jednoduchý název a hodnotu, a druhý tajný kód vytvoří tajná hodnota s části a v názvu tajný podklíč:
        * `SecretName`: `secret_value_1`
        * `Section--SecretName`: `secret_value_2`
-   * Ukázková aplikace zaregistrujte v Azure Active Directory.
-   * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
+   * Zaregistrujte ukázkovou aplikaci v Azure Active Directory.
+   * Povolit aplikaci přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutinu Powershellu autorizovat aplikaci přistupovat k trezoru klíčů, poskytují `List` a `Get` přístup k tajným kódům s `-PermissionsToSecrets list,get`.
 
-2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
-3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako tajný název.
-   * Hierarchická bez hodnoty: hodnota `SecretName` se získávají pomocí `config["SecretName"]`.
-   * Hierarchická hodnoty (oddíly): použití `:` zápis (dvojtečka) nebo `GetSection` metoda rozšíření. Použijte jednu z těchto přístupů k získání hodnoty konfigurace:
+2. Aktualizace aplikace *appsettings.json* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
+3. Spuštění ukázkové aplikace, která získává svůj konfigurační hodnoty z `IConfigurationRoot` se stejným názvem jako název tajného kódu.
+   * Hierarchické bez hodnoty: hodnota `SecretName` se získá pomocí `config["SecretName"]`.
+   * Hierarchické hodnoty (oddílů): použijte `:` zápis (dvojtečka) nebo `GetSection` – metoda rozšíření. Použijte některou z těchto přístupů k získání hodnoty konfigurace:
      * `config["Section:SecretName"]`
      * `config.GetSection("Section")["SecretName"]`
 
-Při spuštění aplikace zobrazuje webová stránka načtená tajný hodnoty:
+Při spuštění aplikace, webová stránka zobrazuje načíst hodnoty tajných kódů:
 
-![Okno prohlížeče zobrazující tajný hodnoty načíst prostřednictvím poskytovatele konfigurace Azure klíč trezoru](key-vault-configuration/_static/sample1.png)
+![Okno prohlížeče zobrazující hodnoty tajných kódů, které jsou načteny prostřednictvím poskytovatele konfigurace Azure Key Vault](key-vault-configuration/_static/sample1.png)
 
-## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>Vytvoření tajných klíčů předponou trezoru klíčů a načítání hodnoty konfigurace (klíč název předpona – ukázka)
+## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>Vytvoření tajných kódů předponou služby key vault a načtení hodnoty konfigurace (klíč název předpona sample)
 
-`AddAzureKeyVault` také poskytuje přetížení, které přijímá implementace `IKeyVaultSecretManager`, která umožňuje řídit způsob klíče tajné klíče trezoru se převedou na konfigurační klíče. Například můžete implementovat rozhraní načíst tajný hodnot na základě předpony hodnoty, které poskytnete při spuštění aplikace. To vám například umožňuje načíst tajné klíče založené na verzi aplikace.
+`AddAzureKeyVault` také poskytuje přetížení přijímající implementace `IKeyVaultSecretManager`, což vám umožňuje řídit jak klíče trezoru tajných kódů se převedou na konfigurační klíče. Například můžete implementovat rozhraní za účelem načtení hodnoty tajných kódů na základě hodnoty předpony, které poskytnete při spuštění aplikace. Díky tomu můžete například načíst tajné kódy na základě verze aplikace.
 
 > [!WARNING]
-> Nepoužívejte předpony na tajné klíče trezoru klíčů, umístit do stejné trezoru klíčů tajné klíče pro víc aplikací nebo umístit prostředí tajné klíče (například *vývoj* versus *produkční* tajné klíče) do stejné trezor. Doporučujeme různé aplikace a vývoj nebo produkční prostředí použít samostatné trezorů klíčů izolovat aplikace prostředí pro nejvyšší úroveň zabezpečení.
+> Nepoužívejte předpony v tajných kódů služby key vault, umístí tajných kódů pro více aplikací do stejného trezoru klíčů nebo umístit prostředí tajné kódy (například *vývoj* oproti *produkční* tajné kódy) do jedné trezor. Doporučujeme různých aplikací a vývojové nebo produkční prostředí použít samostatné trezorům klíčů k izolování aplikace prostředí pro nejvyšší úroveň zabezpečení.
 
-Pomocí druhého ukázkovou aplikaci, vytvořte tajný klíč v trezoru klíčů pro `5000-AppSecret` (tečky nejsou povoleny v trezoru klíčů názvů tajných klíčů) představující tajný klíč aplikace pro 5.0.0.0 verzi vaší aplikace. Pro jinou verzi, 5.1.0.0, vytvoříte tajný klíč pro `5100-AppSecret`. Jednotlivé verze aplikace načítá vlastní tajná hodnota do jeho konfiguraci jako `AppSecret`, vypuzovacího vypnout verze načtenou tajný klíč. Implementace tohoto příkladu je zobrazena níže:
+Pomocí druhého ukázkovou aplikaci, vytvoření tajného klíče v trezoru klíčů pro `5000-AppSecret` (tečky nejsou povoleny v názvech tajných kódů služby key vault) představující tajný kód aplikace pro 5.0.0.0 verzi vaší aplikace. Pro jinou verzi, 5.1.0.0, vytvoření tajného klíče pro `5100-AppSecret`. Každá verze aplikace načte do jeho konfiguraci jako vlastní tajná hodnota `AppSecret`, vypuzovacího vypnout verze během načítání tajného klíče. Ukázková implementace je zobrazena níže:
 
-[!code-csharp[Configuration builder](key-vault-configuration/samples/key-name-prefix-sample/2.x/Program.cs?name=snippet1&highlight=20)]
+[!code-csharp[Configuration builder](key-vault-configuration/samples/key-name-prefix-sample/2.x/Program.cs?name=snippet1&highlight=18)]
 
 [!code-csharp[PrefixKeyVaultSecretManager](key-vault-configuration/samples/key-name-prefix-sample/2.x/Startup.cs?name=snippet1)]
 
-`Load` Metoda je volána algoritmem zprostředkovatele, který iteruje tajné klíče trezoru najít ty, které mají předponu verze. Když najde předponu verze s `Load`, používá algoritmus `GetKey` metoda vrátí název konfigurace tajný název. Ji odstraní vypnout předponu verze z názvu tajného klíče a vrátí zbytek tajný název pro načítání do konfigurace aplikace dvojice název hodnota.
+`Load` Metoda je volána metodou poskytovatele algoritmus, který Iteruje přes našli ty, které mají předponu verze tajné klíče trezoru. Když se nachází verze předpony s `Load`, používá algoritmus `GetKey` metoda vrátí název konfigurace název tajného kódu. Odstraní vypnout verze předpony z názvu tajného klíče a vrátí zbytek název tajného kódu pro načtení do konfigurace aplikace dvojice název hodnota.
 
 Při implementaci tohoto přístupu:
 
-1. Tajné klíče trezoru klíčů jsou načteny.
+1. Tajné klíče služby key vault se načítají.
 2. Řetězec tajný klíč pro `5000-AppSecret` je nalezena shoda.
-3. Verze, `5000` (s pomlčkou), se odstraní z název klíče a `AppSecret` načtení s tajná hodnota do konfigurace aplikace.
+3. Verze, `5000` (s pomlčkou), je odebrána z názvu klíče byste museli opustit `AppSecret` načíst s hodnota tajného klíče do konfigurace aplikace.
 
 > [!NOTE]
-> Můžete taky zadat vlastní `KeyVaultClient` implementace k `AddAzureKeyVault`. Zadávání vlastního klienta můžete sdílet jednu instanci klienta mezi zprostředkovatele konfigurace a dalších částí vaší aplikace.
+> Můžete taky zadat vlastní `KeyVaultClient` implementaci `AddAzureKeyVault`. Zadání vlastního klienta umožňuje sdílet jednu instanci klienta mezi zprostředkovatele konfigurace a ostatní části vaší aplikace.
 
-1. Vytvoření trezoru klíčů a nastavení Azure Active Directory (Azure AD) pro aplikaci následující pokyny v [Začínáme s Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
-   * Přidat tajné klíče do trezoru klíčů pomocí [modulu PowerShell trezoru klíč AzureRM](/powershell/module/azurerm.keyvault) dostupné z [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Portál azure](https://portal.azure.com/). Tajné klíče byly vytvořeny jako buď *ruční* nebo *certifikát* tajných klíčů. *Certifikát* tajné klíče jsou certifikáty používané aplikace a služby, ale nejsou podporovány ve zprostředkovateli konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
-     * Hierarchická hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač.
-     * Vytvořte dvě *ruční* tajných klíčů s následující páry název hodnota:
+1. Vytvoření služby key vault a nastavení Azure Active Directory (Azure AD) pro aplikaci následující pokyny v [Začínáme s Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
+   * Přidávání tajných kódů pomocí služby key vault [modulu AzureRM Key Vault prostředí PowerShell](/powershell/module/azurerm.keyvault) k dispozici [Galerie prostředí PowerShell](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [REST API služby Azure Key Vault](/rest/api/keyvault/), nebo [Webu azure Portal](https://portal.azure.com/). Tajné kódy jsou vytvořeny jako buď *ruční* nebo *certifikát* tajných kódů. *Certifikát* tajné kódy jsou certifikáty pro použití aplikacemi a službami, ale nepodporuje zprostředkovatele konfigurace. Měli byste použít *ruční* možnost vytvořit tajné klíče dvojice název hodnota pro použití se zprostředkovatelem konfigurace.
+     * Hierarchické hodnoty (konfigurační oddíly) použijte `--` (dvě pomlčky) jako oddělovač.
+     * Pak vytvoříte další dva *ruční* tajných kódů pomocí následující dvojice název hodnota:
        * `5000-AppSecret`: `5.0.0.0_secret_value`
        * `5100-AppSecret`: `5.1.0.0_secret_value`
-   * Ukázková aplikace zaregistrujte v Azure Active Directory.
-   * Autorizovat aplikaci pro přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutiny prostředí PowerShell autorizovat aplikaci pro přístup k trezoru klíčů, zadejte `List` a `Get` přístup k tajných klíčů s `-PermissionsToSecrets list,get`.
+   * Zaregistrujte ukázkovou aplikaci v Azure Active Directory.
+   * Povolit aplikaci přístup k trezoru klíčů. Při použití `Set-AzureRmKeyVaultAccessPolicy` rutinu Powershellu autorizovat aplikaci přistupovat k trezoru klíčů, poskytují `List` a `Get` přístup k tajným kódům s `-PermissionsToSecrets list,get`.
 
-2. Aktualizace aplikace služby *appSettings.JSON určený* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
-3. Spuštění ukázkové aplikace, která získává jeho hodnoty konfigurace z `IConfigurationRoot` se stejným názvem jako předponou tajný název. V této ukázce předponu je verze aplikace, která jste zadali na `PrefixKeyVaultSecretManager` když jste přidali poskytovatel konfigurace Azure Key Vault. Hodnota `AppSecret` se získávají pomocí `config["AppSecret"]`. Webová stránka generované aplikace zobrazuje načíst hodnotu:
+2. Aktualizace aplikace *appsettings.json* souboru s hodnotami `Vault`, `ClientId`, a `ClientSecret`.
+3. Spuštění ukázkové aplikace, která získává svůj konfigurační hodnoty z `IConfigurationRoot` se stejným názvem jako předponou název tajného kódu. V této ukázce je předpona, která verze aplikace, které jste zadali do `PrefixKeyVaultSecretManager` při přidání poskytovatele konfigurace služby Azure Key Vault. Hodnota pro `AppSecret` se získá pomocí `config["AppSecret"]`. Webová stránka vygenerovaný touto aplikací zobrazí načíst hodnotu:
 
-   ![Okno prohlížeče zobrazující tajná hodnota načíst prostřednictvím poskytovatele konfigurace Azure klíč trezoru, pokud je 5.0.0.0 verze aplikace](key-vault-configuration/_static/sample2-1.png)
+   ![Okno prohlížeče zobrazující tajná hodnota načteného prostřednictvím zprostředkovatele konfigurace trezoru klíčů Azure, pokud je verze aplikace 5.0.0.0](key-vault-configuration/_static/sample2-1.png)
 
-4. Změna verze sestavení aplikace v souboru projektu z `5.0.0.0` k `5.1.0.0` a znovu spusťte aplikaci. Tato doba tajná hodnota vrácená je `5.1.0.0_secret_value`. Webová stránka generované aplikace zobrazuje načíst hodnotu:
+4. Změnit verzi sestavení aplikace v souboru projektu z `5.0.0.0` k `5.1.0.0` a znovu spusťte aplikaci. Tentokrát, vrácená hodnota tajného kódu je `5.1.0.0_secret_value`. Webová stránka vygenerovaný touto aplikací zobrazí načíst hodnotu:
 
-   ![Okno prohlížeče zobrazující tajná hodnota načíst prostřednictvím poskytovatele konfigurace Azure klíč trezoru, pokud je 5.1.0.0 verze aplikace](key-vault-configuration/_static/sample2-2.png)
+   ![Okno prohlížeče zobrazující tajná hodnota načteného prostřednictvím zprostředkovatele konfigurace trezoru klíčů Azure, pokud je verze aplikace 5.1.0.0](key-vault-configuration/_static/sample2-2.png)
 
-## <a name="controlling-access-to-the-clientsecret"></a>Řízení přístupu ke ClientSecret
+## <a name="controlling-access-to-the-clientsecret"></a>Řízení přístupu k ClientSecret
 
-Použití [nástroj tajný klíč správce](xref:security/app-secrets) udržovat `ClientSecret` mimo vašeho projektu zdroj stromu. Pomocí nástroje Správce tajný klíč, můžete přidružit konkrétní projekt tajné klíče aplikace a sdílet je ve více projektech.
+Použití [nástroj tajný klíč správce](xref:security/app-secrets) udržovat `ClientSecret` mimo projekt stromu zdrojového kódu. Pomocí manažera tajných přidružit k určitému projektu tajných kódů aplikace a sdílet mezi více projekty.
 
-Při vývoji aplikace rozhraní .NET Framework v prostředí, které podporuje certifikáty, můžete ověřovat do Azure Key Vault společně s certifikátem X.509. Privátní klíč certifikátu X.509 spravuje operačního systému. Další informace najdete v tématu [ověřit pomocí certifikátu místo tajný klíč klienta](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret). Použití `AddAzureKeyVault` přetížení, které přijímá `X509Certificate2`.
+Při vývoji aplikace rozhraní .NET Framework v prostředí, které podporuje certifikáty, můžete ověřovat do služby Azure Key Vault pomocí certifikátu X.509. Privátní klíč certifikátu X.509 se spravuje přes operační systém. Další informace najdete v tématu [ověřování pomocí certifikátu místo tajného klíče klienta](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret). Použití `AddAzureKeyVault` přetížení přijímající `X509Certificate2` (`_env` v následujícím příkladu:
 
 ```csharp
+var builtConfig = config.Build();
+
 var store = new X509Store(StoreLocation.CurrentUser);
 store.Open(OpenFlags.ReadOnly);
-var cert = store.Certificates.Find(X509FindType.FindByThumbprint, config["CertificateThumbprint"], false);
+var cert = store.Certificates
+    .Find(X509FindType.FindByThumbprint, 
+        config["CertificateThumbprint"], false);
 
-builder.AddAzureKeyVault(
-    config["Vault"],
-    config["ClientId"],
+config.AddAzureKeyVault(
+    builtConfig["Vault"],
+    builtConfig["ClientId"],
     cert.OfType<X509Certificate2>().Single(),
-    new EnvironmentSecretManager(env.ApplicationName));
-store.Close();
+    new EnvironmentSecretManager(context.HostingEnvironment.ApplicationName));
 
-Configuration = builder.Build();
+store.Close();
 ```
 
-## <a name="reloading-secrets"></a>Opětovné načtení tajné klíče
+## <a name="reloading-secrets"></a>Znovu načíst tajné kódy
 
-Tajné klíče ukládají do mezipaměti, dokud `IConfigurationRoot.Reload()` je volána. Platnost vypršela, zakázané, a aplikace, dokud nejsou dodržovány aktualizované tajných klíčů v trezoru klíčů `Reload` se spustí.
+Tajné klíče jsou uložené v mezipaměti až do `IConfigurationRoot.Reload()` je volána. Vypršela platnost, zakázané, a aktualizované tajné kódy ve službě key vault není respektována aplikace do `Reload` provádí.
 
 ```csharp
 Configuration.Reload();
 ```
 
-## <a name="disabled-and-expired-secrets"></a>Zakázaná a vypršela platnost tajné klíče
+## <a name="disabled-and-expired-secrets"></a>Tajné kódy zakázaná a jejichž platnost vypršela
 
-Throw tajných klíčů zakázaná a vypršela platnost `KeyVaultClientException`. Abyste zabránili vyvolání aplikace, nahraďte aplikace nebo aktualizovat zakázána nebo platnost tajný klíč.
+Vyvolat zakázaná a jejichž platnost vypršela tajných kódů `KeyVaultClientException`. Abyste zabránili vyvolání vaší aplikace, nahradit aplikaci nebo aktualizovat tajný kód zakázaný nebo vypršela platnost.
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Jakmile se aplikace se nepodaří načíst konfiguraci pomocí poskytovatele, chybová zpráva zapsány do [ASP.NET protokolování infrastruktury](xref:fundamentals/logging/index). Tyto podmínky zabrání konfiguraci z načítání:
+Když aplikaci se pak nepodaří načíst konfiguraci pomocí zprostředkovatele, chybová zpráva je zapsána do [ASP.NET protokolování infrastruktury](xref:fundamentals/logging/index). Konfigurace načítání nebudou moct tyto podmínky:
 
-* Aplikace v Azure Active Directory není správně nakonfigurován.
-* Trezor klíčů neexistuje v Azure Key Vault.
+* Aplikace není správně nakonfigurovaný v Azure Active Directory.
+* Trezor klíčů neexistuje ve službě Azure Key Vault.
 * Aplikace nemá oprávnění pro přístup k trezoru klíčů.
 * Zásady přístupu neobsahuje `Get` a `List` oprávnění.
-* V trezoru klíčů konfigurační data (dvojice název hodnota) je nesprávně s názvem, chybí, zakázána, nebo vypršela platnost.
-* Aplikace má nesprávný trezoru klíčů název (`Vault`), Id aplikace Azure AD (`ClientId`), nebo klíč služby Azure AD (`ClientSecret`).
+* Ve službě key vault konfigurační data (dvojice název hodnota) je nesprávně pojmenované, chybí, zakázán, nebo vypršela platnost.
+* Aplikace má název chybný trezoru klíčů (`Vault`), Id aplikace Azure AD (`ClientId`), nebo klíč služby Azure AD (`ClientSecret`).
 * Klíč služby Azure AD (`ClientSecret`) vypršela.
 * Konfigurační klíč (název) je nesprávný v aplikaci pro hodnotu, kterou se pokoušíte načíst.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Konfigurace](xref:fundamentals/configuration/index)
+* <xref:fundamentals/configuration/index>
 * [Microsoft Azure: Trezor klíčů](https://azure.microsoft.com/services/key-vault/)
-* [Microsoft Azure: Dokumentaci k trezoru klíčů](https://docs.microsoft.com/azure/key-vault/)
-* [Klíče postup generování a přenos chráněných pomocí HSM pro Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)
-* [KeyVaultClient – třída](/dotnet/api/microsoft.azure.keyvault.keyvaultclient)
+* [Microsoft Azure: Dokumentace ke službě Key Vault](/azure/key-vault/)
+* [Postup generování a přenos chráněných pomocí HSM klíčů pro Azure Key Vault](/azure/key-vault/key-vault-hsm-protected-keys)
+* [Třída KeyVaultClient](/dotnet/api/microsoft.azure.keyvault.keyvaultclient)

@@ -1,154 +1,268 @@
 ---
-title: Soubor zprostředkovatele v ASP.NET Core
-author: ardalis
-description: Zjistěte, jak ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím poskytovatelů souboru.
+title: Zprostředkovatelé souborů v ASP.NET Core
+author: guardrex
+description: Zjistěte, jak ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím zprostředkovatelé souborů.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 08/01/2018
 uid: fundamentals/file-providers
-ms.openlocfilehash: 0d356322ea9f4cc2caead81746bf9ede4a87923f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 512229cfe7d7efdcd9050fa13dbdbf793be29a0b
+ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276235"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39410153"
 ---
-# <a name="file-providers-in-aspnet-core"></a>Soubor zprostředkovatele v ASP.NET Core
+# <a name="file-providers-in-aspnet-core"></a>Zprostředkovatelé souborů v ASP.NET Core
 
-Podle [Steve Smith](https://ardalis.com/)
+Podle [Steve Smith](https://ardalis.com/) a [Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím poskytovatelů souboru.
+ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím zprostředkovatelé souborů. Zprostředkovatelé souborů se používají v rozhraní ASP.NET Core:
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+* [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment) zpřístupní obsah kořenové a kořenový adresář webové jako aplikace `IFileProvider` typy.
+* [Statické soubory Middleware](xref:fundamentals/static-files) zprostředkovatelé souborů používá k vyhledání statické soubory.
+* [Razor](xref:mvc/views/razor) zprostředkovatelé souborů používá k nalezení stránek a zobrazení.
+* Nástroje pro .NET core používá k určení, které soubory by se měly zveřejňovat zprostředkovatelé souborů a vzory glob.
 
-## <a name="file-provider-abstractions"></a>Abstrakce zprostředkovatele souboru
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-Soubor poskytovatelé jsou abstrakci přes systémy souborů. Hlavní rozhraní je `IFileProvider`. `IFileProvider` zpřístupní metody pro získání informací o souboru (`IFileInfo`), informace o adresáři (`IDirectoryContents`) a k nastavení oznámení o změnách (pomocí `IChangeToken`).
+## <a name="file-provider-interfaces"></a>Rozhraní poskytovatele souboru
 
-`IFileInfo` poskytuje metody a vlastnosti o jednotlivé soubory nebo adresáře. Má dvě logická hodnota vlastnosti `Exists` a `IsDirectory`, a také vlastnosti popisující souboru `Name`, `Length` (v bajtech), a `LastModified` datum. Můžete si přečíst ze souboru pomocí jeho `CreateReadStream` metoda.
+Primární rozhraní se ale [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider). `IFileProvider` poskytuje metody pro:
 
-## <a name="file-provider-implementations"></a>Implementace zprostředkovatele souboru
+* Získání informací o souboru ([IFileInfo](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo)).
+* Získat informace o adresáři ([IDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.idirectorycontents)).
+* Nastavení oznámení o změnách (pomocí [IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken)).
 
-Tři implementace `IFileProvider` jsou k dispozici: fyzické, vložených a složené. Fyzické poskytovatele používá pro přístup k souborům konkrétního systému. Vložené zprostředkovatele se používá pro přístup k souborům, které jsou součástí sestavení. Složené zprostředkovatele slouží k poskytování kombinovaný přístup k souborů a adresářů z jednoho nebo více poskytovatelů.
+`IFileInfo` poskytuje metody a vlastnosti pro práci se soubory:
+
+* [Existuje](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.exists)
+* [IsDirectory](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.isdirectory)
+* [Jméno](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.name)
+* [Délka](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.length) (v bajtech)
+* [LastModified](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.lastmodified) datum
+
+Můžete číst ze souboru pomocí [IFileInfo.CreateReadStream](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo.createreadstream) metody.
+
+Ukázková aplikace předvádí, jak nakonfigurovat poskytovatele souborů v `Startup.ConfigureServices` pro používání v rámci aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).
+
+## <a name="file-provider-implementations"></a>Implementace zprostředkovatele souborů
+
+Tři implementace `IFileProvider` jsou k dispozici.
+
+::: moniker range=">= aspnetcore-2.0"
+
+| Implementace | Popis |
+| -------------- | ----------- |
+| [PhysicalFileProvider](#physicalfileprovider) | Fyzické zprostředkovatele se používá pro přístup k fyzické soubory v systému. |
+| [ManifestEmbeddedFileProvider](#manifestembeddedfileprovider) | Poskytovateli vloženého manifestu se používá pro přístup k souborům, které jsou součástí sestavení. |
+| [CompositeFileProvider](#compositefileprovider) | Složený zprostředkovatele slouží k poskytování kombinovaný přístup k souborů a adresářů od jiných zprostředkovatelů. |
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+| Implementace | Popis |
+| -------------- | ----------- |
+| [PhysicalFileProvider](#physicalfileprovider) | Fyzické zprostředkovatele se používá pro přístup k fyzické soubory v systému. |
+| [EmbeddedFileProvider](#embeddedfileprovider) | Vložený zprostředkovatele se používá pro přístup k souborům, které jsou součástí sestavení. |
+| [CompositeFileProvider](#compositefileprovider) | Složený zprostředkovatele slouží k poskytování kombinovaný přístup k souborů a adresářů od jiných zprostředkovatelů. |
+
+::: moniker-end
 
 ### <a name="physicalfileprovider"></a>PhysicalFileProvider
 
-`PhysicalFileProvider` Poskytuje přístup k fyzické systému souborů. Zabalí ho `System.IO.File` typu (pro fyzické zprostředkovatele), oborů všechny cesty k adresáři a její podřízené položky. Tento obor omezuje přístup na určité adresáře a její podřízené položky, brání přístupu k systému souborů mimo tuto hranici. Při vytváření instance tohoto zprostředkovatele, je nutné zadat s cestu k adresáři, který slouží jako základní cesta pro všechny požadavky provedené pro tohoto zprostředkovatele (a která omezuje přístup mimo tuto cestu). V aplikaci ASP.NET Core, můžete vytvořit instanci `PhysicalFileProvider` zprostředkovatele přímo, nebo můžete požádat o `IFileProvider` v řadiči nebo konstruktor služby prostřednictvím [vkládání závislostí](dependency-injection.md). Pozdější přístup obvykle předá flexibilnější a možností intenzivního testování řešení.
+[PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider) poskytuje přístup k fyzické systému souborů. `PhysicalFileProvider` používá [System.IO.File](/dotnet/api/system.io.file) typu (u fyzického provider) a všechny cesty k adresáři a jeho podřízené obory. Tento rozsah brání v přístupu k systému souborů mimo zadaný adresář a jejích potomků. Při vytváření instance tohoto zprostředkovatele, cestu k adresáři je povinný a slouží jako základní cesta pro všechny požadavky vytvořené pomocí zprostředkovatele. Můžete vytvořit instanci `PhysicalFileProvider` poskytovatele přímo, nebo můžete požádat o `IFileProvider` v konstruktoru prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).
 
-Následující ukázka ukazuje, jak vytvořit `PhysicalFileProvider`.
+**Statické typy**
 
+Následující kód ukazuje, jak vytvořit `PhysicalFileProvider` a použít ho k získání obsah adresáře a informace o souboru:
 
 ```csharp
-IFileProvider provider = new PhysicalFileProvider(applicationRoot);
-IDirectoryContents contents = provider.GetDirectoryContents(""); // the applicationRoot contents
-IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under applicationRoot
+var provider = new PhysicalFileProvider(applicationRoot);
+var contents = provider.GetDirectoryContents(string.Empty);
+var fileInfo = provider.GetFileInfo("wwwroot/js/site.js");
 ```
 
-Můžete iteraci v rámci jeho obsah adresáře nebo získat informace o konkrétní soubor tím, že poskytuje je její částí.
+Typy v předchozím příkladu:
 
-K vyžádání zprostředkovatele z řadič, zadejte v konstruktoru kontroleru a přiřaďte ho pro místní pole. Použijte místní instanci z vaší metody akce:
+* `provider` je `IFileProvider`.
+* `contents` je `IDirectoryContents`.
+* `fileInfo` je `IFileInfo`.
 
-[!code-csharp[](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
+Poskytovatel souboru lze použít k iteraci v rámci adresáře zadaného parametrem `applicationRoot` nebo volání `GetFileInfo` k získání informací souboru. Poskytovatel soubor nemá přístup mimo `applicationRoot` adresáře.
 
-Pak vytvořte poskytovatele v dané aplikaci `Startup` třídy:
+Ukázková aplikace vytvoří poskytovatel aplikace `Startup.ConfigureServices` pomocí [IHostingEnvironment.ContentRootFileProvider](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.contentrootfileprovider):
 
-[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
+```csharp
+var physicalProvider = _env.ContentRootFileProvider;
+```
 
-V *Index.cshtml* zobrazit, iteraci v rámci `IDirectoryContents` poskytuje:
+**Získat typy zprostředkovatele souborů pomocí vkládání závislostí**
 
-[!code-html[](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
+Vložit do jakéhokoli konstruktoru třídy zprostředkovatele a přiřaďte ho do místního pole. Použijte pole v rámci metod tříd pro přístup k souborům.
 
-Výsledek:
+::: moniker range=">= aspnetcore-2.0"
 
-![Soubor zprostředkovatele ukázkové aplikace výpis fyzické soubory a složky](file-providers/_static/physical-directory-listing.png)
+V ukázkové aplikaci `IndexModel` přijímá třídy `IFileProvider` instance získat obsah adresáře pro základní cesty aplikace.
+
+*Pages/Index.cshtml.cs*:
+
+[!code-csharp[](file-providers/samples/2.x/FileProviderSample/Pages/Index.cshtml.cs?name=snippet1)]
+
+`IDirectoryContents` Jsou vstupní stránky.
+
+*Pages/Index.cshtml*:
+
+[!code-cshtml[](file-providers/samples/2.x/FileProviderSample/Pages/Index.cshtml?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+V ukázkové aplikaci `HomeController` přijímá třídy `IFileProvider` instance získat obsah adresáře pro základní cesty aplikace.
+
+*Controllers/HomeController.cs*:
+
+[!code-csharp[](file-providers/samples/1.x/FileProviderSample/Controllers/HomeController.cs?name=snippet1)]
+
+`IDirectoryContents` Jsou provést iteraci v zobrazení.
+
+*Views/Home/Index.cshtml*:
+
+[!code-cshtml[](file-providers/samples/1.x/FileProviderSample/Views/Home/Index.cshtml?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
+
+### <a name="manifestembeddedfileprovider"></a>ManifestEmbeddedFileProvider
+
+[ManifestEmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider) se používá pro přístup k souborům, které jsou vložené v rámci sestavení. `ManifestEmbeddedFileProvider` Manifestu kompilovány do sestavení používá k rekonstrukci původní cesty vložených souborů.
+
+> [!NOTE]
+> `ManifestEmbeddedFileProvider` Je k dispozici v ASP.NET Core 2.1 nebo novější. Přístup k souborům, které jsou součástí sestavení v ASP.NET Core 2.0 nebo starší, najdete v článku [ASP.NET Core 1.x verzi tohoto tématu](xref:fundamentals/file-providers?view=aspnetcore-1.1).
+
+Chcete-li vygenerovat manifest vložené soubory, nastavte `<GenerateEmbeddedFilesManifest>` vlastnost `true`. Zadejte soubory, které chcete vložit s [ &lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects):
+
+[!code-csharp[](file-providers/samples/2.x/FileProviderSample/FileProviderSample.csproj?highlight=5,13)]
+
+Použití [glob vzory](#glob-patterns) určit jeden nebo více souborů určených pro vložení do sestavení.
+
+Vytvoří ukázkovou aplikaci `ManifestEmbeddedFileProvider` a předává právě spuštěné sestavení do konstruktoru.
+
+*Startup.cs*:
+
+```csharp
+var manifestEmbeddedProvider = 
+    new ManifestEmbeddedFileProvider(Assembly.GetEntryAssembly());
+```
+
+Další přetížení umožňují:
+
+* Zadejte relativní cestou k souboru.
+* Obor soubory na datum poslední změny.
+* Název vloženého zdroje obsahujícího vložený soubor manifestu.
+
+| přetížení | Popis |
+| -------- | ----------- |
+| [ManifestEmbeddedFileProvider (sestavení, String)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_) | Přijímá volitelný `root` parametr relativní cesty. Zadejte `root` do oboru volání [GetDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.getdirectorycontents) k těmto prostředkům na zadané cestě. |
+| [ManifestEmbeddedFileProvider (sestavení, řetězec, DateTimeOffset)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_System_DateTimeOffset_) | Přijímá volitelný `root` parametr relativní cesty a `lastModified` datum ([DateTimeOffset](/dotnet/api/system.datetimeoffset)) parametru. `lastModified` Obory datum poslední změny pro datum [IFileInfo](/dotnet/api/microsoft.extensions.fileproviders.ifileinfo) instancí vrácených [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider). |
+| [ManifestEmbeddedFileProvider (sestavení, String, String, DateTimeOffset)](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_ManifestEmbeddedFileProvider__ctor_System_Reflection_Assembly_System_String_System_String_System_DateTimeOffset_) | Přijímá volitelný `root` relativní cesta `lastModified` data, a `manifestName` parametry. `manifestName` Představuje název vloženého zdroje obsahujícího manifest. |
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 ### <a name="embeddedfileprovider"></a>EmbeddedFileProvider
 
-`EmbeddedFileProvider` Se používá pro přístup k souborům, které jsou součástí sestavení. V rozhraní .NET Core, vložíte do sestavení se soubory `<EmbeddedResource>` element v *.csproj* souboru:
+[EmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider) se používá pro přístup k souborům, které jsou vložené v rámci sestavení. Zadejte soubory, které chcete vložit [ &lt;EmbeddedResource&gt; ](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects) vlastnost v souboru projektu:
 
-[!code-json[](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
+```xml
+<ItemGroup>
+  <EmbeddedResource Include="Resource.txt" />
+</ItemGroup>
+```
 
-Můžete použít [expanze názvů vzory](#globbing-patterns) při zadávání soubory pro vložení do sestavení. Tyto vzory použít tak, aby odpovídaly jeden nebo více souborů.
+Použití [glob vzory](#glob-patterns) určit jeden nebo více souborů určených pro vložení do sestavení.
 
-> [!NOTE]
-> Pravděpodobně že by někdy budete chtít ve skutečnosti vložení každý soubor .js ve vašem projektu v jeho sestavení; ukázka výše je ukázkový pouze pro účely.
+Vytvoří ukázkovou aplikaci `EmbeddedFileProvider` a předává právě spuštěné sestavení do konstruktoru.
 
-Při vytváření `EmbeddedFileProvider`, předat sestavení, zobrazí se informace pro jeho konstruktor.
+*Startup.cs*:
 
 ```csharp
 var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 ```
 
-Demonstruje postup vytvoření výše uvedeném fragmentu `EmbeddedFileProvider` s přístupem k aktuálně prováděné sestavení.
+Vložené prostředky nezveřejňují adresáře. Místo toho se vloží cestu k prostředku (přes svůj obor názvů) v jeho název souboru pomocí `.` oddělovače. V ukázkové aplikaci `baseNamespace` je `FileProviderSample.`.
 
-Aktualizace ukázková aplikace sloužící `EmbeddedFileProvider` výsledkem následující výstup:
+[EmbeddedFileProvider (sestavení, String)](/dotnet/api/microsoft.extensions.fileproviders.embeddedfileprovider.-ctor#Microsoft_Extensions_FileProviders_EmbeddedFileProvider__ctor_System_Reflection_Assembly_) konstruktor přijímá volitelný `baseNamespace` parametru. Zadejte základní obor názvů do oboru volání [GetDirectoryContents](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.getdirectorycontents) na tyto prostředky v rámci zadaného oboru názvů.
 
-![Soubor zprostředkovatele ukázkovou aplikaci seznam vložených souborů](file-providers/_static/embedded-directory-listing.png)
-
-> [!NOTE]
-> Vložené prostředky Nevystavujte adresáře. Místo toho je cesta k prostředek (prostřednictvím svého oboru názvů) vložených v jeho název souboru pomocí `.` oddělovačů.
-
-> [!TIP]
-> `EmbeddedFileProvider` Konstruktor přijímá volitelný `baseNamespace` parametr. Určení to bude obor volání `GetDirectoryContents` na tyto prostředky v rámci zadaného oboru názvů.
+::: moniker-end
 
 ### <a name="compositefileprovider"></a>CompositeFileProvider
 
-`CompositeFileProvider` Kombinuje `IFileProvider` instancí vystavení jednoho rozhraní pro práci se soubory z více poskytovatelů. Při vytváření `CompositeFileProvider`, předáte jeden nebo více `IFileProvider` instance jeho konstruktoru:
+[CompositeFileProvider](/dotnet/api/microsoft.extensions.fileproviders.compositefileprovider) kombinuje `IFileProvider` instance vystavení jednotné rozhraní pro práci se soubory od více poskytovatelů. Při vytváření `CompositeFileProvider`, předejte jeden nebo více `IFileProvider` instance konstruktoru.
 
-[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
+::: moniker range=">= aspnetcore-2.0"
 
-Aktualizace ukázková aplikace používat `CompositeFileProvider` která obsahuje oba fyzické a embedded zprostředkovatele dříve nakonfigurován, výsledkem následující výstup:
+V ukázkové aplikaci `PhysicalFileProvider` a `ManifestEmbeddedFileProvider` zadejte soubory `CompositeFileProvider` zaregistrovaný v kontejneru aplikace služby:
 
-![Soubor zprostředkovatele ukázkovou aplikaci výpis fyzické soubory a složky a vložené soubory](file-providers/_static/composite-directory-listing.png)
+[!code-csharp[](file-providers/samples/2.x/FileProviderSample/Startup.cs?name=snippet1)]
 
-## <a name="watching-for-changes"></a>Sledování změn
+::: moniker-end
 
-`IFileProvider` `Watch` Metoda poskytuje způsob, jak sledovat jeden nebo více souborů či adresářů pro změny. Tato metoda přijímá řetězec cesty, které můžete použít [expanze názvů vzory](#globbing-patterns) zadat více souborů a vrátí `IChangeToken`. Tento token zpřístupní `HasChanged` vlastnost, která může být prověřovány, a `RegisterChangeCallback` metoda, která je volána při zjištění změny na zadané cestě řetězec. Všimněte si, že každý token změnu pouze volá jeho přidružené zpětného volání v reakci na jediné změny. Chcete-li povolit konstantní monitorování, můžete použít `TaskCompletionSource` jak je uvedeno níže, nebo znovu vytvořte `IChangeToken` instancí v reakci na změny.
+::: moniker range="< aspnetcore-2.0"
 
-V tomto článku ukázce je konzolová aplikace nakonfigurován k zobrazení zprávy změně textového souboru je:
+V ukázkové aplikaci `PhysicalFileProvider` a `EmbeddedFileProvider` zadejte soubory `CompositeFileProvider` zaregistrovaný v kontejneru aplikace služby:
 
-[!code-csharp[](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
+[!code-csharp[](file-providers/samples/1.x/FileProviderSample/Startup.cs?name=snippet1)]
 
-Výsledek po uložení souboru několikrát:
+::: moniker-end
 
-![Příkazové okno po provádění dotnet. Spusťte ukazuje na soubor quotes.txt změny monitorování aplikací a pětkrát došlo ke změně souboru.](file-providers/_static/watch-console.png)
+## <a name="watch-for-changes"></a>Sledování změn
 
-> [!NOTE]
-> Některé systémy souborů, jako je například Docker kontejnery a sdílené síťové složky a nemusí spolehlivě odeslat oznámení o změnách. Nastavte `DOTNET_USE_POLLINGFILEWATCHER` proměnnou prostředí `1` nebo `true` k dotazování systému souborů pro změny každé 4 sekundy.
+[IFileProvider.Watch](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.watch) metoda poskytuje scénář podívejte se na jeden nebo více souborů nebo adresářů pro změny. `Watch` přijímá řetězec cesty, které můžete použít [glob vzory](#glob-patterns) zadat více souborů. `Watch` Vrátí [IChangeToken](/dotnet/api/microsoft.extensions.primitives.ichangetoken). Token zpřístupňuje změny:
 
-## <a name="globbing-patterns"></a>Vzory expanze názvů
+* [HasChanged](/dotnet/api/microsoft.extensions.primitives.ichangetoken.haschanged): vlastnost, která může být kontrolována k určení, pokud došlo ke změně.
+* [RegisterChangeCallback](/dotnet/api/microsoft.extensions.primitives.ichangetoken.registerchangecallback): volá se, když se zjistí změny na zadané cestě řetězec. Každý token změnit jen volá jeho přidružené zpětné volání v reakci na jediné změny. Chcete-li povolit konstantní monitorování, použijte [TaskCompletionSource](/dotnet/api/system.threading.tasks.taskcompletionsource-1) (viz dole) nebo znovu vytvořit `IChangeToken` instance v reakci na změny.
 
-Systémové cesty k souborům použít zástupné znaky názvem *expanze názvů vzory*. Tyto jednoduché vzory slouží k určení skupiny souborů. Dva zástupné znaky jsou `*` a `**`.
+V ukázkové aplikaci *WatchConsole* konzoly aplikace je nakonfigurovaná pro zobrazení zprávy, když se změní textového souboru:
 
-**`*`**
+::: moniker range=">= aspnetcore-2.0"
 
-   Odpovídá nic na aktuální úrovni složky, nebo libovolný název souboru nebo libovolnou příponou. Shoduje se ukončila příkazem `/` a `.` znaků v cestě k souboru.
+[!code-csharp[](file-providers/samples/2.x/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
-<strong><code>**</code></strong>
+::: moniker-end
 
-   Odpovídá všemu napříč více úrovní adresáře. Slouží k rekurzivnímu odpovídat mnoho souborů v rámci hierarchie adresářů.
+::: moniker range="< aspnetcore-2.0"
 
-### <a name="globbing-pattern-examples"></a>Příklady vzor expanze názvů
+[!code-csharp[](file-providers/samples/1.x/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
-**`directory/file.txt`**
+::: moniker-end
 
-   Odpovídá konkrétní soubor v konkrétní adresář.
+Některé systémy souborů, jako jsou kontejnery Docker a sdílené síťové složky a nemusí spolehlivě posílat oznámení o změnách. Nastavte `DOTNET_USE_POLLING_FILE_WATCHER` proměnnou prostředí, aby `1` nebo `true` k dotazování systému souborů pro změny každé čtyři sekundy (nejde konfigurovat).
 
-**<code>directory/*.txt</code>**
+## <a name="glob-patterns"></a>Vzory glob
 
-   Odpovídá všechny soubory s `.txt` rozšíření v konkrétní adresář.
+Volat jeden vzor zástupných znaků použít systémové cesty k souborům *glob (nebo podpory zástupných znaků) vzory*. Tyto vzory zadejte skupiny souborů. Dva zástupné znaky jsou `*` a `**`:
 
-**`directory/*/bower.json`**
+**`*`**  
+Na aktuální úrovni složky, některý název souboru nebo libovolnou příponou odpovídá úplně všechno. Shody jsou ukončeny `/` a `.` znaky v cestě k souboru.
 
-   Odpovídá všem `bower.json` soubory v adresářích přesně jednu úroveň níže `directory` adresáře.
+**`**`**  
+Napříč několika úrovněmi adresáře odpovídá úplně všechno. Můžete použít k rekurzivnímu shodovat s mnoha soubory v hierarchii adresářů.
 
-**<code>directory/&#42;&#42;/&#42;.txt</code>**
+**Příklady glob vzor**
 
-   Odpovídá všechny soubory s `.txt` nalezeno rozšíření kdekoli v části `directory` adresáře.
+**`directory/file.txt`**  
+Odpovídá konkrétní soubor v konkrétní adresář.
 
-## <a name="file-provider-usage-in-aspnet-core"></a>Soubor zprostředkovatele využití v ASP.NET Core
+**`directory/*.txt`**  
+Vyhledá všechny soubory s *.txt* rozšíření v konkrétní adresář.
 
-Několik částí ASP.NET Core využívat souboru zprostředkovatele. `IHostingEnvironment` zpřístupní obsahu kořenové aplikace a webové kořenový jako `IFileProvider` typy. Middleware statické soubory používá zprostředkovatele souboru k vyhledání statické soubory. Syntaxe Razor umožňuje výrazně využívá `IFileProvider` v vyhledání zobrazení. Pro DotNet publikování funkce používá soubor zprostředkovatele a vzory expanze názvů určit soubory, které je nutné ji publikovat.
+**`directory/*/appsettings.json`**  
+Odpovídá všem `appsettings.json` soubory v adresářích přesně jednu úroveň níže *directory* složky.
 
-## <a name="recommendations-for-use-in-apps"></a>Doporučení pro použití v aplikacích
-
-Pokud vaše aplikace ASP.NET Core vyžaduje přístupu k systému souborů, můžete požádat o instanci `IFileProvider` pomocí vkládání závislostí a pak použít její metody k provádění přístupu, jak je znázorněno v této ukázce. To umožňuje konfiguraci poskytovatele za jednou, když se aplikace spouští a snižuje počet typů implementace, které vaše aplikace vytvoří.
+**`directory/**/*.txt`**  
+Vyhledá všechny soubory s *.txt* rozšíření najít kdekoli v rámci *directory* složky.

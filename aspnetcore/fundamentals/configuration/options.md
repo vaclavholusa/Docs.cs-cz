@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: aa9c490aff873d12c9417e7b611991617207c0d3
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: fd3e55ec821be336501f523550f547f6049c9937
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342442"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514749"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -294,10 +294,17 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 
 ## <a name="accessing-options-during-startup"></a>Přístup k možnosti při spuštění
 
-`IOptions` je možné v `Configure`, protože služby jsou sestaveny dříve, než `Configure` metody. Pokud zprostředkovatele služeb je součástí `ConfigureServices` pro přístup k možnostem, měl by obsahovat žádné možnosti konfigurace, které jsou k dispozici po sestavení poskytovatele služeb. Proto můžou existovat nekonzistentní možnosti dostane do stavu kvůli řazení registrace služby.
+`IOptions` je možné v `Startup.Configure`, protože služby jsou sestaveny dříve, než `Configure` metody.
 
-Protože možnosti jsou obvykle načtena z konfigurace, konfigurace se dá použít v při spuštění v obou `Configure` a `ConfigureServices`. Příklady použití konfigurace během spouštění, najdete v článku [spuštění aplikace](xref:fundamentals/startup) tématu.
+```csharp
+public void Configure(IApplicationBuilder app, IOptions<MyOptions> optionsAccessor)
+{
+    var option1 = optionsAccessor.Value.Option1;
+}
+```
 
-## <a name="see-also"></a>Viz také:
+`IOptions` neměli byste používat v `Startup.ConfigureServices`. Příčinou je pořadí registrace služby můžou existovat nekonzistentní možnosti dostane do stavu.
 
-* [Konfigurace](xref:fundamentals/configuration/index)
+## <a name="additional-resources"></a>Další zdroje
+
+* <xref:fundamentals/configuration/index>

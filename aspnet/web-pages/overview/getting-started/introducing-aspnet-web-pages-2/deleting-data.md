@@ -134,7 +134,7 @@ Druhá podmínka je `!Request["buttonDelete"].IsEmpty()`, což znamená, že ž�
   
  AND  
   
-** `buttonDelete`*Tlačítko byl tlačítko odeslání formuláře.*
+*`buttonDelete`Tlačítko* *byl tlačítko odeslání formuláře.*
 
 Tento formulář (ve skutečnosti, na této stránce) obsahuje pouze jedno tlačítko, takže další test `buttonDelete` není technicky povinný. Stále Chystáte se provést operaci, která se trvale odeberou data. Proto má abyste měli jistotu, jako je to možné, že při provádění operace pouze v případě, že uživatel explicitně požaduje ho. Předpokládejme například, zvětšit později na této stránce a do ní přidat další tlačítka. Dokonce i pak, kód, který odstraní videa se spustí jenom v případě, `buttonDelete` došlo ke kliknutí na tlačítko.
 

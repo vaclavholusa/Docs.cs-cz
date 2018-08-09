@@ -44,4 +44,9 @@ Ve složce projektu spusťte s možnostmi, které chcete generátor Identity. Na
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files Account.Register
 ```
 
+PowerShell používá jako oddělovač příkazu středník. Při použití prostředí powershell, řídicí středníky v seznamu souborů nebo vložit seznam souborů v dvojitých uvozovkách. Příklad:
+
+```cli
+dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+```
 -------------

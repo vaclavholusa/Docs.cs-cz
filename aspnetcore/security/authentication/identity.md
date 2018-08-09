@@ -1,72 +1,88 @@
 ---
 title: Úvod do Identity v ASP.NET Core
 author: rick-anderson
-description: Pomocí Identity aplikace v ASP.NET Core. Obsahuje požadavky na heslo nastavení (RequireDigit, RequiredLength, RequiredUniqueChars a další).
+description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit požadavky na heslo (RequireDigit RequiredLength, RequiredUniqueChars a další).
 ms.author: riande
-ms.date: 01/24/2018
+ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 50ddb96000e6a3f9e1762e9bb3e1f215f20d4356
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 6a23dd4ad78c0695b5724a78204abf6752dfe67d
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095636"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655307"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
-Podle [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Petr Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), a [Steve Smith](https://ardalis.com/)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core Identity je systém členství, který slouží k přidání funkcí přihlášení do vaší aplikace. Uživatelé můžou vytvářet účet a přihlášení s uživatelským jménem a heslem nebo že můžete použít externího zprostředkovatele přihlášení jako je Facebook, Google, Microsoft Account, Twitteru nebo jiné.
+ASP.NET Core Identity je systém členství, který přidá funkce přihlášení do aplikace ASP.NET Core. Uživatelé můžou vytvářet účet s přihlašovací údaje uložené v Identity nebo může použít externího zprostředkovatele přihlášení. Podporované externí přihlášení zprostředkovatele patří [Facebook, Google, Account Microsoft a Twitter](xref:security/authentication/social/index).
 
-ASP.NET Core Identity pro použití databáze SQL serveru k ukládání uživatelská jména, hesla a data profilu můžete nakonfigurovat. Alternativně můžete použít vlastní trvalého úložiště, například Azure Table Storage. Tento dokument obsahuje pokyny pro Visual Studio a pomocí rozhraní příkazového řádku.
+Identity lze konfigurovat pomocí databáze SQL serveru ukládat uživatelská jména, hesla a data profilu. Můžete také jiné trvalého úložiště je možné, například Azure Table Storage.
 
 [Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Jak stáhnout)](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="overview-of-identity"></a>Přehled Identity
+V tomto tématu se naučíte, jak zaregistrovat, přihlaste se pomocí Identity a odhlášení uživatele. Podrobnější pokyny k vytváření aplikací, které používají Identity najdete v části Další kroky na konci tohoto článku.
 
-V tomto tématu budete zjistěte, jak přidat funkci do zaregistrovat, přihlaste se pomocí ASP.NET Core Identity a odhlášení uživatele. Podrobnější pokyny týkající se vytváření aplikací pomocí ASP.NET Core Identity najdete v části Další kroky na konci tohoto článku.
+## <a name="create-a-web-app-with-authentication"></a>Vytvoření webové aplikace s ověřováním
 
-1. Vytvoření projektu webové aplikace ASP.NET Core s jednotlivými uživatelskými účty.
+Vytvoření projektu webové aplikace ASP.NET Core s jednotlivými uživatelskými účty.
 
-   # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-   V sadě Visual Studio, vyberte **souboru** > **nový** > **projektu**. Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**.
+* Vyberte **souboru** > **nové** > **projektu**. 
+* Vyberte **webová aplikace ASP.NET Core**. Pojmenujte projekt **WebApp1** stejný obor názvů jako projekt soubor ke stažení. Klikněte na tlačítko **OK**.
+* Vyberte v ASP.NET Core **webovou aplikaci** ASP.NET Core 2.1 vyberte **změna ověřování**.
+* Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK**.
 
-   ![Dialogové okno nového projektu](identity/_static/01-new-project.png)
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-   Vyberte v ASP.NET Core **webové aplikace (Model-View-Controller)** pro ASP.NET Core 2.x, pak vyberte **změna ověřování**.
+```cli
+dotnet new webapp --auth Individual -o WebApp1
+```
 
-   ![Dialogové okno nového projektu](identity/_static/02-new-project.png)
+---
 
-   Dialogové okno se zobrazí nabídka možnosti ověřování. Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK** vrátit do předchozího dialogového okna.
+Generovaný projekt poskytuje [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:razor-pages/ui-class).
 
-   ![Dialogové okno nového projektu](identity/_static/03-new-project-auth.png)
+### <a name="test-register-and-login"></a>Test registrace a přihlášení
 
-   Výběr **jednotlivé uživatelské účty** instruuje Visual Studio a vytvářet modely, modely ViewModels, zobrazení, Kontrolerů a další prostředky požadované pro ověřování jako součást šablony projektu.
+Spusťte aplikaci a zaregistrovat uživatele. V závislosti na velikost obrazovky může být nutné vybrat navigace přepínacího tlačítka zobrazíte **zaregistrovat** a **přihlášení** odkazy.
 
-   # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
+![přepínací tlačítko navigační panel](identity/_static/navToggle.png)
 
-   Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí `dotnet new mvc --auth Individual`. Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.
+[!INCLUDE[](~/includes/view-identity-db.md)]
 
-   Vytvořený projekt obsahuje `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíček, který ukládá data identit a schémat na SQL Server pomocí [Entity Framework Core](https://docs.microsoft.com/ef/).
+<a name="pw"></a>
+### <a name="configure-identity-services"></a>Konfigurace Identity služby
 
-   ---
+Služby jsou přidány v `ConfigureServices`.
 
-2. Nakonfigurujte identitu služby a přidejte middlewaru v `Startup`.
+::: moniker range=">= aspnetcore-2.1"
 
-   Služby identit jsou přidané do aplikace v `ConfigureServices` metodu `Startup` třídy:
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configureservices)]
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+Předchozí kód konfiguruje Identity s výchozími hodnotami. možnost. Služby jsou k dispozici pro aplikaci přes [injektáž závislostí](xref:fundamentals/dependency-injection).
+
+   Povolení identity voláním [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_). `UseAuthentication` Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
+
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configure&highlight=18)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
 
-   Tyto služby jsou k dispozici pro aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).
+   Služby jsou k dispozici pro aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).
 
    Povolení identity pro aplikace po zavolání `UseAuthentication` v `Configure` metody. `UseAuthentication` Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="= aspnetcore-1.1"
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-33)]
 
@@ -76,122 +92,136 @@ V tomto tématu budete zjistěte, jak přidat funkci do zaregistrovat, přihlast
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
 
-   ---
+::: moniker-end
 
-   Další informace o spuštění aplikace procesu naleznete v tématu [spuštění aplikace](xref:fundamentals/startup).
+Další informace najdete v tématu [IdentityOptions třídy](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) a [spuštění aplikace](xref:fundamentals/startup).
 
-3. Vytvoření uživatele.
+## <a name="scaffold-register-login-and-logout"></a>Vygenerované uživatelské rozhraní registrace, přihlášení a odhlášení
 
-   Spusťte aplikaci a potom klikněte na **zaregistrovat** odkaz.
+Postupujte podle [generování uživatelského rozhraní identity do projektu Razor s autorizací](xref:security/authentication/scaffold-identity#) pokyny.
 
-   Pokud je to poprvé při provádění této akce, může být potřeba ke spouštění migrace. Aplikace vás vyzve, abyste **migrace použít**. V případě potřeby aktualizujte stránku.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-   ![Použití migrace webové stránky](identity/_static/apply-migrations.png)
+Přidáte soubory registrace, přihlášení a odhlášení.
 
-   Alternativně můžete otestovat pomocí ASP.NET Core Identity s vaší aplikací bez trvalé databáze pomocí databáze v paměti. Chcete-li používat databázi v paměti, přidejte `Microsoft.EntityFrameworkCore.InMemory` balíček do vaší aplikace a upravte volání vaší aplikace `AddDbContext` v `ConfigureServices` následujícím způsobem:
 
-   ```csharp
-   services.AddDbContext<ApplicationDbContext>(options =>
-       options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
-   ```
+# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-   Pokud uživatel klikne **zaregistrovat** odkaz, `Register` akce je volána na `AccountController`. `Register` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí):
+Pokud jste vytvořili projekt s názvem **WebApp1**, spusťte následující příkazy. Jinak použijte správný obor názvů pro `ApplicationDbContext`:
+
+
+```cli
+dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+
+```
+
+PowerShell používá jako oddělovač příkazu středník. Při použití prostředí PowerShell, řídicí středníky v seznamu souborů nebo vložit seznam souborů v dvojitých uvozovkách, jak ukazuje předchozí příklad.
+
+---
+
+### <a name="examine-register"></a>Prozkoumejte registru
+
+::: moniker range=">= aspnetcore-2.1"
+
+   Když uživatel klikne **zaregistrovat** odkaz, `RegisterModel.OnPostAsync` vyvolání akce. Uživatel vytvoří [asynchronně](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) na `_userManager` objektu. `_userManager` poskytuje injektáž závislostí):
+
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
+
+   Když uživatel klikne **zaregistrovat** odkaz, `Register` akce je volána na `AccountController`. `Register` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí):
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
+
+::: moniker-end
 
    Pokud byl uživatel vytvořen úspěšně, uživatel je přihlášen voláním `_signInManager.SignInAsync`.
 
    **Poznámka:** naleznete v tématu [účtu potvrzení](xref:security/authentication/accconfirm#prevent-login-at-registration) kroky, jak zabránit okamžité přihlášení při registraci.
 
-4. Přihlásit se.
+### <a name="log-in"></a>Přihlásit se
 
-   Uživatelé můžou přihlásit po klepnutí na **přihlášení** odkazu v horní části webu, nebo na přihlašovací stránku, může přejde v případě podobného pokusu získat přístup k součásti lokality, která vyžaduje ověření. Když uživatel odešle formulář na přihlašovací stránku, `AccountController` `Login` akce je volána.
+::: moniker range=">= aspnetcore-2.1"
 
-   `Login` Volání akce `PasswordSignInAsync` na `_signInManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí).
+Přihlašovací formulář se zobrazí při:
 
-   [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+* **Přihlášení** vybraný odkaz.
+* Když uživatel přistupuje k stránku, kde nejsou ověřené **nebo** ověřen, bude přesměrován na přihlašovací stránku. 
+
+Když se odešle formulář na přihlašovací stránku, `OnPostAsync` akce je volána. `PasswordSignInAsync` je volán na `_signInManager` objektu (postkytovatel: injektáž závislostí).
+
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Login.cshtml.cs?name=snippet&highlight=10-11)]
 
    Základní `Controller` třídy zpřístupňuje `User` vlastnost, která se dá dostat z metody kontroleru. Například můžete zobrazit výčet `User.Claims` a rozhodnutí o autorizaci. Další informace najdete v tématu [autorizace](xref:security/authorization/index).
 
-5. Odhlaste.
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
 
+Přihlašovací formulář se zobrazí, když uživatelé vyberou **přihlášení** propojení nebo přesměrováni při přístupu ke stránce, která vyžaduje ověření. Když uživatel odešle formulář na přihlašovací stránku, `AccountController` `Login` akce je volána.
+
+`Login` Volání akce `PasswordSignInAsync` na `_signInManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí).
+
+[!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+
+Základní (`Controller` nebo `PageModel`) třídy zpřístupňuje `User` vlastnost. Například `User.Claims` může být přezkoumána za účelem rozhodnutí o autorizaci.
+
+::: moniker-end
+
+### <a name="log-out"></a>Odhlásit se
+
+::: moniker range=">= aspnetcore-2.1"
+
+**Odhlásit** vyvolá tento odkaz `LogoutModel.OnPost` akce. 
+
+[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Logout.cshtml.cs)]
+
+[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) vymaže deklarací identity uživatele uložené v souboru cookie. Není přesměrování po volání `SignOutAsync` nebo uživatel uvidí **není** odhlásit.
+
+Příspěvek je zadán v *Pages/Shared/_LoginPartial.cshtml*:
+
+[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
    Kliknutím **Odhlásit** propojit volání `LogOut` akce.
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
 
-   Předchozí kód výše volání `_signInManager.SignOutAsync` metody. `SignOutAsync` Metoda vymaže deklarací identity uživatele uložené v souboru cookie.
+   Předchozí kód volá `_signInManager.SignOutAsync` metody. `SignOutAsync` Metoda vymaže deklarací identity uživatele uložené v souboru cookie.
+::: moniker-end
 
-<a name="pw"></a>
-6. Konfigurace.
+## <a name="test-identity"></a>Otestování Identity
 
-   Identita má některé výchozí chování, které mohou být přepsána nastaveními v třída při spuštění aplikace. `IdentityOptions` není potřeba konfigurovat při použití výchozí chování. Následující kód nastaví několik možností, jak síly hesla:
+Šablony webových projektů výchozí povolit anonymní přístup k domovské stránky. K otestování Identity, přidejte [ `[Authorize]` ](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) na stránku o.
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/About.cshtml.cs)]
 
-   [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
+Pokud jste přihlášeni, odhlaste se. Spusťte aplikaci a vyberte **o** odkaz. Budete přesměrováni na přihlašovací stránku.
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker range=">= aspnetcore-2.1"
 
-   [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-33)]
+### <a name="explore-identity"></a>Prozkoumejte službu Identity
 
-   ---
+Identita prozkoumat podrobněji:
 
-   Další informace o tom, jak nakonfigurovat Identity, najdete v části [konfigurace Identity](xref:security/authentication/identity-configuration).
+* [Vytvoření zdroje plnou identitou uživatelského rozhraní](xref:security/authentication/scaffold-identity#create-full-identity-ui-source)
+* Zkontrolujte příčiny jednotlivé stránky a projít ladicí program.
 
-   Můžete také konfigurovat datový typ primárního klíče, naleznete v tématu [konfigurace Identity primárních klíčů datový typ](xref:security/authentication/identity-primary-key-configuration).
-
-7. Zobrazí se databáze.
-
-   Pokud vaše aplikace používá databázi serveru SQL Server (výchozí nastavení na Windows a pro uživatele sady Visual Studio), můžete zobrazit aplikace vytvořená databáze. Můžete použít **SQL Server Management Studio**. Můžete také z aplikace Visual Studio vyberte **zobrazení** > **Průzkumník objektů systému SQL Server**. Připojte se k **(localdb) \MSSQLLocalDB**. Databáze s názvem odpovídajícím `aspnet-<name of your project>-<guid>` se zobrazí.
-
-   ![Kontextové nabídky v tabulce databáze AspNetUsers](identity/_static/04-db.png)
-
-   Rozbalte databázi a její **tabulky**, klepněte pravým tlačítkem myši **dbo. AspNetUsers** tabulce a vybrat **Data zobrazení**.
-
-8. Zkontrolujte, jestli funguje Identity
-
-    Výchozí hodnota *webové aplikace ASP.NET Core* šablona projektu umožňuje uživatelům přístup k žádné akci v aplikaci bez nutnosti přihlášení. Chcete-li ověřit, jestli ASP.NET Identity funguje, přidejte`[Authorize]` atribut `About` akce `Home` Kontroleru.
-
-    ```csharp
-    [Authorize]
-    public IActionResult About()
-    {
-        ViewData["Message"] = "Your application description page.";
-        return View();
-    }
-    ```
-
-    # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
-    Spustit projekt pomocí **Ctrl** + **F5** a přejděte **o** stránky. Může používat jenom ověření uživatelé **o** stránky teď ASP.NET vás přesměruje na přihlašovací stránku a přihlásit nebo zaregistrovat.
-
-    # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
-
-    Otevřete okno příkazového řádku a přejděte do kořenového adresáře projektu adresáře, který obsahuje `.csproj` souboru. Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz ke spuštění aplikace:
-
-    ```csharp
-    dotnet run 
-    ```
-
-    Adresa URL zadaná ve výstupu vyhledejte [dotnet spustit](/dotnet/core/tools/dotnet-run) příkazu. Adresa URL by měly odkazovat na `localhost` s vygenerované číslo portu. Přejděte **o** stránky. Může používat jenom ověření uživatelé **o** stránky teď ASP.NET vás přesměruje na přihlašovací stránku a přihlásit nebo zaregistrovat.
-
-    ---
+::: moniker-end
 
 ## <a name="identity-components"></a>Komponenty identit
 
-Primární referenční sestavení pro systém identit je `Microsoft.AspNetCore.Identity`. Tento balíček obsahuje základní sadu rozhraní pro ASP.NET Core Identity a je součástí `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.
+::: moniker range=">= aspnetcore-2.1"
 
-Tyto závislosti jsou potřeba pro použití systému identit v aplikacích ASP.NET Core:
+Všechny Identity závislé balíčky NuGet jsou součástí [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app).
+::: moniker-end
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` -Obsahuje požadované typy pro použití s Entity Framework Core Identity.
-
-* `Microsoft.EntityFrameworkCore.SqlServer` -Entity Framework Core je technologie přístup doporučené dat společnosti Microsoft pro relační databáze jako SQL Server. Pro účely testování můžete použít `Microsoft.EntityFrameworkCore.InMemory`.
-
-* `Microsoft.AspNetCore.Authentication.Cookies` -Middlewaru, který umožňuje aplikaci používat na základě souboru cookie ověřování.
+Primární balíček pro identitu [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/). Tento balíček obsahuje základní sadu rozhraní pro ASP.NET Core Identity a je součástí `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.
 
 ## <a name="migrating-to-aspnet-core-identity"></a>Migrace do ASP.NET Core Identity
 
-Pro další informace a pokyny k migraci svou existující identitu úložiště najdete v tématu [migrovat ověřování a identita](xref:migration/identity).
+Další informace a pokyny k migraci vaší existující úložiště identit najdete v tématu [migrovat ověřování a identita](xref:migration/identity).
 
 ## <a name="setting-password-strength"></a>Nastavení síly hesla
 
@@ -199,8 +229,12 @@ Zobrazit [konfigurace](#pw) ukázku, která nastavuje minimální požadavky.
 
 ## <a name="next-steps"></a>Další kroky
 
+* [Konfigurace systému Identity](xref:security/authentication/identity-configuration)
+* <xref:security/authorization/secure-data>
+* <xref:security/authentication/add-user-data>
+* <xref:security/authentication/identity-enable-qrcodes>
+* [Konfigurace Identity primárních klíčů datový typ](xref:security/authentication/identity-primary-key-configuration).
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>
-* <xref:security/authentication/social/index>
 * <xref:host-and-deploy/web-farm>

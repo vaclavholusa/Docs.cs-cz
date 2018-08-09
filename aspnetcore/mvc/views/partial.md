@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 7cb20fc30609adad83cb40e91316da115817f035
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 2223f3c6e42927def4b91ff9da58c228e5904756
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378680"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655320"
 ---
 # <a name="partial-views-in-aspnet-core"></a>Částečná zobrazení v ASP.NET Core
 
@@ -35,7 +35,7 @@ Například technologie ASP.NET Core 2.1 **webovou aplikaci** zahrnuje šablony 
 
 Na stránce komplexní skládá z několika logických částí je užitečné pro práci s jako vlastní částečné zobrazení jednotlivých prostředků. Izolovaně od zbytku stránky lze zobrazit jednotlivé stránky. Zobrazení samotné stránky bude jednodušší, protože obsahuje pouze celkovou strukturu stránky a volání k vykreslení částečného zobrazení.
 
-Kontrolery architektury ASP.NET Core MVC mít [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) metodu, která je volána z metody akce. Stránky Razor nemají žádný ekvivalent `PartialView` metody.
+Kontrolery architektury ASP.NET Core MVC mít [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) metodu, která je volána z metody akce. Stránky Razor nemají žádný ekvivalent `PartialView` metodu [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel).
 
 ## <a name="declare-partial-views"></a>Deklarujte částečné zobrazení
 

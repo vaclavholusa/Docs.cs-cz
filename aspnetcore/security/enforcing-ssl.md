@@ -5,12 +5,12 @@ description: Ukazuje, jak chcete vyžadovat protokol HTTPS/TLS v ASP.NET Core we
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: d8bf11d7d2df8d8b197f001570a8fab1f3262814
-ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
+ms.openlocfilehash: 3bea8661e17fec5128e822d98741d1f8ed7434e5
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514801"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655495"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Vynucení protokolu HTTPS v ASP.NET Core
 
@@ -112,7 +112,10 @@ Globálně vyžadování protokolu HTTPS (`options.Filters.Add(new RequireHttpsA
 <a name="hsts"></a>
 ## <a name="http-strict-transport-security-protocol-hsts"></a>Protokol zabezpečení striktní přenos HTTP (HSTS)
 
-Za [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [striktní přenos HTTP zabezpečení (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) je vylepšení zabezpečení přihlášení, která je zadána webové aplikace pomocí hlavičky speciální odpovědi. Když prohlížeč, který podporuje HSTS obdrží toto záhlaví, ukládá konfiguraci pro doménu, která zabrání odeslání libovolné komunikaci přes protokol HTTP a místo toho vynutí veškerou komunikaci přes protokol HTTPS. Je také znemožní uživateli pomocí nedůvěryhodný nebo neplatný certifikátů, zakázání výzev prohlížeče, které umožní uživateli tohoto certifikátu dočasně důvěřovat.
+Za [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [striktní přenos HTTP zabezpečení (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) je vylepšení zabezpečení přihlášení, která je zadána pomocí hlavičky odpovědi webové aplikace. Když prohlížeč, který podporuje HSTS obdrží toto záhlaví:
+
+* Prohlížeč ukládá konfiguraci pro doménu, která zabrání odeslání libovolné komunikaci přes protokol HTTP. Prohlížeč vynutí veškerou komunikaci přes protokol HTTPS. 
+* Prohlížeč znemožní uživateli pomocí certifikátů nedůvěryhodný nebo neplatný. Prohlížeč zakáže výzev, které umožní uživateli tohoto certifikátu dočasně důvěřovat.
 
 Implementuje HSTS s ASP.NET Core 2.1 nebo vyšší `UseHsts` – metoda rozšíření. Následující kód volá `UseHsts` když aplikace není v [vývojový režim](xref:fundamentals/environments):
 

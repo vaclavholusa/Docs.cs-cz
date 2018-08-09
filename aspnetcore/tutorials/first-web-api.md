@@ -1,19 +1,19 @@
 ---
-title: Vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows
+title: Vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio
 author: rick-anderson
-description: Vytvoření webového rozhraní API pomocí ASP.NET Core MVC a Visual Studio pro Windows
+description: Vytvoření webového rozhraní API pomocí ASP.NET Core MVC a sady Visual Studio ve Windows
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: tutorials/first-web-api
-ms.openlocfilehash: 3da22cbbbe0db7771656997a13587521e182fb2a
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 2694388324cdbd246aad6c88d8439171704dfe89
+ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38164597"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39722513"
 ---
-# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Mike Wasson](https://github.com/mikewasson)
 
@@ -21,7 +21,7 @@ V tomto kurzu sestavení webového rozhraní API pro správu seznam "úkolů". U
 
 Existují tři verze tohoto kurzu:
 
-* Windows: Web API se sadou Visual Studio pro Windows (Tento kurz)
+* Windows: Webové rozhraní API pomocí sady Visual Studio na Windows (Tento kurz)
 * macOS: [webového rozhraní API pomocí sady Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
 * macOS, Linux, Windows: [webového rozhraní API pomocí Visual Studio Code](xref:tutorials/web-api-vsc)
 

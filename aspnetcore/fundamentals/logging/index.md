@@ -5,12 +5,12 @@ description: Další informace o protokolovacího rozhraní v ASP.NET Core. Obje
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 60777d4f8664b7f02c806abb6ca40a29602d207f
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 35bb7fa51db541f825a79151fb7fbe85d48e1998
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378648"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655356"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -707,7 +707,7 @@ Přejděte **streamování protokolů** stránku, abyste zobrazili zprávy aplik
 
 ## <a name="azure-application-insights-trace-logging"></a>Protokolování trasování programu Azure Application Insights
 
-[Application Insights](https://azure.microsoft.com/services/application-insights/) SDK je schopen shromažďování trasování telemetrických dat z protokolů generovaných prostřednictvím protokolování infrastruktury ASP.NET Core. Další informace najdete v tématu [Microsoft/ApplicationInsights-aspnetcore Wiki: protokolování](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging).
+[Application Insights](https://azure.microsoft.com/services/application-insights/) SDK je schopen shromažďování trasování telemetrických dat z protokolů generovaných prostřednictvím protokolování infrastruktury ASP.NET Core. Další informace najdete v tématu [Application Insights pro ASP.NET Core](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core) a [Microsoft/ApplicationInsights-aspnetcore Wiki: protokolování](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging).
 
 ## <a name="additional-resources"></a>Další zdroje
 

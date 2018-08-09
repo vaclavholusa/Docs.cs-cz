@@ -5,14 +5,14 @@ description: Další informace o použití rozhraní IHttpClientFactory ke sprá
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/23/2018
+ms.date: 08/07/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 87424eaea499ba7ece1e5ef88649fcbb2e297635
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: dd217cfed230ea92c31eeed64ec19838032dd224
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320652"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655229"
 ---
 # <a name="initiate-http-requests"></a>Iniciování požadavků HTTP
 
@@ -20,7 +20,7 @@ Podle [Glenn Condron](https://github.com/glennc), [Ryanem Nowak](https://github.
 
 [IHttpClientFactory](/dotnet/api/system.net.http.ihttpclientfactory) můžete zaregistrované a slouží ke konfiguraci a vytvořte [HttpClient](/dotnet/api/system.net.http.httpclient) instance v aplikaci. Nabízí následující výhody:
 
-* Poskytuje centrální umístění pro pojmenovávání a konfiguraci logické `HttpClient` instancí. Například "githubu" klienta můžete zaregistrované a nakonfigurovat tak, aby ke Githubu přistupovat. Výchozí klienta lze zaregistrovat k jiným účelům.
+* Poskytuje centrální umístění pro pojmenovávání a konfiguraci logické `HttpClient` instancí. Například *githubu* klient může zaregistrované a nakonfigurovat tak, aby ke Githubu přistupovat. Výchozí klienta lze zaregistrovat k jiným účelům.
 * Kodifikuje koncept odchozí middleware prostřednictvím delegování obslužné rutiny ve `HttpClient` a rozšíření pro middleware založený na Polly výhod, které poskytuje.
 * Spravuje sdružování a dobu života základní `HttpClientMessageHandler` instancí se vyhnout běžným potížím DNS, ke kterým dochází při správě ručně `HttpClient` životnosti.
 * Přidá prostředí konfigurovat protokolování (prostřednictvím `ILogger`) pro všechny požadavky odeslané prostřednictvím klientů, které jsou vytvořeny procesem.
@@ -52,15 +52,15 @@ Po registraci může přijmout kódu `IHttpClientFactory` kdekoli služby může
 
 [!code-csharp[](http-requests/samples/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,20)]
 
-Pomocí `IHttpClientFactory` tímto způsobem je skvělý způsob, jak Refaktorovat stávající aplikace. Nemá žádný vliv na způsob, jakým `HttpClient` se používá. Na místech, kde `HttpClient` aktuálně se vytvářejí instance, nahraďte volání výskyty `CreateClient`.
+Pomocí `IHttpClientFactory` tímto způsobem je skvělý způsob, jak Refaktorovat stávající aplikace. Nemá žádný vliv na způsob, jakým `HttpClient` se používá. Na místech, kde `HttpClient` aktuálně se vytvářejí instance, nahraďte volání výskyty [CreateClient](/dotnet/api/system.net.http.ihttpclientfactory.createclient).
 
 ### <a name="named-clients"></a>Pojmenované klientů
 
-Pokud aplikace vyžaduje víc různé způsoby použití `HttpClient`, každý s jinou konfiguraci, je možnost použití **s názvem klienti**. Konfigurace pro pojmenovaná `HttpClient` se dá nastavit během registrace v `Startup.ConfigureServices`.
+Pokud aplikace vyžaduje použití mnoha různých `HttpClient`, každý s jinou konfiguraci, je možnost použití **s názvem klienti**. Konfigurace pro pojmenovaná `HttpClient` se dá nastavit během registrace v `Startup.ConfigureServices`.
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
 
-V předchozím kódu `AddHttpClient` je volána, poskytuje název "githubu". Některé výchozí konfigurace má tento klient&mdash;totiž základní adrese a dvě záhlaví vyžadována pro práci s rozhraním API pro GitHub.
+V předchozím kódu `AddHttpClient` je volána, že zadáte název *githubu*. Některé výchozí konfigurace má tento klient&mdash;totiž základní adrese a dvě záhlaví vyžadována pro práci s rozhraním API pro GitHub.
 
 Pokaždé, když `CreateClient` nazývá novou instanci třídy `HttpClient` vytvoření a konfigurace akce je volána.
 
@@ -161,13 +161,13 @@ Chcete-li vytvořit obslužnou rutinu, definujte třídu odvozenou z `Delegating
 
 [!code-csharp[Main](http-requests/samples/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
 
-Předcházející kód definuje obslužnou rutinu základní. Zkontroluje, pokud u požadavku byla zahrnuta hlavičku X-API-KEY. Pokud chybí záhlaví, můžete vyhnout volání HTTP a vrátí odpověď vhodný.
+Předcházející kód definuje obslužnou rutinu základní. Zkontroluje, jestli `X-API-KEY` záhlaví byla zahrnuta v požadavku. Pokud chybí záhlaví, můžete vyhnout volání HTTP a vrátí odpověď vhodný.
 
-Během registrace, lze přidat jeden nebo více obslužných rutin do konfigurace `HttpClient`. Tato úloha se provádí prostřednictvím metody rozšíření na `IHttpClientBuilder`.
+Během registrace, lze přidat jeden nebo více obslužných rutin do konfigurace `HttpClient`. Tato úloha se provádí prostřednictvím metody rozšíření na [IHttpClientBuilder](/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder).
 
 [!code-csharp[](http-requests/samples/Startup.cs?name=snippet5)]
 
-V předchozím kódu `ValidateHeaderHandler` DI zaregistrován. Obslužná rutina **musí** zaregistrovat v DI jako přechodné. Po registraci `AddHttpMessageHandler` může být volána, předejte typ pro obslužné rutiny.
+V předchozím kódu `ValidateHeaderHandler` DI zaregistrován. Obslužná rutina **musí** zaregistrovat v DI jako přechodné. Po registraci [AddHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.addhttpmessagehandler) může být volána, předejte typ pro obslužné rutiny.
 
 Může být registrováno více obslužných rutin v pořadí, ve kterém by se měl spustit. Každý popisovač zabalí další obslužná rutina až do konečné `HttpClientHandler` zpracuje požadavek:
 
@@ -185,7 +185,7 @@ Po obnovení tohoto balíčku, rozšiřující metody jsou k dispozici pro podpo
 
 ### <a name="handle-transient-faults"></a>Zpracování přechodných chyb
 
-Nejběžnější chybami, na které můžete očekávat při volání HTTP externí bude přechodné. Pohodlné rozšíření metoda volána `AddTransientHttpErrorPolicy` je zahrnuté umožňuje zásadu, která definované pro zpracování přechodných chyb. Zásady konfigurované pomocí tohoto úchytu – metoda rozšíření `HttpRequestException`, odpovědi HTTP 5xx a odpovědi HTTP 408.
+Většina běžných chyb nastane, když přechodné externí volání HTTP. Pohodlné rozšíření metoda volána `AddTransientHttpErrorPolicy` je zahrnuté umožňuje zásadu, která definované pro zpracování přechodných chyb. Zásady konfigurované pomocí tohoto úchytu – metoda rozšíření `HttpRequestException`, odpovědi HTTP 5xx a odpovědi HTTP 408.
 
 `AddTransientHttpErrorPolicy` Rozšíření může být použito v rámci `Startup.ConfigureServices`. Toto rozšíření poskytuje přístup k `PolicyBuilder` objekt nakonfigurovaný pro zpracování chyb představující možných přechodných chyb:
 
@@ -215,29 +215,33 @@ Přístup pro správu pravidelně použité zásady, je jejich jednou definovat 
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet10)]
 
-V předchozí kód přidá PolicyRegistry se `ServiceCollection` a dvě zásady, které jsou v něm zaregistrovaný. Chcete-li použít zásady z registru, `AddPolicyHandlerFromRegistry` metoda se používá, předejte název zásady začaly platit.
+V předchozím kódu jsou registrovány dvě zásady, které při `PolicyRegistry` se přidá do `ServiceCollection`. Pomocí zásad z registru, `AddPolicyHandlerFromRegistry` metoda se používá, předejte název zásady začaly platit.
 
 Další informace o `IHttpClientFactory` a integrace Polly můžete najít na [Polly wiki](https://github.com/App-vNext/Polly/wiki/Polly-and-HttpClientFactory).
 
 ## <a name="httpclient-and-lifetime-management"></a>HttpClient a životního cyklu správy
 
-Pokaždé, když `CreateClient` je volán na `IHttpClientFactory`, novou instanci třídy `HttpClient` je vrácena. Bude existovat `HttpMessageHandler` jednoho klienta s názvem. `IHttpClientFactory` bude fond `HttpMessageHandler` instancí, které jsou vytvořeny procesem ke snížení spotřeby prostředků. A `HttpMessageHandler` instance může být znovu použít z fondu při vytváření nového `HttpClient` instance Pokud nevypršela platnost svého životního cyklu. 
+Nový `HttpClient` pokaždé, když je vrácena instance `CreateClient` je volán na `IHttpClientFactory`. Je [objekt HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler) jednoho klienta s názvem. `IHttpClientFactory` fondy `HttpMessageHandler` instancí, které jsou vytvořeny procesem ke snížení spotřeby prostředků. `HttpMessageHandler` Instance může být znovu použít z fondu při vytváření nového `HttpClient` instance Pokud nevypršela platnost svého životního cyklu.
 
-Sdružování obslužných rutin je žádoucí, protože každá obslužná rutina obvykle spravuje svou vlastní základní připojení protokolu HTTP; vytváření více obslužných rutin, než je nezbytné, může způsobit zpoždění připojení. Některé obslužné rutiny také zachovat připojení otevřené po neomezenou dobu, což může zabránit obslužnou rutinu reakce na změny DNS.
+Sdružování obslužných rutin je žádoucí, protože každá obslužná rutina obvykle spravuje svou vlastní základní připojení protokolu HTTP. Vytváření více obslužných rutin, než je nezbytné, může způsobit zpoždění připojení. Některé obslužné rutiny také zachovat připojení otevřené po neomezenou dobu, což může zabránit obslužnou rutinu reakce na změny DNS.
 
-Výchozí doba života obslužná rutina je dvě minuty. Výchozí hodnota se dá přepsat na základě pojmenované klienta. Chcete-li přepsat, zavolejte `SetHandlerLifetime` na `IHttpClientBuilder` , který je vrácen při vytváření klienta:
+Výchozí doba života obslužná rutina je dvě minuty. Výchozí hodnota se dá přepsat na základě pojmenované klienta. Chcete-li přepsat, zavolejte [SetHandlerLifetime](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.sethandlerlifetime) na `IHttpClientBuilder` , který je vrácen při vytváření klienta:
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet11)]
 
+Vyřazení klienta není povinné. Vyřazení zruší odchozí požadavky a záruky daném `HttpClient` instanci nelze použít po volání [Dispose](/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose). `IHttpClientFactory` sleduje a uvolní prostředky využívané třídou `HttpClient` instancí. `HttpClient` Instancí lze obecně zacházet jako objekty .NET nevyžaduje vyřazení.
+
+Zachování jediného `HttpClient` instance zachování připojení pro dlouhé době se běžně používá dříve, než vzniku `IHttpClientFactory`. Tento model se stane zbytečné po migraci na `IHttpClientFactory`.
+
 ## <a name="logging"></a>protokolování
 
-Klienty vytvořené prostřednictvím `IHttpClientFactory` záznam protokolu zpráv pro všechny požadavky. Budete muset povolit úroveň příslušné informace v konfiguraci protokolování tak, aby se zobrazit výchozí zprávy protokolu. Dodatečné protokolování, jako je například protokolování hlavičky požadavku je zahrnuta pouze na úroveň trasování.
+Klienty vytvořené prostřednictvím `IHttpClientFactory` záznam protokolu zpráv pro všechny požadavky. Povolte úroveň příslušné informace v konfiguraci protokolování tak, aby se zobrazit výchozí zprávy protokolu. Dodatečné protokolování, jako je například protokolování hlavičky požadavku je zahrnuta pouze na úroveň trasování.
 
-Kategorie protokolu používá pro každého klienta obsahuje název klienta. Klient s názvem "MyNamedClient", například zprávy protokolu s kategorii `System.Net.Http.HttpClient.MyNamedClient.LogicalHandler`. Na povrchu kanál obslužná rutina požadavku dojde k zprávy s příponou "LogicalHandler". V požadavku jsou zprávy zaznamenány předtím, než ji zpracovali ostatních obslužných rutin v kanálu. V odpovědi jsou zprávy zaznamenány po všech ostatních obslužných rutin kanálu mají přijetí odpovědi.
+Kategorie protokolu používá pro každého klienta obsahuje název klienta. Klient s názvem *MyNamedClient*, například zprávy protokolu s kategorii `System.Net.Http.HttpClient.MyNamedClient.LogicalHandler`. Zprávy doplněny *LogicalHandler* dochází mimo kanál obslužná rutina požadavku. V požadavku jsou zprávy zaznamenány předtím, než ji zpracovali ostatních obslužných rutin v kanálu. V odpovědi jsou zprávy zaznamenány po všech ostatních obslužných rutin kanálu mají přijetí odpovědi.
 
-Také dochází k protokolování uvnitř kanál obslužná rutina požadavku. V případě příklad "MyNamedClient" tyto zprávy jsou zaznamenané v souvislosti s kategorie protokolu `System.Net.Http.HttpClient.MyNamedClient.ClientHandler`. Pro žádost k tomu dochází po spuštění ostatních obslužných rutin a bezprostředně před odesláním žádosti v síti. V odpovědi protokolování zahrnuje stav odpovědi před odesláním zpět prostřednictvím kanálu obslužné rutiny.
+Také dochází k protokolování v kanálu obslužné rutiny žádosti. V *MyNamedClient* například tyto zprávy jsou zaznamenané v souvislosti s kategorie protokolu `System.Net.Http.HttpClient.MyNamedClient.ClientHandler`. Pro žádost k tomu dochází po spuštění ostatních obslužných rutin a bezprostředně před odesláním žádosti v síti. V odpovědi protokolování zahrnuje stav odpovědi před odesláním zpět prostřednictvím kanálu obslužné rutiny.
 
-Povolení protokolování na povrchu a v rámci kanálu umožňuje kontrolu změny provedené ostatních obslužných rutin v kanálu. To může zahrnovat změny hlavičky, požadavku, například nebo stavový kód odpovědi.
+Povolení protokolování mimo a v kanálu umožňuje kontrolu změny provedené ostatních obslužných rutin v kanálu. To může zahrnovat změny hlavičky, požadavku, například nebo stavový kód odpovědi.
 
 Včetně názvu klienta v kategorii protokolů umožňuje filtrování konkrétních klientů s názvem v případě potřeby protokolování.
 
@@ -245,6 +249,6 @@ Včetně názvu klienta v kategorii protokolů umožňuje filtrování konkrétn
 
 Může být nutné k řízení konfigurace vnitřního `HttpMessageHandler` používaný klientem.
 
-`IHttpClientBuilder` Dochází při přidávání s názvem nebo typy klientů. `ConfigurePrimaryHttpMessageHandler` Metody rozšíření lze použít k definování delegáta. Delegát se používá k vytvoření a konfigurace primární `HttpMessageHandler` používané tohoto klienta:
+`IHttpClientBuilder` Dochází při přidávání s názvem nebo typy klientů. [ConfigurePrimaryHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.configureprimaryhttpmessagehandler) metody rozšíření lze použít k definování delegáta. Delegát se používá k vytvoření a konfigurace primární `HttpMessageHandler` používané tohoto klienta:
 
 [!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet12)]

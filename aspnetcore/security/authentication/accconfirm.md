@@ -5,12 +5,12 @@ description: Zjistěte, jak vytvořit aplikaci ASP.NET Core s e-mailové potvrze
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 84eb3580107572f66f0c3b565b8e76ba401c0ddb
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 3ca6d014245bb2a9bc4b1c90285f47eec7cefe84
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219404"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655469"
 ---
 ::: moniker range="<= aspnetcore-2.0"
 
@@ -78,24 +78,11 @@ Postupujte podle pokynů v [povolení ověřování](xref:security/authenticatio
 
 Spusťte aplikaci, vyberte **zaregistrovat** propojit a zaregistrovat uživatele. V tomto okamžiku je pouze ověření na e-mailu [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) atribut. Po odeslání registrace, jste přihlášení do aplikace. Později v tomto kurzu se kód aktualizuje tak, že noví uživatelé nemůže přihlásit, dokud se ověří e-mailu.
 
-## <a name="view-the-identity-database"></a>Zobrazení databáze identit
-
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
-
-* Z **zobrazení** nabídce vyberte možnost **Průzkumník objektů systému SQL Server** (SSOX).
-* Přejděte do **(localdb) MSSQLLocalDB (SQL Server 13)**. Klikněte pravým tlačítkem na **dbo. AspNetUsers** > **zobrazení dat**:
-
-![Místní nabídku pro tabulku AspNetUsers v Průzkumníku objektů SQL serveru](accconfirm/_static/ssox.png)
+[!INCLUDE[](~/includes/view-identity-db.md)]
 
 Poznámka: v tabulce `EmailConfirmed` pole je `False`.
 
 Můžete chtít tento e-mail znovu použít v dalším kroku při ní odešle e-mail s potvrzením. Klikněte pravým tlačítkem na řádek a vyberte **odstranit**. Odstraňuje se e-mailový alias usnadňuje v následujících krocích.
-
-# <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
-
-Zobrazit [práce s SQLite v projektu aplikace ASP.NET Core MVC](xref:tutorials/first-mvc-app-xplat/working-with-sql) pokyny o tom, jak zobrazit databázi SQLite.
-
-------
 
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>Vyžádání potvrzení e-mailu
@@ -113,8 +100,6 @@ Aktualizace *Areas/Identity/IdentityHostingStartup.cs* tak, aby vyžadovala potv
 ### <a name="configure-email-provider"></a>Konfigurace poskytovatele e-mailu
 
 V tomto kurzu [SendGrid](https://sendgrid.com) se používá k odesílání e-mailu. Potřebujete účet SendGrid a klíč k odesílání e-mailu. Můžete použít jiné poskytovateli e-mailu. ASP.NET Core 2.x zahrnuje `System.Net.Mail`, který umožňuje odeslání e-mailu z vaší aplikace. Doporučujeme že použít SendGrid nebo jiné služby e-mailu k odeslání e-mailu. SMTP je obtížné zabezpečení a zařídit správné nastavení.
-
-[Možnosti vzor](xref:fundamentals/configuration/options) slouží k přístupu k účtu a klíč nastavení. Další informace najdete v tématu [konfigurace](xref:fundamentals/configuration/index).
 
 Vytvoření třídy k načtení klíče zabezpečeného e-mailu. V tomto příkladu vytvoření *Services/AuthMessageSenderOptions.cs*:
 
@@ -143,6 +128,8 @@ Obsah *secrets.json* souboru nejsou šifrovány. *Secrets.json* souboru je uvede
     "SendGridKey": "<key removed>"
   }
   ```
+ 
+Další informace najdete v tématu [možnosti vzor](xref:fundamentals/configuration/options) a [konfigurace](xref:fundamentals/configuration/index).
 
 ### <a name="install-sendgrid"></a>Instalace služby SendGrid
 

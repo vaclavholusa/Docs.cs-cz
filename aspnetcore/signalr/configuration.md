@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/31/2018
 uid: signalr/configuration
-ms.openlocfilehash: 32c0ad94fba09fa099c2ab4a6b1d6d79a5542d7f
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: eac1202828edbcd295d7e52aa424cd625ee70e34
+ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396059"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39722461"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>Konfigurace jádra SignalR technologie ASP.NET
 
@@ -234,7 +234,7 @@ Další možnosti se dá nakonfigurovat v `WithUrl` (`withUrl` v JavaScriptu) me
 | `Credentials` | Nejde konfigurovat * | prázdný | Přihlašovací údaje pro odesílání při každé žádosti protokolu HTTP. |
 | `CloseTimeout` | Nejde konfigurovat * | 5 sekund | Pouze objekty Websocket. Maximální množství času, klient počká po uzavření pro server a potvrďte žádosti o uzavření. Pokud server není v tuto chvíli Potvrdit uzavření, klient neodpojí. |
 | `Headers` | Nejde konfigurovat * | prázdný | Slovník další hlavičky protokolu HTTP k odeslání při každé žádosti protokolu HTTP. |
-| `HttpMessageHandlerFactory` | Nejde konfigurovat * | `null` | Delegát, který lze použít ke konfiguraci nebo nahradit `HttpMessageHandler` používaný k odesílání požadavků HTTP. Není možné použít u připojení pomocí protokolu WebSocket. Tento delegát musí vrátit nenulovou hodnotu, a přijímá jako parametr výchozí hodnotu. Upravte nastavení podle této výchozí hodnoty a vrácení nebo vrátit úplně nové `HttpMessageHandler` instance. |
+| `HttpMessageHandlerFactory` | Nejde konfigurovat * | `null` | Delegát, který lze použít ke konfiguraci nebo nahradit `HttpMessageHandler` používaný k odesílání požadavků HTTP. Není možné použít u připojení pomocí protokolu WebSocket. Tento delegát musí vrátit nenulovou hodnotu, a přijímá jako parametr výchozí hodnotu. Upravte nastavení podle této výchozí hodnoty a vrácení nebo vrátí novou `HttpMessageHandler` instance. **Při nahrazování obslužnou rutinu nezapomeňte si zkopírovat na nastavení, která chcete zachovat od zadané obslužné rutiny, v opačném případě nakonfigurovaných možností (například soubory cookie a hlavičky) se nevztahuje na novou obslužnou rutinu.** |
 | `Proxy` | Nejde konfigurovat * | `null` | Proxy server HTTP při odesílání požadavků HTTP. |
 | `UseDefaultCredentials` | Nejde konfigurovat * | `false` | Nastavte tuto logickou hodnotu k odeslání výchozí přihlašovací údaje pro požadavky HTTP a Websocket. To umožňuje použití ověřování Windows. |
 | `WebSocketConfiguration` | Nejde konfigurovat * | `null` | Delegát, který slouží k nakonfigurování dalších možností protokolu WebSocket. Obdrží instanci [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions) , který lze použít ke konfiguraci možností. |

@@ -5,20 +5,23 @@ description: Informace o .NET klienta SignalR technologie ASP.NET Core
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 05/29/2018
+ms.date: 08/07/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: ce5be911e67831cbf6c09e24744111e73ffdbe63
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 970888a410b2486a20f98ce77a8674f8ec357f50
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095031"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655249"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>Klient .NET funkce SignalR technologie ASP.NET Core
 
 Podle [Rachel Appel](http://twitter.com/rachelappel)
 
 Klient .NET funkce SignalR technologie ASP.NET Core můžete využívat aplikace pro Xamarin, WPF, Windows Forms, konzoly a .NET Core. Podobně jako [javascriptový klient](xref:signalr/javascript-client), klient .NET umožňuje příjem a odesílání a příjem zpráv do centra v reálném čase.
+
+> [!NOTE]
+> Xamarin nabízí zvláštní požadavky na verzi sady Visual Studio. Další informace najdete v tématu [klienta SignalR 2.1.1 v Xamarinu](https://github.com/aspnet/Announcements/issues/305).
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/live/aspnetcore/signalr/dotnet-client/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 

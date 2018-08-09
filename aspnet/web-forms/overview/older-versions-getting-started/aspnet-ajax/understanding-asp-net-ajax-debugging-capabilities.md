@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 9d420a41f50d06541d04a1dd3cb78a2e6beaaa9a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 95c2487f26109cbdd8c76dc6f269f37264f5e34b
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813825"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655443"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>Principy možnosti ladění technologie ASP.NET AJAX
 ====================
@@ -55,8 +55,8 @@ Obrázek 1 ukazuje, jaké aplikace Internet Explorer Upřesnit dialogového okna
 
 Jakmile ladění je zapnutý, zobrazí se vám nové položky nabídky se zobrazí v nabídce zobrazení s názvem Script Debugger. Má dvě možnosti, které jsou k dispozici včetně Open a zalomení na další příkaz. Pokud je vybrána Open budete vyzváni k ladění na stránce v sadě Visual Studio 2008 (Všimněte si, že Visual Web Developer Express můžete také použít pro ladění). Pokud je nainstalováno Visual Studio .NET můžete použít tuto instanci nebo vytvořte novou instanci. Pokud je vybrána zalomení na další příkaz budete vyzváni k ladění stránku při spuštění kódu jazyka JavaScript. Pokud kód jazyka JavaScript provádí v události při načtení stránky můžete aktualizovat na stránce Aktivovat ladicí relaci. Pokud kód jazyka JavaScript se spustí po kliknutí na tlačítko ladicí program se spustí ihned po kliknutí na tlačítko.
 
-> *> [!NOTE] Pokud používáte v systému Windows Vista s přístup k řízení Uživatelských účtů povolená a máte Visual Studio 2008 nastavena pro spuštění jako správce, Visual Studio se nepodaří připojit k procesu, když se zobrazí výzva k připojení. Chcete-li tento problém obejít, nejprve spusťte sadu Visual Studio a použít tuto instanci k ladění.*
-
+> [!NOTE]
+> Pokud používáte v systému Windows Vista s přístup k řízení Uživatelských účtů povolené a je nutné spuštění jako správce sady Visual Studio 2008, Visual Studio se nepodaří připojit k procesu, když se zobrazí výzva k připojení. Chcete-li tento problém obejít, nejprve spusťte sadu Visual Studio a použít tuto instanci k ladění.
 
 I když další část popisuje, jak ladit stránky technologie ASP.NET AJAX přímo z v rámci sady Visual Studio 2008, pomocí Internet Exploreru Script Debugger možnost je užitečná při stránka je již otevřen a chcete podrobněji seznámit.
 
@@ -98,8 +98,8 @@ Po spuštění relace ladění a začnete procházení kódu pomocí klávesy F1
 
 Toto dialogové okno se zobrazí, protože Visual Studio .NET není se, jak získat ke zdrojovému kódu některých skriptů odkazuje na stránku. Když to může být poměrně frustrující zpočátku je jednoduchý oprava. Po spuštění relace ladění a na zarážku, přejděte do okna ladit skript Průzkumníka Windows v nabídce sady Visual Studio 2008 nebo pomocí klávesové zkratky Ctrl + Alt + N.
 
-> *> [!NOTE] Není-li v nabídce Průzkumníka skriptu uvedené, přejděte na nástroje* *vlastní* *příkazů v nabídce sady Visual Studio .NET. Vyhledejte položku ladění v části kategorie a klikněte na něj zobrazíte všechny položky nabídky k dispozici. V seznamu příkazů, posuňte se dolů Průzkumník skriptů a přetáhněte ji na ladění* *v nabídce Windows již bylo zmíněno dříve. To zpřístupní položka nabídky Průzkumník skriptů pokaždé, když spustíte Visual Studio .NET.*
-
+> [!NOTE]
+> Není-li v nabídce Průzkumníka skriptu uvedené, přejděte na **nástroje** > **vlastní** > **příkazy** v nabídce sady Visual Studio .NET. Vyhledejte **ladění** položka v kategoriích části a klikněte na něj zobrazíte všechny položky nabídky k dispozici. V seznamu příkazů posuňte se dolů Průzkumník skriptů a přetáhněte ji na ladění Windows v nabídce již bylo zmíněno dříve. To zpřístupní položka nabídky Průzkumník skriptů pokaždé, když spustíte Visual Studio .NET.
 
 Průzkumník skriptu lze použít k zobrazení všech skripty používané na stránce a otevřít v editoru kódu. Jakmile se otevře Průzkumník skriptů, dvakrát klikněte na stránku .aspx, která se právě ladí a otevře se v okně editoru kódu. Proveďte stejnou akci pro všechny ostatní skripty uvedené v podokně skriptu. Jakmile se všechny skripty jsou otevřeny v okně kódu můžete stisknutím klávesy F11 (a použití jiných ladění klávesové zkratky) pro jednotlivé kroky v kódu. Obrázek 3 ukazuje příklad Průzkumníka skriptu. Vypíše aktuální soubor laděného (Demo.aspx) a také dva vlastní skripty a dva skripty dynamicky vloženy do stránky technologie ASP.NET AJAX ScriptManager.
 

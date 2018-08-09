@@ -1,206 +1,240 @@
 ---
 title: Úvod do Identity v ASP.NET Core
 author: rick-anderson
-description: Pomocí Identity aplikace v ASP.NET Core. Obsahuje požadavky na heslo nastavení (RequireDigit, RequiredLength, RequiredUniqueChars a další).
+description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit požadavky na heslo (RequireDigit RequiredLength, RequiredUniqueChars a další).
 ms.author: riande
-ms.date: 01/24/2018
+ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 50ddb96000e6a3f9e1762e9bb3e1f215f20d4356
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 6a23dd4ad78c0695b5724a78204abf6752dfe67d
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095636"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655307"
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a><span data-ttu-id="d8668-104">Úvod do Identity v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="d8668-104">Introduction to Identity on ASP.NET Core</span></span>
+# <a name="introduction-to-identity-on-aspnet-core"></a><span data-ttu-id="02fdd-104">Úvod do Identity v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="02fdd-104">Introduction to Identity on ASP.NET Core</span></span>
 
-<span data-ttu-id="d8668-105">Podle [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Petr Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), a [Steve Smith](https://ardalis.com/)</span><span class="sxs-lookup"><span data-stu-id="d8668-105">By [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway, [Erik Reitan](https://github.com/Erikre), and [Steve Smith](https://ardalis.com/)</span></span>
+<span data-ttu-id="02fdd-105">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="02fdd-105">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="d8668-106">ASP.NET Core Identity je systém členství, který slouží k přidání funkcí přihlášení do vaší aplikace.</span><span class="sxs-lookup"><span data-stu-id="d8668-106">ASP.NET Core Identity is a membership system which allows you to add login functionality to your application.</span></span> <span data-ttu-id="d8668-107">Uživatelé můžou vytvářet účet a přihlášení s uživatelským jménem a heslem nebo že můžete použít externího zprostředkovatele přihlášení jako je Facebook, Google, Microsoft Account, Twitteru nebo jiné.</span><span class="sxs-lookup"><span data-stu-id="d8668-107">Users can create an account and login with a user name and password or they can use an external login provider such as Facebook, Google, Microsoft Account, Twitter or others.</span></span>
+<span data-ttu-id="02fdd-106">ASP.NET Core Identity je systém členství, který přidá funkce přihlášení do aplikace ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="02fdd-106">ASP.NET Core Identity is a membership system that adds login functionality to ASP.NET Core apps.</span></span> <span data-ttu-id="02fdd-107">Uživatelé můžou vytvářet účet s přihlašovací údaje uložené v Identity nebo může použít externího zprostředkovatele přihlášení.</span><span class="sxs-lookup"><span data-stu-id="02fdd-107">Users can create an account with the login information stored in Identity or they can use an external login provider.</span></span> <span data-ttu-id="02fdd-108">Podporované externí přihlášení zprostředkovatele patří [Facebook, Google, Account Microsoft a Twitter](xref:security/authentication/social/index).</span><span class="sxs-lookup"><span data-stu-id="02fdd-108">Supported external login providers include [Facebook, Google, Microsoft Account, and Twitter](xref:security/authentication/social/index).</span></span>
 
-<span data-ttu-id="d8668-108">ASP.NET Core Identity pro použití databáze SQL serveru k ukládání uživatelská jména, hesla a data profilu můžete nakonfigurovat.</span><span class="sxs-lookup"><span data-stu-id="d8668-108">You can configure ASP.NET Core Identity to use a SQL Server database to store user names, passwords, and profile data.</span></span> <span data-ttu-id="d8668-109">Alternativně můžete použít vlastní trvalého úložiště, například Azure Table Storage.</span><span class="sxs-lookup"><span data-stu-id="d8668-109">Alternatively, you can use your own persistent store, for example, an Azure Table Storage.</span></span> <span data-ttu-id="d8668-110">Tento dokument obsahuje pokyny pro Visual Studio a pomocí rozhraní příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="d8668-110">This document contains instructions for Visual Studio and for using the CLI.</span></span>
+<span data-ttu-id="02fdd-109">Identity lze konfigurovat pomocí databáze SQL serveru ukládat uživatelská jména, hesla a data profilu.</span><span class="sxs-lookup"><span data-stu-id="02fdd-109">Identity can be configured using a SQL Server database to store user names, passwords, and profile data.</span></span> <span data-ttu-id="02fdd-110">Můžete také jiné trvalého úložiště je možné, například Azure Table Storage.</span><span class="sxs-lookup"><span data-stu-id="02fdd-110">Alternatively, another persistent store can be used, for example, Azure Table Storage.</span></span>
 
-[<span data-ttu-id="d8668-111">Zobrazení nebo stažení ukázkového kódu.</span><span class="sxs-lookup"><span data-stu-id="d8668-111">View or download the sample code.</span></span>](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [<span data-ttu-id="d8668-112">(Jak stáhnout)</span><span class="sxs-lookup"><span data-stu-id="d8668-112">(How to download)</span></span>](xref:tutorials/index#how-to-download-a-sample)
+[<span data-ttu-id="02fdd-111">Zobrazení nebo stažení ukázkového kódu.</span><span class="sxs-lookup"><span data-stu-id="02fdd-111">View or download the sample code.</span></span>](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [<span data-ttu-id="02fdd-112">(Jak stáhnout)</span><span class="sxs-lookup"><span data-stu-id="02fdd-112">(How to download)</span></span>](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="overview-of-identity"></a><span data-ttu-id="d8668-113">Přehled Identity</span><span class="sxs-lookup"><span data-stu-id="d8668-113">Overview of Identity</span></span>
+<span data-ttu-id="02fdd-113">V tomto tématu se naučíte, jak zaregistrovat, přihlaste se pomocí Identity a odhlášení uživatele.</span><span class="sxs-lookup"><span data-stu-id="02fdd-113">In this topic, you learn how to use Identity to register, log in, and log out a user.</span></span> <span data-ttu-id="02fdd-114">Podrobnější pokyny k vytváření aplikací, které používají Identity najdete v části Další kroky na konci tohoto článku.</span><span class="sxs-lookup"><span data-stu-id="02fdd-114">For more detailed instructions about creating apps that use Identity, see the Next Steps section at the end of this article.</span></span>
 
-<span data-ttu-id="d8668-114">V tomto tématu budete zjistěte, jak přidat funkci do zaregistrovat, přihlaste se pomocí ASP.NET Core Identity a odhlášení uživatele.</span><span class="sxs-lookup"><span data-stu-id="d8668-114">In this topic, you'll learn how to use ASP.NET Core Identity to add functionality to register, log in, and log out a user.</span></span> <span data-ttu-id="d8668-115">Podrobnější pokyny týkající se vytváření aplikací pomocí ASP.NET Core Identity najdete v části Další kroky na konci tohoto článku.</span><span class="sxs-lookup"><span data-stu-id="d8668-115">For more detailed instructions about creating apps using ASP.NET Core Identity, see the Next Steps section at the end of this article.</span></span>
+## <a name="create-a-web-app-with-authentication"></a><span data-ttu-id="02fdd-115">Vytvoření webové aplikace s ověřováním</span><span class="sxs-lookup"><span data-stu-id="02fdd-115">Create a Web app with authentication</span></span>
 
-1. <span data-ttu-id="d8668-116">Vytvoření projektu webové aplikace ASP.NET Core s jednotlivými uživatelskými účty.</span><span class="sxs-lookup"><span data-stu-id="d8668-116">Create an ASP.NET Core Web Application project with Individual User Accounts.</span></span>
+<span data-ttu-id="02fdd-116">Vytvoření projektu webové aplikace ASP.NET Core s jednotlivými uživatelskými účty.</span><span class="sxs-lookup"><span data-stu-id="02fdd-116">Create an ASP.NET Core Web Application project with Individual User Accounts.</span></span>
 
-   # <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="d8668-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d8668-117">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="02fdd-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="02fdd-117">Visual Studio</span></span>](#tab/visual-studio)
 
-   <span data-ttu-id="d8668-118">V sadě Visual Studio, vyberte **souboru** > **nový** > **projektu**.</span><span class="sxs-lookup"><span data-stu-id="d8668-118">In Visual Studio, select **File** > **New** > **Project**.</span></span> <span data-ttu-id="d8668-119">Vyberte **webové aplikace ASP.NET Core** a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="d8668-119">Select **ASP.NET Core Web Application** and click **OK**.</span></span>
+* <span data-ttu-id="02fdd-118">Vyberte **souboru** > **nové** > **projektu**.</span><span class="sxs-lookup"><span data-stu-id="02fdd-118">Select **File** > **New** > **Project**.</span></span> 
+* <span data-ttu-id="02fdd-119">Vyberte **webová aplikace ASP.NET Core**.</span><span class="sxs-lookup"><span data-stu-id="02fdd-119">Select **ASP.NET Core Web Application**.</span></span> <span data-ttu-id="02fdd-120">Pojmenujte projekt **WebApp1** stejný obor názvů jako projekt soubor ke stažení.</span><span class="sxs-lookup"><span data-stu-id="02fdd-120">Name the project **WebApp1** to have the same namespace as the project download.</span></span> <span data-ttu-id="02fdd-121">Klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="02fdd-121">Click **OK**.</span></span>
+* <span data-ttu-id="02fdd-122">Vyberte v ASP.NET Core **webovou aplikaci** ASP.NET Core 2.1 vyberte **změna ověřování**.</span><span class="sxs-lookup"><span data-stu-id="02fdd-122">Select an ASP.NET Core **Web Application** for ASP.NET Core 2.1, then select **Change Authentication**.</span></span>
+* <span data-ttu-id="02fdd-123">Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK**.</span><span class="sxs-lookup"><span data-stu-id="02fdd-123">Select **Individual User Accounts** and click **OK**.</span></span>
 
-   ![Dialogové okno nového projektu](identity/_static/01-new-project.png)
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="02fdd-124">Rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="02fdd-124">.NET Core CLI</span></span>](#tab/netcore-cli)
 
-   <span data-ttu-id="d8668-121">Vyberte v ASP.NET Core **webové aplikace (Model-View-Controller)** pro ASP.NET Core 2.x, pak vyberte **změna ověřování**.</span><span class="sxs-lookup"><span data-stu-id="d8668-121">Select an ASP.NET Core **Web Application (Model-View-Controller)** for ASP.NET Core 2.x, then select **Change Authentication**.</span></span>
+```cli
+dotnet new webapp --auth Individual -o WebApp1
+```
 
-   ![Dialogové okno nového projektu](identity/_static/02-new-project.png)
+---
 
-   <span data-ttu-id="d8668-123">Dialogové okno se zobrazí nabídka možnosti ověřování.</span><span class="sxs-lookup"><span data-stu-id="d8668-123">A dialog appears offering authentication choices.</span></span> <span data-ttu-id="d8668-124">Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK** vrátit do předchozího dialogového okna.</span><span class="sxs-lookup"><span data-stu-id="d8668-124">Select **Individual User Accounts** and click **OK** to return to the previous dialog.</span></span>
+<span data-ttu-id="02fdd-125">Generovaný projekt poskytuje [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:razor-pages/ui-class).</span><span class="sxs-lookup"><span data-stu-id="02fdd-125">The generated project provides [ASP.NET Core Identity](xref:security/authentication/identity) as a [Razor Class Library](xref:razor-pages/ui-class).</span></span>
 
-   ![Dialogové okno nového projektu](identity/_static/03-new-project-auth.png)
+### <a name="test-register-and-login"></a><span data-ttu-id="02fdd-126">Test registrace a přihlášení</span><span class="sxs-lookup"><span data-stu-id="02fdd-126">Test Register and Login</span></span>
 
-   <span data-ttu-id="d8668-126">Výběr **jednotlivé uživatelské účty** instruuje Visual Studio a vytvářet modely, modely ViewModels, zobrazení, Kontrolerů a další prostředky požadované pro ověřování jako součást šablony projektu.</span><span class="sxs-lookup"><span data-stu-id="d8668-126">Selecting **Individual User Accounts** directs Visual Studio to create Models, ViewModels, Views, Controllers, and other assets required for authentication as part of the project template.</span></span>
+<span data-ttu-id="02fdd-127">Spusťte aplikaci a zaregistrovat uživatele.</span><span class="sxs-lookup"><span data-stu-id="02fdd-127">Run the app and register a user.</span></span> <span data-ttu-id="02fdd-128">V závislosti na velikost obrazovky může být nutné vybrat navigace přepínacího tlačítka zobrazíte **zaregistrovat** a **přihlášení** odkazy.</span><span class="sxs-lookup"><span data-stu-id="02fdd-128">Depending on your screen size, you might need to select the navigation toggle button to see the **Register** and **Login** links.</span></span>
 
-   # <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="d8668-127">Rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="d8668-127">.NET Core CLI</span></span>](#tab/netcore-cli)
+![přepínací tlačítko navigační panel](identity/_static/navToggle.png)
 
-   <span data-ttu-id="d8668-128">Pokud používáte rozhraní příkazového řádku .NET Core, vytvořte nový projekt pomocí `dotnet new mvc --auth Individual`.</span><span class="sxs-lookup"><span data-stu-id="d8668-128">If using the .NET Core CLI, create the new project using `dotnet new mvc --auth Individual`.</span></span> <span data-ttu-id="d8668-129">Tento příkaz vytvoří nový projekt se stejným kódem šablony Identity, které sada Visual Studio vytvoří.</span><span class="sxs-lookup"><span data-stu-id="d8668-129">This command creates a new project with the same Identity template code Visual Studio creates.</span></span>
+[!INCLUDE[](~/includes/view-identity-db.md)]
 
-   <span data-ttu-id="d8668-130">Vytvořený projekt obsahuje `Microsoft.AspNetCore.Identity.EntityFrameworkCore` balíček, který ukládá data identit a schémat na SQL Server pomocí [Entity Framework Core](https://docs.microsoft.com/ef/).</span><span class="sxs-lookup"><span data-stu-id="d8668-130">The created project contains the `Microsoft.AspNetCore.Identity.EntityFrameworkCore` package, which persists the Identity data and schema to SQL Server using [Entity Framework Core](https://docs.microsoft.com/ef/).</span></span>
+<a name="pw"></a>
+### <a name="configure-identity-services"></a><span data-ttu-id="02fdd-130">Konfigurace Identity služby</span><span class="sxs-lookup"><span data-stu-id="02fdd-130">Configure Identity services</span></span>
 
-   ---
+<span data-ttu-id="02fdd-131">Služby jsou přidány v `ConfigureServices`.</span><span class="sxs-lookup"><span data-stu-id="02fdd-131">Services are added in `ConfigureServices`.</span></span>
 
-2. <span data-ttu-id="d8668-131">Nakonfigurujte identitu služby a přidejte middlewaru v `Startup`.</span><span class="sxs-lookup"><span data-stu-id="d8668-131">Configure Identity services and add middleware in `Startup`.</span></span>
+::: moniker range=">= aspnetcore-2.1"
 
-   <span data-ttu-id="d8668-132">Služby identit jsou přidané do aplikace v `ConfigureServices` metodu `Startup` třídy:</span><span class="sxs-lookup"><span data-stu-id="d8668-132">The Identity services are added to the application in the `ConfigureServices` method in the `Startup` class:</span></span>
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configureservices)]
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="d8668-133">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="d8668-133">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+<span data-ttu-id="02fdd-132">Předchozí kód konfiguruje Identity s výchozími hodnotami. možnost.</span><span class="sxs-lookup"><span data-stu-id="02fdd-132">The preceding code configures Identity with default option values.</span></span> <span data-ttu-id="02fdd-133">Služby jsou k dispozici pro aplikaci přes [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="02fdd-133">Services are made available to the app through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
+
+   <span data-ttu-id="02fdd-134">Povolení identity voláním [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_).</span><span class="sxs-lookup"><span data-stu-id="02fdd-134">Identity is enabled by calling [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_).</span></span> <span data-ttu-id="02fdd-135">`UseAuthentication` Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.</span><span class="sxs-lookup"><span data-stu-id="02fdd-135">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
+
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configure&highlight=18)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
 
-   <span data-ttu-id="d8668-134">Tyto služby jsou k dispozici pro aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="d8668-134">These services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
+   <span data-ttu-id="02fdd-136">Služby jsou k dispozici pro aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="02fdd-136">Services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
 
-   <span data-ttu-id="d8668-135">Povolení identity pro aplikace po zavolání `UseAuthentication` v `Configure` metody.</span><span class="sxs-lookup"><span data-stu-id="d8668-135">Identity is enabled for the application by calling `UseAuthentication` in the `Configure` method.</span></span> <span data-ttu-id="d8668-136">`UseAuthentication` Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.</span><span class="sxs-lookup"><span data-stu-id="d8668-136">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
+   <span data-ttu-id="02fdd-137">Povolení identity pro aplikace po zavolání `UseAuthentication` v `Configure` metody.</span><span class="sxs-lookup"><span data-stu-id="02fdd-137">Identity is enabled for the application by calling `UseAuthentication` in the `Configure` method.</span></span> <span data-ttu-id="02fdd-138">`UseAuthentication` Přidá ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.</span><span class="sxs-lookup"><span data-stu-id="02fdd-138">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="d8668-137">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="d8668-137">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="= aspnetcore-1.1"
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-33)]
 
-   <span data-ttu-id="d8668-138">Tyto služby jsou k dispozici pro aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="d8668-138">These services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
+   <span data-ttu-id="02fdd-139">Tyto služby jsou k dispozici pro aplikace prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="02fdd-139">These services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
 
-   <span data-ttu-id="d8668-139">Povolení identity pro aplikace po zavolání `UseIdentity` v `Configure` metody.</span><span class="sxs-lookup"><span data-stu-id="d8668-139">Identity is enabled for the application by calling `UseIdentity` in the `Configure` method.</span></span> <span data-ttu-id="d8668-140">`UseIdentity` Přidá na základě souboru cookie ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.</span><span class="sxs-lookup"><span data-stu-id="d8668-140">`UseIdentity` adds cookie-based authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
+   <span data-ttu-id="02fdd-140">Povolení identity pro aplikace po zavolání `UseIdentity` v `Configure` metody.</span><span class="sxs-lookup"><span data-stu-id="02fdd-140">Identity is enabled for the application by calling `UseIdentity` in the `Configure` method.</span></span> <span data-ttu-id="02fdd-141">`UseIdentity` Přidá na základě souboru cookie ověřování [middleware](xref:fundamentals/middleware/index) požadavku kanálu.</span><span class="sxs-lookup"><span data-stu-id="02fdd-141">`UseIdentity` adds cookie-based authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
 
-   ---
+::: moniker-end
 
-   <span data-ttu-id="d8668-141">Další informace o spuštění aplikace procesu naleznete v tématu [spuštění aplikace](xref:fundamentals/startup).</span><span class="sxs-lookup"><span data-stu-id="d8668-141">For more information about the application start up process, see [Application Startup](xref:fundamentals/startup).</span></span>
+<span data-ttu-id="02fdd-142">Další informace najdete v tématu [IdentityOptions třídy](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) a [spuštění aplikace](xref:fundamentals/startup).</span><span class="sxs-lookup"><span data-stu-id="02fdd-142">For more information, see the [IdentityOptions Class](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) and [Application Startup](xref:fundamentals/startup).</span></span>
 
-3. <span data-ttu-id="d8668-142">Vytvoření uživatele.</span><span class="sxs-lookup"><span data-stu-id="d8668-142">Create a user.</span></span>
+## <a name="scaffold-register-login-and-logout"></a><span data-ttu-id="02fdd-143">Vygenerované uživatelské rozhraní registrace, přihlášení a odhlášení</span><span class="sxs-lookup"><span data-stu-id="02fdd-143">Scaffold Register, Login, and LogOut</span></span>
 
-   <span data-ttu-id="d8668-143">Spusťte aplikaci a potom klikněte na **zaregistrovat** odkaz.</span><span class="sxs-lookup"><span data-stu-id="d8668-143">Launch the application and then click on the **Register** link.</span></span>
+<span data-ttu-id="02fdd-144">Postupujte podle [generování uživatelského rozhraní identity do projektu Razor s autorizací](xref:security/authentication/scaffold-identity#) pokyny.</span><span class="sxs-lookup"><span data-stu-id="02fdd-144">Follow the [Scaffold identity into a Razor project with authorization](xref:security/authentication/scaffold-identity#) instructions.</span></span>
 
-   <span data-ttu-id="d8668-144">Pokud je to poprvé při provádění této akce, může být potřeba ke spouštění migrace.</span><span class="sxs-lookup"><span data-stu-id="d8668-144">If this is the first time you're performing this action, you may be required to run migrations.</span></span> <span data-ttu-id="d8668-145">Aplikace vás vyzve, abyste **migrace použít**.</span><span class="sxs-lookup"><span data-stu-id="d8668-145">The application prompts you to **Apply Migrations**.</span></span> <span data-ttu-id="d8668-146">V případě potřeby aktualizujte stránku.</span><span class="sxs-lookup"><span data-stu-id="d8668-146">Refresh the page if needed.</span></span>
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="02fdd-145">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="02fdd-145">Visual Studio</span></span>](#tab/visual-studio)
 
-   ![Použití migrace webové stránky](identity/_static/apply-migrations.png)
+<span data-ttu-id="02fdd-146">Přidáte soubory registrace, přihlášení a odhlášení.</span><span class="sxs-lookup"><span data-stu-id="02fdd-146">Add the Register, Login, and LogOut files.</span></span>
 
-   <span data-ttu-id="d8668-148">Alternativně můžete otestovat pomocí ASP.NET Core Identity s vaší aplikací bez trvalé databáze pomocí databáze v paměti.</span><span class="sxs-lookup"><span data-stu-id="d8668-148">Alternately, you can test using ASP.NET Core Identity with your app without a persistent database by using an in-memory database.</span></span> <span data-ttu-id="d8668-149">Chcete-li používat databázi v paměti, přidejte `Microsoft.EntityFrameworkCore.InMemory` balíček do vaší aplikace a upravte volání vaší aplikace `AddDbContext` v `ConfigureServices` následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="d8668-149">To use an in-memory database, add the `Microsoft.EntityFrameworkCore.InMemory` package to your app and modify your app's call to `AddDbContext` in `ConfigureServices` as follows:</span></span>
 
-   ```csharp
-   services.AddDbContext<ApplicationDbContext>(options =>
-       options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
-   ```
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="02fdd-147">Rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="02fdd-147">.NET Core CLI</span></span>](#tab/netcore-cli)
 
-   <span data-ttu-id="d8668-150">Pokud uživatel klikne **zaregistrovat** odkaz, `Register` akce je volána na `AccountController`.</span><span class="sxs-lookup"><span data-stu-id="d8668-150">When the user clicks the **Register** link, the `Register` action is invoked on `AccountController`.</span></span> <span data-ttu-id="d8668-151">`Register` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí):</span><span class="sxs-lookup"><span data-stu-id="d8668-151">The `Register` action creates the user by calling `CreateAsync` on the `_userManager` object (provided to `AccountController` by dependency injection):</span></span>
+<span data-ttu-id="02fdd-148">Pokud jste vytvořili projekt s názvem **WebApp1**, spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="02fdd-148">If you created the project with name **WebApp1**, run the following commands.</span></span> <span data-ttu-id="02fdd-149">Jinak použijte správný obor názvů pro `ApplicationDbContext`:</span><span class="sxs-lookup"><span data-stu-id="02fdd-149">Otherwise, use the correct namespace for the `ApplicationDbContext`:</span></span>
+
+
+```cli
+dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+
+```
+
+<span data-ttu-id="02fdd-150">PowerShell používá jako oddělovač příkazu středník.</span><span class="sxs-lookup"><span data-stu-id="02fdd-150">PowerShell uses semicolon as a command separator.</span></span> <span data-ttu-id="02fdd-151">Při použití prostředí PowerShell, řídicí středníky v seznamu souborů nebo vložit seznam souborů v dvojitých uvozovkách, jak ukazuje předchozí příklad.</span><span class="sxs-lookup"><span data-stu-id="02fdd-151">When using PowerShell, escape the semicolons in the file list or put the file list in double quotes, as the preceding example shows.</span></span>
+
+---
+
+### <a name="examine-register"></a><span data-ttu-id="02fdd-152">Prozkoumejte registru</span><span class="sxs-lookup"><span data-stu-id="02fdd-152">Examine Register</span></span>
+
+::: moniker range=">= aspnetcore-2.1"
+
+   <span data-ttu-id="02fdd-153">Když uživatel klikne **zaregistrovat** odkaz, `RegisterModel.OnPostAsync` vyvolání akce.</span><span class="sxs-lookup"><span data-stu-id="02fdd-153">When a user clicks the **Register** link, the `RegisterModel.OnPostAsync` action is invoked.</span></span> <span data-ttu-id="02fdd-154">Uživatel vytvoří [asynchronně](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) na `_userManager` objektu.</span><span class="sxs-lookup"><span data-stu-id="02fdd-154">The user is created by [CreateAsync](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) on the `_userManager` object.</span></span> <span data-ttu-id="02fdd-155">`_userManager` poskytuje injektáž závislostí):</span><span class="sxs-lookup"><span data-stu-id="02fdd-155">`_userManager` is provided by dependency injection):</span></span>
+
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
+
+   <span data-ttu-id="02fdd-156">Když uživatel klikne **zaregistrovat** odkaz, `Register` akce je volána na `AccountController`.</span><span class="sxs-lookup"><span data-stu-id="02fdd-156">When a user clicks the **Register** link, the `Register` action is invoked on `AccountController`.</span></span> <span data-ttu-id="02fdd-157">`Register` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí):</span><span class="sxs-lookup"><span data-stu-id="02fdd-157">The `Register` action creates the user by calling `CreateAsync` on the `_userManager` object (provided to `AccountController` by dependency injection):</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-   <span data-ttu-id="d8668-152">Pokud byl uživatel vytvořen úspěšně, uživatel je přihlášen voláním `_signInManager.SignInAsync`.</span><span class="sxs-lookup"><span data-stu-id="d8668-152">If the user was created successfully, the user is logged in by the call to `_signInManager.SignInAsync`.</span></span>
+::: moniker-end
 
-   <span data-ttu-id="d8668-153">**Poznámka:** naleznete v tématu [účtu potvrzení](xref:security/authentication/accconfirm#prevent-login-at-registration) kroky, jak zabránit okamžité přihlášení při registraci.</span><span class="sxs-lookup"><span data-stu-id="d8668-153">**Note:** See [account confirmation](xref:security/authentication/accconfirm#prevent-login-at-registration) for steps to prevent immediate login at registration.</span></span>
+   <span data-ttu-id="02fdd-158">Pokud byl uživatel vytvořen úspěšně, uživatel je přihlášen voláním `_signInManager.SignInAsync`.</span><span class="sxs-lookup"><span data-stu-id="02fdd-158">If the user was created successfully, the user is logged in by the call to `_signInManager.SignInAsync`.</span></span>
 
-4. <span data-ttu-id="d8668-154">Přihlásit se.</span><span class="sxs-lookup"><span data-stu-id="d8668-154">Log in.</span></span>
+   <span data-ttu-id="02fdd-159">**Poznámka:** naleznete v tématu [účtu potvrzení](xref:security/authentication/accconfirm#prevent-login-at-registration) kroky, jak zabránit okamžité přihlášení při registraci.</span><span class="sxs-lookup"><span data-stu-id="02fdd-159">**Note:** See [account confirmation](xref:security/authentication/accconfirm#prevent-login-at-registration) for steps to prevent immediate login at registration.</span></span>
 
-   <span data-ttu-id="d8668-155">Uživatelé můžou přihlásit po klepnutí na **přihlášení** odkazu v horní části webu, nebo na přihlašovací stránku, může přejde v případě podobného pokusu získat přístup k součásti lokality, která vyžaduje ověření.</span><span class="sxs-lookup"><span data-stu-id="d8668-155">Users can sign in by clicking the **Log in** link at the top of the site, or they may be navigated to the Login page if they attempt to access a part of the site that requires authorization.</span></span> <span data-ttu-id="d8668-156">Když uživatel odešle formulář na přihlašovací stránku, `AccountController` `Login` akce je volána.</span><span class="sxs-lookup"><span data-stu-id="d8668-156">When the user submits the form on the Login page, the `AccountController` `Login` action is called.</span></span>
+### <a name="log-in"></a><span data-ttu-id="02fdd-160">Přihlásit se</span><span class="sxs-lookup"><span data-stu-id="02fdd-160">Log in</span></span>
 
-   <span data-ttu-id="d8668-157">`Login` Volání akce `PasswordSignInAsync` na `_signInManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí).</span><span class="sxs-lookup"><span data-stu-id="d8668-157">The `Login` action calls `PasswordSignInAsync` on the `_signInManager` object (provided to `AccountController` by dependency injection).</span></span>
+::: moniker range=">= aspnetcore-2.1"
 
-   [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+<span data-ttu-id="02fdd-161">Přihlašovací formulář se zobrazí při:</span><span class="sxs-lookup"><span data-stu-id="02fdd-161">The Login form is displayed when:</span></span>
 
-   <span data-ttu-id="d8668-158">Základní `Controller` třídy zpřístupňuje `User` vlastnost, která se dá dostat z metody kontroleru.</span><span class="sxs-lookup"><span data-stu-id="d8668-158">The base `Controller` class exposes a `User` property that you can access from controller methods.</span></span> <span data-ttu-id="d8668-159">Například můžete zobrazit výčet `User.Claims` a rozhodnutí o autorizaci.</span><span class="sxs-lookup"><span data-stu-id="d8668-159">For instance, you can enumerate `User.Claims` and make authorization decisions.</span></span> <span data-ttu-id="d8668-160">Další informace najdete v tématu [autorizace](xref:security/authorization/index).</span><span class="sxs-lookup"><span data-stu-id="d8668-160">For more information, see [Authorization](xref:security/authorization/index).</span></span>
+* <span data-ttu-id="02fdd-162">**Přihlášení** vybraný odkaz.</span><span class="sxs-lookup"><span data-stu-id="02fdd-162">The **Log in** link  is selected.</span></span>
+* <span data-ttu-id="02fdd-163">Když uživatel přistupuje k stránku, kde nejsou ověřené **nebo** ověřen, bude přesměrován na přihlašovací stránku.</span><span class="sxs-lookup"><span data-stu-id="02fdd-163">When a user accesses a page where they are not authenticated **or** authorized, they are redirected to the Login page.</span></span> 
 
-5. <span data-ttu-id="d8668-161">Odhlaste.</span><span class="sxs-lookup"><span data-stu-id="d8668-161">Log out.</span></span>
+<span data-ttu-id="02fdd-164">Když se odešle formulář na přihlašovací stránku, `OnPostAsync` akce je volána.</span><span class="sxs-lookup"><span data-stu-id="02fdd-164">When the form on the Login page is submitted, the `OnPostAsync` action is called.</span></span> <span data-ttu-id="02fdd-165">`PasswordSignInAsync` je volán na `_signInManager` objektu (postkytovatel: injektáž závislostí).</span><span class="sxs-lookup"><span data-stu-id="02fdd-165">`PasswordSignInAsync` is called on the `_signInManager` object (provided by dependency injection).</span></span>
 
-   <span data-ttu-id="d8668-162">Kliknutím **Odhlásit** propojit volání `LogOut` akce.</span><span class="sxs-lookup"><span data-stu-id="d8668-162">Clicking the **Log out** link calls the `LogOut` action.</span></span>
+   [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Login.cshtml.cs?name=snippet&highlight=10-11)]
+
+   <span data-ttu-id="02fdd-166">Základní `Controller` třídy zpřístupňuje `User` vlastnost, která se dá dostat z metody kontroleru.</span><span class="sxs-lookup"><span data-stu-id="02fdd-166">The base `Controller` class exposes a `User` property that you can access from controller methods.</span></span> <span data-ttu-id="02fdd-167">Například můžete zobrazit výčet `User.Claims` a rozhodnutí o autorizaci.</span><span class="sxs-lookup"><span data-stu-id="02fdd-167">For instance, you can enumerate `User.Claims` and make authorization decisions.</span></span> <span data-ttu-id="02fdd-168">Další informace najdete v tématu [autorizace](xref:security/authorization/index).</span><span class="sxs-lookup"><span data-stu-id="02fdd-168">For more information, see [Authorization](xref:security/authorization/index).</span></span>
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
+
+<span data-ttu-id="02fdd-169">Přihlašovací formulář se zobrazí, když uživatelé vyberou **přihlášení** propojení nebo přesměrováni při přístupu ke stránce, která vyžaduje ověření.</span><span class="sxs-lookup"><span data-stu-id="02fdd-169">The Login form is displayed when users select the **Log in** link or are redirected when accessing a page that requires authentication.</span></span> <span data-ttu-id="02fdd-170">Když uživatel odešle formulář na přihlašovací stránku, `AccountController` `Login` akce je volána.</span><span class="sxs-lookup"><span data-stu-id="02fdd-170">When the user submits the form on the Login page, the `AccountController` `Login` action is called.</span></span>
+
+<span data-ttu-id="02fdd-171">`Login` Volání akce `PasswordSignInAsync` na `_signInManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí).</span><span class="sxs-lookup"><span data-stu-id="02fdd-171">The `Login` action calls `PasswordSignInAsync` on the `_signInManager` object (provided to `AccountController` by dependency injection).</span></span>
+
+[!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+
+<span data-ttu-id="02fdd-172">Základní (`Controller` nebo `PageModel`) třídy zpřístupňuje `User` vlastnost.</span><span class="sxs-lookup"><span data-stu-id="02fdd-172">The base (`Controller` or `PageModel`) class exposes a `User` property.</span></span> <span data-ttu-id="02fdd-173">Například `User.Claims` může být přezkoumána za účelem rozhodnutí o autorizaci.</span><span class="sxs-lookup"><span data-stu-id="02fdd-173">For example, `User.Claims` can be enumerated to make authorization decisions.</span></span>
+
+::: moniker-end
+
+### <a name="log-out"></a><span data-ttu-id="02fdd-174">Odhlásit se</span><span class="sxs-lookup"><span data-stu-id="02fdd-174">Log out</span></span>
+
+::: moniker range=">= aspnetcore-2.1"
+
+<span data-ttu-id="02fdd-175">**Odhlásit** vyvolá tento odkaz `LogoutModel.OnPost` akce.</span><span class="sxs-lookup"><span data-stu-id="02fdd-175">The **Log out** link invokes the `LogoutModel.OnPost` action.</span></span> 
+
+[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Logout.cshtml.cs)]
+
+<span data-ttu-id="02fdd-176">[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) vymaže deklarací identity uživatele uložené v souboru cookie.</span><span class="sxs-lookup"><span data-stu-id="02fdd-176">[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) clears the user's claims stored in a cookie.</span></span> <span data-ttu-id="02fdd-177">Není přesměrování po volání `SignOutAsync` nebo uživatel uvidí **není** odhlásit.</span><span class="sxs-lookup"><span data-stu-id="02fdd-177">Don't redirect after calling `SignOutAsync` or the user will **not** be signed out.</span></span>
+
+<span data-ttu-id="02fdd-178">Příspěvek je zadán v *Pages/Shared/_LoginPartial.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="02fdd-178">Post is specified in the *Pages/Shared/_LoginPartial.cshtml*:</span></span>
+
+[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
+   <span data-ttu-id="02fdd-179">Kliknutím **Odhlásit** propojit volání `LogOut` akce.</span><span class="sxs-lookup"><span data-stu-id="02fdd-179">Clicking the **Log out** link calls the `LogOut` action.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
 
-   <span data-ttu-id="d8668-163">Předchozí kód výše volání `_signInManager.SignOutAsync` metody.</span><span class="sxs-lookup"><span data-stu-id="d8668-163">The preceding code above calls the `_signInManager.SignOutAsync` method.</span></span> <span data-ttu-id="d8668-164">`SignOutAsync` Metoda vymaže deklarací identity uživatele uložené v souboru cookie.</span><span class="sxs-lookup"><span data-stu-id="d8668-164">The `SignOutAsync` method clears the user's claims stored in a cookie.</span></span>
+   <span data-ttu-id="02fdd-180">Předchozí kód volá `_signInManager.SignOutAsync` metody.</span><span class="sxs-lookup"><span data-stu-id="02fdd-180">The preceding code calls the `_signInManager.SignOutAsync` method.</span></span> <span data-ttu-id="02fdd-181">`SignOutAsync` Metoda vymaže deklarací identity uživatele uložené v souboru cookie.</span><span class="sxs-lookup"><span data-stu-id="02fdd-181">The `SignOutAsync` method clears the user's claims stored in a cookie.</span></span>
+::: moniker-end
 
-<a name="pw"></a>
-6. <span data-ttu-id="d8668-165">Konfigurace.</span><span class="sxs-lookup"><span data-stu-id="d8668-165">Configuration.</span></span>
+## <a name="test-identity"></a><span data-ttu-id="02fdd-182">Otestování Identity</span><span class="sxs-lookup"><span data-stu-id="02fdd-182">Test Identity</span></span>
 
-   <span data-ttu-id="d8668-166">Identita má některé výchozí chování, které mohou být přepsána nastaveními v třída při spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="d8668-166">Identity has some default behaviors that can be overridden in the app's startup class.</span></span> <span data-ttu-id="d8668-167">`IdentityOptions` není potřeba konfigurovat při použití výchozí chování.</span><span class="sxs-lookup"><span data-stu-id="d8668-167">`IdentityOptions` don't need to be configured when using the default behaviors.</span></span> <span data-ttu-id="d8668-168">Následující kód nastaví několik možností, jak síly hesla:</span><span class="sxs-lookup"><span data-stu-id="d8668-168">The following code sets several password strength options:</span></span>
+<span data-ttu-id="02fdd-183">Šablony webových projektů výchozí povolit anonymní přístup k domovské stránky.</span><span class="sxs-lookup"><span data-stu-id="02fdd-183">The default web project templates allow anonymous access to the home pages.</span></span> <span data-ttu-id="02fdd-184">K otestování Identity, přidejte [ `[Authorize]` ](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) na stránku o.</span><span class="sxs-lookup"><span data-stu-id="02fdd-184">To test Identity, add [`[Authorize]`](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) to the About page.</span></span>
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="d8668-169">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="d8668-169">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x/)
+[!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/About.cshtml.cs)]
 
-   [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
+<span data-ttu-id="02fdd-185">Pokud jste přihlášeni, odhlaste se. Spusťte aplikaci a vyberte **o** odkaz.</span><span class="sxs-lookup"><span data-stu-id="02fdd-185">If you are signed in, sign out. Run the app and select the **About** link.</span></span> <span data-ttu-id="02fdd-186">Budete přesměrováni na přihlašovací stránku.</span><span class="sxs-lookup"><span data-stu-id="02fdd-186">You are redirected to the login page.</span></span>
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="d8668-170">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="d8668-170">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x/)
+::: moniker range=">= aspnetcore-2.1"
 
-   [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-33)]
+### <a name="explore-identity"></a><span data-ttu-id="02fdd-187">Prozkoumejte službu Identity</span><span class="sxs-lookup"><span data-stu-id="02fdd-187">Explore Identity</span></span>
 
-   ---
+<span data-ttu-id="02fdd-188">Identita prozkoumat podrobněji:</span><span class="sxs-lookup"><span data-stu-id="02fdd-188">To explore Identity in more detail:</span></span>
 
-   <span data-ttu-id="d8668-171">Další informace o tom, jak nakonfigurovat Identity, najdete v části [konfigurace Identity](xref:security/authentication/identity-configuration).</span><span class="sxs-lookup"><span data-stu-id="d8668-171">For more information about how to configure Identity, see [Configure Identity](xref:security/authentication/identity-configuration).</span></span>
+* [<span data-ttu-id="02fdd-189">Vytvoření zdroje plnou identitou uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="02fdd-189">Create full identity UI source</span></span>](xref:security/authentication/scaffold-identity#create-full-identity-ui-source)
+* <span data-ttu-id="02fdd-190">Zkontrolujte příčiny jednotlivé stránky a projít ladicí program.</span><span class="sxs-lookup"><span data-stu-id="02fdd-190">Examine the source of each page and step through the debugger.</span></span>
 
-   <span data-ttu-id="d8668-172">Můžete také konfigurovat datový typ primárního klíče, naleznete v tématu [konfigurace Identity primárních klíčů datový typ](xref:security/authentication/identity-primary-key-configuration).</span><span class="sxs-lookup"><span data-stu-id="d8668-172">You also can configure the data type of the primary key, see [Configure Identity primary keys data type](xref:security/authentication/identity-primary-key-configuration).</span></span>
+::: moniker-end
 
-7. <span data-ttu-id="d8668-173">Zobrazí se databáze.</span><span class="sxs-lookup"><span data-stu-id="d8668-173">View the database.</span></span>
+## <a name="identity-components"></a><span data-ttu-id="02fdd-191">Komponenty identit</span><span class="sxs-lookup"><span data-stu-id="02fdd-191">Identity Components</span></span>
 
-   <span data-ttu-id="d8668-174">Pokud vaše aplikace používá databázi serveru SQL Server (výchozí nastavení na Windows a pro uživatele sady Visual Studio), můžete zobrazit aplikace vytvořená databáze.</span><span class="sxs-lookup"><span data-stu-id="d8668-174">If your app is using a SQL Server database (the default on Windows and for Visual Studio users), you can view the database the app created.</span></span> <span data-ttu-id="d8668-175">Můžete použít **SQL Server Management Studio**.</span><span class="sxs-lookup"><span data-stu-id="d8668-175">You can use **SQL Server Management Studio**.</span></span> <span data-ttu-id="d8668-176">Můžete také z aplikace Visual Studio vyberte **zobrazení** > **Průzkumník objektů systému SQL Server**.</span><span class="sxs-lookup"><span data-stu-id="d8668-176">Alternatively, from Visual Studio, select **View** > **SQL Server Object Explorer**.</span></span> <span data-ttu-id="d8668-177">Připojte se k **(localdb) \MSSQLLocalDB**.</span><span class="sxs-lookup"><span data-stu-id="d8668-177">Connect to **(localdb)\MSSQLLocalDB**.</span></span> <span data-ttu-id="d8668-178">Databáze s názvem odpovídajícím `aspnet-<name of your project>-<guid>` se zobrazí.</span><span class="sxs-lookup"><span data-stu-id="d8668-178">The database with a name matching `aspnet-<name of your project>-<guid>` is displayed.</span></span>
+::: moniker range=">= aspnetcore-2.1"
 
-   ![Kontextové nabídky v tabulce databáze AspNetUsers](identity/_static/04-db.png)
+<span data-ttu-id="02fdd-192">Všechny Identity závislé balíčky NuGet jsou součástí [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app).</span><span class="sxs-lookup"><span data-stu-id="02fdd-192">All the Identity dependent NuGet packages are included in the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).</span></span>
+::: moniker-end
 
-   <span data-ttu-id="d8668-180">Rozbalte databázi a její **tabulky**, klepněte pravým tlačítkem myši **dbo. AspNetUsers** tabulce a vybrat **Data zobrazení**.</span><span class="sxs-lookup"><span data-stu-id="d8668-180">Expand the database and its **Tables**, then right-click the **dbo.AspNetUsers** table and select **View Data**.</span></span>
+<span data-ttu-id="02fdd-193">Primární balíček pro identitu [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/).</span><span class="sxs-lookup"><span data-stu-id="02fdd-193">The primary package for Identity is [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/).</span></span> <span data-ttu-id="02fdd-194">Tento balíček obsahuje základní sadu rozhraní pro ASP.NET Core Identity a je součástí `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.</span><span class="sxs-lookup"><span data-stu-id="02fdd-194">This package contains the core set of interfaces for ASP.NET Core Identity, and is included by `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.</span></span>
 
-8. <span data-ttu-id="d8668-181">Zkontrolujte, jestli funguje Identity</span><span class="sxs-lookup"><span data-stu-id="d8668-181">Verify Identity works</span></span>
+## <a name="migrating-to-aspnet-core-identity"></a><span data-ttu-id="02fdd-195">Migrace do ASP.NET Core Identity</span><span class="sxs-lookup"><span data-stu-id="02fdd-195">Migrating to ASP.NET Core Identity</span></span>
 
-    <span data-ttu-id="d8668-182">Výchozí hodnota *webové aplikace ASP.NET Core* šablona projektu umožňuje uživatelům přístup k žádné akci v aplikaci bez nutnosti přihlášení.</span><span class="sxs-lookup"><span data-stu-id="d8668-182">The default *ASP.NET Core Web Application* project template allows users to access any action in the application without having to login.</span></span> <span data-ttu-id="d8668-183">Chcete-li ověřit, jestli ASP.NET Identity funguje, přidejte`[Authorize]` atribut `About` akce `Home` Kontroleru.</span><span class="sxs-lookup"><span data-stu-id="d8668-183">To verify that ASP.NET Identity works, add an`[Authorize]` attribute to the `About` action of the `Home` Controller.</span></span>
+<span data-ttu-id="02fdd-196">Další informace a pokyny k migraci vaší existující úložiště identit najdete v tématu [migrovat ověřování a identita](xref:migration/identity).</span><span class="sxs-lookup"><span data-stu-id="02fdd-196">For more information and guidance on migrating your existing Identity store, see [Migrate Authentication and Identity](xref:migration/identity).</span></span>
 
-    ```csharp
-    [Authorize]
-    public IActionResult About()
-    {
-        ViewData["Message"] = "Your application description page.";
-        return View();
-    }
-    ```
+## <a name="setting-password-strength"></a><span data-ttu-id="02fdd-197">Nastavení síly hesla</span><span class="sxs-lookup"><span data-stu-id="02fdd-197">Setting password strength</span></span>
 
-    # <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="d8668-184">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d8668-184">Visual Studio</span></span>](#tab/visual-studio)
+<span data-ttu-id="02fdd-198">Zobrazit [konfigurace](#pw) ukázku, která nastavuje minimální požadavky.</span><span class="sxs-lookup"><span data-stu-id="02fdd-198">See [Configuration](#pw) for a sample that sets the minimum password requirements.</span></span>
 
-    <span data-ttu-id="d8668-185">Spustit projekt pomocí **Ctrl** + **F5** a přejděte **o** stránky.</span><span class="sxs-lookup"><span data-stu-id="d8668-185">Run the project using **Ctrl** + **F5** and navigate to the **About** page.</span></span> <span data-ttu-id="d8668-186">Může používat jenom ověření uživatelé **o** stránky teď ASP.NET vás přesměruje na přihlašovací stránku a přihlásit nebo zaregistrovat.</span><span class="sxs-lookup"><span data-stu-id="d8668-186">Only authenticated users may access the **About** page now, so ASP.NET redirects you to the login page to login or register.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="02fdd-199">Další kroky</span><span class="sxs-lookup"><span data-stu-id="02fdd-199">Next Steps</span></span>
 
-    # <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="d8668-187">Rozhraní příkazového řádku .NET Core</span><span class="sxs-lookup"><span data-stu-id="d8668-187">.NET Core CLI</span></span>](#tab/netcore-cli)
-
-    <span data-ttu-id="d8668-188">Otevřete okno příkazového řádku a přejděte do kořenového adresáře projektu adresáře, který obsahuje `.csproj` souboru.</span><span class="sxs-lookup"><span data-stu-id="d8668-188">Open a command window and navigate to the project's root directory containing the `.csproj` file.</span></span> <span data-ttu-id="d8668-189">Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz ke spuštění aplikace:</span><span class="sxs-lookup"><span data-stu-id="d8668-189">Run the [dotnet run](/dotnet/core/tools/dotnet-run) command to run the app:</span></span>
-
-    ```csharp
-    dotnet run 
-    ```
-
-    <span data-ttu-id="d8668-190">Adresa URL zadaná ve výstupu vyhledejte [dotnet spustit](/dotnet/core/tools/dotnet-run) příkazu.</span><span class="sxs-lookup"><span data-stu-id="d8668-190">Browse the URL specified in the output from the [dotnet run](/dotnet/core/tools/dotnet-run) command.</span></span> <span data-ttu-id="d8668-191">Adresa URL by měly odkazovat na `localhost` s vygenerované číslo portu.</span><span class="sxs-lookup"><span data-stu-id="d8668-191">The URL should point to `localhost` with a generated port number.</span></span> <span data-ttu-id="d8668-192">Přejděte **o** stránky.</span><span class="sxs-lookup"><span data-stu-id="d8668-192">Navigate to the **About** page.</span></span> <span data-ttu-id="d8668-193">Může používat jenom ověření uživatelé **o** stránky teď ASP.NET vás přesměruje na přihlašovací stránku a přihlásit nebo zaregistrovat.</span><span class="sxs-lookup"><span data-stu-id="d8668-193">Only authenticated users may access the **About** page now, so ASP.NET redirects you to the login page to login or register.</span></span>
-
-    ---
-
-## <a name="identity-components"></a><span data-ttu-id="d8668-194">Komponenty identit</span><span class="sxs-lookup"><span data-stu-id="d8668-194">Identity Components</span></span>
-
-<span data-ttu-id="d8668-195">Primární referenční sestavení pro systém identit je `Microsoft.AspNetCore.Identity`.</span><span class="sxs-lookup"><span data-stu-id="d8668-195">The primary reference assembly for the Identity system is `Microsoft.AspNetCore.Identity`.</span></span> <span data-ttu-id="d8668-196">Tento balíček obsahuje základní sadu rozhraní pro ASP.NET Core Identity a je součástí `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.</span><span class="sxs-lookup"><span data-stu-id="d8668-196">This package contains the core set of interfaces for ASP.NET Core Identity, and is included by `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.</span></span>
-
-<span data-ttu-id="d8668-197">Tyto závislosti jsou potřeba pro použití systému identit v aplikacích ASP.NET Core:</span><span class="sxs-lookup"><span data-stu-id="d8668-197">These dependencies are needed to use the Identity system in ASP.NET Core applications:</span></span>
-
-* <span data-ttu-id="d8668-198">`Microsoft.AspNetCore.Identity.EntityFrameworkCore` -Obsahuje požadované typy pro použití s Entity Framework Core Identity.</span><span class="sxs-lookup"><span data-stu-id="d8668-198">`Microsoft.AspNetCore.Identity.EntityFrameworkCore` - Contains the required types to use Identity with Entity Framework Core.</span></span>
-
-* <span data-ttu-id="d8668-199">`Microsoft.EntityFrameworkCore.SqlServer` -Entity Framework Core je technologie přístup doporučené dat společnosti Microsoft pro relační databáze jako SQL Server.</span><span class="sxs-lookup"><span data-stu-id="d8668-199">`Microsoft.EntityFrameworkCore.SqlServer` - Entity Framework Core is Microsoft's recommended data access technology for relational databases like SQL Server.</span></span> <span data-ttu-id="d8668-200">Pro účely testování můžete použít `Microsoft.EntityFrameworkCore.InMemory`.</span><span class="sxs-lookup"><span data-stu-id="d8668-200">For testing, you can use `Microsoft.EntityFrameworkCore.InMemory`.</span></span>
-
-* <span data-ttu-id="d8668-201">`Microsoft.AspNetCore.Authentication.Cookies` -Middlewaru, který umožňuje aplikaci používat na základě souboru cookie ověřování.</span><span class="sxs-lookup"><span data-stu-id="d8668-201">`Microsoft.AspNetCore.Authentication.Cookies` - Middleware that enables an app to use cookie-based authentication.</span></span>
-
-## <a name="migrating-to-aspnet-core-identity"></a><span data-ttu-id="d8668-202">Migrace do ASP.NET Core Identity</span><span class="sxs-lookup"><span data-stu-id="d8668-202">Migrating to ASP.NET Core Identity</span></span>
-
-<span data-ttu-id="d8668-203">Pro další informace a pokyny k migraci svou existující identitu úložiště najdete v tématu [migrovat ověřování a identita](xref:migration/identity).</span><span class="sxs-lookup"><span data-stu-id="d8668-203">For additional information and guidance on migrating your existing Identity store see [Migrate Authentication and Identity](xref:migration/identity).</span></span>
-
-## <a name="setting-password-strength"></a><span data-ttu-id="d8668-204">Nastavení síly hesla</span><span class="sxs-lookup"><span data-stu-id="d8668-204">Setting password strength</span></span>
-
-<span data-ttu-id="d8668-205">Zobrazit [konfigurace](#pw) ukázku, která nastavuje minimální požadavky.</span><span class="sxs-lookup"><span data-stu-id="d8668-205">See [Configuration](#pw) for a sample that sets the minimum password requirements.</span></span>
-
-## <a name="next-steps"></a><span data-ttu-id="d8668-206">Další kroky</span><span class="sxs-lookup"><span data-stu-id="d8668-206">Next Steps</span></span>
-
+* [<span data-ttu-id="02fdd-200">Konfigurace systému Identity</span><span class="sxs-lookup"><span data-stu-id="02fdd-200">Configure Identity</span></span>](xref:security/authentication/identity-configuration)
+* <xref:security/authorization/secure-data>
+* <xref:security/authentication/add-user-data>
+* <xref:security/authentication/identity-enable-qrcodes>
+* <span data-ttu-id="02fdd-201">[Konfigurace Identity primárních klíčů datový typ](xref:security/authentication/identity-primary-key-configuration).</span><span class="sxs-lookup"><span data-stu-id="02fdd-201">[Configure Identity primary keys data type](xref:security/authentication/identity-primary-key-configuration).</span></span>
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>
-* <xref:security/authentication/social/index>
 * <xref:host-and-deploy/web-farm>

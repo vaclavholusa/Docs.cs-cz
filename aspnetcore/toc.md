@@ -35,7 +35,7 @@
 ## [Vytváření webových rozhraní API](xref:web-api/index)
 ### [Vytvoření webového rozhraní API v sadě Visual Studio Code](xref:tutorials/web-api-vsc)
 ### [Vytvoření webového rozhraní API v sadě Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
-### [Vytvoření webového rozhraní API v sadě Visual Studio pro Windows](xref:tutorials/first-web-api)
+### [Vytvoření webového rozhraní API v sadě Visual Studio](xref:tutorials/first-web-api)
 ### [Vytváření back-endových služeb pro nativní mobilní aplikace](xref:mobile/native-mobile-backend)
 ### [Stránky nápovědy používající Swagger](xref:tutorials/web-api-help-pages-using-swagger)
 #### [Začínáme se službou NSwag](xref:tutorials/get-started-with-nswag)
@@ -218,7 +218,7 @@
 ## [Ladění snímků v sadě Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
 ## [Řešení potíží](xref:test/troubleshoot)
 
-# [Přístup k datům pomocí EF Core a Azure](data/index.md)
+# [Přístup k datům pomocí EF Core](xref:data/index)
 ## [Začínáme s Razor Pages a EF Core pomocí sady Visual Studio](xref:data/ef-rp/intro)
 ## [Začínáme s ASP.NET Core a EF Core pomocí sady Visual Studio](data/ef-mvc/index.md)
 ## [ASP.NET Core s EF Core – nová databáze](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
@@ -229,6 +229,15 @@
 ### [Začínáme s úložištěm objektů blob a připojenými službami sady Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 ### [Začínáme se službou Queue Storage a připojenými službami sady Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
 ### [Začínáme se službou Table Storage a připojenými službami sady Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+
+# [Doprovodné materiály k Azure](xref:azure/index)
+## DevOps s využitím ASP.NET Core a Azure
+### [Úvod](xref:azure/devops/index)
+### [Nástroje a soubory ke stažení](xref:azure/devops/tools-and-downloads)
+### [Nasazení do App Service](xref:azure/devops/deploy-to-app-service)
+### [Průběžná integrace a nasazování](xref:azure/devops/cicd)
+### [Monitorování a odstraňování potíží](xref:azure/devops/monitor)
+### [Další postup](xref:azure/devops/next-steps)
 
 # [Vývoj klientské strany](xref:client-side/index)
 ## [Použití nástroje Gulp](xref:client-side/using-gulp)

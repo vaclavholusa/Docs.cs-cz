@@ -6,7 +6,12 @@ Předcházející kód definuje třídu kontroleru rozhraní API bez metody. V n
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Controllers/TodoController2.cs?name=snippet_todo1)]
 
-Předcházející kód definuje třídu kontroleru rozhraní API bez metody. V následujících částech jsou přidány metody k implementaci rozhraní API. Třída je opatřen poznámkou `[ApiController]` atribut pro povolení některé vhodné funkce. Informace o funkcích, které jsou povolené v atributu naleznete v tématu [opatřit poznámkami třída s atributem ApiControllerAttribute](xref:web-api/index#annotate-class-with-apicontrollerattribute).
+Předchozí kód:
+
+* Definuje třídu kontroleru rozhraní API bez metody.
+* Vytvoří nový úkol položky, když `TodoItems` je prázdný. Není možné odstranit všechny položky Todo protože konstruktoru vytvoří novou jeden if `TodoItems` je prázdný.
+
+V následujících částech jsou přidány metody k implementaci rozhraní API. Třída je opatřen poznámkou `[ApiController]` atribut pro povolení některé vhodné funkce. Informace o funkcích, které jsou povolené v atributu naleznete v tématu [opatřit poznámkami třída s atributem ApiControllerAttribute](xref:web-api/index#annotate-class-with-apicontrollerattribute).
 ::: moniker-end
 
 Kontroleru konstruktor používá [injektáž závislostí](xref:fundamentals/dependency-injection) vkládat kontext databáze (`TodoContext`) do kontroleru. Kontext databáze se používá ve všech [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) metody v kontroleru. Konstruktor přidá položku do databáze v paměti, pokud neexistuje.

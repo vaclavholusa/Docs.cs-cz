@@ -6,7 +6,7 @@ V této části přidáte logiku ověřování k `Movie` model a zajistíte, že
 
 ## <a name="keeping-things-dry"></a>Udržování věci zkušební
 
-Jedním z principů návrhu MVC je [suchého](https://wikipedia.org/wiki/Don%27t_repeat_yourself) ("není opakujte sami"). ASP.NET MVC umožňuje zadat funkci nebo chování pouze jednou a pak jste ji všude, kde se projeví v aplikaci. To snižuje množství kódu, které potřebujete k zápisu a provede kód, který napíšete méně chyby náchylné k chybám, usnadňuje testování a jednodušší správu.
+Jedním z principů návrhu MVC je [suchého](https://wikipedia.org/wiki/Don%27t_repeat_yourself) ("není opakujte sami"). ASP.NET Core MVC umožňuje zadat funkci nebo chování pouze jednou a pak jste ji všude, kde se projeví v aplikaci. To snižuje množství kódu, které potřebujete k zápisu a provede kód, který napíšete méně chyby náchylné k chybám, usnadňuje testování a jednodušší správu.
 
 Podpora ověřování poskytované MVC a Entity Framework Core Code First je dobrým příkladem zásada SUCHÝCH v akci. Ověřovací pravidla můžete zadat pomocí deklarace na jednom místě (ve třídě modelu) a pravidel se vynucují kdekoli v aplikaci.
 
@@ -25,7 +25,7 @@ Aktualizace `Movie` třídy, které chcete využít výhod integrovaného `Requi
 
 Ověření atributy určují chování, které chcete vynutit na vlastnosti projektu, které se použijí. `Required` a `MinimumLength` atributy znamená, že vlastnost musí mít hodnotu, ale nic zabraňuje uživateli v zadávání prázdnými znaky až splňovat toto ověření. `RegularExpression` Atribut se používá k omezení znaků, může být vstupní. Ve výše uvedeném kódu `Genre` a `Rating` musí používat jen písmena (první písmeno velké písmeno, bílý prostor, číslice a speciální znaky nejsou povoleny). `Range` Atribut omezuje hodnotu do zadaného rozsahu. `StringLength` Atribut umožňuje nastavit maximální délka vlastnosti typu string a volitelně jeho minimální délka. Typy hodnot (například `decimal`, `int`, `float`, `DateTime`) jsou ze své podstaty povinné a nemusíte `[Required]` atribut.
 
-Ověřovací pravidla s automaticky vynucuje ASP.NET umožňuje vytvořit robustnější aplikace. Také zajistí, že nelze zapomenete něco ověření a neúmyslně nechat chybná data do databáze.
+Ověřovací pravidla automaticky vynucuje sada ASP.NET Core s pomáhá vytvářet aplikace pro více robustní. Také zajistí, že nelze zapomenete něco ověření a neúmyslně nechat chybná data do databáze.
 
 ## <a name="validation-error-ui-in-mvc"></a>Chyba ověření uživatelského rozhraní v aplikaci MVC
 

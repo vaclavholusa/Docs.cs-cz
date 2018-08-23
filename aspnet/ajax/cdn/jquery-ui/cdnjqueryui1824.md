@@ -3,17 +3,17 @@ uid: ajax/cdn/jquery-ui/cdnjqueryui1824
 title: uživatelské rozhraní jQuery 1.8.24 ve službě Microsoft Ajax CDN | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/23/2014
 ms.assetid: 1d3b5e8c-5600-43cd-aa54-7aabdff535fa
 msc.legacyurl: /ajax/cdn/jquery-ui/cdnjqueryui1824
 msc.type: content
-ms.openlocfilehash: 54359ada0f9d135198ccea8d73f797248ee94370
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 69133f0aa9091f9e24264d61bf2731731d55fec6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813783"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752247"
 ---
 <a name="jquery-ui-1824-on-the-microsoft-ajax-cdn"></a>uživatelské rozhraní jQuery 1.8.24 ve službě Microsoft Ajax CDN
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-d
 title: 'Iterace #6 – použití vývoje řízeného (VB) | Dokumentace Microsoftu'
 author: microsoft
 description: V této iterace šestého přidáme nové funkce do naší aplikace tak, že nejprve zápis testů jednotek a psaní kódu pro testování částí. V této iterace...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: e1fd226f-3f8e-4575-a179-5c75b240333d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5108e427025f42424c2dc6b657806544f9f8eeaa
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 7b1700e0ccece543c381dbb4fa7d6243de57ed4d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396111"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755444"
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a>Iterace #6 – použití vývoje řízeného (VB)
 ====================

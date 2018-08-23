@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/introduction/getting-started
 title: Začínáme s ASP.NET MVC 5 | Dokumentace Microsoftu
 author: Rick-Anderson
 description: 'Poznámka: Aktualizovanou verzi tohoto kurzu je k dispozici zde pomocí sady Visual Studio 2015. Nové kurzu se používá technologie ASP.NET Core MVC 6, které poskytuje mnoho improvem...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: f3d8adbe-55e7-4fd4-84a8-7155bc45c676
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 85d5d3292ff99ade6995c710e2728c41255def4c
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 8417be945e16ed99e655f628134c9190429f1d67
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38211745"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755083"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>Začínáme s ASP.NET MVC 5
 ====================

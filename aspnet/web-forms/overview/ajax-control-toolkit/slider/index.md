@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/slider/index
 title: Posuvník | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz ukazuje, jak použít k zobrazení grafického jezdce, které uživatelé můžou řídit pomocí myši v ovládacím prvku posuvník.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: fd7812d1-55d7-4e4a-96c8-1614b375db56
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider
 msc.type: chapter
-ms.openlocfilehash: b59c45b70272b389484d0562b5694115b04269ab
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a73631fc1e5345e8705b6eb69e0241d44e298af7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808386"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752236"
 ---
 <a name="slider"></a>Posuvník
 ====================

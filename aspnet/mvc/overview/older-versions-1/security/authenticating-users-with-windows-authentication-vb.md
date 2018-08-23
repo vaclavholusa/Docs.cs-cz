@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-au
 title: Ověřování uživatelů pomocí ověřování Windows (VB) | Dokumentace Microsoftu
 author: microsoft
 description: Zjistěte, jak používat ověřování Windows v rámci aplikace MVC. Zjistíte, jak povolit ověřování Windows v rámci co webové aplikace...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 532fa051-7d5c-4d6d-87f6-339ce4b84c44
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c3c7f7bfc15483451ede5382bf3fc02db47dea0e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e37508dedd4243dd1a1638e68760f6f4310e61a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811685"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754835"
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>Ověřování uživatelů pomocí ověřování Windows (VB)
 ====================

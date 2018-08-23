@@ -3,17 +3,17 @@ uid: signalr/overview/security/hub-authorization
 title: Ověřování a autorizace Center SignalR | Dokumentace Microsoftu
 author: pfletcher
 description: Toto téma popisuje, jak omezit, kteří uživatelé nebo rolí se dostanete metod rozbočovače. Verze softwaru použitým v tomto tématu ve Visual Studio 2013 .NET 4.5 SignalR...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/05/2015
 ms.assetid: a610c796-c131-473c-baef-2e6c568cb2a2
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 6f69ffc31f048c8a962547da37f65b63e2193f5a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 21946b9fa0406de79af7b83809869d90e6e8234e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819033"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752245"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>Ověřování a autorizace Center SignalR
 ====================

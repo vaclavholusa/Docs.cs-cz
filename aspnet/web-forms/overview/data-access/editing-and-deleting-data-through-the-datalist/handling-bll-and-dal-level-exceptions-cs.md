@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datali
 title: Zpracování výjimek na úrovni knihoven BLL a DAL (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu se podíváme tactfully zpracování výjimky vyvolána během pracovního postupu aktualizace upravitelné DataList.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: f8fd58e2-f932-4f08-ab3d-fbf8ff3295d2
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f83293f7b8482c2a24c3d825e271582edaadec59
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ebaca5ea34fabe3fcd4979eab2e3f684e8e221be
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812077"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754629"
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>Zpracování výjimek na úrovni knihoven BLL a DAL (C#)
 ====================

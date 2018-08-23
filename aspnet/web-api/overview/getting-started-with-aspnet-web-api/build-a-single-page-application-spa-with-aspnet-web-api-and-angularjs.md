@@ -3,17 +3,17 @@ uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-ap
 title: 'Praktické cvičení: Sestavení jednostránkové aplikaci (SPA) pomocí webového rozhraní API ASP.NET a Angular.js | Dokumentace Microsoftu'
 author: rick-anderson
 description: Tradiční webových aplikací inicializuje klienta (prohlížeč) komunikaci se serverem můžete si vyžádat stránku. Server zpracuje požadavek...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 8e9cc082d982aec0a4385a3cefecd118c937e641
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 24ab1c470a22b5b328d1f3bc400400978eb31600
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811517"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755093"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Praktické cvičení: Sestavení jednostránkové aplikaci (SPA) pomocí webového rozhraní API ASP.NET a Angular.js
 ====================

@@ -3,17 +3,17 @@ uid: whitepapers/aspnet-and-iis6
 title: Spuštění ASP.NET 1.1 se službou IIS 6.0 | Dokumentace Microsoftu
 author: rick-anderson
 description: Sice systému Windows Server 2003, zahrnuje službu IIS 6.0 a ASP.NET 1.1, jsou ve výchozím nastavení zakázané tyto komponenty. Tento dokument White Paper popisuje, jak povolit služby IIS 6.0...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: 5a5537bf-2aaa-49e7-839f-9e6522b829d8
 msc.legacyurl: /whitepapers/aspnet-and-iis6
 msc.type: content
-ms.openlocfilehash: 338059104f46a6c5517212db6e1a54c12677e133
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 38cd0abc1e9133b9b86cff6dd2759ce98ac5a115
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839291"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752050"
 ---
 <a name="running-aspnet-11-with-iis-60"></a>Spuštění ASP.NET 1.1 se službou IIS 6.0
 ====================

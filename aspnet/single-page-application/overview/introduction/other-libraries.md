@@ -1,19 +1,19 @@
 ---
 uid: single-page-application/overview/introduction/other-libraries
-title: Znáte jiné knihovny než Knockout? | Dokumentace Microsoftu
+title: Znáte jiné knihovny než Knockout? | Dokumenty Microsoft
 author: madskristensen
 description: Znáte jiné knihovny než Knockout?
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/05/2013
 ms.assetid: a8367c6d-ef94-4dff-a010-5eff9e6eea96
 msc.legacyurl: /single-page-application/overview/introduction/other-libraries
 msc.type: authoredcontent
-ms.openlocfilehash: 69006df6a5de3290ac294a309756eb0a53baa975
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 53c97580b45bb40a6c3256c8038ec5c8b861b69f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834591"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754568"
 ---
 <a name="know-a-library-other-than-knockout"></a>Znáte jiné knihovny než Knockout?
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-s
 title: Použití hodnot řetězce dotazu k filtrování dat pomocí vazby modelu a webových formulářů | Dokumentace Microsoftu
 author: tfitzmac
 description: V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Data interakce díky vazby modelu další přímo-...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: b4615d004a32d00b91635bc321a2d4ea792fddbe
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fc4ec64cf583f25eca6795f7ff9215f025170054
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837260"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756933"
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>Použití hodnot řetězce dotazu pro filtrování dat pomocí vazby modelu a webové formuláře
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: Základní rozdíly mezi službou IIS a serveru ASP.NET Development Server (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Při testování aplikace ASP.NET místně, je pravděpodobné, že používáte webový Server ASP.NET Development. Provozním webu je však pravděpodobně pow...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 090e9205-52f3-4d72-ae31-44775b8b8421
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 586bc45a44e773c3097de0959411a2d27098459a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: aa20def6568d44b589099af6ecf829789fb06231
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821087"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753327"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>Hlavní rozdíly mezi službou IIS a serveru ASP.NET Development Server (VB)
 ====================

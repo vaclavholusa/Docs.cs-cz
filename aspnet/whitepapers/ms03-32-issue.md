@@ -3,17 +3,17 @@ uid: whitepapers/ms03-32-issue
 title: Oprava chyby "Serverová aplikace není k dispozici" po použití aktualizace zabezpečení pro IE | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento dokument popisuje opravu, která řeší problém s MS03 32 aktualizace zabezpečení pro Internet Explorer, který má vliv na aplikace ASP.NET 1.0 běžící na Wi...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: 1a289379229335a9841dec48e577c19173419891
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ce2d705a93577b0c6d28f86069873c6ecd891db6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836720"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755297"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>Oprava chyby "Serverová aplikace není k dispozici" po použití aktualizace zabezpečení pro IE
 ====================

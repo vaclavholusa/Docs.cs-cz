@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-acce
 title: ASP.NET MVC 4 – modely a přístup k datům | Dokumentace Microsoftu
 author: rick-anderson
 description: 'Poznámka: Tento praktického testovacího prostředí se předpokládá, že máte základní znalosti ASP.NET MVC. Pokud jste ještě nepoužívali ASP.NET MVC před, doporučujeme si projít ASP.NET MVC 4...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: bbb726f9f4abb2f9c72153a8c7986c5c83a9a840
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 26896e6ee3c02e8f939296ecbfb8b7d500940765
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818369"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756716"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 – modely a přístup k datům
 

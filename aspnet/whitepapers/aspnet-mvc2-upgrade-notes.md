@@ -3,17 +3,17 @@ uid: whitepapers/aspnet-mvc2-upgrade-notes
 title: Upgrade aplikace ASP.NET MVC 1,0 do architektury ASP.NET MVC 2 | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento dokument popisuje, jak tom, jak upgradovat ručně a pomocí Průvodce aplikace ASP.NET MVC 1,0 ASP.NET MVC 2. Tento dokument je také k dispozici pro d...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/08/2010
 ms.assetid: f1a01759-d251-4b09-8835-e112e336c6dd
 msc.legacyurl: /whitepapers/aspnet-mvc2-upgrade-notes
 msc.type: content
-ms.openlocfilehash: fe1696cd8f98f2ff253d385b62a6bcd74b536d33
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3de69df7e80037de35c2609232f4574bc9d03c80
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823868"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756407"
 ---
 <a name="upgrading-an-aspnet-mvc-10-application-to-aspnet-mvc-2"></a>Upgrade aplikace ASP.NET MVC 1,0 do architektury ASP.NET MVC 2
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/basic-reporting/displaying-data-with-the-obj
 title: Zobrazení dat ovládacím prvkem ObjectDataSource (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz se zabývá ovládacího prvku ObjectDataSource pomocí tohoto ovládacího prvku lze svázat data načtená z knihoven BLL vytvořili v předchozím kurzu bez havi...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: d62c3a63-0940-4019-874e-4a4047df0c1c
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 759403bf175cfb2d44cc53ab497c55c354733f15
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f49cbf19b090917c170b025c269f825cf486c31a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832721"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753071"
 ---
 <a name="displaying-data-with-the-objectdatasource-vb"></a>Zobrazení dat ovládacím prvkem ObjectDataSource (VB)
 ====================

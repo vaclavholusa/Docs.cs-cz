@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspn
 title: Přístup k databázi přímo ze stránky ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
 description: Tyto kurzy vám ukážou, jak pomocí ovládacím prvkem SqlDataSource databázi dotazovat přímo, pokud není zapotřebí striktní oddělení prezentace a data...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 134a202f-4eef-41fc-8e91-70efba338389
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page
 msc.type: chapter
-ms.openlocfilehash: 9c95edcebc69d7bf37d7dd320807337d714e3fff
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6836b02937ebdf3110390260633317e2d3fef43a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834563"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752859"
 ---
 <a name="accessing-the-database-directly-from-an-aspnet-page"></a>Přístup k databázi přímo ze stránky ASP.NET
 ====================

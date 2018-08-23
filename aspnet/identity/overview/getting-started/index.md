@@ -3,17 +3,17 @@ uid: identity/overview/getting-started/index
 title: Začínáme s ASP.NET Identity | Dokumentace Microsoftu
 author: rick-anderson
 description: ASP.NET Identity systém je navržený tak, chcete-li nahradit předchozí systémy členství technologie ASP.NET a jednoduché členství. Zahrnuje podporu profilu, integraci OAuth...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/02/2013
 ms.assetid: 72bb0051-a696-437e-a4e6-ca1225a6e271
 msc.legacyurl: /identity/overview/getting-started
 msc.type: chapter
-ms.openlocfilehash: d6e2a1cbcffee8eb5b14ab5a60dc14f8c7e56973
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5e124c3ae59cabcdb90872bbf5470964aed148c8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813175"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752235"
 ---
 <a name="getting-started-with-aspnet-identity"></a>Začínáme s ASP.NET Identity
 ====================

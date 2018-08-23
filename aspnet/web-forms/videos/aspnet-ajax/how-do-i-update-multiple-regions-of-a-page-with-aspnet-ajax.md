@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax
-title: '[Postup:] Aktualizace více oblastí stránky pomocí ASP.NET AJAX? | Dokumentace Microsoftu'
+title: '[Postup:] Aktualizace více oblastí stránky pomocí ASP.NET AJAX? | Dokumenty Microsoft'
 author: scottgolightly
 description: V tomto videu jsme dozvíte, že ovládací prvek UpdatePanel technologie ASP.NET AJAX obsahuje dvě vlastnosti, které můžete použít k aktualizaci více oblastí v respons webovou stránku...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/09/2007
 ms.assetid: 7572654d-6fa2-4ea3-a43b-56a8578af0f6
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 8ee08c07999f59153a6757faa24803bdabf420f3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 87bb74ed2f6301cafc6abe3bfa75fbf3884dd651
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820681"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756427"
 ---
 <a name="how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax"></a>[Postup:] Aktualizace více oblastí stránky pomocí ASP.NET AJAX?
 ====================

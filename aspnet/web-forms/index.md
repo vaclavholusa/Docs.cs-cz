@@ -3,17 +3,17 @@ uid: web-forms/index
 title: Webové formuláře ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
 description: Stáhněte si Visual Web Developer Express a zjistěte, jak rychle vytvářet webové aplikace pomocí snadno pochopitelné ovládacích prvků ve webových formulářů ASP.NET, ve vizuálním návrhem environ...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/08/2011
 ms.assetid: 7e4ce5d2-ab22-44f0-9825-c12eed7b8fcb
 msc.legacyurl: /web-forms
 msc.type: categoryindex
-ms.openlocfilehash: 8d87f569908d5a376cfdca90d475723dc50f5a2d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 88c12f74c3fa086a90b9999d6a4887be106c1e98
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834194"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756067"
 ---
 <a name="aspnet-web-forms"></a>ASP.NET – webové formuláře
 ====================

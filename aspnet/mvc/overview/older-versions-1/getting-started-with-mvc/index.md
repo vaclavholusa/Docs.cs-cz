@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/getting-started-with-mvc/index
 title: Začínáme s MVC | Dokumentace Microsoftu
 author: rick-anderson
 description: Toto je série kurzů Začátečník, který představuje rozhraní ASP.NET MVC. Vytvořte jednoduchou webovou aplikaci, která čte a zapisuje z databáze.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/08/2011
 ms.assetid: 057f01bf-0ad9-488a-ae75-c8f85b8e1f23
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc
 msc.type: chapter
-ms.openlocfilehash: 4c6da3646a71ebbe42c59f6c90cb0beb48e87a4a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 22e344b0667ac596bea75884df6aadd8e6a5ff92
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814078"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755245"
 ---
 <a name="getting-started-with-mvc"></a>Začínáme s MVC
 ====================

@@ -3,17 +3,17 @@ uid: web-api/overview/hosting-aspnet-web-api/index
 title: 'Webového rozhraní API ASP.NET: Nasazení a hostování | Dokumentace Microsoftu'
 author: rick-anderson
 description: Popisuje, jak hostovat vaše webové rozhraní API.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2012
 ms.assetid: 500be045-e1e1-478a-97fc-0374645dd95f
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api
 msc.type: chapter
-ms.openlocfilehash: c724f16ff04370419350ce8083deeb405413d3b6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 76e5df0e67dee23df3cd0114f50011aa41e45e51
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816698"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756072"
 ---
 <a name="aspnet-web-api-deployment-and-hosting"></a>Rozhraní ASP.NET Web API: Nasazení a hostování
 ====================

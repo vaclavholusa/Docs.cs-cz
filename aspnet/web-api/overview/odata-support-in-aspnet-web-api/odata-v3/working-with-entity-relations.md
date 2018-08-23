@@ -3,17 +3,17 @@ uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-enti
 title: Podpora relací prvků v OData v3 s webovým rozhraním API 2 | Dokumentace Microsoftu
 author: MikeWasson
 description: 'Většina datových sad definovat vztahy mezi entitami: Zákazníci mají objednávky; knihy jste autoři; produkty mají dodavatelů. Použití protokolu OData, klienti se můžete dostat přes...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/26/2014
 ms.assetid: 1e4c2eb4-b6cf-42ff-8a65-4d71ddca0394
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
 msc.type: authoredcontent
-ms.openlocfilehash: b24e3ca4e3d39b424bec6bb408bb0f85825c6761
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fc1c6b938c4e4be379edf1a495ca47f5f5f2eb4f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810741"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755278"
 ---
 <a name="supporting-entity-relations-in-odata-v3-with-web-api-2"></a>Podpora relací prvků v OData v3 s webovým rozhraním API 2
 ====================

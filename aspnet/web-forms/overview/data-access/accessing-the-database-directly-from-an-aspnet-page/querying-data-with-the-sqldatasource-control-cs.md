@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspn
 title: Dotazování na Data ovládacím prvkem SqlDataSource (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: V předchozích kurzech jsme použili ovládacího prvku ObjectDataSource prezentační vrstvy plně nezávislá na vrstvě přístupu k datům. Od této tutor...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: 60512d6a-b572-4b7a-beb3-3e44b4d2020c
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6b9ca474b7a085302d287a223c08abe2fa5336b0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0d15e09c2b790c4d1e6b278c4ea35bab7f66b861
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815288"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754879"
 ---
 <a name="querying-data-with-the-sqldatasource-control-c"></a>Dotazování na Data ovládacím prvkem SqlDataSource (C#)
 ====================

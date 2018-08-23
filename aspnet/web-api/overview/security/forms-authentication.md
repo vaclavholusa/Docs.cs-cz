@@ -3,17 +3,17 @@ uid: web-api/overview/security/forms-authentication
 title: Ověřování pomocí formulářů v rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: MikeWasson
 description: Popisuje použití ověřování pomocí formulářů v rozhraní ASP.NET Web API.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/12/2012
 ms.assetid: 9f06c1f2-ffaa-4831-94a0-2e4a3befdf07
 msc.legacyurl: /web-api/overview/security/forms-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 4b73adf1390ce9573cd2979010932365349caea0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 35d62a83382553085ed8a728dcdcdae0e93090b8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827531"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756704"
 ---
 <a name="forms-authentication-in-aspnet-web-api"></a>Ověřování pomocí formulářů v rozhraní ASP.NET Web API
 ====================
@@ -21,7 +21,7 @@ podle [Mike Wasson](https://github.com/MikeWasson)
 
 Ověřování pomocí formulářů formuláře HTML k odeslání přihlašovacích údajů uživatele k serveru. Není internetovým standardem. Ověřování pomocí formulářů je vhodné pro webové rozhraní API, která se volají z webové aplikace pouze tak, aby uživatelé můžou komunikovat s formuláře HTML.
 
-| Android – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze. | Universal Windows Platform – používá  rozhraní API. |
+| Výhody | Nevýhody |
 | --- | --- |
 | – Snadno se implementuje: integrovaný do technologie ASP.NET. -Používá poskytovatele členství prostředí ASP.NET, které umožňuje snadno spravovat uživatelské účty. | -Není standardní HTTP ověřování mechanismus; používá soubory cookie protokolu HTTP místo standardní hlavička autorizace. -Vyžaduje klientský prohlížeč. -Přihlašovací údaje jsou odeslány jako prostý text. -Citlivé na padělání žádosti mezi weby (CSRF); vyžaduje Antimalware CSRF opatření. -Obtížně používala, od nonbrowser klientů. Přihlášení se vyžaduje prohlížeč. -Uživatelských přihlašovacích údajů se odesílají v požadavku. – Někteří si uživatel cookies vypne. |
 

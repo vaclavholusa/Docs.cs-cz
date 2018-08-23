@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/database-first-development/generating-views
 title: 'EF Database First s ASP.NET MVC: generování zobrazení | Dokumentace Microsoftu'
 author: tfitzmac
 description: Pomocí generování uživatelského rozhraní ASP.NET, MVC a Entity Framework, můžete vytvořit webovou aplikaci, která poskytuje rozhraní pro existující databázi. Tento kurz seri...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/29/2014
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 9c85b330ac415d8c73d58b31a5108197b754669f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 74c7abdc2d0f8fff9ad769d013fb001e2b9e427b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835325"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756018"
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>EF Database First s ASP.NET MVC: generování zobrazení
 ====================

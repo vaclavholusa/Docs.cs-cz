@@ -3,17 +3,17 @@ uid: mvc/overview/security/preventing-open-redirection-attacks
 title: Prevence útoků na otevřeném přesměrování (C#) | Dokumentace Microsoftu
 author: jongalloway
 description: Tento kurz vysvětluje, jak lze zabránit útokům otevřené přesměrování ve svých aplikacích ASP.NET MVC. Tento kurz popisuje změny, které mají za cíl...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 69fb02e0-f5b7-4c35-878c-fa87164fc785
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 33d2d050805d9b65741c121cdb2b65a59e1ea392
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 767f9c85527fbcdf34e700eb32fe0c6cad30bf0c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813197"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756682"
 ---
 <a name="preventing-open-redirection-attacks-c"></a>Prevence útoků na otevřeném přesměrování (C#)
 ====================

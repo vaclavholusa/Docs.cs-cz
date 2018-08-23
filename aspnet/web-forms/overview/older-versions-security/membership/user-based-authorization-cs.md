@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/user-based-authorizat
 title: Ověřování založené na uživatelích (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu se podíváme na omezení přístupu na stránky a omezení funkce na úrovni stránky prostřednictvím různých technik.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 3c815a9e-2296-4b9b-b945-776d54989daa
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2fe1dbc7e5fd609870975fbf41849522bbeed534
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 18aad3bde961747af64de2b76ff83feb767597d9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823984"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752102"
 ---
 <a name="user-based-authorization-c"></a>Ověřování založené na uživatelích (C#)
 ====================

@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 title: 'Kurz: Serverové vysílání s knihovnou SignalR 2 | Dokumentace Microsoftu'
 author: tdykstra
 description: Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá ASP.NET SignalR 2 pro zajištění všesměrového vysílání funkce serveru. Server vysílání znamená, že commun...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 0e86fbea9c5668e20fce7a494c76c52f9c089c09
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c2248e68b3c9411687ab6410f12ec85488fe0738
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820694"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755484"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Kurz: Serverové vysílání s knihovnou SignalR 2
 ====================
@@ -73,7 +73,7 @@ Tento kurz obsahuje následující části:
 - [Testování aplikace](#test)
 - [Povolení protokolování](#enablelogging)
 - [Instalace a zkontrolujte úplnou ukázku StockTicker](#fullsample)
-- [Další kroky](#nextsteps)
+- [Další postup](#nextsteps)
 
 [Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.signalr.sample) nainstaluje balíček NuGet ukázkové simulované aplikace běžícími v projektu sady Visual Studio.
 

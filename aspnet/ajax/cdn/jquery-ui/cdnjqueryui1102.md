@@ -3,17 +3,17 @@ uid: ajax/cdn/jquery-ui/cdnjqueryui1102
 title: uživatelské rozhraní jQuery 1.10.2 ve službě Microsoft Ajax CDN | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/22/2014
 ms.assetid: a11b68a0-8133-411d-a988-bcbdb29db745
 msc.legacyurl: /ajax/cdn/jquery-ui/cdnjqueryui1102
 msc.type: content
-ms.openlocfilehash: 9d9e3086f09f430a113ee54e61bb46b9e9034cf5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 137813f95c64f3eff326789f0e0ac2a2598a1455
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831168"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756419"
 ---
 <a name="jquery-ui-1102-on-the-microsoft-ajax-cdn"></a>uživatelské rozhraní jQuery 1.10.2 ve službě Microsoft Ajax CDN
 ====================

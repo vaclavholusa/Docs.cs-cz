@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-as
 title: Úvod do ASP.NET MVC 3 (VB) | Dokumentace Microsoftu
 author: Rick-Anderson
 description: V tomto kurzu se seznámíte se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, což je...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: a1b3d789-93b4-487f-b90d-80c9c9b4f8fa
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: 66e267642adabac9a4b4c724b06dc2658ff0ea42
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 92439a6c75e8e106d0c8c99b672dcfb1effd513f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828014"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756417"
 ---
 <a name="intro-to-aspnet-mvc-3-vb"></a>Úvod do ASP.NET MVC 3 (VB)
 ====================

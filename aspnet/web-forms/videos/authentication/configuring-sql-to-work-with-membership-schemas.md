@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/configuring-sql-to-work-with-membership-sch
 title: Konfigurace SQL kvůli spolupráci se schématy členství | Dokumentace Microsoftu
 author: JoeStagner
 description: V toto video Joe Stagner ukazuje, jak nakonfigurovat instanci SQL a pracovat s konkrétní ASP služby profil členství; tak i vyrovnat...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/04/2008
 ms.assetid: b3edd71d-b43e-4ccb-93e5-b89bb723312c
 msc.legacyurl: /web-forms/videos/authentication/configuring-sql-to-work-with-membership-schemas
 msc.type: video
-ms.openlocfilehash: ae5e335e05df010996c9cb84f4af01874ce6005f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1748f40aea66022e928b8f2b0584efab48047fd3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810501"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753268"
 ---
 <a name="configuring-sql-to-work-with-membership-schemas"></a>Konfigurace SQL kvůli spolupráci se schématy členství
 ====================

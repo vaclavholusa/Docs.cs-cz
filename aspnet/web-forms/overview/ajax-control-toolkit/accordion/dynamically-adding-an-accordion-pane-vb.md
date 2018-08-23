@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-acc
 title: Dynamické přidání podokna ovládacího prvku Accordion (VB) | Dokumentace Microsoftu
 author: wenz
 description: Ovládacího prvku Accordion sadou nástrojů AJAX Control Toolkit poskytuje více podoken a umožňuje uživateli zobrazit jeden z nich najednou. Panely jsou obvykle deklarované w...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1fdb95ee1ee93bc011a257e4e21c876dbbc7d2a9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b0ac0919e64fb6494bd9c7c5f00a5f69274799ed
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820023"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756412"
 ---
 <a name="dynamically-adding-an-accordion-pane-vb"></a>Dynamické přidání podokna ovládacího prvku Accordion (VB)
 ====================

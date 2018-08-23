@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/basic-reporting/declarative-parameters-vb
 title: Deklarované parametry (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu jsme vám ukazují, jak použít parametrem nastaveným na hodnotu pevně zakódované vyberte data pro zobrazení v ovládacím prvku DetailsView.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: dc1234a3-114f-4c9a-8d25-50ca03cc8e8e
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 01330d6c743fa9534cdb5dfa42bde5dbbe954c40
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 10ed3a4f019cd78033ecdd61499b1914f403414e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839226"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756719"
 ---
 <a name="declarative-parameters-vb"></a>Deklarované parametry (VB)
 ====================

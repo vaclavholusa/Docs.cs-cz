@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/index
 title: Začínáme s ASP.NET MVC 4 | Dokumentace Microsoftu
 author: rick-anderson
 description: V této sérii kurzů se seznámíte se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, w...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/15/2012
 ms.assetid: a35183ac-cbcb-4070-9233-6331cde921ad
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4
 msc.type: chapter
-ms.openlocfilehash: 24ff01474044a7b9053a313c80b915dc198fdae5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 73b01c8f2cd1d36ff5f4dc2020df2e14f6a0f290
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830578"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754320"
 ---
 <a name="getting-started-with-aspnet-mvc-4"></a>Začínáme s ASP.NET MVC 4
 ====================

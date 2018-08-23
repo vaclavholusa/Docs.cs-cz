@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-control
-title: '[Postup:] Pomocí ovládacího prvku ASP.NET AJAX UpdateProgress? | Dokumentace Microsoftu'
+title: '[Postup:] Pomocí ovládacího prvku ASP.NET AJAX UpdateProgress? | Dokumenty Microsoft'
 author: JoeStagner
 description: V aplikaci AJAX často dochází znatelný pozastavení mezi čas, kdy prohlížeč odešle požadavek sítě a doby prohlížeč obdrží odpověď. T....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/20/2007
 ms.assetid: fadc5c5a-e481-4472-b339-715cc036dc4e
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-control
 msc.type: video
-ms.openlocfilehash: f4dcf89da332c303c5bb8e3c1093a9a2b8b68c34
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4b6f7fcd8d987cd1c105d53cc76f86f0b82b473e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808152"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754569"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-updateprogress-control"></a>[Postup:] Pomocí ovládacího prvku ASP.NET AJAX UpdateProgress?
 ====================

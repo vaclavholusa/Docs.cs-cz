@@ -3,17 +3,17 @@ uid: whitepapers/aspnet-data-access-content-map
 title: Přístup k datům v technologii ASP.NET – doporučené zdroje informací | Dokumentace Microsoftu
 author: rick-anderson
 description: Toto téma obsahuje odkazy na dokumentaci o tom, jak přistupovat k datům ve webové aplikace ASP.NET, především s využitím rozhraní Entity Framework a SQL Se...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2013
 ms.assetid: f8157be1-4ab9-469e-ad3a-0ccc80b56c00
 msc.legacyurl: /whitepapers/aspnet-data-access-content-map
 msc.type: content
-ms.openlocfilehash: fb0cea94d82cc8f59ec56a5445ee84d38325995e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6993c17c8de890cbaa40c619bcd20f494bfd2f90
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832497"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753687"
 ---
 <a name="aspnet-data-access---recommended-resources"></a>Přístup k datům v technologii ASP.NET – doporučené zdroje informací
 ====================
@@ -55,7 +55,7 @@ Téma obsahuje následující části:
 - [Optimalizace výkonu Data Access](#optimizingdataaccess)
 - [Nasazení databáze](#deploying)
 - [Přístup k datům prostřednictvím webové služby](#webservice)
-- [Další zdroje informací](#additional)
+- [Další prostředky](#additional)
 
 <a id="gettingstarted"></a>
 

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/index
 title: MutuallyExclusiveCheckbox | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz ukazuje, jak pomocí ovládacího prvku MutuallyExclusiveCheckbox vytvoření zaškrtávací políčka, které fungují jako přepínací tlačítka (vzájemně se vylučujících), ale, může být...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: f3f8ccad-2bb3-4cf7-94bf-24b184d987dc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox
 msc.type: chapter
-ms.openlocfilehash: 3dc2e423689518d205dcf5772d2bf798f10ed485
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d171d1908034d81f931236f1494db29599014f70
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818525"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756024"
 ---
 <a name="mutuallyexclusivecheckbox"></a>MutuallyExclusiveCheckbox
 ====================

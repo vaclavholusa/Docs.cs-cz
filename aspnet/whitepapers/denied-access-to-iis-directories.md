@@ -3,17 +3,17 @@ uid: whitepapers/denied-access-to-iis-directories
 title: Aplikace ASP.NET zamítla přístup k adresářům služby IIS | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento dokument White Paper popisuje, co musíte udělat, pokud požadavek na vaše aplikace ASP.NET vrátí chyba "přístup byl odepřen do DirectoryName. Nepovedlo se s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: 4853ee29d2468c4b67375123c5b2ec15089fe09b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c3a14f51df7aaf5c5935cf60ee4e687c10048e91
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842407"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752234"
 ---
 <a name="aspnet-denied-access-to-iis-directories"></a>Aplikace ASP.NET zamítla přístup k adresářům služby IIS
 ====================

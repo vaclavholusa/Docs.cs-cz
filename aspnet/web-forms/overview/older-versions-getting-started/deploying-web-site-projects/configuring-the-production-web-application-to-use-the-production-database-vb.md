@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: Konfigurace provozní webové aplikace pro použití provozní databáze (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak je popsáno v předchozích kurzech, není, informací o konfiguraci se liší mezi vývojovou a provozní prostředí. Toto je es...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: a64a7aa0-6608-449e-83bf-1ef8cceee504
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 952bdafd06143ce24e9e8beb0d6e6343400ffdc6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3d6e25de44a7c84ef0919d1cfd8ab4c6b368e0ea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840697"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756476"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>Konfigurace provozní webové aplikace pro použití provozní databáze (VB)
 ====================

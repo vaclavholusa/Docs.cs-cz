@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 title: Nahrávání souborů (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Zjistěte, jak povolit uživatelům odesílat binární soubory (jako jsou například dokumenty aplikace Word nebo PDF) k vašemu webovému serveru, kde mohou být uloženy v systému souborů na server, buď...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: b381b1da-feb3-4776-bc1b-75db53eb90ab
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f420797b7c06b9063b70b784a5b61c7d02162c1d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8849f8f279dde883a71fb3ba1678a589f2e321eb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820072"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754562"
 ---
 <a name="uploading-files-c"></a>Nahrávání souborů (C#)
 ====================

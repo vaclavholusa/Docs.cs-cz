@@ -3,17 +3,17 @@ uid: web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api
 title: Použití rozhraní OWIN k samoobslužnému hostování webového rozhraní API 2 ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz ukazuje, jak hostovat v konzolové aplikaci, používá OWIN k samoobslužnému hostování webového rozhraní API rozhraní ASP.NET Web API. Otevřít Web Interface pro .NET (OWIN) d...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/09/2013
 ms.assetid: a90a04ce-9d07-43ad-8250-8a92fb2bd3d5
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 9fba2774e3873d32115a14fa0c84b99466eda04f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0d16498e94ac0a66c117ed057db398c14080beaa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830908"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756073"
 ---
 <a name="use-owin-to-self-host-aspnet-web-api-2"></a>Použití rozhraní OWIN k samoobslužnému hostování webového rozhraní API 2 ASP.NET
 ====================

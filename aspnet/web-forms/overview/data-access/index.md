@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/index
 title: Starší verze – přístup k datům | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak k provádění různých úloh souvisejících s daty pomocí ovládací prvky dat webových formulářů ASP.NET.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: cf54a6fb-a362-4481-b967-c158b98092f7
 msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
-ms.openlocfilehash: 27a73db8984c2e0a12b4372d0a783f2deca786ac
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0060650de35a8693a9c1432876df1d4902bb1ade
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824549"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753759"
 ---
 <a name="older-versions---data-access"></a>Starší verze – přístup k datům
 ====================

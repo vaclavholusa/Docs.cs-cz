@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-streng
 title: Testování síly hesla (C#) | Dokumentace Microsoftu
 author: wenz
 description: Hesla jsou skoro kdekoli, vyžaduje, aby opožděné uživatelé mívají sklony zvolte jednoduchá hesla, které se podařilo. PasswordStrength ovládacího prvku ASP. N...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: cb4afbae-9b8f-483d-9729-476d4b9f85fc
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2eec810a0e37347059d3e82a37b25d5663eab987
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b71744df46f8b8d20efafa333a10370397c37d2f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839801"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755720"
 ---
 <a name="testing-the-strength-of-a-password-c"></a>Testování síly hesla (C#)
 ====================

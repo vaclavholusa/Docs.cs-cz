@@ -3,17 +3,17 @@ uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-m
 title: 'Kurz: Začínáme s knihovnou SignalR 1.x a MVC 4 | Dokumentace Microsoftu'
 author: pfletcher
 description: Pomocí funkce SignalR technologie ASP.NET a ASP.NET MVC 4 k sestavení aplikace pro chatování v reálném čase.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 2d9f983a859f2920154d2021bb313ffa7300198e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 34a7ae97a0a0652c090aa72e2cb21a4bce13bd5c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823472"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756935"
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>Kurz: Začínáme s knihovnou SignalR 1.x a MVC 4
 ====================

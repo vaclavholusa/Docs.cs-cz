@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/multiple-con
 title: Několik prvků ContentPlaceHolder a výchozí obsah (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Zkoumá, jak přidat více zástupné znaky obsahu místě na hlavní stránku, jakož i jak určit výchozí obsah v obsahu místo zástupné znaky.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 98cb78e03f9f7aff4a36625416188aba04512f6a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 18e2dfdf5cf3d5802bf94d797795fc0f12bdc95b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839697"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753112"
 ---
 <a name="multiple-contentplaceholders-and-default-content-vb"></a>Několik prvků ContentPlaceHolder a výchozí obsah (VB)
 ====================

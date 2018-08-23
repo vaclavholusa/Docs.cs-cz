@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/how-do-i-make-custom-pages
-title: Jak vytvořit vlastní stránky? | Dokumentace Microsoftu
+title: Jak vytvořit vlastní stránky? | Dokumenty Microsoft
 author: shanselman
 description: V tomto videu se dozvíte, jak provádět vlastní stránky pro některé tabulky, zatímco jiné stránky pomocí standardních funkcí.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/08/2008
 ms.assetid: f2b20119-abf4-4e78-9c47-adf563ad174c
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-make-custom-pages
 msc.type: video
-ms.openlocfilehash: 5d2791dc1a64f0119a7ca92736836ae7364407ac
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 233efe11a592a72d20fe637948612ee29d62c0da
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807187"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756925"
 ---
 <a name="how-do-i-make-custom-pages"></a>Jak vytvořit vlastní stránky?
 ====================

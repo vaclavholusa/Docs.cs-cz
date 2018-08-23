@@ -3,17 +3,17 @@ uid: aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 title: Hostování OWIN v roli pracovního procesu Azure | Dokumentace Microsoftu
 author: MikeWasson
 description: Tento kurz ukazuje, jak k samoobslužnému hostování OWIN v roli pracovního procesu Microsoft Azure. Open Web Interface pro .NET (OWIN) definuje abstrakce mezi .NET webový server...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: f62b9299a4e369ae3a938c85e60dd6a79108548d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6bead915491c62de809b8625d8071a63c70a6ef5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826478"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753068"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Hostování specifikace OWIN v roli pracovního procesu Azure
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: Principy webových služeb ASP.NET AJAX | Dokumentace Microsoftu
 author: scottcate
 description: Webové služby jsou nedílnou součástí rozhraní .NET framework, která poskytují řešení napříč platformami pro výměnu dat mezi distribuované systémy. I když Web...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/28/2008
 ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: b98ef4c27ab7b4b729e9e5b68e7d2642a6418ab6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5e59077373b68b907391eff5349e1925222792a3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838598"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756723"
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>Principy webových služeb ASP.NET AJAX
 ====================

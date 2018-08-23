@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-s
 title: Vytvoření rozložení platného pro celý web pomocí stránek předlohy (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Tomto kurzu se dozvíte základní informace o stránku předlohy. A to, co jsou hlavní stránky, jak funguje jeden vytvořit stránku předlohy, jaké jsou obsahu místo zástupné znaky, jak funguje jeden cr...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 30945276-8ed9-4b27-8e50-4309244d3559
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 182f45c28dc37633b429fead333d401818299e36
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: feb04c19092101bb019883c8b72b40ceb9afc015
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827819"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754563"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>Vytvoření rozložení platného pro celý web pomocí stránek předlohy (VB)
 ====================

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/index
 title: Jak I | Dokumentace Microsoftu
 author: rick-anderson
 description: ASP.NET MVC a jak vytvořit aplikaci elektronického obchodování celou od začátku na dokončení The Storefront - vztahovat na videa v této části.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/15/2011
 ms.assetid: 9bc6c53a-3e54-4f9d-8bef-0f3359aecf7b
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
-ms.openlocfilehash: 4a10a8ecedc225f552b575c0dd980b9d9c24f0c5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 09b8b31059ed6a238414714847d191426e28db28
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836226"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752514"
 ---
 <a name="how-do-i"></a>Jak I
 ====================

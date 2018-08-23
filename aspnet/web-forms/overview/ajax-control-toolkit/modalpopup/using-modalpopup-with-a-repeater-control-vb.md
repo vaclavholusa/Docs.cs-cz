@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-
 title: Použití ovládacího prvku ModalPopup v ovládacím prvku Repeater (VB) | Dokumentace Microsoftu
 author: wenz
 description: Ovládací prvek ovládacího prvku ModalPopup v sadou nástrojů AJAX Control Toolkit nabízí jednoduchý způsob, jak vytvořit modální místní nabídky pomocí znamená, že na straně klienta. Je také možné použít tuto sml...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 0c8e74f1-b3ba-4ca9-a1c5-f5c4831a359a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c51ddd4b2bcc17c7d8c5dee0926903bea6ac749f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4915883ce50512a0a612060ba9543705abcc5f00
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826611"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753261"
 ---
 <a name="using-modalpopup-with-a-repeater-control-vb"></a>Použití ovládacího prvku ModalPopup v ovládacím prvku Repeater (VB)
 ====================

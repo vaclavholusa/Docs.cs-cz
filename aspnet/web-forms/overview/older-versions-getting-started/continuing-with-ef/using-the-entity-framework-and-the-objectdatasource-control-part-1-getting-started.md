@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-
 title: 'Použití rozhraní Entity Framework 4.0 a ovládací prvek ObjectDataSource, 1. část: Začínáme | Dokumentace Microsoftu'
 author: tdykstra
 description: V této sérii kurzů staví na Contoso University webovou aplikaci, která se vytvořila Začínáme s Entity Framework série kurzů. Pokud yo...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: 244278c1-fec8-4255-8a8a-13bde491c4f5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 9eb39d0cf57e114537c76f33e2f4647196b0ff30
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5eaeaa0aa474e1aed86954e6c10dd1703b938944
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837675"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753275"
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>Použití rozhraní Entity Framework 4.0 a ovládací prvek ObjectDataSource, 1. část: Začínáme
 ====================

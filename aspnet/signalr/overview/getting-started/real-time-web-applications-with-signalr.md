@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/real-time-web-applications-with-signalr
 title: 'Praktické cvičení: V reálném čase webové aplikace s knihovnou SignalR | Dokumentace Microsoftu'
 author: rick-anderson
 description: Webové aplikace v reálném čase funkcí možnost na straně serveru nabízet obsah připojeným klientům, jakmile k ní dojde, v reálném čase. Pro vývojáře využívající technologii ASP.NET, ASP...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 50ed2bed6b5b20684d00d7887494ee41346b5c3f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3f6174049ffddae4bb2a1819e3684bcdec1b55f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828906"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751839"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Praktické cvičení: V reálném čase webové aplikace s knihovnou SignalR
 ====================

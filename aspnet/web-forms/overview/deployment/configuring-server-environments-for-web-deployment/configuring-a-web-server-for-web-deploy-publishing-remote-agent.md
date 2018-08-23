@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-server-environments-for-web-deplo
 title: Konfigurace webového serveru pro webové nasazení publikování (vzdálený Agent) | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma popisuje postup konfigurace webového serveru Internetové informační služby (IIS) pro podporu publikování na webu a nasazení pomocí nasazení webu služby IIS...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 348c618fe6ec726e8087b4f3acb66cddbef1d225
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7350e986130af7426603e861622949f580512339
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819640"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756475"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Konfigurace webového serveru pro publikování (vzdálený Agent) nasazeného webu
 ====================

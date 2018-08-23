@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: Zobrazení vlastní chybové stránky (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Co uživateli zobrazí když dojde k chybě za běhu ve webové aplikaci ASP.NET? Odpověď závisí na tom, na webu &lt;customErrors&gt; konfigurace...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: 14873c5d-81a9-455b-bd71-30fb555583e7
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 749b754903fb8e164b77edff4216fb2e2cf057b6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 54aa5e31888262b80461e77d5abddcbe4fbe01eb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812922"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754874"
 ---
 <a name="displaying-a-custom-error-page-vb"></a>Zobrazení vlastní chybové stránky (VB)
 ====================

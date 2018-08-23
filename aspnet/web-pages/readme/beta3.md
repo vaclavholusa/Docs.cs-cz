@@ -3,17 +3,17 @@ uid: web-pages/readme/beta3
 title: A ASP.NET Web Pages (Razor) verze Beta 3 verze – soubor Readme | Dokumentace Microsoftu
 author: rick-anderson
 description: Web Matrix a ASP.NET Web souboru Readme verze Beta 3 stránky (Razor)
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/10/2011
 ms.assetid: ffa3d5c9-91e5-4da3-b409-560b0c7fbbf0
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 16b324e555b5450fc1e05c63e7e19985a2d02b89
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3d729d1b0615533dddceff484acb3d42247f6cab
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831829"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754298"
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Web Matrix a ASP.NET Web souboru Readme verze Beta 3 stránky (Razor)
 ====================

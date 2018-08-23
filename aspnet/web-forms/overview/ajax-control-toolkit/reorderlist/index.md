@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/reorderlist/index
 title: Ovládacím prvkem ReorderList | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz ukazuje, jak pomocí ovládacího prvku ovládacím prvkem ReorderList k zobrazení seznamu, které uživatelé mohou změnit pořadí operací přetažením položek.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: 25df8150-7999-4ab6-b401-0cad5f396d6c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist
 msc.type: chapter
-ms.openlocfilehash: 1f531b9427ee7e8a76fa7303ec706f9318e9b840
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f429dac4352a5d0e469a7e3721f4b1a9396cd8f9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820931"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751891"
 ---
 <a name="reorderlist"></a>Ovládacím prvkem ReorderList
 ====================

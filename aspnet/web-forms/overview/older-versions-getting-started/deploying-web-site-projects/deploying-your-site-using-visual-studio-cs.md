@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: Nasazení webu pomocí sady Visual Studio (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Visual Studio obsahuje nástroje pro nasazení webu. Další informace o těchto nástrojích v tomto kurzu.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: cde4ee53-a5d0-4937-a54b-67877e8266c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 38fb133a30f8b4516078b14cd67b2a0d53c7d482
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 94f4f3e0d81f3cfae141c8306731cc8eef6f0efb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810128"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755220"
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Nasazení webu pomocí sady Visual Studio (C#)
 ====================

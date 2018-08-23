@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-co
 title: Přidání Kontroleru (C#) | Dokumentace Microsoftu
 author: Rick-Anderson
 description: V tomto kurzu se seznámíte se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Serivice aktualizací Service Pack 1, které i...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: 0b8c56b5-fdf3-42dd-a866-98fbe0ab78a0
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 0c13248960384e8d773f9c5ba3d927b6a8502938
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b31cf3bdf18c144d2735973119367b01de0353fe
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805856"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753672"
 ---
 <a name="adding-a-controller-c"></a>Přidání Kontroleru (C#)
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with
 title: Přidávání metody Create a vytvořit zobrazení | Dokumentace Microsoftu
 author: shanselman
 description: Toto je kurz pro začátečníky, který vysvětluje základy ASP.NET MVC. Vytvořte jednoduchou webovou aplikaci, která čte a zapisuje z databáze.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: a3a90963-0286-4fa0-9b3d-c230cc18b0a3
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
 msc.type: authoredcontent
-ms.openlocfilehash: cf0d721b551c38e8c38e35f82b73ee1b14cd068f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 546c3e0a24ecd0d916c79e9ad12f62b926c760c5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840963"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756006"
 ---
 <a name="adding-a-create-method-and-create-view"></a>Přidávání metody Create a zobrazení Create
 ====================

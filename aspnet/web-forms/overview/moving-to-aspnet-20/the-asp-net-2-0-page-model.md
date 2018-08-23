@@ -3,17 +3,17 @@ uid: web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 title: Model 2.0 stránky ASP.NET | Dokumentace Microsoftu
 author: microsoft
 description: V technologii ASP.NET 1.x, vývojáři měli možnost volby mezi model pomocí vloženého kódu a model kódu použití modelu code-behind. Použití modelu Code-behind může implementovat s využitím buď Src attr...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: af4575a3-0ae3-4638-ba4d-218fad7a1642
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: 2c8a0624af30d93d2ba68dc4b0b0880d6e371616
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4452169a01276cbc60f2a2057e6b560022ccd7c0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811698"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756397"
 ---
 <a name="the-aspnet-20-page-model"></a>Model 2.0 stránky ASP.NET
 ====================

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hookin
 title: 'ASP.NET MVC – prezentace část 11: Připojení nákupního košíku a použití komponent | Dokumentace Microsoftu'
 author: robconery
 description: V této epizodě můžu připojit lokalitu až do nákupního košíku a některé testy na můj řadiče. Jsem také vytváření komponent pomocí funkce málo známé MVC, th...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: 25cc35b4-601e-448b-abf1-bc253b30d232
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components
 msc.type: video
-ms.openlocfilehash: d3cf98f60b19c0594cc49514e8c8263d20c4057e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6346362aa885f4da667ad329993b0d816c71120a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824358"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757096"
 ---
 <a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a>ASP.NET MVC – prezentace část 11: Připojení nákupního košíku a použití komponent
 ====================

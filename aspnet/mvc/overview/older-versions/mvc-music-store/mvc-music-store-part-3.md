@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 title: '3. část: Zobrazení a modely ViewModels | Dokumentace Microsoftu'
 author: jongalloway
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. 3. část popisuje zobrazení a modely ViewModel.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 8fd89c2a448877bf13a7828f545ffcd400f63bb1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 828ff18abcc5932f82be71a45ebde589eeb051fa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837407"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752404"
 ---
 <a name="part-3-views-and-viewmodels"></a>3. část: Zobrazení a modely ViewModels
 ====================
@@ -214,7 +214,7 @@ Všimněte si, že máme plnou podporu technologie IntelliSense jsme zadávání
 
 ![](mvc-music-store-part-3/_static/image18.png)
 
-V rámci naší smyčky "foreach" Visual Web Developer ví, že každá položka je typu Genre, takže uvidíme IntelliSence pro každý žánr typ.
+V rámci naší smyčky "foreach" Visual Web Developer ví, že každá položka je typu Genre, takže uvidíme technologie IntelliSense pro každý žánr typ.
 
 ![](mvc-music-store-part-3/_static/image19.png)
 

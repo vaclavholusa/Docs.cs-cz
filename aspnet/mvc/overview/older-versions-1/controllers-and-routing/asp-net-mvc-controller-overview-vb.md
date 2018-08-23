@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controlle
 title: ASP.NET MVC – přehled Kontrolerů (VB) | Dokumentace Microsoftu
 author: StephenWalther
 description: V tomto kurzu Stephen Walther vás seznámí s kontrolery ASP.NET MVC. Zjistíte, jak vytvořit nové řadiče a vracet různé druhy res akce...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/16/2008
 ms.assetid: 94c3e5d9-a904-445e-a34e-d92fd1ca108a
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-controller-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ac5e9242f494b8472e582bc76a6f4805db2f770f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 604bf4af2a46e56d9445de141fae1a1651acf47f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809220"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755435"
 ---
 <a name="aspnet-mvc-controller-overview-vb"></a>ASP.NET MVC – přehled Kontrolerů (VB)
 ====================

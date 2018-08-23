@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with
 title: Přidání Kontroleru | Dokumentace Microsoftu
 author: shanselman
 description: Najít aktualizovanou verzi, pokud v tomto kurzu je k dispozici zde prostřednictvím sady Visual Studio 2013. Nové kurz používá ASP.NET MVC 5, která nabízí mnoho vylepšení v porovnání s t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/14/2010
 ms.assetid: ff03dcc0-da97-458d-838f-0823e7482642
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: afe1182bca0fe58e1df162c5027df35992eeef38
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 856b7d98ac8bd30982d81b0609bb9c1288e07e49
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809907"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754821"
 ---
 <a name="adding-a-controller"></a>Přidání Kontroleru
 ====================

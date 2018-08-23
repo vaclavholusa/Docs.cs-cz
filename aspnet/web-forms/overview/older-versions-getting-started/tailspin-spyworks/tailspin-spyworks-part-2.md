@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspi
 title: '– Část 2: Vrstva přístupu k datům | Dokumentace Microsoftu'
 author: JoeStagner
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. 2. část se věnuje přidání vrstvy přístupu k datům.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 5a9d5429-d70b-411c-8474-f42cf7ef8a2b
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: c1d61681952cbf1f0587f0e42da21f8436d79ebb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5b5ae08b157054bf0f3231782127ee3110f36d00
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812029"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752437"
 ---
 <a name="part-2-data-access-layer"></a>2. část: Vrstva přístupu k datům
 ====================

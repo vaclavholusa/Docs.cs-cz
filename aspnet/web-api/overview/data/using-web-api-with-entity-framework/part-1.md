@@ -3,17 +3,17 @@ uid: web-api/overview/data/using-web-api-with-entity-framework/part-1
 title: Použití rozhraní Web API 2 s Entity Framework 6 | Dokumentace Microsoftu
 author: MikeWasson
 description: V tomto kurzu se dozvíte, že se se základy vytváření webovou aplikaci s webovým rozhraním API technologie ASP.NET back-endu. Tento kurz používá Entity Framework 6 pro uspořádání dat...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: e879487e-dbcd-4b33-b092-d67c37ae768c
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: bc853413e814e6ef1a44841d114853003d7328f9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4abe0e06dfd927765efd8e566584e111cf4117d5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827230"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753026"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>Použití rozhraní Web API 2 s Entity Framework 6
 ====================

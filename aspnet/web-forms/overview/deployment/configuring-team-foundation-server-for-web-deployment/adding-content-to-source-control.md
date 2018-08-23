@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-de
 title: Přidávání obsahu do správy zdrojového kódu | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma vysvětluje, jak přidat obsah do správy zdrojového kódu v Team Foundation Server (TFS) 2010. Popisuje postup přidání řešení a projektů do týmu proje...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 86c14aab-c2dd-4f73-b40c-c6d52fa44950
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 9fdb2e37f2925273b457157b634865d93e865098
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2119705a75d0717d05d4a7db69b3f5d38b1cdd45
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838368"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754788"
 ---
 <a name="adding-content-to-source-control"></a>Přidávání obsahu do správy zdrojového kódu
 ====================

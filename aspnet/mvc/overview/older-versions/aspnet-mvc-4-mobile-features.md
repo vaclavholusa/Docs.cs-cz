@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 title: Funkce mobilní architektury ASP.NET MVC 4 | Dokumentace Microsoftu
 author: Rick-Anderson
 description: Teď existuje verze MVC 5 tohoto kurzu s ukázkami kódu při nasazení webové aplikace ASP.NET MVC 5 Mobile na webech Azure.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: c852f4a853d14badb6c9a1c2c1ddb7b069bc3441
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3cb2414775b2c29617296dcf0c2dc5729153cdd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806580"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755031"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Funkce mobilní architektury ASP.NET MVC 4
 ====================
@@ -212,7 +212,7 @@ Následující kód ukazuje kompletní *Global.asax* souboru.
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> Pokud používáte Internet Explorer 9 a nevidíte `BundleMobileConfig` řádek výše v zvýraznit žlutý, klikněte na tlačítko [kompatibilního zobrazení tlačítka](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![obrázek kompatibilní zobrazení tlačítka (vypnuto)] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Obrázek tlačítka kompatibilního zobrazení (vypnuto)") v Internet Exploreru, chcete-li změnit z přehledu ikonu ![obrázek kompatibilní zobrazení tlačítka (vypnuto)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "obrázek kompatibilní zobrazení tlačítka (vypnuté) ") plnou barvu ![obrázku (na) tlačítko pro kompatibilní zobrazení](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "obrázku (na) tlačítko pro kompatibilní zobrazení"). Případně můžete zobrazit v tomto kurzu v aplikaci FireFox nebo Chrome.
+> Pokud používáte Internet Explorer 9 a nevidíte `BundleMobileConfig` řádek výše v zvýraznit žlutý, klikněte na tlačítko [kompatibilního zobrazení tlačítka](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![obrázek kompatibilní zobrazení tlačítka (vypnuto)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Obrázek tlačítka kompatibilního zobrazení (vypnuto)") v Internet Exploreru, chcete-li změnit z přehledu ikonu ![obrázek kompatibilní zobrazení tlačítka (vypnuto)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "obrázek kompatibilní zobrazení tlačítka (vypnuté) ") plnou barvu ![obrázku (na) tlačítko pro kompatibilní zobrazení](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "obrázku (na) tlačítko pro kompatibilní zobrazení"). Případně můžete zobrazit v tomto kurzu v aplikaci FireFox nebo Chrome.
 
 
 Otevřít *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* a přidejte následující kód přímo po `Html.Partial` volání:

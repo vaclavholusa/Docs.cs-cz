@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-
 title: Vytvoření vzájemně se vylučujících zaškrtávacích políček (VB) | Dokumentace Microsoftu
 author: wenz
 description: 'Když je možné vybrat jenom jednu sadu možností, přepínače se obvykle používají. Nevýhodou, i když je: Po výběru jedné přepínací tlačítka ve skupině...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: e9dd1d5a-a1db-4114-981d-6a91acb1d709
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6badd005ed4775cb248784f3e9991132db1b3969
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fd338b622779b64dd59f9cf6f3e2365ef5cb3ffb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828796"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755034"
 ---
 <a name="creating-mutually-exclusive-checkboxes-vb"></a>Vytvoření vzájemně se vylučujících zaškrtávacích políček (VB)
 ====================

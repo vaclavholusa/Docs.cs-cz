@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-p
 title: 'Videa o ASP.NET vNext: část vazby modelu 3 - aktualizace | Dokumentace Microsoftu'
 author: DamianEdwards
 description: V tomto videu Damianem Edwardsem předvede, jak data se aktualizují dokončí kontroly vazby modelu.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/22/2011
 ms.assetid: 63c42590-08ac-44da-91f8-bd79489b9ecc
 msc.legacyurl: /web-forms/videos/aspnet-web-forms-vnext/aspnet-vnext-videos-model-binding-part-3-updating
 msc.type: video
-ms.openlocfilehash: 124405cdc01b3722eb07dac21a43da31d90c143a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bc278ae16c120eb62498055fa3753d7d2561e0ea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827113"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754834"
 ---
 <a name="aspnet-vnext-videos-model-binding-part-3---updating"></a>Videa o ASP.NET vNext: část vazby modelu 3 - aktualizace
 ====================

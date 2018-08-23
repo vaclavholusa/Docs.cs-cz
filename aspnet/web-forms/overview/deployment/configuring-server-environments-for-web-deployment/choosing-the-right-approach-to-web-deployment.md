@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-server-environments-for-web-deplo
 title: Výběr správného přístupu k nasazení webu | Dokumentace Microsoftu
 author: jrjlee
 description: Při práci s Internetové informační služby (IIS) nástroj pro nasazení webu (nasazení webu) 2.0 nebo novější, existují tři hlavní přístupy, které vám umožní získat...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 787a53fd-9901-4a11-9d58-61e0509cda45
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: eb1b7d50e5d7461d760ad7a963cc70369b7a4513
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0b21852a1db2862a8452e332021b55ce7f1db423
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807048"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755419"
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>Výběr správného přístupu k nasazení webu
 ====================
@@ -33,10 +33,10 @@ podle [Jason Lee](https://github.com/jrjlee)
 
 Tato tabulka zobrazuje hlavní výhody a nevýhody obou těchto nasazení přístupů, společně s scénáře, které nejvíce obvykle vyhovují jednotlivým přístupům.
 
-| Přístup | Android – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze. | Universal Windows Platform – používá  rozhraní API. | Typické scénáře |
+| Přístup | Výhody | Nevýhody | Typické scénáře |
 | --- | --- | --- | --- |
 | Vzdálený Agent | Je snadné nastavení. Je vhodný pro pravidelné aktualizace webové aplikace a obsah. | Uživatel musí být správce na cílovém serveru. uživatele nejde zadat alternativní přihlašovací údaje. | Vývojových prostředích. Testovací prostředí. |
-| Dočasné agenta | Není nutné nainstalovat nasazení webu v cílovém počítači. Automaticky se používá nejnovější verzi nástroje nasazení webu. | Uživatel musí být správce na cílovém serveru. Uživatele nejde zadat alternativní přihlašovací údaje. | Vývojových prostředích. Testovací prostředí. |
+| Dočasné agenta | Není nutné nainstalovat nasazení webu v cílovém počítači. Automaticky se používá nejnovější verzi nástroje nasazení webu. | Uživatel musí být správce na cílovém serveru. uživatele nejde zadat alternativní přihlašovací údaje. | Vývojových prostředích. Testovací prostředí. |
 | Obslužná rutina nasazení webu | Uživatelé bez oprávnění správce můžou nasazovat obsah. Je vhodný pro pravidelné aktualizace webové aplikace a obsah. | Je mnohem složitější nastavení. | Pracovní prostředí. Produkční prostředí intranetu. Hostované prostředí. |
 | Offline nasazení | Je velmi snadné nastavení. Je vhodná pro izolované prostředí. | Správce serveru musíte ručně zkopírovat a importovat pokaždé, když webového balíčku. | Přístupem k Internetu produkční prostředí. Izolované prostředí sítě. |
   

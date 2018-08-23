@@ -3,17 +3,17 @@ uid: web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-p
 title: Zobrazení mapy v ASP.NET Web Pages lokality (Razor) | Dokumentace Microsoftu
 author: tfitzmac
 description: Tento článek vysvětluje, jak zobrazit interaktivní mapy na stránkách na webu rozhraní ASP.NET Web Pages (Razor) podle mapování služby poskytované Bing, Google, Ma...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2014
 ms.assetid: b5c268dd-ca6a-4562-b94c-a220fcf01f58
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 4c64791a77f2a72c227ce74e796340c6d8c7316c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0b0879047bc71057884ebef98a598eed8c28cddf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812779"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755219"
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Zobrazení map na webu rozhraní ASP.NET Web Pages (Razor)
 ====================

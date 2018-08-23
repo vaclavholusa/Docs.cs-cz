@@ -3,17 +3,17 @@ uid: web-pages/overview/releases/top-features-in-web-pages-2
 title: Horní funkce v rozhraní ASP.NET Web Pages 2 | Dokumentace Microsoftu
 author: microsoft
 description: Toto téma obsahuje přehled o hlavní nové funkce v ASP.NET Web Pages 2, jednoduché webové programování rozhraní, která je součástí WebMatr...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/13/2012
 ms.assetid: cc712e72-c3d0-4e43-bc2d-28cc09cd8f71
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: 6e20dedd19ae458b9881973570f23b5d77dda654
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e06db7eb33dc2891d86b65fa56c20b9e8cae1970
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827398"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752011"
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>Hlavní funkce webových stránek v ASP.NET 2
 ====================
@@ -34,7 +34,7 @@ podle [Microsoft](https://github.com/microsoft)
 >     - [Přidání map použití pomocné rutiny mapy](#maphelper)
 >     - [Spuštění webové stránky aplikace vedle sebe](#sidebyside)
 >     - [Vykreslování stránek pro mobilní zařízení](#mobile)
-> - [Další zdroje informací](#resources)
+> - [Další prostředky](#resources)
 > 
 > > [!NOTE]
 > > Toto téma předpokládá, že používáte služby WebMatrix pro práci s vaším kódem ASP.NET Web Pages 2. Ale jako s 1 webové stránky, můžete také vytvořit webové stránky 2 webů pomocí sady Visual Studio, která vám umožňuje rozšířené možnosti technologie IntelliSense a ladění. Pro práci s webovými stránkami v sadě Visual Studio, je nutné nejprve nainstalovat Visual Studio 2010 SP1, Visual Web Developer Express 2010 SP1 nebo Visual Studio 11 Beta. Nainstalujte ASP.NET MVC 4 Beta, který obsahuje šablony a nástroje pro vytváření aplikací ASP.NET MVC 4 a Web Pages 2 v sadě Visual Studio.

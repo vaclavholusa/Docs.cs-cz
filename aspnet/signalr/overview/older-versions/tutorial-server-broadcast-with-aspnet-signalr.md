@@ -3,17 +3,17 @@ uid: signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signa
 title: 'Kurz: Serverové vysílání s knihovnou ASP.NET SignalR 1.x | Dokumentace Microsoftu'
 author: pfletcher
 description: Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá knihovnu ASP.NET SignalR pro zajištění všesměrového vysílání funkce serveru. Serverové vysílání znamená, že to communic...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 1f98b35236812aac1362f1e36e60971ff8d896bc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 76dc2f4d54f6ab4cebbde06dfd611a9b5ee5ae64
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816191"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752029"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>Kurz: Serverové vysílání s knihovnou ASP.NET SignalR 1.x
 ====================
@@ -48,7 +48,7 @@ Tento kurz obsahuje následující části:
 - [Testování aplikace](#test)
 - [Povolení protokolování](#enablelogging)
 - [Instalace a zkontrolujte úplnou ukázku StockTicker](#fullsample)
-- [Další kroky](#nextsteps)
+- [Další postup](#nextsteps)
 
 > [!NOTE]
 > Pokud nechcete, aby pro seznámení se základními kroky při vytváření aplikace, můžete nainstalovat balíček SignalR.Sample v novém **prázdná webová aplikace ASP.NET** projektu a přečtěte si vysvětlení kódu těchto kroků. První část kurzu obsahuje podmnožinu SignalR.Sample kódu a druhá část vysvětluje klíčové funkce v balíčku SignalR.Sample další funkce.

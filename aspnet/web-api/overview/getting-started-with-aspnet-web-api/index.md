@@ -3,17 +3,17 @@ uid: web-api/overview/getting-started-with-aspnet-web-api/index
 title: Začínáme s rozhraním ASP.NET Web API | Dokumentace Microsoftu
 author: rick-anderson
 description: Další informace o ASP.NET Web API ASP.NET Web API je architektura, která usnadňuje sestavování služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: a36e178f-de46-46d9-b150-61fb3ba1b4d3
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api
 msc.type: chapter
-ms.openlocfilehash: d36f908c12b6d2071e14ae162b962d619f5f7449
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9350116f4a9dd3ca9faed402fd6f8bbba29f01a6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808685"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755423"
 ---
 <a name="getting-started-with-aspnet-web-api"></a>Začínáme s rozhraním ASP.NET Web API
 ====================

@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
-title: '[Postup:] Vynucení programovacích standardů analýzy kódu? | Dokumentace Microsoftu'
+title: '[Postup:] Vynucení programovacích standardů analýzy kódu? | Dokumenty Microsoft'
 author: rick-anderson
 description: V aplikaci Visual Studio Team System mají přesné řízení pravidla analýzy kódu, které se vztahují na projekty knihovny tříd, webových projektů a co zdrojového kódu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/09/2007
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: 6a3260c4427cb3f895da29a1b280c71333e87faa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 609f91090520cc36f312a68d63ba6d7356bb008d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832264"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753224"
 ---
 <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[Postup:] Vynucení programovacích standardů analýzy kódu?
 ====================

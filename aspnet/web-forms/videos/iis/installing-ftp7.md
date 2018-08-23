@@ -3,17 +3,17 @@ uid: web-forms/videos/iis/installing-ftp7
 title: Instalace protokolu FTP7 | Dokumentace Microsoftu
 author: JoeStagner
 description: Protokolu FTP7 je novou a výkonnou. Toto video ukazuje, jak se dá stáhnout rychle zprovoznit!
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/09/2009
 ms.assetid: 92348a5c-10a3-4cad-b3cf-5e8669f987ab
 msc.legacyurl: /web-forms/videos/iis/installing-ftp7
 msc.type: video
-ms.openlocfilehash: 0f5bc1a2018208060261098128ee8cb516a07120
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8eb32f05bd41f32c00a4bdc431f6bea250f942fa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838220"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755703"
 ---
 <a name="installing-ftp7"></a>Instalace protokolu FTP7
 ====================

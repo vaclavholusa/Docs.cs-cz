@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
-title: '[Postup:] Použít technologie ASP.NET AJAX – Extender SlideShow? | Dokumentace Microsoftu'
+title: '[Postup:] Použít technologie ASP.NET AJAX – Extender SlideShow? | Dokumenty Microsoft'
 author: JoeStagner
 description: Toto video ukazuje, jak extender SlideShow z technologie ASP.NET AJAX Control Toolkit se změní standardní ovládací prvek ASP.NET Image plně funkční sl...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
-ms.openlocfilehash: ca4edb59eabce98d2c2bdbe6bf99d9863cb29ea3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3aaeb417bd4e137839256cb3768f59dc6dda1785
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801207"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755701"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[Postup:] Použít technologie ASP.NET AJAX – Extender SlideShow?
 ====================

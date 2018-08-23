@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 title: Dávkové odstraňování (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Zjistěte, jak odstranit více záznamů databáze v rámci jedné operace. Ve vrstvě uživatelského rozhraní můžeme stavět rozšířené GridView vytvořili v předchozím kroku tut...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2007
 ms.assetid: 4fb72f75-32ab-4bf7-a764-be20367be726
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c7a0db8708c95cc348619cadd21514f4bea2e553
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ec3560f31f2def1801f9d09b3b583de6cdabc834
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815986"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756403"
 ---
 <a name="batch-deleting-vb"></a>Dávkové odstraňování (VB)
 ====================

@@ -1,31 +1,53 @@
 ---
-title: Povolit generování kód QR pro TOTP aplikace v ASP.NET Core
+title: Povolit generování kódu QR pro TOTP aplikace v ASP.NET Core
 author: rick-anderson
-description: Zjistit, jak povolit generování kódu QR pro TOTP ověřovací aplikace, které pracovat s ASP.NET Core dvoufaktorové ověřování.
-monikerRange: '>= aspnetcore-2.0'
+description: Zjistěte, jak povolit generování kódu QR pro aplikace TOTP, které pracují s ASP.NET Core dvojúrovňového ověřování.
 ms.author: riande
-ms.date: 09/24/2017
+ms.date: 08/14/2018
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: b0d8f104119340b97bd65f1826bb921ca875acf8
-ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
+ms.openlocfilehash: 4535efdde7340436c6a508848bff86e103df570e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37089968"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756004"
 ---
-# <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>Povolit generování kód QR pro TOTP aplikace v ASP.NET Core
+# <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>Povolit generování kódu QR pro TOTP aplikace v ASP.NET Core
 
-ASP.NET Core se dodává s podporou pro ověřovací aplikací pro jednotlivé ověřování. Dva faktor ověřování (2FA), použití založené na čase jednorázové heslo algoritmus (TOTP), jsou tyto aplikace doporučenému přístupu pro 2FA odvětví. 2FA pomocí TOTP je upřednostňovaný k 2FA serveru SMS. Ověřovací aplikaci poskytuje 6 až 8 číslice kódu, které uživatelé musí zadat po potvrzení uživatelského jména a hesla. Ověřovací aplikaci je obvykle nainstalován na Smartphone.
+::: moniker range="<= aspnetcore-2.0"
 
-Šablony webové aplikace ASP.NET Core podporovat ověřovací data, ale nemáte poskytují podporu pro generování QRCode. Generátory QRCode usnadňují nastavení 2FA. Tento dokument vás provede přidáním [kód QR](https://wikipedia.org/wiki/QR_code) generování na stránku konfigurace 2FA.
+Kódy QR vyžaduje ASP.NET Core 2.0 nebo novější.
 
-## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>Přidání kódy QR na stránku konfigurace 2FA
+::: moniker-end
 
-Tyto pokyny používají *qrcode.js* z https://davidshimjs.github.io/qrcodejs/ úložišti.
+::: moniker range=">= aspnetcore-2.0"
 
-* Stažení [knihovna javascript qrcode.js](https://davidshimjs.github.io/qrcodejs/) k `wwwroot\lib` složku ve vašem projektu.
+ASP.NET Core se dodává s podporou pro aplikace authenticator pro jednotlivé ověřování. Dva faktoru ověřování (2FA), pomocí časovou synchronizací jednorázové heslo algoritmus (TOTP), jsou tyto aplikace v oboru doporučenému přístupu pro 2FA. 2FA pomocí TOTP je upřednostňována před SMS 2FA. Aplikace authenticator poskytuje 6 až 8 číselným kódem, který uživatelé musí zadat po potvrzení uživatelského jména a hesla. Ověřovací aplikace se obvykle instaluje na smartphonu.
 
-* V *Pages\Account\Manage\EnableAuthenticator.cshtml* (stránky Razor) nebo *Views\Manage\EnableAuthenticator.cshtml* (MVC), vyhledejte `Scripts` na konci souboru:
+Šablony ASP.NET Core webové aplikace podporovat ověřovací data, ale neposkytuje podporu pro generování QRCode. Generátory QRCode usnadnění instalace 2FA. Tento dokument vás provede přidáním [kód QR](https://wikipedia.org/wiki/QR_code) generování ke konfigurační stránce 2FA.
+
+## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>Přidání na stránku konfigurace 2FA kódy QR
+
+Tyto pokyny používají *qrcode.js* z https://davidshimjs.github.io/qrcodejs/ úložiště.
+
+* Stáhněte si [knihovny javascript qrcode.js](https://davidshimjs.github.io/qrcodejs/) k `wwwroot\lib` složku ve vašem projektu.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+* Postupujte podle pokynů v [vygenerované uživatelské rozhraní Identity](xref:security/authentication/scaffold-identity) ke generování */Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml*.
+* V */Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml*, vyhledejte `Scripts` části na konci souboru:
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+* V *Pages/Account/Manage/EnableAuthenticator.cshtml* (stránky Razor) nebo *Views/Manage/EnableAuthenticator.cshtml* (MVC), vyhledejte `Scripts` části na konci souboru:
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
 
 ```cshtml
 @section Scripts {
@@ -33,7 +55,7 @@ Tyto pokyny používají *qrcode.js* z https://davidshimjs.github.io/qrcodejs/ �
 }
 ```
 
-* Aktualizace `Scripts` části se přidat odkaz na `qrcodejs` knihovny, které jste přidali a volání generovat kód QR. By měla vypadat takto:
+* Aktualizace `Scripts` části a přidejte odkaz na `qrcodejs` knihovny, které jste přidali a volání pro generování kódu QR. Měl by vypadat takto:
 
 ```cshtml
 @section Scripts {
@@ -51,15 +73,29 @@ Tyto pokyny používají *qrcode.js* z https://davidshimjs.github.io/qrcodejs/ �
 }
 ```
 
-* Odstraňte odstavce, který odkazy na tyto pokyny.
+* Odstranění odstavce, který slouží k propojení k těmto pokynům.
 
-Spuštění aplikace a zkontrolujte, zda jste naskenujte kód QR a ověřit kód, který prokáže ověřovacích.
+Spusťte aplikaci a ujistěte se, že můžete naskenovat kód QR a ověřit kód, který prokáže, ověřovací data.
 
-## <a name="change-the-site-name-in-the-qr-code"></a>Změňte název webu v kód QR
+## <a name="change-the-site-name-in-the-qr-code"></a>Změna názvu serveru v kódu QR
 
-Název webu v kód QR je převzat ze název projektu, který si zvolíte při počátečním vytvoření projektu. Můžete ji změnit tak, že vyhledá `GenerateQrCodeUri(string email, string unformattedKey)` metoda v *Pages\Account\Manage\EnableAuthenticator.cshtml.cs* souboru (stránky Razor) nebo *Controllers\ManageController.cs* (MVC) souboru.
+::: moniker-end
 
-Ve výchozím kódu ze šablony vypadá takto:
+::: moniker range=">= aspnetcore-2.1"
+
+Název webu v kód QR je převzat z názvu projektu, který si zvolíte při prvotním vytvoření projektu. Můžete ji změnit tím, že hledají `GenerateQrCodeUri(string email, string unformattedKey)` metodu */Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml*.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+Název webu v kód QR je převzat z názvu projektu, který si zvolíte při prvotním vytvoření projektu. Můžete ho změnit tím, že hledají `GenerateQrCodeUri(string email, string unformattedKey)` metoda v *Pages/Account/Manage/EnableAuthenticator.cshtml.cs* (stránky Razor) souboru nebo *Controllers/ManageController.cs* souboru (MVC).
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
+
+Výchozí kód ze šablony by měl vypadat takto:
 
 ```c#
 private string GenerateQrCodeUri(string email, string unformattedKey)
@@ -72,17 +108,19 @@ private string GenerateQrCodeUri(string email, string unformattedKey)
 }
 ```
 
-Druhý parametr ve volání `string.Format` je název lokality, provedených od název řešení. Lze změnit na jakoukoli hodnotu, ale musí být vždycky kódovaná adresou URL.
+Druhý parametr ve volání `string.Format` je název vašeho webu, na základě název řešení. Lze jej změnit na libovolnou hodnotu, ale musí být vždy kódování URL.
 
-## <a name="using-a-different-qr-code-library"></a>Pomocí různých kód QR knihovny
+## <a name="using-a-different-qr-code-library"></a>Použití knihovny jiný kód QR
 
-Kód QR knihovny můžete nahradit své upřednostňované knihovny. Obsahuje kód HTML `qrCode` obsahuje element, do kterého můžete umístit kód QR podle jakýmkoli své knihovny.
+Knihovny kódu QR můžete nahradit své upřednostňované knihovny. Obsahuje kód HTML `qrCode` elementu, do kterého můžete umístit kód QR libovolné mechanismem vaše knihovna poskytuje.
 
-Je k dispozici v správně formátovaného adresa URL pro kód QR:
+Správně formátované adresy URL pro kód QR je k dispozici v:
 
 * `AuthenticatorUri` Vlastnost modelu.
 * `data-url` Vlastnost `qrCodeData` elementu.
 
-## <a name="totp-client-and-server-time-skew"></a>TOTP klientských a serverových čas zkosení
+## <a name="totp-client-and-server-time-skew"></a>TOTP klientských a serverových nerovnoměrné rozdělení času
 
-Ověření TOTP (založené na čase jednorázové heslo) závisí na serveru a ověřovací zařízení má přesnému času. Tokeny pouze trvat 30 sekund. Pokud se nedaří přihlášení 2FA TOTP, zkontrolujte, jestli čas serveru přesné a pokud možno synchronizovány s služby přesné NTP.
+Ověření TOTP (podle času jednorázového hesla) závisí na serveru a ověřovací zařízení s přesnému času. Tokeny pouze posledních 30 sekund. Pokud se nedaří přihlášení TOTP 2FA, zkontrolujte, zda čas serveru přesné a pokud možno synchronizované do služby přesné NTP.
+
+::: moniker-end

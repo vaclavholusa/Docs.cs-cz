@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 title: Vytvoření ovládacího prvku Rating (VB) | Dokumentace Microsoftu
 author: wenz
 description: Mnoho webů z elektronického obchodování na komunitní weby, nabízí svým uživatelům míra články nebo položky. To obvykle vyžaduje některé kódování úsilí, ale pracujeme...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 6d0d70f4-725e-4258-8ae8-24a6ba1ddbf7
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cb8bd8ab400bf5633b8218e724ad86cf7271699d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b229d0155fbab0437c644b41424164e4c655f5e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811970"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755013"
 ---
 <a name="creating-a-rating-control-vb"></a>Vytvoření ovládacího prvku Rating (VB)
 ====================

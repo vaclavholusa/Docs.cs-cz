@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: Vzor založený na frontě práce (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
 description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: f9916e4ecbe6234ee12bcb56519e7e2c0e490972
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c454023c26d73df174a43b3a8ad6745ef8654fd2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840185"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752834"
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Vzor založený na frontě práce (vytváření skutečných cloudových aplikací s Azure)
 ====================

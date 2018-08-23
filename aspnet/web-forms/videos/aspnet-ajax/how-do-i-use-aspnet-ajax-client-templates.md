@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-aspnet-ajax-client-templates
 title: 'Postup: použití technologie ASP.NET AJAX klientských šablon | Dokumentace Microsoftu'
 author: rick-anderson
 description: Účastnící se vytváření AJAX interakce, asynchronní volání služby a aktualizace na stránce s Výsledná data jsou dvě klíčové kroky. ASP.NET AJAX h...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/18/2009
 ms.assetid: 2ab9d1eb-25b7-4bb6-b334-b83e45e9fcbb
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-aspnet-ajax-client-templates
 msc.type: video
-ms.openlocfilehash: 6bbeaf163ddba014ece439e22a2aaae0831a3e43
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4087364bfd65e4d60bd0490126457edbde52845e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820172"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751801"
 ---
 <a name="how-do-i-use-aspnet-ajax-client-templates"></a>Postup: použití technologie ASP.NET AJAX klientských šablon
 ====================

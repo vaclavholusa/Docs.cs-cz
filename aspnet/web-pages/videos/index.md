@@ -3,17 +3,17 @@ uid: web-pages/videos/index
 title: Video | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: febf2824-4e3d-4dc6-84c5-f99777ec6144
 msc.legacyurl: /web-pages/videos
 msc.type: book
-ms.openlocfilehash: a747402e7514406009f70fe1173773cfbff3a808
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8ad0a510ea62848b7a429c0bd4fa781b50c2ce53
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805921"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752611"
 ---
 <a name="videos"></a>Videa
 ====================

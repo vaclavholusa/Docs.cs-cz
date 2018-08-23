@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 title: Předání dat stránkám předlohy pro zobrazení (C#) | Dokumentace Microsoftu
 author: microsoft
 description: Cílem tohoto kurzu je vysvětlují, jak můžete předat data z kontroleru na hlavní stránku zobrazení. Prozkoumáme dvou strategií pro předávání dat k zobrazení m...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: 5fee879b-8bde-42a9-a434-60ba6b1cf747
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd2d3e85ac518a066d72541d40ab87543b1a70d1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e04a9b274b735af05a8e08dc7d8f34f0d83605be
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818979"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755227"
 ---
 <a name="passing-data-to-view-master-pages-c"></a>Předání dat stránkám předlohy pro zobrazení (C#)
 ====================

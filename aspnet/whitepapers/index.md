@@ -3,17 +3,17 @@ uid: whitepapers/index
 title: Dokumenty White Paper | Dokumentace Microsoftu
 author: rick-anderson
 description: Na této stránce najdete dokumenty White Paper umožňují nainstalovat a nakonfigurovat prostředí ASP.NET a vám pomůžou při psaní zabezpečené, rychlé a flexibilní aplikací ASP.NET.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2011
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 2bf12fd606a2afafa8ac047abb54b8ebb79112f4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3e463e0fb8e6af228480fc4795e1bd0ee5badac9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824761"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754522"
 ---
 <a name="whitepapers"></a>Dokumenty white paper
 ====================

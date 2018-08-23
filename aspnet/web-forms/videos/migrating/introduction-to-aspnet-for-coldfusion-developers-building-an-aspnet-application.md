@@ -3,17 +3,17 @@ uid: web-forms/videos/migrating/introduction-to-aspnet-for-coldfusion-developers
 title: 'Úvod do ASP.NET pro vývojáře v ColdFusion: Tvorba aplikace ASP.NET | Dokumentace Microsoftu'
 author: microsoft
 description: Toto webové vysílání ukazuje, jak vytvořit aplikaci ASP.NET od prázdný formulář poskytnout zkušené vývojáře ColdFusion jasno, co přesně...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2006
 ms.assetid: 47316dec-a4cd-4818-8ba7-87e29d963c38
 msc.legacyurl: /web-forms/videos/migrating/introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application
 msc.type: video
-ms.openlocfilehash: cc2e6e95210be61347f595d38673b904111fdb94
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7598deac9178cc428cf605deae78b5fbe9f8e180
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803863"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754818"
 ---
 <a name="introduction-to-aspnet-for-coldfusion-developers-building-an-aspnet-application"></a>Úvod do ASP.NET pro vývojáře v ColdFusion: Tvorba aplikace ASP.NET
 ====================

@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-health-monitoring-for-an-aspnet-application
-title: '[Postup:]  Implementace monitorování stavu aplikace ASP.NET? | Dokumentace Microsoftu'
+title: '[Postup:]  Implementace monitorování stavu aplikace ASP.NET? | Dokumenty Microsoft'
 author: rick-anderson
 description: V toto video pixelů na Chris ukáže jak implementovat stav monitorování a získat podrobné informace za běhu aplikace technologie ASP.NET. Zjistěte, výkonný a...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/05/2007
 ms.assetid: b3abd282-840a-42e3-ac27-cddbb22c5e33
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-health-monitoring-for-an-aspnet-application
 msc.type: video
-ms.openlocfilehash: 19161f76de27826d15ad0c68392fb1af40292614
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 23b7b12b0f22548951b5801205fd225e580b5c8c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806477"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753655"
 ---
 <a name="how-do-i--implement-health-monitoring-for-an-aspnet-application"></a>[Postup:]  Implementace monitorování stavu aplikace ASP.NET?
 ====================

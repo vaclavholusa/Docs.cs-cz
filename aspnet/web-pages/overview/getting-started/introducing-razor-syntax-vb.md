@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
 title: Úvod k programování v rozhraní ASP.NET Web používající syntaxi Razor (Visual Basic) | Dokumentace Microsoftu
 author: tfitzmac
 description: Tento dodatek poskytuje přehled o programování s webovými stránkami ASP.NET v jazyce Visual Basic pomocí syntaxe Razor.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 72f995e62141df4e8f4cd082b4873d82067af8c1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cbec035533c37723afcd5bf4aa0c6e1c83dbae23
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816545"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756843"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Úvod k programování v rozhraní ASP.NET Web používající syntaxi Razor (Visual Basic)
 ====================
@@ -273,30 +273,88 @@ K převodu hodnoty na celá čísla, volání `AsInt` metody. Pokud převod nen�
 Následující tabulka uvádí některé běžné metody převodu a testování pro proměnné.
 
 
-::: řádek:::::: sloupec::: <strong>– metoda</strong> ::: konec sloupce:::::: sloupec::: <strong>popis</strong> ::: column-end:::::: sloupec::: <strong>příklad</strong> ::: column-end:::::: konec řádku:::
+:::row:::
+    :::column:::
+        <strong>– Metoda</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Popis</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Příklad</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsInt(), IsInt()` ::: konec sloupce:::::: sloupec::: převede řetězec představující celé číslo (jako &quot;593&quot;) na celé číslo.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsInt(), IsInt()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec představující celé číslo (například &quot;593&quot;) na celé číslo.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsBool(), IsBool()` ::: konec sloupce:::::: sloupec::: převede řetězec jako &quot;true&quot; nebo &quot;false&quot; s typem Boolean.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsBool(), IsBool()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; s typem Boolean.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsFloat(), IsFloat()` ::: konec sloupce:::::: sloupec::: převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsFloat(), IsFloat()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsDecimal(), IsDecimal()` ::: konec sloupce:::::: sloupec::: převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) ::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsDecimal(), IsDecimal()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsDateTime(), IsDateTime()` ::: konec sloupce:::::: sloupec::: převede řetězec představující hodnotu data a času na ASP.NET `DateTime` typu.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsDateTime(), IsDateTime()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec představující hodnotu data a času na ASP.NET `DateTime` typu.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `ToString()` ::: konec sloupce:::::: sloupec::: jakýmkoli jiným datovým typem převede na řetězec.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `ToString()`
+    :::column-end:::
+    :::column:::
+        Převede jakýkoli jiný typ dat na řetězec.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
+    :::column-end:::
+:::row-end:::
 
 
 ## <a name="operators"></a>Operátory
@@ -304,47 +362,137 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
 Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jaký druh příkaz k provedení ve výrazu. Visual Basic podporuje mnoho operátorů, ale je potřeba jenom rozpoznat pár, abyste mohli začít vyvíjet webové stránky ASP.NET. Následující tabulka shrnuje nejčastější operátory.
 
 
-::: řádek:::::: sloupec::: <strong>– operátor</strong> ::: column-end:::::: sloupec::: <strong>popis</strong> ::: column-end:::::: sloupec::: <strong>příklady</strong> ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        <strong>– Operátor</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Popis</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Příklady</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `+ - * /` ::: konec sloupce:::::: sloupec::: matematické operátory používat ve výrazech pro číselná.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `+ - * /`
+    :::column-end:::
+    :::column:::
+        Matematické operátory používat ve výrazech pro číselná.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `=` ::: konec sloupce:::::: sloupec::: přiřazení a rovnosti. V závislosti na kontextu buď přiřadí hodnotu na pravé straně příkazu na objekt na levé straně nebo zkontroluje hodnoty na rovnost.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `=`
+    :::column-end:::
+    :::column:::
+        Přiřazení a rovnosti. V závislosti na kontextu buď přiřadí hodnotu na pravé straně příkazu na objekt na levé straně nebo zkontroluje hodnoty na rovnost.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `<>` ::: konec sloupce:::::: sloupec::: nerovnost. Vrátí `True` Pokud hodnoty nejsou shodné.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `<>`
+    :::column-end:::
+    :::column:::
+        Nerovnost. Vrátí `True` Pokud hodnoty nejsou shodné.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `< > <= >=` ::: konec sloupce:::::: sloupec::: menší než, větší než, menší než nebo rovno a větší než nebo rovno.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `< > <= >=`
+    :::column-end:::
+    :::column:::
+        Menší než, větší než, menší než nebo rovno a větší než nebo rovno.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `&` ::: konec sloupce:::::: sloupec::: zřetězení, který se používá pro připojení řetězce.
-::: konec sloupce:::::: sloupec::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `&`
+    :::column-end:::
+    :::column:::
+        Zřetězení, který se používá pro připojení řetězce.
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `+= -=` ::: konec sloupce:::::: sloupec::: operátory přírůstku a snížení, které operátorů sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `+= -=`
+    :::column-end:::
+    :::column:::
+        Přírůstek a snížení operátory, které operátorů sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `.` ::: konec sloupce:::::: sloupec::: tečkou. Použít k rozlišení objekty a jejich vlastnosti a metody.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `.`
+    :::column-end:::
+    :::column:::
+        Tečka. Použít k rozlišení objekty a jejich vlastnosti a metody.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `()` ::: konec sloupce:::::: sloupec::: závorky. Skupinové výrazy, lze pro předání parametrů k metodám a chcete získat přístup ke členům pole a kolekce.
-::: konec sloupce:::::: sloupec::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `()`
+    :::column-end:::
+    :::column:::
+        Závorky. Skupinové výrazy, lze pro předání parametrů k metodám a chcete získat přístup ke členům pole a kolekce.
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `Not` ::: konec sloupce:::::: sloupec::: není. Vrátí hodnotu true na false a naopak. Obvykle se používá jako zjednodušený způsob, jak otestovat pro `False` (to znamená pro není `True`).
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `Not`
+    :::column-end:::
+    :::column:::
+        Není. Vrátí hodnotu true na false a naopak. Obvykle se používá jako zjednodušený způsob, jak otestovat pro `False` (to znamená pro není `True`).
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AndAlso OrElse` ::: konec sloupce:::::: sloupec::: logické a a které se používají k propojení podmínky společně.
-::: konec sloupce:::::: sloupec::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AndAlso OrElse`
+    :::column-end:::
+    :::column:::
+        Logický operátor AND a které se používají k propojení podmínky společně.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
+    :::column-end:::
+:::row-end:::
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>Práce s souboru a cesty ke složkám v kódu
 

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mockin
 title: 'ASP.NET prezentace MVC – část 12: Vytvoření modelu | Dokumentace Microsoftu'
 author: robconery
 description: V této epizodě můžu implementovat napodobování, takže můžete otestovat své akce ověřování pro moje UserController.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: 9a0f04b9-6a49-4e2c-9c12-03ab71ab2705
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-12-mocking
 msc.type: video
-ms.openlocfilehash: 4f25641ad0246d54e3e34b691d7169b76cfbde92
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0af5799a779f19f19f8eaeab5c554d90993ca4af
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841878"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755989"
 ---
 <a name="aspnet-mvc-storefront-part-12-mocking"></a>Prezentace ASP.NET MVC – část 12: vytvoření modelu
 ====================

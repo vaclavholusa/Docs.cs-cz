@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles
-title: 'Jak mohu: vytvořit efektivního standardního přístupu k implementaci stylů CSS | Dokumentace Microsoftu'
+title: 'Jak mohu: vytvořit efektivního standardního přístupu k implementaci stylů CSS | Dokumenty Microsoft'
 author: rick-anderson
 description: V toto video pixelů na Chris ukazuje, jak uspořádat a implementaci stylů CSS, které poskytují standardizované vzhled a chování na webu. Kromě toho jsou stylů...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/15/2010
 ms.assetid: 1d902492-c6a3-4ab8-8e3d-57384ac893d5
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles
 msc.type: video
-ms.openlocfilehash: 04ff5486d6fd8db172ece96891e959691330c3dc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0fc433f5b3ccab07da88ef6489ded3b5e07cd928
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831382"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757101"
 ---
 <a name="how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles"></a>Jak mohu: vytvořit efektivního standardního přístupu k implementaci stylů CSS
 ====================

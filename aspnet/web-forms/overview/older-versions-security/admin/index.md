@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/admin/index
 title: ASP.NET 3.5 – Správa zabezpečení | Dokumentace Microsoftu
 author: rick-anderson
 description: V této sérii kurzů ukazuje jeden způsob, jak vytvořit stránku pro správu, které umožňuje spravovat uživatele a role.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: b715c4ec-6f4b-4f7e-8ee3-b1613477ce61
 msc.legacyurl: /web-forms/overview/older-versions-security/admin
 msc.type: chapter
-ms.openlocfilehash: 0eecf858d6db678537bedd68f72a216a25d69280
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: dde25fe54cf7ba56790979328e7bc8b8a3301226
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837041"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755399"
 ---
 <a name="aspnet-35---security-administration"></a>ASP.NET 3.5 – Správa zabezpečení
 ====================

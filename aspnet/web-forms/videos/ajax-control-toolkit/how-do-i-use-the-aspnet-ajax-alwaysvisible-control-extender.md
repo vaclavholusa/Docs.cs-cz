@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender
-title: '[Postup:] Použít zařízení Extender ovládacího prvku AlwaysVisible technologie ASP.NET AJAX? | Dokumentace Microsoftu'
+title: '[Postup:] Použít zařízení Extender ovládacího prvku AlwaysVisible technologie ASP.NET AJAX? | Dokumenty Microsoft'
 author: JoeStagner
 description: Podívejte se, jak snadné je ukotvení prvek na místo na obrazovce, ve kterém zůstane vždy viditelné bez ohledu na to, jak daleko uživatel může posunout dokumentu. ...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2007
 ms.assetid: 1126e173-733e-437f-abdd-81784f47b7f0
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender
 msc.type: video
-ms.openlocfilehash: 9c2e5c15b88106758194f6ecb37b11dacdd341c7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9bf324b9aac11809991d849fba9e796f6ed1db59
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802432"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755414"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-alwaysvisible-control-extender"></a>[Postup:] Použít zařízení Extender ovládacího prvku AlwaysVisible technologie ASP.NET AJAX?
 ====================

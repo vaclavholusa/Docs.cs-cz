@@ -3,16 +3,16 @@ uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-we
 title: Začínáme s rozhraním ASP.NET Web API 2 (C#)
 author: MikeWasson
 description: Protokol HTTP není jen pro poskytovat webové stránky. Je také výkonnou platformu pro vytváření rozhraní API, která zpřístupňují služby a data. HTTP je jednoduchý, flexibilní a ubiq...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/28/2017
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 170e361c46631e7ecdbe026061c181158dcf803f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 14796ce31187a0f6a6331b46477fadc77e281c3b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823417"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753222"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>Začínáme s rozhraním ASP.NET Web API 2 (C#)
 ====================

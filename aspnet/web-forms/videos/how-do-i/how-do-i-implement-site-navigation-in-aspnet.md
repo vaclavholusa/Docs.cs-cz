@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-site-navigation-in-aspnet
-title: '[Postup:] Implementace navigace na webu technologie ASP.NET? | Dokumentace Microsoftu'
+title: '[Postup:] Implementace navigace na webu technologie ASP.NET? | Dokumenty Microsoft'
 author: rick-anderson
 description: V tomto videu jsme zjistěte, jak definovat mapy webu a jeho použití s serverové ovládací prvky nabídky, prvek TreeView a mapy webu. Vidíme, jak používat na hlavní stránce mapy webu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/18/2007
 ms.assetid: 889e8100-a80c-41c0-bfeb-7d466c754548
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-site-navigation-in-aspnet
 msc.type: video
-ms.openlocfilehash: 1995ce735698f0c7827e2721c07c1d98922a7ba3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ee5b79587672b9bf076439b28aad9de3f0c7dd98
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822428"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753044"
 ---
 <a name="how-do-i-implement-site-navigation-in-aspnet"></a>[Postup:] Implementace navigace na webu technologie ASP.NET?
 ====================

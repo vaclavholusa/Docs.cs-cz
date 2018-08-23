@@ -3,17 +3,17 @@ uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipel
 title: Middleware OWIN v IIS integrovaný kanál | Dokumentace Microsoftu
 author: Praburaj
 description: Tento článek popisuje, jak spustit komponenty middlewaru OWIN (OMCs) v integrovaném kanálu IIS a jak nastavit událost kanálu OMC poběží. Měli byste...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/07/2013
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: e78ded1dcafd40097d6477a757406c7170dd1bb7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 56bd145688e1ab0a70710cc80cb8f5fa10ee8968
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828095"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752442"
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>Middleware OWIN v integrovaném kanálu IIS
 ====================

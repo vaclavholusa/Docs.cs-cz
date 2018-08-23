@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-f
 title: Řazení, filtrování a stránkování s Entity Framework v aplikaci ASP.NET MVC (3 10) | Dokumentace Microsoftu
 author: tdykstra
 description: Contoso University ukázkovou webovou aplikaci ukazuje postup vytvoření aplikace ASP.NET MVC 4 pomocí Entity Framework 5 Code First a sady Visual Studio...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f5ce5f926021a53a5dd96e578b26b8c186c9a83c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 72180686ea1ee6f6695b24fcedf3af90c1eddcfa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841031"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756641"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Řazení, filtrování a stránkování s Entity Framework v aplikaci ASP.NET MVC (3 10)
 ====================

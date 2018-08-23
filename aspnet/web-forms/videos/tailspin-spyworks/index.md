@@ -3,17 +3,17 @@ uid: web-forms/videos/tailspin-spyworks/index
 title: Tailspin Spyworks | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak používat nové funkce v technologii ASP.NET 4 k sestavení nebo online úložiště, včetně nákupu, Pokladna a správu.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 8aa371f8-913c-4ed2-98b0-f76abf15669d
 msc.legacyurl: /web-forms/videos/tailspin-spyworks
 msc.type: chapter
-ms.openlocfilehash: c280130cd7697ba453e06f5f719193a7090fb09a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0fbbc6e0ca1d13effe5d7f157e3f0dc5502578c6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804197"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756857"
 ---
 <a name="tailspin-spyworks"></a>Tailspin Spyworks
 ====================

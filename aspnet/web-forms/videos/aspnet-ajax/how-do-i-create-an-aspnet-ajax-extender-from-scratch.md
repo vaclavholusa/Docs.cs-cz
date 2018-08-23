@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-create-an-aspnet-ajax-extender-from-scratch
-title: '[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender? | Dokumentace Microsoftu'
+title: '[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender? | Dokumenty Microsoft'
 author: rick-anderson
 description: Informace o vytvoření extenderu ASP.NET AJAX pro standardní serverový ovládací prvek ASP.NET. Jsme se zobrazí postup, chcete-li přidat vlastnosti na straně serveru a jazyka JavaScript na straně klienta...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/01/2007
 ms.assetid: 526b4ec1-4a80-4fae-bf0d-af5cb78f5d02
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-create-an-aspnet-ajax-extender-from-scratch
 msc.type: video
-ms.openlocfilehash: 4e82ac4351e7af361140d38f79fb3a1bfde5834a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c9e2b3e29c7fd907679c97277c243bd12b4bdff9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810066"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755207"
 ---
 <a name="how-do-i-create-an-aspnet-ajax-extender-from-scratch"></a>[Postup:] Vytvoření zcela nové ASP.NET AJAX – Extender?
 ====================

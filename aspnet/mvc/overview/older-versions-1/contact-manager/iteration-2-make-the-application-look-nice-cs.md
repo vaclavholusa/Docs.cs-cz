@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-applicat
 title: 'Iterace #2 – Vytvoření aplikace vypadat nice (C#) | Dokumentace Microsoftu'
 author: microsoft
 description: V této iterace můžeme zlepšit vzhled aplikace tak, že změna výchozích hlavní stránka zobrazení ASP.NET MVC a stylů CSS.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: f1173feb-11ee-4017-8f3f-86599ea6ae13
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 89dc31d8ab0d73aac3a79a0a942121bb9a240eb7
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: c8bbd20cb64fb27a0a6de2cdc14743f6961f4bf0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396137"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752229"
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a>Iterace #2 – Vytvoření aplikace vypadat nice (C#)
 ====================

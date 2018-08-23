@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/index
 title: ASP.NET MVC – zobrazení | Dokumentace Microsoftu
 author: rick-anderson
 description: Této sérii kurzů poskytuje stručný úvod do ASP.NET MVC zobrazení, zobrazení dat a pomocných rutin HTML.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/28/2011
 ms.assetid: c2dea264-0d8c-4216-bbe5-70d2421597b0
 msc.legacyurl: /mvc/overview/older-versions-1/views
 msc.type: chapter
-ms.openlocfilehash: 7ace21d40c43838326400a274d8fa8af1c82495b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 05f49ffb2bb6bb4a0a04d673845f8e9901d138f8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823071"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755987"
 ---
 <a name="aspnet-mvc-views"></a>Zobrazení ASP.NET MVC
 ====================

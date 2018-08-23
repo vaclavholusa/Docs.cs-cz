@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeat
 title: Vnořené dat webové ovládací prvky (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu se podíváme na tom, jak používat Repeateru vnořit do jiného opakovače. V příkladech se ukazují, jak naplnit obě d vnitřní Repeater...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: 8b7fcf7b-722b-498d-a4e4-7c93701e0c95
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 45e460edb09fe9398d204e0f280dfb088a44946d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 297d76da5bf049ec68a351562f96f3587b059b55
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803175"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755011"
 ---
 <a name="nested-data-web-controls-vb"></a>Webové ovládací prvky vnořených dat (VB)
 ====================

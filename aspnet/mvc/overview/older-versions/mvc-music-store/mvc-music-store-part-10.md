@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 title: '10. část: Závěrečné aktualizace návrhu navigace a webu, závěr | Dokumentace Microsoftu'
 author: jongalloway
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace ASP.NET MVC Music Store. Část 10 popisuje závěrečné aktualizace navigace a S...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 0c6e4c2f-fcdb-4978-9656-1990c6f15727
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 msc.type: authoredcontent
-ms.openlocfilehash: 40ed7c337e097675199ab66229095bd3315d8c8d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f32509701dd112053aa4f31d6552601f961c7413
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836803"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755405"
 ---
 <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>10. část: Závěrečné aktualizace návrhu navigace a webu, závěr
 ====================

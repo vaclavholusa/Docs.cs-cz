@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/movie-database/create-a-movie-database-applic
 title: Vytvoření aplikace Movie Database za 15 minut s ASP.NET MVC (VB) | Dokumentace Microsoftu
 author: StephenWalther
 description: Stephen Walther sestavení celý databázově řízeného aplikaci ASP.NET MVC od začátku na dokončení. Tento kurz představuje vynikající Úvod pro uživatele, kteří jsou nové t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: e4ba9786-734c-4eb3-91bb-089793325d0d
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d852dd2797f6df40cd233759648ec442259d4d26
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f0a060bffc2e45f54d03571b6609a30876202e32
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831197"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756399"
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>Vytvoření aplikace Movie Database za 15 minut s ASP.NET MVC (VB)
 ====================

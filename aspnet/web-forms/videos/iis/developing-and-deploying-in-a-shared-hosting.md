@@ -3,17 +3,17 @@ uid: web-forms/videos/iis/developing-and-deploying-in-a-shared-hosting
 title: Vývoj a nasazení při sdíleném hostování | Dokumentace Microsoftu
 author: JoeStagner
 description: Toto video představuje vývoj aplikace ASP.NET ve sdíleném hostování prostředí prokazováním &quot;živé úpravy&quot; a &quot;vzdálené publikace &...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/09/2009
 ms.assetid: fb6b54c6-5459-4528-98a0-1fb16144836a
 msc.legacyurl: /web-forms/videos/iis/developing-and-deploying-in-a-shared-hosting
 msc.type: video
-ms.openlocfilehash: 102b18fa7c6b0d04d49389cb8a59c4eb390681e8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5930979c8e6aeb88505edb55b76b6cd72c70309a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820996"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757091"
 ---
 <a name="developing-and-deploying-in-a-shared-hosting"></a>Vývoj a nasazení při sdíleném hostování
 ====================

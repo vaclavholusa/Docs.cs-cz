@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-de
 title: Konfigurace oprávnění pro tým nasazení sestavení | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma popisuje, jak nakonfigurovat oprávnění, které umožňují sestavení serveru nasazení obsahu do webové servery a databázové servery jako součást automatizovaného b...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 2488a91e-b0a8-465a-b874-3233f724b56b
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b577d887b4a4476b6796ae9f1df538d16eededa3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0142be694a4e7d601625022f6fbfe39971823d03
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820357"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754780"
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>Konfigurace oprávnění pro tým nasazení sestavení
 ====================

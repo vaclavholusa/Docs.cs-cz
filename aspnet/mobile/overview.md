@@ -3,17 +3,17 @@ uid: mobile/overview
 title: Mobilní aplikace a servery s technologií ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
 description: Zjistěte, jak ASP.NET umožňuje snadno sestavovat mobilní webové aplikace
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/28/2011
 ms.assetid: 1febce65-cdd4-47da-bdb5-1e6022ccd20a
 msc.legacyurl: /mobile
 msc.type: content
-ms.openlocfilehash: 613cb6ccd303b1dd2054210ad90bfd5dc1fbb8cc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1d5dea4a7f961475579cfdf677377ce9c9956540
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834114"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752002"
 ---
 <a name="mobile-apps--sites-with-aspnet"></a>Mobilní aplikace a weby pomocí ASP.NET
 ====================

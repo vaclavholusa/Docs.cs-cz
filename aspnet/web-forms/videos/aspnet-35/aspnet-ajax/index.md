@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/aspnet-ajax/index
 title: ASP.NET Ajax | Dokumentace Microsoftu
 author: rick-anderson
 description: Tato série videí popisuje přidání funkcí Ajax do aplikace ASP.NET.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/14/2011
 ms.assetid: 93486ab8-7a8c-4075-935a-83900817b3db
 msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax
 msc.type: chapter
-ms.openlocfilehash: ea20adc4a8ebbd8d6d1f2ca1dd375e6ac835faeb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ac46b096c549e0e582801a6db7134c9396eb26e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831820"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752846"
 ---
 <a name="aspnet-ajax"></a>ASP.NET Ajax
 ====================

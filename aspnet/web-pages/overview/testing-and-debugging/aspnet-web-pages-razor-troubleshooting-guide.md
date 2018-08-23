@@ -3,17 +3,17 @@ uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshoo
 title: ASP.NET – webové stránky příručky pro řešení potíží (Razor) | Dokumentace Microsoftu
 author: tfitzmac
 description: Tento článek popisuje problémy, které můžete mít při práci s webových stránek ASP.NET (Razor) a některé doporučené řešení. Verze softwaru Úvo ASP.NET Web...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2014
 ms.assetid: 2a2c1833-0bfe-4e2e-9cc0-341b52c7b121
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 0d0e47ce1b52f0e9ac23a44bbd37ac1a38290dbd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c27139a720decd34a4ab89e6f93e71c97d123b45
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825160"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752607"
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET – webové stránky příručky pro řešení potíží (Razor)
 ====================
@@ -36,7 +36,7 @@ Toto téma obsahuje následující oddíly:
 - [Problémy s kódem Razor](#IssuesWithRazorCode)
 - [Problémy se zabezpečením a členství](#membership)
 - [Problémy s odesláním e-mailu](#email)
-- [Další zdroje informací](#AdditionalResources)
+- [Další prostředky](#AdditionalResources)
 
 Obecné dotazy najdete v tématu [webových stránek ASP.NET (Razor) – nejčastější dotazy](https://go.microsoft.com/fwlink/?LinkId=253000).
 

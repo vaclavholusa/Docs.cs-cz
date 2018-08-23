@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-formatting/index
 title: Vlastní formátování | Dokumentace Microsoftu
 author: rick-anderson
 description: Tyto kurzy podívejte se na tom, jak přizpůsobit zobrazení dat během vazby dat s použitím obslužné rutiny událostí do ovládacího prvku GridView, DetailsView a FormView ovládacích prvků.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 320b7d26-837f-4fa7-a242-1ab82f8bdbe9
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting
 msc.type: chapter
-ms.openlocfilehash: 94f1eb660bc273ee67733298e80f6d72b36f6494
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 72a9b91b6d646d5c7d9d3105b4c36eec38a98236
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813404"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755203"
 ---
 <a name="custom-formatting"></a>Vlastní formátování
 ====================

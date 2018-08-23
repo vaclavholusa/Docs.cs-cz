@@ -3,17 +3,17 @@ uid: web-forms/overview/presenting-and-managing-data/model-binding/updating-dele
 title: Aktualizace, odstraňování a vytváření data pomocí vazby modelu a webových formulářů | Dokumentace Microsoftu
 author: tfitzmac
 description: V této sérii kurzů ukazuje základní aspekty v použití vazby modelu s projektem aplikace webových formulářů ASP.NET. Data interakce díky vazby modelu další přímo-...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/27/2014
 ms.assetid: 602baa94-5a4f-46eb-a717-7a9e539c1db4
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 1cf9873db177b67927b579def1eedd08e3e9a762
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3e098d7b10ba6218ffa1818ccf8fc8df6912a9e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821629"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754813"
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>Aktualizace, odstraňování a vytváření data pomocí vazby modelu a webové formuláře
 ====================

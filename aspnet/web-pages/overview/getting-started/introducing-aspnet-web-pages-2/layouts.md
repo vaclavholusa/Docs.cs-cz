@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 title: Představení rozhraní ASP.NET Web Pages – vytvoření konzistentního rozložení | Dokumentace Microsoftu
 author: tfitzmac
 description: V tomto kurzu se dozvíte, jak k vytvoření konzistentního vzhledu stránky na webu, který používá rozhraní ASP.NET Web Pages použít rozložení. Předpokládá, že jste dokončili...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: c85ec591-f8d7-4882-b763-de6ab9f3df7a
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 5641b65ab1053ccc039a94f7a591185ff00ff1c9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8f3d9e8a6f6a0179224e18faf11db3dc1510a095
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806543"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752614"
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>Úvod do webových stránek ASP.NET – vytvoření konzistentního rozložení
 ====================

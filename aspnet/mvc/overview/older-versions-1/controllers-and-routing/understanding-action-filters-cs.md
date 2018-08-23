@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-
 title: Principy filtrů akcí (C#) | Dokumentace Microsoftu
 author: microsoft
 description: Cílem tohoto kurzu je vysvětlit filtrů akce. Filtr akce je atribut, který můžete použít na akce kontroleru--nebo celý kontroler...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: a94e4e81-40c1-47b7-8613-126a1a6cc93d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aaec90a14e53f0173ea09fbdbaa591ec0eb680b1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6c7706d8252d5a0271f1b9243fa8eb282f722654
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810160"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752604"
 ---
 <a name="understanding-action-filters-c"></a>Principy filtrů akcí (C#)
 ====================

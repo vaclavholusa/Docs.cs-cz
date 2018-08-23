@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-server-environments-for-web-deplo
 title: Konfigurování serveru databáze webu nasadit publikování | Dokumentace Microsoftu
 author: jrjlee
 description: Toto téma popisuje, jak konfigurovat databázový server SQL Server 2008 R2 pro podporu nasazení webu a publikování. Úlohy popsané v tomto tématu jsou co...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: e7c447f9-eddf-4bbe-9f18-3326d965d093
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 9ec938298ea63609c276aed807a67722bf9bd66d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0f8639efcfcd02c9fdb65ce3ed25272965be8aa8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841976"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753429"
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Konfigurace databázového serveru pro publikování nasazeného webu
 ====================

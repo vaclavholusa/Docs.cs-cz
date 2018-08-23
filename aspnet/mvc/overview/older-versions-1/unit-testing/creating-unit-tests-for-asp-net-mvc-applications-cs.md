@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-
 title: Vytváření testů jednotek pro aplikace ASP.NET MVC (C#) | Dokumentace Microsoftu
 author: StephenWalther
 description: Zjistěte, jak vytvářet testy částí pro akce kontroleru. V tomto kurzu Stephen Walther ukazuje, jak otestovat, jestli akce kontroleru vrátí sloupce části...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: d3a270b9-d7b1-47f2-8775-fc3beb518b5c
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f9e6945a379d37f1539c7135041f50dcc7041750
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 08de8a57860886a8f633cacbaae1d63fe08a5a02
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826676"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752003"
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>Vytváření testů jednotek pro aplikace ASP.NET MVC (C#)
 ====================

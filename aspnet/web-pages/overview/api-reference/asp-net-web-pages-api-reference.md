@@ -3,17 +3,17 @@ uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
 title: Webové stránky ASP.NET (Razor) – rozhraní API rychlé odkazy | Dokumentace Microsoftu
 author: tfitzmac
 description: Tato stránka obsahuje seznam s krátkou příklady z nejčastěji používaných objektů, vlastnosti a metody pro programování rozhraní ASP.NET Web Pages se syntaxí Razor.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2014
 ms.assetid: 4001cb9b-3bfd-4ace-8a89-1561d8421e2c
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 5fb5b8d29fce25fb36704a58b673f5f3bd582873
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a10446eb621feb26c485384700ad9980cccf5d8b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836760"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752199"
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>Webové stránky ASP.NET (Razor) – rozhraní API rychlé odkazy
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scen
 title: Použití jazyka AJAX k implementaci scénářů mapování | Dokumentace Microsoftu
 author: microsoft
 description: Krok 11 ukazuje, jak integrovat podporu mapování AJAX do naší aplikace NerdDinner povolení uživatelé, kteří jsou vytvoření, úpravách nebo prohlížení večeří zobrazíte l...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: f8b9704e966c0211a690156555f4a272a823023a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f7de23ca46e6dc00fe8075e28068a8b3f95d02cd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825976"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753043"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>Použití jazyka AJAX k implementaci scénářů mapování
 ====================

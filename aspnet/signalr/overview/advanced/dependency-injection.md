@@ -3,17 +3,17 @@ uid: signalr/overview/advanced/dependency-injection
 title: Injektáž závislostí v knihovně SignalR | Dokumentace Microsoftu
 author: MikeWasson
 description: Verze softwaru použitým v tomto tématu Visual Studio 2013 .NET 4.5 SignalR 2 předchozí verze tohoto tématu informace o předchozích verzích...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 423fe4475312b4772c83d071321b162da1beb9b1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2f9b8eeb87882a686df5f35b2e7048a8518c8d4b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819173"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752840"
 ---
 <a name="dependency-injection-in-signalr"></a>Injektáž závislostí v knihovně SignalR
 ====================

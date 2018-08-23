@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globali
 title: 'ASP.NET MVC prezentace – část 5: Globalizace | Dokumentace Microsoftu'
 author: robconery
 description: Rob Conery funguje s ochranou Damien refaktorování databáze, kterou chcete řešit problémy s testovací data a globalizace.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/27/2008
 ms.assetid: ec659d9f-8172-4c9e-9dd0-f5743bb27d4b
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-5-globalization
 msc.type: video
-ms.openlocfilehash: 5f0e6e4c91c9cc39270df7801c47bce947433845
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f250add5d8c88287fb3666741b928d8e84a31fa2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827411"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752222"
 ---
 <a name="aspnet-mvc-storefront-part-5-globalization"></a>Prezentace ASP.NET MVC – část 5: globalizace
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-ne
 title: Přidání nového pole do modelu filmů a databázové tabulky (VB) | Dokumentace Microsoftu
 author: Rick-Anderson
 description: V tomto kurzu se seznámíte se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, což je...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/12/2011
 ms.assetid: 28970e1b-1845-4015-86ef-121e52a6c397
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: cd178b36e1554c9521e0a001568ba41ec13fcef0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 816660aff696c64948e6ca9daca6632cc9d58082
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839661"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754534"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>Přidání nového pole do modelu filmů a databázové tabulky (VB)
 ====================

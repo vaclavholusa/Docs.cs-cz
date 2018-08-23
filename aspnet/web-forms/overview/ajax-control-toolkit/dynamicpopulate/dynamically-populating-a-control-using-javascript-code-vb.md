@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populat
 title: Dynamické naplnění ovládacího prvku Javascriptovým kódem (VB) | Dokumentace Microsoftu
 author: wenz
 description: ASP.NET AJAX Control Toolkit ovládacího prvku DynamicPopulate volání webové služby (nebo metodu stránky) a vyplní výsledné hodnoty do cílového ovládacího prvku na t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 90582e54-3e90-432a-9da5-689fb39ed56b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fae87d87b0783dff6fc8f5f282a73b05ee64affa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5d1c3b59896b8c509e9c62738ccd1b37c250a840
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812737"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752216"
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>Dynamické naplnění ovládacího prvku Javascriptovým kódem (VB)
 ====================

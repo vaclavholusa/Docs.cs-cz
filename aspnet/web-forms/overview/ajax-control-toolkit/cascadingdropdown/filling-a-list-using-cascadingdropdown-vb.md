@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-us
 title: Vyplnění seznamu ovládacím prvkem CascadingDropDown (VB) pomocí | Dokumentace Microsoftu
 author: wenz
 description: Sada nástrojů AJAX Control Toolkit ovládacího prvku CascadingDropDown rozšiřuje ovládací prvek DropDownList tak, aby se změny v jedné DropDownList zatížení související hodnoty v anoth...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 5236695e-5c70-4887-baee-0bfb0afb3448
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/filling-a-list-using-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4a2e2440c0b93fc3945c466a2c60c6560c9e57a4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ad716222335e8b6f2484953296cc263119718105
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834174"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756670"
 ---
 <a name="filling-a-list-using-cascadingdropdown-vb"></a>Vyplnění seznamu ovládacím prvkem použití ovládacího prvku CascadingDropDown (VB)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scen
 title: ASP.NET 4 – Úvod do nasazení v podniku | Dokumentace Microsoftu
 author: rick-anderson
 description: Této sérii kurzů popisuje nástroje a techniky, které slouží k nasazování webových aplikací v různých podnikových scénářích.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 8e55d4a3-5f93-42b5-b053-4736c9152f11
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios
 msc.type: chapter
-ms.openlocfilehash: 9eaacdaa17414e86c42ed5e530639949f8fc7326
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 77225f999e348fdfd434007c4b08729724d24d04
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825256"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756831"
 ---
 <a name="aspnet-4---enterprise-deployment-introduction"></a>ASP.NET 4 – Úvod do nasazení v podniku
 ====================

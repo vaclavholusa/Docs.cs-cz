@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/secure-applications-using-authenti
 title: Zabezpečení aplikací ověřováním a autorizací | Dokumentace Microsoftu
 author: microsoft
 description: Krok 9 ukazuje, jak přidat ověřování a autorizace pro zabezpečení naší aplikace NerdDinner tak, aby uživatelé potřebují k registraci a přihlaste se k webu k vytvoření...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 9e4d5cac-b071-440c-b044-20b6d0c964fb
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/secure-applications-using-authentication-and-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 0005b99dbf7d59e96313f025880c46cdec4838b6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d5f1b26312f11fd6d4ab500c7f24a4d89d428e38
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801389"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757110"
 ---
 <a name="secure-applications-using-authentication-and-authorization"></a>Zabezpečení aplikací ověřováním a autorizací
 ====================

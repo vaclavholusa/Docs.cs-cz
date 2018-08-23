@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-configure-the-aspnet-ajax-calendar-control
-title: '[Postup:] Konfigurovat ovládací prvek ASP.NET AJAX kalendáře? | Dokumentace Microsoftu'
+title: '[Postup:] Konfigurovat ovládací prvek ASP.NET AJAX kalendáře? | Dokumenty Microsoft'
 author: JoeStagner
 description: V tomto videu jsme vidět ukázku řadu možností, které jsou dostupné pro konfiguraci vzhledu a chování zařízení extender ovládacího prvku kalendář z t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/30/2007
 ms.assetid: bee087cc-7fed-4dce-8b52-19987f2d38a6
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-configure-the-aspnet-ajax-calendar-control
 msc.type: video
-ms.openlocfilehash: a60b60a25016f0779a821c3dbb50b061e0002530
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c5ed82a0c02a3f88e2da3067ca73e66e87bbc7e9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826877"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752613"
 ---
 <a name="how-do-i-configure-the-aspnet-ajax-calendar-control"></a>[Postup:] Konfigurovat ovládací prvek ASP.NET AJAX kalendáře?
 ====================

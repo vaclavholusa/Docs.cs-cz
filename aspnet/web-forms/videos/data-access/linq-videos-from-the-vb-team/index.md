@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/index
 title: Videa o jazyce LINQ od týmu VB | Dokumentace Microsoftu
 author: rick-anderson
 description: Tato videa poskytují za hodinu a polovinu obsahu, zaměřuje na nové funkce jazyků LINQ jazyka Visual Basic 9.0 zahrnuty v sadě Visual Studio 2008.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/24/2012
 ms.assetid: 257373bb-eab0-47bc-b5a2-37a9e91666d6
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
-ms.openlocfilehash: ca78bbdb56776f0e096dd839209904f05e58a2bf
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 67c6aaf358d4c7c2764493e8c17e1d5245096014
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825012"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754280"
 ---
 <a name="linq-videos-from-the-vb-team"></a>Videa o jazyce LINQ od týmu VB
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-
 title: Animace závislá na podmínce (VB) | Dokumentace Microsoftu
 author: wenz
 description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Určuje, zda je animace...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 1b87d8d6-b3f7-4126-b51c-d41442fbf947
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4b815d7000d94ceec8864b29f0dddf0171344de1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: be43b68ce77819cdcd09d8e875604db90e8a8d96
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836285"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753447"
 ---
 <a name="animation-depending-on-a-condition-vb"></a>Animace závislá na podmínce (VB)
 ====================

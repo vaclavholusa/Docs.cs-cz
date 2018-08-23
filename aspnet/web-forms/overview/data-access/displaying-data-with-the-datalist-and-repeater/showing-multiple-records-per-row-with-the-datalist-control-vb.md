@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeat
 title: Zobrazení více záznamů na řádku ovládacím prvkem DataList (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto krátkém kurzu podíváme, jak přizpůsobit rozložení prvku DataList prostřednictvím její vlastnosti RepeatColumns a RepeatDirection.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: f555c531-bf33-4699-9987-42dbfef23c1f
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 55e07159fd9d0f4c750a2522feb0538a1cfb4bea
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7a23e8897e4fbdf84c4d6916c22bad9687fa5ee6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831884"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756622"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>Zobrazení více záznamů na řádku ovládacím prvkem DataList (VB)
 ====================

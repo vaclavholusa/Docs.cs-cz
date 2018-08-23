@@ -3,17 +3,17 @@ uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-ap
 title: Ověřování a autorizace v rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: MikeWasson
 description: Poskytuje obecný přehled o ověřování a autorizace v rozhraní ASP.NET Web API.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f882a9bb2922d0eb28eee7cdba0896bdc5318c2a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a78606a74b2149e68e3b01f4fe204f4a13edf4b5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812831"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755977"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Ověřování a autorizace v rozhraní ASP.NET Web API
 ====================
@@ -117,6 +117,6 @@ Následující diagram znázorňuje hierarchii tříd pro **třídy AuthorizeAtt
 
 ### <a name="authorization-inside-a-controller-action"></a>Povolení uvnitř akce Kontroleru
 
-V některých případech může umožnit požadavek na pokračovat, ale změnit chování podle objektu zabezpečení. Například informace, které vrátíte se může změnit v závislosti na roli uživatele. V rámci metody kontroleru, můžete získat z aktuální zásady **ApiController.User** vlastnost.
+V některých případech může umožnit požadavek na pokračovat, ale změnit chování podle objektu zabezpečení. Například informace, které vrátíte se může změnit v závislosti na roli uživatele. V rámci metody kontroleru, můžete získat aktuální objekt zabezpečení z **ApiController.User** vlastnost.
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample7.cs)]

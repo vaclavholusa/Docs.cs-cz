@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/07/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: cbbdee6849768004476d94c58be4a0e7cc2d6f9e
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
+ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938469"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41752806"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Řešení potíží s ASP.NET Core ve službě IIS
 
@@ -97,6 +97,7 @@ Povolení a zobrazení protokolů stdout:
 1. Přejděte do složky pro nasazení webu v hostitelském systému.
 1. Pokud *protokoly* složka není k dispozici, vytvořte složku. Pokyny o tom, jak povolit MSBuild k vytvoření *protokoly* složky v nasazení automaticky, zobrazí [adresářovou strukturu](xref:host-and-deploy/directory-structure) tématu.
 1. Upravit *web.config* souboru. Nastavte **stdoutLogEnabled** k `true` a změnit **stdoutLogFile** tak, aby odkazoval na cestu *protokoly* složky (například `.\logs\stdout`). `stdout` v cestě je předpona názvu souboru protokolu. Časové razítko, id procesu a příponu souboru jsou přidány automaticky při vytvoření protokolu. Pomocí `stdout` jako předpona názvu souboru, má název souboru typické protokolu *stdout_20180205184032_5412.log*. 
+1. Ověřte identitu fondu aplikací má oprávnění k zápisu *protokoly* složky.
 1. Uložte aktualizovaný *web.config* souboru.
 1. Vytvořte žádost do aplikace.
 1. Přejděte *protokoly* složky. Vyhledání a otevření protokolu nejnovější stdout.

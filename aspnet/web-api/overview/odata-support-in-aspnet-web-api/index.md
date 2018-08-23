@@ -3,17 +3,17 @@ uid: web-api/overview/odata-support-in-aspnet-web-api/index
 title: V rozhraní ASP.NET Web API OData | Dokumentace Microsoftu
 author: rick-anderson
 description: Postup vytvoření koncových bodů protokolu OData v rozhraní Web API. OData je data protokol pro web. Poskytuje jednotným způsobem pro dotazování a manipulaci s datovými sadami. Webové rozhraní API s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/17/2012
 ms.assetid: 9151c605-e911-4f24-95b5-ca310b105abf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api
 msc.type: chapter
-ms.openlocfilehash: ef7c343716a0ada6a0798bb9205652ba52be8e64
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9b805bb1ed9d7b5dea53a2aaccbf471829145920
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824736"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756382"
 ---
 <a name="odata-in-aspnet-web-api"></a>V rozhraní ASP.NET Web API OData
 ====================

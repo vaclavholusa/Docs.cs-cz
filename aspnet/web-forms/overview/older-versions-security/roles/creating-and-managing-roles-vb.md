@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/roles/creating-and-managing-role
 title: Vytváření a Správa rolí (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz zkoumá kroky potřebné ke konfiguraci rozhraní role. Pod vytváříme webové stránky, vytvářet a odstraňovat role.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/24/2008
 ms.assetid: 83af9f5f-9a00-4f83-8afc-e98bdd49014e
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cbfa06ec50693f9640c813288e7c9175db670351
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e51fa6de3d2fe7b5c9cd84900d154070eb1960b9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819601"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754540"
 ---
 <a name="creating-and-managing-roles-vb"></a>Vytváření a Správa rolí (VB)
 ====================

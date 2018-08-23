@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 title: Dávkové aktualizace (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Zjistěte, jak aktualizace více záznamů databáze v rámci jedné operace. Ve vrstvě uživatelského rozhraní při sestavování ovládacího prvku GridView, kde každý řádek je možné upravovat. V datech...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2007
 ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7e5062898ca683571df2929eba5d824f9d77accd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 76c475b67943b77d99630e087ed46fe6d5f11a03
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833398"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754537"
 ---
 <a name="batch-updating-vb"></a>Dávkové aktualizace (VB)
 ====================

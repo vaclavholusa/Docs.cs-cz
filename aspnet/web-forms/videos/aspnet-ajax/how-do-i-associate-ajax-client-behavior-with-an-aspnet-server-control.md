@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-associate-ajax-client-behavior-with-an-aspnet-server-control
-title: '[Postup:] Spojení chování klienta AJAX se serverového ovládacího prvku ASP.NET? | Dokumentace Microsoftu'
+title: '[Postup:] Spojení chování klienta AJAX se serverového ovládacího prvku ASP.NET? | Dokumenty Microsoft'
 author: rick-anderson
 description: Zjistěte, jak vytvořit chování klienta na základě Microsoft AJAX, která můžou být spojené s serverového ovládacího prvku ASP.NET na stránku .aspx. Chování klienta e...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/18/2007
 ms.assetid: 3a75ac02-225d-4e30-8669-0156c3ef06c7
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-associate-ajax-client-behavior-with-an-aspnet-server-control
 msc.type: video
-ms.openlocfilehash: 00d45c3dcf9092dbb51b7e162c2b9fb190090c5d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 35ffec97c7652622ae69c443f741114758ef95b4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815999"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756834"
 ---
 <a name="how-do-i-associate-ajax-client-behavior-with-an-aspnet-server-control"></a>[Postup:] Spojení chování klienta AJAX se serverového ovládacího prvku ASP.NET?
 ====================

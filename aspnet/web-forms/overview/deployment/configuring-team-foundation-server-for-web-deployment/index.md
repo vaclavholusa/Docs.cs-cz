@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-de
 title: ASP.NET 4 – nasazení v podniku 3 konfigurace serveru TFS | Dokumentace Microsoftu
 author: rick-anderson
 description: Tomto kurzu se dozvíte, jak nakonfigurovat Team Foundation Server (TFS) 2010 k sestavení řešení a nasazení webového obsahu do různých cílových prostředích.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: b71d1611-5f26-40dd-8315-b65b9d69b198
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: chapter
-ms.openlocfilehash: 372f63a06e928847fb13f4d07279b420d15741a5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3b86454aed230ee5dcb65454c92842bf83f3cff0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822582"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752014"
 ---
 <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4 – nasazení v podniku 3 konfigurace serveru TFS
 ====================

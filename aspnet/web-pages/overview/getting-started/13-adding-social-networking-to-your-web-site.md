@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/13-adding-social-networking-to-your-web-
 title: Přidání sociálních sítí na rozhraní ASP.NET Web Pages servery (Razor) | Dokumentace Microsoftu
 author: tfitzmac
 description: Tato kapitola vysvětluje, jak integrovat svůj web pomocí služby pro sociální sítě. V této kapitole se dozvíte, jak umožnit lidem/odkazu na záložku webu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/21/2014
 ms.assetid: 03c342f9-b35c-4d7c-b9ed-cd9aaaffedb6
 msc.legacyurl: /web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: e50a35d9770da247d18bbe1b3660b7bd5d46d8e9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 684fcfdde0aefeb168398bdf7a42f9fdbd6e48b3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822441"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753434"
 ---
 <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a>Přidání sociálních sítí pro ASP.NET Web Pages servery (Razor)
 ====================

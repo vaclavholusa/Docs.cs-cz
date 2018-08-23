@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/caching-data/index
 title: Ukládání dat do mezipaměti | Dokumentace Microsoftu
 author: rick-anderson
 description: Této sérii kurzů vysvětluje ukládání do mezipaměti, což může zlepšit výkon webu a tom, jak používat ukládání do mezipaměti na prezentační vrstvu pomocí ovládacího prvku ObjectDataSource...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 7d7ee56c-a867-4777-9407-ec8f73a605a3
 msc.legacyurl: /web-forms/overview/data-access/caching-data
 msc.type: chapter
-ms.openlocfilehash: 524282da59081b486a650a3644733364db8376bc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: daa92182f2c28a7fd79d584c0a647f6a15700d12
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801140"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751815"
 ---
 <a name="caching-data"></a>Ukládaní dat do mezipaměti
 ====================

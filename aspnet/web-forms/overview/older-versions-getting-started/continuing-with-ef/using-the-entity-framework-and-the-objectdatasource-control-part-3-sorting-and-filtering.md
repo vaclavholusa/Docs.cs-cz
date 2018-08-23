@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-
 title: 'Použití rozhraní Entity Framework 4.0 a ovládací prvek ObjectDataSource, 3. část: řazení a filtrování | Dokumentace Microsoftu'
 author: tdykstra
 description: V této sérii kurzů staví na Contoso University webovou aplikaci, která se vytvořila Začínáme s Entity Framework 4.0 série kurzů. I...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: 2990bd10-590d-43d5-9529-6b503ce5455d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering
 msc.type: authoredcontent
-ms.openlocfilehash: 15d9a7ecd3119af02576cbcf728828353748a513
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 71e26dc9a63131842daf4aa1549d761690b723ea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806995"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757087"
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-3-sorting-and-filtering"></a>Použití rozhraní Entity Framework 4.0 a ovládací prvek ObjectDataSource, 3. část: řazení a filtrování
 ====================

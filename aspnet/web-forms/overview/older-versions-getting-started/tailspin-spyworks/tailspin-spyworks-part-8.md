@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspi
 title: '8. část: Závěrečné stránky, zpracování výjimek a závěr | Dokumentace Microsoftu'
 author: JoeStagner
 description: V této sérii kurzů podrobně popisuje všechny kroky k vytvoření ukázkové aplikace Tailspin Spyworks. Část 8 přidá stránku kontaktní informace o stránce a výjimek...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: 5aeadf8f-39f3-4f07-a78f-1c310c64fb23
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 4fb0147a5cd8621e5341e4995960adf2f00fffc0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3b49ee53e82933de9b50960779c28ca6ab7441e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804714"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757076"
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>8. část: Závěrečné stránky, zpracování výjimek a závěr
 ====================

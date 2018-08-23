@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml
-title: '[Postup:] Začínáme s rozhraním LINQ to XML? | Dokumentace Microsoftu'
+title: '[Postup:] Začínáme s rozhraním LINQ to XML? | Dokumenty Microsoft'
 author: bethmassi
 description: Vývojáře v jazyce Visual Basic se dozvíte, jak pracovat s XML v jazyce Visual Basic pomocí literálů XML, vložené výrazy a vlastnosti osy XML k vytváření, dotazování a...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: dc3dedcd-5daf-4f0e-9afa-9ccad94f2ce0
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml
 msc.type: video
-ms.openlocfilehash: d2e27e0049078ade239b79ee55f9a74a3131e321
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c7ca1a1361157afc6d1032dc4bcded3fdc2fbe38
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817093"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752016"
 ---
 <a name="how-do-i-get-started-with-linq-to-xml"></a>[Postup:] Začínáme s rozhraním LINQ to XML?
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-
 title: Animace v reakci na interakci uživatele (VB) | Dokumentace Microsoftu
 author: wenz
 description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace lze hvězdičkami...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c8204c05-ec27-40fe-933d-88e4e727a482
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4b774a058e715e4a98e767daf92886f24e627822
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0d9a3bf853afdbde0a419b90d1563fc06d3f9979
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815522"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752405"
 ---
 <a name="animating-in-response-to-user-interaction-vb"></a>Animace v reakci na interakci uživatele (VB)
 ====================

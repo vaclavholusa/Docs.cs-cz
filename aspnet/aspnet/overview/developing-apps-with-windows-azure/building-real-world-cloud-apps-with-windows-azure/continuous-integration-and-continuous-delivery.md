@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: Průběžná integrace a průběžné doručování (vytváření skutečných cloudových aplikací s Azure) | Dokumentace Microsoftu
 author: MikeWasson
 description: Vytváření reálného světa cloudových aplikací s Azure e kniha je založená na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které se dají mu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 40687c490fdfb7764ac9ca8af6fffd054362d552
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 787aacfd843f5f72e567670d601fb036a2c474bc
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819410"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756007"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Průběžná integrace a průběžné doručování (vytváření skutečných cloudových aplikací s Azure)
 ====================

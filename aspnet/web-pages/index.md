@@ -3,17 +3,17 @@ uid: web-pages/index
 title: Webové stránky ASP.NET | Dokumentace Microsoftu
 author: rick-anderson
 description: Stáhněte si WebMatrix a zjistěte, jak rychle sestavit webové stránky v jednoduchý způsob kombinování serverového kódu s HTML.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: 5418ba96-ff49-4a43-9cbb-09dea4949d23
 msc.legacyurl: /web-pages
 msc.type: categoryindex
-ms.openlocfilehash: efd61b01102c4bdcd05253da4f59177db2d57c3b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 967c5687013cac75b5ec8dd665269026bd46601c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828138"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753012"
 ---
 <a name="aspnet-web-pages"></a>ASP.NET – webové stránky
 ====================

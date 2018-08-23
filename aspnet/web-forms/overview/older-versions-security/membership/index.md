@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/index
 title: ASP.NET 3.5 – členství | Dokumentace Microsoftu
 author: rick-anderson
 description: V této sérii kurzů prozkoumá techniky pro použití systému integrované členství (zabezpečení) vytvořit uživatelské účty a konfigurace autorizačních pravidel.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 96fc5552-05cd-4547-909f-9bb3176e44d6
 msc.legacyurl: /web-forms/overview/older-versions-security/membership
 msc.type: chapter
-ms.openlocfilehash: c9453801d0e0b2d3cbf3494a5e7fc08a9f52886e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 99409da3b5e54e1f1fa0d2d3ef3668dcc16083d5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822086"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754815"
 ---
 <a name="aspnet-35---membership"></a>ASP.NET 3.5 – členství
 ====================

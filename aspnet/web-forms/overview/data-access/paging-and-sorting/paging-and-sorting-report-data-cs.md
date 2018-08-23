@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report
 title: Stránkování a řazení sestavy dat (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Stránkování a řazení jsou dvě velmi běžné funkce při zobrazení dat v aplikaci online. V tomto kurzu provedeme první pohled na přidání, řazení a...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 811a6ef2-ec66-4c8e-a089-6f795056e288
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 741404bda11fd1d5776a7493b95ffe5d0c61fce2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5ebef919deeda409cfa6805b603f67ef96ff003e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819342"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756387"
 ---
 <a name="paging-and-sorting-report-data-c"></a>Stránkování a řazení dat sestavy (C#)
 ====================

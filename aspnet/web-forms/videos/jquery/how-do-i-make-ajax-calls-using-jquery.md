@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/jquery/how-do-i-make-ajax-calls-using-jquery
-title: 'Postup: Zkontrolujte volání Ajax pomocí jQuery? | Dokumentace Microsoftu'
+title: 'Postup: Zkontrolujte volání Ajax pomocí jQuery? | Dokumenty Microsoft'
 author: rick-anderson
 description: V toto video pixelů na Chris ukazuje, jak provádět volání Ajax pomocí knihovny jQuery. Ukázka webového serveru se vytvoří, který obsahuje jednoduché webové služby, které vrací...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/12/2010
 ms.assetid: 112b6255-ec37-4311-b967-c1aacce78bc8
 msc.legacyurl: /web-forms/videos/jquery/how-do-i-make-ajax-calls-using-jquery
 msc.type: video
-ms.openlocfilehash: 2ae43ad45fd823a814156ab1f863484e2d113a63
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 91a959da3405926980fb69aaeaa230ddec6cdc4e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807200"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753032"
 ---
 <a name="how-do-i-make-ajax-calls-using-jquery"></a>Postup: Zkontrolujte volání Ajax pomocí jQuery?
 ====================

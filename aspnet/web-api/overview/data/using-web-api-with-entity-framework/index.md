@@ -3,17 +3,17 @@ uid: web-api/overview/data/using-web-api-with-entity-framework/index
 title: Použití rozhraní Web API 2 s Entity Framework 6 | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak vytvořit aplikaci webového rozhraní API, která používá Entity Framework pro databáze trvalosti.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/03/2012
 ms.assetid: 6c3c4f27-2fa3-49dc-bcaf-1ee3ef620f8e
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework
 msc.type: chapter
-ms.openlocfilehash: 9db6b35c457ad10641fa7bd3de62a41585ed0894
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 89d129616130df1508f559a2abbb975a13fdc601
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832921"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755707"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>Použití rozhraní Web API 2 s Entity Framework 6
 ====================

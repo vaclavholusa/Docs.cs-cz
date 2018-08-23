@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/customiz
 title: Přizpůsobení rozhraní pro úpravu dat (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu podíváme na tom, jak přizpůsobit rozhraní upravovat prvku GridView, tak, že nahradíte standardního textového pole a ovládací prvky zaškrtávacího políčka s ternativní...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/17/2006
 ms.assetid: 4830d984-bd2c-4a08-bfe5-2385599f1f7d
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 991f8d07c12c13b1477c2df072847b3730bc1051
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5d2bf8e3b074e846f1071a94884faa40312e507b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840765"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755036"
 ---
 <a name="customizing-the-data-modification-interface-vb"></a>Přizpůsobení rozhraní pro úpravu dat (VB)
 ====================

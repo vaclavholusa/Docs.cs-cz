@@ -3,17 +3,17 @@ uid: web-api/overview/security/working-with-ssl-in-web-api
 title: Práce s protokolem SSL ve webovém rozhraní API | Dokumentace Microsoftu
 author: MikeWasson
 description: Ukazuje, jak používat protokol SSL s ASP.NET Web API, včetně používání certifikátů SSL klienta.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/12/2012
 ms.assetid: 97f6164f-59cf-45c0-b820-e4aa29b45396
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 0e0ca75c6ff1af397fce91079bcd8e9304b025ef
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b11b35f58a1f033423f5e6ea5f5373df0d1fcb5f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829807"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757081"
 ---
 <a name="working-with-ssl-in-web-api"></a>Práce s protokolem SSL ve webovém rozhraní API
 ====================
@@ -48,7 +48,7 @@ Přidejte tento filtr pro všechny akce webového rozhraní API, které vyžaduj
 
 Protokol SSL zajišťuje ověřování pomocí certifikátů infrastruktury veřejných klíčů. Na serveru, musíte zadat certifikát, který se ověřuje serveru do klienta. Je méně běžné pro klienta, jak poskytnout certifikát na server, ale to je jednou z možností pro ověřování klientů. Použití klientských certifikátů pomocí protokolu SSL, potřebujete způsob, jak distribuovat certifikáty podepsané svým uživatelům. Pro mnoho typů aplikací neměl by to být vhodné uživatelské prostředí, ale v některých prostředích (například organizace) může být vhodná.
 
-| Android – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze. | Universal Windows Platform – používá  rozhraní API. |
+| Výhody | Nevýhody |
 | --- | --- |
 | -Certificate přihlašovací údaje jsou silnější než uživatelského jména a hesla. -SSL poskytuje kompletní zabezpečený kanál s ověřováním, zprávu, integritu a šifrování zpráv. | -Je nutné získat a správu certifikátů infrastruktury veřejných KLÍČŮ. -Klientská platforma musí podporovat klientské certifikáty SSL. |
 

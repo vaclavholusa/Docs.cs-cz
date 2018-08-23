@@ -3,17 +3,17 @@ uid: web-pages/videos/aspnet-razor-pages/index
 title: Stránky technologie ASP.NET Razor | Dokumentace Microsoftu
 author: rick-anderson
 description: Které videa můžete zobrazit a procházet webové stránky a služba WebMatrix.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/18/2012
 ms.assetid: ffad842d-548c-40c6-84c5-10858133e972
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages
 msc.type: chapter
-ms.openlocfilehash: 67bd93d5c6bdc9b4f6fef73f7ea3894d224d7c07
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e0c0c719ef628a4e5050e908d45421d5bfd6d983
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832251"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753046"
 ---
 <a name="aspnet-web-pages"></a>ASP.NET – webové stránky
 =================

@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/urls-in-mast
 title: Adresy URL stránek předloh (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Řeší, jak můžete přerušit adresy URL na hlavní stránce kvůli soubor předlohové stránky se v jiném adresáři relativní než stránku obsahu. Prohledá probíhá přenesení změn...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: 43d1e83c-0092-4dcf-977c-e709c4dce7c3
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 28c9927539ac243ce84f7a25c73be837d2dd6daa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 881debeeaa98a7f2be7ccadb501c019e698b22f2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822752"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756376"
 ---
 <a name="urls-in-master-pages-vb"></a>Adresy URL stránek předloh (VB)
 ====================

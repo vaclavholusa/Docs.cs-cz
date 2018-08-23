@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-cascading-style-sheets-for-web-page-layout
-title: '[Postup:] Použití šablony stylů CSS pro rozložení webové stránky? | Dokumentace Microsoftu'
+title: '[Postup:] Použití šablony stylů CSS pro rozložení webové stránky? | Dokumenty Microsoft'
 author: rick-anderson
 description: V tomto videu jsme Další informace o použití &amp;lt; div&amp;gt; prvky v kombinaci s šablony stylů (CSS) k vytvoření robustních a vyšší výkon web p...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2007
 ms.assetid: c812231d-e811-4048-9922-b34df1d0f300
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-cascading-style-sheets-for-web-page-layout
 msc.type: video
-ms.openlocfilehash: 5b741f57837e3747078df8210c471589164324b9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4ec1f66065d27fcf1b10ffca0b3c899a417ecc53
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820782"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754797"
 ---
 <a name="how-do-i-use-cascading-style-sheets-for-web-page-layout"></a>[Postup:] Použití šablony stylů CSS pro rozložení webové stránky?
 ====================

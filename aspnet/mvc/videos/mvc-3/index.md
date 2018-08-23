@@ -3,22 +3,22 @@ uid: mvc/videos/mvc-3/index
 title: ASP.NET MVC 3 | Dokumentace Microsoftu
 author: rick-anderson
 description: Rychlé přístupů k rozhraní ASP.NET MVC 3
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/28/2011
 ms.assetid: b3384347-2f88-4fb4-a775-7b96bf88b9d8
 msc.legacyurl: /mvc/videos/mvc-3
 msc.type: chapter
-ms.openlocfilehash: b17c1eeb32df89722e75ca9d65f90da94ee424fa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bd024be3a9aa7152378b1e78d76ac2f05e65f0c7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804854"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756071"
 ---
-<a name="aspnet-mvc-3"></a><span data-ttu-id="2c3ef-103">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="2c3ef-103">ASP.NET MVC 3</span></span>
+<a name="aspnet-mvc-3"></a><span data-ttu-id="4a2c1-103">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="4a2c1-103">ASP.NET MVC 3</span></span>
 ====================
-> <span data-ttu-id="2c3ef-104">Rychlé přístupů k rozhraní ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="2c3ef-104">ASP.NET MVC 3 Quick Hits</span></span>
+> <span data-ttu-id="4a2c1-104">Rychlé přístupů k rozhraní ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="4a2c1-104">ASP.NET MVC 3 Quick Hits</span></span>
 
 
-- [<span data-ttu-id="2c3ef-105">MVC 3 – zobrazovací modul Razor</span><span class="sxs-lookup"><span data-stu-id="2c3ef-105">MVC 3 - Razor View Engine</span></span>](mvc-3-razor-view-engine.md)
-- [<span data-ttu-id="2c3ef-106">MVC 3 – pomocné rutiny Razor</span><span class="sxs-lookup"><span data-stu-id="2c3ef-106">MVC 3 - Razor Helpers</span></span>](mvc-3-razor-helpers.md)
+- [<span data-ttu-id="4a2c1-105">MVC 3 – zobrazovací modul Razor</span><span class="sxs-lookup"><span data-stu-id="4a2c1-105">MVC 3 - Razor View Engine</span></span>](mvc-3-razor-view-engine.md)
+- [<span data-ttu-id="4a2c1-106">MVC 3 – pomocné rutiny Razor</span><span class="sxs-lookup"><span data-stu-id="4a2c1-106">MVC 3 - Razor Helpers</span></span>](mvc-3-razor-helpers.md)

@@ -1640,7 +1640,8 @@
 
 
 
-
+# [Visual Studio 2017](visual-studio/overview/2017/index.md)
+## [Optimalizace výkonu sestavení pro řešení](xref:visual-studio/overview/2017/optimize-build-perf)
 
 # [Visual Studio 2013](visual-studio/overview/2013/index.md)
 ## [Vytváření webových projektů ASP.NET v sadě Visual Studio 2013](visual-studio/overview/2013/creating-web-projects-in-visual-studio.md)

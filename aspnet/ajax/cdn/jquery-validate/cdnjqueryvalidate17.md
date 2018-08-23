@@ -3,24 +3,24 @@ uid: ajax/cdn/jquery-validate/cdnjqueryvalidate17
 title: jQuery.Validate verze 1.7 | Dokumentace Microsoftu
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/23/2014
 ms.assetid: cef6b8be-ac1a-4661-85e3-8e444782ad88
 msc.legacyurl: /ajax/cdn/jquery-validate/cdnjqueryvalidate17
 msc.type: content
-ms.openlocfilehash: 2680ebc84d8d5e3f10b385381bfc38cc8eed5e9e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8b8245d4d61666ec8e6147490394273c74f4c9b3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836474"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755305"
 ---
-<a name="jqueryvalidate-version-17"></a><span data-ttu-id="b4667-102">jQuery.Validate verze 1.7</span><span class="sxs-lookup"><span data-stu-id="b4667-102">jquery.validate version 1.7</span></span>
+<a name="jqueryvalidate-version-17"></a><span data-ttu-id="f42da-102">jQuery.Validate verze 1.7</span><span class="sxs-lookup"><span data-stu-id="f42da-102">jquery.validate version 1.7</span></span>
 ====================
-<span data-ttu-id="b4667-103">Následující soubory jsou hostované v síti CDN:</span><span class="sxs-lookup"><span data-stu-id="b4667-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="f42da-103">Následující soubory jsou hostované v síti CDN:</span><span class="sxs-lookup"><span data-stu-id="f42da-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.pack.js
 - https://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/additional-methods.js
-- <span data-ttu-id="b4667-104">Lokalizace souborů</span><span class="sxs-lookup"><span data-stu-id="b4667-104">Localization Files</span></span>
+- <span data-ttu-id="f42da-104">Lokalizace souborů</span><span class="sxs-lookup"><span data-stu-id="f42da-104">Localization Files</span></span>

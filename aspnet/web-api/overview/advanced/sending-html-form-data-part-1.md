@@ -3,17 +3,17 @@ uid: web-api/overview/advanced/sending-html-form-data-part-1
 title: 'Posílání dat formulářů HTML ve webovém rozhraní API technologie ASP.NET: Data formuláře kódovaná | Dokumentace Microsoftu'
 author: MikeWasson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/15/2012
 ms.assetid: 585351c4-809a-4bf5-bcbe-35d624f565fe
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 617b16da20f448bf86e4b99841ad6eeaf8aafe4d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2d01212cc408f8bb66fa3103464c9a1f7a1e21c6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818064"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756390"
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a>Posílání dat formulářů HTML ve webovém rozhraní API technologie ASP.NET: Data formuláře kódovaná
 ====================
@@ -115,7 +115,7 @@ Za druhé klient musí k odeslání hodnoty v následujícím formátu:
 
 [!code-xml[Main](sending-html-form-data-part-1/samples/sample8.xml)]
 
-Konkrétně část název z dvojice název/hodnota musí být prázdná pro jednoduchý typ.. Některé prohlížeče nepodporují to pro formuláře HTML, ale následujícím způsobem vytvořte tento formát ve skriptu:
+Konkrétně část název z dvojice název/hodnota musí být prázdná pro jednoduchý typ. Některé prohlížeče nepodporují to pro formuláře HTML, ale následujícím způsobem vytvořte tento formát ve skriptu:
 
 [!code-javascript[Main](sending-html-form-data-part-1/samples/sample9.js)]
 

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-t
 title: Konfigurace nastavení připojení a příkaz úrovně vrstvy přístupu k datům (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Objekty TableAdapter v datové sadě zadán automaticky postará o připojení k databázi, vydávání příkazů a naplnění DataTable s výsledky...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: d57dfa2b-d627-45cb-b5b1-abbf3159d770
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6d8f5aa0e114d22a3192b89f190baa83315bfa8c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d44372ef3eaf7634d3bf3a82bd2c1eb1d710f786
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818288"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753451"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Konfigurace nastavení připojení a příkaz úrovně vrstvy přístupu k datům (VB)
 ====================
@@ -34,7 +34,7 @@ V tomto kurzu prozkoumáme jak získat přístup k nastavení databáze úroveň
 
 ## <a name="working-with-data-using-adonet"></a>Práce s daty pomocí ADO.NET
 
-Rozhraní Microsoft .NET Framework obsahuje množství tříd určený konkrétně pro práci s daty. Tyto třídy v rámci nebyl nalezen [ `System.Data` obor názvů](https://msdn.microsoft.com/library/system.data.aspx), jsou označovány jako *ADO.NET* třídy. Některé třídy v rámci zastřešující ADO.NET jsou vázané na konkrétní *poskytovatele dat*. Zprostředkovatel dat můžete představit jako komunikační kanál, který umožňuje informací mezi třídy rozhraní ADO.NET a základnímu úložišti dat.. Existují zobecněný poskytovatelé, třeba OleDb a rozhraní ODBC, jakož i zprostředkovatelů, které jsou navrženy speciálně pro konkrétní databázi systému. Například i když je možné se připojit k databázi serveru Microsoft SQL Server pomocí zprostředkovatele služeb OleDb, poskytovatel Sqlclienta je mnohem efektivnější byl navržený a optimalizovaný pro SQL Server.
+Rozhraní Microsoft .NET Framework obsahuje množství tříd určený konkrétně pro práci s daty. Tyto třídy v rámci nebyl nalezen [ `System.Data` obor názvů](https://msdn.microsoft.com/library/system.data.aspx), jsou označovány jako *ADO.NET* třídy. Některé třídy v rámci zastřešující ADO.NET jsou vázané na konkrétní *poskytovatele dat*. Zprostředkovatel dat můžete představit jako komunikační kanál, který umožňuje informací mezi třídy rozhraní ADO.NET a základnímu úložišti dat. Existují zobecněný poskytovatelé, třeba OleDb a rozhraní ODBC, jakož i zprostředkovatelů, které jsou navrženy speciálně pro konkrétní databázi systému. Například i když je možné se připojit k databázi serveru Microsoft SQL Server pomocí zprostředkovatele služeb OleDb, poskytovatel Sqlclienta je mnohem efektivnější byl navržený a optimalizovaný pro SQL Server.
 
 Když programově přístup k datům, je obvykle používají následující vzor:
 

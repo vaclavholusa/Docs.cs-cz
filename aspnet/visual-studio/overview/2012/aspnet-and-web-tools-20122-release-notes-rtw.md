@@ -3,17 +3,17 @@ uid: visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 title: ASP.NET a Web Tools 2012.2 poznámky k verzi | Dokumentace Microsoftu
 author: rick-anderson
 description: Zpráva k vydání verze pro ASP.NET and Web Tools 2012.2
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/14/2013
 ms.assetid: 9534e58b-1d15-4f1d-b04c-10c79b9d8227
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
-ms.openlocfilehash: 607c6ae81f21feda16fecd8c676c289bf49a5dbb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0566a362b36f6cfb73b6479cd490e82c63455459
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817353"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754876"
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>Zpráva k vydání verze technologie ASP.NET and Web Tools 2012.2
 ====================
@@ -117,7 +117,7 @@ Rozhraní ASP.NET Web API se rozšířily o několik nových funkcí:
 
 #### <a name="aspnet-web-api-odata"></a>ASP.NET Web API OData
 
-Rozhraní ASP.NET Web API OData poskytuje flexibilitu, které potřebujete k tvorbě koncových bodů protokolu OData s formátovaným obchodní logikou libovolný zdroj dat.. S ASP.NET Web API OData řízení velikosti sémantiky OData, kterou chcete zveřejnit. ASP.NET Web API OData je součástí šablony projektu ASP.NET MVC 4 a je také k dispozici z NuGet ([http://www.nuget.org/packages/microsoft.aspnet.webapi.odata](http://www.nuget.org/packages/microsoft.aspnet.webapi.odata)).
+Rozhraní ASP.NET Web API OData poskytuje flexibilitu, které potřebujete k tvorbě koncových bodů protokolu OData s formátovaným obchodní logikou libovolný zdroj dat. S ASP.NET Web API OData řízení velikosti sémantiky OData, kterou chcete zveřejnit. ASP.NET Web API OData je součástí šablony projektu ASP.NET MVC 4 a je také k dispozici z NuGet ([http://www.nuget.org/packages/microsoft.aspnet.webapi.odata](http://www.nuget.org/packages/microsoft.aspnet.webapi.odata)).
 
 ASP.NET Web API OData v současné době podporuje následující funkce:
 

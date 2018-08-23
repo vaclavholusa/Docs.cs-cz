@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-tw
 title: Dva DropDownList (C#) filtrování záznamů Master/Detail | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz rozšiřuje vztah záznamů master/detail přidat třetí vrstvou, pomocí dvou ovládacích prvků DropDownList a vyberte požadovaný nadřazený a dvě úrovně nadřazený recor...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: ac4b0d77-4816-4ded-afd0-88dab667aedd
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f8f216689494e0f80902c42f425883558c1e21ce
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2a310df0871820e864b02f28b7d2c46d82b7ad63
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842254"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755238"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-c"></a>Dva DropDownList (C#) filtrování záznamů Master/Detail
 ====================

@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 1c724da918640c514acbc24c390de4e735f8bf49
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 626b828e2391d3982ff2cf393f0c9e0748c12810
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342429"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755805"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC s EF Core – CRUD - 2 z 10
 
@@ -117,7 +117,7 @@ V *StudentsController.cs*, upravte HttpPost `Create` metoda bloku try-catch při
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 
-Tento kód přidá entity Student vytvořené vazač modelu ASP.NET MVC do entity studenty nastavení a pak uloží změny do databáze. (Vazač modelu odkazuje na funkci ASP.NET MVC, která usnadňuje práci s data odeslaná formuláře; vazač modelu převádí hodnoty odeslaného formuláře na typy CLR a předává je na metodu akce v parametrech. V tomto případě vazače modelu vytvoří instanci entity studenta pomocí hodnoty vlastností z kolekce formuláře.)
+Tento kód přidá Student entita vytvořená pomocí ASP.NET Core MVC vazač modelu pro studenty entity nastavení a pak uloží změny do databáze. (Vazač modelu odkazuje na funkci ASP.NET Core MVC, která usnadňuje práci s data odeslaná formuláře; vazač modelu převádí hodnoty odeslaného formuláře na typy CLR a předává je na metodu akce v parametrech. V tomto případě vazače modelu vytvoří instanci entity studenta pomocí hodnoty vlastností z kolekce formuláře.)
 
 Můžete odebrat `ID` z `Bind` atribut, protože ID je hodnota primárního klíče, které SQL Server se nastaví automaticky při vložení řádku. Vstup od uživatele nelze nastavit hodnotu ID.
 
@@ -273,7 +273,7 @@ Klikněte na tlačítko **odstranit**. Zobrazí se indexovou stránku bez odstra
 
 Tím se uvolní prostředky, které obsahuje připojení k databázi, instance kontextu musí být uvolněn co nejdříve až budete hotovi s ním. ASP.NET Core předdefinované [injektáž závislostí](../../fundamentals/dependency-injection.md) dané úlohy postará za vás.
 
-V *Startup.cs*, volání [AddDbContext rozšiřující metoda](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) ke zřízení `DbContext` třídy v kontejneru DI technologie ASP.NET. Že metoda nastaví doba platnosti služby `Scoped` ve výchozím nastavení. `Scoped` znamená, že doba života objektu kontextu se shoduje s webovou žádost životnosti a `Dispose` metoda se bude automaticky volána na konci webový požadavek.
+V *Startup.cs*, volání [AddDbContext rozšiřující metoda](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) ke zřízení `DbContext` třídy v ASP.NET Core DI kontejneru. Že metoda nastaví doba platnosti služby `Scoped` ve výchozím nastavení. `Scoped` znamená, že doba života objektu kontextu se shoduje s webovou žádost životnosti a `Dispose` metoda se bude automaticky volána na konci webový požadavek.
 
 ## <a name="handling-transactions"></a>Zpracování transakcí
 

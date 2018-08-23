@@ -5,12 +5,12 @@ description: Tento kurz představuje užitečné tématech překračují základ
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: be44ef115ce72e1571bbdea2c609ea6c53792c59
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 25916365b4e682a8e296e0affbcddd4f1e5846b1
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194039"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755803"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC s EF Core – rozšířené – 10 10
 
@@ -187,7 +187,7 @@ Chcete-li provést zpětnou analýzu datový model, včetně tříd entit z exis
 
 ## <a name="next-steps"></a>Další kroky
 
-Dokončení tohoto postupu Tato série kurzů týkající se použití Entity Framework Core v aplikaci ASP.NET MVC.
+Dokončení tohoto postupu Tato série kurzů týkající se použití Entity Framework Core v aplikaci ASP.NET Core MVC.
 
 Další informace o EF Core najdete v článku [dokumentace Entity Framework Core](https://docs.microsoft.com/ef/core). Kniha je také k dispozici: [Entity Framework Core v akci](https://www.manning.com/books/entity-framework-core-in-action).
 

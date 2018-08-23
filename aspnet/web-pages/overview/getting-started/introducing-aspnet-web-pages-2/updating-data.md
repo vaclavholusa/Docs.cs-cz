@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-
 title: Představení rozhraní ASP.NET Web Pages – aktualizace databázových dat | Dokumentace Microsoftu
 author: tfitzmac
 description: V tomto kurzu se dozvíte, jak aktualizovat záznam (změnit) existující databáze při použití webových stránek ASP.NET (Razor). Předpokládá, že jste dokončili řady th...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/02/2018
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 948f5b5933669a43bf37dc0317ad644660dc67e9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9d0da2eed9964e56a01f3c811d6a14c9d1735e10
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842899"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754637"
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Úvod do webových stránek ASP.NET – aktualizace databázových dat
 ====================

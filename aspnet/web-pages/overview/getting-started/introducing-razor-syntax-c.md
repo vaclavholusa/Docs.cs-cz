@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-razor-syntax-c
 title: Úvod k programování v rozhraní ASP.NET Web používající syntaxi Razor (C#) | Dokumentace Microsoftu
 author: tfitzmac
 description: Tato kapitola obsahuje přehled programování s webovými stránkami ASP.NET pomocí syntaxe Razor. ASP.NET je technologie od Microsoftu pro spouštění dynamického webového pa...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 22985b71d39d93b8ad42ee923b872846f2fafa99
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 347e5ddbc02866887d3f422ecc291e5e3dfacaaf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814298"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757134"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Úvod k programování v rozhraní ASP.NET Web používající syntaxi Razor (C#)
 ====================
@@ -340,84 +340,248 @@ K převodu hodnoty na celá čísla, volání `AsInt` metody. Pokud převod nen�
 
 Následující tabulka uvádí některé běžné metody převodu a testování pro proměnné.
 
-::: řádek:::::: sloupec::: <strong>– metoda</strong> ::: konec sloupce:::::: sloupec::: <strong>popis</strong> ::: column-end:::::: sloupec::: <strong>příklad</strong> ::: column-end:::::: konec řádku:::
+:::row:::
+    :::column:::
+        <strong>– Metoda</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Popis</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Příklad</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsInt(), IsInt()` ::: konec sloupce:::::: sloupec::: převede řetězec představující celé číslo (např. "593") na celé číslo.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsInt(), IsInt()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec představující celé číslo (např. "593") na celé číslo.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsBool(), IsBool()` ::: konec sloupce:::::: sloupec::: převede řetězec jako &quot;true&quot; nebo &quot;false&quot; s typem Boolean.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsBool(), IsBool()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; s typem Boolean.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsFloat(), IsFloat()` ::: konec sloupce:::::: sloupec::: převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsFloat(), IsFloat()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsDecimal(), IsDecimal()` ::: konec sloupce:::::: sloupec::: převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) ::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsDecimal(), IsDecimal()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `AsDateTime(), IsDateTime()` ::: konec sloupce:::::: sloupec::: převede řetězec představující hodnotu data a času na ASP.NET `DateTime` typu.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `AsDateTime(), IsDateTime()`
+    :::column-end:::
+    :::column:::
+        Převede řetězec představující hodnotu data a času na ASP.NET `DateTime` typu.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `ToString()` ::: konec sloupce:::::: sloupec::: jakýmkoli jiným datovým typem převede na řetězec.
-::: konec sloupce:::::: sloupec::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `ToString()`
+    :::column-end:::
+    :::column:::
+        Převede jakýkoli jiný typ dat na řetězec.
+    :::column-end:::
+    :::column:::
+        [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
+    :::column-end:::
+:::row-end:::
 
 ## <a name="operators"></a>Operátory
 
 Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jaký druh příkaz k provedení ve výrazu. Jazyk C# (a syntaxi Razor, která je založena na něm) podporuje mnoho operátorů, ale je potřeba jenom rozpoznat pár, abyste mohli začít. Následující tabulka shrnuje nejčastější operátory.
 
 
-::: řádek:::::: sloupec::: <strong>– operátor</strong> ::: column-end:::::: sloupec::: <strong>popis</strong> ::: column-end:::::: sloupec::: <strong>příklady</strong> ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        <strong>– Operátor</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Popis</strong>
+    :::column-end:::
+    :::column:::
+        <strong>Příklady</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `+` `-` `*` `/` ::: konec sloupce:::::: sloupec::: matematické operátory používat ve výrazech pro číselná.
-::: konec sloupce:::::: sloupec::: [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `+` `-` `*` `/`
+    :::column-end:::
+    :::column:::
+        Matematické operátory používat ve výrazech pro číselná.
+    :::column-end:::
+    :::column:::
+        [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `=` ::: konec sloupce:::::: sloupec::: přiřazení. Přiřadí hodnotu na pravé straně příkazu na objekt na levé straně.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `=`
+    :::column-end:::
+    :::column:::
+        Přiřazení. Přiřadí hodnotu na pravé straně příkazu na objekt na levé straně.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `==` ::: konec sloupce:::::: sloupec::: rovnosti. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdílu mezi `=` operátor a `==` operátor.)::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `==`
+    :::column-end:::
+    :::column:::
+        Rovnost. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdílu mezi `=` operátor a `==` operátor.) :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `!=` ::: konec sloupce:::::: sloupec::: nerovnost. Vrátí `true` Pokud hodnoty nejsou shodné.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `!=`
+    :::column-end:::
+    :::column:::
+        Nerovnost. Vrátí `true` Pokud hodnoty nejsou shodné.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `< > <= >=` ::: column-end:::::: sloupec::: méně – než, větší-než, menší než – nebo se znaménkem rovná a větší než nebo rovno.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `< > <= >=`
+    :::column-end:::
+    :::column:::
+        Less – než, větší-než, menší než – nebo se znaménkem rovná a větší než nebo rovno.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `+` ::: konec sloupce:::::: sloupec::: zřetězení, který se používá pro připojení řetězce. ASP.NET ví rozdíl mezi tento operátor a operátor sčítání na základě datového typu výrazu.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `+`
+    :::column-end:::
+    :::column:::
+        Zřetězení, který se používá pro připojení řetězce. ASP.NET ví rozdíl mezi tento operátor a operátor sčítání na základě datového typu výrazu.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `+=` `-=` ::: konec sloupce:::::: sloupec::: operátory přírůstku a snížení, které operátorů sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `+=``-=`
+    :::column-end:::
+    :::column:::
+        Přírůstek a snížení operátory, které operátorů sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `.` ::: konec sloupce:::::: sloupec::: tečkou. Použít k rozlišení objekty a jejich vlastnosti a metody.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `.`
+    :::column-end:::
+    :::column:::
+        Tečka. Použít k rozlišení objekty a jejich vlastnosti a metody.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `()` ::: konec sloupce:::::: sloupec::: závorky. Použít skupinové výrazy a předat parametry metody.
-::: konec sloupce:::::: sloupec::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `()`
+    :::column-end:::
+    :::column:::
+        Závorky. Použít skupinové výrazy a předat parametry metody.
+    :::column-end:::
+    :::column:::
+        [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `[]` ::: konec sloupce:::::: sloupec::: závorky. Používá pro přístup k hodnoty pole nebo kolekce.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `[]`
+    :::column-end:::
+    :::column:::
+        Složené závorky. Používá pro přístup k hodnoty pole nebo kolekce.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `!` ::: konec sloupce:::::: sloupec::: není. Obrátí `true` hodnota, která se `false` a naopak. Obvykle se používá jako zjednodušený způsob, jak otestovat pro `false` (to znamená pro není `true`).
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `!`
+    :::column-end:::
+    :::column:::
+        Není. Obrátí `true` hodnota, která se `false` a naopak. Obvykle se používá jako zjednodušený způsob, jak otestovat pro `false` (to znamená pro není `true`).
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: řádek:::::: sloupec::: `&&` <code>&#124;&#124;</code> ::: konec sloupce:::::: sloupec::: logické a a které se používají k propojení podmínky společně.
-::: konec sloupce:::::: sloupec::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
-    ::: konec sloupce:::::: konec řádku:::
+:::row:::
+    :::column:::
+        `&&`<code>&#124;&#124;</code>
+    :::column-end:::
+    :::column:::
+        Logický operátor AND a které se používají k propojení podmínky společně.
+    :::column-end:::
+    :::column:::
+        [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
+    :::column-end:::
+:::row-end:::
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>Práce s souboru a cesty ke složkám v kódu

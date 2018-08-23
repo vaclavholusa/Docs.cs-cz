@@ -3,17 +3,17 @@ uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 title: Profilování a ladění aplikace ASP.NET MVC pomocí balíčku Glimpse | Dokumentace Microsoftu
 author: Rick-Anderson
 description: Balíčku glimpse je neúspěchu a rostoucí řadu opensourcových balíčků NuGet, která poskytuje podrobné výkonu, ladění a diagnostických informací pro ASP.NET...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/26/2015
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 4d044217d6c33594b39747a765165b8702338027
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f5d174ff6823d654a24dcb2c90f10a3cbd24f1e7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808538"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755734"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Profilování a ladění aplikace ASP.NET MVC pomocí balíčku Glimpse
 ====================
@@ -28,7 +28,7 @@ Podle [Rick Anderson](https://github.com/Rick-Anderson)
 - [Vazby modelu](#mb)
 - [Trasy](#route)
 - [Pomocí balíčku Glimpse v Azure](#da)
-- [Další zdroje informací](#addRes)
+- [Další prostředky](#addRes)
 
 <a id="ig"></a>
 ## <a name="installing-glimpse"></a>Instalace balíčku Glimpse

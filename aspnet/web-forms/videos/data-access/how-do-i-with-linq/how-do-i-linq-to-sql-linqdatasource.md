@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqda
 title: '[Postup:] Technologie LINQ to SQL: zdroj dat LinqDataSource | Dokumentace Microsoftu'
 author: scottstanfield
 description: 'Nový ovládací prvek asp: zdroj dat LinqDataSource .NET 3.5 usnadňuje vytvoření vazby na prvky uživatelského rozhraní. Žádný kód ve skutečnosti byla zapsána nebo nemá vliv na provádění tohoto videa. Dotaz, upd...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/10/2008
 ms.assetid: 8ba6bfb6-8eb3-45d2-8819-5b5b54bf520c
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-linqdatasource
 msc.type: video
-ms.openlocfilehash: 5daf53a36800ab6f77705a4bc506cb9c7b8b04d9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 55da4a8317329b4d16e01991f1a0e69dc12e5eba
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826798"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753336"
 ---
 <a name="how-do-i-linq-to-sql-linqdatasource"></a>[Postup:] Technologie LINQ to SQL: zdroj LinqDataSource
 ====================

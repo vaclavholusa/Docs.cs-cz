@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-dynamic-data/begin-editing-the-templates-in-aspnet-
 title: Začínáme upravovat šablony v aplikacích ASP.NET s dynamickými daty | Dokumentace Microsoftu
 author: JoeStagner
 description: Toto video bude prozkoumávání struktury aplikace aplikace vygenerované dynamických dat ASP.NET a začít pracovat na úpravy dodané šablony.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/23/2008
 ms.assetid: e5b0f6da-635c-461d-8f34-ab815715888a
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/begin-editing-the-templates-in-aspnet-dynamic-data-applications
 msc.type: video
-ms.openlocfilehash: 2cbb30248c0d4c0d9db1ced698df2593ebf2021f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2f1bc029e2a9555c3526747e228141ac81cde3c6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832364"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752718"
 ---
 <a name="begin-editing-the-templates-in-aspnet-dynamic-data-applications"></a>Začínáme upravovat šablony v aplikacích ASP.NET s dynamickými daty
 ====================

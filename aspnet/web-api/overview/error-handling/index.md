@@ -3,17 +3,17 @@ uid: web-api/overview/error-handling/index
 title: Zpracování chyb v rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: rick-anderson
 description: Způsob zpracování výjimek v rozhraní ASP.NET Web API.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/23/2014
 ms.assetid: 0b2f1edb-816c-4a86-95bc-0c55797eb3af
 msc.legacyurl: /web-api/overview/error-handling
 msc.type: chapter
-ms.openlocfilehash: 2976eb85016297680132dd5361e3f41d5606bc4a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6c66910237fbf8686d5f9fce023e8efea35c06f7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825170"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756486"
 ---
 <a name="error-handling-in-aspnet-web-api"></a>Zpracování chyb v rozhraní ASP.NET Web API
 ====================

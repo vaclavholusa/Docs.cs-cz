@@ -5,12 +5,12 @@ description: V tomto kurzu přidat další entity a relace a přizpůsobte si da
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 1d3c69c8c658b5ca2f0253b790b0dc75d44d3064
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: c97acd2b943e1d4c466c060247220b3b8bab6d6b
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194087"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756089"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC s EF Core – Model dat – 5 10
 
@@ -66,7 +66,7 @@ Spusťte aplikaci, přejděte na stránku Index studenty a Všimněte si, že č
 
 ### <a name="the-stringlength-attribute"></a>Atribut StringLength
 
-Můžete také zadat data ověřovací pravidla a chybových zpráv ověření pomocí atributů. `StringLength` Atribut Nastaví maximální počet znaků v databázi a na straně klienta a na straně serveru ověřování pro architekturu ASP.NET MVC. Minimální délka řetězce. můžete také zadat v tomto atributu, ale minimální hodnota nemá žádný vliv na schéma databáze.
+Můžete také zadat data ověřovací pravidla a chybových zpráv ověření pomocí atributů. `StringLength` Atribut Nastaví maximální počet znaků v databázi a na straně klienta a na straně serveru ověřování pro ASP.NET Core MVC. Minimální délka řetězce. můžete také zadat v tomto atributu, ale minimální hodnota nemá žádný vliv na schéma databáze.
 
 Předpokládejme, že chcete mít jistotu, že uživatelé nezadávejte více než 50 znaků pro název. Chcete-li přidat toto omezení, přidejte `StringLength` atributů `LastName` a `FirstMidName` vlastnosti, jak je znázorněno v následujícím příkladu:
 

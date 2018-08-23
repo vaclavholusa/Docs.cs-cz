@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additi
 title: Přidávání sloupců do další tabulky DataTable (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Při použití třídy TableAdapter průvodce k vytvoření datové sady typu, odpovídající objekt DataTable obsahuje sloupce vrácené dotazem hlavní databáze. Ale existovat...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a36f7267591e01ac2bd552385eeb22e1fda68c6e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 75b5a1e1d6beb00079d754601860d0c25bc8a23e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803230"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756944"
 ---
 <a name="adding-additional-datatable-columns-vb"></a>Přidávání sloupců do další tabulky DataTable (VB)
 ====================

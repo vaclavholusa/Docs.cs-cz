@@ -1,60 +1,60 @@
 ---
-title: Spravovat balíčky klienta s Bower v ASP.NET Core
+title: Správa balíčků na straně klienta nástrojem Bower v ASP.NET Core
 author: rick-anderson
-description: Spravovat balíčky klienta s Bower.
+description: Správa balíčků na straně klienta nástrojem Bower.
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 02/14/2017
+ms.date: 08/09/2018
 uid: client-side/bower
-ms.openlocfilehash: 23f3dcd06f012f3cf8d9509280b91c4bd1dc84e1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8606c21596a5d9d6ada9c60b55b2f54da21c601b
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272514"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902716"
 ---
-# <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Spravovat balíčky klienta s Bower v ASP.NET Core
+# <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Správa balíčků na straně klienta nástrojem Bower v ASP.NET Core
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel rýže](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), a [Scott Addie](https://scottaddie.com) 
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel rýže](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), a [Scott Addie](https://scottaddie.com)
 
 > [!IMPORTANT]
-> A udržovat Bower jeho údržby programu doporučujeme používat jiné řešení. [Správce knihovny](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/) (LibMan pro zkrácení) je systém správy obsahu statické klienta nové sady Visual Studio (Visual Studio 15,8 nebo novější). Další informace najdete v tématu [Správce knihovny: Správce obsahu na straně klienta pro webové aplikace](https://blogs.msdn.microsoft.com/webdev/2018/04/17/library-manager-client-side-content-manager-for-web-apps/). Bower je podporována v sadě Visual Studio prostřednictvím verze 15,5.
+> Zatímco Bower byla zachována jeho programu doporučujeme používat jiné řešení. [Správce knihovny](https://blogs.msdn.microsoft.com/webdev/2018/04/18/what-happened-to-bower/) (LibMan zkráceně) je nástroj pro získání nové knihoven na straně klienta ze sady Visual Studio (Visual Studio 15,8 nebo novější). Další informace naleznete v tématu <xref:client-side/libman/index>. Bower je podporováno v sadě Visual Studio přes verzi 15.5.
 >
-> Yarn s Webpack je jeden oblíbenou alternativu, pro kterou [pokyny k migraci](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) jsou k dispozici. 
+> Yarn s Webpacku je jeden oblíbenou alternativu, pro kterou [pokyny k migraci](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) jsou k dispozici.
 
-[Bower](https://bower.io/) volá sám sebe "Správce balíčků pro web". V ekosystému .NET zaplňování void zanechaný NuGet neschopnost poskytovat statické soubory obsahu. Pro projekty ASP.NET Core, jsou tyto statické soubory systému na straně klienta knihovny jako [jQuery](http://jquery.com/) a [Bootstrap](http://getbootstrap.com/). Pro knihovny .NET, můžete dál používat [NuGet](https://www.nuget.org/) Správce balíčků.
+[Bower](https://bower.io/) zavolá sama sebe "Správce balíčků pro web". Vyplní void zanechaný neschopnost Nugetu doručování statických souborů obsahu v ekosystému .NET. Pro projekty ASP.NET Core, jsou tyto statické soubory přináší knihoven na straně klienta, jako je [jQuery](http://jquery.com/) a [Bootstrap](http://getbootstrap.com/). Pro knihovny .NET, můžete dál používat [NuGet](https://www.nuget.org/) Správce balíčků.
 
-Proces sestavení nové projekty vytvořené pomocí šablony projektů ASP.NET Core nastavení na straně klienta. [jQuery](http://jquery.com/) a [Bootstrap](http://getbootstrap.com/) jsou nainstalovány, a Bower je podporována.
+Proces sestavení nové projekty vytvořené pomocí šablon projektů ASP.NET Core, nastavení na straně klienta. [jQuery](http://jquery.com/) a [Bootstrap](http://getbootstrap.com/) jsou nainstalované a podporované Bower.
 
-Balíčky klienta jsou uvedeny v *bower.json* souboru. Šablony projektů ASP.NET Core nakonfiguruje *bower.json* s Bootstrap, jQuery a k ověřování jQuery.
+Balíčky na straně klienta jsou uvedené v *bower.json* souboru. Šablony projektů ASP.NET Core nakonfiguruje *bower.json* s Bootstrap, jQuery a k ověřování jQuery.
 
-V tomto kurzu přidáme podpora [písma Super](http://fontawesome.io). Bower balíčky můžete nainstalovat **spravovat balíčky Bower** uživatelského rozhraní nebo ručně v *bower.json* souboru.
+V tomto kurzu přidáme podporu [knihovnou aplikací Font Awesome](http://fontawesome.io). Dá se nainstalovat balíčky bower s **spravovat balíčky Bower** uživatelského rozhraní nebo ručně v *bower.json* souboru.
 
-### <a name="installation-via-manage-bower-packages-ui"></a>Instalaci přes spravovat balíčky Bower uživatelského rozhraní
+### <a name="installation-via-manage-bower-packages-ui"></a>Instalace přes spravovat balíčky Bower uživatelského rozhraní
 
-* Vytvoření nové aplikace ASP.NET – webové jádro s **webové aplikace ASP.NET Core (.NET Core)** šablony. Vyberte **webovou aplikaci** a **bez ověřování**.
+* Vytvoření nové aplikace ASP.NET Core Web s **webová aplikace ASP.NET Core (.NET Core)** šablony. Vyberte **webovou aplikaci** a **bez ověřování**.
 
-* Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **spravovat balíčky Bower** (případně z hlavní nabídky, **projektu** > **spravovat balíčky Bower**).
+* Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **spravovat balíčky Bower** (případně v hlavní nabídce **projektu** > **spravovat balíčky Bower**).
 
-* V **Bower: \<název projektu\>**  okně klikněte na kartu "Browse" a pak filtrovat seznam balíčků zadáním `font-awesome` do vyhledávacího pole:
+* V **Bower: \<název projektu\>**  okna, klikněte na kartu "Procházet" a vyfiltrujte seznam balíčků tak, že zadáte `font-awesome` do vyhledávacího pole:
 
-  ![Správa balíčků bower](bower/_static/manage-bower-packages.png)
+  ![spravovat balíčky bower](bower/_static/manage-bower-packages.png)
 
-* Potvrďte, že "uložit změny do *bower.json*" je zaškrtnuté políčko. V rozevíracím seznamu vyberte verzi a klikněte na tlačítko **nainstalovat** tlačítko. **Výstup** okně se zobrazí podrobné informace o instalaci.
+* Ujistěte se, že "uložit změny do *bower.json*" je zaškrtnuté políčko. Z rozevíracího seznamu vyberte verzi a klikněte na tlačítko **nainstalovat** tlačítko. **Výstup** okno zobrazuje podrobné informace o instalaci.
 
 ### <a name="manual-installation-in-bowerjson"></a>Ruční instalace v bower.json
 
-Otevřete *bower.json* souboru a přidejte do závislosti "font Super". IntelliSense zobrazuje dostupné balíčky. Pokud je vybraný balíček, zobrazí se dostupné verze. Následující obrázky jsou starší a nebude odpovídat co vidíte.
+Otevřít *bower.json* a přidejte k závislostem "knihovnou aplikací font awesome". Technologie IntelliSense zobrazuje dostupné balíčky. Když je vybraný balíček, se zobrazí dostupné verze. Následující obrázky jsou starší a nebudou shodovat.
 
-![IntelliSense bower balíček Průzkumníka](bower/_static/add-package.png)
+![IntelliSense Průzkumníku balíčků bower](bower/_static/add-package.png)
 
-![bower verze IntelliSense](bower/_static/version-intelliSense.png)
+![verze technologie IntelliSense pro bower](bower/_static/version-intelliSense.png)
 
-Bower používá [sémantické verze](http://semver.org/) k uspořádání závislosti. Sémantické verze, také známé jako SemVer identifikuje balíčky s schématu číslování \<hlavní >.\< méně závažné >. \<oprava >. IntelliSense zjednodušuje tím, že zobrazuje pouze několik běžné volby sémantické verze. Horní položku v seznamu IntelliSense (4.6.3 v předchozím příkladu), je považován za nejnovější stabilní verze balíčku. Symbol šipka nahoru (^) odpovídá nejnovější hlavní verzi a znak tilda (~) odpovídá nejnovější dílčí verzi.
+Bower používá [sémantické správy verzí](http://semver.org/) k uspořádání závislosti. Sémantické správy verzí, označované také jako SemVer identifikuje balíčky se schéma číslování \<hlavní >.\< podverze >. \<opravy >. Technologie IntelliSense zjednodušuje tím, že zobrazuje pouze několik běžné volby sémantické správy verzí. Horní položku v seznamu technologie IntelliSense (4.6.3 v příkladu výše) se považuje za nejnovější stabilní verze balíčku. Symbol stříšky (^) odpovídá nejnovější hlavní verzi a tilda (~) odpovídá nejnovější dílčí verzi.
 
-Uložit *bower.json* souboru. Visual Studio sleduje *bower.json* změny v souboru. Při ukládání, *bower instalace* se spustí příkaz. Najdete v okně výstupu **Bower nebo npm** zobrazení pro přesný příkaz spustit.
+Uložit *bower.json* souboru. Visual Studio sleduje *bower.json* změny v souboru. Po uložení, *nainstalovat bower* spuštění příkazu. Najdete v okně Výstup **Bower/npm** zobrazení pro přesný příkaz spustit.
 
-Otevřete *.bowerrc* souboru pod *bower.json*. `directory` Je nastavena na *wwwroot/lib* což označuje umístění Bower nainstaluje balíček prostředků.
+Otevřít *.bowerrc* soubor *bower.json*. `directory` Je nastavena na *wwwroot/lib* označující umístění Bower nainstaluje balíček prostředků.
 
 ```json
 {
@@ -62,64 +62,64 @@ Otevřete *.bowerrc* souboru pod *bower.json*. `directory` Je nastavena na *wwwr
 }
 ```
 
-Do vyhledávacího pole v Průzkumníku řešení můžete použít k vyhledání a zobrazení písma Super balíčku.
+Pole Hledat v Průzkumníku řešení můžete použít k vyhledání a knihovnou aplikací font awesome balíček zobrazíte.
 
-Otevřete *Views\Shared\_Layout.cshtml* souboru a přidejte soubor písma Super šablon stylů CSS v prostředí [značky pomocná](xref:mvc/views/tag-helpers/intro) pro `Development`. V Průzkumníku řešení přetažení *písma awesome.css* uvnitř `<environment names="Development">` elementu.
+Otevřít *Views\Shared\_Layout.cshtml* a knihovnou aplikací font awesome soubor CSS přidejte do prostředí [pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) pro `Development`. Z Průzkumníka řešení, přetáhněte a umístěte *písmo awesome.css* uvnitř `<environment names="Development">` elementu.
 
 [!code-html[](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
 
-V produkční aplikace přidat *písma awesome.min.css* do pomocné rutiny prostředí značky pro `Staging,Production`.
+V produkční aplikaci přidat *písmo awesome.min.css* k pomocná rutina značky prostředí pro `Staging,Production`.
 
-Nahraďte obsah *Views\Home\About.cshtml* souboru nástroje Razor s následující kód:
+Nahraďte obsah *Views\Home\About.cshtml* Razor souboru následujícím kódem:
 
 [!code-html[](bower/sample/About.cshtml)]
 
-Spusťte aplikaci a přejděte do zobrazení o ověření funguje písma Super balíčku.
+Spusťte aplikaci a přejděte do zobrazení o zkontrolujte, jestli funguje knihovnou aplikací font awesome balíčku.
 
-## <a name="exploring-the-client-side-build-process"></a>Zkoumání procesu sestavení na straně klienta
+## <a name="exploring-the-client-side-build-process"></a>Zkoumání proces sestavení na straně klienta
 
-Většina šablony projektů ASP.NET Core jsou již byla konfigurována pro použití Bower. Tento další návod začíná prázdný projekt ASP.NET Core a přidá každého jednotlivého ručně, abyste získali chování pro použití Bower v projektu. Můžete zobrazit, co se stane s strukturu projektu a runtime výstup jako každé změně konfigurace.
+Většina šablony projektů ASP.NET Core je již nakonfigurován pro použití Bower. Tento návod další začíná prázdný projekt ASP.NET Core a přidá každého jednotlivého ručně, abyste získali představu pro použití Bower v projektu. Zobrazí se, co se stane strukturu projektu a modul runtime výstup jak každé změně konfigurace.
 
-Obecné kroky pro použití s Bower procesu sestavení na straně klienta jsou:
+Obecné kroky pro použití s Bowerem proces sestavení na straně klienta jsou:
 
-* Definujte balíčky použité ve vašem projektu. <!-- once defined, you don't need to download them, VS does -->
-* Odkaz na balíčky z webových stránek.
+* Definujte balíčky používané ve vašem projektu. <!-- once defined, you don't need to download them, VS does -->
+* Referenční dokumentace k balíčkům z webových stránek.
 
 ### <a name="define-packages"></a>Definování balíčků
 
-Jakmile seznam balíčků v *bower.json* je se stažení souboru, Visual Studio. Následující příklad používá k načtení knihovny jQuery a Bootstrap na Bower *wwwroot* složky.
+Jakmile se seznam balíčků v *bower.json* souboru, Visual Studio stáhne. Následující příklad používá k načtení jQuery a Bootstrap pro Bower *wwwroot* složky.
 
-* Vytvoření nové aplikace ASP.NET – webové jádro s **webové aplikace ASP.NET Core (.NET Core)** šablony. Vyberte **prázdný** šablona projektu a klikněte na tlačítko **OK**.
+* Vytvoření nové aplikace ASP.NET Core Web s **webová aplikace ASP.NET Core (.NET Core)** šablony. Vyberte **prázdný** šablony projektu a klikněte na tlačítko **OK**.
 
-* V Průzkumníku řešení klikněte pravým tlačítkem na projekt > **přidat novou položku** a vyberte **Bower konfigurační soubor**. Poznámka: A *.bowerrc* soubor je taky přidaný.
+* V Průzkumníku řešení klikněte pravým tlačítkem na projekt > **přidat novou položku** a vyberte **konfigurační soubor Bower**. Poznámka: A *.bowerrc* také přidá soubor.
 
-* Otevřete *bower.json*a přidejte jquery a bootstrap na `dependencies` oddílu. Výsledná *bower.json* soubor bude vypadat jako v následujícím příkladu. Verze bude časem změnit a nemusí odpovídat následující obrázek.
+* Otevřít *bower.json*a přidat jquery a bootstrap na `dependencies` oddílu. Výsledná *bower.json* soubor bude vypadat jako v následujícím příkladu. Verze bude v průběhu času měnit a nemusí odpovídat na následujícím obrázku.
 
 [!code-json[](bower/sample/bower.json?highlight=5,6)]
 
 * Uložit *bower.json* souboru.
 
-  Ověřte, tento projekt zahrnuje *bootstrap* a *jQuery* adresářů v *wwwroot/lib*. Bower používá *.bowerrc* instalace prostředků v souboru *wwwroot/lib*.
+  Ověřte, projekt obsahuje *bootstrap* a *jQuery* adresáře v *wwwroot/lib*. Používá pro bower *.bowerrc* sloužící k instalaci prostředky v *wwwroot/lib*.
 
-  Poznámka: Rozhraní "Správa balíčků Bower" poskytuje alternativu k ruční souboru úpravy.
+  Poznámka: "Spravovat balíčky Bower" uživatelské rozhraní poskytuje alternativu k ruční soubor úpravy.
 
 ### <a name="enable-static-files"></a>Povolte statické soubory
 
-* Přidat `Microsoft.AspNetCore.StaticFiles` balíček NuGet do projektu.
-* Povolte statické soubory ke zpracování s [middleware se statickými soubory](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions). Přidejte volání [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions) k `Configure` metodu `Startup`.
+* Přidat `Microsoft.AspNetCore.StaticFiles` do projektu balíček NuGet.
+* Povolte statické soubory ke zpracování se [middleware se statickými soubory](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions). Přidejte volání do [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions) k `Configure` metoda `Startup`.
 
 [!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 
-### <a name="reference-packages"></a>Referenčních balíčků
+### <a name="reference-packages"></a>Odkaz na balíčky
 
-V této části vytvoříte stránky HTML a ověří, zda má přístup k nasazených balíčků.
+V této části vytvoříte stránku HTML k ověření, že může přistupovat k nasazených balíčků.
 
-* Přidat novou stránku HTML s názvem *Index.html* k *wwwroot* složky. Poznámka: Je nutné přidat soubor HTML *wwwroot* složky. Ve výchozím nastavení, nelze zpracovat statický obsah mimo *wwwroot*. V tématu [statické soubory](xref:fundamentals/static-files) Další informace.
+* Přidejte novou stránku HTML s názvem *Index.html* k *wwwroot* složky. Poznámka: Je nutné přidat soubor HTML k *wwwroot* složky. Ve výchozím nastavení, statický obsah nelze zpracovat v mimo *wwwroot*. Zobrazit [statické soubory](xref:fundamentals/static-files) Další informace.
 
-  Nahraďte obsah *Index.html* s následující kód:
+  Nahraďte obsah *Index.html* následujícím kódem:
 
 [!code-html[](bower/sample/Index.html)]
 
-* Spusťte aplikaci a přejděte do `http://localhost:<port>/Index.html`. Alternativně s *Index.html* otevřené, stiskněte `Ctrl+Shift+W`. Ověřte, že se použije jumbotron stylů, kód jazyka jQuery odpovídá při kliknutí na tlačítko a že zavedení tlačítko se změní stav.
+* Spusťte aplikaci a přejděte do `http://localhost:<port>/Index.html`. Můžete také s *Index.html* otevřen, stiskněte klávesu `Ctrl+Shift+W`. Ověřte, že se použije jumbotron stylu, kód jazyka jQuery reaguje, když dojde ke kliknutí na tlačítko a, že na spouštěcí tlačítko změní stav.
 
-  ![Styl jumbotron použitý](bower/_static/jumbotron.png)
+  ![jumbotron stylem](bower/_static/jumbotron.png)

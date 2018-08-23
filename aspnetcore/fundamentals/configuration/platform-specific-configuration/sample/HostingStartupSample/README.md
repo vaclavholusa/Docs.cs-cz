@@ -1,3 +1,3 @@
-# <a name="aspnet-hosting-startup-sample"></a>Ukázka spuštění hostování ASP.NET
+# <a name="aspnet-core-hosting-startup-sample"></a>Ukázka po spuštění hostování ASP.NET Core
 
-Tento příklad ukazuje použití [IHostingStartup](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup). Tento příklad znázorňuje podle scénářů v tématu [vylepšení aplikace z externí sestavení](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/platform-specific-configuration).
+Tento příklad ukazuje použití metody [IHostingStartup](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup). Tato ukázka demonstruje scénáře popsané v [vylepšení aplikace z externího sestavení](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/platform-specific-configuration).

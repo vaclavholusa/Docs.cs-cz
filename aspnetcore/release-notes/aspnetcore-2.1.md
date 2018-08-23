@@ -3,15 +3,16 @@ title: Co je nového v ASP.NET Core 2.1
 author: isaac2004
 description: Informace o nových funkcích v ASP.NET Core 2.1.
 monikerRange: = aspnetcore-2.1
+ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: aspnetcore-2.1
-ms.openlocfilehash: f113e990d8b8f3eb80def0d18e301d930e58e596
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: acbed75e2e894569816669e250795c95482bde2a
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320678"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41819474"
 ---
 # <a name="whats-new-in-aspnet-core-21"></a>Co je nového v ASP.NET Core 2.1
 
@@ -157,6 +158,12 @@ Další informace najdete v tématu [šablony jednostránkové aplikace pomocí 
 ## <a name="razor-pages-in-an-area"></a>Stránky Razor v oblasti.
 
 Teď podporují stránky Razor [oblasti](xref:mvc/controllers/areas). Chcete-li zobrazit příklad oblasti, vytvořte nová webová aplikace Razor Pages s jednotlivými uživatelskými účty. Webové aplikace stránky Razor pomocí jednotlivých uživatelských účtů zahrnuje */Areas/Identity/Pages*.
+
+## <a name="mvc-compatibility-version"></a>Verze kompatibility MVC
+
+<xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> Metoda umožňuje aplikacím vyjádřit výslovný souhlas nebo výslovný nesouhlas s potenciálně rozbíjející změny chování zavedení v ASP.NET Core MVC 2.1 nebo novější.
+
+Další informace naleznete v tématu <xref:mvc/compatibility-version>.
 
 ## <a name="migrate-from-20-to-21"></a>Migrace z verze 2.0 na verzi 2.1
 

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-areas
 title: ASP.NET MVC 2 – oblasti | Dokumentace Microsoftu
 author: jongalloway
 description: V tomto videu se dozvíte, jak používat funkci oblastí k usnadňují uspořádání větších aplikací ASP.NET MVC pomocí jejich rozdělení do různých funct...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/22/2010
 ms.assetid: 6ec738b6-c34c-4647-b8bf-9acb8d2a259d
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-areas
 msc.type: video
-ms.openlocfilehash: 95f3ea6a054d1e02cca2902fd6eea54ef33d347d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 24284cf9a703c5b7bb385395f9fe2ab3d3f2325b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827576"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753478"
 ---
 <a name="aspnet-mvc-2---areas"></a>ASP.NET MVC 2 – oblasti
 ====================

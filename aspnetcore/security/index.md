@@ -5,12 +5,12 @@ description: Další informace o ověřování, autorizaci a zabezpečení zákl
 ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: ed64594c85d555d8417903947fc3ce927dc04cec
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 3a1c1ea1ad28fccbe5ae91b0be193938b095f60b
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095759"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754391"
 ---
 # <a name="overview-of-aspnet-core-security"></a>Přehled zabezpečení ASP.NET Core
 
@@ -35,9 +35,9 @@ ASP.NET Core a EF obsahují funkce, které vám pomůžou zabezpečit vaše apli
 * [Proti padělání požadavků mezi weby (CSRF)](xref:security/anti-request-forgery)
 * [Útoky na otevřeném přesměrování](xref:security/preventing-open-redirects)
 
-Existují další chyby zabezpečení, které byste měli vědět. Další informace najdete v části v tomto dokumentu na *dokumentace k ASP.NET je zabezpečení*.
+Existují další chyby zabezpečení, které byste měli vědět. Další informace najdete v části v tomto dokumentu na *dokumentace k ASP.NET Core zabezpečení*.
 
-## <a name="aspnet-security-documentation"></a>Dokumentace ke službě Security technologie ASP.NET
+## <a name="aspnet-core-security-documentation"></a>Dokumentace k zabezpečení ASP.NET Core
 
 *   [Ověřování](xref:security/authentication/index)
     *   [Úvod do systému Identity](xref:security/authentication/identity)

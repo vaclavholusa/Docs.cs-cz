@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectabl
 title: Master/Detail s volitelnou GridView hlavní podrobnosti DetailView (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu budou mít ovládacího prvku GridView, jejíž řádky patří název a ceny jednotlivých produktů spolu s tlačítko pro výběr. Vyberte tlačítko pro particu...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17885b2f4892011629e04596b24ca677de2fa8b7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0bf724741ffbc01aa7611d8b075d89827bf83777
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820921"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751898"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>Master/Detail s volitelnou GridView hlavní podrobnosti DetailView (VB)
 ====================

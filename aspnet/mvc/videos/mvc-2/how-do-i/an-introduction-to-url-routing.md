@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/an-introduction-to-url-routing
 title: Úvod do směrování adres URL | Dokumentace Microsoftu
 author: StephenWalther
 description: V tomto kurzu Stephen Walther ukazuje, jak získat požadavky prohlížeče mapují na akce kontroleru pomocí směrování adres URL. Také se dozvíte, jak vytvořit zákaznických...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/20/2008
 ms.assetid: ad0f4d26-6366-4464-968f-a24a380e6dc6
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/an-introduction-to-url-routing
 msc.type: video
-ms.openlocfilehash: f239bc6e781cf45090e16a197ff5adf9849f6f92
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 632208e44a8494b56fab277e6be253fc1b59587f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839044"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752112"
 ---
 <a name="an-introduction-to-url-routing"></a>Úvod do směrování adres URL
 ====================

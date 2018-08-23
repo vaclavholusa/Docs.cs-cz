@@ -1,27 +1,27 @@
 ---
-title: Visual Studio publikační profily pro nasazení aplikace ASP.NET Core
+title: Visual Studio publikačních profilů pro nasazení aplikace ASP.NET Core
 author: rick-anderson
-description: Naučte se vytvářet profily publikování v sadě Visual Studio a použít je pro správu nasazení aplikací ASP.NET Core do různých cíle.
+description: Zjistěte, jak vytvořit profily publikování v sadě Visual Studio a jejich použití pro správu nasazení aplikací ASP.NET Core do různých cílů.
 ms.author: riande
 ms.custom: mvc
 ms.date: 04/10/2018
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 280599ab4b4f0a70d154cc4408e7232aaf766d8e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2958b83de13207b93790004a4fa60b0509af3cd2
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279555"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902583"
 ---
-# <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio publikační profily pro nasazení aplikace ASP.NET Core
+# <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio publikačních profilů pro nasazení aplikace ASP.NET Core
 
 Podle [Sayed Ibrahim Hashimi](https://github.com/sayedihashimi) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Tento dokument se zaměřuje na použití Visual Studio 2017 k vytvoření a používání publikační profily. Profily publikování, vytvořené pomocí sady Visual Studio můžete spustit z nástroje MSBuild a Visual Studio 2017. V tématu [publikování webové aplikace ASP.NET Core Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny k publikování do Azure.
+Tento dokument je zaměřený na vytváření a používání pomocí sady Visual Studio 2017 se publikační profily. Profily publikování vytvořené pomocí sady Visual Studio můžete spustit z nástroje MSBuild a sadě Visual Studio 2017. Zobrazit [publikovat webovou aplikaci ASP.NET Core do služby Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny k publikování do Azure.
 
 Následující soubor projektu byl vytvořen pomocí příkazu `dotnet new mvc`:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -64,49 +64,49 @@ Následující soubor projektu byl vytvořen pomocí příkazu `dotnet new mvc`:
 `<Project>` Elementu `Sdk` atribut provádí následující úlohy:
 
 * Importuje soubor vlastnosti z *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.Props* na začátku.
-* Importuje soubor cíle z *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.targets* na konci.
+* Importuje soubor cílů z *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web\Sdk\Sdk.targets* na konci.
 
-Výchozím umístěním pro `MSBuildSDKsPath` (s Visual Studio 2017 Enterprise) je *% programfiles (x86) %\Microsoft Visual Studio\2017\Enterprise\MSBuild\Sdks* složky.
+Výchozím umístěním pro `MSBuildSDKsPath` (pomocí sady Visual Studio 2017 Enterprise) je *% programfiles (x86) %\Microsoft Visual Studio\2017\Enterprise\MSBuild\Sdks* složky.
 
 `Microsoft.NET.Sdk.Web` SDK závisí na:
 
 * *Microsoft.NET.Sdk.Web.ProjectSystem*
 * *Microsoft.NET.Sdk.Publish*
 
-Což způsobí, že následující vlastnosti a cílů určených k importu:
+Což způsobí, že následující vlastnosti a cíle, které se mají naimportovat:
 
 * *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.Props*
 * *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Web.ProjectSystem\Sdk\Sdk.targets*
 * *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.Props*
 * *$(MSBuildSDKsPath)\Microsoft.NET.Sdk.Publish\Sdk\Sdk.targets*
 
-Publikujte cíle import právo sada cíle založené na metodě publikování použít.
+Publikování import cílů vpravo sadu cílů založené na metodě publikování použít.
 
-Při načtení projektu nástroje MSBuild nebo Visual Studio dojde k vysoké úrovně takto:
+Při načtení projektu nástroje MSBuild nebo Visual Studio provedou tyto akce vysoké úrovně:
 
-* Sestavení projektu
-* Výpočetní soubory k publikování
-* Publikovat soubory do cílového umístění
+* Sestavit projekt
+* COMPUTE souborů k publikování
+* Publikování souborů do cíle
 
-## <a name="compute-project-items"></a>Výpočetní položky projektu
+## <a name="compute-project-items"></a>COMPUTE položky projektu
 
-Při načtení projektu, se vypočítávají položky projektu (soubory). `item type` Atribut určuje způsob zpracování souboru. Ve výchozím nastavení *.cs* souborů jsou součástí `Compile` seznamu položek. Soubory `Compile` kompilované seznamu položek.
+Při načtení projektu jsou vypočítány položky projektu (soubory). `item type` Atribut určuje, jak se zpracovávají souboru. Ve výchozím nastavení *.cs* soubory jsou zahrnuty v `Compile` seznam položek. Soubory `Compile` jsou zkompilovány seznam položek.
 
-`Content` Seznamu položek obsahuje soubory, které jsou publikovány kromě výstupy sestavení. Ve výchozím nastavení, soubory odpovídající vzoru `wwwroot/**` jsou součástí `Content` položky. `wwwroot/\*\*` [Expanze názvů vzor](https://gruntjs.com/configuring-tasks#globbing-patterns) odpovídá všechny soubory v *wwwroot* složky **a** podsložky. Pokud chcete explicitně přidat do seznamu publikovat soubor, přidejte přímo v souboru *.csproj* souboru, jak je znázorněno v [souborů](#include-files).
+`Content` Seznamu položek obsahuje soubory, které jsou publikovány kromě výstupy sestavení. Ve výchozím nastavení, soubory odpovídající vzoru `wwwroot/**` jsou součástí `Content` položky. `wwwroot/\*\*` [Model podpory zástupných znaků](https://gruntjs.com/configuring-tasks#globbing-patterns) vyhledá všechny soubory v *wwwroot* složky **a** podsložky. Pokud chcete explicitně přidat soubor do seznamu publikovat, přidejte přímo v souboru *.csproj* sdílené, jak je znázorněno v [vložených souborů](#include-files).
 
 Při výběru **publikovat** tlačítko v sadě Visual Studio nebo při publikování z příkazového řádku:
 
-* Nebude vlastnosti se vypočítávají (soubory, které jsou potřebné k vytvoření).
-* **Visual Studio pouze**: obnovení balíčků NuGet. (Obnovit, musí být explicitní uživatelem v rozhraní příkazového řádku).
+* Jsou vypočítané vlastnosti/položky (soubory, které jsou potřebné k sestavení).
+* **Visual Studio pouze**: obnovení balíčků NuGet. (Obnovit musí být explicitní uživatelem na rozhraní příkazového řádku).
 * Sestavení projektu.
-* Publikování položky se vypočítávají (soubory, které jsou potřebné k publikování).
-* Po publikování projektu (počítaný soubory se zkopírují do cílového umístění publikovat).
+* Publikovat položky se zpracovávají (soubory, které jsou potřebné k publikování).
+* Publikování projektu (vypočítané soubory se zkopírují do cílového umístění publikování).
 
-Když projekt ASP.NET Core odkazuje `Microsoft.NET.Sdk.Web` v souboru projektu, *app_offline.htm* soubor je umístěn v kořenovém adresáři webové aplikace. Když se soubor nachází, modul ASP.NET Core řádně ukončí aplikaci a slouží *app_offline.htm* souboru během nasazení. Další informace najdete v tématu [odkazu na modul jádro ASP.NET konfigurace](xref:host-and-deploy/aspnet-core-module#app_offlinehtm).
+Když se odkazuje projekt ASP.NET Core `Microsoft.NET.Sdk.Web` v souboru projektu *app_offline.htm* soubor umístěn v kořenovém adresáři webové aplikace. Pokud soubor existuje, modul ASP.NET Core řádně ukončí aplikaci, slouží *app_offline.htm* souboru během nasazení. Další informace najdete v tématu [odkaz Konfigurace modul ASP.NET Core](xref:host-and-deploy/aspnet-core-module#app_offlinehtm).
 
-## <a name="basic-command-line-publishing"></a>Základní publikování příkazového řádku
+## <a name="basic-command-line-publishing"></a>Publikování základních příkazového řádku
 
-Příkazového řádku publikování funguje na všech platformách podporovaných .NET Core a nevyžaduje Visual Studio. V níže, ukázky [dotnet publikování](/dotnet/core/tools/dotnet-publish) příkaz spuštěn z adresáře projektu (obsahující *.csproj* souboru). Pokud není ve složce projektu explicitně předat v cestě k souboru projektu. Příklad:
+Příkazový řádek publikování funguje na všech platformách .NET Core podporovány a nevyžaduje, aby Visual Studio. Níže [dotnet publikovat](/dotnet/core/tools/dotnet-publish) příkaz spustí z adresáře projektu (která obsahuje *.csproj* souboru). Pokud není ve složce projektu explicitně předávat v cestě k souboru projektu. Příklad:
 
 ```console
 dotnet publish C:\Webs\Web1
@@ -114,7 +114,7 @@ dotnet publish C:\Webs\Web1
 
 Spusťte následující příkazy k vytvoření a publikování webové aplikace:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```console
 dotnet new mvc
@@ -131,7 +131,7 @@ dotnet publish
 
 ---
 
-[Dotnet publikování](/dotnet/core/tools/dotnet-publish) příkaz vytváří výstup podobný následujícímu:
+[Dotnet publikovat](/dotnet/core/tools/dotnet-publish) příkaz vytváří výstup podobný následujícímu:
 
 ```console
 C:\Webs\Web1>dotnet publish
@@ -142,67 +142,67 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Web1 -> C:\Webs\Web1\bin\Debug\netcoreapp2.0\publish\
 ```
 
-Výchozí nastavení publikování složky je `bin\$(Configuration)\netcoreapp<version>\publish`. Výchozí hodnota pro `$(Configuration)` je *ladění*. V předchozím příkladu `<TargetFramework>` je `netcoreapp2.0`.
+Výchozí nastavení složky pro publikování je `bin\$(Configuration)\netcoreapp<version>\publish`. Výchozí nastavení pro `$(Configuration)` je *ladění*. V předchozím příkladu `<TargetFramework>` je `netcoreapp2.0`.
 
-`dotnet publish -h` Zobrazí nápovědu informace pro publikování.
+`dotnet publish -h` Zobrazí nápovědu pro publikování.
 
-Určuje následující příkaz `Release` sestavení a publikování adresáře:
+Následující příkaz určuje `Release` sestavení a publikování adresáře:
 
 ```console
 dotnet publish -c Release -o C:\MyWebs\test
 ```
 
-[Dotnet publikování](/dotnet/core/tools/dotnet-publish) příkaz volání MSBuild, které vyvolá `Publish` cíl. Žádné parametry předaný `dotnet publish` jsou předávány MSBuild. `-c` Parametr se mapuje `Configuration` vlastnosti MSBuild. `-o` Parametr mapuje `OutputPath`.
+[Dotnet publikovat](/dotnet/core/tools/dotnet-publish) volání MSBuild, který vyvolá příkaz `Publish` cíl. Žádné parametry předány `dotnet publish` jsou předávaným do MSBuild. `-c` Parametr se mapuje `Configuration` vlastnosti Msbuildu. `-o` Parametr mapuje na `OutputPath`.
 
-Vlastnosti nástroje MSBuild lze předat některou z následujících formátů:
+Vlastnosti nástroje MSBuild mohou být předány některou z následujících formátů:
 
 * ` p:<NAME>=<VALUE>`
 * `/p:<NAME>=<VALUE>`
 
-Publikuje následující příkaz `Release` sestavení do sdílené síťové složky:
+Následující příkaz publikuje `Release` od sestavení k síťové sdílené složky:
 
 `dotnet publish -c Release /p:PublishDir=//r8/release/AdminWeb`
 
-Sdílené síťové složce je zadán s lomítkem (*//r8/*) a funguje na všech platformách .NET Core podporována.
+Sdílené síťové složky se zadaným lomítka (*//r8/*) a funguje na všech platformách .NET Core podporovány.
 
-Potvrďte, že není spuštěn publikované aplikace pro nasazení. Soubory *publikování* složky jsou zamčené, když aplikace běží. Nasazení nemůže proběhnout, protože uzamčen, že soubory nelze kopírovat.
+Potvrďte, že publikované aplikace pro nasazení neběží. Soubory *publikovat* složky jsou zamčené, když je aplikace spuštěna. Nasazení nebyla vytvořena, protože uzamčena, nelze zkopírovat soubory.
 
-## <a name="publish-profiles"></a>Publikační profily
+## <a name="publish-profiles"></a>Profily publikování
 
-Tato část používá Visual Studio 2017 k vytvoření profilu publikování. Po vytvoření publikování ze sady Visual Studio nebo pomocí příkazového řádku je k dispozici.
+Tato část používá Visual Studio 2017 k vytvoření profilu publikování. Po vytvoření publikování ze sady Visual Studio nebo příkazového řádku je k dispozici.
 
-Publikování profily může zjednodušit proces publikování a může existovat libovolný počet profilů. Vytvořte profil publikování v sadě Visual Studio volbou jedné z následujících cestách:
+Publikování profilů může zjednodušit proces publikování, a může existovat libovolný počet profilů. Vytvořte profil publikování v sadě Visual Studio výběrem jedné z následujících cest:
 
 * Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte **publikovat**.
-* Vyberte **publikovat &lt;název_projektu&gt;**  z **sestavení** nabídky.
+* Vyberte **publikovat &lt;project_name&gt;**  z **sestavení** nabídky.
 
-**Publikovat** kapacity stránky aplikace se zobrazí. Pokud projekt chybí profil publikování, zobrazí se následující stránka:
+**Publikovat** zobrazuje kartu na stránce kapacity aplikace. Pokud projekt nemá profil publikování, zobrazí se následující stránka:
 
-![Na kartě Publikovat kapacity stránky aplikace](visual-studio-publish-profiles/_static/az.png)
+![Na kartě Publikovat na stránce kapacity aplikace](visual-studio-publish-profiles/_static/az.png)
 
-Když **složky** je vybrána, zadejte cestu ke složce pro uložení publikovaných prostředků. Výchozí složkou je *bin\Release\PublishOutput*. Klikněte **vytvořit profil** tlačítko Dokončit.
+Když **složky** je vybrána, zadejte cestu ke složce pro ukládání publikovaných prostředků. Výchozí složkou je *bin\Release\PublishOutput*. Klikněte na tlačítko **vytvořit profil** tlačítko Dokončit.
 
-Po vytvoření profilu publikování **publikovat** kartě změny. Nově vytvořený profil se objeví v rozevíracím seznamu. Klikněte na tlačítko **vytvořit nový profil** vytvořit jinou nový profil.
+Po vytvoření profilu publikování **publikovat** kartě změny. V rozevíracím seznamu se zobrazí nově vytvořený profil. Klikněte na tlačítko **vytvořit nový profil** vytvořte další nový profil.
 
-![Na kartě publikovat aplikace kapacity stránky zobrazující FolderProfile](visual-studio-publish-profiles/_static/create_new.png)
+![Na kartě Publikovat na stránce kapacity aplikace zobrazuje FolderProfile](visual-studio-publish-profiles/_static/create_new.png)
 
-Průvodce Publikovat podporuje následující cíle publikování:
+Průvodce publikováním podporuje následující cíle publikování:
 
-* Aplikační služba Azure
-* Virtuální počítače Azure
-* Služba IIS, FTP, atd. (pro všechny webové servery)
+* Azure App Service
+* Azure Virtual Machines
+* Služba IIS, FTP atd., (pro všechny webové servery)
 * Folder
 * Importovat profil
 
-Další informace najdete v tématu [jaké možnosti publikování je pro mě nejlepší](/visualstudio/ide/not-in-toc/web-publish-options).
+Další informace najdete v tématu [jaké možnosti publikování jsou pro mě nejlepší](/visualstudio/ide/not-in-toc/web-publish-options).
 
-Při vytváření profilu publikování pomocí sady Visual Studio *vlastnosti/PublishProfiles/&lt;Název_profilu&gt;.pubxml* k vytvoření souboru MSBuild. *.Pubxml* soubor je soubor MSBuild a obsahuje konfigurační nastavení publikování. Tento soubor můžete změnit na přizpůsobení sestavení a publikování procesu. Proces publikování je pro čtení tohoto souboru. `<LastUsedBuildConfiguration>` je speciální, protože je globální vlastnost a by neměl být ve všech souborů, které je v sestavení naimportována. V tématu [MSBuild: jak nastavit vlastnost konfigurace](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) Další informace.
+Při vytváření profilu publikování pomocí sady Visual Studio *vlastnosti/PublishProfiles/&lt;Název_profilu&gt;.pubxml* se vytvoří soubor MSBuild. *.Pubxml* soubor je soubor MSBuild a obsahuje konfigurační nastavení publikování. Tento soubor můžete změnit na vlastní nastavení sestavení a publikování procesu. Tento soubor je pro čtení procesem publikování. `<LastUsedBuildConfiguration>` je speciální, protože globální vlastností a nemohou být zapsány všech souborů, které se importují v sestavení. Zobrazit [MSBuild: jak nastavit vlastnost konfigurace](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx) Další informace.
 
-Při publikování Azure cíl, *.pubxml* soubor obsahuje ID vašeho předplatného Azure. Přidání tohoto souboru do správy zdrojového kódu se nedoporučuje se tento typ cíle. Při publikování na cíl, mimo Azure, je možné vrátit se změnami *.pubxml* souboru.
+Při publikování do Azure cíl, *.pubxml* soubor obsahuje identifikátor vašeho předplatného Azure. S cílovým typem přidává se tento soubor do správy zdrojového kódu se nedoporučuje. Při publikování na cíl mimo Azure, je k vrácení se změnami *.pubxml* souboru.
 
-Citlivých informací (jako je heslo publikování) se šifrují úrovni uživatele nebo počítače. Je uložený v *vlastnosti/PublishProfiles/&lt;Název_profilu&gt;. pubxml.user* souboru. Protože tento soubor můžete ukládat citlivé informace, by neměla být zaškrtnuta do správy zdrojového kódu.
+Se šifrují citlivé údaje (třeba publikovat heslo) na úrovni uživatele nebo počítače. Je uložený v *vlastnosti/PublishProfiles/&lt;Název_profilu&gt;. pubxml.user* souboru. Protože tento soubor můžete uložit citlivé informace, by neměla být zaškrtnuta do správy zdrojového kódu.
 
-Přehled o tom, jak publikovat webovou aplikaci na ASP.NET Core najdete v tématu [hostitele a nasazení](xref:host-and-deploy/index). Úlohy nástroje MSBuild a cíle, které jsou nezbytné pro publikování aplikace ASP.NET Core jsou open source v https://github.com/aspnet/websdk.
+Přehled o tom, jak publikovat webovou aplikaci v ASP.NET Core, najdete v části [hostitele a nasadit](xref:host-and-deploy/index). Úlohy MSBuild a cíle plánování pro publikování aplikace ASP.NET Core je open source na https://github.com/aspnet/websdk.
 
 `dotnet publish` můžete použít složku, MSDeploy, a [Kudu](https://github.com/projectkudu/kudu/wiki) publikační profily:
 
@@ -212,25 +212,25 @@ Složka (funguje napříč platformami):
 dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>
 ```
 
-MSDeploy (aktuálně toto funguje pouze v systému Windows, protože není MSDeploy napříč platformami):
+MSDeploy (aktuálně toto funguje pouze ve Windows, protože není MSDeploy napříč platformami):
 
 ```console
 dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>
 ```
 
-Balíček MSDeploy (aktuálně toto funguje pouze v systému Windows, protože není MSDeploy napříč platformami):
+Balíček MSDeploy (aktuálně toto funguje pouze ve Windows, protože není MSDeploy napříč platformami):
 
 ```console
 dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>
 ```
 
-V předchozích ukázkách **nemáte** předat `deployonbuild` k `dotnet publish`.
+V předchozích ukázkách **není** předat `deployonbuild` k `dotnet publish`.
 
 Další informace najdete v tématu [Microsoft.NET.Sdk.Publish](https://github.com/aspnet/websdk#microsoftnetsdkpublish).
 
-`dotnet publish` podporuje rozhraní API modulu Kudu pro publikování do služby Azure z libovolné platformě. Visual Studio publikovat podporuje rozhraní API modulu Kudu, ale podporuje WebSDK pro různé platformy publikování v Azure.
+`dotnet publish` podporuje rozhraní API Kudu k publikování do Azure z jakékoliv platformy. Visual Studio publikování podporuje Kudu rozhraní API, ale je podporovaný modulem WebSDK pro různé platformy publikovat do Azure.
 
-Přidat profil publikování, který *vlastnosti nebo PublishProfiles* složku s následujícím obsahem:
+Přidat profil publikování *vlastnosti/PublishProfiles* složka s následujícím obsahem:
 
 ```xml
 <Project>
@@ -243,25 +243,25 @@ Přidat profil publikování, který *vlastnosti nebo PublishProfiles* složku s
 </Project>
 ```
 
-Spusťte následující příkaz, který zip si obsah publikovat a publikujete ho v Azure pomocí rozhraní API modulu Kudu:
+Spusťte následující příkaz, který zip obsah publikovat a publikujete ji do Azure pomocí rozhraní API Kudu:
 
 ```console
 dotnet publish /p:PublishProfile=Azure /p:Configuration=Release
 ```
 
-Při použití profil publikování, nastavte následující vlastnosti nástroje MSBuild:
+Při použití profil publikování, nastavte následující vlastnosti MSBuild:
 
 * `DeployOnBuild=true`
 * `PublishProfile=<Publish profile name>`
 
-Při publikování k profilu s názvem *FolderProfile*, můžete provést některou z níže uvedených příkazů:
+Při publikování tak, že profil s názvem *FolderProfile*, lze provést jednu z následujících příkazů:
 
 * `dotnet build /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 * `msbuild      /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
-Při vyvolání [dotnet sestavení](/dotnet/core/tools/dotnet-build), zavolá `msbuild` spustit sestavení a publikování procesu. Volání metody buď `dotnet build` nebo `msbuild` je ekvivalentní při předávání ve složce profilu. Při volání metody MSBuild přímo v systému Windows, je použít rozhraní .NET Framework verze nástroje MSBuild. MSDeploy je aktuálně omezená na počítačích s Windows pro publikování. Volání metody `dotnet build` na do jiné složky profil vyvolá MSBuild a MSBuild používá MSDeploy v jiné složce profily. Volání metody `dotnet build` na jiný složky profilu vyvolá MSBuild (pomocí MSDeploy) a má za následek selhání (i když běžících na platformě Windows). Pokud chcete publikovat pomocí profilu pro jiné složky, přímo voláním funkce MSBuild.
+Při vyvolání [dotnet sestavení](/dotnet/core/tools/dotnet-build), volá `msbuild` ke spuštění sestavení a publikování procesu. Volání na buď `dotnet build` nebo `msbuild` je ekvivalentní při předávání ve složce profilu. Při volání nástroje MSBuild přímo na Windows, se používá rozhraní .NET Framework verze nástroje MSBuild. Je aktuálně omezená na počítače s Windows pro publikování MSDeploy. Volání `dotnet build` do jiné složky profil vyvolá MSBuild a nástroj MSBuild používá MSDeploy v jiné složce profily. Volání `dotnet build` v jiné složce profilu vyvolá MSBuild (pomocí MSDeploy) a vede k chybě (i když spuštěn na platformě Windows). Pokud chcete publikovat pomocí profilu bez složky, přímo voláním funkce MSBuild.
 
-Profil publikování se následující složce byl vytvořen pomocí sady Visual Studio a publikuje do sdílené síťové složky:
+Profil publikování následující složka byla vytvořena pomocí sady Visual Studio a publikuje do sdílené síťové složky:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -287,44 +287,44 @@ MSBuild file.
 </Project>
 ```
 
-Poznámka: `<LastUsedBuildConfiguration>` je nastaven na `Release`. Při publikování ze sady Visual Studio `<LastUsedBuildConfiguration>` je nastavena hodnota vlastnosti konfigurace, pomocí hodnoty, když se spustí proces publikování. `<LastUsedBuildConfiguration>` Vlastnosti konfigurace je speciální a by nemělo být přepsáno v importovaného souboru MSBuild. Tato vlastnost může být přepsána z příkazového řádku.
+Poznámka: `<LastUsedBuildConfiguration>` je nastavena na `Release`. Při publikování ze sady Visual Studio `<LastUsedBuildConfiguration>` hodnota vlastnosti konfigurace je nastavena pomocí hodnoty, když se spustí proces publikování. `<LastUsedBuildConfiguration>` Vlastnost konfigurace je speciální a nesmí být přepsána nastaveními v importovaný soubor MSBuild. Tato vlastnost může být přepsána z příkazového řádku.
 
-Pomocí .NET Core rozhraní příkazového řádku:
+Použití .NET Core CLI:
 
 ```console
 dotnet build -c Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 ```
 
-Pomocí nástroje MSBuild:
+Použití nástroje MSBuild:
 
 ```console
 msbuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 ```
 
-## <a name="publish-to-an-msdeploy-endpoint-from-the-command-line"></a>Publikovat do koncového bodu MSDeploy z příkazového řádku
+## <a name="publish-to-an-msdeploy-endpoint-from-the-command-line"></a>Publikování do koncového bodu MSDeploy z příkazového řádku
 
-Publikování můžete provést pomocí rozhraní .NET Core CLI nebo MSBuild. `dotnet publish` běží v kontextu .NET Core. `msbuild` Příkaz vyžaduje rozhraní .NET Framework, který omezuje na prostředí Windows.
+Publikování můžete udělat pomocí rozhraní příkazového řádku .NET Core nebo MSBuild. `dotnet publish` spuštění v rámci .NET Core. `msbuild` Příkaz vyžaduje rozhraní .NET Framework, který omezuje do prostředí Windows.
 
-Nejjednodušší způsob, jak publikovat s MSDeploy je nejdřív vytvořte profil publikování ve Visual Studio 2017 a použít profil z příkazového řádku.
+Nejdřív vytvořte profil publikování v sadě Visual Studio 2017 a použít profil z příkazového řádku je nejjednodušší způsob, jak publikovat pomocí nástroje MSDeploy.
 
-V následující ukázce je vytvoření webové aplikace ASP.NET Core (pomocí `dotnet new mvc`), a přidají se profilem publikování Azure pomocí sady Visual Studio.
+V následujícím příkladu se vytvoří webová aplikace ASP.NET Core (pomocí `dotnet new mvc`), a přidá se profil publikování Azure s Visual Studio.
 
-Spustit `msbuild` z **příkazový řádek vývojáře pro VS 2017**. Příkazový řádek vývojáře má správný *msbuild.exe* v cestě sadou některé nástroje MSBuild proměnné.
+Spustit `msbuild` z **Developer Command Prompt for VS 2017**. Developer Command Prompt má správný *msbuild.exe* v cestě některé sadou proměnných MSBuild.
 
-MSBuild používá následující syntaxe:
+Nástroj MSBuild používá následující syntaxi:
 
 ```console
 msbuild <path-to-project-file> /p:DeployOnBuild=true /p:PublishProfile=<Publish Profile> /p:Username=<USERNAME> /p:Password=<PASSWORD>
 ```
 
-Získat `Password` z  *\<publikovat name >. PublishSettings* souboru. Stažení *. PublishSettings* soubor z buď:
+Získejte `Password` z  *\<publikovat jméno >. PublishSettings* souboru. Stáhněte si *. PublishSettings* soubor z aplikace:
 
-* Průzkumník řešení: Klikněte pravým tlačítkem na webovou aplikaci a vyberte **stažení profilu publikování**.
-* Portál Azure: klikněte na tlačítko **profilu publikování Get** ve webové aplikaci **přehled** panelu.
+* Průzkumník řešení: Klikněte pravým tlačítkem na webovou aplikaci a vyberte **stáhnout profil publikování**.
+* Azure portal: klikněte na tlačítko **získat profil publikování** ve webové aplikaci **přehled** panelu.
 
-`Username` můžete najít v profilu publikování.
+`Username` nenašlo se v profilu publikování.
 
-Následující ukázkové používá *Web11112 – Web Deploy* profilu publikování:
+Následující ukázkový používá *Web11112 – nasazení webu* profil publikování:
 
 ```console
 msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
@@ -332,9 +332,9 @@ msbuild "C:\Webs\Web1\Web1.csproj" /p:DeployOnBuild=true
  /p:Password="<password removed>"
 ```
 
-## <a name="exclude-files"></a>Vyloučit soubory
+## <a name="exclude-files"></a>Vyloučení souborů
 
-Při publikování webové aplikace ASP.NET Core, sestavení artefaktů a obsah *wwwroot* složky jsou zahrnuty. `msbuild` podporuje [expanze názvů vzory](https://gruntjs.com/configuring-tasks#globbing-patterns). Například následující `<Content>` element vyloučí všechny text (*.txt*) souborů z *wwwroot a obsah* složce a jejích podsložkách.
+Při publikování webové aplikace ASP.NET Core, artefakty sestavení a obsah *wwwroot* složky jsou zahrnuty. `msbuild` podporuje [vzorů podpory zástupných znaků](https://gruntjs.com/configuring-tasks#globbing-patterns). Například následující `<Content>` element vyloučí veškerý text (*.txt*) souborů z doručené pošty *wwwroot/obsah* složce a jejích podsložkách.
 
 ```xml
 <ItemGroup>
@@ -342,9 +342,9 @@ Při publikování webové aplikace ASP.NET Core, sestavení artefaktů a obsah 
 </ItemGroup>
 ```
 
-Předchozí kód lze přidat do profilu publikování nebo *.csproj* souboru. Když je přidán do *.csproj* , pravidlo se přidá soubor všechny profily publikování v projektu.
+Předchozí kód lze přidat do profilu publikování nebo *.csproj* souboru. Když se přidá *.csproj* , pravidlo se přidá soubor všechny profily publikování v projektu.
 
-Následující `<MsDeploySkipRules>` element vyloučí všechny soubory z *wwwroot a obsah* složky:
+Následující `<MsDeploySkipRules>` element vyloučí všechny soubory *wwwroot/obsah* složky:
 
 ```xml
 <ItemGroup>
@@ -355,13 +355,13 @@ Následující `<MsDeploySkipRules>` element vyloučí všechny soubory z *wwwro
 </ItemGroup>
 ```
 
-`<MsDeploySkipRules>` neodstraní *přeskočit* cíle z webu nasazení. `<Content>` cílové soubory a složky, se odstraní z webu nasazení. Předpokládejme například, že nasazené webové aplikace měla následující soubory:
+`<MsDeploySkipRules>` nedojde k odstranění *přeskočit* cílů nasazení webu. `<Content>` cílové soubory a složky, jsou odstraněny z nasazení webu. Předpokládejme například, že nasazené webové aplikace má následující soubory:
 
 * *Views/Home/About1.cshtml*
 * *Views/Home/About2.cshtml*
 * *Views/Home/About3.cshtml*
 
-Pokud následující `<MsDeploySkipRules>` těchto souborů nemohli odstranit na webu nasazení, jsou přidány elementy.
+Pokud následující `<MsDeploySkipRules>` prvky jsou přidány, by dojít k odstranění těchto souborů na web pro nasazení.
 
 ```xml
 <ItemGroup>
@@ -382,9 +382,9 @@ Pokud následující `<MsDeploySkipRules>` těchto souborů nemohli odstranit na
 </ItemGroup>
 ```
 
-Podle předchozích `<MsDeploySkipRules>` elementy zabránit *přeskočen* soubory z nasazení. Tyto soubory neodstraní poté, co máte nasazené.
+Předchozí `<MsDeploySkipRules>` zabránit prvky *přeskočeno* soubory z nasazení. Tyto soubory neodstraní po nasazení.
 
-Následující `<Content>` element odstraní cílové soubory v lokalitě nasazení:
+Následující `<Content>` element odstraní cílové soubory na web pro nasazení:
 
 ```xml
 <ItemGroup>
@@ -392,7 +392,7 @@ Následující `<Content>` element odstraní cílové soubory v lokalitě nasaze
 </ItemGroup>
 ```
 
-Pomocí příkazového řádku nasazení s předchozím `<Content>` element vypočítá následující výstup:
+Pomocí příkazového řádku nasazení s předchozím `<Content>` element provede následující výstup:
 
 ```console
 MSDeployPublish:
@@ -411,9 +411,9 @@ MSDeployPublish:
 Done Building Project "C:\Webs\Web1\Web1.csproj" (default targets).
 ```
 
-## <a name="include-files"></a>Vložené soubory
+## <a name="include-files"></a>Soubory k zahrnutí
 
-Zahrnuje následující kód *bitové kopie* složky mimo adresář projektu, který má *wwwroot nebo obrázky* složku publikování webu:
+Obsahuje následující kód *image* mimo adresář projektu do složky *wwwroot/imagí* složku publikování webu:
 
 ```xml
 <ItemGroup>
@@ -424,11 +424,11 @@ Zahrnuje následující kód *bitové kopie* složky mimo adresář projektu, kt
 </ItemGroup>
 ```
 
-Značky lze přidat do *.csproj* soubor nebo profil publikování. Pokud je přidán do *.csproj* souboru, má součástí každý profil publikování v projektu.
+Značky mohou být přidány do *.csproj* souboru nebo profil publikování. Pokud je přidána do *.csproj* souboru, je zahrnutý v každé profilu publikování v projektu.
 
-Následující zvýrazněnou kód ukazuje, jak na:
+Následující zvýrazněný kód ukazuje jak na:
 
-* Kopírování souboru z mimo projekt do *wwwroot* složky.
+* Zkopírovat soubor z mimo projekt sketchflow *wwwroot* složky.
 * Vyloučit *wwwroot\Content* složky.
 * Vyloučit *Views\Home\About2.cshtml*.
 
@@ -465,11 +465,11 @@ MSBuild file.
 </Project>
 ```
 
-Najdete v článku [WebSDK Readme](https://github.com/aspnet/websdk) pro další ukázky nasazení.
+Zobrazit [WebSDK Readme](https://github.com/aspnet/websdk) pro další nasazení ukázky.
 
 ## <a name="run-a-target-before-or-after-publishing"></a>Spustit cíl před nebo po publikování
 
-Integrované `BeforePublish` a `AfterPublish` cíle provést cíl před nebo po cíl publikování. Do profilu publikování k protokolování zpráv konzoly před i po publikování přidejte následující prvky:
+Předdefinované `BeforePublish` a `AfterPublish` cíle spustit cíl před nebo za cíl publikování. Přidáte do profilu publikování k protokolování zpráv konzoly před i po publikování následující prvky:
 
 ```xml
 <Target Name="CustomActionsBeforePublish" BeforeTargets="BeforePublish">
@@ -480,9 +480,9 @@ Integrované `BeforePublish` a `AfterPublish` cíle provést cíl před nebo po 
 </Target>
 ```
 
-## <a name="publish-to-a-server-using-an-untrusted-certificate"></a>Publikování na serveru, který používá nedůvěryhodný certifikát
+## <a name="publish-to-a-server-using-an-untrusted-certificate"></a>Publikovat na server pomocí nedůvěryhodného certifikátu
 
-Přidat `<AllowUntrustedCertificate>` vlastnosti s hodnotou `True` k profilu publikování:
+Přidat `<AllowUntrustedCertificate>` vlastnost s hodnotou `True` do profilu publikování:
 
 ```xml
 <PropertyGroup>
@@ -490,18 +490,19 @@ Přidat `<AllowUntrustedCertificate>` vlastnosti s hodnotou `True` k profilu pub
 </PropertyGroup>
 ```
 
-## <a name="the-kudu-service"></a>Služby modulu Kudu
+## <a name="the-kudu-service"></a>Kudu service
 
-Chcete-li zobrazit soubory v nasazení aplikace webové služby Azure App Service, použijte [Kudu služby](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service). Připojení `scm` tokenu pro název webové aplikace. Příklad:
+Chcete-li zobrazit soubory v nasazení služby Azure App Service webovou aplikaci, použijte [Kudu service](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service). Připojit `scm` tokenu název webové aplikace. Příklad:
 
 | Adresa URL                                    | Výsledek       |
 | -------------------------------------- | ------------ |
 | `http://mysite.azurewebsites.net/`     | Webové aplikace      |
-| `http://mysite.scm.azurewebsites.net/` | Služby modulu kudu |
+| `http://mysite.scm.azurewebsites.net/` | Kudu service |
 
-Vyberte [ladění konzoly](https://github.com/projectkudu/kudu/wiki/Kudu-console) položky nabídky, které chcete zobrazit, upravit, odstranit nebo přidat soubory.
+Vyberte [ladění konzoly](https://github.com/projectkudu/kudu/wiki/Kudu-console) položka nabídky zobrazit, upravit, odstranit nebo přidat soubory.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Nasazení webové](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) zjednodušuje nasazení webové aplikace a weby pro servery služby IIS.
-* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): Soubor problémy a žádosti o funkce pro nasazení.
+* [Webu nasadit](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy) zjednodušuje nasazení webové aplikace a weby pro servery služby IIS.
+* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): Soubor problémů a požádat o funkce pro nasazení.
+* [Publikování webové aplikace v ASP.NET do virtuálního počítače Azure ze sady Visual Studio](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)

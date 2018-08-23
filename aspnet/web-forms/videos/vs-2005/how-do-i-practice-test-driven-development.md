@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-practice-test-driven-development
-title: '[Postup:] Postup Test-Driven Development? | Dokumentace Microsoftu'
+title: '[Postup:] Postup Test-Driven Development? | Dokumenty Microsoft'
 author: rick-anderson
 description: Visual Studio Team System poskytuje nástroje potřebné k praxe Test-Driven vývoje a toto video jsme zjistěte, jak systém týmu testovací funkce...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 60b10049-ca02-4830-b3ce-83e9584511d0
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-practice-test-driven-development
 msc.type: video
-ms.openlocfilehash: c2e13eef647c4e491a08c506be7efe5582fa6bba
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3006b4d61844753dc36c5005dfbf1f66f928dbb5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842127"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755101"
 ---
 <a name="how-do-i-practice-test-driven-development"></a>[Postup:] Postup Test-Driven Development?
 ====================

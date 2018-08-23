@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 title: Webové stránky ASP.NET (Razor) – nejčastější dotazy | Dokumentace Microsoftu
 author: tfitzmac
 description: Tento článek uvádí některé časté otázky ke správě webových stránek ASP.NET (Razor) a službě WebMatrix. Verze softwaru použít kurz ASP.NET Web Pages (R...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: b137bd04-25e1-47cb-9d96-ef2e179ecf1f
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: 1f97056c952757ea2d009eaca57d904791e80ca3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 03e89adc2415808ea49107616f529fa895d6e52a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814233"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756482"
 ---
 <a name="aspnet-web-pages-razor-faq"></a>Webové stránky ASP.NET (Razor) – nejčastější dotazy
 ====================
@@ -42,7 +42,7 @@ podle [Tom FitzMacken](https://github.com/tfitzmac)
 - [Je nutné použít metodu WebSecurity pomocné rutiny pro podporu přihlášení?](#Do_I_have_to_use_the_WebSecurity_helper_to_support_logins)
 - [Podporuje rozhraní ASP.NET Web Pages HTML5?](#Does_ASP.NET_Web_Pages_support_HTML5)
 - [Můžete použít jazyk JavaScript a jQuery s webovými stránkami?](#Can_I_use_JavaScript_and_jQuery_with_Web_Pages)
-- [Další zdroje informací](#AdditionalResources)
+- [Další prostředky](#AdditionalResources)
 
 Otázky týkající se chyby a další problémy, najdete v článku [Průvodce odstraňováním potíží pro webové stránky ASP.NET (Razor)](https://go.microsoft.com/fwlink/?LinkId=253001).
 

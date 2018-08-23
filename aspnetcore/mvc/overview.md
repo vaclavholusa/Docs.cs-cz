@@ -5,12 +5,12 @@ description: Zjistěte, jak ASP.NET Core MVC je bohatou architekturu pro vytvá�
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: d2a50e48c20fe69b1fe691bfc9c91a27d4219922
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378635"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902596"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Přehled ASP.NET Core MVC
 
@@ -251,3 +251,9 @@ Pomocné rutiny značek poskytuje vývojové prostředí podporou HTML a bohaté
 ### <a name="view-components"></a>Komponenty zobrazení
 
 [Zobrazení komponenty](views/view-components.md) umožňují balíček logiky vykreslování a znovu ji použít v celé aplikaci. Jsou podobné [částečná zobrazení](views/partial.md), ale s přidružené logiky.
+
+## <a name="compatibility-version"></a>Verze kompatibility
+
+<xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> Metoda umožňuje aplikacím vyjádřit výslovný souhlas nebo výslovný nesouhlas s potenciálně rozbíjející změny chování zavedení v ASP.NET Core MVC 2.1 nebo novější.
+
+Další informace naleznete v tématu <xref:mvc/compatibility-version>.

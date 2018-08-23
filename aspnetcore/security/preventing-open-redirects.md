@@ -1,51 +1,51 @@
 ---
-title: Zabránit útokům otevřete přesměrování v ASP.NET Core
+title: Zabránění útokům na otevřeném přesměrování v ASP.NET Core
 author: ardalis
-description: Ukazuje, jak zabránit otevřete přesměrování útoky na aplikace ASP.NET Core
+description: Ukazuje, jak zabránit v otevřeném přesměrování útoků, které aplikace ASP.NET Core
 ms.author: riande
 ms.date: 07/07/2017
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 75591e37753c24bc959b3a96a54abebb51728364
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 0896189d2caaccb19647eb7c6d57f29dfc0290dd
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278295"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756744"
 ---
-# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>Zabránit útokům otevřete přesměrování v ASP.NET Core
+# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>Zabránění útokům na otevřeném přesměrování v ASP.NET Core
 
-Webové aplikace, který přesměruje na adresu URL, která je zadána prostřednictvím požadavku například řetězci dotazu nebo formuláře dat může potenciálně manipulováno k přesměrování uživatelů na externí, škodlivý URL. Tato manipulaci se nazývá útok otevřete přesměrování.
+Webové aplikace, který přesměruje na adresu URL, která je zadáno pomocí požadavku, například data řetězce dotazu nebo formuláře může být potenciálně úmyslně přesměrovat uživatele na škodlivé, externí adresu URL. Toto úmyslné poškozování, se nazývá otevřené přesměrování útoku.
 
-Vždy, když vaše aplikace logiky přesměruje na zadané adrese URL, je nutné ověřit, že adresu URL pro přesměrování nikdo neoprávněně nemanipuloval. ASP.NET Core obsahuje integrovanou funkci k ochraně aplikace před útoky otevřete přesměrování (označované také jako otevřený přesměrování).
+Pokaždé, když se vaše aplikace logiky se přesměruje na zadané adresy URL, je nutné ověřit, že adresa URL pro přesměrování bylo neoprávněně manipulováno. ASP.NET Core má integrované funkce k ochraně aplikace před útoky na otevřeném přesměrování (označované také jako otevřené přesměrování).
 
-## <a name="what-is-an-open-redirect-attack"></a>Co je útok otevřete přesměrování?
+## <a name="what-is-an-open-redirect-attack"></a>Co je útok otevřeném přesměrování?
 
-Při přístupu k prostředkům, které vyžadují ověřování webových aplikací často přesměrovat uživatele na přihlašovací stránku. Zahrnuje typlically přesměrování `returnUrl` parametr řetězce dotazu tak, aby uživatel se může vracet na původně požadovanou URL adresu po jejich úspěšně přihlášeni. Poté, co se uživatel ověřuje, že přesměrováni na měl původně požadovanou adresu URL.
+Webové aplikace často přesměrovat uživatele na přihlašovací stránku, když přistupují k prostředkům, které vyžadují ověřování. Obvykle zahrnuje přesměrování `returnUrl` parametr řetězce dotazu tak, aby uživatel může být vrácen na původně požadovanou URL adresu po jejich úspěšném přihlášení. Poté, co se uživatel ověřuje, jsou přesměrováni na adresu URL bylo původně požadovali.
 
-Vzhledem k tomu, že cílová adresa URL je zadána v řetězci dotazu požadavku, uživatel se zlými úmysly může manipulovat s řetězci dotazu. Zmanipulovanou řetězce dotazu by se mohl lokality tak, aby přesměruje uživatele na stránku externí, škodlivý. Tento postup se nazývá útok otevřete přesměrování (nebo přesměrování).
+Protože cílová adresa URL je uveden v řetězci dotazu požadavku, uživateli se zlými úmysly může manipulovat s řetězec dotazu. Zmanipulovanou řetězce dotazu může umožnit, aby přesměruje uživatele na škodlivý web externí web. Tato technika se nazývá útoku otevřené přesměrování (nebo přesměrování).
 
 ### <a name="an-example-attack"></a>Příklad útoku
 
-Uživatel se zlými úmysly může vyvíjet útok díky uživatel se zlými úmysly přístup k pověření uživatele nebo citlivé informace ve vaší aplikaci. Zahájit útoku, jejich přimět kliknutím na odkaz na přihlašovací stránku vašeho webu, s uživateli `returnUrl` hodnotu querystring adresu URL. Například [NerdDinner.com](http://nerddinner.com) ukázkovou aplikaci (napsané pro rozhraní ASP.NET MVC) zahrnuje takové přihlašovací stránky zde: `http://nerddinner.com/Account/LogOn?returnUrl=/Home/About`. Útoku pak postupujte podle následujících kroků:
+Uživatel se zlými úmysly můžete vyvíjet útoku určený k tomu, uživatel se zlými úmysly přístup k přihlašovacím údajům uživatele nebo citlivé informace. Zahájit útok, uživateli se zlými úmysly convinces uživatel kliknutím na odkaz na přihlašovací stránku vašeho webu pomocí `returnUrl` přidána k adrese URL hodnotu řetězce dotazu. Zvažte například aplikaci na `contoso.com` , který obsahuje přihlašovací stránku na `http://contoso.com/Account/LogOn?returnUrl=/Home/About`. Útok zahrnuje následující kroky:
 
-1. Uživatel klikne na odkaz `http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn` (Všimněte si, druhý adresa URL je nerddi**n**če, není nerddi**nn**če).
-2. Uživatel se přihlásí úspěšně.
-3. Uživatel je přesměrován (lokalitou) na `http://nerddiner.com/Account/LogOn` (škodlivé weby, které vypadá skutečné lokality).
-4. Uživatel znovu přihlásí (poskytnutí škodlivý lokality své přihlašovací údaje) a je přesměrován zpět na web skutečné.
+1. Uživatel klikne škodlivý odkaz `http://contoso.com/Account/LogOn?returnUrl=http://contoso1.com/Account/LogOn` (druhý adresa URL je "contoso**1**.com", ne "contoso.com").
+2. Přihlášení uživatele úspěšně.
+3. Uživatel je přesměrován (lokalitou) na `http://contoso1.com/Account/LogOn` (škodlivým webům, který může vypadat přesně skutečné stránky).
+4. Uživatel znovu přihlásí (poskytuje škodlivý web přihlašovacích údajů) a je přesměrován zpět na skutečné stránky.
 
-Uživatel se pravděpodobně domníváte jejich první pokus o přihlášení se nezdařilo a jejich druhý byla úspěšná. S největší pravděpodobností zůstanou nebere v úvahu ohrožený přihlašovacích údajů.
+Uživatel pravděpodobně domnívá, že jejich první pokus o přihlášení se nezdařilo a jestli jejich druhý pokus se úspěšně dokončila. Uživatel zůstane pravděpodobně vědět, že jsou dojde k ohrožení bezpečnosti přihlašovacích údajů.
 
-![Proces útoku otevřete přesměrování](preventing-open-redirects/_static/open-redirection-attack-process.png)
+![Proces útoku otevřené přesměrování](preventing-open-redirects/_static/open-redirection-attack-process.png)
 
-Některé servery kromě přihlašovací stránky, zadejte přesměrování stránky nebo koncové body. Představte si aplikace se zobrazí stránka s otevřete přesměrování, `/Home/Redirect`. Útočník by mohl vytvořit, například pomocí odkazu v e-mailu, který přejde na `[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login`. Běžný uživatel na adrese URL a zjistit, že začíná název vaší lokality. Důvěřující, který, bude kliknutím na odkaz. Otevřete přesměrování by uživatel pak pošlete do lokality phishing, která vypadá totožná s tímto počítačem, a uživatel by pravděpodobně přihlášení, které budou věřit je váš web.
+Kromě stránek přihlášení některé weby poskytují stránek přesměrování nebo koncové body. Představte si vaše aplikace obsahuje stránku s otevřeném přesměrování `/Home/Redirect`. Útočník by mohl vytvořit, například pomocí odkazu v e-mailu, který směřuje na `[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login`. Běžný uživatel se podívá na adresu URL a vidět, že začíná názvem vaší lokality. Které důvěřující, bude kliknou na odkaz. Otevřeném přesměrování by pak uživatele poslat na lokalitě útoky phishing, která vypadá identické té vaší, a uživatel by pravděpodobně přihlášení budou věřit, je váš web.
 
-## <a name="protecting-against-open-redirect-attacks"></a>Ochrana proti útokům na otevřete přesměrování
+## <a name="protecting-against-open-redirect-attacks"></a>Ochrana před útoky na otevřeném přesměrování
 
-Při vývoji webových aplikací, považovat za nedůvěryhodným všechna data zadaný uživatelem. Pokud aplikace obsahuje funkce, který přesměruje uživatele na základě obsahu adresy URL, zajistěte, aby takové přesměrování jsou pouze místně v rámci vaší aplikace (nebo známé adresy URL, není libovolnou URL, která může být zadána v řetězci dotazu).
+Při vývoji webových aplikací, zpracovávat všechny uživatelsky zadaných dat jako nedůvěryhodné. Pokud má vaše aplikace funkcí, které přesměruje uživatele na základě obsahu adresy URL, ujistěte se, že takové přesměrování jsou pouze dělat místně v rámci vaší aplikace (nebo známou adresu URL, nikoliv adresu URL, která může být zadána v řetězec dotazu).
 
 ### <a name="localredirect"></a>LocalRedirect
 
-Použití `LocalRedirect` Pomocná metoda od základní `Controller` třídy:
+Použití `LocalRedirect` pomocnou metodu v základní třídě `Controller` třídy:
 
 ```csharp
 public IActionResult SomeAction(string redirectUrl)
@@ -54,13 +54,13 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-`LocalRedirect` bude vyvolána výjimka, pokud je zadaná adresa URL není místní. Jinak se chová podobně jako `Redirect` metoda.
+`LocalRedirect` vyvolá výjimku, pokud je zadána adresa URL není místní. V opačném případě se chová stejně jako `Redirect` metody.
 
 ### <a name="islocalurl"></a>IsLocalUrl
 
-Použití [IsLocalUrl](/dotnet/api/Microsoft.AspNetCore.Mvc.IUrlHelper?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_) metoda před přesměrování otestovat adresy URL:
+Použití [IsLocalUrl](/dotnet/api/Microsoft.AspNetCore.Mvc.IUrlHelper?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_) metoda test adresy URL před přesměrování:
 
-Následující příklad ukazuje, jak zkontrolovat, zda je adresa URL místní před přesměrování.
+Následující příklad ukazuje, jak zjistit, jestli je adresa URL místní před přesměrování.
 
 ```csharp
 private IActionResult RedirectToLocal(string returnUrl)
@@ -76,4 +76,4 @@ private IActionResult RedirectToLocal(string returnUrl)
 }
 ```
 
-`IsLocalUrl` Metoda chrání uživatelé z nechtěně přesměrování na škodlivé weby. Přihlaste se na podrobnosti o adresu URL, který byl poskytnut, pokud nejsou místní adresa URL je zadáno v situaci, kde je očekávána místní adresa URL. Protokolování přesměrování adresy URL může pomoci při diagnostice přesměrování útoky.
+`IsLocalUrl` Metoda chrání uživatele od nedopatřením se přesměrovává na škodlivý web. Přihlaste se na podrobnosti o adresu URL, která byla k dispozici, pokud jiné než místní adresa URL je zadáno v situaci, kde byl očekáván místní adresu URL. Protokolování přesměrování adresy URL může pomoci při diagnostice přesměrování útoky.

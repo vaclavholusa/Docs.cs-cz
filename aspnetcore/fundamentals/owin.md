@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: fundamentals/owin
-ms.openlocfilehash: 04042eedc52b4e6f57685e2d9ec1a75cd130fd8d
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: db28eeff88a13dc95c469f3b7c0746c807da830f
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144960"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752521"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>Otevřete Web Interface pro .NET (OWIN) s ASP.NET Core
 
@@ -31,7 +31,7 @@ To umožňuje zajistit také jejich hostování nad OWIN kompatibilní serveru/h
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>Spuštění OWIN middleware v kanálu ASP.NET
+## <a name="running-owin-middleware-in-the-aspnet-core-pipeline"></a>Spuštění OWIN middleware v kanálu ASP.NET Core
 
 Podpora OWIN ASP.NET Core je nasazen jako součást `Microsoft.AspNetCore.Owin` balíčku. Podpora OWIN můžete importovat do projektu po instalaci tohoto balíčku.
 
@@ -56,7 +56,7 @@ public Task OwinHello(IDictionary<string, object> environment)
 
 Vrátí vzorek podpis `Task` a přijímá `IDictionary<string, object>` podle požadavku OWIN.
 
-Následující kód ukazuje, jak přidat `OwinHello` middleware (popsaný výš) do kanálu technologie ASP.NET s `UseOwin` – metoda rozšíření.
+Následující kód ukazuje, jak přidat `OwinHello` middleware (popsaný výš) do kanálu ASP.NET Core s `UseOwin` – metoda rozšíření.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -90,9 +90,9 @@ app.UseOwin(pipeline =>
 
 <a name="hosting-on-owin"></a>
 
-## <a name="using-aspnet-hosting-on-an-owin-based-server"></a>Použití hostování v technologii ASP.NET na server s procesorem OWIN
+## <a name="using-aspnet-core-hosting-on-an-owin-based-server"></a>Použití hostování v technologii ASP.NET Core na server s procesorem OWIN
 
-Na základě OWIN servery můžou hostovat aplikace ASP.NET. Jeden takový server je [Nowin](https://github.com/Bobris/Nowin), webový server .NET OWIN. V ukázce pro účely tohoto článku, můžu zahrnuli projekt, který odkazuje na Nowin a použije ho k vytvoření `IServer` dokáže ASP.NET Core s vlastním hostováním.
+Na základě OWIN servery můžou hostovat aplikace ASP.NET Core. Jeden takový server je [Nowin](https://github.com/Bobris/Nowin), webový server .NET OWIN. V ukázce pro účely tohoto článku, můžu zahrnuli projekt, který odkazuje na Nowin a použije ho k vytvoření `IServer` dokáže ASP.NET Core s vlastním hostováním.
 
 [!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 

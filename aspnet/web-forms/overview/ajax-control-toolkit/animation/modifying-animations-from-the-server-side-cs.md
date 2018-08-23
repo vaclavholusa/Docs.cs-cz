@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from
 title: Úpravy animací na straně serveru (C#) | Dokumentace Microsoftu
 author: wenz
 description: Animace ovládacího prvku ASP.NET AJAX Control Toolkit je právě ovládacího prvku, ale celé rozhraní pro přidání animace k ovládacímu prvku. Animace může také...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: b0abec39-a1c9-422d-ba9a-ef16f6185af8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8954f025873ea553fde26c6e2330ce6e5be2b539
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ac2c2b1e9cfceba7f818f3f2dcbd719e94bea83e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804051"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752108"
 ---
 <a name="modifying-animations-from-the-server-side-c"></a>Úpravy animací na straně serveru (C#)
 ====================

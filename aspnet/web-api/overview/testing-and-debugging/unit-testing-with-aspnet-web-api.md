@@ -3,23 +3,23 @@ uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 title: Testování rozhraní ASP.NET Web API 2 | Dokumentace Microsoftu
 author: tfitzmac
 description: Tento průvodce a aplikace ukazují, jak vytvořit jednoduchý částí pro vaši aplikaci s webovým rozhraním API 2. Tento kurz ukazuje, jak zahrnout proj test jednotek...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 701ced855ff2848182fdbf8d4b9e2bcf0c33341b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0a3f9ddde725995359de85c5e0783106f5de02bd
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806212"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755310"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>Testování rozhraní ASP.NET Web API 2
 ====================
 podle [Tom FitzMacken](https://github.com/tfitzmac)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[Stáhnout dokončený projekt](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > Tento průvodce a aplikace ukazují, jak vytvořit jednoduchý částí pro vaši aplikaci s webovým rozhraním API 2. Tento kurz ukazuje, jak zahrnout projekt testu jednotek ve vašem řešení a zapisovat testovací metody, které zkontrolujte hodnoty vrácené z metody kontroleru.
 > 

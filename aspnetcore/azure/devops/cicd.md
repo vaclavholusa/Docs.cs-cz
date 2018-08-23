@@ -2,15 +2,15 @@
 title: DevOps s využitím ASP.NET Core a Azure | Průběžná integrace a nasazování
 author: CamSoper
 description: Průvodce, který poskytuje pokyny k začátku do konce na vytváření procesních toků pro DevOps pro aplikace ASP.NET Core hostované v Azure.
-ms.author: casoper
-ms.date: 08/07/2018
+ms.author: scaddie
+ms.date: 08/17/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 9127f26fc4e3f78ec745fa1e342de137228f484e
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
-ms.translationtype: HT
+ms.openlocfilehash: e084a6115dc7e176c17b2b318233b7a003b39a83
+ms.sourcegitcommit: 1cf65c25ed16495e27f35ded98b3952a30c68f36
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39722615"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41755107"
 ---
 # <a name="continuous-integration-and-deployment"></a>Průběžná integrace a nasazování
 
@@ -224,12 +224,13 @@ Definice sestavení **úlohy** karta obsahuje seznam jednotlivých kroků, kter�
 ![definice úlohy sestavení](media/cicd/build-definition-tasks.png)
 
 1. **Obnovení** &mdash; Executes `dotnet restore` příkaz k obnovení balíčků NuGet aplikace. Výchozí balíček informační kanál používá je nuget.org.
-1. **Sestavení** &mdash; Executes `dotnet build --configuration Release` příkaz pro kompilaci kódu aplikace. To `--configuration` možnost se používá k vytvoření optimalizované verzi kódu, který je vhodný pro nasazení do produkčního prostředí. Upravit *BuildConfiguration* proměnné na definici sestavení **proměnné** kartu podle potřeby, například konfigurace ladění je.
-1. **Test** &mdash; Executes `dotnet test --configuration Release` příkaz pro spuštění testů jednotek aplikace. Pokud selže některý z testů, sestavení selže a není nasazený.
+1. **Sestavení** &mdash; Executes `dotnet build --configuration release` příkaz pro kompilaci kódu aplikace. To `--configuration` možnost se používá k vytvoření optimalizované verzi kódu, který je vhodný pro nasazení do produkčního prostředí. Upravit *BuildConfiguration* proměnné na definici sestavení **proměnné** kartu podle potřeby, například konfigurace ladění je.
+1. **Test** &mdash; Executes `dotnet test --configuration release --logger trx --results-directory <local_path_on_build_agent>` příkaz pro spuštění testů jednotek aplikace. Jednotkové testy jsou spouštěny v rámci jakékoli C# projekt odpovídající `**/*Tests/*.csproj` glob vzor. Výsledky testu jsou uloženy v *.trx* soubor v místě určeném `--results-directory` možnost. Pokud selžou i všechny testy, sestavení selže a není nasazený.
 
     > [!NOTE]
-    > Ověření jednotky jsou testy správně funguje, upravte *SimpleFeedReader.Tests\Services\NewsServiceTests.cs* záměrně přerušení jeden z testů, například tak, že změníte `Assert.True(result.Count > 0);` k `Assert.False(result.Count > 0);` v `Returns_News_Stories_Given_Valid_Uri()` Metoda. Potvrďte a odešlete změny. Sestavení se nezdaří a stav kanálu sestavení se změní na **nepovedlo**. Vrácení změn, potvrzení a nabízených oznámení znovu a sestavení úspěšné.
-1. **Publikování** &mdash; Executes `dotnet publish --configuration Release --output <local_path_on_build_agent>` příkazu *ZIP* soubor s artefakty, které mají být nasazeny. `--output` Určuje umístění pro publikování aplikace *ZIP* souboru. Zda je zadáno umístění předáním [předdefinované proměnné](https://docs.microsoft.com/vsts/pipelines/build/variables) s názvem `$(build.artifactstagingdirectory)`. Tato proměnná rozšíří na místní cestu, například *c:\agent\_work\1\a*, agenta sestavení.
+    > Chcete-li ověřit pracovní jednotky testů, upravte *SimpleFeedReader.Tests\Services\NewsServiceTests.cs* záměrně přerušení jednoho z testů. Například změnit `Assert.True(result.Count > 0);` k `Assert.False(result.Count > 0);` v `Returns_News_Stories_Given_Valid_Uri` metody. Potvrďte a odešlete změny na Githubu. Sestavení se aktivuje a selže. Stav kanálu sestavení se změní na **nepovedlo**. Vrácení změn, potvrzení a nabízených oznámení znovu. Sestavení úspěšné.
+
+1. **Publikování** &mdash; Executes `dotnet publish --configuration release --output <local_path_on_build_agent>` příkazu *ZIP* soubor s artefakty, které mají být nasazeny. `--output` Určuje umístění pro publikování aplikace *ZIP* souboru. Zda je zadáno umístění předáním [předdefinované proměnné](https://docs.microsoft.com/vsts/pipelines/build/variables) s názvem `$(build.artifactstagingdirectory)`. Tato proměnná rozšíří na místní cestu, například *c:\agent\_work\1\a*, agenta sestavení.
 1. **Publikování artefaktů** &mdash; Publishes *ZIP* vytvářených souborů **publikovat** úloh. Úloha přijímá *ZIP* umístění jako parametr, což je předdefinovaná proměnná souboru `$(build.artifactstagingdirectory)`. *ZIP* soubor je publikován jako složku s názvem *vyřadit*.
 
 Klikněte na definici sestavení **Souhrn** odkaz k zobrazení historie sestavení s definicí:

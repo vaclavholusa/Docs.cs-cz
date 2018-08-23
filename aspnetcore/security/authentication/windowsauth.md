@@ -1,120 +1,139 @@
 ---
-title: Konfigurovat ověřování systému Windows v ASP.NET Core
+title: Konfigurace ověřování Windows v ASP.NET Core
 author: ardalis
-description: Tento článek popisuje postup konfigurace ověřování systému Windows v ASP.NET Core, pomocí služby IIS Express, IIS, ovladač HTTP.sys a WebListener.
+description: Tento článek popisuje, jak nakonfigurovat ověřování Windows v ASP.NET Core pomocí služby IIS Express, IIS, ovladač HTTP.sys a WebListener.
 ms.author: riande
-ms.date: 10/24/2017
+ms.date: 08/18/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: d3fdf8534e92ea306c2fef7bc4fda6d644c7d911
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 93b1a1de74ef6554d48709b04870f7e23738846b
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276208"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41753135"
 ---
-# <a name="configure-windows-authentication-in-aspnet-core"></a>Konfigurovat ověřování systému Windows v ASP.NET Core
+# <a name="configure-windows-authentication-in-aspnet-core"></a>Konfigurace ověřování Windows v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com) a [Scott Addie](https://twitter.com/Scott_Addie)
 
-Ověřování systému Windows lze konfigurovat pro aplikace ASP.NET Core hostované službou IIS, [HTTP.sys](xref:fundamentals/servers/httpsys), nebo [WebListener](xref:fundamentals/servers/weblistener).
+Ověřování Windows se dá nakonfigurovat pro aplikace ASP.NET Core hostované službou IIS, [HTTP.sys](xref:fundamentals/servers/httpsys), nebo [WebListener](xref:fundamentals/servers/weblistener).
 
-## <a name="what-is-windows-authentication"></a>Co je ověřování systému Windows?
+## <a name="windows-authentication"></a>Ověřování systému Windows
 
-Ověřování systému Windows závisí na operačním systému k ověřování uživatelů aplikace ASP.NET Core. Pokud váš server běží v podnikové síti pomocí identity domény služby Active Directory nebo jiné účty systému Windows k identifikaci uživatelů, můžete použít ověřování systému Windows. Ověřování systému Windows je nejvhodnější pro prostředí intranetu, ve kterých uživatelů, klientské aplikace a webové servery patří do stejné domény systému Windows.
+Ověřování Windows závisí na operačním systému k ověření uživatelů z aplikací ASP.NET Core. Ověřování Windows můžete použít, pokud váš server běží v podnikové síti pomocí identit domény služby Active Directory nebo jiné účty Windows k identifikaci uživatelů. Ověřování Windows je nejvhodnější pro prostředí intranetu, ve kterých uživatelé, klientské aplikace a webové servery patří do stejné domény Windows.
 
-[Další informace o ověřování systému Windows a instalaci pro službu IIS](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
+[Další informace o ověřování Windows a nainstalovat ho pro službu IIS](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/).
 
-## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>Povolit ověřování systému Windows v aplikaci ASP.NET Core
+## <a name="enable-windows-authentication-in-an-aspnet-core-app"></a>Povolení ověřování Windows v aplikaci ASP.NET Core
 
-Šablony sady Visual Studio webové aplikace mohou být nakonfigurované pro podporu ověřování systému Windows.
+Šablony Visual Studio webové aplikace mohou být nakonfigurované pro podporu ověřování Windows.
 
-### <a name="use-the-windows-authentication-app-template"></a>Použití šablony aplikace ověřování systému Windows
+### <a name="use-the-windows-authentication-app-template"></a>Použití šablony aplikace ověřování Windows
 
 V sadě Visual Studio:
-1. Vytvořte novou webovou aplikaci ASP.NET Core. 
+
+1. Vytvořte novou webovou aplikaci ASP.NET Core.
 1. Vyberte webovou aplikaci ze seznamu šablon.
-1. Vyberte **změna ověřování** tlačítko a vyberte **ověřování systému Windows**. 
+1. Vyberte **změna ověřování** tlačítko a vyberte **ověřování Windows**.
 
-Spusťte aplikaci. Uživatelské jméno se zobrazí v horním rohu aplikace.
+Spusťte aplikaci. Uživatelské jméno se zobrazí v horní části přímo z aplikace.
 
-![Snímek obrazovky prohlížeče ověřování systému Windows](windowsauth/_static/browser-screenshot.png)
+![Snímek obrazovky prohlížeče ověřování Windows](windowsauth/_static/browser-screenshot.png)
 
-Šablona pro vývojové práci pomocí služby IIS Express, poskytuje veškeré konfigurace nezbytné použít ověřování systému Windows. V následující části ukazuje, jak ručně nakonfigurovat aplikace ASP.NET Core pro ověřování systému Windows.
+Při vývojových pracích pomocí služby IIS Express Šablona nabízí veškeré konfigurace nezbytné pro použití ověřování Windows. Následující část popisuje postup při ruční konfiguraci aplikace ASP.NET Core pro ověřování Windows.
 
-### <a name="visual-studio-settings-for-windows-and-anonymous-authentication"></a>Nastavení sady Visual Studio pro systém Windows a anonymní ověřování
+### <a name="visual-studio-settings-for-windows-and-anonymous-authentication"></a>Nastavení sady Visual Studio pro Windows a anonymní ověřování
 
-Projekt Visual Studio **vlastnosti** stránky **ladění** karta obsahuje zaškrtávací políčka pro ověřování systému Windows a anonymní ověřování.
+Projekt aplikace Visual Studio **vlastnosti** stránky **ladění** karta obsahuje zaškrtávací políčka pro ověřování Windows a anonymní ověřování.
 
-![Snímek obrazovky prohlížeče ověřování systému Windows](windowsauth/_static/vs-auth-property-menu.png)
+![Snímek obrazovky prohlížeče ověřování Windows](windowsauth/_static/vs-auth-property-menu.png)
 
-Můžete taky tyto dvě vlastnosti se dá nakonfigurovat v *launchSettings.json* souboru:
+Alternativně se dá nakonfigurovat tyto dvě vlastnosti v *launchSettings.json* souboru:
 
 [!code-json[](windowsauth/sample/launchSettings.json?highlight=3-4)]
 
-## <a name="enable-windows-authentication-with-iis"></a>Povolit ověřování systému Windows pomocí služby IIS
+## <a name="enable-windows-authentication-with-iis"></a>Povolení ověřování Windows pomocí služby IIS
 
-Služba IIS použije [ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) do hostitele aplikací ASP.NET Core. Modul umožňuje ověřování systému Windows, které jsou předávány do služby IIS ve výchozím nastavení. Ověřování systému Windows je konfigurován ve službě IIS, ne aplikace. Následující části vysvětlují, jak pomocí Správce služby IIS ke konfiguraci aplikace ASP.NET Core pomocí ověřování systému Windows.
+Služba IIS použije [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) pro hostování aplikací ASP.NET Core. Ověřování Windows konfigurován ve službě IIS, ne aplikace. Následující části vysvětlují, jak pomocí Správce služby IIS ke konfiguraci aplikace ASP.NET Core používat ověřování Windows.
 
-### <a name="create-a-new-iis-site"></a>Vytvoří nový web služby IIS
+### <a name="iis-configuration"></a>Konfigurace služby IIS
 
-Zadejte název a složky a povolit ji vytvořit nový fond aplikací.
+Povolte službu Role služby IIS pro ověřování Windows. Další informace najdete v tématu [povolit ověřování Windows služby Role služby IIS (viz krok 2)](xref:host-and-deploy/iis/index#iis-configuration).
+
+Middleware pro integraci služby IIS je ve výchozím nastavení nakonfigurované k automatickému ověření žádosti. Další informace najdete v tématu [hostitele ASP.NET Core ve Windows se službou IIS: IIS možnosti (AutomaticAuthentication)](xref:host-and-deploy/iis/index#iis-options).
+
+Modul ASP.NET Core je ve výchozím nastavení nakonfigurovaný pro předávání Windows ověřovací token do aplikace. Další informace najdete v tématu [odkaz Konfigurace modul ASP.NET Core: atributy elementu aspNetCore](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element).
+
+### <a name="create-a-new-iis-site"></a>Vytvořit nový web služby IIS
+
+Zadejte název a složku a mohla vytvořit nový fond aplikací.
 
 ### <a name="customize-authentication"></a>Přizpůsobení ověřování
 
-Otevřete nabídku ověřování pro danou lokalitu.
+Otevřete funkcích ověřování pro lokalitu.
 
-![Nabídky ověřování služby IIS](windowsauth/_static/iis-authentication-menu.png)
+![Nabídka ověřování služby IIS](windowsauth/_static/iis-authentication-menu.png)
 
-Zakázáním anonymního ověřování a povolit ověřování systému Windows.
+Zakázat anonymní ověřování a povolit ověřování Windows.
 
 ![Nastavení ověřování služby IIS](windowsauth/_static/iis-auth-settings.png)
 
-### <a name="publish-your-project-to-the-iis-site-folder"></a>Publikování projektu do složky webového serveru IIS
+### <a name="publish-your-project-to-the-iis-site-folder"></a>Publikovat projekt do složky webu služby IIS
 
 Pomocí sady Visual Studio nebo rozhraní příkazového řádku .NET Core, publikujte aplikaci do cílové složky.
 
-![Dialogové okno publikování sady Visual Studio](windowsauth/_static/vs-publish-app.png)
+![Dialogové okno pro publikování aplikace Visual Studio](windowsauth/_static/vs-publish-app.png)
 
 Další informace o [publikování do služby IIS](xref:host-and-deploy/iis/index).
 
-Spusťte aplikaci a ověří, zda je funkční ověřování systému Windows.
+Spuštění aplikace a zkontrolujte, že funguje ověřování Windows.
 
-## <a name="enable-windows-authentication-with-httpsys-or-weblistener"></a>Povolení ověřování systému Windows pomocí ovladače HTTP.sys nebo WebListener
+::: moniker range=">= aspnetcore-2.0"
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x/)
+## <a name="enable-windows-authentication-with-httpsys"></a>Povolení ověřování Windows pomocí HTTP.sys
 
-I když Kestrel nepodporuje ověřování systému Windows, můžete použít [HTTP.sys](xref:fundamentals/servers/httpsys) podporu vlastním hostováním scénářů v systému Windows. Následující příklad konfiguruje hostitel webové aplikace používat ovladač HTTP.sys pomocí ověřování systému Windows:
+Přestože Kestrel nepodporuje ověřování Windows, můžete použít [HTTP.sys](xref:fundamentals/servers/httpsys) pro zajištění podpory scénářů v místním prostředí ve Windows. Následující příklad nastaví hostitel webové aplikace pro použití HTTP.sys s ověřováním Windows:
 
 [!code-csharp[](windowsauth/sample/Program2x.cs?highlight=9-14)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+> [!NOTE]
+> Ovladač HTTP.sys delegáty pro ověřování v režimu jádra ověřování protokolem Kerberos. Režim ověřování uživatele nepodporuje protokolů Kerberos a HTTP.sys. Účet počítače musí být použité k dešifrování token/lístek služby Kerberos, která se získá z Active Directory a předá klienta na serveru k ověření uživatele. Zaregistrujte hlavní název služby (SPN) příslušného hostitele není uživatel aplikace.
 
-I když Kestrel nepodporuje ověřování systému Windows, můžete použít [WebListener](xref:fundamentals/servers/weblistener) podporu vlastním hostováním scénářů v systému Windows. Následující příklad konfiguruje hostitel webové aplikace používat WebListener pomocí ověřování systému Windows:
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+## <a name="enable-windows-authentication-with-weblistener"></a>Povolení ověřování Windows pomocí WebListener
+
+Přestože Kestrel nepodporuje ověřování Windows, můžete použít [WebListener](xref:fundamentals/servers/weblistener) pro zajištění podpory scénářů v místním prostředí ve Windows. Následující příklad nastaví hostitel webové aplikace pro použití WebListener s ověřováním Windows:
 
 [!code-csharp[](windowsauth/sample/Program1x.cs?highlight=6-11)]
 
----
+> [!NOTE]
+> WebListener delegáty pro ověřování v režimu jádra ověřování protokolem Kerberos. Režim ověřování uživatele nepodporuje protokolů Kerberos a WebListener. Účet počítače musí být použité k dešifrování token/lístek služby Kerberos, která se získá z Active Directory a předá klienta na serveru k ověření uživatele. Zaregistrujte hlavní název služby (SPN) příslušného hostitele není uživatel aplikace.
 
-## <a name="work-with-windows-authentication"></a>Práce s ověřováním systému Windows
+::: moniker-end
 
-Stav konfigurace anonymního přístupu určuje, jakým způsobem `[Authorize]` a `[AllowAnonymous]` atributy se používají v aplikaci. Následující dvě části popisují způsob zpracování konfigurace zakázaných a povolených stavy anonymní přístup.
+## <a name="work-with-windows-authentication"></a>Práce s ověřováním Windows
 
-### <a name="disallow-anonymous-access"></a>Zakáže anonymní přístup
+Stav konfigurace anonymního přístupu určuje způsob, jakým `[Authorize]` a `[AllowAnonymous]` atributy se používají v aplikaci. Následující dvě části popisují, jak zpracovat stavy zakázaných a povolených Konfigurace anonymního přístupu.
 
-Pokud je povolené ověřování systému Windows a je zakázán anonymní přístup, `[Authorize]` a `[AllowAnonymous]` atributy mít žádný vliv. Pokud webu služby IIS (nebo ovladač HTTP.sys nebo WebListener server) je nakonfigurován tak, aby zakázala anonymní přístup, požadavek dosáhne nikdy vaší aplikace. Z tohoto důvodu `[AllowAnonymous]` atribut neplatí.
+### <a name="disallow-anonymous-access"></a>Zakázat anonymní přístup
+
+Když je povolené ověřování Windows a je zakázán anonymní přístup, `[Authorize]` a `[AllowAnonymous]` atributy nemají žádný účinek. Pokud web služby IIS (nebo HTTP.sys nebo WebListener server) je konfigurována tak anonymní přístup, požadavek dosáhne nikdy vaší aplikace. Z tohoto důvodu `[AllowAnonymous]` atributu nelze použít.
 
 ### <a name="allow-anonymous-access"></a>Povolení anonymního přístupu
 
-Pokud jsou povolené ověřování systému Windows a anonymní přístup, použijte `[Authorize]` a `[AllowAnonymous]` atributy. `[Authorize]` Atribut umožňuje zabezpečit součásti aplikace, které skutečně vyžadují ověřování systému Windows. `[AllowAnonymous]` Atribut přepsání `[Authorize]` atribut využití v rámci aplikace, které povolí anonymní přístup. V tématu [jednoduché autorizace](xref:security/authorization/simple) podrobnosti o použití atributu.
+Pokud jsou povolené ověřování Windows a anonymní přístup, použijte `[Authorize]` a `[AllowAnonymous]` atributy. `[Authorize]` Atribut umožňuje zabezpečit části aplikace, které skutečně vyžadují ověřování Windows. `[AllowAnonymous]` Atribut přepsání `[Authorize]` atribut využití v aplikacích, které umožňují anonymní přístup. Zobrazit [jednoduchá autorizace](xref:security/authorization/simple) podrobnosti o použití atributu.
 
-V ASP.NET Core 2.x, `[Authorize]` atribut vyžaduje, aby další konfigurace v *Startup.cs* vyzve anonymních požadavků pro ověřování systému Windows. Doporučená konfigurace mírně závisí na webovém serveru, který je používán.
+V ASP.NET Core 2.x, `[Authorize]` atribut vyžaduje další konfiguraci ve *Startup.cs* vybízí anonymních požadavků pro ověřování Windows. Doporučená konfigurace mírně závisí na webovém serveru, který je používán.
 
 > [!NOTE]
-> Ve výchozím nastavení můžou uživatelé, kteří nemají oprávnění pro přístup k stránky prázdnou odpověď HTTP 403. [StatusCodePages middleware](xref:fundamentals/error-handling#configuring-status-code-pages) lze nakonfigurovat, aby uživatelům lepší "Přístup byl odepřen".
+> Ve výchozím nastavení uživatelé, kteří nemají oprávnění k získání přístupu ke stránce se zobrazí prázdnou odpověď HTTP 403. [StatusCodePages middleware](xref:fundamentals/error-handling#configuring-status-code-pages) umožňují uživatelům poskytovat lepší prostředí "Přístup byl odepřen".
 
 #### <a name="iis"></a>IIS
 
-Pokud používáte službu IIS, přidejte následující `ConfigureServices` metoda: 
+Pokud používáte službu IIS, přidejte následující text do `ConfigureServices` metody:
 
 ```csharp
 // IISDefaults requires the following import:
@@ -124,7 +143,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 #### <a name="httpsys"></a>HTTP.sys
 
-Pokud používáte HTTP.sys, přidejte následující `ConfigureServices` metoda:
+Pokud používáte HTTP.sys, přidejte následující text do `ConfigureServices` metody:
 
 ```csharp
 // HttpSysDefaults requires the following import:
@@ -134,10 +153,8 @@ services.AddAuthentication(HttpSysDefaults.AuthenticationScheme);
 
 ### <a name="impersonation"></a>Zosobnění
 
-ASP.NET Core neimplementuje zosobnění. Aplikace spustí s identity aplikací pro všechny požadavky a pomocí identity aplikace fondu nebo proces. Pokud potřebujete explicitně provedení akce jménem uživatele, použijte `WindowsIdentity.RunImpersonated`. Spustit jednou akcí v tomto kontextu a pak zavřete kontextu.
+ASP.NET Core neimplementuje zosobnění. Aplikace běží s identitou aplikace pro všechny požadavky pomocí aplikace identity fondu nebo procesu. Pokud je třeba explicitně provést akce jménem uživatele, použijte `WindowsIdentity.RunImpersonated`. V tomto kontextu spuštění jedné akce a potom zavřete kontextu.
 
 [!code-csharp[](windowsauth/sample/Startup.cs?name=snippet_Impersonate&highlight=10-18)]
 
-Všimněte si, že `RunImpersonated` nepodporuje asynchronní operace a by nemělo být použito pro komplexní scénáře. Například zabalení celý požadavky nebo middleware zřetězen není podporován nebo doporučené.
-
----
+Všimněte si, že `RunImpersonated` nepodporuje asynchronní operace by se neměl používat pro komplexní scénáře. Například obtékání celý požadavky nebo middleware zřetězen není podporován nebo doporučené.

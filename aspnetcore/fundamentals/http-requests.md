@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/07/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: dd217cfed230ea92c31eeed64ec19838032dd224
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 2a1bf78edb5068d8b10d66e5ef306b1ad4395da6
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655229"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41752523"
 ---
 # <a name="initiate-http-requests"></a>Iniciování požadavků HTTP
 
@@ -46,11 +46,11 @@ Existuje několik způsobů `IHttpClientFactory` lze použít v aplikaci:
 
 `IHttpClientFactory` Lze registrovat pomocí volání `AddHttpClient` rozšiřující metody na `IServiceCollection`uvnitř `Startup.ConfigureServices` metoda.
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet1)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet1)]
 
 Po registraci může přijmout kódu `IHttpClientFactory` kdekoli služby může být vložený se [injektáž závislostí](xref:fundamentals/dependency-injection) (DI). `IHttpClientFactory` Slouží k vytvoření `HttpClient` instance:
 
-[!code-csharp[](http-requests/samples/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,20)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/BasicUsage.cshtml.cs?name=snippet1&highlight=9-12,21)]
 
 Pomocí `IHttpClientFactory` tímto způsobem je skvělý způsob, jak Refaktorovat stávající aplikace. Nemá žádný vliv na způsob, jakým `HttpClient` se používá. Na místech, kde `HttpClient` aktuálně se vytvářejí instance, nahraďte volání výskyty [CreateClient](/dotnet/api/system.net.http.ihttpclientfactory.createclient).
 
@@ -58,7 +58,7 @@ Pomocí `IHttpClientFactory` tímto způsobem je skvělý způsob, jak Refaktoro
 
 Pokud aplikace vyžaduje použití mnoha různých `HttpClient`, každý s jinou konfiguraci, je možnost použití **s názvem klienti**. Konfigurace pro pojmenovaná `HttpClient` se dá nastavit během registrace v `Startup.ConfigureServices`.
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet2)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet2)]
 
 V předchozím kódu `AddHttpClient` je volána, že zadáte název *githubu*. Některé výchozí konfigurace má tento klient&mdash;totiž základní adrese a dvě záhlaví vyžadována pro práci s rozhraním API pro GitHub.
 
@@ -66,7 +66,7 @@ Pokaždé, když `CreateClient` nazývá novou instanci třídy `HttpClient` vyt
 
 Využívat pojmenované klienta, může být předán parametr řetězce `CreateClient`. Zadejte název klienta, který se má vytvořit:
 
-[!code-csharp[](http-requests/samples/Pages/NamedClient.cshtml.cs?name=snippet1&highlight=20)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/NamedClient.cshtml.cs?name=snippet1&highlight=21)]
 
 V předchozím kódu žádost nemusí zadejte název hostitele. Ho můžete předat právě cestu, protože se používá základní adresu nakonfigurovanou pro klienta.
 
@@ -76,25 +76,25 @@ Typy klientů poskytují stejné funkce jako pojmenované klientů bez nutnosti 
 
 Typový klient přijme `HttpClient` parametr v konstruktoru:
 
-[!code-csharp[](http-requests/samples/GitHub/GitHubService.cs?name=snippet1&highlight=5)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/GitHub/GitHubService.cs?name=snippet1&highlight=5)]
 
 V předchozím kódu konfigurace přesunout do typový klient. `HttpClient` Objektu je vystaven jako veřejná vlastnost. Je možné definovat metody specifické pro rozhraní API, které vystavují `HttpClient` funkce. `GetAspNetDocsIssues` Metoda zapouzdřuje kód potřebný k vyhledání a parsování nejnovější otevřené problémy z úložiště GitHub.
 
 K registraci typový klient Obecné `AddHttpClient` metody rozšíření lze použít v `Startup.ConfigureServices`, určení typový klient třídy:
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet3)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet3)]
 
 Typový klient je zaregistrovaný jako přechodné s DI. Typový klient může vloží a využívat přímo:
 
-[!code-csharp[](http-requests/samples/Pages/TypedClient.cshtml.cs?name=snippet1&highlight=11-14,20)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Pages/TypedClient.cshtml.cs?name=snippet1&highlight=11-14,20)]
 
 Pokud tomu dávají přednost, konfigurace pro typový klient se dá nastavit během registrace v `Startup.ConfigureServices`, spíše než v konstruktoru typu klienta:
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet4)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet4)]
 
 Je možné zcela zapouzdření `HttpClient` v rámci typu klienta. Místo bude vystavená jako vlastnost, je možné veřejné metody poskytnou která volá `HttpClient` instance interně.
 
-[!code-csharp[](http-requests/samples/GitHub/RepoService.cs?name=snippet1&highlight=3)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/GitHub/RepoService.cs?name=snippet1&highlight=4)]
 
 V předchozím kódu `HttpClient` se ukládá jako soukromé pole. Veškerý přístup pro volání externích prochází `GetRepos` metody.
 
@@ -159,19 +159,19 @@ public class ValuesController : ControllerBase
 
 Chcete-li vytvořit obslužnou rutinu, definujte třídu odvozenou z `DelegatingHandler`. Přepsat `SendAsync` metoda spuštění kódu před předáním požadavku další obslužná rutina kanálu:
 
-[!code-csharp[Main](http-requests/samples/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Handlers/ValidateHeaderHandler.cs?name=snippet1)]
 
 Předcházející kód definuje obslužnou rutinu základní. Zkontroluje, jestli `X-API-KEY` záhlaví byla zahrnuta v požadavku. Pokud chybí záhlaví, můžete vyhnout volání HTTP a vrátí odpověď vhodný.
 
 Během registrace, lze přidat jeden nebo více obslužných rutin do konfigurace `HttpClient`. Tato úloha se provádí prostřednictvím metody rozšíření na [IHttpClientBuilder](/dotnet/api/microsoft.extensions.dependencyinjection.ihttpclientbuilder).
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet5)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet5)]
 
 V předchozím kódu `ValidateHeaderHandler` DI zaregistrován. Obslužná rutina **musí** zaregistrovat v DI jako přechodné. Po registraci [AddHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.addhttpmessagehandler) může být volána, předejte typ pro obslužné rutiny.
 
 Může být registrováno více obslužných rutin v pořadí, ve kterém by se měl spustit. Každý popisovač zabalí další obslužná rutina až do konečné `HttpClientHandler` zpracuje požadavek:
 
-[!code-csharp[](http-requests/samples/Startup.cs?name=snippet6)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet6)]
 
 ## <a name="use-polly-based-handlers"></a>Použít na základě Polly obslužné rutiny
 
@@ -179,7 +179,7 @@ Může být registrováno více obslužných rutin v pořadí, ve kterém by se 
 
 Metody rozšíření jsou k dispozici pro povolení použití zásad Polly nakonfigurované `HttpClient` instancí. Jsou k dispozici v rozšíření Polly [Microsoft.Extensions.Http.Polly](https://www.nuget.org/packages/Microsoft.Extensions.Http.Polly/) balíček NuGet. Není součástí tohoto balíčku [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Abyste použili rozšíření explicitní `<PackageReference />` by měl být zahrnutý v projektu.
 
-[!code-csharp[](http-requests/samples/HttpClientFactorySample.csproj?highlight=9)]
+[!code-csharp[](http-requests/samples/2.x/HttpClientFactorySample/HttpClientFactorySample.csproj?highlight=9)]
 
 Po obnovení tohoto balíčku, rozšiřující metody jsou k dispozici pro podporu přidání obslužné rutiny na základě Polly klientům.
 
@@ -189,7 +189,7 @@ Většina běžných chyb nastane, když přechodné externí volání HTTP. Poh
 
 `AddTransientHttpErrorPolicy` Rozšíření může být použito v rámci `Startup.ConfigureServices`. Toto rozšíření poskytuje přístup k `PolicyBuilder` objekt nakonfigurovaný pro zpracování chyb představující možných přechodných chyb:
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet7)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet7)]
 
 V předchozím kódu `WaitAndRetryAsync` definované zásady. Neúspěšné požadavky se zopakují až třikrát s zpožděním mezi pokusy o 600 ms.
 
@@ -197,7 +197,7 @@ V předchozím kódu `WaitAndRetryAsync` definované zásady. Neúspěšné pož
 
 Další rozšiřující metody existují, které lze přidat na základě Polly obslužné rutiny. Je jedno takové rozšíření `AddPolicyHandler`, který má několik přetížení. Jedním přetížením mu umožní ho možné zkontrolovat při definování zásad, které chcete použít:
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet8)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet8)]
 
 V předchozím kódu pokud je odchozí požadavek GET, časový limit 10 sekundu se použije. Pro jiné metody HTTP se používá s časovým limitem 30 sekund.
 
@@ -205,7 +205,7 @@ V předchozím kódu pokud je odchozí požadavek GET, časový limit 10 sekundu
 
 Je běžné vnořit Polly zásady, které poskytují vylepšené funkce:
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet9)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet9)]
 
 V předchozím příkladu jsou přidány dvě obslužné rutiny. První použití `AddTransientHttpErrorPolicy` rozšíření přidat zásady opakování. Neúspěšné požadavky se zopakují až třikrát. Druhé volání `AddTransientHttpErrorPolicy` přidá zásadu jističe. Další externí požadavky jsou blokovány 30 sekund, pokud postupně dojde k 5 neúspěšných pokusů o přihlášení. Jistič zásady jsou stavová. Všechna volání prostřednictvím tohoto klienta sdílet stejný stav okruhu.
 
@@ -213,7 +213,7 @@ V předchozím příkladu jsou přidány dvě obslužné rutiny. První použit�
 
 Přístup pro správu pravidelně použité zásady, je jejich jednou definovat a registrovat pomocí `PolicyRegistry`. Metody rozšíření je k dispozici tomu, aby obslužná rutina přidat pomocí zásad z registru:
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet10)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet10)]
 
 V předchozím kódu jsou registrovány dvě zásady, které při `PolicyRegistry` se přidá do `ServiceCollection`. Pomocí zásad z registru, `AddPolicyHandlerFromRegistry` metoda se používá, předejte název zásady začaly platit.
 
@@ -227,7 +227,7 @@ Sdružování obslužných rutin je žádoucí, protože každá obslužná ruti
 
 Výchozí doba života obslužná rutina je dvě minuty. Výchozí hodnota se dá přepsat na základě pojmenované klienta. Chcete-li přepsat, zavolejte [SetHandlerLifetime](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.sethandlerlifetime) na `IHttpClientBuilder` , který je vrácen při vytváření klienta:
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet11)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet11)]
 
 Vyřazení klienta není povinné. Vyřazení zruší odchozí požadavky a záruky daném `HttpClient` instanci nelze použít po volání [Dispose](/dotnet/api/system.idisposable.dispose#System_IDisposable_Dispose). `IHttpClientFactory` sleduje a uvolní prostředky využívané třídou `HttpClient` instancí. `HttpClient` Instancí lze obecně zacházet jako objekty .NET nevyžaduje vyřazení.
 
@@ -251,4 +251,4 @@ Může být nutné k řízení konfigurace vnitřního `HttpMessageHandler` pou�
 
 `IHttpClientBuilder` Dochází při přidávání s názvem nebo typy klientů. [ConfigurePrimaryHttpMessageHandler](/dotnet/api/microsoft.extensions.dependencyinjection.httpclientbuilderextensions.configureprimaryhttpmessagehandler) metody rozšíření lze použít k definování delegáta. Delegát se používá k vytvoření a konfigurace primární `HttpMessageHandler` používané tohoto klienta:
 
-[!code-csharp[Main](http-requests/samples/Startup.cs?name=snippet12)]
+[!code-csharp[Main](http-requests/samples/2.x/HttpClientFactorySample/Startup.cs?name=snippet12)]

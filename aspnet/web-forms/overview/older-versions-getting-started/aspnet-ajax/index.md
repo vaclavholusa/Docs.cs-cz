@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/index
 title: ASP.NET 3.5 – AJAX | Dokumentace Microsoftu
 author: rick-anderson
 description: Informace o knihovně technologie ASP.NET AJAX, včetně komponenty UpdatePanel a aktualizace částečná stránka, ověřování, lokalizace a ladění.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: b7d13a9f-3d44-431d-bea7-eb2da524de9d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax
 msc.type: chapter
-ms.openlocfilehash: 72cfdffc261971462fb692eb0894db42d5df347a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 90fa34211557f57a2dde4e0d1021bf1707d1beb4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801809"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754327"
 ---
 <a name="aspnet-35---ajax"></a>ASP.NET 3.5 – AJAX
 ====================

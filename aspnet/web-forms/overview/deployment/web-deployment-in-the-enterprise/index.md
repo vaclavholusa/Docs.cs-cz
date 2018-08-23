@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/index
 title: ASP.NET 4 – nasazení v podniku 1 | Dokumentace Microsoftu
 author: rick-anderson
 description: Tento kurz popisuje, jak splnit řadu výzvy, které se můžete setkat, když spravujete nasazení podnikových webových aplikací na developmen...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/16/2012
 ms.assetid: 83e0a572-428f-4bea-9638-1a031c6901c0
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise
 msc.type: chapter
-ms.openlocfilehash: a98dd11e8da289b9c0dcbb9514180f3508a698ef
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 92bc3d18c417e73e198d0f7663489fd931bf75b5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834007"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755508"
 ---
 <a name="aspnet-4---enterprise-deployment-series-1"></a>ASP.NET 4 – nasazení v podniku 1
 ====================

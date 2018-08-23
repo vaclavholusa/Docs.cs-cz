@@ -5,14 +5,14 @@ description: V tomto kurzu vytvoříte aplikaci chatu, který používá funkce 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/08/2018
+ms.date: 08/20/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 2c1c46b4a608eb0d39287a5261ed7c1f847a644e
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: db7f31963f6a4280069f1f4f82a547e2879e64bb
+ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39722474"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41757198"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>Kurz: Začínáme s funkce SignalR technologie ASP.NET Core
 
@@ -45,6 +45,12 @@ Na konci budete mít funkční aplikaci chatu:
 * [C# pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 * [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js, použít klientskou knihovnou SignalR JavaScript)
 
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+
+* [Visual Studio pro Mac verze 7.5.4 nebo novější](https://www.visualstudio.com/downloads/)
+* [.NET core SDK 2.1 nebo novější](https://www.microsoft.com/net/download/all) (zahrnuty v instalaci sady Visual Studio)
+* [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js, použít klientskou knihovnou SignalR JavaScript)
+
 ---
 
 ## <a name="create-the-project"></a>Vytvoření projektu
@@ -59,7 +65,7 @@ Na konci budete mít funkční aplikaci chatu:
 
 * Vyberte **webovou aplikaci** vytvořit projekt, který se používá pro stránky Razor.
 
-* Ujistěte se, že Cílová architektura, která je **ASP.NET Core 2.1**a pak vyberte **OK**. 
+* Vyberte cílovou architekturu **.NET Core**vyberte **ASP.NET Core 2.1**a klikněte na tlačítko **OK**.
 
   ![Dialogové okno nového projektu v sadě Visual Studio](signalr/_static/signalr-new-project-choose-type.png)
 
@@ -75,11 +81,21 @@ Na konci budete mít funkční aplikaci chatu:
 
    [!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+
+* V nabídce vyberte **soubor > Nový řešení**.
+
+* Vyberte **.NET Core > aplikace > webové aplikace ASP.NET Core** (nevybírejte **ASP.NET Core webové aplikace (MVC)**).
+
+* Vyberte **Další**.
+
+* Pojmenujte projekt *SignalRChat*a pak vyberte **vytvořit**.
+
 ---
 
 ## <a name="add-the-signalr-client-library"></a>Přidat klientské knihovně SignalR
 
-Je součástí serveru knihovny SignalR [Microsoft.AspnetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Ale budete muset získat Javascriptovou klientskou knihovnu z npm, Správce balíčků Node.js.
+Je součástí serveru knihovny SignalR [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Ale budete muset získat Javascriptovou klientskou knihovnu z npm, Správce balíčků Node.js.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
@@ -87,7 +103,7 @@ Je součástí serveru knihovny SignalR [Microsoft.AspnetCore.App Microsoft.aspn
 
   ```console
   cd SignalRChat
-  ``` 
+  ```
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -96,6 +112,10 @@ Je součástí serveru knihovny SignalR [Microsoft.AspnetCore.App Microsoft.aspn
   ```console
   cd SignalRChat
   ``` 
+
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+
+* V **terminálu**, přejděte do složky projektu (ten, který obsahuje *SignalRChat.csproj* souboru).
 
 ---
 
@@ -132,18 +152,12 @@ Je součástí serveru knihovny SignalR [Microsoft.AspnetCore.App Microsoft.aspn
   Příkaz vytvoří výstup podobný následujícímu příkladu:
 
   ```
-  npm : npm notice created a lockfile as package-lock.json. You should commit this file.
-  At line:1 char:1
-  + npm install @aspnet/signalr
-  + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      + CategoryInfo          : NotSpecified: (npm notice crea...mmit this file.:String) [], RemoteException
-      + FullyQualifiedErrorId : NativeCommandError
-  WARN
-   SignalRChat@1.0.0 No description
-  WARN
-   SignalRChat@1.0.0 No repository field.
+  npm notice created a lockfile as package-lock.json. You should commit this file.
+  npm WARN signalrchat@1.0.0 No description
+  npm WARN signalrchat@1.0.0 No repository field.
+
   + @aspnet/signalr@1.0.2
-  added 1 package in 1.398s
+  added 1 package in 0.98s
   ```
 
 `npm install` Příkaz stáhli Javascriptovou klientskou knihovnu pro podsložku *node_modules*. Zkopírujte z něj do složky v části *wwwroot* , kterou můžete odkazovat z webové stránky chatovací aplikaci.
@@ -200,7 +214,19 @@ Na serveru funkce SignalR nastavené předat požadavky SignalR SignalR.
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
 * Stisknutím klávesy **CTRL + F5** a spusťte tak aplikaci bez ladění.
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
+
+* Stisknutím klávesy **CTRL + F5** a spusťte tak aplikaci bez ladění.
+
+# <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
+
+* V nabídce vyberte **spuštění > Spustit bez ladění**.
+
+---
 
 * Zkopírujte adresu URL z adresního řádku, otevřete jinou instanci prohlížeče nebo karty a vložte adresu URL do adresního řádku.
 

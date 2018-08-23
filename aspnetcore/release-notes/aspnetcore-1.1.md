@@ -1,37 +1,38 @@
 ---
-title: Co je nového v technologii ASP.NET Core 1.1
+title: Co je nového v ASP.NET Core 1.1
 author: rick-anderson
-description: Další informace o nových funkcích v technologii ASP.NET Core 1.1.
+description: Informace o nových funkcích v ASP.NET Core 1.1.
 monikerRange: = aspnetcore-1.1
+ms.author: riande
 ms.date: 02/14/2017
 uid: aspnetcore-1.1
-ms.openlocfilehash: ae55c677c31f4bf298f7de5c7b1a81f1945598cd
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 4ea2819699552162ec8077afacb368388dc1f903
+ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077434"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41753772"
 ---
-# <a name="whats-new-in-aspnet-core-11"></a>Co je nového v technologii ASP.NET Core 1.1
+# <a name="whats-new-in-aspnet-core-11"></a>Co je nového v ASP.NET Core 1.1
 
 ASP.NET Core 1.1 obsahuje následující nové funkce:
 
 - [Middleware pro přepis adres URL](xref:fundamentals/url-rewriting)
 - [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
-- [Zobrazení součásti jako značka pomocné rutiny](xref:mvc/views/view-components#invoking-a-view-component-as-a-tag-helper)
+- [Zobrazení komponenty jako pomocné rutiny značek](xref:mvc/views/view-components#invoking-a-view-component-as-a-tag-helper)
 - [Middleware jako filtry MVC](xref:mvc/controllers/filters#using-middleware-in-the-filter-pipeline)
-- [Na základě souborů cookie TempData zprostředkovatele](xref:fundamentals/app-state#tempdata)
-- [Zprostředkovatel protokolování Azure App Service](xref:fundamentals/logging/index#azure-app-service-provider)
+- [Na základě souboru cookie TempData zprostředkovatele](xref:fundamentals/app-state#tempdata)
+- [Zprostředkovatel protokolování služby Azure App Service](xref:fundamentals/logging/index#azure-app-service-provider)
 - [Zprostředkovatel konfigurace služby Azure Key Vault](xref:security/key-vault-configuration)
 - [Úložiště Azure a ochranu dat Redis úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)
-- [WebListener serveru pro Windows](xref:fundamentals/servers/weblistener)
-- [Podpora pro objekty WebSockets](xref:fundamentals/websockets)
+- [Serveru WebListener pro Windows](xref:fundamentals/servers/weblistener)
+- [Webové sockety](xref:fundamentals/websockets)
 
 ## <a name="choosing-between-versions-10-and-11-of-aspnet-core"></a>Volba mezi verze 1.0 a 1.1 ASP.NET Core
 
-ASP.NET Core 1.1 má více funkcí než 1.0. Obecně platí doporučujeme že použít nejnovější verzi.
+ASP.NET Core 1.1 nabízí víc funkcí než 1.0. Obecně doporučujeme, abyste že používali nejnovější verzi.
 
 ## <a name="additional-information"></a>Další informace
 
-- [Poznámky k verzi ASP.NET Core 1.1.0](https://github.com/aspnet/Home/releases/tag/1.1.0)
-- Pro připojení k vývojový tým ASP.NET Core průběh a plány, naladit [ASP.NET komunity Standup](https://live.asp.net/).
+- [Zpráva k vydání verze technologie ASP.NET Core 1.1.0](https://github.com/aspnet/Home/releases/tag/1.1.0)
+- Spojte se s vývojovým týmem ASP.NET Core průběh a plány, Nalaďte si [rychlá schůzka komunitě ASP.NET](https://live.asp.net/).

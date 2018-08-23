@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 6b955c2064d7d6a045594e56326e2f7df282675f
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a02588dc98283a375e9deb7c8561c59f6d886eb0
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095304"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757195"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>Odeslání zprávy z mimo rozbočovač
 
@@ -27,7 +27,7 @@ Rozbočovače SignalR je základní abstrakci pro odesílání zpráv do klient�
 V knihovně SignalR technologie ASP.NET Core, můžete přístup k instanci `IHubContext` pomocí vkládání závislostí. Můžete vložit instance `IHubContext` do kontroleru, middleware nebo jiné služby DI. Použijte instanci pro odesílání zpráv do klientů.
 
 > [!NOTE]
-> Tím se liší od funkce SignalR technologie ASP.NET, který používá GlobalHost pro poskytnutí přístupu k `IHubContext`. ASP.NET Core má rozhraní injektáž závislostí, které eliminuje potřebu této globální typu singleton.
+> Tím se liší od ASP.NET 4.x SignalR, která používá GlobalHost k poskytnutí přístupu k `IHubContext`. ASP.NET Core má rozhraní injektáž závislostí, které eliminuje potřebu této globální typu singleton.
 
 ### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>Vloží instanci `IHubContext` v kontroleru
 

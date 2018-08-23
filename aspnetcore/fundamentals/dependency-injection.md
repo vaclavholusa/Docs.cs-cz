@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 861370dc689e2420838f639ea0b1fb8f73927e16
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: df5bc21f9b93206b3cfc97a052df26b891930d23
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342416"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902564"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injektáž závislostí v ASP.NET Core
 
@@ -143,7 +143,7 @@ V ukázkové aplikaci `IMyDependency` služba není registrována s konkrétní 
 ::: moniker-end
 
 > [!NOTE]
-> Každý `services.Add<ServiceName>` – metoda rozšíření přidá (a potenciálně nakonfiguruje) služby. Například `services.AddMvc()` přidá služby Razor Pages a vyžadují MVC. Doporučujeme, aby aplikace postupujte podle Tato konvence. Rozšiřující metody v umístění [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) obor názvů pro zapouzdření skupiny registrací služby.
+> Každý `services.Add{SERVICE_NAME}` – metoda rozšíření přidá (a potenciálně nakonfiguruje) služby. Například `services.AddMvc()` přidá služby Razor Pages a vyžadují MVC. Doporučujeme, aby aplikace postupujte podle Tato konvence. Rozšiřující metody v umístění [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) obor názvů pro zapouzdření skupiny registrací služby.
 
 Pokud konstruktor služby vyžaduje jednoduchého typu, například `string`, primitivní vlastnost může být vloženy pomocí [konfigurace](xref:fundamentals/configuration/index) nebo [možnosti vzor](xref:fundamentals/configuration/options):
 
@@ -198,7 +198,7 @@ V ukázkové aplikaci `IMyDependency` instance je požadováno a použít k vol�
 | [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | singleton |
 | [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | singleton |
 
-Metody rozšíření kolekce služby je možné zaregistrovat službu (a jeho závislé služby, pokud je to nutné), tato konvence při použití jediného `Add<ServiceName>` metodu rozšíření k registraci všech služeb vyžadují danou službu. Následující kód je příklad toho, jak přidat další služby do kontejneru pomocí metody rozšíření [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext), [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity), a [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc):
+Metody rozšíření kolekce služby je možné zaregistrovat službu (a jeho závislé služby, pokud je to nutné), tato konvence při použití jediného `Add{SERVICE_NAME}` metodu rozšíření k registraci všech služeb vyžadují danou službu. Následující kód je příklad toho, jak přidat další služby do kontejneru pomocí metody rozšíření [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext), [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity), a [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc):
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -480,14 +480,24 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="default-service-container-replacement"></a>Výchozí služba kontejneru nahrazení
 
-Integrovaná služba kontejneru je určená k poskytování základní požadavky rozhraní framework a většina uživatelských aplikací, které vycházejí. Vývojáři však můžete předdefinovaných kontejnerů nahraďte jejich preferované kontejneru. `Startup.ConfigureServices` Metoda obvykle vrací `void`. Pokud se změní podpis metody se vraťte [IServiceProvider](/dotnet/api/system.iserviceprovider), můžete nakonfigurovat a vrátí jiný kontejner. Spousta kontejnerů IoC nejsou k dispozici pro .NET. V následujícím příkladu [Autofac](https://autofac.org/) kontejneru se používá:
+Integrovaná služba kontejneru je určen pro sloužit potřebám rozhraní framework a většina uživatelů aplikací. Doporučujeme používat integrované kontejneru, pokud potřebujete konkrétní funkce, která nepodporuje. Některé z funkcí podporovaných v 3. stran kontejnery nebyl nalezen v předdefinované kontejneru:
 
-1. Instalovat balíčky odpovídajícího kontejneru:
+* Vkládání vlastnosti
+* Vkládání podle názvu
+* Podřízené kontejnery
+* Management vlastní doba života
+* `Func<T>` Podpora pro opožděná inicializace
+
+Najdete v článku [injektáž závislostí souboru readme.md](https://github.com/aspnet/DependencyInjection#using-other-containers-with-microsoftextensionsdependencyinjection) seznam některých kontejnerů, které podporují adaptéry.
+
+Následující příklad nahradí kontejneru integrované s [Autofac](https://autofac.org/):
+
+* Instalovat balíčky odpovídajícího kontejneru:
 
     * [Autofac](https://www.nuget.org/packages/Autofac/)
     * [Autofac.Extensions.DependencyInjection](https://www.nuget.org/packages/Autofac.Extensions.DependencyInjection/)
 
-2. Konfigurace kontejneru v `Startup.ConfigureServices` a vraťte se `IServiceProvider`:
+* Konfigurace kontejneru v `Startup.ConfigureServices` a vraťte se `IServiceProvider`:
 
     ```csharp
     public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -506,7 +516,7 @@ Integrovaná služba kontejneru je určená k poskytování základní požadavk
 
     Použití kontejneru 3. stran `Startup.ConfigureServices` musí vracet `IServiceProvider`.
 
-3. Konfigurace Autofac v `DefaultModule`:
+* Konfigurace Autofac v `DefaultModule`:
 
     ```csharp
     public class DefaultModule : Module

@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/storing-additional-us
 title: Ukládání dalších informací o uživatelích (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu jsme tuto otázku odpovědět sestavením aplikace vyloženě návštěv. Přitom se podíváme na různé možnosti pro modeli...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: ee4b924e-8002-4dc3-819f-695fca1ff867
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2ea731012f8c053d1e1eac293fdbeaec66db23bf
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 33e686cc3b977c6c740dfaf1057e1e399d5a298b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816035"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755308"
 ---
 <a name="storing-additional-user-information-vb"></a>Ukládání dalších informací o uživatelích (VB)
 ====================

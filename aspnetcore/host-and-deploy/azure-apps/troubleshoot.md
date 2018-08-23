@@ -1,185 +1,185 @@
 ---
-title: Řešení potíží s ASP.NET Core v Azure App Service
+title: Řešení potíží s ASP.NET Core ve službě Azure App Service
 author: guardrex
-description: Zjistěte, jak k diagnostikování problémů s nasazením ASP.NET Core Azure App Service.
+description: Zjistěte, jak diagnostikovat problémy s nasazením služby ASP.NET Core Azure App Service.
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/31/2018
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: f9918e9162329f4c5dbd1ff18e30fce0db24e651
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a995c743b4e43be8bea5329affb3f2c736b1d016
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272721"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902551"
 ---
-# <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Řešení potíží s ASP.NET Core v Azure App Service
+# <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Řešení potíží s ASP.NET Core ve službě Azure App Service
 
 Podle [Luke Latham](https://github.com/guardrex)
 
 [!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
-Tento článek obsahuje pokyny o tom, jak diagnostikovat ASP.NET Core problém při spuštění aplikace pomocí diagnostických nástrojů Azure App Service. Další pomoc při řešení potíží, najdete v části [Přehled služby Azure App Service diagnostics](/azure/app-service/app-service-diagnostics) a [postup: monitorování aplikací ve službě Azure App Service](/azure/app-service/web-sites-monitor) v dokumentaci k Azure.
+Tento článek obsahuje pokyny o tom, jak Diagnostika ASP.NET Core problém při spuštění aplikace pomocí diagnostických nástrojů služby Azure App Service. Další pomoc při řešení potíží, najdete v části [Přehled diagnostiky služby Azure App Service](/azure/app-service/app-service-diagnostics) a [postup: monitorování aplikací ve službě Azure App Service](/azure/app-service/web-sites-monitor) v dokumentaci k Azure.
 
 ## <a name="app-startup-errors"></a>Chyby při spuštění aplikace
 
-**502.5 zpracování selhání**  
-Pracovní proces se nezdaří. Aplikaci nelze spustit.
+**502.5 zpracovat selhání**  
+Pracovní proces se nezdaří. Aplikace se nespustí.
 
-[ASP.NET Core modulu](xref:fundamentals/servers/aspnet-core-module) pokusy o spuštění pracovního procesu, ale nepodaří spustit. Zkoumání protokolu událostí aplikace často pomáhá tento typ problému. Přístup k protokolu je podrobně popsaný [protokolu událostí aplikace](#application-event-log) části.
+[Modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) pokusy o spuštění pracovního procesu, ale nepovede spustit. Zkoumání v protokolu událostí aplikace často pomáhá při řešení tohoto typu problému. Přístup k protokolu je podrobně [protokolu událostí aplikace](#application-event-log) oddílu.
 
-*502.5 selhání procesu* chybová stránka je vrácena, pokud nesprávně nakonfigurované aplikace způsobí, že pracovní proces selhání:
+*502.5 selhání procesu* při nesprávně nakonfigurované aplikace způsobí, že se pracovní proces selže, vrátí se chybová stránka:
 
 ![Okno prohlížeče zobrazující stránku 502.5 selhání procesu](troubleshoot/_static/process-failure-page.png)
 
-**500 vnitřní chybu serveru**  
-Spuštění aplikace, ale chybu brání splnění požadavku server.
+**Chyba 500 interní Server**  
+Spuštění aplikace, ale chybu brání splnění žádosti. na serveru.
 
-Při spuštění nebo při vytváření odpovědi, k této chybě dojde v kódu aplikace. Odpovědi může obsahovat žádný obsah, nebo se může zobrazit odpověď *500 – Vnitřní chyba serveru* v prohlížeči. V protokolu událostí aplikace obvykle stavy normálně spustil aplikaci. Z hlediska serveru, který je správná. Aplikace se spustit, ale nemůže generovat platnou odpověď. [Spusťte aplikaci v konzole Kudu](#run-the-app-in-the-kudu-console) nebo [povolit protokol stdout ASP.NET Core modulu](#aspnet-core-module-stdout-log) k vyřešení tohoto problému.
+Při spuštění nebo při vytváření odpovědi, k této chybě dochází v kódu aplikace. Odpověď může obsahovat žádný obsah nebo se může zobrazit odpovědi *500 – Interní chyba serveru* v prohlížeči. V protokolu událostí aplikace obvykle hlásí, že aplikace se normálně spustit. Z pohledu serveru, který je správný. Aplikace začal, ale nemůže generovat platnou odpověď. [Spusťte aplikaci v konzole Kudu](#run-the-app-in-the-kudu-console) nebo [povolit protokol stdout modul ASP.NET Core](#aspnet-core-module-stdout-log) k vyřešení tohoto problému.
 
 **Obnovení připojení**
 
-Pokud dojde k chybě po odeslání hlaviček, je příliš pozdní pro server k odeslání **500 – Vnitřní chyba serveru** když dojde k chybě. Často se to stane, když dojde k chybě během serializace komplexních objektů pro odpověď. Tento typ chyby se zobrazí jako *obnovení připojení* chyba na straně klienta. [Protokolování aplikací](xref:fundamentals/logging/index) mohou pomoci při odstraňování těchto typů chyb.
+Pokud dojde k chybě po odeslání hlavičky, bude příliš pozdě pro server k odeslání **500 – Interní chyba serveru** , když dojde k chybě. Často se to stane, když dojde k chybě při serializaci složitých objektů pro odpověď. Tento typ chyby se zobrazí jako *obnovení připojení* chyba na straně klienta. [Protokolování aplikací](xref:fundamentals/logging/index) mohou pomoci při řešení těchto typů chyb.
 
-## <a name="default-startup-limits"></a>Výchozí omezení spuštění
+## <a name="default-startup-limits"></a>Výchozí omezení při spuštění
 
-Modul základní ASP.NET je konfigurován s výchozím *startupTimeLimit* 120 sekundách. Pokud necháte nastavenou výchozí hodnotu, aplikace může trvat až dvě minuty spustit před modul protokoly selhání procesu. Informace o konfiguraci modulu najdete v tématu [atributy elementu aspNetCore](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element).
+Modul ASP.NET Core je nakonfigurovaná s výchozí *startupTimeLimit* 120 sekund. Když necháte na výchozí hodnotu, aplikace může trvat až dvě minuty, spusťte před modulu protokoly selhání procesu. Informace o konfiguraci modulu najdete v tématu [atributy elementu aspNetCore](xref:host-and-deploy/aspnet-core-module#attributes-of-the-aspnetcore-element).
 
 ## <a name="troubleshoot-app-startup-errors"></a>Řešení chyb při spuštění aplikace
 
 ### <a name="application-event-log"></a>Protokol událostí aplikace
 
-Chcete-li získat přístup k protokolu událostí aplikace, použijte **Diagnostikujte a řešení problémů** okno na portálu Azure:
+Chcete-li získat přístup k protokolu událostí aplikace, použijte **diagnostikovat a řešit problémy** okna na webu Azure Portal:
 
-1. Na portálu Azure otevřete okno aplikace v **App Services** okno.
-1. Vyberte **Diagnostikujte a řešení problémů** okno.
-1. V části **vyberte KATEGORII problému**, vyberte **webové aplikace dolů** tlačítko.
-1. V části **navrhované řešení**, otevřete podokno pro **otevřete protokoly událostí aplikace**. Vyberte **otevřené záznamy událostí aplikace** tlačítko.
+1. Na webu Azure Portal, otevřete okno aplikace **App Services** okno.
+1. Vyberte **diagnostikovat a řešit problémy** okno.
+1. V části **vyberte KATEGORII problému**, vyberte **vypnutí webové aplikace** tlačítko.
+1. V části **navrhované řešení**, otevřete podokno **otevřete protokoly událostí aplikace**. Vyberte **otevřete protokoly událostí aplikace** tlačítko.
 1. Zkontrolujte nejnovější chybu poskytované *IIS AspNetCoreModule* v **zdroj** sloupce.
 
-Alternativu k použití **Diagnostikujte a řešení problémů** okno je zkontrolujte v souboru protokolu událostí aplikace přímo pomocí [Kudu](https://github.com/projectkudu/kudu/wiki):
+O alternativu k použití **diagnostikovat a řešit problémy** okno je prozkoumat soubor protokolu událostí aplikace přímo pomocí [Kudu](https://github.com/projectkudu/kudu/wiki):
 
-1. Vyberte **Rozšířené nástroje** v okně **nástroje pro vývoj** oblasti. Vyberte **přejděte&rarr;**  tlačítko. Otevře se konzola Kudu v novou kartu prohlížeče nebo okna.
-1. Pomocí navigačního panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
-1. Otevřete **LogFiles** složky.
+1. Vyberte **Rozšířené nástroje** okna portálu **nástroje pro vývoj** oblasti. Vyberte **Přejít&rarr;**  tlačítko. Otevře se konzola Kudu v nové záložce prohlížeče nebo v okně.
+1. V navigačním panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
+1. Otevřít **LogFiles** složky.
 1. Vyberte ikonu tužky vedle *eventlog.xml* souboru.
 1. Vyhledejte v protokolu. Přejděte do dolní části zobrazíte nejnovější události v protokolu.
 
 ### <a name="run-the-app-in-the-kudu-console"></a>Spusťte aplikaci v konzole Kudu
 
-Mnoho chyb spuštění nepřispívají užitečné informace v protokolu událostí aplikace. Aplikaci můžete spustit [Kudu](https://github.com/projectkudu/kudu/wiki) vzdálené spuštění konzoly chcete zjistit, chyba:
+Mnoho chyb při spuštění nevytvářejí užitečné informace v protokolu událostí aplikace. Aplikaci můžete spustit [Kudu](https://github.com/projectkudu/kudu/wiki) vzdálené spuštění konzoly ke zjištění chyby:
 
-1. Vyberte **Rozšířené nástroje** v okně **nástroje pro vývoj** oblasti. Vyberte **přejděte&rarr;**  tlačítko. Otevře se konzola Kudu v novou kartu prohlížeče nebo okna.
-1. Pomocí navigačního panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
-1. Otevření složky k cestě **lokality** > **wwwroot**.
+1. Vyberte **Rozšířené nástroje** okna portálu **nástroje pro vývoj** oblasti. Vyberte **Přejít&rarr;**  tlačítko. Otevře se konzola Kudu v nové záložce prohlížeče nebo v okně.
+1. V navigačním panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
+1. Otevření složky a cesta **lokality** > **wwwroot**.
 1. V konzole spusťte aplikaci spuštěním sestavení aplikace.
-   * Pokud je aplikace [nasazení závislé na framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd), spusťte sestavení aplikace s *dotnet.exe*. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`: `dotnet .\<assembly_name>.dll`
-   * Pokud je aplikace [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd)spusťte aplikaci je spustitelný soubor. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`: `<assembly_name>.exe`
-1. Výstup z aplikace, zobrazuje všechny chyby konzoly je přesměrovaná do konzole Kudu.
+   * Pokud je aplikace [nasazení závisí na architektuře](/dotnet/core/deploying/#framework-dependent-deployments-fdd), spusťte sestavení aplikace s *dotnet.exe*. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`: `dotnet .\<assembly_name>.dll`
+   * Pokud je aplikace [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd)spuštěním spustitelného souboru aplikace. V následujícím příkazu nahraďte název sestavení aplikace pro `<assembly_name>`: `<assembly_name>.exe`
+1. Výstup z aplikace zobrazuje všechny chyby konzoly je přesměrovaná do konzoly Kudu.
 
 ### <a name="aspnet-core-module-stdout-log"></a>ASP.NET Core modulu stdout protokolu
 
-Protokol stdout ASP.NET Core modulu zaznamenává často užitečné chybové zprávy, nebyl nalezen v protokolu událostí aplikace. Povolení a zobrazit protokoly stdout:
+Protokol stdout modul ASP.NET Core zaznamenává často užitečné chybové zprávy nebyl nalezen v protokolu událostí aplikace. Povolení a zobrazení protokolů stdout:
 
-1. Přejděte na **Diagnostikujte a řešení problémů** okno na portálu Azure.
-1. V části **vyberte KATEGORII problému**, vyberte **webové aplikace dolů** tlačítko.
-1. V části **navrhované řešení** > **povolit přesměrování protokolu Stdout**, kliknutím na tlačítko **otevřít konzolu Kudu upravit soubor Web.Config**.
-1. V Kudu **konzole diagnostiky**, otevřete složky k cestě **lokality** > **wwwroot**. Posuňte se dolů a zobrazení *web.config* souboru v dolní části seznamu.
+1. Přejděte **diagnostikovat a řešit problémy** okna na webu Azure Portal.
+1. V části **vyberte KATEGORII problému**, vyberte **vypnutí webové aplikace** tlačítko.
+1. V části **navrhované řešení** > **povolit přesměrování protokolu Stdout**, vyberte tlačítko **otevřete konzoly Kudu můžete upravit soubor Web.Config**.
+1. V Kudu **konzole diagnostiky**, otevřete složky do cesty **lokality** > **wwwroot**. Posuňte se dolů zobrazit *web.config* soubor v dolní části seznamu.
 1. Klikněte na ikonu tužky vedle *web.config* souboru.
-1. Nastavit **stdoutLogEnabled** k `true` a změňte **stdoutLogFile** cestu k: `\\?\%home%\LogFiles\stdout`.
+1. Nastavte **stdoutLogEnabled** k `true` a změnit **stdoutLogFile** cestu k: `\\?\%home%\LogFiles\stdout`.
 1. Vyberte **Uložit** uložte aktualizovaný *web.config* souboru.
-1. Vytvořte žádost na aplikaci.
-1. Vraťte se k portálu Azure. Vyberte **Rozšířené nástroje** v okně **nástroje pro vývoj** oblasti. Vyberte **přejděte&rarr;**  tlačítko. Otevře se konzola Kudu v novou kartu prohlížeče nebo okna.
-1. Pomocí navigačního panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
+1. Vytvořte žádost do aplikace.
+1. Vraťte se do portálu Azure portal. Vyberte **Rozšířené nástroje** okna portálu **nástroje pro vývoj** oblasti. Vyberte **Přejít&rarr;**  tlačítko. Otevře se konzola Kudu v nové záložce prohlížeče nebo v okně.
+1. V navigačním panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
 1. Vyberte **LogFiles** složky.
-1. Zkontrolujte **změněné** sloupce a vyberte ikonu tužky můžete upravit stdout protokolů pomocí data poslední úpravy.
-1. Když se otevře soubor protokolu, zobrazí se chyba.
+1. Zkontrolujte **změněné** sloupci a vyberte ikonu tužky a upravte standardního výstupu skriptu protokolů pomocí data poslední úpravy.
+1. Po otevření souboru protokolu, zobrazí se chyba.
 
-**Důležité!** Zakážete stdout protokolování po dokončení odstraňování potíží.
+**Důležité!** Zakážete protokolování stdout po dokončení odstraňování potíží.
 
-1. V Kudu **konzole diagnostiky**, vraťte se do cesty **lokality** > **wwwroot** na nich *web.config* souboru. Otevřete **web.config** soubor znovu výběrem na ikonu tužky.
-1. Nastavit **stdoutLogEnabled** k `false`.
+1. V Kudu **konzole diagnostiky**, vraťte se na cestu **lokality** > **wwwroot** zobrazíte *web.config* souboru. Otevřít **web.config** soubor znovu tak, že vyberete ikonu tužky.
+1. Nastavte **stdoutLogEnabled** k `false`.
 1. Vyberte **Uložit** k uložení souboru.
 
 > [!WARNING]
-> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené. Používejte pouze stdout protokolování pro řešení problémů při spuštění aplikace.
+> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet souborů protokolů, které jsou vytvořeny. Používejte pouze stdout protokolování k řešení problémů při spuštění aplikace.
 >
-> Pro obecné protokolování v aplikaci ASP.NET Core po spuštění, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
+> Pro obecné protokolování v aplikaci ASP.NET Core po spuštění, použijte knihovnu protokolování, která omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [zprostředkovatele přihlášení třetí strany](xref:fundamentals/logging/index#third-party-logging-providers).
 
-## <a name="common-startup-errors"></a>Běžné chyby při spuštění 
+## <a name="common-startup-errors"></a>Běžné chyby spuštění 
 
-Najdete v článku [ASP.NET Core běžné chyby odkaz](xref:host-and-deploy/azure-iis-errors-reference). Většina běžné problémy, které brání spuštění aplikací jsou popsané v referenčním tématu.
+Zobrazit [ASP.NET Core běžné chyby odkaz](xref:host-and-deploy/azure-iis-errors-reference). Většina běžných problémů, které brání spuštění aplikace jsou zahrnuté v referenčním tématu.
 
-## <a name="slow-or-hanging-app"></a>Pomalá nebo měny aplikace
+## <a name="slow-or-hanging-app"></a>Pomalá nebo Změ aplikace
 
-Pokud aplikace reaguje pomalu nebo přestane reagovat na vyžádání, najdete v části [Poradce při potížích pomalé webové aplikace problémy s výkonem v Azure App Service](/azure/app-service/app-service-web-troubleshoot-performance-degradation) pro ladění pokyny.
+Když aplikace reaguje pomalu nebo přestane reagovat na vyžádání, najdete v článku [Poradce při potížích pomalých webových aplikací problémy s výkonem ve službě Azure App Service](/azure/app-service/app-service-web-troubleshoot-performance-degradation) pro ladění pokyny.
 
 ## <a name="remote-debugging"></a>Vzdálené ladění
 
-Najdete v následujících tématech:
+V následujících tématech:
 
-* [Vzdálené ladění webových aplikací části řešení webové aplikace ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) (dokumentace k Azure)
-* [Vzdálené ladění ASP.NET Core ve službě IIS v Azure ve Visual Studio 2017](/visualstudio/debugger/remote-debugging-azure) (dokumentace k sadě Visual Studio)
+* [Vzdálené ladění webových aplikací části řešení potíží s webovou aplikací ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) (dokumentace k Azure)
+* [Vzdálené ladění ASP.NET Core ve službě IIS v Azure v sadě Visual Studio 2017](/visualstudio/debugger/remote-debugging-azure) (dokumentace k sadě Visual Studio)
 
 ## <a name="application-insights"></a>Application Insights
 
-[Application Insights](https://azure.microsoft.com/services/application-insights/) poskytuje telemetrická data z aplikací, které jsou hostované v Azure App Service, včetně protokolování a funkce generování sestav. Application Insights lze pouze sestavy chyb, které se provádějí až po aplikace spustí, když je k dispozici funkcí protokolování aplikace. Další informace najdete v tématu [Application Insights pro ASP.NET Core](/azure/application-insights/app-insights-asp-net-core).
+[Application Insights](https://azure.microsoft.com/services/application-insights/) poskytuje telemetrická data z aplikací hostovaných ve službě Azure App Service, včetně protokolování a generování sestav funkce chyb. Application Insights může jenom nahlásit to o chybách, ke kterým dochází po spuštění aplikace, když funkce protokolování aplikace budou k dispozici. Další informace najdete v tématu [Application Insights pro ASP.NET Core](/azure/application-insights/app-insights-asp-net-core).
 
 ## <a name="monitoring-blades"></a>Monitorování oken
 
-Monitorování okna zadejte alternativu potíží metody popsané výše v tomto tématu. Těchto oknech umožňuje diagnostikovat chyby 500-series.
+Monitorování okna poskytují alternativní řešení potíží s prostředí pro metod popsaných výše v tomto tématu. Těchto oknech lze diagnostikovat chyby 500-series.
 
-Zkontrolujte, zda jsou nainstalovány rozšíření základní technologie ASP.NET. Pokud nejsou nainstalované rozšíření, nainstalujte je ručně:
+Potvrďte, že jsou nainstalované rozšíření ASP.NET Core. Pokud nejsou rozšíření nainstalována, nainstalujte je ručně:
 
 1. V **nástroje pro vývoj** části okna, vyberte **rozšíření** okno.
-1. **ASP.NET Core rozšíření** by se měla objevit v seznamu.
-1. Pokud nejsou nainstalované rozšíření, vyberte **přidat** tlačítko.
-1. Vyberte **ASP.NET Core rozšíření** ze seznamu.
+1. **Rozšíření ASP.NET Core** by se měla zobrazit v seznamu.
+1. Pokud není nainstalovaná rozšíření, vyberte **přidat** tlačítko.
+1. Zvolte **rozšíření ASP.NET Core** ze seznamu.
 1. Vyberte **OK** přijměte právní podmínky.
 1. Vyberte **OK** na **přidat rozšíření** okno.
-1. Automaticky otevírané okno informační zpráva znamená, když jsou rozšíření úspěšně nainstalovány.
+1. Informační zprávy určuje, kdy jsou úspěšně nainstalováni rozšíření.
 
 Pokud není povoleno protokolování stdout, postupujte podle těchto kroků:
 
-1. Na portálu Azure vyberte **Rozšířené nástroje** okno v **nástroje pro vývoj** oblasti. Vyberte **přejděte&rarr;**  tlačítko. Otevře se konzola Kudu v novou kartu prohlížeče nebo okna.
-1. Pomocí navigačního panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
-1. Otevření složky k cestě **lokality** > **wwwroot** a posuňte se dolů a zobrazení *web.config* souboru v dolní části seznamu.
+1. Na webu Azure Portal, vyberte **Rozšířené nástroje** okna portálu **nástroje pro vývoj** oblasti. Vyberte **Přejít&rarr;**  tlačítko. Otevře se konzola Kudu v nové záložce prohlížeče nebo v okně.
+1. V navigačním panelu v horní části stránky otevřete **konzolou pro ladění** a vyberte **CMD**.
+1. Otevření složky a cesta **lokality** > **wwwroot** a posuňte se dolů zobrazit *web.config* soubor v dolní části seznamu.
 1. Klikněte na ikonu tužky vedle *web.config* souboru.
-1. Nastavit **stdoutLogEnabled** k `true` a změňte **stdoutLogFile** cestu k: `\\?\%home%\LogFiles\stdout`.
+1. Nastavte **stdoutLogEnabled** k `true` a změnit **stdoutLogFile** cestu k: `\\?\%home%\LogFiles\stdout`.
 1. Vyberte **Uložit** uložte aktualizovaný *web.config* souboru.
 
 Přejděte k aktivaci protokolování diagnostiky:
 
-1. Na portálu Azure vyberte **protokolů diagnostiky** okno.
-1. Vyberte **na** přepínač pro **protokolování aplikace (systém souborů)** a **podrobné chybové zprávy**. Vyberte **Uložit** tlačítka v horní části okna.
-1. Chcete-li zahrnout trasování chybných požadavků, také známé jako protokolování se nezdařilo požadavek událostí ukládání do vyrovnávací paměti (FREB), vyberte **na** přepínač pro **trasování chybných požadavků**. 
-1. Vyberte **datový proud protokolu** okno, která je uvedena bezprostředně pod **protokolů diagnostiky** okno na portálu.
-1. Vytvořte žádost na aplikaci.
-1. V rámci datového proudu data protokolu je uvedena příčinu chyby.
+1. Na webu Azure Portal, vyberte **diagnostické protokoly** okno.
+1. Vyberte **na** přepnout **protokolování aplikace (systém souborů)** a **podrobné chybové zprávy**. Vyberte **Uložit** tlačítko v horní části okna.
+1. Chcete-li zahrnout trasování chybných požadavků, označované také jako protokolování se nezdařil požadavek událostí do vyrovnávací paměti (FREB), vyberte **na** přepínače **chybných požadavků**. 
+1. Vyberte **stream protokolů** okno, ve kterém je okamžitě uvedený v části **diagnostické protokoly** okno na portálu.
+1. Vytvořte žádost do aplikace.
+1. V rámci datového proudu dat protokolu je označeno příčinu chyby.
 
-**Důležité!** Ujistěte se, že zakázat stdout protokolování po dokončení odstraňování potíží. Postupujte podle pokynů v [ASP.NET Core modulu stdout protokolu](#aspnet-core-module-stdout-log) části.
+**Důležité!** Je potřeba zakázat protokolování stdout po dokončení odstraňování potíží. Přečtěte si pokyny v [protokolů stdout modul ASP.NET Core](#aspnet-core-module-stdout-log) oddílu.
 
-Chcete-li zobrazit protokoly trasování neúspěšných požadavků (FREB protokoly):
+Chcete-li zobrazit protokoly trasování neúspěšných požadavků (protokoly FREB):
 
-1. Přejděte na **Diagnostikujte a řešení problémů** okno na portálu Azure.
-1. Vyberte **se nezdařilo protokoly žádosti o trasování** z **SUPPORT TOOLS** oblast na bočním panelu.
+1. Přejděte **diagnostikovat a řešit problémy** okna na webu Azure Portal.
+1. Vyberte **nepovedlo vyžádat trasování protokoly** z **SUPPORT TOOLS** oblasti na bočním panelu.
 
-V tématu [žádosti se nezdařilo trasování části Povolit protokolování diagnostiky pro webové aplikace v Azure App Service tématu](/azure/app-service/web-sites-enable-diagnostic-log#failed-request-traces) a [výkon aplikace nejčastější dotazy pro webové aplikace v Azure: jak lze zapnout trasování chybných požadavků?](/azure/app-service/app-service-web-availability-performance-application-issues-faq#how-do-i-turn-on-failed-request-tracing) Další informace.
+Zobrazit [část povolit protokolování diagnostiky pro webové aplikace v Azure App Service tématu trasování požadavku se nezdařilo](/azure/app-service/web-sites-enable-diagnostic-log#failed-request-traces) a [nejčastějších dotazech týkajících se výkonu aplikace pro Web Apps v Azure: Jak mohu zapnout trasování chybných požadavků?](/azure/app-service/app-service-web-availability-performance-application-issues-faq#how-do-i-turn-on-failed-request-tracing) Další informace.
 
-Další informace najdete v tématu [povolit protokolování diagnostiky pro webové aplikace v Azure App Service](/azure/app-service/web-sites-enable-diagnostic-log).
+Další informace najdete v tématu [povolit protokolování diagnostiky pro webové aplikace ve službě Azure App Service](/azure/app-service/web-sites-enable-diagnostic-log).
 
 > [!WARNING]
-> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet soubory protokolů vytvořené.
+> Nepodařilo se zakázat protokol stdout může vést k selhání aplikace nebo serveru. Neexistuje žádné omezení velikosti souboru protokolu nebo počet souborů protokolů, které jsou vytvořeny.
 >
-> Pro běžné protokolování v aplikaci ASP.NET Core, použijte knihovnu protokolování, který omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [poskytovatelů třetích stran protokolování](xref:fundamentals/logging/index#third-party-logging-providers).
+> Pro rutiny protokolování v aplikaci ASP.NET Core, použijte protokolování knihovnu, která omezuje velikost souboru protokolu a otočí protokoly. Další informace najdete v tématu [zprostředkovatele přihlášení třetí strany](xref:fundamentals/logging/index#third-party-logging-providers).
 
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Úvod do zpracování chyb v ASP.NET Core](xref:fundamentals/error-handling)
-* [Běžné chyby referenční dokumentace pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
-* [Řešení potíží s webovou aplikaci v Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
-* [Řešení chyb HTTP "502 Chybná brána" a "503 Služba není k dispozici" ve službě Azure web apps](/app-service/app-service-web-troubleshoot-http-502-http-503)
-* [Řešení potíží s výkonem pomalé webové aplikace v Azure App Service](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
-* [Výkon aplikace nejčastější dotazy pro webové aplikace v Azure](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
-* [Azure Web App izolovaného prostoru (aplikační služby modulu runtime provádění omezení)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)
-* [Azure Friday: Azure App Service diagnostiku a řešení potíží s prostředí (12 dvouminutové video)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
+* [Referenční informace o běžných chybách pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
+* [Řešení potíží s webovou aplikací ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
+* [Řešení potíží s chybami HTTP typu "502 – Chybná brána" a "503 Služba není dostupná" ve službě Azure web apps](/azure/app-service/app-service-web-troubleshoot-http-502-http-503)
+* [Řešení problémů s výkonem pomalých webových aplikací ve službě Azure App Service](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
+* [Nejčastějších dotazech týkajících se výkonu aplikace pro Web Apps v Azure](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
+* [Azure Web App izolovaného prostoru (omezení spuštění modulu runtime služby App Service)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)
+* [Azure Friday: Azure App Service diagnostiku a řešení potíží s prostředí (12 pětiminutové video)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)

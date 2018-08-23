@@ -1,30 +1,30 @@
 ---
-title: Migrace ověřování a identita na jádro ASP.NET
+title: Ověřování a identitu migrovat do ASP.NET Core
 author: ardalis
-description: Zjistěte, jak migrovat do projektu ASP.NET MVC základní ověřování a identita z projektu aplikace ASP.NET MVC.
+description: Zjistěte, jak migrovat ověřování a identita z projektu aplikace ASP.NET MVC do projektu aplikace ASP.NET Core MVC.
 ms.author: riande
 ms.date: 10/14/2016
 uid: migration/identity
-ms.openlocfilehash: e05d72ca78c7b8191a47f78cda31ee40e04d0706
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 72e62e78e37325ec47d54abbc11a875ae87fb63a
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275694"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755510"
 ---
-# <a name="migrate-authentication-and-identity-to-aspnet-core"></a>Migrace ověřování a identita na jádro ASP.NET
+# <a name="migrate-authentication-and-identity-to-aspnet-core"></a>Ověřování a identitu migrovat do ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
-V předchozím článku jsme [migrovat konfigurace z projektu aplikace ASP.NET MVC rozhraní ASP.NET MVC základní](xref:migration/configuration). V tomto článku jsme migrovat funkce správy registrace, přihlášení a uživatele.
+V předchozím článku jsme [migrovat konfigurace z projektu aplikace ASP.NET MVC do ASP.NET Core MVC](xref:migration/configuration). V tomto článku budeme migrovat funkcím pro správu registrace, přihlášení a uživatele.
 
-## <a name="configure-identity-and-membership"></a>Nakonfigurujte identitu a členství
+## <a name="configure-identity-and-membership"></a>Konfigurace Identity a členství
 
-V architektuře ASP.NET MVC, ověřování a identita funkcí je nakonfigurována pomocí ASP.NET Identity v *Startup.Auth.cs* a *IdentityConfig.cs*, který je umístěn v *App_Start* složka. V aplikaci ASP.NET MVC jádra, tyto funkce jsou nakonfigurované v *Startup.cs*.
+V architektuře ASP.NET MVC, ověřování a identita funkcí je nakonfigurována pomocí technologie ASP.NET Identity v *Startup.Auth.cs* a *IdentityConfig.cs*, který je umístěn v *App_Start* složka. V ASP.NET Core MVC, tyto funkce nakonfigurovány v *Startup.cs*.
 
 Nainstalujte `Microsoft.AspNetCore.Identity.EntityFrameworkCore` a `Microsoft.AspNetCore.Authentication.Cookies` balíčky NuGet.
 
-Potom otevřete *Startup.cs* a aktualizovat `Startup.ConfigureServices` metoda použít službu pro rozhraní Entity Framework a Identity:
+Pak otevřete *Startup.cs* a aktualizovat `Startup.ConfigureServices` způsob použití rozhraní Entity Framework a služby identit:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -41,7 +41,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-V tomto okamžiku existují dva typy odkazovaný ve výše uvedený kód, který jsme nebyly migrovány z projektu ASP.NET MVC: `ApplicationDbContext` a `ApplicationUser`. Vytvořte novou *modely* složky v ASP.NET Core projektu a přidejte do ní odpovídající tyto typy dvou tříd. Zjistíte, ASP.NET MVC verzích tyto třídy ve */Models/IdentityModels.cs*, ale budeme používat jeden soubor pro třídy migrované projektu, protože se trochu objasnit.
+V tomto okamžiku existují dva typy odkazovaný ve výše uvedeném kódu, který jsme ještě nebyli migrovaní z projektu ASP.NET MVC: `ApplicationDbContext` a `ApplicationUser`. Vytvořte nový *modely* složky v ASP.NET Core projekt a přidejte dvě třídy do ní odpovídající typy. ASP.NET MVC se najít verze těchto tříd v */Models/IdentityModels.cs*, ale budeme používat jeden soubor třídy migrovaného projektu, protože to je trochu objasnit.
 
 *ApplicationUser.cs*:
 
@@ -74,17 +74,17 @@ namespace NewMvcProject.Models
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            // Customize the ASP.NET Identity model and override the defaults if needed.
-            // For example, you can rename the ASP.NET Identity table names and more.
+            // Customize the ASP.NET Core Identity model and override the defaults if needed.
+            // For example, you can rename the ASP.NET Core Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
     }
 }
 ```
 
-ASP.NET Core MVC Starter webového projektu neobsahuje mnohem přizpůsobení uživatelů, nebo `ApplicationDbContext`. Při migraci skutečné aplikace, musíte taky migrovat všechny vlastní vlastnosti a metody uživatele vaší aplikace a `DbContext` třídy a také další třídy modelu, vaše aplikace využívá. Například pokud vaše `DbContext` má `DbSet<Album>`, budete muset migrovat `Album` třídy.
+Projekt webu ASP.NET Core MVC neobsahuje množství vlastního nastavení uživatelů, nebo `ApplicationDbContext`. Při migraci skutečné aplikace, je také potřeba migrovat všechny vlastní vlastnosti a metody uživatele vaší aplikace a `DbContext` třídy, jakož i jiné třídy modelů, vaše aplikace využívá. Například pokud vaše `DbContext` má `DbSet<Album>`, je potřeba migrovat `Album` třídy.
 
-S těmito soubory na místě *Startup.cs* souboru můžete provedeny zkompilovat aktualizací jeho `using` příkazy:
+Pomocí těchto souborů na místě *Startup.cs* souboru provádět kompilaci aktualizací jeho `using` příkazy:
 
 ```csharp
 using Microsoft.AspNetCore.Builder;
@@ -95,13 +95,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 ```
 
-Naše aplikace je teď připravený na podporu ověřování a identita služby. Pouze musí mít tyto funkce dostupná uživatelům.
+Naše aplikace je teď připravený na podporu ověřování a služby identit. Právě musí mít tyto funkce zveřejněné uživatelům.
 
-## <a name="migrate-registration-and-login-logic"></a>Migrace logiku registrace a přihlášení
+## <a name="migrate-registration-and-login-logic"></a>Migrace registrace a přihlášení logiky
 
-Nakonfigurované pro aplikaci služby Identita a přístup k datům nakonfigurovat pomocí rozhraní Entity Framework a SQL Server jsme připraveni přidat podporu registrace a přihlášení do aplikace. Odvolat, [výše v procesu migrace](xref:migration/mvc#migrate-the-layout-file) jsme označeno jako komentář odkaz na *_LoginPartial* v *_Layout.cshtml*. Nyní je čas vrátit kódu, Odkomentujte ho a přidejte v zobrazení pro podporu funkcí přihlášení a potřeby řadiče.
+Nakonfigurované pro aplikaci služby identit a přístupu k datům pomocí Entity Framework a systému SQL Server nakonfigurovat je připraven k přidání podpory pro registrace a přihlášení do aplikace. Vzpomeňte si, že [výše v procesu migrace](xref:migration/mvc#migrate-the-layout-file) jsme odkaz na komentář *_LoginPartial* v *_Layout.cshtml*. Nyní je čas vrátit kód, Odkomentujte ho a přidat nezbytné kontrolerů a zobrazení pro podporu funkcí přihlášení.
 
-Zrušením komentáře u `@Html.Partial` řádek v *_Layout.cshtml*:
+Zrušením komentáře u `@Html.Partial` řádku v *_Layout.cshtml*:
 
 ```cshtml
       <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
@@ -111,9 +111,9 @@ Zrušením komentáře u `@Html.Partial` řádek v *_Layout.cshtml*:
 </div>
 ```
 
-Nyní, přidat nové zobrazení syntaxe Razor s názvem *_LoginPartial* k *zobrazení a sdílených* složky:
+Teď přidejte nové zobrazení Razor s názvem *_LoginPartial* k *zobrazení/Shared* složky:
 
-Aktualizace *_LoginPartial.cshtml* následujícím kódem (Nahraďte veškerý jeho obsah):
+Aktualizace *_LoginPartial.cshtml* následujícím kódem (nahradit všechny jeho obsah):
 
 ```cshtml
 @inject SignInManager<ApplicationUser> SignInManager
@@ -141,8 +141,8 @@ else
 }
 ```
 
-V tomto okamžiku byste měli být schopni obnovit stránku v prohlížeči.
+V tomto okamžiku byste měli nelze aktualizovat stránku ve svém prohlížeči.
 
 ## <a name="summary"></a>Souhrn
 
-ASP.NET Core zavádí změny funkce ASP.NET Identity. V tomto článku jste viděli, jak migrovat funkce správy ověřování a uživatele v identitě ASP.NET Identity do ASP.NET Core.
+ASP.NET Core zavádí změn funkce ASP.NET Identity. V tomto článku jste viděli, jak migrovat ověřování a uživatelská funkce správy identity technologie ASP.NET do ASP.NET Core.

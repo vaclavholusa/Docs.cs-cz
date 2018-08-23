@@ -5,12 +5,12 @@ description: Průvodce, který poskytuje pokyny k začátku do konce na vytvář
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/next-steps
-ms.openlocfilehash: c1b0b52295e2795e608399637dc9d864e2f572de
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: 7a0f1b1b56a33b1870e0657d8ba465adb84f5a02
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39722610"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756743"
 ---
 # <a name="next-steps"></a>Další kroky
 
@@ -20,7 +20,7 @@ Kromě hostování webů a DevOps Azure nabízí širokou škálu služeb Platfo
 
 ## <a name="storage-and-databases"></a>Úložiště a databází
 
-[Redis Cache](https://docs.microsoft.com/azure/redis-cache/) je vysokou propustností a nízkou latencí dat, ukládání do mezipaměti k dispozici jako službu. Je možné pro ukládání výstupu stránek, snížení požadavků na databázi a poskytování stavu relace ASP.NET do několika instancí aplikace.
+[Redis Cache](https://docs.microsoft.com/azure/redis-cache/) je vysokou propustností a nízkou latencí dat, ukládání do mezipaměti k dispozici jako službu. Je možné pro ukládání výstupu stránek, snížení požadavků na databázi a poskytování stavu relace ASP.NET Core do několika instancí aplikace.
 
 [Azure Storage](https://docs.microsoft.com/azure/storage/) je široce škálovatelné cloudové úložiště Azure. Vývojáři můžou využít výhod [Queue Storage](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction) spolehlivé front a [Table Storage](https://docs.microsoft.com/azure/storage/tables/table-storage-overview) je úložiště dvojic klíč hodnota NoSQL navržená pro rychlý vývoj pomocí rozsáhlé, částečně strukturovaných datových sad.
 

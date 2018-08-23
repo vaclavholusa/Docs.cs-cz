@@ -1,19 +1,19 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-automate-testing-using-team-build
-title: '[Postup:] Automatizujte testování pomocí týmového sestavení? | Dokumentace Microsoftu'
+title: '[Postup:] Automatizujte testování pomocí týmového sestavení? | Dokumenty Microsoft'
 author: rick-anderson
 description: V tomto videu jsme dozvíte, jak definovat automatické testy, které se spustí během týmového sestavení pomocí Visual Studio Team System a jak jsme můžete přejít dolů k...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/01/2007
 ms.assetid: 8e8fd5a9-0e98-415a-93f5-9ad7524ae9bb
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-automate-testing-using-team-build
 msc.type: video
-ms.openlocfilehash: 8d1e75ed391a34771d247330a984c5de2e0fbc99
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 95a02d8eaaeaa06b2323eaecc03fda58c2acb397
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829111"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754385"
 ---
 <a name="how-do-i-automate-testing-using-team-build"></a>[Postup:] Automatizujte testování pomocí týmového sestavení?
 ====================

@@ -3,17 +3,17 @@ uid: web-api/overview/security/basic-authentication
 title: Základní ověřování v rozhraní ASP.NET Web API | Dokumentace Microsoftu
 author: MikeWasson
 description: Popisuje použití základního ověřování v rozhraní ASP.NET Web API.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/02/2014
 ms.assetid: 41423767-0021-47c3-9e53-0021b457c39f
 msc.legacyurl: /web-api/overview/security/basic-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 035baec7c56c0bf6eaacd26ea5192faf2ed6e932
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7afafb6b7851f0d955d1f4292318f64d2a068a45
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829584"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756084"
 ---
 <a name="basic-authentication-in-aspnet-web-api"></a>Základní ověřování v rozhraní ASP.NET Web API
 ====================
@@ -21,7 +21,7 @@ podle [Mike Wasson](https://github.com/MikeWasson)
 
 Základní ověřování je definována v [RFC 2617, ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest přístup](http://www.ietf.org/rfc/rfc2617.txt).
 
-Universal Windows Platform – používá  rozhraní API.
+Nevýhody
 
 - Přihlašovací údaje uživatele jsou odeslány v požadavku.
 - Přihlašovací údaje jsou odeslány jako prostý text.
@@ -29,7 +29,7 @@ Universal Windows Platform – používá  rozhraní API.
 - Žádný způsob, jak se odhlásit, s výjimkou ukončením relace prohlížeče.
 - Snadno napadnutelný mezi weby (CSRF); proti padělání požadavků vyžaduje Antimalware CSRF opatření.
 
-Android – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze.
+Výhody
 
 - Internet standard.
 - Podporuje všechny hlavní prohlížeče.

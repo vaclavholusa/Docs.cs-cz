@@ -5,12 +5,12 @@ description: Zjistěte, jak nakonfigurovat aplikaci pomocí dvojice název hodno
 ms.author: riande
 ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 6474b9f5cb9e441854565a7891c4aac7f781c810
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: 829c6c7e2750879b51bf3ce8225c6e472900f2ad
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410127"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752522"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
@@ -155,7 +155,7 @@ Vyvolat zakázaná a jejichž platnost vypršela tajných kódů `KeyVaultClient
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Když aplikaci se pak nepodaří načíst konfiguraci pomocí zprostředkovatele, chybová zpráva je zapsána do [ASP.NET protokolování infrastruktury](xref:fundamentals/logging/index). Konfigurace načítání nebudou moct tyto podmínky:
+Když aplikaci se pak nepodaří načíst konfiguraci pomocí zprostředkovatele, chybová zpráva je zapsána do [ASP.NET Core protokolování infrastruktury](xref:fundamentals/logging/index). Konfigurace načítání nebudou moct tyto podmínky:
 
 * Aplikace není správně nakonfigurovaný v Azure Active Directory.
 * Trezor klíčů neexistuje ve službě Azure Key Vault.

@@ -3,17 +3,17 @@ uid: web-api/overview/security/integrated-windows-authentication
 title: Integrované ověřování Windows | Dokumentace Microsoftu
 author: MikeWasson
 description: Popisuje použití integrovaného ověřování Windows v rozhraní ASP.NET Web API.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/18/2012
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: c15677b7aa66619f1ff32819585340ff497b937d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 13dead421abf7ded73cbb2e5f87e54b1a869b5d4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820403"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754900"
 ---
 <a name="integrated-windows-authentication"></a>Ověření integrované Windows
 ====================
@@ -21,7 +21,7 @@ podle [Mike Wasson](https://github.com/MikeWasson)
 
 Integrované ověřování Windows umožňuje uživatelům přihlásit se pomocí svých přihlašovacích údajů Windows, pomocí protokolu Kerberos nebo NTLM. Klient odešle přihlašovací údaje v autorizační hlavičce. Ověřování Windows je nejvhodnější pro prostředí intranetu. Další informace najdete v tématu [ověřování Windows](https://www.iis.net/configreference/system.webserver/security/authentication/windowsauthentication).
 
-| Android – systém cesta vrácená procedurou  je přijatelné umístění pro uložení souboru databáze. | Universal Windows Platform – používá  rozhraní API. |
+| Výhody | Nevýhody |
 | --- | --- |
 | -Integrovaná do služby IIS. -Neodesílá přihlašovacích údajů uživatele v požadavku. – Pokud je klientský počítač patří do domény (například intranet aplikace), není nutné zadávat přihlašovací údaje uživatele. | -Není doporučena pro internetové aplikace. -Vyžaduje podporu protokolu Kerberos nebo NTLM v klientovi. -Klient musí být v doméně služby Active Directory. |
 

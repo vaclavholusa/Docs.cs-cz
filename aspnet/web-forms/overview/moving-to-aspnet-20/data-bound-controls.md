@@ -3,17 +3,17 @@ uid: web-forms/overview/moving-to-aspnet-20/data-bound-controls
 title: Vázané ovládací prvky dat | Dokumentace Microsoftu
 author: microsoft
 description: Většina aplikací ASP.NET spoléhá na určitý stupeň prezentace dat ze zdroje dat back-end. Ovládací prvky vázané na data, aby byla pivotal součástí komunikující w...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 0e23ff32-646d-43f3-8bec-6b2313d3abd6
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-bound-controls
 msc.type: authoredcontent
-ms.openlocfilehash: bfee5ed9c786cc8799da108b99781ff6eb508477
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b115109c7307d05dc9e620378a51a71407204740
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833216"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754389"
 ---
 <a name="data-bound-controls"></a>Vázané ovládací prvky dat
 ====================

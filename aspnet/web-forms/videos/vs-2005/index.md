@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/index
 title: Visual Studio 2005 | Dokumentace Microsoftu
 author: rick-anderson
 description: Jak pracovat s Visual Studio 2005 Team System a doplňky provést testování, nasazení a další úlohy.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: 1bcf9a1c-ed34-4ed0-ab91-253df08fc6ff
 msc.legacyurl: /web-forms/videos/vs-2005
 msc.type: chapter
-ms.openlocfilehash: 3d62a9613f550ba72195e278160b71db15425ec5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0085424743ad2592dd06c58adba801bd676f2c0f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842812"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753334"
 ---
 <a name="visual-studio-2005"></a>Visual Studio 2005
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-
 title: Vlastní tlačítka akcí ovládacími prvky DataList a Repeater | Dokumentace Microsoftu
 author: rick-anderson
 description: Tyto kurzy vám ukážou, jak přidat tlačítka na ovládacích prvcích DataList a Repeater ovládací prvky pro přidání vlastních funkcí.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2011
 ms.assetid: d017f36f-0152-43c7-ac44-6c7c755ea79a
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: 71d6e8397287777f75d980c896cfea10ccc4c009
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4156ab56cda4e88caa883cf8968dca319109e59f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806206"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755302"
 ---
 <a name="custom-button-actions-with-the-datalist-and-repeater"></a>Vlastní tlačítka akcí ovládacími prvky DataList a Repeater
 ====================

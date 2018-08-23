@@ -3,17 +3,17 @@ uid: signalr/overview/deployment/index
 title: Funkce SignalR nasazení a hostování | Dokumentace Microsoftu
 author: rick-anderson
 description: Postup nasazení a hostování aplikací SignalR.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/19/2014
 ms.assetid: 62482bdd-e2a4-46e5-b909-6d0c6bc07114
 msc.legacyurl: /signalr/overview/deployment
 msc.type: chapter
-ms.openlocfilehash: 82f3a6523efd052f34f7c9cdafdc32bd697f76f9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: df56c36ba757192169fa6aac0fa48a120dfc717c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841361"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756481"
 ---
 <a name="signalr-deployment-and-hosting"></a>Funkce SignalR nasazení a hostování
 ====================

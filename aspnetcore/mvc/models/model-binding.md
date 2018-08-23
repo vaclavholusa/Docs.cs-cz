@@ -4,14 +4,14 @@ author: tdykstra
 description: Zjistěte, jak vazby modelu v ASP.NET Core MVC mapují data požadavků HTTP na parametry metod akce.
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 ms.author: tdykstra
-ms.date: 01/22/2018
+ms.date: 08/14/2018
 uid: mvc/models/model-binding
-ms.openlocfilehash: 200e2c22e02ec9e24b7cdb3883cf6f2f93f2f4b7
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 0ce20a8040c6b19da1f57e1c053a7ef81d8bcb23
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095730"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753541"
 ---
 # <a name="model-binding-in-aspnet-core"></a>Vazby modelu v ASP.NET Core
 
@@ -99,6 +99,31 @@ MVC obsahuje několik atributů, které vám umožní směrovat její výchozí 
 
 Atributy jsou velmi užitečné nástroje při budete muset změnit výchozí chování vazby modelu.
 
+## <a name="customize-model-binding-and-validation-globally"></a>Upravit vazby modelu a ověření globálně
+
+Model vazby a ověřování systému chování doprovází [ModelMetadata](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelmetadata) , který popisuje:
+
+* Jak modelu má být vázána.
+* Jak ověřování dochází na typu a jeho vlastnosti.
+
+Aspekty chování systému je globálně nakonfigurovat tak, že přidáte podrobnosti zprostředkovatele, aby [MvcOptions.ModelMetadataDetailsProviders](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.modelmetadatadetailsproviders#Microsoft_AspNetCore_Mvc_MvcOptions_ModelMetadataDetailsProviders). MVC má několik poskytovatelů integrované podrobnosti, které umožňují že konfigurace chování těchto jako zakázání ověření nebo vazby modelu pro určité typy.
+
+Chcete-li zakázat vazby modelu všech modelů určitého typu, přidejte [ExcludeBindingMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.excludebindingmetadataprovider) v `Startup.ConfigureServices`. Například s vazbou modelu zakázat na všech modelů typu `System.Version`:
+
+```csharp
+services.AddMvc().AddMvcOptions(options =>
+    options.ModelMetadataDetailsProviders.Add(
+        new ExcludeBindingMetadataProvider(typeof(System.Version))));
+```
+
+Chcete-li zakázat ověřování na vlastnosti určitého typu, přidejte [SuppressChildValidationMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.suppresschildvalidationmetadataprovider) v `Startup.ConfigureServices`. Například chcete-li zakázat ověřování na vlastnosti typu `System.Guid`:
+
+```csharp
+services.AddMvc().AddMvcOptions(options =>
+    options.ModelMetadataDetailsProviders.Add(
+        new SuppressChildValidationMetadataProvider(typeof(System.Guid))));
+```
+
 ## <a name="bind-formatted-data-from-the-request-body"></a>Vytvoření vazby formátovaných dat z textu požadavku
 
 Data žádosti můžou mít širokou škálu formátů, včetně JSON, XML a mnohé další. Při použití atributu [FromBody] k označení, že chcete svázat parametr s daty v textu požadavku aplikace MVC používá nakonfigurovanou sadu formátovacích modulů pro zpracování žádosti o data na základě jeho typu obsahu. Ve výchozím nastavení obsahuje MVC `JsonInputFormatter` třídy pro zpracování dat JSON, ale můžete přidat další formátovacích modulů pro zpracování XML a dalších vlastních formátů.
@@ -109,7 +134,7 @@ Data žádosti můžou mít širokou škálu formátů, včetně JSON, XML a mno
 > [!NOTE]
 > `JsonInputFormatter` Je výchozí formátování a je založena na [Json.NET](https://www.newtonsoft.com/json).
 
-Vybere vstupní formátovacích modulů na základě technologie ASP.NET [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) záhlaví a typ parametru, pokud neexistuje atribut použitý k jeho zadání jinak. Pokud chcete použít XML nebo jiný formát je nutné ji nakonfigurovat v *Startup.cs* soubor, ale nejdřív muset získat odkaz na `Microsoft.AspNetCore.Mvc.Formatters.Xml` pomocí nástroje NuGet. Spouštěcí kód by měl vypadat přibližně takto:
+ASP.NET Core vybere vstupní formátovacích modulů na základě [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) záhlaví a typ parametru, pokud neexistuje atribut použitý k jeho zadání jinak. Pokud chcete použít XML nebo jiný formát je nutné ji nakonfigurovat v *Startup.cs* soubor, ale nejdřív muset získat odkaz na `Microsoft.AspNetCore.Mvc.Formatters.Xml` pomocí nástroje NuGet. Spouštěcí kód by měl vypadat přibližně takto:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -119,7 +144,7 @@ public void ConfigureServices(IServiceCollection services)
    }
 ```
 
-Kód v *Startup.cs* obsahuje soubor `ConfigureServices` metodu s `services` argument můžete použít k vytvoření služby pro aplikace ASP.NET. V příkladu přidáváme formátovací modul XML jako služba, která bude poskytovat MVC pro tuto aplikaci. `options` Argument předaný `AddMvc` metoda umožňuje přidávat a spravovat filtry, formátování a další možnosti systému z MVC po spuštění aplikace. Následně použít `Consumes` atribut třídy kontroler nebo akce metody pro práci s formátem chcete.
+Kód v *Startup.cs* obsahuje soubor `ConfigureServices` metodu s `services` argument můžete použít k vytvoření služby pro aplikaci ASP.NET Core. V příkladu přidáváme formátovací modul XML jako služba, která bude poskytovat MVC pro tuto aplikaci. `options` Argument předaný `AddMvc` metoda umožňuje přidávat a spravovat filtry, formátování a další možnosti systému z MVC po spuštění aplikace. Následně použít `Consumes` atribut třídy kontroler nebo akce metody pro práci s formátem chcete.
 
 ### <a name="custom-model-binding"></a>Vlastní vazba modelu
 

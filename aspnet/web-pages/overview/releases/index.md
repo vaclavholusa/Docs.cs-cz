@@ -3,17 +3,17 @@ uid: web-pages/overview/releases/index
 title: Webové stránky verze | Dokumentace Microsoftu
 author: rick-anderson
 description: Co je nového v jednotlivých verzích rozhraní ASP.NET Web Pages.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/16/2014
 ms.assetid: d01b3ea0-8d82-404b-bfea-eb1ba7ca4a54
 msc.legacyurl: /web-pages/overview/releases
 msc.type: chapter
-ms.openlocfilehash: c56dd03df5c1507350657a9b2ccb70dfe5df4a60
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4d3f132d0b8ba189f1c98a8b02dea1b05613c9d8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818544"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757130"
 ---
 <a name="web-pages-releases"></a>Verze webových stránek
 ====================

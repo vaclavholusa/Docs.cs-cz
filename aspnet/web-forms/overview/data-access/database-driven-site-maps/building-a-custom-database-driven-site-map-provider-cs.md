@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/database-driven-site-maps/building-a-custom-
 title: Vytváření vlastního databázově řízeného zprostředkovatele mapy webu (C#) | Dokumentace Microsoftu
 author: rick-anderson
 description: Výchozího zprostředkovatele mapy webu v technologii ASP.NET 2.0 načte data ze statického souboru XML. Je vhodné pro mnoho malé a střední okno velikosti zprostředkovatele založený na formátu XML...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2007
 ms.assetid: 04b7591d-106f-4f05-87e9-d416cb65a8a6
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fdc6ddeac800279a638911f1f64772c49fff5449
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4db59ed13aef81e94feba61299e710bfddd78a76
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807109"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41756079"
 ---
 <a name="building-a-custom-database-driven-site-map-provider-c"></a>Vytváření vlastního databázově řízeného zprostředkovatele mapy webu (C#)
 ====================

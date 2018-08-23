@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-
 title: 'ASP.NET MVC prezentace – část 21: Správa objednávek a přizpůsobení | Dokumentace Microsoftu'
 author: robconery
 description: V této epizodě vytvořit stránku objednávek a probereme různé problémy týkající se vyřizování objednávek. Kromě toho zavést přizpůsobení funkce...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: f1490fdc-ee7d-4fee-a4e5-25d141d88478
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization
 msc.type: video
-ms.openlocfilehash: fc72b2c9c4a89b4b43aee15855a7c64ee4c8d6ac
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: eedb78dcb6ffafc23277921d57ade0a7c9c04a88
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806957"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41755306"
 ---
 <a name="aspnet-mvc-storefront-part-21-order-manager-and-personalization"></a>ASP.NET MVC prezentace – část 21: Správa objednávek a přizpůsobení
 ====================

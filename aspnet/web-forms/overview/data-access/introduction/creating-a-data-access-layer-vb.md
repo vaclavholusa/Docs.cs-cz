@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 title: Vytvoření vrstvy přístupu k datům (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: V tomto kurzu začneme od úplného začátku a vytvořit na datový přístup vrstvou DAL, pomocí zadané datové sady, přístup k informacím v databázi.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/05/2010
 ms.assetid: 6227233a-6254-4b6b-9a89-947efef22330
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bfd4a1d9e47101594140ad4357bb467128ce26ee
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e1ac8d90ecdedc2bf5f963ddc6e3abd0942fac13
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833086"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753540"
 ---
 <a name="creating-a-data-access-layer-vb"></a>Vytvoření vrstvy přístupu k datům (VB)
 ====================

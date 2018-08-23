@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: cbef7e5edf2950a87a4cd4155c63a22fff2990fe
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216309"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41754638"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC s Entity Framework Core – kurz 1 10
 
@@ -35,7 +35,7 @@ EF Core 2.0 je nejnovější verze EF, ale ještě nemá všechny funkce verze E
 
 ## <a name="prerequisites"></a>Požadavky
 
-[! Zahrnout [] (~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
@@ -80,7 +80,7 @@ Otevřít Visual Studio a vytvořte nové technologie ASP.NET Core C# projekt we
 
 * Klikněte na tlačítko **OK**
 
-  ![Dialogové okno Nový projekt ASP.NET](intro/_static/new-aspnet.png)
+  ![Dialogové okno Nový projekt ASP.NET Core](intro/_static/new-aspnet.png)
 
 ## <a name="set-up-the-site-style"></a>Nastavit styl lokality
 
@@ -273,7 +273,7 @@ Všimněte si, že trvá kontroleru `SchoolContext` jako parametr konstruktoru.
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
-Injektáž závislostí ASP.NET se postará o předáním instance `SchoolContext` do kontroleru. Jste nakonfigurovali, že *Startup.cs* soubor výše.
+Injektáž závislostí ASP.NET Core se postará o předáním instance `SchoolContext` do kontroleru. Jste nakonfigurovali, že *Startup.cs* soubor výše.
 
 Obsahuje kontroler `Index` metodě akce, která zobrazuje všechny studenty v databázi. Metoda získá seznam studentů z entity studenty ve čtení nastavení `Students` vlastnost instance kontextu databáze:
 

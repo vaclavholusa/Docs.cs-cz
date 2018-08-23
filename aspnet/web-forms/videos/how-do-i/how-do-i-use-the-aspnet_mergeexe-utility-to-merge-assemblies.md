@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge
 title: '[Postup:] Použití nástroje aspnet_merge.exe ke sloučení sestavení | Dokumentace Microsoftu'
 author: rick-anderson
 description: V tomto videu se zobrazí Chris pixelů na použití nástroje aspnet_merge.exe ke sloučení sestavení, které již byly zkompilovány pomocí aspnet_compiler.exe utilit...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2008
 ms.assetid: 2bfd5353-2a35-449e-aeff-0fb94cf10030
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
 msc.type: video
-ms.openlocfilehash: 2e5fc2e53518c0dcfe16842b7bd6eccec1d67e83
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b68c8f582452c1293e8555ea1e18b407c520cbec
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829528"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41757132"
 ---
 <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[Postup:] Použití nástroje aspnet_merge.exe ke sloučení sestavení
 ====================

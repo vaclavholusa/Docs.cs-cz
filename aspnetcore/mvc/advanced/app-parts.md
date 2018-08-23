@@ -1,26 +1,26 @@
 ---
 title: Částí aplikace v ASP.NET Core
 author: ardalis
-description: Další informace o použití částí aplikace, které jsou abstrakce přes prostředky aplikace, na zjištění nebo předejít přetížení funkce ze sestavení.
+description: Další informace o použití částí aplikace, které jsou abstrakce nad prostředky, které aplikace, vyhledat nebo Vyhněte se načítání funkcí ze sestavení.
 ms.author: riande
 ms.date: 01/04/2017
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: e0290ceadc159d7c3608ec4420d95cd219407d32
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 377217870743e70f5e20544da43cb80c2c916c42
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276822"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41752319"
 ---
 # <a name="application-parts-in-aspnet-core"></a>Částí aplikace v ASP.NET Core
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-*Část aplikace* je abstrakci přes prostředky aplikace, ze kterého MVC funkce jako řadiče zobrazení součásti, nebo může být zjištěny značky pomocné rutiny. Příkladem je součástí aplikace je AssemblyPart, který zapouzdřuje odkaz na sestavení a zpřístupňuje typy a odkazy na kompilace. *Funkce zprostředkovatelé* práce s částí aplikace k naplnění funkce aplikace ASP.NET MVC jádra. Nejčastěji se využívá případ částí aplikace je vám umožní nakonfigurovat aplikace zjistit (nebo vyloučit načítání) MVC funkce ze sestavení.
+*Aplikace část* je abstrakcí nad prostředky, které aplikace, ze kterého MVC funkce, jako je řadiče zobrazení komponenty, nebo může být zjištěny pomocných rutin značek. Jedním z příkladů části aplikace je AssemblyPart, který zapouzdřuje odkaz na sestavení a zpřístupňuje typy a odkazy na sestavení. *Funkce poskytovatele* fungují s částí aplikace k naplnění funkce aplikace ASP.NET Core MVC. Případ použití hlavní částí aplikace je k tomu, abyste do konfigurace aplikace pro zjišťování (nebo vyloučit načítání) funkcemi technologie MVC ze sestavení.
 
-## <a name="introducing-application-parts"></a>Představení částí aplikace
+## <a name="introducing-application-parts"></a>Úvod do částí aplikace
 
-Aplikace MVC načíst jejich funkce z [částí aplikace](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart). Konkrétně [AssemblyPart](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) třída reprezentuje z části aplikace, kterou je zajištěna sestavení. Tyto třídy můžete použít ke zjištění a načíst MVC funkcí, jako jsou řadiče, zobrazení součásti, pomocné rutiny značky a razor kompilace zdrojů. [ApplicationPartManager](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager) zodpovídá za sledování částí aplikace a poskytovatelů funkcí, které jsou k dispozici v aplikaci MVC. Můžete pracovat s `ApplicationPartManager` v `Startup` při konfiguraci MVC:
+Aplikace MVC načítat jejich funkcí z [částí aplikace](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart). Zejména v případě [AssemblyPart](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) třída reprezentuje aplikace část, která je založená na sestavení. Tyto třídy můžete zjišťovat a načíst funkcemi technologie MVC., jako jsou řadiče, zobrazení komponenty, pomocných rutin značek a razor kompilace zdrojů. [ApplicationPartManager](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager) zodpovídá za sledování částí aplikace a poskytovatelů funkcí, které jsou k dispozici pro aplikaci MVC. Můžete pracovat `ApplicationPartManager` v `Startup` při konfiguraci MVC:
 
 ```csharp
 // create an assembly part from a class's assembly
@@ -35,11 +35,11 @@ services.AddMvc()
     .ConfigureApplicationPartManager(apm => apm.ApplicationParts.Add(part));
 ```
 
-Ve výchozím nastavení se MVC vyhledávání strom závislosti a vyhledat řadiče (i v jiných sestavení). Načíst libovolný sestavení (například z modulu plug-in, který se odkazuje v době kompilace), můžete použít jako součást aplikace.
+Ve výchozím nastavení bude MVC vyhledání stromu závislostí a vyhledat řadiče (i v jiných sestavení). Načtení libovolného sestavení (například z modulu plug-in, který se neodkazuje v době kompilace), můžete použít jako součást aplikace.
 
-Můžete použít částí aplikace k *vyhnout* hledá řadičů v konkrétní sestavení nebo umístění. Můžete řídit, které části (nebo sestavení) jsou k dispozici pro aplikaci změnou `ApplicationParts` kolekce `ApplicationPartManager`. Pořadí položek v `ApplicationParts` kolekce není důležité. Je důležité plně nakonfigurovat `ApplicationPartManager` před jeho použitím v kontejneru konfigurace služby. Například byste měli plně nakonfigurovat `ApplicationPartManager` před vyvoláním `AddControllersAsServices`. Selhání Uděláte to tak, bude znamenat, že řadiče v částí aplikace přidán po, nebude mít vliv volání metody (nebude získat registrován jako služby) může být důsledkem toho nesprávné bevavior vaší aplikace.
+Můžete použít částí aplikace na *vyhnout* hledáte řadiče v konkrétní sestavení nebo umístění. Můžete řídit, které části (nebo sestavení) jsou k dispozici pro aplikaci tak, že upravíte `ApplicationParts` kolekce `ApplicationPartManager`. Pořadí položek v `ApplicationParts` kolekce není důležité. Je potřeba nakonfigurovat plně `ApplicationPartManager` před použitím konfigurace služby v kontejneru. Například byste měli plně nakonfigurovat `ApplicationPartManager` před vyvoláním `AddControllersAsServices`. Pokud tak neučiníte, znamená, že je, že to nebude mít vliv volání metody řadiče v částí aplikace přidá za (nebude zaregistrovat jako služba) což může způsobit nesprávné chování vaší aplikace.
 
-Pokud je sestavení obsahující řadiče nechcete používat, odeberte jej z `ApplicationPartManager`:
+Pokud máte sestavení, která obsahuje řadiče nechcete používat, odeberte ho z `ApplicationPartManager`:
 
 ```csharp
 services.AddMvc()
@@ -55,22 +55,22 @@ services.AddMvc()
     })
 ```
 
-Kromě sestavení projektu a jeho závislá sestavení `ApplicationPartManager` bude obsahovat části pro `Microsoft.AspNetCore.Mvc.TagHelpers` a `Microsoft.AspNetCore.Mvc.Razor` ve výchozím nastavení.
+Kromě sestavení vašeho projektu a jeho závislých sestavení `ApplicationPartManager` bude obsahovat části pro `Microsoft.AspNetCore.Mvc.TagHelpers` a `Microsoft.AspNetCore.Mvc.Razor` ve výchozím nastavení.
 
-## <a name="application-feature-providers"></a>Zprostředkovatele funkce aplikace
+## <a name="application-feature-providers"></a>Poskytovatelé funkce aplikací
 
-Zprostředkovatele funkce aplikace zkontrolujte částí aplikace a poskytují funkce pro ty části. Existuje poskytovatelů integrované funkce pro následující funkce MVC:
+Funkce poskytovatelů aplikací zkontrolujte částí aplikace a poskytují funkce pro tyto součásti. Existují zprostředkovatelé integrovaná funkce pro následující funkce MVC:
 
 * [Kontrolery](/dotnet/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
 * [Odkaz na metadata](/dotnet/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
 * [Pomocné rutiny značek](/dotnet/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
-* [Zobrazení součásti](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
+* [Komponenty zobrazení](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
 
-Zprostředkovatelé funkce dědit z `IApplicationFeatureProvider<T>`, kde `T` je typ funkce. Můžete implementovat vlastní funkce, kterou zprostředkovatele pro jakýkoli z typů funkce MVC uvedené výše. Pořadí poskytovatelů funkce v `ApplicationPartManager.FeatureProviders` kolekce může být důležité, protože novější zprostředkovatelé může reagovat na akce provedené předchozí poskytovatelů.
+Poskytovatelé funkce dědit z `IApplicationFeatureProvider<T>`, kde `T` je typ funkce. Můžete implementovat vlastní funkce, kterou poskytovatelů pro všechny typy MVC funkce uvedené výše. Pořadí poskytovatelů funkcí v `ApplicationPartManager.FeatureProviders` kolekce může být důležité, od poskytovatelů novější můžete reagovat na akce provedené předchozí poskytovatelů.
 
-### <a name="sample-generic-controller-feature"></a>Ukázka: Funkce obecné adaptér
+### <a name="sample-generic-controller-feature"></a>Ukázka: Funkce obecného adaptér
 
-Ve výchozím nastavení, ASP.NET MVC základní ignoruje obecné řadiče (například `SomeController<T>`). Tato ukázka používá zprostředkovatele funkce řadiče, který spustí po výchozím zprostředkovatelem a přidá instance obecné řadiče pro zadaný seznam typů (definované v `EntityTypes.Types`):
+Ve výchozím nastavení, ASP.NET Core MVC ignoruje obecný řadiče (například `SomeController<T>`). Tato ukázka používá poskytovatele funkce kontroleru, který se spustí po výchozího zprostředkovatele a přidá instance obecného kontroleru pro zadaný seznam typů (definované v `EntityTypes.Types`):
 
 [!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
 
@@ -78,7 +78,7 @@ Typy entit:
 
 [!code-csharp[](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
 
-Zprostředkovatele funkce je přidaný do `Startup`:
+Poskytovatel funkce bude přidána do `Startup`:
 
 ```csharp
 services.AddMvc()
@@ -86,7 +86,7 @@ services.AddMvc()
         apm.FeatureProviders.Add(new GenericControllerFeatureProvider()));
 ```
 
-Ve výchozím nastavení, Obecný řadič názvy používaných pro směrování by být ve formátu *GenericController 1 [pomůcky]* místo *pomůcky*. Upravit název tak, aby odpovídaly obecného typu používané řadičem se používá následující atribut:
+Ve výchozím nastavení, názvy obecný kontroleru používaný ke směrování by formuláře *GenericController'1 [widgetu]* místo *Widget*. Tento atribut se používá k úpravě názvu tak, aby odpovídaly obecný typ používaný řadičem:
 
 [!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
 
@@ -96,14 +96,14 @@ Ve výchozím nastavení, Obecný řadič názvy používaných pro směrování
 
 Výsledek, pokud se požaduje odpovídající trasy:
 
-![Příklad výstup z ukázkové aplikace načte "Hello z obecné Sproket řadiče."](app-parts/_static/generic-controller.png)
+![Příklad výstupu z ukázkové aplikace načte "Hello z obecného Sproket řadiče."](app-parts/_static/generic-controller.png)
 
 ### <a name="sample-display-available-features"></a>Ukázka: Zobrazení dostupných funkcí
 
-Můžete iterovat vyplněná funkce dostupné pro vaši aplikaci tím, že požádá `ApplicationPartManager` prostřednictvím [vkládání závislostí](../../fundamentals/dependency-injection.md) a jeho použití k naplnění instancí příslušné funkce:
+Můžete iterovat mají údaj vyplněný funkce, které jsou do vaší aplikace pomocí žádosti `ApplicationPartManager` prostřednictvím [injektáž závislostí](../../fundamentals/dependency-injection.md) a použít ho k naplnění instancí odpovídající funkce:
 
 [!code-csharp[](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
 
 Příklad výstupu:
 
-![Příklad výstupu z ukázkové aplikace](app-parts/_static/available-features.png)
+![Ukázkový výstup z ukázkové aplikace](app-parts/_static/available-features.png)

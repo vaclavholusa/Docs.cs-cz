@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-
 title: Použití ovládacího prvku ComboBox (VB) | Dokumentace Microsoftu
 author: microsoft
 description: Pole se seznamem je ovládací prvek ASP.NET AJAX, který kombinuje flexibilitu textové pole se seznamem možností, ze kterých mohou uživatelé vybrat.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: e887e7b2-a6e7-4a28-a134-ba334494badb
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 745871b7e8cca14b3458d9004d581dfacf55ea24
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ec00a58581f36f87ecdca2fbd96fcea645f75f48
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837721"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41753471"
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>Použití ovládacího prvku ComboBox (VB)
 ====================

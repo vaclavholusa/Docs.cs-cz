@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-throug
 title: Účinné stránkování velkých objemů dat (VB) | Dokumentace Microsoftu
 author: rick-anderson
 description: Výchozí možnost stránkování prvku prezentace dat nevhodné, při práci s velkými objemy dat, jako jeho základní retriev ovládací prvek zdroje dat...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b00e18287bdb791a353b7ebd1bbb6cc0ab586b5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5870b9ac2af7d9df927edd8230334dee4885c6a1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805503"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41752450"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>Účinné stránkování velkých objemů dat (VB)
 ====================

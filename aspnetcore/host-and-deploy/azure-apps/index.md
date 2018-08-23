@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: ece61a3e362ec5e2ff8f415351a0f9257fc72098
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: 9a7d20378cac597b748d8a60eb0f0bf17c9ba082
+ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228608"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41756491"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hostitele ASP.NET Core ve službě Azure App Service
 
@@ -99,7 +99,7 @@ Další informace najdete v tématu [zprostředkovateli úložiště klíčů](x
 Aplikace ASP.NET Core ve verzi preview je možné nasadit do služby Azure App Service pomocí následujících postupů:
 
 * [Instalace rozšíření webu ve verzi preview](#install-the-preview-site-extension)
-* [Nasazení samostatné aplikace](#deploy-the-app-self-contained)
+<!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
 * [Použití Docker pro kontejnery s Web Apps](#use-docker-with-web-apps-for-containers)
 
 Pokud dojde k potížím s pomocí rozšíření webu ve verzi preview, otevřete problém na [Githubu](https://github.com/aspnet/azureintegration/issues/new).
@@ -138,14 +138,16 @@ Pokud šablonu ARM se používá k vytvoření a nasazení aplikace, `siteextens
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-### <a name="deploy-the-app-self-contained"></a>Nasazení samostatné aplikace
+<!--
+### Deploy the app self-contained
 
-A [samostatnou aplikaci](/dotnet/core/deploying/#self-contained-deployments-scd) je možné nasadit, která představuje modul runtime ve verzi preview v nasazení. Při nasazování samostatnou aplikaci:
+A [self-contained app](/dotnet/core/deploying/#self-contained-deployments-scd) can be deployed that carries the preview runtime in the deployment. When deploying a self-contained app:
 
-* Webu nemusí být připravené.
-* Aplikace musí zveřejnit jinak než při publikování závisí na architektuře nasazení sdílený modul runtime a hostitele na serveru.
+* The site doesn't need to be prepared.
+* The app must be published differently than when publishing for a framework-dependent deployment with the shared runtime and host on the server.
 
-Samostatná aplikace jsou možné u všech aplikací ASP.NET Core.
+Self-contained apps are an option for all ASP.NET Core apps.
+-->
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Použití Docker pro kontejnery s Web Apps
 

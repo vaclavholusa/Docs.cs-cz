@@ -123,7 +123,7 @@ Existují tři samostatné kroky k dokončení. Dokončením kroků v následuj�
 
     ![Modální dialogové okno Uložit definici sestavení-](media/cicd/vsts-save-modal.png)
 
-    Použít výchozí složky *\\*a klikněte na tlačítko **Uložit** tlačítko.
+    Použít výchozí složky *\\* a klikněte na tlačítko **Uložit** tlačítko.
 
 ### <a name="create-the-release-pipeline"></a>Vytvořit kanál pro vydávání verzí
 

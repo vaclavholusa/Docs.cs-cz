@@ -31,7 +31,7 @@ Klientské knihovny SignalR JavaScript je dodávána jako [npm](https://www.npmj
   npm install @aspnet/signalr
   ```
 
-npm nainstaluje balíček obsahu *node_modules\\ @aspnet\signalr\dist\browser* složky. Vytvořte novou složku s názvem *signalr* pod *wwwroot\\lib* složky. Kopírovat *signalr.js* do souboru *wwwroot\lib\signalr* složky.
+npm nainstaluje balíček obsahu *node_modules\\@aspnet\signalr\dist\browser* složky. Vytvořte novou složku s názvem *signalr* pod *wwwroot\\lib* složky. Kopírovat *signalr.js* do souboru *wwwroot\lib\signalr* složky.
 
 ## <a name="use-the-signalr-javascript-client"></a>Použití klienta SignalR JavaScript
 

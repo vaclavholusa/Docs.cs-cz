@@ -5,12 +5,12 @@ description: Zjistěte, jak řídit chování aplikace napříč několika prost
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: eaa6fa44ed90d0c85a11f5e67a4bb9a91e84c196
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: 720e5ef9fb63b83499ce1801a1c3f9df4786d748
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254867"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927939"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Používání více prostředí v ASP.NET Core
 
@@ -275,7 +275,11 @@ Pro distribuce Linuxu, použijte `export` příkazu na příkazovém řádku pro
 
 ### <a name="configuration-by-environment"></a>Konfigurace podle prostředí
 
-Zobrazit *konfigurace podle prostředí* část <xref:fundamentals/configuration/index#configuration-by-environment>.
+Načtení konfigurace podle prostředí, doporučujeme:
+
+* *appSettings* soubory (* appsettings.&lt; <Environment> &gt;.json). Zobrazit [konfigurace: poskytovatel konfigurace souboru](xref:fundamentals/configuration/index#file-configuration-provider).
+* proměnné prostředí (nastavený v každém systému je hostitelem aplikace). V tématu [konfigurace: poskytovatel konfigurace souboru](xref:fundamentals/configuration/index#file-configuration-provider) a [bezpečné ukládání tajných kódů aplikace při vývoji: proměnné prostředí](xref:security/app-secrets#environment-variables).
+* Tajný klíč správce (ve vývojovém prostředí pouze). Zobrazit <xref:security/app-secrets>.
 
 ## <a name="environment-based-startup-class-and-methods"></a>Na základě prostředí při spuštění třídy a metody
 

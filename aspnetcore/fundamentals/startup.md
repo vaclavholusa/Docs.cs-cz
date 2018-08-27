@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 228719863400f30643cd3007df5291ee807cffba
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 465d33cc1f19428d5189b3a6fa7088ac402a9751
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870890"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927968"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -115,7 +115,7 @@ Pořadí spuštění middlewaru je nastavena podle pořadí podle `IStartupFilte
 * Více `IStartupFilter` implementace může komunikovat se stejnými objekty. Pokud pořadí je důležité, pořadí jejich `IStartupFilter` služby registrace tak, aby odpovídala pořadí, ve kterém jejich middlewares by měly být spuštěny.
 * Knihovny přidat middlewaru s jedním nebo více `IStartupFilter` implementace, které spustit před nebo po dalším middlewarem aplikace zaregistrované `IStartupFilter`. K vyvolání `IStartupFilter` middleware před middleware přidal knihovny `IStartupFilter`, umístěte registrace služby před knihovny se přidá do kontejneru služby. K vyvolání později, umístěte registrace služby po přidání knihovny.
 
-## <a name="adding-configuration-at-startup-from-an-external-assembly"></a>Přidává se konfigurace při spuštění z externího sestavení
+## <a name="add-configuration-at-startup-from-an-external-assembly"></a>Přidat konfiguraci při spuštění z externího sestavení
 
 [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) implementace umožňuje přidání vylepšení do aplikace při spuštění z externího sestavení mimo aplikaci prvku `Startup` třídy. Další informace najdete v tématu [vylepšení aplikace z externího sestavení](xref:fundamentals/configuration/platform-specific-configuration).
 

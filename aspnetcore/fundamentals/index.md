@@ -15,7 +15,7 @@ ms.locfileid: "41754639"
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
-Aplikace ASP.NET Core je konzolová aplikace, která vytvoří webovým serverem v jeho `Main` metody:
+Aplikace ASP.NET Core je konzolová aplikace, která vytváří webový server ve své `Main` metodě:
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -23,7 +23,7 @@ Aplikace ASP.NET Core je konzolová aplikace, která vytvoří webovým serverem
 
 `Main` Metoda vyvolá [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*), který využívá [Tvůrce modelu](https://wikipedia.org/wiki/Builder_pattern) vytvoření webového hostitele. Tvůrce obsahuje metody, které definují webového serveru (například <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) a třída při spuštění (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>). V předchozím příkladu [Kestrel](xref:fundamentals/servers/kestrel) automaticky přiděluje webový server. Webového hostitele ASP.NET Core se pokusí o spuštění ve službě IIS, pokud je k dispozici. Další webové servery, jako například [HTTP.sys](xref:fundamentals/servers/httpsys), je možné vyvoláním metody odpovídající rozšíření. `UseStartup` je vysvětleno v další části.
 
-<xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>, návratový typ `WebHost.CreateDefaultBuilder` vyvolání, obsahuje mnoho metod volitelné. Tyto metody patří k `UseHttpSys` pro hostování aplikace v souboru HTTP.sys a <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> pro zadání kořenový adresář s obsahem. <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> a <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> metody sestavení <xref:Microsoft.AspNetCore.Hosting.IWebHost> objekt, který je hostitelem aplikace a začne naslouchat požadavkům HTTP.
+Typ <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>, který je vrácen jako výsledek volání `WebHost.CreateDefaultBuilder`, obsahuje mnoho volitelných metod. Jednou z těchto metod je `UseHttpSys` pro hostování aplikace pomocí HTTP.sys a <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> pro určení kořenového adresáře s obsahem. Metody <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> a <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> slouží k sestavení objektu <xref:Microsoft.AspNetCore.Hosting.IWebHost>, který je hostitelem aplikace, resp. zahájí naslouchání HTTP požadavků.
 
 ::: moniker-end
 
@@ -33,13 +33,13 @@ Aplikace ASP.NET Core je konzolová aplikace, která vytvoří webovým serverem
 
 `Main` Používá metoda <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>, který využívá [Tvůrce modelu](https://wikipedia.org/wiki/Builder_pattern) chcete vytvořit hostitele webové aplikace. Tvůrce obsahuje metody, které definují webového serveru (například <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>) a třída při spuštění (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>). V předchozím příkladu [Kestrel](xref:fundamentals/servers/kestrel) se používá webový server. Další webové servery, jako například [WebListener](xref:fundamentals/servers/weblistener), je možné vyvoláním metody odpovídající rozšíření. `UseStartup` je vysvětleno v další části.
 
-`WebHostBuilder` poskytuje mnoho volitelné metod, včetně <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> k hostování ve službě IIS a služby IIS Express a <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> pro zadání kořenový adresář s obsahem. <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> a <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> metody sestavení <xref:Microsoft.AspNetCore.Hosting.IWebHost> objekt, který je hostitelem aplikace a začne naslouchat požadavkům HTTP.
+`WebHostBuilder` poskytuje mnoho volitelné metod, včetně <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> k hostování ve službě IIS a služby IIS Express a <xref:Microsoft.Extensions.Hosting.HostingHostBuilderExtensions.UseContentRoot*> pro zadání kořenový adresář s obsahem. Metody <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.Build*> a <xref:Microsoft.AspNetCore.Hosting.WebHostExtensions.Run*> slouží k sestavení objektu <xref:Microsoft.AspNetCore.Hosting.IWebHost>, který je hostitelem aplikace, resp. zahájí naslouchání HTTP požadavků.
 
 ::: moniker-end
 
-## <a name="startup"></a>Po spuštění
+## <a name="startup"></a>Třída pro spuštění
 
-`UseStartup` Metoda `WebHostBuilder` Určuje `Startup` třídy pro vaši aplikaci:
+Metoda `UseStartup` třídy `WebHostBuilder` určuje spouštěcí třídu `Startup` Vaší aplikace:
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -53,7 +53,7 @@ Aplikace ASP.NET Core je konzolová aplikace, která vytvoří webovým serverem
 
 ::: moniker-end
 
-`Startup` Třída je tady můžete definovat kanál zpracování požadavků a které jsou nakonfigurované všechny služby vyžaduje aplikaci. `Startup` Třída musí být veřejné a musí obsahovat následující metody:
+Ve třídě `Startup` můžete definovat kanál zpracování požadavků a nakonfigurovat všechny služby, které aplikace vyžaduje. Třída `Startup` musí být veřejná a musí obsahovat následující metody:
 
 ::: moniker range=">= aspnetcore-2.0"
 

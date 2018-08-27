@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 9355d467ca819ea8c6292963b31367ad5ca36d55
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 05ebc2b51401f8ce8d76d7d121e351cd9ca42c80
+ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938534"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42899854"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>Kompilace souboru Razor v ASP.NET Core
 
@@ -39,9 +39,12 @@ Tady jsou vedlejší účinky předkompilace souborech Razor:
 ## <a name="deploy-precompiled-files"></a>Předkompilované soubory nasazení
 
 ::: moniker range=">= aspnetcore-2.1"
+
 Kompilace sestavení a publikování běhu Razor souborů je povolené ve výchozím nastavení sada Razor SDK. Úprava souborů Razor, až se aktualizují je podporována v okamžiku sestavení. Ve výchozím nastavení pouze kompilované *Views.dll* a ne *.cshtml* jsou soubory nasazeny s vaší aplikací.
 
 > [!IMPORTANT]
+> V ASP.NET Core 3.0 se odebere předkompilaci. Doporučujeme migrovat na [Razor Sdk](xref:razor-pages/sdk).
+>
 > Sada Razor SDK nabídka platí jenom v případě, že žádné vlastnosti specifické pro předkompilaci jsou nastaveny v souboru projektu. Například nastavení *.csproj* souboru `MvcRazorCompileOnPublish` vlastnost `true` zakáže Razor SDK.
 ::: moniker-end
 
@@ -55,6 +58,8 @@ Pokud váš projekt cílí na .NET Core, nejsou nutné žádné změny.
 Šablony projektů ASP.NET Core 2.x implicitně nastavena `MvcRazorCompileOnPublish` vlastnost `true` ve výchozím nastavení. V důsledku toho tento prvek můžete ho bezpečně odebrat z *.csproj* souboru.
 
 > [!IMPORTANT]
+> V ASP.NET Core 3.0 se odebere předkompilaci. Doporučujeme migrovat na [Razor Sdk](xref:razor-pages/sdk).
+>
 > Předkompilace Razor soubor není k dispozici při provádění [samostatná nasazení (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) v ASP.NET Core 2.0.
 ::: moniker-end
 

@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: tutorials/signalr
-ms.openlocfilehash: db7f31963f6a4280069f1f4f82a547e2879e64bb
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41757198"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055829"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>Kurz: Začínáme s funkce SignalR technologie ASP.NET Core
 
@@ -95,7 +95,7 @@ Na konci budete mít funkční aplikaci chatu:
 
 ## <a name="add-the-signalr-client-library"></a>Přidat klientské knihovně SignalR
 
-Je součástí serveru knihovny SignalR [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Ale budete muset získat Javascriptovou klientskou knihovnu z npm, Správce balíčků Node.js.
+Je součástí serveru knihovny SignalR [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Ale budete muset získat Javascriptovou klientskou knihovnu z [npm, Správce balíčků Node.js](https://www.npmjs.com/get-npm).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 

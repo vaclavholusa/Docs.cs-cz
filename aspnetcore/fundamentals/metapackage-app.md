@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: e82c219635bbbebe1d6f5639308490c37361b286
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 95fd6b7e73cf325674f1c1e03f9eea88cbc1af13
+ms.sourcegitcommit: f3538693a12cf55b7f124a6519677239170b7c43
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952952"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43114772"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Microsoft.AspNetCore.App Microsoft.aspnetcore.all pro ASP.NET Core 2.1
 
@@ -53,6 +53,15 @@ Následující projekt odkazy na soubory `Microsoft.AspNetCore.App` Microsoft.as
 
 Číslo verze na `Microsoft.AspNetCore.App` nemá odkaz **není** zaručit, že tato verze sdíleného framework se použije. Předpokládejme například, že verze `2.1.1` není zadána, ale `2.1.3` je nainstalována. V takovém případě aplikace používá `2.1.3`. Však není doporučena, můžete zakázat chování vpřed (opravy a/nebo menší). Další informace o chování vpřed verze balíčku, naleznete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
 
+## <a name="update-aspnet-core"></a>Aktualizace ASP.NET Core
+
 `Microsoft.AspNetCore.App` [Microsoft.aspnetcore.all](/dotnet/core/packages#metapackages) není tradiční balíček, který je aktualizována z NuGet. Podobně jako `Microsoft.NETCore.App`, `Microsoft.AspNetCore.App` představuje sdílený modul runtime, který má zpracovat mimo NuGet sémantiku speciální správy verzí. Další informace najdete v tématu [balíčky, metabalíčky a architektury](/dotnet/core/packages).
+
+Chcete-li aktualizovat ASP.NET Core:
+
+* Na počítačích vývojářů a buildovací servery: Stáhněte a nainstalujte [.NET Core SDK](https://www.microsoft.com/net/download).
+* Na serverech nasazení: Stáhněte a nainstalujte [.NET Core runtime](https://www.microsoft.com/net/download).
+
+ Aplikace se posunout vpřed byla nejnovější nainstalovaná verze na restartování aplikace. Není potřeba aktualizovat `Microsoft.AspNetCore.App` číslo verze v souboru projektu. Další informace najdete v tématu [aplikace závisí na architektuře posunout vpřed](/dotnet/core/versions/selection#framework-dependent-apps-roll-forward).
 
 Pokud vaše aplikace už dřív použili `Microsoft.AspNetCore.All`, naleznete v tématu [migrace z metabalíček na Microsoft.AspNetCore.App](xref:fundamentals/metapackage#migrate).

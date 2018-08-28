@@ -8,12 +8,12 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: ccb0e6096b0281e5ef8af63bfd84b172e7f209b9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e135cfa2945b9e7e5269eb436ff0c1dff20aacdf
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755103"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055709"
 ---
 <a name="what-is-web-forms"></a>Novinky webových formulářů
 ====================
@@ -21,7 +21,7 @@ Webové formuláře ASP.NET je součástí architektury webové aplikace ASP.NET
 
 Webové formuláře jsou stránky, které vaši uživatelé požadavku ve svém prohlížeči. Tyto stránky může být napsán pomocí kombinace HTML, klientského skriptu, serverových ovládacích prvků a serverovým kódem. Pokud uživatelé požadují stránku, je kompilován a spuštěn na serveru v rámci rozhraní a pak rozhraní framework generuje kód HTML, který může mít za následek prohlížeče. Na stránce technologie ASP.NET webové formuláře uvádí informace pro uživatele v libovolném prohlížeči nebo klientské zařízení.
 
-Pomocí sady Visual Studio, můžete vytvořit webových formulářů ASP.NET. Visual Studio integrované vývojové prostředí (IDE) umožňuje přetažení serverových ovládacích prvků pro rozložení stránky webových formulářů. Pak můžete snadno nastavit vlastnosti, metody a události pro ovládací prvky na stránce nebo stránce přímo. Tyto vlastnosti, metody a události se používají k definování chování webové stránky, vzhled a chování a tak dále. Vytvoření serveru kódu pro zpracování logiky stránky, můžete použít jazyk .NET, jako je Visual Basic nebo C#.
+Pomocí sady Visual Studio, můžete vytvořit webových formulářů ASP.NET. Visual Studio integrované vývojové prostředí (IDE) umožňuje přetažení serverových ovládacích prvků pro rozložení stránky webových formulářů. Pak můžete snadno nastavit vlastnosti, metody a události pro ovládací prvky na stránce nebo samotné stránky. Tyto vlastnosti, metody a události se používají k definování chování webové stránky, vzhled a chování a tak dále. Vytvoření serveru kódu pro zpracování logiky stránky, můžete použít jazyk .NET, jako je Visual Basic nebo C#.
 
 > [!NOTE] 
 > 

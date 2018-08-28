@@ -4,14 +4,14 @@ author: rick-anderson
 description: Zjistěte, jak automaticky vygenerovat identitu v projektu aplikace ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 5/16/2018
+ms.date: 08/16/2018
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 07163941d0bd1fea6f9b3d9867536580d8a9e9d8
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: e35836fa9c20729da7c857243410833749b3a595
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063270"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055845"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>Identity vygenerované uživatelské rozhraní v projektech ASP.NET Core
 
@@ -26,6 +26,9 @@ I když generátor generuje většinu kódu nezbytné, budete muset aktualizovat
 Při spuštění generátor Identity *ScaffoldingReadme.txt* vytvoří soubor v adresáři projektu. *ScaffoldingReadme.txt* soubor obsahuje obecné pokyny, co je potřeba k dokončení generování uživatelského rozhraní aktualizace Identity. Tento dokument obsahuje podrobnější pokyny než *ScaffoldingReadme.txt* souboru.
 
 Doporučujeme používat systém správy zdrojového kódu, které jsou uvedeny rozdíly souborů a umožňuje zpět mimo změny. Zkontrolujte změny po spuštění generátor Identity.
+
+> [!NOTE]
+> Při použití se vyžadují služby [dvoufaktorové ověřování](xref:security/authentication/identity-enable-qrcodes), [účtu potvrzení a heslo pro obnovení](xref:security/authentication/accconfirm)a další funkce zabezpečení s identitou. Služby nebo zástupné procedury služby nejsou generovány při generování uživatelského rozhraní Identity. Služby a povolení těchto funkcí je nutné přidat ručně. Viz například [vyžadují e-mailové potvrzení](xref:security/authentication/accconfirm#require-email-confirmation).
 
 ## <a name="scaffold-identity-into-an-empty-project"></a>Vygenerované uživatelské rozhraní identity do prázdného projektu
 
@@ -94,7 +97,8 @@ dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --file
 [!INCLUDE[](~/includes/webapp-alias-notice.md)]
 -->
 
-[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)] Některé možnosti Identity jsou nakonfigurované v *Areas/Identity/IdentityHostingStartup.cs*. Další informace najdete v tématu [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).
+[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
+Některé možnosti Identity jsou nakonfigurované v *Areas/Identity/IdentityHostingStartup.cs*. Další informace najdete v tématu [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).
 
 ## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a>Vygenerované uživatelské rozhraní identity do projektu aplikace MVC bez existující autorizace
 

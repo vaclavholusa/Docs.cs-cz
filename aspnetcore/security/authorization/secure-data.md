@@ -1,366 +1,341 @@
 ---
-title: Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace
+title: Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněnými autorizací
 author: rick-anderson
-description: Postup vytvoření aplikace pro stránky Razor s uživatelskými daty chráněn autorizace. Zahrnuje protokol HTTPS, ověřování, zabezpečení, ASP.NET Core Identity.
+description: Zjistěte, jak vytvořit aplikace Razor Pages s uživatelskými daty chráněnými autorizací. Zahrnuje HTTPS, ověřování, zabezpečení ASP.NET Core Identity.
 ms.author: riande
-ms.date: 01/24/2018
+ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 32ced054ba559e66de4a300137d56b7c81a4149b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ba59e8d6243965188397c4ba7a130eec42acfb91
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276377"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055877"
 ---
-# <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a><span data-ttu-id="e9b36-104">Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněn autorizace</span><span class="sxs-lookup"><span data-stu-id="e9b36-104">Create an ASP.NET Core app with user data protected by authorization</span></span>
+::: moniker range="<= aspnetcore-1.1"
 
-<span data-ttu-id="e9b36-105">Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Audette Jan](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="e9b36-105">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
+<span data-ttu-id="bae44-104">Zobrazit [tento PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) pro verzi technologie ASP.NET Core MVC.</span><span class="sxs-lookup"><span data-stu-id="bae44-104">See [this PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core MVC version.</span></span> <span data-ttu-id="bae44-105">ASP.NET Core 1.1 verzi tohoto kurzu je v [to](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) složky.</span><span class="sxs-lookup"><span data-stu-id="bae44-105">The ASP.NET Core 1.1 version of this tutorial is in [this](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) folder.</span></span> <span data-ttu-id="bae44-106">1.1 ukázka ASP.NET Core je v [ukázky](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).</span><span class="sxs-lookup"><span data-stu-id="bae44-106">The 1.1 ASP.NET Core sample is in the [samples](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).</span></span>
+::: moniker-end
 
-<span data-ttu-id="e9b36-106">Tento kurz ukazuje postup vytvoření webové aplikace ASP.NET Core s uživatelskými daty chráněn autorizace.</span><span class="sxs-lookup"><span data-stu-id="e9b36-106">This tutorial shows how to create an ASP.NET Core web app with user data protected by authorization.</span></span> <span data-ttu-id="e9b36-107">Zobrazí seznam kontakty, které ověřené uživatele (registrovaný) jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="e9b36-107">It displays a list of contacts that authenticated (registered) users have created.</span></span> <span data-ttu-id="e9b36-108">Existují tři skupiny zabezpečení:</span><span class="sxs-lookup"><span data-stu-id="e9b36-108">There are three security groups:</span></span>
+::: moniker range="= aspnetcore-2.0"
 
-* <span data-ttu-id="e9b36-109">**Registrované uživatele** můžete zobrazit všechny schválené data a můžete upravit nebo odstranit svá vlastní data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-109">**Registered users** can view all the approved data and can edit/delete their own data.</span></span>
-* <span data-ttu-id="e9b36-110">**Správci** můžete schválit nebo odmítnout kontaktní údaje.</span><span class="sxs-lookup"><span data-stu-id="e9b36-110">**Managers** can approve or reject contact data.</span></span> <span data-ttu-id="e9b36-111">Pouze schválené kontakty jsou viditelné pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="e9b36-111">Only approved contacts are visible to users.</span></span>
-* <span data-ttu-id="e9b36-112">**Správci** můžete schválit nebo odmítnout a upravit nebo odstranit všechna data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-112">**Administrators** can approve/reject and edit/delete any data.</span></span>
+<span data-ttu-id="bae44-107">Zobrazit [Tento pdf] ()https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)</span><span class="sxs-lookup"><span data-stu-id="bae44-107">See the [this pdf] (https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)</span></span>
 
-<span data-ttu-id="e9b36-113">Na následujícím obrázku, uživatel Rick (`rick@example.com`) je přihlášený.</span><span class="sxs-lookup"><span data-stu-id="e9b36-113">In the following image, user Rick (`rick@example.com`) is signed in.</span></span> <span data-ttu-id="e9b36-114">Rick lze zobrazit pouze schválené kontakty a **upravit**/**odstranit**/**vytvořit nový** odkazy pro jeho kontakty.</span><span class="sxs-lookup"><span data-stu-id="e9b36-114">Rick can only view approved contacts and **Edit**/**Delete**/**Create New** links for his contacts.</span></span> <span data-ttu-id="e9b36-115">Pouze poslední záznam vytvořené Rick, zobrazí **upravit** a **odstranit** odkazy.</span><span class="sxs-lookup"><span data-stu-id="e9b36-115">Only the last record, created by Rick, displays **Edit** and **Delete** links.</span></span> <span data-ttu-id="e9b36-116">Ostatní uživatelé neuvidí poslední záznam tak, aby manažer nebo správce se změnil stav do "Schváleno".</span><span class="sxs-lookup"><span data-stu-id="e9b36-116">Other users won't see the last record until a manager or administrator changes the status to "Approved".</span></span>
+::: moniker-end
 
-![Obrázek popsané předcházející](secure-data/_static/rick.png)
+::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="e9b36-118">Na následujícím obrázku `manager@contoso.com` je přihlášen a v roli správce:</span><span class="sxs-lookup"><span data-stu-id="e9b36-118">In the following image, `manager@contoso.com` is signed in and in the managers role:</span></span>
+# <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a><span data-ttu-id="bae44-108">Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněnými autorizací</span><span class="sxs-lookup"><span data-stu-id="bae44-108">Create an ASP.NET Core app with user data protected by authorization</span></span>
 
-![Obrázek popsané předcházející](secure-data/_static/manager1.png)
+<span data-ttu-id="bae44-109">Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Joe Audette](https://twitter.com/joeaudette)</span><span class="sxs-lookup"><span data-stu-id="bae44-109">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Joe Audette](https://twitter.com/joeaudette)</span></span>
 
-<span data-ttu-id="e9b36-120">Následující obrázek znázorňuje vybraných manažerů zobrazení podrobností kontaktu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-120">The following image shows the managers details view of a contact:</span></span>
+<span data-ttu-id="bae44-110">Tento kurz ukazuje, jak vytvořit webovou aplikaci ASP.NET Core s uživatelskými daty chráněnými autorizací.</span><span class="sxs-lookup"><span data-stu-id="bae44-110">This tutorial shows how to create an ASP.NET Core web app with user data protected by authorization.</span></span> <span data-ttu-id="bae44-111">Zobrazí seznam kontakty, které ověřeným uživatelům (registrovaných) jste vytvořili.</span><span class="sxs-lookup"><span data-stu-id="bae44-111">It displays a list of contacts that authenticated (registered) users have created.</span></span> <span data-ttu-id="bae44-112">Existují tři skupiny zabezpečení:</span><span class="sxs-lookup"><span data-stu-id="bae44-112">There are three security groups:</span></span>
 
-![Obrázek popsané předcházející](secure-data/_static/manager.png)
+* <span data-ttu-id="bae44-113">**Zaregistrované uživatele** můžete zobrazit všechny schválené data a můžete upravit nebo odstranit svá vlastní data.</span><span class="sxs-lookup"><span data-stu-id="bae44-113">**Registered users** can view all the approved data and can edit/delete their own data.</span></span>
+* <span data-ttu-id="bae44-114">**Správci** můžete schválit nebo odmítnout kontaktní údaje.</span><span class="sxs-lookup"><span data-stu-id="bae44-114">**Managers** can approve or reject contact data.</span></span> <span data-ttu-id="bae44-115">Uživatelé vidí pouze schválené kontakty.</span><span class="sxs-lookup"><span data-stu-id="bae44-115">Only approved contacts are visible to users.</span></span>
+* <span data-ttu-id="bae44-116">**Správci** můžete schvalovat a odmítat a upravit nebo odstranit všechna data.</span><span class="sxs-lookup"><span data-stu-id="bae44-116">**Administrators** can approve/reject and edit/delete any data.</span></span>
 
-<span data-ttu-id="e9b36-122">**Schválit** a **odmítnout** tlačítka se zobrazí pouze správci a správci.</span><span class="sxs-lookup"><span data-stu-id="e9b36-122">The **Approve** and **Reject** buttons are only displayed for managers and administrators.</span></span>
+<span data-ttu-id="bae44-117">Na následujícím obrázku, uživatel Rick (`rick@example.com`) je přihlášený.</span><span class="sxs-lookup"><span data-stu-id="bae44-117">In the following image, user Rick (`rick@example.com`) is signed in.</span></span> <span data-ttu-id="bae44-118">Rick může zobrazit jenom schválené kontakty a **upravit**/**odstranit**/**vytvořit nový** odkazy pro jeho kontakty.</span><span class="sxs-lookup"><span data-stu-id="bae44-118">Rick can only view approved contacts and **Edit**/**Delete**/**Create New** links for his contacts.</span></span> <span data-ttu-id="bae44-119">Pouze poslední záznam vytvořil Rick, zobrazí **upravit** a **odstranit** odkazy.</span><span class="sxs-lookup"><span data-stu-id="bae44-119">Only the last record, created by Rick, displays **Edit** and **Delete** links.</span></span> <span data-ttu-id="bae44-120">Ostatní uživatelé neuvidí poslední záznam, dokud správce nebo správce změní stav na "Schváleno".</span><span class="sxs-lookup"><span data-stu-id="bae44-120">Other users won't see the last record until a manager or administrator changes the status to "Approved".</span></span>
 
-<span data-ttu-id="e9b36-123">Na následujícím obrázku `admin@contoso.com` je přihlášen a v roli správce:</span><span class="sxs-lookup"><span data-stu-id="e9b36-123">In the following image, `admin@contoso.com` is signed in and in the administrators role:</span></span>
+![obrázek popisuje předchozí](secure-data/_static/rick.png)
 
-![Obrázek popsané předcházející](secure-data/_static/admin.png)
+<span data-ttu-id="bae44-122">Na následujícím obrázku `manager@contoso.com` je podepsán v a v roli správce:</span><span class="sxs-lookup"><span data-stu-id="bae44-122">In the following image, `manager@contoso.com` is signed in and in the managers role:</span></span>
 
-<span data-ttu-id="e9b36-125">Správce má všechna oprávnění.</span><span class="sxs-lookup"><span data-stu-id="e9b36-125">The administrator has all privileges.</span></span> <span data-ttu-id="e9b36-126">Jana můžete pro čtení, úpravy nebo odstranění všechny kontakty a změnit stav kontaktů.</span><span class="sxs-lookup"><span data-stu-id="e9b36-126">She can read/edit/delete any contact and change the status of contacts.</span></span>
+![obrázek popisuje předchozí](secure-data/_static/manager1.png)
 
-<span data-ttu-id="e9b36-127">Aplikace byla vytvořená [generování uživatelského rozhraní](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) následující `Contact` modelu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-127">The app was created by [scaffolding](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) the following `Contact` model:</span></span>
+<span data-ttu-id="bae44-124">Následující obrázek ukazuje vedoucí zobrazení podrobností o kontaktu:</span><span class="sxs-lookup"><span data-stu-id="bae44-124">The following image shows the managers details view of a contact:</span></span>
 
-[!code-csharp[](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
+![obrázek popisuje předchozí](secure-data/_static/manager.png)
 
-<span data-ttu-id="e9b36-128">Ukázka obsahuje následující rutiny autorizace:</span><span class="sxs-lookup"><span data-stu-id="e9b36-128">The sample contains the following authorization handlers:</span></span>
+<span data-ttu-id="bae44-126">**Schválit** a **odmítnout** tlačítek se zobrazí pouze správci a správci.</span><span class="sxs-lookup"><span data-stu-id="bae44-126">The **Approve** and **Reject** buttons are only displayed for managers and administrators.</span></span>
 
-* <span data-ttu-id="e9b36-129">`ContactIsOwnerAuthorizationHandler`: Zajistí uživatele můžete upravit pouze svá data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-129">`ContactIsOwnerAuthorizationHandler`: Ensures that a user can only edit their data.</span></span>
-* <span data-ttu-id="e9b36-130">`ContactManagerAuthorizationHandler`: Umožňuje správcům schválit nebo odmítnout kontakty.</span><span class="sxs-lookup"><span data-stu-id="e9b36-130">`ContactManagerAuthorizationHandler`: Allows managers to approve or reject contacts.</span></span>
-* <span data-ttu-id="e9b36-131">`ContactAdministratorsAuthorizationHandler`: Umožňuje správcům schválit nebo odmítnout kontakty a upravit nebo odstranit kontakty.</span><span class="sxs-lookup"><span data-stu-id="e9b36-131">`ContactAdministratorsAuthorizationHandler`: Allows administrators to approve or reject contacts and to edit/delete contacts.</span></span>
+<span data-ttu-id="bae44-127">Na následujícím obrázku `admin@contoso.com` je podepsán v a v roli správce:</span><span class="sxs-lookup"><span data-stu-id="bae44-127">In the following image, `admin@contoso.com` is signed in and in the administrators role:</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="e9b36-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e9b36-132">Prerequisites</span></span>
+![obrázek popisuje předchozí](secure-data/_static/admin.png)
 
-<span data-ttu-id="e9b36-133">V tomto kurzu je rozšířený.</span><span class="sxs-lookup"><span data-stu-id="e9b36-133">This tutorial is advanced.</span></span> <span data-ttu-id="e9b36-134">Měli byste se seznámit s:</span><span class="sxs-lookup"><span data-stu-id="e9b36-134">You should be familiar with:</span></span>
+<span data-ttu-id="bae44-129">Správce má všechna oprávnění.</span><span class="sxs-lookup"><span data-stu-id="bae44-129">The administrator has all privileges.</span></span> <span data-ttu-id="bae44-130">Může číst/upravovat/odstraňovat všechny kontakty a změnit stav kontakty.</span><span class="sxs-lookup"><span data-stu-id="bae44-130">She can read/edit/delete any contact and change the status of contacts.</span></span>
 
-* [<span data-ttu-id="e9b36-135">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="e9b36-135">ASP.NET Core</span></span>](xref:tutorials/first-mvc-app/start-mvc)
-* [<span data-ttu-id="e9b36-136">Ověřování</span><span class="sxs-lookup"><span data-stu-id="e9b36-136">Authentication</span></span>](xref:security/authentication/index)
-* [<span data-ttu-id="e9b36-137">Potvrzení účtu a obnovení hesla</span><span class="sxs-lookup"><span data-stu-id="e9b36-137">Account Confirmation and Password Recovery</span></span>](xref:security/authentication/accconfirm)
-* [<span data-ttu-id="e9b36-138">Autorizace</span><span class="sxs-lookup"><span data-stu-id="e9b36-138">Authorization</span></span>](xref:security/authorization/index)
-* [<span data-ttu-id="e9b36-139">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="e9b36-139">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
+<span data-ttu-id="bae44-131">Aplikace byla vytvořena pomocí [generování uživatelského rozhraní](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) následující `Contact` modelu:</span><span class="sxs-lookup"><span data-stu-id="bae44-131">The app was created by [scaffolding](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) the following `Contact` model:</span></span>
 
-<span data-ttu-id="e9b36-140">V tématu [tento PDF soubor](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) pro ASP.NET MVC základní verzi.</span><span class="sxs-lookup"><span data-stu-id="e9b36-140">See [this PDF file](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) for the ASP.NET Core MVC version.</span></span> <span data-ttu-id="e9b36-141">Verze 1.1 jádro ASP.NET v tomto kurzu je v [to](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) složky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-141">The ASP.NET Core 1.1 version of this tutorial is in [this](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) folder.</span></span> <span data-ttu-id="e9b36-142">1.1 ASP.NET Core ukázka je v [ukázky](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).</span><span class="sxs-lookup"><span data-stu-id="e9b36-142">The 1.1 ASP.NET Core sample is in the [samples](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).</span></span>
+[!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet)]
 
-## <a name="the-starter-and-completed-app"></a><span data-ttu-id="e9b36-143">Spuštění a dokončené aplikace</span><span class="sxs-lookup"><span data-stu-id="e9b36-143">The starter and completed app</span></span>
+<span data-ttu-id="bae44-132">Ukázka obsahuje následující rutiny autorizace:</span><span class="sxs-lookup"><span data-stu-id="bae44-132">The sample contains the following authorization handlers:</span></span>
 
-<span data-ttu-id="e9b36-144">[Stáhněte si](xref:tutorials/index#how-to-download-a-sample) [Dokončit](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) aplikace.</span><span class="sxs-lookup"><span data-stu-id="e9b36-144">[Download](xref:tutorials/index#how-to-download-a-sample) the [completed](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) app.</span></span> <span data-ttu-id="e9b36-145">[Test](#test-the-completed-app) dokončené aplikace, takže seznámit se s jeho funkce zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="e9b36-145">[Test](#test-the-completed-app) the completed app so you become familiar with its security features.</span></span>
+* <span data-ttu-id="bae44-133">`ContactIsOwnerAuthorizationHandler`: Zajistí, že uživatel může upravovat jenom svá data.</span><span class="sxs-lookup"><span data-stu-id="bae44-133">`ContactIsOwnerAuthorizationHandler`: Ensures that a user can only edit their data.</span></span>
+* <span data-ttu-id="bae44-134">`ContactManagerAuthorizationHandler`: Umožňuje správcům schválit nebo odmítnout kontakty.</span><span class="sxs-lookup"><span data-stu-id="bae44-134">`ContactManagerAuthorizationHandler`: Allows managers to approve or reject contacts.</span></span>
+* <span data-ttu-id="bae44-135">`ContactAdministratorsAuthorizationHandler`: Umožňuje správcům schválit nebo odmítnout kontakty a úpravy nebo odstranění kontaktů.</span><span class="sxs-lookup"><span data-stu-id="bae44-135">`ContactAdministratorsAuthorizationHandler`: Allows administrators to approve or reject contacts and to edit/delete contacts.</span></span>
 
-### <a name="the-starter-app"></a><span data-ttu-id="e9b36-146">Úvodní aplikaci</span><span class="sxs-lookup"><span data-stu-id="e9b36-146">The starter app</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="bae44-136">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bae44-136">Prerequisites</span></span>
 
-<span data-ttu-id="e9b36-147">[Stáhněte si](xref:tutorials/index#how-to-download-a-sample) [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) aplikace.</span><span class="sxs-lookup"><span data-stu-id="e9b36-147">[Download](xref:tutorials/index#how-to-download-a-sample) the [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) app.</span></span>
+<span data-ttu-id="bae44-137">V tomto kurzu je advanced.</span><span class="sxs-lookup"><span data-stu-id="bae44-137">This tutorial is advanced.</span></span> <span data-ttu-id="bae44-138">Měli byste se seznámit s:</span><span class="sxs-lookup"><span data-stu-id="bae44-138">You should be familiar with:</span></span>
 
-<span data-ttu-id="e9b36-148">Spusťte aplikaci, klepněte **ContactManager** propojit a ověřte, můžete vytvořit, upravit a odstranit a obraťte se na.</span><span class="sxs-lookup"><span data-stu-id="e9b36-148">Run the app, tap the **ContactManager** link, and verify you can create, edit, and delete a contact.</span></span>
+* [<span data-ttu-id="bae44-139">ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="bae44-139">ASP.NET Core</span></span>](xref:tutorials/first-mvc-app/start-mvc)
+* [<span data-ttu-id="bae44-140">Ověřování</span><span class="sxs-lookup"><span data-stu-id="bae44-140">Authentication</span></span>](xref:security/authentication/index)
+* [<span data-ttu-id="bae44-141">Potvrzení účtu a obnovení hesla</span><span class="sxs-lookup"><span data-stu-id="bae44-141">Account Confirmation and Password Recovery</span></span>](xref:security/authentication/accconfirm)
+* [<span data-ttu-id="bae44-142">Autorizace</span><span class="sxs-lookup"><span data-stu-id="bae44-142">Authorization</span></span>](xref:security/authorization/index)
+* [<span data-ttu-id="bae44-143">Entity Framework Core</span><span class="sxs-lookup"><span data-stu-id="bae44-143">Entity Framework Core</span></span>](xref:data/ef-mvc/intro)
 
-## <a name="secure-user-data"></a><span data-ttu-id="e9b36-149">Zabezpečení dat uživatele</span><span class="sxs-lookup"><span data-stu-id="e9b36-149">Secure user data</span></span>
+<span data-ttu-id="bae44-144">Stažení kódu pro tento kurz vyžaduje ASP.NET Core 2.2 ve verzi preview 1 nebo novější.</span><span class="sxs-lookup"><span data-stu-id="bae44-144">The download code as for this tutorial requires ASP.NET Core 2.2 preview 1 or later.</span></span> <span data-ttu-id="bae44-145">Zobrazit [tento problém Githubu](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) pro vyřešit.</span><span class="sxs-lookup"><span data-stu-id="bae44-145">See [this GitHub issue](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) for a work-around.</span></span>
 
-<span data-ttu-id="e9b36-150">V následujících částech mít všechny hlavní kroky k vytvoření aplikace dat zabezpečení uživatele.</span><span class="sxs-lookup"><span data-stu-id="e9b36-150">The following sections have all the major steps to create the secure user data app.</span></span> <span data-ttu-id="e9b36-151">Vám může být užitečné k odkazování na dokončený projekt.</span><span class="sxs-lookup"><span data-stu-id="e9b36-151">You may find it helpful to refer to the completed project.</span></span>
+## <a name="the-starter-and-completed-app"></a><span data-ttu-id="bae44-146">Starter a dokončené aplikace</span><span class="sxs-lookup"><span data-stu-id="bae44-146">The starter and completed app</span></span>
 
-### <a name="tie-the-contact-data-to-the-user"></a><span data-ttu-id="e9b36-152">Tie – kontaktních údajů pro uživatele</span><span class="sxs-lookup"><span data-stu-id="e9b36-152">Tie the contact data to the user</span></span>
+<span data-ttu-id="bae44-147">[Stáhněte si](xref:tutorials/index#how-to-download-a-sample) [Dokončit](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) aplikace.</span><span class="sxs-lookup"><span data-stu-id="bae44-147">[Download](xref:tutorials/index#how-to-download-a-sample) the [completed](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) app.</span></span> <span data-ttu-id="bae44-148">[Test](#test-the-completed-app) dokončené aplikace tak, že jste se seznámili s jeho funkcí zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="bae44-148">[Test](#test-the-completed-app) the completed app so you become familiar with its security features.</span></span>
 
-<span data-ttu-id="e9b36-153">Pomocí technologie ASP.NET [Identity](xref:security/authentication/identity) ID uživatele, aby uživatelé můžete upravit svá data, ale ne další data uživatele.</span><span class="sxs-lookup"><span data-stu-id="e9b36-153">Use the ASP.NET [Identity](xref:security/authentication/identity) user ID to ensure users can edit their data, but not other users data.</span></span> <span data-ttu-id="e9b36-154">Přidat `OwnerID` a `ContactStatus` k `Contact` modelu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-154">Add `OwnerID` and `ContactStatus` to the `Contact` model:</span></span>
+### <a name="the-starter-app"></a><span data-ttu-id="bae44-149">Úvodní aplikaci</span><span class="sxs-lookup"><span data-stu-id="bae44-149">The starter app</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
+<span data-ttu-id="bae44-150">[Stáhněte si](xref:tutorials/index#how-to-download-a-sample) [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) aplikace.</span><span class="sxs-lookup"><span data-stu-id="bae44-150">[Download](xref:tutorials/index#how-to-download-a-sample) the [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) app.</span></span>
 
-<span data-ttu-id="e9b36-155">`OwnerID` ID uživatele z `AspNetUser` tabulky v [Identity](xref:security/authentication/identity) databáze.</span><span class="sxs-lookup"><span data-stu-id="e9b36-155">`OwnerID` is the user's ID from the `AspNetUser` table in the [Identity](xref:security/authentication/identity) database.</span></span> <span data-ttu-id="e9b36-156">`Status` Pole určuje, zda kontakt zobrazit obecné uživatele.</span><span class="sxs-lookup"><span data-stu-id="e9b36-156">The `Status` field determines if a contact is viewable by general users.</span></span>
+<span data-ttu-id="bae44-151">Spusťte aplikaci, klepněte **ContactManager** propojit a ověření můžete vytvářet, upravovat a odstraňovat kontakt.</span><span class="sxs-lookup"><span data-stu-id="bae44-151">Run the app, tap the **ContactManager** link, and verify you can create, edit, and delete a contact.</span></span>
 
-<span data-ttu-id="e9b36-157">Vytvořte nové migrace a aktualizaci databáze:</span><span class="sxs-lookup"><span data-stu-id="e9b36-157">Create a new migration and update the database:</span></span>
+## <a name="secure-user-data"></a><span data-ttu-id="bae44-152">Zabezpečení dat uživatele</span><span class="sxs-lookup"><span data-stu-id="bae44-152">Secure user data</span></span>
+
+<span data-ttu-id="bae44-153">Následující oddíly mají všechny hlavní kroky k vytvoření aplikace pro data zabezpečení uživatele.</span><span class="sxs-lookup"><span data-stu-id="bae44-153">The following sections have all the major steps to create the secure user data app.</span></span> <span data-ttu-id="bae44-154">Vám může být užitečné k odkazování na dokončení projektu.</span><span class="sxs-lookup"><span data-stu-id="bae44-154">You may find it helpful to refer to the completed project.</span></span>
+
+### <a name="tie-the-contact-data-to-the-user"></a><span data-ttu-id="bae44-155">Tie kontaktní údaje pro uživatele</span><span class="sxs-lookup"><span data-stu-id="bae44-155">Tie the contact data to the user</span></span>
+
+<span data-ttu-id="bae44-156">Použití technologie ASP.NET [Identity](xref:security/authentication/identity) ID uživatele, aby tak uživatelé můžete upravit jejich data, ale ne data jiných uživatelů.</span><span class="sxs-lookup"><span data-stu-id="bae44-156">Use the ASP.NET [Identity](xref:security/authentication/identity) user ID to ensure users can edit their data, but not other users data.</span></span> <span data-ttu-id="bae44-157">Přidat `OwnerID` a `ContactStatus` k `Contact` modelu:</span><span class="sxs-lookup"><span data-stu-id="bae44-157">Add `OwnerID` and `ContactStatus` to the `Contact` model:</span></span>
+
+[!code-csharp[](secure-data/samples/final2.1/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
+
+<span data-ttu-id="bae44-158">`OwnerID` je ID uživatele z `AspNetUser` v tabulku [Identity](xref:security/authentication/identity) databáze.</span><span class="sxs-lookup"><span data-stu-id="bae44-158">`OwnerID` is the user's ID from the `AspNetUser` table in the [Identity](xref:security/authentication/identity) database.</span></span> <span data-ttu-id="bae44-159">`Status` Pole určuje, zda je kontakt zobrazitelné obecný uživatel.</span><span class="sxs-lookup"><span data-stu-id="bae44-159">The `Status` field determines if a contact is viewable by general users.</span></span>
+
+<span data-ttu-id="bae44-160">Vytvořte novou migraci a aktualizaci databáze:</span><span class="sxs-lookup"><span data-stu-id="bae44-160">Create a new migration and update the database:</span></span>
 
 ```console
 dotnet ef migrations add userID_Status
 dotnet ef database update
 ```
 
-### <a name="require-https-and-authenticated-users"></a><span data-ttu-id="e9b36-158">Vyžadovat protokol HTTPS a ověření uživatelé</span><span class="sxs-lookup"><span data-stu-id="e9b36-158">Require HTTPS and authenticated users</span></span>
+### <a name="add-role-services-to-identity"></a><span data-ttu-id="bae44-161">Přidání služby Role na identitu</span><span class="sxs-lookup"><span data-stu-id="bae44-161">Add Role services to Identity</span></span>
 
-<span data-ttu-id="e9b36-159">Přidat [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) k `Startup`:</span><span class="sxs-lookup"><span data-stu-id="e9b36-159">Add [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) to `Startup`:</span></span>
+<span data-ttu-id="bae44-162">Připojit [kliknutím na Přidat role](/dotnet/api/microsoft.aspnetcore.identity.identitybuilder.addroles#Microsoft_AspNetCore_Identity_IdentityBuilder_AddRoles__1) přidat služby rolí:</span><span class="sxs-lookup"><span data-stu-id="bae44-162">Append [AddRoles](/dotnet/api/microsoft.aspnetcore.identity.identitybuilder.addroles#Microsoft_AspNetCore_Identity_IdentityBuilder_AddRoles__1) to add Role services:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_env)]
+[!code-csharp[](secure-data/samples/final2.1/Startup.cs?name=snippet2&highlight=12)]
 
-<span data-ttu-id="e9b36-160">V `ConfigureServices` metodu *Startup.cs* soubor, přidejte [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) filtr autorizace:</span><span class="sxs-lookup"><span data-stu-id="e9b36-160">In the `ConfigureServices` method of the *Startup.cs* file, add the [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) authorization filter:</span></span>
+### <a name="require-authenticated-users"></a><span data-ttu-id="bae44-163">Vyžadovat ověření uživatelé</span><span class="sxs-lookup"><span data-stu-id="bae44-163">Require authenticated users</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
+<span data-ttu-id="bae44-164">Nastavte výchozí zásady ověřování tak, aby vyžadovala ověření uživatelů:</span><span class="sxs-lookup"><span data-stu-id="bae44-164">Set the default authentication policy to require users to be authenticated:</span></span>
 
-<span data-ttu-id="e9b36-161">Pokud používáte Visual Studio, povolte protokol HTTPS.</span><span class="sxs-lookup"><span data-stu-id="e9b36-161">If you're using Visual Studio, enable HTTPS.</span></span>
+[!code-csharp[](secure-data/samples/final2.1/Startup.cs?name=snippet&highlight=17-99)] 
 
-<span data-ttu-id="e9b36-162">Přesměrování požadavků HTTP do HTTPS, najdete v části [URL přepisování Middleware](xref:fundamentals/url-rewriting).</span><span class="sxs-lookup"><span data-stu-id="e9b36-162">To redirect HTTP requests to HTTPS, see [URL Rewriting Middleware](xref:fundamentals/url-rewriting).</span></span> <span data-ttu-id="e9b36-163">Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol HTTPS:</span><span class="sxs-lookup"><span data-stu-id="e9b36-163">If you're using Visual Studio Code or testing on a local platform that doesn't include a test certificate for HTTPS:</span></span>
+ <span data-ttu-id="bae44-165">Můžete zrušit ověřování na úrovni metody stránky Razor, kontroler nebo akce s `[AllowAnonymous]` atribut.</span><span class="sxs-lookup"><span data-stu-id="bae44-165">You can opt out of authentication at the Razor Page, controller, or action method level with the `[AllowAnonymous]` attribute.</span></span> <span data-ttu-id="bae44-166">Nastavení výchozí zásady ověřování tak, aby vyžadovala ověření uživatelů chrání nově přidané Razor Pages a kontrolery.</span><span class="sxs-lookup"><span data-stu-id="bae44-166">Setting the default authentication policy to require users to be authenticated protects newly added Razor Pages and controllers.</span></span> <span data-ttu-id="bae44-167">Ve výchozím nastavení je vyžadováno ověření je bezpečnější než spoléhání se na nové řadiče a Razor Pages zahrnout s `[Authorize]` atribut.</span><span class="sxs-lookup"><span data-stu-id="bae44-167">Having authentication required by default is more secure than relying on new controllers and Razor Pages to include the `[Authorize]` attribute.</span></span>
 
-  <span data-ttu-id="e9b36-164">Nastavit `"LocalTest:skipHTTPS": true` v *appsettings. Developement.JSON* souboru.</span><span class="sxs-lookup"><span data-stu-id="e9b36-164">Set `"LocalTest:skipHTTPS": true` in the *appsettings.Developement.json* file.</span></span>
+<span data-ttu-id="bae44-168">Přidat [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) index stránky o a kontaktní anonymní uživatelé získali informace o webu předtím, než aby se zaregistrovali.</span><span class="sxs-lookup"><span data-stu-id="bae44-168">Add [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) to the Index, About, and Contact pages so anonymous users can get information about the site before they register.</span></span>
 
-### <a name="require-authenticated-users"></a><span data-ttu-id="e9b36-165">Vyžadovat ověření uživatelé</span><span class="sxs-lookup"><span data-stu-id="e9b36-165">Require authenticated users</span></span>
+[!code-csharp[](secure-data/samples/final2.1/Pages/Index.cshtml.cs?highlight=1,6)]
 
-<span data-ttu-id="e9b36-166">Nastavte výchozí zásady ověřování tak, aby vyžadovala uživatele k ověření.</span><span class="sxs-lookup"><span data-stu-id="e9b36-166">Set the default authentication policy to require users to be authenticated.</span></span> <span data-ttu-id="e9b36-167">Můžete vyjádření výslovného nesouhlasu ověřování na úrovni stránky Razor, kontroler nebo akce metoda s `[AllowAnonymous]` atribut.</span><span class="sxs-lookup"><span data-stu-id="e9b36-167">You can opt out of authentication at the Razor Page, controller, or action method level with the `[AllowAnonymous]` attribute.</span></span> <span data-ttu-id="e9b36-168">Nastavení výchozích zásad ověřování budou muset uživatelé ověřit chrání nově přidané stránky Razor a řadiče.</span><span class="sxs-lookup"><span data-stu-id="e9b36-168">Setting the default authentication policy to require users to be authenticated protects newly added Razor Pages and controllers.</span></span> <span data-ttu-id="e9b36-169">Má ve výchozím nastavení je vyžadováno ověření je bezpečnější než spoléhat na nových řadičů a stránky Razor zahrnout `[Authorize]` atribut.</span><span class="sxs-lookup"><span data-stu-id="e9b36-169">Having authentication required by default is safer than relying on new controllers and Razor Pages to include the `[Authorize]` attribute.</span></span> 
+### <a name="configure-the-test-account"></a><span data-ttu-id="bae44-169">Konfigurace testovací účet</span><span class="sxs-lookup"><span data-stu-id="bae44-169">Configure the test account</span></span>
 
-<span data-ttu-id="e9b36-170">Tento požadavek ověřen, všichni uživatelé [AuthorizeFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizefolder?view=aspnetcore-2.0#Microsoft_Extensions_DependencyInjection_PageConventionCollectionExtensions_AuthorizeFolder_Microsoft_AspNetCore_Mvc_ApplicationModels_PageConventionCollection_System_String_System_String_) a [AuthorizePage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizepage?view=aspnetcore-2.0) volání nejsou potřeba.</span><span class="sxs-lookup"><span data-stu-id="e9b36-170">With the requirement of all users authenticated, the [AuthorizeFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizefolder?view=aspnetcore-2.0#Microsoft_Extensions_DependencyInjection_PageConventionCollectionExtensions_AuthorizeFolder_Microsoft_AspNetCore_Mvc_ApplicationModels_PageConventionCollection_System_String_System_String_) and [AuthorizePage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizepage?view=aspnetcore-2.0) calls are not required.</span></span>
-
-<span data-ttu-id="e9b36-171">Aktualizace `ConfigureServices` s následujícími změnami:</span><span class="sxs-lookup"><span data-stu-id="e9b36-171">Update `ConfigureServices` with the following changes:</span></span>
-
-* <span data-ttu-id="e9b36-172">Komentář `AuthorizeFolder` a `AuthorizePage`.</span><span class="sxs-lookup"><span data-stu-id="e9b36-172">Comment out `AuthorizeFolder` and `AuthorizePage`.</span></span>
-* <span data-ttu-id="e9b36-173">Nastavte výchozí zásady ověřování tak, aby vyžadovala uživatele k ověření.</span><span class="sxs-lookup"><span data-stu-id="e9b36-173">Set the default authentication policy to require users to be authenticated.</span></span>
-
-[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
-
-<span data-ttu-id="e9b36-174">Přidat [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) do indexu, o a kontaktní stránky, mohou anonymní uživatelé získat informace o lokalitě, před jejich registraci.</span><span class="sxs-lookup"><span data-stu-id="e9b36-174">Add [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) to the Index, About, and Contact pages so anonymous users can get information about the site before they register.</span></span> 
-
-[!code-csharp[](secure-data/samples/final2/Pages/Index.cshtml.cs?name=snippet&highlight=2)]
-
-<span data-ttu-id="e9b36-175">Přidat `[AllowAnonymous]` k [LoginModel a RegisterModel](https://github.com/aspnet/templating/issues/238).</span><span class="sxs-lookup"><span data-stu-id="e9b36-175">Add `[AllowAnonymous]` to the [LoginModel and RegisterModel](https://github.com/aspnet/templating/issues/238).</span></span>
-
-### <a name="configure-the-test-account"></a><span data-ttu-id="e9b36-176">Nakonfigurujte účet pro test</span><span class="sxs-lookup"><span data-stu-id="e9b36-176">Configure the test account</span></span>
-
-<span data-ttu-id="e9b36-177">`SeedData` Třída vytvoří dva účty: správce a správce.</span><span class="sxs-lookup"><span data-stu-id="e9b36-177">The `SeedData` class creates two accounts: administrator and manager.</span></span> <span data-ttu-id="e9b36-178">Použití [nástroj tajný klíč správce](xref:security/app-secrets) nastavení hesla pro tyto účty.</span><span class="sxs-lookup"><span data-stu-id="e9b36-178">Use the [Secret Manager tool](xref:security/app-secrets) to set a password for these accounts.</span></span> <span data-ttu-id="e9b36-179">Nastavení hesla z adresáře projektu (adresář obsahující *Program.cs*):</span><span class="sxs-lookup"><span data-stu-id="e9b36-179">Set the password from the project directory (the directory containing *Program.cs*):</span></span>
+<span data-ttu-id="bae44-170">`SeedData` Třída vytvoří dva účty: správce a správce.</span><span class="sxs-lookup"><span data-stu-id="bae44-170">The `SeedData` class creates two accounts: administrator and manager.</span></span> <span data-ttu-id="bae44-171">Použití [nástroj tajný klíč správce](xref:security/app-secrets) nastavení hesla pro tyto účty.</span><span class="sxs-lookup"><span data-stu-id="bae44-171">Use the [Secret Manager tool](xref:security/app-secrets) to set a password for these accounts.</span></span> <span data-ttu-id="bae44-172">Nastavte heslo z adresáře projektu (adresáře, který obsahuje *Program.cs*):</span><span class="sxs-lookup"><span data-stu-id="bae44-172">Set the password from the project directory (the directory containing *Program.cs*):</span></span>
 
 ```console
 dotnet user-secrets set SeedUserPW <PW>
 ```
 
-<span data-ttu-id="e9b36-180">Pokud nepoužijete silné heslo, je vyvolána výjimka, kdy `SeedData.Initialize` je volána.</span><span class="sxs-lookup"><span data-stu-id="e9b36-180">If you don't use a strong password, an exception is thrown when `SeedData.Initialize` is called.</span></span>
+<span data-ttu-id="bae44-173">Pokud není zadán silné heslo, je vyvolána výjimka, když `SeedData.Initialize` je volána.</span><span class="sxs-lookup"><span data-stu-id="bae44-173">If a strong password is not specified, an exception is thrown when `SeedData.Initialize` is called.</span></span>
 
-<span data-ttu-id="e9b36-181">Aktualizace `Main` používat heslo testu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-181">Update `Main` to use the test password:</span></span>
+<span data-ttu-id="bae44-174">Aktualizace `Main` test heslo budete používat:</span><span class="sxs-lookup"><span data-stu-id="bae44-174">Update `Main` to use the test password:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Program.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2.1/Program.cs?name=snippet)]
 
-### <a name="create-the-test-accounts-and-update-the-contacts"></a><span data-ttu-id="e9b36-182">Vytvoření testovacích účtů a aktualizovat kontaktů</span><span class="sxs-lookup"><span data-stu-id="e9b36-182">Create the test accounts and update the contacts</span></span>
+### <a name="create-the-test-accounts-and-update-the-contacts"></a><span data-ttu-id="bae44-175">Vytvoření testovacích účtů a aktualizovat kontakty</span><span class="sxs-lookup"><span data-stu-id="bae44-175">Create the test accounts and update the contacts</span></span>
 
-<span data-ttu-id="e9b36-183">Aktualizace `Initialize` metoda v `SeedData` třídy za účelem vytvoření testovacích účtů:</span><span class="sxs-lookup"><span data-stu-id="e9b36-183">Update the `Initialize` method in the `SeedData` class to create the test accounts:</span></span>
+<span data-ttu-id="bae44-176">Aktualizace `Initialize` metodu `SeedData` třídy za účelem vytvoření testovacích účtů:</span><span class="sxs-lookup"><span data-stu-id="bae44-176">Update the `Initialize` method in the `SeedData` class to create the test accounts:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet_Initialize)]
+[!code-csharp[](secure-data/samples/final2.1/Data/SeedData.cs?name=snippet_Initialize)]
 
-<span data-ttu-id="e9b36-184">Přidat ID uživatele správce a `ContactStatus` kontaktům.</span><span class="sxs-lookup"><span data-stu-id="e9b36-184">Add the administrator user ID and `ContactStatus` to the contacts.</span></span> <span data-ttu-id="e9b36-185">Si ho kontaktů "Odesláno" a jedné "Zamítnutá".</span><span class="sxs-lookup"><span data-stu-id="e9b36-185">Make one of the contacts "Submitted" and one "Rejected".</span></span> <span data-ttu-id="e9b36-186">Přidáte ID uživatele a stav pro všechny kontakty.</span><span class="sxs-lookup"><span data-stu-id="e9b36-186">Add the user ID and status to all the contacts.</span></span> <span data-ttu-id="e9b36-187">Je zobrazena pouze jeden kontakt:</span><span class="sxs-lookup"><span data-stu-id="e9b36-187">Only one contact is shown:</span></span>
+<span data-ttu-id="bae44-177">Přidat správce ID uživatele a `ContactStatus` kontaktům.</span><span class="sxs-lookup"><span data-stu-id="bae44-177">Add the administrator user ID and `ContactStatus` to the contacts.</span></span> <span data-ttu-id="bae44-178">Proveďte jednu z kontakty "Submitted" a jedné "byl odmítnut".</span><span class="sxs-lookup"><span data-stu-id="bae44-178">Make one of the contacts "Submitted" and one "Rejected".</span></span> <span data-ttu-id="bae44-179">Přidáte ID uživatele a stav pro všechny kontakty.</span><span class="sxs-lookup"><span data-stu-id="bae44-179">Add the user ID and status to all the contacts.</span></span> <span data-ttu-id="bae44-180">Je zobrazena pouze jeden kontakt:</span><span class="sxs-lookup"><span data-stu-id="bae44-180">Only one contact is shown:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet1&highlight=17,18)]
+[!code-csharp[](secure-data/samples/final2.1/Data/SeedData.cs?name=snippet1&highlight=17,18)]
 
-## <a name="create-owner-manager-and-administrator-authorization-handlers"></a><span data-ttu-id="e9b36-188">Vytvoření vlastníka, správce a Správce autorizací obslužné rutiny</span><span class="sxs-lookup"><span data-stu-id="e9b36-188">Create owner, manager, and administrator authorization handlers</span></span>
+## <a name="create-owner-manager-and-administrator-authorization-handlers"></a><span data-ttu-id="bae44-181">Vytvořit vlastníka, správce a Správce autorizace obslužné rutiny</span><span class="sxs-lookup"><span data-stu-id="bae44-181">Create owner, manager, and administrator authorization handlers</span></span>
 
-<span data-ttu-id="e9b36-189">Vytvoření `ContactIsOwnerAuthorizationHandler` třídy v *autorizace* složky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-189">Create a `ContactIsOwnerAuthorizationHandler` class in the *Authorization* folder.</span></span> <span data-ttu-id="e9b36-190">`ContactIsOwnerAuthorizationHandler` Ověřuje, že uživatel, který funguje na prostředku vlastníkem prostředku.</span><span class="sxs-lookup"><span data-stu-id="e9b36-190">The `ContactIsOwnerAuthorizationHandler` verifies that the user acting on a resource owns the resource.</span></span>
+<span data-ttu-id="bae44-182">Vytvoření `ContactIsOwnerAuthorizationHandler` třídy v *autorizace* složky.</span><span class="sxs-lookup"><span data-stu-id="bae44-182">Create a `ContactIsOwnerAuthorizationHandler` class in the *Authorization* folder.</span></span> <span data-ttu-id="bae44-183">`ContactIsOwnerAuthorizationHandler` Ověřuje, že uživatel na prostředek vlastníkem prostředku.</span><span class="sxs-lookup"><span data-stu-id="bae44-183">The `ContactIsOwnerAuthorizationHandler` verifies that the user acting on a resource owns the resource.</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Authorization/ContactIsOwnerAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2.1/Authorization/ContactIsOwnerAuthorizationHandler.cs)]
 
-<span data-ttu-id="e9b36-191">`ContactIsOwnerAuthorizationHandler` Volání [kontextu. Úspěšné](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) Pokud ověřený aktuální uživatel je jeho vlastníkem.</span><span class="sxs-lookup"><span data-stu-id="e9b36-191">The `ContactIsOwnerAuthorizationHandler` calls [context.Succeed](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) if the current authenticated user is the contact owner.</span></span> <span data-ttu-id="e9b36-192">Obslužné rutiny autorizace obecně:</span><span class="sxs-lookup"><span data-stu-id="e9b36-192">Authorization handlers generally:</span></span>
+<span data-ttu-id="bae44-184">`ContactIsOwnerAuthorizationHandler` Volání [kontextu. Úspěšné](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) aktuálně ověřeného uživatele při jeho vlastníkem.</span><span class="sxs-lookup"><span data-stu-id="bae44-184">The `ContactIsOwnerAuthorizationHandler` calls [context.Succeed](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) if the current authenticated user is the contact owner.</span></span> <span data-ttu-id="bae44-185">Obslužné rutiny autorizace obecně:</span><span class="sxs-lookup"><span data-stu-id="bae44-185">Authorization handlers generally:</span></span>
 
-* <span data-ttu-id="e9b36-193">Vrátí `context.Succeed` Pokud jsou splněny požadavky na.</span><span class="sxs-lookup"><span data-stu-id="e9b36-193">Return `context.Succeed` when the requirements are met.</span></span>
-* <span data-ttu-id="e9b36-194">Vrátí `Task.CompletedTask` Pokud nejsou splněné požadavky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-194">Return `Task.CompletedTask` when requirements aren't met.</span></span> <span data-ttu-id="e9b36-195">`Task.CompletedTask` je ani úspěch nebo neúspěch&mdash;umožňuje ostatních obslužných rutin autorizaci ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="e9b36-195">`Task.CompletedTask` is neither success or failure&mdash;it allows other authorization handlers to run.</span></span>
+* <span data-ttu-id="bae44-186">Vrátí `context.Succeed` Pokud jsou splněny.</span><span class="sxs-lookup"><span data-stu-id="bae44-186">Return `context.Succeed` when the requirements are met.</span></span>
+* <span data-ttu-id="bae44-187">Vrátí `Task.CompletedTask` Pokud požadavky nejsou splněny.</span><span class="sxs-lookup"><span data-stu-id="bae44-187">Return `Task.CompletedTask` when requirements aren't met.</span></span> <span data-ttu-id="bae44-188">`Task.CompletedTask` je ani úspěch nebo neúspěch&mdash;umožňuje ostatních obslužných rutin autorizaci ke spuštění.</span><span class="sxs-lookup"><span data-stu-id="bae44-188">`Task.CompletedTask` is neither success or failure&mdash;it allows other authorization handlers to run.</span></span>
 
-<span data-ttu-id="e9b36-196">Pokud potřebujete explicitně nezdaří, vrátí [kontextu. Selhání](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail).</span><span class="sxs-lookup"><span data-stu-id="e9b36-196">If you need to explicitly fail, return [context.Fail](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail).</span></span>
+<span data-ttu-id="bae44-189">Pokud je potřeba explicitně nezdaří, vrátí [kontextu. Selhání](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail).</span><span class="sxs-lookup"><span data-stu-id="bae44-189">If you need to explicitly fail, return [context.Fail](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail).</span></span>
 
-<span data-ttu-id="e9b36-197">Aplikace umožňuje kontaktní vlastníky úpravy, odstranění nebo vytvořit svá vlastní data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-197">The app allows contact owners to edit/delete/create their own data.</span></span> <span data-ttu-id="e9b36-198">`ContactIsOwnerAuthorizationHandler` není potřeba zkontrolovat operaci předán v parametru požadavek.</span><span class="sxs-lookup"><span data-stu-id="e9b36-198">`ContactIsOwnerAuthorizationHandler` doesn't need to check the operation passed in the requirement parameter.</span></span>
+<span data-ttu-id="bae44-190">Aplikaci umožňuje kontaktní vlastníkům upravit, odstranit a vytvořit svoje vlastní data.</span><span class="sxs-lookup"><span data-stu-id="bae44-190">The app allows contact owners to edit/delete/create their own data.</span></span> <span data-ttu-id="bae44-191">`ContactIsOwnerAuthorizationHandler` není nutné ke kontrole operace předané v parametru požadavku.</span><span class="sxs-lookup"><span data-stu-id="bae44-191">`ContactIsOwnerAuthorizationHandler` doesn't need to check the operation passed in the requirement parameter.</span></span>
 
-### <a name="create-a-manager-authorization-handler"></a><span data-ttu-id="e9b36-199">Vytvořte obslužnou rutinu Správce autorizací</span><span class="sxs-lookup"><span data-stu-id="e9b36-199">Create a manager authorization handler</span></span>
+### <a name="create-a-manager-authorization-handler"></a><span data-ttu-id="bae44-192">Vytvořte obslužnou rutinu Správce autorizací</span><span class="sxs-lookup"><span data-stu-id="bae44-192">Create a manager authorization handler</span></span>
 
-<span data-ttu-id="e9b36-200">Vytvoření `ContactManagerAuthorizationHandler` třídy v *autorizace* složky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-200">Create a `ContactManagerAuthorizationHandler` class in the *Authorization* folder.</span></span> <span data-ttu-id="e9b36-201">`ContactManagerAuthorizationHandler` Ověřuje uživatele, který funguje na prostředku je správce.</span><span class="sxs-lookup"><span data-stu-id="e9b36-201">The `ContactManagerAuthorizationHandler` verifies the user acting on the resource is a manager.</span></span> <span data-ttu-id="e9b36-202">Pouze správci můžete schválit nebo odmítnout změny obsahu (nové nebo změněné).</span><span class="sxs-lookup"><span data-stu-id="e9b36-202">Only managers can approve or reject content changes (new or changed).</span></span>
+<span data-ttu-id="bae44-193">Vytvoření `ContactManagerAuthorizationHandler` třídy v *autorizace* složky.</span><span class="sxs-lookup"><span data-stu-id="bae44-193">Create a `ContactManagerAuthorizationHandler` class in the *Authorization* folder.</span></span> <span data-ttu-id="bae44-194">`ContactManagerAuthorizationHandler` Ověřuje uživatele na prostředek je správce.</span><span class="sxs-lookup"><span data-stu-id="bae44-194">The `ContactManagerAuthorizationHandler` verifies the user acting on the resource is a manager.</span></span> <span data-ttu-id="bae44-195">Pouze vedoucí mohli schválit nebo odmítnout změny obsahu (nové nebo změněné).</span><span class="sxs-lookup"><span data-stu-id="bae44-195">Only managers can approve or reject content changes (new or changed).</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Authorization/ContactManagerAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2.1/Authorization/ContactManagerAuthorizationHandler.cs)]
 
-### <a name="create-an-administrator-authorization-handler"></a><span data-ttu-id="e9b36-203">Vytvoření obslužné rutiny Správce autorizací</span><span class="sxs-lookup"><span data-stu-id="e9b36-203">Create an administrator authorization handler</span></span>
+### <a name="create-an-administrator-authorization-handler"></a><span data-ttu-id="bae44-196">Vytvořte obslužnou rutinu Správce autorizací</span><span class="sxs-lookup"><span data-stu-id="bae44-196">Create an administrator authorization handler</span></span>
 
-<span data-ttu-id="e9b36-204">Vytvoření `ContactAdministratorsAuthorizationHandler` třídy v *autorizace* složky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-204">Create a `ContactAdministratorsAuthorizationHandler` class in the *Authorization* folder.</span></span> <span data-ttu-id="e9b36-205">`ContactAdministratorsAuthorizationHandler` Ověřuje uživatele, který funguje na prostředku je správce.</span><span class="sxs-lookup"><span data-stu-id="e9b36-205">The `ContactAdministratorsAuthorizationHandler` verifies the user acting on the resource is an administrator.</span></span> <span data-ttu-id="e9b36-206">Správce může provádět všechny operace.</span><span class="sxs-lookup"><span data-stu-id="e9b36-206">Administrator can do all operations.</span></span>
+<span data-ttu-id="bae44-197">Vytvoření `ContactAdministratorsAuthorizationHandler` třídy v *autorizace* složky.</span><span class="sxs-lookup"><span data-stu-id="bae44-197">Create a `ContactAdministratorsAuthorizationHandler` class in the *Authorization* folder.</span></span> <span data-ttu-id="bae44-198">`ContactAdministratorsAuthorizationHandler` Ověřuje uživatele na prostředek je správce.</span><span class="sxs-lookup"><span data-stu-id="bae44-198">The `ContactAdministratorsAuthorizationHandler` verifies the user acting on the resource is an administrator.</span></span> <span data-ttu-id="bae44-199">Správce může provádět všechny operace.</span><span class="sxs-lookup"><span data-stu-id="bae44-199">Administrator can do all operations.</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Authorization/ContactAdministratorsAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2.1/Authorization/ContactAdministratorsAuthorizationHandler.cs)]
 
-## <a name="register-the-authorization-handlers"></a><span data-ttu-id="e9b36-207">Registraci obslužných rutin autorizace</span><span class="sxs-lookup"><span data-stu-id="e9b36-207">Register the authorization handlers</span></span>
+## <a name="register-the-authorization-handlers"></a><span data-ttu-id="bae44-200">Zaregistrujte obslužné rutiny autorizace</span><span class="sxs-lookup"><span data-stu-id="bae44-200">Register the authorization handlers</span></span>
 
-<span data-ttu-id="e9b36-208">Musí být pro registrované služby pomocí Entity Framework Core [vkládání závislostí](xref:fundamentals/dependency-injection) pomocí [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions).</span><span class="sxs-lookup"><span data-stu-id="e9b36-208">Services using Entity Framework Core must be registered for [dependency injection](xref:fundamentals/dependency-injection) using [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions).</span></span> <span data-ttu-id="e9b36-209">`ContactIsOwnerAuthorizationHandler` Používá ASP.NET Core [Identity](xref:security/authentication/identity), který je založený na Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="e9b36-209">The `ContactIsOwnerAuthorizationHandler` uses ASP.NET Core [Identity](xref:security/authentication/identity), which is built on Entity Framework Core.</span></span> <span data-ttu-id="e9b36-210">Registraci obslužných rutin s kolekcí služby, takže jsou k dispozici na `ContactsController` prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="e9b36-210">Register the handlers with the service collection so they're available to the `ContactsController` through [dependency injection](xref:fundamentals/dependency-injection).</span></span> <span data-ttu-id="e9b36-211">Přidejte následující kód do konce `ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="e9b36-211">Add the following code to the end of `ConfigureServices`:</span></span>
+<span data-ttu-id="bae44-201">Pomocí Entity Framework Core Services musí být zaregistrovaný pro [injektáž závislostí](xref:fundamentals/dependency-injection) pomocí [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions).</span><span class="sxs-lookup"><span data-stu-id="bae44-201">Services using Entity Framework Core must be registered for [dependency injection](xref:fundamentals/dependency-injection) using [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions).</span></span> <span data-ttu-id="bae44-202">`ContactIsOwnerAuthorizationHandler` Používá ASP.NET Core [Identity](xref:security/authentication/identity), která je založená na Entity Framework Core.</span><span class="sxs-lookup"><span data-stu-id="bae44-202">The `ContactIsOwnerAuthorizationHandler` uses ASP.NET Core [Identity](xref:security/authentication/identity), which is built on Entity Framework Core.</span></span> <span data-ttu-id="bae44-203">Obslužné rutiny zaregistrovat u kolekce služby jsou k dispozici na `ContactsController` prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection).</span><span class="sxs-lookup"><span data-stu-id="bae44-203">Register the handlers with the service collection so they're available to the `ContactsController` through [dependency injection](xref:fundamentals/dependency-injection).</span></span> <span data-ttu-id="bae44-204">Přidejte následující kód do konce `ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="bae44-204">Add the following code to the end of `ConfigureServices`:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
+[!code-csharp[](secure-data/samples/final2.1/Startup.cs?name=snippet_defaultPolicy&highlight=27-99)]
 
-<span data-ttu-id="e9b36-212">`ContactAdministratorsAuthorizationHandler` a `ContactManagerAuthorizationHandler` jsou přidány jako jednotlivé prvky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-212">`ContactAdministratorsAuthorizationHandler` and `ContactManagerAuthorizationHandler` are added as singletons.</span></span> <span data-ttu-id="e9b36-213">Jsou jednotlivé prvky, protože se nepoužívají EF a veškeré informace potřebné v `Context` parametr `HandleRequirementAsync` metoda.</span><span class="sxs-lookup"><span data-stu-id="e9b36-213">They're singletons because they don't use EF and all the information needed is in the `Context` parameter of the `HandleRequirementAsync` method.</span></span>
+<span data-ttu-id="bae44-205">`ContactAdministratorsAuthorizationHandler` a `ContactManagerAuthorizationHandler` jsou přidány jako jednotlivé prvky.</span><span class="sxs-lookup"><span data-stu-id="bae44-205">`ContactAdministratorsAuthorizationHandler` and `ContactManagerAuthorizationHandler` are added as singletons.</span></span> <span data-ttu-id="bae44-206">Jednotlivé prvky jsou vzhledem k tomu, že se nepoužívají EF a všechny informace potřebné musí být `Context` parametr `HandleRequirementAsync` metoda.</span><span class="sxs-lookup"><span data-stu-id="bae44-206">They're singletons because they don't use EF and all the information needed is in the `Context` parameter of the `HandleRequirementAsync` method.</span></span>
 
-## <a name="support-authorization"></a><span data-ttu-id="e9b36-214">Povolení podpory</span><span class="sxs-lookup"><span data-stu-id="e9b36-214">Support authorization</span></span>
+## <a name="support-authorization"></a><span data-ttu-id="bae44-207">Povolení podpory</span><span class="sxs-lookup"><span data-stu-id="bae44-207">Support authorization</span></span>
 
-<span data-ttu-id="e9b36-215">V této části se aktualizace stránky Razor a přidejte třídu operations požadavky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-215">In this section, you update the Razor Pages and add an operations requirements class.</span></span>
+<span data-ttu-id="bae44-208">V této části se aktualizace stránky Razor a přidejte třídu požadavků operace.</span><span class="sxs-lookup"><span data-stu-id="bae44-208">In this section, you update the Razor Pages and add an operations requirements class.</span></span>
 
-### <a name="review-the-contact-operations-requirements-class"></a><span data-ttu-id="e9b36-216">Zkontrolujte požadavky na třídy kontaktní operace</span><span class="sxs-lookup"><span data-stu-id="e9b36-216">Review the contact operations requirements class</span></span>
+### <a name="review-the-contact-operations-requirements-class"></a><span data-ttu-id="bae44-209">Zkontrolujte požadavky na třídy kontaktní operace</span><span class="sxs-lookup"><span data-stu-id="bae44-209">Review the contact operations requirements class</span></span>
 
-<span data-ttu-id="e9b36-217">Zkontrolujte `ContactOperations` třídy.</span><span class="sxs-lookup"><span data-stu-id="e9b36-217">Review the `ContactOperations` class.</span></span> <span data-ttu-id="e9b36-218">Tato třída obsahuje požadavky na aplikace podporuje:</span><span class="sxs-lookup"><span data-stu-id="e9b36-218">This class contains the requirements the app supports:</span></span>
+<span data-ttu-id="bae44-210">Zkontrolujte `ContactOperations` třídy.</span><span class="sxs-lookup"><span data-stu-id="bae44-210">Review the `ContactOperations` class.</span></span> <span data-ttu-id="bae44-211">Tato třída obsahuje požadavky na aplikace podporuje:</span><span class="sxs-lookup"><span data-stu-id="bae44-211">This class contains the requirements the app supports:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Authorization/ContactOperations.cs)]
+[!code-csharp[](secure-data/samples/final2.1/Authorization/ContactOperations.cs)]
 
-### <a name="create-a-base-class-for-the-razor-pages"></a><span data-ttu-id="e9b36-219">Vytvořte základní třídu pro stránky Razor</span><span class="sxs-lookup"><span data-stu-id="e9b36-219">Create a base class for the Razor Pages</span></span>
+### <a name="create-a-base-class-for-the-contacts-razor-pages"></a><span data-ttu-id="bae44-212">Vytvoření základní třídu pro stránky Razor kontakty</span><span class="sxs-lookup"><span data-stu-id="bae44-212">Create a base class for the Contacts Razor Pages</span></span>
 
-<span data-ttu-id="e9b36-220">Vytvořte základní třídu, která obsahuje služeb v rámci kontakty stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="e9b36-220">Create a base class that contains the services used in the contacts Razor Pages.</span></span> <span data-ttu-id="e9b36-221">Základní třída vloží tento kód inicializace na jednom místě:</span><span class="sxs-lookup"><span data-stu-id="e9b36-221">The base class puts that initialization code in one location:</span></span>
+<span data-ttu-id="bae44-213">Vytvořte základní třídu, která obsahuje služby využité v kontaktech stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="bae44-213">Create a base class that contains the services used in the contacts Razor Pages.</span></span> <span data-ttu-id="bae44-214">Základní třída vloží kód inicializace na jednom místě:</span><span class="sxs-lookup"><span data-stu-id="bae44-214">The base class puts the initialization code in one location:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/DI_BasePageModel.cs)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/DI_BasePageModel.cs)]
 
-<span data-ttu-id="e9b36-222">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="e9b36-222">The preceding code:</span></span>
+<span data-ttu-id="bae44-215">Předchozí kód:</span><span class="sxs-lookup"><span data-stu-id="bae44-215">The preceding code:</span></span>
 
-* <span data-ttu-id="e9b36-223">Přidá `IAuthorizationService` služby s přístupem k autorizaci obslužné rutiny.</span><span class="sxs-lookup"><span data-stu-id="e9b36-223">Adds the `IAuthorizationService` service to access to the authorization handlers.</span></span>
-* <span data-ttu-id="e9b36-224">Přidá identitu `UserManager` služby.</span><span class="sxs-lookup"><span data-stu-id="e9b36-224">Adds the Identity `UserManager` service.</span></span>
-* <span data-ttu-id="e9b36-225">Přidat `ApplicationDbContext`.</span><span class="sxs-lookup"><span data-stu-id="e9b36-225">Add the `ApplicationDbContext`.</span></span>
+* <span data-ttu-id="bae44-216">Přidá `IAuthorizationService` služby pro přístup k rutinám autorizace.</span><span class="sxs-lookup"><span data-stu-id="bae44-216">Adds the `IAuthorizationService` service to access to the authorization handlers.</span></span>
+* <span data-ttu-id="bae44-217">Přidá identitu `UserManager` služby.</span><span class="sxs-lookup"><span data-stu-id="bae44-217">Adds the Identity `UserManager` service.</span></span>
+* <span data-ttu-id="bae44-218">Přidat `ApplicationDbContext`.</span><span class="sxs-lookup"><span data-stu-id="bae44-218">Add the `ApplicationDbContext`.</span></span>
 
-### <a name="update-the-createmodel"></a><span data-ttu-id="e9b36-226">Aktualizace CreateModel</span><span class="sxs-lookup"><span data-stu-id="e9b36-226">Update the CreateModel</span></span>
+### <a name="update-the-createmodel"></a><span data-ttu-id="bae44-219">Aktualizace CreateModel</span><span class="sxs-lookup"><span data-stu-id="bae44-219">Update the CreateModel</span></span>
 
-<span data-ttu-id="e9b36-227">Aktualizovat konstruktor vytvořit stránku modelu používat `DI_BasePageModel` základní třídy:</span><span class="sxs-lookup"><span data-stu-id="e9b36-227">Update the create page model constructor to use the `DI_BasePageModel` base class:</span></span>
+<span data-ttu-id="bae44-220">Aktualizovat konstruktoru vytvořit stránku model použití `DI_BasePageModel` základní třídy:</span><span class="sxs-lookup"><span data-stu-id="bae44-220">Update the create page model constructor to use the `DI_BasePageModel` base class:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
 
-<span data-ttu-id="e9b36-228">Aktualizace `CreateModel.OnPostAsync` metodu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-228">Update the `CreateModel.OnPostAsync` method to:</span></span>
+<span data-ttu-id="bae44-221">Aktualizace `CreateModel.OnPostAsync` metodu:</span><span class="sxs-lookup"><span data-stu-id="bae44-221">Update the `CreateModel.OnPostAsync` method to:</span></span>
 
-* <span data-ttu-id="e9b36-229">Přidat ID uživatele `Contact` modelu.</span><span class="sxs-lookup"><span data-stu-id="e9b36-229">Add the user ID to the `Contact` model.</span></span>
-* <span data-ttu-id="e9b36-230">Ověřte, zda že má uživatel oprávnění k vytvoření kontakty autorizace obslužná rutina volejte.</span><span class="sxs-lookup"><span data-stu-id="e9b36-230">Call the authorization handler to verify the user has permission to create contacts.</span></span>
+* <span data-ttu-id="bae44-222">Přidat ID uživatele, `Contact` modelu.</span><span class="sxs-lookup"><span data-stu-id="bae44-222">Add the user ID to the `Contact` model.</span></span>
+* <span data-ttu-id="bae44-223">Ověřte, zda že má uživatel oprávnění k vytvoření kontakty obslužná rutina ověřování volejte.</span><span class="sxs-lookup"><span data-stu-id="bae44-223">Call the authorization handler to verify the user has permission to create contacts.</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
 
-### <a name="update-the-indexmodel"></a><span data-ttu-id="e9b36-231">Aktualizace IndexModel</span><span class="sxs-lookup"><span data-stu-id="e9b36-231">Update the IndexModel</span></span>
+### <a name="update-the-indexmodel"></a><span data-ttu-id="bae44-224">Aktualizace IndexModel</span><span class="sxs-lookup"><span data-stu-id="bae44-224">Update the IndexModel</span></span>
 
-<span data-ttu-id="e9b36-232">Aktualizace `OnGetAsync` metoda tak uživatelům obecné jsou zobrazeny pouze schválené kontaktů:</span><span class="sxs-lookup"><span data-stu-id="e9b36-232">Update the `OnGetAsync` method so only approved contacts are shown to general users:</span></span>
+<span data-ttu-id="bae44-225">Aktualizace `OnGetAsync` metody, jsou uvedeny pouze schválené kontakty obecné uživatelům:</span><span class="sxs-lookup"><span data-stu-id="bae44-225">Update the `OnGetAsync` method so only approved contacts are shown to general users:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Index.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Index.cshtml.cs?name=snippet)]
 
-### <a name="update-the-editmodel"></a><span data-ttu-id="e9b36-233">Aktualizace EditModel</span><span class="sxs-lookup"><span data-stu-id="e9b36-233">Update the EditModel</span></span>
+### <a name="update-the-editmodel"></a><span data-ttu-id="bae44-226">Aktualizace EditModel</span><span class="sxs-lookup"><span data-stu-id="bae44-226">Update the EditModel</span></span>
 
-<span data-ttu-id="e9b36-234">Přidejte obslužnou rutinu ověřování k ověření, že uživatel kontakt vlastní.</span><span class="sxs-lookup"><span data-stu-id="e9b36-234">Add an authorization handler to verify the user owns the contact.</span></span> <span data-ttu-id="e9b36-235">Protože je ověřován autorizace prostředků, `[Authorize]` atribut není dost.</span><span class="sxs-lookup"><span data-stu-id="e9b36-235">Because resource authorization is being validated, the `[Authorize]` attribute is not enough.</span></span> <span data-ttu-id="e9b36-236">Aplikace nemá přístup k prostředku, při hodnocení atributy.</span><span class="sxs-lookup"><span data-stu-id="e9b36-236">The app doesn't have access to the resource when attributes are evaluated.</span></span> <span data-ttu-id="e9b36-237">Ověření na základě prostředků musí být nutné.</span><span class="sxs-lookup"><span data-stu-id="e9b36-237">Resource-based authorization must be imperative.</span></span> <span data-ttu-id="e9b36-238">Jakmile načítání v modelu stránky nebo načítání v rámci obslužná rutina samotné má aplikace přístup k prostředku, musí provést kontroly.</span><span class="sxs-lookup"><span data-stu-id="e9b36-238">Checks must be performed once the app has access to the resource, either by loading it in the page model or by loading it within the handler itself.</span></span> <span data-ttu-id="e9b36-239">Často přístup k prostředku předáním v klíči prostředků.</span><span class="sxs-lookup"><span data-stu-id="e9b36-239">You frequently access the resource by passing in the resource key.</span></span>
+<span data-ttu-id="bae44-227">Přidejte obslužnou rutinu ověřování k ověření, že uživatel je vlastníkem kontaktu.</span><span class="sxs-lookup"><span data-stu-id="bae44-227">Add an authorization handler to verify the user owns the contact.</span></span> <span data-ttu-id="bae44-228">Protože ra se ověřuje, `[Authorize]` atribut není dostatek.</span><span class="sxs-lookup"><span data-stu-id="bae44-228">Because resource authorization is being validated, the `[Authorize]` attribute is not enough.</span></span> <span data-ttu-id="bae44-229">Aplikace nemá přístup k prostředku, když jsou vyhodnocovány atributy.</span><span class="sxs-lookup"><span data-stu-id="bae44-229">The app doesn't have access to the resource when attributes are evaluated.</span></span> <span data-ttu-id="bae44-230">Autorizace na základě prostředků musí být nezbytné.</span><span class="sxs-lookup"><span data-stu-id="bae44-230">Resource-based authorization must be imperative.</span></span> <span data-ttu-id="bae44-231">Kontroly musí provést, když má aplikace přístup k prostředku načtením v modelu stránky nebo načtením v rámci samotná obslužná rutina.</span><span class="sxs-lookup"><span data-stu-id="bae44-231">Checks must be performed once the app has access to the resource, either by loading it in the page model or by loading it within the handler itself.</span></span> <span data-ttu-id="bae44-232">Často přistupovat k prostředku předáním klíč prostředku.</span><span class="sxs-lookup"><span data-stu-id="bae44-232">You frequently access the resource by passing in the resource key.</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Edit.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Edit.cshtml.cs?name=snippet)]
 
-### <a name="update-the-deletemodel"></a><span data-ttu-id="e9b36-240">Aktualizace DeleteModel</span><span class="sxs-lookup"><span data-stu-id="e9b36-240">Update the DeleteModel</span></span>
+### <a name="update-the-deletemodel"></a><span data-ttu-id="bae44-233">Aktualizace DeleteModel</span><span class="sxs-lookup"><span data-stu-id="bae44-233">Update the DeleteModel</span></span>
 
-<span data-ttu-id="e9b36-241">Aktualizace modelu stránky odstranit pomocí obslužná rutina ověřování ověřte, zda že má uživatel oprávnění odstranit na kontakt.</span><span class="sxs-lookup"><span data-stu-id="e9b36-241">Update the delete page model to use the authorization handler to verify the user has delete permission on the contact.</span></span>
+<span data-ttu-id="bae44-234">Aktualizace modelu stránku odstranit sloužící k ověření, že uživatel má oprávnění odstranit u kontaktu obslužnou rutinu ověřování.</span><span class="sxs-lookup"><span data-stu-id="bae44-234">Update the delete page model to use the authorization handler to verify the user has delete permission on the contact.</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Delete.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Delete.cshtml.cs?name=snippet)]
 
-## <a name="inject-the-authorization-service-into-the-views"></a><span data-ttu-id="e9b36-242">Vložit služby autorizace do zobrazení</span><span class="sxs-lookup"><span data-stu-id="e9b36-242">Inject the authorization service into the views</span></span>
+## <a name="inject-the-authorization-service-into-the-views"></a><span data-ttu-id="bae44-235">Vložit do zobrazení autorizační službu</span><span class="sxs-lookup"><span data-stu-id="bae44-235">Inject the authorization service into the views</span></span>
 
-<span data-ttu-id="e9b36-243">Zobrazuje uživatelské rozhraní v současné době upravovat a odstraňovat odkazy na data, která uživatele nelze upravit.</span><span class="sxs-lookup"><span data-stu-id="e9b36-243">Currently, the UI shows edit and delete links for data the user can't modify.</span></span> <span data-ttu-id="e9b36-244">Uživatelské rozhraní je opraven použití obslužná rutina ověřování pro zobrazení.</span><span class="sxs-lookup"><span data-stu-id="e9b36-244">The UI is fixed by applying the authorization handler to the views.</span></span>
+<span data-ttu-id="bae44-236">V současné době ukazuje uživatelského rozhraní upravovat a odstraňovat kontakty, které uživatel nemůže upravovat odkazy.</span><span class="sxs-lookup"><span data-stu-id="bae44-236">Currently, the UI shows edit and delete links for contacts the user can't modify.</span></span>
 
-<span data-ttu-id="e9b36-245">Vložit služby ověřování *Views/_ViewImports.cshtml* souboru tak, aby byl k dispozici pro všechna zobrazení:</span><span class="sxs-lookup"><span data-stu-id="e9b36-245">Inject the authorization service in the *Views/_ViewImports.cshtml* file so it's available to all views:</span></span>
+<span data-ttu-id="bae44-237">Vloží autorizační službu v *Views/_ViewImports.cshtml* souboru tak, aby byl k dispozici pro všechna zobrazení:</span><span class="sxs-lookup"><span data-stu-id="bae44-237">Inject the authorization service in the *Views/_ViewImports.cshtml* file so it's available to all views:</span></span>
 
-[!code-cshtml[](secure-data/samples/final2/Pages/_ViewImports.cshtml?highlight=6-9)]
+[!code-cshtml[](secure-data/samples/final2.1/Pages/_ViewImports.cshtml?highlight=6-99)]
 
-<span data-ttu-id="e9b36-246">Předchozí kód přidá několik `using` příkazy.</span><span class="sxs-lookup"><span data-stu-id="e9b36-246">The preceding markup adds several `using` statements.</span></span>
+<span data-ttu-id="bae44-238">Předchozí kód přidá několik `using` příkazy.</span><span class="sxs-lookup"><span data-stu-id="bae44-238">The preceding markup adds several `using` statements.</span></span>
 
-<span data-ttu-id="e9b36-247">Aktualizace **upravit** a **odstranit** odkazů v *Pages/Contacts/Index.cshtml* , pouze se vykresluje pro uživatele s příslušnými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="e9b36-247">Update the **Edit** and **Delete** links in *Pages/Contacts/Index.cshtml* so they're only rendered for users with the appropriate permissions:</span></span>
+<span data-ttu-id="bae44-239">Aktualizace **upravit** a **odstranit** odkazů v *Pages/Contacts/Index.cshtml* tak, že pouze vykreslen pro uživatele s příslušnými oprávněními:</span><span class="sxs-lookup"><span data-stu-id="bae44-239">Update the **Edit** and **Delete** links in *Pages/Contacts/Index.cshtml* so they're only rendered for users with the appropriate permissions:</span></span>
 
-[!code-cshtml[](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
+[!code-cshtml[](secure-data/samples/final2.1/Pages/Contacts/Index.cshtml?highlight=34-36,62-999)]
 
 > [!WARNING]
-> <span data-ttu-id="e9b36-248">Skrytí odkazy z uživatelů, kteří nemají oprávnění ke změně dat nepodporuje zabezpečit aplikace.</span><span class="sxs-lookup"><span data-stu-id="e9b36-248">Hiding links from users that don't have permission to change data doesn't secure the app.</span></span> <span data-ttu-id="e9b36-249">Skrytí odkazy díky aplikaci přívětivější zobrazením pouze platné odkazy.</span><span class="sxs-lookup"><span data-stu-id="e9b36-249">Hiding links makes the app more user-friendly by displaying only valid links.</span></span> <span data-ttu-id="e9b36-250">Uživatelé mohou zabezpečení generované adresy URL pro vyvolání upravit a odstranit operací na data, která budou nevlastníte.</span><span class="sxs-lookup"><span data-stu-id="e9b36-250">Users can hack the generated URLs to invoke edit and delete operations on data they don't own.</span></span> <span data-ttu-id="e9b36-251">Kontroly přístupu k zabezpečení dat musí vynucovat stránky Razor nebo kontroleru.</span><span class="sxs-lookup"><span data-stu-id="e9b36-251">The Razor Page or controller must enforce access checks to secure the data.</span></span>
+> <span data-ttu-id="bae44-240">Skrytí propojení od uživatele, kteří nemají oprávnění ke změně dat nebude zabezpečení aplikace.</span><span class="sxs-lookup"><span data-stu-id="bae44-240">Hiding links from users that don't have permission to change data doesn't secure the app.</span></span> <span data-ttu-id="bae44-241">Skrytí propojení nastaví aplikaci jako přívětivější tím, že zobrazuje pouze platné odkazy.</span><span class="sxs-lookup"><span data-stu-id="bae44-241">Hiding links makes the app more user-friendly by displaying only valid links.</span></span> <span data-ttu-id="bae44-242">Uživatelé můžou hack generované adres URL pro vyvolání funkce upravit a odstranit operací s daty, které není vlastní.</span><span class="sxs-lookup"><span data-stu-id="bae44-242">Users can hack the generated URLs to invoke edit and delete operations on data they don't own.</span></span> <span data-ttu-id="bae44-243">Stránka Razor nebo kontroleru musí vynucovat kontroly přístupu pro data zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="bae44-243">The Razor Page or controller must enforce access checks to secure the data.</span></span>
 
-### <a name="update-details"></a><span data-ttu-id="e9b36-252">Podrobné informace o aktualizaci</span><span class="sxs-lookup"><span data-stu-id="e9b36-252">Update Details</span></span>
+### <a name="update-details"></a><span data-ttu-id="bae44-244">Podrobné informace o aktualizaci</span><span class="sxs-lookup"><span data-stu-id="bae44-244">Update Details</span></span>
 
-<span data-ttu-id="e9b36-253">Zobrazení podrobností aktualizujte, aby správci můžete schválit nebo odmítnout kontaktů:</span><span class="sxs-lookup"><span data-stu-id="e9b36-253">Update the details view so managers can approve or reject contacts:</span></span>
+<span data-ttu-id="bae44-245">Aktualizujte zobrazení podrobností, aby vedoucí mohli schválit nebo odmítnout kontaktů:</span><span class="sxs-lookup"><span data-stu-id="bae44-245">Update the details view so managers can approve or reject contacts:</span></span>
 
-[!code-cshtml[](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
+[!code-cshtml[](secure-data/samples/final2.1/Pages/Contacts/Details.cshtml?name=snippet)]
 
-<span data-ttu-id="e9b36-254">Aktualizace modelu stránky podrobnosti:</span><span class="sxs-lookup"><span data-stu-id="e9b36-254">Update the details page model:</span></span>
+<span data-ttu-id="bae44-246">Model stránky podrobnosti aktualizace:</span><span class="sxs-lookup"><span data-stu-id="bae44-246">Update the details page model:</span></span>
 
-[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Details.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Details.cshtml.cs?name=snippet)]
 
-## <a name="test-the-completed-app"></a><span data-ttu-id="e9b36-255">Testování dokončená aplikace</span><span class="sxs-lookup"><span data-stu-id="e9b36-255">Test the completed app</span></span>
+## <a name="test-the-completed-app"></a><span data-ttu-id="bae44-247">Testování dokončené aplikace</span><span class="sxs-lookup"><span data-stu-id="bae44-247">Test the completed app</span></span>
 
-<span data-ttu-id="e9b36-256">Pokud jste pomocí Visual Studio Code nebo testování na místní platformu, která neobsahuje testovací certifikát pro protokol HTTPS:</span><span class="sxs-lookup"><span data-stu-id="e9b36-256">If you're using Visual Studio Code or testing on a local platform that doesn't include a test certificate for HTTPS:</span></span>
+<span data-ttu-id="bae44-248">Pokud má kontaktů:</span><span class="sxs-lookup"><span data-stu-id="bae44-248">If the app has contacts:</span></span>
 
-* <span data-ttu-id="e9b36-257">Nastavit `"LocalTest:skipHTTPS": true` v *appsettings. Developement.JSON* souboru tak, aby přeskočil požadavek HTTPS.</span><span class="sxs-lookup"><span data-stu-id="e9b36-257">Set `"LocalTest:skipHTTPS": true` in the *appsettings.Developement.json* file to skip the HTTPS requirement.</span></span> <span data-ttu-id="e9b36-258">Přeskočit HTTPS pouze na vývojovém počítači.</span><span class="sxs-lookup"><span data-stu-id="e9b36-258">Skip HTTPS only on a development machine.</span></span>
+* <span data-ttu-id="bae44-249">Odstranění všech záznamů v `Contact` tabulky.</span><span class="sxs-lookup"><span data-stu-id="bae44-249">Delete all the records in the `Contact` table.</span></span>
+* <span data-ttu-id="bae44-250">Restartujte aplikaci k přidání dat do databáze.</span><span class="sxs-lookup"><span data-stu-id="bae44-250">Restart the app to seed the database.</span></span>
 
-<span data-ttu-id="e9b36-259">Pokud má kontaktů:</span><span class="sxs-lookup"><span data-stu-id="e9b36-259">If the app has contacts:</span></span>
+<span data-ttu-id="bae44-251">Zaregistrujte pro procházení kontakty uživatele.</span><span class="sxs-lookup"><span data-stu-id="bae44-251">Register a user for browsing the contacts.</span></span>
 
-* <span data-ttu-id="e9b36-260">Odstranit všechny záznamy v `Contact` tabulky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-260">Delete all the records in the `Contact` table.</span></span>
-* <span data-ttu-id="e9b36-261">Restartujte aplikaci počáteční hodnoty databáze.</span><span class="sxs-lookup"><span data-stu-id="e9b36-261">Restart the app to seed the database.</span></span>
+<span data-ttu-id="bae44-252">Snadný způsob, jak otestovat dokončená aplikace je spustíte tři různé prohlížeče (nebo incognito/InPrivate verze).</span><span class="sxs-lookup"><span data-stu-id="bae44-252">An easy way to test the completed app is to launch three different browsers (or incognito/InPrivate versions).</span></span> <span data-ttu-id="bae44-253">V jeden prohlížeč, registraci nového uživatele (například `test@example.com`).</span><span class="sxs-lookup"><span data-stu-id="bae44-253">In one browser, register a new user (for example, `test@example.com`).</span></span> <span data-ttu-id="bae44-254">Přihlaste se k každým prohlížečem s jiným uživatelem.</span><span class="sxs-lookup"><span data-stu-id="bae44-254">Sign in to each browser with a different user.</span></span> <span data-ttu-id="bae44-255">Ověřte následující operace:</span><span class="sxs-lookup"><span data-stu-id="bae44-255">Verify the following operations:</span></span>
 
-<span data-ttu-id="e9b36-262">Registrace uživatele pro procházení kontaktů.</span><span class="sxs-lookup"><span data-stu-id="e9b36-262">Register a user for browsing the contacts.</span></span>
+* <span data-ttu-id="bae44-256">Registrovaných uživatelů můžete zobrazit všechny schválené kontaktní údaje.</span><span class="sxs-lookup"><span data-stu-id="bae44-256">Registered users can view all the approved contact data.</span></span>
+* <span data-ttu-id="bae44-257">Registrovaných uživatelů můžete upravit nebo odstranit svá vlastní data.</span><span class="sxs-lookup"><span data-stu-id="bae44-257">Registered users can edit/delete their own data.</span></span>
+* <span data-ttu-id="bae44-258">Vedoucí mohli schválit nebo odmítnout kontaktní údaje.</span><span class="sxs-lookup"><span data-stu-id="bae44-258">Managers can approve or reject contact data.</span></span> <span data-ttu-id="bae44-259">`Details` Zobrazení ukazuje **schválit** a **odmítnout** tlačítka.</span><span class="sxs-lookup"><span data-stu-id="bae44-259">The `Details` view shows **Approve** and **Reject** buttons.</span></span>
+* <span data-ttu-id="bae44-260">Správci můžou schvalovat a odmítat a upravit nebo odstranit všechna data.</span><span class="sxs-lookup"><span data-stu-id="bae44-260">Administrators can approve/reject and edit/delete any data.</span></span>
 
-<span data-ttu-id="e9b36-263">Snadný způsob, jak testování dokončená aplikace je spustíte tři různé prohlížeče (nebo incognito/InPrivate verze).</span><span class="sxs-lookup"><span data-stu-id="e9b36-263">An easy way to test the completed app is to launch three different browsers (or incognito/InPrivate versions).</span></span> <span data-ttu-id="e9b36-264">V jedné prohlížeče registraci nového uživatele (například `test@example.com`).</span><span class="sxs-lookup"><span data-stu-id="e9b36-264">In one browser, register a new user (for example, `test@example.com`).</span></span> <span data-ttu-id="e9b36-265">Přihlaste se do každé prohlížeče s jiným uživatelem.</span><span class="sxs-lookup"><span data-stu-id="e9b36-265">Sign in to each browser with a different user.</span></span> <span data-ttu-id="e9b36-266">Ověřte následující operace:</span><span class="sxs-lookup"><span data-stu-id="e9b36-266">Verify the following operations:</span></span>
-
-* <span data-ttu-id="e9b36-267">Registrovaní uživatelé můžete zobrazit všechny schválené kontaktní data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-267">Registered users can view all the approved contact data.</span></span>
-* <span data-ttu-id="e9b36-268">Registrovaní uživatelé můžete upravit nebo odstranit svá vlastní data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-268">Registered users can edit/delete their own data.</span></span>
-* <span data-ttu-id="e9b36-269">Správce můžete schválit nebo odmítnout kontaktní údaje.</span><span class="sxs-lookup"><span data-stu-id="e9b36-269">Managers can approve or reject contact data.</span></span> <span data-ttu-id="e9b36-270">`Details` Zobrazení ukazuje **schválit** a **odmítnout** tlačítka.</span><span class="sxs-lookup"><span data-stu-id="e9b36-270">The `Details` view shows **Approve** and **Reject** buttons.</span></span>
-* <span data-ttu-id="e9b36-271">Správci mohou schválit či odmítnout a upravit nebo odstranit všechna data.</span><span class="sxs-lookup"><span data-stu-id="e9b36-271">Administrators can approve/reject and edit/delete any data.</span></span>
-
-| <span data-ttu-id="e9b36-272">Uživatel</span><span class="sxs-lookup"><span data-stu-id="e9b36-272">User</span></span>| <span data-ttu-id="e9b36-273">Možnosti</span><span class="sxs-lookup"><span data-stu-id="e9b36-273">Options</span></span> |
+| <span data-ttu-id="bae44-261">Uživatel</span><span class="sxs-lookup"><span data-stu-id="bae44-261">User</span></span>| <span data-ttu-id="bae44-262">Možnosti</span><span class="sxs-lookup"><span data-stu-id="bae44-262">Options</span></span> |
 | ------------ | ---------|
-| test@example.com | <span data-ttu-id="e9b36-274">Můžete upravit nebo odstranit vlastní data</span><span class="sxs-lookup"><span data-stu-id="e9b36-274">Can edit/delete own data</span></span> |
-| manager@contoso.com | <span data-ttu-id="e9b36-275">Můžete schválit nebo odmítnout a upravit nebo odstranit vlastní data</span><span class="sxs-lookup"><span data-stu-id="e9b36-275">Can approve/reject and edit/delete own data</span></span> |
-| admin@contoso.com | <span data-ttu-id="e9b36-276">Můžete upravit nebo odstranit a schválit či odmítnout všechna data</span><span class="sxs-lookup"><span data-stu-id="e9b36-276">Can edit/delete and approve/reject all data</span></span>|
+| test@example.com | <span data-ttu-id="bae44-263">Můžete upravit nebo odstranit vlastní data</span><span class="sxs-lookup"><span data-stu-id="bae44-263">Can edit/delete own data</span></span> |
+| manager@contoso.com | <span data-ttu-id="bae44-264">Můžete schvalovat a odmítat a upravit nebo odstranit data jsou vaše vlastnictví</span><span class="sxs-lookup"><span data-stu-id="bae44-264">Can approve/reject and edit/delete own data</span></span> |
+| admin@contoso.com | <span data-ttu-id="bae44-265">Můžete upravit nebo odstranit a schvalovat a odmítat všechna data</span><span class="sxs-lookup"><span data-stu-id="bae44-265">Can edit/delete and approve/reject all data</span></span>|
 
-<span data-ttu-id="e9b36-277">Vytvoření kontaktu v prohlížeči na správce.</span><span class="sxs-lookup"><span data-stu-id="e9b36-277">Create a contact in the administrator's browser.</span></span> <span data-ttu-id="e9b36-278">Zkopírujte adresu URL pro odstranění a upravit z kontaktujte správce.</span><span class="sxs-lookup"><span data-stu-id="e9b36-278">Copy the URL for delete and edit from the administrator contact.</span></span> <span data-ttu-id="e9b36-279">Tyto odkazy vložte do prohlížeče se zobrazil uživatel k ověření, že se zobrazil uživatel nemůže provést tyto operace.</span><span class="sxs-lookup"><span data-stu-id="e9b36-279">Paste these links into the test user's browser to verify the test user can't perform these operations.</span></span>
+<span data-ttu-id="bae44-266">Vytvoření kontaktu v prohlížeči na správce.</span><span class="sxs-lookup"><span data-stu-id="bae44-266">Create a contact in the administrator's browser.</span></span> <span data-ttu-id="bae44-267">Zkopírujte adresu URL pro odstranění a upravit z kontaktujte správce.</span><span class="sxs-lookup"><span data-stu-id="bae44-267">Copy the URL for delete and edit from the administrator contact.</span></span> <span data-ttu-id="bae44-268">Vložte tyto odkazy do testů webového prohlížeče k ověření, že testovací uživatel nemůže provádět tyto operace.</span><span class="sxs-lookup"><span data-stu-id="bae44-268">Paste these links into the test user's browser to verify the test user can't perform these operations.</span></span>
 
-## <a name="create-the-starter-app"></a><span data-ttu-id="e9b36-280">Vytvořit úvodní aplikaci</span><span class="sxs-lookup"><span data-stu-id="e9b36-280">Create the starter app</span></span>
+## <a name="create-the-starter-app"></a><span data-ttu-id="bae44-269">Vytvořit úvodní aplikaci</span><span class="sxs-lookup"><span data-stu-id="bae44-269">Create the starter app</span></span>
 
-* <span data-ttu-id="e9b36-281">Vytvoření stránky Razor aplikace s názvem "ContactManager"</span><span class="sxs-lookup"><span data-stu-id="e9b36-281">Create a Razor Pages app named "ContactManager"</span></span>
-
-  * <span data-ttu-id="e9b36-282">Vytvoření aplikace s **jednotlivých uživatelských účtů**.</span><span class="sxs-lookup"><span data-stu-id="e9b36-282">Create the app with **Individual User Accounts**.</span></span>
-  * <span data-ttu-id="e9b36-283">Pojmenujte ji "ContactManager", obor názvů odpovídá oboru názvů používaný v ukázce.</span><span class="sxs-lookup"><span data-stu-id="e9b36-283">Name it "ContactManager" so your namespace matches the namespace used in the sample.</span></span>
-
-::: moniker range=">= aspnetcore-2.1"
+* <span data-ttu-id="bae44-270">Vytvoření aplikace stránky Razor s názvem "ContactManager"</span><span class="sxs-lookup"><span data-stu-id="bae44-270">Create a Razor Pages app named "ContactManager"</span></span>
+   * <span data-ttu-id="bae44-271">Vytvoření aplikace s **jednotlivých uživatelských účtů**.</span><span class="sxs-lookup"><span data-stu-id="bae44-271">Create the app with **Individual User Accounts**.</span></span>
+   * <span data-ttu-id="bae44-272">Pojmenujte ji "ContactManager" tak obor názvů odpovídá oboru názvů použitého v ukázce.</span><span class="sxs-lookup"><span data-stu-id="bae44-272">Name it "ContactManager" so the namespace matches the namespace used in the sample.</span></span>
+   * <span data-ttu-id="bae44-273">`-uld` Určuje LocalDB místo SQLite</span><span class="sxs-lookup"><span data-stu-id="bae44-273">`-uld` specifies LocalDB instead of SQLite</span></span>
 
   ```console
   dotnet new webapp -o ContactManager -au Individual -uld
   ```
 
-  [!INCLUDE[](~/includes/webapp-alias-notice.md)]
+* <span data-ttu-id="bae44-274">Přidat *Models\Contact.cs*:</span><span class="sxs-lookup"><span data-stu-id="bae44-274">Add *Models\Contact.cs*:</span></span>
 
-::: moniker-end
+  [!code-csharp[](secure-data/samples/starter2.1/Models/Contact.cs?name=snippet1)]
 
-::: moniker range="= aspnetcore-2.0"
-
-  ```console
-  dotnet new razor -o ContactManager -au Individual -uld
-  ```
-
-::: moniker-end
-
-  * <span data-ttu-id="e9b36-285">`-uld` Určuje LocalDB místo SQLite</span><span class="sxs-lookup"><span data-stu-id="e9b36-285">`-uld` specifies LocalDB instead of SQLite</span></span>
-
-* <span data-ttu-id="e9b36-286">Přidejte následující `Contact` modelu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-286">Add the following `Contact` model:</span></span>
-
-  [!code-csharp[](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
-
-* <span data-ttu-id="e9b36-287">Vygenerované uživatelské rozhraní `Contact` modelu:</span><span class="sxs-lookup"><span data-stu-id="e9b36-287">Scaffold the `Contact` model:</span></span>
+* <span data-ttu-id="bae44-275">Vygenerované uživatelské rozhraní `Contact` modelu.</span><span class="sxs-lookup"><span data-stu-id="bae44-275">Scaffold the `Contact` model.</span></span>
+* <span data-ttu-id="bae44-276">Vytvořte počáteční migraci a aktualizaci databáze:</span><span class="sxs-lookup"><span data-stu-id="bae44-276">Create initial migration and update the database:</span></span>
 
 ```console
 dotnet aspnet-codegenerator razorpage -m Contact -udl -dc ApplicationDbContext -outDir Pages\Contacts --referenceScriptLibraries
+dotnet ef database drop -f
+dotnet ef migrations add initial
+dotnet ef database update
 ```
 
-* <span data-ttu-id="e9b36-288">Aktualizace **ContactManager** ukotvení v *Pages/_Layout.cshtml* souboru:</span><span class="sxs-lookup"><span data-stu-id="e9b36-288">Update the **ContactManager** anchor in the *Pages/_Layout.cshtml* file:</span></span>
+* <span data-ttu-id="bae44-277">Aktualizace **ContactManager** ukotvit v *Pages/_Layout.cshtml* souboru:</span><span class="sxs-lookup"><span data-stu-id="bae44-277">Update the **ContactManager** anchor in the *Pages/_Layout.cshtml* file:</span></span>
 
 ```cshtml
 <a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>
 ```
 
-* <span data-ttu-id="e9b36-289">Vygenerovat počáteční migraci a aktualizaci databáze:</span><span class="sxs-lookup"><span data-stu-id="e9b36-289">Scaffold the initial migration and update the database:</span></span>
+* <span data-ttu-id="bae44-278">Testování aplikace pomocí vytváření, úpravy a odstranění kontaktu</span><span class="sxs-lookup"><span data-stu-id="bae44-278">Test the app by creating, editing, and deleting a contact</span></span>
 
-```console
-dotnet ef migrations add initial
-dotnet ef database update
-```
+### <a name="seed-the-database"></a><span data-ttu-id="bae44-279">Přidání dat do databáze</span><span class="sxs-lookup"><span data-stu-id="bae44-279">Seed the database</span></span>
 
-* <span data-ttu-id="e9b36-290">Aplikaci otestovat a vytváření, úpravy a odstranění kontaktu</span><span class="sxs-lookup"><span data-stu-id="e9b36-290">Test the app by creating, editing, and deleting a contact</span></span>
+<span data-ttu-id="bae44-280">Přidat [SeedData](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2.1/Data/SeedData.cs) třídu *Data* složky.</span><span class="sxs-lookup"><span data-stu-id="bae44-280">Add the [SeedData](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2.1/Data/SeedData.cs) class to the *Data* folder.</span></span>
 
-### <a name="seed-the-database"></a><span data-ttu-id="e9b36-291">Počáteční hodnoty databáze</span><span class="sxs-lookup"><span data-stu-id="e9b36-291">Seed the database</span></span>
+<span data-ttu-id="bae44-281">Volání `SeedData.Initialize` z `Main`:</span><span class="sxs-lookup"><span data-stu-id="bae44-281">Call `SeedData.Initialize` from `Main`:</span></span>
 
-<span data-ttu-id="e9b36-292">Přidat `SeedData` třídy k *Data* složky.</span><span class="sxs-lookup"><span data-stu-id="e9b36-292">Add the `SeedData` class to the *Data* folder.</span></span> <span data-ttu-id="e9b36-293">Pokud jste stáhli ukázku, můžete zkopírovat *SeedData.cs* do souboru *Data* složky starter projektu.</span><span class="sxs-lookup"><span data-stu-id="e9b36-293">If you've downloaded the sample, you can copy the *SeedData.cs* file to the *Data* folder of the starter project.</span></span>
+[!code-csharp[](secure-data/samples/starter2.1/Program.cs?name=snippet)]
 
-<span data-ttu-id="e9b36-294">Volání `SeedData.Initialize` z `Main`:</span><span class="sxs-lookup"><span data-stu-id="e9b36-294">Call `SeedData.Initialize` from `Main`:</span></span>
-
-[!code-csharp[](secure-data/samples/starter2/Program.cs?name=snippet)]
-
-<span data-ttu-id="e9b36-295">Otestujte, že aplikace nasadí databázi.</span><span class="sxs-lookup"><span data-stu-id="e9b36-295">Test that the app seeded the database.</span></span> <span data-ttu-id="e9b36-296">Pokud jsou všechny řádky v kontakt DB, metodu počáteční hodnoty nefunguje.</span><span class="sxs-lookup"><span data-stu-id="e9b36-296">If there are any rows in the contact DB, the seed method doesn't run.</span></span>
+<span data-ttu-id="bae44-282">Otestujte, že aplikace naplnila databázi.</span><span class="sxs-lookup"><span data-stu-id="bae44-282">Test that the app seeded the database.</span></span> <span data-ttu-id="bae44-283">Pokud existují nějaké řádky v kontaktu DB, metoda počáteční hodnoty není spuštěna.</span><span class="sxs-lookup"><span data-stu-id="bae44-283">If there are any rows in the contact DB, the seed method doesn't run.</span></span>
 
 <a name="secure-data-add-resources-label"></a>
 
-### <a name="additional-resources"></a><span data-ttu-id="e9b36-297">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="e9b36-297">Additional resources</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="bae44-284">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="bae44-284">Additional resources</span></span>
 
-* <span data-ttu-id="e9b36-298">[Prostředí ASP.NET Core autorizace](https://github.com/blowdart/AspNetAuthorizationWorkshop).</span><span class="sxs-lookup"><span data-stu-id="e9b36-298">[ASP.NET Core Authorization Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop).</span></span> <span data-ttu-id="e9b36-299">Toto testovací prostředí obsahuje více podrobností o funkcích zabezpečení byla zavedená v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="e9b36-299">This lab goes into more detail on the security features introduced in this tutorial.</span></span>
-* [<span data-ttu-id="e9b36-300">Autorizace v ASP.NET Core: jednoduchý, na základě deklarace a vlastní role</span><span class="sxs-lookup"><span data-stu-id="e9b36-300">Authorization in ASP.NET Core: Simple, role, claims-based, and custom</span></span>](xref:security/authorization/index)
-* [<span data-ttu-id="e9b36-301">Autorizace uživatele na základě zásad</span><span class="sxs-lookup"><span data-stu-id="e9b36-301">Custom policy-based authorization</span></span>](xref:security/authorization/policies)
+* <span data-ttu-id="bae44-285">[ASP.NET Core povolení Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop).</span><span class="sxs-lookup"><span data-stu-id="bae44-285">[ASP.NET Core Authorization Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop).</span></span> <span data-ttu-id="bae44-286">Toto testovací prostředí obsahuje větší podrobnosti o funkcích zabezpečení v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="bae44-286">This lab goes into more detail on the security features introduced in this tutorial.</span></span>
+* [<span data-ttu-id="bae44-287">Autorizace v ASP.NET Core: jednoduchý, role, založené na deklaracích a vlastní</span><span class="sxs-lookup"><span data-stu-id="bae44-287">Authorization in ASP.NET Core: Simple, role, claims-based, and custom</span></span>](xref:security/authorization/index)
+* [<span data-ttu-id="bae44-288">Autorizace na základě zásad</span><span class="sxs-lookup"><span data-stu-id="bae44-288">Custom policy-based authorization</span></span>](xref:security/authorization/policies)
+
+::: moniker-end

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: ff04ebeb6a682ec924afe896fd6716010a63f7cd
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752318"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312244"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
@@ -25,7 +25,7 @@ Tento článek se věnuje běžné přístupy k zpracování chyb v aplikacích 
 
 ::: moniker range=">= aspnetcore-2.1"
 
-Chcete-li nakonfigurovat aplikaci, která zobrazí stránka, která jsou uvedeny podrobné informace o výjimkách, použijte *stránku výjimek pro vývojáře*. Stránka k dispozici ve [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) balíček, který je k dispozici v [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Přidejte řádek, který `Startup.Configure` metody:
+Chcete-li nakonfigurovat aplikaci, která zobrazí stránka, která jsou uvedeny podrobné informace o výjimkách, použijte *stránku výjimek pro vývojáře*. Na stránce je k dispozici ve [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) balíček, který je k dispozici v [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Přidejte řádek, který `Startup.Configure` metody:
 
 ::: moniker-end
 
@@ -45,10 +45,10 @@ Chcete-li nakonfigurovat aplikaci, která zobrazí stránka, která jsou uvedeny
 
 Umístěte volání [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) před veškerý middleware, ve které chcete zaznamenat tak výjimky, jako například `app.UseMvc`.
 
->[!WARNING]
+> [!WARNING]
 > Povolit na stránce výjimek pro vývojáře **pouze, když je aplikace spuštěna ve vývojovém prostředí**. Nechcete veřejně sdílet podrobné informace o výjimce při spuštění aplikace v produkčním prostředí. [Další informace o konfiguraci prostředí](xref:fundamentals/environments).
 
-Stránce výjimek pro vývojáře najdete spuštění ukázkové aplikace s prostředím nastavena na `Development`a přidejte `?throw=true` k základní adrese URL aplikace. Stránka obsahuje několik karet s informacemi o výjimku a požadavek. První karta obsahuje trasování zásobníku:
+Stránce výjimek pro vývojáře najdete spuštění ukázkové aplikace s prostředím nastavena na `Development` a přidejte `?throw=true` k základní adrese URL aplikace. Stránka obsahuje několik karet s informacemi o výjimku a požadavek. První karta obsahuje trasování zásobníku:
 
 ![Trasování zásobníku](error-handling/_static/developer-exception-page.png)
 
@@ -60,7 +60,7 @@ Pokud požadavek má soubory cookie, zobrazí se na **soubory cookie** kartu. Z�
 
 ![Záhlaví](error-handling/_static/developer-exception-page-headers.png)
 
-## <a name="configuring-a-custom-exception-handling-page"></a>Konfigurace vlastní výjimky zpracování stránky
+## <a name="configure-a-custom-exception-handling-page"></a>Konfigurace vlastní výjimky zpracování stránky
 
 Na stránce obslužné rutiny výjimky pro použití při není aplikace spuštěna konfiguraci `Development` prostředí:
 
@@ -81,13 +81,35 @@ public IActionResult Error()
 }
 ```
 
-## <a name="configuring-status-code-pages"></a>Konfigurace stavu znakové stránky
+## <a name="configure-status-code-pages"></a>Konfigurace stavu znakové stránky
 
-Ve výchozím nastavení, aplikace neposkytuje znakovou stránku bohaté stav pro stavové kódy HTTP, jako například *404 Nenalezeno*. Poskytnout stav znakových stránek, nakonfigurujte Middleware stránky kód stavu přidáním čáry `Startup.Configure` metody:
+Ve výchozím nastavení, aplikace neposkytuje znakovou stránku bohaté stav pro stavové kódy HTTP, jako například *404 Nenalezeno*. Pokud chcete poskytnout stav znakové stránky, použijte Middleware stránky stavový kód.
+
+::: moniker range=">= aspnetcore-2.1"
+
+Middleware je k dispozici ve [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) balíček, který je k dispozici v [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app).
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+Middleware je k dispozici ve [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) balíček, který je k dispozici v [metabalíček Microsoft.aspnetcore.all](xref:fundamentals/metapackage).
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+Middleware je k dispozici tak, že přidáte odkaz na balíček pro [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) balíčku v souboru projektu.
+
+::: moniker-end
+
+Přidejte řádek, který `Startup.Configure` metody:
 
 ```csharp
 app.UseStatusCodePages();
 ```
+
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePages*> by měla být volána před požadavkem zpracování middlewares v kanálu (třeba statické soubory Middleware a Middlewarem MVC).
 
 Ve výchozím nastavení přidá Middleware stránky stavový kód obslužné rutiny pro běžné stavové kódy, jako je například 404 prostého textu:
 

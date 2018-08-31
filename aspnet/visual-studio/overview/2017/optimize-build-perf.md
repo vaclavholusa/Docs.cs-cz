@@ -1,23 +1,24 @@
 ---
 uid: visual-studio/overview/2017/optimize-build-perf
 title: Optimalizace výkonu sestavení pro řešení
-author: tfitzmac
+author: AngelosP
 description: Optimalizace výkonu sestavení pro řešení
 ms.author: riande
-ms.date: 08/22/2018
+ms.date: 08/29/2018
 msc.type: authoredcontent
-ms.openlocfilehash: 19f190835e7477e69db470b74edac9e211fd9158
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: c1a5cf5e59374b4c0dd7150c5dd62fbde42af555
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41910022"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312138"
 ---
 # <a name="optimize-build-performance-for-solution"></a>Optimalizace výkonu sestavení pro řešení
-Visual Studio 2017 15.8 a později přidat novou položku nabídky v části **sestavení > kompilace ASP.NET > Optimalizovat výkon sestavení pro řešení**.
+
+Visual Studio 2017 15.8 nebo vyšší zahrnují položky nabídky: **sestavení** > **kompilace ASP.NET** > **optimalizovat výkon sestavení pro řešení**.
 
 ![snímek obrazovky s novou položku nabídky](optimize-build-perf/_static/optimize-build-performance-for-solution.png)
 
-ASP.NET zkompiluje za běhu, což znamená, že váš projekt ASP.NET provede s ní kopie kompilátor jeho zobrazení. Ale na počítači pro vývojáře při kopírování kompilátor neodpovídá kopie sady Visual Studio, výkon sestavení to má vliv v řádu sekund 1-3 na přírůstkové sestavení. Tato funkce bude aktualizovat kopii projektu kompilátoru tak, aby odpovídaly v sadě Visual Studio, který by měl urychlit přírůstková sestavení.
+ASP.NET zkompiluje za běhu, což znamená, že technologie ASP.NET provede s ní kopie kompilátor jeho zobrazení. Ale na počítači pro vývojáře při kopírování kompilátor neodpovídá kopie sady Visual Studio, sestavení je dopad na výkon v řádu sekund 1-3 na přírůstkové sestavení. Tato funkce aktualizuje váš projekt kopie kompilátor tak, aby odpovídala sadě Visual Studio, což obvykle urychlí přírůstková sestavení.
 
-To platí pouze pro projekty ASP.NET Framework, se nevztahují na ASP.NET Core.
+**To se vztahuje na ASP.NET Framework 4.7.1 nebo později pouze pro projekty, neplatí pro ASP.NET Core.**

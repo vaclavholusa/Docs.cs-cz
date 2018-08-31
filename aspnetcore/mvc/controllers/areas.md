@@ -1,44 +1,44 @@
 ---
 title: Oblasti v ASP.NET Core
 author: rick-anderson
-description: Zjistěte, jak jsou oblasti o architektuře ASP.NET MVC funkci sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení).
+description: Zjistěte, jak oblasti jsou používány pro organizaci související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení) funkce služby technologie ASP.NET MVC.
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/controllers/areas
-ms.openlocfilehash: 3e998af42cd6209271495dd8dd97a8aed35717a4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b78bb5146f1ab9039fa9ff015471654510718ed6
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274824"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312215"
 ---
 # <a name="areas-in-aspnet-core"></a>Oblasti v ASP.NET Core
 
 Podle [Dhananjay Kumar](https://twitter.com/debug_mode) a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Oblasti se o funkci ASP.NET MVC sloužící k organizování související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení). Použití oblastí vytvoří hierarchii pro účely směrování přidáním jiný parametr trasy, `area`do `controller` a `action`.
+Oblasti jsou používány pro organizaci související funkce do skupiny jako samostatný obor názvů (pro směrování) a strukturu složek (pro zobrazení) funkce služby technologie ASP.NET MVC. Pomocí oblastí vytvoří hierarchii pro účely směrování tak, že přidáte další parametr trasy, `area`do `controller` a `action`.
 
-Oblasti poskytují způsob, jak oddílu velké ASP.NET Core MVC webové aplikace do menších funkční seskupení. Oblast je efektivně strukturu MVC uvnitř aplikace. V projektu MVC logické součásti jako Model, Kontroleru a zobrazení jsou uchovány v různých složkách a konvence pojmenování aplikace MVC používá k vytvoření vztahu mezi těmito součástmi. Pro velké aplikace může být výhodné oddílu aplikace na samostatné vysoké úrovni oblasti funkcí. Pro instanci elektronické obchodování aplikace s více organizačních jednotek, jako je například checkout, fakturace a vyhledávání atd. Každý z těchto jednotek mají své vlastní logickou součástí zobrazení, řadiče a modely. V tomto scénáři můžete v oblasti fyzicky oddílu komponenty obchodní ve stejném projektu.
+Oblasti poskytují způsob, jak rozdělit velké aplikace ASP.NET Core MVC Web na menší funkční seskupení. Oblast je v podstatě struktury MVC uvnitř aplikace. V projektu aplikace MVC logické komponenty, jako jsou modelu, Kontroleru a zobrazení jsou uloženy v různých složkách a aplikace MVC používá konvence pojmenování a vytvořit tak relaci mezi těmito součástmi. Pro velké aplikace může být výhodné rozdělit na samostatné vysoké úrovně funkční oblasti aplikace. Například e-commerce aplikace s několika obchodními jednotkami, jako je například checkout, fakturace a vyhledávání atd. Každá z těchto jednotek mít své vlastní logickou součástí zobrazení, kontrolerů a modely. V tomto scénáři použijete k oblasti fyzicky rozdělení komponent firmy ve stejném projektu.
 
-Oblast může být definován jako menší funkční jednotky v projektu ASP.NET MVC jádra s vlastní sadou řadiče, zobrazení a modely.
+Oblast je definovat jako menších funkční jednotek v projektu aplikace ASP.NET Core MVC s vlastní sadou řadiče, zobrazení a modely.
 
-Zvažte použití oblastí v MVC při projektu:
+Zvažte použití oblastí v MVC projektu při:
 
-* Aplikace se provádí více vysoké úrovně funkčnosti komponent, které by měl být oddělený logicky
+* Vaše aplikace je proveden součástí více vysoké úrovně funkčnosti, která by měla být oddělena logicky
 
-* Chcete oddílu projektu MVC tak, aby každý funkční oblast bylo možné pracovat nezávisle
+* Chcete rozdělit projekt MVC tak, aby každá funkční oblast je možné pracovat nezávisle na sobě
 
-Oblast funkce:
+Oblasti funkce:
 
-* ASP.NET MVC základní aplikaci může mít libovolný počet oblastí
+* Aplikace ASP.NET Core MVC může mít libovolný počet oblastí.
 
-* Každou oblast má svou vlastní řadiče, modely a zobrazení
+* Každá oblast má vlastní řadiče, modely a zobrazení.
 
-* Umožňuje uspořádat do několika komponent vysoké úrovně, které bylo možné pracovat nezávisle rozsáhlých projektů MVC
+* Oblasti umožňují organizovat velké projekty MVC do více základní součásti, které je možné pracovat nezávisle na sobě.
 
-* Podporuje více řadiče se stejným názvem - tak dlouho, dokud mají různé *oblastí*
+* Oblasti podporují víc řadičích se stejným názvem, za předpokladu, že mají různé *oblasti*.
 
-Podívejme se na příklad znázorňující způsob vytváření a použít oblasti. Řekněme, že máte aplikaci ze storu, která má dva odlišné seskupení kontrolery a zobrazení: produktů a služeb. Složka obvykle struktury pro, že pomocí MVC oblasti vypadá níže:
+Pojďme se podívat na příklad, který ukazuje, jak vytvořit a použít oblasti. Řekněme, že máte aplikace ze storu, která má dvě odlišné skupiny kontrolerů a zobrazení: produktů a služeb. Složka je obvykle strukturu pro, používat MVC vypadá níže:
 
 * název projektu
 
@@ -52,7 +52,7 @@ Podívejme se na příklad znázorňující způsob vytváření a použít obla
 
         * ManageController.cs
 
-      * zobrazení
+      * Zobrazení
 
         * Domů
 
@@ -68,13 +68,13 @@ Podívejme se na příklad znázorňující způsob vytváření a použít obla
 
         * HomeController.cs
 
-      * zobrazení
+      * Zobrazení
 
         * Domů
 
           * Index.cshtml
 
-Když se pokusí MVC pro vykreslení zobrazení v oblasti, ve výchozím nastavení, pokusí se hledat v následujících umístěních:
+MVC se pokusí pro vykreslení zobrazení v oblasti, ve výchozím nastavení, pokusí se vás pod rouškou v následujících umístěních:
 
 ```text
 /Areas/<Area-Name>/Views/<Controller-Name>/<Action-Name>.cshtml
@@ -82,9 +82,9 @@ Když se pokusí MVC pro vykreslení zobrazení v oblasti, ve výchozím nastave
    /Views/Shared/<Action-Name>.cshtml
    ```
 
-Jedná se o výchozí umístění, které je možné změnit prostřednictvím `AreaViewLocationFormats` na `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.
+Toto jsou výchozí umístění, které lze změnit prostřednictvím `AreaViewLocationFormats` na `Microsoft.AspNetCore.Mvc.Razor.RazorViewEngineOptions`.
 
-Například v níže uvedeného kódu místo nutnosti název složky jako "Oblasti", byla změněna na "Kategorií".
+Například v níže uvedeného kódu namísto nutnosti název složky jako "Oblasti", byl změněn na "Kategorie".
 
 ```csharp
 services.Configure<RazorViewEngineOptions>(options =>
@@ -96,9 +96,9 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-Poznámka je, že strukturu *zobrazení* složka je jenom jeden, která je považována za důležité sem a obsah ostatních složek, jako jsou *řadiče* a *modely* nemá **není** vás. Například nemusí mít *řadiče* a *modely* složku v všechny. Toto funguje, protože obsah *řadiče* a *modely* je pouze kód, který získá zkompilovat do ve formátu .dll, kde je jako obsah *zobrazení* není dokud požadavek na který zobrazení byly provedeny.
+Poznámka je struktura *zobrazení* složky je pouze jeden, který je považován za důležité tady a obsah ostatních složek, jako jsou *řadiče* a *modely* nemá **není** záleží. Například nemusí mít *řadiče* a *modely* složky vůbec. Tento postup funguje, protože obsah *řadiče* a *modely* je jenom kód, který získá kompilovány do knihovny DLL tam, kde jako obsah *zobrazení* není až do požadavek, který zobrazení byly provedeny.
 
-Jakmile hierarchii složek, které jste definovali, budete muset MVC říct, že každý řadič je přiřazený k oblasti. Provedete to tak architekturu názvu řadiče s `[Area]` atribut.
+Jakmile jste definovali hierarchii složek, je třeba sdělit MVC, že je každý kontroler přidružené k oblasti. Můžete to udělat pomocí upravení názvu kontroleru se `[Area]` atribut.
 
 ```csharp
 ...
@@ -122,7 +122,7 @@ Jakmile hierarchii složek, které jste definovali, budete muset MVC říct, že
    }
    ```
 
-Nastavte definici trasy, která funguje s vaší nově vytvořený oblasti. [Trasy, která má akce kontroleru](routing.md) článek obsahuje podrobnosti o tom, jak vytvořit definicí cesty, včetně použití konvenční trasy a trasy atributů. V tomto příkladu použijeme konvenční trasy. Chcete-li to provést, otevřete *Startup.cs* soubor a upravit přidáním `areaRoute` s názvem definice trasy níže.
+Nastavte definici trasy, která funguje s nově vytvořený oblasti. [Trasy na akce kontroleru](routing.md) článek obsahuje podrobnosti o tom, jak vytvořit trasu definic, včetně použití konvenční trasy a trasy atributů. V tomto příkladu použijeme konvenční trasy. Chcete-li to provést, otevřete *Startup.cs* soubor a upravit ji tak, že přidáte `areaRoute` s názvem definice trasy níže.
 
 ```csharp
 ...
@@ -138,48 +138,48 @@ Nastavte definici trasy, která funguje s vaší nově vytvořený oblasti. [Tra
    });
    ```
 
-Procházení k `http://<yourApp>/products`, `Index` metody akce `HomeController` v `Products` oblasti bude volána.
+Přejdete na adresu `http://<yourApp>/products`, `Index` metody akce `HomeController` v `Products` oblasti, který bude vyvolán.
 
 ## <a name="link-generation"></a>Generování odkazů
 
-* Generování odkazů z akce v rámci oblast na základě řadiče jiné akce v rámci stejného řadiče.
+* Generování odkazů z akce v rámci oblasti na základě kontroleru další akce v rámci stejné kontroleru.
 
   Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`
 
   HtmlHelper syntaxe: `@Html.ActionLink("Go to Product's Home Page", "Index")`
 
-  TagHelper syntaxe: `<a asp-action="Index">Go to Product's Home Page</a>`
+  Taghelperu. syntaxe: `<a asp-action="Index">Go to Product's Home Page</a>`
 
-  Všimněte si, že jsme nemusí zadat hodnoty 'oblastí' a 'controller' tady jsou již k dispozici v kontextu aktuálního požadavku. Tyto druhy hodnot, se nazývají `ambient` hodnoty.
+  Všimněte si, že jsme nemusí poskytnout hodnoty "oblasti" a "controller" Zde jsou už k dispozici v rámci aktuálního požadavku. Tento druh hodnoty se nazývají `ambient` hodnoty.
 
-* Generování odkazů z akce v rámci oblast na základě řadiče další akci na jiném řadiči
+* Generování odkazů z akce v rámci oblasti na základě kontroleru další akci na jiný kontroler
 
   Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`
 
   HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products Home Page", "Index", "Manage")`
 
-  TagHelper syntaxe: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
+  Taghelperu. syntaxe: `<a asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
-  Všimněte si, tady je použita hodnota vedlejším oblasti, ale výše je výslovně zadána hodnota 'controller'.
+  Všimněte si, že tady se používá okolí hodnotu "oblasti", ale explicitně zadaná hodnota 'controller' výše.
 
-* Generování odkazů z akce v rámci oblasti řadiče další akci na základě různých řadiče a jiné oblasti.
+* Generování odkazů z akce v rámci oblasti kontroleru další akci na základě různých kontroleru a do jiné oblasti.
 
   Řekněme, že je cesta aktuální žádosti jako `/Products/Home/Create`
 
   HtmlHelper syntaxe: `@Html.ActionLink("Go to Services Home Page", "Index", "Home", new { area = "Services" })`
 
-  TagHelper syntaxe: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`
+  Taghelperu. syntaxe: `<a asp-area="Services" asp-controller="Home" asp-action="Index">Go to Services Home Page</a>`
 
-  Všimněte si, že tady jsou použity žádné vedlejším hodnoty.
+  Všimněte si, že tady žádné okolí hodnoty jsou použity.
 
-* Generování odkazů z akce v rámci řadič oblast na základě jinou akci na jiném řadiči a **není** v oblasti.
+* Generování odkazů z akce v rámci řadič oblasti založené na jinou akci na jiný kontroler a **není** v oblasti.
 
   HtmlHelper syntaxe: `@Html.ActionLink("Go to Manage Products  Home Page", "Index", "Home", new { area = "" })`
 
-  TagHelper syntaxe: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
+  Taghelperu. syntaxe: `<a asp-area="" asp-controller="Manage" asp-action="Index">Go to Manage Products Home Page</a>`
 
-  Vzhledem k tomu, že chcete generovat odkazy na jiné oblasti na základě akce kontroleru, jsme prázdný vedlejším hodnota "plochu" sem.
+  Protože chceme, aby ke generování odkazů do jiné oblasti na základě akce kontroleru, jsme prázdný okolí hodnotu "oblasti" zde.
 
-## <a name="publishing-areas"></a>Publikování oblastí
+## <a name="publishing-areas"></a>Publikování oblasti
 
-Všechny `*.cshtml` a `wwwroot/**` soubory jsou publikovány do výstupního při `<Project Sdk="Microsoft.NET.Sdk.Web">` je součástí *.csproj* souboru.
+Všechny `*.cshtml` a `wwwroot/**` souborů k publikování do výstupu, kdy `<Project Sdk="Microsoft.NET.Sdk.Web">` je součástí *.csproj* souboru.

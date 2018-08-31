@@ -5,12 +5,12 @@ description: Tento článek popisuje, jak nakonfigurovat ověřování Windows v
 ms.author: riande
 ms.date: 08/18/2018
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 93b1a1de74ef6554d48709b04870f7e23738846b
-ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
+ms.openlocfilehash: a8066d248c0d4db1d1f61b2a14bdb4656a2f4265
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41753135"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312409"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Konfigurace ověřování Windows v ASP.NET Core
 
@@ -129,7 +129,7 @@ Pokud jsou povolené ověřování Windows a anonymní přístup, použijte `[Au
 V ASP.NET Core 2.x, `[Authorize]` atribut vyžaduje další konfiguraci ve *Startup.cs* vybízí anonymních požadavků pro ověřování Windows. Doporučená konfigurace mírně závisí na webovém serveru, který je používán.
 
 > [!NOTE]
-> Ve výchozím nastavení uživatelé, kteří nemají oprávnění k získání přístupu ke stránce se zobrazí prázdnou odpověď HTTP 403. [StatusCodePages middleware](xref:fundamentals/error-handling#configuring-status-code-pages) umožňují uživatelům poskytovat lepší prostředí "Přístup byl odepřen".
+> Ve výchozím nastavení uživatelé, kteří nemají oprávnění k získání přístupu ke stránce se zobrazí prázdnou odpověď HTTP 403. [StatusCodePages middleware](xref:fundamentals/error-handling#configure-status-code-pages) umožňují uživatelům poskytovat lepší prostředí "Přístup byl odepřen".
 
 #### <a name="iis"></a>IIS
 

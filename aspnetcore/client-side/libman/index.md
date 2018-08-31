@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/14/2018
 uid: client-side/libman/index
-ms.openlocfilehash: b21ab0dbeda043dceda5376bcd95ccd334707c5a
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a6ff0cc3342cfac74739387aa17046ed5050232f
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41909999"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312356"
 ---
 # <a name="client-side-library-acquisition-in-aspnet-core-with-libman"></a>Získání knihoven na straně klienta v ASP.NET Core s LibMan
 
@@ -34,4 +34,5 @@ LibMan není systém správy balíčků. Pokud už používáte Správce balíč
 ## <a name="additional-resources"></a>Další zdroje
 
 * <xref:client-side/libman/libman-vs>
+* <xref:client-side/libman/libman-cli>
 * [Úložiště LibMan GitHub](https://github.com/aspnet/LibraryManager)

@@ -5,16 +5,16 @@ description: Průvodce, který poskytuje pokyny k začátku do konce na vytvář
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: 3cf99f4d497bf2edd8759ab9afdee66ad49fac3d
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: a63e97d9ab9eb0ed2fbd30e8c2e033f0c048d33e
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39722611"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312298"
 ---
 # <a name="tools-and-downloads"></a>Nástroje a soubory ke stažení
 
-Azure nabízí několik rozhraní pro zřizování a správu prostředků, jako [webu Azure portal](https://portal.azure.com), [rozhraní příkazového řádku Azure](https://docs.microsoft.com/cli/azure/), [prostředí Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/overview), [cloudu Azure Prostředí](https://shell.azure.com/bash)a sady Visual Studio. Tato příručka používá minimalist přístup a používá Azure Cloud Shell pokaždé, když je možné snížit kroky. Na webu Azure portal musí být však použít pro některé části.
+Azure nabízí několik rozhraní pro zřizování a správu prostředků, jako [webu Azure portal](https://portal.azure.com), [rozhraní příkazového řádku Azure](https://docs.microsoft.com/cli/azure/), [prostředí Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview), [cloudu Azure Prostředí](https://shell.azure.com/bash)a sady Visual Studio. Tato příručka používá minimalist přístup a používá Azure Cloud Shell pokaždé, když je možné snížit kroky. Na webu Azure portal musí být však použít pro některé části.
 
 ## <a name="prerequisites"></a>Požadavky
 

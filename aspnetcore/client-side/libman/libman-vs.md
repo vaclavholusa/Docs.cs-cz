@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: client-side/libman/libman-vs
-ms.openlocfilehash: b44769f1d0925f38523d6570858de17f37e32c2b
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a653b1a5c07feca8672ba38e0cda3ddc30482c5a
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41910042"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312176"
 ---
 # <a name="use-libman-with-aspnet-core-in-visual-studio"></a>LibMan pomocí ASP.NET Core v sadě Visual Studio
 
@@ -100,7 +100,7 @@ Pomocí následující soubor manifestu LibMan načte soubory za definované v k
 
 * Podmnožinu [jQuery](https://jquery.com/) verze 3.3.1 je načten z CDNJS zprostředkovatele. Dílčí je definována v `files` vlastnost&mdash;*jquery.min.js*, *jquery.js*, a *jquery.min.map*. Soubory jsou umístěny v projektu *wwwroot/lib/jquery* složky.
 * Podkladové [Bootstrap](https://getbootstrap.com/) verze 4.1.3 je načten a je umístěná v *wwwroot/lib/bootstrap* složky. Literál objektu `provider` vlastnosti přepsání `defaultProvider` hodnotu vlastnosti. LibMan načte Bootstrap soubory z unpkg zprostředkovatele.
-* Podmnožinu [Lodash](https://lodash.com/) schválila orgán v rámci organizace. *Lodash.js* a *lodash.min.js* soubory se načítají z místního systému souborů na *C:\\tmp\\*. Soubory se zkopírují do projektu *wwwroot/lib/lodash* složky.
+* Podmnožinu [Lodash](https://lodash.com/) schválila orgán v rámci organizace. *Lodash.js* a *lodash.min.js* soubory se načítají z místního systému souborů na *C:\\temp\\lodash\\*. Soubory se zkopírují do projektu *wwwroot/lib/lodash* složky.
 
 [!code-json[](samples/LibManSample/libman.json)]
 
@@ -193,7 +193,7 @@ Clean libraries operation completed
 2 libraries were successfully deleted in 1.91 secs
 ```
 
-Operace vyčištění odstraní jenom soubory z projektu. Soubory knihoven zůstat v mezipaměti pro rychlejší načítání na budoucí obnovení operací. Správa knihovny soubory uložené v mezipaměti místní počítač, použijte rozhraní příkazového řádku LibMan.
+Operace vyčištění odstraní jenom soubory z projektu. Soubory knihoven zůstat v mezipaměti pro rychlejší načítání na budoucí obnovení operací. Ke správě knihovny soubory uložené v mezipaměti místním počítači, použijte [LibMan CLI](xref:client-side/libman/libman-cli).
 
 ## <a name="uninstall-library-files"></a>Odinstalace soubory knihoven
 
@@ -231,4 +231,5 @@ Přejít na starší verzi knihovny, na ručně upravit *libman.json* souboru. K
 
 ## <a name="additional-resources"></a>Další zdroje
 
+* <xref:client-side/libman/libman-cli>
 * [Úložiště LibMan GitHub](https://github.com/aspnet/LibraryManager)

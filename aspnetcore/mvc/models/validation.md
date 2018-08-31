@@ -5,12 +5,12 @@ description: Další informace o ověření modelu v ASP.NET Core MVC.
 ms.author: riande
 ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378664"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312151"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v ASP.NET Core MVC
 
@@ -239,7 +239,7 @@ Nyní když uživatelé zadají e-mailu, JavaScript v zobrazení zavolá vzdále
 
 [!code-csharp[](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields` mohli jste explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje později refaktoring. Metody akce k provedení ověření pak musí přijmout dva argumenty, jeden pro hodnotu vlastnosti `FirstName` a jeden pro hodnotu `LastName`.
+`AdditionalFields` mohli jste explicitně nastavena na řetězce `"FirstName"` a `"LastName"`, ale pomocí [ `nameof` ](/dotnet/csharp/language-reference/keywords/nameof) operátor takto zjednodušuje později refaktoring. Metody akce k provedení ověření pak musí přijmout dva argumenty, jeden pro hodnotu vlastnosti `FirstName` a jeden pro hodnotu `LastName`.
 
 [!code-csharp[](validation/sample/UsersController.cs?range=30-39)]
 

@@ -5,12 +5,12 @@ description: Tento kurz ukazuje vytvoření ASP.NET Core 2.x aplikace pomocí ex
 ms.author: riande
 ms.date: 11/01/2016
 uid: security/authentication/social/index
-ms.openlocfilehash: b2176ef40faaee02c5ef53dbb92a802212e58e8b
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: 48a01ab241f9a6ad6ad3fb2ee9e210f459075c33
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063322"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336117"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>Facebook, Google a externí zprostředkovatel ověřování v ASP.NET Core
 
@@ -97,3 +97,5 @@ Chcete-li vytvořit heslo a přihlaste se pomocí e-mailu, kterou jste nastavili
 * Tento článek zavedené externího ověřování a vysvětlení požadovaných součástí pro přidání externí přihlášení do aplikace ASP.NET Core.
 
 * Referenční stránky specifickým pro zprostředkovatele konfigurace přihlášení pro zprostředkovatele, které vaše aplikace vyžaduje.
+
+* Můžete chtít zachovat další data o uživateli a jejich přístup a obnovovací tokeny. Další informace naleznete v tématu <xref:security/authentication/social/additional-claims>.

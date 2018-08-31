@@ -1,28 +1,28 @@
 ---
-title: Přidejte nové pole do aplikace ASP.NET MVC jádra
+title: Přidání nového pole do aplikace ASP.NET Core MVC
 author: rick-anderson
-description: Další informace o použití migrace Entity Framework Code First přidávají nové pole do modelu a migrovat tato změna k databázi.
+description: Další informace o použití migrace Entity Framework Code First pro přidání nového pole do modelu a migrovat tuto změnu do databáze.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 10/06/2017
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: eb98ebcde1086ad605127dddc055a18d4874c722
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 74f7a98143c80504d534c5ee4fd06b3dd076a2f2
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961032"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312228"
 ---
-# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidejte nové pole do aplikace ASP.NET MVC jádra
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidání nového pole do aplikace ASP.NET Core MVC
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V této části budete používat [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First a přidat nové pole do modelu migraci, které změnit na databázi.
+V této části použijete [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First pro přidání nového pole do modelu a migraci, které změnit na databázi.
 
-Při použití EF Code First automaticky vytvořit databázi, Code First přidá tabulku k databázi chcete-li sledovat, jestli je synchronizována s třídy modelu, který se vygeneroval ze schématu databáze. Pokud nejsou synchronizované, EF vyvolá výjimku. Díky tomu je snazší najít problémy nekonzistentní databáze nebo kódu.
+Při použití platforem EF Code First automaticky vytvořit databázi, Code First přidá tabulku do databáze pro sledování, zda je synchronizovaný s tříd modelu, které byly vygenerovány z schéma databáze. Pokud nejsou synchronizované, EF vyvolá výjimku. Díky tomu je snazší najít problémy s nekonzistentní databáze nebo kódu.
 
-## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti hodnocení filmu modelu
+## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti do hodnocení filmů modelu
 
-Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
+Otevřít *Models/Movie.cs* a přidejte `Rating` vlastnost:
 
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
@@ -31,41 +31,41 @@ Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 ::: moniker-end
 
-Sestavení aplikace (Ctrl + Shift + B).
+Vytvořte aplikaci (Ctrl + Shift + B).
 
-Protože jste přidali nové pole do `Movie` třídy, je také potřeba aktualizovat seznamu povolených vazby, tato vlastnost budou zahrnuty. V *MoviesController.cs*, aktualizovat `[Bind]` atribut pro obě `Create` a `Edit` akce metody pro zahrnutí `Rating` vlastnost:
+Protože jsme přidali nové pole do `Movie` třídy, musíte také aktualizovat vazbu seznamu povolených, aby tuto novou vlastnost budou zahrnuty. V *MoviesController.cs*, aktualizovat `[Bind]` atribut pro obě `Create` a `Edit` metody akce, které chcete zahrnout `Rating` vlastnost:
 
 ```csharp
 [Bind("ID,Title,ReleaseDate,Genre,Price,Rating")]
    ```
 
-Je také potřeba aktualizovat zobrazit šablony, aby bylo možné zobrazit, vytvořit a upravit nové `Rating` vlastnost v okně prohlížeče.
+Je také potřeba aktualizovat zobrazit šablony, aby bylo možné zobrazit, vytvořit a upravit novou `Rating` vlastností v okně prohlížeče.
 
-Upravit */Views/Movies/Index.cshtml* souboru a přidejte `Rating` pole:
+Upravit */Views/Movies/Index.cshtml* a přidejte `Rating` pole:
 
 [!code-HTML[](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
-Aktualizace */Views/Movies/Create.cshtml* s `Rating` pole. Můžete zkopírujte a vložte předchozí "formuláře skupinu" a pomohou intelliSense aktualizovat pole. IntelliSense pracuje s [značky Pomocníci](xref:mvc/views/tag-helpers/intro). Poznámka: V verze RTM nástroje Visual Studio 2017 musíte nainstalovat [služby jazyk Razor](https://marketplace.visualstudio.com/items?itemName=ms-madsk.RazorLanguageServices) technologie intelliSense pro Razor. Tento problém bude vyřešený v příští verzi.
+Aktualizace */Views/Movies/Create.cshtml* s `Rating` pole. Můžete kopírovat/vložit předchozí "formuláře skupinu" a aktualizujte pole pomohou technologie intelliSense. Technologie IntelliSense funguje s [pomocných rutin značek](xref:mvc/views/tag-helpers/intro). Poznámka: Ve verzi RTM sady Visual Studio 2017 je potřeba nainstalovat [jazykové služby Razor](https://marketplace.visualstudio.com/items?itemName=ms-madsk.RazorLanguageServices) pro funkce Razor intelliSense. Tato chyba bude opravena v další vydané verzi.
 
-![Vývojář zadal písmeno R hodnoty atributu ASP-pro v druhé elementu label zobrazení. Kontextové nabídky Intellisense ukazuje se zobrazuje dostupná pole, včetně hodnocení, které je v seznamu je zvýrazněna automaticky. Když vývojář klikne na pole nebo stiskne klávesu Enter na klávesnici, nastaví se hodnota k hodnocení.](new-field/_static/cr.png)
+![Vývojář napsal písmeno R pro hodnotu atributu ASP-pro druhý popisek prvku zobrazení. Jeho ikona místní nabídku technologie Intellisense zobrazí dostupná pole, včetně hodnocení, který je zvýrazněn v seznamu automaticky. Když vývojář klikne pole nebo stiskne klávesu Enter na klávesnici, hodnota se nastaví na hodnocení.](new-field/_static/cr.png)
 
-Aplikace nebude fungovat, dokud aktualizujeme DB zahrnout nové pole. Pokud spustíte ji nyní, získáte následující `SqlException`:
+Aplikace nebude fungovat, dokud aktualizujeme DB zahrnout nové pole. Pokud jste ji nyní spustit, zobrazí se následující `SqlException`:
 
 `SqlException: Invalid column name 'Rating'.`
 
-Tato chyba se zobrazuje, protože aktualizované třídy modelu film se liší od schématu tabulky film existující databáze. (V tabulce databáze neexistuje žádný sloupec hodnocení.)
+Tato chyba se zobrazuje, protože aktualizované třídy modelu film se liší od schématu tabulky Movie existující databáze. (V tabulce databáze není žádný sloupec hodnocení.)
 
 Řešení chyby několika způsoby:
 
-1. Máte rozhraní Entity Framework automaticky vyřadit a znovu vytvořit databázi na základě nové třídy schématu modelu. Tento přístup je velmi praktické již v rané fázi v cyklu vývoje, pokud byste active vývoj pro testovací databázi. umožňuje rychle společně momentální schéma modelu a databáze. Nevýhodou, ale je, že přijdete o stávající data v databázi – tak, že nechcete, aby pro tento postup u provozní databáze! Pomocí inicializátoru automaticky počáteční hodnoty databázi s daty test je často produktivní způsob, jak vyvíjet aplikace.
+1. Máte rozhraní Entity Framework automaticky vyřadit a znovu vytvořit databázi založené na nové schéma třídy modelu. Tento přístup je velmi vhodné v rané fázi vývojového cyklu při provádění testu databáze; s aktivním vývojem umožňuje rychlý rozvoj schématu modelu a databáze společně. Nevýhodou, je však dojít ke ztrátě existujících dat v databázi, takže nechcete tuto metodu použijte u provozní databáze. Použití inicializátoru automaticky naplnit databázi daty testu je často produktivní způsob, jak vyvíjet aplikace.
 
-2. Explicitně změnit schéma z existující databáze tak, aby odpovídala třídy modelu. Výhodou tohoto přístupu je, že zachováte data. Můžete tuto změnu provést buď ručně, nebo vytvořením databáze změnit skriptu.
+2. Explicitně upravte schéma stávající databázi tak, aby odpovídalo tříd modelu. Výhodou tohoto přístupu je, že zachováte vaše data. Můžete tuto změnu provést buď ručně, nebo tak, že vytvoříte databázi změnit skript.
 
-3. Použijte migrace Code First k aktualizaci schématu databáze.
+3. Pomocí migrace Code First aktualizovat schéma databáze.
 
-V tomto kurzu použijeme migrace Code First.
+Pro účely tohoto kurzu používáme migrace Code First.
 
-Aktualizace `SeedData` třídy tak, aby poskytuje hodnotu pro nový sloupec. Ukázka změnu jsou uvedeny níže, ale budete chtít tuto změnu provést pro každý `new Movie`.
+Aktualizace `SeedData` třídy tak, že poskytuje hodnoty pro nový sloupec. Ukázka změnu je uveden níže, ale budete chtít tuto změnu pro každou `new Movie`.
 
 [!code-csharp[](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
@@ -73,20 +73,20 @@ Sestavte řešení.
 
 Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola správce balíčků**.
 
-  ![Pomocí PMC nabídky](adding-model/_static/pmc.png)
+  ![PMC nabídky](adding-model/_static/pmc.png)
 
-Pomocí PMC zadejte následující příkazy:
+V konzole PMC zadejte následující příkazy:
 
 ```powershell
 Add-Migration Rating
 Update-Database
 ```
 
-`Add-Migration` Příkaz zjistí rozhraní migrace prozkoumat aktuální `Movie` modelu s aktuálním `Movie` schéma databáze a vytvořit nezbytného kódu migrace databáze do nového modelu. Název "Hodnocení" libovolný a slouží k názvu souboru migrace. Je vhodné použít smysluplný název souboru migrace.
+`Add-Migration` Příkaz říká rozhraní framework migrace ke kontrole aktuální `Movie` modelů s aktuálním `Movie` schématu databáze a vytvářet kód potřebné k migraci databáze na nový model. Název "Hodnocení" je volitelný a slouží k pojmenování souboru migrace. Je vhodné použít smysluplný název souboru migrace.
 
-Pokud odstraníte všechny záznamy v databázi, bude inicializovat počáteční hodnoty databáze a zahrnout `Rating` pole. Můžete provést s odstranit odkazy v prohlížeči nebo z SSOX.
+Při odstranění všech záznamů v databázi, bude inicializace naplnit databáze a zahrnout `Rating` pole. Můžete to provést s odstranit odkazy v prohlížeči nebo z SSOX.
 
-Spusťte aplikaci a ověřte, můžete vytvořit, upravit nebo zobrazení filmy s `Rating` pole. Měli byste také přidat `Rating` do `Edit`, `Details`, a `Delete` zobrazí šablony.
+Spusťte aplikaci a ověřit, je možné vytvořit/upravit/zobrazit videa s `Rating` pole. Měli byste také přidat `Rating` pole `Edit`, `Details`, a `Delete` zobrazení šablon.
 
 > [!div class="step-by-step"]
 > [Předchozí](search.md)

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: dfef2bf21f325f11d147379f75a8d81a8bd05eec
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41886743"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336063"
 ---
 # <a name="aspnet-core-web-host"></a>Webového hostitele ASP.NET Core
 
@@ -338,6 +338,23 @@ Nastavení přesměrování portu HTTPS. Použít v [vynucování HTTPS](xref:se
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting("https_port", "8080")
+```
+
+### <a name="hosting-startup-exclude-assemblies"></a>Hostování sestavení vyloučit při spuštění
+
+POPIS
+
+**Klíč**: hostingStartupExcludeAssemblies  
+**Typ**: *řetězec*  
+**Výchozí**: prázdný řetězec  
+**Sada s použitím**: `UseSetting`  
+**Proměnná prostředí**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
+
+Řetězec oddělený středníkem při spuštění sestavení mají vyloučit při spuštění hostování.
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting(WebHostDefaults.HostingStartupExcludeAssembliesKey, "assembly1;assembly2")
 ```
 
 ::: moniker-end

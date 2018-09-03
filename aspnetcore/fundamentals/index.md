@@ -1,4 +1,4 @@
----
+﻿---
 title: Základy ASP.NET Core
 author: rick-anderson
 description: Seznamte se základními koncepty pro vytváření aplikací ASP.NET Core.
@@ -77,7 +77,7 @@ Obsahu kořenový adresář je základní cesta k obsahu používat aplikace, ja
 
 ## <a name="web-root"></a>Kořen webu
 
-Kořenový adresář webové aplikace je adresář, do projektu obsahující veřejné, statické prostředky, jako jsou šablony stylů CSS, JavaScript a soubory obrázků.
+Kořen webu (Web Root) je adresář projektu, který obsahuje veřejné, statické prostředky, jako jsou např. kaskádové styly, JavaScript a obrázky.
 
 ## <a name="dependency-injection-services"></a>Vkládání závislostí (služby)
 
@@ -213,7 +213,6 @@ Další informace naleznete v tématu <xref:fundamentals/metapackage-app>.
 
 * Všechny podporované balíčky vytvořené týmem ASP.NET Core.
 * Všechny podporované balíčky Entity Framework Core.
-* Interní a 3. stran závislosti používat ASP.NET Core a Entity Framework Core.
 
 Další informace naleznete v tématu <xref:fundamentals/metapackage>.
 

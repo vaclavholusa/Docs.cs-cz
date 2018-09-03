@@ -71,15 +71,15 @@ Ve třídě `Startup` můžete definovat kanál zpracování požadavků a nakon
 
 Další informace naleznete v tématu <xref:fundamentals/startup>.
 
-## <a name="content-root"></a>Kořenové obsahu
+## <a name="content-root"></a>Kořen obsahu
 
 Obsahu kořenový adresář je základní cesta k obsahu používat aplikace, jako například [Razor Pages](xref:razor-pages/index), MVC zobrazení a statické prostředky. Ve výchozím nastavení obsahu kořenový adresář je na stejné umístění jako základní cesta aplikace pro spustitelný soubor, který je hostitelem aplikace.
 
-## <a name="web-root"></a>Kořenový adresář webové
+## <a name="web-root"></a>Kořen webu
 
 Kořenový adresář webové aplikace je adresář, do projektu obsahující veřejné, statické prostředky, jako jsou šablony stylů CSS, JavaScript a soubory obrázků.
 
-## <a name="dependency-injection-services"></a>Injektáž závislostí (služby)
+## <a name="dependency-injection-services"></a>Vkládání závislostí (služby)
 
 A *služby* je komponenta, která je určená pro běžné používání v aplikaci. Služby jsou k dispozici prostřednictvím [injektáž závislostí (DI)](xref:fundamentals/dependency-injection). ASP.NET Core zahrnuje nativní kontejner řízení IOC (Inversion), který podporuje [konstruktor vkládání](xref:mvc/controllers/dependency-injection#constructor-injection) ve výchozím nastavení. Pokud chcete, můžete nahradit výchozí kontejner. Kromě jeho [volné párování výhodu](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#encapsulation), DI umožňuje službám, jako například [protokolování](xref:fundamentals/logging/index), která je dostupná v celé aplikaci.
 
@@ -97,7 +97,7 @@ Další informace naleznete v tématu <xref:fundamentals/middleware/index> a <x
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="initiate-http-requests"></a>Iniciování požadavků HTTP
+## <a name="initiate-http-requests"></a>Iniciování HTTP požadavků
 
 <xref:System.Net.Http.IHttpClientFactory> je k dispozici pro přístup k <xref:System.Net.Http.HttpClient> instance požadavky HTTP.
 
@@ -113,7 +113,7 @@ Další informace naleznete v tématu <xref:fundamentals/environments>.
 
 ## <a name="hosting"></a>Hostování
 
-Konfigurace aplikace ASP.NET Core a spouštění *hostitele*, který je zodpovědný za spouštění a životního cyklu správy aplikací.
+Aplikace ASP.NET Core konfiguruje a spouští *hostitele*, který je zodpovědný za správu životního cyklu aplikace.
 
 Další informace naleznete v tématu <xref:fundamentals/host/index>.
 
@@ -129,7 +129,7 @@ ASP.NET Core využívá konfigurační model založený na páry název hodnota.
 
 Další informace naleznete v tématu <xref:fundamentals/configuration/index>.
 
-## <a name="logging"></a>protokolování
+## <a name="logging"></a>Protokolování
 
 ASP.NET Core podporuje rozhraní API protokolování, které funguje s různými zprostředkovatelů protokolování. Předdefinované zprostředkovatele podpory odesílání protokolů do jednoho nebo více cílů. Můžete použít rozhraní protokolování třetích stran.
 
@@ -149,7 +149,7 @@ Další informace naleznete v tématu <xref:fundamentals/routing>.
 
 ## <a name="file-providers"></a>Zprostředkovatelé souborů
 
-ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím zprostředkovatelé souborů, která nabízí obecné rozhraní pro práci se soubory napříč platformami.
+ASP.NET Core abstrahuje přístup k systému souborů prostřednictvím zprostředkovatelů souborů, nabízí společné rozhraní pro práci se soubory napříč platformami.
 
 Další informace naleznete v tématu <xref:fundamentals/file-providers>.
 
@@ -159,9 +159,9 @@ Statické soubory Middleware slouží statické soubory, jako jsou soubory HTML,
 
 Další informace naleznete v tématu <xref:fundamentals/static-files>.
 
-## <a name="session-and-app-state"></a>Stav relace a aplikace
+## <a name="session-and-app-state"></a>Stav aplikace a relace
 
-ASP.NET Core nabízí několik způsobů zachovat stav relace a aplikace, zatímco uživatel prochází webové aplikace.
+ASP.NET Core nabízí několik způsobů pro uchování stavu aplikace a relace v čase procházení webové aplikace uživatelem.
 
 Další informace naleznete v tématu <xref:fundamentals/app-state>.
 
@@ -173,7 +173,7 @@ Další informace naleznete v tématu <xref:fundamentals/localization>.
 
 ## <a name="request-features"></a>Funkce požadavků
 
-Podrobnosti o implementaci webového serveru související s požadavky HTTP a odpovědí jsou definovány v rozhraní. Tato rozhraní jsou používány implementací serveru a middleware k vytvoření a úprava kanálu hostitelské aplikace.
+Implementační detaily webového serveru související s HTTP požadavky a odpověďmi jsou definovány v rozhraních. Tato rozhraní jsou používána implementacemi serveru a middlewarem k vytvoření a modifikaci kanálu hostingu.
 
 Další informace naleznete v tématu <xref:fundamentals/request-features>.
 
@@ -189,7 +189,7 @@ Další informace naleznete v tématu <xref:fundamentals/host/hosted-services>.
 
 Další informace naleznete v tématu <xref:fundamentals/httpcontext>.
 
-## <a name="websockets"></a>Protokoly Websocket
+## <a name="websockets"></a>WebSocket
 
 [Protokol WebSocket](https://wikipedia.org/wiki/WebSocket) je protokol, který umožňuje obousměrný trvalé komunikačních kanálů přes připojení TCP. Používá se pro aplikace, například konverzace, akciích, hry a kdekoli vyžadujete funkcí v reálném čase ve webové aplikaci. ASP.NET Core podporuje další scénáře využití webových soketů.
 
@@ -197,7 +197,7 @@ Další informace naleznete v tématu <xref:fundamentals/websockets>.
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="microsoftaspnetcoreapp-metapackage"></a>Microsoft.AspNetCore.App Microsoft.aspnetcore.all
+## <a name="microsoftaspnetcoreapp-metapackage"></a>Metabalíček Microsoft.AspNetCore.App
 
 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) Microsoft.aspnetcore.all zjednodušuje správu balíčků.
 
@@ -207,24 +207,24 @@ Další informace naleznete v tématu <xref:fundamentals/metapackage-app>.
 
 ::: moniker range="= aspnetcore-2.0"
 
-## <a name="microsoftaspnetcoreall-metapackage"></a>Metabalíček Microsoft.aspnetcore.all
+## <a name="microsoftaspnetcoreall-metapackage"></a>Metabalíček Microsoft.AspNetCore.All
 
-[Metabalíček](https://www.nuget.org/packages/Microsoft.AspNetCore.All) Microsoft.aspnetcore.all pro ASP.NET Core zahrnuje:
+[Metabalíček](https://www.nuget.org/packages/Microsoft.AspNetCore.All) Microsoft.AspNetCore.All pro ASP.NET Core zahrnuje:
 
-* Všechny podporované balíčky týmem ASP.NET Core.
-* Všechny podporované balíčky pomocí Entity Framework Core.
+* Všechny podporované balíčky vytvořené týmem ASP.NET Core.
+* Všechny podporované balíčky Entity Framework Core.
 * Interní a 3. stran závislosti používat ASP.NET Core a Entity Framework Core.
 
 Další informace naleznete v tématu <xref:fundamentals/metapackage>.
 
 ::: moniker-end
 
-## <a name="net-core-vs-net-framework-runtime"></a>Modul runtime .NET core oproti .NET Framework
+## <a name="net-core-vs-net-framework-runtime"></a>.NET Core proti .NET Framework
 
-Aplikace ASP.NET Core můžete zaměřují na modul runtime .NET Core nebo .NET Framework.
+Aplikace ASP.NET Core lze při překladu cílit jak na běhové prostředí .NET Core, tak na běhové prostředí .NET Framework.
 
-Další informace najdete v tématu [volba mezi .NET Core a .NET Framework](/dotnet/articles/standard/choosing-core-framework-server).
+Další informace najdete v tématu [Volba mezi .NET Core a .NET Framework](/dotnet/articles/standard/choosing-core-framework-server).
 
-## <a name="choose-between-aspnet-core-and-aspnet"></a>Zvolte mezi ASP.NET Core a ASP.NET
+## <a name="choose-between-aspnet-core-and-aspnet"></a>Volba mezi ASP.NET Core a ASP.NET
 
 Další informace o volbě mezi ASP.NET Core a ASP.NET najdete v tématu <xref:fundamentals/choose-between-aspnet-and-aspnetcore>.

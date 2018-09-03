@@ -8,7 +8,7 @@ ms.date: 07/02/2018
 uid: fundamentals/index
 ms.openlocfilehash: 8e0198e2975192e6522c4821741aacc7a844000b
 ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 08/01/2018
 ms.locfileid: "39410088"
@@ -49,26 +49,26 @@ Metoda `UseStartup` třídy `WebHostBuilder` určuje spouštěcí třídu `Start
 
 ---
 
-Ve třídě `Startup` můžete definovat rouru zpracování požadavků a nakonfigurovat všechny služby, které aplikace vyžaduje. Třída `Startup` musí být veřejná a musí obsahovat následující metody:
+Ve třídě `Startup` můžete definovat kanál zpracování požadavků a nakonfigurovat všechny služby, které aplikace vyžaduje. Třída `Startup` musí být veřejná a musí obsahovat následující metody:
 
 ```csharp
 public class Startup
 {
-    // Tato metoda je volána při spuštění. Použijte tuto metodu
-    // pro přidání služeb do kontejneru.
+    // This method gets called by the runtime. Use this method
+    // to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
     }
 
-    // Tato metoda je volána při spuštění. Použijte tuto metodu
-    // pro konfiguraci roury zpracování požadavků.
+    // This method gets called by the runtime. Use this method
+    // to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app)
     {
     }
 }
 ```
 
-`ConfigureServices` definuje [služby](#dependency-injection-services) používané v aplikaci (například ASP.NET Core MVC, Entity Framework Core, Identity). `Configure` definuje [middlewary](xref:fundamentals/middleware/index) pro rouru zpracování požadavků.
+`ConfigureServices` definuje [služby](#dependency-injection-services) používané v aplikaci (například ASP.NET, Core MVC, Entity Framework Core, Identity). `Configure` definuje [middlewary](xref:fundamentals/middleware/index) pro kanál zpracování požadavků.
 
 Další informace naleznete v tématu [Spuštění aplikace](xref:fundamentals/startup).
 
@@ -88,7 +88,7 @@ Další informace najdete v tématu [Vkládání závislostí](xref:fundamentals
 
 ## <a name="middleware"></a>Middleware
 
-V ASP.NET Core budujete rouru zpracování požadavků pomocí [middlewarů](xref:fundamentals/middleware/index). ASP.NET Core middleware nejprve provádí asynchronní operace nad kontextem `HttpContext`, a následně může předat řízení dalšímu middlewaru v pořadí nebo okamžitě ukončit zpracování HTTP požadavku. Middlewarová komponenta s názvem "XYZ" se přidá pomocí volání rozšiřující metody `UseXYZ` uvnitř metody `Configure`.
+V ASP.NET Core budujete kanál zpracování požadavků pomocí [middlewarů](xref:fundamentals/middleware/index). ASP.NET Core middleware nejprve provádí asynchronní operace nad kontextem `HttpContext`, a následně může předat řízení dalšímu middlewaru v pořadí nebo okamžitě ukončit zpracování HTTP požadavku. Middlewarová komponenta s názvem "XYZ" se přidá pomocí volání rozšiřující metody `UseXYZ` uvnitř metody `Configure`.
 
 ASP.NET Core obsahuje pestrý výběr vestavěných middlewarů:
 
@@ -112,7 +112,7 @@ Informace o používání `IHttpClientFactory` pro přístup k instancím tříd
 
 ## <a name="environments"></a>Prostředí
 
-ASP.NET Core umožňuje rozlišení vývojového ("Development") a produkčního ("Production") prostředí. Konkrétní prostředí lze nastavit pomocí proměnných prostředí.
+ASP.NET Core umožňuje rozlišení vývojového ("Development") a produkčního ("Production") prostředí, konkrétní prostředí lze nastavit pomocí proměnných prostředí.
 
 Další informace najdete v tématu [používání více prostředí](xref:fundamentals/environments).
 
@@ -130,7 +130,7 @@ Další informace najdete v tématu [Protokolování](xref:fundamentals/logging/
 
 ## <a name="error-handling"></a>Zpracování chyb
 
-ASP.NET Core má integrované funkce pro zpracování chyb v aplikacích, vč. stránku pro diagnostiku výjimek, vlastní chybové stránky a zpracování výjimek při spuštění.
+ASP.NET Core má integrované funkce pro zpracování chyb v aplikacích, vč. stránky pro diagnostiku výjimek, vlastní chybové stránky a zpracování výjimek při spuštění.
 
 Další informace najdete v tématu [Zpracování chyb](xref:fundamentals/error-handling).
 
@@ -142,13 +142,13 @@ Další informace najdete v tématu [Směrování](xref:fundamentals/routing).
 
 ## <a name="file-providers"></a>Zprostředkovatelé souborů
 
-ASP.NET Core abstrahuje přístup k systému souborů prostřednictvím zprostředkovatelů souborů. Nabízí společné rozhraní pro práci se soubory napříč platformami.
+ASP.NET Core abstrahuje přístup k systému souborů prostřednictvím zprostředkovatelů souborů, nabízí společné rozhraní pro práci se soubory napříč platformami.
 
 Další informace najdete v tématu [Zprostředkovatelé souborů](xref:fundamentals/file-providers).
 
 ## <a name="static-files"></a>Statické soubory
 
-Middleware pro statické soubory poskytuje přístup ke statickým souborům, jako např. HTML, kaskádovým stylům, obrázkům a JavaScriptu.
+Middleware pro statické soubory poskytuje přístup ke statickým souborům, jako například HTML, kaskádovým stylům, obrázkům a JavaScriptu.
 
 Další informace najdete v tématu [Statické soubory](xref:fundamentals/static-files).
 
@@ -158,15 +158,15 @@ Aplikace ASP.NET Core konfiguruje a spouští *hostitele*, který je zodpovědn�
 
 Další informace najdete v tématu [Hostování v ASP.NET Core](xref:fundamentals/host/index).
 
-## <a name="session-and-app-state"></a>Relace a stav aplikace
+## <a name="session-and-app-state"></a>Stav aplikace a relace
 
-ASP.NET Core nabízí několik způsobů pro uchování relace a stavu aplikace v čase procházení webové aplikace uživatelem.
+ASP.NET Core nabízí několik způsobů pro uchování stavu aplikace a relace v čase procházení webové aplikace uživatelem.
 
-Další informace najdete v tématu [Relace a stav aplikace](xref:fundamentals/app-state).
+Další informace najdete v tématu [Stav aplikace a relace](xref:fundamentals/app-state).
 
 ## <a name="servers"></a>Servery
 
-Aplikace ASP.NET Core nenaslouchá přímo HTTP požadavkům, ale spoléhá na HTTP server, který jí předává jednotlivé požadavky. Předaný požadavek je zabalen do objektů, ke kterým je možné přistupovat skrz rozhraní. ASP.NET Core obsahuje zabudovaný multiplatformní webový server [Kestrel](xref:fundamentals/servers/kestrel). Kestrel může běžet v pozadí produkčního webového serveru, jako je například [IIS](https://www.iis.net/) nebo [Nginx](http://nginx.org), ale i samostatně.
+ASP.NET Core nenaslouchá přímo HTTP požadavkům. Spoléhá na HTTP server, který aplikaci předává jednotlivé požadavky. Předaný požadavek je zabalen do objektů, ke kterým je možné přistupovat skrz rozhraní. ASP.NET Core obsahuje zabudovaný multiplatformní webový server [Kestrel](xref:fundamentals/servers/kestrel). Kestrel může běžet v pozadí produkčního webového serveru, jako je například [IIS](https://www.iis.net/) nebo [Nginx](http://nginx.org). Kestrel může běžet i na pozadí hraničního serveru.
 
 Další informace najdete v tématu [Servery](xref:fundamentals/servers/index) a v následujících tématech:
 
@@ -176,15 +176,15 @@ Další informace najdete v tématu [Servery](xref:fundamentals/servers/index) a
 
 ## <a name="globalization-and-localization"></a>Globalizace a lokalizace
 
-Vytvoření vícejazyčných web pomocí ASP.NET Core umožňuje oslovit větší počet návštěvníků. ASP.NET Core poskytuje služby a middleware pro usnadnění lokalizace do různých jazyků a kultur.
+Vytvoření vícejazyčného webu pomocí ASP.NET Core umožňuje oslovit větší počet návštěvníků. ASP.NET Core poskytuje služby a middleware pro usnadnění lokalizace do různých jazyků a kultur.
 
 Další informace najdete v tématu [Globalizace a lokalizace](xref:fundamentals/localization).
 
-## <a name="request-features"></a>Rysy požadavků
+## <a name="request-features"></a>Funkce požadavků
 
-Implementační detaily webového serveru související s HTTP požadavky a odpověďmi jsou definovány v rozhraních. Tato rozhraní jsou používána implementacemi serveru a middlewarem k vytvoření a modifikaci roury hostingu.
+Implementační detaily webového serveru související s HTTP požadavky a odpověďmi jsou definovány v rozhraních. Tato rozhraní jsou používána implementacemi serveru a middlewarem k vytvoření a modifikaci kanálu hostingu.
 
-Další informace najdete v tématu [Rysy požadavků](xref:fundamentals/request-features).
+Další informace najdete v tématu [Funkce požadavků](xref:fundamentals/request-features).
 
 ## <a name="background-tasks"></a>Úlohy na pozadí
 

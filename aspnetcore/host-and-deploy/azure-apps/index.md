@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Azure App Service s odkazy na užitečné zdroje informací.
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/24/2018
+ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 42775bf4d3e88893260a5973f6f7bc9d3a006b5a
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
-ms.translationtype: HT
+ms.openlocfilehash: bc2a686c5ddc44fded135c9eed5caf676218773a
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927825"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312067"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Hostitele ASP.NET Core ve službě Azure App Service
 
@@ -110,35 +110,55 @@ Aplikace ASP.NET Core ve verzi preview je možné nasadit do služby Azure App S
 <!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
 * [Použití Docker pro kontejnery s Web Apps](#use-docker-with-web-apps-for-containers)
 
-Pokud dojde k potížím s pomocí rozšíření webu ve verzi preview, otevřete problém na [Githubu](https://github.com/aspnet/azureintegration/issues/new).
-
 ### <a name="install-the-preview-site-extension"></a>Instalace rozšíření webu ve verzi preview
+
+Pokud dojde k potížím s pomocí rozšíření webu ve verzi preview, otevřete problém na [Githubu](https://github.com/aspnet/azureintegration/issues/new).
 
 1. Na webu Azure Portal přejděte do okna služby App Service.
 1. Vyberte webovou aplikaci.
-1. Do vyhledávacího pole zadejte "ex" nebo přejděte dolů v seznamu management podoken můžete vizualizaci **nástroje pro vývoj**.
+1. Zadejte "ex" vyhledávacího pole zadejte nebo přejděte dolů v seznamu management oddíly pro **nástroje pro vývoj**.
 1. Vyberte **nástroje pro vývoj** > **rozšíření**.
 1. Vyberte **přidat**.
-
-   ![Okno Azure aplikace nenavazuje na předchozí kroky](index/_static/x1.png)
-
-1. Vyberte **rozšíření ASP.NET Core**.
+1. Vyberte **ASP.NET Core &lt;x.y&gt; (x86) Runtime** rozšíření ze seznamu, kde `<x.y>` je verze preview ASP.NET Core (například **Runtime ASP.NET Core 2.2 (x86)**). X86 modulu runtime je vhodný pro [nasazení závisí na architektuře](/dotnet/core/deploying/#framework-dependent-deployments-fdd) , které využívají mimo proces hostování modulu ASP.NET Core.
 1. Vyberte **OK** přijměte právní podmínky.
 1. Vyberte **OK** nainstalovat rozšíření.
 
-Po dokončení operací přidat, je nainstalovaná nejnovější verze preview .NET Core. Ověření instalace spuštěním `dotnet --info` v konzole. Z **služby App Service** okno:
+Po dokončení operace, je nainstalovaná nejnovější verze preview .NET Core. Ověření instalace:
 
-1. Zadejte "con" v poli vyhledávání nebo přejděte dolů v seznamu management podokna na **nástroje pro vývoj**.
-1. Vyberte **nástroje pro vývoj** > **konzoly**.
-1. Zadejte `dotnet --info` v konzole.
+1. Vyberte **Rozšířené nástroje** pod **nástroje pro vývoj**.
+1. Vyberte **Přejít** na **Rozšířené nástroje** okno.
+1. Vyberte **konzolou pro ladění** > **Powershellu** položky nabídky.
+1. Na příkazovém řádku Powershellu spusťte následující příkaz. Nahraďte verze modulu runtime ASP.NET Core pro `<x.y>` v příkazu:
 
-Pokud verze `2.1.300-preview1-008174` na nejnovější verzi preview, je následující výstup je získaném spuštěním `dotnet --info` příkazového řádku:
+   ```powershell
+   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.<x.y>.x86\
+   ```
+   Pokud modul runtime nainstalovaný ve verzi preview je určený pro ASP.NET Core 2.2, příkaz je:
+   ```powershell
+   Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.2.2.x86\
+   ```
+   Příkaz vrátí `True` při x64 je nainstalován modul runtime ve verzi preview.
 
-![Okno Azure aplikace nenavazuje na předchozí kroky](index/_static/cons.png)
+::: moniker range=">= aspnetcore-2.2"
 
-Verze technologie ASP.NET Core je vidět na předchozím obrázku `2.1.300-preview1-008174`, zde je příklad. Nejnovější verze preview ASP.NET Core v době nakonfigurovat rozšíření webu se zobrazí, když spustíte `dotnet --info`.
+> [!NOTE]
+> Architektura platformy (x86/x64) aplikace služby App Services je nastavena v **nastavení aplikace** okně v části **obecné nastavení** pro aplikace, které jsou hostované na výpočetní prostředky řady A-series nebo lepší hostování vrstvy. Pokud aplikace běží v režimu v procesu a architektura platformy je nakonfigurovaný pro (x64) 64-bit, používá modul ASP.NET Core runtime 64bitová verze preview, pokud jsou k dispozici. Nainstalujte **ASP.NET Core &lt;x.y&gt; (x64) Runtime** rozšíření (například **modulu Runtime ASP.NET Core 2.2 (x64)**).
+>
+> Po instalaci x64 ve verzi preview modulu runtime, spusťte následující příkaz v příkazovém okně prostředí PowerShell Kudu k ověření instalace. Nahraďte verze modulu runtime ASP.NET Core pro `<x.y>` v příkazu:
+>
+> ```powershell
+> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.<x.y>.x64\
+> ```
+> Pokud modul runtime nainstalovaný ve verzi preview je určený pro ASP.NET Core 2.2, příkaz je:
+> ```powershell
+> Test-Path D:\home\SiteExtensions\AspNetCoreRuntime.2.2.x64\
+> ```
+> Příkaz vrátí `True` při x64 je nainstalován modul runtime ve verzi preview.
 
-`dotnet --info` Zobrazí cestu k rozšíření webu, na kterém je nainstalovaný verzi Preview. Zobrazuje aplikaci se službou z rozšíření webu místo výchozího *ProgramFiles* umístění. Pokud se zobrazí *ProgramFiles*, restartujte lokalitu a spustit `dotnet --info`.
+::: moniker-end
+
+> [!NOTE]
+> **Rozšíření ASP.NET Core** povoluje další funkce pro ASP.NET Core v Azure App Services, jako například povolení protokolování v Azure. Rozšíření se nainstaluje automaticky při nasazení ze sady Visual Studio. Pokud rozšíření není nainstalovaný, nainstalujte ho pro aplikaci.
 
 **Použití rozšíření webu ve verzi preview pomocí šablony ARM**
 

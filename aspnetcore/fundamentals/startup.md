@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 845cf231ed096af2f9c6d22b452510535ef44263
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 923d17be9c2bb1a9d338599d1cdc4c34302cddab
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893214"
+ms.locfileid: "44040092"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -56,6 +56,8 @@ Další informace o `WebHostBuilder`, najdete v článku [Hosting](xref:fundamen
 * Je voláno hostitelem webové před `Configure` metoda konfigurace služby pro aplikace.
 * Kde [možnosti konfigurace](xref:fundamentals/configuration/index) jsou nastaveny podle konvence.
 
+Typický vzor je volat všechny `Add{Service}` metody a poté zavolejte všechny `services.Configure{Service}` metody. Viz například [konfigurace Identity služby](xref:security/authentication/identity#pw).
+
 Přidání služeb do kontejneru služby je k dispozici v aplikaci a `Configure` metody. Služby jsou vyřešeny prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection) nebo z [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
 Hostitel webové nakonfigurovat některé služby před `Startup` metody jsou volány. Podrobnosti najdete v [hostitele v ASP.NET Core](xref:fundamentals/host/index) tématu.
@@ -86,7 +88,7 @@ Další informace o tom, jak používat `IApplicationBuilder` a pořadí zpracov
 
 [!code-csharp[](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
-## <a name="startup-filters"></a>Po spuštění filtry
+## <a name="extend-startup-with-startup-filters"></a>Rozšířit filtry při spuštění po spuštění
 
 Použití [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter) pro konfiguraci middlewaru na začátku nebo na konci vaší aplikace [konfigurovat](#the-configure-method) middleware kanálu. `IStartupFilter` je užitečný k zajištění toho, že middleware běží před nebo po middleware přidal knihovny na začátku nebo konci kanál pro zpracování požadavku aplikace.
 
@@ -102,9 +104,9 @@ Každý `IStartupFilter` implementuje jednu nebo více middlewares v kanálu po�
 
 [!code-csharp[](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
 
-`IStartupFilter` Je zaregistrovaný v kontejneru služby `ConfigureServices`:
+`IStartupFilter` Je zaregistrovaný v kontejneru služby [IWebHostBuilder.ConfigureServices](xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.ConfigureServices*) k předvedení jak rozšiřuje funkci filtru po spuštění `Startup` z mimo `Startup` třídy:
 
-[!code-csharp[](startup/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](startup/sample/Program.cs?name=snippet1&highlight=4-5)]
 
 Když parametr řetězce dotazu pro `option` je k dispozici, middleware zpracovává přiřazení hodnoty před MVC middleware vykreslí odpovědi:
 

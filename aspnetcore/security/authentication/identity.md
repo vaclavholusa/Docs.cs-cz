@@ -5,12 +5,12 @@ description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit p
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: bc69b1db56361dc185f582032148a4fb8078fdda
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 96f446ad9ec1ef5d807a8648e68308ee20583365
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893230"
+ms.locfileid: "44040025"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
@@ -56,7 +56,7 @@ Spusťte aplikaci a zaregistrovat uživatele. V závislosti na velikost obrazovk
 <a name="pw"></a>
 ### <a name="configure-identity-services"></a>Konfigurace Identity služby
 
-Služby jsou přidány v `ConfigureServices`. Následující kód neobsahuje vygenerovanou šablonu `CookiePolicyOptions`:
+Služby jsou přidány v `ConfigureServices`. Typický vzor je volat všechny `Add{Service}` metody a poté zavolejte všechny `services.Configure{Service}` metody. Následující kód neobsahuje vygenerovanou šablonu `CookiePolicyOptions`:
 
 ::: moniker range=">= aspnetcore-2.1"
 

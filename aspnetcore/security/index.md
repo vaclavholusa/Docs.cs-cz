@@ -5,12 +5,12 @@ description: Další informace o ověřování, autorizaci a zabezpečení zákl
 ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: 3a1c1ea1ad28fccbe5ae91b0be193938b095f60b
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: d371d37690b6d641f8e584f5e51dcc074a581622
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41754391"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040079"
 ---
 # <a name="overview-of-aspnet-core-security"></a>Přehled zabezpečení ASP.NET Core
 
@@ -104,3 +104,4 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
 *   [Obrana proti skriptování mezi weby](xref:security/cross-site-scripting)
 *   [Povolení žádostí nepůvodního zdroje (CORS)](xref:security/cors)
 *   [Sdílení souborů cookie mezi aplikacemi](xref:security/cookie-sharing)
+*   [IP safelist](xref:security/ip-safelist)

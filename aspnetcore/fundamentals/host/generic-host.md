@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: de9044875c8ebc62c80a129d721e7d37be5d846d
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: e19a8a78b4c02fbae3d3acd23ee357c6003c35cf
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927806"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44039962"
 ---
 # <a name="net-generic-host"></a>Obecný hostitele .NET
 
@@ -196,16 +196,32 @@ Použijte objekt pro vytváření a konfigurace kontejneru vlastní služby pro 
 
 ## <a name="extensibility"></a>Rozšiřitelnost
 
-Rozšiřitelnost hostitele se provádí pomocí metody rozšíření na `IHostBuilder`. Následující příklad ukazuje, jak rozšiřující metoda rozšiřuje `IHostBuilder` implementaci [RabbitMQ](https://www.rabbitmq.com/). Metoda rozšíření (jinde v aplikaci) zaregistruje RabbitMQ `IHostedService`:
+Rozšiřitelnost hostitele se provádí pomocí metody rozšíření na `IHostBuilder`. Následující příklad ukazuje, jak rozšiřující metoda rozšiřuje `IHostBuilder` implementaci [TimedHostedService](xref:fundamentals/host/hosted-services#timed-background-tasks) příklad jsme vám ukázali v <xref:fundamentals/host/hosted-services>.
 
 ```csharp
-// UseRabbitMq is an extension method that sets up RabbitMQ to handle incoming
-// messages.
 var host = new HostBuilder()
-    .UseRabbitMq<MyMessageHandler>()
+    .UseHostedService<TimedHostedService>()
     .Build();
 
 await host.StartAsync();
+```
+
+Vytvoří aplikaci `UseHostedService` metodu rozšíření k registraci hostované služby předaný `T`:
+
+```csharp
+using System;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+public static class Extensions
+{
+    public static IHostBuilder UseHostedService<T>(this IHostBuilder hostBuilder)
+        where T : class, IHostedService, IDisposable
+    {
+        return hostBuilder.ConfigureServices(services =>
+            services.AddHostedService<T>());
+    }
+}
 ```
 
 ## <a name="manage-the-host"></a>Spravovat hostitele

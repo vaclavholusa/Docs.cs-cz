@@ -5,12 +5,12 @@ description: Zjistěte, jak nastavit ověřování Azure Active Directory B2C s 
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 731b25cac6f0d56fd34d12114a73e5cb5265dda6
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 73a66cea1533cc835796f673021bfa45c35f5935
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202637"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893191"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>Ověření cloudu s Azure Active Directory B2C v ASP.NET Core
 
@@ -107,7 +107,7 @@ Použijte postup v dokumentaci k Azure AD B2C do [vytvořit zásadu registrace n
 
 ## <a name="run-the-app"></a>Spuštění aplikace
 
-V sadě Visual Studio, stiskněte klávesu **F5** sestavíte a spustíte aplikaci. Po spuštění webové aplikace, vyberte **přihlášení**.
+V sadě Visual Studio, stiskněte klávesu **F5** sestavíte a spustíte aplikaci. Po spuštění webové aplikace, vyberte **přijmout** přijmout a použití souborů cookie (Pokud se zobrazí výzva) a pak vyberte **přihlášení**.
 
 ![Přihlaste se do aplikace](./azure-ad-b2c/_static/signin.png)
 

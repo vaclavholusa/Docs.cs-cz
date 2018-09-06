@@ -5,12 +5,12 @@ description: Objevte, jak přidat třídy pro správu filmy v databázi pomocí 
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 9e0fd0ee98c84bb2336749640b2a3c103e4639b6
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: fb3a287725fa68ff9feb9935d7e6c5c2b8316517
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938323"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893117"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Přidání modelu do aplikace v ASP.NET Core Razor Pages
 
@@ -103,14 +103,14 @@ Add-Migration Initial
 Update-Database
 ```
 
-Alternativně můžete použít následující příkazy rozhraní příkazového řádku .NET Core:
+Alternativně lze použít následující příkazy rozhraní příkazového řádku .NET Core ze složky projektu:
 
 ```console
 dotnet ef migrations add Initial
 dotnet ef database update
 ```
 
-Následující zpráva upozornění ignorovat, kterou vyřešíte v dalším kurzu:
+Ignorovat následující zpráva upozornění, že v opravy pozdějších kurzech:
 
 `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
 

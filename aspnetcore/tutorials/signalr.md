@@ -5,14 +5,14 @@ description: V tomto kurzu vytvoříte aplikaci chatu, který používá funkce 
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 6d96331a4630f766ca11edb056fd3e13b52b6ae4
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055829"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893162"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>Kurz: Začínáme s funkce SignalR technologie ASP.NET Core
 
@@ -34,22 +34,19 @@ Na konci budete mít funkční aplikaci chatu:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [Visual Studio 2017 verze 15.7.3 nebo novější](https://www.visualstudio.com/downloads/) s **vývoj pro ASP.NET a web** pracovního vytížení
+* [Visual Studio 2017 verze 15,8 nebo novější](https://www.visualstudio.com/downloads/) s **vývoj pro ASP.NET a web** pracovního vytížení
 * [.NET core SDK 2.1 nebo novější](https://www.microsoft.com/net/download/all)
-* [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js, použít klientskou knihovnou SignalR JavaScript)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [.NET core SDK 2.1 nebo novější](https://www.microsoft.com/net/download/all)
 * [C# pro Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js, použít klientskou knihovnou SignalR JavaScript)
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * [Visual Studio pro Mac verze 7.5.4 nebo novější](https://www.visualstudio.com/downloads/)
 * [.NET core SDK 2.1 nebo novější](https://www.microsoft.com/net/download/all) (zahrnuty v instalaci sady Visual Studio)
-* [npm](https://www.npmjs.com/get-npm) (Správce balíčků pro Node.js, použít klientskou knihovnou SignalR JavaScript)
 
 ---
 
@@ -95,76 +92,85 @@ Na konci budete mít funkční aplikaci chatu:
 
 ## <a name="add-the-signalr-client-library"></a>Přidat klientské knihovně SignalR
 
-Je součástí serveru knihovny SignalR [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Ale budete muset získat Javascriptovou klientskou knihovnu z [npm, Správce balíčků Node.js](https://www.npmjs.com/get-npm).
+Je součástí serveru knihovny SignalR [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Knihovny JavaScript klienta není automaticky zahrnut v projektu. V tomto kurzu použijete [Správce knihovny (LibMan)](xref:client-side/libman/index) získat klientské knihovny z *unpkg*. [unpkg](https://unpkg.com/#/) je [síť pro doručování obsahu](https://wikipedia.org/wiki/Content_delivery_network) , která může doručovat cokoli, co je součástí [npm, Správce balíčků Node.js](https://www.npmjs.com/get-npm).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-* V **Konzola správce balíčků** (PMC), přejděte do složky projektu (ten, který obsahuje *SignalRChat.csproj* souboru).
+* V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **knihoven na straně klienta**.
 
-  ```console
-  cd SignalRChat
-  ```
+* V **přidat knihovnu na straně klienta** dialogovém okně pro **poskytovatele** vyberte **unpkg**. 
+
+* Pro **knihovny**, zadejte _@aspnet/signalr @1_a vyberte nejnovější verzi, která není ve verzi preview.
+
+  ![Přidat dialog knihoven na straně klienta - knihovně](signalr/_static/libman1.png)
+
+* Vyberte **zvolte konkrétní soubory**, rozbalte *dist a prohlížeče* a pak zvolte položku *signalr.js* a *signalr.min.js*.
+
+* Nastavte **cílové umístění** k *wwwroot/lib/signalr/* a vyberte **nainstalovat**.
+
+  ![Přidat dialog knihoven na straně klienta – vyberte soubory a cíl](signalr/_static/libman2.png)
+
+  [LibMan](xref:client-side/libman/index) vytvoří *wwwroot/lib/signalr* složky a kopie vybrané soubory.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-2. Přejděte do nové složky projektu.
+* V **integrovaný terminál**, spusťte následující příkaz k instalaci LibMan.
 
   ```console
-  cd SignalRChat
-  ``` 
+  dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  ```
+
+* Přejděte do složky projektu (ten, který obsahuje *SignalRChat.csproj* souboru).
+
+* Spusťte následující příkaz s použitím LibMan získat klientské knihovně SignalR. Budete muset počkat několik sekund, než výstup.
+
+  ```console
+  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  ```
+
+  Parametry určete následující možnosti:
+  * Použití zprostředkovatele unpkg.
+  * Kopírovat soubory *wwwroot/lib/signalr* cíl.
+  * Zkopírujte pouze zadané soubory.
+
+  Výstup bude vypadat jako v následujícím příkladu:
+
+  ```console
+  wwwroot/lib/signalr/dist/browser/signalr.js written to disk
+  wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
-* V **terminálu**, přejděte do složky projektu (ten, který obsahuje *SignalRChat.csproj* souboru).
+* V **terminálu**, spusťte následující příkaz k instalaci LibMan.
+
+  ```console
+  dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  ```
+
+* Přejděte do složky projektu (ten, který obsahuje *SignalRChat.csproj* souboru).
+
+* Spusťte následující příkaz s použitím LibMan získat klientské knihovně SignalR.
+
+  ```console
+  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  ```
+
+  Parametry určete následující možnosti:
+  * Použití zprostředkovatele unpkg.
+  * Kopírovat soubory *wwwroot/lib/signalr* cíl.
+  * Zkopírujte pouze zadané soubory.
+
+  Výstup bude vypadat jako v následujícím příkladu:
+
+  ```console
+  wwwroot/lib/signalr/dist/browser/signalr.js written to disk
+  wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  ```
 
 ---
-
-* Spustit inicializátor npm. Chcete-li vytvořit *package.json* souboru:
-
-  ```console
-  npm init -y
-  ```
-
-  Příkaz vytvoří výstup podobný následujícímu příkladu:
-
-  ```console
-  Wrote to C:\tmp\SignalRChat\package.json:
-  {
-    "name": "SignalRChat",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"0
-  }
-  ```
-
-* Nainstalujte balíček knihovny klienta:
-
-  ```console
-  npm install @aspnet/signalr
-  ```
-
-  Příkaz vytvoří výstup podobný následujícímu příkladu:
-
-  ```
-  npm notice created a lockfile as package-lock.json. You should commit this file.
-  npm WARN signalrchat@1.0.0 No description
-  npm WARN signalrchat@1.0.0 No repository field.
-
-  + @aspnet/signalr@1.0.2
-  added 1 package in 0.98s
-  ```
-
-`npm install` Příkaz stáhli Javascriptovou klientskou knihovnu pro podsložku *node_modules*. Zkopírujte z něj do složky v části *wwwroot* , kterou můžete odkazovat z webové stránky chatovací aplikaci.
-
-* Vytvoření *signalr* složky *wwwroot/lib*.
-
-* Kopírovat *signalr.js* souboru z *node_modules/@aspnet/signalr/dist/browser* k novému *wwwroot/lib/signalr* složky.
 
 ## <a name="create-the-signalr-hub"></a>Vytvoření rozbočovače SignalR
 

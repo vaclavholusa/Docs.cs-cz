@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: df7af9fd05c19c42357989bbd8a81da062a564cc
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312244"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893100"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
@@ -66,7 +66,7 @@ Na stránce obslužné rutiny výjimky pro použití při není aplikace spušt�
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-V aplikaci s Razor Pages [dotnet nové](/dotnet/core/tools/dotnet-new) chybová stránka obsahuje šablona Razor Pages a `ErrorModel` stránce třídy modelu v *stránky* složky.
+V aplikaci s Razor Pages [dotnet nové](/dotnet/core/tools/dotnet-new) šablona Razor Pages nabízí chybovou stránku a chybě `PageModel` třídy v *stránky* složky.
 
 V aplikaci MVC, není uspořádání metody akce obslužná rutina chyby s atributy metody HTTP, jako například `HttpGet`. Explicitní příkazy zabránit v dosažení metodu některé požadavky. Povolit anonymní přístup k metodě tak, aby se neověřené uživatele dostávají zobrazení chyb.
 

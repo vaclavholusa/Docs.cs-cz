@@ -4,14 +4,14 @@ author: guardrex
 description: Další informace o webového hostitele v ASP.NET Core, který je zodpovědný za spouštění a životního cyklu správy aplikací.
 ms.author: riande
 ms.custom: mvc
-ms.date: 06/19/2018
+ms.date: 09/01/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
+ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336063"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44089896"
 ---
 # <a name="aspnet-core-web-host"></a>Webového hostitele ASP.NET Core
 
@@ -80,6 +80,25 @@ Konfigurace určené `CreateDefaultBuilder` můžete přepsat a rozšířen o [C
         ...
     ```
 
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+* Následující volání `ConfigureKestrel` přepíše výchozí [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) 30,000,000 bajtů navázat, když Kestrel nakonfigurovaly `CreateDefaultBuilder`:
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxRequestBodySize = 20000000;
+        });
+        ...
+    ```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 * Následující volání [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) přepíše výchozí [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize) 30,000,000 bajtů navázat, když Kestrel nakonfigurovaly `CreateDefaultBuilder`:
 
     ```csharp
@@ -90,6 +109,10 @@ Konfigurace určené `CreateDefaultBuilder` můžete přepsat a rozšířen o [C
         });
         ...
     ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
 
 *Obsahu kořenové* Určuje, kde hostitele vyhledává soubory obsahu, jako jsou například soubory zobrazení MVC. Při spuštění aplikace z kořenové složky projektu, kořenové složky projektu slouží jako kořenový adresář obsahu. Toto je výchozí hodnotu použitou v [sady Visual Studio](https://www.visualstudio.com/) a [nové šablony pro dotnet](/dotnet/core/tools/dotnet-new).
 

@@ -6,21 +6,22 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: security/ip-safelist
-ms.openlocfilehash: 40fe7b67359efd1692490099c3fb529ba4a6148f
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 362d1ded00bda3f328e029fb467f2b3eeaa01396
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040122"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126706"
 ---
 # <a name="client-ip-safelist-for-aspnet-core"></a>Safelist IP klienta pro ASP.NET Core
 
 Podle [Damien překážka](https://twitter.com/damien_bod) a [Petr Dykstra](https://github.com/tdykstra)
  
-Tento článek ukazuje dva způsoby, jak implementovat safelist IP (označované také jako seznam povolených):
+Tento článek popisuje tři způsoby, jak implementovat safelist IP (označované také jako seznam povolených) v aplikaci ASP.NET Core. Můžete použít:
 
-* Pomocí ASP.NET Core middlewarem ke kontrole vzdálené IP adresy každé žádosti o.
-* Pomocí filtrů Akce ASP.NET Core ke kontrole Vzdálená IP adresa žádosti o konkrétní akci metody.
+* Middleware pro vzdálené IP adresy každé žádosti o kontrolu.
+* Filtry akce ke kontrole Vzdálená IP adresa žádosti o konkrétní řadiče nebo metody akce.
+* Filtry stránky Razor ke kontrole Vzdálená IP adresa požadavků pro stránky Razor.
 
 Ukázková aplikace ukazuje oba přístupy. V obou případech je uložen řetězec obsahující schválených klientských IP adres v nastavení aplikace. Middleware nebo filtr analyzuje řetězec do seznam a zkontroluje, zda vzdálené IP je v seznamu. V opačném případě se vrátí stavový kód HTTP 403 Zakázáno.
 

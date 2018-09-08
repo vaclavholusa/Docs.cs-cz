@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: 255baf5570fc5127718aafcb3170bc3d00f00c91
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 1833b5bb77b199bb5fd0257e9f33b4d6f0c23ec5
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040066"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126732"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>Konfigurace ASP.NET Core práci se servery proxy a nástroje pro vyrovnávání zatížení
 
@@ -220,12 +220,14 @@ services.Configure<ForwardedHeadersOptions>(options =>
 
 Pokud server používá duální sokety, jsou ve formátu protokolu IPv6 zadané adresy IPv4 (například `10.0.0.1` IPv4 v IPv6 jako `::ffff:10.0.0.1` nebo `::ffff:a00:1`). Zobrazit [IPAddress.MapToIPv6](xref:System.Net.IPAddress.MapToIPv6*). Určit, pokud tento formát je požadováno pohledem [HttpContext.Connection.RemoteIpAddress](xref:Microsoft.AspNetCore.Http.ConnectionInfo.RemoteIpAddress*).
 
-V následujícím příkladu je do poskytuje předané záhlaví síťová adresa `KnownNetworks` seznamu ve formátu protokolu IPv6:
+V následujícím příkladu je do poskytuje předané záhlaví síťová adresa `KnownNetworks` seznamu ve formátu protokolu IPv6.
 
-Krátký formát protokolu IPv6 pro `10.11.12.1/8`:
+Adresa IPv4: `10.11.12.1/8`
 
-* `::ffff:0a0b:0c01`
-* Délka předpony: 104 (8 + 96&dagger;)
+Převedený IPv6 adresa: `::ffff:10.11.12.1`  
+Převést délka předpony: 104
+
+Můžete také zadat adresu v šestnáctkovém formátu (`10.11.12.1` v IPv6 jako `::ffff:0a0b:0c01`). Při převodu adresu IPv4 na IPv6, přidejte 96 do délka předpony CIDR (`8` v příkladu) pro další `::ffff:` předponu IPv6 (8 + 96 = 104). 
 
 ```csharp
 // To access IPNetwork and IPAddress, add the following namespaces:
@@ -236,11 +238,9 @@ services.Configure<ForwardedHeadersOptions>(options =>
     options.ForwardedHeaders =
         ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
     options.KnownNetworks.Add(new IPNetwork(
-        IPAddress.Parse("::ffff:0a0b:0c01"), 104));
+        IPAddress.Parse("::ffff:10.11.12.1"), 104));
 });
 ```
-
-&dagger;Při převodu adresu IPv4 na IPv6, přidejte do délka předpony CIDR pro další 96 `::ffff:` předponu IPv6.
 
 ## <a name="troubleshoot"></a>Řešení potíží
 

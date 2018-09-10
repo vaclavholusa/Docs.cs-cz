@@ -393,6 +393,7 @@
 ## [Obrana proti skriptování mezi weby](xref:security/cross-site-scripting)
 ## [Povolení žádostí nepůvodního zdroje (CORS)](xref:security/cors)
 ## [Sdílení souborů cookie mezi aplikacemi](xref:security/cookie-sharing)
+## [Seznam bezpečných IP adres](xref:security/ip-safelist)
 
 # [Výkon](xref:performance/index)
 ## [Reakce mezipaměti](xref:performance/caching/index)

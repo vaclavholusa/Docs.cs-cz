@@ -110,7 +110,7 @@ Pokud je určena hodnota parametru řetězce dotazu `option`, middleware zpracuj
 
 ![Okno prohlížeče zobrazující vykreslenou stránku Index. Hodnota Option je vykreslena jako 'From Middleware' na základě parametru řetězce dotazu 'option', jehož hodnota je nastavena na 'From Middleware'.](startup/_static/index.png)
 
-Pořadí spuštění middlewarů je nastavena podle pořadí registrace `IStartupFilter`:
+Pořadí spuštění middlewarů je nastaveno podle pořadí registrace `IStartupFilter`:
 
 * Několik různých implementací `IStartupFilter` může operovat se stejnými objekty. Pokud je pro Vás důležité pořadí, seřaďte jednotlivé registrace služeb `IStartupFilter` tak, aby odpovídaly pořadí, ve kterém mají být jejich middlewary spuštěny.
 * Knihovny mohou přidávat middlewary s jednou nebo více implementacemi `IStartupFilter`, které se spuští před nebo po spuštění ostatních middlewarů aplikace zaregistrovaných pomocí `IStartupFilter`. K vyvolání `IStartupFilter` middlewaru před `IStartupFilter` middlewarem přidaného knihovnou, umístěte registraci Vaší služby před registrací knihovny do kontejneru služeb. Pro opačné pořadí umístěte registraci služby za přidání knihovny.

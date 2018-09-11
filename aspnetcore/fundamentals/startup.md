@@ -17,56 +17,56 @@ ms.locfileid: "44040092"
 
 Podle [Steve Smith](https://ardalis.com), [Petr Dykstra](https://github.com/tdykstra), a [Luke Latham](https://github.com/guardrex)
 
-`Startup` Třída nakonfiguruje služby a kanál žádosti o aplikace.
+Třída `Startup` konfiguruje služby a kanál zpracování požadavků aplikace.
 
-## <a name="the-startup-class"></a>Třída při spuštění
+## <a name="the-startup-class"></a>Třída Startup
 
-Použití aplikace ASP.NET Core `Startup` třídy, který se nazývá `Startup` konvencí. `Startup` Třídy:
+Aplikace ASP.NET Core používají třídu `Startup`, která je konvenčně pojmenována `Startup`. Třída `Startup`:
 
-* Může volitelně zahrnovat [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) metoda konfigurace služby pro aplikace.
-* Musí obsahovat [konfigurovat](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metodu pro vytvoření kanálu zpracování žádosti o aplikace.
+* Může volitelně obsahovat metodu [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices), která konfiguruje služby aplikace.
+* Musí obsahovat metodu [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) k vytvoření kanálu zpracování požadavků aplikace.
 
 `ConfigureServices` a `Configure` jsou volány modulem runtime při spuštění aplikace:
 
 [!code-csharp[](startup/snapshot_sample/Startup1.cs)]
 
-Zadejte `Startup` třídy s [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) metody:
+Třídu `Startup` můžete specifikovat pomocí rozšiřující metody [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_):
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-Webového hostitele obsahuje některé služby, které jsou k dispozici na `Startup` konstruktoru třídy. Aplikace přidá další služby prostřednictvím `ConfigureServices`. Hostitelské i aplikaci služby jsou pak k dispozici v `Configure` a v celé aplikaci.
+Hostitel webové aplikace poskytuje některé služby, které jsou k dispozici konstruktoru třídy `Startup`. Aplikace přidává další služby prostřednictvím metody `ConfigureServices`. Služby hostitele i aplikace jsou pak k dispozici v metodě `Configure` a v celé aplikaci.
 
-Běžně [injektáž závislostí](xref:fundamentals/dependency-injection) do `Startup` třída je vložení:
+Ve třídě `Startup` se běžně používá [vkládání závislostí](xref:fundamentals/dependency-injection) pro vložení:
 
-* [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) konfigurace služby pro prostředí.
-* [Parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) načíst konfiguraci.
-* [Implementaci třídy ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) pro vytváření protokolovacího nástroje v `Startup.ConfigureServices`.
+* [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) pro konfiguraci služeb prostřednictvím prostředí.
+* [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) pro načtení konfigurace.
+* [ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) pro vytváření protokolovacího nástroje v `Startup.ConfigureServices`.
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
 Alternativa k vkládání `IHostingEnvironment` je chcete použít přístup na základě konvence. Aplikace můžete definovat zvláštní `Startup` třídy pro různá prostředí (například `StartupDevelopment`) a odpovídající `Startup` třídy je vybrané v době běhu. Třídy, jejichž přípona názvu odpovídá aktuální prostředí je nastaveno jako prioritní. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [používání více prostředí](xref:fundamentals/environments#environment-based-startup-class-and-methods).
 
-Další informace o `WebHostBuilder`, najdete v článku [Hosting](xref:fundamentals/host/index) tématu. Informace o zpracování chyb během spouštění najdete v tématu [zpracování výjimek při spuštění](xref:fundamentals/error-handling#startup-exception-handling).
+Další informace o `WebHostBuilder` naleznete ve článku [Hosting](xref:fundamentals/host/index). Informace o zpracování chyb během spuštění naleznete v tématu [Zpracování výjimek při spuštění](xref:fundamentals/error-handling#startup-exception-handling).
 
-## <a name="the-configureservices-method"></a>ConfigureServices – metoda
+## <a name="the-configureservices-method"></a>Metoda ConfigureServices
 
-[ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) metoda je:
+Metoda [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) je:
 
-* Nepovinné
-* Je voláno hostitelem webové před `Configure` metoda konfigurace služby pro aplikace.
-* Kde [možnosti konfigurace](xref:fundamentals/configuration/index) jsou nastaveny podle konvence.
+* volitelná,
+* volána hostitelem webové aplikace před voláním metody `Configure`, aby nakonfigurovala příslušné služby,
+* metoda, ve které jsou [možnosti konfigurace](xref:fundamentals/configuration/index) nastaveny podle konvence.
 
 Typický vzor je volat všechny `Add{Service}` metody a poté zavolejte všechny `services.Configure{Service}` metody. Viz například [konfigurace Identity služby](xref:security/authentication/identity#pw).
 
-Přidání služeb do kontejneru služby je k dispozici v aplikaci a `Configure` metody. Služby jsou vyřešeny prostřednictvím [injektáž závislostí](xref:fundamentals/dependency-injection) nebo z [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
+Po přidání služeb do kontejneru jsou tyto služby k dispozici v celé aplikaci a v rámci metody `Configure`. Služby jsou zpřístupňovány prostřednictvím [vkládání závislostí](xref:fundamentals/dependency-injection) nebo [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
-Hostitel webové nakonfigurovat některé služby před `Startup` metody jsou volány. Podrobnosti najdete v [hostitele v ASP.NET Core](xref:fundamentals/host/index) tématu.
+Hostitel webové aplikace může konfigurovat některé služby před voláním metod ve třídě `Startup`. Podrobnosti naleznete v tématu [Hostitel v ASP.NET Core](xref:fundamentals/host/index).
 
-Funkce, které vyžadují značné instalační program, existují `Add[Service]` rozšiřující metody na [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Běžné webové aplikace registruje služby pro Entity Framework, Identity a MVC:
+Pro funkce, které vyžadují složitější konfiguraci, existují rozšiřující metody `Add[Service]` nad rozhraním [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Typická webová aplikace může registrovat například služby pro Entity Framework, Identity a MVC:
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 
-## <a name="the-configure-method"></a>Konfigurovat – metoda
+## <a name="the-configure-method"></a>Metoda Configure
 
 [Konfigurovat](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metoda se používá k určení, jak aplikace reaguje na požadavky HTTP. Kanál žádosti je nakonfigurovaný tak, že přidáte [middleware](xref:fundamentals/middleware/index) součástí [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) instance. `IApplicationBuilder` je k dispozici na `Configure` metody, ale není registrován v kontejneru služby. Hostování vytvoří `IApplicationBuilder` a předává je přímo na `Configure`.
 

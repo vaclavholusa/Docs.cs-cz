@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: 95fd6b7e73cf325674f1c1e03f9eea88cbc1af13
-ms.sourcegitcommit: f3538693a12cf55b7f124a6519677239170b7c43
+ms.openlocfilehash: 37e911052d9d33daebf0f2424868f9589f9a04b0
+ms.sourcegitcommit: 1a2fc47fb5d3da0f2a3c3269613ab20eb3b0da2c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43114772"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44373329"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Microsoft.AspNetCore.App Microsoft.aspnetcore.all pro ASP.NET Core 2.1
 
@@ -45,7 +45,7 @@ Následující projekt odkazy na soubory `Microsoft.AspNetCore.App` Microsoft.as
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.3" />
   </ItemGroup>
 
 </Project>

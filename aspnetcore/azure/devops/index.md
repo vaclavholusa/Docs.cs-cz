@@ -5,12 +5,12 @@ description: Průvodce, který poskytuje pokyny k začátku do konce na vytvář
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/index
-ms.openlocfilehash: f2eb2499a61ce639457f30f4d182dac6ff677a0f
-ms.sourcegitcommit: 6d02e26748a09eabeb0e11740a398cc2bc90b098
+ms.openlocfilehash: 53667831f5e33107178a947f23d957ff22e8c1a0
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41755514"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340092"
 ---
 # <a name="devops-with-aspnet-core-and-azure"></a>DevOps s využitím ASP.NET Core a Azure
 
@@ -46,7 +46,7 @@ Přečtěte si různé metody pro nasazení aplikace ASP.NET Core do služby Azu
 
 ### <a name="continuous-integration-and-deploymentxrefazuredevopscicd"></a>[Průběžná integrace a nasazování](xref:azure/devops/cicd)
 
-Sestavení začátku do konce průběžnou integraci a nasazení řešení pro aplikace ASP.NET Core s využitím Githubu, VSTS a Azure.
+Sestavení začátku do konce průběžnou integraci a nasazení řešení pro aplikace ASP.NET Core s využitím Githubu, služby Azure DevOps a Azure.
 
 ### <a name="monitor-and-debugxrefazuredevopsmonitor"></a>[Monitorování a ladění](xref:azure/devops/monitor)
 

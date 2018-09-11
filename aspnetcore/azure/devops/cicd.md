@@ -5,27 +5,27 @@ description: Průvodce, který poskytuje pokyny k začátku do konce na vytvář
 ms.author: scaddie
 ms.date: 08/17/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: e084a6115dc7e176c17b2b318233b7a003b39a83
-ms.sourcegitcommit: 1cf65c25ed16495e27f35ded98b3952a30c68f36
+ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41755107"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340105"
 ---
 # <a name="continuous-integration-and-deployment"></a>Průběžná integrace a nasazování
 
-V předchozích kapitol vytvoříte místní úložiště Git pro aplikaci jednoduché Reader informačního kanálu. V této kapitole budete publikovat tento kód do úložiště GitHub a vytvořit kanál DevOps Visual Studio Team Services (VSTS). Kanál umožňuje průběžné vytváření buildů a nasazení aplikace. Každé potvrzení do úložiště GitHub se aktivuje sestavení a nasazení do přípravného slotu webové aplikace Azure.
+V předchozích kapitol vytvoříte místní úložiště Git pro aplikaci jednoduché Reader informačního kanálu. V této kapitole budete publikovat tento kód do úložiště GitHub a vytvořit kanál DevOps služby Azure pomocí Azure kanálů. Kanál umožňuje průběžné vytváření buildů a nasazení aplikace. Každé potvrzení do úložiště GitHub se aktivuje sestavení a nasazení do přípravného slotu webové aplikace Azure.
 
 V této části budete provádět následující úlohy:
 
 * Publikování aplikace kódu na Githubu
 * Odpojit místní nasazení přes Git
-* Vytvořit účet VSTS
-* Vytvořit týmový projekt ve VSTS
+* Vytvořit organizaci Azure DevOps
+* Vytvořit týmový projekt ve službách Azure DevOps
 * Vytvořte definici sestavení
 * Vytvořit kanál pro vydávání verzí
 * Potvrzení změn na Githubu a automaticky nasadit do Azure
-* Prozkoumejte kanálu VSTS DevOps
+* Prozkoumejte Azure kanály kanálu
 
 ## <a name="publish-the-apps-code-to-github"></a>Publikování aplikace kódu na Githubu
 
@@ -53,7 +53,7 @@ V této části budete provádět následující úlohy:
 
 ## <a name="disconnect-local-git-deployment"></a>Odpojit místní nasazení přes Git
 
-Odeberte místní nasazení přes Git pomocí následujícího postupu. VSTS nahradí a argumentech, které tuto funkci.
+Odeberte místní nasazení přes Git pomocí následujícího postupu. Kanály Azure (služby Azure DevOps) nahrazuje a argumentech, které tuto funkci.
 
 1. Otevřít [webu Azure portal](https://portal.azure.com/)a přejděte *pracovní (mywebapp\<unique_number\>/pracovní)* webové aplikace. Webové aplikace můžete rychle umístěný tak, že zadáte *pracovní* vyhledávacího pole na portálu:
 
@@ -63,26 +63,26 @@ Odeberte místní nasazení přes Git pomocí následujícího postupu. VSTS nah
 1. Přejděte *mywebapp < unique_number >* služby App Service. Připomínáme je možné k rychlému vyhledání služby App Service na portálu vyhledávacího pole.
 1. Klikněte na tlačítko **možnosti nasazení**. Otevře se nový panel. Klikněte na tlačítko **odpojit** místní Git konfigurace správy zdrojového kódu, který byl přidán v předchozích kapitol odebrat. Operace odstranění potvrďte kliknutím **Ano** tlačítko.
 
-## <a name="create-a-vsts-account"></a>Vytvořit účet VSTS
+## <a name="create-an-azure-devops-organization"></a>Vytvořit organizaci Azure DevOps
 
-1. Otevřete prohlížeč a přejděte [stránce pro vytvoření účtu VSTS](https://go.microsoft.com/fwlink/?LinkId=307137).
-1. Zadejte jedinečný název do **vyberte si snadno zapamatovatelné jméno** textového pole a vytvoří adresu URL pro přístup k účtu VSTS.
+1. Otevřete prohlížeč a přejděte [stránce pro vytvoření organizace Azure DevOps](https://go.microsoft.com/fwlink/?LinkId=307137).
+1. Zadejte jedinečný název do **vyberte si snadno zapamatovatelné jméno** textového pole a vytvoří adresu URL pro přístup k vaší organizaci Azure DevOps.
 1. Vyberte **Git** přepínač, protože je kód hostovaný v úložišti GitHub.
 1. Klikněte na tlačítko **pokračovat** tlačítko. Po krátkém čekání, účet a týmový projekt s názvem *MyFirstProject*, jsou vytvořeny.
 
-    ![Stránka pro vytvoření účtu VSTS](media/cicd/vsts-account-creation.png)
+    ![Stránka Vytvořit organizaci Azure DevOps](media/cicd/vsts-account-creation.png)
 
-1. Otevřete potvrzení e-mailu označující, že účet VSTS a projektu jsou připravené k použití. Klikněte na tlačítko **začněte svůj projekt** tlačítka:
+1. Otevřete potvrzení e-mailu označující, že organizaci Azure DevOps a projektu jsou připravené k použití. Klikněte na tlačítko **začněte svůj projekt** tlačítka:
 
     ![Váš projekt tlačítko Start](media/cicd/vsts-start-project.png)
 
 1. V prohlížeči se otevře  *\<account_name\>. visualstudio.com*. Klikněte na tlačítko *MyFirstProject* odkaz se začne konfigurace projektu kanálu DevOps.
 
-## <a name="configure-the-devops-pipeline"></a>Konfigurace kanálu DevOps
+## <a name="configure-the-azure-pipelines-pipeline"></a>Nakonfigurujte kanál kanály Azure
 
 Existují tři samostatné kroky k dokončení. Dokončením kroků v následujících třech částech vede provozní kanál DevOps.
 
-### <a name="grant-vsts-access-to-the-github-repository"></a>VSTS udělit přístup k úložišti GitHub
+### <a name="grant-azure-devops-access-to-the-github-repository"></a>Azure DevOps udělit přístup k úložišti GitHub
 
 1. Rozbalte **nebo vytváření kódu z externího úložiště** prvku typu accordion. Klikněte na tlačítko **nastavení sestavení** tlačítka:
 
@@ -92,12 +92,12 @@ Existují tři samostatné kroky k dokončení. Dokončením kroků v následuj�
 
     ![Vyberte zdroje – GitHub](media/cicd/vsts-select-source.png)
 
-1. Vyžaduje se autorizace, než VSTS můžete získat přístup k úložišti GitHub. Zadejte *< GitHub_username > Githubu připojení* v **název připojení** textového pole. Příklad:
+1. Vyžaduje se autorizace, než Azure DevOps můžete získat přístup k úložišti GitHub. Zadejte *< GitHub_username > Githubu připojení* v **název připojení** textového pole. Příklad:
 
     ![Název připojení Githubu](media/cicd/vsts-repo-authz.png)
 
 1. Pokud na vašem účtu GitHub je povoleno dvoufaktorové ověřování, osobní přístupový token je povinný. V takovém případě klikněte na tlačítko **autorizovat pomocí osobního přístupového tokenu Githubu** odkaz. Zobrazit [oficiální pokyny k vytvoření tokenu pat Githubu](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) nápovědu. Pouze *úložiště* obor oprávnění je potřeba. V opačném případě klikněte na tlačítko **autorizovat pomocí OAuth** tlačítko.
-1. Po zobrazení výzvy, přihlaste se k vašemu účtu GitHub. Vyberte Authorize udělit přístup ke svému účtu VSTS. V případě úspěchu, je vytvořen nový koncový bod služby.
+1. Po zobrazení výzvy, přihlaste se k vašemu účtu GitHub. Vyberte Authorize k udělení přístupu k vaší organizaci Azure DevOps. V případě úspěchu, je vytvořen nový koncový bod služby.
 1. Klikněte na tlačítko se třemi tečkami vedle **úložiště** tlačítko. Vyberte *< GitHub_username > / jednoduchý kanálu čtečky* úložiště ze seznamu. Klikněte na tlačítko **vyberte** tlačítko.
 1. Vyberte *hlavní* vytvářet větve z **výchozí větev pro ruční a plánovaná sestavení** rozevíracího seznamu. Klikněte na tlačítko **pokračovat** tlačítko. Zobrazí se stránka pro výběr šablony.
 
@@ -205,7 +205,7 @@ Existují tři samostatné kroky k dokončení. Dokončením kroků v následuj�
 
     ![Povolit průběžnou integraci](media/cicd/enable-ci.png)
 
-1. Přejděte **zařazeno do fronty** karty **sestavení a vydání** > **sestavení** stránky ve VSTS. Sestavení zařazené do fronty ukazuje větve a potvrzení změn, které aktivuje sestavení:
+1. Přejděte **zařazeno do fronty** kartě **kanály Azure** > **sestavení** stránku služby Azure DevOps. Sestavení zařazené do fronty ukazuje větve a potvrzení změn, které aktivuje sestavení:
 
     ![sestavení zařazené do fronty](media/cicd/build-queued.png)
 
@@ -213,7 +213,7 @@ Existují tři samostatné kroky k dokončení. Dokončením kroků v následuj�
 
     ![aktualizovaná aplikace](media/cicd/updated-app-v4.png)
 
-## <a name="examine-the-vsts-devops-pipeline"></a>Prozkoumejte kanálu VSTS DevOps
+## <a name="examine-the-azure-pipelines-pipeline"></a>Prozkoumejte Azure kanály kanálu
 
 ### <a name="build-definition"></a>Definice sestavení
 
@@ -275,6 +275,6 @@ Předplatné, skupinu prostředků, typ služby, název webové aplikace a podro
 
 ## <a name="additional-reading"></a>Další čtení
 
-* [Sestavení aplikace ASP.NET Core](https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core)
-* [Vytvoření a nasazení do webové aplikace Azure](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp)
-* [Definovat proces sestavení CI pro vaše úložiště GitHub](https://docs.microsoft.com/vsts/pipelines/build/ci-build-github)
+* [Vytvořit svůj první kanál s kanály Azure](/azure/devops/pipelines/get-started-yaml)
+* [Projekt pro sestavení a .NET Core](/azure/devops/pipelines/languages/dotnet-core)
+* [Nasazení webové aplikace s Azure kanály](/azure/devops/pipelines/targets/webapp)

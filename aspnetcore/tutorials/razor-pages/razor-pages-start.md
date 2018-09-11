@@ -5,12 +5,12 @@ description: Seznamte se se základy vytváření webové aplikace ASP.NET Core 
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: bc18ec3ad3bb7e3afe38030a34b2e748ce9e341b
-ms.sourcegitcommit: 74c09caec8992635825b45b7f065f871d33c077a
+ms.openlocfilehash: 20fc1dfebda66a23c4682aa8e94523a710abf8b2
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42634974"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340014"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>Začínáme se stránkami Razor v ASP.NET Core
 
@@ -61,7 +61,7 @@ Následující obrázek znázorňuje aplikaci po přijetí sledování:
 
 ![Index nebo Domovská stránka](razor-pages-start/_static/home2.1.png)
 
-* Visual Studio spustí [služby IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikaci. Zobrazí se panel Adresa `localhost:port#` a nemít něco podobného `example.com`. Důvodem je, že `localhost` je standardní název hostitele místního počítače. Localhost slouží pouze webové požadavky z místního počítače. Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server. Na předchozím obrázku je číslo portu 5000. Při spuštění aplikace se zobrazí jiné číslo portu.
+* Visual Studio spustí [služby IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí aplikaci. Zobrazí se panel Adresa `localhost:port#` a nemít něco podobného `example.com`. Důvodem je, že `localhost` je standardní název hostitele místního počítače. Localhost slouží pouze webové požadavky z místního počítače. Když Visual Studio vytvoří webový projekt, náhodný port se používá pro webový server. Na předchozím obrázku číslo portu je 5001. Při spuštění aplikace se zobrazí jiné číslo portu.
 * Spuštění aplikace s **Ctrl + F5** (bez ladění režim) umožňuje provádět změny kódu, uložte soubor, aktualizujte prohlížeč a zobrazení změn kódu. Mnoho vývojářů dávají přednost používání režimu bez ladění k rychlému spusťte aplikaci a podívejte se na změny.
 
 [!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]

@@ -5,12 +5,12 @@ description: Průvodce, který poskytuje pokyny k začátku do konce na vytvář
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: a63e97d9ab9eb0ed2fbd30e8c2e033f0c048d33e
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 5529068b83db475315784571fbf4151d7ecd0d5d
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312298"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340157"
 ---
 # <a name="tools-and-downloads"></a>Nástroje a soubory ke stažení
 
@@ -21,7 +21,7 @@ Azure nabízí několik rozhraní pro zřizování a správu prostředků, jako 
 Vyžadují se následující předplatná:
 
 * Azure &mdash; Pokud nemáte účet, [získat bezplatnou zkušební verzi](https://azure.microsoft.com/free/).
-* Visual Studio Team Services (VSTS) &mdash; tento účet je vytvořen v kapitole 4.
+* Služby Azure DevOps &mdash; vaše předplatné Azure DevOps a organizace se vytvoří v kapitole 4.
 * GitHub &mdash; Pokud nemáte účet, [ZDARMA zaregistrovat](https://github.com/join).
 
 Tyto nástroje jsou požadovány:

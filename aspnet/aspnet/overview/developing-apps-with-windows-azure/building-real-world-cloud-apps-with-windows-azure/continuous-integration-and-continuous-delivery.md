@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 787aacfd843f5f72e567670d601fb036a2c474bc
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a92a68ce8bbeec604a22e082975d33f9f3377c1
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756007"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340066"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Průběžná integrace a průběžné doručování (vytváření skutečných cloudových aplikací s Azure)
 ====================
@@ -40,9 +40,9 @@ Následující diagram z [Microsoft Patterns and Practices e knihy o průběžn�
 
 Automatizace těchto procesů v Azure je snadné. Vzhledem k tomu, že všechno, co máte spuštěnou v cloudu, není nutné kupovat nebo spravovat servery pro sestavení nebo testovací prostředí. A není nutné čekat serveru tak, aby jej bylo možné provést testování na. S každým sestavením, které uděláte můžete uveďte do provozu testovacího prostředí v Azure pomocí skriptu pro automatizaci, spuštění akceptační testy nebo další podrobné testy proti ho a pak po dokončení právě dovolí ho. A pokud spustíte pouze tento server pro 2 hodiny nebo 8 hodin denně, je množství peněz, které budete muset dál za něj platit minimální, vzhledem k tomu, že Platíte pouze za čas, který ve skutečnosti běží na počítači. Například prostředí vyžaduje pro opravu že aplikace v podstatě nás stojí přibližně 1 cent za hodinu budete-li jednu úroveň z bezplatné úrovně. V průběhu měsíce, pokud jste ji spustili jenom prostředí za hodinu v době, testovací prostředí by pravděpodobně méně nákladný než provoz latte, které zakoupíte na Starbucks.
 
-## <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (VSTS)
+## <a name="azure-devops-services"></a>Služby Azure DevOps 
 
-VSTS poskytuje několik funkcí, které vám pomáhají s vývojem aplikací, od plánování až po nasazení.
+Služby Azure DevOps poskytuje několik funkcí, které vám pomáhají s vývojem aplikací, od plánování až po nasazení.
 
 - Podporuje Git (distribuovaný) a správy zdrojového kódu TFVC (centralizovaná).
 - Nabízí služby elastické sestavování, což znamená, že ji dynamicky vytvoří buildovací servery, když je budete potřebovat a provede je mimo provoz, když budete mít. Když někdo kontroluje změny zdrojového kódu a není nutné mít přidělit a platit za vlastních serverů sestavení, které se nacházejí ve většině případů nečinnosti může sestavení automaticky aktivovat. Sestavovací služba je zdarma za předpokladu, abyste nepřekročili počet sestavení. Pokud plánujete udělat velký počet sestavení, můžete platit trochu více servery vyhrazené sestavení.
@@ -52,9 +52,9 @@ VSTS poskytuje několik funkcí, které vám pomáhají s vývojem aplikací, od
 - Podporuje agilního řízení projektů.
 
 
-Další informace o průběžnou integraci a doručování funkce VSTS najdete v tématu [Visual Studio Team Services](https://www.visualstudio.com/team-services/).
+Další informace o průběžnou integraci a doručování funkce Azure DevOps služby najdete v tématu [dokumentace ke službě Azure DevOps](/azure/devops/index).
 
-Pokud hledáte klíč řízení projektů, týmovou spolupráci a řešení řízení zdroje, prohlédněte si VSTS. Tato služba je zdarma až pro 5 uživatelů a si můžete zaregistrovat na [Visual Studio Team Services](https://www.visualstudio.com/team-services/).
+Pokud hledáte klíč řízení projektů, týmovou spolupráci a řešení řízení zdroje, prohlédněte si služby Azure DevOps. Zaregistrujte se na [Azure DevOps služby](https://dev.azure.com/).
 
 ## <a name="summary"></a>Souhrn
 

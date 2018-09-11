@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 3470d9278574a95115b14f25b90a0a93bb3b8a67
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 5ae8ce01610828417fc76ed6626e518c8493bd0f
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756088"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340196"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>Průběžné nasazování do Azure pomocí sady Visual Studio a Git s ASP.NET Core
 
@@ -21,7 +21,7 @@ podle [Erik Reitan](https://github.com/Erikre)
 
 Tento kurz ukazuje, jak vytvořit webovou aplikaci ASP.NET Core pomocí sady Visual Studio a nasadit ho z Visual Studio do služby Azure App Service pomocí průběžného nasazování.
 
-Viz také [pomocí VSTS k sestavení a publikovat webovou aplikaci Azure s průběžným nasazováním](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic), který ukazuje postup při konfiguraci pracovního postupu průběžné doručování (CD) pro [služby Azure App Service](/azure/app-service/app-service-web-overview) pomocí Visual Studio Team Služby. Azure průběžné doručování ve službě Team Services zjednodušuje nastavení robustního kanálu nasazení publikovat aktualizace pro aplikace hostované ve službě Azure App Service. Kanál je možné nakonfigurovat z portálu Azure portal k vytvoření, spuštění testů, nasazení do přípravného slotu a pak nasadit do produkčního prostředí.
+Viz také [vytvořit svůj první kanál s kanály Azure](/azure/devops/pipelines/get-started-yaml), který ukazuje postup při konfiguraci pracovního postupu průběžné doručování (CD) pro [služby Azure App Service](/azure/app-service/app-service-web-overview) pomocí služby Azure DevOps. Kanály Azure (služby Azure DevOps služby), zjednodušuje zřízení robustního kanálu nasazení publikovat aktualizace pro aplikace hostované ve službě Azure App Service. Kanál je možné nakonfigurovat z portálu Azure portal k vytvoření, spuštění testů, nasazení do přípravného slotu a pak nasadit do produkčního prostředí.
 
 > [!NOTE]
 > K dokončení tohoto kurzu je nutné účet Microsoft Azure. Získat účet služby se [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A261C142F) nebo [zaregistrujte si bezplatnou zkušební verzi](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
@@ -228,5 +228,5 @@ Zobrazení aktualizované webové aplikace tak, že vyberete **Procházet** v ok
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Pomocí VSTS můžete vytvářet a publikovat webovou aplikaci Azure s průběžným nasazováním](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)
+* [Vytvořit svůj první kanál s kanály Azure](/azure/devops/pipelines/get-started-yaml)
 * [Projekt Kudu](https://github.com/projectkudu/kudu/wiki)

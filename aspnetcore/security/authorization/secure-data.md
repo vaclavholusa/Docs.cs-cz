@@ -5,12 +5,12 @@ description: Zjistěte, jak vytvořit aplikace Razor Pages s uživatelskými dat
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 9f264daa4a6b63478077cadb06a697f274014199
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: a263b092194763ae4ff3360fc0d76e8ee494b5a6
+ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336008"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510360"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -268,6 +268,10 @@ Aktualizujte zobrazení podrobností, aby vedoucí mohli schválit nebo odmítno
 Model stránky podrobnosti aktualizace:
 
 [!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Details.cshtml.cs?name=snippet)]
+
+## <a name="add-a-user-to-a-role"></a>Přidání uživatele do role
+
+Role jsou uloženy v souboru cookie Identity. Změny provedené na uživatelské role nejsou trvale uložena do souboru cookie, dokud je znova vygeneroval soubor cookie nebo uživatele odhlášení a přihlášení. Aplikace, které se přidání uživatele k roli by měly volat `SignInManager.RefreshSignInAsync(user)` k aktualizaci souboru cookie.
 
 ## <a name="test-the-completed-app"></a>Testování dokončené aplikace
 

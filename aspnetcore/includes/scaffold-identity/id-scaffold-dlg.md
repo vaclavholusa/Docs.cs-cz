@@ -11,7 +11,7 @@ Spusťte generátor Identity:
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-Pokud jste nenainstalovali dříve generátor technologie ASP.NET, nainstalujte ho:
+Pokud jste nenainstalovali dříve generátor ASP.NET Core, nainstalujte ho:
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator

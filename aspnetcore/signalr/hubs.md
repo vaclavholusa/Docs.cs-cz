@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/01/2018
 uid: signalr/hubs
-ms.openlocfilehash: be39666373e2b099054bb71f4a7fcf17aeb9a01c
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: e583676ab0eed45aeaf6391d8cdf8c1485aa914e
+ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095278"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510334"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Použití rozbočovače signalr pro ASP.NET Core
 
@@ -42,9 +42,29 @@ Vytvoření centra deklarováním třídy, která dědí z `Hub`a přidejte do n
 
 Můžete určit návratový typ a parametry, včetně komplexní typy a pole, stejně jako v jakékoli metodě jazyka C#. Funkce SignalR zpracovává serializace a deserializace komplexních objektů a polí v parametry a návratové hodnoty.
 
+## <a name="the-context-object"></a>Objekt kontextu
+
+`Hub` Třída nemá `Context` vlastnost, která obsahuje následující vlastnosti s informacemi o připojení:
+
+| Vlastnost | Popis |
+| ------ | ----------- |
+| `ConnectionId` | Získá jedinečný ID pro připojení, přiřazené systémem SignalR. Existuje jedno ID připojení pro každé připojení.|
+| `UserIdentifier` | Získá [identifikátor uživatele](xref:signalr/groups). Ve výchozím nastavení, používá SignalR `ClaimTypes.NameIdentifier` z `ClaimsPrincipal` přidružené k připojení jako identifikátor uživatele. |
+| `User` | Získá `ClaimsPrincipal` spojené s aktuálním uživatelem. |
+| `Items` | Získá kolekci klíč/hodnota, která umožňuje sdílet data v rámci oboru pro toto připojení. Data mohou být uložena v této kolekci a se zachová připojení napříč volání metod rozbočovače na jiný. |
+| `Features` | Získá kolekci funkcí, které jsou k dispozici na připojení. Teď není potřeba tuto kolekci ve většině scénářů, takže ho není podrobně popsány v ještě. |
+| `ConnectionAborted` | Získá `CancellationToken` , která upozorní, když je připojení přerušeno. |
+
+`Hub.Context` obsahuje také následující metody:
+
+| Metoda | Popis |
+| ------ | ----------- |
+| `GetHttpContext` | Vrátí `HttpContext` pro připojení, nebo `null` Pokud připojení není přidružený požadavku HTTP. Pro připojení prostřednictvím protokolu HTTP můžete použít tuto metodu se získat informace, jako jsou hlavičky protokolu HTTP a řetězce dotazu. |
+| `Abort` | Zruší připojení. |
+
 ## <a name="the-clients-object"></a>Objekt klientů
 
-Každá instance `Hub` třída nemá vlastnost s názvem `Clients` , který obsahuje následující členy pro komunikaci mezi serverem a klientem:
+`Hub` Třída nemá `Clients` vlastnost, která obsahuje následující vlastnosti pro komunikaci mezi serverem a klientem:
 
 | Vlastnost | Popis |
 | ------ | ----------- |
@@ -53,7 +73,7 @@ Každá instance `Hub` třída nemá vlastnost s názvem `Clients` , který obsa
 | `Others` | Volá metodu na všechny připojené klienty kromě klienta, který volal metodu |
 
 
-Kromě toho `Hub.Clients` obsahuje následující dvě metody:
+`Hub.Clients` obsahuje také následující metody:
 
 | Metoda | Popis |
 | ------ | ----------- |

@@ -287,7 +287,7 @@
 ### [Publikování do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
 ### [Publikování do Azure nástroji CLI](xref:tutorials/publish-to-azure-webapp-using-cli)
 ### [Průběžné nasazování do Azure pomocí sady Visual Studio a systému Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
-### [Průběžné nasazování do Azure pomocí služeb VSTS](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)
+### [Průběžné nasazování do Azure pomocí Azure Pipelines](/azure/devops/pipelines/get-started-yaml)
 ### [Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)
 ## [Hostování ve Windows se službou IIS](xref:host-and-deploy/iis/index)
 ### [Řešení potíží s ASP.NET Core ve službě IIS](xref:host-and-deploy/iis/troubleshoot)

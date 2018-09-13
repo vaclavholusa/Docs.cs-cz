@@ -7,16 +7,14 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/10/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: 205ca8ca228dcc2cc77f7e9b6431943851a3b152
-ms.sourcegitcommit: 1a2fc47fb5d3da0f2a3c3269613ab20eb3b0da2c
+ms.openlocfilehash: ef84ede2ed45ddc3b64d4ce8f5bd0018a681faf6
+ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44373316"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44749318"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>Klient .NET funkce SignalR technologie ASP.NET Core
-
-Podle [Rachel Appel](http://twitter.com/rachelappel)
 
 Klientská knihovna .NET funkce SignalR technologie ASP.NET Core umožňuje komunikovat s rozbočovače SignalR z aplikací .NET.
 
@@ -39,7 +37,26 @@ Install-Package Microsoft.AspNetCore.SignalR.Client
 
 K navázání připojení, vytvoření `HubConnectionBuilder` a volat `Build`. Adresa URL rozbočovače, protokol, typ přenosu, úroveň protokolu, záhlaví a další možnosti je možné nakonfigurovat při vytváření připojení. Nakonfigurujte veškeré požadované možnosti vložíte-li některý z `HubConnectionBuilder` metod do `Build`. Zahájit připojení s `StartAsync`.
 
-[!code-csharp[Build hub connection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_MainWindowClass&highlight=14-16,32)]
+[!code-csharp[Build hub connection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_MainWindowClass&highlight=15-17,39)]
+
+## <a name="handle-lost-connection"></a>Zpracování došlo ke ztrátě připojení
+
+Použití <xref:Microsoft.AspNetCore.SignalR.Client.HubConnection.Closed> události a reagovat na došlo ke ztrátě připojení. Můžete například chtít automatizovat opětovné připojení.
+
+`Closed` Událost vyžaduje delegáta, který vrátí `Task`, což umožňuje asynchronní kód ke spuštění bez použití `async void`. Tím se uspokojí delegáta v `Closed` obslužná rutina události, která spustí synchronně, vracet `Task.CompletedTask`:
+
+```csharp
+connection.Closed += (error) => {
+    // Do your close logic.
+    return Task.CompletedTask;
+};
+```
+
+Hlavním důvodem pro asynchronní podporu je tak můžete restartovat připojení. Spouští se připojení je asynchronní akce.
+
+V `Closed` obslužná rutina, která restartuje připojení, vezměte v úvahu časový limit na některé náhodné zpoždění, aby se zabránilo přetížení serveru, jak je znázorněno v následujícím příkladu:
+
+[!code-csharp[Use Closed event handler to automate reconnection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_ClosedRestart)]
 
 ## <a name="call-hub-methods-from-client"></a>Volání metod rozbočovače na z klienta
 

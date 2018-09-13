@@ -5,12 +5,12 @@ description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit p
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 96f446ad9ec1ef5d807a8648e68308ee20583365
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: af07adcc7f9513845bb91eb233f0a9840e1bd6f4
+ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040025"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44749305"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
@@ -23,6 +23,21 @@ Identity lze konfigurovat pomocí databáze SQL serveru ukládat uživatelská j
 [Zobrazení nebo stažení ukázkového kódu.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(Jak stáhnout)](xref:tutorials/index#how-to-download-a-sample)
 
 V tomto tématu se naučíte, jak zaregistrovat, přihlaste se pomocí Identity a odhlášení uživatele. Podrobnější pokyny k vytváření aplikací, které používají Identity najdete v části Další kroky na konci tohoto článku.
+
+::: moniker range=">= aspnetcore-2.1"
+
+<a name="adi"></a>
+## <a name="adddefaultidentity-and-addidentity"></a>AddDefaultIdentity a AddIdentity
+
+[AddDefaultIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionuiextensions.adddefaultidentity?view=aspnetcore-2.1#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionUIExtensions_AddDefaultIdentity__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Identity_IdentityOptions__) byla zavedena v ASP. Core 2.1. Volání `AddDefaultIdentity` je podobná následující volání:
+
+* [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity?view=aspnetcore-2.1#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionExtensions_AddIdentity__2_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Identity_IdentityOptions__)
+* [AddDefaultUI](/dotnet/api/microsoft.aspnetcore.identity.identitybuilderuiextensions.adddefaultui?view=aspnetcore-2.1#Microsoft_AspNetCore_Identity_IdentityBuilderUIExtensions_AddDefaultUI_Microsoft_AspNetCore_Identity_IdentityBuilder_)
+* [AddDefaultTokenProviders](/dotnet/api/microsoft.aspnetcore.identity.identitybuilderextensions.adddefaulttokenproviders?view=aspnetcore-2.1#Microsoft_AspNetCore_Identity_IdentityBuilderExtensions_AddDefaultTokenProviders_Microsoft_AspNetCore_Identity_IdentityBuilder_)
+
+Zobrazit [AddDefaultIdentity zdroj](https://github.com/aspnet/Identity/blob/2634637fd535b229762b5e4a49cdd128f4d8f12e/src/UI/IdentityServiceCollectionUIExtensions.cs#L47-L64) Další informace.
+
+::: moniker-end
 
 ## <a name="create-a-web-app-with-authentication"></a>Vytvoření webové aplikace s ověřováním
 

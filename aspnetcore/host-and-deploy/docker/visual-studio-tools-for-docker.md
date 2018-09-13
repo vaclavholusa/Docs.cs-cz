@@ -4,14 +4,14 @@ author: spboyer
 description: Zjistěte, jak kontejnerizovat aplikace ASP.NET Core pomocí nástroje Visual Studio 2017 a Docker pro Windows.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/26/2018
+ms.date: 09/12/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 962c35cb1487dacd93fd78d09e2417ef77387e42
-ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
-ms.translationtype: MT
+ms.openlocfilehash: ecccc571f554e8dacdd37d247883547d1b525e9a
+ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39275860"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44749344"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools for Docker s ASP.NET Core
 
@@ -102,6 +102,10 @@ Přidejte Visual Studio Tools for Docker *docker-compose* projektu do řešení 
 V předchozím příkladu `image: hellodockertools` generuje obrázek `hellodockertools:dev` při spuštění aplikace **ladění** režimu. `hellodockertools:latest` Image se vygeneruje, když aplikace běží v **vydání** režimu.
 
 Před názvem obrázku [Docker Hubu](https://hub.docker.com/) uživatelské jméno (třeba `dockerhubusername/hellodockertools`) Pokud je image do registru. Můžete také změnit název image přidat adresu URL privátního registru (například `privateregistry.domain.com/hellodockertools`) v závislosti na konfiguraci.
+
+Pokud chcete různé chování v závislosti na konfiguraci sestavení (například ladění nebo vydání), přidejte určených pro konfigurace *docker-compose* soubory. Soubory by měly být pojmenovány podle konfigurace sestavení (například *docker compose.vs.debug.yml* a *docker compose.vs.release.yml*) a je umístěná ve stejném umístění jako *docker compose override.yml* souboru. 
+
+Použití souborů určených pro konfigurace přepsání, můžete zadat jinou konfiguraci nastavení (jako jsou proměnné prostředí a vstupní body) u sestavení konfigurace Debug a Release.
 
 ### <a name="service-fabric"></a>Service Fabric
 

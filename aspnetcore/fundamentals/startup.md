@@ -44,7 +44,7 @@ Ve třídě `Startup` se běžně používá [vkládání závislostí](xref:fun
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-Alternativa k vkládání `IHostingEnvironment` je chcete použít přístup na základě konvence. Aplikace můžete definovat zvláštní `Startup` třídy pro různá prostředí (například `StartupDevelopment`) a odpovídající `Startup` třídy je vybrané v době běhu. Třídy, jejichž přípona názvu odpovídá aktuální prostředí je nastaveno jako prioritní. Pokud aplikace běží ve vývojovém prostředí a zahrnuje i `Startup` třídy a `StartupDevelopment` třídy, `StartupDevelopment` třída se používá. Další informace najdete v tématu [používání více prostředí](xref:fundamentals/environments#environment-based-startup-class-and-methods).
+Alternativou ke vložení `IHostingEnvironment` je použití přístupu založeného na konvencích. Aplikace může definovat oddělenou `Startup` třídu pro různá prostředí (například `StartupDevelopment`). Odpovídající `Startup` třída je vybrána v době běhu. Třída, jejíž název má příponu odpovídající aktuálnímu prostředí, je upřednostněna. Pokud aplikace běží ve vývojovém prostředí a obsahuje třídu `Startup` i třídu `StartupDevelopment`, použije se třída `StartupDevelopment` . Další informace naleznete v tématu [Používání více prostředí](xref:fundamentals/environments#environment-based-startup-class-and-methods).
 
 Další informace o `WebHostBuilder` naleznete ve článku [Hosting](xref:fundamentals/host/index). Informace o zpracování chyb během spuštění naleznete v tématu [Zpracování výjimek při spuštění](xref:fundamentals/error-handling#startup-exception-handling).
 
@@ -68,7 +68,7 @@ Pro funkce, které vyžadují složitější konfiguraci, existují rozšiřují
 
 ## <a name="the-configure-method"></a>Metoda Configure
 
-[Konfigurovat](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) metoda se používá k určení, jak aplikace reaguje na požadavky HTTP. Kanál žádosti je nakonfigurovaný tak, že přidáte [middleware](xref:fundamentals/middleware/index) součástí [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) instance. `IApplicationBuilder` je k dispozici na `Configure` metody, ale není registrován v kontejneru služby. Hostování vytvoří `IApplicationBuilder` a předává je přímo na `Configure`.
+Metoda [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) se používá k upřesnění způsobu, jakým má aplikace reagovat na HTTP požadavky. Kanál zpracování požadavků se konfiguruje přidáváním [middlewarů](xref:fundamentals/middleware/index) k instanci builderu [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder). `IApplicationBuilder` je dostupný metodě `Configure`, není však registrován v kontejneru služeb. Hosting vytváří `IApplicationBuilder` a předává jej přímo metodě `Configure`
 
 [Šablona ASP.NET Core](/dotnet/core/tools/dotnet-new) konfigurující kanál s podporou stránky pro diagnostiku výjimky, [BrowserLink](http://vswebessentials.com/features/browserlink), chybové stránky, statické soubory a ASP.NET Core MVC:
 
@@ -76,7 +76,7 @@ Pro funkce, které vyžadují složitější konfiguraci, existují rozšiřují
 
 Každá rozšiřující metoda `Use` přidává middleware do kanálu zpracování požadavků. Rozšiřující metoda `UseMvc` například přidává [směrovací middleware](xref:fundamentals/routing) do kanálu zpracování požadavku a konfiguruje [MVC](xref:mvc/overview) jako výchozí obslužnou rutinu.
 
-Jednotlivé komponenty middleware v kanálu požadavku zodpovídá za vyvolání další komponenta v kanálu nebo zkrácenou řetězci, pokud je to vhodné. Pokud zkrácenou nedojde, middleware řetězce, má každý middleware druhou šanci na zpracování žádosti. před odesláním do klienta.
+Každá middlewarová komponenta v kanálu zpracování požadavků zodpovídá za vyvolání další komponenty v kanálu, případně může provést předčasné ukončení řetězce volání. Pokud nedojde k předčasnému ukončení řetězce volání během zpracování požadavku, může libovolný middleware požadavek zpracovat ještě podruhé, než je odeslán klientovi.
 
 Také doplňující služby, jako jsou například `IHostingEnvironment` a `ILoggerFactory`, mohou být specifikovány v signatuře metody. Jsou-li specifikovány, vkládají se do metody za předpokladu jejich dostupnosti.
 

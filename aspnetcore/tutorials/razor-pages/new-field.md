@@ -1,123 +1,126 @@
 ---
-title: Přidat nové pole na stránku Razor v ASP.NET Core
+title: Přidat nové pole do stránky v ASP.NET Core Razor
 author: rick-anderson
-description: Ukazuje, jak přidat nové pole na stránku Razor základní Entity Framework
+description: Ukazuje, jak přidat nové pole do stránky Razor pomocí Entity Framework Core
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d9bf8c7cea20bf38aacf432465d7b33514bcd64d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6c23e5ab21dbb94c69ba50200a1d76647e22410a
+ms.sourcegitcommit: 4afaa55918262c8dcbd3efa9584959a731b47681
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277290"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45613450"
 ---
-# <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>Přidat nové pole na stránku Razor v ASP.NET Core
+# <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>Přidat nové pole do stránky v ASP.NET Core Razor
 
-podle [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V této části můžete použít [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First a přidat nové pole do modelu migraci, které změnit na databázi.
+V této části použijete [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First pro přidání nového pole do modelu a migraci, které změnit na databázi.
 
 Při použití automaticky vytvořit databázi, Code First EF Code First:
 
-* Přidá tabulku k databázi a sleduje, zda je synchronizována s třídy modelu, který se vygeneroval ze schématu databáze.
+* Přidá do databáze, kterou chcete sledovat, jestli je schéma databáze synchronizované s tříd modelu, které byly vygenerovány z tabulky.
 * Pokud nejsou synchronizované s databáze třídy modelu, EF vyvolá výjimku. 
 
-Automatické ověření schématu nebo modelu synchronizované usnadňuje vyhledání problémy nekonzistentní databáze nebo kódu.
+Automatické ověření schématu a model synchronizované usnadňuje vyhledání potíží nekonzistentní databáze nebo kódu.
 
-## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti hodnocení filmu modelu
+## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti do hodnocení filmů modelu
 
-Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
+Otevřít *Models/Movie.cs* a přidejte `Rating` vlastnost:
+
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
 
 ::: moniker-end
 
-Sestavení aplikace (Ctrl + Shift + B).
+Vytvořte aplikaci (Ctrl + Shift + B).
 
 Upravit *Pages/Movies/Index.cshtml*a přidejte `Rating` pole:
 
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
 
-Přidat `Rating` pole na stránky odstranit a podrobnosti.
+Přidat `Rating` pole na stránkách Delete a podrobnosti.
 
-Aktualizace *Create.cshtml* s `Rating` pole. Vám může zkopírujte a vložte předchozí `<div>` elementu a umožňují nápovědy intelliSense aktualizovat pole. IntelliSense pracuje s [značky Pomocníci](xref:mvc/views/tag-helpers/intro).
+Aktualizace *Create.cshtml* s `Rating` pole. Můžete zkopírovat a Vložit předchozí `<div>` aktualizujte pole elementu a umožňují nápovědy technologie intelliSense. Technologie IntelliSense funguje s [pomocných rutin značek](xref:mvc/views/tag-helpers/intro).
 
-![Vývojář zadal písmeno R hodnoty atributu ASP-pro v druhé elementu label zobrazení. Kontextové nabídky Intellisense ukazuje se zobrazuje dostupná pole, včetně hodnocení, které je v seznamu je zvýrazněna automaticky. Když vývojář klikne na pole nebo stiskne klávesu Enter na klávesnici, nastaví se hodnota k hodnocení.](new-field/_static/cr.png)
+![Vývojář napsal písmeno R pro hodnotu atributu ASP-pro druhý popisek prvku zobrazení. Jeho ikona místní nabídku technologie Intellisense zobrazí dostupná pole, včetně hodnocení, který je zvýrazněn v seznamu automaticky. Když vývojář klikne pole nebo stiskne klávesu Enter na klávesnici, hodnota se nastaví na hodnocení.](new-field/_static/cr.png)
 
 Následující kód ukazuje *Create.cshtml* s `Rating` pole:
 
 [!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
 
-Přidat `Rating` pole na stránku upravit.
+Přidat `Rating` pole na stránce Upravit.
 
-Aplikace nebude fungovat, dokud nebude databáze je aktualizováno, aby zahrnovalo nové pole. Je-li spustit nyní, vyvolává aplikaci `SqlException`:
+Aplikace nebude fungovat, dokud databáze je aktualizováno, aby zahrnovalo nové pole. Je-li spustit, vyvolá aplikaci `SqlException`:
 
 ```
 SqlException: Invalid column name 'Rating'.
 ```
 
-Tato chyba je způsobená aktualizované třídy modelu film se liší od schématu film tabulky databáze. (Není žádná `Rating` sloupec v tabulce databáze.)
+Tato chyba je způsobena se liší od schématu tabulky Movie databáze třídy modelu aktualizované video. (Neexistuje žádný `Rating` sloupec v tabulce databáze.)
 
 Řešení chyby několika způsoby:
 
-1. Máte rozhraní Entity Framework automaticky vyřadit a znovu vytvořit databázi pomocí nové třídy schéma modelu. Tento přístup je vhodné již v rané fázi v cyklu vývoje; umožňuje rychle společně momentální schéma modelu a databáze. Nevýhodou je, že přijdete o stávající data v databázi. Nechcete, aby pro tento postup u provozní databáze! Vyřazení databáze na změny schématu a automaticky naplnit databázi daty test pomocí inicializátoru je často produktivní způsob, jak vyvíjet aplikace.
+1. Máte rozhraní Entity Framework automaticky vyřadit a znovu vytvořit databázi pomocí nové schéma třídy modelu. Tento přístup je vhodný v rané fázi vývojového cyklu; umožňuje rychlý rozvoj schématu modelu a databáze společně. Nevýhodou je, dojít ke ztrátě existujících dat v databázi. Nechcete tuto metodu použijte u provozní databáze. Vyřazení databáze na změny schématu a pomocí inicializátoru automaticky naplnit databázi daty testu je často produktivní způsob, jak vyvíjet aplikace.
 
-2. Explicitně změnit schéma z existující databáze tak, aby odpovídala třídy modelu. Výhodou tohoto přístupu je, že zachováte data. Můžete tuto změnu provést buď ručně, nebo vytvořením databáze změnit skriptu.
+2. Explicitně upravte schéma stávající databázi tak, aby odpovídalo tříd modelu. Výhodou tohoto přístupu je, že zachováte vaše data. Můžete tuto změnu provést buď ručně, nebo tak, že vytvoříte databázi změnit skript.
 
-3. Použijte migrace Code First k aktualizaci schématu databáze.
+3. Pomocí migrace Code First aktualizovat schéma databáze.
 
-V tomto kurzu používejte migrace Code First.
+V tomto kurzu pomocí migrace Code First.
 
-Aktualizace `SeedData` třídy tak, aby poskytuje hodnotu pro nový sloupec. Ukázka změnu jsou uvedeny níže, ale budete chtít tuto změnu provést pro každý `new Movie` bloku.
+Aktualizace `SeedData` třídy tak, že poskytuje hodnoty pro nový sloupec. Ukázka změnu je uveden níže, ale budete chtít tuto změnu pro každou `new Movie` bloku.
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
 ::: moniker range="= aspnetcore-2.0"
-Najdete v článku [dokončit SeedData.cs souboru](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs).
+Zobrazit [dokončit soubor SeedData.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs).
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
-Najdete v článku [dokončit SeedData.cs souboru](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/SeedDataRating.cs).
+Zobrazit [dokončit soubor SeedData.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/SeedDataRating.cs).
 ::: moniker-end
 
 Sestavte řešení.
 
 <a name="pmc"></a> Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola správce balíčků**.
-Pomocí PMC zadejte následující příkazy:
+V konzole PMC zadejte následující příkazy:
 
 ```powershell
 Add-Migration Rating
 Update-Database
 ```
 
-`Add-Migration` Příkaz zjistí rozhraní pro:
+`Add-Migration` Příkaz říká rozhraní framework:
 
-* Porovnání `Movie` modelu s `Movie` schéma databáze.
-* Vytvoření kódu k migraci schéma databáze do nového modelu.
+* Porovnání `Movie` modelů s `Movie` schématu databáze.
+* Vytvoření kódu pro migraci schématu databáze na nový model.
 
-Název "Hodnocení" libovolný a slouží k názvu souboru migrace. Je vhodné použít smysluplný název souboru migrace.
+Název "Hodnocení" je volitelný a slouží k pojmenování souboru migrace. Je vhodné použít smysluplný název souboru migrace.
 
-<a name="ssox"></a> Pokud odstraníte všechny záznamy v databázi, bude inicializátoru počáteční hodnoty databáze a zahrnout `Rating` pole. To lze provést pomocí odstranění odkazy v prohlížeči nebo z [Průzkumník objektů systému Sql Server](xref:tutorials/razor-pages/sql#ssox) (SSOX). Chcete-li odstranit databázi z SSOX:
+<a name="ssox"></a> Při odstranění všech záznamů v databázi, bude inicializátoru naplnit databáze a zahrnout `Rating` pole. To lze provést pomocí odstranit odkazy v prohlížeči nebo z [Průzkumník objektů systému Sql Server](xref:tutorials/razor-pages/sql#ssox) (SSOX). Pokud chcete odstranit databázi z SSOX:
 
 * Vyberte databázi v SSOX.
 * Klikněte pravým tlačítkem na databázi a vyberte *odstranit*.
 * Zkontrolujte **ukončete stávající připojení**.
 * Vyberte **OK**.
-* V [pomocí PMC](xref:tutorials/razor-pages/new-field#pmc), aktualizovat databázi:
+* V [PMC](xref:tutorials/razor-pages/new-field#pmc), aktualizovat databázi:
 
   ```powershell
   Update-Database
   ```
 
-Spusťte aplikaci a ověřte, můžete vytvořit, upravit nebo zobrazení filmy s `Rating` pole. Pokud není nasadí databázi, zastavte službu IIS Express a pak spusťte aplikaci.
+Spusťte aplikaci a ověřit, je možné vytvořit/upravit/zobrazit videa s `Rating` pole. Pokud databáze není nasazený, zastavte službu IIS Express a pak spusťte aplikaci.
 
 > [!div class="step-by-step"]
-> [Předchozí: Přidání vyhledávací](xref:tutorials/razor-pages/search)
+> [Předchozí: Přidání vyhledávací funkce](xref:tutorials/razor-pages/search)
 > [Další: Přidání ověření](xref:tutorials/razor-pages/validation)

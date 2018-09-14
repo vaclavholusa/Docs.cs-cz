@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 09/12/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: ecccc571f554e8dacdd37d247883547d1b525e9a
-ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
-ms.translationtype: HT
+ms.openlocfilehash: 4bb28e7644997c50c14046bc0c89338fa35a5f14
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44749344"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538476"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools for Docker s ASP.NET Core
 
@@ -231,6 +231,7 @@ Může být očekávání pro produkci nebo verze image, která se má menší v
 
 ## <a name="additional-resources"></a>Další zdroje
 
+* [Kontejner vývoj pomocí sady Visual Studio](/visualstudio/containers)
 * [Azure Service Fabric: Příprava vývojového prostředí](/azure/service-fabric/service-fabric-get-started)
 * [Nasazení aplikace .NET v kontejneru Windows do Azure Service Fabric](/azure/service-fabric/service-fabric-host-app-in-a-container)
 * [Řešení potíží s Visual Studio 2017 vývoj aplikací pomocí Dockeru](/azure/vs-azure-tools-docker-troubleshooting-docker-errors)

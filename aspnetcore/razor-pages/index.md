@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: f5549a24c5b5fe2e6b33bd55960f87a8bf86bd19
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 25add294d74be2840d2bee224b0f5ea91c782b64
+ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870877"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601779"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do služby v ASP.NET Core Razor Pages
 
@@ -376,6 +376,8 @@ Aktualizovaný *Pages/Create.cshtml* zobrazení souboru:
 
 [Razor Pages starter projektu](#rpvs17) obsahuje *Pages/_ValidationScriptsPartial.cshtml*, který zachytí nahoru ověřování na straně klienta.
 
+Další informace o částečné zobrazení, naleznete v tématu <xref:mvc/views/partial>.
+
 <a name="url_gen"></a>
 
 ## <a name="url-generation-for-pages"></a>Generování adresy URL pro stránky
@@ -558,11 +560,12 @@ services.AddMvc()
     .WithRazorPagesRoot("/path/to/razor/pages");
 ```
 
-## <a name="see-also"></a>Viz také:
+## <a name="additional-resources"></a>Další zdroje
 
-* [Úvod do ASP.NET Core](xref:index)
-* [Syntaxe Razor](xref:mvc/views/razor)
-* [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
-* [Konvence autorizace stránek Razor](xref:security/authorization/razor-pages-authorization)
-* [Razor stránek vlastní trasy a stránky model poskytovatele](xref:razor-pages/razor-pages-conventions)
-* [Testy jednotek stránek Razor](xref:test/razor-pages-tests)
+* <xref:index>
+* <xref:mvc/views/razor>
+* <xref:tutorials/razor-pages/razor-pages-start>
+* <xref:security/authorization/razor-pages-authorization>
+* <xref:razor-pages/razor-pages-conventions>
+* <xref:test/razor-pages-tests>
+* <xref:mvc/views/partial>

@@ -32,18 +32,23 @@ ASP.NET Core se přeloží `http://localhost:1234/Movies/Edit/4` do požadavku n
 Otevřít `Movies` kontroleru a prozkoumejte dva `Edit` metody akce. Následující kód ukazuje `HTTP GET Edit` metodu, která načte videa a naplní vygenerovaný formulář pro úpravy *Edit.cshtml* souboru Razor.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit1)]
 
 Následující kód ukazuje `HTTP POST Edit` metodu, která zpracovává hodnoty odeslaných filmu:
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
 
 Následující kód ukazuje `HTTP POST Edit` metodu, která zpracovává hodnoty odeslaných filmu:
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
 
 `[Bind]` Atribut je jedním ze způsobů pro ochranu před [over-pass-the účtování](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Vlastnosti v by měly obsahovat pouze `[Bind]` atribut, který chcete změnit. Zobrazit [chránit před útoky over-pass-the účtování kontrolér](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application) Další informace. [Modely ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) poskytnout alternativní způsob zabráníte typu over-pass-the účtování.
@@ -51,10 +56,15 @@ Následující kód ukazuje `HTTP POST Edit` metodu, která zpracovává hodnoty
 Všimněte si, že druhá `Edit` předchází metody akce `[HttpPost]` atribut.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit2&highlight=1)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2&highlight=4)]
+
 ::: moniker-end
 
 `HttpPost` Atribut určuje, že to `Edit` může být vyvolána metoda *pouze* pro `POST` požadavky. Můžete použít `[HttpGet]` atribut na první upravit metodu, ale není nutné protože `[HttpGet]` je výchozí nastavení.
@@ -68,10 +78,15 @@ Všimněte si, že druhá `Edit` předchází metody akce `[HttpPost]` atribut.
 `HttpGet Edit` Metoda přebírá tento film `ID` parametr, vyhledá videa pomocí Entity Frameworku `SingleOrDefaultAsync` metoda a vrátí vybraného videa do zobrazení pro úpravy. Pokud nelze najít videa, `NotFound` (HTTP 404), je vrácena.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit1)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
+
 ::: moniker-end
 
 Když systém generování uživatelského rozhraní zobrazení pro úpravy, prozkoumat `Movie` třídy a vytvořený kód pro vykreslení `<label>` a `<input>` prvky pro každou vlastnost třídy. Následující příklad ukazuje zobrazení pro úpravy, které vygeneroval systém generování uživatelského rozhraní sady Visual Studio:
@@ -93,10 +108,15 @@ Spusťte aplikaci a přejděte `/Movies` adresy URL. Klikněte na tlačítko **u
 Následující seznam ukazuje `[HttpPost]` verzi `Edit` metody akce.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
 
 `[ValidateAntiForgeryToken]` Ověří skrytý atribut [XSRF](xref:security/anti-request-forgery) generovaných generátor tokenů proti padělání v tokenu [pomocné rutiny značky formuláře](xref:mvc/views/working-with-forms)

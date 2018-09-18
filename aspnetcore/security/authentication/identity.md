@@ -5,12 +5,12 @@ description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit p
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: af07adcc7f9513845bb91eb233f0a9840e1bd6f4
-ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
+ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44749305"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010972"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
@@ -143,6 +143,7 @@ PowerShell používá jako oddělovač příkazu středník. Při použití pros
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
    Když uživatel klikne **zaregistrovat** odkaz, `Register` akce je volána na `AccountController`. `Register` Akce vytvoří uživatele voláním `CreateAsync` na `_userManager` objektu (poskytnuté `AccountController` pomocí vkládání závislostí):
@@ -171,6 +172,7 @@ Když se odešle formulář na přihlašovací stránku, `OnPostAsync` akce je v
    Základní `Controller` třídy zpřístupňuje `User` vlastnost, která se dá dostat z metody kontroleru. Například můžete zobrazit výčet `User.Claims` a rozhodnutí o autorizaci. Další informace najdete v tématu [autorizace](xref:security/authorization/index).
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
 Přihlašovací formulář se zobrazí, když uživatelé vyberou **přihlášení** propojení nebo přesměrováni při přístupu ke stránce, která vyžaduje ověření. Když uživatel odešle formulář na přihlašovací stránku, `AccountController` `Login` akce je volána.
@@ -198,12 +200,15 @@ Příspěvek je zadán v *Pages/Shared/_LoginPartial.cshtml*:
 [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
+
    Kliknutím **Odhlásit** propojit volání `LogOut` akce.
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
 
    Předchozí kód volá `_signInManager.SignOutAsync` metody. `SignOutAsync` Metoda vymaže deklarací identity uživatele uložené v souboru cookie.
+
 ::: moniker-end
 
 ## <a name="test-identity"></a>Otestování Identity
@@ -230,6 +235,7 @@ Identita prozkoumat podrobněji:
 ::: moniker range=">= aspnetcore-2.1"
 
 Všechny Identity závislé balíčky NuGet jsou součástí [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app).
+
 ::: moniker-end
 
 Primární balíček pro identitu [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/). Tento balíček obsahuje základní sadu rozhraní pro ASP.NET Core Identity a je součástí `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.

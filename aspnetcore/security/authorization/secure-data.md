@@ -5,16 +5,17 @@ description: Zjistěte, jak vytvořit aplikace Razor Pages s uživatelskými dat
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: e4a54c95aa8131441d29a835751ce6241aac2ed3
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: 2fb13f0772a1f8aa4ed2ff3ece2a2c5d3b7360c9
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601766"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010933"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
 Zobrazit [tento PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) pro verzi technologie ASP.NET Core MVC. ASP.NET Core 1.1 verzi tohoto kurzu je v [to](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) složky. 1.1 ukázka ASP.NET Core je v [ukázky](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2).
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
@@ -76,11 +77,13 @@ V tomto kurzu je advanced. Měli byste se seznámit s:
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.1"
 
 V ASP.NET Core 2.1 `User.IsInRole` selže při použití `AddDefaultIdentity`. Tento kurz používá `AddDefaultIdentity` a vyžaduje tudíž ASP.NET Core 2.2 ve verzi preview 1 nebo novější. Zobrazit [tento problém Githubu](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) pro vyřešit.
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
 ## <a name="the-starter-and-completed-app"></a>Starter a dokončené aplikace

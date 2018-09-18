@@ -5,12 +5,12 @@ description: Další informace o použití migrace Entity Framework Code First p
 ms.author: riande
 ms.date: 10/06/2017
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 74f7a98143c80504d534c5ee4fd06b3dd076a2f2
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: b63bad99c4a966703634c711e5406d86e5bd140c
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312228"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010881"
 ---
 # <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidání nového pole do aplikace ASP.NET Core MVC
 
@@ -25,10 +25,15 @@ Při použití platforem EF Code First automaticky vytvořit databázi, Code Fir
 Otevřít *Models/Movie.cs* a přidejte `Rating` vlastnost:
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
 ::: moniker-end
 
 Vytvořte aplikaci (Ctrl + Shift + B).

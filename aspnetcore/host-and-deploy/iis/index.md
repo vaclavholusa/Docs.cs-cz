@@ -4,18 +4,18 @@ author: guardrex
 description: Zjistěte, jak hostovat aplikace ASP.NET Core na Windows serveru Internetové informační služby (IIS).
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 09/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 1a7769e12728b09b04749a124c50366ddb1374d7
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: d596ae67dbdfe938999a0b6f3f64b7f1647b4949
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202663"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011734"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
-Podle [Luke Latham](https://github.com/guardrex) a [Rick Anderson](https://twitter.com/RickAndMSFT)
+Podle [Luke Latham](https://github.com/guardrex)
 
 ## <a name="supported-operating-systems"></a>Podporované operační systémy
 
@@ -26,11 +26,48 @@ Následující operační systémy se podporují:
 
 [HTTP.sys server](xref:fundamentals/servers/httpsys) (dříve se označovaly jako [WebListener](xref:fundamentals/servers/weblistener)) nebude fungovat v konfigurace reverzního proxy serveru se službou IIS. Použití [Kestrel server](xref:fundamentals/servers/kestrel).
 
+Informace o hostování v Azure najdete v tématu <xref:host-and-deploy/azure-apps/index>.
+
+## <a name="http2-support"></a>Podpora HTTP/2
+
+::: moniker range=">= aspnetcore-2.2"
+
+[HTTP/2](https://httpwg.org/specs/rfc7540.html) se podporuje s ASP.NET Core v následujících scénářích nasazení služby IIS:
+
+* V procesu
+  * Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
+  * Cílová architektura: .NET Core 2.2 nebo vyšší
+  * Protokol TLS 1.2 nebo vyšší připojení
+* Mimo proces
+  * Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
+  * Edge připojení pomocí protokolu HTTP/2, ale reverzní proxy server připojení k [Kestrel server](xref:fundamentals/servers/kestrel) používá HTTP/1.1.
+  * Cílová architektura: není k dispozici pro nasazení mimo proces, protože připojení HTTP/2 je zpracována zcela službou IIS.
+  * Protokol TLS 1.2 nebo vyšší připojení
+
+V procesu nasazení po vytvoření připojení k protokolu HTTP/2 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) sestavy `HTTP/2`. Mimo proces nasazení po vytvoření připojení k protokolu HTTP/2 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) sestavy `HTTP/1.1`.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
+[HTTP/2](https://httpwg.org/specs/rfc7540.html) se podporuje pro nasazení mimo proces, které splňují základní požadavky na následující:
+
+* Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
+* Edge připojení pomocí protokolu HTTP/2, ale reverzní proxy server připojení k [Kestrel server](xref:fundamentals/servers/kestrel) používá HTTP/1.1.
+* Cílová architektura: není k dispozici pro nasazení mimo proces, protože připojení HTTP/2 je zpracována zcela službou IIS.
+* Protokol TLS 1.2 nebo vyšší připojení
+
+Pokud se připojení HTTP/2, [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) sestavy `HTTP/1.1`.
+
+::: moniker-end
+
+HTTP/2 je standardně povolená. Připojení vrátit zpět k protokolu HTTP/1.1, pokud nedojde k připojení k protokolu HTTP/2. Další informace o konfiguraci protokolu HTTP/2 u nasazení ve službě IIS najdete v části [HTTP/2 ve službě IIS](/iis/get-started/whats-new-in-iis-10/http2-on-iis).
+
 ## <a name="application-configuration"></a>Konfigurace aplikace
 
 ### <a name="enable-the-iisintegration-components"></a>Povolit IISIntegration součásti
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele. `CreateDefaultBuilder` nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako integrace webového serveru a umožňuje služby IIS tím, že nakonfigurujete základní cesty a port pro [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
 
@@ -42,7 +79,9 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 Modul ASP.NET Core generuje dynamický port přiřadit back endový proces. `CreateDefaultBuilder` volání [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) metodu, která převezme dynamický port a nakonfiguruje Kestrel k naslouchání `http://localhost:{dynamicPort}/`. Tím se přepíše ostatní konfigurace adresy URL, jako je například volání `UseUrls` nebo [Kestrel pro naslouchání API](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá na portu zadána při spuštění aplikaci bez služby IIS.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Zahrnout závislost [Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) balíčku v závislosti aplikaci. Používat middleware pro integraci služby IIS tak, že přidáte [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) metodu rozšíření k [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder):
 
@@ -59,7 +98,7 @@ Modul ASP.NET Core generuje dynamický port přiřadit back endový proces. `Use
 
 Pokud `UseUrls` je volána v aplikaci ASP.NET Core 1.0, volání **před** volání `UseIISIntegration` tak, aby port nakonfigurovaný modul není přepsán. Toto pořadí volání není požadován spolu s ASP.NET Core 1.1, protože modul nastavení přepíše `UseUrls`.
 
----
+::: moniker-end
 
 Další informace o hostování najdete v tématu [hostitele v ASP.NET Core](xref:fundamentals/host/index).
 
@@ -438,3 +477,4 @@ Rozlišení běžných chyb při hostování aplikací ASP.NET Core ve službě 
 * [Úvod do ASP.NET Core](xref:index)
 * [Lokality oficiální Microsoft IIS](https://www.iis.net/)
 * [Technická knihovna obsahu Windows serveru](/windows-server/windows-server)
+* [HTTP/2 ve službě IIS](/iis/get-started/whats-new-in-iis-10/http2-on-iis)

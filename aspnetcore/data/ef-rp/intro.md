@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvořit aplikaci pro stránky Razor pomocí Entity F
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: d74d0909f03fe4d504f21c3880ec2447cadc8b13
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 89002f7b4a5af17a9404b14822086c7a9a6ec265
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336091"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011454"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Stránky Razor pomocí Entity Framework Core v ASP.NET Core – kurz 1 z 8
 
@@ -309,6 +309,7 @@ Některé co je potřeba mít na paměti při zápisu asynchronního kódu, kter
 Další informace o asynchronním programování v rozhraní .NET najdete v tématu [asynchronní přehled](/dotnet/articles/standard/async) a [asynchronní programování pomocí modifikátoru async a operátoru await](/dotnet/csharp/programming-guide/concepts/async/).
 
 V dalším kurzu, základní CRUD (vytváření, čtení, aktualizace nebo odstranění) jsou zkoumány operace.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

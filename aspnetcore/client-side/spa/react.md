@@ -1,81 +1,82 @@
 ---
-title: Šablona projektu reagují pomocí ASP.NET Core
+title: Šablona projektu React pomocí ASP.NET Core
 author: SteveSandersonMS
-description: Zjistěte, jak začít pracovat se šablonou projektu ASP.NET Core jedné stránky aplikace (SPA) pro reagují a vytvořit aplikaci reagují.
+description: Zjistěte, jak začít pracovat s ASP.NET Core jedné stránky aplikace (SPA) šablona projektu pro React a vytvořit aplikaci react.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/react
-ms.openlocfilehash: 721ea1d4197ddd17dde657924f12dee2a6858d97
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c83b119e81d7d0abfd727cb8c72abb09763d9448
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291657"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011418"
 ---
-# <a name="use-the-react-project-template-with-aspnet-core"></a>Šablona projektu reagují pomocí ASP.NET Core
+# <a name="use-the-react-project-template-with-aspnet-core"></a>Šablona projektu React pomocí ASP.NET Core
 
 ::: moniker range="= aspnetcore-2.0"
 
 > [!NOTE]
-> Tato dokumentace není o šablona projektu reagují součástí technologie ASP.NET 2.0 jádra. Jde o šabloně novější reagují, do kterého můžete ručně aktualizovat. Šablona je součástí 2.1 jádro ASP.NET ve výchozím nastavení.
+> Tato dokumentace se o šablona projektu React součástí ASP.NET Core 2.0. Jde o šabloně novější React, do kterého můžete ručně aktualizovat. Šablona je zahrnuta v ASP.NET Core 2.1 ve výchozím nastavení.
 
 ::: moniker-end
 
-Aktualizovanou šablonu projektu reagují poskytuje příhodný výchozí bod pro ASP.NET Core aplikací pomocí reagují a [vytvořit aplikaci reagují](https://github.com/facebookincubator/create-react-app) konvence (CRA) k implementaci bohatou a klientské uživatelské rozhraní (UI).
+Aktualizovaná šablona projektu React poskytuje příhodný výchozí bod pro ASP.NET Core aplikace pomocí React a [vytvořit aplikaci react](https://github.com/facebookincubator/create-react-app) konvence (CRA) k implementaci bohatě vybaveným a na straně klienta uživatelské rozhraní (UI).
 
-Šablona je ekvivalentní k vytvoření projektu ASP.NET Core tak, aby fungoval jako back-end rozhraní API i standardní CRA reagovat projekt tak, aby fungoval jako uživatelského rozhraní, ale s výhodou hostování oba seznamy v jedné aplikaci projekt, který můžete vytvořená a publikovaná jako na jednu jednotku.
+Šablona je ekvivalentní k vytváření projektu aplikace ASP.NET Core tak, aby fungoval jako back-endu rozhraní API a standardní CRA React projekt tak, aby fungoval jako uživatelské rozhraní, ale se snadným ovládáním hostování i v projektu aplikace s jedním, který se dají vytvořit a publikovat jako jeden celek.
 
 ## <a name="create-a-new-app"></a>Vytvoření nové aplikace
 
 ::: moniker range="= aspnetcore-2.0"
 
-Pokud používáte technologii ASP.NET 2.0 jádra, ujistěte se, když jste [nainstalovat aktualizovanou šablonu projektu reagují](xref:spa/index#installation).
+Pokud používáte ASP.NET Core 2.0, zkontrolujte, že máte [nainstalované aktualizovaná šablona projektu React](xref:spa/index#installation).
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
-Pokud máte ASP.NET Core 2.1 nainstalovaný, není nutné k instalaci v šabloně projektů reagují.
+Pokud máte ASP.NET Core 2.1 nainstalovaný, není nutné k instalaci šablona projektu React.
 
 ::: moniker-end
 
-Vytvoření nového projektu z příkazového řádku pomocí příkazu `dotnet new react` v prázdného adresáře. Můžete například vytvořit následující příkazy v aplikaci *-nové aplikace my* adresáře a přepnete se do této složky:
+Vytvoření nového projektu z příkazového řádku pomocí příkazu `dotnet new react` v prázdném adresáři. Například následující příkazy vytvoří aplikaci *my nové app* adresáře a přepnete se do tohoto adresáře:
 
 ```console
 dotnet new react -o my-new-app
 cd my-new-app
 ```
 
-Spusťte aplikaci v sadě Visual Studio nebo .NET Core rozhraní příkazového řádku:
+Spuštění aplikace Visual Studio nebo .NET Core CLI:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-Otevřete vygenerovaného *.csproj* souboru a spuštění aplikace jako normální odtud.
+Otevřete vygenerovaný *.csproj* souboru a spuštění aplikace jako za normálních okolností z něj.
 
-Proces sestavení obnoví npm závislosti během prvního spuštění, což může trvat několik minut. Následující sestavení je mnohem rychlejší.
+Proces sestavení obnoví závislosti npm při prvním spuštění, což může trvat několik minut. Následující sestavení jsou mnohem rychlejší.
 
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
-Zajistěte, abyste měli proměnné prostředí s názvem `ASPNETCORE_Environment` s hodnotou `Development`. V systému Windows (v výzvy – prostředí PowerShell), spusťte `SET ASPNETCORE_Environment=Development`. V systému macOS nebo Linux, spusťte `export ASPNETCORE_Environment=Development`.
+Ujistěte se, máte proměnnou prostředí volá `ASPNETCORE_Environment` s hodnotou `Development`. Na Windows (v výzev – prostředí PowerShell), spusťte `SET ASPNETCORE_Environment=Development`. V systému macOS nebo Linux spusťte `export ASPNETCORE_Environment=Development`.
 
-Spustit [dotnet sestavení](/dotnet/core/tools/dotnet-build) k ověření aplikace sestavení správně. Při prvním spuštění procesu sestavení obnoví npm závislosti, které může trvat několik minut. Následující sestavení je mnohem rychlejší.
+Spustit [dotnet sestavení](/dotnet/core/tools/dotnet-build) správně k ověření aplikace sestavena. Při prvním spuštění procesu sestavení obnoví závislosti na npm, což může trvat několik minut. Následující sestavení jsou mnohem rychlejší.
 
 Spustit [dotnet spustit](/dotnet/core/tools/dotnet-run) a spusťte aplikaci.
 
 ---
 
-Šablona projektu vytvoří aplikace ASP.NET Core a reagují aplikaci. Aplikace ASP.NET Core se má použít pro přístup k datům, autorizaci a další otázky straně serveru. Reagují aplikace, které se nacházejí v *ClientApp* podadresáři, je určena k použití pro všechny otázky uživatelského rozhraní.
+Šablona projektu vytvoří aplikace ASP.NET Core a aplikace s React. Aplikace ASP.NET Core je určena pro použití pro přístup k datům, autorizaci a další aspekty na straně serveru. Aplikace React, které se nacházejí v *ClientApp* podadresář, je určena pro použití pro všechny aspekty uživatelského rozhraní.
 
-## <a name="add-pages-images-styles-modules-etc"></a>Přidání stránky, obrázky, styly, moduly, atd.
+## <a name="add-pages-images-styles-modules-etc"></a>Přidání stránek, obrázků, styly, moduly, atd.
 
-*ClientApp* adresář je standardní CRA reagovat aplikace. Najdete v oficiální [CRA dokumentaci](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) Další informace.
+*ClientApp* adresář je standardní CRA reakce aplikace. Najdete v oficiální [CRA dokumentaci](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) Další informace.
 
-Jsou drobné rozdíly mezi reagují aplikace vytvořené pomocí této šablony a jeden vytvořené CRA sama o sobě; schopnosti aplikace jsou však beze změny. Obsahuje aplikace vytvořené pomocí šablony [Bootstrap](https://getbootstrap.com/)– na základě rozložení a základní příklad směrování.
+Existují mírné rozdíly mezi React aplikace vytvořené pomocí této šablony a vytvořil CRA sama o sobě; Nicméně jsou schopnosti aplikace beze změny. Obsahuje aplikaci vytvořenou pomocí šablony [Bootstrap](https://getbootstrap.com/)– na základě rozložení a základní příklad směrování.
 
 ## <a name="install-npm-packages"></a>Instalace balíčků npm
 
-Chcete-li instalovat balíčky jiných výrobců npm, použijte na příkazovém řádku ve *ClientApp* podadresáři. Příklad:
+Pokud chcete nainstalovat balíčky npm třetích stran, použijte příkazový řádek v *ClientApp* podadresáře. Příklad:
 
 ```console
 cd ClientApp
@@ -84,29 +85,29 @@ npm install --save <package_name>
 
 ## <a name="publish-and-deploy"></a>Publikování a nasazení
 
-Ve vývoji aplikace běží v režimu optimalizovaná pro vývojáře pohodlí. Například JavaScript sady zahrnují zdroj mapy (tak, aby při ladění, zobrazí se původní zdrojový kód). Aplikace sleduje JavaScript, HTML a CSS změny souborů na disku a automaticky znovu zkompiluje a znovu načte, jakmile je detekována tyto soubory změnit.
+Při vývoji se aplikace běží v režimu optimalizované pro usnadnění práce vývojářů. Například jazyka JavaScript sady obsahují zdrojových mapování (tak, aby při ladění, se zobrazí původní zdrojový kód). Aplikace sleduje jazyka JavaScript, HTML a CSS změny souborů na disku a automaticky se znovu zkompiluje a znovu načte, když vidí tyto soubory změnit.
 
-V produkčním prostředí sloužit verzi vaší aplikace, která je optimalizovaná pro výkon. Ta se nakonfiguruje automaticky provést. Když publikujete, je konfigurace sestavení vysílá minifikovaný, sestavení transpiled kódu na straně klienta. Na rozdíl od sestavení vývoj nevyžaduje produkční build Node.js k instalaci na serveru.
+V produkčním prostředí sloužit verzi vaší aplikace, které je optimalizované pro výkon. Ta se nakonfiguruje, která se provede automaticky. Když publikujete, konfigurace sestavení generuje minifikovaný, transpiled sestavení vašeho kódu na straně klienta. Na rozdíl od sestavení vývoj nevyžaduje produkční build Node.js nainstalovaný na serveru.
 
-Můžete použít standardní [metody nasazení a hostování ASP.NET Core](xref:host-and-deploy/index).
+Můžete použít standardní [metody hostování a nasazení ASP.NET Core](xref:host-and-deploy/index).
 
-## <a name="run-the-cra-server-independently"></a>Spusťte CRA server nezávisle
+## <a name="run-the-cra-server-independently"></a>Spusťte CRA server nezávisle na sobě
 
-Projekt je nakonfigurován na spuštění svou vlastní instanci vývojový server CRA na pozadí při spuštění v režimu pro vývoj aplikace ASP.NET Core. To je výhodné, protože znamená to, že nemusíte ručně spustit samostatný server.
+Projekt je nakonfigurován ke spuštění svoji vlastní instanci vývojový server sady CRA na pozadí při spuštění v režimu pro vývoj aplikace ASP.NET Core. Je to vhodné, protože to znamená, že není nutné ručně spustit na samostatný server.
 
-Není nevýhodou toto výchozí nastavení. Pokaždé, když upravíte kódu C# a vaše ASP.NET Core aplikace potřebuje k restartování, CRA server se restartuje. Několik sekund jsou nutné ke spuštění zálohování. Pokud provádíme za časté úpravy kódu jazyka C# a nechcete čekat CRA server restartovat, spusťte server CRA externě, nezávisle na procesu ASP.NET Core. Postupujte následovně:
+Nevýhodou této výchozí nastavení není k dispozici. Pokaždé, když změníte kód jazyka C# a vaše ASP.NET Core, které aplikace potřebuje k restartování, CRA server se restartuje. Pár sekund jsou vyžadovány pro spuštění zálohování. Pokud vytváříte časté úpravy kódu jazyka C# a nechcete čekat, CRA server restartovat, spusťte server CRA externě, nezávisle na procesu ASP.NET Core. Postup:
 
-1. V příkazovém řádku přepnout *ClientApp* podadresáři a spouštět CRA vývojový server:
+1. V příkazovém řádku přejděte *ClientApp* podadresáře a spusťte vývojový server sady CRA:
 
     ```console
     cd ClientApp
     npm start
     ```
 
-2. Upravte v aplikaci ASP.NET Core použít externí instance serveru CRA místo spuštění jeho vlastní. Ve vaší *spuštění* třídy, nahraďte `spa.UseReactDevelopmentServer` volání následujícím kódem:
+2. Upravte aplikace ASP.NET Core pro použití externího instance serveru CRA namísto jeho vlastní spuštění. Ve vaší *spuštění* třídy, nahraďte `spa.UseReactDevelopmentServer` vyvolání následujícím kódem:
 
     ```csharp
     spa.UseProxyToSpaDevelopmentServer("http://localhost:3000");
     ```
 
-Při spuštění aplikace ASP.NET Core nespustí CRA serveru. Instance, kterou jste spustili ručně bude místo něj použita. To umožňuje spustit a restartovat rychlejší. Se už čeká aplikace reagují pokaždé, když znovu sestavit.
+Při spuštění aplikace ASP.NET Core se nespustí CRA serveru. Místo toho se používá instanci, kterou jste spustili ručně. To umožňuje spuštění a restartování rychleji. Už čeká na opětovné sestavení pokaždé, když v aplikaci React.

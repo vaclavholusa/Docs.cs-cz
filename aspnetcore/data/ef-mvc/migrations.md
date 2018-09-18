@@ -5,12 +5,12 @@ description: V tomto kurzu začnete používat funkci migrace EF Core ke správ�
 ms.author: tdykstra
 ms.date: 03/15/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: f710b33ac1a6017b0e3d7e8c3e528675a41424bb
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 556d7d4ad05679ebfce6c909b29610482bb3f350
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194167"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011463"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC s EF Core – migrace - 4 z 10
 
@@ -165,6 +165,7 @@ Další informace o příkazech PMC najdete v tématu [Konzola správce balíčk
 ## <a name="summary"></a>Souhrn
 
 V tomto kurzu jste viděli, jak vytvořit a použít první migraci. V dalším kurzu se zobrazí za přibližně pohledu na pokročilejší témata tak, že rozbalíte datového modelu. Na cestě můžete vytvářet a použít další migrace.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

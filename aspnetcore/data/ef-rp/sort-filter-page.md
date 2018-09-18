@@ -5,12 +5,12 @@ description: V tomto kurzu přidáte řazení, filtrování a stránkování fun
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: ee5a0dae41ba0afba518f0bd6fbd379fdbbfb1c1
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 668d6e54a64022dda948170f72538f6d4cd9a49f
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202611"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011635"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – řazení, filtrování, stránkování – 3 z 8
 
@@ -161,7 +161,7 @@ V současné době vyberete řazení odkaz záhlaví sloupce filtru hodnotu **hl
 
 V této části `PaginatedList` je vytvořená třída pro podporu stránkování. `PaginatedList` Třídy používá `Skip` a `Take` příkazy k filtrování dat na serveru, místo získávání všech řádků v tabulce. Následující obrázek znázorňuje tlačítka stránkování.
 
-![studenti indexová stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
+![Studenti index stránky s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Ve složce projektu vytvořit `PaginatedList.cs` následujícím kódem:
 
@@ -231,7 +231,7 @@ Spusťte aplikaci a přejděte na stránku pro studenty.
 * Ujistěte se, že funguje stránkování, klikněte na odkazy stránkování v jiné pořadí řazení.
 * K ověření, zda stránkování správně funguje s řazením a filtrováním, zadejte hledaný řetězec a stránkování.
 
-![studenti indexová stránka s odkazy stránkování](sort-filter-page/_static/paging.png)
+![Studenti index stránky s odkazy stránkování](sort-filter-page/_static/paging.png)
 
 Pokud chcete získat lepší přehled kódu:
 
@@ -281,6 +281,7 @@ Pokud narazíte na potíže nelze vyřešit, stáhněte si [dokončené aplikace
 * [Ladění ASP.NET Core 2.x zdroje](https://github.com/aspnet/Docs/issues/4155)
 
 V dalším kurzu se aplikace používá k aktualizaci modelu dat migrace.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

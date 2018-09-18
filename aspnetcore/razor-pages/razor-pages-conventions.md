@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak směrování a aplikační konvence zprostředkovatele modelu můžete ovládací prvek stránky směrování, zjišťování a zpracování.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 04/12/2018
+ms.date: 09/17/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 5a5d580b4260767e411571ccacc19d6e8fe12559
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655373"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011859"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>Konvence směrování a aplikačních stránky Razor v ASP.NET Core
 
@@ -69,6 +69,26 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+## <a name="route-order"></a>Pořadí trasy
+
+Zadejte trasy <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> pro zpracování (trasy párování).
+
+| Pořadí            | Chování |
+| :--------------: | -------- |
+| -1               | Trasy se zpracuje dříve, než jsou zpracovány jiným trasám. |
+| 0                | Není zadáno pořadí (výchozí hodnota). Není přiřazení `Order` (`Order = null`) výchozí hodnoty trasy `Order` na hodnotu 0 (nula) pro zpracování. |
+| 1, 2, &hellip; n | Určuje pořadí zpracování trasy. |
+
+Podle konvence pokládáme stav zpracování trasy:
+
+* Trasy se zpracovávají v pořadí (hodnota -1, 0, 1, 2, &hellip; n).
+* Když trasy mají stejné `Order`, nejvíce určené směrování je nalezena shoda, nejprve následovaný specifické pro less trasy.
+* Když tras se stejnou `Order` a stejný počet parametrů odpovídat adrese URL žádosti, trasy se zpracovávají v pořadí, ve kterém se přidají do <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.PageConventionCollection>.
+
+Pokud je to možné Vyhněte se v závislosti na zavedených postupu zpracování objednávky. Obecně platí směrování vybere správné směrování s odpovídajícími adresy URL. Pokud je nutné nastavit trasy `Order` vlastnosti pro směrování požadavků správně, směrování schéma aplikace je pravděpodobně matoucí pro klienty a křehkými udržovat. Které se snaží zjednodušit směrování schéma aplikace. Ukázková aplikace vyžaduje explicitní trasy zpracování objednávky k předvedení několik scénáře použití jedné aplikace. Nicméně, měli byste se pokusit postup nastavení trasy, aby `Order` v produkčních aplikacích.
+
+Stránky Razor směrování a směrování sdílení řadiče MVC implementace. Informace o pořadí trasy v tématech MVC je k dispozici na [směrování na akce kontroleru: pořadí trasy atributů](xref:mvc/controllers/routing#ordering-attribute-routes).
+
 ## <a name="model-conventions"></a>Vytváření modelu
 
 Přidat delegáta pro [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) přidat [modelu konvencí](xref:mvc/controllers/application-model#conventions) , která platí pro stránky Razor.
@@ -81,8 +101,13 @@ Ukázková aplikace přidá `{globalTemplate?}` šablona trasy pro všechny str�
 
 [!code-csharp[](razor-pages-conventions/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
 
-> [!NOTE]
-> `Order` Vlastnost `AttributeRouteModel` je nastavena na `-1`. Tím se zajistí, že tato šablona je přiřazena prioritu pro první pozice hodnot dat trasy, když je zadaná hodnota jednu trasu a také by to mají přednost před automaticky vygenerované stránky Razor trasy. Například ukázka přidá `{aboutTemplate?}` šablonu trasy později v tomto tématu. `{aboutTemplate?}` Šablony je uveden `Order` z `1`. Když se na stránce o požaduje za `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = -1`) a není `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> Vlastnost <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> je nastavena na `1`. Tím se zajistí následující trasu odpovídající chování v ukázkové aplikaci:
+
+* Šablona trasy pro `TheContactPage/{text?}` přidat později v tomto tématu. Trasa stránku kontaktu má výchozí pořadí `null` (`Order = 0`), tak, aby odpovídala před `{globalTemplate?}` šablonu trasy.
+* `{aboutTemplate?}` Trasy šablona se přidá později v tomto tématu. `{aboutTemplate?}` Šablony je uveden `Order` z `2`. Když se na stránce o požaduje za `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 1`) a není `RouteData.Values["aboutTemplate"]` (`Order = 2`) z důvodu nastavení `Order` vlastnost.
+* `{otherPagesTemplate?}` Trasy šablona se přidá později v tomto tématu. `{otherPagesTemplate?}` Šablony je uveden `Order` z `2`. Když všechny stránky v *stránek/OtherPages* složky je požadováno se parametr trasy (například `/OtherPages/Page1/RouteDataValue`), "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 1`) a ne `RouteData.Values["otherPagesTemplate"]` (`Order = 2`) z důvodu nastavení `Order` vlastnost.
+
+Kdykoli je to možné, nemají nastavený `Order`, což má za následek `Order = 0`. Spolehněte se na směrování k výběru správné směrování.
 
 Možnosti stránky Razor, jako je například přidávání [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions), se přidají, když MVC se přidá do kolekce služby `Startup.ConfigureServices`. Příklad najdete v tématu [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/).
 
@@ -111,6 +136,7 @@ Tato ukázková aplikace používá `AddHeaderAttribute` třídy přidat záhlav
 ![Hlavičky odpovědi na stránce o ukazují, že byly přidány GlobalHeader.](razor-pages-conventions/_static/about-page-global-header.png)
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **Přidat konvence model obslužné rutiny pro všechny stránky**
 
 Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) ke kolekci [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se použijí během model obslužné rutiny stránky konstrukce.
@@ -135,6 +161,7 @@ services.AddMvc()
             options.Conventions.Add(new GlobalPageHandlerModelConvention());
         });
 ```
+
 ::: moniker-end
 
 ## <a name="page-route-action-conventions"></a>Stránka trasy akce konvence
@@ -149,8 +176,9 @@ Tato ukázková aplikace používá `AddFolderRouteModelConvention` přidat `{ot
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet3)]
 
-> [!NOTE]
-> `Order` Vlastnost `AttributeRouteModel` je nastavena na `1`. To zajistí, že šablona pro `{globalTemplate?}` (sada výše v tomto tématu) je prioritu pro první data trasy hodnotu pozice, pokud je zadaná hodnota jednu trasu. Pokud na stránce Page1 je požadováno v `/OtherPages/Page1/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = -1`) a ne `RouteData.Values["otherPagesTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> Vlastnost <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> je nastavena na `2`. To zajistí, že šablona pro `{globalTemplate?}` (dříve v tématu, které chcete nastavit `1`) je prioritu pro první data trasy hodnotu pozice, pokud je zadaná hodnota jednu trasu. Pokud stránku *stránek/OtherPages* složky je požadováno s hodnotu parametru trasy (například `/OtherPages/Page1/RouteDataValue`), "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 1`) a není `RouteData.Values["otherPagesTemplate"]` (`Order = 2`) z důvodu nastavení `Order` vlastnost.
+
+Kdykoli je to možné, nemají nastavený `Order`, což má za následek `Order = 0`. Spolehněte se na směrování k výběru správné směrování.
 
 Požadavek ukázky Page1 stránku na `localhost:5000/OtherPages/Page1/GlobalRouteValue/OtherPagesRouteValue` a zkontrolujte výsledek:
 
@@ -164,8 +192,9 @@ Tato ukázková aplikace používá `AddPageRouteModelConvention` přidat `{abou
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet4)]
 
-> [!NOTE]
-> `Order` Vlastnost `AttributeRouteModel` je nastavena na `1`. To zajistí, že šablona pro `{globalTemplate?}` (sada výše v tomto tématu) je prioritu pro první data trasy hodnotu pozice, pokud je zadaná hodnota jednu trasu. Pokud je na stránku o `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = -1`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 1`) z důvodu nastavení `Order` vlastnost.
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> Vlastnost <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel> je nastavena na `2`. To zajistí, že šablona pro `{globalTemplate?}` (dříve v tématu, které chcete nastavit `1`) je prioritu pro první data trasy hodnotu pozice, pokud je zadaná hodnota jednu trasu. Pokud je hodnotou parametr trasy na požadované stránku o `/About/RouteDataValue`, "RouteDataValue" je načten do `RouteData.Values["globalTemplate"]` (`Order = 1`) a ne `RouteData.Values["aboutTemplate"]` (`Order = 2`) z důvodu nastavení `Order` vlastnost.
+
+Kdykoli je to možné, nemají nastavený `Order`, což má za následek `Order = 0`. Spolehněte se na směrování k výběru správné směrování.
 
 Žádosti o stránku ukázky na `localhost:5000/About/GlobalRouteValue/AboutRouteValue` a zkontrolujte výsledek:
 

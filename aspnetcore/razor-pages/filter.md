@@ -1,61 +1,61 @@
 ---
-title: Filtr metody pro stránky Razor v ASP.NET Core
+title: Metody filtrování pro Razor Pages v ASP.NET Core
 author: Rick-Anderson
-description: Naučte se vytvořit filtr metody pro stránky Razor v ASP.NET Core.
+description: Zjistěte, jak vytvořit filtr metody pro stránky Razor v ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 04/05/2018
 uid: razor-pages/filter
-ms.openlocfilehash: 70f762f32a9e4fda01418a47e3eb7d7224639a0a
-ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
+ms.openlocfilehash: d9d4ea65a9357d19c283036e7ab9417e0deaeda2
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37092845"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011715"
 ---
-# <a name="filter-methods-for-razor-pages-in-aspnet-core"></a>Filtr metody pro stránky Razor v ASP.NET Core
+# <a name="filter-methods-for-razor-pages-in-aspnet-core"></a>Metody filtrování pro Razor Pages v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Filtry stránky Razor [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) a [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0) povolit stránky Razor spustit kód před a po spuštění obslužnou rutinu stránky Razor. Filtry Razor stránce jsou podobná [filtrů Akce ASP.NET Core MVC](xref:mvc/controllers/filters#action-filters), s výjimkou je nelze použít s obslužnými rutinami jednotlivých stránek. 
+Stránka Razor filtruje [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) a [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0) povolit stránky Razor pro spuštění kódu před a po spuštění rutiny stránky Razor. Filtry stránek Razor jsou podobné [filtrů Akce ASP.NET Core MVC](xref:mvc/controllers/filters#action-filters)s výjimkou případů, nejde použít u metody obslužné rutiny jednotlivých stránek. 
 
-Filtry Razor stránky:
+Stránka Razor filtry:
 
-* Spuštění kódu po nebyla vybrána metoda obslužná rutina, ale předtím, než dojde k vazby modelu.
-* Kód spusťte před spuštěním metody obslužné rutiny, po dokončení vazby modelu.
-* Po provedení metody obslužná rutina spusťte kód.
-* Může být implementováno na stránce nebo globálně.
-* Nelze použít s obslužnými rutinami konkrétní stránky.
+* Spuštění kódu po výběru metody obslužné rutiny, ale před provedením vázání modelu.
+* Spuštění kódu před spuštěním metody obslužné rutiny, po dokončení vazby modelu.
+* Spuštění kódu po provedení metody obslužné rutiny.
+* Je možné implementovat na stránce nebo globálně.
+* Nejde použít u metody obslužné rutiny konkrétní stránky.
 
-Kód můžete spustit, než obslužná rutina metoda provádí pomocí konstruktoru stránky nebo middleware, ale pouze filtry stránky Razor mít přístup k [HttpContext](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.httpcontext?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_RazorPages_PageModel_HttpContext). Mít filtry [FilterContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.filtercontext?view=aspnetcore-2.0) odvozené parametr, který poskytuje přístup k `HttpContext`. Například [implementovat atribut filtru](#ifa) ukázka přidá hlavičku odpovědi, něco, co nelze provést pomocí konstruktorů nebo middleware.
+Kód můžete spustit před metodu obslužné rutiny provede pomocí konstruktoru stránky nebo middleware, ale pouze filtry stránky Razor nemají přístup k [HttpContext](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.httpcontext?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_RazorPages_PageModel_HttpContext). Filtry nemají [FilterContext](/dotnet/api/microsoft.aspnetcore.mvc.filters.filtercontext?view=aspnetcore-2.0) odvozené parametr, který poskytuje přístup k `HttpContext`. Například [implementovat atribut filtru](#ifa) ukázka přidá hlavičku odpovědi, něco, co nelze provést s konstruktory nebo middlewaru.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/filter/sample/PageFilter) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/filter/sample/PageFilter) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-Stránka filtry Razor poskytují následující metody, které lze použít globálně nebo na úrovni stránky:
+Filtry stránek Razor poskytují následující metody, které se dají aplikovat globálně nebo na úrovni stránky:
 
-* Synchronních metod:
+* Synchronní metody:
 
-    * [OnPageHandlerSelected](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerselected?view=aspnetcore-2.0) : volá se po nebyla vybrána metoda obslužná rutina, ale model, než dojde k vazby.
+    * [OnPageHandlerSelected](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerselected?view=aspnetcore-2.0) : volá se po vybrali metodu obslužné rutiny, ale před modelu dojde k vazby.
     * [OnPageHandlerExecuting](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuting?view=aspnetcore-2.0) : voláno před provedením metody obslužné rutiny, po dokončení vazby modelu.
-    * [OnPageHandlerExecuted](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuted?view=aspnetcore-2.0) : voláno po provedení metody obslužné rutiny, před výsledku akce.
+    * [OnPageHandlerExecuted](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter.onpagehandlerexecuted?view=aspnetcore-2.0) : voláno po spuštění metody obslužné rutiny, před výsledku akce.
 
 * Asynchronní metody:
 
-    * [OnPageHandlerSelectionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerselectionasync?view=aspnetcore-2.0) : volána asynchronně po nebyla vybrána metoda obslužná rutina, ale model, než dojde k vazby.
-    * [OnPageHandlerExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerexecutionasync?view=aspnetcore-2.0) : volaná asynchronně před vyvoláním metody obslužné rutiny, po dokončení vazby modelu.
+    * [OnPageHandlerSelectionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerselectionasync?view=aspnetcore-2.0) : volána asynchronně poté, co byla vybrána metoda obslužné rutiny, ale před modelu dojde k vazby.
+    * [OnPageHandlerExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter.onpagehandlerexecutionasync?view=aspnetcore-2.0) : asynchronně volá se před vyvoláním metody obslužné rutiny, po dokončení vazby modelu.
 
 > [!NOTE]
-> Implementace **buď** synchronní nebo asynchronní verzi rozhraní filtru, nikoli oba dva. Rozhraní framework zkontroluje nejprve Pokud filtr implementuje rozhraní asynchronní, a pokud ano, který volá. Pokud tomu tak není, volá metodu nebo metody rozhraní synchronní. Pokud jsou obě rozhraní implementované, se nazývají asynchronní metody. Stejné pravidlo platí pro přepsání v stránky, implementovat synchronní nebo asynchronní verzi přepsání, nikoli oba dva.
+> Implementace **buď** synchronní nebo asynchronní verzi rozhraní filtru, ne obojí. Rozhraní framework nejprve zkontroluje a zjistěte, jestli implementuje rozhraní asynchronní filtr, a pokud ano, který volá. Pokud tomu tak není, volá rozhraní synchronní metody. Pokud jsou obě rozhraní implementované, se nazývají asynchronní metody. Stejné pravidlo platí pro přepsání hodnot v stránky, implementovat synchronní nebo asynchronní verze přepsání, ne obojí.
 
-## <a name="implement-razor-page-filters-globally"></a>Globálně implementace filtrů stránky Razor
+## <a name="implement-razor-page-filters-globally"></a>Globálně implementovat filtry stránek Razor
 
 Následující kód implementuje `IAsyncPageFilter`:
 
 [!code-csharp[Main](filter/sample/PageFilter/Filters/SampleAsyncPageFilter.cs?name=snippet1)]
 
-V předchozí kód [objektu ILogger](/dotnet/api/microsoft.extensions.logging.ilogger?view=aspnetcore-2.0) se nevyžaduje. V ukázce slouží k zadání informací o trasování pro aplikace.
+V předchozím kódu [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger?view=aspnetcore-2.0) se nevyžaduje. V ukázce slouží k poskytnutí informací o trasování pro aplikaci.
 
-Následující kód umožňuje `SampleAsyncPageFilter` v `Startup` třídy:
+V následujícím kódu umožňuje `SampleAsyncPageFilter` v `Startup` třídy:
 
 [!code-csharp[Main](filter/sample/PageFilter/Startup.cs?name=snippet2&highlight=11)]
 
@@ -63,7 +63,7 @@ Následující kód ukazuje kompletní `Startup` třídy:
 
 [!code-csharp[Main](filter/sample/PageFilter/Startup.cs?name=snippet1)]
 
-Následující kód volání `AddFolderApplicationModelConvention` pro použití `SampleAsyncPageFilter` na pouze stránky v */subFolder*:
+Následující kód volá `AddFolderApplicationModelConvention` použít `SampleAsyncPageFilter` na pouze stránky */subFolder*:
 
 [!code-csharp[Main](filter/sample/PageFilter/Startup2.cs?name=snippet2)]
 
@@ -71,14 +71,15 @@ Následující kód implementuje synchronní `IPageFilter`:
 
 [!code-csharp[Main](filter/sample/PageFilter/Filters/SamplePageFilter.cs?name=snippet1)]
 
-Následující kód umožňuje `SamplePageFilter`:
+V následujícím kódu umožňuje `SamplePageFilter`:
 
 [!code-csharp[Main](filter/sample/PageFilter/StartupSync.cs?name=snippet2&highlight=11)]
 
 ::: moniker range=">= aspnetcore-2.1"
-## <a name="implement-razor-page-filters-by-overriding-filter-methods"></a>Implementace filtru stránek Razor přepsáním metody filtru
 
-Následující kód přepíše synchronní filtry Razor stránky:
+## <a name="implement-razor-page-filters-by-overriding-filter-methods"></a>Stránka Razor filtry implementace přepsáním metody filtru
+
+Následující kód přepíše synchronní filtry stránky Razor:
 
 [!code-csharp[Main](filter/sample/PageFilter/Pages/Index.cshtml.cs)]
 
@@ -87,7 +88,7 @@ Následující kód přepíše synchronní filtry Razor stránky:
 <a name="ifa"></a>
 ## <a name="implement-a-filter-attribute"></a>Implementace atribut filtru
 
-Integrovaný filtr na základě atributů [OnResultExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncresultfilter.onresultexecutionasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Filters_IAsyncResultFilter_OnResultExecutionAsync_Microsoft_AspNetCore_Mvc_Filters_ResultExecutingContext_Microsoft_AspNetCore_Mvc_Filters_ResultExecutionDelegate_) může být rozčlenění filtru. Filtr přidá do odpovědi hlavičku:
+Integrovaný filtr založený na atributu [OnResultExecutionAsync](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncresultfilter.onresultexecutionasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Filters_IAsyncResultFilter_OnResultExecutionAsync_Microsoft_AspNetCore_Mvc_Filters_ResultExecutingContext_Microsoft_AspNetCore_Mvc_Filters_ResultExecutionDelegate_) filtru můžete má rozčlenit do podtříd. Filtr přidá do odpovědi hlavičku:
 
 [!code-csharp[Main](filter/sample/PageFilter/Filters/AddHeaderAttribute.cs)]
 
@@ -95,13 +96,13 @@ Následující kód se vztahuje `AddHeader` atribut:
 
 [!code-csharp[Main](filter/sample/PageFilter/Pages/Contact.cshtml.cs?name=snippet1)]
 
-V tématu [přepsání výchozí pořadí](xref:mvc/controllers/filters#overriding-the-default-order) pokyny k přepsání pořadí.
+Zobrazit [přepisuje výchozí pořadí](xref:mvc/controllers/filters#overriding-the-default-order) pokyny k přepsání pořadí.
 
-V tématu [zrušení a krátký circuiting](xref:mvc/controllers/filters#cancellation-and-short-circuiting) pokyny týkající se krátká smyčka kanálu filtru z filtru. 
+Zobrazit [zrušení a krátký circuiting](xref:mvc/controllers/filters#cancellation-and-short-circuiting) pokyny týkající se zkrácenou filtr kanálu z filtru. 
 
 <a name="auth"></a>
-## <a name="authorize-filter-attribute"></a>Autorizovat atribut filtru
+## <a name="authorize-filter-attribute"></a>Povolit atribut filtru
 
-[Authorize](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-2.0) atribut lze použít k `PageModel`:
+[Authorize](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute?view=aspnetcore-2.0) atribut lze použít `PageModel`:
 
 [!code-csharp[Main](filter/sample/PageFilter/Pages/ModelWithAuthFilter.cshtml.cs?highlight=7)]

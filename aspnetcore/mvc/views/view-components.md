@@ -5,12 +5,12 @@ description: Zjistěte, jak komponenty zobrazení se používají v ASP.NET Core
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: c4e4de6e4ffb634a636bccdb2a929a524baebecf
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 0410e2025019bae45d941e61f556f4b2b57bd30f
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41754392"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010907"
 ---
 # <a name="view-components-in-aspnet-core"></a>Zobrazení komponenty v ASP.NET Core
 
@@ -75,9 +75,9 @@ Zobrazení komponenty definuje svou logikou v `InvokeAsync` metodu, která vrát
 
 Modul runtime vyhledává zobrazení v následující cesty:
 
-* Řetězec/Pages/součásti/<component name>/\<view_name >
-* Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-* Views/Shared/Components/\<view_component_name>/\<view_name>
+* Řetězec/Pages/součásti/\<view_component_name > /\<view_name >
+* /Views/\<controller_name > /Components/\<view_component_name > /\<view_name >
+* / Zobrazení/Shared/Components/\<view_component_name > /\<view_name >
 
 Výchozí název zobrazení pro součást zobrazení je *výchozí*, což znamená, že váš soubor zobrazení se obvykle nazývá *stránku Default.cshtml*. Můžete zadat název jiné zobrazení, při vytváření komponenty výsledný objekt zobrazení, nebo při volání `View` metody.
 

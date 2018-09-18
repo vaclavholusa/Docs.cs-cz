@@ -3,14 +3,14 @@ title: Směrování na akce kontroleru v ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak ASP.NET Core MVC používá směrování Middleware podle adresy URL příchozích událostí požadavků a jejich namapování na akce.
 ms.author: riande
-ms.date: 03/14/2017
+ms.date: 09/17/2018
 uid: mvc/controllers/routing
-ms.openlocfilehash: 0d328d930ecb932c22fec524babb1c856b656b95
-ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
+ms.openlocfilehash: d66c2f14adf55dd0c4a7c3adfad7e5737e4deda1
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514775"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011650"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>Směrování na akce kontroleru v ASP.NET Core
 
@@ -376,6 +376,8 @@ Atribut trasy můžete nakonfigurovat pořadí, pomocí `Order` vlastnost všech
 
 > [!TIP]
 > Vyhněte se v závislosti na `Order`. Pokud váš prostor adresy URL vyžaduje explicitní seřazení hodnot pro směrování správně, je pravděpodobně matoucí také klientům. Směrování atributů obecně bude vyberte správné směrování s odpovídajícími adresy URL. Pokud nefunguje výchozí pořadí použili pro generování adresy URL, pomocí názvu trasy, je obvykle jednodušší než použití přepsání `Order` vlastnost.
+
+Stránky Razor směrování a směrování sdílení řadiče MVC implementace. Informace o pořadí trasy v tématech pro stránky Razor je k dispozici na [trasy a aplikační konvence pro stránky Razor: směrování pořadí](xref:razor-pages/razor-pages-conventions#route-order).
 
 <a name="routing-token-replacement-templates-ref-label"></a>
 

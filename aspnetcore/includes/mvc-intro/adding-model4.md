@@ -1,98 +1,105 @@
-Zvýrazněných code výš ukazuje kontext databáze film, který se přidává do [vkládání závislostí](xref:fundamentals/dependency-injection) kontejneru (v *Startup.cs* souboru). `services.AddDbContext<MvcMovieContext>(options =>` Určuje použití a připojovací řetězec databáze. `=>` je [lambda operátor](/dotnet/articles/csharp/language-reference/operators/lambda-operator).
+Zvýrazněný kód výše znázorňuje kontext databáze filmů přidávaný do [injektáž závislostí](xref:fundamentals/dependency-injection) kontejner (v *Startup.cs* souboru). `services.AddDbContext<MvcMovieContext>(options =>` Určuje databázi, do použití a připojovací řetězec. `=>` je [operátor lambda](/dotnet/articles/csharp/language-reference/operators/lambda-operator).
 
-Otevřete *Controllers/MoviesController.cs* soubor a zkontrolujte konstruktoru:
+Otevřít *Controllers/MoviesController.cs* souboru a prozkoumání konstruktoru:
 
 <!-- l.. Make copy of Movies controller because we comment out the initial index method and update it later  -->
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_1)] 
 
-Používá konstruktoru [vkládání závislostí](xref:fundamentals/dependency-injection) vložení kontext databáze (`MvcMovieContext `) do kontroleru. Kontext databáze se používá v každé z [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) metody v kontroleru.
+Konstruktor používá [injektáž závislostí](xref:fundamentals/dependency-injection) vkládat kontext databáze (`MvcMovieContext `) do kontroleru. Kontext databáze se používá ve všech [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) metody v kontroleru.
 
 <a name="strongly-typed-models-keyword-label"></a>
 <a name="strongly-typed-models-and-the--keyword"></a>
 
-## <a name="strongly-typed-models-and-the-model-keyword"></a>Silného typu modely a @model – klíčové slovo
+## <a name="strongly-typed-models-and-the-model-keyword"></a>Modely se silnými typy a @model – klíčové slovo
 
-V tomto kurzu jste viděli, jak řadič může předat data nebo objekty zobrazení pomocí `ViewData` slovníku. `ViewData` Slovník je dynamický objekt, který představuje pohodlný způsob pozdní vazbou předávat informace k zobrazení.
+Dříve v tomto kurzu jste viděli, jak kontroleru můžete předat data nebo objekty zobrazení pomocí `ViewData` slovníku. `ViewData` Slovník je dynamický objekt, který představuje pohodlný způsob s pozdní vazbou k předávání informací do zobrazení.
 
-MVC obsahuje také možnost předat silně typované objekty modelu zobrazení. Tento přístup umožňuje lepší kompilaci Kontrola kódu silného typu. Tento mechanismus generování uživatelského rozhraní použít tento přístup (který předává silného typu modelu) s `MoviesController` třídy a zobrazení, když vytvořeno metody a zobrazení.
+MVC rovněž poskytuje možnost předávání silně typované objekty modelu zobrazení. Tento přístup umožňuje lepší kompilace Kontrola kódu silného typu. Generování uživatelského rozhraní mechanismus použít tento přístup (který předává model silného typu) se `MoviesController` třídy a zobrazení při vytvoření rovnou metody a zobrazení.
 
-Zkontrolujte vygenerovaného `Details` metoda v *Controllers/MoviesController.cs* souboru:
+Zkontrolujte vygenerovaný `Details` metodu *Controllers/MoviesController.cs* souboru:
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MoviesController.cs?name=snippet_details)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_details)]
+
 ::: moniker-end
 
 
-`id` Parametru se obecně předá jako data trasy. Například `http://localhost:5000/movies/details/1` nastaví:
+`id` Jako data trasy, která je obecně předán parametr. Například `http://localhost:5000/movies/details/1` nastaví:
 
-* Aby řadič `movies` řadiče (první segment adresy URL).
-* Akce, která `details` (druhý segment adresy URL).
+* Kontroleru `movies` kontroler (první segment adresy URL).
+* Akce, která má `details` (druhý segment adresy URL).
 * Id na hodnotu 1 (poslední segment adresy URL).
 
-Můžete také předáte `id` s dotazem řetězec následujícím způsobem:
+Můžete také předat `id` pomocí dotazu řetězec následujícím způsobem:
 
 `http://localhost:1234/movies/details?id=1`
 
-`id` Parametr je definován jako [typ s možnou hodnotou Null](/dotnet/csharp/programming-guide/nullable-types/index) (`int?`) v případě, že hodnotu ID není zadaný.
+`id` Parametr je definován jako [typ připouštějící hodnotu Null](/dotnet/csharp/programming-guide/nullable-types/index) (`int?`) v případě, že je hodnota ID není k dispozici.
 
 
 
 ::: moniker range=">= aspnetcore-2.1"
 
-A [výrazu lambda](/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) je předané do `FirstOrDefaultAsync` vyberte film entit, které odpovídají hodnotě trasy dat nebo dotaz, řetězec.
+A [výraz lambda](/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) předáno pracovnímu `FirstOrDefaultAsync` vyberte film entity, které odpovídají směrování dat nebo dotaz řetězcovou hodnotu.
 
 ```csharp
 var movie = await _context.Movie
     .FirstOrDefaultAsync(m => m.ID == id);
 ```
+
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-2.0"
 
-A [výrazu lambda](/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) je předané do `SingleOrDefaultAsync` vyberte film entit, které odpovídají hodnotě trasy dat nebo dotaz, řetězec.
+A [výraz lambda](/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) předáno pracovnímu `SingleOrDefaultAsync` vyberte film entity, které odpovídají směrování dat nebo dotaz řetězcovou hodnotu.
 
 ```csharp
 var movie = await _context.Movie
     .SingleOrDefaultAsync(m => m.ID == id);
 ```
+
 ::: moniker-end
 
 
 
-Pokud se najde film, instanci `Movie` model předán `Details` zobrazení:
+Pokud se najde videa, instance `Movie` modelu je předán `Details` zobrazení:
 
 ```csharp
 return View(movie);
    ```
 
-Zkontrolujte obsah *Views/Movies/Details.cshtml* souboru:
+Zkontrolovat obsah *Views/Movies/Details.cshtml* souboru:
 
 [!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/DetailsOriginal.cshtml)]
 
-Zahrnutím `@model` příkaz v horní části souboru zobrazení, můžete zadat typ objektu, která očekává zobrazení. Pokud jste vytvořili řadičem film, Visual Studio automaticky zahrnuty následující `@model` příkaz v horní části *Details.cshtml* souboru:
+Zahrnutím `@model` příkazu v horní části souboru zobrazení, můžete určit typ objektu, který očekává, že zobrazení. Při vytvoření kontroleru video Visual Studio automaticky zahrnuty následující `@model` příkazu v horní části *Details.cshtml* souboru:
 
 ```HTML
 @model MvcMovie.Models.Movie
    ```
 
-To `@model` – direktiva umožňuje přístup k video, které kontroleru předaná do zobrazení pomocí pomocí `Model` objekt, který je silného typu. Například v *Details.cshtml* zobrazení, kód předá pro každé pole film `DisplayNameFor` a `DisplayFor` pomocné objekty HTML s silného typu `Model` objektu. `Create` a `Edit` metody a zobrazení předat také `Movie` objekt modelu.
+To `@model` – direktiva umožňuje přístup k video, které kontroleru předána do zobrazení podle používání `Model` objekt, který je silně typováno. Například v *Details.cshtml* zobrazení, že kód předá jednotlivých polí filmů a `DisplayNameFor` a `DisplayFor` pomocných rutin HTML se silnými typy `Model` objektu. `Create` a `Edit` metody a zobrazení také předat `Movie` objekt modelu.
 
-Zkontrolujte *Index.cshtml* zobrazení a `Index` metoda v filmy kontroleru. Všimněte si, jak kód vytvoří `List` objektu při volání `View` metoda. Kód předá to `Movies` ze seznamu `Index` metody akce k zobrazení:
+Zkontrolujte *Index.cshtml* zobrazení a `Index` metoda v filmy kontroleru. Všimněte si, jak kód vytvoří `List` objektu při volání `View` metody. Kód předá to `Movies` ze seznamu `Index` metody akce k zobrazení:
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_index)]
 
-Když vytvoříte řadič filmy, generování uživatelského rozhraní automaticky zahrnuty následující `@model` příkaz v horní části *Index.cshtml* souboru:
+Když vytvoříte řadič filmy, generování uživatelského rozhraní automaticky zahrnuty následující `@model` příkazu v horní části *Index.cshtml* souboru:
 
 <!-- Copy Index.cshtml to IndexOriginal.cshtml -->
 
 [!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexOriginal.cshtml?range=1)]
 
-`@model` – Direktiva umožňuje přístup k seznamu filmy, které kontroleru předaná do zobrazení pomocí pomocí `Model` objekt, který je silného typu. Například v *Index.cshtml* zobrazit, smyčky kód prostřednictvím filmy s `foreach` příkaz přes silného typu `Model` objektu:
+`@model` – Direktiva umožňuje přístup k seznamu filmy, které kontroleru předána do zobrazení podle používání `Model` objekt, který je silně typováno. Například v *Index.cshtml* zobrazíte kód cyklicky projde filmů s `foreach` příkaz přes silného typu `Model` objektu:
 
 [!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexOriginal.cshtml?highlight=1,31,34,37,40,43,46-48)]
 
-Protože `Model` objektu je silného typu (jako `IEnumerable<Movie>` objektu), každá položka v smyčky je zadán jako `Movie`. Mezi další výhody, to znamená, že dostanete kompilaci Kontrola kódu:
+Protože `Model` objektu je silně typováno (jako `IEnumerable<Movie>` objektu), každé položky ve smyčce je zadán jako `Movie`. Kromě dalších výhod, to znamená, že dostanete kompilace Kontrola kódu:

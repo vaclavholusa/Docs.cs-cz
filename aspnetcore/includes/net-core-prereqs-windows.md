@@ -4,5 +4,7 @@
 * **Vývoj pro různé platformy .NET core**
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [Sady SDK .NET core 2.1 nebo novější](https://www.microsoft.com/net/download/windows)
+
 ::: moniker-end

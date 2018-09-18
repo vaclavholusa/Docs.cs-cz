@@ -3,14 +3,14 @@ title: Poskytovatelé vlastního úložiště pro ASP.NET Core Identity
 author: ardalis
 description: Zjistěte, jak nakonfigurovat poskytovatelé vlastního úložiště pro ASP.NET Core Identity.
 ms.author: riande
-ms.date: 05/24/2017
+ms.date: 09/17/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 4b210a52ae9761bb838dd5611e86ce8f71345499
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: db51c39cc700f93917f54c80adbfe7922ffcd67e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751910"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011258"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastního úložiště pro ASP.NET Core Identity
 
@@ -59,7 +59,7 @@ Při vytváření nové instance objektu `UserManager` nebo `RoleManager` zadejt
 
 ### <a name="users"></a>Uživatelé
 
-Registrovaným uživatelům svého webu. [IdentityUser](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser) typ mohou rozšířit nebo jako příklad je použita pro vlastní typ. Není nutné pro dědění z určitého typu, k implementaci vlastních řešení úložiště identit.
+Registrovaným uživatelům svého webu. [IdentityUser](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser) typ mohou rozšířit nebo jako příklad je použita pro vlastní typ. Není nutné pro dědění z určitého typu, k implementaci vlastních řešení úložiště identit.
 
 ### <a name="user-claims"></a>Deklarace identity uživatelů
 
@@ -67,11 +67,11 @@ Sada příkazů (nebo [deklarace identity](/dotnet/api/system.security.claims.cl
 
 ### <a name="user-logins"></a>Přihlášení uživatele
 
-Informace o poskytovateli služeb externího ověřování (jako je Facebook nebo účet Microsoft) pro použití při přihlášení uživatele. [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
+Informace o poskytovateli služeb externího ověřování (jako je Facebook nebo účet Microsoft) pro použití při přihlášení uživatele. [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
 
 ### <a name="roles"></a>Role
 
-Autorizačních skupin pro váš web. Obsahuje název Id a rolí role (jako "Admin" nebo "Employee"). [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityrole)
+Autorizačních skupin pro váš web. Obsahuje název Id a rolí role (jako "Admin" nebo "Employee"). [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.identityrole)
 
 ## <a name="the-data-access-layer"></a>Vrstva přístupu k datům
 
@@ -83,11 +83,11 @@ Vrstva přístupu k datům poskytuje logiku pro uložení dat do zdroje dat z AS
 
 ### <a name="context-class"></a>context – třída
 
-Zapouzdří informace pro připojení k vaší mechanismu trvalosti a spouštění dotazů. Několik datových tříd vyžadují instanci této třídy, obvykle k dispozici prostřednictvím vkládání závislostí. [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1).
+Zapouzdří informace pro připojení k vaší mechanismu trvalosti a spouštění dotazů. Několik datových tříd vyžadují instanci této třídy, obvykle k dispozici prostřednictvím vkládání závislostí. [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1).
 
 ### <a name="user-storage"></a>Úložiště uživatelů
 
-Ukládá a načítá uživatelské informace (například uživatelské jméno a heslo hash). [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Ukládá a načítá uživatelské informace (například uživatelské jméno a heslo hash). [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="role-storage"></a>Role úložiště
 
@@ -95,15 +95,15 @@ Ukládá a načítá informace o rolích (jako je například název role). [Př
 
 ### <a name="userclaims-storage"></a>Úložiště objektu UserClaims.
 
-Ukládá a načítá informace o deklaraci identity uživatele (například typ deklarace identity a hodnota). [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Ukládá a načítá informace o deklaraci identity uživatele (například typ deklarace identity a hodnota). [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userlogins-storage"></a>Úložiště entit přihlášení uživatele
 
-Ukládá a načítá uživatelské přihlašovací údaje (například externí zprostředkovatel ověřování). [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Ukládá a načítá uživatelské přihlašovací údaje (například externí zprostředkovatel ověřování). [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userrole-storage"></a>Položka UserRole úložiště
 
-Ukládá a načítá, které role jsou přiřazeny jednotlivým uživatelům. [Příklad](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
+Ukládá a načítá, které role jsou přiřazeny jednotlivým uživatelům. [Příklad](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 **TIP:** pouze implementace třídy, které chcete používat ve vaší aplikaci.
 
@@ -115,7 +115,7 @@ Implementační logika pro vytvoření uživatele se v `_usersTable.CreateAsync`
 
 ## <a name="customize-the-user-class"></a>Přizpůsobit třídu uživatelů
 
-Při implementaci zprostředkovatele úložiště, vytvořte třídu uživatelů, která je ekvivalentní [ `IdentityUser` třídy](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser).
+Při implementaci zprostředkovatele úložiště, vytvořte třídu uživatelů, která je ekvivalentní [IdentityUser třídy](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser).
 
 Minimálně musí obsahovat třídy uživatelů `Id` a `UserName` vlastnost.
 
@@ -185,7 +185,7 @@ public class UserStore : IUserStore<IdentityUser>,
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim IdentityUserLogin a IdentityUserRole
 
-`Microsoft.AspNet.Identity.EntityFramework` Obor názvů obsahuje implementace [IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1), [IdentityUserLogin](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin), a [IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1) třídy. Pokud používáte tyto funkce, můžete vytvořit vlastní verze těchto tříd a definovat vlastnosti pro vaši aplikaci. Někdy je však mnohem efektivnější nenačetla tyto entity do paměti při provádění základních operací (například přidávání nebo odebírání deklarace identity uživatele). Třídy úložiště back-endu můžete místo toho provádění těchto operací přímo na zdroj dat. Například `UserStore.GetClaimsAsync` můžete volat metodu `userClaimTable.FindByUserId(user.Id)` metoda při spuštění dotazu na tabulky přímo, který vrátí seznam deklarací identity.
+`Microsoft.AspNet.Identity.EntityFramework` Obor názvů obsahuje implementace [IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1), [IdentityUserLogin](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin), a [IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1) třídy. Pokud používáte tyto funkce, můžete vytvořit vlastní verze těchto tříd a definovat vlastnosti pro vaši aplikaci. Někdy je však mnohem efektivnější nenačetla tyto entity do paměti při provádění základních operací (například přidávání nebo odebírání deklarace identity uživatele). Třídy úložiště back-endu můžete místo toho provádění těchto operací přímo na zdroj dat. Například `UserStore.GetClaimsAsync` můžete volat metodu `userClaimTable.FindByUserId(user.Id)` metoda při spuštění dotazu na tabulky přímo, který vrátí seznam deklarací identity.
 
 ## <a name="customize-the-role-class"></a>Vlastní nastavení role třídy
 

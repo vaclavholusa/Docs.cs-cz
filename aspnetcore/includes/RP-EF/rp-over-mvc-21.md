@@ -14,4 +14,5 @@ ASP.NET Core 2.1 Razor Pages verzi tohoto kurzu má mnoho vylepšení verze 2.0.
 * Je upřednostňovaný způsob pro nový vývoj aplikací.
 
 Pokud se rozhodnete v tomto kurzu přes [Razor Pages](xref:data/ef-rp/intro) verze, dejte nám vědět, proč v [této diskuse Githubu](https://github.com/aspnet/Docs/issues/6146).
+
 ::: moniker-end

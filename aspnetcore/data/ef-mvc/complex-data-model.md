@@ -5,12 +5,12 @@ description: V tomto kurzu přidat další entity a relace a přizpůsobte si da
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: c97acd2b943e1d4c466c060247220b3b8bab6d6b
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756089"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011765"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC s EF Core – Model dat – 5 10
 
@@ -495,6 +495,7 @@ Klikněte pravým tlačítkem myši **CourseAssignment** tabulce a vybrat **Data
 ## <a name="summary"></a>Souhrn
 
 Teď máte složitějšího datového modelu a odpovídající databáze. V následujícím kurzu se dozvíte informace o tom, jak přistupovat k související data.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

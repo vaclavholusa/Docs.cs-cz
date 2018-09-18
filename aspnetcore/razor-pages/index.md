@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 25add294d74be2840d2bee224b0f5ea91c782b64
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: bded9687e86ade206aee3422337fd14817787949
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601779"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011677"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do služby v ASP.NET Core Razor Pages
 
@@ -419,6 +419,7 @@ Generování adresy URL pro stránky podporuje relativních názvů. V následuj
 Relativní název propojení je užitečné, když vytváření webů s komplexní strukturou. Pokud používáte relativní názvy propojení mezi stránkami ve složce, můžete přejmenovat tuto složku. Všechny odkazy i nadále fungovat (vzhledem k tomu patří mezi ně neměli název složky).
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="viewdata-attribute"></a>Atribut viewData
 
 Data mohou být předána na stránku s [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute). Upravené vlastnosti v kontrolerech a modelech stránky Razor pomocí `[ViewData]` hodnoty uložené a načíst z [objektu ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary).
@@ -452,6 +453,7 @@ Název je v rozložení pro čtení ze slovníku ViewData:
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
 ## <a name="tempdata"></a>TempData

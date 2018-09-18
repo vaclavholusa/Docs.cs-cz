@@ -5,12 +5,12 @@ description: Objevte, jak přidat třídy pro správu filmy v databázi pomocí 
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: fb3a287725fa68ff9feb9935d7e6c5c2b8316517
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: de82738509bb009f030a02e28904e3155088fa6a
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893117"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011355"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Přidání modelu do aplikace v ASP.NET Core Razor Pages
 
@@ -126,6 +126,7 @@ SqlException: Databázi "RazorPagesMovieContext identifikátor GUID" požadovan�
 Přihlašovací jméno uživatele 'Jméno uživatele' se nezdařilo.
 
 Je provedena [kroku migrace](#pmc).
+
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"

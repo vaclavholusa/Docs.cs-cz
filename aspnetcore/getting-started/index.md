@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 7ab9f303d74786c4ac76f002d0f2c66371e78cb8
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: 06129200834607188052f44a888749c51662f638
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228579"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011592"
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
 
@@ -49,13 +49,15 @@ ms.locfileid: "39228579"
 
    Ve výstupu předchozího příkazu se zobrazí následující zpráva:
 
-   *Byla vyžádána důvěřující vývojářský certifikát HTTPS. Pokud certifikát není důvěryhodný provedeme následující příkaz:* `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'` *tento příkaz vás může vyzvat k zadání hesla k instalaci certifikátu v řetězci klíčů systému.    Heslo:*
+   *Byla vyžádána důvěřující vývojářský certifikát HTTPS. Pokud certifikát není důvěryhodný jsme se spusťte následující příkaz:* `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`
+   *Tento příkaz vás může vyzvat k zadání hesla k instalaci certifikátu v řetězci klíčů systému. Heslo:*
 
    Zadejte svoje heslo, pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-   <a name="see-the-documentation-for-your-linux-distribution-on-how-to-trust-the-https-development-certificate"></a>O tom, jak důvěřovat certifikátu protokolu HTTPS vývoj naleznete v dokumentaci k vaší distribuci Linuxu
+   O tom, jak důvěřovat certifikátu protokolu HTTPS vývoj naleznete v dokumentaci k vaší distribuci Linuxu
+   
 ---
 
 4. Spuštění aplikace:
@@ -152,4 +154,5 @@ ms.locfileid: "39228579"
 7. Přejděte do `http://localhost:5000`.
 
 [!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
+
 ::: moniker-end

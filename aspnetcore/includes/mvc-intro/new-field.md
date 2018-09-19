@@ -1,61 +1,66 @@
 <!-- This include not used by windows version -->
-# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidejte nové pole do aplikace ASP.NET MVC jádra
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>Přidání nového pole do aplikace ASP.NET Core MVC
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Přidá nové pole do tohoto kurzu `Movies` tabulky. Jsme budete vyřaďte databázi a vytvořte novou, když nám změnit schéma (Přidat nové pole). Tento pracovní postup funguje dobře časná ve vývoj při nemáme žádná data produkční do opraveny.
+V tomto kurzu přidáte nové pole do `Movies` tabulky. Vytvoříme vyřaďte databázi a vytvořte novou, když se změní schéma (přidání nového pole). Tento pracovní postup funguje dobře již v rané fázi při vývoji, když nemáme žádná data produkční opraveny.
 
-Po nasazení vaší aplikace a máte data, která budete muset opraveny, nelze vyřadit vaší databáze, když potřebujete změnit schéma. Rozhraní Entity Framework [migrace Code First](/ef/core/get-started/aspnetcore/new-db) vám umožní aktualizovat schéma a migraci databáze bez ztráty dat. Migrace je oblíbených funkce při použití SQL serveru, ale SQLlite nepodporuje mnoho schématu operací migrace, takže jenom velmi jednoduše migrace se možná. V tématu [SQLite omezení](/ef/core/providers/sqlite/limitations) Další informace.
+Jakmile je aplikace nasazená a máte data, která je potřeba opraveny, nelze vyřadit vaší databáze, pokud je třeba změnit schéma. Entity Framework [migrace Code First](/ef/core/get-started/aspnetcore/new-db) vám umožní aktualizovat schéma a migrovat databáze beze ztráty dat. Migrace je oblíbené funkce při použití SQL serveru, ale SQLlite nepodporuje mnoho operací migrace schématu, tak jenom velmi jednoduše migrace jsou možné. Zobrazit [omezení SQLite](/ef/core/providers/sqlite/limitations) Další informace.
 
-## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti hodnocení filmu modelu
+## <a name="adding-a-rating-property-to-the-movie-model"></a>Přidání vlastnosti do hodnocení filmů modelu
 
-Otevřete *Models/Movie.cs* souboru a přidejte `Rating` vlastnost:
+Otevřít *Models/Movie.cs* a přidejte `Rating` vlastnost:
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Models/MovieDateRating.cs?highlight=12&name=snippet)]
-::: moniker-end
-::: moniker range="<= aspnetcore-2.0"
-[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
 ::: moniker-end
 
-Protože jste přidali nové pole do `Movie` třídy, je také potřeba aktualizovat bílou vazby, tato vlastnost budou zahrnuty. V *MoviesController.cs*, aktualizovat `[Bind]` atribut pro obě `Create` a `Edit` akce metody pro zahrnutí `Rating` vlastnost:
+::: moniker range="<= aspnetcore-2.0"
+
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
+::: moniker-end
+
+Protože jsme přidali nové pole do `Movie` třídy, je také potřeba aktualizovat na seznamu povolených elementů vazby tak tuto novou vlastnost budou zahrnuty. V *MoviesController.cs*, aktualizovat `[Bind]` atribut pro obě `Create` a `Edit` metody akce, které chcete zahrnout `Rating` vlastnost:
 
 ```csharp
 [Bind("ID,Title,ReleaseDate,Genre,Price,Rating")]
    ```
 
-Můžete také potřebovat k aktualizaci zobrazit šablony, aby bylo možné zobrazit, vytvářet a upravovat nové `Rating` vlastnost v okně prohlížeče.
+Budete také potřebovat aktualizovat zobrazit šablony, aby bylo možné zobrazit, vytvářet a upravovat nové `Rating` vlastností v okně prohlížeče.
 
-Upravit */Views/Movies/Index.cshtml* souboru a přidejte `Rating` pole:
+Upravit */Views/Movies/Index.cshtml* a přidejte `Rating` pole:
 
 [!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 Aktualizace */Views/Movies/Create.cshtml* s `Rating` pole.
 
-Aplikace nebude fungovat, dokud aktualizujeme DB zahrnout nové pole. Pokud spustíte ji nyní, získáte následující `SqliteException`:
+Aplikace nebude fungovat, dokud aktualizujeme DB zahrnout nové pole. Pokud jste ji nyní spustit, zobrazí se následující `SqliteException`:
 
 ```
 SqliteException: SQLite Error 1: 'no such column: m.Rating'.
 ```
 
-Tato chyba se zobrazuje, protože aktualizované třídy modelu film se liší od schématu tabulky film existující databáze. (Není žádná `Rating` sloupec v tabulce databáze.)
+Tato chyba se zobrazuje, protože aktualizované třídy modelu film se liší od schématu tabulky Movie existující databáze. (Neexistuje žádný `Rating` sloupec v tabulce databáze.)
 
 Řešení chyby několika způsoby:
 
-1. Vyřaďte databázi a mít automaticky znovu vytvořit databázi na základě nové třídy schématu modelu Entity Framework. S tímto přístupem, přijdete o stávající data v databázi –, nelze to provést pomocí provozní databáze! Pomocí inicializátoru automaticky počáteční hodnoty databázi s daty test je často produktivní způsob, jak vyvíjet aplikace.
+1. Vyřaďte databázi a mít automaticky znovu vytvořit databázi založené na nové schéma třídy modelu Entity Framework. S tímto přístupem budete dojít ke ztrátě existujících dat v databázi, proto nelze provést s produkční databází. Použití inicializátoru automaticky naplnit databázi daty testu je často produktivní způsob, jak vyvíjet aplikace.
 
-2. Ručně upravte schéma z existující databáze tak, aby odpovídala třídy modelu. Výhodou tohoto přístupu je, že zachováte data. Můžete tuto změnu provést buď ručně, nebo vytvořením databáze změnit skriptu.
+2. Ručně upravte schéma stávající databázi tak, aby odpovídalo tříd modelu. Výhodou tohoto přístupu je, že zachováte vaše data. Můžete tuto změnu provést buď ručně, nebo tak, že vytvoříte databázi změnit skript.
 
-3. Použijte migrace Code First k aktualizaci schématu databáze.
+3. Pomocí migrace Code First aktualizovat schéma databáze.
 
-V tomto kurzu jsme budete vyřadit a znovu vytvořit databázi, když se změní schéma. Spusťte následující příkaz z terminálu odpojení databáze:
+V tomto kurzu vytvoříme vyřadit a znovu vytvořit databázi, když se změní schéma. Z terminálu vyřazení databáze spusťte následující příkaz:
 
 `dotnet ef database drop`
 
-Aktualizace `SeedData` třídy tak, aby poskytuje hodnotu pro nový sloupec. Ukázka změnu jsou uvedeny níže, ale budete chtít tuto změnu provést pro každý `new Movie`.
+Aktualizace `SeedData` třídy tak, že poskytuje hodnoty pro nový sloupec. Ukázka změnu je uveden níže, ale budete chtít tuto změnu pro každou `new Movie`.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
-Přidat `Rating` pole na `Edit`, `Details`, a `Delete` zobrazení.
+Přidat `Rating` pole `Edit`, `Details`, a `Delete` zobrazení.
 
-Spusťte aplikaci a ověřte, můžete vytvořit, upravit nebo zobrazení filmy s `Rating` pole. šablony.
+Spusťte aplikaci a ověřit, je možné vytvořit/upravit/zobrazit videa s `Rating` pole. šablony.

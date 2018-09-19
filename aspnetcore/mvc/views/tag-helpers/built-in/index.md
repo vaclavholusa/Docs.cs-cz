@@ -1,45 +1,45 @@
 ---
-title: Předdefinované značky Pomocníci ASP.NET Core
+title: ASP.NET Core integrované pomocné rutiny značek
 author: pkellner
-description: Zjistěte, jak ASP.NET Core předdefinované značky Pomocníci zvýšení produktivity uživatelů.
+description: Zjistěte, jak ASP.NET Core integrovaných pomocných rutin značek zvýší vaši produktivitu.
 ms.author: riande
-ms.date: 09/13/2017
+ms.date: 09/18/2018
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 4f2ebf1600f42847db1c1f9517787b020d2e86c9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5d9425e0b68578c86a6f9a691322e0bb63a860fb
+ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279165"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46292307"
 ---
-# <a name="aspnet-core-built-in-tag-helpers"></a>Předdefinované značky Pomocníci ASP.NET Core
+# <a name="aspnet-core-built-in-tag-helpers"></a>ASP.NET Core integrované pomocné rutiny značek
 
-Podle [Petr Kellner](http://peterkellner.net)
+Podle [Peter Kellner](http://peterkellner.net)
 
-ASP.NET Core zahrnuje mnoho předdefinovaných značky pomocníci pro zvýšení produktivity uživatelů. Tato část obsahuje přehled integrované Pomocníci značky.
+ASP.NET Core zahrnuje mnoho integrovaných pomocných rutin značek a zvýšit tak svou produktivitu. Tato část obsahuje základní informace o integrovaných pomocných rutin značek.
 
 > [!NOTE]
-> Jsou předdefinované značky pomocné rutiny, které nejsou popsané, protože se používá interně pomocí [Razor](xref:mvc/views/razor) modul zobrazení. To zahrnuje značka Pomocník pro ~ znaku, který rozšíří na kořenovou cestu webové stránky.
+> Existují vestavěné pomocných rutin značek, které nejsou popsány, protože se používá interně pomocí [Razor](xref:mvc/views/razor) modul zobrazení. Jedná se o pomocné rutiny značky pro ~ znaku rozšíří kořenová cesta webové stránky.
 
-## <a name="built-in-aspnet-core-tag-helpers"></a>Pomocníci značky předdefinované ASP.NET Core
+## <a name="built-in-aspnet-core-tag-helpers"></a>ASP.NET Core integrované pomocné rutiny značek
 
-**[Pomocník značka ukotvení](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)**
+**[Ukotvení pomocné rutiny značky](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)**
 
-**[Pomocník značky mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)**
+**[Pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)**
 
-**[Pomocník značky distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)**
+**[Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)**
 
-**[Pomocník značku prostředí](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)**
+**[Pomocná rutina značky prostředí](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)**
 
 [comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/form-action-tag-helper)**
 
-**[Pomocník značku formuláře](xref:mvc/views/working-with-forms#the-form-tag-helper)**
+**[Pomocná rutina značky formuláře](xref:mvc/views/working-with-forms#the-form-tag-helper)**
 
-**[Pomocník značka obrázku](xref:mvc/views/tag-helpers/builtin-th/image-tag-helper)**
+**[Pomocná rutina značky obrázku](xref:mvc/views/tag-helpers/builtin-th/image-tag-helper)**
 
-**[Pomocník vstupní značky](xref:mvc/views/working-with-forms#the-input-tag-helper)**
+**[Vstup pomocné rutiny značky](xref:mvc/views/working-with-forms#the-input-tag-helper)**
 
-**[Pomocník značky popisek](xref:mvc/views/working-with-forms#the-label-tag-helper)**
+**[Pomocná rutina značek v popisku](xref:mvc/views/working-with-forms#the-label-tag-helper)**
 
 [comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/link-tag-helper)**
 
@@ -47,17 +47,17 @@ ASP.NET Core zahrnuje mnoho předdefinovaných značky pomocníci pro zvýšení
 
 [comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/script-tag-helper)**
 
-**[Pomocník částečné značky](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)**
+**[Pomocná rutina částečné značky](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)**
 
-**[Vyberte značku pomocné rutiny](xref:mvc/views/working-with-forms#the-select-tag-helper)**
+**[Vyberte pomocné rutiny značky](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 
-**[Pomocník TextArea značky](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**
+**[Pomocná rutina značky TextArea](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**
 
-**[Pomocná rutina pro ověření zprávy značky](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**
+**[Pomocná rutina značek v ověřovací zpráva](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**
 
 **[Pomocná rutina pro ověření Summary – značka](xref:mvc/views/working-with-forms#the-validation-summary-tag-helper)**
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Vývoj klientské strany](xref:client-side/index)
-* [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
+* <xref:mvc/views/tag-helpers/intro>
+* <xref:mvc/views/tag-helpers/th-components>

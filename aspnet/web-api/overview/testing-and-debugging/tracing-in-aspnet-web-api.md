@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 697e7e91ae2d9d5712d9306a291635793063117b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 02805eda4f8dceb467547fa4e00aef8ea956f228
+ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752843"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46292281"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Trasování v rozhraní ASP.NET Web API 2
 ====================
@@ -114,7 +114,7 @@ Může být aktivní pouze jeden trasování zapisovače. Ve výchozím nastaven
 
 ## <a name="how-web-api-tracing-works"></a>Jak webové rozhraní API trasování funguje
 
-Trasování v použití webového rozhraní API používá v webové rozhraní API *průčelí* vzor: když je povoleno trasování, webové rozhraní API zabalí různé části požadavku kanálu pomocí třídy, které provádějí sledování volání.
+Používá trasování v rozhraní Web API *průčelí* vzor: když je povoleno trasování, webové rozhraní API zabalí různé části požadavku kanálu pomocí třídy, které provádějí sledování volání.
 
 Například při výběru kontroleru, kanál používá **IHttpControllerSelector** rozhraní. S povoleným trasováním, vloží pipleline třídu, která implementuje **IHttpControllerSelector** , ale volání skutečné implementaci:
 

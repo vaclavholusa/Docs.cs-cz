@@ -5,12 +5,12 @@ description: Další informace o konceptu ochranu dat a principy návrhu rozhran
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/introduction
-ms.openlocfilehash: 29a2bbef6f2fd9b61541173af143926ca82bfad7
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a49eee89e8c11b26c76ba167215c141482159933
+ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095692"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46292294"
 ---
 # <a name="aspnet-core-data-protection"></a>Ochrana dat ASP.NET Core
 
@@ -66,15 +66,15 @@ Systém ochrany dat je rozdělena do pěti hlavní balíčky. Tři hlavní oslov
 
 Zásobník ochrany dat se skládá z pěti balíčky.
 
-* Microsoft.AspNetCore.DataProtection.Abstractions obsahuje základní IDataProtectionProvider a IDataProtector rozhraní. Obsahuje také užitečné rozšiřující metody, které vám můžou pomoct práci s těmito typy (například přetížení IDataProtector.Protect). V části příjemce rozhraní pro další informace. Pokud někomu jinému zodpovídá za vytvoření instance systému ochrany dat a jsou jednoduše používat rozhraní API, budete chtít odkaz Microsoft.AspNetCore.DataProtection.Abstractions.
+* [Microsoft.AspNetCore.DataProtection.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Abstractions/) obsahuje <xref:Microsoft.AspNetCore.DataProtection.IDataProtectionProvider> a <xref:Microsoft.AspNetCore.DataProtection.IDataProtector> rozhraní služby ochrany dat vytvořit. Obsahuje také užitečné rozšiřující metody pro práci s těmito typy (například [IDataProtector.Protect](xref:Microsoft.AspNetCore.DataProtection.DataProtectionCommonExtensions.Protect*)). Pokud systém ochrany dat je vytvořena instance jinde a budete používat rozhraní API, odkazovat `Microsoft.AspNetCore.DataProtection.Abstractions`.
 
-* Microsoft.AspNetCore.DataProtection obsahuje základní implementaci systému ochrany dat, včetně základních kryptografických operací, správu klíčů, konfigurace a rozšíření. Pokud jste za vytvoření instance systému ochrany dat (například zvýšení ho IServiceCollection) nebo úpravě nebo rozšiřování své chování, budete chtít odkaz Microsoft.AspNetCore.DataProtection.
+* [Microsoft.AspNetCore.DataProtection](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection/) obsahuje základní implementaci systému ochrany dat, včetně základních kryptografických operací, správu klíčů, konfigurace a rozšíření. K vytvoření instance systému ochrany dat (například jejím přidáním na <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection>) nebo úpravě nebo rozšiřování své chování, odkazovat `Microsoft.AspNetCore.DataProtection`.
 
-* Microsoft.AspNetCore.DataProtection.Extensions obsahuje další rozhraní API vývojáři můžou být užitečné, ale které nepatří do balíčku core. Například tento balíček obsahuje jednoduché "vytvořit instanci systém odkazuje na konkrétní úložiště klíčů adresář se žádné nastavení injektáž závislostí" rozhraní API (Další informace). Také obsahuje rozšiřující metody pro omezení životnosti chráněných datových částí (Další informace).
+* [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) obsahuje další rozhraní API vývojáři můžou být užitečné, ale které nepatří do balíčku core. Například tento balíček obsahuje metody pro vytváření objektů pro vytvoření instance systému ochrany dat pro ukládání klíčů do umístění v systému souborů bez injektáž závislostí (viz <xref:Microsoft.AspNetCore.DataProtection.DataProtectionProvider>). Také obsahuje rozšiřující metody pro omezení životnosti chráněných datových částí (viz <xref:Microsoft.AspNetCore.DataProtection.ITimeLimitedDataProtector>).
 
-* Microsoft.AspNetCore.DataProtection.SystemWeb lze nainstalovat do stávající aplikace ASP.NET 4.x přesměrovat její &lt;machineKey&gt; operace místo toho použít nový zásobník ochrany dat. Zobrazit [kompatibility](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) Další informace.
+* [Microsoft.AspNetCore.DataProtection.SystemWeb](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.SystemWeb/) lze nainstalovat do stávající aplikace ASP.NET 4.x přesměrovat její `<machineKey>` operace používat nový zásobník ochrany dat ASP.NET Core. Další informace naleznete v tématu <xref:security/data-protection/compatibility/replacing-machinekey>.
 
-* Microsoft.AspNetCore.Cryptography.KeyDerivation poskytuje implementaci pro hashování rutina PBKDF2 hesel a mohou být využívána systémy, které je potřeba zpracovat uživatelská hesla zabezpečeně. Zobrazit [hodnoty Hash hesla](xref:security/data-protection/consumer-apis/password-hashing) Další informace.
+* [Microsoft.AspNetCore.Cryptography.KeyDerivation](https://www.nuget.org/packages/Microsoft.AspNetCore.Cryptography.KeyDerivation/) poskytuje implementaci pro hashování rutina PBKDF2 hesel a mohou být využívána systémy, které musí heslo uživatele zpracovávají bezpečně. Další informace naleznete v tématu <xref:security/data-protection/consumer-apis/password-hashing>.
 
 ## <a name="additional-resources"></a>Další zdroje
 

@@ -4,14 +4,14 @@ author: ardalis
 description: Další informace o protokolovacího rozhraní v ASP.NET Core. Objevte poskytovatelé vestavěné protokolování a další informace o Oblíbené zprostředkovatele třetí strany.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/27/2018
+ms.date: 09/19/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: c6e9aae06df6ebec373b1296f86e37380bf08b15
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: e3bf5909edb515a2dabba206abaa160bc431d622
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055758"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46483084"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -116,7 +116,7 @@ Například konfigurace protokolování běžně poskytované `Logging` části 
     },
     "Console":
     {
-      "IncludeScopes": "true"
+      "IncludeScopes": true
     }
   }
 }

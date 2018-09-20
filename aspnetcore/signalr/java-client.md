@@ -7,12 +7,12 @@ ms.author: mimengis
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/java-client
-ms.openlocfilehash: f110f5391ac34f5cb4a72f64c16d86c8a37369a2
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 0eba59a05ea6fd3fed46fcab86ac20caf40ebb65
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43995427"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482915"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>Klientskou sadou Java funkce SignalR technologie ASP.NET Core
 
@@ -26,12 +26,12 @@ Konzolovou aplikaci Java vzorku, který odkazuje tento článek používá klien
 
 ## <a name="install-the-signalr-java-client-package"></a>Instalace balíčku pro klienta SignalR Java
 
-*Signalr 0.1.0 preview1 35029* soubor JAR umožňuje klientům připojení k rozbočovačům SignalR. Číslo verze nejnovější soubor JAR, najdete v tématu [výsledky hledání Maven](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav).
+*Signalr 0.1.0 preview2 35174* soubor JAR umožňuje klientům připojení k rozbočovačům SignalR. Číslo verze nejnovější soubor JAR, najdete v tématu [výsledky hledání Maven](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav).
 
 Pokud používáte Gradle, přidejte následující řádek, který `dependencies` část vaší *build.gradle* souboru:
 
 ```gradle
-implementation 'com.microsoft.aspnet:signalr:0.1.0-preview1-35029'
+implementation 'com.microsoft.aspnet:signalr:0.1.0-preview2-35174'
 ```
 
 Pokud pomocí nástroje Maven, přidejte následující řádky uvnitř `<dependencies>` prvek vaše *pom.xml* souboru:
@@ -63,12 +63,12 @@ Jde o předběžnou verzi preview klienta Java. Existuje mnoho funkcí, které s
 * Pouze primitivní typy mohou být přijímány jako parametry a návratové typy.
 * Rozhraní API jsou synchronní.
 * V tuto chvíli je podporován pouze typ "Odeslat" volání. "Vyvolat" a vysílání datového proudu návratové hodnoty nejsou podporovány.
-* Klient v současné době nepodporuje [služby Azure SignalR](/azure/azure-signalr/).
 * Pouze protokol JSON je podporován.
 * Je podporován pouze přenosu objekty Websocket.
 
 ## <a name="additional-resources"></a>Další zdroje
 
+* [Reference k rozhraní Java API](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
 * <xref:signalr/hubs>
 * <xref:signalr/javascript-client>
 * <xref:signalr/publish-to-azure-web-app>

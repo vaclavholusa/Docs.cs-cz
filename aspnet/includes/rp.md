@@ -1,0 +1,1 @@
+Pro nový vývoj webových aplikací doporučujeme pro stránky Razor. Další informace najdete v tématu [Začínáme se stránkami Razor](/aspnet/core/tutorials/razor-pages/razor-pages-start).

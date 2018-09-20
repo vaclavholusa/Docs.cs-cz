@@ -4,14 +4,14 @@ author: tdykstra
 description: Objevte témata, která se týkají funkce SignalR technologie ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
-ms.date: 08/30/2018
+ms.date: 09/19/2018
 uid: signalr/index
-ms.openlocfilehash: a26acad61c09a0c58ede313bfbcd88e2c87ff45c
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 42e9edc082d86a2326c4bea717c19246cf7a6d20
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893030"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482876"
 ---
 # <a name="aspnet-core-signalr"></a>Funkce SignalR technologie ASP.NET Core
 
@@ -25,9 +25,10 @@ ms.locfileid: "43893030"
   * [Publikování do Azure](xref:signalr/publish-to-azure-web-app)
 * [Klienti](xref:signalr/javascript-client)
   * [Klient .NET](xref:signalr/dotnet-client)
-  * [Klientskou sadou Java](xref:signalr/java-client)
+  * [Klient Java](xref:signalr/java-client)
+  * [Reference k rozhraní Java API](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
   * [Klient JavaScriptu](xref:signalr/javascript-client)
-  * [JavaScript API](/javascript/api/?view=signalr-js-latest)
+  * [Reference k rozhraní API jazyka JavaScript](/javascript/api/?view=signalr-js-latest)
   * [WebPack a TypeScript](xref:tutorials/signalr-typescript-webpack)
 * [Konfigurace](xref:signalr/configuration)
 * [Ověřování a autorizace](xref:signalr/authn-and-authz)

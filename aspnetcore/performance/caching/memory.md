@@ -4,14 +4,14 @@ author: rick-anderson
 description: Zjistěte, jak data v paměti v ASP.NET Core do mezipaměti.
 ms.author: riande
 ms.custom: mvc
-ms.date: 7/22/2018
+ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 091d00ca7a30b61bdd83618e055bf23e0f2753c4
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 2570ad7d939d67530b3de8cd0147815c2e25ecc8
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899841"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482980"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>Mezipaměť in-memory v ASP.NET Core
 
@@ -31,7 +31,19 @@ Vyžadují jiné rychlé relace ve webové farmě [distribuovaná mezipaměť](d
 
 Mezipaměť v paměti můžete uložit libovolný objekt; rozhraní distribuované mezipaměti je omezená na `byte[]`.
 
-### <a name="cache-guidelines"></a>Pokyny k mezipaměti
+## <a name="systemruntimecachingmemorycache"></a>System.Runtime.Caching/MemoryCache
+
+<xref:System.Runtime.Caching>/<xref:System.Runtime.Caching.MemoryCache> ([Balíček NuGet](https://www.nuget.org/packages/System.Runtime.Caching/)) lze použít s:
+
+* .NET standard 2.0 nebo novější.
+* Žádné [implementace .NET](/dotnet/standard/net-standard#net-implementation-support) , který cílí na .NET Standard 2.0 nebo novější. Například, ASP.NET Core 2.0 nebo novější.
+* Rozhraní .NET framework 4.5 nebo novější.
+
+[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/) / `IMemoryCache` (popsané v tomto tématu) se doporučuje namísto používat `System.Runtime.Caching` / `MemoryCache` lépe integrovaná do ASP.NET Core. Například `IMemoryCache` nativně funguje s ASP.NET Core [injektáž závislostí](xref:fundamentals/dependency-injection).
+
+Použití `System.Runtime.Caching` / `MemoryCache` jako most kompatibility během portování kódu z ASP.NET 4.x ASP.NET Core.
+
+## <a name="cache-guidelines"></a>Pokyny k mezipaměti
 
 * Kód by měl mít vždy záložní volbu pro načtení dat a **není** závisí na hodnotu uloženou v mezipaměti k dispozici.
 * Mezipaměť používá omezených zdrojů paměti. Omezit růst mezipaměti:

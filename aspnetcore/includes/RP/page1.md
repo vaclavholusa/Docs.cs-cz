@@ -11,10 +11,13 @@ Tento kurz zkoumá stránky Razor vytvořené generování uživatelského rozhr
 Zkontrolujte *Pages/Movies/Index.cshtml.cs* Model stránky:
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
+
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index21.cshtml.cs)]
 
 ::: moniker-end
@@ -118,11 +121,15 @@ Uložte změny a otestujte aplikaci po kliknutí na **RpMovie** odkaz. Zobrazit 
 Zkontrolujte *Pages/Movies/Create.cshtml.cs* model stránky:
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
+
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create21.cshtml.cs?name=snippetALL)]
+
 ::: moniker-end
 
 

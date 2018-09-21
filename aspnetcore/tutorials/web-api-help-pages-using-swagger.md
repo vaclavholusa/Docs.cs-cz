@@ -1,37 +1,37 @@
 ---
-title: Stránky ASP.NET Core Web API nápovědy s Swagger / Open rozhraní API
+title: Stránky nápovědy ASP.NET Core webového rozhraní API ve Swaggeru / OpenAPI
 author: rsuter
-description: V tomto kurzu poskytuje návod k přidávání Swagger ke generování dokumentaci, abyste stránky pro aplikaci pomocí webového rozhraní API.
+description: Tento kurz poskytuje návod k přidávání Swagger generovat dokumentaci a stránky aplikace webového rozhraní API nápovědy.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/09/2018
+ms.date: 09/20/2018
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 56e146337ad9e94298f72abf5ede009eea65fb46
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 586195e3a29130c0b638ed6763ea5c9032ca6b2b
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272248"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523126"
 ---
-# <a name="aspnet-core-web-api-help-pages-with-swagger--open-api"></a>Stránky ASP.NET Core Web API nápovědy s Swagger / Open rozhraní API
+# <a name="aspnet-core-web-api-help-pages-with-swagger--openapi"></a>Stránky nápovědy ASP.NET Core webového rozhraní API ve Swaggeru / OpenAPI
 
-Podle [Christoph Nienaber](https://twitter.com/zuckerthoben) a [Portoriku Suter](http://rsuter.com)
+Podle [Christoph Nienaber](https://twitter.com/zuckerthoben) a [Rico Suter](http://rsuter.com)
 
-Při využívání webového rozhraní API, může vývojář náročné pochopení její různé metody. [Swagger](https://swagger.io/), také známé jako otevřené rozhraní API, řeší problém generování užitečné stránky dokumentace a nápovědu pro webové rozhraní API. Poskytuje výhod, třeba interaktivní dokumentace, generování klienta SDK a možnosti rozpoznání rozhraní API.
+Při využívání webové rozhraní API, může vývojář náročné Principy jeho různé metody. [Swagger](https://swagger.io/), označované také jako [OpenAPI](https://www.openapis.org/), řeší problém generování užitečné stránky dokumentace a nápovědu pro webová rozhraní API. Poskytuje výhody, jako je například interaktivní dokumentace, generování klientských sad SDK a rozhraní API zjistitelnost.
 
-V tomto článku [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) a [NSwag](https://github.com/RSuter/NSwag) jsou showcased .NET Swagger implementace:
+V tomto článku [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) a [službou NSwag](https://github.com/RSuter/NSwag) jsou konferenci .NET Swagger implementace:
 
-* **Swashbuckle.AspNetCore** je projektu pro generování dokumenty Swagger pro rozhraní API ASP.NET Core webové aplikace s otevřeným zdrojem.
+* **Swashbuckle.AspNetCore** je projekt open source pro generování dokumentů Swagger pro rozhraní Web API ASP.NET Core.
 
-* **NSwag** je jiný projekt s otevřeným zdrojem pro integraci [uživatelské rozhraní Swagger](https://swagger.io/swagger-ui/) nebo [ReDoc](https://github.com/Rebilly/ReDoc) do rozhraní API ASP.NET Core Web. Nabízí přístupy k vygenerování C# a TypeScript kód klienta pro vaše rozhraní API.
+* **Službou NSwag** je jiný projekt open source pro generování dokumentů Swagger a integraci [uživatelské rozhraní Swagger](https://swagger.io/swagger-ui/) nebo [ReDoc](https://github.com/Rebilly/ReDoc) do ASP.NET Core webová rozhraní API. Kromě toho službou NSwag nabízí přístupy ke generování jazyka C# a TypeScript klientský kód pro vaše rozhraní API.
 
-## <a name="what-is-swagger--open-api"></a>Co je Swagger a otevřete rozhraní API?
+## <a name="what-is-swagger--openapi"></a>Co je Swagger / OpenAPI?
 
-Swagger je bez ohledu na jazyková specifikace popisujících [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) rozhraní API. Projekt Swagger byl věnován na [OpenAPI Initiative](https://www.openapis.org/), kde ji se nyní označuje jako otevřené rozhraní API. Oba názvy jsou použity zcela zaměnitelným významem; je však upřednostňované otevřené rozhraní API. To umožňuje počítače i lidí na Seznamte se s možnostmi služby bez jakékoli přímý přístup k implementaci (zdrojový kód, přístup k síti, dokumentace). Jeden cíl je minimalizovat množství práce potřebné pro připojení některému programu služby. Jiné cílem je snížit množství času potřebné pro přesně dokumentu služby.
+Swagger se specifikace bez ohledu na jazyk pro popis [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) rozhraní API. Projekt Swagger byl věnován na [OpenAPI iniciativy](https://www.openapis.org/), kde ji se nyní označuje jako OpenAPI. Oba názvy jsou používány Zaměnitelně; je však upřednostňované OpenAPI. Umožňuje počítačům a lidí na široké možnosti produktu služby bez jakékoli přímý přístup k implementaci (zdrojový kód, přístup k síti, dokumentace ke službě). Chcete-li minimalizovat množství práce potřebné pro připojení služby zrušeným přidružením je jedním z cílů. Jiné cílem je omezit množství času potřebného k přesně dokumentu služby.
 
 ## <a name="swagger-specification-swaggerjson"></a>Specifikace swagger (swagger.json)
 
-Základní s tokem Swagger je specifikace Swagger&mdash;ve výchozím nastavení, dokument s názvem *swagger.json*. Je generován Swagger nástroj řetězu (nebo jiných výrobců implementace je) na základě vaší služby. Popisuje možnosti rozhraní API a jak přístup pomocí protokolu HTTP. Ho jednotky uživatelské rozhraní Swagger a řetězu nástroj používá k povolení generování kódu klienta a zjišťování. Tady je příklad specifikace Swagger, snížit jako stručný výtah:
+Core do služby flow Swaggeru je specifikace Swagger&mdash;ve výchozím nastavení, dokumentu s názvem *swagger.json*. Vygenerovala Swagger nástroj řetězu (nebo implementace jiných výrobců jeho) založené na vaši službu. Popisuje možnosti přístupu k němu přes HTTP a rozhraní API. Řídí uživatelské rozhraní Swagger a používá řetězce nástrojů na povolit generování kódu klienta a zjišťování. Tady je příklad specifikace Swagger pro zkrácení snížit:
 
 ```json
 {
@@ -104,16 +104,16 @@ Základní s tokem Swagger je specifikace Swagger&mdash;ve výchozím nastavení
 
 ## <a name="swagger-ui"></a>Uživatelské rozhraní swagger
 
-[Uživatelské rozhraní swagger](https://swagger.io/swagger-ui/) nabízí uživatelské rozhraní založené na webu, které poskytuje informace o službě, pomocí generovaného specifikace Swagger. Swashbuckle a NSwag obsahovat embedded verzi uživatelské rozhraní Swagger, tak, aby může být hostovaný v aplikaci ASP.NET Core pomocí volání registrace middleware. Webové uživatelské rozhraní vypadá takto:
+[Uživatelské rozhraní swagger](https://swagger.io/swagger-ui/) nabízí uživatelské rozhraní založené na web, poskytující informace o službě pomocí generovaného specifikace Swagger. Swashbuckle a službou NSwag obsahovat vložený verzi uživatelské rozhraní Swagger, tak, že je možné hostovat ve vaší aplikaci ASP.NET Core pomocí volání registrace middlewaru. Webové uživatelské rozhraní vypadá takto:
 
 ![Uživatelské rozhraní swagger](web-api-help-pages-using-swagger/_static/swagger-ui.png)
 
-Každá metoda veřejné akce v řadičích může být testována z uživatelského rozhraní. Klikněte na název metody rozbalte v části. Přidat všechny potřebné parametry a klikněte na tlačítko **vyzkoušejte ji!**.
+Každá metoda public akce ve vašich kontrolerech můžete otestovat v uživatelském rozhraní. Klikněte na název metody, rozbalte v části. Přidat všechny potřebné parametry a klikněte na tlačítko **vyzkoušejte ji!**.
 
 ![Příklad Swagger získat testu](web-api-help-pages-using-swagger/_static/get-try-it-out.png)
 
 > [!NOTE]
-> Je uživatelské rozhraní Swagger verze použitá pro na snímcích obrazovky je verze 2. Verze 3 příklad najdete v tématu [Petstore příklad](http://petstore.swagger.io/).
+> Uživatelské rozhraní Swagger verze použitá pro snímky obrazovky je verze 2. Například verze 3, naleznete v tématu [Petstore příklad](http://petstore.swagger.io/).
 
 ## <a name="next-steps"></a>Další kroky
 

@@ -4,14 +4,14 @@ author: zuckerthoben
 description: Další informace o použití službou NSwag generovat dokumentaci a stránky pro webovému rozhraní API ASP.NET Core nápovědy.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 06/29/2018
+ms.date: 09/20/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: ba20ccfbe2610eb4e3ec3a4c35f8e3b4cae0bb9c
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 432dcc0f2c65903ff637d09e744e2b2ed44a0eb3
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011872"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523191"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>Začínáme se službou NSwag a ASP.NET Core
 
@@ -29,9 +29,14 @@ Podle [Christoph Nienaber](https://twitter.com/zuckerthoben) a [Rico Suter](http
 
 ::: moniker-end
 
-Pomocí [službou NSwag](https://github.com/RSuter/NSwag) pomocí ASP.NET Core vyžaduje middlewaru [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) balíček NuGet. Balíček se skládá z generátoru Swagger, uživatelské rozhraní Swagger (v2 a v3), a [uživatelského rozhraní ReDoc](https://github.com/Rebilly/ReDoc).
+Zaregistrujte middlewares službou NSwag na:
 
-Je důrazně doporučujeme používat vaší službou NSwag možnosti generování kódu. Pro generování kódu vyberte jednu z následujících možností:
+* Generovat specifikaci Swaggeru pro rozhraní API implementované webu.
+* Poskytování uživatelského rozhraní Swagger pro procházení a testování webové rozhraní API.
+
+Použít [službou NSwag](https://github.com/RSuter/NSwag) middlewares ASP.NET Core, nainstalujte [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) balíček NuGet. Tento balíček obsahuje middlewares generovat a slouží specifikace Swaggeru, uživatelské rozhraní Swagger (v2 a v3), a [uživatelského rozhraní ReDoc](https://github.com/Rebilly/ReDoc).
+
+Kromě toho má důrazně doporučujeme používat vaší službou NSwag možnosti generování kódu. Vyberte jednu z následujících možností využít možnosti generování kódu:
 
 * Použití [NSwagStudio](https://github.com/NSwag/NSwag/wiki/NSwagStudio), desktopové aplikace Windows pro generování klientského kódu v C# a TypeScript pro vaše rozhraní API.
 * Použití [NSwag.CodeGeneration.CSharp](https://www.nuget.org/packages/NSwag.CodeGeneration.CSharp/) nebo [NSwag.CodeGeneration.TypeScript](https://www.nuget.org/packages/NSwag.CodeGeneration.TypeScript/) balíčky NuGet, se generování uvnitř projektu kódu.
@@ -40,7 +45,7 @@ Je důrazně doporučujeme používat vaší službou NSwag možnosti generován
 
 ## <a name="features"></a>Funkce
 
-Hlavním důvodem pro použití službou NSwag je schopnost nejen zavést uživatelské rozhraní Swagger a Swagger generátor, ale ujistěte se, chcete-li využívají možnosti generace pružný kódu. Není nutné existujícího rozhraní API&mdash;můžete použít rozhraní API třetích stran, která začlenit Swagger a nechat službou NSwag generovat implementace klienta. V obou případech urychlené vývojový cyklus a snadno přizpůsobit změn rozhraní API.
+Hlavním důvodem pro použití službou NSwag je schopnost pouze uživatelské rozhraní Swagger a generátoru Swagger, ale také vytvářecí využívají možnosti generování flexibilní kódu. Není nutné existujícího rozhraní API&mdash;můžete použít rozhraní API třetích stran, která začlenit Swagger a nechat službou NSwag generovat implementace klienta. V obou případech urychlené vývojový cyklus a snadno přizpůsobit změn rozhraní API.
 
 ## <a name="package-installation"></a>Instalace balíčku
 
@@ -92,9 +97,13 @@ dotnet add TodoApi.csproj package NSwag.AspNetCore
 
 Importujte následující obory názvů v `Startup` třídy:
 
-[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_StartupConfigureImports)]
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_ConfigureServices&highlight=8-8)]
 
-V `Startup.Configure` metoda, povolí middleware pro poskytování generované specifikace Swagger a uživatelské rozhraní Swagger:
+V `Startup.ConfigureServices` metoda, registraci k požadovaným službám Swaggeru: 
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=6-10)]
+
+V `Startup.Configure` metoda, povolí middleware pro poskytování generované specifikace Swagger a uživatelské rozhraní Swagger v3:
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/Startup.cs?name=snippet_Configure&highlight=6-10)]
 

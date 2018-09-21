@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 77eedeb962bed06f1375284bcf05c4e4ffcdde3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9ef69ece2558260f0409e9388751f77ac84a06f1
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752019"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523074"
 ---
 <a name="signalr-troubleshooting"></a>Řešení potíží s knihovnou SignalR
 ====================
@@ -157,7 +157,7 @@ Připojení v klientské aplikaci .NET, který používá zabezpečení domény 
 
 ## <a name="configuring-iis-websockets-to-pingpong-to-detect-a-dead-client"></a>Konfigurace služby IIS websockets na příkaz ping/pong ke zjištění dead klienta
 
-Servery SignalR neznáte, pokud je klient dead nebo Ne, a spoléhají na oznámení z podkladové protokolu websocket pro chyby připojení, tedy zpětného volání při zavření. Jedním řešením tohoto problému je ke konfiguraci služby IIS websockets provést příkaz ping/pong za vás. Tím se zajistí, že vaše připojení se zavře, pokud to naruší neočekávaně. Další informace najdete v části [tento příspěvek na stackoverflow](http://stackoverflow.com/questions/19502755/websocket-clients-state-not-changing-on-network-loss).
+Servery SignalR neví, pokud je klient dead nebo není a spoléhají na oznámení z podkladové protokolu websocket pro chyby připojení, to znamená, `OnClose` zpětného volání. Jedním řešením tohoto problému je ke konfiguraci služby IIS websockets provést příkaz ping/pong za vás. Tím se zajistí, že vaše připojení se zavře, pokud to naruší neočekávaně. Další informace najdete v části [tento příspěvek na stackoverflow](http://stackoverflow.com/questions/19502755/websocket-clients-state-not-changing-on-network-loss).
 
 <a id="other"></a>
 

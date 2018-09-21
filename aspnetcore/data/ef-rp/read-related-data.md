@@ -5,12 +5,12 @@ description: V tomto kurzu čtení a zobrazení souvisejících dat – to zname
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bb1d087a5449c6e26c40e572d161dd9644ac2323
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: f57853fae7fb1cb7df130f38a6996c87a5c08e83
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219339"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523282"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat – 6 8
 
@@ -20,7 +20,7 @@ Podle [Petr Dykstra](https://github.com/tdykstra), [Jan Macek P](https://twitter
 
 V tomto kurzu související data načíst a zobrazit. Související data jsou data, která načte EF Core do navigační vlastnosti.
 
-Pokud narazíte na potíže nelze vyřešit, stáhněte si [dokončené aplikace pro tuto fázi](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part6-related).
+Pokud narazíte na potíže nelze vyřešit, [stažení nebo zobrazení dokončené aplikace.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [Pokyny ke stažení](xref:tutorials/index#how-to-download-a-sample).
 
 Dokončené stránky pro účely tohoto kurzu na následujících obrázcích:
 

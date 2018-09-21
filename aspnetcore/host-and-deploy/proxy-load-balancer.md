@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: 5d2821790581f64d0de8fd3eb42cbd0c71586101
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: a03250d6cafe7279c3fcf3957d33214a9b4ed514
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011895"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523048"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>Konfigurace ASP.NET Core práci se servery proxy a nástroje pro vyrovnávání zatížení
 
@@ -249,44 +249,85 @@ services.Configure<ForwardedHeadersOptions>(options =>
 
 ## <a name="troubleshoot"></a>Řešení potíží
 
-Pokud hlavičky nejsou předávány očekávaným, povolit [protokolování](xref:fundamentals/logging/index). Pokud protokoly neposkytují dostatek informací k vyřešení tohoto problému, výčet hlavičky žádosti přijaté serverem. Záhlaví může být zapsán pro odpověď aplikace pomocí middlewaru vložených:
+Pokud hlavičky nejsou předávány očekávaným, povolit [protokolování](xref:fundamentals/logging/index). Pokud protokoly neposkytují dostatek informací k vyřešení tohoto problému, výčet hlavičky žádosti přijaté serverem. Použití middlewaru vložených zapsat hlavičky požadavku pro odpověď aplikace nebo záhlaví protokolu. Umístit některý z následujících příkladů kódu ihned po volání <xref:Microsoft.AspNetCore.Builder.ForwardedHeadersExtensions.UseForwardedHeaders*> v `Startup.Configure`.
+
+Do záhlaví se zapíší do odpovědi aplikaci, použijte následující middlewaru vložených terminálu:
 
 ```csharp
-public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory)
+app.Run(async (context) =>
 {
-    app.Run(async (context) =>
+    context.Response.ContentType = "text/plain";
+
+    // Request method, scheme, and path
+    await context.Response.WriteAsync(
+        $"Request Method: {context.Request.Method}{Environment.NewLine}");
+    await context.Response.WriteAsync(
+        $"Request Scheme: {context.Request.Scheme}{Environment.NewLine}");
+    await context.Response.WriteAsync(
+        $"Request Path: {context.Request.Path}{Environment.NewLine}");
+
+    // Headers
+    await context.Response.WriteAsync($"Request Headers:{Environment.NewLine}");
+
+    foreach (var header in context.Request.Headers)
     {
-        context.Response.ContentType = "text/plain";
+        await context.Response.WriteAsync($"{header.Key}: " +
+            $"{header.Value}{Environment.NewLine}");
+    }
 
-        // Request method, scheme, and path
-        await context.Response.WriteAsync(
-            $"Request Method: {context.Request.Method}{Environment.NewLine}");
-        await context.Response.WriteAsync(
-            $"Request Scheme: {context.Request.Scheme}{Environment.NewLine}");
-        await context.Response.WriteAsync(
-            $"Request Path: {context.Request.Path}{Environment.NewLine}");
+    await context.Response.WriteAsync(Environment.NewLine);
 
-        // Headers
-        await context.Response.WriteAsync($"Request Headers:{Environment.NewLine}");
-
-        foreach (var header in context.Request.Headers)
-        {
-            await context.Response.WriteAsync($"{header.Key}: " +
-                $"{header.Value}{Environment.NewLine}");
-        }
-
-        await context.Response.WriteAsync(Environment.NewLine);
-
-        // Connection: RemoteIp
-        await context.Response.WriteAsync(
-            $"Request RemoteIp: {context.Connection.RemoteIpAddress}");
-    });
-}
+    // Connection: RemoteIp
+    await context.Response.WriteAsync(
+        $"Request RemoteIp: {context.Connection.RemoteIpAddress}");
+});
 ```
 
-Ujistěte se, že X - Forwarded-* hlavičky jsou přijaté serverem s očekávané hodnoty. Pokud jsou zadaná hlavička více hodnot, mějte na paměti předané Middleware záhlaví procesy záhlaví v obráceném pořadí zprava doleva.
+Můžete taky zapisovat do protokolů místo text odpovědi s použitím následujících middlewaru vložených. To umožňuje lokality tak, aby fungoval při ladění.
 
-Původní vzdálenou IP adresu požadavku musí shodovat s položkou v `KnownProxies` nebo `KnownNetworks` uvádí před `X-Forwarded-For` se zpracovává. Toto nastavení omezuje záhlaví falšování identity tím, že služby předávání z nedůvěryhodné proxy servery.
+```csharp
+var logger = _loggerFactory.CreateLogger<Startup>();
+
+app.Use(async (context, next) =>
+{
+    // Request method, scheme, and path
+    logger.LogDebug("Request Method: {METHOD}", context.Request.Method);
+    logger.LogDebug("Request Scheme: {SCHEME}", context.Request.Scheme);
+    logger.LogDebug("Request Path: {PATH}", context.Request.Path);
+
+    // Headers
+    foreach (var header in context.Request.Headers)
+    {
+        logger.LogDebug("Header: {KEY}: {VALUE}", header.Key, header.Value);
+    }
+
+    // Connection: RemoteIp
+    logger.LogDebug("Request RemoteIp: {REMOTE_IP_ADDRESS}", 
+        context.Connection.RemoteIpAddress);
+
+    await next();
+});
+```
+
+Při zpracování `X-Forwarded-{For|Proto|Host}` hodnoty se přesunou do `X-Original-{For|Proto|Host}`. Pokud jsou zadaná hlavička více hodnot, mějte na paměti předané Middleware záhlaví procesy záhlaví v obráceném pořadí zprava doleva. Výchozí `ForwardLimit` je 1 (jeden), takže se zpracuje pouze krajní hodnotu z hlavičky, pokud hodnota `ForwardLimit` se zvýší.
+
+Původní vzdálenou IP adresu požadavku musí shodovat s položkou v `KnownProxies` nebo `KnownNetworks` uvádí předtím, než se zpracovávají předané záhlaví. Toto nastavení omezuje záhlaví falšování identity tím, že služby předávání z nedůvěryhodné proxy servery. Při zjištění neznámé proxy protokolování určuje adresu proxy serveru:
+
+```console
+September 20th 2018, 15:49:44.168 Unknown proxy: 10.0.0.100:54321
+```
+
+V předchozím příkladu je 10.0.0.100 proxy server. Pokud je server důvěryhodným proxy serverem, přidat IP adresu serveru `KnownProxies` (nebo přidat k důvěryhodné síti `KnownNetworks`) v `Startup.ConfigureServices`. Další informace najdete v tématu [možnosti předané middlewaru záhlaví](#forwarded-headers-middleware-options) oddílu.
+
+```csharp
+services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.KnownProxies.Add(IPAddress.Parse("10.0.0.100"));
+});
+```
+
+> [!IMPORTANT]
+> Povolte jenom důvěryhodným proxy serverů a sítí přeposílat záhlaví. V opačném případě [falšování adresy IP](https://www.iplocation.net/ip-spoofing) útoky jsou možné.
 
 ## <a name="additional-resources"></a>Další zdroje
 

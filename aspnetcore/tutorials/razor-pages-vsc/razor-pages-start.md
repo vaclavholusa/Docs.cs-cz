@@ -6,26 +6,26 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: b1f1dcc1401d707cff79f3269ab70b900e9fc21c
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: b7f6ca377a892fce912dc0ee9d4b7378f40fbf24
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38123380"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46522924"
 ---
-# <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a><span data-ttu-id="bdb2a-103">Začínáme s ASP.NET Core Razor Pages ve Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="bdb2a-103">Get started with ASP.NET Core Razor Pages in Visual Studio Code</span></span>
+# <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a><span data-ttu-id="405c5-103">Začínáme s ASP.NET Core Razor Pages ve Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="405c5-103">Get started with ASP.NET Core Razor Pages in Visual Studio Code</span></span>
 
-<span data-ttu-id="bdb2a-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="bdb2a-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="405c5-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="405c5-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="bdb2a-105">V tomto kurzu se naučíte se základy vytváření webové aplikace ASP.NET Core Razor Pages.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-105">This tutorial teaches the basics of building an ASP.NET Core Razor Pages web app.</span></span> <span data-ttu-id="bdb2a-106">Doporučujeme je provést [Úvod do stránky Razor](xref:razor-pages/index) před zahájením tohoto kurzu.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-106">We recommend you complete [Introduction to Razor Pages](xref:razor-pages/index) before starting this tutorial.</span></span> <span data-ttu-id="bdb2a-107">Stránky Razor je doporučený způsob sestavení uživatelského rozhraní pro webové aplikace v ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-107">Razor Pages is the recommended way to build UI for web applications in ASP.NET Core.</span></span>
+<span data-ttu-id="405c5-105">V tomto kurzu se naučíte se základy vytváření webové aplikace ASP.NET Core Razor Pages.</span><span class="sxs-lookup"><span data-stu-id="405c5-105">This tutorial teaches the basics of building an ASP.NET Core Razor Pages web app.</span></span> <span data-ttu-id="405c5-106">Doporučujeme je provést [Úvod do stránky Razor](xref:razor-pages/index) před zahájením tohoto kurzu.</span><span class="sxs-lookup"><span data-stu-id="405c5-106">We recommend you complete [Introduction to Razor Pages](xref:razor-pages/index) before starting this tutorial.</span></span> <span data-ttu-id="405c5-107">Stránky Razor je doporučený způsob sestavení uživatelského rozhraní pro webové aplikace v ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="405c5-107">Razor Pages is the recommended way to build UI for web applications in ASP.NET Core.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="bdb2a-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bdb2a-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="405c5-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="405c5-108">Prerequisites</span></span>
 
 [!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
-## <a name="create-a-razor-web-app"></a><span data-ttu-id="bdb2a-109">Vytvoření webové aplikace Razor</span><span class="sxs-lookup"><span data-stu-id="bdb2a-109">Create a Razor web app</span></span>
+## <a name="create-a-razor-web-app"></a><span data-ttu-id="405c5-109">Vytvoření webové aplikace Razor</span><span class="sxs-lookup"><span data-stu-id="405c5-109">Create a Razor web app</span></span>
 
-<span data-ttu-id="bdb2a-110">Z terminálu spusťte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="bdb2a-110">From a terminal, run the following commands:</span></span>
+<span data-ttu-id="405c5-110">Z terminálu spusťte následující příkazy:</span><span class="sxs-lookup"><span data-stu-id="405c5-110">From a terminal, run the following commands:</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -34,8 +34,6 @@ dotnet new webapp -o RazorPagesMovie
 cd RazorPagesMovie
 dotnet run
 ```
-
-[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 
@@ -49,26 +47,26 @@ dotnet run
 
 ::: moniker-end
 
-<span data-ttu-id="bdb2a-111">Předchozí příkazy použití [rozhraní příkazového řádku .NET Core](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu pro stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-111">The preceding commands use the [.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet) to create and run a Razor Pages project.</span></span> <span data-ttu-id="bdb2a-112">Otevřete prohlížeč na http://localhost:5000 zobrazení aplikace.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-112">Open a browser to http://localhost:5000 to view the application.</span></span>
+<span data-ttu-id="405c5-111">Předchozí příkazy použití [rozhraní příkazového řádku .NET Core](https://docs.microsoft.com/dotnet/core/tools/dotnet) k vytvoření a spuštění projektu pro stránky Razor.</span><span class="sxs-lookup"><span data-stu-id="405c5-111">The preceding commands use the [.NET Core CLI](https://docs.microsoft.com/dotnet/core/tools/dotnet) to create and run a Razor Pages project.</span></span> <span data-ttu-id="405c5-112">Otevřete prohlížeč na http://localhost:5000 zobrazení aplikace.</span><span class="sxs-lookup"><span data-stu-id="405c5-112">Open a browser to http://localhost:5000 to view the application.</span></span>
 
 ![Index nebo Domovská stránka](../razor-pages/razor-pages-start/_static/home.png)
 
 [!INCLUDE [razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
-## <a name="open-the-project"></a><span data-ttu-id="bdb2a-114">Otevřete projekt</span><span class="sxs-lookup"><span data-stu-id="bdb2a-114">Open the project</span></span>
+## <a name="open-the-project"></a><span data-ttu-id="405c5-114">Otevřete projekt</span><span class="sxs-lookup"><span data-stu-id="405c5-114">Open the project</span></span>
 
-<span data-ttu-id="bdb2a-115">Stisknutím kláves Ctrl + C vypnout aplikaci.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-115">Press Ctrl+C to shut down the application.</span></span>
+<span data-ttu-id="405c5-115">Stisknutím kláves Ctrl + C vypnout aplikaci.</span><span class="sxs-lookup"><span data-stu-id="405c5-115">Press Ctrl+C to shut down the application.</span></span>
 
-<span data-ttu-id="bdb2a-116">Visual Studio Code (VS Code), vyberte **soubor > Otevřít složku**a pak vyberte *RazorPagesMovie* složky.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-116">From Visual Studio Code (VS Code), select **File > Open Folder**, and then select the *RazorPagesMovie* folder.</span></span>
+<span data-ttu-id="405c5-116">Visual Studio Code (VS Code), vyberte **soubor > Otevřít složku**a pak vyberte *RazorPagesMovie* složky.</span><span class="sxs-lookup"><span data-stu-id="405c5-116">From Visual Studio Code (VS Code), select **File > Open Folder**, and then select the *RazorPagesMovie* folder.</span></span>
 
-- <span data-ttu-id="bdb2a-117">Vyberte **Ano** k **upozornit** zpráva "požadované prostředky pro vytvoření a odladění chybí"RazorPagesMovie".</span><span class="sxs-lookup"><span data-stu-id="bdb2a-117">Select **Yes** to the **Warn** message "Required assets to build and debug are missing from 'RazorPagesMovie'.</span></span> <span data-ttu-id="bdb2a-118">Přidáním?"</span><span class="sxs-lookup"><span data-stu-id="bdb2a-118">Add them?"</span></span>
-- <span data-ttu-id="bdb2a-119">Vyberte **obnovení** k **informace** zpráva "Neexistují nevyřešené závislosti".</span><span class="sxs-lookup"><span data-stu-id="bdb2a-119">Select **Restore** to the **Info** message "There are unresolved dependencies".</span></span>
+- <span data-ttu-id="405c5-117">Vyberte **Ano** k **upozornit** zpráva "požadované prostředky pro vytvoření a odladění chybí"RazorPagesMovie".</span><span class="sxs-lookup"><span data-stu-id="405c5-117">Select **Yes** to the **Warn** message "Required assets to build and debug are missing from 'RazorPagesMovie'.</span></span> <span data-ttu-id="405c5-118">Přidáním?"</span><span class="sxs-lookup"><span data-stu-id="405c5-118">Add them?"</span></span>
+- <span data-ttu-id="405c5-119">Vyberte **obnovení** k **informace** zpráva "Neexistují nevyřešené závislosti".</span><span class="sxs-lookup"><span data-stu-id="405c5-119">Select **Restore** to the **Info** message "There are unresolved dependencies".</span></span>
 
-### <a name="launch-the-app"></a><span data-ttu-id="bdb2a-120">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="bdb2a-120">Launch the app</span></span>
+### <a name="launch-the-app"></a><span data-ttu-id="405c5-120">Spuštění aplikace</span><span class="sxs-lookup"><span data-stu-id="405c5-120">Launch the app</span></span>
 
-<span data-ttu-id="bdb2a-121">Stisknutím kláves Ctrl + F5 spusťte aplikaci bez ladění.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-121">Press Ctrl+F5 to start the app without debugging.</span></span> <span data-ttu-id="bdb2a-122">Alternativně z **ladění** nabídce vyberte možnost **spustit bez ladění**.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-122">Alternatively, from the **Debug** menu, select **Start Without Debugging**.</span></span>
+<span data-ttu-id="405c5-121">Stisknutím kláves Ctrl + F5 spusťte aplikaci bez ladění.</span><span class="sxs-lookup"><span data-stu-id="405c5-121">Press Ctrl+F5 to start the app without debugging.</span></span> <span data-ttu-id="405c5-122">Alternativně z **ladění** nabídce vyberte možnost **spustit bez ladění**.</span><span class="sxs-lookup"><span data-stu-id="405c5-122">Alternatively, from the **Debug** menu, select **Start Without Debugging**.</span></span>
 
-<span data-ttu-id="bdb2a-123">V dalším kurzu přidáme modelu do projektu.</span><span class="sxs-lookup"><span data-stu-id="bdb2a-123">In the next tutorial, we add a model to the project.</span></span> 
+<span data-ttu-id="405c5-123">V dalším kurzu přidáme modelu do projektu.</span><span class="sxs-lookup"><span data-stu-id="405c5-123">In the next tutorial, we add a model to the project.</span></span> 
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="bdb2a-124">Další krok: Přidání modelu</span><span class="sxs-lookup"><span data-stu-id="bdb2a-124">Next: Adding a model</span></span>](xref:tutorials/razor-pages-vsc/model)  
+> [<span data-ttu-id="405c5-124">Další krok: Přidání modelu</span><span class="sxs-lookup"><span data-stu-id="405c5-124">Next: Adding a model</span></span>](xref:tutorials/razor-pages-vsc/model)  

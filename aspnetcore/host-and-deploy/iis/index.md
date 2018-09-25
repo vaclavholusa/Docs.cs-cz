@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: d596ae67dbdfe938999a0b6f3f64b7f1647b4949
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 8f2155cbf0bc3101b78b890c1d66797278f1ca4b
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011734"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028307"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
@@ -216,6 +216,8 @@ Povolit **konzolu pro správu IIS** a **webové služby**.
    Zabránit instalaci x86 instalačního programu balíčků na x x64 OS, spusťte instalační program z příkazového řádku správce s přepínačem `OPT_NO_X86=1`.
 
 1. Restartování systému nebo spuštění **net stop byla /y** následovaný **net start w3svc** z příkazového řádku. Restartování služby IIS příjmem změnu systému provedené CESTU, která je proměnná prostředí, instalační služby.
+
+   Pokud instalační služby systému Windows, který je hostitelem svazku zjistí, že služba IIS dokončení instalace vyžaduje obnovení, obnoví instalační program služby IIS. Pokud instalační program spustí resetování služby IIS, se restartují všechny fondy aplikací IIS a websites.
 
 > [!NOTE]
 > Informace o sdílenou konfiguraci aplikaci IIS najdete v tématu [modul ASP.NET Core s sdílenou konfiguraci aplikaci IIS](xref:host-and-deploy/aspnet-core-module#aspnet-core-module-with-an-iis-shared-configuration).

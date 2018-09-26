@@ -7,18 +7,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: cc8f7fa00436a847ab1d1ba0976fb5e3899576ee
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 8c6a4a039fdc2cbe097d3439b3d79b9228d458b1
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312125"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47210974"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>Úlohy na pozadí s hostovanými službami v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-V ASP.NET Core, je možné implementovat úlohy na pozadí jako *hostovaných služeb*. Hostovanou službu je třída s atributem logiky úloh na pozadí, který implementuje [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) rozhraní. Toto téma obsahuje tři příklady hostované služby:
+V ASP.NET Core, je možné implementovat úlohy na pozadí jako *hostovaných služeb*. Hostovaná služba je třída s logikou úlohy na pozadí a implementuje rozhraní <xref:Microsoft.Extensions.Hosting.IHostedService>. Toto téma obsahuje tři příklady hostované služby:
 
 * Úlohy na pozadí, který běží na časovač.
 * Hostovanou službu, která aktivuje vymezené služby. Injektáž závislostí můžete použít službu s vymezeným oborem.
@@ -31,19 +31,23 @@ Ukázková aplikace je k dispozici ve dvou verzích:
 * Webového hostitele &ndash; The webového hostitele je užitečné pro hostování webových aplikací. Příklad kódu v tomto tématu je od verze webového hostitele vzorku. Další informace najdete v tématu [webového hostitele](xref:fundamentals/host/web-host) tématu.
 * Obecný hostitele &ndash; obecný hostitelské Novinky v ASP.NET Core 2.1. Další informace najdete v tématu [obecný hostitele](xref:fundamentals/host/generic-host) tématu.
 
+## <a name="package"></a>Balíček
+
+Odkaz [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app) nebo přidat odkaz na balíček [Microsoft.Extensions.Hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting) balíčku.
+
 ## <a name="ihostedservice-interface"></a>IHostedService rozhraní
 
-Hostované služby, které implementují [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) rozhraní. Rozhraní definuje dvě metody pro objekty, které se spravují přes hostitele:
+Hostované služby, které implementují <xref:Microsoft.Extensions.Hosting.IHostedService> rozhraní. Rozhraní definuje dvě metody pro objekty, které se spravují přes hostitele:
 
-* [StartAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.startasync)  -  `StartAsync` obsahuje logiku pro spuštění úlohy na pozadí. Při použití [webového hostitele](xref:fundamentals/host/web-host), `StartAsync` se volá, když server spuštěn a [IApplicationLifetime.ApplicationStarted](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstarted) se aktivuje. Při použití [obecný hostitele](xref:fundamentals/host/generic-host), `StartAsync` je volána před provedením `ApplicationStarted` se aktivuje.
+* [StartAsync(CancellationToken)](xref:Microsoft.Extensions.Hosting.IHostedService.StartAsync*)  -  `StartAsync` obsahuje logiku pro spuštění úlohy na pozadí. Při použití [webového hostitele](xref:fundamentals/host/web-host), `StartAsync` se volá, když server spuštěn a [IApplicationLifetime.ApplicationStarted](xref:Microsoft.AspNetCore.Hosting.IApplicationLifetime.ApplicationStarted*) se aktivuje. Při použití [obecný hostitele](xref:fundamentals/host/generic-host), `StartAsync` je volána před provedením `ApplicationStarted` se aktivuje.
 
-* [StopAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.stopasync) – aktivováno, když hostitel provádí řádné vypnutí. `StopAsync` obsahuje logiku pro ukončení úlohy na pozadí a uvolnění nespravovaných prostředků. Pokud se aplikace ukončí neočekávaně (například aplikace proces selže), `StopAsync` nemusí být volána.
+* [StopAsync(CancellationToken)](xref:Microsoft.Extensions.Hosting.IHostedService.StopAsync*) – aktivováno, když hostitel provádí řádné vypnutí. `StopAsync` obsahuje logiku pro ukončení úlohy na pozadí a uvolnění nespravovaných prostředků. Pokud se aplikace ukončí neočekávaně (například aplikace proces selže), `StopAsync` nemusí být volána.
 
-Hostovaná služba je aktivována jednou při spuštění aplikace a řádné vypnutí při vypnutí aplikace. Když [IDisposable](/dotnet/api/system.idisposable) je implementováno, prostředky se dá uvolnit při uvolnění kontejneru služby. Pokud dojde k chybě při provádění úlohy na pozadí, `Dispose` by měla být volána i v případě `StopAsync` není volána.
+Hostovaná služba je aktivována jednou při spuštění aplikace a řádné vypnutí při vypnutí aplikace. Když <xref:System.IDisposable> je implementováno, prostředky se dá uvolnit při uvolnění kontejneru služby. Pokud dojde k chybě při provádění úlohy na pozadí, `Dispose` by měla být volána i v případě `StopAsync` není volána.
 
 ## <a name="timed-background-tasks"></a>Úlohy na pozadí vypršel časový limit
 
-Úlohy na pozadí vypršel časový limit využívá [System.Threading.Timer](/dotnet/api/system.threading.timer) třídy. Časovač spustí úkolu `DoWork` metody. Časovač je zakázáno na `StopAsync` a uvolněno při uvolnění má v kontejneru služby `Dispose`:
+Úlohy na pozadí vypršel časový limit využívá [System.Threading.Timer](xref:System.Threading.Timer) třídy. Časovač spustí úkolu `DoWork` metody. Časovač je zakázáno na `StopAsync` a uvolněno při uvolnění má v kontejneru služby `Dispose`:
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
 
@@ -55,7 +59,7 @@ Není registrován v `Startup.ConfigureServices` s `AddHostedService` – metoda
 
 Použití vymezené služby v rámci `IHostedService`, vytvoření oboru. Ve výchozím nastavení je vytvořen žádný obor pro hostovanou službu.
 
-Služba úloh na pozadí s vymezeným oborem obsahuje logiku úlohy na pozadí. V následujícím příkladu [ILogger](/dotnet/api/microsoft.extensions.logging.ilogger) se vloží do služby:
+Služba úloh na pozadí s vymezeným oborem obsahuje logiku úlohy na pozadí. V následujícím příkladu <xref:Microsoft.Extensions.Logging.ILogger> se vloží do služby:
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ScopedProcessingService.cs?name=snippet1)]
 
@@ -69,11 +73,11 @@ Služby jsou registrované ve `Startup.ConfigureServices`. `IHostedService` Zare
 
 ## <a name="queued-background-tasks"></a>Úlohy na pozadí ve frontě
 
-Fronta úloh na pozadí je založená na platformě .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem) ([nezávazně naplánované být integrované pro ASP.NET Core 3.0](https://github.com/aspnet/Hosting/issues/1280)):
+Fronta úloh na pozadí je založená na platformě .NET 4.x <xref:System.Web.Hosting.HostingEnvironment.QueueBackgroundWorkItem*> ([nezávazně naplánované být integrované pro ASP.NET Core 3.0](https://github.com/aspnet/Hosting/issues/1280)):
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/BackgroundTaskQueue.cs?name=snippet1)]
 
-V `QueueHostedService`, úlohy na pozadí ve frontě jsou odstraněné z fronty a provést, protože [BackgroundService](/dotnet/api/microsoft.extensions.hosting.backgroundservice), což je základní třída pro implementaci dlouho běžící `IHostedService`:
+V `QueueHostedService`, úlohy na pozadí ve frontě jsou odstraněné z fronty a provést, protože <xref:Microsoft.Extensions.Hosting.BackgroundService>, což je základní třída pro implementaci dlouho běžící `IHostedService`:
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=16,20)]
 
@@ -92,4 +96,4 @@ Když **přidat úkol** výběru tlačítka na indexovou stránku, `OnPostAddTas
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Implementace úloh na pozadí v mikroslužbách s IHostedService a BackgroundService třídy](/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/background-tasks-with-ihostedservice)
-* [System.Threading.Timer](/dotnet/api/system.threading.timer)
+* [System.Threading.Timer](xref:System.Threading.Timer)

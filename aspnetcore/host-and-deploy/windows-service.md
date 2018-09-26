@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Windows.
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 06/04/2018
+ms.date: 09/25/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: fb748b74b62abb297ac0b16ec34982daf0e13cbd
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: eb88b0bb2e9ce4cfd3a7db2081ad7d62d5dcb08e
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523178"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211036"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Hostitele ASP.NET Core ve službě Windows
 
@@ -21,13 +21,13 @@ Aplikace ASP.NET Core je možné hostovat na Windows bez použití služby IIS j
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="get-started"></a>Začínáme
+## <a name="convert-a-project-into-a-windows-service"></a>Převést projekt do služby Windows
 
-K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě jsou nezbytné následující minimální změny:
+Následující minimální změny je potřeba nastavit stávající projekt ASP.NET Core pro spouštěn jako služba:
 
 1. V souboru projektu:
 
-   1. Ověřte existenci identifikátor modulu runtime nebo ho přidat do  **\<PropertyGroup >** , který obsahuje Cílová architektura:
+   * Ověřte existenci Windows [identifikátor modulu Runtime (RID)](/dotnet/core/rid-catalog) nebo ho přidat do `<PropertyGroup>` , který obsahuje Cílová architektura:
 
       ::: moniker range=">= aspnetcore-2.1"
 
@@ -61,10 +61,15 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
       ```
 
       ::: moniker-end
-      
-      Pokud neclusterovaném Runtime identifikátorů (RID) jsou k dispozici na seznam oddělený středníkem, použijte název vlastnosti `<RuntimeIdentifiers>` (množné číslo). Další informace najdete v tématu [katalog identifikátorů RID .NET Core](/dotnet/core/rid-catalog).
 
-   1. Přidat odkaz na balíček pro [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/).
+      Chcete-li publikovat pro více identifikátorů RID:
+
+      * Zadejte identifikátory RID v seznam oddělený středníkem.
+      * Použijte název vlastnosti `<RuntimeIdentifiers>` (množné číslo).
+
+      Další informace najdete v tématu [katalog identifikátorů RID .NET Core](/dotnet/core/rid-catalog).
+
+   * Přidat odkaz na balíček pro [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices).
 
 1. Proveďte následující změny v `Program.Main`:
 
@@ -86,10 +91,10 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
 
 1. Publikování aplikace. Použití [dotnet publikovat](/dotnet/articles/core/tools/dotnet-publish) nebo [profil publikování pro Visual Studio](xref:host-and-deploy/visual-studio-publish-profiles). Při používání sady Visual Studio, vyberte **FolderProfile**.
 
-   Chcete-li publikovat ukázkovou aplikaci z příkazového řádku, spusťte následující příkaz v okně konzoly ze složky projektu:
+   Chcete-li publikovat ukázkovou aplikaci pomocí nástrojů rozhraní příkazového řádku (CLI), spusťte [dotnet publikovat](/dotnet/core/tools/dotnet-publish) příkazu na příkazovém řádku ve složce projektu. V musí být zadán identifikátor RID `<RuntimeIdenfifier>` (nebo `<RuntimeIdentifiers>`) vlastnost souboru projektu. V následujícím příkladu, publikování aplikace v rámci konfigurace verze pro `win7-x64` modulu runtime:
 
    ```console
-   dotnet publish --configuration Release
+   dotnet publish --configuration Release --runtime win7-x64
    ```
 
 1. Použití [sc.exe](https://technet.microsoft.com/library/bb490995) nástroj příkazového řádku vytvořte službu. `binPath` Hodnota je cesta ke spustitelnému souboru aplikace, která zahrnuje název spustitelného souboru. **Mezera mezi znaménko rovná se a znak uvozovek na začátek cesty je povinný.**
@@ -100,7 +105,7 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
 
    Služby se publikují do složky projektu, použijte cestu k *publikovat* složku pro vytvoření služby. V následujícím příkladu:
 
-   * Projekt se nachází v `c:\my_services\AspNetCoreService` složky.
+   * Projekt se nachází v *c:\\my_services\\AspNetCoreService* složky.
    * Projekt, se publikují v `Release` konfigurace.
    * Moniker cílového rozhraní (TFM) je `netcoreapp2.1`.
    * Identifikátor modulu Runtime (RID) je `win7-x64`.
@@ -112,14 +117,14 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
    ```console
    sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
    ```
-   
+
    > [!IMPORTANT]
    > Ujistěte se, že je k dispozici mezi prostor `binPath=` argument a její hodnotu.
-   
+
    Publikovat a spustit službu z jiné složky:
-   
-      1. Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkazu. Pokud používáte Visual Studio, nakonfigurujte **cílové umístění** v **FolderProfile** publikovat stránku vlastností před výběrem **publikovat** tlačítko.
-   1. Vytvoření služby s `sc.exe` příkazu cesta k výstupní složce. Zahrnout název spustitelného souboru služby na cestě k dispozici na `binPath`.
+
+      * Použití [– výstupní &lt;OUTPUT_DIRECTORY&gt; ](/dotnet/core/tools/dotnet-publish#options) možnost `dotnet publish` příkazu. Pokud používáte Visual Studio, nakonfigurujte **cílové umístění** v **FolderProfile** publikovat stránku vlastností před výběrem **publikovat** tlačítko.
+      * Vytvoření služby s `sc.exe` příkazu cesta k výstupní složce. Zahrnout název spustitelného souboru služby na cestě k dispozici na `binPath`.
 
 1. Spusťte službu pomocí `sc start <SERVICE_NAME>` příkazu.
 
@@ -131,7 +136,7 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
 
    Příkaz trvá několik sekund se spustit službu.
 
-1. `sc query <SERVICE_NAME>` Příkaz je možné zkontrolovat stav služby k určení stavu:
+1. Chcete-li zkontrolovat stav služby, použijte `sc query <SERVICE_NAME>` příkazu. Stav je uveden jako jeden z následujících hodnot:
 
    * `START_PENDING`
    * `RUNNING`
@@ -170,7 +175,7 @@ K nastavení existujícího projektu ASP.NET Core pro spouštění ve službě j
    sc delete MyService
    ```
 
-## <a name="provide-a-way-to-run-outside-of-a-service"></a>Poskytují způsob, jak běží mimo službu
+## <a name="run-the-app-outside-of-a-service"></a>Spuštění aplikace mimo službu
 
 Usnadňuje testování a ladění, když se provozují mimo službu, takže je obvyklý přidáte kód, který volá `RunAsService` pouze za určitých podmínek. Například aplikace může běžet jako aplikace konzoly v jazyce `--console` argument příkazového řádku nebo pokud je připojen ladicí program:
 
@@ -234,7 +239,7 @@ Zadejte [konfigurace koncového bodu HTTPS serveru Kestrel](xref:fundamentals/se
 
 ## <a name="current-directory-and-content-root"></a>Aktuální adresář a obsahu root
 
-Aktuální pracovní adresář vrátit voláním `Directory.GetCurrentDirectory()` pro službu Windows je *C:\WINDOWS\system32* složky. *System32* složka není vhodné umístění pro ukládání souborů služby (například soubory nastavení). Použijte jednu z následujících dvou přístupů k zajištění údržby a přístup k prostředky a nastavení souborů pomocí služby [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) při použití [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder):
+Aktuální pracovní adresář vrátit voláním `Directory.GetCurrentDirectory()` pro službu Windows je *C:\\WINDOWS\\system32* složky. *System32* složka není vhodné umístění pro ukládání souborů služby (například soubory nastavení). Použijte jednu z následujících dvou přístupů k zajištění údržby a přístup k prostředky a nastavení souborů pomocí služby [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath) při použití [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder):
 
 * Pomocí obsahu kořenovou cestu. `IHostingEnvironment.ContentRootPath` Se stejnou cestu k dispozici na `binPath` argument při vytvoření služby. Namísto použití `Directory.GetCurrentDirectory()` k vytvoření cesty k souborům nastavení, použijte obsah kořenové cestě a udržovat soubory v kořenové obsahu aplikace.
 * Store soubory na vhodné místo na disku. Zadejte absolutní cestu s `SetBasePath` do složky obsahující soubory.

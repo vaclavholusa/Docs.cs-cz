@@ -5,12 +5,12 @@ description: Další informace o metodě kontroleru podrobnosti a zobrazit v zá
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: c3fb7ae9507d13f3b8c7d366e333151dc7a7a6d3
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 9864abb54483c0ccf911aaf704a1beae007b32a4
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011422"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211010"
 ---
 # <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>Zkontrolujte podrobnosti a odstranit metody aplikace ASP.NET Core
 
@@ -73,7 +73,7 @@ public async Task<IActionResult> Delete(int id, bool notUsed)
 
 ### <a name="publish-to-azure"></a>Publikování do Azure
 
-Zobrazit [publikovat webovou aplikaci ASP.NET Core do služby Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny o tom, jak tuto aplikaci můžete publikovat do Azure pomocí sady Visual Studio.  Aplikace můžete publikovat také z [příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli).
+Informace o nasazení do Azure, viz [kurz: vytvoření aplikace ASP.NET se službou SQL Database v Azure](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase). Instrukce, jako jsou určené pro aplikace ASP.NET, není aplikace v ASP.NET Core, ale postup je stejný.
 
 > [!div class="step-by-step"]
 > [Předchozí](validation.md)

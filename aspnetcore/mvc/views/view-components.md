@@ -5,12 +5,12 @@ description: Zjistěte, jak komponenty zobrazení se používají v ASP.NET Core
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 0410e2025019bae45d941e61f556f4b2b57bd30f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010907"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211062"
 ---
 # <a name="view-components-in-aspnet-core"></a>Zobrazení komponenty v ASP.NET Core
 
@@ -95,6 +95,8 @@ Parametry předávané `InvokeAsync` metody. `PriorityList` z je vyvolána zobra
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
+::: moniker range=">= aspnetcore-1.1"
+
 ## <a name="invoking-a-view-component-as-a-tag-helper"></a>Vyvolání komponenty zobrazení jako pomocné rutiny značky
 
 Pro ASP.NET Core 1.1 a vyšší, můžete vyvolat komponentu zobrazení jako [pomocné rutiny značky](xref:mvc/views/tag-helpers/intro):
@@ -110,7 +112,7 @@ Jazyka Pascal – třídy a metody parametry pro pomocné rutiny značek jsou p�
 </vc:[view-component-name]>
 ```
 
-Poznámka: Chcete-li použít komponentu zobrazení jako pomocné rutiny značky, je nutné zaregistrovat sestavení obsahující pomocí zobrazení komponenty `@addTagHelper` směrnice. Například pokud vaše komponenta zobrazení je v sestavení nazvané "MyWebApp", přidejte následující direktivy pro `_ViewImports.cshtml` souboru:
+Použití zobrazení komponenty jako pomocné rutiny značky, zaregistrovat sestavení obsahující pomocí zobrazení komponenty `@addTagHelper` směrnice. Pokud vaše komponenta zobrazení je v sestavení nazvané `MyWebApp`, přidejte následující direktivy k *_ViewImports.cshtml* souboru:
 
 ```cshtml
 @addTagHelper *, MyWebApp
@@ -127,6 +129,8 @@ Ve značkách pomocné rutiny značky:
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
 V příkladu výše `PriorityList` stane součástí zobrazení `priority-list`. Parametry pro zobrazení komponenty jsou předány jako atributy v malá písmena kebab.
+
+::: moniker-end
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>Vyvolání komponenty zobrazení přímo z kontroleru
 
@@ -243,6 +247,76 @@ Pokud chcete kompilovat bezpečný přístup z více času, můžete nahradit n�
 Přidat `using` příkazu vaše Razor zobrazení souboru a použít `nameof` operátor:
 
 [!code-cshtml[](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,35-)]
+
+## <a name="perform-synchronous-work"></a>Provedení synchronní práce
+
+Rozhraní framework zpracovává volání synchronního `Invoke` metodu, pokud není nutné provádět asynchronní práce. Následující metoda vytvoří synchronního `Invoke` zobrazení komponenty:
+
+```csharp
+public class PriorityList : ViewComponent
+{
+    public IViewComponentResult Invoke(int maxPriority, bool isDone)
+    {
+        var items = new List<string> { $"maxPriority: {maxPriority}", $"isDone: {isDone}" };
+        return View(items);
+    }
+}
+```
+
+Dílčí zobrazení Razor soubor obsahuje řetězce předaný `Invoke` – metoda (*Views/Home/Components/PriorityList/Default.cshtml*):
+
+```cshtml
+@model List<string>
+
+<h3>Priority Items</h3>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+Zobrazení komponenty je vyvolán v souboru Razor (například *Views/Home/Index.cshtml*) pomocí některého z následujících postupů:
+
+* <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>
+* [Pomocná rutina značky](xref:mvc/views/tag-helpers/intro)
+
+Použít <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper> přístup, zavolejte `Component.InvokeAsync`:
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-1.1"
+
+Zobrazení komponenty je vyvolán v souboru Razor (například *Views/Home/Index.cshtml*) s <xref:Microsoft.AspNetCore.Mvc.IViewComponentHelper>.
+
+Volání `Component.InvokeAsync`:
+
+::: moniker-end
+
+```cshtml
+@await Component.InvokeAsync(nameof(PriorityList), new { maxPriority = 4, isDone = true })
+```
+
+::: moniker range=">= aspnetcore-1.1"
+
+Použití pomocné rutiny značky, zaregistrovat sestavení obsahující pomocí zobrazení komponenty `@addTagHelper` – direktiva (součást zobrazení je v sestavení nazvané `MyWebApp`):
+
+```cshtml
+@addTagHelper *, MyWebApp
+```
+
+Použití zobrazení komponenty pomocné rutiny značky v souboru kódu Razor:
+
+```cshtml
+<vc:priority-list max-priority="999" is-done="false">
+</vc:priority-list>
+```
+::: moniker-end
+
+Označení metody `PriorityList.Invoke` je synchronní, ale Razor najde a volá metodu s `Component.InvokeAsync` v souboru označení.
 
 ## <a name="additional-resources"></a>Další zdroje
 

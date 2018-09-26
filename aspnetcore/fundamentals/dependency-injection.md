@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 56fb03bcbed7208a2ea1caedc9e1a412e289770b
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 57b50512d0dfbe1b1b7d7782f6eb7e328dd99149
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292359"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211075"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injektáž závislostí v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/), [Scott Addie](https://scottaddie.com), a [Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core podporuje závislost vkládání (DI) software vzor návrhu, což je technika, pro dosažení [řízení IOC (Inversion)](https://deviq.com/inversion-of-control/) mezi třídami a jejich závislosti.
+ASP.NET Core podporuje závislost vkládání (DI) software vzor návrhu, což je technika, pro dosažení [řízení IOC (Inversion)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) mezi třídami a jejich závislosti.
 
 Další informace specifické pro vkládání závislostí do kontrolerů MVC najdete v tématu <xref:mvc/controllers/dependency-injection>.
 
@@ -442,7 +442,7 @@ Osvědčené postupy jsou následující:
 
 Pomocí následujících [SOLID zásady z objektu orientovaný návrh](https://deviq.com/solid/), třídy aplikace jsou často přirozeně na malé, skvěle a snadno otestované.
 
-Pokud třída zdá se, že máte příliš mnoho vložených závislostí, je obecně znak, třída má příliš mnoho zodpovědnosti a porušuje [jedné zásadě odpovědnost (SRP)](https://deviq.com/single-responsibility-principle/). Pokus o Refaktorovat třídy některé z jeho zodpovědnosti přesunutím do nové třídy. Mějte na paměti, která tříd modelu stránky Razor Pages a třídy kontroleru MVC byste se zaměřit na aspekty uživatelského rozhraní. Obchodní pravidla a data přístup implementace podrobnosti by měly být neustále ve třídách, které jsou vhodné pro tyto [oddělení obavy](https://deviq.com/separation-of-concerns/).
+Pokud třída zdá se, že máte příliš mnoho vložených závislostí, je obecně znak, třída má příliš mnoho zodpovědnosti a porušuje [jedné zásadě odpovědnost (SRP)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#single-responsibility). Pokus o Refaktorovat třídy některé z jeho zodpovědnosti přesunutím do nové třídy. Mějte na paměti, která tříd modelu stránky Razor Pages a třídy kontroleru MVC byste se zaměřit na aspekty uživatelského rozhraní. Obchodní pravidla a data přístup implementace podrobnosti by měly být neustále ve třídách, které jsou vhodné pro tyto [oddělení obavy](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns).
 
 ### <a name="disposal-of-services"></a>Vyřazení služby
 
@@ -563,6 +563,6 @@ Injektáž závislostí je *alternativní* na vzorech přístupu statická/glob�
 * <xref:fundamentals/middleware/extensibility>
 * [Zápis čistý kód v ASP.NET Core s injektáž závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Spravované kontejneru návrhu aplikace, Prelude: Kam patří kontejneru?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
-* [Princip explicitní závislosti.](https://deviq.com/explicit-dependencies-principle/)
+* [Princip explicitní závislosti.](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
 * [Inverze – kontejnery ovládacích prvků a vzor injektáž závislostí (Martina Fowlera)](https://www.martinfowler.com/articles/injection.html)
 * [Je nový spojovací ("vzájemné připevnění" kódu pro konkrétní implementaci)](https://ardalis.com/new-is-glue)

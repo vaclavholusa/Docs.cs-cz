@@ -1,18 +1,18 @@
 ---
 title: Začínáme se stránkami Razor v ASP.NET Core
 author: rick-anderson
-description: Seznamte se se základy vytváření webové aplikace ASP.NET Core Razor Pages. Stránky Razor se doporučuje pro webové úlohy v ASP.NET Core.
+description: Tato série kurzů ukazuje, jak používat v ASP.NET Core Razor Pages. Zjistěte, jak vytvořit model, generování kódu pro stránky Razor, použít pro přístup k datům Entity Framework Core a SQL Server, vyhledávání, přidat ověřování vstupu a použití migrace k aktualizaci modelu.
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 20fc1dfebda66a23c4682aa8e94523a710abf8b2
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 2e1c84a704856a22e1e105f56612194d4bb9c234
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340014"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47210997"
 ---
-# <a name="get-started-with-razor-pages-in-aspnet-core"></a>Začínáme se stránkami Razor v ASP.NET Core
+# <a name="tutorial-get-started-with-razor-pages-in-aspnet-core"></a>Kurz: Začínáme se stránkami Razor v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 

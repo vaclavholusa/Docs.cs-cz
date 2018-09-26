@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: e27253e3f02fa808136494ed5373059ef6e0df0d
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011584"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211023"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidání ověřování do stránky ASP.NET Core Razor
 
@@ -160,7 +160,7 @@ Následující kód ukazuje kombinace atributů na jednom řádku:
 
 ### <a name="publish-to-azure"></a>Publikování do Azure
 
-Zobrazit [publikovat webovou aplikaci ASP.NET Core do služby Azure App Service pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pokyny o tom, jak tuto aplikaci můžete publikovat do Azure.
+Informace o nasazení do Azure, viz [kurz: vytvoření aplikace ASP.NET se službou SQL Database v Azure](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase). Instrukce, jako jsou určené pro aplikace ASP.NET, není aplikace v ASP.NET Core, ale postup je stejný.
 
 Děkujeme vám za dokončení tohoto úvodu do stránky Razor. Děkujeme za zpětnou vazbu. [Začínáme s Razor Pages a EF Core](xref:data/ef-rp/intro) je vynikající postupujte až v tomto kurzu.
 

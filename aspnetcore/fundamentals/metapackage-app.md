@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: d27c3aa53d6edd235006dc136f09558395e15b6e
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 68b5aca60273a8c6ef03c0a29842e6a5305adeb3
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538450"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230162"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>Microsoft.AspNetCore.App Microsoft.aspnetcore.all pro ASP.NET Core 2.1
 
@@ -45,13 +45,26 @@ Následující projekt odkazy na soubory `Microsoft.AspNetCore.App` Microsoft.as
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
 </Project>
 ```
 
-Číslo verze na `Microsoft.AspNetCore.App` nemá odkaz **není** zaručit, že tato verze sdíleného framework se použije. Předpokládejme například, že verze `2.1.1` není zadána, ale `2.1.3` je nainstalována. V takovém případě aplikace používá `2.1.3`. Však není doporučena, můžete zakázat chování vpřed (opravy a/nebo menší). Další informace o chování vpřed verze balíčku, naleznete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
+Předchozí kód představuje typické ASP.NET Core 2.1 a vyšší šablony. Neurčuje číslo verze `Microsoft.AspNetCore.App` odkaz na balíček. Pokud není zadána verze, [implicitní](https://github.com/dotnet/core/blob/master/release-notes/1.0/sdk/1.0-rc3-implicit-package-refs.md) ale není určená verze sady SDK, tedy `Microsoft.NET.Sdk.Web`. Doporučujeme, abyste spoléhat na implicitní verze určené sady SDK a nastavení nejsou explicitně číslo verze na odkaz na balíček. Pokud máte otázky k tomu, ponechte v Githubu komentář [diskuse implicitní verze Microsoft.AspNetCore.App](https://github.com/aspnet/Docs/issues/6430).
+
+Implicitní verze je nastaveno na `major.minor.0` pro přenosné aplikace. Mechanismus vpřed sdílené architektuře se spustí aplikaci na nejnovější verzi kompatibilní mezi nainstalované rozhraní sdílené. Chcete-li zaručit, že při vývoji se používá stejnou verzi, testovacím i produkčním prostředí, ujistěte se, že stejná verze modulu sdílené framework je nainstalována ve všech prostředích. Pro aplikace uzavřeným číslo implicitní verze nastavena na `major.minor.patch` sdílené Framework dodávat v nainstalované sady SDK.
+
+Určení číslo verze na `Microsoft.AspNetCore.App` nemá odkaz **není** zaručit, že tato verze sdíleného vybere se rozhraní framework. Předpokládejme například, ale není určená verze "2.1.1", ale je nainstalovaná "2.1.3". V takovém případě bude aplikace používat "2.1.3". Však není doporučena, můžete zakázat Posunutí vpřed (opravy a/nebo menší). Další informace týkající se příkaz dotnet hostitele vpřed a jak nakonfigurovat své chování najdete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
+
+`<Project Sdk` musí být nastaveno na `Microsoft.NET.Sdk.Web` použít implicitní verze `Microsoft.AspNetCore.App`.  Když `<Project Sdk="Microsoft.NET.Sdk">` (bez koncových `.Web`) se používá:
+
+* Generují se následující upozornění:
+
+     *NU1604 upozornění: Závislost projektu Microsoft.AspNetCore.App neobsahuje inkluzivní dolní mez. Dolní mez zahrňte do verze závislosti zajistit výsledky obnovení budou konzistentní.*
+* Jedná se o známý problém s .NET Core 2.1 SDK a bude opravený v .NET Core 2.2 SDK.
+
+<a name="update"></a>
 
 ## <a name="update-aspnet-core"></a>Aktualizace ASP.NET Core
 

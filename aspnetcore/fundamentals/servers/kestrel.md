@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/13/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 21ba522b454a88a006938936e426537786ccaa1f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 218b6429462991659ba02804fdc8fbb99b69f1a6
+ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011727"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47211088"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>Implementace serveru webové kestrel v ASP.NET Core
 
@@ -160,7 +160,7 @@ Volání [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkes
 
 ::: moniker-end
 
-### <a name="kestrel-options"></a>Možnosti kestrel
+## <a name="kestrel-options"></a>Možnosti kestrel
 
 ::: moniker range=">= aspnetcore-2.0"
 
@@ -172,7 +172,7 @@ Webový server Kestrel má omezení možnosti konfigurace, které jsou obzvláš
 
 Nastavte na tyto a další omezení [omezení](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.limits) vlastnost [KestrelServerOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions) třídy. `Limits` Vlastnost obsahuje instanci [KestrelServerLimits](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits) třídy.
 
-**Maximální počet klientských připojení**
+### <a name="maximum-client-connections"></a>Maximální počet klientských připojení
 
 [MaxConcurrentConnections](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxconcurrentconnections)  
 [MaxConcurrentUpgradedConnections](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxconcurrentupgradedconnections)
@@ -227,7 +227,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 Maximální počet připojení je neomezený počet (null) ve výchozím nastavení.
 
-**Velikost textu maximální požadavku**
+### <a name="maximum-request-body-size"></a>Velikost textu maximální požadavku
 
 [MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)
 
@@ -272,7 +272,7 @@ Můžete přepsat nastavení pro konkrétní žádost a v middlewaru:
 
 Pokud se pokusíte nakonfigurovat limit na vyžádání po spuštění aplikace k přečtení požadavku, je vyvolána výjimka. Je `IsReadOnly` vlastnost, která označuje, zda `MaxRequestBodySize` vlastnost je ve stavu jen pro čtení, což znamená, je příliš pozdě Konfigurace limitu.
 
-**Minimální požadavek tělo přenosová rychlost**
+### <a name="minimum-request-body-data-rate"></a>Minimální požadavek tělo přenosová rychlost
 
 [MinRequestBodyDataRate](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.minrequestbodydatarate)  
 [MinResponseDataRate](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.minresponsedatarate)
@@ -316,7 +316,7 @@ Sazby za žádost můžete nakonfigurovat v middlewaru:
 
 ::: moniker range=">= aspnetcore-2.2"
 
-**MaxStreamsPerConnection**
+### <a name="maximum-streams-per-connection"></a>Maximální datových proudů za připojení
 
 `Http2.MaxStreamsPerConnection` omezuje počet datových proudů souběžný požadavek na připojení HTTP/2. Nadbytečné datové proudy jsou odmítnuta.
 
@@ -332,7 +332,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 Výchozí hodnota je 100.
 
-**HeaderTableSize**
+### <a name="header-table-size"></a>Velikost záhlaví tabulky
 
 Dekodér HPACK dekomprimuje hlavičky protokolu HTTP pro připojení HTTP/2. `Http2.HeaderTableSize` omezuje velikost tabulky záhlaví komprese, který používá HPACK dekodéru. Hodnota je k dispozici v oktetech a musí být větší než nula (0).
 
@@ -348,7 +348,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 Výchozí hodnota je 4096.
 
-**MaxFrameSize**
+### <a name="maximum-frame-size"></a>Maximální velikost rámce
 
 `Http2.MaxFrameSize` Určuje maximální velikost datové rámce připojení HTTP/2 pro příjem. Hodnota je k dispozici v oktetech a musí být mezi 2 ^ 14 (16384) a 2 ^ 16 777 24-1 (215).
 
@@ -385,7 +385,7 @@ Informace o možnostech Kestrel a omezení najdete tady:
 
 ::: moniker-end
 
-### <a name="endpoint-configuration"></a>Konfigurace koncového bodu
+## <a name="endpoint-configuration"></a>Konfigurace koncového bodu
 
 ::: moniker range="= aspnetcore-2.0"
 
@@ -431,20 +431,24 @@ Volání [naslouchání](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.ke
 
 ASP.NET Core 2.1 `KestrelServerOptions` konfigurace:
 
-**ConfigureEndpointDefaults (akce&lt;ListenOptions&gt;)**  
+### <a name="configureendpointdefaultsactionltlistenoptionsgt"></a>ConfigureEndpointDefaults (akce&lt;ListenOptions&gt;)
+
 Určuje konfiguraci `Action` pro spuštění v každý zadaný koncový bod. Volání `ConfigureEndpointDefaults` více než jednou nahradí předchozí `Action`s poslední `Action` zadané.
 
-**ConfigureHttpsDefaults (akce&lt;HttpsConnectionAdapterOptions&gt;)**  
+### <a name="configurehttpsdefaultsactionlthttpsconnectionadapteroptionsgt"></a>ConfigureHttpsDefaults (akce&lt;HttpsConnectionAdapterOptions&gt;)
+
 Určuje konfiguraci `Action` ke spuštění pro každý koncový bod HTTPS. Volání `ConfigureHttpsDefaults` více než jednou nahradí předchozí `Action`s poslední `Action` zadané.
 
-**Configure(IConfiguration)**  
+### <a name="configureiconfiguration"></a>Configure(IConfiguration)
+
 Vytvoří zavaděč konfigurace pro nastavení Kestrel, který přebírá [parametry IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) jako vstup. Konfigurace musí být určená ke konfiguračnímu oddílu Kestrel.
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
 
-**ListenOptions.UseHttps**  
+### <a name="listenoptionsusehttps"></a>ListenOptions.UseHttps
+
 Nakonfigurujte Kestrel k používání HTTPS.
 
 `ListenOptions.UseHttps` rozšíření:
@@ -703,7 +707,7 @@ public static IWebHost BuildWebHost(string[] args) =>
 
 ::: moniker-end
 
-**Vytvoření vazby na soket TCP**
+### <a name="bind-to-a-tcp-socket"></a>Vytvoření vazby na soket TCP
 
 [Naslouchání](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listen) metoda vytvoří vazbu na soket TCP a umožňuje lambda s možností konfigurace certifikátu SSL:
 
@@ -742,7 +746,7 @@ Tento příklad konfiguruje SSL pro koncový bod s [ListenOptions](/dotnet/api/m
 
 [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
 
-**Vytvoření vazby k Unixovému soketu**
+### <a name="bind-to-a-unix-socket"></a>Vytvoření vazby k Unixovému soketu
 
 Naslouchání soketu Unix s [ListenUnixSocket](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions.listenunixsocket) dosáhnout tak vyššího výkonu se serverem Nginx, jak je znázorněno v tomto příkladu:
 
@@ -774,7 +778,7 @@ public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
 
 ::: moniker range=">= aspnetcore-2.0"
 
-**Port 0**
+### <a name="port-0"></a>Port 0
 
 Když číslo portu `0` určena Kestrel dynamicky váže dostupný port. Následující příklad ukazuje, jak určit port, který Kestrel vázán skutečně za běhu:
 
@@ -786,7 +790,7 @@ Při spuštění aplikace Určuje výstup okna konzoly dynamický port, kde se d
 Listening on the following addresses: http://127.0.0.1:48508
 ```
 
-**Konfigurační klíč a omezení proměnnou prostředí ASPNETCORE_URLS hostitele UseUrls argument příkazového řádku--adresy URL, adresy URL**
+### <a name="limitations"></a>Omezení
 
 Konfigurace koncových bodů pomocí následujících postupů:
 
@@ -795,12 +799,12 @@ Konfigurace koncových bodů pomocí následujících postupů:
 * `urls` Konfigurační klíč hostitele
 * `ASPNETCORE_URLS` Proměnná prostředí
 
-Tyto metody jsou užitečné pro provádění kódu práce se servery než Kestrel. Mějte ale na tato omezení:
+Tyto metody jsou užitečné pro provádění kódu práce se servery než Kestrel. Nicméně mějte na paměti následující omezení:
 
 * Protokol SSL nelze použít s těchto přístupů, pokud výchozí certifikát je součástí konfigurace koncového bodu HTTPS (například pomocí `KestrelServerOptions` konfigurace nebo konfiguračního souboru, jak je znázorněno výše v tomto tématu).
 * Při i `Listen` a `UseUrls` přístupy se využívat současně, `Listen` přepsat koncových bodů `UseUrls` koncových bodů.
 
-**Konfigurace koncového bodu služby IIS**
+### <a name="iis-endpoint-configuration"></a>Konfigurace koncového bodu služby IIS
 
 Při použití služby IIS, adresa URL vazeb pro služby IIS změnit vazby jsou nastaveny buď `Listen` nebo `UseUrls`. Další informace najdete v tématu [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) tématu.
 
@@ -817,7 +821,7 @@ Ve výchozím nastavení, ASP.NET Core váže k `http://localhost:5000`. Konfigu
 
 Další informace o těchto metodách, naleznete v tématu [Hosting](xref:fundamentals/host/index).
 
-**Konfigurace koncového bodu služby IIS**
+### <a name="iis-endpoint-configuration"></a>Konfigurace koncového bodu služby IIS
 
 Při použití služby IIS, adresa URL vazby pro službu IIS přepsat vazby nastavil `UseUrls`. Další informace najdete v tématu [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) tématu.
 
@@ -825,7 +829,7 @@ Při použití služby IIS, adresa URL vazby pro službu IIS přepsat vazby nast
 
 ::: moniker range=">= aspnetcore-2.2"
 
-**ListenOptions.Protocols**
+### <a name="listenoptionsprotocols"></a>ListenOptions.Protocols
 
 `Protocols` Vlastnost vytvoří protokol HTTP (`HttpProtocols`) povolený koncový bod připojení nebo na serveru. Přiřaďte hodnotu `Protocols` vlastnost z `HttpProtocols` výčtu.
 

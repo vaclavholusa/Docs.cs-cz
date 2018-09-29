@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/20/2018
 uid: signalr/publish-to-azure-web-app
-ms.openlocfilehash: b0126771a9ba3a28a7af14adf5b5959c7591e5fb
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a6a0e44f5c67fefdac6bd26b3772c23e75f8bfc1
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095291"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454723"
 ---
 # <a name="publish-an-aspnet-core-signalr-app-to-an-azure-web-app"></a>Publikování ASP.NET Core aplikace SignalR pro webovou aplikaci Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "39095291"
 
 ## <a name="publish-the-app"></a>Publikování aplikace
 
-Visual Studio obsahuje integrované nástroje pro publikování do webové aplikace Azure. Můžete použít Visual Studio Code uživatele [rozhraní příkazového řádku Azure](/cli/azure) příkazy k publikování aplikací do Azure. Tento článek se týká publikování pomocí nástrojů v sadě Visual Studio. Publikování aplikace pomocí Azure CLI, najdete v článku [publikování aplikace ASP.NET Core do Azure pomocí nástrojů příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli).
+Visual Studio obsahuje integrované nástroje pro publikování do webové aplikace Azure. Můžete použít Visual Studio Code uživatele [rozhraní příkazového řádku Azure](/cli/azure) příkazy k publikování aplikací do Azure. Tento článek se týká publikování pomocí nástrojů v sadě Visual Studio. Publikování aplikace pomocí Azure CLI, najdete v článku [publikování aplikace ASP.NET Core do Azure pomocí nástrojů příkazového řádku](/azure/app-service/app-service-web-get-started-dotnet).
 
 Klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **publikovat**. Ujistěte se, že **vytvořit nový** se změnami **vyberte cíl publikování** dialogového okna a vyberte **publikovat**.
 
@@ -63,6 +63,6 @@ Na webu Azure Portal, přejděte na **nastavení aplikace** pro vaši webovou ap
 
 ## <a name="related-resources"></a>Související prostředky
 
-* [Publikování aplikace ASP.NET Core do Azure pomocí nástrojů příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli?tabs=windows)
+* [Publikování aplikace ASP.NET Core do Azure pomocí nástrojů příkazového řádku](/azure/app-service/app-service-web-get-started-dotnet)
 * [Publikování aplikace ASP.NET Core do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
 * [Hostitelství a nasazení aplikací v ASP.NET Core ve verzi Preview v Azure](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)

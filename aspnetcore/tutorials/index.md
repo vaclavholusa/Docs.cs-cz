@@ -5,12 +5,12 @@ description: Seznam podrobné pokyny k tom, jak vyvíjet aplikace ASP.NET Core.
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: d103c351595f0d61e5f0ee14492f9f46b8c17e86
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 3d2fbb453c8f6510806d8dc263ea344023aa4cda
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144947"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454788"
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy k ASP.NET Core
 
@@ -28,7 +28,7 @@ Tyto podrobné návody pro vývoj aplikací ASP.NET Core jsou k dispozici:
    * [Stránky Razor s VS Code](xref:tutorials/razor-pages-vsc/index)  
 
 * [Vytvoření webové aplikace SignalR, která pracuje v reálném čase](xref:tutorials/signalr)
-* [Vytvoření webové aplikace SignalR s TypeScript](xref:tutorials/signalr-typescript-webpack)
+* [Vytvoření webové aplikace SignalR pomocí TypeScriptu](xref:tutorials/signalr-typescript-webpack)
 
 * Vytvoření webové aplikace ASP.NET Core MVC
 
@@ -82,7 +82,7 @@ Tyto podrobné návody pro vývoj aplikací ASP.NET Core jsou k dispozici:
 ## <a name="host-and-deploy"></a>Hostitelství a nasazení
 
 * [Nasazení webové aplikace ASP.NET Core do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)
-* [Nasazení webové aplikace ASP.NET Core do Azure pomocí příkazového řádku](xref:tutorials/publish-to-azure-webapp-using-cli)
+* [Nasazení webové aplikace ASP.NET Core do Azure pomocí příkazového řádku](/azure/app-service/app-service-web-get-started-dotnet)
 * [Publikování do Azure webové aplikace s průběžným nasazováním](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 * [Nasazení kontejneru ASP.NET na vzdáleného hostitele Docker](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [ASP.NET Core a Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)

@@ -1,17 +1,17 @@
 ---
 title: Metabalíček Microsoft.aspnetcore.all pro ASP.NET Core 2.0
 author: Rick-Anderson
-description: Metabalíček Microsoft.aspnetcore.all zahrnuje všechny podporované balíčky ASP.NET Core a Entity Framework Core, společně s jejich závislostmi.
+description: Metabalíček Microsoft.aspnetcore.all se nedoporučuje pro ASP.NET Core 2.1 nebo novější.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/20/2017
+ms.date: 09/20/2018
 uid: fundamentals/metapackage
-ms.openlocfilehash: fbc0f5465dc37a612b81c293f1a58b53ea4b2238
-ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
+ms.openlocfilehash: 1942426dbd5c15ae4a5fa5fbb931b94f50aa6043
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39123824"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454736"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Metabalíček Microsoft.aspnetcore.all pro ASP.NET Core 2.0
 
@@ -20,11 +20,11 @@ ms.locfileid: "39123824"
 
 Tato funkce vyžaduje ASP.NET Core 2.x cílení na .NET Core 2.x.
 
-[Metabalíček](https://www.nuget.org/packages/Microsoft.AspNetCore.All) Microsoft.aspnetcore.all pro ASP.NET Core zahrnuje:
+[Metabalíček](https://www.nuget.org/packages/Microsoft.AspNetCore.All) Microsoft.AspNetCore.All pro ASP.NET Core zahrnuje:
 
-* Všechny podporované balíčky týmem ASP.NET Core.
+* Všechny podporované balíčky vytvořené týmem ASP.NET Core.
 * Všechny podporované balíčky pomocí Entity Framework Core.
-* Interní a 3. stran závislosti používat ASP.NET Core a Entity Framework Core.
+* Interní závislosti a závislosti třetích stran používané v rámci ASP.NET Core a Entity Framework Core.
 
 Všechny funkce aplikace ASP.NET Core 2.x a Entity Framework Core 2.x jsou součástí `Microsoft.AspNetCore.All` balíčku. Tento balíček použít výchozí šablony projektu cílení ASP.NET Core 2.0.
 
@@ -65,3 +65,11 @@ Všechny závislosti z předchozí balíčky, které jinak nejsou závislosti `M
 
 * `StackExchange.Redis` jako závislost `Microsoft.Extensions.Caching.Redis`
 * `Microsoft.ApplicationInsights` jako závislost `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`
+
+## <a name="update-aspnet-core-21"></a>Aktualizace ASP.NET Core 2.1
+
+Doporučujeme vám migrace na migraci `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all 2.1 nebo novější. Pokud chcete dál používat `Microsoft.AspNetCore.All` Microsoft.aspnetcore.all a ověřte nasazení nejnovější verze opravy:
+
+* Na počítačích vývojářů a buildovací servery: nainstalujte nejnovější [.NET Core SDK](https://www.microsoft.com/net/download).
+* Na serverech nasazení: nainstalujte nejnovější [.NET Core runtime](https://www.microsoft.com/net/download).
+ Vaše aplikace se posunout vpřed byla nejnovější nainstalovaná verze na restartování aplikace.

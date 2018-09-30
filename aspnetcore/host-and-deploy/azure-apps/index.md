@@ -1,19 +1,19 @@
 ---
-title: Hostitele ASP.NET Core ve službě Azure App Service
+title: Nasazení aplikace ASP.NET Core do Azure App Service
 author: guardrex
-description: Zjistěte, jak hostovat aplikace ASP.NET Core ve službě Azure App Service s odkazy na užitečné zdroje informací.
+description: Tento článek obsahuje odkazy na hostiteli Azure a nasazení prostředků.
 ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 23289823e154d93e4bedd23a1efae0e58c71eae0
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: a70ca46da633161083c1860aca92242d47d5e7c7
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340183"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454755"
 ---
-# <a name="host-aspnet-core-on-azure-app-service"></a>Hostitele ASP.NET Core ve službě Azure App Service
+# <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Nasazení aplikace ASP.NET Core do Azure App Service
 
 [Azure App Service](https://azure.microsoft.com/services/app-service/) je [Microsoft cloud computingu platformová služba](https://azure.microsoft.com/) pro hostování webových aplikací, včetně ASP.NET Core.
 

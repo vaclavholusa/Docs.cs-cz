@@ -5,12 +5,12 @@ description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit p
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010972"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860950"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
@@ -45,7 +45,7 @@ Vytvoření projektu webové aplikace ASP.NET Core s jednotlivými uživatelský
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* Vyberte **souboru** > **nové** > **projektu**. 
+* Vyberte **souboru** > **nové** > **projektu**.
 * Vyberte **webová aplikace ASP.NET Core**. Pojmenujte projekt **WebApp1** stejný obor názvů jako projekt soubor ke stažení. Klikněte na tlačítko **OK**.
 * Vyberte v ASP.NET Core **webovou aplikaci** ASP.NET Core 2.1 vyberte **změna ověřování**.
 * Vyberte **jednotlivé uživatelské účty** a klikněte na tlačítko **OK**.
@@ -119,15 +119,12 @@ Postupujte podle [generování uživatelského rozhraní identity do projektu Ra
 
 Přidáte soubory registrace, přihlášení a odhlášení.
 
-
 # <a name="net-core-clitabnetcore-cli"></a>[Rozhraní příkazového řádku .NET Core](#tab/netcore-cli)
 
 Pokud jste vytvořili projekt s názvem **WebApp1**, spusťte následující příkazy. Jinak použijte správný obor názvů pro `ApplicationDbContext`:
 
-
 ```cli
 dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
-
 ```
 
 PowerShell používá jako oddělovač příkazu středník. Při použití prostředí PowerShell, řídicí středníky v seznamu souborů nebo vložit seznam souborů v dvojitých uvozovkách, jak ukazuje předchozí příklad.
@@ -163,7 +160,7 @@ PowerShell používá jako oddělovač příkazu středník. Při použití pros
 Přihlašovací formulář se zobrazí při:
 
 * **Přihlášení** vybraný odkaz.
-* Když uživatel přistupuje k stránku, kde nejsou ověřené **nebo** ověřen, bude přesměrován na přihlašovací stránku. 
+* Když uživatel přistupuje k stránku, kde nejsou ověřené **nebo** ověřen, bude přesměrován na přihlašovací stránku.
 
 Když se odešle formulář na přihlašovací stránku, `OnPostAsync` akce je volána. `PasswordSignInAsync` je volán na `_signInManager` objektu (postkytovatel: injektáž závislostí).
 
@@ -254,7 +251,6 @@ Zobrazit [konfigurace](#pw) ukázku, která nastavuje minimální požadavky.
 * <xref:security/authorization/secure-data>
 * <xref:security/authentication/add-user-data>
 * <xref:security/authentication/identity-enable-qrcodes>
-* [Konfigurace Identity primárních klíčů datový typ](xref:security/authentication/identity-primary-key-configuration).
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>

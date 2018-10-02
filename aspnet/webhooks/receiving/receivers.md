@@ -6,12 +6,12 @@ description: ASP.NET – Webhooky příjemců
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 6cdea089-15b2-4732-8c68-921ca561a8f1
-ms.openlocfilehash: 376cb3e3fdc0bc7bd248da1f57e1064fb27b3cef
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d771a588b23abcd7b1b33e694af17b219683fc48
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41754777"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860911"
 ---
 # <a name="aspnet-webhooks-receivers"></a>ASP.NET – Webhooky příjemců
 
@@ -33,7 +33,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 Z bezpečnostních důvodů vyžadují mnoho příjemci Webhooku, že je identifikátor URI *https* identifikátor URI a v některých případech musí obsahovat také další dotaz parametr, který se používá k vynucení, který pouze zamýšlené strany můžete poslat Webhooky výše identifikátoru URI .
 
-<em> <receiver> </em> Komponenta je jméno příjemce, například <em>githubu</em> nebo <em>slack</em>.
+`<receiver>` Komponenta je jméno příjemce, například `github` nebo `slack`.
 
 *{Id}* je volitelný identifikátor, který slouží k identifikaci konkrétní konfigurace příjemce Webhooku. To je možné zaregistrovat N Webhooky u konkrétního příjemce. Například následující tři identifikátory URI slouží k registraci pro tři nezávislá Webhooků:
 

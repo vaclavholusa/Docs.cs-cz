@@ -6,14 +6,16 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 5ba26d46bba9cdc649ac93c67c50731941c61888
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: a6a5023594aec01370143e7d1f35fb45c109122a
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523151"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860937"
 ---
 # <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
+
+Tento dokument popisuje kroky pro vytvoření a spuštění aplikace ASP.NET Core.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -21,55 +23,57 @@ ms.locfileid: "46523151"
 
 2. Vytvoření projektu aplikace ASP.NET Core. Otevřete příkazové okno a zadejte následující příkaz:
 
-    ```console
-    dotnet new webapp -o aspnetcoreapp
-    ```
+   ```console
+   dotnet new webapp -o aspnetcoreapp
+   ```
 
 3. Důvěřujete certifikátu vývoj HTTPS:
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-    ```console
-    dotnet dev-certs https --trust
-    ```
+  ```console
+  dotnet dev-certs https --trust
+  ```
 
-   Ve výstupu předchozího příkazu se zobrazí následující dialogové okno:
+  Ve výstupu předchozího příkazu se zobrazí následující dialogové okno:
 
-   ![Dialogové okno upozornění zabezpečení](_static/cert.png)
+  ![Dialogové okno upozornění zabezpečení](_static/cert.png)
 
-   Vyberte **Ano** Pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
+  Vyberte **Ano** Pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-    ```console
-    dotnet dev-certs https --trust
-    ```
+  ```console
+  dotnet dev-certs https --trust
+  ```
 
-   Ve výstupu předchozího příkazu se zobrazí následující zpráva:
+  Ve výstupu předchozího příkazu se zobrazí následující zpráva:
 
-   *Byla vyžádána důvěřující vývojářský certifikát HTTPS. Pokud certifikát není důvěryhodný jsme se spusťte následující příkaz:* `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`
-   *Tento příkaz vás může vyzvat k zadání hesla k instalaci certifikátu v řetězci klíčů systému. Heslo:*
+  *Byla vyžádána důvěřující vývojářský certifikát HTTPS. Pokud certifikát není důvěryhodný provedeme následující příkaz:* `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`.  
+  * Tento příkaz vás může vyzvat k zadání hesla k instalaci certifikátu v řetězci klíčů systému.
+  
+  Heslo: *
 
-   Zadejte svoje heslo, pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
+  Zadejte svoje heslo, pokud vyjádříte souhlas s důvěřovat certifikátu vývoje.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-   O tom, jak důvěřovat certifikátu protokolu HTTPS vývoj naleznete v dokumentaci k vaší distribuci Linuxu
+  O tom, jak důvěřovat certifikátu protokolu HTTPS vývoj naleznete v dokumentaci k vaší distribuci Linuxu.
    
 ---
 
 4. Spuštění aplikace:
 
-    ```console
-    cd aspnetcoreapp
-    dotnet run
-    ```
+   ```console
+   cd aspnetcoreapp
+   dotnet run
+   ```
 
 5. Přejděte do [ http://localhost:5001 ](http://localhost:5001).  Klikněte na tlačítko **přijmout** přijměte zásady ochrany osobních údajů a soubory cookie. Tato aplikace nemá uchovává osobní údaje.
 
 6. Otevřít *Pages/About.cshtml* a upravovat na stránce s následující zvýrazněný kód:
 
-    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
+   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
 7. Přejděte do [ http://localhost:5001/About ](http://localhost:5001/About) a ověřte změny jsou zobrazeny.
 
@@ -85,22 +89,22 @@ ms.locfileid: "46523151"
 
    Otevřete příkazové okno. Zadejte následující příkaz:
 
-    ```console
-    dotnet new razor -o aspnetcoreapp
-    ```
+   ```console
+   dotnet new razor -o aspnetcoreapp
+   ```
 
 3. Spusťte aplikaci pomocí následujících příkazů:
 
-    ```console
-    cd aspnetcoreapp
-    dotnet run
-    ```
+   ```console
+   cd aspnetcoreapp
+   dotnet run
+   ```
 
 4. Přejděte do [ http://localhost:5000 ](http://localhost:5000).
 
 5. Otevřít *Pages/About.cshtml* a upravovat na stránce zobrazí zprávu "Hello, world! Je čas na serveru @DateTime.Now":
 
-    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 
 6. Přejděte do [ http://localhost:5000/About ](http://localhost:5000/About) a ověřit změny.
 
@@ -137,9 +141,9 @@ ms.locfileid: "46523151"
 
 5. Obnovení balíčků.
 
-    ```console
-    dotnet restore
-    ```
+   ```console
+   dotnet restore
+   ```
 
 6. Spusťte aplikaci.
 

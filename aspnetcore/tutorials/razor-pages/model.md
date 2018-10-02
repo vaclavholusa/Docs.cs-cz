@@ -5,12 +5,12 @@ description: Objevte, jak přidat třídy pro správu filmy v databázi pomocí 
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: de82738509bb009f030a02e28904e3155088fa6a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 5cd1e08ac52d352be23a280419d7456f685a03ad
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011355"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045598"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>Přidání modelu do aplikace v ASP.NET Core Razor Pages
 
@@ -22,9 +22,7 @@ ms.locfileid: "46011355"
 
 V Průzkumníku řešení klikněte pravým tlačítkem myši **RazorPagesMovie** Projekt > **přidat** > **novou složku**. Název složky *modely*.
 
-Klikněte pravým tlačítkem myši *modely* složky. Vyberte **přidat** > **třídy**. Název třídy **film** a přidejte následující vlastnosti:
-
-Nahraďte obsah `Movie` třídy následujícím kódem:
+Klikněte pravým tlačítkem myši *modely* složky. Vyberte **přidat** > **třídy**. Název třídy **film** a nahraďte obsah `Movie` třídy následujícím kódem:
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie21/Models/Movie1.cs?name=snippet)]
 
@@ -58,10 +56,10 @@ Proces vygenerované uživatelské rozhraní vytvořit a změnit následující 
 
 ### <a name="files-created"></a>Soubory vytvořené
 
-* *Stránky/filmy* vytvoření, odstranění, podrobností, úpravy, Index. Tyto stránky je podrobně popsaný v dalším kurzu.
+* *Stránky/filmy*: vytvoření, odstranění, podrobností, úpravy, Index. Tyto stránky je podrobně popsaný v dalším kurzu.
 * *Data/RazorPagesMovieContext.cs*
 
-### <a name="files-updates"></a>Soubory aktualizace
+### <a name="file-updates"></a>Aktualizace souboru
 
 * *Startup.cs*: změny tohoto souboru jsou podrobně popsané v další části.
 * *appSettings.JSON*: přidat připojovací řetězec použitý pro připojení k místní databázi.
@@ -122,8 +120,8 @@ Ignorovat následující zpráva upozornění, že v opravy pozdějších kurzec
 
 Pokud dojde k chybě:
 
-SqlException: Databázi "RazorPagesMovieContext identifikátor GUID" požadovaný v přihlášení nelze otevřít. Přihlášení se nezdařilo.
-Přihlašovací jméno uživatele 'Jméno uživatele' se nezdařilo.
+`SqlException: Cannot open database "RazorPagesMovieContext-GUID" requested by the login. The login failed.
+Login failed for user 'User-name'.`
 
 Je provedena [kroku migrace](#pmc).
 

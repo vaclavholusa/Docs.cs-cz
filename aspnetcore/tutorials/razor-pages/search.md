@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 9608f454c2c4ae0f4db1e71200b0ca98fe2cd2ad
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c88441b39d8c96ec817c58fc56ebd51a0887b077
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454710"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045559"
 ---
 # <a name="add-search-to-aspnet-core-razor-pages"></a>Přidání vyhledávání do ASP.NET Core Razor Pages
 
@@ -82,7 +82,7 @@ Přidejte následující zvýrazněný vlastnosti do *Pages/Movies/Index.cshtml.
 ::: moniker-end
 
 
-`SelectList Genres` Obsahuje seznam žánrů. To umožňuje uživateli vybrat rozšířením podle tematických ze seznamu.
+`Genres` Vlastnost obsahuje seznam žánrů. To umožňuje uživateli vybrat rozšířením podle tematických ze seznamu.
 
 `MovieGenre` Vlastnost obsahuje konkrétní žánr vybere uživatele (například "západní").
 

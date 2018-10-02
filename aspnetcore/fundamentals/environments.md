@@ -5,12 +5,12 @@ description: Zjistěte, jak řídit chování aplikace napříč několika prost
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 720e5ef9fb63b83499ce1801a1c3f9df4786d748
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 0786b55ee133b98aae1bfac688e7d81d23c8c9a4
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927939"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860976"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Používání více prostředí v ASP.NET Core
 
@@ -28,7 +28,7 @@ ASP.NET Core načte proměnnou prostředí `ASPNETCORE_ENVIRONMENT` při spušt�
 
 Předchozí kód:
 
-* Volání [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) a [UseBrowserLink](/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink) při `ASPNETCORE_ENVIRONMENT` je nastavena na `Development`.
+* Volání [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) při `ASPNETCORE_ENVIRONMENT` je nastavena na `Development`.
 * Volání [UseExceptionHandler](/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler) při hodnotu `ASPNETCORE_ENVIRONMENT` nastavený jeden z následujících akcí:
 
     * `Staging`
@@ -285,7 +285,7 @@ Načtení konfigurace podle prostředí, doporučujeme:
 
 ### <a name="startup-class-conventions"></a>Při spuštění třídy konvence
 
-Při spuštění aplikace ASP.NET Core [třídu pro spuštění](xref:fundamentals/startup) bootstraps aplikace. Aplikace můžete definovat zvláštní `Startup` třídy pro různá prostředí (například `StartupDevelopment`) a odpovídající `Startup` třídy je vybrané v době běhu. Třídy, jejichž přípona názvu odpovídá aktuální prostředí je nastaveno jako prioritní. Pokud odpovídající `Startup{EnvironmentName}` třídy nenajde, `Startup` třída se používá.
+Při spuštění aplikace ASP.NET Core [třídu pro spuštění](xref:fundamentals/startup) bootstraps aplikace. Aplikace může definovat oddělenou `Startup` třídu pro různá prostředí (například `StartupDevelopment`). Odpovídající `Startup` třída je vybrána v době běhu. Třída, jejíž název má příponu odpovídající aktuálnímu prostředí, je upřednostněna. Pokud odpovídající `Startup{EnvironmentName}` třídy nenajde, `Startup` třída se používá.
 
 K implementaci založeném na prostředí `Startup` třídy, vytvoří `Startup{EnvironmentName}` třídy pro každé prostředí, které se používají a záložní `Startup` třídy:
 

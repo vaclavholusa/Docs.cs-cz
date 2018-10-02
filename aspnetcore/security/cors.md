@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/05/2018
 uid: security/cors
-ms.openlocfilehash: f654260411f1bd5725a0e3d14951c7e9bbc893e8
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: cfbf24edb1dae76f676d51738b0d57266688d53e
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039975"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045585"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>Povolení žádostí napříč zdroji (CORS) v ASP.NET Core
 
@@ -270,7 +270,7 @@ U některých požadavků CORS prohlížeč odešle požadavek další před pro
 
 * Metoda žádosti je GET, HEAD nebo POST.
 * Aplikaci nelze nastavit hlavičku žádosti jiných než `Accept`, `Accept-Language`, `Content-Language`, `Content-Type`, nebo `Last-Event-ID`.
-* `Content-Type` Záhlaví,-li nastavit, protože má jednu z jedné z následujících hodnot:
+* `Content-Type` Záhlaví,-li nastavit, protože má jednu z následujících hodnot:
   * `application/x-www-form-urlencoded`
   * `multipart/form-data`
   * `text/plain`

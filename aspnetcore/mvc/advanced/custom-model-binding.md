@@ -1,48 +1,48 @@
 ---
-title: Vlastní Model vazby v ASP.NET Core
+title: Vlastní vazba modelu v ASP.NET Core
 author: ardalis
-description: Zjistěte, jak vazby modelu umožňuje akce kontroleru pracovat přímo s typy modelu v ASP.NET Core.
+description: Zjistěte, jak vazby modelu umožňuje akce kontroleru pracovat přímo s typy modelů v ASP.NET Core.
 ms.author: riande
 ms.date: 04/10/2017
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: f5bd9a3eefb1fd9c1534e8767ad8e8af37514adb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b8745241b0699d270bb8f3a56ab614b0ca49e64b
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275390"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045533"
 ---
-# <a name="custom-model-binding-in-aspnet-core"></a>Vlastní Model vazby v ASP.NET Core
+# <a name="custom-model-binding-in-aspnet-core"></a>Vlastní vazba modelu v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/)
 
-Vazby modelu umožňuje akce kontroleru pracovat přímo s modelu typy (předané jako argumenty metoda), spíš než požadavky HTTP. Mapování mezi modely dat a aplikací příchozí požadavek se zpracovává souborem vazače modelů. Vazba funkce integrované modelu mohou vývojáři rozšířit implementací vazače modelů vlastní (i když obvykle nemusíte napsat vlastního zprostředkovatele).
+Vazby modelu umožňuje akce kontroleru pracovat přímo s typy modelů (předané jako argumenty metody), spíše než požadavky HTTP. Mapování mezi příchozí žádosti o datové a aplikační modely zařizuje služba vazače modelů. Vývojáři mohou rozšířit funkci vazby modelu předdefinovaných implementací vazače modelů vlastní (i když obvykle není nutné napsat vlastního zprostředkovatele).
 
-[Zobrazení nebo stažení ukázky z webu GitHub](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-model-binding/)
+[Zobrazit nebo stáhnout ukázky z Githubu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/custom-model-binding/)
 
-## <a name="default-model-binder-limitations"></a>Výchozí omezení vazač modelu
+## <a name="default-model-binder-limitations"></a>Výchozí omezení vazače modelu
 
-Vazače modelů výchozí podporují většinu běžné typy dat .NET Core a by měl splňovat požadavky Většina vývojářů. Očekávané při vytváření vazby textový vstup z požadavku přímo do modelu typy. Možná budete muset transformace vstupu před jeho vazby. Pokud například máte klíč, který slouží k vyhledávání dat modelu. Můžete použít vlastní vazač modelu pro načtení dat. na základě klíče.
+Vazače modelů výchozí podporu většiny běžných typů dat .NET Core a by měl splňovat potřeby Většina vývojářů. Očekávají se vytvořit vazbu textový vstup z požadavku přímo s typy modelů. Můžete potřebovat, který umožňuje transformovat vstupní před jeho vazbu. Například pokud máte klíč, který slouží k vyhledání dat modelu. Můžete použít vlastní vazač modelu pro načtení dat na základě klíče.
 
-## <a name="model-binding-review"></a>Zkontrolujte vazby modelu
+## <a name="model-binding-review"></a>Kontrola vazby modelu
 
-Vazby modelu používá pro typy, které funguje na určité definice. A *jednoduchý typ* je převést z jednoho řetězce ve vstupu. A *komplexní typ* je převést z více vstupních hodnot. Rozhraní framework určuje rozdíl podle existenci `TypeConverter`. Doporučujeme vytvořit převaděč typu, pokud máte jednoduchou `string`  ->  `SomeType` mapování, která nevyžaduje externím prostředkům.
+Vazby modelu používá konkrétní definice pro typy, které se pracuje. A *jednoduchý typ* převést z jednoho řetězce ve vstupu. A *komplexní typ* převést z více vstupních hodnot. Rozhraní určuje rozdíl založené na existenci `TypeConverter`. Doporučujeme vytvořit konvertor typu, pokud máte jednoduchou `string`  ->  `SomeType` mapování, které nevyžaduje externí prostředky.
 
-Před vytvořením vlastní vlastní vazač modelu, je vhodné prostudovali jak existující model jsou implementované vazače. Vezměte v úvahu [ByteArrayModelBinder](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder) kterých jde převést kódováním base64 řetězce na pole bajtů. Bajtová pole jsou často uložené jako soubory nebo pole objektů BLOB databáze.
+Před vytvořením vlastní vlastní vazač modelu, je vhodné si předtím prostudovali jak existující model jsou implementovány vazače. Vezměte v úvahu [ByteArrayModelBinder](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder) kterých jde převést pole bajtů řetězce s kódováním base64. Bajtová pole jsou často uložené jako soubory nebo pole objektů BLOB v databázi.
 
-### <a name="working-with-the-bytearraymodelbinder"></a>Práce ByteArrayModelBinder
+### <a name="working-with-the-bytearraymodelbinder"></a>Práce s ByteArrayModelBinder
 
-Řetězce s kódováním base64 lze použít k reprezentování binární data. Například na následujícím obrázku může být kódovaný jako řetězec.
+Řetězce s kódováním base64 slouží k reprezentaci binární data. Na následujícím obrázku například může být zakódován jako řetězec.
 
-![DotNet robota](custom-model-binding/images/bot.png "robota dotnet.")
+![DotNet bot](custom-model-binding/images/bot.png "dotnet bot")
 
-Malá část řetězec s kódováním je znázorněno na následujícím obrázku:
+Malou část řetězce s kódováním je vidět na následujícím obrázku:
 
-![DotNet robota kódovaný](custom-model-binding/images/encoded-bot.png "kódovaný robota dotnet.")
+![DotNet bot kódovaný](custom-model-binding/images/encoded-bot.png "dotnet bot kódování")
 
-Postupujte podle pokynů [tohoto příkladu README](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/sample/CustomModelBindingSample/README.md) převést řetězec s kódováním base64 do souboru.
+Postupujte podle pokynů [vzorku README](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/sample/CustomModelBindingSample/README.md) pro převod řetězce s kódováním base64 do souboru.
 
-Můžete využít řetězce kódováním base64 a používat rozhraní ASP.NET MVC jádra `ByteArrayModelBinder` ji převést do bajtového pole. [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider) které implementuje [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider) mapuje `byte[]` argumenty, které mají `ByteArrayModelBinder`:
+Můžete provést řetězec s kódováním base64 a používat ASP.NET Core MVC `ByteArrayModelBinder` převést do bajtového pole. [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider) která implementuje [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider) mapuje `byte[]` argumenty `ByteArrayModelBinder`:
 
 ```csharp
 public IModelBinder GetBinder(ModelBinderProviderContext context)
@@ -61,75 +61,75 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 }
 ```
 
-Při vytváření vlastní vlastní vazač modelu, můžete implementovat vlastní `IModelBinderProvider` zadejte, nebo použijte [ModelBinderAttribute](/dotnet/api/microsoft.aspnetcore.mvc.modelbinderattribute).
+Při vytváření vlastní vlastní vazač modelu, můžete implementovat vlastní `IModelBinderProvider` typ nebo použít [ModelBinderAttribute](/dotnet/api/microsoft.aspnetcore.mvc.modelbinderattribute).
 
-Následující příklad ukazuje, jak používat `ByteArrayModelBinder` převést řetězec s kódováním base64 tak, aby `byte[]` a výsledek uložit do souboru:
+Následující příklad ukazuje, jak používat `ByteArrayModelBinder` převést na řetězec s kódováním base64 `byte[]` a uložte výsledky do souboru:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post1&highlight=3)]
 
-Můžete odeslat řetězec s kódováním base64, pomocí této metody rozhraní api pomocí nástroje, například [Postman](https://www.getpostman.com/):
+Můžete vytvořit řetězec s kódováním base64 do této metody rozhraní api pomocí některého nástroje, například [Postman](https://www.getpostman.com/):
 
 ![postman](custom-model-binding/images/postman.png "postman")
 
-Tak dlouho, dokud vazač svázat data požadavku na příslušně pojmenovaných vlastnosti nebo argumenty, bude úspěšné vazby modelu. Následující příklad ukazuje, jak používat `ByteArrayModelBinder` s modelem zobrazení:
+Tak dlouho, dokud vazač svázat data požadavku na příslušně pojmenovaných vlastnosti nebo argumenty, proběhne úspěšně vazby modelu. Následující příklad ukazuje, jak používat `ByteArrayModelBinder` pomocí zobrazení modelu:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post2&highlight=2)]
 
-## <a name="custom-model-binder-sample"></a>Ukázky vazač vlastní modelu
+## <a name="custom-model-binder-sample"></a>Ukázka vlastního modelu vazače
 
-V této části jsme budete implementovat vlastní vazač modelu který:
+V této části jsme budete implementovat vlastní vazač modelu, který:
 
-- Převede příchozí data požadavku na silného typu klíče argumenty.
+- Převede příchozí žádosti o data silného typu klíče argumenty.
 - Používá Entity Framework Core se načíst související entity.
-- Předá přidružené entity jako argument pro metodu akce.
+- Související entita se předává jako argument do metody akce.
 
-Následující ukázkové používá `ModelBinder` atributu u `Author` modelu:
+Následující ukázkový používá `ModelBinder` atribut na `Author` modelu:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Data/Author.cs?highlight=10)]
 
-V předchozí kód `ModelBinder` atribut určuje typ `IModelBinder` který se používá k vytvoření vazby `Author` parametrů akcí. 
+V předchozím kódu `ModelBinder` atribut určuje typ `IModelBinder` , který má použít k vytvoření vazby `Author` parametry akce. 
 
-`AuthorEntityBinder` Se používá k vytvoření vazby `Author` parametr podle načtení entity ze zdroje dat pomocí Entity Framework Core a `authorId`:
+`AuthorEntityBinder` Pro vazbu se použije `Author` parametru načtení entity ze zdroje dat pomocí Entity Framework Core a `authorId`:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinder.cs?name=demo)]
 
-Následující kód ukazuje způsob použití `AuthorEntityBinder` v metodu akce:
+Následující kód ukazuje způsob použití `AuthorEntityBinder` v metodě akce:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo2&highlight=2)]
 
-`ModelBinder` Atributu lze použít `AuthorEntityBinder` parametry, které nepoužívají výchozí konvence:
+`ModelBinder` Atribut je možné použít `AuthorEntityBinder` na parametry, které nepoužívají výchozí konvence:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
-V tomto příkladu, protože název argument není výchozí `authorId`, je zadán parametr používání `ModelBinder` atribut. Všimněte si, že kontroleru a akce metoda jednodušší ve srovnání s vyhledávání entity v metodě akce. Logika pro načtení Autor pomocí Entity Framework Core je přesunuta do vazače modelu. To může být výrazně zjednodušení, pokud máte několik metod, které vytvořit vazbu na modelu vytvořit a pomáhají vám postupovat podle [SUCHÝCH Princip](http://deviq.com/don-t-repeat-yourself/).
+V tomto příkladu, protože název argumentu není výchozí `authorId`, je zadán pomocí parametru `ModelBinder` atribut. Všimněte si, že metoda kontroleru a akce jsou zjednodušené ve srovnání s vyhledávání entit v metodě akce. Logika pro načtení Autor pomocí Entity Framework Core se přesune do vazače modelu. To může být značné zjednodušení, pokud máte několik metod, které svázat `Author` model a můžete sledovat [zásada SUCHÝCH](http://deviq.com/don-t-repeat-yourself/).
 
-Můžete použít `ModelBinder` atribut vlastnosti jednotlivých modelu (například na viewmodel) nebo pro parametry metody akce k určení vazač modelu nebo název modelu pro právě tento typ nebo akci.
+Můžete použít `ModelBinder` atribut vlastnosti jednotlivých modelu (například na viewmodel) nebo na parametry metod akce k určení vazač modelu nebo název modelu pro právě tento typ nebo akce.
 
 ### <a name="implementing-a-modelbinderprovider"></a>Implementace ModelBinderProvider
 
-Místo použití atributu, můžete implementovat `IModelBinderProvider`. Toto je, jak jsou implementované vestavěnou architekturou vazače. Když zadáte typ vaší vazač funguje na, zadejte typ argumentu vytváří, **není** přijímá vaší vazač vstupu. Následující zprostředkovatele vazače pracuje `AuthorEntityBinder`. Při jejím přidání do kolekce MVC poskytovatelů, nemusíte používat `ModelBinder` atributu u `Author` nebo `Author` zadali parametry.
+Místo použití atributu, můžete implementovat `IModelBinderProvider`. To je, jak se implementují vestavěnou architekturou vazače. Když zadáte typ pracuje vaše vazač, zadejte typ argumentu vytvoří, **není** přijímá vstup vaše vazače. Následující zprostředkovatele vazače spolupracuje `AuthorEntityBinder`. Když se přidá do kolekce MVC od poskytovatelů, není nutné použít `ModelBinder` atribut na `Author` nebo `Author` silné parametry.
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
 
-> Poznámka: Předchozí kód vrátí `BinderTypeModelBinder`. `BinderTypeModelBinder` funguje jako objekt pro vytváření pro vazače modelů a poskytuje vkládání závislostí (DI). `AuthorEntityBinder` Vyžaduje DI pro přístup k EF jádra. Použití `BinderTypeModelBinder` Pokud vaše vazač modelu vyžaduje služby od DI.
+> Poznámka: Vrátí předchozí kód `BinderTypeModelBinder`. `BinderTypeModelBinder` funguje jako objekt pro vytváření pro vazače modelů a poskytuje injektáž závislostí (DI). `AuthorEntityBinder` Vyžaduje DI pro přístup k EF Core. Použití `BinderTypeModelBinder` Pokud vyžaduje služby DI vaše vazače modelu.
 
-Pokud chcete používat zprostředkovatele vazače modelu vlastní, přidejte ho `ConfigureServices`:
+Použití zprostředkovatele vazače modelu vlastní, přidejte ji kliknutím na `ConfigureServices`:
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
 
-Při vyhodnocování vazače modelů, je zkontrolován kolekce zprostředkovatelů v pořadí. První poskytovatele, který vrací vazač používá.
+Při vyhodnocování vazače modelů, je kolekce zprostředkovatelů zkoumány podle pořadí. Prvním poskytovatelem, který vrací vazač se používá.
 
-Následující obrázek znázorňuje výchozí vazače modelů z ladicího programu.
+Následující obrázek ukazuje výchozí vazače modelů z ladicího programu.
 
 ![Výchozí vazače modelů](custom-model-binding/images/default-model-binders.png "výchozí vazače modelů")
 
-Přidání poskytovatele na konec kolekce může mít za následek vazač modelu předdefinované volána před vaše vlastní vazač má možnost. V tomto příkladu, poběží vlastní zprostředkovatel se přidá na začátek kolekce zajistit, že se používá pro `Author` argumentů akce.
+Vazač modelu integrované volána před vlastní vázací objekt má možnost můžou výsledkem přidání poskytovatele na konec kolekce. V tomto příkladu vlastního zprostředkovatele se přidá na začátek kolekce, kterou chcete zajistit, že se používá pro `Author` argumentů.
 
 [!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
 
 ## <a name="recommendations-and-best-practices"></a>Doporučení a osvědčené postupy
 
 Vazače modelů vlastní:
-- Neměli nastavit stavové kódy, nebo může vracet výsledky (například 404 není nalezena). V případě selhání vazby modelu [filtr akce](xref:mvc/controllers/filters) nebo logiky v rámci samotné metoda akce by měla řídit tyto chyby.
-- Jsou velmi užitečné k odstranění opakovaných kódu a mezi vyjímání obavy z metody akce.
-- Obvykle nepoužívejte převést řetězec do vlastního typu, [ `TypeConverter` ](/dotnet/api/system.componentmodel.typeconverter) je obvykle lepší volbou.
+- By se neměly pokoušet stavové kódy nebo vrátit výsledky (například 404 Nenalezeno). Pokud vazba modelu selže, [filtr akce](xref:mvc/controllers/filters) nebo by měla tuto chybu řešit logiky v rámci samotného metody akce.
+- Jsou zvláště užitečná pro odstranění opakování kódu a převeďte společné aspekty z metody akce.
+- Obvykle neměl by se převod řetězce na vlastní typ, [ `TypeConverter` ](/dotnet/api/system.componentmodel.typeconverter) je obvykle vhodnější.

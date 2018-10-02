@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 6144bfb9e731ace51b4f23870fdb06519fd4a9ea
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: cd958b9c084de4b3e12784774544610873a519f9
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211023"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045520"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>Přidání ověřování do stránky ASP.NET Core Razor
 
@@ -27,7 +27,7 @@ Podpora ověřování poskytované stránkami Razor a technologií Entity Framew
 
 ### <a name="adding-validation-rules-to-the-movie-model"></a>Přidání pravidel ověřování do modelu movie
 
-Otevřít *Movie.cs* souboru. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) poskytuje integrovanou sadu atributů ověření, která se použijí deklarativně třída nebo vlastnost. DataAnnotations taky obsahuje atributy formátování, jako je `DataType` , pomoct při formátování a neposkytují ověření.
+Otevřít *Models/Movie.cs* souboru. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) poskytuje integrovanou sadu atributů ověření, která se použijí deklarativně třída nebo vlastnost. DataAnnotations taky obsahuje atributy formátování, jako je `DataType` , pomoct při formátování a neposkytují ověření.
 
 Aktualizace `Movie` třídy výhod `Required`, `StringLength`, `RegularExpression`, a `Range` atributů ověření.
 
@@ -79,7 +79,7 @@ Pokud JavaScript je zakázaný v prohlížeči, odeslání formuláře s chybami
 
 Volitelný parametr, test ověření na straně serveru:
 
-* Zakážete jazyka JavaScript v prohlížeči. Pokud nelze zakázat jazyka JavaScript v prohlížeči, zkuste jiný prohlížeč.
+* Zakážete jazyka JavaScript v prohlížeči. Můžete provést pomocí nástroje pro vývojáře v prohlížeči. Pokud nelze zakázat jazyka JavaScript v prohlížeči, zkuste jiný prohlížeč.
 * Nastavte zarážky `OnPostAsync` metoda vytvoření nebo úprava stránky.
 * Odeslání formuláře se chyby ověření.
 * Ověřte, že stav modelu, který je neplatný:

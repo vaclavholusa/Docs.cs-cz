@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/19/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: e3bf5909edb515a2dabba206abaa160bc431d622
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 62418d108461cf07490d7f406104db9ab3f11783
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46483084"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861067"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -25,7 +25,7 @@ Informace o protokolování stdout při hostování za nástrojem službou IIS n
 
 ## <a name="how-to-create-logs"></a>Jak vytvořit protokoly
 
-Chcete-li vytvořit protokoly, implementovat [ILogger&lt;TCategoryName&gt; ](/dotnet/api/microsoft.extensions.logging.ilogger-1) objektu z [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru:
+Chcete-li vytvořit protokoly, získat [ILogger&lt;TCategoryName&gt; ](/dotnet/api/microsoft.extensions.logging.ilogger-1) z [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru:
 
 ::: moniker range=">= aspnetcore-2.0"
 

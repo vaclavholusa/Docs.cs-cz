@@ -1,132 +1,131 @@
 ---
 title: Migrace z rozhraní ASP.NET Web API pro ASP.NET Core
 author: ardalis
-description: Zjistěte, jak migrovat implementaci webového rozhraní API z webové rozhraní API ASP.NET do ASP.NET Core MVC.
-ms.author: riande
-ms.date: 05/10/2018
+description: Zjistěte, jak migrovat implementaci webového rozhraní API z ASP.NET 4.x webového rozhraní API pro ASP.NET Core MVC.
+ms.author: scaddie
+ms.custom: mvc
+ms.date: 10/01/2018
 uid: migration/webapi
-ms.openlocfilehash: 8dd969c8644525606227989ca87e41fbfae5aed1
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 3c4ded874de2700e1290022a535c08f30dce9490
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894189"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47861015"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>Migrace z rozhraní ASP.NET Web API pro ASP.NET Core
 
-Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://scottaddie.com)
+Podle [Scott Addie](https://twitter.com/scott_addie) a [Steve Smith](https://ardalis.com/)
 
-Webová rozhraní API jsou služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů a mobilních zařízení. ASP.NET Core MVC zahrnuje podporu pro vytváření webových rozhraní API poskytuje jednoduchý a konzistentní způsob vytváření webových aplikací. V tomto článku vám ukážeme kroky potřebné k migraci implementaci webového rozhraní API z webové rozhraní API ASP.NET do ASP.NET Core MVC.
+Rozhraní Web API pro ASP.NET 4.x je služba HTTP, kterou půjde používat celou řadu klientů, včetně prohlížečů a mobilních zařízení. Webové rozhraní API aplikace modelů do jednodušší programovacího modelu říká ASP.NET Core MVC a sjednocuje ASP.NET Core MVC ASP.NET 4.x společnosti. Tento článek popisuje kroky potřebné k migraci z ASP.NET 4.x webového rozhraní API pro ASP.NET Core MVC.
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="review-aspnet-web-api-project"></a>Přezkoumání projektu ASP.NET Web API
+## <a name="prerequisites"></a>Požadavky
 
-Tento článek používá ukázkový projekt *ProductsApp*, které byly vytvořeny v článku [Začínáme s ASP.NET Web API 2](/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) jako výchozí bod. V příslušném projektu je jednoduchý projekt webového rozhraní API ASP.NET nakonfigurovat následujícím způsobem.
+* [Sady SDK .NET core 2.1 nebo novější](https://www.microsoft.com/net/download/all)
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/) verze 15.7.3 nebo novější s **vývoj pro ASP.NET a web** pracovního vytížení
+
+## <a name="review-aspnet-4x-web-api-project"></a>Projděte si projekt webového rozhraní API technologie ASP.NET 4.x
+
+Jako výchozí bod, tento článek používá *ProductsApp* projekt vytvořený v [Začínáme s ASP.NET Web API 2](/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api). V příslušném projektu je nakonfigurovaný Jednoduchý projekt webového rozhraní API technologie ASP.NET 4.x následujícím způsobem.
 
 V *Global.asax.cs*, je provedeno volání `WebApiConfig.Register`:
 
-[!code-csharp[](../migration/webapi/sample/ProductsApp/Global.asax.cs?highlight=14)]
+[!code-csharp[](webapi/sample/ProductsApp/Global.asax.cs?highlight=14)]
 
-`WebApiConfig` je definován v *App_Start*, a má jenom jednu statickou `Register` metody:
+`WebApiConfig` je definován v *App_Start* složky. Má jenom jednu statickou `Register` metody:
 
-[!code-csharp[](../migration/webapi/sample/ProductsApp/App_Start/WebApiConfig.cs?highlight=15,16,17,18,19,20)]
+[!code-csharp[](webapi/sample/ProductsApp/App_Start/WebApiConfig.cs?highlight=15-20)]
 
-Tato třída nakonfiguruje [směrováním atributů](/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2), i když se ve skutečnosti používá v projektu. Nakonfiguruje taky směrovací tabulky, který používá rozhraní ASP.NET Web API. V takovém případě bude rozhraní ASP.NET Web API očekávané adresy URL ve formátu */api/ {controller} / {id}*, s *{id}* je nepovinná.
+Tato třída nakonfiguruje [směrováním atributů](/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2), i když se ve skutečnosti používá v projektu. Nakonfiguruje taky směrovací tabulky, který používá rozhraní ASP.NET Web API. V takovém případě očekává, že webové rozhraní API ASP.NET 4.x adresy URL ve formátu `/api/{controller}/{id}`, s `{id}` je nepovinná.
 
-*ProductsApp* projekt obsahuje pouze jeden jednoduchý kontroleru, která dědí z `ApiController` a poskytuje dvě metody:
+*ProductsApp* projekt obsahuje jeden kontroler. Kontroler dědí z `ApiController` a poskytuje dvě metody:
 
-[!code-csharp[](../migration/webapi/sample/ProductsApp/Controllers/ProductsController.cs?highlight=19,24)]
+[!code-csharp[](webapi/sample/ProductsApp/Controllers/ProductsController.cs?highlight=19,24)]
 
-Nakonec modelu *produktu*, používá *ProductsApp*, je jednoduchou třídu:
+`Product` Model používaný `ProductsController` je jednoduchou třídu:
 
 [!code-csharp[](webapi/sample/ProductsApp/Models/Product.cs)]
 
-Když teď máme Jednoduchý projekt, ze kterého se má spustit, jsme ukazují, jak migrovat tento projekt webového rozhraní API pro ASP.NET Core MVC.
+Následující části ukazují migrace projektu webového rozhraní API pro ASP.NET Core MVC.
 
-## <a name="create-the-destination-project"></a>Vytvořte cílový projekt
+## <a name="create-destination-project"></a>Vytvořte cílový projekt
 
-Pomocí sady Visual Studio, vytvořte novou, prázdnou řešení s názvem *WebAPIMigration*. Přidat existující *ProductsApp* projekt na ni a pak přidejte nový projekt webové aplikace ASP.NET Core do řešení. Název nového projektu *ProductsCore*.
+Proveďte následující kroky v sadě Visual Studio:
 
-![Otevře dialogové okno Nový projekt webové šablony](webapi/_static/add-web-project.png)
+* Přejděte na **souboru** > **nové** > **projektu** > **ostatní typy projektů**  >  **Řešení sady visual Studio**. Vyberte **prázdné řešení**a řešení nazvěte *WebAPIMigration*. Klikněte na tlačítko **OK** tlačítko.
+* Přidat existující *ProductsApp* projektu do řešení.
+* Přidat nový **webové aplikace ASP.NET Core** projektu do řešení. Vyberte **.NET Core** cílové rozhraní framework z rozevíracího seznamu a vyberte **API** šablony projektu. Pojmenujte projekt *ProductsCore*a klikněte na tlačítko **OK** tlačítko.
 
-Potom vyberte šablonu projektu webového rozhraní API. Budeme migrovat *ProductsApp* obsah do tohoto nového projektu.
-
-![Dialogové okno nové webové aplikace pomocí šablony projektu webového rozhraní API vybrali v seznamu šablon ASP.NET Core](webapi/_static/aspnet-5-webapi.png)
-
-Odstranit `Project_Readme.html` z projektu nový soubor. Řešení by teď měl vypadat takto:
-
-![Otevřít v Průzkumníkovi řešení se soubory a složkami ProductsApp a ProductsCore projektů řešení aplikací](webapi/_static/webapimigration-solution.png)
+Řešení teď obsahuje dva projekty. Následující části popisují migraci *ProductsApp* obsah projektu *ProductsCore* projektu.
 
 ## <a name="migrate-configuration"></a>Migrace konfigurace
 
-ASP.NET Core se už používá *Global.asax*, *web.config*, nebo *App_Start* složek. Místo toho všechny úlohy po spuštění se provádějí *Startup.cs* v kořenovém adresáři projektu (viz [spuštění aplikace](../fundamentals/startup.md)). V ASP.NET Core MVC, směrování na základě atributů je nyní standardní součástí při `UseMvc()` nazývá; a toto je doporučený postup pro konfiguraci tras webového rozhraní API (a způsob, jakým zpracovává počáteční projekt webového rozhraní API směrování).
+ASP.NET Core nepoužívá *App_Start* složky nebo *Global.asax* souboru a *web.config* se přidá soubor na čas publikování. *Startup.cs* je náhradou *Global.asax* a je umístěn v kořenové složce projektu. `Startup` Třída zpracovává všechny úlohy po spuštění aplikace. Další informace naleznete v tématu <xref:fundamentals/startup>.
 
-[!code-csharp[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=31)]
+V ASP.NET Core MVC směrovací atribut je standardní součástí při <xref:Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc*> je volána `Startup.Configure`. Následující `UseMvc` volání nahradí *ProductsApp* projektu *App_Start/WebApiConfig.cs* souboru:
 
-Za předpokladu, že chcete používat směrování atributů ve vašem projektu do budoucna, je potřeba žádná další konfigurace. Jednoduše použijte atributy podle potřeby do kontrolerů a akcí, jak je tomu v ukázce `ValuesController` třídu, která je součástí počáteční projekt webového rozhraní API:
+[!code-csharp[](webapi/sample/ProductsCore/Startup.cs?name=snippet_Configure&highlight=13])]
 
-[!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ValuesController.cs?highlight=9,13,20,27,33,39)]
+## <a name="migrate-models-and-controllers"></a>Migrace modelů a kontrolerů
 
-Všimněte si přítomnost *[řadič]* na řádku 8. Směrování na základě atributu nyní podporuje určité tokeny, jako například *[řadič]* a *[action]*. Tyto tokeny se nahradí za běhu s názvem kontroler nebo akce, v uvedeném pořadí, ke které byl použit atribut. Tato možnost slouží k omezení počtu magic řetězce v projektu, a zajišťuje, že trasy se budou uchovávat synchronizované s jejich odpovídající kontrolery a akce při použití automatické přejmenování refaktoring.
+Zkopírovat *ProductApp* projektu kontroleru a používá model. Postupujte podle těchto kroků:
 
-K migraci kontroler API produkty, jsme nutné nejprve zkopírovat *ProductsController* do nového projektu. Pak jednoduše uvést atribut trasy na kontroleru:
+1. Kopírování *Controllers/ProductsController.cs* z původního projektu do nové.
+1. Zkopírujte celý *modely* složku z původního projektu do nové.
+1. Změnit obory názvů zkopírované soubory tak, aby odpovídaly novým názvem projektu (*ProductsCore*). Upravit `using ProductsApp.Models;` výroky *ProductsController.cs* příliš.
 
-```csharp
-[Route("api/[controller]")]
-```
+V tomto okamžiku vytváření aplikace výsledkem počet chyb kompilace. Této chybě dojde, protože následující součásti neexistují v ASP.NET Core:
 
-Budete taky muset přidat `[HttpGet]` atribut dvě metody, protože oba by měla být volána prostřednictvím HTTP Get. Zahrnout očekává parametr "id" atribut `GetProduct()`:
+* `ApiController` Třída
+* `System.Web.Http` Namespace
+* `IHttpActionResult` Rozhraní
 
-```csharp
-// /api/products
-[HttpGet]
-...
+Opravte chyby následujícím způsobem:
 
-// /api/products/1
-[HttpGet("{id}")]
-```
+1. Změna `ApiController` k <xref:Microsoft.AspNetCore.Mvc.ControllerBase>. Přidat `using Microsoft.AspNetCore.Mvc;` přeložit `ControllerBase` odkaz.
+1. Odstraňte `using System.Web.Http;`.
+1. Změnit `GetProduct` návratový typ akce z `IHttpActionResult` k `ActionResult<Product>`.
 
-V tomto okamžiku směrování je správně nakonfigurovaná; ale jsme ji nelze ještě otestovat. Je nutné provést další změny před *ProductsController* bude zkompilována.
+## <a name="configure-routing"></a>Konfigurace směrování
 
-## <a name="migrate-models-and-controllers"></a>Migrace modelů a Kontrolerů
+Konfigurace směrování následujícím způsobem:
 
-Posledním krokem v procesu migrace pro tento jednoduchý projekt webového rozhraní API se mají zkopírovat do řadičů a všechny modely, které používají. V takovém případě stačí zkopírovat *Controllers/ProductsController.cs* z původního projektu do nové. Potom zkopírujte celou složku modely z původního projektu do nové. Upravit obory názvů tak, aby odpovídaly novým názvem projektu (*ProductsCore*).  V tomto okamžiku můžete vytvořit aplikaci a zjistíte, počet chyb kompilace. Obecně by měla spadat do následujících kategorií:
+1. Uspořádání `ProductsController` třídy s následujícími atributy:
 
-* *Objektu ApiController* neexistuje
+    ```csharp
+    [Route("api/[controller]")]
+    [ApiController]
+    ```
 
-* *System.Web.Http* obor názvů neexistuje.
+    Předchozí [[trasy]](xref:Microsoft.AspNetCore.Mvc.RouteAttribute) atribut nakonfiguruje vzor směrování atributů kontroleru. [[Objektu ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) atribut díky atribut směrování požadavků pro všechny akce v tomto kontroleru.
 
-* *IHttpActionResult* neexistuje
+    Směrování atributů podporuje tokeny, jako například `[controller]` a `[action]`. Za běhu každý token se nahradí názvem kontroler nebo akce, v uvedeném pořadí, ke které byl použit atribut. Tokeny snížit počet magic řetězců v projektu. Tokeny Ujistěte se také trasy zajistila synchronizovanost s odpovídající kontrolery a akce při automatické přejmenování refaktoringy používají.
+1. Povolit požadavky HTTP Get `ProductController` akce:
+    * Použít [[HttpGet]](xref:Microsoft.AspNetCore.Mvc.HttpGetAttribute) atribut `GetAllProducts` akce.
+    * Použít `[HttpGet("{id}")]` atribut `GetProduct` akce.
 
-Naštěstí následují všechny velmi snadné, chcete-li opravit:
+Až tyto změny a odstranění nepoužívaných `using` příkazů *ProductsController.cs* souboru vypadá takto:
 
-* Změna *objektu ApiController* k *řadič* (budete muset přidat *pomocí Microsoft.AspNetCore.Mvc*)
+[!code-csharp[](webapi/sample/ProductsCore/Controllers/ProductsController.cs)]
 
-* Odstraní všechny pomocí příkazu odkazující na *System.Web.Http*
+Spusťte projekt pro migrované a přejděte do `/api/products`. Zobrazí se úplný seznam tří produktů. Přejděte do `/api/products/1`. Zobrazí se první produktu.
 
-* Změnit všechny metody vracející *IHttpActionResult* se vraťte *IActionResult*
+## <a name="compatibility-shim"></a>Překrytí kompatibility
 
-Jakmile tyto změny byly provedeny a nepoužívané pomocí příkazů odebrat, migrovaných *ProductsController* třídy vypadá takto:
+[Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) knihovna poskytuje kompatibilitu překrytí pro přesun projekty webového rozhraní API technologie ASP.NET 4.x ASP.NET Core. Překrytí kompatibility rozšiřuje podporu celé řady konvence z rozhraní Web API 2 ASP.NET 4.x ASP.NET Core. Ukázka přenáší dříve v tomto dokumentu je dostatečně základní, že bylo překrytí kompatibility zbytečné. U větších projektů pomocí shimu kompatibility může být užitečná pro dočasné překlenutí této propasti API mezi ASP.NET Core a ASP.NET 4.x webového rozhraní API 2.
 
-[!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ProductsController.cs?highlight=1,2,6,8,9,27)]
-
-Teď by měl být schopni spustit migrovaného projektu a přejděte do */api/produkty*; a zobrazí se úplný seznam produktů 3. Přejděte do */api/products/1* a měli byste vidět první produktu.
-
-## <a name="aspnet-4x-web-api-2-compatibility-shim"></a>Překrytí kompatibility ASP.NET 4.x webovým rozhraním API 2
-
-Je užitečné nástroje při migraci ASP.NET Web API projektů ASP.NET Core [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) knihovny. Překrytí kompatibility rozšiřuje ASP.NET Core umožňující celou řadou různých konvencí webovým rozhraním API 2, který se má použít. Ukázka přenáší dříve v tomto dokumentu je dostatečně základní, že překrytí kompatibility není nezbytné. U větších projektů pomocí shimu kompatibility může být užitečná pro dočasné překlenutí této propasti API mezi ASP.NET Core a ASP.NET Web API 2.
-
-Překrytí kompatibility webového rozhraní API je určen se použije jako dočasné opatření pro usnadnění migrace velké projekty webového rozhraní API pro ASP.NET Core. V průběhu času se musí aktualizovat projekty ASP.NET Core využít aniž byste museli spoléhat na překrytí kompatibility.
+Překrytí kompatibility webového rozhraní API je určen se použije jako dočasné opatření pro podporu migrace velkých projektech ASP.NET 4.x webového rozhraní API pro ASP.NET Core. V průběhu času se musí aktualizovat projekty ASP.NET Core využít aniž byste museli spoléhat na překrytí kompatibility.
 
 Kompatibilita funkce obsažené v `Microsoft.AspNetCore.Mvc.WebApiCompatShim` patří:
 
 * Přidá `ApiController` tak, aby základních typů řadičů není potřeba aktualizovat.
-* Umožňuje vytvořit vazbu modelu webové rozhraní API – stylu. ASP.NET Core MVC model vazby funkce podobně jako na MVC 5, ve výchozím nastavení. Změny překrytí kompatibility vazby se víc podobá vytváření vazby modelu webovým rozhraním API 2 modelu. Komplexní typy jsou automaticky svázán z textu požadavku.
+* Umožňuje vytvořit vazbu modelu webové rozhraní API – stylu. ASP.NET Core MVC model vazby funkcí podobně, který technologie ASP.NET 4.x MVC 5, ve výchozím nastavení. Změny překrytí kompatibility vazby se víc podobá vytváření vazby modelu 4.x webovým rozhraním API 2 technologie ASP.NET modelu. Komplexní typy jsou automaticky svázán z textu požadavku.
 * Rozšiřuje vazby modelu, tak, aby akce kontroleru může mít parametry typu `HttpRequestMessage`.
 * Přidá formátování zpráv umožňuje akce vrátí výsledky typu `HttpResponseMessage`.
 * Přidá další odpovědi metody, které webové rozhraní API 2 akce může mít používají k předávání odpovědi:
-  * Objekt HttpResponseMessage generátorů:
+  * `HttpResponseMessage` generátory:
     * `CreateResponse<T>`
     * `CreateErrorResponse`
   * Výsledek metody akce:
@@ -136,14 +135,15 @@ Kompatibilita funkce obsažené v `Microsoft.AspNetCore.Mvc.WebApiCompatShim` pa
     * `InvalidModelStateResult`
     * `NegotiatedContentResult`
     * `ResponseMessageResult`
-* Přidá instanci `IContentNegotiator` do kontejnerů DI aplikace a provede vyjednávání souvisejících typů z obsahu [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/) k dispozici. Jedná se o typech, jako je `DefaultContentNegotiator`, `MediaTypeFormatter`atd.
+* Přidá instanci `IContentNegotiator` aplikaci prvku kontejneru pro vkládání (DI) závislosti a zpřístupňuje obsahu vyjednávání související typy z [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/). Mezi tyto typy patří `DefaultContentNegotiator` a `MediaTypeFormatter`.
 
-Chcete-li použít překrytí kompatibility, budete muset:
+Chcete-li použít překrytí kompatibility:
 
-* Nainstalujte [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) balíček NuGet.
-* Zaregistrovat překrytí kompatibility služby kontejnerů DI aplikace po zavolání `services.AddMvc().AddWebApiConventions()` aplikace `Startup.ConfigureServices` metody.
-* Definování tras specifické pro webové rozhraní API pomocí `MapWebApiRoute` na `IRouteBuilder` aplikace `IApplicationBuilder.UseMvc` volání.
+1. Nainstalujte [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) balíček NuGet.
+1. Zaregistrovat překrytí kompatibility služby kontejnerů DI aplikace po zavolání `services.AddMvc().AddWebApiConventions()` v `Startup.ConfigureServices`.
+1. Definování webové rozhraní API specifické směruje pomocí `MapWebApiRoute` na `IRouteBuilder` aplikace `IApplicationBuilder.UseMvc` volání.
 
-## <a name="summary"></a>Souhrn
+## <a name="additional-resources"></a>Další zdroje
 
-Migrace Jednoduchý projekt webového rozhraní API ASP.NET do ASP.NET Core MVC je celkem jasné, Děkujeme integrovanou podporu pro webové rozhraní API v ASP.NET Core MVC. Hlavní části, bude nutné každý projekt ASP.NET Web API pro migraci jsou tras, kontrolerů a modelů, spolu s aktualizace typů používaných modulem kontrolery a akce.
+* <xref:web-api/index>
+* <xref:web-api/action-return-types>

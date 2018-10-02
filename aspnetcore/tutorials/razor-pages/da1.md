@@ -6,24 +6,24 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: 78490be1cfa3018c465cb1e8125918404a7e4525
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 7633c0a40764cc18a656f0497e3280e4067cb59f
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011602"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045572"
 ---
-# <a name="update-the-generated-pages-in-an-aspnet-core-app"></a><span data-ttu-id="6e54e-103">Aktualizovat generované stránky v aplikaci ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="6e54e-103">Update the generated pages in an ASP.NET Core app</span></span>
+# <a name="update-the-generated-pages-in-an-aspnet-core-app"></a><span data-ttu-id="940d6-103">Aktualizovat generované stránky v aplikaci ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="940d6-103">Update the generated pages in an ASP.NET Core app</span></span>
 
-<span data-ttu-id="6e54e-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="6e54e-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="940d6-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="940d6-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="6e54e-105">Máme o dobrý začátek aplikace movie, ale v prezentaci není ideální.</span><span class="sxs-lookup"><span data-stu-id="6e54e-105">We have a good start to the movie app, but the presentation isn't ideal.</span></span> <span data-ttu-id="6e54e-106">Nechceme zobrazíte čas (12:00:00 dop. na následujícím obrázku) a **ReleaseDate** by měl být **datum vydání** (dvě slova).</span><span class="sxs-lookup"><span data-stu-id="6e54e-106">We don't want to see the time (12:00:00 AM in the image below) and **ReleaseDate** should be **Release Date** (two words).</span></span>
+<span data-ttu-id="940d6-105">Máme o dobrý začátek aplikace movie, ale v prezentaci není ideální.</span><span class="sxs-lookup"><span data-stu-id="940d6-105">We have a good start to the movie app, but the presentation isn't ideal.</span></span> <span data-ttu-id="940d6-106">Nechceme zobrazíte čas (12:00:00 dop. na následujícím obrázku) a **ReleaseDate** by měl být **datum vydání** (dvě slova).</span><span class="sxs-lookup"><span data-stu-id="940d6-106">We don't want to see the time (12:00:00 AM in the image below) and **ReleaseDate** should be **Release Date** (two words).</span></span>
 
 ![Otevřít v prohlížeči Chrome ukazující data o filmech aplikace Movie](sql/_static/m55.png)
 
-## <a name="update-the-generated-code"></a><span data-ttu-id="6e54e-108">Aktualizace generovaného kódu</span><span class="sxs-lookup"><span data-stu-id="6e54e-108">Update the generated code</span></span>
+## <a name="update-the-generated-code"></a><span data-ttu-id="940d6-108">Aktualizace generovaného kódu</span><span class="sxs-lookup"><span data-stu-id="940d6-108">Update the generated code</span></span>
 
-<span data-ttu-id="6e54e-109">Otevřít *Models/Movie.cs* a přidejte zvýrazněné řádky je znázorněno v následujícím kódu:</span><span class="sxs-lookup"><span data-stu-id="6e54e-109">Open the *Models/Movie.cs* file and add the highlighted lines shown in the following code:</span></span>
+<span data-ttu-id="940d6-109">Otevřít *Models/Movie.cs* a přidejte zvýrazněné řádky je znázorněno v následujícím kódu:</span><span class="sxs-lookup"><span data-stu-id="940d6-109">Open the *Models/Movie.cs* file and add the highlighted lines shown in the following code:</span></span>
 
 ::: moniker range="= aspnetcore-2.0"
 
@@ -37,19 +37,19 @@ ms.locfileid: "46011602"
 
 ::: moniker-end
 
-<span data-ttu-id="6e54e-110">Klikněte pravým tlačítkem myši klikněte na červenou vlnovkou čáru > **rychlé akce a Refaktoringy**.</span><span class="sxs-lookup"><span data-stu-id="6e54e-110">Right click on a red squiggly line > **Quick Actions and Refactorings**.</span></span>
+<span data-ttu-id="940d6-110">Klikněte pravým tlačítkem myši klikněte na červenou vlnovkou čáru > **rychlé akce a Refaktoringy**.</span><span class="sxs-lookup"><span data-stu-id="940d6-110">Right click on a red squiggly line > **Quick Actions and Refactorings**.</span></span>
 
   ![Zobrazí místní nabídku \*\* > rychlé akce a Refaktoringy \*\*.](da1/qa.png)
 
-<span data-ttu-id="6e54e-112">Vyberte `using System.ComponentModel.DataAnnotations;`</span><span class="sxs-lookup"><span data-stu-id="6e54e-112">Select `using System.ComponentModel.DataAnnotations;`</span></span>
+<span data-ttu-id="940d6-112">Vyberte `using System.ComponentModel.DataAnnotations;`</span><span class="sxs-lookup"><span data-stu-id="940d6-112">Select `using System.ComponentModel.DataAnnotations;`</span></span>
 
   ![pomocí System.ComponentModel.DataAnnotations v horní části seznamu](da1/da.png)
 
-  <span data-ttu-id="6e54e-114">Visual studio přidá `using System.ComponentModel.DataAnnotations;`.</span><span class="sxs-lookup"><span data-stu-id="6e54e-114">Visual studio adds `using System.ComponentModel.DataAnnotations;`.</span></span>
+  <span data-ttu-id="940d6-114">Visual Studio přidá `using System.ComponentModel.DataAnnotations;`.</span><span class="sxs-lookup"><span data-stu-id="940d6-114">Visual Studio adds `using System.ComponentModel.DataAnnotations;`.</span></span>
 
 [!INCLUDE [model1](~/includes/RP/da2.md)]
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="6e54e-115">[Předchozí: Práce s SQL Server LocalDB](xref:tutorials/razor-pages/sql)
-> [vyhledávání přidat](xref:tutorials/razor-pages/search)</span><span class="sxs-lookup"><span data-stu-id="6e54e-115">[Previous: Working with SQL Server LocalDB](xref:tutorials/razor-pages/sql)
+> <span data-ttu-id="940d6-115">[Předchozí: Práce s SQL Server LocalDB](xref:tutorials/razor-pages/sql)
+> [vyhledávání přidat](xref:tutorials/razor-pages/search)</span><span class="sxs-lookup"><span data-stu-id="940d6-115">[Previous: Working with SQL Server LocalDB](xref:tutorials/razor-pages/sql)
 [Add search](xref:tutorials/razor-pages/search)</span></span>

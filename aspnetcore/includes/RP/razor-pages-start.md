@@ -20,10 +20,10 @@ Následující tabulka uvádí soubory a složky v projektu. Pro účely tohoto 
 
 *_Layout.cshtml* soubor obsahuje společné elementy HTML (skripty a šablony stylů) a nastaví rozložení pro aplikaci. Například když kliknete na **RazorPagesMovie**, **Domů**, **o** nebo **kontakt**, se zobrazí stejné prvky. Společné prvky patří navigační nabídce na horní a záhlaví v dolní části okna. Zobrazit [rozložení](xref:mvc/views/layout) Další informace.
 
-*Soubor _ViewStart.cshtml* nastaví stránky Razor `Layout` použít vlastnost *_Layout.cshtml* souboru. Zobrazit [rozložení](xref:mvc/views/layout) Další informace.
-
 *_ViewImports.cshtml* soubor obsahuje direktivy Razor, které jsou importovány do každé stránky Razor. Zobrazit [direktivy import sdílených](xref:mvc/views/layout#importing-shared-directives) Další informace.
+
+*Soubor _ViewStart.cshtml* nastaví stránky Razor `Layout` použít vlastnost *_Layout.cshtml* souboru. Zobrazit [rozložení](xref:mvc/views/layout) Další informace.
 
 *_ValidationScriptsPartial.cshtml* soubor obsahuje odkaz na [jQuery](https://jquery.com/) skripty pro ověření. Pokud přidáme `Create` a `Edit` stránky později v tomto kurzu *_ValidationScriptsPartial.cshtml* soubor se použije.
 
-`About`, `Contact` a `Index` stránky jsou basic můžete použít ke spuštění aplikace. `Error` Stránky se používá k zobrazení informací o chybách.
+`About`, `Contact` a `Index` stránky jsou basic můžete použít ke spuštění aplikace. `Error` Stránky se používá k zobrazení informací o chybách. `Privacy` Stránce můžete zadat podrobnosti o zásadách ochrany osobních údajů vašeho webu.

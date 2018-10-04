@@ -7,12 +7,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: c2374e7c9ac89c2af26436529c7fa58a2d2d6ba6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1343bd100f521326477ecd831aa627b4394bad44
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814155"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795350"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>Migrace aplikací ASP.NET MVC do kontejnerů s Windows
 
@@ -35,11 +35,11 @@ Aplikace zahrnuje tyto kroky:
 
 ## <a name="prerequisites"></a>Požadavky
 
-Musí běžet vývojovém počítači
+Vývojovém počítači musíte mít následující software:
 
-- [Windows 10 Anniversary Update](https://www.microsoft.com/software-download/windows10/) (nebo vyšší) nebo [Windows serveru 2016](https://www.microsoft.com/cloud-platform/windows-server) (nebo vyšší).
+- [Windows 10 Anniversary Update](https://www.microsoft.com/software-download/windows10/) (nebo vyšší) nebo [Windows serveru 2016](https://www.microsoft.com/cloud-platform/windows-server) (nebo novější)
 - [Docker pro Windows](https://docs.docker.com/docker-for-windows/) -Beta 26 verze stabilní 1.13.0 nebo 1.12 (nebo novější verze)
-- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx).
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
 > [!IMPORTANT]
 > Pokud používáte Windows Server 2016, postupujte podle pokynů pro [nasazení hostitele kontejneru – Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment).
@@ -114,7 +114,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 `-d` Argument říká Dockeru, spusťte na obrázku v režimu odpojení. To znamená, že se že Image Dockeru spustíte odpojené z aktuálního prostředí.
 
-V mnoha příkladech dockeru může se zobrazit -p mapování portů kontejneru a hostitele. Výchozí aspnet image kontejneru pro naslouchání na portu 80 a zpřístupnit ji již nakonfigurována. 
+V mnoha příkladech dockeru může se zobrazit -p mapování portů kontejneru a hostitele. Výchozí aspnet image kontejneru pro naslouchání na portu 80 a zpřístupnit ji již nakonfigurována.
 
 `--name randomanswers` Udává název spuštěného kontejneru. Tento název je můžete použít namísto ID kontejneru v většinu příkazů.
 

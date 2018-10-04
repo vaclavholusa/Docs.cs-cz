@@ -8,38 +8,38 @@ ms.date: 02/20/2014
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: da04158c58054a8c0b8e31d3a55bea2dcbae7a05
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: fb9a69d568e10ddafd71e2b9600b3dae21576807
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752809"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794986"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>Úvod do ladění ASP.NET – webové stránky servery (Razor)
 ====================
 podle [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Tento článek popisuje různé způsoby, jak ladit stránky na webu rozhraní ASP.NET Web Pages (Razor). Ladění je proces najít a opravit chyby ve znakových stránek.
-> 
-> **Co se dozvíte:** 
-> 
+>
+> **Co se dozvíte:**
+>
 > - Jak zobrazit informace, které pomůžou analyzovat a ladění stránek.
 > - Jak používat ladění nástroje v sadě Visual Studio.
->   
-> 
+>
+>
 > Toto jsou funkce technologie ASP.NET v následujícím článku:
-> 
+>
 > - `ServerInfo` Pomocné rutiny.
 > - `ObjectInfo` pomocné rutiny.
->   
-> 
+>
+>
 > ## <a name="software-versions"></a>Verze softwaru
-> 
-> 
+>
+>
 > - Webové stránky ASP.NET (Razor) 3
 > - Visual Studio 2013
->   
-> 
+>
+>
 > V tomto kurzu se také pracuje s ASP.NET Web Pages 2. Můžete použít nástroj WebMatrix 3 ale integrovaný ladicí program nepodporuje.
 
 
@@ -54,8 +54,8 @@ Důležitou součástí Poradce při potížích s chybami a problémy v kódu j
 
     Můžete přidat `ServerInfo` kódu kamkoli do stránky. Ale přidání na konci se oddělovat jeho výstup z jiné stránky obsahu, který usnadňuje čtení.
 
-    > [!NOTE] 
-    > 
+    > [!NOTE]
+    >
     > **Důležité** byste měli odebrat všechny diagnostický kód z vašich webových stránek před přesunutím webové stránky na provozním serveru. To platí pro `ServerInfo` pomocné rutiny, jakož i jiné diagnostické postupy v tomto článku, které se týkají přidání kódu do stránky. Nechcete návštěvnících webu zobrazíte informace o název serveru, uživatelská jména, cesty na serveru a podobné podrobnosti, protože tento typ informací může být užitečné lidí se zlými úmysly.
 3. Uložit na stránku a spustíte ji v prohlížeči.
 
@@ -119,7 +119,7 @@ Dalším způsobem, jak vidět, co se děje ve vašem kódu, je vložit výrazy 
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>Pomocí nástroje pro ladění v sadě Visual Studio
 
-Pro pokročilejší možnosti ladění pomocí Visual Studio 2013 nebo bezplatnou [Visual Studio Express 2013 for Web](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-2013-express). Pomocí sady Visual Studio můžete nastavit zarážku v kódu na řádku, který chcete zkontrolovat.
+Pro pokročilejší možnosti ladění, použijte [sady Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Pomocí sady Visual Studio můžete nastavit zarážku v kódu na řádku, který chcete zkontrolovat.
 
 ![nastavit zarážku](introduction-to-debugging/_static/image1.png)
 

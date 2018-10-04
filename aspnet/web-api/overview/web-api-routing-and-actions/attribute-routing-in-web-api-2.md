@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f13720c5e9de99fb4ae5b27a757c257cac881f89
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 35cf3bf555218b6b49b30f48186e4c67aff4ff7b
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751824"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795548"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Směrování atributů v rozhraní ASP.NET Web API 2
 ====================
@@ -25,10 +25,9 @@ Starší styl směrování, volá se, založené na konvenci směrování, je st
 
 Toto téma ukazuje, jak povolit směrování atributů a popisuje různé možnosti pro směrování atributů. Kurz začátku do konce, který používá atribut směrování, najdete v tématu [vytvořit rozhraní REST API se směrováním atributů ve webovém rozhraní API 2](create-a-rest-api-with-attribute-routing.md).
 
-
 ## <a name="prerequisites"></a>Požadavky
 
-[Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional nebo Enterprise Edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional nebo Enterprise edition
 
 Alternativně můžete použijte Správce balíčků NuGet nainstalujte potřebné balíčky. Z **nástroje** nabídky v sadě Visual Studio, vyberte **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
@@ -55,21 +54,21 @@ Tady jsou některé vzory, které atribut směrování umožňuje snadné.
 
 V tomto příkladu "/ api/v1/produktů" bude směrovat do jiného řadiče než "/ api/v2/produktů".
 
-`/api/v1/products`  
+`/api/v1/products`
 `/api/v2/products`
 
 **Přetížení identifikátoru URI segmenty**
 
 V tomto příkladu "1" je číslo objednávky, ale "čekající na vyřízení" mapuje na kolekci.
 
-`/orders/1`  
+`/orders/1`
 `/orders/pending`
 
 **Více typy parametrů**
 
 V tomto příkladu "1" je číslo objednávky, ale "06/2013/16" Určuje datum.
 
-`/orders/1`  
+`/orders/1`
 `/orders/2013/06/16`
 
 <a id="enable"></a>
@@ -251,7 +250,7 @@ Rozhraní se pokusí tak, aby odpovídaly identifikátor URI s trasy, je vyhodno
 Zde je, jak se určuje celkový počet pořadí:
 
 1. Porovnání **RouteOrder** vlastnost atribut trasy.
-2. Podívejte se na každý segment identifikátoru URI v šabloně trasy. Pro každý segment pořadí následujícím způsobem: 
+2. Podívejte se na každý segment identifikátoru URI v šabloně trasy. Pro každý segment pořadí následujícím způsobem:
 
     1. Literál segmenty.
     2. Parametry trasy s omezeními.

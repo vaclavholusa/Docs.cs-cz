@@ -8,12 +8,12 @@ ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 0a3f9ddde725995359de85c5e0783106f5de02bd
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 91cca2789b66b7b8983f8786b506c5fc71db8b75
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755310"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795431"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>Testování rozhraní ASP.NET Web API 2
 ====================
@@ -22,17 +22,15 @@ podle [Tom FitzMacken](https://github.com/tfitzmac)
 [Stáhnout dokončený projekt](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > Tento průvodce a aplikace ukazují, jak vytvořit jednoduchý částí pro vaši aplikaci s webovým rozhraním API 2. Tento kurz ukazuje, jak zahrnout projekt testu jednotek ve vašem řešení a zapisovat testovací metody, které zkontrolujte hodnoty vrácené z metody kontroleru.
-> 
+>
 > Tento kurz předpokládá, že jste obeznámeni se základními koncepcemi rozhraní ASP.NET Web API. Úvodní tutoriál naleznete v tématu [Začínáme s ASP.NET Web API 2](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md).
-> 
+>
 > Testování částí v tomto tématu jsou záměrně omezené na jednoduché datové scénáře. Testování pokročilejší scénáře datových částí, naleznete v tématu [vytvoření modelu Entity Framework při jednotky testování ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/vs/)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Webové rozhraní API 2
-
 
 ## <a name="in-this-topic"></a>V tomto tématu
 
@@ -41,7 +39,6 @@ Toto téma obsahuje následující oddíly:
 - [Požadované součásti](#prereqs)
 - [Stáhnout kód](#download)
 - [Vytvoření aplikace pomocí projektu testů jednotek](#appwithunittest)
-
     - [Přidejte projekt testu jednotek při vytváření aplikace](#whencreate)
     - [Přidat projekt testování částí do existující aplikace](#addtoexisting)
 - [Nastavení aplikace webového rozhraní API 2](#setupproject)
@@ -52,7 +49,7 @@ Toto téma obsahuje následující oddíly:
 <a id="prereqs"></a>
 ## <a name="prerequisites"></a>Požadavky
 
-Visual Studio 2017 Community, Professional nebo Enterprise edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional nebo Enterprise edition
 
 <a id="download"></a>
 ## <a name="download-code"></a>Stáhnout kód

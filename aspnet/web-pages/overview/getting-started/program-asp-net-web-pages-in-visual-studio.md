@@ -8,38 +8,38 @@ ms.date: 02/13/2014
 ms.assetid: 0acfec5a-48f2-4766-a801-a0f426966f0a
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 41cb1048b9dab21516e38cfff0772b8b690d474f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f3c1a74b23a0d9535256caa660408701062fe21c
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756627"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795444"
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Programování webových stránek ASP.NET (Razor) pomocí sady Visual Studio
 ====================
 podle [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Tento článek vysvětluje, jak můžete pomocí sady Visual Studio nebo Visual Web Developer Express do programu websites webových stránek ASP.NET (Razor).
-> 
+>
 > Co se dozvíte
-> 
+>
 > - Co je potřeba nainstalovat (Pokud se něco) pro práci s webovými stránkami ASP.NET ve vaší verzi sady Visual Studio.
 > - Jak přidat podporu pro webové stránky ASP.NET pro aplikaci Visual Web Developer 2010 Express.
 > - Jak používat funkce v sadě Visual Studio pro práci s ASP.NET Razor pages, včetně technologie IntelliSense a ladicí program.
->   
-> 
+>
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
+>
+>
 > - Webové stránky ASP.NET (Razor) 3
 > - Visual Studio 2013
 > - Služba WebMatrix 3
->   
-> 
+>
+>
 > V tomto kurzu se také pracuje s ASP.NET Web Pages 2, Visual Studio 2012, Visual Studio 2010 a službě WebMatrix 2.
 
 
-Můžete naprogramovat ASP.NET Web pages se syntaxí Razor pomocí služby WebMatrix nebo mnoha jiných editorů kódu. Můžete také použít Microsoft Visual Studio, což je plně vybavené integrované vývojové prostředí (IDE), která poskytuje výkonnou sadu nástrojů pro vytváření mnoho typů aplikací (ne jenom weby). Chcete-li pracovat se stránkami ASP.NET Razor, můžete buď použijte některou z úplné edice sady Visual Studio nebo bezplatnou [Visual Studio Express for Web](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-2013-express) edition.
+Můžete naprogramovat ASP.NET Web pages se syntaxí Razor pomocí služby WebMatrix nebo mnoha jiných editorů kódu. Můžete také použít Microsoft Visual Studio, což je plně vybavené integrované vývojové prostředí (IDE), která poskytuje výkonnou sadu nástrojů pro vytváření mnoho typů aplikací (ne jenom weby). Chcete-li pracovat se stránkami ASP.NET Razor, můžete použít [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
 
 Jsou dvě užitečné funkce, které poskytuje Visual Studio pro programování s webovými stránkami ASP.NET Razor:
 
@@ -47,6 +47,8 @@ Jsou dvě užitečné funkce, které poskytuje Visual Studio pro programování 
 - *Ladicí program*. Ladicí program umožňuje řešit kódu zastavte program je spuštěn, zkoumání proměnné a krokování kódu řádek po řádku.
 
 ## <a name="using-visual-studio-with-different-versions-of-aspnet-web-pages"></a>Pomocí sady Visual Studio s různými verzemi nástroje ASP.NET Web Pages
+
+Pro vývoj webových aplikací ASP.NET v sadě Visual Studio 2017, nainstalujte **vývoj pro ASP.NET a web** pracovního vytížení.
 
 Visual Studio 2012 a Visual Studio 2013 zahrnují podporu pro rozhraní ASP.NET Web Pages. (Balíčky, které jsou nutné pro podporu rozhraní ASP.NET Web Pages nainstalují při instalaci sady Visual Studio.)
 
@@ -73,7 +75,7 @@ Když kliknete na tlačítko, projekt otevřen v sadě Visual Studio. Můžete p
 
 Chcete-li v sadě Visual Studio můžete vytvořit web ASP.NET Razor:
 
-1. Spusťte Visual Studio nebo Visual Web Developer.
+1. Otevřít Visual Studio.
 2. V **souboru** nabídky, klikněte na tlačítko **nový web**.
 
     ![Vytvořit nový web](program-asp-net-web-pages-in-visual-studio/_static/image2.png)
@@ -90,28 +92,27 @@ Nový projekt existuje a naplní se některé výchozí webové stránky, abycho
 Teď, když jste vytvořili webu, najdete v článku Jak funguje technologie IntelliSense v sadě Visual Studio.
 
 1. Na webu jste právě vytvořili, otevřete *stránku Default.cshtml* stránky.
-2. Po `<h3>` značky na stránce zadejte `@ServerInfo.` (včetně tečky). Všimněte si, jak technologie IntelliSense zobrazuje dostupné metody pro `ServerInfo` pomocné rutiny v rozevíracím seznamu. 
+2. Po `<h3>` značky na stránce zadejte `@ServerInfo.` (včetně tečky). Všimněte si, jak technologie IntelliSense zobrazuje dostupné metody pro `ServerInfo` pomocné rutiny v rozevíracím seznamu.
 
     ![technologie IntelliSense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
-3. Vyberte `GetHtml` metody ze seznamu a potom stiskněte klávesu Enter. Technologie IntelliSense automaticky vyplní metodu. (Jak s jakoukoli metodou v jazyce C#, je nutné přidat `()` znaky za metodu.)  
-   Dokončený kód `GetHtml` metoda vypadá jako v následujícím příkladu:  
+3. Vyberte `GetHtml` metody ze seznamu a potom stiskněte klávesu Enter. Technologie IntelliSense automaticky vyplní metodu. (Jak s jakoukoli metodou v jazyce C#, je nutné přidat `()` znaky za metodu.) Dokončený kód `GetHtml` metoda vypadá jako v následujícím příkladu:
 
     [!code-cshtml[Main](program-asp-net-web-pages-in-visual-studio/samples/sample1.cshtml)]
-4. Stiskněte kombinaci kláves Ctrl + F5 ke spuštění stránky. Je to, co bude stránka vypadat, když se zobrazí v prohlížeči: 
+4. Stiskněte kombinaci kláves Ctrl + F5 ke spuštění stránky. Je to, co bude stránka vypadat, když se zobrazí v prohlížeči:
 
     ![výchozí stránku v prohlížeči](program-asp-net-web-pages-in-visual-studio/_static/image5.png)
 5. Zavřete prohlížeč.
 
 ### <a name="using-the-debugger"></a>Pomocí ladicího programu
 
-1. V horní části *stránku Default.cshtml* stránku po řádek, který začíná `Page.Title`, přidejte následující řádek kódu: 
+1. V horní části *stránku Default.cshtml* stránku po řádek, který začíná `Page.Title`, přidejte následující řádek kódu:
 
     [!code-csharp[Main](program-asp-net-web-pages-in-visual-studio/samples/sample2.cs)]
 2. Šedé okraj editoru nalevo od kódu, klikněte vedle tohoto nového řádku, chcete-li přidat *zarážku*. Zarážka je, že se ladicí program zastaví, abyste si mohli zobrazit, co se děje v daném okamžiku spuštění programu značku.
 
     ![nastavit zarážku](program-asp-net-web-pages-in-visual-studio/_static/image6.png)
 3. Odeberte volání `ServerInfo.GetHtml` metoda a přidejte volání `@myTime` proměnné na příslušné místo. Toto volání zobrazí aktuální hodnotu čas, který je vrácen nový řádek kódu.
-4. Stiskněte klávesu F5 ke spuštění stránky v ladicím programu. Na stránce se zastaví na zarážce, kterou jste nastavili. Následující obrázek ukazuje, co bude stránka vypadat jako v editoru se zarážkou (žlutě). 
+4. Stiskněte klávesu F5 ke spuštění stránky v ladicím programu. Na stránce se zastaví na zarážce, kterou jste nastavili. Následující obrázek ukazuje, co bude stránka vypadat jako v editoru se zarážkou (žlutě).
 
     ![ladění zarážku](program-asp-net-web-pages-in-visual-studio/_static/image7.png)
 5. Na panelu nástrojů ladění, klikněte na tlačítko **Krokovat s vnořením** tlačítko (nebo stisknutím klávesy F11) spusťte další řádek kódu. Pokaždé, když kliknete na toto tlačítko přechodu spuštění na další řádek kódu.

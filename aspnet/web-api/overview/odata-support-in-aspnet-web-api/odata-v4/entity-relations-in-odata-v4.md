@@ -8,41 +8,37 @@ ms.date: 06/26/2014
 ms.assetid: 72657550-ec09-4779-9bfc-2fb15ecd51c7
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 80173519f1c8abd77b4138b7d29f780ffc60a188
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d07ddab83462ee1bc84ba8ab15fe906937f506e6
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753696"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795389"
 ---
 <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>Relace prvků v OData v4 pomocí rozhraní ASP.NET Web API 2.2
 ====================
 podle [Mike Wasson](https://github.com/MikeWasson)
 
 > Většina datových sad definovat vztahy mezi entitami: Zákazníci mají objednávky; knihy jste autoři; produkty mají dodavatelů. Použití protokolu OData, klienti můžete přejít přes relací prvků. Zadaný produkt, můžete najít dodavatele. Můžete také vytvořit nebo odebrat relace. Například můžete nastavit od dodavatele, produktu.
-> 
+>
 > Tento kurz ukazuje, jak podporují tyto operace v OData v4, pomocí rozhraní ASP.NET Web API. Tento kurz vychází z kurzu [vytvořit OData v4 koncový bod pomocí rozhraní ASP.NET Web API 2](create-an-odata-v4-endpoint.md).
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
+>
 > - Webové rozhraní API 2.1
 > - OData v4
-> - [Visual Studio 2013 Update 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (stáhněte si Visual Studio 2017 [tady](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - Entity Framework 6
 > - .NET 4.5
-> 
-> 
+>
 > ## <a name="tutorial-versions"></a>Kurz verze
-> 
+>
 > OData verze 3, naleznete v tématu [podpora relací prvků v OData v3](https://asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations).
-
 
 ## <a name="add-a-supplier-entity"></a>Přidání Entity dodavatele
 
 > [!NOTE]
 > Tento kurz vychází z kurzu [vytvořit OData v4 koncový bod pomocí rozhraní ASP.NET Web API 2](create-an-odata-v4-endpoint.md).
-
 
 Nejdřív potřebujeme související entity. Přidejte třídu pojmenovanou `Supplier` ve složce modely.
 

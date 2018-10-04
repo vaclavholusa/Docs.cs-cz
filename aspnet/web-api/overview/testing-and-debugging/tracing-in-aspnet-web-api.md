@@ -8,30 +8,28 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 02805eda4f8dceb467547fa4e00aef8ea956f228
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 426e3500c504a651a325eec021e2d9e8b9cc1d32
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292281"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795277"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Trasování v rozhraní ASP.NET Web API 2
 ====================
 podle [Mike Wasson](https://github.com/MikeWasson)
 
 > Pokud se pokoušíte ladit webové aplikace, není žádná náhrada správnou sadu protokoly trasování. Tento kurz ukazuje, jak povolit trasování v rozhraní ASP.NET Web API. Tuto funkci můžete použít ke sledování, co dělá rozhraní webového rozhraní API před a po vyvolá kontrolér. Také ho můžete použít ke sledování vlastního kódu.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (funguje taky s Visual Studiem 2015)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) (funguje taky s Visual Studiem 2015)
 > - Webové rozhraní API 2
 > - [Microsoft.AspNet.WebApi.Tracing](http://www.nuget.org/packages/Microsoft.AspNet.WebApi.Tracing)
 
-
 ## <a name="enable-systemdiagnostics-tracing-in-web-api"></a>Povolit System.Diagnostics trasování ve webovém rozhraní API
 
-Nejprve vytvoříme nový projekt webové aplikace ASP.NET. V sadě Visual Studio z **souboru** nabídce vyberte možnost **nový**, pak **projektu**. V části **šablony**, **webové**vyberte **webová aplikace ASP.NET**.
+Nejprve vytvoříme nový projekt webové aplikace ASP.NET. V sadě Visual Studio z **souboru** nabídce vyberte možnost **nový** > **projektu**. V části **šablony**, **webové**vyberte **webová aplikace ASP.NET**.
 
 [![](tracing-in-aspnet-web-api/_static/image2.png)](tracing-in-aspnet-web-api/_static/image1.png)
 

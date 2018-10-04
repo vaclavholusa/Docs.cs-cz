@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6f4fa7cf3746da0a6cdd4bd037fea509d488a59d
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578013"
+ms.locfileid: "48795535"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Dodatek: Oprava ji ukázkovou aplikaci (sestavování skutečných cloudových aplikací s Azure)
 ====================
@@ -22,7 +22,6 @@ podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twi
 [Stáhněte si opravu ho projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
 > **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
-
 
 Tento dodatek ke Cloudovým aplikacím reálného světa vytváření s Azure e kniha obsahuje následující oddíly, které poskytují další informace o Fix It ukázkové aplikace, můžete si stáhnout:
 
@@ -177,11 +176,11 @@ Vloží nový projekt šablony `Thread.Sleep` v ukázce kódu pro roli pracovní
 
 Pokud asynchronní metody nemusí vracet hodnotu, vraťte se `Task` typ spíše než `void`.
 
-Tento příklad je z `FixItQueueManager` třídy: 
+Tento příklad je z `FixItQueueManager` třídy:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-Měli byste použít `async void` pouze pro obslužné rutiny události nejvyšší úrovně. Pokud definujete metodu jako `async void`, nelze volající **await** metodu nebo zachytit žádné výjimky, metoda vyvolá. Další informace najdete v tématu [osvědčené postupy v Asynchronous Programming](https://msdn.microsoft.com/magazine/jj991977.aspx). 
+Měli byste použít `async void` pouze pro obslužné rutiny události nejvyšší úrovně. Pokud definujete metodu jako `async void`, nelze volající **await** metodu nebo zachytit žádné výjimky, metoda vyvolá. Další informace najdete v tématu [osvědčené postupy v Asynchronous Programming](https://msdn.microsoft.com/magazine/jj991977.aspx).
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>Použít token zrušení pro zrušení volání ze smyčky role pracovního procesu
 
@@ -216,8 +215,8 @@ Existují dva způsoby, jak spouštět aplikace Fix It:
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>Spustit základní aplikace
 
-1. Nainstalujte [Visual Studio 2013 nebo Visual Studio Express 2013 for Web](https://www.visualstudio.com/downloads).
-2. Nainstalujte [Azure SDK pro .NET pro Visual Studio 2013.](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
+1. Nainstalujte [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017).
+2. Nainstalujte [Azure SDK pro .NET pro Visual Studio](https://azure.microsoft.com/downloads/).
 3. Stáhněte si soubor .zip z [galerie kódů MSDN](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4).
 4. V Průzkumníku souborů klikněte pravým tlačítkem na soubor .zip a klikněte na tlačítko Vlastnosti a pak v okně Vlastnosti klikněte na odblokovat.
 5. Rozbalte tento soubor.
@@ -225,7 +224,7 @@ Existují dva způsoby, jak spouštět aplikace Fix It:
 7. V nabídce Nástroje klikněte na správce balíčků knihoven a pak Konzola správce balíčků.
 8. V balíčku správce konzoly (konzolu PMC), kliknutím na tlačítko Obnovit.
 9. Ukončení sady Visual Studio.
-10. Spustit [emulátoru úložiště Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx).
+10. Spustit [emulátoru úložiště Azure](/azure/storage/common/storage-use-emulator).
 11. Restartujte sadu Visual Studio, otevřete soubor řešení uzavřeny v předchozím kroku.
 12. Ujistěte se, že projekt automatickou je nastaven jako spouštěný projekt a pak stiskněte CTRL + F5 ke spuštění projektu.
 
@@ -234,24 +233,24 @@ Existují dva způsoby, jak spouštět aplikace Fix It:
 
 1. Postupujte podle pokynů pro [spustit základní aplikace](#runbase)a pak zavřete prohlížeč a zavřete sadu Visual Studio.
 2. Spusťte Visual Studio s oprávněními správce. (Budete používat emulátor výpočtů v Azure, a, která vyžaduje oprávnění správce.)
-3. V aplikaci *Web.config* soubor *MyFixIt* project (webový projekt), změňte hodnotu vlastnosti `appSettings/UseQueues` "true": 
+3. V aplikaci *Web.config* soubor *MyFixIt* project (webový projekt), změňte hodnotu vlastnosti `appSettings/UseQueues` "true":
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
 4. Pokud [emulátoru úložiště Azure](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) není stále spuštěna, spusťte ji znovu.
 5. Spusťte automatickou webový projekt a projekt MyFixItCloudService současně.
 
-    Pomocí sady Visual Studio 2013:
+    Pomocí sady Visual Studio:
 
-   1. Stisknutím klávesy F5 spusťte automatickou projektu.
-   2. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt MyFixItCloudService a potom klikněte na tlačítko **ladění** -- **spustit novou instanci**.
+   1. Stisknutím klávesy **F5** spustit automatickou projekt.
+   2. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt MyFixItCloudService a potom klikněte na tlačítko **ladění** > **spustit novou instanci**.
 
-      Pomocí Visual Studio 2013 Express pro Web:
+    Pomocí Visual Studio 2013 Express pro Web:
 
    3. V Průzkumníku řešení klikněte pravým tlačítkem myši na automatickou řešení a vyberte **vlastnosti**.
-   4. Vyberte **více projektů po spuštění**...
+   4. Vyberte **více projektů po spuštění**.
    5. V **akce** vyberte rozevírací seznam v části MyFixIt a MyFixItCloudService, **Start**.
    6. Klikněte na tlačítko **OK**.
-   7. Stisknutím klávesy F5 spusťte obou projektů.
+   7. Stisknutím klávesy **F5** ke spuštění obou projektů.
 
       Při spuštění projektu MyFixItCloudService Visual Studio spustí emulátoru Azure compute. V závislosti na konfiguraci brány firewall můžete povolit emulátor přes bránu firewall.
 
@@ -354,8 +353,7 @@ K určení, které prostředky skript vytvořený dříve, než ji zastavit, pou
 
 - `Get-AzureWebsite`
 - `Get-AzureSqlDatabaseServer`
-- `Get-AzureSqlDatabase`: Ke spuštění této rutiny, předat název databázového serveru do `Get-AzureSqlDatabase`:  
-    `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
+- `Get-AzureSqlDatabase`: Ke spuštění této rutiny, předat název databázového serveru do `Get-AzureSqlDatabase`:   `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
 
 Pokud chcete odstranit tyto prostředky, použijte následující příkazy. Všimněte si, že při odstranění databázového serveru, je automaticky odstraňovat databáze přidružené k serveru.
 
@@ -366,7 +364,7 @@ Pokud chcete odstranit tyto prostředky, použijte následující příkazy. Vš
 <a id="deployqueues"></a>
 ## <a name="how-to-deploy-the-app-with-queue-processing-to-azure-app-service-web-apps-and-an-azure-cloud-service"></a>Jak nasadit aplikaci s frontou zpracování pro Azure App Service Web Apps a Azure Cloud Service
 
-Pokud chcete povolit front, proveďte následující změnu v souboru MyFixIt\Web.config. V části `appSettings`, změňte hodnotu vlastnosti `UseQueues` "true": 
+Pokud chcete povolit front, proveďte následující změnu v souboru MyFixIt\Web.config. V části `appSettings`, změňte hodnotu vlastnosti `UseQueues` "true":
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample31.xml)]
 

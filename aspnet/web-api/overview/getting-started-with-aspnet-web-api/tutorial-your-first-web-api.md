@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 11/28/2017
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 14796ce31187a0f6a6331b46477fadc77e281c3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 62e99a41ba935470c39476c9aea8ee4193543425
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753222"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795290"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>Začínáme s rozhraním ASP.NET Web API 2 (C#)
 ====================
@@ -21,14 +21,13 @@ podle [Mike Wasson](https://github.com/MikeWasson)
 [Stáhnout dokončený projekt](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
 Protokol HTTP není jen pro poskytovat webové stránky. HTTP je také výkonnou platformu pro vytváření rozhraní API, která zpřístupňují služby a data. HTTP je snadné, flexibilní a všudypřítomná. Téměř jakoukoli platformu, která si můžete představit obsahuje knihovny HTTP, takže služeb HTTP můžete oslovit širokou škálu klientů, včetně prohlížečů, mobilní zařízení a tradičních desktopových aplikací.
- 
+
 Rozhraní ASP.NET Web API je architektura určená k vytváření webových rozhraní API jako nadstavby rozhraní .NET Framework. V tomto kurzu použijete rozhraní ASP.NET Web API k vytvoření webového rozhraní API, který vrátí seznam produktů.
 
- 
- ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-  
- - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
- - Webové rozhraní API 2
+## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
+
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+- Webové rozhraní API 2
 
 Zobrazit [vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio pro Windows](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) pro novější verze tohoto kurzu.
 

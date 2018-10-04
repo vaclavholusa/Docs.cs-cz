@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: e710980cecf9093ea9046b5790379befb5b61841
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752510"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794877"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>Kurz: Vysokofrekvenční Reálný čas s knihovnou SignalR 2
 ====================
@@ -213,7 +213,7 @@ Aplikace je skoro hotová, ale jsme dokonce vytvářet jeden další vylepšení
 
 ## <a name="further-steps"></a>Další kroky
 
-V tomto kurzu jste zjistili, jak programovat aplikace SignalR, která odesílá zprávy s vysokou frekvencí mezi klienty a servery. Toto paradigma komunikace je užitečné pro vývoj online hry a další simulace, jako například [ShootR hru vytvořili s knihovnou SignalR](http://shootr.signalr.net).
+V tomto kurzu jste zjistili, jak programovat aplikace SignalR, která odesílá zprávy s vysokou frekvencí mezi klienty a servery. Toto paradigma komunikace je užitečné pro vývoj online hry a další simulace, jako například [ShootR hru vytvořili s knihovnou SignalR](https://shootr.azurewebsites.net/).
 
 Hotové aplikace vytvořené v tomto kurzu si můžete stáhnout z [Galerie kódu na](https://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a).
 

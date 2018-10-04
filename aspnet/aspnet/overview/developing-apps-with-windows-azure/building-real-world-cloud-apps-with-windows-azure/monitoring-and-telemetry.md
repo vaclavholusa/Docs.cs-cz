@@ -8,16 +8,16 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: cec29e27e834317661f80eed93cb8b81a0786644
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f4dae827627103e5cfb9981b6c3b9342cdc34c13
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756880"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578000"
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Monitorování a Telemetrie (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Petr Dykstra](https://github.com/tdykstra)
 
 [Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -29,7 +29,7 @@ Velké množství lidí Spolehněte se na zákazníky a dát jim vědět, že je
 ## <a name="buy-or-rent-a-telemetry-solution"></a>Koupit nebo poskytovat do nájmu řešení telemetrie
 
 > [!NOTE]
-> Tento článek byl zapsán před [Application Insights](https://azure.microsoft.com/services/application-insights/) byl uvolněn. Application Insights je řešení telemetrie upřednostňovaný přístup v Azure. Zobrazit [nastavení Application Insights pro váš web ASP.NET](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net) Další informace.
+> Tento článek byl zapsán před [Application Insights](/azure/application-insights/app-insights-overview) byl uvolněn. Application Insights je řešení telemetrie upřednostňovaný přístup v Azure. Zobrazit [nastavení Application Insights pro váš web ASP.NET](/azure/application-insights/app-insights-asp-net) Další informace.
 
 
 Jednou z věcí, to je skvělé o cloudovém prostředí je, že je velmi snadné hodit kupovat nebo poskytovat do nájmu moct vítězství. Telemetrie je příklad. Nevyžaduje spoustu úsilí můžete získat systém velmi se mi líbí telemetrie aktivní a spuštěné, nákladově velmi efektivní. Spousta skvělé partnerů, které se integrují s Azure a některé z nich mít bezplatných vrstev – takže získáte základní telemetrie pro žádnou akci. Tady je několik příkladů z těch, které jsou aktuálně dostupné v Azure:
@@ -38,7 +38,7 @@ Jednou z věcí, to je skvělé o cloudovém prostředí je, že je velmi snadn�
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
-Od března 2015 [Microsoft Application Insights pro Visual Studio Online](https://azure.microsoft.com/documentation/articles/app-insights-get-started/) neuvolní ještě ale je k dispozici ve verzi preview vyzkoušet. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) rovněž zahrnuje monitorovací funkce.
+[Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) rovněž zahrnuje monitorovací funkce.
 
 Rychle provedeme procesem nastavení špičkové funkce New Relicu pro ukazují, jak snadno může být systém telemetrie.
 

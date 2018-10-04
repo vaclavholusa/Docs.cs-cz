@@ -2,53 +2,48 @@
 uid: mvc/overview/getting-started/introduction/getting-started
 title: Začínáme s ASP.NET MVC 5 | Dokumentace Microsoftu
 author: Rick-Anderson
-description: 'Poznámka: Aktualizovanou verzi tohoto kurzu je k dispozici zde pomocí sady Visual Studio 2015. Nové kurzu se používá technologie ASP.NET Core MVC 6, které poskytuje mnoho improvem...'
 ms.author: riande
-ms.date: 05/28/2015
+ms.date: 10/04/2018
 ms.assetid: f3d8adbe-55e7-4fd4-84a8-7155bc45c676
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 8417be945e16ed99e655f628134c9190429f1d67
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2cc9364b815cae0207fc59784303c6a0906f1b94
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755083"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578442"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>Začínáme s ASP.NET MVC 5
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 [!INCLUDE [consider RP](../../../../includes/razor.md)]
 
- V tomto kurzu se seznámíte se základy vytváření webové aplikace ASP.NET MVC 5 pomocí [Visual Studio 2017](https://www.visualstudio.com/). Konečné zdroj kurzu [Githubu](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
+V tomto kurzu se naučíte se základy vytváření webové aplikace ASP.NET MVC 5 pomocí [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Poslední zdrojový kód pro tento kurz je umístěn na [Githubu](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie).
 
+V tomto kurzu zapsal [Scott Guthrie](https://weblogs.asp.net/scottgu/) (twitter[ @scottgu ](https://twitter.com/scottgu) ), [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](https://twitter.com/shanselman) ) , a [Rick Anderson](https://twitter.com/RickAndMSFT) ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )
 
- V tomto kurzu zapsal [Scott Guthrie](https://weblogs.asp.net/scottgu/) (twitter[ @scottgu ](https://twitter.com/scottgu) ), [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](https://twitter.com/shanselman) ) , a [Rick Anderson](https://twitter.com/RickAndMSFT) ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )
+Potřebujete účet Azure tak, aby tuto aplikaci nasadit do Azure:
 
- Potřebujete účet Azure tak, aby tuto aplikaci nasadit do Azure:
+- Je možné [zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) – budete dostávat kredity můžete použít k vyzkoušení placených služeb Azure a dokonce i po jejich použití až můžete účet ponechat a dál používat bezplatné služby Azure.
+- Je možné [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) – vaše předplatné MSDN vám dává kredity každý měsíc, můžete použít k placení za služby Azure.
 
- - Je možné [zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) – budete dostávat kredity můžete použít k vyzkoušení placených služeb Azure a dokonce i po jejich použití až můžete účet ponechat a dál používat bezplatné služby Azure.
- - Je možné [aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) – vaše předplatné MSDN vám dává kredity každý měsíc, můžete použít k placení za služby Azure.
+## <a name="get-started"></a>Začínáme
 
+Začněte tím, že [instalací sady Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017). Spusťte Visual Studio.
 
-## <a name="getting-started"></a>Začínáme
+Visual Studio je integrované vývojové prostředí, nebo integrovaného vývojového prostředí. Stejným způsobem, jako používáte k tvorbě dokumenty Microsoft Wordu, budete používat integrované vývojové prostředí pro vytváření aplikací. V sadě Visual Studio je seznam v dolní části zobrazující různé možnosti, které jsou k dispozici pro vás. Je také nabídka, která nabízí další způsob, jak provádět úkoly v integrovaném vývojovém prostředí. Například místo výběru **nový projekt** na **úvodní stránku**, můžete použít řádek nabídek a vyberte **souboru** > **nový projekt**.
 
-Začněte tím, že instalaci a používání [Visual Studio 2017](https://www.visualstudio.com/).
+![](getting-started/_static/image1.png)
 
-Visual Studio je integrované vývojové prostředí, nebo integrovaného vývojového prostředí. Stejným způsobem, jako používáte k tvorbě dokumenty Microsoft Wordu, budete používat integrované vývojové prostředí pro vytváření aplikací. V sadě Visual Studio je seznam v dolní části zobrazující různé možnosti, které jsou k dispozici pro vás. Je také nabídka, která nabízí další způsob, jak provádět úkoly v integrovaném vývojovém prostředí. (Například místo výběru **nový projekt** z **Start** stránky, můžete použít nabídku a vyberte **souboru** &gt; **nový projekt**.)
+## <a name="create-your-first-app"></a>Vytvoření první aplikace
 
-
-![](getting-started/_static/image1.png)  
-
-
-## <a name="creating-your-first-application"></a>Vytvoření vaší první aplikace
-
-Klikněte na tlačítko **nový projekt**, vyberte jazyk Visual C# na levé straně, pak **webové** a pak vyberte **webová aplikace ASP.NET (.NET Framework)**. Pojmenujte svůj projekt "MvcMovie" a potom klikněte na tlačítko **OK**.
+Na **úvodní stránku**vyberte **nový projekt**. V **nový projekt** dialogové okno, vyberte **Visual C#** kategorie na levé straně, pak **webové**a pak vyberte **webová aplikace ASP.NET (.NET Framework)**  šablony projektu. Pojmenujte svůj projekt "MvcMovie" a klikněte na tlačítko **OK**.
 
 ![](getting-started/_static/image2.png)
 
-V **nový projekt ASP.NET** dialogového okna, klikněte na tlačítko **MVC** a potom klikněte na tlačítko **OK**.
+V **nová webová aplikace ASP.NET** dialogovém okně zvolte **MVC** a klikněte na tlačítko **OK**.
 
 ![](getting-started/_static/image3.png)
 
@@ -56,13 +51,13 @@ Visual Studio použít výchozí šablonu projektu ASP.NET MVC, které jste prá
 
 ![](getting-started/_static/image4.png)
 
-Klikněte na tlačítko F5 spusťte ladění. F5 způsobí, že Visual Studio spustíte [služby IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) a spouštění vaší webové aplikace. Visual Studio pak spustí prohlížeč a otevře domovskou stránku aplikace. Všimněte si, že na panelu Adresa prohlížeče `localhost:port#` a nemít něco podobného `example.com`. Důvodem je, že `localhost` vždy odkazuje na vaše vlastní místní počítače v tomto případě je spuštěna aplikace právě jste vytvořili. Při spuštění webový projekt sady Visual Studio náhodný port se používá pro webový server. Na následujícím obrázku je číslo portu 1234. Při spuštění aplikace se zobrazí jiné číslo portu.
+Stisknutím klávesy **F5** pro spuštění ladění. Když stisknete klávesu **F5**, Visual Studio spustí [služby IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview) a spustí webovou aplikaci. Visual Studio pak spustí prohlížeč a otevře domovskou stránku aplikace. Všimněte si, že na panelu Adresa prohlížeče `localhost:port#` a nemít něco podobného `example.com`. Důvodem je, že `localhost` vždy odkazuje na vaše vlastní místní počítače v tomto případě je spuštěna aplikace právě jste vytvořili. Při spuštění webový projekt sady Visual Studio náhodný port se používá pro webový server. Na následujícím obrázku je číslo portu 1234. Při spuštění aplikace se zobrazí jiné číslo portu.
 
 ![](getting-started/_static/image5.png)
 
-Předem připravené tuto výchozí šablonu vám Home, kontaktů a o stránky. Na obrázku výše nezobrazuje **Domů**, **o** a **kontakt** odkazy. V závislosti na velikosti okna prohlížeče můžete potřebovat kliknutím na ikonu navigační naleznete pod následujícími odkazy.
+Předem připravené tuto výchozí šablonu poskytuje `Home`, `Contact`, a `About` stránky. Na obrázku výše nezobrazuje **Domů**, **o**, a **kontakt** odkazy. V závislosti na velikosti okna prohlížeče můžete potřebovat kliknutím na ikonu navigační naleznete pod následujícími odkazy.
 
-![](getting-started/_static/image6.png)  
+![](getting-started/_static/image6.png)
 
 Aplikace také poskytuje podporu pro registraci a přihlaste se. Dalším krokem je změnit, jak tato aplikace funguje a přečtěte si ještě něco o architektuře ASP.NET MVC. Ukončete aplikaci ASP.NET MVC a Změníme kód.
 
@@ -74,10 +69,10 @@ Chcete zobrazit dokončené web spuštěný jako živou webovou aplikaci? Komple
 
 [![](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/?repository=https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie&amp;WT.mc_id=deploy_azure_aspnet)
 
-Potřebujete účet Azure k nasazení tohoto řešení do Azure. Pokud ještě nemáte účet, máte následující možnosti:
+Potřebujete účet Azure k nasazení tohoto řešení do Azure. Pokud ještě nemáte účet, použijte jednu z následujících možností k jejímu vytvoření:
 
 - [Zdarma otevřít účet Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) – budete dostávat kredity můžete použít k vyzkoušení placených služeb Azure a dokonce i po jejich použití až můžete účet ponechat a dál používat bezplatné služby Azure.
-- [Aktivovat výhody pro předplatitele MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) – vaše předplatné MSDN vám dává kredity každý měsíc, můžete použít k placení za služby Azure.
+- [Aktivovat výhody pro předplatitele sady Visual Studio](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers) – předplatné sady Visual Studio vám dává kredity každý měsíc, můžete použít k placení za služby Azure.
 
 > [!div class="step-by-step"]
 > [Next](adding-a-controller.md)

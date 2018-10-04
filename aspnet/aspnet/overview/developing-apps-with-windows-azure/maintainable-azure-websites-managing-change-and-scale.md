@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: a26f22a7cf39593ee068fb8e8d57200120c97ccb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 05181ae1b2d857eea45983d378b28011c1cd755a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755193"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578130"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktické cvičení: udržitelné weby Azure: Správa změn a škálování
 ====================
@@ -22,17 +22,17 @@ podle [Campy Web týmu](https://twitter.com/webcamps)
 [Stáhněte si Web Campy školení Kit](http://aka.ms/webcamps-training-kit)
 
 > Microsoft Azure umožňuje snadno vytvářet a nasazovat weby do produkčního prostředí. Ale nebyly provedeny, když vaše aplikace je v provozu, je právě začínáte! Budete potřebovat pro zpracování se měnící požadavky, aktualizace databáze, škálování a další. Naštěstí služby Azure App Service vám kryje záda, spoustou funkcí, které vám pomůže ochránit vaše weby, které běží plynule.
-> 
+>
 > Azure nabízí bezpečného a flexibilního vývoje, možnosti nasazení a škálování webových aplikací libovolné velikosti. Pomocí svých stávajících nástrojů k vytváření a nasazování aplikací bez starostí o správu infrastruktury.
-> 
+>
 > Zřiďte provozní webové aplikace si během několika minut a snadno nasadit obsah vytvořený pomocí svůj oblíbený vývojový nástroj. Můžete nasadit existující lokalitu přímo ze správy zdrojových kódů s podporou **Git**, **Githubu**, **Bitbucket**, **TFS**a dokonce i  **DropBox**. Nasazení přímo z vašeho oblíbeného prostředí IDE nebo skripty s využitím **PowerShell** ve Windows nebo **rozhraní příkazového řádku** nástroje spuštěná v jakémkoli operačním systému. Po nasazení, informujte webů neustále o podporu pro průběžné nasazování.
-> 
+>
 > Azure poskytuje škálovatelné, odolné cloudové úložiště, zálohu a řešení obnovy pro jakákoli data, libovolném objemu. Při nasazování aplikací do produkčního prostředí, služeb úložiště, jako například tabulky, objekty BLOB a databází SQL, můžete škálovat aplikaci v cloudu.
-> 
+>
 > U databází SQL je potřeba aktualizovat databázi produktivní při nasazování nové verze aplikace. K **migrace Entity Framework Code First**, vývoj a nasazení modelu dat zjednodušili jsme se aktualizovat vaše prostředí během několika minut. Tato praktická cvičení se dozvíte, dalších tématech, které by mohly nastat při nasazení vaší webové aplikace do produkčního prostředí v Microsoft Azure.
-> 
+>
 > Všechny ukázky kódu a fragmenty kódu jsou součástí této webové Campy školicí sady, k dispozici na [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit).
-> 
+>
 > Další podrobné pokrytí v tomto tématu najdete v článku [vytváření skutečných cloudových aplikací s Azure e kniha](building-real-world-cloud-apps-with-windows-azure/introduction.md).
 
 
@@ -60,7 +60,7 @@ K dokončení této praktické testovací prostředí jsou vyžadovány následu
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/) nebo vyšší
 - [Sada Azure SDK for .NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [Systém správy verzí GIT](http://git-scm.com/download)
-- Předplatné Microsoft Azure 
+- Předplatné Microsoft Azure
 
     - Zaregistrovat [bezplatnou zkušební verzi](http://aka.ms/watk-freetrial)
     - Pokud jste Visual Studio Professional, Test Professional, Premium nebo Ultimate s MSDN nebo MSDN Platforms odběratele, aktivovat váš [výhodu MSDN](http://aka.ms/watk-msdn) hned a začít s vývojem a testování v Azure
@@ -202,10 +202,10 @@ V této úloze budete používat **migrace Entity Framework Code First** zjistí
 
     > [!NOTE]
     > Soubor migrace se skládá ze dvou způsobů **nahoru** a **dolů**.
-    > 
+    >
     > - **Nahoru** metoda se použije k určení, co se změní aktuální verze našich aplikací nutnost používat k databázi.
     > - **Dolů** používaných k vrácení změn, přidali jsme do **nahoru** metody.
-    > 
+    >
     > Při migraci databáze zaktualizuje databázi, se aplikace spustí všechny migrace v pořadí, časové razítko a jenom na ty, které nebyly použity od poslední aktualizace ( \_MigrationHistory tabulka uchovává informace o migraci, které byly použity). **Nahoru** bude volána metoda všechny migrace a provede změny jsme zadali do databáze. Pokud se rozhodneme vrátit k předchozí migrace **dolů** volaná metoda vrátit ke svému změny v obráceném pořadí.
 4. V **Konzola správce balíčků**, zadejte následující příkaz a stiskněte klávesu **Enter**.
 
@@ -298,15 +298,15 @@ V této úloze vytvoříte webovou aplikaci v **služby Azure App Service** z po
 
     > [!NOTE]
     > Ve výchozím nastavení, Azure poskytuje domén na *azurewebsites.net* ale také vám dává možnost nastavit vlastní domény pomocí portálu pro správu Azure. Pokud používáte režimy určité služby Azure App Service však můžete spravovat pouze vlastních domén.
-    > 
+    >
     > Azure App Service je k dispozici v edicích Free, Shared, Basic, Standard a Premium. Všechny webové aplikace v režimu Free a Shared spustit v prostředí s více tenanty a kvóty pro využití procesoru, paměti a sítě. Maximální počet bezplatných aplikací může lišit podle vašeho plánu. Ve standardním režimu zvolte výpočetní prostředky, které aplikace spustit na vyhrazených virtuálních počítačích, které odpovídají na standardní Azure. Můžete najít v konfiguraci webové aplikace režim **škálování** nabídky vaší webové aplikace.
-    > 
+    >
     > ![Azure App Service režimy](maintainable-azure-websites-managing-change-and-scale/_static/image19.png "režimy služby Azure App Service")
-    > 
+    >
     > Pokud používáte **Shared** nebo **standardní** režimu, bude možné spravovat vlastní domény pro webovou aplikaci tak, že přejdete do vaší aplikace **konfigurovat** nabídky a kliknutím na **Správa domén** pod *názvy domén*.
-    > 
+    >
     > ![Spravovat domény](maintainable-azure-websites-managing-change-and-scale/_static/image20.png "spravovat domény")
-    > 
+    >
     > ![Správa vlastních domén](maintainable-azure-websites-managing-change-and-scale/_static/image21.png "spravování vlastních domén")
 9. Po vytvoření webové aplikace klikněte na odkaz v části **URL** sloupci zkontrolujte, že se nová webová aplikace spuštěná.
 
@@ -754,7 +754,7 @@ V této úloze bude používat portál pro správu Azure k povolení této funkc
 
     > [!NOTE]
     > Tento rozsah představuje průměrné využití procesoru pro vaši webovou aplikaci. Azure bude přidávat nebo odebírat instance, které chcete zachovat svou webovou aplikaci v tomto rozsahu. Zadat minimální a maximální počet instancí používaných pro škálování v **počet instancí** konfigurace. Azure se nikdy dostanou nad nebo nad rámec tohoto limitu.
-    > 
+    >
     > Výchozí hodnota **cílový procesor** hodnoty jsou změněny jen pro účely tohoto testovacího prostředí. Nakonfigurováním rozsahu procesoru malé hodnotami jsou zvyšuje šance na aktivační událost automatického škálování při moderování zatížení je umístěn na aplikaci.
 
     ![Změna cílového procesoru chcete být 20 až 40 procent](maintainable-azure-websites-managing-change-and-scale/_static/image78.png "změna cíl CPU, který má být 20 až 40 procent")
@@ -869,7 +869,7 @@ Teď, když **automatického škálování** byl nakonfigurován, musíte vytvo�
 20. V **Průzkumníka řešení**, dvakrát klikněte **Local.settings** souboru prozkoumat nastavení testu. Ve výchozím nastavení používá Visual Studio místního počítače ke spuštění testů.
 
     > [!NOTE]
-    > Alternativně můžete nakonfigurovat testovacího projektu pro spuštění zátěžových testů v cloudu pomocí **Visual Studio Online (VSO)**. VSO poskytuje cloudové zátěžové testování služba, která simuluje zatížení realističtější, jak se vyhnout omezení místní prostředí, jako je kapacita procesoru, paměti a šířky pásma sítě. Další informace o spouštění zátěžových testů pomocí VSO, naleznete v tématu [v tomto článku](https://www.visualstudio.com/get-started/load-test-your-app-vs).
+    > Alternativně můžete nakonfigurovat testovacího projektu pro spuštění zátěžových testů v cloudu pomocí **testovací plány Azure**. Azure testovací plány poskytuje cloudové zátěžové testování služba, která simuluje zatížení realističtější, jak se vyhnout omezení místní prostředí jako kapacity procesoru, paměti a šířky pásma sítě. Další informace o používání Azure testovací plány pro spuštění zátěžových testů, naleznete v tématu [scénáře testování zatížení](/azure/devops/test/load-test/overview?view=vsts).
 
     ![Nastavení testu](maintainable-azure-websites-managing-change-and-scale/_static/image98.png)
 
@@ -904,10 +904,10 @@ Nyní spusťte zátěžový test, který jste vytvořili v předchozí úloze a 
 
     > [!NOTE]
     > Může trvat několik minut, než se změna projeví v grafu (stiskněte **CTRL + F5** pravidelně obnovíte stránku). Pokud se nezobrazí žádné změny, zkuste následující:
-    > 
+    >
     > - Prodloužit dobu trvání zátěžového testu (například na **10 minut**)
     > - Omezit maximální a minimální hodnoty **cílový procesor** rozsah v konfiguraci automatického škálování webové aplikace
-    > - Spusťte zátěžový test v cloudu s využitím **Visual Studio Online**. Další informace o [zde](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
+    > - Spusťte zátěžový test v cloudu s využitím **testovací plány Azure**. Další informace o [zde](/azure/devops/test/load-test/index?view=vsts)
 
 * * *
 

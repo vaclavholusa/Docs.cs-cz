@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: performance/response-compression
-ms.openlocfilehash: 3a01c2d572c0026944347f736f9658a7872e6c35
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: d5e0b6ed21c14f2e76396cde846c69a76ad40794
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028281"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578143"
 ---
 # <a name="response-compression-in-aspnet-core"></a>Kompresi odpovědí v ASP.NET Core
 
@@ -150,9 +150,21 @@ Odeslat žádost pro ukázkovou aplikaci bez `Accept-Encoding` záhlaví a podí
 
 ![Fiddler okno zobrazuje výsledek požadavku bez hlavičky Accept-Encoding. Odpověď není v komprimovaném tvaru.](response-compression/_static/request-uncompressed.png)
 
+::: moniker range=">= aspnetcore-2.2"
+
+Odeslat žádost pro ukázkovou aplikaci s `Accept-Encoding: br` záhlaví (Brotli komprese) a podívejte se, že je komprimován odpovědi. `Content-Encoding` a `Vary` záhlaví jsou k dispozici v odpovědi.
+
+![Fiddler okno zobrazuje výsledek žádosti s hlavičku Accept-Encoding a hodnotu br. Měnit a kódování obsahu hlaviček jsou přidány do odpovědi. Odpověď je komprimován.](response-compression/_static/request-compressed-br.png)
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 Odeslat žádost pro ukázkovou aplikaci s `Accept-Encoding: gzip` záhlaví a podívejte se, že je komprimován odpovědi. `Content-Encoding` a `Vary` záhlaví jsou k dispozici v odpovědi.
 
 ![Fiddler okno zobrazuje výsledek žádosti s hlavičku Accept-Encoding a hodnotu gzip. Měnit a kódování obsahu hlaviček jsou přidány do odpovědi. Odpověď je komprimován.](response-compression/_static/request-compressed.png)
+
+::: moniker-end
 
 ## <a name="providers"></a>Zprostředkovatelé
 

@@ -8,16 +8,16 @@ ms.date: 01/12/2011
 ms.assetid: 28970e1b-1845-4015-86ef-121e52a6c397
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 816660aff696c64948e6ca9daca6632cc9d58082
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8fb0fb5c1db24f1961bba08f7b1c2182caca39ca
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41754534"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577428"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>Přidání nového pole do modelu filmů a databázové tabulky (VB)
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > V tomto kurzu se seznámíte se základy vytváření ASP.NET MVC webovou aplikaci pomocí Microsoft Visual Web Developer 2010 Express Service Pack 1, což je bezplatná verze sady Microsoft Visual Studio. Než začnete, ujistěte se, že jste nainstalovali požadavky uvedené níže. Nainstalujte všechny z nich kliknutím na následující odkaz: [instalačního programu webové platformy](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Alternativně můžete nainstalovat jednotlivě požadavky pomocí následujících odkazů:
 > 

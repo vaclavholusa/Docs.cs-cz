@@ -8,16 +8,16 @@ ms.date: 08/20/2015
 ms.assetid: f50a5cdb-c06a-46ed-aa14-fc5b049dc8dc
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: f31015f5ebd660d0f95a2e978b305c1d272293d5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 97b73c5ae18a528d33b44a4de4afc434ac46af48
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753257"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577597"
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>Aplikace ASP.NET MVC 5 s SMS a e-mailu dvoufaktorového ověřování
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > V tomto kurzu se dozvíte, jak vytvořit webovou aplikaci ASP.NET MVC 5 s dvoufaktorovým ověřováním. By se měla Dokončit [vytvořit zabezpečenou webovou aplikaci ASP.NET MVC 5 s přihlášením, resetovat heslo a potvrzení e-mailu](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md) než budete pokračovat. Můžete stáhnout hotovou aplikaci [tady](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952). Položka ke stažení obsahuje ladění pomocné rutiny, které umožňují otestovat bez nastavení e-mailem nebo poskytovatele služby SMS serveru SMS a e-mailové potvrzení.
 > 

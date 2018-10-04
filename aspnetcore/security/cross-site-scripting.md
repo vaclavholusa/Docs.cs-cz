@@ -3,14 +3,14 @@ title: Zabránit webů skriptování mezi weby (XSS) v ASP.NET Core
 author: rick-anderson
 description: Další informace o skriptování mezi weby (XSS) a techniky pro řešení tohoto ohrožení zabezpečení v aplikaci ASP.NET Core.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: 4784b1775d955f0ef00526e50b960fc873ea218d
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342208"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577441"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Zabránit webů skriptování mezi weby (XSS) v ASP.NET Core
 
@@ -36,9 +36,9 @@ Na základní úrovni XSS funguje tak, přičemž aplikace do vkládání `<scri
 
 Modul Razor použité v MVC automaticky kóduje všechny výstupní zdrojem proměnné, pokud pracujete ve skutečnosti intenzivně zabránit, aby ji uděláte. Použije pravidla při každém použití kódování atributu HTML *@* směrnice. Ve formátu HTML kódování atributu je nadstavbou jazyka kódování HTML, to znamená, že nemáte problém sami se určuje, zda by měl používat kódování HTML nebo kódování atributu HTML. Musíte zajistit, že používáte pouze v kontextu HTML, ne už při pokusu o vložení nedůvěryhodný vstup přímo do jazyka JavaScript. Pomocné rutiny značek se také kódování vstup, který použijete v parametrů tag.
 
-Využijte následující zobrazení syntaxe Razor.
+Proveďte následující zobrazení Razor:
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -59,7 +59,7 @@ Toto zobrazení vypíše obsah *untrustedInput* proměnné. Tato proměnná obsa
 
 Může nastat situace, které chcete vložit do jazyka JavaScript ke zpracování v zobrazení hodnotu. Existují dva způsoby, jak to provést. Nejbezpečnější způsob, jak vložit hodnoty je hodnota atributu data značky a načíst v JavaScript. Příklad:
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -114,9 +114,9 @@ Který při spuštění, zobrazí se pak takto:
    <"123">
    ```
 
-Kodér JavaScript můžete také volat přímo,
+Kodér JavaScript můžete také volat přímo:
 
-```none
+```cshtml
 @using System.Text.Encodings.Web;
    @inject JavaScriptEncoder encoder;
 
@@ -225,4 +225,4 @@ Obecné přijme, postup je, že kódování probíhá místě výstup a kódovan
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Ověření jako XSS techniku ochrany před únikem informací
 
-Ověření může být užitečný nástroj v omezení útoky XSS. Například číselných řetězců obsahující pouze znaky 0-9, nebude spustí XSS útoku. Ověření bude složitější, pokud, budete chtít přijmout HTML v uživatelském vstupu - analýza elementu input kódu HTML je obtížné, pokud není možné. Markdownu a dalších formátů text by bezpečnější možnost pro bohaté vstup. Jste nikdy by se neměla spoléhat na ověření samostatně. Vždy kódování nedůvěryhodný vstup před výstupu, bez ohledu na to, jaké ověřování, které jste provedli.
+Ověření může být užitečný nástroj v omezení útoky XSS. Například číselných řetězců obsahující pouze znaky 0-9, nebude spustí XSS útoku. Ověření bude složitější, při přijetí HTML vstup uživatele. Analýza elementu input kódu HTML je obtížné, pokud není možné. Markdown, společně se analyzátor, který odstraní vložený HTML, je bezpečnější možnost pro příjem formátovaný vstup. Nikdy spoléhat na ověřovací samostatně. Vždy kódování nedůvěryhodný vstup před výstupu, bez ohledu na to, jaké ověřování nebo čištění pro zadávání byla provedena.

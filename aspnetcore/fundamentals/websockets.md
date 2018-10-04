@@ -2,17 +2,17 @@
 title: Webové sockety v ASP.NET Core
 author: rick-anderson
 description: Zjistěte, jak začít pracovat s objekty Websocket v ASP.NET Core.
-monikerRange: '>= aspnetcore-2.1'
+monikerRange: '>= aspnetcore-1.1'
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: a9fe13ef7895ea3ab43257dbbaf4521f883c0804
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: fc3f70fb888797216b2ccc911a9f69eaae6ac01c
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433984"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577727"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Webové sockety v ASP.NET Core
 
@@ -110,7 +110,7 @@ Pokud chcete povolit podporu protokolu WebSocket v systému Windows 8 nebo nově
 1. Otevřete následující uzly: **Internetová informační služba** > **webové služby** > **funkce pro vývoj aplikací**.
 1. Vyberte **protokol WebSocket** funkce. Vyberte **OK**.
 
-**Zakázat protokol WebSocket, když v node.js pomocí socket.io**
+### <a name="disable-websocket-when-using-socketio-on-nodejs"></a>Zakázat protokol WebSocket, když v Node.js pomocí socket.io
 
 Pokud používáte podpora protokolu WebSocket v [socket.io](https://socket.io/) na [Node.js](https://nodejs.org/), zakázat pomocí modul WebSocket služby IIS výchozí `webSocket` element v *web.config* nebo *applicationHost.config*. Pokud není tento krok provést, modul WebSocket služby IIS se pokusí se zpracovat komunikaci pomocí protokolu WebSocket spíše než Node.js a aplikace.
 

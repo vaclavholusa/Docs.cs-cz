@@ -5,12 +5,12 @@ description: Zjistěte, jak řídit chování aplikace napříč několika prost
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 0786b55ee133b98aae1bfac688e7d81d23c8c9a4
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: de3c3fd5a2f0e49366d9d5b4e992d0247bcab0e5
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860976"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577519"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Používání více prostředí v ASP.NET Core
 
@@ -245,7 +245,6 @@ Chcete-li nastavit `ASPNETCORE_ENVIRONMENT` proměnné prostředí pro aplikace 
 > [!IMPORTANT]
 > Při hostování aplikace v IIS a přidání nebo změně `ASPNETCORE_ENVIRONMENT` prostředí proměnné, použijte jednu z následujících přístupů k mají novou hodnotu vyzvednou aplikace:
 >
-> * Restartování fondu aplikací vaší aplikace.
 > * Spustit `net stop was /y` následovaný `net start w3svc` z příkazového řádku.
 > * Restartujte server.
 

@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 24674adf1f28b3ffc0822a4b112c972d1e7ed5b4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1938de2b57c8fafa7ea8a656c0a42d2d3f1a6c81
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755424"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577870"
 ---
 <a name="introduction-to-aspnet-identity"></a>Úvod do ASP.NET Identity
 ====================
-podle [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
+podle [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://github.com/rustd), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Petr Dykstra](https://github.com/tdykstra)
 
 > Systém členství technologie ASP.NET byla zavedena v systémech ASP.NET 2.0 zpět v roce 2005 a protože pak byly provedeny změny v mnoha způsoby webové aplikace obvykle zpracovávat ověřování a autorizace. ASP.NET Identity je čerstvé podívat, co systém členství by měla být při vytváření moderních aplikací pro web, telefon nebo tablet.
 > 

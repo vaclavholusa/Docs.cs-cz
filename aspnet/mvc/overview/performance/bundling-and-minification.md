@@ -8,16 +8,16 @@ ms.date: 08/23/2012
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 7e54bdd2f50edb5001982ada9b6ce023584ce5b0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9b627a66007aec09a404147698e2bef06c7e7794
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752640"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577714"
 ---
 <a name="bundling-and-minification"></a>Sdružování a Minifikace
 ====================
-Podle [Rick Anderson](https://github.com/Rick-Anderson)
+Podle [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Sdružování a minifikace jsou dva postupy můžete použít v technologii ASP.NET 4.5 na zvýšení zatížení doba požadavku. Sdružování a minifikace zlepšuje dobu načítání snížením počtu požadavků na serveru a snížením velikosti požadovaných prostředků (například šablon stylů CSS a JavaScript.)
 

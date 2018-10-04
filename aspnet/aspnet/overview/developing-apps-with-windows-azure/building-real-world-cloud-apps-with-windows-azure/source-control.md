@@ -8,23 +8,22 @@ ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 8402b73f5f9d063d958df39f98267468e4aef746
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5df863762523b62759bb4f7849ca2635e5241b0a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755035"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577792"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Správy zdrojového kódu (vytváření skutečných cloudových aplikací s Azure)
 ====================
-podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson](https://github.com/Rick-Anderson), [Petr Dykstra](https://github.com/tdykstra)
+podle [Mike Wasson](https://github.com/MikeWasson), [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Petr Dykstra](https://github.com/tdykstra)
 
 [Stažení opravit projektu](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) nebo [stáhnout elektronickou knihu](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > **Vytváření reálného světa cloudových aplikací s Azure** e knihy je založena na prezentaci vypracovanou organizací cccppf Scott Guthrie. Vysvětluje 13 vzory a postupy, které vám pomůžou být úspěšný vývoj webových aplikací v cloudu. Informace o e kniha najdete v tématu [první kapitoly](introduction.md).
 
-
-Je nezbytné pro všechny projekty vývoje pro cloud, ne jenom Týmová prostředí správy zdrojového kódu. Nebylo by si představit úpravy zdrojového kódu nebo dokonce Wordový dokument bez funkce zpět a automatické zálohování a Správa zdrojového kódu nabízí tyto funkce na úrovni projektu, kde se dají ušetřit ještě víc času, kdy dojde k chybě. S cloudovými službami zdrojového ovládacího prvku už nemusíte dělat starosti o složité nastavování a můžete použít Visual Studio Online správy zdrojového kódu až 5 uživatelů zdarma.
+Je nezbytné pro všechny projekty vývoje pro cloud, ne jenom Týmová prostředí správy zdrojového kódu. Nebylo by si představit úpravy zdrojového kódu nebo dokonce Wordový dokument bez funkce zpět a automatické zálohování a Správa zdrojového kódu nabízí tyto funkce na úrovni projektu, kde se dají ušetřit ještě víc času, kdy dojde k chybě. S cloudovými službami zdrojového ovládacího prvku už nemusíte dělat starosti o složité nastavování a bezplatné správy Azure úložišť zdrojového kódu můžete použít až pro 5 uživatelů.
 
 První část této kapitole popisuje tři klíčové osvědčené postupy a mějte na paměti:
 
@@ -32,11 +31,11 @@ První část této kapitole popisuje tři klíčové osvědčené postupy a mě
 - [Nikdy se změnami tajných kódů](#secrets) (citlivá data, jako je například přihlašovací údaje) do úložiště zdrojového kódu.
 - [Nastavit zdrojové větve](#devops) umožňující pracovních postupů DevOps.
 
-Zbývající část kapitola obsahuje některé ukázky implementace tyto vzory v sadě Visual Studio, Azure a Visual Studio Online:
+Zbývající část kapitola obsahuje některé ukázky implementace tyto vzory v sadě Visual Studio, Azure a úložiště Azure:
 
 - [Přidat skripty do správy zdrojového kódu v sadě Visual Studio](#vsscripts)
 - [Store citlivá data v Azure](#appsettings)
-- [Pomocí Gitu ve Visual Studio a Visual Studio Online](#gittfs)
+- [Pomocí Gitu ve Visual Studiu a úložiště Azure](#gittfs)
 
 <a id="scripts"></a>
 ## <a name="treat-automation-scripts-as-source-code"></a>Skripty pro automatizaci považovat za zdrojového kódu
@@ -73,7 +72,7 @@ Tato struktura také vám umožní rychle reagovat na zpětnou vazbu od zákazn�
 
 Bez větvení struktury tímto způsobem s jeho oddělení produkce a vývojových větvích by mohlo problém produkčního prostředí v pozici by bylo nutné podporovat nové funkce kódu společně s jste kód opravili správně produkčního prostředí můžete. Nový kód funkce nemusí být plně otestovaný a připravený pro produkční a možná budete muset udělat spoustu práce zálohování Zavádíme změny, které ještě nejsou připravené. Nebo může být nutné zpoždění jste kód opravili správně, pokud chcete otestovat změny a jejich přípravu pro nasazení.
 
-Dále uvidíte příklady toho, jak implementovat tyto tři vzory v sadě Visual Studio, Azure a Visual Studio Online. Toto jsou příklady spíše než podrobné postupy-k-it pokyny; podrobné pokyny, které poskytují veškeré potřebné kontextu, najdete v článku [prostředky](#resources) části na konci kapitoly.
+Dále uvidíte příklady toho, jak implementovat tyto tři vzory v sadě Visual Studio, Azure a úložiště Azure. Toto jsou příklady spíše než podrobné postupy-k-it pokyny; podrobné pokyny, které poskytují veškeré potřebné kontextu, najdete v článku [prostředky](#resources) části na konci kapitoly.
 
 <a id="vsscripts"></a>
 ## <a name="add-scripts-to-source-control-in-visual-studio"></a>Přidat skripty do správy zdrojového kódu v sadě Visual Studio
@@ -128,17 +127,17 @@ Všimněte si, že tyto skripty jsou parametrizovány tak, aby skutečnými hodn
 Při spuštění místně ve vašem vývojovém prostředí aplikace načte váš místní soubor Web.config a připojení body řetězec k databázi systému SQL Server LocalDB ve *aplikace\_Data* složce webového projektu. Při spuštění aplikace v Azure a aplikace se pokusí načíst tyto hodnoty ze souboru Web.config, získá zpět a používá jsou hodnoty uložené pro webový server není co je skutečně v souboru Web.config.
 
 <a id="gittfs"></a>
-## <a name="use-git-in-visual-studio-and-visual-studio-online"></a>Pomocí Gitu ve Visual Studio a Visual Studio Online
+## <a name="use-git-in-visual-studio-and-azure-devops"></a>Pomocí Gitu ve Visual Studiu a Azure DevOps
 
 Všechny zdrojové prostředí pro ovládací prvek můžete implementovat DevOps větvení struktury, které jsou uvedené výše. Distribuovaných týmů [distribuovaný systém řízení verze](http://en.wikipedia.org/wiki/Distributed_revision_control) (systém DVCS) může být nejvhodnější; pro jiné týmy [centralizované systému](http://en.wikipedia.org/wiki/Revision_control) může být vhodnější.
 
-[Git](http://git-scm.com/) je DVCS, který se má stát velmi populární. Pokud používáte Git pro správu zdrojového kódu, máte úplnou kopii úložiště s celou její historií v místním počítači. Mnoho lidí dáváte přednost, protože je to snazší pokračovat v práci, když nejste připojení k síti – můžou dál vykonávat potvrzení změn a vrácení zpět, vytvářet a přepnutí větví a tak dále. I v případě, že jste připojeni k síti, je jednodušší a rychlejší vytváření větví a přepínání větví všechno, co je místní. Můžete také provést místních potvrzení změn, vrácení zpět bez nutnosti vliv na ostatní vývojáři. A může hromadně potvrzení před odesláním do serveru.
+[Git](http://git-scm.com/) je oblíbených distribuovaný systém správy verzí. Pokud používáte Git pro správu zdrojového kódu, máte úplnou kopii úložiště s celou její historií v místním počítači. Mnoho lidí dáváte přednost, protože je to snazší pokračovat v práci, když nejste připojení k síti – můžou dál vykonávat potvrzení změn a vrácení zpět, vytvářet a přepnutí větví a tak dále. I v případě, že jste připojeni k síti, je jednodušší a rychlejší vytváření větví a přepínání větví všechno, co je místní. Můžete také provést místních potvrzení změn, vrácení zpět bez nutnosti vliv na ostatní vývojáři. A může hromadně potvrzení před odesláním do serveru.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), dříve známé jako Team Foundation Service, nabízí i Git a [Team Foundation Version Control](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; centralizované správy zdrojového kódu). Tady v Microsoftu v Azure group některé týmy používají centralizovanou správu zdrojového kódu, používat distribuována, a některé používá kombinaci (centralizovaná u některých projektů a distribuován pro jiné projekty). Služby VSO je zdarma až pro 5 uživatelů. Si můžete zaregistrovat bezplatný plán [tady](https://go.microsoft.com/fwlink/?LinkId=307137).
+[Úložiště Azure](/azure/devops/repos/index?view=vsts) nabízí i [Git](/azure/devops/repos/git/?view=vsts) a [Team Foundation Version Control](/azure/devops/repos/tfvc/index?view=vsts) (TFVC; centralizované správy zdrojového kódu). Začínáme s Azure DevOps [tady](https://app.vsaex.visualstudio.com/signup).
 
-Visual Studio 2013 zahrnuje prvotřídní integrované [podporu úložiště Git](https://msdn.microsoft.com/library/hh850437.aspx); zde je rychlý ukázku toho, jak to funguje.
+Visual Studio 2017 obsahuje vestavěné prvotřídní [podporu úložiště Git](https://msdn.microsoft.com/library/hh850437.aspx). Tady je rychlý ukázku toho, jak to funguje.
 
-S projektem otevřeným v sadě Visual Studio 2013, klikněte pravým tlačítkem na řešení v **Průzkumníka řešení**a zvolte **přidat řešení do správy zdrojových kódů**.
+S projektem otevřeným v sadě Visual Studio, klikněte pravým tlačítkem na řešení v **Průzkumníka řešení**a klikněte na tlačítko **přidat řešení do správy zdrojových kódů**.
 
 ![Přidat řešení do správy zdrojového kódu](source-control/_static/image9.png)
 
@@ -184,7 +183,7 @@ Pokud přepnete zpět do hlavní větve, obsah  *\_Layout.cshtml* soubor automat
 
 Tento jednoduchý příklad toho, jak můžete rychle vytvořit větev a překlopit vpřed a zpět mezi větvemi. Tato funkce umožňuje vysoce agilní pracovní postup pomocí strukturu větví a skripty pro automatizaci uvedené v [automatizovat všechno](automate-everything.md) kapitoly. Například může být práci ve větvi vývoj, vytvořte větev opravy hotfix z hlavní, přepnout na novou větev, proveďte požadované změny existuje a potvrdíte je a pak přepněte zpět do větve vývoje a pokračovat, co jste dělali.
 
-Co už víte, zde je způsob práce s místním úložištěm Git v sadě Visual Studio. V prostředí team obvykle také vložíte změny běžné úložiště. Nástroje sady Visual Studio také umožňují tak, aby odkazoval do vzdáleného úložiště Git. K tomuto účelu můžete použít webu GitHub.com, nebo můžete použít [Git ve Visual Studiu Online](https://msdn.microsoft.com/library/hh850437.aspx) integrovaná všechny ostatní sady Visual Studio Online funkce jako je například pracovní položky a sledování chyb.
+Co už víte, zde je způsob práce s místním úložištěm Git v sadě Visual Studio. V prostředí team obvykle také vložíte změny běžné úložiště. Nástroje sady Visual Studio také umožňují tak, aby odkazoval do vzdáleného úložiště Git. K tomuto účelu můžete použít webu GitHub.com, nebo můžete použít [Git a úložiště Azure](/azure/devops/repos/git/overview?view=vsts) integrovat se všemi dalšími možnostmi Azure DevOps například pracovní položky a sledování chyb.
 
 Tato akce není jediným způsobem je možné implementovat agilní strategie větvení, samozřejmě. Můžete povolit stejného agilní pracovního postupu pomocí úložiště centralizovanou správu zdrojového ovládacího prvku.
 
@@ -194,13 +193,6 @@ Měřit její úspěšnost systému správy zdrojů na základě toho, jak rychl
 
 <a id="resources"></a>
 ## <a name="resources"></a>Prostředky
-
-[Visual Studio Online](https://www.visualstudio.com/) portál poskytuje dokumentace a podpora služby a můžete se zaregistrovat pro účet. Pokud máte sadu Visual Studio 2012 a chcete použít Git, přečtěte si téma [Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c).
-
-Další informace o TFVC (centralizované správy verzí) a Git (distribuovanou správu verzí) naleznete na následujících odkazech:
-
-- [Který systém správy verzí mám použít: TFVC nebo Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) Dokumentace MSDN obsahuje tabulku se souhrnem rozdílech mezi TFVC a Git.
-- [Dobře chci Team Foundation Server a jsem, jako je Git, ale které je lepší?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Porovnání Git a TFVC.
 
 Další informace o strategie větvení naleznete na následujících odkazech:
 

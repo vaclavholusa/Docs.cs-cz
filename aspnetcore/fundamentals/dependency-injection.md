@@ -143,7 +143,7 @@ V ukázkové aplikaci je služba `IMyDependency` registrována s konkrétním ty
 ::: moniker-end
 
 > [!NOTE]
-> Každý rozšiřující metoda `services.Add{SERVICE_NAME}` přidává (a potenciálně konfiguruje) služby. Například `services.AddMvc()` přidává služby Stránek Razor a MVC. Doporučujeme, aby v aplikacích byla tato konvence dodržena. Umístěte rozšiřující metody do jmenného prostoru [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) pro zapouzdření skupin registrací služeb.
+> Každá rozšiřující metoda `services.Add{SERVICE_NAME}` přidává (a potenciálně konfiguruje) služby. Například `services.AddMvc()` přidává služby Stránek Razor a MVC. Doporučujeme, aby v aplikacích byla tato konvence dodržena. Umístěte rozšiřující metody do jmenného prostoru [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) pro zapouzdření skupin registrací služeb.
 
 Pokud konstruktor služby vyžaduje primitivní typ, například `string`, může být vložen pomocí [konfigurace](xref:fundamentals/configuration/index) nebo [vzoru možností (options pattern)](xref:fundamentals/configuration/options):
 

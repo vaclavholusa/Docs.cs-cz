@@ -8,12 +8,12 @@ ms.date: 05/22/2015
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 27c4bcc6dd127fe1a430aaec462e2c19a5fb7851
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 29ece7754bc6e25ea968c25a99a2f48ab837e12c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577376"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911532"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>Zkoumání metod Edit a zobrazení pro úpravy
 ====================
@@ -99,16 +99,15 @@ Pokud používáte jazykovou verzi US English počítače, můžete tuto část 
 > [!NOTE]
 > pro podporu ověřování jQuery pro neanglická národní prostředí, které používají čárku (&quot;,&quot;) pro desetinné čárky a USA retweetovat neanglické formáty kalendářního data, musíte zahrnout *globalize.js* a konkrétní  *cultures/Globalize.cultures.js* souboru (z [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) a JavaScript, který chcete použít `Globalize.parseFloat`. Jiné než anglické jazykové ověřování jQuery můžete získat z NuGet. (Neinstalujte Globalize Pokud používáte anglické národní prostředí.)
 
+1. Z **nástroje** klikněte na nabídku **Správce balíčků NuGet**a potom klikněte na tlačítko **spravovat balíčky NuGet pro řešení**.
 
-1. Z **nástroje** klikněte na nabídku **Správce balíčků NuGetLibrary**a potom klikněte na tlačítko **spravovat balíčky NuGet pro řešení**.  
-  
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
 2. V levém podokně vyberte <strong>Procházet *.</strong>* (Viz následující obrázek).
-3. Do vstupního pole, zadejte * Globalize **.  
-  
+3. Do vstupního pole, zadejte * Globalize **.
+
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) Zvolte `jQuery.Validation.Globalize`, zvolte `MvcMovie` a klikněte na tlačítko **nainstalovat**. *Scripts\jquery.globalize\globalize.js* soubor bude přidán do projektu. *Scripts\jquery.globalize\cultures\* složka bude obsahovat mnoho souborů JavaScriptu jazykovou verzi. Mějte na paměti, může trvat 5 minut k instalaci tohoto balíčku.
 
-   Následující kód ukazuje změny souboru Views\Movies\Edit.cshtml: 
+   Následující kód ukazuje změny souboru Views\Movies\Edit.cshtml:
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cshtml)]
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 23dc9cc7fd469e934ed9915922a3baa772d9e1ab
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48794877"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912025"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>Kurz: Vysokofrekvenční Reálný čas s knihovnou SignalR 2
 ====================
@@ -22,37 +22,37 @@ podle [Patrick Fletcher](https://github.com/pfletcher)
 [Stáhnout dokončený projekt](http://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
 
 > Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá ASP.NET SignalR 2 zasílání zpráv nakonfigurovánu vysokou frekvencí. Vysoká frekvence zasílání zpráv v tomto případě znamená, že aktualizace, které se odesílají s pevnou sazbou; v případě této aplikace, až 10 zpráv za sekundu.
-> 
+>
 > Aplikace, kterou vytvoříte v tomto kurzu zobrazí obrazec, který můžete přetáhnout uživatelů. Umístění obrazce ve všech propojených prohlížečů pak aktualizuje tak, aby odpovídala pozici Přetahované tvaru použitím vypršel časový limit aktualizace.
-> 
+>
 > Koncepty představenými v tomto kurzu jste aplikací v reálném čase hry a další aplikace simulace.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>V tomto kurzu pomocí sady Visual Studio 2012
-> 
-> 
+>
+>
 > Pokud chcete použít Visual Studio 2012 s tímto kurzem, postupujte takto:
-> 
+>
 > - Aktualizace vašeho [Správce balíčků](http://docs.nuget.org/docs/start-here/installing-nuget) na nejnovější verzi.
 > - Nainstalujte [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - Instalace webové platformy, vyhledejte a nainstalujte **technologie ASP.NET a webové nástroje 2013.1 pro Visual Studio 2012**. Tím se nainstaluje šablony sady Visual Studio pro funkci SignalR třídy jako **centra**.
 > - Některé šablony (jako například **třídy pro spuštění OWIN**) nebudou k dispozici; pro ty, použijte místo toho soubor třídy.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>Kurz verze
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -102,12 +102,12 @@ Následující postup slouží k vytvoření prázdná webová aplikace ASP.NET 
 3. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, vyberte **přidat | Třída rozbočovače SignalR (v2)**. Název třídy **MoveShapeHub.cs** a přidejte ho do projektu. Tento krok vytvoří **MoveShapeHub** třídy a přidá do projektu sadu souborů skriptů a odkazy na sestavení, podporující funkci SignalR.
 
     > [!NOTE]
-    > Funkce SignalR můžete také přidat do projektu kliknutím **nástroje | Správce balíčků knihoven | Konzola správce balíčků** a spuštění příkazu:
+    > Funkce SignalR můžete také přidat do projektu kliknutím **nástroje > Správce balíčků NuGet > Konzola správce balíčků** a spuštění příkazu:
 
-    `install-package Microsoft.AspNet.SignalR`. 
+    `install-package Microsoft.AspNet.SignalR`.
 
     Pokud používáte konzolu pro přidání SignalR, vytvořte třída rozbočovače SignalR jako samostatný krok po přidání SignalR.
-4. Klikněte na tlačítko **nástroje | Správce balíčků knihoven | Konzola správce balíčků**. V okně Správce balíčku spusťte následující příkaz:
+4. Klikněte na tlačítko **nástroje > Správce balíčků NuGet > Konzola správce balíčků**. V okně Správce balíčku spusťte následující příkaz:
 
     `Install-Package jQuery.UI.Combined`
 

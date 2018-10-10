@@ -8,40 +8,40 @@ ms.date: 06/10/2014
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 42cf7faf9112875e15072993b6210348d0c42534
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1783a3ab292a5460d5cc1b7ad78073071d65d379
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753648"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911938"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>Principy a zpracování událostí doby platnosti v knihovně SignalR
 ====================
 podle [Patrick Fletcher](https://github.com/pfletcher), [Petr Dykstra](https://github.com/tdykstra)
 
 > Tento článek obsahuje přehled funkce SignalR připojení, opětovné připojení a odpojení události, které dokáže zpracovat a nastavení časového limitu a keepalive, které můžete nakonfigurovat.
-> 
+>
 > Tento článek předpokládá, že máte již určitá znalost události doby života SignalR a připojení. Úvod k funkci SignalR naleznete v tématu [Úvod ke knihovně SignalR](../getting-started/introduction-to-signalr.md). Seznam událostí doby platnosti naleznete v následujících zdrojích:
-> 
+>
 > - [Zpracování událostí doby platnosti ve třídě centra](hubs-api-guide-server.md#connectionlifetime)
 > - [Zpracování událostí doby platnosti v klientech jazyka JavaScript](hubs-api-guide-javascript-client.md#connectionlifetime)
 > - [Zpracování událostí doby platnosti v klientů .NET](hubs-api-guide-net-client.md#connectionlifetime)
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -144,8 +144,8 @@ Události doby života zapříčinil nemusí jakékoli připojení, způsobit p�
 
 Některá síťová prostředí záměrně nečinných připojení po zavření a jiné funkce keepalive paketů je Zabraňte to tak, že se tyto sítě vědět, že připojení SignalR je používán. V extrémních případech nemusí být výchozí frekvence odesílání příkazu ping keepalive dostatečná ochrana proti uzavřené připojení. V takovém případě můžete nakonfigurovat odesílání příkazu ping keepalive do odešlou častěji. Další informace najdete v tématu [nastavení časového limitu a keepalive](#timeoutkeepalive) dále v tomto tématu.
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > **Důležité**: posloupnost událostí, je zde popsáno, není zaručeno. SignalR je každý pokus o vyvolání událostí doby platnosti v předvídatelné podle tohoto schématu, ale existuje mnoho variant událostí sítě a mnoha způsoby, ve kterých je zpracovávat základní architektury komunikace, jako jsou přenosu rozhraní API. Například `Reconnected` událost nemusí být vyvolána, když klient znovu připojí, nebo `OnConnected` obslužnou rutinu na serveru může spustit, když neúspěšný pokus o navázání připojení. Toto téma popisuje pouze efekty, které by bylo vytvořeno obvykle některé obvyklé okolnosti.
 
 

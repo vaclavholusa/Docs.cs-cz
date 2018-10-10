@@ -8,12 +8,12 @@ ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 24ab1c470a22b5b328d1f3bc400400978eb31600
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3c3557bb2be2807b11874937fcc629b5b773e463
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755093"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912251"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>Praktické cvičení: Sestavení jednostránkové aplikaci (SPA) pomocí webového rozhraní API ASP.NET a Angular.js
 ====================
@@ -308,7 +308,7 @@ Začněte instalací AngularJS z konzoly Správce balíčků sady Visual Studio.
 
 
 1. Otevřete **Visual Studio Express 2013 for Web** a otevřete **GeekQuiz.sln** řešení nachází v **zdroj/Ex2-CreatingASPAInterface/Begin** složky. Alternativně můžete pokračovat v řešení, který jste získali v předchozím cvičení.
-2. Otevřít **Konzola správce balíčků** z **nástroje** | **Správce balíčků knihoven**. Zadejte následující příkaz k instalaci **AngularJS.Core** balíček NuGet.
+2. Otevřít **Konzola správce balíčků** z **nástroje** > **Správce balíčků NuGet**. Zadejte následující příkaz k instalaci **AngularJS.Core** balíček NuGet.
 
     [!code-powershell[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample16.ps1)]
 3. V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **skripty** složky **GeekQuiz** projektu a vyberte **přidat | Nová složka**. Název složky **aplikace** a stiskněte klávesu **Enter**.

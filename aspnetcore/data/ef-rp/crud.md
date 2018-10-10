@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvářet, číst, aktualizovat, odstranit pomocí EF
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 31fefc148040d7b65e9b65d6bf19f502ef9de542
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 25493f93daf3fe5e874ad1d06b918196cd1f074d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795561"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912810"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - CRUD - 2, 8
 
@@ -26,7 +26,7 @@ V tomto kurzu, vygenerované CRUD (vytváření, čtení, aktualizace nebo odstr
 
 Chcete-li minimalizovat složitost a ponechat tyto kurzy, zaměřuje na EF Core, EF Core kód slouží v modelech stránky. Někteří vývojáři používat vrstvu služby nebo [použitému vzoru úložišť](xref:fundamentals/repository-pattern) v vytvořit abstraktní vrstvu mezi uživatelského rozhraní (stránky Razor) a vrstva přístupu k datům.
 
-V tomto kurzu, vytvořit, upravit, odstranit a podrobnosti stránky Razor *Student* jsou zkoumány složky.
+V tomto kurzu, vytvořit, upravit, odstranit a podrobnosti stránky Razor *studenty* jsou zkoumány složky.
 
 Automaticky generovaný kód používá následující vzor pro stránky Create, Edit a Delete:
 
@@ -236,9 +236,9 @@ Testování, odstranění.
 
 ## <a name="common-errors"></a>Běžné chyby
 
-Student/Index nebo jiné odkazy nefungují:
+Studenti na Index nebo jiné odkazy nefungují:
 
-Ověřte stránky Razor obsahuje správný `@page` směrnice. Například by měl u stránky Razor Student/Index **není** obsahovat šablonu trasy:
+Ověřte stránky Razor obsahuje správný `@page` směrnice. Například by studenty/indexovou stránku Razor **není** obsahovat šablonu trasy:
 
 ```cshtml
 @page "{id:int}"

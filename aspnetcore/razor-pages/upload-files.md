@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 07/11/2018
 uid: razor-pages/upload-files
-ms.openlocfilehash: 4b2f80cd5644cf21d5d8452aff6df4eb5591d41b
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 92e72869967b6e3202c97b92e341ea22adc69651
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38993466"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912498"
 ---
 # <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>Nahrání souborů do stránky v ASP.NET Core Razor
 
@@ -261,7 +261,7 @@ Při odeslání formuláře k serveru, `ModelState` je zaškrtnuté políčko. P
 
 ## <a name="link-the-file-upload-razor-page"></a>Propojit samotné nahrávání souborů stránky Razor
 
-Otevřít *Pages/Shared/_Layout.cshtml* a přidat odkaz na navigačním panelu na stránce plány:
+Otevřít *Pages/Shared/_Layout.cshtml* a přidat odkaz do navigačního panelu na stránce plány dosáhnout:
 
 ```cshtml
 <div class="navbar-collapse collapse">
@@ -342,4 +342,4 @@ Uživatel může kliknout **odstranit** odkaz z něj k dosažení zobrazení pot
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
-Informace o odstraňování potíží `IFormFile` nahrát, najdete v článku [nahrání souborů v ASP.NET Core: řešení potíží s](xref:mvc/models/file-uploads#troubleshooting).
+Pro poradce při potížích s informací `IFormFile` nahrávání, viz [odesílání souborů ASP.NET jádra: Poradce při potížích s](xref:mvc/models/file-uploads#troubleshooting).

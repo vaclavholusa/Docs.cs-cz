@@ -8,12 +8,12 @@ ms.date: 10/14/2017
 ms.assetid: 8935bf14-ca6d-4a4e-9dbe-b96ce74cef49
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: 7479dc1477c928e0c59adc5f93e6674a7d348172
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 0da6955a6062571d917fb8c9651417fe834ad34f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578299"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912645"
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Síť pro doručování obsahu Microsoft Ajax
 ====================
@@ -684,6 +684,7 @@ Tyto verze modulu plug-in jQuery DataTables jsou hostované na této sítě CDN.
 
 Toto vydání [Modernizr](http://www.modernizr.com "Modernizr") jsou hostované v síti CDN:
 
+- https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-3.5.0.js
 - https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js
 - https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js
 - https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.1.js

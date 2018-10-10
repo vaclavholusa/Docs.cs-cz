@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 7ecd180b7608e82ea143575c6590574b92843dcf
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6768472b0c75757c9f368cfea58d5084c26719e1
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577493"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913161"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 4
 ====================
@@ -76,13 +76,13 @@ V této části přidáte [jQuery UI datepicker](http://jqueryui.com/demos/datep
 
 Nejprve je nutné nainstalovat knihovny uživatelského rozhraní jQuery. K tomuto účelu používáte NuGet, který je Správce balíčků, který je součástí verze SP1 Visual Studio 2010 a Visual Web Developer.
 
-V aplikaci Visual Web Developer z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven** a pak vyberte **spravovat balíčky NuGet**.
+V aplikaci Visual Web Developer z **nástroje** klepněte na příkaz **Správce balíčků NuGet** a vyberte **Správa balíčků NuGet**.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image3.png)
 
-Poznámka: Pokud **nástroje** nabídek nezobrazuje **Správce balíčků knihoven** příkaz, je potřeba nainstalovat NuGet podle pokynů v [instalace balíčků NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) stránky na webu NuGet.   
+Poznámka: Pokud **nástroje** nezobrazuje v nabídce **Správce balíčků NuGet** příkaz, je třeba nainstalovat podle pokynů uvedených NuGet [instalace NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) stránky na webu NuGet.   
   
-Pokud používáte Visual Studio místo aplikace Visual Web Developer z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven** a pak vyberte **přidat odkaz na balíček knihovny**.
+Pokud používáte Visual Studio místo aplikace Visual Web Developer, ze **nástroje** příkaz **Správce balíčků NuGet** a vyberte **přidat odkaz na knihovnu balíček**.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image4.png)
 

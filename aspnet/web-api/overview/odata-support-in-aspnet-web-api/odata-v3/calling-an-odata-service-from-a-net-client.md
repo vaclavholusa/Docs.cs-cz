@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 6f448917-ad23-4dcc-9789-897fad74051b
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 45d4d1304d2c628d2ab0d09925d2050bf6f58c60
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 75f8e3eab7bd5667bbdcccbb5ae8a8e5b1f5fdba
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755398"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912049"
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>Volání služby OData z klienta .NET (C#)
 ====================
@@ -22,11 +22,11 @@ podle [Mike Wasson](https://github.com/MikeWasson)
 [Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
 > Tento kurz ukazuje postupy při volání služby OData z klientské aplikace C#.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) (funguje v sadě Visual Studio 2012)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) (funguje v sadě Visual Studio 2012)
 > - [Klientská knihovna pro WCF Data Services](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Webové rozhraní API 2. (V příkladu služby OData se vytvořil pomocí webového rozhraní API 2, ale klientské aplikace nezávisí na webového rozhraní API.)
 

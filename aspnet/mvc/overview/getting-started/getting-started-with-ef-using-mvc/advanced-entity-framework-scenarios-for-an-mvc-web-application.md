@@ -8,21 +8,20 @@ ms.date: 12/08/2014
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6e3de242f7cfc584f4c3d1dfa3d1948ee4d49d66
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 0aa440e700c9bfb02aa5d55ebf481850a730febe
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899822"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912680"
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>Scénáře pro pokročilé Entity Framework 6 pro aplikaci MVC 5 Web (12, 12)
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
-
+> Ukázková webová aplikace Contoso University ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí Entity Framework 6 kód první a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 V předchozím kurzu jste implementovali tabulky na hierarchii dědičnosti. V tomto kurzu zahrnuje zavádí několik témat, které jsou užitečné mít na paměti při nad rámec základní informace o vývoji webových aplikací ASP.NET, které používají Entity Framework Code First. Pokyny krok za krokem vás provede kód a pomocí sady Visual Studio pro následující témata:
 
@@ -150,7 +149,7 @@ V *řadiče/CourseController*, nahraďte `Index` metodu s následujícím kódem
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
-Nyní nastavte zarážku na `return` – příkaz (F9 umístěte kurzor na tento řádek). Stisknutím klávesy F5 spusťte projekt v režimu ladění a vyberte kurzu indexovou stránku. Pokud kód dosáhne zarážky, podívejte se `sql` proměnné. Zobrazí se dotaz, který je odeslána do systému SQL Server. Je jednoduchý `Select` příkazu.
+Nyní nastavte zarážku na `return` – příkaz (F9 umístěte kurzor na tento řádek). Stisknutím klávesy **F5** a spusťte projekt v režimu ladění, vyberte kurzu indexovou stránku. Pokud kód dosáhne zarážky, podívejte se `sql` proměnné. Zobrazí se dotaz, který je odeslána do systému SQL Server. Je jednoduchý `Select` příkazu.
 
 [!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample7.json)]
 
@@ -291,7 +290,6 @@ Chybová zpráva:
 
 > Nejde vytvořit nebo stínovou kopii "&lt;filename&gt;' Pokud tento soubor již existuje.
 
-
 Řešení
 
 Počkejte několik sekund a aktualizujte stránku.
@@ -301,7 +299,6 @@ Počkejte několik sekund a aktualizujte stránku.
 Chybová zpráva (z `Update-Database` příkazu v konzole PMC):
 
 > Termín 'Aktualizace databáze' nebyl rozpoznán jako název rutiny, funkce, soubor skriptu nebo spustitelného programu. Zkontrolujte, zda název, nebo pokud cesty byl zahrnut, ověřte správnost cesty a zkuste to znovu.
-
 
 Řešení
 
@@ -313,7 +310,6 @@ Chybová zpráva (z `Update-Database` příkazu v konzole PMC):
 
 > Ověření se nezdařilo pro jednu nebo více entit. Viz vlastnost 'EntityValidationErrors' Další podrobnosti.
 
-
 Řešení
 
 Jeden příčinou tohoto problému je chyby ověřování při `Seed` metoda spuštění. Naleznete v tématu [financování a ladění Entity Framework (EF) databází](https://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx) tipy pro ladění `Seed` metody.
@@ -322,9 +318,7 @@ Jeden příčinou tohoto problému je chyby ověřování při `Seed` metoda spu
 
 Chybová zpráva:
 
-> Chyba protokolu HTTP 500.19 – vnitřní chyba serveru  
-> Požadované stránce nelze přistoupit, protože související konfigurační data pro stránky je neplatná.
-
+> Chyba protokolu HTTP 500.19 – vnitřní chyba serveru požadovanou stránku nelze získat přístup, protože související konfigurační data pro stránky je neplatná.
 
 Řešení
 
@@ -335,7 +329,6 @@ Jedním ze způsobů, které se zobrazí tato chyba je nemusíte několik kopií
 Chybová zpráva:
 
 > Při navazování připojení k serveru SQL Server došlo k chybě související se sítí nebo s instancí. Server nebyl nalezen nebo nebyl přístupný. Ověřte, zda je název instance správný a, SQL Server je nakonfigurován pro povolit vzdálená připojení. (poskytovatel: rozhraní sítě systému SQL, chyba: 26 - Chyba vyhledávání serveru či Instance zadáno)
-
 
 Řešení
 

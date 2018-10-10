@@ -4,14 +4,14 @@ description: Zjistěte, jak nastavit službu Apache jako reverzní proxy server 
 author: spboyer
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 09/08/2018
+ms.date: 10/09/2018
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 534e0415b2d278a518aea0ecb8042aeab4a0aa0e
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 237646f839a4973074bb64176a024ebb3d32ee4e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523204"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913005"
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Hostitele ASP.NET Core v Linuxu pomocí Apache
 
@@ -40,7 +40,7 @@ dotnet publish --configuration Release
 
 Aplikace můžete také publikovat jako [samostatná nasazení](/dotnet/core/deploying/#self-contained-deployments-scd) Pokud nechcete zachovat modulu runtime .NET Core na serveru.
 
-Aplikace ASP.NET Core zkopírujte na server pomocí nástroje, které se integruje do pracovního postupu organizace (třeba spojovací bod služby, SFTP). Je běžné vyhledejte webové aplikace v rámci *var* adresář (třeba *aspnetcore/var/hellomvc*).
+Aplikace ASP.NET Core zkopírujte na server pomocí nástroje, které se integruje do pracovního postupu organizace (třeba spojovací bod služby, SFTP). Je běžné vyhledejte webové aplikace v rámci *var* adresář (třeba *www/var/helloapp*).
 
 > [!NOTE]
 > V případě produkčního nasazení pracovního postupu průběžné integrace funguje publikování aplikace a kopírování prostředky na server.
@@ -147,7 +147,7 @@ Complete!
 
 Konfigurační soubory pro Apache jsou umístěné v rámci `/etc/httpd/conf.d/` adresáře. Žádný soubor s *.conf* rozšíření, jsou zpracovávána v abecedním pořadí kromě souborů konfigurace modulu v `/etc/httpd/conf.modules.d/`, která obsahuje veškeré konfigurace soubory nezbytné k načtení modulů.
 
-Vytvoření konfiguračního souboru s názvem *hellomvc.conf*, pro aplikace:
+Vytvoření konfiguračního souboru s názvem *helloapp.conf*, pro aplikace:
 
 ```
 <VirtualHost *:*>
@@ -160,8 +160,8 @@ Vytvoření konfiguračního souboru s názvem *hellomvc.conf*, pro aplikace:
     ProxyPassReverse / http://127.0.0.1:5000/
     ServerName www.example.com
     ServerAlias *.example.com
-    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
-    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
+    ErrorLog ${APACHE_LOG_DIR}helloapp-error.log
+    CustomLog ${APACHE_LOG_DIR}helloapp-access.log common
 </VirtualHost>
 ```
 
@@ -194,7 +194,7 @@ Apache je nyní instalačního programu předat požadavky na `http://localhost:
 Vytvoření definičního souboru služby:
 
 ```bash
-sudo nano /etc/systemd/system/kestrel-hellomvc.service
+sudo nano /etc/systemd/system/kestrel-helloapp.service
 ```
 
 Příklad souboru služby pro aplikaci:
@@ -204,8 +204,8 @@ Příklad souboru služby pro aplikaci:
 Description=Example .NET Web API App running on CentOS 7
 
 [Service]
-WorkingDirectory=/var/aspnetcore/hellomvc
-ExecStart=/usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+WorkingDirectory=/var/www/helloapp
+ExecStart=/usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 Restart=always
 # Restart service after 10 seconds if the dotnet service crashes:
 RestartSec=10
@@ -236,21 +236,21 @@ systemd-escape "<value-to-escape>"
 Uložte soubor a povolení služby:
 
 ```bash
-sudo systemctl enable kestrel-hellomvc.service
+sudo systemctl enable kestrel-helloapp.service
 ```
 
 Spusťte službu a ověřte, zda je spuštěna:
 
 ```bash
-sudo systemctl start kestrel-hellomvc.service
-sudo systemctl status kestrel-hellomvc.service
+sudo systemctl start kestrel-helloapp.service
+sudo systemctl status kestrel-helloapp.service
 
-● kestrel-hellomvc.service - Example .NET Web API App running on CentOS 7
-    Loaded: loaded (/etc/systemd/system/kestrel-hellomvc.service; enabled)
+● kestrel-helloapp.service - Example .NET Web API App running on CentOS 7
+    Loaded: loaded (/etc/systemd/system/kestrel-helloapp.service; enabled)
     Active: active (running) since Thu 2016-10-18 04:09:35 NZDT; 35s ago
 Main PID: 9021 (dotnet)
-    CGroup: /system.slice/kestrel-hellomvc.service
-            └─9021 /usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
+    CGroup: /system.slice/kestrel-helloapp.service
+            └─9021 /usr/local/bin/dotnet /var/www/helloapp/helloapp.dll
 ```
 
 Reverzní proxy server nakonfigurovaný a spravované přes Kestrel *systemd*, webové aplikace plně konfigurována a je přístupný z prohlížeče na místním počítači v `http://localhost`. Kontrola hlavičky odpovědi **Server** hlavička označuje, že aplikace ASP.NET Core je poskytovaný Kestrel:
@@ -266,16 +266,16 @@ Transfer-Encoding: chunked
 
 ### <a name="viewing-logs"></a>Zobrazení protokolů
 
-Od webové aplikace pomocí Kestrel se spravuje pomocí *systemd*, události a procesy jsou protokolovány centralizované deníku. Ale tento deník obsahuje záznamy pro všechny služby a spravuje procesy *systemd*. Chcete-li zobrazit `kestrel-hellomvc.service`-konkrétní položky, použijte následující příkaz:
+Od webové aplikace pomocí Kestrel se spravuje pomocí *systemd*, události a procesy jsou protokolovány centralizované deníku. Ale tento deník obsahuje záznamy pro všechny služby a spravuje procesy *systemd*. Chcete-li zobrazit `kestrel-helloapp.service`-konkrétní položky, použijte následující příkaz:
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service
+sudo journalctl -fu kestrel-helloapp.service
 ```
 
 Pro filtrování podle času, zadejte možnosti pomocí příkazu. Například použít `--since today` filtrovat aktuální den nebo `--until 1 hour ago` zobrazíte položky do předchozí hodiny. Další informace najdete v tématu [man stránka journalctl](https://www.unix.com/man-page/centos/1/journalctl/).
 
 ```bash
-sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
+sudo journalctl -fu kestrel-helloapp.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
 ## <a name="data-protection"></a>Ochrana dat
@@ -343,7 +343,7 @@ K vynucení SSL, nainstalujte `mod_rewrite` modulu, který chcete-li povolit př
 sudo yum install mod_rewrite
 ```
 
-Upravit *hellomvc.conf* soubor povolit přepisování adres URL a zabezpečenou komunikaci na portu 443:
+Upravit *helloapp.conf* soubor povolit přepisování adres URL a zabezpečenou komunikaci na portu 443:
 
 ```
 <VirtualHost *:*>
@@ -360,8 +360,8 @@ Upravit *hellomvc.conf* soubor povolit přepisování adres URL a zabezpečenou 
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ErrorLog /var/log/httpd/helloapp-error.log
+    CustomLog /var/log/httpd/helloapp-access.log common
     SSLEngine on
     SSLProtocol all -SSLv2
     SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4
@@ -427,7 +427,7 @@ Tento příklad ukazuje, jak nainstalovat a nakonfigurovat Apache na CentOS 7 a 
 sudo yum install mod_proxy_balancer
 ```
 
-V konfiguračním souboru je znázorněno níže, další instanci `hellomvc` aplikace je ke spuštění na portu 5001 instalace. *Proxy* části je nastaven s konfigurací nástroje pro vyrovnávání se dvěma členy pro vyrovnávání zatížení *byrequests*.
+V konfiguračním souboru je znázorněno níže, další instanci `helloapp` je nastaven na spuštění port 5001. *Proxy* části je nastaven s konfigurací nástroje pro vyrovnávání se dvěma členy pro vyrovnávání zatížení *byrequests*.
 
 ```
 <VirtualHost *:*>
@@ -455,8 +455,8 @@ V konfiguračním souboru je znázorněno níže, další instanci `hellomvc` ap
     <Location />
         SetHandler balancer
     </Location>
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ErrorLog /var/log/httpd/helloapp-error.log
+    CustomLog /var/log/httpd/helloapp-access.log common
     SSLEngine on
     SSLProtocol all -SSLv2
     SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:!RC4+RSA:+HIGH:+MEDIUM:!LOW:!RC4

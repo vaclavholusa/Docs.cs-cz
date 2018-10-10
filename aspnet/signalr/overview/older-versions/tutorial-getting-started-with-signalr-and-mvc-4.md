@@ -8,12 +8,12 @@ ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 34a7ae97a0a0652c090aa72e2cb21a4bce13bd5c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 95fc3315149e07dbdb0505a2b5ab197bfedba097
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756935"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910873"
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>Kurz: Začínáme s knihovnou SignalR 1.x a MVC 4
 ====================
@@ -63,7 +63,7 @@ Tato část ukazuje, jak vytvořit aplikaci ASP.NET MVC 4, přidejte knihovny Si
       2. Vyberte šablonu aplikace Internet, zrušte zaškrtnutí políčka pro **vytvořit projekt testování částí**a klikněte na tlačítko OK.
 
          ![Vytvořte web na Internetu mvc](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-      3. Otevřít **nástroje | Správce balíčků knihoven | Konzola správce balíčků** a spusťte následující příkaz. Tento krok přidává do projektu sadu souborů skriptů a odkazy na sestavení, které umožňují funkce SignalR.
+      3. Otevřít **nástroje > Správce balíčků NuGet > Konzola správce balíčků** a spusťte následující příkaz. Tento krok přidává do projektu sadu souborů skriptů a odkazy na sestavení, které umožňují funkce SignalR.
 
          `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
       4. V **Průzkumníka řešení** rozbalte složku skripty. Všimněte si, že byly přidány do projektu knihovny skriptů pro funkci SignalR.

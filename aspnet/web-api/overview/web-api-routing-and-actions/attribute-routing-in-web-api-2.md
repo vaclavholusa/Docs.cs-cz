@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 35cf3bf555218b6b49b30f48186e4c67aff4ff7b
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: d16dcc618bf6c60714179601db14f4dd2a9e41ce
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795548"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912149"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Směrování atributů v rozhraní ASP.NET Web API 2
 ====================
@@ -29,7 +29,7 @@ Toto téma ukazuje, jak povolit směrování atributů a popisuje různé možno
 
 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional nebo Enterprise edition
 
-Alternativně můžete použijte Správce balíčků NuGet nainstalujte potřebné balíčky. Z **nástroje** nabídky v sadě Visual Studio, vyberte **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+Alternativně můžete použijte Správce balíčků NuGet nainstalujte potřebné balíčky. Z **nástroje** v aplikaci Visual Studio, vyberte v nabídce **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 `Install-Package Microsoft.AspNet.WebApi.WebHost`
 

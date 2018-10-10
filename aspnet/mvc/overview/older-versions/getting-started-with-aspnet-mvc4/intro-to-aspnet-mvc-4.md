@@ -8,39 +8,39 @@ ms.date: 08/15/2012
 ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 62f67d0d0dfe7a3c9d04eacfbcac56f7fd03ef07
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: ea3d1517192ded0e5372c49897bb1fec33324b6f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577363"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912394"
 ---
 <a name="intro-to-aspnet-mvc-4"></a>Úvod do ASP.NET MVC 4
 ====================
 Podle [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-> Pokud v tomto kurzu je k dispozici aktualizovaná verze [tady](../../getting-started/introduction/getting-started.md) pomocí [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). Nové kurz používá ASP.NET MVC 5, která nabízí mnoho vylepšení v porovnání s v tomto kurzu.
-> 
+> Pokud v tomto kurzu je k dispozici aktualizovaná verze [tady](../../getting-started/introduction/getting-started.md) pomocí [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013). Nové kurz používá ASP.NET MVC 5, která nabízí mnoho vylepšení v porovnání s v tomto kurzu.
+>
 > V tomto kurzu se seznámíte se základy vytváření ASP.NET MVC 4 webovou aplikaci pomocí Microsoft [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) nebo Visual Web Developer 2010 Express Service Pack 1. Doporučuje se Visual Studio 2012, nebudete muset nic k dokončení tohoto kurzu instalovat. Pokud používáte Visual Studio 2010 je nutné nainstalovat následující komponenty. Můžete nainstalovat všechny z nich kliknutím na následujících odkazech:
-> 
+>
 > - [Visual Studio Web Developer Express SP1 požadavky](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [Instalační program identitu pracovního procesu pro technologii ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)
 > - [LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)
 > - [SSDT](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)
-> 
+>
 > Pokud používáte Visual Studio 2010 Visual Web Developer 2010, nainstalujte [instalační program identitu pracovního procesu pro technologii ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392) a: [požadavky sady Visual Studio 2010](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
-> 
+>
 > Projekt aplikace Visual Web Developer se zdrojovým kódem jazyka C# je k dispozici v tomto tématu. [Stáhněte si verzi C#](https://code.msdn.microsoft.com/Intro-to-ASPNET-MVC-4-61d0219d/file/114480/1/MvcMovie.zip).
-> 
+>
 > V tomto kurzu spustíte aplikaci v sadě Visual Studio. Můžete také zpřístupnit aplikace přes Internet nasazením k poskytovateli hostingu. Společnost Microsoft nabízí bezplatné webových hostitelských služeb pro až 10 webových serverů ve [Bezplatný zkušební účet Windows Azure](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604). Informace o tom, jak nasadit webový projekt sady Visual Studio na webu Windows Azure naleznete v tématu [vytvoření a nasazení webu ASP.NET a služby SQL Database pomocí sady Visual Studio](https://docs.microsoft.com/dotnet/azure/). Tento kurz také ukazuje způsob použití migrace Entity Framework Code First pro nasazení databáze SQL serveru do služby Windows Azure SQL Database (dřív SQL Azure).
-> 
+>
 > V tomto kurzu byla zapsána od Ricka Andersona ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
 
 
 ## <a name="what-youll-build"></a>Co budete vytvářet
 
 > [!NOTE]
-> Pokud v tomto kurzu je k dispozici aktualizovaná verze [tady](../../getting-started/introduction/getting-started.md) pomocí [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). Nové kurz používá ASP.NET MVC 5, která nabízí mnoho vylepšení v porovnání s v tomto kurzu.
+> Pokud v tomto kurzu je k dispozici aktualizovaná verze [tady](../../getting-started/introduction/getting-started.md) pomocí [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013). Nové kurz používá ASP.NET MVC 5, která nabízí mnoho vylepšení v porovnání s v tomto kurzu.
 
 
 Budete implementujte jednoduchou aplikaci výpis film, který podporuje vytváření, úprav, vyhledávání a zobrazení videa z databáze. Níže jsou uvedeny dva snímky obrazovky z aplikace, kterou vytvoříte. Stránka zobrazující seznam videa z databáze obsahuje:

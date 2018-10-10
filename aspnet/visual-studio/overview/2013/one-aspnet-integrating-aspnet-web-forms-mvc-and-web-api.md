@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b6ac0dca92ab3d75eb871099882dcea549264354
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c18911680b59448cd67190f71e951a3fcf3d0478
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756384"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912732"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>Praktické cvičení: Jeden ASP.NET: integrace webových formulářů ASP.NET, MVC a webového rozhraní API
 ====================
@@ -372,7 +372,7 @@ V této úloze bude používat Internet Explorer **vývojářské nástroje F12 
 
 Při vytváření webové rozhraní API, je užitečné vytvořit stránku nápovědy tak, aby ostatní vývojáři vědět, jak volat rozhraní API. Můžete vytvořit a aktualizovat stránky dokumentace ručně, ale je vhodnější pro automatické generování je vyhnout se nutnosti údržby práci. V této úloze používáte balíček Nuget k automatickému generování stránek nápovědy webového rozhraní API do řešení.
 
-1. Z **nástroje** nabídky v sadě Visual Studio, vyberte **Správce balíčků knihoven**a potom klikněte na tlačítko **Konzola správce balíčků**.
+1. Z **nástroje** v aplikaci Visual Studio, vyberte v nabídce **Správce balíčků NuGet**a potom klepněte na **konzoly Správce balíčků**.
 2. V **Konzola správce balíčků** okno, že spustíte následující příkaz:
 
     [!code-powershell[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample7.ps1)]

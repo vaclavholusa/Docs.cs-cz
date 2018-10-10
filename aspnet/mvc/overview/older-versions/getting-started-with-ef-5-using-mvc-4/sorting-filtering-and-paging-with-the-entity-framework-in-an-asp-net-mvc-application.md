@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 72180686ea1ee6f6695b24fcedf3af90c1eddcfa
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8bea3d4bc19a5a47240abeb2cc015116814a8fdf
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756641"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911816"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>Řazení, filtrování a stránkování s Entity Framework v aplikaci ASP.NET MVC (3 10)
 ====================
@@ -117,7 +117,7 @@ Přidání stránkování k studenty indexovou stránku, začnete pomocí instal
 
 NuGet **PagedList.Mvc** balíček automaticky nainstaluje **PagedList** balíčku jako závislost. **PagedList** balíček nainstaluje `PagedList` kolekce typů a rozšíření metod pro `IQueryable` a `IEnumerable` kolekce. Rozšiřující metody vytvořit jednu stránku dat v `PagedList` kolekce z vaší `IQueryable` nebo `IEnumerable`a `PagedList` kolekce poskytuje několik vlastností a metod, které usnadňují stránkování. **PagedList.Mvc** balíček nainstaluje stránkování pomocné rutiny, která zobrazuje tlačítka stránkování.
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven** a potom **spravovat balíčky NuGet pro řešení**.
+Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet** a potom **spravovat balíčky NuGet pro řešení**.
 
 V **spravovat balíčky NuGet** dialogové okno, klikněte na tlačítko **Online** kartu na levé straně a pak do vyhledávacího pole zadejte "stránkovaného". Když se zobrazí **PagedList.Mvc** balíček, klikněte na tlačítko **nainstalovat**.
 

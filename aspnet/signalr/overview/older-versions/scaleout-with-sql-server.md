@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 1dca7967-8296-444a-9533-837eb284e78c
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: cd0e3d4bdb4d2eb78e5c41167a17f8673584f654
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d68196aa8e4d0c60570a0e36ccc75a2a080d57bc
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751996"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912745"
 ---
 <a name="signalr-scaleout-with-sql-server-signalr-1x"></a>Škálování aplikace SignalR SQL serverem (SignalR 1.x)
 ====================
@@ -66,7 +66,6 @@ Povolí službu Service Broker, pomocí následujícího dotazu SQL:
 > [!NOTE]
 > Pokud tento dotaz se zdá, zablokování, ujistěte se, že nejsou žádné aplikace, připojení k databázi.
 
-
 Pokud jste povolili trasování, trasování zobrazí také, zda je povolena služba Service Broker.
 
 ## <a name="create-a-signalr-application"></a>Vytvoření aplikace SignalR
@@ -76,7 +75,7 @@ Vytvoření aplikace SignalR pomocí některé z těchto kurzů:
 - [Začínáme s knihovnou SignalR](../getting-started/tutorial-getting-started-with-signalr.md)
 - [Začínáme s knihovnou SignalR a MVC 4](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-V dalším kroku upravíme, aby byl chatovací aplikaci, aby podporovala škálování s využitím SQL serveru. Nejprve přidejte balíček SignalR.SqlServer NuGet do projektu. V sadě Visual Studio z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+V dalším kroku upravíme, aby byl chatovací aplikaci, aby podporovala škálování s využitím SQL serveru. Nejprve přidejte balíček SignalR.SqlServer NuGet do projektu. V aplikaci Visual Studio z **nástroje** příkaz **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-powershell[Main](scaleout-with-sql-server/samples/sample4.ps1)]
 

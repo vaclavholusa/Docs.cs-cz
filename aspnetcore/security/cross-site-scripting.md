@@ -5,18 +5,18 @@ description: Další informace o skriptování mezi weby (XSS) a techniky pro ř
 ms.author: riande
 ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 50f0211a2c64708d9b788dd10ce9064e66014d55
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577441"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910522"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>Zabránit webů skriptování mezi weby (XSS) v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Skriptování mezi weby (XSS) je ohrožení zabezpečení, která umožňuje útočníkovi umístí skripty na straně klienta (obvykle JavaScriptu) do webových stránek. Když ostatní uživatelé načíst ovlivněné stránek, které budou spuštěny skripty útočníci, umožňuje útočníkovi krádež souborů cookie a relace tokeny, změňte obsah webové stránky pomocí manipulace s modelem DOM nebo přesměrovat prohlížeč na jinou stránku. Ohrožení zabezpečení XSS obecně dojít, když aplikace přijímá vstup uživatele a uloží jej na stránce bez ověřování, kódování nebo ho uvozovací znaky.
+Skriptování mezi weby (XSS) je ohrožení zabezpečení, která umožňuje útočníkovi umístí skripty na straně klienta (obvykle JavaScriptu) do webových stránek. Když ostatní uživatelé načíst ovlivněné stránek, které budou spuštěny skripty útočníka, umožňuje útočníkovi krádež souborů cookie a relace tokeny, změňte obsah webové stránky pomocí manipulace s modelem DOM nebo přesměrovat prohlížeč na jinou stránku. Ohrožení zabezpečení XSS obecně dojít, když aplikace přijímá vstup uživatele a uloží jej na stránku bez ověřování, kódování nebo ho uvozovací znaky.
 
 ## <a name="protecting-your-application-against-xss"></a>Ochrana aplikace proti skriptování mezi servery
 
@@ -26,15 +26,15 @@ Na základní úrovni XSS funguje tak, přičemž aplikace do vkládání `<scri
 
 2. Před přepnutím nedůvěryhodná data uvnitř elementu HTML Ujistěte se, že je kódováno jazykem HTML. Kódování HTML, jako má znaků &lt; a změny do bezpečného formuláře jako &amp;lt;
 
-3. Před uvedením nedůvěryhodná data do atributu HTML Ujistěte se, že je kódování atributu HTML. Kódování atributu HTML je nadstavbou jazyka kódování HTML a další znaky zakóduje jako "a".
+3. Před uvedením nedůvěryhodná data do atributu HTML Ujistěte se, že je kódováno jazykem HTML. Kódování atributu HTML je nadstavbou jazyka kódování HTML a další znaky zakóduje jako "a".
 
-4. Před přepnutím nedůvěryhodná data do jazyka JavaScript umístíte data v elementu HTML, jehož obsah načíst za běhu. Pokud to není možný, zajistěte, aby data je zakódován jazyka JavaScript. Kódování JavaScript trvá nebezpečné znaky pro JavaScript a nahradí je jejich hex, například &lt; by být zakódován jako `\u003C`.
+4. Před přepnutím nedůvěryhodná data do jazyka JavaScript umístíte data v elementu HTML, jehož obsah načíst za běhu. Pokud to není možné, pak Ujistěte se, že data jsou kódované jazyka JavaScript. Kódování JavaScript trvá nebezpečné znaky pro JavaScript a nahradí je jejich hex, například &lt; by být zakódován jako `\u003C`.
 
 5. Před přepnutím nedůvěryhodná data do řetězce dotazu adresy URL Ujistěte se, že je kódování URL.
 
 ## <a name="html-encoding-using-razor"></a>Kódování HTML pomocí syntaxe Razor
 
-Modul Razor použité v MVC automaticky kóduje všechny výstupní zdrojem proměnné, pokud pracujete ve skutečnosti intenzivně zabránit, aby ji uděláte. Použije pravidla při každém použití kódování atributu HTML *@* směrnice. Ve formátu HTML kódování atributu je nadstavbou jazyka kódování HTML, to znamená, že nemáte problém sami se určuje, zda by měl používat kódování HTML nebo kódování atributu HTML. Musíte zajistit, že používáte pouze v kontextu HTML, ne už při pokusu o vložení nedůvěryhodný vstup přímo do jazyka JavaScript. Pomocné rutiny značek se také kódování vstup, který použijete v parametrů tag.
+Modul Razor použité v MVC automaticky kóduje všechny výstupní zdrojem proměnné, pokud pracujete ve skutečnosti intenzivně zabránit, aby ji uděláte. Použije pravidla kódování atributu HTML při každém použití *@* směrnice. Ve formátu HTML kódování atributu je nadstavbou jazyka kódování HTML, to znamená, že nemáte problém sami se určuje, zda by měl používat kódování HTML nebo kódování atributu HTML. Musíte zajistit, že používáte pouze v kontextu HTML, ne už při pokusu o vložení nedůvěryhodný vstup přímo do jazyka JavaScript. Pomocné rutiny značek se také kódování vstup, který použijete v parametrů tag.
 
 Proveďte následující zobrazení Razor:
 
@@ -107,7 +107,7 @@ To vytvoří následující kód HTML
    </script>
    ```
 
-Který při spuštění, zobrazí se pak takto:
+Který při spuštění, zobrazí se pak následující:
 
 ```none
 <"123">
@@ -129,7 +129,7 @@ Kodér JavaScript můžete také volat přímo:
    </script>
    ```
 
-To bude vykreslení v prohlížeči takto:
+To bude vykreslení v prohlížeči následujícím způsobem:
 
 ```html
 <script>

@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 05181ae1b2d857eea45983d378b28011c1cd755a
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: bc6de2f0c8b2cd958c198abb90fc4ad97613e973
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578130"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913304"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Praktické cvičení: udržitelné weby Azure: Správa změn a škálování
 ====================
@@ -124,7 +124,7 @@ V této úloze bude projít kroky povolení **migrace Entity Framework Code Firs
 
 1. Otevřete Visual Studio a otevřete **GeekQuiz.sln** soubor řešení od **Source\Ex1 UsingEntityFrameworkMigrations\Begin**.
 2. Sestavte řešení, aby bylo možné stáhnout a nainstalovat **NuGet** balíček závislostí. Chcete-li to provést, klikněte pravým tlačítkem na řešení a klikněte na tlačítko **sestavit řešení** nebo stiskněte klávesu **Ctrl + Shift + B**.
-3. Z **nástroje** nabídky v sadě Visual Studio, vyberte **Správce balíčků knihoven**a potom klikněte na tlačítko **Konzola správce balíčků**.
+3. Z **nástroje** v aplikaci Visual Studio, vyberte v nabídce **Správce balíčků NuGet**a potom klepněte na **konzoly Správce balíčků**.
 4. V **Konzola správce balíčků**, zadejte následující příkaz a stiskněte klávesu **Enter**. Vytvoří se při počáteční migraci na základě existující modelu.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample1.ps1)]

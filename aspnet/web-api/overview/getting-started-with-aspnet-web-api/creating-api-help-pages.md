@@ -8,12 +8,12 @@ ms.date: 04/01/2013
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 2d8758034ca4339ed7e9699cf2f2643bfab87ba4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c081064a32151a71fc4f3ea407e0c48a1539432a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756869"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913122"
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>Vytváření stránek nápovědy pro rozhraní ASP.NET Web API
 ====================
@@ -55,7 +55,7 @@ Každé rozhraní API obsahuje odkaz na stránku se podrobnější informace, v�
 
 Stránky nápovědy k existujícímu projektu webového rozhraní API můžete přidat pomocí Správce balíčků NuGet. Tato možnost je užitečná, že spusťte ze šablony jiný projekt než má šablona "Webového rozhraní API".
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V [Konzola správce balíčků](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) okno, zadejte jeden z následujících příkazů:
+Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet**a pak vyberte **Konzola správce balíčků**. V [Konzola správce balíčků](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) okno, zadejte jeden z následujících příkazů:
 
 Pro **jazyka C#** aplikace: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 

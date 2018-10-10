@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 41db1af79ed63ff4dd12be37e9cc76e16f1bf5e4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c58b06af0044144cf28cc36c16a41672aa1f6eb3
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41754994"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911262"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>Injektáž závislostí v rozhraní ASP.NET Web API 2
 ====================
@@ -88,7 +88,7 @@ Kontejner IoC je softwarová součást, která zodpovídá za správu závislost
 > "IoC" znamená "inverzi ovládacího prvku", což je obecný vzor, pokud rámec volání do kódu aplikace. Kontejner IoC vytvoří objekty, které "Invertuje" obvyklý tok řízení.
 
 
-V tomto kurzu použijeme [Unity](https://msdn.microsoft.com/library/ff647202.aspx) z Microsoft Patterns &amp; postupy. (Zahrnout další oblíbené knihovny [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Ninject](http://www.ninject.org/), a [StructureMap ](http://docs.structuremap.net/).) Správce balíčků NuGet můžete nainstalovat Unity. Z **nástroje** nabídky v sadě Visual Studio, vyberte **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+V tomto kurzu použijeme [Unity](https://msdn.microsoft.com/library/ff647202.aspx) z Microsoft Patterns &amp; postupy. (Zahrnout další oblíbené knihovny [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Ninject](http://www.ninject.org/), a [StructureMap ](http://docs.structuremap.net/).) Správce balíčků NuGet můžete nainstalovat Unity. Z **nástroje** v aplikaci Visual Studio, vyberte v nabídce **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-console[Main](dependency-injection/samples/sample7.cmd)]
 

@@ -8,34 +8,34 @@ ms.date: 01/05/2015
 ms.assetid: a610c796-c131-473c-baef-2e6c568cb2a2
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 21946b9fa0406de79af7b83809869d90e6e8234e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 886373f6c0949f9dc0d3f95edf1d052c6c05490b
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752245"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910964"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>Ověřování a autorizace Center SignalR
 ====================
 podle [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Toto téma popisuje, jak omezit, kteří uživatelé nebo rolí se dostanete metod rozbočovače. 
-> 
+> Toto téma popisuje, jak omezit, kteří uživatelé nebo rolí se dostanete metod rozbočovače.
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 

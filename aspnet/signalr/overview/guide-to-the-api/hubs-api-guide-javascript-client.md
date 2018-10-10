@@ -8,38 +8,38 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: de47593e7f54757d4f91a6e92485567e74b829ed
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9edb7fd100a3f4c5331454045ac206d2f7a81961
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41757099"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912446"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>Funkce SignalR technologie ASP.NET pokyny k rozhraní API Center – javascriptový klient
 ====================
 podle [Patrick Fletcher](https://github.com/pfletcher), [Petr Dykstra](https://github.com/tdykstra)
 
 > Tento dokument obsahuje úvod k používání rozhraní API rozbočovače pro funkci SignalR verze 2 v klientů JavaScript, například s prohlížeči a aplikace Windows Store (WinJS).
-> 
+>
 > Rozhraní API pro rozbočovače SignalR umožňuje vytvářet vzdálených volání procedur (RPC) ze serveru pro připojené klienty a z klientů k serveru. V serverovém kódu můžete definovat metody, které mohou být volány klientů a volat metody, které běží na straně klienta. V klientském kódu můžete definovat metody, které lze volat ze serveru a volání metody, které běží na serveru. Funkce SignalR postará za vás zajistí funkčnost systému klient server.
-> 
+>
 > Funkce SignalR také nabízí nižší úrovně rozhraní API volá trvalé připojení. Úvod do SignalR, rozbočovačů a trvalá připojení, najdete v článku [Úvod ke knihovně SignalR](../getting-started/introduction-to-signalr.md).
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -234,7 +234,7 @@ Tento příkaz přidá 2.1.0 verzi balíčku do projektu.
 
 ### <a name="calling-usecors"></a>Volání UseCors
 
- Následující fragment kódu ukazuje, jak implementovat mezi doménami připojení v SignalR 2. 
+ Následující fragment kódu ukazuje, jak implementovat mezi doménami připojení v SignalR 2.
 
 **Implementace žádosti napříč doménami v SignalR 2**
 
@@ -242,12 +242,12 @@ Následující kód ukazuje, jak povolit CORS a JSONP v projektu funkcí SignalR
 
 [!code-csharp[Main](hubs-api-guide-javascript-client/samples/sample11.cs)]
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > - Nenastavujte `jQuery.support.cors` na hodnotu true v kódu.
-> 
+>
 >     ![JQuery.support.cors nemají nastavený na hodnotu true](hubs-api-guide-javascript-client/_static/image7.png)
-> 
+>
 >     Funkce SignalR zpracovává použití CORS. Nastavení `jQuery.support.cors` na hodnotu true zakáže JSONP, protože kvůli němu SignalR předpokládat, že prohlížeč podporuje CORS.
 > - Když se připojujete k adrese URL místního hostitele, Internet Explorer 10 nebude považují za připojení mezi doménami, tak, že aplikace bude fungovat místně pomocí aplikace Internet Explorer 10 i v případě, že jste ještě nepovolili mezi doménami připojení na serveru.
 > - Informace o použití připojení mezi doménami se aplikace Internet Explorer 9, najdete v tématu [toto vlákno na StackOverflow](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work).

@@ -8,21 +8,20 @@ ms.date: 01/13/2015
 ms.assetid: c89d809f-6c65-4425-a3fa-c9f6e8ac89f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9b326ec22fc70a8c1746c5cd2c302c7f04fa8d3e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ab6a553100d704746840eaad512ec140d4576c44
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752440"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911783"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Odolnost připojení a zachycení příkazů s Entity Framework v aplikaci ASP.NET MVC
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
-
+> Ukázková webová aplikace Contoso University ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí Entity Framework 6 kód první a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 Zatím aplikace je spuštěné místně v rámci služby IIS Express na vašem vývojovém počítači. Aplikace skutečný zpřístupnit ostatním uživatelům používat přes Internet, je zapotřebí nasadit na web poskytovatele hostitelských služeb a je zapotřebí nasadit databázi k databázovému serveru.
 
@@ -73,7 +72,7 @@ Kvůli implementaci osvědčený postup pro cloudové aplikace můžete také po
 
 ### <a name="create-a-logging-interface-and-class"></a>Vytvoření protokolování rozhraní a třídy
 
-A [osvědčený postup pro protokolování](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) , je to udělat pomocí rozhraní namísto pevně kódováno pomocí volání System.Diagnostics.Trace nebo třída protokolování. Který usnadňuje mechanismu protokolování později změnit, pokud byste někdy potřebovali udělat. Takže v této části vytvoříte rozhraní protokolování a třídu pro implementaci ní/p > 
+A [osvědčený postup pro protokolování](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) , je to udělat pomocí rozhraní namísto pevně kódováno pomocí volání System.Diagnostics.Trace nebo třída protokolování. Který usnadňuje mechanismu protokolování později změnit, pokud byste někdy potřebovali udělat. Takže v této části vytvoříte rozhraní protokolování a třídu pro implementaci ní/p >
 
 1. Vytvoření složky v projektu a pojmenujte ho *protokolování*.
 2. V *protokolování* složce vytvořte soubor třídy *ILogger.cs*a nahraďte kód šablony následujícím kódem:
@@ -138,7 +137,7 @@ Dále vytvoříte třídy, které rozhraní Entity Framework volat pokaždé, kd
 
 ## <a name="test-logging-and-connection-resiliency"></a>Test připojení k protokolování a odolnost proti chybám
 
-1. Stisknutím klávesy F5 spusťte aplikaci v režimu ladění a pak klikněte na tlačítko **studenty** kartu.
+1. Stisknutím klávesy **F5** spusťte aplikaci v režimu ladění, a klikněte **studenty** kartu.
 2. Podívejte se na Visual Studio **výstup** okno a zobrazit výstup trasování. Budete muset posunout nahoru za některé chyby JavaScriptu získat protokoly vytvořené vaší protokolovacího nástroje.
 
     Všimněte si, že vidíte skutečné SQL dotazy odeslané do databáze. Uvidíte některé počáteční dotazy a příkazy, které rozhraní Entity Framework nemá Pokud chcete začít, kontrola verze databáze a tabulky historie migrace (získáte informace o migraci v dalším kurzu). Zobrazit dotaz pro stránkování, chcete-li zjistit, kolik studenty existují, a nakonec se zobrazí dotaz, který získá data studentů.
@@ -172,7 +171,7 @@ Dále vytvoříte třídy, které rozhraní Entity Framework volat pokaždé, kd
 
 V tomto kurzu jste viděli, jak povolit odolnost připojení a protokolů příkazy SQL, které lze kombinovat rozhraní Entity Framework a odesílá do databáze. V dalším kurzu nasazujete aplikace na Internetu, pomocí migrace Code First pro nasazení databáze.
 
-Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu. Můžete také požádat o nový témat na [Show Me jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu.
 
 Odkazy na další zdroje Entity Framework lze nalézt v [přístup k datům ASP.NET – doporučené zdroje informací](../../../../whitepapers/aspnet-data-access-content-map.md).
 

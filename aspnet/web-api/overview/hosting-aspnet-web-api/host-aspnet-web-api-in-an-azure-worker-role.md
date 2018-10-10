@@ -8,27 +8,27 @@ ms.date: 04/02/2014
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: cabf88e4e6c946f92a9e4534a4db5ae15dd8cae5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 40cb1a4514beaf81e7ed75bbd3e478f2ba146fe5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753264"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910743"
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>Hostovat rozhraní ASP.NET Web API 2 v roli pracovního procesu Azure
 ====================
 podle [Mike Wasson](https://github.com/MikeWasson)
 
 > Tento kurz ukazuje, jak hostovat rozhraní ASP.NET Web API v roli pracovního procesu Azure používá OWIN k samoobslužnému hostování webového rozhraní API rozhraní framework.
-> 
+>
 > [Otevřete Web Interface pro .NET](http://owin.org/) (OWIN) definuje abstrakce mezi .NET webové servery a webové aplikace. Webové aplikace ze serveru, který je ideální pro webové aplikace ve vašem vlastním procesu mimo službu IIS s vlastním hostováním OWIN OWIN odděluje obě části – například v roli pracovního procesu systému Azure.
-> 
+>
 > V tomto kurzu budete používat Microsoft.Owin.Host.HttpListener balíček, který poskytuje HTTP server, který použije k samoobslužnému hostování aplikací OWIN.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Webové rozhraní API 2
 > - [Sada Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
 
@@ -56,7 +56,7 @@ Obecně platí aplikace Azure může obsahovat více rolí, i když tento kurz p
 
 ## <a name="add-the-web-api-and-owin-packages"></a>Přidání webového rozhraní API a balíčky OWIN
 
-Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků knihoven**, pak klikněte na tlačítko **Konzola správce balíčků**.
+Z **nástroje** nabídky, klepněte na **Správce balíčků NuGet**, klepněte na **konzoly Správce balíčků**.
 
 V okně konzoly Správce balíčků zadejte následující příkaz:
 
@@ -128,7 +128,7 @@ Emulátor služby výpočty místní IP adresa přiřadí ke koncovému bodu. IP
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image11.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image10.png)
 
-Zjistit IP adresu v rámci nasazení služeb, nasazení [id], podrobnosti o službě. Otevřete webový prohlížeč a přejdete na http://<em>adresu</em>/testovací/1, kde <em>adresu</em> je IP adresa přidělí emulátor služby výpočty; například `http://127.0.0.1:80/test/1`. Měli byste vidět odpovědi z kontroleru webového rozhraní API:
+Nalezení IP adresy v rámci služby nasazení, nasazení [id], podrobnosti o službě. Otevřete webový prohlížeč a přejdete na http://<em>adresu</em>/testovací/1, kde <em>adresu</em> je IP adresa přidělí emulátor služby výpočty; například `http://127.0.0.1:80/test/1`. Měli byste vidět odpovědi z kontroleru webového rozhraní API:
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image12.png)
 

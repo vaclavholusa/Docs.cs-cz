@@ -8,33 +8,33 @@ ms.date: 03/20/2014
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 2dd4af4543713ab08ad9427d183f667e2dc04f1f
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 095dad49a8e9f963d941a84398afe9da0f46ce0b
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578039"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912264"
 ---
 <a name="owin-oauth-20-authorization-server"></a>Autorizační Server OWIN OAuth 2.0
 ====================
 podle [Hongye Sun](https://github.com/hongyes), [Praburaj manažer](https://github.com/Praburaj), [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Tento kurz vám pomůže o tom, jak implementovat serveru autorizace OAuth 2.0 pomocí middlewaru OWIN OAuth. Toto je rozšířený výukový program, který popisuje pouze kroky pro vytvoření autorizační Server OWIN OAuth 2.0. Toto není podrobný kurz. [Stáhněte si ukázkový kód](https://code.msdn.microsoft.com/OWIN-OAuth-20-Authorization-ba2b8783/file/114932/1/AuthorizationServer.zip).
-> 
+>
 > > [!NOTE]
 > > Tato osnovy by neměl určena pro použití pro vytvoření aplikace pro zabezpečené produkční. Tento kurz je určen k poskytování pouze přehledu o tom, jak implementovat serveru autorizace OAuth 2.0 pomocí middlewaru OWIN OAuth.
-> 
-> 
+>
+>
 > ## <a name="software-versions"></a>Verze softwaru
-> 
+>
 > | **Uvedené v tomto kurzu** | **Funguje taky s** |
 > | --- | --- |
 > | Windows 8.1 | Windows 8, Windows 7 |
-> | [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) | [Visual Studio 2013 Express for Desktop](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express). Visual Studio 2012 s nejnovější aktualizací by měly fungovat, ale kurzu nebyl byly testovány s ním a některé možnosti nabídky a dialogových oknech se liší. |
+> | [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) | [Visual Studio 2013 Express for Desktop](https://my.visualstudio.com/Downloads?q=visual%20studio%202013#d-2013-express). Visual Studio 2012 s nejnovější aktualizací by měly fungovat, ale kurzu nebyl byly testovány s ním a některé možnosti nabídky a dialogových oknech se liší. |
 > | .NET 4.5 |  |
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Pokud máte otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je uvést v [Katana projektu na Githubu](https://github.com/aspnet/AspNetKatana/). Pro dotazy a připomínky týkající se tohoto kurzu, samotný naleznete v části poznámky v dolní části stránky.
 
 
@@ -81,11 +81,11 @@ Výše uvedený kód umožňuje přihlášení aplikace/externí soubory cookie 
 
 - `AuthorizeEndpointPath`: K vydání tokenu nebo kódu vyjádření souhlasu požadavek cesta kde klientské aplikace přesměrují uživatelského agenta aby bylo možné získat uživatele. Musí začínat úvodním lomítkem, například "`/Authorize`".
 - `TokenEndpointPath`: Žádost o cestu klientské aplikace přímo komunikují se získat přístupový token. Musí začínat úvodním lomítkem, jako je "/ Token". Pokud klient je vystaven [klienta\_tajný kód](http://tools.ietf.org/html/rfc6749#appendix-A.2), musí být poskytnut do tohoto koncového bodu.
-- `ApplicationCanDisplayErrors`: Nastavte na `true` Pokud webová aplikace chce generovat vlastní chybové stránky pro chyby ověření klienta `/Authorize` koncového bodu. Je to potřeba jenom pro případy, kdy prohlížeč není přesměrován zpět do klientské aplikace, třeba když `client_id` nebo `redirect_uri` , nejsou správné. `/Authorize` Koncový bod by měl očekávat "oauth. Chyba","oauth. Popis chyby"a"oauth. Vlastnosti ErrorUri"jsou přidány do prostředí OWIN. 
+- `ApplicationCanDisplayErrors`: Nastavte na `true` Pokud webová aplikace chce generovat vlastní chybové stránky pro chyby ověření klienta `/Authorize` koncového bodu. Je to potřeba jenom pro případy, kdy prohlížeč není přesměrován zpět do klientské aplikace, třeba když `client_id` nebo `redirect_uri` , nejsou správné. `/Authorize` Koncový bod by měl očekávat "oauth. Chyba","oauth. Popis chyby"a"oauth. Vlastnosti ErrorUri"jsou přidány do prostředí OWIN.
 
     > [!NOTE]
     > Pokud není true, bude autorizační server vrátit výchozí chybovou stránku s podrobnostmi o chybě.
-- `AllowInsecureHttp`: Hodnota True pro povolení požadavků ověřování a tokenů doručení na adresy HTTP URI a povolit příchozí `redirect_uri` povolit parametry požadavku a adresy HTTP URI. 
+- `AllowInsecureHttp`: Hodnota True pro povolení požadavků ověřování a tokenů doručení na adresy HTTP URI a povolit příchozí `redirect_uri` povolit parametry požadavku a adresy HTTP URI.
 
     > [!WARNING]
     > Zabezpečení – Toto je pouze pro vývoj.
@@ -107,9 +107,9 @@ Přihlašovací stránka je zobrazena níže:
 
 ![](owin-oauth-20-authorization-server/_static/image1.png)
 
-Projděte si IETF OAuth 2 [udělení autorizačního kódu](http://tools.ietf.org/html/rfc6749#section-4.1) části nyní. 
+Projděte si IETF OAuth 2 [udělení autorizačního kódu](http://tools.ietf.org/html/rfc6749#section-4.1) části nyní.
 
-**Zprostředkovatel** (v následující tabulce) je [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx). Zprostředkovatel, který je typu `OAuthAuthorizationServerProvider`, která obsahuje všechny události serveru OAuth. 
+**Zprostředkovatel** (v následující tabulce) je [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx). Zprostředkovatel, který je typu `OAuthAuthorizationServerProvider`, která obsahuje všechny události serveru OAuth.
 
 | Kroky toku z část udělení autorizačního kódu | Stažení ukázkové provádí tyto kroky: |
 | --- | --- |
@@ -134,13 +134,13 @@ Výše uvedený kód používá k ukládání-the-ticket kódu a identity a obno
 
 ![](owin-oauth-20-authorization-server/_static/image2.png)
 
-Pokud **udělení** výběru tlačítka `Authorize` akce vytvoří nové identity "Nosiče" a přihlaste se. Aktivuje autorizační server pro generování nosný token a jejich odesílání zpět do klienta s datovou část JSON. 
+Pokud **udělení** výběru tlačítka `Authorize` akce vytvoří nové identity "Nosiče" a přihlaste se. Aktivuje autorizační server pro generování nosný token a jejich odesílání zpět do klienta s datovou část JSON.
 
 ### <a name="implicit-grant"></a>Implicitní Grant
 
 Najdete IETF OAuth 2 [implicitní Grant](http://tools.ietf.org/html/rfc6749#section-4.2) části nyní.
 
- [Implicitní Grant](http://tools.ietf.org/html/rfc6749#section-4.2) tok je znázorněno na obrázku 4 je tok a které mapování OWIN OAuth následuje middlewaru.  
+ [Implicitní Grant](http://tools.ietf.org/html/rfc6749#section-4.2) tok je znázorněno na obrázku 4 je tok a které mapování OWIN OAuth následuje middlewaru.
 
 | Kroky toku z část implicitní udělení | Stažení ukázkové provádí tyto kroky: |
 | --- | --- |
@@ -159,7 +159,7 @@ Protože jsme již implementováno koncový bod autorizace (`OAuthController.Aut
 
 Najdete IETF OAuth 2 [udělení přihlašovacích údajů heslo vlastníka prostředku](http://tools.ietf.org/html/rfc6749#section-4.3) části nyní.
 
- [Udělení přihlašovacích údajů heslo vlastníka prostředku](http://tools.ietf.org/html/rfc6749#section-4.3) tok z obrázku 5 je tok a řídí se middleware mapování, která OWIN OAuth.  
+ [Udělení přihlašovacích údajů heslo vlastníka prostředku](http://tools.ietf.org/html/rfc6749#section-4.3) tok z obrázku 5 je tok a řídí se middleware mapování, která OWIN OAuth.
 
 | Kroky toku z část udělení přihlašovacích údajů heslo vlastníka prostředku | Stažení ukázkové provádí tyto kroky: |
 | --- | --- |
@@ -182,7 +182,7 @@ Tady je ukázková implementace pro `Provider.GrantResourceOwnerCredentials`:
 
 Najdete IETF OAuth 2 [udělení klientských přihlašovacích údajů](http://tools.ietf.org/html/rfc6749#section-4.4) části nyní.
 
- [Udělení klientských přihlašovacích údajů](http://tools.ietf.org/html/rfc6749#section-4.4) tok je znázorněno na obrázku 6 je tok a řídí se middleware mapování, která OWIN OAuth.  
+ [Udělení klientských přihlašovacích údajů](http://tools.ietf.org/html/rfc6749#section-4.4) tok je znázorněno na obrázku 6 je tok a řídí se middleware mapování, která OWIN OAuth.
 
 | Kroky toku z část udělování přihlašovacích údajů klienta | Stažení ukázkové provádí tyto kroky: |
 | --- | --- |
@@ -203,7 +203,7 @@ Tady je ukázková implementace pro `Provider.GrantClientCredentials`:
 
 Najdete IETF OAuth 2 [aktualizovat Token](http://tools.ietf.org/html/rfc6749#section-1.5) části nyní.
 
- [Aktualizovat Token](http://tools.ietf.org/html/rfc6749#section-1.5) tok je znázorněno na obrázku 2 je tok a které mapování OWIN OAuth následuje middlewaru.  
+ [Aktualizovat Token](http://tools.ietf.org/html/rfc6749#section-1.5) tok je znázorněno na obrázku 2 je tok a které mapování OWIN OAuth následuje middlewaru.
 
 | Kroky toku z část udělování přihlašovacích údajů klienta | Stažení ukázkové provádí tyto kroky: |
 | --- | --- |
@@ -212,7 +212,7 @@ Najdete IETF OAuth 2 [aktualizovat Token](http://tools.ietf.org/html/rfc6749#sec
 |  |  |
 | (H) autorizační server ověří klienta a ověří obnovovací token a pokud je platný, vystaví nový přístupový token (a volitelně nového tokenu obnovení). |  |
 
-Tady je ukázková implementace pro `Provider.GrantRefreshToken`: 
+Tady je ukázková implementace pro `Provider.GrantRefreshToken`:
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample9.cs)]
 

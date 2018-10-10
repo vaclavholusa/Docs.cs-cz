@@ -5,12 +5,12 @@ description: V tomto kurzu čtení a zobrazení souvisejících dat – to zname
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: f57853fae7fb1cb7df130f38a6996c87a5c08e83
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: e23b8bb870b329bd705fbc9548df62524303893e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523282"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912318"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat – 6 8
 
@@ -51,7 +51,7 @@ Existuje několik způsobů, EF Core můžete načíst související data do nav
 
   ![Příklad explicitní načtení](read-related-data/_static/explicit-loading.png)
 
-* [Opožděné načtení](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [EF Core v současné době nepodporuje opožděné načtení](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Pokud entita je nejdřív přečíst, související data nebude načten. Při prvním přístupu k vlastnosti navigace se automaticky načte data požadovaná pro tuto navigační vlastnost. Bude odeslán dotaz do databáze pokaždé, když vlastnost navigace pracuje poprvé.
+* [Opožděné načtení](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [Opožděné načtení byl přidán do EF Core ve verzi 2.1](/ef/core/querying/related-data#lazy-loading). Pokud entita je nejdřív přečíst, související data nebude načten. Při prvním přístupu k vlastnosti navigace se automaticky načte data požadovaná pro tuto navigační vlastnost. Bude odeslán dotaz do databáze pokaždé, když vlastnost navigace pracuje poprvé.
 
 * `Select` Operátor načte pouze souvisejících dat, které jsou potřeba.
 

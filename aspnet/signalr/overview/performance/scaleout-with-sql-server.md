@@ -8,32 +8,32 @@ ms.date: 06/10/2014
 ms.assetid: 98358b6e-9139-4239-ba3a-2d7dd74dd664
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: c99b38e9326ee60bfedbd7ec2f383685343cf3c0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7d9acfc8ed2dd692f36528a8a9700d92d86a4203
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752237"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910444"
 ---
 <a name="signalr-scaleout-with-sql-server"></a>Škálování aplikace SignalR službou SQL Server
 ====================
 podle [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -50,16 +50,16 @@ Microsoft SQL Server 2005 nebo novější. Propojovacího rozhraní podporuje po
 Předtím, než získáme podrobný kurz, zde je rychlý přehled toho, co budete dělat.
 
 1. Vytvoření nové prázdné databáze. Propojovacího rozhraní se vytvoří nezbytné tabulky v této databázi.
-2. Přidejte tyto balíčky NuGet pro vaši aplikaci: 
+2. Přidejte tyto balíčky NuGet pro vaši aplikaci:
 
     - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
     - [Microsoft.AspNet.SignalR.SqlServer](http://nuget.org/packages/Microsoft.AspNet.SignalR.SqlServer)
 3. Vytvoření aplikace SignalR.
-4. Přidejte následující kód do souboru Startup.cs konfigurace propojovacího rozhraní: 
+4. Přidejte následující kód do souboru Startup.cs konfigurace propojovacího rozhraní:
 
     [!code-csharp[Main](scaleout-with-sql-server/samples/sample1.cs)]
 
-   Tento kód nastaví propojovacího rozhraní s výchozími hodnotami u [TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) a [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Informace o změně těchto hodnot najdete v tématu [výkon aplikace SignalR: škálování metriky](signalr-performance.md#scaleout_metrics). 
+   Tento kód nastaví propojovacího rozhraní s výchozími hodnotami u [TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) a [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Informace o změně těchto hodnot najdete v tématu [výkon aplikace SignalR: škálování metriky](signalr-performance.md#scaleout_metrics).
 
 ## <a name="configure-the-database"></a>Konfigurace databáze
 
@@ -96,7 +96,7 @@ Vytvoření aplikace SignalR pomocí některé z těchto kurzů:
 - [Začínáme s knihovnou SignalR 2.0](../getting-started/tutorial-getting-started-with-signalr.md)
 - [Začínáme s knihovnou SignalR 2.0 a MVC 5](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)
 
-V dalším kroku upravíme, aby byl chatovací aplikaci, aby podporovala škálování s využitím SQL serveru. Nejprve přidejte balíček SignalR.SqlServer NuGet do projektu. V sadě Visual Studio z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+V dalším kroku upravíme, aby byl chatovací aplikaci, aby podporovala škálování s využitím SQL serveru. Nejprve přidejte balíček SignalR.SqlServer NuGet do projektu. V aplikaci Visual Studio z **nástroje** příkaz **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-powershell[Main](scaleout-with-sql-server/samples/sample4.ps1)]
 

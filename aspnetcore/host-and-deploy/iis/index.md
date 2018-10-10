@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak hostovat aplikace ASP.NET Core na Windows serveru Internetové informační služby (IIS).
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/13/2018
+ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 8f2155cbf0bc3101b78b890c1d66797278f1ca4b
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 46bcb7822e93862d49923c813140ef453b5e27e5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028307"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913291"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
@@ -46,6 +46,8 @@ Informace o hostování v Azure najdete v tématu <xref:host-and-deploy/azure-ap
 
 V procesu nasazení po vytvoření připojení k protokolu HTTP/2 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) sestavy `HTTP/2`. Mimo proces nasazení po vytvoření připojení k protokolu HTTP/2 [HttpRequest.Protocol](xref:Microsoft.AspNetCore.Http.HttpRequest.Protocol*) sestavy `HTTP/1.1`.
 
+Další informace o modelech hostování a mimo proces, najdete v článku <xref:fundamentals/servers/aspnet-core-module> tématu a <xref:host-and-deploy/aspnet-core-module>.
+
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.2"
@@ -67,9 +69,31 @@ HTTP/2 je standardně povolená. Připojení vrátit zpět k protokolu HTTP/1.1,
 
 ### <a name="enable-the-iisintegration-components"></a>Povolit IISIntegration součásti
 
-::: moniker range=">= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.2"
 
-Typické *Program.cs* volání [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) zahájíte nastavení hostitele. `CreateDefaultBuilder` nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako integrace webového serveru a umožňuje služby IIS tím, že nakonfigurujete základní cesty a port pro [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
+**Model hostingu v procesu**
+
+Typické *Program.cs* volání <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> zahájíte nastavení hostitele. `CreateDefaultBuilder` volání `UseIIS` metoda pro spuštění [CoreCLR](/dotnet/standard/glossary#coreclr) a hostování aplikace v rámci pracovní proces služby IIS (`w3wp.exe`). Testy výkonu zjistí, že hostování .NET Core aplikace v procesu poskytuje vyšší propustnost žádostí ve srovnání s žádostí aplikace na více instancí procesu a využívání proxy serverů k hostování [Kestrel](xref:fundamentals/servers/kestrel).
+
+**Model hostingu mimo proces**
+
+Typické *Program.cs* volání <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> zahájíte nastavení hostitele. Pro hostování mimo proces se službou IIS, `CreateDefaultBuilder` nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako integrace webového serveru a umožňuje služby IIS tím, že nakonfigurujete základní cesty a port pro [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+Modul ASP.NET Core generuje dynamický port přiřadit back endový proces. `CreateDefaultBuilder` volání <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> metodu, která převezme dynamický port a nakonfiguruje Kestrel k naslouchání `http://localhost:{dynamicPort}/`. Tím se přepíše ostatní konfigurace adresy URL, jako je například volání `UseUrls` nebo [Kestrel pro naslouchání API](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá jenom na porty zadána při spuštění aplikaci bez služby IIS.
+
+Další informace o modelech hostování a mimo proces, najdete v článku <xref:fundamentals/servers/aspnet-core-module> tématu a <xref:host-and-deploy/aspnet-core-module>.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
+Typické *Program.cs* volání <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> zahájíte nastavení hostitele. `CreateDefaultBuilder` nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako integrace webového serveru a umožňuje služby IIS tím, že nakonfigurujete základní cesty a port pro [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
 
 ```csharp
 public static IWebHost BuildWebHost(string[] args) =>
@@ -212,8 +236,13 @@ Povolit **konzolu pro správu IIS** a **webové služby**.
    1. Spusťte instalační program na serveru.
 
    **Důležité!** Pokud před službou IIS instalovanou sadou hostování, je nutné opravit instalaci sady. Spusťte instalační program sady hostování znovu po instalaci služby IIS.
-   
-   Zabránit instalaci x86 instalačního programu balíčků na x x64 OS, spusťte instalační program z příkazového řádku správce s přepínačem `OPT_NO_X86=1`.
+
+   Spusťte instalační program z příkazového řádku správce s jeden nebo více přepínačů lze řídit chování instalačního programu:
+
+   * `OPT_NO_ANCM=1` &ndash; Instalace modulu jádra ASP.NET přeskočit.
+   * `OPT_NO_RUNTIME=1` &ndash; Instalace modulu runtime .NET Core přeskočit.
+   * `OPT_NO_SHAREDFX=1` &ndash; Přeskočit instalaci rozhraní ASP.NET sdílené (modul runtime technologie ASP.NET).
+   * `OPT_NO_X86=1` &ndash; X86 instalace přeskočit runtimes. Tento přepínač použijte, když víte, že vám nebude hostitelem 32bitových aplikací. Pokud je pravděpodobné, že 32-bit a 64-bit aplikací budou v budoucnu umístěny, není tento přepínač a nainstalovat obě runtimes.
 
 1. Restartování systému nebo spuštění **net stop byla /y** následovaný **net start w3svc** z příkazového řádku. Restartování služby IIS příjmem změnu systému provedené CESTU, která je proměnná prostředí, instalační služby.
 
@@ -430,7 +459,7 @@ Pokud pracovní proces služby IIS vyžaduje přístup k aplikaci přes se zvý�
 
 1. Vyberte **umístění** tlačítko a ujistěte se, že je vybraná systému.
 
-1. Zadejte **fondu aplikací služby IIS\\< app_pool_name >** v **zadejte názvy objektů k výběru** oblasti. Vyberte **Kontrola názvů** tlačítko. Pro *DefaultAppPool* zkontrolovat názvy pomocí **IIS AppPool\DefaultAppPool**. Při **Kontrola názvů** se vybere tlačítko, hodnota **DefaultAppPool** je uveden v oblasti názvy objektu. Není možné zadat název fondu aplikací přímo do oblasti názvy objektu. Použití **fondu aplikací služby IIS\\< app_pool_name >** formátování při vyhledávání pro název objektu.
+1. ENTER **fond aplikací služby IIS\\< app_pool_name >** v **zadejte názvy objektů k výběru** oblasti. Vyberte **Kontrola názvů** tlačítko. Pro *DefaultAppPool* zkontrolovat názvy pomocí **IIS AppPool\DefaultAppPool**. Při **Kontrola názvů** se vybere tlačítko, hodnota **DefaultAppPool** je uveden v oblasti názvy objektu. Není možné zadat název fondu aplikací přímo do oblasti názvy objektu. Použití **fond aplikací služby IIS\\< app_pool_name >** formátovat při kontrole názvu objektu.
 
    ![Vyberte uživatele nebo skupiny dialogové okno pro složky aplikace: název fondu aplikací "DefaultAppPool" se připojí k "fondu aplikací služby IIS\" v oblasti názvy objektu před výběrem"Zkontrolujte názvy."](index/_static/select-users-or-groups-1.png)
 

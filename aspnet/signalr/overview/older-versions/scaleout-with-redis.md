@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 6abecf80-8ffa-41ba-b0d9-1d9edbe7687b
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 4f587b129a1a22e64625d2ab0fc7655984262ebe
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 90f1f1429dcdf8f1015365e5aa337371c6307715
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756010"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910717"
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Škálování aplikace SignalR službou Redis (SignalR 1.x)
 ====================
@@ -94,7 +94,7 @@ Vytvoření aplikace SignalR pomocí některé z těchto kurzů:
 - [Začínáme s knihovnou SignalR](../getting-started/tutorial-getting-started-with-signalr.md)
 - [Začínáme s knihovnou SignalR a MVC 4](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-V dalším kroku upravíme, aby byl chatovací aplikaci, aby podporovala škálování s využitím Redis. Nejprve přidejte balíček SignalR.Redis NuGet do projektu. V sadě Visual Studio z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+V dalším kroku upravíme, aby byl chatovací aplikaci, aby podporovala škálování s využitím Redis. Nejprve přidejte balíček SignalR.Redis NuGet do projektu. V aplikaci Visual Studio z **nástroje** příkaz **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 

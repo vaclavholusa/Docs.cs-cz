@@ -8,27 +8,27 @@ ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 6bead915491c62de809b8625d8071a63c70a6ef5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: dbf0964695dd2592d063b05c0778923edffe8e2e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753068"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910770"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Hostování specifikace OWIN v roli pracovního procesu Azure
 ====================
 podle [Mike Wasson](https://github.com/MikeWasson)
 
 > Tento kurz ukazuje, jak k samoobslužnému hostování OWIN v roli pracovního procesu Microsoft Azure.
-> 
+>
 > [Otevřete Web Interface pro .NET](http://owin.org/) (OWIN) definuje abstrakce mezi .NET webové servery a webové aplikace. Webové aplikace ze serveru, který je ideální pro webové aplikace ve vašem vlastním procesu mimo službu IIS s vlastním hostováním OWIN OWIN odděluje obě části – například v roli pracovního procesu systému Azure.
-> 
+>
 > V tomto kurzu se dozvíte, jak hostování na vlastním serveru aplikací OWIN v roli pracovního procesu Microsoft Azure. Další informace o rolích pracovního procesu najdete v tématu [spouštění modelů Azure](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices).
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - [Sada Azure SDK for .NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
@@ -56,7 +56,7 @@ Obecně platí aplikace Azure může obsahovat více rolí, i když tento kurz p
 
 ## <a name="add-the-owin-self-host-packages"></a>Přidání balíčků samoobslužné hostování OWIN
 
-Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků knihoven**, pak klikněte na tlačítko **Konzola správce balíčků**.
+Z **nástroje** nabídky, klepněte na **Správce balíčků NuGet**, klepněte na **konzoly Správce balíčků**.
 
 V okně konzoly Správce balíčků zadejte následující příkaz:
 
@@ -116,7 +116,7 @@ Emulátor služby výpočty místní IP adresa přiřadí ke koncovému bodu. IP
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-Zjistit IP adresu v rámci nasazení služeb, nasazení [id], podrobnosti o službě. Otevřete webový prohlížeč a přejdete na http://<em>adresu</em>, kde <em>adresu</em> je IP adresa přidělí emulátor služby výpočty; například `http://127.0.0.1:80`. Zobrazí se úvodní stránka OWIN:
+Nalezení IP adresy v rámci služby nasazení, nasazení [id], podrobnosti o službě. Otevřete webový prohlížeč a přejdete na http://<em>adresu</em>, kde <em>adresu</em> je IP adresa přidělí emulátor služby výpočty; například `http://127.0.0.1:80`. Zobrazí se úvodní stránka OWIN:
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 

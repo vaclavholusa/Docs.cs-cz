@@ -1,56 +1,63 @@
 ---
-title: Zvolte mezi ASP.NET a ASP.NET Core
+title: Zvolte mezi ASP.NET 4.x a ASP.NET Core
 author: rick-anderson
-description: Zjistěte, jak si vybrat mezi ASP.NET a ASP.NET Core.
+description: Vysvětluje, ASP.NET Core vs. ASP.NET 4.x a jak si vybrat mezi nimi.
 ms.author: riande
-ms.date: 05/11/2018
+ms.date: 09/11/2018
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: 6d759c0bc5e5c7d32d6c14786db6ba9fe7a2f1e8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f046491e2ec68b6beaad581e2b04e6688a81f2d1
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291642"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911042"
 ---
-# <a name="choose-between-aspnet-and-aspnet-core"></a>Zvolte mezi ASP.NET a ASP.NET Core
+# <a name="choose-between-aspnet-4x-and-aspnet-core"></a>Zvolte mezi ASP.NET 4.x a ASP.NET Core
 
-Bez ohledu na to, kterou vytváříte, webové aplikace technologie ASP.NET má řešení pro vás: z podnikové webové aplikace cílený na Windows Server, na malých mikroslužeb cílení na Linux kontejnery a všechno, co v rozmezí.
+ASP.NET Core je verzí ASP.NET 4.x. V tomto článku jsou uvedeny rozdíly mezi nimi.
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
-ASP.NET Core je otevřeným zdrojem, a platformy architektura pro vytváření moderní cloudové webových aplikací v systému Windows, systému macOS nebo Linux.
+ASP.NET Core je open source, napříč platformami platforma pro vytváření moderních cloudových webových aplikací ve Windows, macOS nebo Linuxu.
 
-## <a name="aspnet"></a>ASP.NET
+[!INCLUDE[](~/includes/benefits.md)]
 
-ASP.NET je vyspělá rozhraní, které poskytuje všechny potřebné k vytvoření podnikové úrovni, na serveru webové aplikace v systému Windows.
+## <a name="aspnet-4x"></a>ASP.NET 4.x
 
-## <a name="framework-selection"></a>Výběr Framework
+ASP.NET 4.x je vyspělá architektura, která poskytuje služby nezbytné k sestavení na podnikové úrovni, server webových aplikací založených na Windows.
 
-Zkontrolujte následující tabulce, jak zjistit, které framework nejlépe vyhovuje vašim potřebám.
+## <a name="framework-selection"></a>Výběr rozhraní Framework
 
-| ASP.NET Core | ASP.NET |
+Následující tabulka porovnává ASP.NET Core, ASP.NET 4.x.
+
+| ASP.NET Core | ASP.NET 4.x |
 |---|---|
-|Sestavení pro Windows, systému macOS nebo Linux|Sestavení pro Windows|
-|[Stránky Razor](xref:razor-pages/index) se o doporučený postup pro vytvoření webového uživatelského rozhraní od ASP.NET Core 2.x. Viz také [MVC](xref:mvc/overview), [webové rozhraní API](xref:tutorials/first-web-api), a [SignalR](xref:signalr/introduction).|Použití [Web Forms](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [webové rozhraní API](/aspnet/web-api/), [Webhooky](/aspnet/webhooks/), nebo [webové stránky](/aspnet/web-pages)|
-|Několik verzí systému na počítač|Jedna verze na počítač|
-|Vývoj pomocí sady Visual Studio, [Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/), nebo [Visual Studio Code](https://code.visualstudio.com/) pomocí jazyka C# nebo F #|Vývoj pomocí sady Visual Studio pomocí jazyka C#, VB a F #|
-|Vyšší výkon než technologie ASP.NET|Dobrý výkon|
-|[Vyberte modul runtime rozhraní .NET Framework nebo .NET Core](/dotnet/articles/standard/choosing-core-framework-server)|Použít modul runtime rozhraní .NET Framework|
+|Sestavení pro Windows, macOS nebo Linux|Sestavení pro Windows|
+|[Stránky Razor](xref:razor-pages/index) je doporučený postup pro vytváření webového uživatelského rozhraní k ASP.NET Core 2.x. Viz také [MVC](xref:mvc/overview), [webové rozhraní API](xref:tutorials/first-web-api), a [SignalR](xref:signalr/introduction).|Použití [webových formulářů](/aspnet/web-forms), [SignalR](/aspnet/signalr), [MVC](/aspnet/mvc), [webové rozhraní API](/aspnet/web-api/), [Webhooky](/aspnet/webhooks/), nebo [webové stránky](/aspnet/web-pages)|
+|Více verzí na počítač|Jedna verze na počítač|
+|Vývoj s využitím sady Visual Studio [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/), nebo [Visual Studio Code](https://code.visualstudio.com/) pomocí jazyka C# nebo F #|Vývoj s využitím sady Visual Studio pomocí jazyka C#, VB nebo F #|
+|Vyšší výkon než ASP.NET 4.x|Dobrý výkon|
+|[Zvolte rozhraní .NET Framework nebo .NET Core runtime](/dotnet/articles/standard/choosing-core-framework-server)|Použít modul runtime rozhraní .NET Framework|
 
-## <a name="aspnet-core-scenarios"></a>ASP.NET základní scénáře
+Zobrazit [ASP.NET Core, které cílí na rozhraní .NET Framework](xref:index#target-framework) informace o podpoře ASP.NET Core 2.x na rozhraní .NET Framework.
 
-* [Stránky Razor](xref:razor-pages/index) se o doporučený postup pro vytvoření webového uživatelského rozhraní od ASP.NET Core 2.x.
+## <a name="aspnet-core-scenarios"></a>Scénáře ASP.NET Core
+
+* [Stránky Razor](xref:razor-pages/index) je doporučený postup pro vytváření webového uživatelského rozhraní k ASP.NET Core 2.x.
 * [Weby](xref:tutorials/first-mvc-app/index)
 * [Rozhraní API](xref:tutorials/first-web-api)
 * [V reálném čase](xref:signalr/index)
+* [Nasazení aplikace ASP.NET Core do Azure](/azure/app-service/app-service-web-get-started-dotnet)
 
-## <a name="aspnet-scenarios"></a>Scénáře ASP.NET
+## <a name="aspnet-4x-scenarios"></a>ASP.NET 4.x scénáře
 
 * [Weby](/aspnet/mvc)
 * [Rozhraní API](/aspnet/web-api)
 * [V reálném čase](/aspnet/signalr)
+* [Vytvoření webové aplikace ASP.NET 4.x v Azure](/azure/app-service/app-service-web-get-started-dotnet-framework)
 
-## <a name="resources"></a>Prostředky
+## <a name="additional-resources"></a>Další zdroje
 
-* [Úvod do technologie ASP.NET](/aspnet/overview)
+* [Úvod do ASP.NET](/aspnet/overview)
 * [Úvod do ASP.NET Core](xref:index)
+* <xref:host-and-deploy/azure-apps/index>

@@ -8,12 +8,12 @@ ms.date: 09/27/2013
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: f400ec887bdee123084f582d18016fb5ed3f2165
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9920861da0e67d9304a944cacfb8ff8685267cd6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753220"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913174"
 ---
 <a name="getting-started-with-owin-and-katana"></a>Začínáme se specifikací OWIN a Katana
 ====================
@@ -39,7 +39,7 @@ V **nový projekt ASP.NET** dialogového okna, vyberte **prázdný** šablony.
 
 ### <a name="add-nuget-packages"></a>Přidání balíčků NuGet
 
-Dále přidejte požadované balíčky NuGet. Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+Dále přidejte požadované balíčky NuGet. Z **nástroje** příkaz **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 `install-package Microsoft.Owin.Host.SystemWeb –Pre`
 

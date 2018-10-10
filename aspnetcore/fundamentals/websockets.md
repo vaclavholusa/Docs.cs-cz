@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: fc3f70fb888797216b2ccc911a9f69eaae6ac01c
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577727"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911649"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Webové sockety v ASP.NET Core
 
@@ -20,7 +20,7 @@ Podle [Petr Dykstra](https://github.com/tdykstra) a [Andrew Stanton sestry](http
 
 Tento článek vysvětluje, jak začít pracovat s objekty Websocket v ASP.NET Core. [Protokol WebSocket](https://wikipedia.org/wiki/WebSocket) ([RFC 6455](https://tools.ietf.org/html/rfc6455)) je protokol, který umožňuje obousměrný trvalé komunikačních kanálů přes připojení TCP. Používá se v aplikacích, které využívají samosprávné komunikace rychlé, v reálném čase, jako jsou konverzace, řídicí panel a herních aplikací.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample)). Zobrazit [další kroky](#next-steps) části Další informace.
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample)). Zobrazit [další kroky](#next-steps) části Další informace.
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -60,14 +60,34 @@ Použijte pracovat přímo s připojení soketu Websocket. Například můžete 
 
 Přidat objekty Websocket middlewaru v `Configure` metodu `Startup` třídy:
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSockets)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSockets)]
+
+::: moniker-end
 
 Můžete nakonfigurovat následující nastavení:
 
 * `KeepAliveInterval` – Jak často k odesílání rámců "příkaz ping" ke klientovi, aby proxy servery udržení připojení otevřeného.
 * `ReceiveBufferSize` – Velikost vyrovnávací paměti používané přijímat data. Pokročilí uživatelé může být nutné změnit to pro optimalizace na základě velikosti dat výkonu.
 
-[!code-csharp[](websockets/sample/Startup.cs?name=UseWebSocketsOptions)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=UseWebSocketsOptions)]
+
+::: moniker-end
 
 ### <a name="accept-websocket-requests"></a>Přijímal požadavky protokolu WebSocket
 
@@ -75,7 +95,17 @@ Někde dále v cyklu požadavku (dále v `Configure` metoda nebo akce MVC, např
 
 Následující příklad je z později v `Configure` metody:
 
-[!code-csharp[](websockets/sample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=AcceptWebSocket&highlight=7)]
+
+::: moniker-end
 
 Požadavek protokolu WebSocket může dojít na libovolnou adresu URL, ale tento vzorový kód přijímá jenom žádosti o `/ws`.
 
@@ -85,7 +115,17 @@ Požadavek protokolu WebSocket může dojít na libovolnou adresu URL, ale tento
 
 Předá kódu uvedeného výše, který přijme žádost protokolu WebSocket `WebSocket` objektu `Echo` metody. Kód přijme zprávu a okamžitě odešle zpět stejné zprávy. Zprávy jsou odeslané a přijaté ve smyčce, dokud klient ukončí připojení:
 
-[!code-csharp[](websockets/sample/Startup.cs?name=Echo)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/2.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](websockets/samples/1.x/WebSocketsSample/Startup.cs?name=Echo)]
+
+::: moniker-end
 
 Při přijímání připojení soketu websocket bylo před zahájením smyčky, middleware kanálu se ukončí. Po zavření soketu, unwinds kanálu. To znamená požadavek se zastaví v budoucnu v kanálu při přijetí objekt WebSocket. Když je smyčka dokončena, je uzavřený soket žádost pokračuje zálohování kanálu.
 
@@ -122,7 +162,7 @@ Pokud používáte podpora protokolu WebSocket v [socket.io](https://socket.io/)
 
 ## <a name="next-steps"></a>Další kroky
 
-[Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) , který doprovází tento článek je odezvu aplikace. Obsahuje webovou stránku, která umožňuje připojení pomocí protokolu WebSocket, a server odešle všechny zprávy, které obdrží zpět do klienta. Spustit z příkazového řádku (ne zřídila pro spuštění ze sady Visual Studio službou IIS Express) a přejděte do http://localhost:5000. Webové stránky zobrazí v levém horním rohu stav připojení:
+[Ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/samples) , který doprovází tento článek je odezvu aplikace. Obsahuje webovou stránku, která umožňuje připojení pomocí protokolu WebSocket, a server odešle všechny zprávy, které obdrží zpět do klienta. Spustit z příkazového řádku (ne zřídila pro spuštění ze sady Visual Studio službou IIS Express) a přejděte do http://localhost:5000. Webové stránky zobrazí v levém horním rohu stav připojení:
 
 ![Počáteční stav webové stránky](websockets/_static/start.png)
 

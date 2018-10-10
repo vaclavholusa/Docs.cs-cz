@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 50986eeb4c5c8b06c739ee9f860665b877853d78
-ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
+ms.openlocfilehash: 33fae5d87029c8b3afdc321e0247555c1e479d07
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47230188"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912615"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injektáž závislostí v ASP.NET Core
 
@@ -540,17 +540,17 @@ Metoda factory jedné služby, jako je například druhý argument [AddSingleton
 
 Při práci s injektáž závislostí, mít na paměti tato doporučení:
 
-* Vyhněte se ukládání dat a konfigurace přímo do kontejneru služby. Například by neměla uživatele nákupního košíku přidat obvykle do kontejneru služby. Konfigurace by měl používat [možnosti vzor](xref:fundamentals/configuration/options). Podobně nepoužívejte "vlastník dat" objekty, které existují pouze pokud chcete povolit přístup na některý objekt. Je lepší požádat o skutečné položky pomocí vkládání závislostí, pokud je to možné.
+* Vyhněte se ukládání dat a konfigurace přímo do kontejneru služby. Například by neměla uživatele nákupního košíku přidat obvykle do kontejneru služby. Konfigurace by měl používat [možnosti vzor](xref:fundamentals/configuration/options). Podobně nepoužívejte "vlastník dat" objekty, které existují pouze pokud chcete povolit přístup na některý objekt. Je lepší požádat o skutečné položky prostřednictvím DI.
 
 * Vyhněte se statické přístup ke službám (příklad staticky – zadáním [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) pro použití jinde).
 
-* Vyhněte se použití modelu služby Lokátor (například [IServiceProvider.GetService](/dotnet/api/system.iserviceprovider.getservice)).
+* Vyhněte se použití *služby lokátoru vzor*. Není třeba vyvolat <xref:System.IServiceProvider.GetService*> při DI místo toho můžete získat instanci služby. Další variantou Lokátor služby, aby se vkládá objekt factory, který řeší závislosti za běhu. Obě tyto postupy kombinace [ovládacího prvku inverzi](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) strategie.
 
 * Vyhněte se statické přístup k `HttpContext` (například [IHttpContextAccessor.HttpContext](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor.httpcontext)).
 
 Stejně jako všechny sadu doporučení mohou nastat situace, ve kterém jsou vyžadována doporučení se ignoruje. Výjimky se vyskytují jen vzácně&mdash;většinou zvláštní případy v rámci samotného rozhraní.
 
-Injektáž závislostí je *alternativní* na vzorech přístupu statická/globální objekt. Nebudete moci využít výhod injektáž závislostí, jsou-li zkombinovány s přístupem statický objekt.
+DI je *alternativní* na vzorech přístupu statická/globální objekt. Nebudete moci využít výhod DI, jsou-li zkombinovány s přístupem statický objekt.
 
 ## <a name="additional-resources"></a>Další zdroje
 

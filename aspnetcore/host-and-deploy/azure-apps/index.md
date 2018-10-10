@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: f2de81af4bd2992aec76a287484d0057021231d8
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: c0bacc72cd02a5ebf993ca8ba5db2c7fe4325a29
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860963"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913187"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Nasazení aplikace ASP.NET Core do Azure App Service
 
@@ -101,11 +101,11 @@ Další informace najdete v tématu [zprostředkovateli úložiště klíčů](x
 
 ## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>Nasazení ve verzi preview ASP.NET Core do služby Azure App Service
 
-Aplikace ASP.NET Core ve verzi preview je možné nasadit do služby Azure App Service pomocí následujících postupů:
+Použijte jeden z následujících přístupů:
 
-* [Instalace rozšíření webu ve verzi preview](#install-the-preview-site-extension)
-<!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
-* [Použití Docker pro kontejnery s Web Apps](#use-docker-with-web-apps-for-containers)
+* [Nainstalujte rozšíření náhledu webu](#install-the-preview-site-extension).
+* [Nasazení samostatné aplikace](#deploy-the-app-self-contained).
+* [Pomocí webové aplikace Docker pro kontejnery](#use-docker-with-web-apps-for-containers).
 
 ### <a name="install-the-preview-site-extension"></a>Instalace rozšíření webu ve verzi preview
 
@@ -161,18 +161,46 @@ Po dokončení operace, je nainstalovaná nejnovější verze preview .NET Core.
 
 Pokud šablonu ARM se používá k vytvoření a nasazení aplikace, `siteextensions` typ prostředku je možné přidat rozšíření webu do webové aplikace. Příklad:
 
-[!code-json[Main](index/sample/arm.json?highlight=2)]
+[!code-json[](index/sample/arm.json?highlight=2)]
 
-<!--
-### Deploy the app self-contained
+### <a name="deploy-the-app-self-contained"></a>Nasazení samostatné aplikace
 
-A [self-contained app](/dotnet/core/deploying/#self-contained-deployments-scd) can be deployed that carries the preview runtime in the deployment. When deploying a self-contained app:
+A [samostatné nasazení (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) , která se zaměřuje náhled runtime vyvolá modul runtime náhled v nasazení.
 
-* The site doesn't need to be prepared.
-* The app must be published differently than when publishing for a framework-dependent deployment with the shared runtime and host on the server.
+Při nasazování samostatnou aplikaci:
 
-Self-contained apps are an option for all ASP.NET Core apps.
--->
+* Na webu v Azure App Service nevyžaduje [náhled rozšíření webu](#install-the-preview-site-extension).
+* Aplikace musí být zveřejněno po použití jiné metody než při publikování [framework závislé nasazení (chyba)](/dotnet/core/deploying#framework-dependent-deployments-fdd).
+
+#### <a name="publish-from-visual-studio"></a>Publikování z aplikace Visual Studio
+
+1. Vyberte **sestavení** > **{název_aplikace} publikovat** z panelu nástrojů sady Visual Studio.
+1. V **vyberte cíl publikování** dialogového okna, ujistěte se, že **služby App Service** zaškrtnuto.
+1. Vyberte **Advanced**. **Publikovat** otevře se dialogové okno.
+1. V **publikovat** dialogové okno:
+   * Ujistěte se, že **vydání** vybrané konfigurace.
+   * Otevřít **režim nasazení** rozevíracího seznamu a vyberte **samostatná**.
+   * Vyberte cílový modul runtime z **cílový modul Runtime** rozevíracího seznamu. Výchozí hodnota je `win-x86`.
+   * Pokud je potřeba odebrat další soubory při nasazování, otevřete **možností publikování souboru** a zaškrtněte políčko, chcete-li odebrat další soubory v cílovém umístění.
+   * Vyberte **Uložit**.
+1. Vytvoření nového webu nebo aktualizovat existující lokalitu podle zbývajících výzev Průvodce publikováním.
+
+#### <a name="publish-using-command-line-interface-cli-tools"></a>Publikování pomocí nástrojů rozhraní příkazového řádku (CLI)
+
+1. V souboru projektu, zadejte jeden nebo více [Runtime identifikátorů (RID)](/dotnet/core/rid-catalog). Použít `<RuntimeIdentifier>` (singulární) pro jeden identifikátorů RID, nebo použijte `<RuntimeIdentifiers>` zadejte středníkem oddělený seznam identifikátorů RID (Plurální). V následujícím příkladu `win-x86` zadaný identifikátorů RID:
+
+   ```xml
+   <PropertyGroup>
+     <TargetFramework>netcoreapp2.1</TargetFramework>
+     <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+   </PropertyGroup>
+   ```
+1. Z příkazového prostředí, publikujte aplikaci v rámci konfigurace verze modulu runtime hostitele s [dotnet publikovat](/dotnet/core/tools/dotnet-publish) příkazu. V následujícím příkladu je aplikace publikována pro `win-x86` identifikátorů RID. Identifikátor RID zadaný pro `--runtime` ve musí být Zadaná možnost `<RuntimeIdentifier>` (nebo `<RuntimeIdentifiers>`) vlastnost v souboru projektu.
+
+   ```console
+   dotnet publish --configuration Release --runtime win-x86
+   ```
+1. Přesunout obsah *bin/Release / {TARGET FRAMEWORK} / {IDENTIFIKÁTOR modulu RUNTIME} / publish* adresář k webu ve službě App Service.
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Použití Docker pro kontejnery s Web Apps
 

@@ -8,12 +8,12 @@ ms.date: 01/26/2012
 ms.assetid: be5ab1e2-4140-4275-ac59-ca82a1bac0c1
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: cac0d5aeaf49f45051d062935e0e9207ce59c7eb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 63d192a6fa2aafef3770d5b0b97ec32e001b69db
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756022"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912695"
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>Hostování na vlastním rozhraní ASP.NET Web API 1 (C#)
 ====================
@@ -50,7 +50,7 @@ V Průzkumníku řešení klikněte pravým tlačítkem myši na projekt a vyber
 
 Správce balíčků NuGet je nejjednodušší způsob, jak přidat sestavení webového rozhraní API do projektu – technologie ASP.NET.
 
-Pokud chcete zkontrolovat, jestli je nainstalovaný Správce balíčků NuGet, klikněte na tlačítko **nástroje** nabídky v sadě Visual Studio. Pokud se zobrazí nabídka položek volá **Správce balíčků knihoven**, pak máte Správce balíčků NuGet.
+Pokud chcete zkontrolovat, jestli je nainstalovaný Správce balíčků NuGet, klikněte na tlačítko **nástroje** nabídky v sadě Visual Studio. Pokud se zobrazí nabídka položek volá **Správce balíčků NuGet**, pak máte Správce balíčků NuGet.
 
 Instalace Správce balíčků NuGet:
 
@@ -68,8 +68,8 @@ Instalace Správce balíčků NuGet:
 
 Po dokončení instalace Správce balíčků NuGet do projektu přidejte balíček Self-Host webové rozhraní API.
 
-1. Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**. *Poznámka:*: Pokud se vám nezobrazí tato nabídka položek, ujistěte se, že tento správce balíčků NuGet správně nainstalován.
-2. Vyberte **spravovat balíčky NuGet pro řešení...**
+1. Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet**. *Poznámka:*: Pokud se vám nezobrazí tato nabídka položek, ujistěte se, že tento správce balíčků NuGet správně nainstalován.
+2. Vyberte **spravovat balíčky NuGet pro řešení**
 3. V **Správa balíčků Nuget** dialogového okna, vyberte **Online**.
 4. Do vyhledávacího pole zadejte &quot;Microsoft.AspNet.WebApi.SelfHost&quot;.
 5. Vyberte balíček ASP.NET Web API Self hostitele a klikněte na tlačítko **nainstalovat**.
@@ -77,7 +77,6 @@ Po dokončení instalace Správce balíčků NuGet do projektu přidejte balíč
 
 > [!NOTE]
 > Ujistěte se, že k instalaci balíčku s názvem Microsoft.AspNet.WebApi.SelfHost, ne AspNetWebApi.SelfHost.
-
 
 ![](self-host-a-web-api/_static/image4.png)
 
@@ -141,8 +140,8 @@ Přidáte do řešení nový projekt konzolové aplikace:
 
 Použití Správce balíčků NuGet pro přidání balíčku ASP.NET Web API základní knihovny:
 
-- V nabídce Nástroje vyberte **Správce balíčků knihoven**.
-- Vyberte **spravovat balíčky NuGet pro řešení...**
+- V nabídce Nástroje vyberte **Správce balíčků NuGet**.
+- Vyberte **spravovat balíčky NuGet pro řešení**
 - V **spravovat balíčky NuGet** dialogového okna, vyberte **Online**.
 - Do vyhledávacího pole zadejte &quot;Microsoft.AspNet.WebApi.Client&quot;.
 - Vyberte balíček Microsoft ASP.NET Web API klientské knihovny a klikněte na tlačítko **nainstalovat**.

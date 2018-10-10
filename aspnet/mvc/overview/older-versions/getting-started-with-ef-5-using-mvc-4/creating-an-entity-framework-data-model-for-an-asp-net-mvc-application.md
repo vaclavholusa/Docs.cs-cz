@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 4ba029b6-ee7c-4e45-a0e7-b703c37e5d9a
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 037f67d679762a037eaef9f0a4060156b94d97b1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: b691f718258f98e03513a089ca26b286f284765e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756943"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913230"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>Vytvoření datového modelu Entity Framework pro aplikace ASP.NET MVC (1 10)
 ====================
@@ -97,7 +97,7 @@ Klikněte na tlačítko **OK**.
 
 Několik jednoduchých změn se nastavit v nabídce webu, rozložení a domovské stránky.
 
-Otevřít *Views\Shared\\_Layout.cshtml*a nahraďte jeho obsah souboru následujícím kódem. Změny jsou zvýrazněné.
+Otevřít *Views\Shared\\_Layout.cshtml*a nahraďte obsah souboru následující kód. Změny jsou zvýrazněné.
 
 [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample1.cshtml?highlight=5,15,25-28,43)]
 
@@ -210,7 +210,7 @@ Při prvním spuštění pro vývoj aplikací, datový model změn často a poka
 
 ### <a name="enable-code-first-migrations"></a>Povolení migrace Code First
 
-1. Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků knihoven** a potom **Konzola správce balíčků**.
+1. Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků NuGet** a potom **Konzola správce balíčků**.
 
     ![Selecting_Package_Manager_Console](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image10.png)
 2. Na `PM>` řádku zadejte následující příkaz:
@@ -270,7 +270,7 @@ Pro účely tohoto kurzu budete používat migrace pro nasazení, ale vaše `See
 
     ![](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
-    `add-migration` Příkaz přidá do složky, migrace *[DateStamp]\_InitialCreate.cs* soubor, který obsahuje kód, který vytvoří databázi. První parametr (`InitialCreate)` se používá pro soubor pojmenujte a může být cokoliv, co chcete; obvykle zvolíte slovo nebo slovní spojení, které shrnuje, co se provádí v migraci. Můžete například pojmenovat pozdější migraci &quot;AddDepartmentTable&quot;.
+    `add-migration` Příkaz se přidá do složky při přenesení *[DateStamp]\_InitialCreate.cs* soubor, který obsahuje kód, který vytvoří databázi. První parametr (`InitialCreate)` se používá pro soubor pojmenujte a může být cokoliv, co chcete; obvykle zvolíte slovo nebo slovní spojení, které shrnuje, co se provádí v migraci. Můžete například pojmenovat pozdější migraci &quot;AddDepartmentTable&quot;.
 
     ![Složka migrace s počáteční migraci](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 

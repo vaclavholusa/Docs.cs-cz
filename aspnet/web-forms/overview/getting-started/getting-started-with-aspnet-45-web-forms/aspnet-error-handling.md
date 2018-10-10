@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: ed5d7b9b4e61b0289734f4cdef1039b31ddda7a7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: af5e5a9c8d211b07b57aa50238b02cabe249aef8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752612"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911837"
 ---
 <a name="aspnet-error-handling"></a>Zpracování chyb v ASP.NET
 ====================
@@ -275,7 +275,7 @@ Knihovny ELMAH (Chyba protokolovací moduly a obslužné rutiny) je nástrojem p
 
 Než začnete pracovat s ELMAH, je nutné nainstalovat. Je to snadné použití *NuGet* balíček Instalační služby. Jak je uvedeno výše v této sérii kurzů, NuGet je rozšíření sady Visual Studio, který umožňuje snadno instalovat a aktualizovat open source knihoven a nástrojů v sadě Visual Studio.
 
-1. V sadě Visual Studio z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**  - &gt; **spravovat balíčky NuGet pro řešení**. 
+1. V sadě Visual Studio z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet** > **spravovat balíčky NuGet pro řešení**. 
 
     ![Zpracování chyb v ASP.NET – spravovat balíčky NuGet pro řešení](aspnet-error-handling/_static/image6.png)
 2. **Spravovat balíčky NuGet** dialogové okno se zobrazí v rámci sady Visual Studio.

@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a3f6174049ffddae4bb2a1819e3684bcdec1b55f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 59831fb8497c86ec5e02de3912b36a15f416597c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751839"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913229"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Praktické cvičení: V reálném čase webové aplikace s knihovnou SignalR
 ====================
@@ -148,7 +148,7 @@ V této úloze budete projít aplikace a zkontrolujte, jak je znázorněno na st
 
 V této úloze budou do řešení přidat SignalR a odeslání aktualizací pro klienty automaticky při odeslání nové odpovědi na server.
 
-1. Z **nástroje** nabídky v sadě Visual Studio, vyberte **Správce balíčků knihoven**a potom klikněte na tlačítko **Konzola správce balíčků**.
+1. Z **nástroje** v aplikaci Visual Studio, vyberte v nabídce **Správce balíčků NuGet**a potom klepněte na **konzoly Správce balíčků**.
 2. V **Konzola správce balíčků** okno, že spustíte následující příkaz:
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample1.ps1)]
@@ -362,7 +362,7 @@ V této úloze se vytvoří databáze, která bude sloužit jako propojovací ro
 
 V této úloze nakonfigurujete **kvíz Informatik** pro připojení k propojovací rozhraní systému SQL Server. Nejprve přidejte **SignalR.SqlServer** balíček NuGet a sady připojení řetězec k databázi propojovacího rozhraní.
 
-1. Otevřít **Konzola správce balíčků** z **nástroje** | **Správce balíčků knihoven**. Ujistěte se, že **GeekQuiz** projekt určený v **výchozí projekt** rozevíracího seznamu. Zadejte následující příkaz k instalaci **Microsoft.AspNet.SignalR.SqlServer** balíček NuGet.
+1. Otevřít **Konzola správce balíčků** z **nástroje** > **Správce balíčků NuGet**. Ujistěte se, že **GeekQuiz** projekt určený v **výchozí projekt** rozevíracího seznamu. Zadejte následující příkaz k instalaci **Microsoft.AspNet.SignalR.SqlServer** balíček NuGet.
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample13.ps1)]
 2. Opakujte předchozí krok, ale tentokrát pro projekt **GeekQuiz2**.

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: f35e26bc8db2bbdb579836bbc9556ad2147cb8bf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d103573fb31bb3b08d054cbf65ff906bd5d151d3
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753058"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912797"
 ---
 <a name="introduction-to-signalr"></a>Úvod ke knihovně SignalR
 ====================
@@ -51,9 +51,7 @@ SignalR je open source, přístupné prostřednictvím [Githubu](https://github.
 
 ## <a name="signalr-and-websocket"></a>SignalR a protokol WebSocket
 
-Funkce SignalR používá nový přenos pomocí protokolu WebSocket, pokud je k dispozici a spadne zpět na starší přenosy v případě potřeby. Zatímco určitě můžete napsat aplikaci přímo pomocí protokolu WebSocket, pomocí nástroje SignalR, znamená, že mnoho dalších funkcí, které je třeba k implementaci se už jsme udělali za vás. Co je nejdůležitější to znamená, že vám umožní kódování vaše aplikace využívat protokolu WebSocket bez nutnosti starat o vytváření samostatných kódové cestě pro starší klienty. Funkce SignalR také chrání před starostí o aktualizace pomocí protokolu WebSocket, protože SignalR budou i nadále být aktualizované kvůli podpoře změny v přenosu, poskytuje jednotné rozhraní aplikace napříč verzemi protokolu WebSocket.
-
-Zatímco určitě můžete vytvořit řešení, které využívá samostatně pomocí protokolu WebSocket, funkce SignalR poskytuje všechny funkce, které byste museli napsat sami, jako je například nouzového řešení ověření pomocí jiných přenosů a revize aplikace aktualizací pro implementace protokolu WebSocket.
+SignalR používá nové dopravní WebSocket, pokud je k dispozici a přejde zpět na starší přenos v případě potřeby. Při psaní by jistě vaší aplikace pomocí WebSocket přímo, pomocí SignalR znamená, že se již děje mnoho dalších funkcí, které je nutné implementovat. Co je nejdůležitější to znamená, že můžete kód vaší aplikace využít WebSocket bez starosti o vytvoření samostatného kódu cesty pro starší klienty. SignalR také chrání před starosti o aktualizacích WebSocket, protože SignalR je aktualizována na podporu změn v podkladové dopravy poskytuje konzistentní rozhraní aplikace napříč různými verzemi WebSocket.
 
 <a id="transports"></a>
 

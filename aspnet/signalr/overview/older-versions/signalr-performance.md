@@ -8,12 +8,12 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 4fba0cc79046f5f3fd1dc50e5b69ddb78d98c23d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3ac62639617e1ff83761d0a1d45c27303d0b820d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752658"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912758"
 ---
 <a name="signalr-performance-signalr-1x"></a>Výkon aplikace SignalR (SignalR 1.x)
 ====================
@@ -119,7 +119,7 @@ Tato část popisuje, jak povolit a použití čítačů výkonu SignalR, souč�
 
 Čítače výkonu lze přidat na server pomocí nástroje volá SignalR.exe. Chcete-li nainstalovat tento nástroj, postupujte takto:
 
-1. V aplikaci Visual Studio vyberte **nástroje**, **Správce balíčků knihoven**, **spravovat balíčky NuGet pro řešení...**
+1. V aplikaci Visual Studio, vyberte **nástroje** > **Správce balíčků NuGet** > **spravovat balíčky NuGet pro řešení**
 2. Vyhledejte **signalr.utils**a kliknout na tlačítko nainstalovat.
 
     ![](signalr-performance/_static/image1.png)

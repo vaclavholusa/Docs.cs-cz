@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 654f697c8d095d45ba31e2808c52f9ad24b606c8
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2e0d3b45fd51192d227d852dc2f05b45ca42944c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756671"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910912"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Vytvoření koncového bodu OData v3 s webovým rozhraním API 2
 ====================
@@ -22,18 +22,18 @@ podle [Mike Wasson](https://github.com/MikeWasson)
 [Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
 > [Open Data Protocol](http://www.odata.org/) (OData) je protokol data access pro web. OData nabízí jednotné způsob, jak strukturovat data, zadávat dotazy na data a manipulovat s sady dat prostřednictvím operace CRUD (vytváření, čtení, aktualizace a odstranění). OData podporuje formáty JSON a AtomPub (XML). OData definuje také způsob, jak vystavit metadata o datech. Klienti mohou používat metadata a zjistit informace o typu a vztahy pro datovou sadu.
-> 
+>
 > Rozhraní ASP.NET Web API usnadňuje vytvoření koncového bodu OData pro datovou sadu. Můžete řídit přesně OData operace, které podporuje koncový bod. Můžete hostovat víc koncových bodů protokolu OData, společně s koncovými body mimo prostředí OData. Máte plnou kontrolu nad datový model, back-end obchodní logiku a data vrstev.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Webové rozhraní API 2
 > - OData verze 3
 > - Entity Framework 6
 > - [Fiddler webový ladicí proxy server (volitelné)](http://www.fiddler2.com)
-> 
+>
 > Přidala se podpora web API OData v [technologie ASP.NET a Web Tools 2012.2 Update](https://go.microsoft.com/fwlink/?LinkId=282650). Tento kurz používá však generování uživatelského rozhraní, která byla přidána do sady Visual Studio 2013.
 
 
@@ -154,7 +154,7 @@ První parametr je popisný název pro tuto trasu. Klienti služby se tento náz
 
 V tomto kroku použijete rozhraní Entity Framework pro přidání dat do databáze s daty testu. Tento krok je volitelný, ale umožňuje vám to hned otestovat na váš koncový bod OData.
 
-Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+Z **nástroje** příkaz **Správce balíčků NuGet**, vyberte **konzoly Správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
@@ -240,7 +240,7 @@ OData podporuje několik formátů serializace:
 - JSON výraz "light" (představíme v OData v3)
 - JSON "verbose" (OData v2)
 
-Ve výchozím nastavení používá formát "výraz light" AtomPubJSON webového rozhraní API. 
+Ve výchozím nastavení používá formát "výraz light" AtomPubJSON webového rozhraní API.
 
 Získat AtomPub formát, nastavte hlavičku Accept "application/atom + xml". Tady je text odpovědi příkladu:
 

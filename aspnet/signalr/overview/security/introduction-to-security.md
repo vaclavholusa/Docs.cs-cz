@@ -8,34 +8,34 @@ ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 62f835349697d02ebe7363b00a032a5353d3dfc2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 765abd36c5182f291499042e787bcb4fcc727997
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755716"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910850"
 ---
 <a name="introduction-to-signalr-security"></a>Úvod do zabezpečení knihovnou SignalR
 ====================
 podle [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Tento článek popisuje problémy se zabezpečením, které je třeba zvážit při vývoji aplikace SignalR. 
-> 
+> Tento článek popisuje problémy se zabezpečením, které je třeba zvážit při vývoji aplikace SignalR.
+>
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -108,7 +108,7 @@ Tady je příklad útok CSRF:
 
 1. Přihlášení uživatele do www.example.com, ověřování pomocí formulářů.
 2. Server ověřuje uživatele. Odpověď ze serveru obsahuje soubor cookie ověřování.
-3. Bez odhlášení, uživatel navštíví škodlivý web. Tento škodlivý web obsahuje následující formulář HTML: 
+3. Bez odhlášení, uživatel navštíví škodlivý web. Tento škodlivý web obsahuje následující formulář HTML:
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
@@ -124,12 +124,9 @@ Přestože tento příklad vyžaduje, aby uživatel kliknout na tlačítko formu
 
 Funkce SignalR přijímá následující kroky, aby se zabránilo škodlivým webům ve vytváření platných žádostí na aplikace. SignalR je potřeba provést tyto kroky ve výchozím nastavení, není potřeba provádět žádnou akci ve vašem kódu.
 
-- **Zakázat žádosti napříč doménami**  
- Funkce SignalR zakáže žádosti napříč doménami uživatelům zabránit ve volání koncových bodů SignalR z externí domény. Funkce SignalR považuje za jakýkoli požadavek od externí domény není platný a blokuje žádosti. Doporučujeme zachovat toto výchozí chování v opačném případě škodlivým webům může přimět uživatele k odesílání příkazů do vaší lokality. Pokud budete muset použít napříč požadavky domény, přečtěte si téma [jak k navázání připojení mezi doménami](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) .
-- **Předat token připojení v řetězci dotazu, nikoli soubor cookie**  
- Funkce SignalR předá token připojení jako hodnotu řetězce dotazu, místo jako soubor cookie. Ukládání token připojení do souboru cookie nebezpečné, protože v prohlížeči může nechtěně předat token připojení vyskytne škodlivý kód. Také předá připojení token v řetězci dotazu zabraňuje token připojení uložením mimo aktuální připojení. Uživatel se zlými úmysly proto nelze vytvořit žádost pod přihlašovacími údaji jiným uživatelem.
-- **Ověřit token připojení**  
- Jak je popsáno v [token připojení](#connectiontoken) části server ví, u kterého id připojení souvisí s každého ověřeného uživatele. Server není zpracovat jakýkoli požadavek od id připojení, které se neshoduje s uživatelským jménem. Není pravděpodobné, že uživatel se zlými úmysly může uhodnout žádost platná, protože uživatel se zlými úmysly byste museli znát uživatelské jméno a aktuální id náhodně vygenerované připojovací. Toto id připojení se stane neplatným, jako je připojení ukončeno. Anonymní uživatelé neměli mít přístup k žádné citlivé údaje.
+- **Zakázat žádosti napříč doménami** SignalR zakáže žádosti napříč doménami uživatelům zabránit ve volání koncových bodů SignalR z externí domény. Funkce SignalR považuje za jakýkoli požadavek od externí domény není platný a blokuje žádosti. Doporučujeme zachovat toto výchozí chování v opačném případě škodlivým webům může přimět uživatele k odesílání příkazů do vaší lokality. Pokud budete muset použít napříč požadavky domény, přečtěte si téma [jak k navázání připojení mezi doménami](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) .
+- **Předat token připojení v řetězci dotazu, nikoli soubor cookie** SignalR předá token připojení jako hodnotu řetězce dotazu, ne jako soubor cookie. Ukládání token připojení do souboru cookie nebezpečné, protože v prohlížeči může nechtěně předat token připojení vyskytne škodlivý kód. Také předá připojení token v řetězci dotazu zabraňuje token připojení uložením mimo aktuální připojení. Uživatel se zlými úmysly proto nelze vytvořit žádost pod přihlašovacími údaji jiným uživatelem.
+- **Ověřit token připojení** jak je popsáno v [token připojení](#connectiontoken) části server ví, u kterého id připojení souvisí s každého ověřeného uživatele. Server není zpracovat jakýkoli požadavek od id připojení, které se neshoduje s uživatelským jménem. Není pravděpodobné, že uživatel se zlými úmysly může uhodnout žádost platná, protože uživatel se zlými úmysly byste museli znát uživatelské jméno a aktuální id náhodně vygenerované připojovací. Toto id připojení se stane neplatným, jako je připojení ukončeno. Anonymní uživatelé neměli mít přístup k žádné citlivé údaje.
 
 <a id="recommendations"></a>
 

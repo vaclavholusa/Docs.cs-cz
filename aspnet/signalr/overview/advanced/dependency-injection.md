@@ -8,32 +8,32 @@ ms.date: 06/10/2014
 ms.assetid: a14121ae-02cf-4024-8af0-9dd0dc810690
 msc.legacyurl: /signalr/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 2f9b8eeb87882a686df5f35b2e7048a8518c8d4b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 607738e7531eaf9ee9f6a24267b65e153cc4d599
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752840"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912863"
 ---
 <a name="dependency-injection-in-signalr"></a>Injektáž závislostí v knihovně SignalR
 ====================
 podle [Mike Wasson](https://github.com/MikeWasson), [Patrick Fletcher](https://github.com/pfletcher)
 
 > ## <a name="software-versions-used-in-this-topic"></a>Verze softwaru použitým v tomto tématu
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>Předchozích verzích tohoto tématu
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -140,7 +140,7 @@ Vytvoření `IStockTicker` rozhraní není nezbytně nutné, ale já bych chtěl
 
 Existuje spousta open source technologie IoC kontejnerů pro .NET. Pro účely tohoto kurzu použiju [Ninject](http://www.ninject.org/). (Zahrnout další oblíbené knihovny [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Unity](https://github.com/unitycontainer/unity), a [StructureMap ](http://docs.structuremap.net).)
 
-Použití Správce balíčků NuGet k instalaci [Ninject knihovny](https://nuget.org/packages/Ninject/3.0.1.10). V sadě Visual Studio z **nástroje** nabídky vyberte možnost **Správce balíčků knihoven** | **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
+Použití Správce balíčků NuGet k instalaci [Ninject knihovny](https://nuget.org/packages/Ninject/3.0.1.10). V sadě Visual Studio z **nástroje** nabídky vyberte možnost **Správce balíčků NuGet** > **Konzola správce balíčků**. V okně konzoly Správce balíčků zadejte následující příkaz:
 
 [!code-powershell[Main](dependency-injection/samples/sample13.ps1)]
 

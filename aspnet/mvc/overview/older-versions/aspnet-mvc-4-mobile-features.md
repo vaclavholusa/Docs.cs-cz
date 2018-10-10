@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 8b82b8b9b1ee6646072931da889c643afb34d474
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6fe55a14b40f8c50dee91cdc7f59d0378f2a1ea2
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578156"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912322"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Funkce mobilní architektury ASP.NET MVC 4
 ====================
@@ -184,7 +184,7 @@ Přejmenovat *Views\Home\AllTags.Mobile.cshtml* a *Views\Home\AllTags.iPhone.csh
 
 Nainstalujte *jQuery.Mobile.MVC* balíček NuGet díky tomu:
 
-1. Z **nástroje** nabídce vyberte možnost **Správce balíčků knihoven**a pak vyberte **Konzola správce balíčků**.
+1. Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet**a pak vyberte **Konzola správce balíčků**.
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
 2. V **Konzola správce balíčků**, zadejte `Install-Package jQuery.Mobile.MVC -version 1.0.0`
@@ -245,11 +245,11 @@ Aktualizovat *AllTags* zobrazení v mobilním prohlížeči. Můžete nyní proc
 
 > [!NOTE]
 > Ladění Poznámka: následující kód můžete přidat na konec objektu Views\Shared\\_ViewSwitcher.cshtml pro ladění zobrazení pomocí prohlížeče identifikační řetězec prohlížeče nastavena na mobilním zařízení.
-> 
+>
 > [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample15.cs)]
-> 
->  a přidejte následující záhlaví *Views\Shared\\_Layout.cshtml* souboru.  
-> 
+>
+>  a přidejte následující záhlaví *Views\Shared\\_Layout.cshtml* souboru.
+>
 > [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample16.html)]
 
 

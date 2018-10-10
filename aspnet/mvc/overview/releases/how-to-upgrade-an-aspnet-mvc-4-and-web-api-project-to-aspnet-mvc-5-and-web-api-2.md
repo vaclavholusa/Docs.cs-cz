@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: db0d02d9-58e8-4a0b-8d7d-b8df8ea97b88
 msc.legacyurl: /mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d6fb40741c5f7b992e907a462ac92972fe603624
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 2566e201e44ccd9642abda7c7996056c73178fd6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578364"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912849"
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>Postup upgradu ASP.NET MVC 4 a projektem webového rozhraní API a webovém rozhraní API 2 technologie ASP.NET MVC 5
 ====================
@@ -71,8 +71,8 @@ Podle [Rick Anderson]((https://twitter.com/RickAndMSFT))
     > Microsoft-weboví Pomocníci bylo nahrazeno tématem Microsoft.AspNet.WebHelpers. Doporučujeme nejprve odeberte starý balíček a pak nainstalujte novější balíček.   
     >   
     > Neexistuje žádná různé verze kompatibilita mezi hlavní balíčky technologie ASP.NET. Například MVC 5 je kompatibilní s pouze Razor 3 a ne 2 Razor.
-4. Otevřete svůj projekt v sadě Visual Studio 2013.
-5. Odeberte některé z následujících balíčků ASP.NET NuGet, které jsou nainstalovány. Bude odeberte pomocí konzoly Správce balíčků (PMC). Otevřete konzolu PMC, vyberte **nástroje** nabídky a pak vyberte **Správce balíčků knihoven** vyberte **Konzola správce balíčků**. Váš projekt nemusí zahrnovat všechny z nich.
+4. Otevřete svůj projekt v sadě Visual Studio.
+5. Odeberte některé z následujících balíčků ASP.NET NuGet, které jsou nainstalovány. Bude odeberte pomocí konzoly Správce balíčků (PMC). Otevřete konzolu PMC, vyberte **nástroje** nabídky a pak vyberte **Správce balíčků NuGet,** vyberte **Konzola správce balíčků**. Váš projekt nemusí zahrnovat všechny z nich.
 
     1. `Microsoft.AspNet.WebPages.Administration`  
    Tento balíček bude přidán obvykle při upgradu z MVC 3 na MVC 4. Chcete-li ho odebrat, spusťte následující příkaz v konzole PMC:  

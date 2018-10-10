@@ -6,28 +6,43 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: a6a5023594aec01370143e7d1f35fb45c109122a
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 4a5a0cc5a5dab2171ab8ef43818185a4ee91af0e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860937"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912563"
 ---
-# <a name="get-started-with-aspnet-core"></a>Začínáme s ASP.NET Core
+# <a name="tutorial-get-started-with-aspnet-core"></a>Kurz: Začínáme s ASP.NET jádro
 
-Tento dokument popisuje kroky pro vytvoření a spuštění aplikace ASP.NET Core.
+Tento návod ukazuje, jak vytvořit webovou aplikaci ASP.NET jádro pomocí rozhraní příkazového řádku .NET Core. Se dozvíte, jak:
 
-::: moniker range=">= aspnetcore-2.1"
+> [!div class="checklist"]
+> * Vytvoření projektu webové aplikace.
+> * Povolte místní HTTPS.
+> * Spusťte aplikaci.
+> * Úprava stránky syntaxe Razor.
 
-1. Nainstalujte [!INCLUDE [](~/includes/2.1-SDK.md)].
+Na konci máte spuštěn v místním počítači pomocí aplikace pracovní web app.
 
-2. Vytvoření projektu aplikace ASP.NET Core. Otevřete příkazové okno a zadejte následující příkaz:
+![Domovská stránka aplikace](_static/home-page.png)
+
+
+## <a name="prerequisites"></a>Požadavky
+
+* Nainstalujte [!INCLUDE [](~/includes/2.1-SDK.md)].
+
+## <a name="create-a-web-app-project"></a>Vytvoření projektu webové aplikace
+
+* Otevřete příkazové prostředí a zadejte následující příkaz:
 
    ```console
    dotnet new webapp -o aspnetcoreapp
    ```
 
-3. Důvěřujete certifikátu vývoj HTTPS:
+## <a name="enable-local-https"></a>Povolit místní HTTPS
+
+* Důvěřujete certifikátu vývoj HTTPS:
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -62,99 +77,36 @@ Tento dokument popisuje kroky pro vytvoření a spuštění aplikace ASP.NET Cor
    
 ---
 
-4. Spuštění aplikace:
+## <a name="run-the-app"></a>Spuštění aplikace
+
+* Spusťte následující příkazy:
 
    ```console
    cd aspnetcoreapp
    dotnet run
    ```
 
-5. Přejděte do [ http://localhost:5001 ](http://localhost:5001).  Klikněte na tlačítko **přijmout** přijměte zásady ochrany osobních údajů a soubory cookie. Tato aplikace nemá uchovává osobní údaje.
+* Přejděte do [ https://localhost:5001 ](https://localhost:5001). Klikněte na tlačítko **přijmout** přijměte zásady ochrany osobních údajů a soubory cookie. Tato aplikace nemá uchovává osobní údaje.
 
-6. Otevřít *Pages/About.cshtml* a upravovat na stránce s následující zvýrazněný kód:
+## <a name="edit-a-razor-page"></a>Úprava stránky syntaxe Razor
+
+* Otevřít *Pages/About.cshtml* a upravovat na stránce s následující zvýrazněný kód:
 
    [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9)]
 
-7. Přejděte do [ http://localhost:5001/About ](http://localhost:5001/About) a ověřte změny jsou zobrazeny.
+* Přejděte do [ https://localhost:5001/About ](https://localhost:5001/About) a ověřte změny jsou zobrazeny.
 
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
+## <a name="next-steps"></a>Další kroky
 
-::: moniker-end
+V tomto kurzu jste zjistili, jak:
 
-::: moniker range="= aspnetcore-2.0"
+> [!div class="checklist"]
+> * Vytvoření projektu webové aplikace.
+> * Povolte místní HTTPS.
+> * Spusťte projekt.
+> * Proveďte změnu.
 
-1. Nainstalujte [!INCLUDE [](~/includes/net-core-sdk-download-link.md)].
+Další informace o základní technologie ASP.NET naleznete v tématu zavedení:
 
-2. Vytvořte nový projekt ASP.NET Core.
-
-   Otevřete příkazové okno. Zadejte následující příkaz:
-
-   ```console
-   dotnet new razor -o aspnetcoreapp
-   ```
-
-3. Spusťte aplikaci pomocí následujících příkazů:
-
-   ```console
-   cd aspnetcoreapp
-   dotnet run
-   ```
-
-4. Přejděte do [ http://localhost:5000 ](http://localhost:5000).
-
-5. Otevřít *Pages/About.cshtml* a upravovat na stránce zobrazí zprávu "Hello, world! Je čas na serveru @DateTime.Now":
-
-   [!code-cshtml[](sample/getting-started/about.cshtml?highlight=9&range=1-9)]
-
-6. Přejděte do [ http://localhost:5000/About ](http://localhost:5000/About) a ověřit změny.
-
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
-
-::: moniker-end
-
-::: moniker range="<= aspnetcore-1.1"
-
-1. Nainstalovat sadu .NET Core **instalační program sady SDK** pro sadu SDK 1.0.4 z [.NET Core všechny soubory ke stažení stránky](https://www.microsoft.com/net/download/all).
-
-2. Vytvořte složku pro nový projekt ASP.NET Core.
-
-   Otevřete příkazové okno. Zadejte následující příkazy:
-
-   ```console
-   mkdir aspnetcoreapp
-   cd aspnetcoreapp
-   ```
-
-3. Pokud nainstalujete novější verze sady SDK na svém počítači vytvořte *global.json* vyberte 1.0.4 SDK.
-
-   ```json
-   {
-     "sdk": { "version": "1.0.4" }
-   }
-   ```
-
-4. Vytvořte nový projekt ASP.NET Core.
-
-   ```console
-   dotnet new web
-   ```
-
-5. Obnovení balíčků.
-
-   ```console
-   dotnet restore
-   ```
-
-6. Spusťte aplikaci.
-
-   ```console
-   dotnet run
-   ```
-
-   [Dotnet spustit](/dotnet/core/tools/dotnet-run) příkaz sestaví aplikaci nejprve v případě potřeby.
-
-7. Přejděte do `http://localhost:5000`.
-
-[!INCLUDE [next steps](~/includes/getting-started/next-steps.md)]
-
-::: moniker-end
+> [!div class="nextstepaction"]
+> <xref:index>

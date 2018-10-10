@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 08834147-77ec-454a-bb7a-d931d2a40dab
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9bfe860761a18cb4a69d33336d64a169e3c834f9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 613494d58d7652f69a52241bcd3a7e896bc5407c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41754567"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912699"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>Implementace dědičnosti s rozhraním Entity Framework 6 v aplikaci ASP.NET MVC 5 (11, 12)
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Ukázková webová aplikace Contoso University ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí Entity Framework 6 kód první a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 V předchozím kurzu zpracování výjimky souběžnosti. Tento kurzu se dozvíte, jak implementovat dědičnosti v datovém modelu.
@@ -116,9 +116,9 @@ Spustit `update-database` příkaz znovu.
 
 > [!NOTE]
 > Je možné získat další chyby při migraci dat a provádění změn schématu. Pokud se zobrazí chyby při migraci nevyřešíte sami, můžete pokračovat v kurzu tak, že změníte připojovací řetězec *Web.config* souboru nebo odstraněním databáze. Nejjednodušším způsobem je přejmenovat databázi *Web.config* souboru. Například změňte název databáze do ContosoUniversity2, jak je znázorněno v následujícím příkladu:
-> 
+>
 > [!code-xml[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample6.xml?highlight=2)]
-> 
+>
 > S novou databázi, nejsou žádná data chcete migrovat a `update-database` příkaz je mnohem pravděpodobnější k dokončení bez chyb. Pokyny k odstranění databáze najdete v tématu [jak vyřadit databázi ze sady Visual Studio 2012](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/). Pokud budete postupovat tímto přístupem budete pokračovat v kurzu, na konci tohoto kurzu přeskočit krok nasazení nebo nasazení do nové lokality a databáze. Pokud nasazujete aktualizace do stejné lokality, které jste se nasazujete do již, EF dojde ke stejné chybě migrace automaticky spustí. Pokud chcete odstranění chyby migrace, je nejlepší prostředek Entity Framework fóra nebo StackOverflow.com.
 
 
@@ -142,13 +142,13 @@ Následující diagram znázorňuje strukturu nové databáze školy:
 
 Tato část vyžaduje, abyste dokončili nepovinný **nasazení aplikace do Azure** tématu [část 3, řazení, filtrování a stránkování](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md) této série kurzů. Pokud jste měli migrace chyby, které jste vyřešili tak, že odstraníte databáze v projektu pro místní, přeskočte tento krok. nebo vytvořte novou lokalitu a databázi a nasadit do nového prostředí.
 
-1. Ve Visual Studiu klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **publikovat** v místní nabídce.  
-  
+1. Ve Visual Studiu klikněte pravým tlačítkem na projekt v **Průzkumníka řešení** a vyberte **publikovat** v místní nabídce.
+
     ![Publikování v kontextové nabídce projektu](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
-2. Klikněte na tlačítko **publikovat**.  
-  
-    ![Publikování](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)  
-  
+2. Klikněte na tlačítko **publikovat**.
+
+    ![Publikování](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
+
    Otevře se webová aplikace ve vašem výchozím prohlížeči.
 3. Otestování aplikace ověří, že funguje.
 

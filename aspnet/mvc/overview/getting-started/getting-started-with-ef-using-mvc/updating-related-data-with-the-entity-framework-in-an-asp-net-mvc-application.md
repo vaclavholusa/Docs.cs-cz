@@ -8,20 +8,20 @@ ms.date: 05/01/2015
 ms.assetid: 7ba88418-5d0a-437d-b6dc-7c3816d4ec07
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e7f5fd725a0d151f19f49be9ceaf52b049d459c0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 647793a65dec8feaf37de561ad77b4585bb869a8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756013"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912212"
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Aktualizace souvisejících dat s Entity Framework v aplikaci ASP.NET MVC
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Ukázková webová aplikace Contoso University ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí Entity Framework 6 kód první a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 V předchozím kurzu zobrazí související data; v tomto kurzu budete aktualizovat související data. U většiny relací to můžete udělat prostřednictvím aktualizace pole cizích klíčů nebo navigační vlastnosti. U relací m: n Entity Framework nezveřejňuje tabulky spojení přímo, tak přidání a odebrání entity do a z odpovídající navigační vlastnosti.
@@ -214,8 +214,8 @@ Klikněte na tlačítko **upravit** na instruktorem zobrazíte stránky pro úpr
 
 Některá přiřazení kurzu a klikněte na tlačítko **Uložit**. Provedené změny se projeví na indexovou stránku.
 
- Poznámka: Přístup provádět upravovat data kurzu kurzů vedených funguje dobře, když je omezený počet kurzů. Pro kolekce, které jsou mnohem větší různé uživatelské rozhraní a jinou metodu aktualizace by vyžaduje.  
- 
+ Poznámka: Přístup provádět upravovat data kurzu kurzů vedených funguje dobře, když je omezený počet kurzů. Pro kolekce, které jsou mnohem větší různé uživatelské rozhraní a jinou metodu aktualizace by vyžaduje.
+
 
 ## <a name="update-the-deleteconfirmed-method"></a>Aktualizace DeleteConfirmed – metoda
 
@@ -269,7 +269,7 @@ Jak je vysvětleno v [základních funkcí CRUD kurzu](implementing-basic-crud-f
 
 Teď jste dokončili tento úvod k práci s související data. V těchto kurzech zatím jste pracovali s kódem, který provádí synchronní vstupně-výstupních operací. Provedete aplikací, používají webové prostředky serveru efektivněji díky implementaci asynchronního kódu, tedy budete používat v dalším kurzu.
 
-Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu. Můžete také požádat o nový témat na [Show Me jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu.
 
 Odkazy na další zdroje Entity Framework lze nalézt v [přístup k datům ASP.NET – doporučené zdroje informací](../../../../whitepapers/aspnet-data-access-content-map.md).
 

@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 378bcc038335ee852cd1a6c6e545eb72c6e0c78b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9b3d47c3c8fe5f0b37f1d45e19341df3f91a5bb0
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753266"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911185"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Nasazení webové aplikace ASP.NET s SQL serverem Compact pomocí sady Visual Studio nebo Visual Web Developer: nasazení databází SQL Server Compact - 2 z 12
 ====================
@@ -105,12 +105,11 @@ Otevřete aplikační soubor Web.config a odeberte elementu, který určuje tř�
 > [!NOTE]
 > Jiný způsob, jak určit třídu inicializátoru je provést zavoláním `Database.SetInitializer` v `Application_Start` metodu *Global.asax* souboru. Pokud povolíte migrace v projektu, který tato metoda používá k určení inicializátoru, odeberte tento řádek kódu.
 
-
 V dalším kroku povolení migrace Code First.
 
 Prvním krokem je zajistit, že je projekt ContosoUniversity nastavit jako spouštěný projekt. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ContosoUniversity a vyberte **nastavit jako spouštěný projekt**. Migrace Code First bude hledat v projektu po spuštění a najděte připojovací řetězec databáze.
 
-Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků knihoven** a potom **Konzola správce balíčků**.
+Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků NuGet** a potom **Konzola správce balíčků**.
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 

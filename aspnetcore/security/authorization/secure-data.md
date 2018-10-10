@@ -5,12 +5,12 @@ description: Zjistěte, jak vytvořit aplikace Razor Pages s uživatelskými dat
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 2fb13f0772a1f8aa4ed2ff3ece2a2c5d3b7360c9
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 71b7855958b530b8bac32843a8d1e7db0113ffd9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010933"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912628"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -249,7 +249,7 @@ Aktualizace modelu stránku odstranit sloužící k ověření, že uživatel m�
 
 V současné době ukazuje uživatelského rozhraní upravovat a odstraňovat kontakty, které uživatel nemůže upravovat odkazy.
 
-Vloží autorizační službu v *Views/_ViewImports.cshtml* souboru tak, aby byl k dispozici pro všechna zobrazení:
+Vstříkněte autorizační služba v *Views/_ViewImports.cshtml* souboru tak, aby byl k dispozici pro všechna zobrazení:
 
 [!code-cshtml[](secure-data/samples/final2.1/Pages/_ViewImports.cshtml?highlight=6-99)]
 
@@ -328,7 +328,7 @@ dotnet ef migrations add initial
 dotnet ef database update
 ```
 
-* Aktualizace **ContactManager** ukotvit v *Pages/_Layout.cshtml* souboru:
+* Aktualizace **ContactManager** ukotvení v *Pages/_Layout.cshtml* souboru:
 
 ```cshtml
 <a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>
@@ -350,6 +350,7 @@ Otestujte, že aplikace naplnila databázi. Pokud existují nějaké řádky v k
 
 ### <a name="additional-resources"></a>Další zdroje
 
+* [Vytvoření webové aplikace .NET Core využívající SQL Database ve službě Azure App Service](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 * [ASP.NET Core povolení Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop). Toto testovací prostředí obsahuje větší podrobnosti o funkcích zabezpečení v tomto kurzu.
 * [Autorizace v ASP.NET Core: jednoduchý, role, založené na deklaracích a vlastní](xref:security/authorization/index)
 * [Autorizace na základě zásad](xref:security/authorization/policies)

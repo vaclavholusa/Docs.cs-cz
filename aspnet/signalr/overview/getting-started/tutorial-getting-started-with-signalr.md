@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 647dab496acd63dc774236ed448bd6b37b19c707
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 676dc0854ef6f041e705ed6b39432e11dd8643ed
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752036"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910899"
 ---
 <a name="tutorial-getting-started-with-signalr-2"></a>Kurz: Začínáme s knihovnou SignalR 2
 ====================
@@ -102,7 +102,7 @@ Následující kroky slouží k vytvoření prázdná webová aplikace ASP.NET a
 3. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt, vyberte **přidat | Třída rozbočovače SignalR (v2)**. Název třídy **ChatHub.cs** a přidejte ho do projektu. Tento krok vytvoří **ChatHub** třídy a přidá do projektu sadu souborů skriptů a odkazy na sestavení, podporující funkci SignalR.
 
     > [!NOTE]
-    > Funkce SignalR můžete také přidat do projektu tak, že otevřete **nástroje | Správce balíčků knihoven | Konzola správce balíčků** a spuštění příkazu:
+    > Funkce SignalR můžete také přidat do projektu tak, že otevřete **nástroje > Správce balíčků NuGet > Konzola správce balíčků** a spuštění příkazu:
 
     `install-package Microsoft.AspNet.SignalR`
 

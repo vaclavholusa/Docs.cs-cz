@@ -8,32 +8,32 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: ee62a7b01ff357262aa89dbac4f49180b4c58fe0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 89b27267bec5edb0692fe75061d08b4688df5a8c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753265"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912063"
 ---
 <a name="enabling-signalr-tracing"></a>Povolení trasování knihovnou SignalR
 ====================
 podle [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Tento dokument popisuje, jak povolit a nakonfigurovat trasování pro funkci SignalR servery a klienty. Trasování můžete zobrazit diagnostické informace o událostech v aplikaci funkce SignalR.
-> 
+>
 > Toto téma bylo napsáno původně podle Patrick Fletcher.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET Framework 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 
@@ -134,7 +134,7 @@ Následující výstup zobrazuje položky `ClientLog.txt` soubor pro aplikaci po
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>Povolení trasování v klientech Windows Phone 8
 
-Aplikace SignalR pro aplikace Windows Phone pomocí stejného klienta .NET jako aplikace klasické pracovní plochy, ale [Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) a zápis do souboru s [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) nejsou k dispozici. Místo toho je potřeba vytvořit vlastní implementaci [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) pro trasování. 
+Aplikace SignalR pro aplikace Windows Phone pomocí stejného klienta .NET jako aplikace klasické pracovní plochy, ale [Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) a zápis do souboru s [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) nejsou k dispozici. Místo toho je potřeba vytvořit vlastní implementaci [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) pro trasování.
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>Protokolování událostí klienta Windows Phone v uživatelském rozhraní

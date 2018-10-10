@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 02/14/2017
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 34a553c7ff8a18c367bf5e8079e2ea71f968bf3b
-ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
+ms.openlocfilehash: e613dc1e85b84cc5e2b8ad2bf3958040257d1966
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39219417"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911276"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Pomocných rutin značek ve formulářích v ASP.NET Core
 
@@ -119,10 +119,10 @@ V následující tabulce jsou uvedeny některé běžné [anotacemi dat](/dotnet
 
 |Atribut|Typ vstupu|
 |---|---|
-|[EmailAddress]|typ = "e-mail"|
+|[Email]|typ = "e-mail"|
 |[Url]|typ = "url"|
 |[HiddenInput]|typ = "skrytá"|
-|[Phone]|typ = "tel"|
+|[Telefon]|typ = "tel"|
 |[DataType(DataType.Password)]| typ = "password"|
 |[DataType(DataType.Date)]| type=”date”|
 |[DataType(DataType.Time)]| typ = "čas"|
@@ -320,7 +320,7 @@ Existují dva pomocných rutin značek ověření. `Validation Message Tag Helpe
 
 ### <a name="the-validation-message-tag-helper"></a>Pomocná rutina značky zpráva ověření
 
-* Přidá [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` atribut [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, který připojí chybové zprávy ověření na vstupní pole vlastnosti zadaného modelu.   Pokud dojde k chybě ověření na straně klienta, [jQuery](https://jquery.com/) zobrazí chybová zpráva portálu `<span>` elementu.
+* Přidá [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` atribut [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) element, který připojí chybové zprávy ověření na vstupní pole vlastnosti zadaného modelu. Pokud dojde k chybě ověření na straně klienta, [jQuery](https://jquery.com/) zobrazí chybová zpráva portálu `<span>` elementu.
 
 * Taky uplatněním ověřování na serveru. Klienti mohou mít zakázaný JavaScript a nějaké ověření lze provést pouze na straně serveru.
 
@@ -413,7 +413,7 @@ Ukázka:
 
 `Index` Metoda inicializuje `CountryViewModel`, nastaví pro vybranou zemi a předává jej do `Index` zobrazení.
 
-[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
+[!code-csharp[](working-with-forms/sample/final/Controllers/HomeController.cs?range=8-13)]
 
 HTTP POST `Index` metoda zobrazí výběr:
 

@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdf443fbce7376ac057c848df146717955203f9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 67f44d9f23a2fe83c48e68328b1dee739056e32f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755724"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912381"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Nasazení webu ASP.NET pomocí sady Visual Studio: Příprava nasazení databáze
 ====================
@@ -84,15 +84,13 @@ Otevřete aplikaci *Web.config* souboru a odstranit nebo okomentovat `add` prvek
 > [!NOTE]
 > Jiný způsob, jak určit třídu inicializátoru je provést zavoláním `Database.SetInitializer` v `Application_Start` metodu *Global.asax* souboru. Pokud povolíte migrace v projektu, který tato metoda používá k určení inicializátoru, odeberte tento řádek kódu.
 
-
 > [!NOTE]
 > Pokud používáte Visual Studio 2013, přidat následující kroky mezi kroky 2 a 3: (a) v konzole PMC zadejte "entityframework update-package-verze 6.1.1" získání aktuální verze EF. A (b) sestavte projekt, aby získat seznam chyb sestavení a opravte je. Odstranit pomocí příkazů pro obory názvů, které už existují, klikněte pravým tlačítkem a kliknutím na tlačítko Přidat direktivu using příkazy, kde jsou potřeba vyřešit a změnit výskyty System.Data.EntityState System.Data.Entity.EntityState.
-
 
 ### <a name="enable-code-first-migrations"></a>Povolení migrace Code First
 
 1. Ujistěte se, že je projekt ContosoUniversity (ne ContosoUniversity.DAL) nastavit jako spouštěný projekt. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ContosoUniversity a vyberte **nastavit jako spouštěný projekt**. Migrace Code First bude hledat v projektu po spuštění a najděte připojovací řetězec databáze.
-2. Z **nástroje** nabídky, klikněte na tlačítko **Správce balíčků knihoven** (nebo **Správce balíčků NuGet**) a potom **Konzola správce balíčků**.
+2. Z **nástroje** nabídce zvolte **Správce balíčků NuGet** > **Konzola správce balíčků**.
 
     ![Selecting_Package_Manager_Console](preparing-databases/_static/image3.png)
 3. V horní části **Konzola správce balíčků** okno vybrat jako výchozí projekt a potom at ContosoUniversity.DAL `PM>` řádku zadejte "enable migrace".

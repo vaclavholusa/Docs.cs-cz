@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/01/2018
 uid: fundamentals/file-providers
-ms.openlocfilehash: 512229cfe7d7efdcd9050fa13dbdbf793be29a0b
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: a0d326f5fc995cb903380315879d39a8ce851d06
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410153"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913213"
 ---
 # <a name="file-providers-in-aspnet-core"></a>Zprostředkovatelé souborů v ASP.NET Core
 
@@ -141,7 +141,7 @@ V ukázkové aplikaci `HomeController` přijímá třídy `IFileProvider` instan
 [ManifestEmbeddedFileProvider](/dotnet/api/microsoft.extensions.fileproviders.manifestembeddedfileprovider) se používá pro přístup k souborům, které jsou vložené v rámci sestavení. `ManifestEmbeddedFileProvider` Manifestu kompilovány do sestavení používá k rekonstrukci původní cesty vložených souborů.
 
 > [!NOTE]
-> `ManifestEmbeddedFileProvider` Je k dispozici v ASP.NET Core 2.1 nebo novější. Přístup k souborům, které jsou součástí sestavení v ASP.NET Core 2.0 nebo starší, najdete v článku [ASP.NET Core 1.x verzi tohoto tématu](xref:fundamentals/file-providers?view=aspnetcore-1.1).
+> `ManifestEmbeddedFileProvider` Je k dispozici v ASP.NET Core 2.1 nebo novější. Přístup k souborům, které jsou součástí sestavení v ASP.NET Core 2.0 nebo starší, najdete v článku [ASP.NET Core 1.x verzi tohoto tématu](/aspnet/core/fundamentals/file-providers?view=aspnetcore-1.1).
 
 Chcete-li vygenerovat manifest vložené soubory, nastavte `<GenerateEmbeddedFilesManifest>` vlastnost `true`. Zadejte soubory, které chcete vložit s [ &lt;EmbeddedResource&gt;](/dotnet/core/tools/csproj#default-compilation-includes-in-net-core-projects):
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 6258530beedced9570111478fea630b1556e1a1e
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 0ab920cc8890f2a1e4d1fb8d783dea666751a53f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927955"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911289"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -108,7 +108,7 @@ V následujícím kódu druhý `IConfigureOptions<TOptions>` služby se přidá 
 
 [!code-csharp[](options/sample/Pages/Index.cshtml.cs?name=snippet_Example2)]
 
-Můžete přidat několik poskytovatelů konfigurace. Poskytovatelé konfigurace jsou k dispozici v balíčcích NuGet. Tato nastavení se použijí, jejich registrace.
+Můžete přidat několik poskytovatelů konfigurace. Poskytovatelé konfigurace jsou k dispozici v balíčcích NuGet. Se použijí v pořadí, které jsou registrovány.
 
 Každé volání [konfigurovat&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1.configure) přidá `IConfigureOptions<TOptions>` služby service container. V předchozím příkladu hodnoty `Option1` a `Option2` jsou určené v *appsettings.json*, ale hodnoty `Option1` a `Option2` jsou přepsány nakonfigurované delegáta.
 
@@ -250,7 +250,9 @@ named_options_2: option1 = named_options_2_value1_from_action, option2 = 5
 * `named_options_2` Delegování v `ConfigureServices` pro `Option1`.
 * Výchozí hodnota pro `Option2` poskytované `MyOptions` třídy.
 
-Nakonfigurujte všechny instance s názvem možnosti s [OptionsServiceCollectionExtensions.ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) metody. Následující kód konfiguruje `Option1` pro všechny pojmenované instance konfigurace běžných hodnotou. Přidejte následující kód do ručně `Configure` metody:
+## <a name="configure-all-options-with-the-configureall-method"></a>Všechny možnosti nakonfigurovat ConfigureAll – metoda
+
+Nakonfigurujte všechny možnosti instance s [OptionsServiceCollectionExtensions.ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) metody. Následující kód konfiguruje `Option1` pro všechny konfigurace instance s hodnotou běžné. Přidejte následující kód do ručně `Configure` metody:
 
 ```csharp
 services.ConfigureAll<MyOptions>(myOptions => 
@@ -353,7 +355,7 @@ services.PostConfigure<MyOptions>("named_options_1", myOptions =>
 });
 ```
 
-Použití [PostConfigureAll&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall) po nakonfigurovat všechny pojmenované instance konfigurace:
+Použití [PostConfigureAll&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall) po konfiguraci všechny instance konfigurace:
 
 ```csharp
 services.PostConfigureAll<MyOptions>(myOptions =>

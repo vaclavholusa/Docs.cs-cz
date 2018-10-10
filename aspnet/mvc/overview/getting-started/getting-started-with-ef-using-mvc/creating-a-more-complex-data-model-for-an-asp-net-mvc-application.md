@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 46f7f3c9-274f-4649-811d-92222a9b27e2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 25bd71f9860db01afb7177da0f9befbdd8eb8e12
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 25cec8bb9384dbd053f8af12855171a54675a40e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753333"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912485"
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>Vytvoření složitějšího datového modelu pro aplikace ASP.NET MVC
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Ukázková webová aplikace Contoso University ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí Entity Framework 6 kód první a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 V předchozích kurzech jste pracovali s jednoduchý datový model, který se skládá z tři entity. V tomto kurzu přidáte další entity a relace a tak, že zadáte formátování, ověřování a pravidel mapování database budete Přizpůsobte si datový model. Zobrazí se vám dva způsoby, jak Přizpůsobte si datový model: přidáním atributů do tříd entit a přidáním kódu do třídy kontextu databáze.
@@ -230,13 +230,13 @@ Ve výchozím nastavení Entity Framework předpokládá, že hodnoty primární
 
 Vlastnosti cizího klíče a vlastnosti navigace v `Course` entity zahrnují následující vztahy:
 
-- Kurz je přiřazena jednoho oddělení, takže `DepartmentID` cizího klíče a `Department` navigační vlastnost z důvodů uvedených výše. 
+- Kurz je přiřazena jednoho oddělení, takže `DepartmentID` cizího klíče a `Department` navigační vlastnost z důvodů uvedených výše.
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
-- Kurz můžete mít libovolný počet studentů zaregistrované, takže `Enrollments` navigační vlastnost je kolekce: 
+- Kurz můžete mít libovolný počet studentů zaregistrované, takže `Enrollments` navigační vlastnost je kolekce:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample18.cs)]
-- Kurz může být vedená instruktorů více, proto `Instructors` navigační vlastnost je kolekce: 
+- Kurz může být vedená instruktorů více, proto `Instructors` navigační vlastnost je kolekce:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample19.cs)]
 
@@ -260,15 +260,15 @@ Mapování sloupců se obecně nevyžaduje, protože rozhraní Entity Framework 
 
 Vlastnosti cizího klíče a navigace zahrnují následující vztahy:
 
-- Oddělení může nebo nemusí mít správce a správce je vždy instruktorem. Proto `InstructorID` vlastnost je součástí jako cizí klíč `Instructor` přidá entity a otazník za `int` označení označit vlastnosti jako datový typ s možnou hodnotou Null typu. Navigační vlastnost jmenuje `Administrator` obsahuje, ale `Instructor` entity: 
+- Oddělení může nebo nemusí mít správce a správce je vždy instruktorem. Proto `InstructorID` vlastnost je součástí jako cizí klíč `Instructor` přidá entity a otazník za `int` označení označit vlastnosti jako datový typ s možnou hodnotou Null typu. Navigační vlastnost jmenuje `Administrator` obsahuje, ale `Instructor` entity:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample22.cs)]
-- Oddělení může mít mnoho kurzů, takže `Courses` navigační vlastnost: 
+- Oddělení může mít mnoho kurzů, takže `Courses` navigační vlastnost:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample23.cs)]
 
   > [!NOTE]
-  > Podle konvence rozhraní Entity Framework umožňuje kaskádové odstranění pro Null cizí klíče a vztahy many-to-many. To může způsobit Cyklické kaskádové odstranění pravidla, která způsobí výjimku při pokusu o přidání migrace. Například pokud definujete nebyla `Department.InstructorID` vlastnost jako s možnou hodnotou Null, získali byste k následující výjimce: "referenční vztahu povede cyklického odkazu, který není povolen." V případě potřeby obchodní pravidla `InstructorID` vlastnosti být null, je třeba použít následující příkaz rozhraní API fluent zakázat kaskádové odstranění v relaci: 
+  > Podle konvence rozhraní Entity Framework umožňuje kaskádové odstranění pro Null cizí klíče a vztahy many-to-many. To může způsobit Cyklické kaskádové odstranění pravidla, která způsobí výjimku při pokusu o přidání migrace. Například pokud definujete nebyla `Department.InstructorID` vlastnost jako s možnou hodnotou Null, získali byste k následující výjimce: "referenční vztahu povede cyklického odkazu, který není povolen." V případě potřeby obchodní pravidla `InstructorID` vlastnosti být null, je třeba použít následující příkaz rozhraní API fluent zakázat kaskádové odstranění v relaci:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
@@ -285,10 +285,10 @@ Vlastnosti cizího klíče a navigace zahrnují následující vztahy:
 
 Vlastnosti cizího klíče a navigačních vlastností zahrnují následující vztahy:
 
-- Záznam registrace je jeden kurzům, tedy `CourseID` vlastnost cizího klíče a `Course` navigační vlastnost: 
+- Záznam registrace je jeden kurzům, tedy `CourseID` vlastnost cizího klíče a `Course` navigační vlastnost:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample26.cs)]
-- Záznam registrace je pro jeden student, tedy `StudentID` vlastnost cizího klíče a `Student` navigační vlastnost: 
+- Záznam registrace je pro jeden student, tedy `StudentID` vlastnost cizího klíče a `Student` navigační vlastnost:
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample27.cs)]
 
@@ -382,13 +382,13 @@ Po dokončení úprav &lt; *časové razítko&gt;\_ComplexDataModel.cs* soubor, 
 
 > [!NOTE]
 > Je možné získat další chyby při migraci dat a provádění změn schématu. Pokud se zobrazí chyby při migraci, které nelze vyřešit, můžete změnit název databáze v připojovacím řetězci nebo odstranit databázi. Nejjednodušším způsobem je přejmenovat databázi v *Web.config* souboru. Následující příklad ukazuje název změní na kapacitní jednotka\_testu:
-> 
+>
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample36.xml?highlight=1)]
-> 
+>
 > S novou databázi, nejsou žádná data chcete migrovat a `update-database` příkaz je mnohem pravděpodobnější k dokončení bez chyb. Pokyny k odstranění databáze najdete v tématu [jak vyřadit databázi ze sady Visual Studio 2012](http://romiller.com/2013/05/17/how-to-drop-a-database-from-visual-studio-2012/).
-> 
+>
 > Pokud selže, je dalším krokem, který můžete vyzkoušet, znovu inicializovat databázi zadáním následujícího příkazu v konzole PMC:
-> 
+>
 > `update-database -TargetMigration:0`
 
 
@@ -406,7 +406,7 @@ Klikněte pravým tlačítkem myši `CourseInstructor` tabulky a vyberte **zobra
 
 Teď máte složitějšího datového modelu a odpovídající databáze. V následujícím kurzu se dozvíte informace o různých způsobech pro přístup k související data.
 
-Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu. Můžete také požádat o nový témat na [Show Me jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu.
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET – doporučené zdroje informací](../../../../whitepapers/aspnet-data-access-content-map.md).
 

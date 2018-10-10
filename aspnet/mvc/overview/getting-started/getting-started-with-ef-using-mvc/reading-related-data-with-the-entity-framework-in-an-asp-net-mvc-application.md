@@ -8,20 +8,20 @@ ms.date: 11/07/2014
 ms.assetid: 18cdd896-8ed9-4547-b143-114711e3eafb
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 16bef0094406f3f45307eabd19c0872e90ecf7ef
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 18d3720f891e2356af42b58389776f2d04eee39d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755449"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913200"
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Čtení souvisejících dat s Entity Framework v aplikaci ASP.NET MVC
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra)
 
-[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) nebo [stahovat PDF](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[Stáhnout dokončený projekt](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí sady Visual Studio 2013 a Entity Framework 6 Code First. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
+> Ukázková webová aplikace Contoso University ukazuje, jak vytvářet aplikace ASP.NET MVC 5 pomocí Entity Framework 6 kód první a Visual Studio. Informace o této sérii kurzů, naleznete v tématu [z prvního kurzu této série](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md).
 
 
 V předchozím kurzu jste dokončili školní datového modelu. V tomto kurzu budete čtení a zobrazení souvisejících dat – to znamená, že data, která načte Entity Framework do navigační vlastnosti.
@@ -36,7 +36,7 @@ Na následujících obrázcích stránky, kterou budete pracovat.
 
 Existuje několik způsobů, Entity Framework mohou načíst související data do navigační vlastnosti entity:
 
-- *Opožděné načtení*. Pokud entita je nejdřív přečíst, související data nebude načten. Ale při prvním pokusu o přístup k vlastnosti navigace data požadovaná pro tuto navigační vlastnost je automaticky načte. Výsledkem je více dotazy odeslané do databáze – jeden pro samotné entity a jeden pokaždé, když související data entity musí být načten. `DbContext` Třídy ve výchozím nastavení povoluje opožděné načtení. 
+- *Opožděné načtení*. Pokud entita je nejdřív přečíst, související data nebude načten. Ale při prvním pokusu o přístup k vlastnosti navigace data požadovaná pro tuto navigační vlastnost je automaticky načte. Výsledkem je více dotazy odeslané do databáze – jeden pro samotné entity a jeden pokaždé, když související data entity musí být načten. `DbContext` Třídy ve výchozím nastavení povoluje opožděné načtení.
 
     ![Lazy_loading_example](https://asp.net/media/2577850/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Lazy_loading_example_2c44eabb-5fd3-485a-837d-8e3d053f2c0c.png)
 - *Předběžné načítání*. Při čtení entity související data načíst společně. Obvykle v důsledku jednoho spojení dotaz, který zkopíruje všechna data, který je nezbytný. Předběžné načítání určíte pomocí `Include` metody.
@@ -69,7 +69,7 @@ Pokud nepoužíváte DTO, můžete zakázat opožděné načtení a nedocházelo
 Tady jsou některé další [způsoby, jak zakázat opožděné načtení](https://msdn.microsoft.com/data/jj574232):
 
 - Pro konkrétní navigační vlastnosti vynechat, nechte `virtual` – klíčové slovo deklarovat vlastnost.
-- Pro všechny vlastnosti navigace, nastavte `LazyLoadingEnabled` k `false`, vložte následující kód v konstruktoru třídy kontextu: 
+- Pro všechny vlastnosti navigace, nastavte `LazyLoadingEnabled` k `false`, vložte následující kód v konstruktoru třídy kontextu:
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
@@ -183,10 +183,10 @@ Stávající kód, které jste udělali následující změny:
 
 - Změnit třídu modelu `InstructorIndexData`.
 - Změnil se název stránky z **Index** k **Instruktoři**.
-- Přidá **Office** sloupec, který zobrazuje `item.OfficeAssignment.Location` pouze tehdy, pokud `item.OfficeAssignment` nemá hodnotu null. (Protože je to vztah jeden: nula nebo 1, nemusí být se souvisejícím `OfficeAssignment` entity.) 
+- Přidá **Office** sloupec, který zobrazuje `item.OfficeAssignment.Location` pouze tehdy, pokud `item.OfficeAssignment` nemá hodnotu null. (Protože je to vztah jeden: nula nebo 1, nemusí být se souvisejícím `OfficeAssignment` entity.)
 
     [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml)]
-- Přidání kódu, která dynamicky přidá `class="success"` k `tr` element vybraných kurzů vedených. Tím se nastaví barvu pozadí vybraného řádku s využitím [Bootstrap](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap) třídy. 
+- Přidání kódu, která dynamicky přidá `class="success"` k `tr` element vybraných kurzů vedených. Tím se nastaví barvu pozadí vybraného řádku s využitím [Bootstrap](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap) třídy.
 
     [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample17.cshtml)]
 - Přidat nový `ActionLink` označené jako **vyberte** bezprostředně před další odkazy na každém řádku, což způsobí, že ID vybraných kurzů vedených k odeslání do `Index` metoda.
@@ -243,7 +243,7 @@ Spustit kurzů vedených indexovou stránku a zobrazí se vám nijak neliší ob
 
 Nyní využili jste všechny tři způsoby, jak (opožděné, nemůžou dočkat, až a explicitní) načíst související data do navigační vlastnosti. V dalším kurzu dozvíte, jak aktualizovat související data.
 
-Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu. Můžete také požádat o nový témat na [Show Me jak s kód](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
+Jak vám v tomto kurzu líbilo a co můžeme zlepšit nám prosím zpětnou vazbu.
 
 Odkazy na další zdroje Entity Framework najdete v [přístup k datům ASP.NET – doporučené zdroje informací](../../../../whitepapers/aspnet-data-access-content-map.md).
 

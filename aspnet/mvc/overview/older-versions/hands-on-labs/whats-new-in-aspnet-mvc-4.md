@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: b1d80928d765bc71ea1579272662b6697371c47b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9d5a51a5887ecbbc96fce1416b88aa849bc3674e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752023"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912719"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>Co je nového v architektuře ASP.NET MVC 4
 
@@ -382,7 +382,7 @@ Jednou z klíčových aktualizací v architektuře ASP.NET MVC 4 je podpora pro 
 
       > [!NOTE]
       > Jednou z výhod pomocí nástroje NuGet je, že není nutné dodávat všechny knihovny ve vašem projektu, zmenšení velikosti projektu. Pomocí nástroje NuGet zadáním verze balíčku v souboru Packages.config, budete moct stáhnout požadované knihovny při prvním spuštění projektu. To je důvod, proč budete muset projít tyto kroky po otevření existujícího řešení z tohoto testovacího prostředí.
-2. Otevřít **Konzola správce balíčků** kliknutím **nástroje** &gt; **Správce balíčků knihoven** &gt; **Správce balíčků Konzola** nabídky.
+2. Otevřít **Konzola správce balíčků** kliknutím **nástroje** > **Správce balíčků NuGet** > **Konzola správce balíčků**  nabídky.
 
     ![Otevření konzole Správce balíčků NuGet](whats-new-in-aspnet-mvc-4/_static/image22.png "otevření konzole Správce balíčků NuGet")
 

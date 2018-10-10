@@ -5,12 +5,12 @@ description: ASP.NET Core Identity výchozí hodnoty a zjistěte, jak nakonfigur
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 0faab001b981c79f6afa16b2a8cf80c1ef141b11
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 02441cd28c2a99eda7b50ed54f4437d4b52ca5d9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011297"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911934"
 ---
 # <a name="configure-aspnet-core-identity"></a>Konfigurace ASP.NET Core Identity
 
@@ -79,18 +79,30 @@ Ve výchozím nastavení identita vyžaduje, aby hesla obsahovat velké písmeno
 
 [IdentityOptions.Password](/dotnet/api/microsoft.aspnetcore.identity.identityoptions.password) Určuje, [PasswordOptions](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions) s vlastnostmi, které jsou uvedené v tabulce.
 
+::: moniker range=">= aspnetcore-2.0"
+
 | Vlastnost | Popis | Výchozí |
 | -------- | ----------- | :-----: |
 | [RequireDigit](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredigit) | Vyžaduje číslo v rozmezí 0 – 9 v hesle. | `true` |
 | [RequiredLength](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredlength) | Minimální délka hesla. | 6 |
-
-::: moniker range=">= aspnetcore-2.0"
-
+| [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | Vyžaduje malé písmeno v hesle. | `true` |
+| [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | Vyžaduje nealfanumerických znaků v hesle. | `true` |
 | [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars) | Platí jenom pro ASP.NET Core 2.0 nebo novější.<br><br> Vyžaduje počet jedinečných znaků v hesle. | 1 |
+| [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | Vyžaduje velké písmeno heslo. | `true` |
 
 ::: moniker-end
 
-| [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | Vyžaduje malé písmeno v hesle. | `true` | | [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | Vyžaduje nealfanumerických znaků v hesle. | `true` | | [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | Vyžaduje velké písmeno heslo. | `true` |
+::: moniker range="< aspnetcore-2.0"
+
+| Vlastnost | Popis | Výchozí |
+| -------- | ----------- | :-----: |
+| [RequireDigit](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredigit) | Vyžaduje číslo v rozmezí 0 – 9 v hesle. | `true` |
+| [RequiredLength](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredlength) | Minimální délka hesla. | 6 |
+| [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | Vyžaduje malé písmeno v hesle. | `true` |
+| [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | Vyžaduje nealfanumerických znaků v hesle. | `true` |
+| [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | Vyžaduje velké písmeno heslo. | `true` |
+
+::: moniker-end
 
 ### <a name="sign-in"></a>přihlášení
 
@@ -137,7 +149,7 @@ Následující kód nastaví `SignIn` nastavení (výchozí hodnoty):
 
 | Vlastnost | Popis | Výchozí |
 | -------- | ----------- | :-----: |
-| [AllowedUserNameCharacters](/dotnet/api/microsoft.aspnetcore.identity.useroptions.allowedusernamecharacters) | Povolené znaky uživatelské jméno. | abcdefghijklmnopqrstuvwxyz<br>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789<br>-._@+ |
+| [AllowedUserNameCharacters](/dotnet/api/microsoft.aspnetcore.identity.useroptions.allowedusernamecharacters) | Povolené znaky uživatelské jméno. | abcdefghijklmnopqrstuvwxyz<br>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789<br>-.\_@+ |
 | [RequireUniqueEmail](/dotnet/api/microsoft.aspnetcore.identity.useroptions.requireuniqueemail) | Vyžaduje každý uživatel měl jedinečnou e-mailovou. | `false` |
 
 ### <a name="cookie-settings"></a>Nastavení souborů cookie

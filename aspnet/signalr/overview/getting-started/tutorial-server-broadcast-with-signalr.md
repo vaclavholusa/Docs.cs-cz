@@ -8,49 +8,49 @@ ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: c2248e68b3c9411687ab6410f12ec85488fe0738
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a85a704dc5d830ec793540fbc44a3ce7ec8c934
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755484"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911530"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Kurz: Serverové vysílání s knihovnou SignalR 2
 ====================
 podle [Petr Dykstra](https://github.com/tdykstra), [Tom FitzMacken](https://github.com/tfitzmac)
 
 > Tento kurz ukazuje, jak vytvořit webovou aplikaci, která používá ASP.NET SignalR 2 pro zajištění všesměrového vysílání funkce serveru. Server vysílání znamená, že komunikace klientů jsou spuštěné na serveru. Tento scénář vyžaduje jiný přístup programovací než peer-to-peer scénářů, jako je chatovací aplikace, ve kterých lze inicializovat komunikace klientů pomocí jedné nebo více klientů.
-> 
+>
 > Aplikace, kterou vytvoříte v tomto kurzu simuluje akciích Typický scénář pro vysílání funkce serveru.
-> 
+>
 > Toto téma bylo napsáno původně podle Patrick Fletcher.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>V tomto kurzu pomocí sady Visual Studio 2012
-> 
-> 
+>
+>
 > Pokud chcete použít Visual Studio 2012 s tímto kurzem, postupujte takto:
-> 
+>
 > - Aktualizace vašeho [Správce balíčků](http://docs.nuget.org/docs/start-here/installing-nuget) na nejnovější verzi.
 > - Nainstalujte [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - Instalace webové platformy, vyhledejte a nainstalujte **technologie ASP.NET a webové nástroje 2013.1 pro Visual Studio 2012**. Tím se nainstaluje šablony sady Visual Studio pro funkci SignalR třídy jako **centra**.
 > - Některé šablony (jako například **třídy pro spuštění OWIN**) nebudou k dispozici; pro ty, použijte místo toho soubor třídy.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>Kurz verze
-> 
+>
 > Informace o předchozích verzích systému SignalR naleznete v tématu [starší verze funkce SignalR](../older-versions/index.md).
-> 
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 

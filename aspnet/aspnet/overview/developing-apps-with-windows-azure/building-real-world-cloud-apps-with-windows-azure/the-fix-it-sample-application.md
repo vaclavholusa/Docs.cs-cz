@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: de3c8ea29f2c271136f58d8165bb92f4ab28ce83
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795535"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912823"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>Dodatek: Oprava ji ukázkovou aplikaci (sestavování skutečných cloudových aplikací s Azure)
 ====================
@@ -221,7 +221,7 @@ Existují dva způsoby, jak spouštět aplikace Fix It:
 4. V Průzkumníku souborů klikněte pravým tlačítkem na soubor .zip a klikněte na tlačítko Vlastnosti a pak v okně Vlastnosti klikněte na odblokovat.
 5. Rozbalte tento soubor.
 6. Poklikejte na soubor .sln a spusťte sadu Visual Studio.
-7. V nabídce Nástroje klikněte na správce balíčků knihoven a pak Konzola správce balíčků.
+7. Z **nástroje** nabídky, klepněte na **Správce balíčků NuGet**, pak **konzoly Správce balíčků**.
 8. V balíčku správce konzoly (konzolu PMC), kliknutím na tlačítko Obnovit.
 9. Ukončení sady Visual Studio.
 10. Spustit [emulátoru úložiště Azure](/azure/storage/common/storage-use-emulator).

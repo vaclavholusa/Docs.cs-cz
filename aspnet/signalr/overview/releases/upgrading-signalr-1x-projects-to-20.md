@@ -8,41 +8,41 @@ ms.date: 06/10/2014
 ms.assetid: adcfef99-9bc5-489d-a91b-9b7c2bc35e04
 msc.legacyurl: /signalr/overview/releases/upgrading-signalr-1x-projects-to-20
 msc.type: authoredcontent
-ms.openlocfilehash: 84155a4c171a2ac2149dbbf4237b6561d2814aa0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 450ddedb520035cc05a0dbcca1a2666dd1ba24c7
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753027"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910548"
 ---
 <a name="upgrading-signalr-1x-projects-to-version-2"></a>Upgradování projektů SignalR 1.x na verzi 2
 ====================
 podle [Patrick Fletcher](https://github.com/pfletcher)
 
 > Toto téma popisuje, jak upgradovat existující projekt SignalR 1.x na SignalR 2.x a jak řešit problémy, které mohou nastat během procesu upgradu.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>V tomto kurzu použili verze softwaru
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - Funkce SignalR verze 1 a 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>V tomto kurzu pomocí sady Visual Studio 2012
-> 
-> 
+>
+>
 > Pokud chcete použít Visual Studio 2012 s tímto kurzem, postupujte takto:
-> 
+>
 > - Aktualizace vašeho [Správce balíčků](http://docs.nuget.org/docs/start-here/installing-nuget) na nejnovější verzi.
 > - Nainstalujte [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx).
 > - Instalace webové platformy, vyhledejte a nainstalujte **technologie ASP.NET a webové nástroje 2013.1 pro Visual Studio 2012**. Tím se nainstaluje šablony sady Visual Studio pro funkci SignalR třídy jako **centra**.
 > - Některé šablony (jako například **třídy pro spuštění OWIN**) nebudou k dispozici; pro ty, použijte místo toho soubor třídy.
-> 
-> 
+>
+>
 > ## <a name="questions-and-comments"></a>Otázky a komentáře
-> 
+>
 > Napište prosím zpětnou vazbu o tom, jak vám líbilo v tomto kurzu a co můžeme zlepšit v komentářích v dolní části stránky. Pokud máte nějaké otázky, které přímo nesouvisejí, najdete v tomto kurzu, můžete je publikovat [fórum ASP.NET SignalR](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) nebo [StackOverflow.com](http://stackoverflow.com/).
 
 

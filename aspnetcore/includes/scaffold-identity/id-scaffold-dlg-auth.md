@@ -5,7 +5,7 @@ Spusťte generátor Identity:
 * Z **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt > **přidat** > **novou vygenerovanou položku**.
 * V levém podokně **přidat vygenerované uživatelské rozhraní** dialogového okna, vyberte **Identity** > **přidat**.
 * V **ADD Identity** dialogového okna, vyberte požadované možnosti.
-  * Vyberte existující stránku rozložení nebo rozložení souboru budou přepsány nesprávný kód. Při výběru existujícího souboru _Layout.cshtml je **není** přepsán.
+  * Vyberte existující stránku rozložení nebo rozložení souboru budou přepsány nesprávný kód. Pokud stávající  *\_Layout.cshtml* byl vybrán soubor, je **není** přepsán.
 
  Například `~/Pages/Shared/_Layout.cshtml` pro stránky Razor `~/Views/Shared/_Layout.cshtml` pro projekty MVC
 * Pokud chcete použít existující kontext dat, vyberte aspoň jeden soubor přepsat. Musíte vybrat aspoň jeden soubor a přidejte datový kontext.
@@ -50,5 +50,6 @@ PowerShell používá jako oddělovač příkazu středník. Při použití pros
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
 ```
 
-<a name="if-you-run-the-identity-scaffolder-without-specifying-the---files-flag-or-the---usedefaultui-flag-all-the-available-identity-ui-pages-will-be-created-in-your-project"></a>Pokud spustíte bez zadání generátor Identity `--files` příznak nebo `--useDefaultUI` příznak, všechny stránky k dispozici identita uživatelského rozhraní se vytvoří ve vašem projektu.
+Pokud spustíte bez zadání generátor Identity `--files` příznak nebo `--useDefaultUI` příznak, všechny stránky k dispozici identita uživatelského rozhraní se vytvoří ve vašem projektu.
+
 -------------

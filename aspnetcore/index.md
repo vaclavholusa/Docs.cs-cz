@@ -3,14 +3,14 @@ title: Úvod do ASP.NET Core
 author: rick-anderson
 description: Nechte si představit ASP.NET Core, což je platformově univerzální, vysoce výkonná architektura typu open-source, která slouží k vytváření moderních cloudových aplikací připojených k internetu.
 ms.author: riande
-ms.date: 02/28/2018
+ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 6de7f1bc8229c5de519e4064dda0a7061cf8b9c6
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077709"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454775"
 ---
 # <a name="introduction-to-aspnet-core"></a>Úvod do ASP.NET Core
 
@@ -40,8 +40,6 @@ ASP.NET Core nabízí následující výhody:
 * Možnost kompilace a spuštění v systémech Windows, Mac OS a Linux.
 * Architektura zaměřená na open-source a [komunitu](https://live.asp.net/)
 
-Architektura ASP.NET Core se celá dodává v balíčcích [NuGet](https://www.nuget.org/). Pomocí balíčků NuGet můžete svou aplikaci optimalizovat tak, aby obsahovala jen nezbytné závislosti. Ve skutečnosti vyžadují aplikace ASP.NET Core 2.x, jejichž cílem je .NET Core, jen [jeden balíček NuGet](xref:fundamentals/metapackage). K výhodám menší plochy aplikace patří důkladnější zabezpečení, menší údržba a větší výkon.
-
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>Vytváření webových rozhraní API a webového uživatelského rozhraní v ASP.NET Core MVC
 
 Architektura ASP.NET Core MVC nabízí funkce umožňující vytvářet [webová rozhraní API](xref:tutorials/index#build-web-apis) a [webové aplikace](xref:tutorials/index#build-web-apps):
@@ -52,7 +50,7 @@ Architektura ASP.NET Core MVC nabízí funkce umožňující vytvářet [webová
 * [Pomocné rutiny značky](xref:mvc/views/tag-helpers/intro) umožňují, aby se kód na straně serveru v souborech Razor podílel na vytváření a vykreslování prvků HTML.
 * Díky integrované podpoře [různých datových formátů a vyjednávání obsahu](xref:web-api/advanced/formatting) mohou vaše webová rozhraní API používat různí klienti, včetně prohlížečů a mobilních zařízení.
 * [Vazby modelu](xref:mvc/models/model-binding) automaticky mapují data požadavků HTTP na parametry metod akce.
-* [Ověření modelu](xref:mvc/models/validation) automaticky ověří stranu klienta i stranu serveru.
+* [Ověření modelu](xref:mvc/models/validation) automaticky provede ověření na straně klienta i serveru.
 
 ## <a name="client-side-development"></a>Vývoj klientské strany
 
@@ -78,5 +76,6 @@ Další informace naleznete v následujících materiálech:
 
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Kurzy k ASP.NET Core](xref:tutorials/index)
+* <xref:tutorials/publish-to-azure-webapp-using-vs>
 * [Základy ASP.NET Core](xref:fundamentals/index)
 * [Týdenní přehled novinek v komunitě ASP.NET](https://live.asp.net/) se zabývá pokrokem v týmových projektech a týmovými plány. Nabízí nové blogové příspěvky a software třetích stran.

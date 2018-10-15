@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: fundamentals/servers/index
-ms.openlocfilehash: f9a6f1ee1d080732f6a379f5be791c9e225ae0a5
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 161ab3fdf48e58d8c9af991dc5531e46d9c5adff
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911930"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325858"
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implementací webového serveru v ASP.NET Core
 
@@ -62,7 +62,7 @@ Pokud aplikace je přístupný z Internetu, Kestrel musíte použít službu IIS
 
 ![Kestrel nepřímo komunikuje přes Internet prostřednictvím reverzního proxy serveru, jako je například Apache, IIS nebo Nginx](kestrel/_static/kestrel-to-internet.png)
 
-Nejdůležitější důvod pomocí reverzního proxy serveru pro nasazení hraniční (vystavené pro provoz z Internetu) je zabezpečení. Verze 1.x Kestrel nemají funkcí důležité zabezpečení, ochranu před útoky z Internetu. To zahrnuje, ale není omezený na, odpovídající časové limity, žádost o velikosti omezení a omezení počtu souběžných připojení.
+Nejdůležitější důvod pomocí reverzního proxy serveru pro veřejnou hraniční server nasazení, které jsou vystaveny přímo k Internetu je zabezpečení. Verze 1.x Kestrel nemají funkcí důležité zabezpečení, ochranu před útoky z Internetu. To zahrnuje, ale není omezený na, odpovídající časové limity, žádost o velikosti omezení a omezení počtu souběžných připojení.
 
 Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
@@ -156,7 +156,7 @@ Při spuštění aplikace z příkazového řádku ve složce projektu [dotnet s
   * Cílová architektura: .NET Core 2.2 nebo vyšší
 * [Služba IIS (out-of-process)](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
-  * Edge připojení pomocí protokolu HTTP/2, ale připojení reverzního proxy serveru k Kestrel používá HTTP/1.1.
+  * Připojení k serveru edge veřejně přístupných používat HTTP/2, ale připojení reverzního proxy serveru na Kestrel používá HTTP/1.1.
   * Cílová architektura: není k dispozici pro nasazení na více instancí procesu služby IIS.
 
 ::: moniker-end
@@ -168,7 +168,7 @@ Při spuštění aplikace z příkazového řádku ve složce projektu [dotnet s
   * Cílová architektura: není k dispozici pro nasazení souboru HTTP.sys.
 * [Služba IIS (out-of-process)](xref:host-and-deploy/iis/index#http2-support)
   * Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
-  * Edge připojení pomocí protokolu HTTP/2, ale připojení reverzního proxy serveru k Kestrel používá HTTP/1.1.
+  * Připojení k serveru edge veřejně přístupných používat HTTP/2, ale připojení reverzního proxy serveru na Kestrel používá HTTP/1.1.
   * Cílová architektura: není k dispozici pro nasazení na více instancí procesu služby IIS.
 
 ::: moniker-end

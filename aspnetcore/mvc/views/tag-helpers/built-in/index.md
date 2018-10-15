@@ -3,23 +3,24 @@ title: ASP.NET Core integrované pomocné rutiny značek
 author: pkellner
 description: Zjistěte, jak ASP.NET Core integrovaných pomocných rutin značek zvýší vaši produktivitu.
 ms.author: riande
-ms.date: 09/18/2018
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 5d9425e0b68578c86a6f9a691322e0bb63a860fb
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 58840d6ecd09bd2ae7f96c046a0cb93c018f9645
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292307"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325481"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>ASP.NET Core integrované pomocné rutiny značek
 
 Podle [Peter Kellner](http://peterkellner.net)
 
-ASP.NET Core zahrnuje mnoho integrovaných pomocných rutin značek a zvýšit tak svou produktivitu. Tato část obsahuje základní informace o integrovaných pomocných rutin značek.
+Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
 > [!NOTE]
-> Existují vestavěné pomocných rutin značek, které nejsou popsány, protože se používá interně pomocí [Razor](xref:mvc/views/razor) modul zobrazení. Jedná se o pomocné rutiny značky pro ~ znaku rozšíří kořenová cesta webové stránky.
+> Existují vestavěné pomocných rutin značek, které nebyly popsány v dokumentaci. Tyto pomocné rutiny značek se používají interně pomocí [Razor](xref:mvc/views/razor) modul zobrazení. Jedná se o pomocné rutiny značky pro `~` znaku (tilda), které rozšíří kořenová cesta webové stránky.
 
 ## <a name="built-in-aspnet-core-tag-helpers"></a>ASP.NET Core integrované pomocné rutiny značek
 

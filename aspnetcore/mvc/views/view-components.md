@@ -5,12 +5,12 @@ description: Zjistěte, jak komponenty zobrazení se používají v ASP.NET Core
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: cf2cfcdb07271503b844e31940e90b7376db0a6f
-ms.sourcegitcommit: 599ebae5c2d6fcb22dfa6ae7d1f4bdfcacb79af4
+ms.openlocfilehash: 49c8be655f151e219c8fa0854dbcf510d7bbd158
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47211062"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325578"
 ---
 # <a name="view-components-in-aspnet-core"></a>Zobrazení komponenty v ASP.NET Core
 
@@ -75,20 +75,20 @@ Zobrazení komponenty definuje svou logikou v `InvokeAsync` metodu, která vrát
 
 Modul runtime vyhledává zobrazení v následující cesty:
 
-* Řetězec/Pages/součásti/\<view_component_name > /\<view_name >
-* /Views/\<controller_name > /Components/\<view_component_name > /\<view_name >
-* / Zobrazení/Shared/Components/\<view_component_name > /\<view_name >
+* Řetězec/Pages/součásti / {název komponenty zobrazení} / {název zobrazení}
+* /Components/ /views/ {název řadiče} {název komponenty zobrazení} / {název zobrazení}
+* / Zobrazení/Shared/Components / {View název komponenty} / {název zobrazení}
 
 Výchozí název zobrazení pro součást zobrazení je *výchozí*, což znamená, že váš soubor zobrazení se obvykle nazývá *stránku Default.cshtml*. Můžete zadat název jiné zobrazení, při vytváření komponenty výsledný objekt zobrazení, nebo při volání `View` metody.
 
-Doporučujeme pojmenovat soubor zobrazení *stránku Default.cshtml* a použít *zobrazení/Shared/Components/\<view_component_name > /\<view_name >* cestu. `PriorityList` Komponenta zobrazení používané v tomto příkladu používá *Views/Shared/Components/PriorityList/Default.cshtml* pro součásti zobrazení.
+Doporučujeme pojmenovat soubor zobrazení *stránku Default.cshtml* a použít *zobrazení/Shared/Components / {název komponenty zobrazení} / {název zobrazení}* cestu. `PriorityList` Komponenta zobrazení používané v tomto příkladu používá *Views/Shared/Components/PriorityList/Default.cshtml* pro součásti zobrazení.
 
 ## <a name="invoking-a-view-component"></a>Vyvolání komponenty zobrazení
 
 Chcete-li použít komponentu zobrazení, zavolejte následující uvnitř zobrazení:
 
 ```cshtml
-@Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
+@Component.InvokeAsync("Name of view component", {Anonymous Type Containing Parameters})
 ```
 
 Parametry předávané `InvokeAsync` metody. `PriorityList` z je vyvolána zobrazení komponenty vyvinuté v následujícím článku *Views/Todo/Index.cshtml* zobrazení souboru. V následujícím příkladu `InvokeAsync` metoda je volána s dva parametry:

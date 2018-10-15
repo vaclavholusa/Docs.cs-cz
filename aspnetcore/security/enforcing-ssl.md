@@ -1,16 +1,17 @@
 ---
 title: Vynucení protokolu HTTPS v ASP.NET Core
 author: rick-anderson
-description: Ukazuje, jak chcete vyžadovat protokol HTTPS/TLS v ASP.NET Core webové aplikace.
+description: Zjistěte, jak chcete vyžadovat protokol HTTPS/TLS ve webové aplikaci ASP.NET Core.
 ms.author: riande
-ms.date: 2/9/2018
+ms.custom: mvc
+ms.date: 10/11/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: 6e16191b1a4627e683fd2281e5556b2a6e84c082
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: b4c058d3b4f00276043d9520d756e62ed8cac5d9
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523139"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325598"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>Vynucení protokolu HTTPS v ASP.NET Core
 
@@ -30,6 +31,7 @@ Tento dokument ukazuje, jak:
 > * Ukončete připojení s stavový kód 400 (Chybný požadavek) a není obsluhovat žádosti.
 
 <a name="require"></a>
+
 ## <a name="require-https"></a>Vyžadovat protokol HTTPS
 
 ::: moniker range=">= aspnetcore-2.1"
@@ -47,38 +49,52 @@ Následující kód volá `UseHttpsRedirection` v `Startup` třídy:
 
 Předchozí zvýrazněný kód:
 
-* Používá výchozí [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) (`Status307TemporaryRedirect`).
+* Používá výchozí [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) ([Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect)).
 * Používá výchozí [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport) (null), pokud není přepsán `ASPNETCORE_HTTPS_PORT` proměnné prostředí nebo [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature).
 
-> [!WARNING] 
->Port musí být k dispozici pro daný middleware přesměrovat na protokol HTTPS. Pokud není port je k dispozici, nedojde k přesměrování na protokol HTTPS. HTTPS port se dá nastavit některým z následujících nastavení:
-> 
->* `HttpsRedirectionOptions.HttpsPort` 
->* `ASPNETCORE_HTTPS_PORT` Proměnné prostředí. 
->* Při vývoji, adresu url HTTPS v *launchsettings.json*. 
->* Adresu url HTTPS nakonfigurovaná přímo na Kestrel nebo HttpSys. 
+Doporučujeme používat dočasné přesměrování spíše než trvalé přesměrování jako odkaz ukládání do mezipaměti může způsobit nestabilní chování ve vývojovém prostředí. Doporučujeme používat [HSTS](#hsts) na signál pro klienty, kteří pouze zabezpečit prostředek požadavků odesílaných do aplikace (jenom v produkčním prostředí).
+
+> [!WARNING]
+> Port musí být k dispozici pro daný middleware přesměrovat na protokol HTTPS. Pokud je k dispozici žádný port, nedojde k přesměrování na protokol HTTPS. HTTPS port se dá nastavit některým z následujících postupů:
+>
+> * Nastavte `HttpsRedirectionOptions.HttpsPort`.
+> * Nastavte `ASPNETCORE_HTTPS_PORT` proměnné prostředí.
+> * Při vývoji, nastavte adresu URL HTTPS *launchsettings.json*.
+> * Konfigurace koncového bodu adresy URL HTTPS [Kestrel](xref:fundamentals/servers/kestrel) nebo [HTTP.sys](xref:fundamentals/servers/httpsys).
+>
+> Při Kestrel nebo ovladač HTTP.sys se používá jako veřejnou hraniční server, musí být Kestrel nebo ovladač HTTP.sys nakonfigurovaná k naslouchání na obojí:
+>
+> * Zabezpečený port, ve kterém se klient přesměruje (obvykle 443 v produkčním prostředí a 5001 ve vývoji).
+> * Nezabezpečené port (standardně 80 v produkčním prostředí) a 5000 ve vývoji.
+>
+> Nezabezpečené port musí být přístupné pro klienta v pořadí pro aplikaci pro příjem nezabezpečený požadavek a přesměrování na zabezpečený port.
+>
+> Všechny brány firewall mezi klientem a serverem musí mít také porty otevřené pro provoz.
+>
+> Další informace najdete v tématu [konfigurace koncového bodu Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration) nebo <xref:fundamentals/servers/httpsys>.
 
 Následující zvýrazněný kód volá [AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection) konfigurace middlewaru možností:
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=14-99)]
 
-Volání `AddHttpsRedirection` jenom je potřeba změnit hodnoty ` HttpsPort` nebo ` RedirectStatusCode`;
+Volání `AddHttpsRedirection` jenom je potřeba změnit hodnoty `HttpsPort` nebo `RedirectStatusCode`.
 
 Předchozí zvýrazněný kód:
 
-* Nastaví [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) k `Status307TemporaryRedirect`, což je výchozí hodnota.
+* Nastaví [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) k [Status307TemporaryRedirect](/dotnet/api/microsoft.aspnetcore.http.statuscodes.status307temporaryredirect), což je výchozí hodnota. Použijte pole [StatusCodes](/dotnet/api/microsoft.aspnetcore.http.statuscodes) třídu pro přiřazení k `RedirectStatusCode`.
 * Nastaví HTTPS port 5001. Výchozí hodnota je 443.
 
 Automaticky nastavit port následujících mechanismů:
 
 * Middleware najdou porty prostřednictvím [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) když platí tyto podmínky:
 
-   * Kestrel nebo ovladač HTTP.sys se používá přímo s koncovým bodům protokol HTTPS (platí také pro spuštění aplikace pomocí ladicího programu nástroje Visual Studio Code).
-   * Pouze **jeden port HTTPS** používají aplikaci.
+  * Kestrel nebo ovladač HTTP.sys se používá přímo s koncovým bodům protokol HTTPS (platí také pro spuštění aplikace pomocí ladicího programu nástroje Visual Studio Code).
+  * Pouze **jeden port HTTPS** používají aplikaci.
 
 * Visual Studio se používá:
-   * Služba IIS Express má povolený protokol HTTPS.
-   * *launchSettings.json* nastaví `sslPort` pro službu IIS Express.
+
+  * Služba IIS Express má povolený protokol HTTPS.
+  * *launchSettings.json* nastaví `sslPort` pro službu IIS Express.
 
 > [!NOTE]
 > Při spuštění aplikace za reverzní proxy server (například služby IIS, IIS Express), `IServerAddressesFeature` není k dispozici. Port musí být ručně nakonfigurované. Pokud port není nastavena, přesměrování požadavků.
@@ -130,6 +146,7 @@ Globálně vyžadování protokolu HTTPS (`options.Filters.Add(new RequireHttpsA
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="hsts"></a>
+
 ## <a name="http-strict-transport-security-protocol-hsts"></a>Protokol zabezpečení striktní přenos HTTP (HSTS)
 
 Za [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [striktní přenos HTTP zabezpečení (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) je vylepšení zabezpečení přihlášení, která je zadána pomocí hlavičky odpovědi webové aplikace. Když [prohlížeč, který podporuje HSTS](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet#Browser_Support) obdrží toto záhlaví:
@@ -156,7 +173,7 @@ Následující kód:
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=5-12)]
 
 * Nastaví parametr přednačtení záhlaví zabezpečení přenosu Strict. Předinstalační není součástí [specifikaci RFC HSTS](https://tools.ietf.org/html/rfc6797), ale podporuje webových prohlížečů přednačtení HSTS weby na čerstvou instalaci. Zobrazit [ https://hstspreload.org/ ](https://hstspreload.org/) Další informace.
-* Umožňuje [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), které se vztahují zásady HSTS na hostiteli subdomény. 
+* Umožňuje [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), které se vztahují zásady HSTS na hostiteli subdomény.
 * Explicitně nastaví parametr max-age záhlaví zabezpečení přenosu Strict na 60 dnů. Pokud není nastavena výchozí hodnota je 30 dní. Najdete v článku [max-age směrnice](https://tools.ietf.org/html/rfc6797#section-6.1.1) Další informace.
 * Přidá `example.com` do seznamu hostitelů mají vyloučit.
 
@@ -173,11 +190,12 @@ Předchozí příklad ukazuje, jak přidat další hostitele.
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="https"></a>
-## <a name="opt-out-of-https-on-project-creation"></a>Výslovný nesouhlas s HTTPS při vytvoření projektu
 
-Šablony ASP.NET Core 2.1 nebo novější webových aplikací (ze sady Visual Studio nebo příkazového řádku dotnet) povolit [HTTPS přesměrování](#require) a [HSTS](#hsts). Pro nasazení, které nevyžadují protokol HTTPS je můžete odhlásit protokolu HTTPS. Například některé back-endových služeb, kde HTTPS se zpracovává externě na hraničních zařízeních, pomocí protokolu HTTPS v každém uzlu, není nutná.
+## <a name="opt-out-of-httpshsts-on-project-creation"></a>Odhlásit HTTPS/HSTS při vytvoření projektu
 
-Odhlásit protokolu HTTPS:
+V některých scénářích služby back-endu kde zabezpečení připojení probíhá v veřejnou hraniční části sítě není vyžadována konfigurace zabezpečení připojení v každém uzlu. Webová aplikace vygenerované ze šablony v sadě Visual Studio nebo z [dotnet nové](/dotnet/core/tools/dotnet-new) povolit příkaz [HTTPS přesměrování](#require) a [HSTS](#hsts). Pro nasazení, které nevyžadují tyto scénáře které můžete výslovný nesouhlas s HTTPS/HSTS při vytvoření aplikace ze šablony.
+
+Chcete odhlásit HTTPS/HSTS:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/01/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
-ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
+ms.openlocfilehash: 8b6517b009a289d6b93e2cc1bea60ecace61a3c6
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44089896"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326157"
 ---
 # <a name="aspnet-core-web-host"></a>Webového hostitele ASP.NET Core
 
@@ -46,10 +46,10 @@ public class Program
 * Načtení [konfigurace hostitele](#host-configuration-values) od:
   * Proměnné prostředí s předponou `ASPNETCORE_` (například `ASPNETCORE_ENVIRONMENT`).
   * Argumenty příkazového řádku.
-* Konfigurace aplikace načte z:
+* Načte konfiguraci aplikací v uvedeném pořadí od:
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
-  * [Tajné klíče uživatelů](xref:security/app-secrets) při spuštění aplikace `Development` prostředí s využitím vstupní sestavení.
+  * [Tajný klíč správce](xref:security/app-secrets) při spuštění aplikace `Development` prostředí s využitím vstupní sestavení.
   * Proměnné prostředí.
   * Argumenty příkazového řádku.
 * Nakonfiguruje [protokolování](xref:fundamentals/logging/index) pro výstup konzoly a ladění. Protokolování zahrnuje [filtrování protokolu](xref:fundamentals/logging/index#log-filtering) pravidel specifikovaných v části Konfigurace protokolování *appsettings.json* nebo *appsettings. { Prostředí} .json* souboru.
@@ -164,7 +164,7 @@ host.Run();
 
 ::: moniker-end
 
-Při nastavování hostitele, [konfigurovat](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) metody lze zadat. Pokud `Startup` Zadaná třída, musíte definovat `Configure` metoda. Další informace naleznete v tématu <xref:fundamentals/startup>. Více volání `ConfigureServices` připojit k sobě navzájem. Více volání `Configure` nebo `UseStartup` na `WebHostBuilder` nahradit předchozí nastavení.
+Při nastavování hostitele, [konfigurovat](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) a [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) metody lze zadat. Pokud `Startup` Zadaná třída, musíte definovat `Configure` metoda. Další informace naleznete v tématu <xref:fundamentals/startup>. Při vícenásobném volání metody `ConfigureServices` se přidají služby ze všech volání. Více volání `Configure` nebo `UseStartup` na `WebHostBuilder` nahradit předchozí nastavení.
 
 ## <a name="host-configuration-values"></a>Hodnoty konfigurace hostitele
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/30/2018
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 4ce808ec4241ab2fc3c2fb81c3fdb15dd853cd90
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: e549bc3adf3efa32b3ac975cf04a35f508a554d5
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342273"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325624"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio Code
 
@@ -63,7 +63,7 @@ Zobrazit [nápovědy Visual Studio Code](#visual-studio-code-help) tipy pro pou�
 
 :::moniker range=">= aspnetcore-2.1"
 
-Vytvoření nového projektu ASP.NET Core 2.1 nebo novější přidá [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) odkaz na balíček *TodoApi.csproj* souboru. Přidat `Version` atribut, pokud ještě není zadán.
+Vytvoření nového projektu ASP.NET Core 2.1 nebo novější přidá [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) odkaz na balíček *TodoApi.csproj* souboru:
 
 [!code-xml[](first-web-api/samples/2.1/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
 

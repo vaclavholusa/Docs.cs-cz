@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 46bcb7822e93862d49923c813140ef453b5e27e5
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 12075f68dd828680f6bfbd46ea22ebd7bbe52dc7
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913291"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326014"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
@@ -40,7 +40,7 @@ Informace o hostování v Azure najdete v tématu <xref:host-and-deploy/azure-ap
   * Protokol TLS 1.2 nebo vyšší připojení
 * Mimo proces
   * Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
-  * Edge připojení pomocí protokolu HTTP/2, ale reverzní proxy server připojení k [Kestrel server](xref:fundamentals/servers/kestrel) používá HTTP/1.1.
+  * Připojení k serveru edge veřejně přístupných pomocí protokolu HTTP/2, ale reverzní proxy server připojení k [Kestrel server](xref:fundamentals/servers/kestrel) používá HTTP/1.1.
   * Cílová architektura: není k dispozici pro nasazení mimo proces, protože připojení HTTP/2 je zpracována zcela službou IIS.
   * Protokol TLS 1.2 nebo vyšší připojení
 
@@ -55,7 +55,7 @@ Další informace o modelech hostování a mimo proces, najdete v článku <xref
 [HTTP/2](https://httpwg.org/specs/rfc7540.html) se podporuje pro nasazení mimo proces, které splňují základní požadavky na následující:
 
 * Windows Server 2016 nebo Windows 10 nebo novější; IIS 10 nebo novější.
-* Edge připojení pomocí protokolu HTTP/2, ale reverzní proxy server připojení k [Kestrel server](xref:fundamentals/servers/kestrel) používá HTTP/1.1.
+* Připojení k serveru edge veřejně přístupných pomocí protokolu HTTP/2, ale reverzní proxy server připojení k [Kestrel server](xref:fundamentals/servers/kestrel) používá HTTP/1.1.
 * Cílová architektura: není k dispozici pro nasazení mimo proces, protože připojení HTTP/2 je zpracována zcela službou IIS.
 * Protokol TLS 1.2 nebo vyšší připojení
 

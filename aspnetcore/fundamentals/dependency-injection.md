@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 33fae5d87029c8b3afdc321e0247555c1e479d07
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: afbd8fa9eedefe97fa993d63a1edc6d0cc4ab0c4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912615"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325988"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injektáž závislostí v ASP.NET Core
 
@@ -249,7 +249,7 @@ Konstruktory mohou přijímat argumenty, které nejsou součástí injektáž z�
 
 Když jsou vyřešeny služby `IServiceProvider` nebo `ActivatorUtilities`, vyžaduje konstruktor vkládání *veřejné* konstruktoru.
 
-Když jsou vyřešeny služby `ActivatorUtilities`, konstruktor vkládání vyžaduje tento pouze jeden použít konstruktor existuje. Přetížení konstruktoru jsou podporované, ale může existovat pouze jedním přetížením, jehož argumenty lze všechny splnit vkládání závislostí.
+Když jsou vyřešeny služby `ActivatorUtilities`, vkládání konstruktor vyžaduje, že pouze jeden použít konstruktor existuje. Přetížení konstruktoru jsou podporované, ale může existovat pouze jedním přetížením, jehož argumenty lze všechny splnit vkládání závislostí.
 
 ## <a name="entity-framework-contexts"></a>Kontext Entity Framework
 
@@ -287,9 +287,9 @@ Rozhraní jsou implementovány v `Operation` třídy. `Operation` Konstruktor vy
 
 `OperationService` Zaregistrován to záleží na každé z nich `Operation` typy. Když `OperationService` žádá pomocí vkládání závislostí, obdrží buď novou instanci třídy každé služby nebo stávající instance podle doby života ze závislých služeb.
 
-* Pokud přechodné služby se vytvoří při požadavku `OperationsId` z `IOperationTransient` služby se liší od `OperationsId` z `OperationService`. `OperationService` obdrží novou instanci třídy `IOperationTransient` třídy. Vrací novou instanci jinou `OperationsId`.
-* Pokud vymezené služby se vytvoří každý požadavek, `OperationsId` z `IOperationScoped` služba je stejné jako u `OperationService` v rámci požadavku. Obě služby napříč požadavky, sdílet jiné `OperationsId` hodnotu.
-* Pokud jsou služby typu singleton a instanci typu singleton vytvořit jednou a použít v rámci všech požadavků a všemi službami, `OperationsId` je konstantní napříč všemi požadavky služby.
+* Pokud přechodné služby se vytvoří při požadavku `OperationId` z `IOperationTransient` služby se liší od `OperationId` z `OperationService`. `OperationService` obdrží novou instanci třídy `IOperationTransient` třídy. Vrací novou instanci jinou `OperationId`.
+* Pokud vymezené služby se vytvoří každý požadavek, `OperationId` z `IOperationScoped` služba je stejné jako u `OperationService` v rámci požadavku. Obě služby napříč požadavky, sdílet jiné `OperationId` hodnotu.
+* Pokud jsou služby typu singleton a instanci typu singleton vytvořit jednou a použít v rámci všech požadavků a všemi službami, `OperationId` je konstantní napříč všemi požadavky služby.
 
 ::: moniker range=">= aspnetcore-2.1"
 

@@ -1,58 +1,62 @@
 ---
-title: Obrázek značky Pomocník ASP.NET Core
+title: Pomocná rutina značky obrázku v ASP.NET Core
 author: pkellner
-description: Ukazuje, jak pracovat s pomocná značka obrázku
+description: Ukazuje, jak pracovat s pomocná rutina značky obrázku.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 7ed160354b25aa0183ac49db93307b1f1b4d0666
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5eb74a6698911a1c594d11573192cb1b9ed53b49
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276640"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325832"
 ---
-# <a name="image-tag-helper-in-aspnet-core"></a>Obrázek značky Pomocník ASP.NET Core
+# <a name="image-tag-helper-in-aspnet-core"></a>Pomocná rutina značky obrázku v ASP.NET Core
 
-Podle [Petr Kellner](http://peterkellner.net) 
+Podle [Peter Kellner](http://peterkellner.net)
 
-Pomocná značka obrázku rozšiřuje `img` (`<img>`) značky. Vyžaduje `src` značky a taky `boolean` atribut `asp-append-version`.
+Pomocná rutina značky obrázku rozšiřuje `<img>` značky, které poskytují chování mezipaměti nejnovějších souborů statické bitové kopie.
 
-Pokud zdroj bitové kopie (`src`) je statický soubor na webovém serveru hostitele se připojí jedinečný mezipaměti nejnovějších řetězec jako parametr dotazu na zdroj bitové kopie. Tím se zajistí, že pokud se změní soubor na webovém serveru hostitele, adresu URL jedinečný požadavku je vygenerováno, která zahrnuje parametr aktualizované žádosti. Mezipaměť nejnovějších řetězec je jedinečnou hodnotu představující hodnotu hash souboru statické bitové kopie.
+Řetězec nejnovějších mezipaměti je jedinečná hodnota, který představuje hodnotu hash souboru statický obrázek připojí k adrese URL prostředku. Jedinečný řetězec vyzve klienty (a některé proxy servery), aby znovu načíst obrázek z hostitele webového serveru a ne z mezipaměti klienta.
 
-Pokud zdroj bitové kopie (`src`) není statický soubor (například soubor nebo vzdálenou adresou URL neexistuje na serveru), `<img>` tagu `src` atribut je generována žádné mezipaměti nejnovějších parametr řetězce dotazu.
+Pokud zdroj obrázku (`src`) je statický soubor na webovém serveru hostitele:
 
-## <a name="image-tag-helper-attributes"></a>Atributy pomocné rutiny značka obrázku
+* Jedinečné nejnovějších mezipaměti řetězec je připojen jako parametr dotazu na zdroj bitové kopie.
+* Pokud se změní soubor na webovém serveru hostitele, je generována jedinečný požadavek URL, která zahrnuje parametr aktualizované požadavku.
 
+Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
-### <a name="asp-append-version"></a>ASP připojit verze
-
--Li zadána spolu s `src` atribut pomocná značka obrázku je volána.
-
-Příklad platné `img` Pomocník značky:
-
-```cshtml
-<img src="~/images/asplogo.png" 
-    asp-append-version="true"  />
-```
-
-Pokud se statický soubor existuje v adresáři *... Wwwroot/Images/asplogo.PNG* generovaný kód jazyka html je podobný následujícímu (hodnota hash bude jiný):
-
-```html
-<img 
-    src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM"/>
-```
-
-Hodnota přiřazená k parametr `v` je hodnota hash souboru na disku. Pokud webový server nemůže získat přístup pro čtení ke statickému souboru odkazováno, ne `v` parametry se přidá do `src` atribut.
-
-- - -
+## <a name="image-tag-helper-attributes"></a>Atributy pomocné rutiny značky obrázku
 
 ### <a name="src"></a>src
 
-Pokud chcete aktivovat pomocná značka obrázku, src atribut je požadován na `<img>` elementu. 
+K aktivaci pomocná rutina značky obrázku `src` na je vyžadován atribut `<img>` elementu.
 
-> [!NOTE]
-> Pomocník značka obrázku používá `Cache` zprostředkovatele na serveru místní web ukládat počítané `Sha512` daného souboru. Pokud je soubor požádat znovu `Sha512` nemusí být přepočítána. Je mezipaměť zneplatněna pomocí souboru sledovacího procesu, který je připojen k souboru po souboru `Sha512` se počítá.
+Zdroj obrázku (`src`) musí odkazovat na fyzický statický soubor na serveru. Pokud `src` je identifikátor URI vzdálené mezipaměti nejnovějších parametru řetězce dotazu se nevygeneroval.
+
+### <a name="asp-append-version"></a>ASP přidat verzi
+
+Při `asp-append-version` zadán s parametrem `true` hodnotu spolu s `src` atribut pomocná rutina značky obrázku je vyvolána.
+
+Následující příklad používá pomocná rutina značky obrázku:
+
+```cshtml
+<img src="~/images/asplogo.png" asp-append-version="true" />
+```
+
+Pokud ke statickému souboru v adresáři existuje */wwwroot/image/*, generovaný kód HTML je podobný následujícímu (hodnota hash se lišit):
+
+```html
+<img src="/images/asplogo.png?v=Kl_dqr9NVtnMdsM2MUg4qthUnWZm5T1fCEimBPWDNgM" />
+```
+
+Hodnota přiřazená k parametru `v` je hodnota hash *asplogo.png* souboru na disku. Pokud webový server nelze získat přístup pro čtení k statických souborů žádné `v` parametru se přidá do `src` atribut v vykreslované značky.
+
+## <a name="hash-caching-behavior"></a>Hash – chování ukládání do mezipaměti
+
+Pomocná rutina značky obrázku využívá poskytovatele mezipaměti v místní webový server k ukládání vypočítané `Sha512` hash daný soubor. Pokud soubor je požadováno více než jednou, není přepočítá hodnoty hash. Mezipaměť je ukončit platnost souboru sledovací proces, který se připojuje k souboru po souboru `Sha512` vypočítat hodnotu hash. Při změně souboru na disku, nová hodnota hash se počítá a uložili do mezipaměti.
 
 ## <a name="additional-resources"></a>Další zdroje
 

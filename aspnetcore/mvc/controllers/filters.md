@@ -3,14 +3,14 @@ title: Filtry v ASP.NET Core
 author: ardalis
 description: Zjistěte, jak filtry fungují a jak je používat v ASP.NET Core MVC.
 ms.author: riande
-ms.date: 08/15/2018
+ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: e20d934a17337d404249220d703ac4bb7164dfa6
-ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
+ms.openlocfilehash: 8b3291474883f2cad35283c6104327e03fcc3fec
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402156"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326027"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
@@ -204,13 +204,15 @@ Pokud vaše filtry mají závislosti, které potřebujete získat přístup z DI
 
 ### <a name="servicefilterattribute"></a>ServiceFilterAttribute
 
-A `ServiceFilter` načte z DI instance filtru. Přidání filtru do kontejneru v `ConfigureServices`, odkazovat v `ServiceFilter` atribut
+Tyto typy implementace filtr služby jsou registrovány v DI. A `ServiceFilterAttribute` načte z DI instance filtru. Přidat `ServiceFilterAttribute` do kontejneru v `Startup.ConfigureServices`, odkazovat v `[ServiceFilter]` atribut:
 
 [!code-csharp[](./filters/sample/src/FiltersSample/Startup.cs?name=snippet_ConfigureServices&highlight=11)]
 
 [!code-csharp[](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_ServiceFilter&highlight=1)]
 
-Pomocí `ServiceFilter` i bez registrace výsledky typu filtru výjimek:
+Při použití `ServiceFilterAttribute`a nastavte `IsReusable` se o nápovědu, která instance filtru *může* znovu použít mimo byl vytvořen v rámci oboru požadavku. Rozhraní poskytuje žádné záruky, že vytvoří jedna instance filtru nebo filtr nebudou vyžádána znovu z kontejnerů DI někdy později. Vyhněte se použití `IsReusable` při použití filtr, který závisí na službách s životností jiného než typu singleton.
+
+Pomocí `ServiceFilterAttribute` i bez registrace výsledky typu filtru výjimek:
 
 ```
 System.InvalidOperationException: No service for type
@@ -226,7 +228,9 @@ System.InvalidOperationException: No service for type
 Vzhledem k tomuto rozdílu:
 
 * Typy, které jsou odkazovány pomocí `TypeFilterAttribute` nemusí být nejprve registrováno s kontejnerem.  Mají jejich závislosti pracující na kontejneru. 
-* `TypeFilterAttribute` Volitelně může přijímat argumenty konstruktoru typu. 
+* `TypeFilterAttribute` Volitelně může přijímat argumenty konstruktoru typu.
+
+Při použití `TypeFilterAttribute`a nastavte `IsReusable` se o nápovědu, která instance filtru *může* znovu použít mimo byl vytvořen v rámci oboru požadavku. Rozhraní poskytuje žádnou záruku, že jedna instance filtru bude vytvořen. Vyhněte se použití `IsReusable` při použití filtr, který závisí na službách s životností jiného než typu singleton.
 
 Následující příklad ukazuje, jak předat argumenty typu pomocí `TypeFilterAttribute`:
 

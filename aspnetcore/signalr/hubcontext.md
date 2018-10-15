@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 2d7d37b655bf7dbb71b321919314bbb8bef8db17
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: bb07a3b5c6e153092635fa4e1283619777865a53
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339975"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325351"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>Odeslání zprávy z mimo rozbočovač
 
@@ -22,14 +22,14 @@ Rozbočovače SignalR je základní abstrakci pro odesílání zpráv do klient�
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubcontext/sample/) [(jak stáhnout)](xref:tutorials/index#how-to-download-a-sample)
 
-## <a name="get-an-instance-of-ihubcontext"></a>Získání instance typu `IHubContext`
+## <a name="get-an-instance-of-ihubcontext"></a>Získat instanci IHubContext
 
 V knihovně SignalR technologie ASP.NET Core, můžete přístup k instanci `IHubContext` pomocí vkládání závislostí. Můžete vložit instance `IHubContext` do kontroleru, middleware nebo jiné služby DI. Použijte instanci pro odesílání zpráv do klientů.
 
 > [!NOTE]
 > Tím se liší od ASP.NET 4.x SignalR, která používá GlobalHost k poskytnutí přístupu k `IHubContext`. ASP.NET Core má rozhraní injektáž závislostí, které eliminuje potřebu této globální typu singleton.
 
-### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>Vloží instanci `IHubContext` v kontroleru
+### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>Vložit instance IHubContext v kontroleru
 
 Můžete vložit instance `IHubContext` do kontroleru tak, že ho přidáte do konstruktoru:
 
@@ -39,7 +39,7 @@ Nyní, s přístupem k instanci `IHubContext`, jako kdyby byly v centru samotné
 
 [!code-csharp[IHubContext](hubcontext/sample/Controllers/HomeController.cs?range=21-25)]
 
-### <a name="get-an-instance-of-ihubcontext-in-middleware"></a>Získat instanci `IHubContext` v middlewaru
+### <a name="get-an-instance-of-ihubcontext-in-middleware"></a>Získat instanci IHubContext v middlewaru
 
 Přístup `IHubContext` v rámci kanálu middleware takto:
 

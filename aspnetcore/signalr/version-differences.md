@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 2f3458f27fd7f22339751e0734dd8c5da709a3c0
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: ea2de2606a99de70fa645c0c42303525fea0a44e
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340118"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325533"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>Rozdíly mezi funkce SignalR technologie ASP.NET a technologie SignalR technologie ASP.NET Core
 
@@ -31,7 +31,7 @@ Funkce SignalR technologie ASP.NET Core není kompatibilní s klientů nebo serv
 
 ### <a name="automatic-reconnects"></a>Automatické připojování
 
-Automatické připojování již nejsou podporovány. Dříve SignalR pokusil připojit k serveru, pokud připojení bylo zrušeno. Když teď aplikaci filled klient je odpojen, uživatel musí explicitně spustit nové připojení, pokud se chcete znovu připojit.
+Automatické připojování nepodporují funkce SignalR technologie ASP.NET Core. Pokud klient je odpojen, uživatel musí explicitně spustit nové připojení, aby připojení bylo možné. V funkce SignalR technologie ASP.NET SignalR pokusí znovu připojit k serveru, pokud připojení se ukončí. 
 
 ### <a name="protocol-support"></a>Podpora protokolu
 

@@ -3,60 +3,67 @@ title: Pomocná rutina značky prostředí v ASP.NET Core
 author: pkellner
 description: Pomocná rutina značky prostředí ASP.NET Core definované, včetně všech vlastností
 ms.author: riande
-ms.date: 07/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
-ms.openlocfilehash: 4a283a3a03aa6cac228ec6effd02e3f1095be260
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 379f58ed37329f047d53adf1dcfdfd2ad6a6ca4e
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342221"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325234"
 ---
 # <a name="environment-tag-helper-in-aspnet-core"></a>Pomocná rutina značky prostředí v ASP.NET Core
 
-Podle [Peter Kellner](http://peterkellner.net) a [Ateya Hisham Bin](https://twitter.com/hishambinateya)
+Podle [Peter Kellner](http://peterkellner.net), [Hisham Bin Ateya](https://twitter.com/hishambinateya), a [Luke Latham](https://github.com/guardrex)
 
-Pomocná rutina značky prostředí podmíněně vykreslí obsah uzavřené podle aktuální hostitelského prostředí. Jeho jediný atribut `names` je čárkami oddělený seznam prostředí názvů, který pokud všechny odpovídaly aktuálním prostředí, aktivují uzavřené obsah k vykreslení.
+Pomocná rutina značky prostředí podmíněně vykreslí obsah uzavřené na základě aktuálního [hostitelské prostředí](xref:fundamentals/environments). Pomocná rutina značky prostředí jeden atribut, `names`, je čárkou oddělený seznam názvů prostředí. Pokud se názvy zadané prostředí shodují v aktuálním prostředí, se uzavřené obsah zobrazí.
+
+Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
 ## <a name="environment-tag-helper-attributes"></a>Atributy pomocné rutiny značky prostředí
 
 ### <a name="names"></a>názvy
 
-Přijímá jediný název hostitelské prostředí nebo čárkami oddělený seznam hostování názvy prostředí, které aktivují vykreslování uzavřené obsah.
+`names` Přijímá jediný název hostitelské prostředí nebo čárkami oddělený seznam hostování názvy prostředí, které aktivují vykreslování uzavřené obsah.
 
-Tyto hodnoty jsou ve srovnání s aktuální hodnota vrácená z ASP.NET Core statickou vlastnost `HostingEnvironment.EnvironmentName`.  Tato hodnota je jeden z následujících: **pracovní**; **Vývoj** nebo **produkční**. Porovnání ignoruje velikost písmen.
+Hodnoty prostředí jsou ve srovnání s aktuální hodnotu vrácenou příkazem [IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*). Porovnání ignoruje velikost písmen.
 
-Příkladem platné `environment` je pomocná rutina značky:
+Následující příklad používá pomocná rutina značky prostředí. Pokud hostitelského prostředí je pracovní nebo produkční prostředí, je zobrazení obsahu:
 
 ```cshtml
 <environment names="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
+
+::: moniker range=">= aspnetcore-2.0"
 
 ## <a name="include-and-exclude-attributes"></a>zahrnutí a vyloučení atributy
 
-ASP.NET Core 2.x přidá `include`  &  `exclude` atributy. Tyto atributy určují, vykreslování uzavřené obsahu na základě zahrnuté ani vyloučené hostování prostředí názvů.
+`include` & `exclude` atributy ovládacího prvku vykreslování uzavřené obsahu na základě zahrnuté ani vyloučené hostování prostředí názvů.
 
-### <a name="include-aspnet-core-20-and-later"></a>Zahrnout ASP.NET Core 2.0 a vyšší
+### <a name="include"></a>include
 
-`include` Vlastnost má podobné chování `names` atribut v ASP.NET Core 1.0.
+`include` Vlastnost vykazuje podobné chování jako `names` atribut. Uvedené v prostředí `include` hodnota atributu musí odpovídat aplikace hostitelské prostředí ([IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*)) k vykreslení obsahu `<environment>` značky.
 
 ```cshtml
 <environment include="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
 
-### <a name="exclude-aspnet-core-20-and-later"></a>vyloučit ASP.NET Core 2.0 a vyšší
+### <a name="exclude"></a>exclude
 
-Naproti tomu `exclude` vlastnost `EnvironmentTagHelper` vykreslení uzavřené obsahu pro všechny názvy hostitelských prostředí s výjimkou vymazáním, který jste zadali.
+Rozdíl od `include` atribut obsah `<environment>` je vykreslen při hostování prostředí neodpovídá uvedené v prostředí `exclude` hodnotu atributu.
 
 ```cshtml
 <environment exclude="Development">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is not Development</strong>
 </environment>
 ```
+
+::: moniker-end
 
 ## <a name="additional-resources"></a>Další zdroje
 

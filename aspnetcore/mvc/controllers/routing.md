@@ -5,12 +5,12 @@ description: Zjistěte, jak ASP.NET Core MVC používá směrování Middleware 
 ms.author: riande
 ms.date: 09/17/2018
 uid: mvc/controllers/routing
-ms.openlocfilehash: d66c2f14adf55dd0c4a7c3adfad7e5737e4deda1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: a5f2670ed8742b7ff67b0494d7bdb37d919349f4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011650"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326079"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>Směrování na akce kontroleru v ASP.NET Core
 
@@ -383,7 +383,7 @@ Stránky Razor směrování a směrování sdílení řadiče MVC implementace. 
 
 ## <a name="token-replacement-in-route-templates-controller-action-area"></a>Token nahrazení v šablonách tras ([kontroler], [action] [Oblast])
 
-Pro usnadnění práce trasy atributů podporují *token nahrazení* uzavřením token do hranatých závorek (`[`, `]`). Tokeny `[action]`, `[area]`, a `[controller]` nahradí hodnoty názvu akce, názvu oblasti a názvu kontroleru z akce, kde je definován trasy. V tomto příkladu může akce odpovídat cesty adresy URL, jak je popsáno v komentářích:
+Pro usnadnění práce trasy atributů podporují *token nahrazení* uzavřením token do hranatých závorek (`[`, `]`). Tokeny `[action]`, `[area]`, a `[controller]` se nahradí hodnotami názvu akce, názvu oblasti a názvu kontroleru z akce, kde je definován trasy. V následujícím příkladu akce odpovídat cesty adresy URL, jak je popsáno v komentářích:
 
 [!code-csharp[](routing/sample/main/Controllers/ProductsController.cs?range=7-11,13-17,20-22)]
 
@@ -407,9 +407,56 @@ public class ProductsController : MyBaseController
 }
 ```
 
-Nahrazování tokenů platí také pro názvy tras definován atribut trasy. `[Route("[controller]/[action]", Name="[controller]_[action]")]` vygeneruje název jedinečný trasy pro každou akci.
+Nahrazování tokenů platí také pro názvy tras definován atribut trasy. `[Route("[controller]/[action]", Name="[controller]_[action]")]` vygeneruje název jedinečný trasa pro každou akci.
 
 Tak, aby odpovídaly oddělovač literální nahrazení tokenu `[` nebo `]`, řídicí znak opakováním (`[[` nebo `]]`).
+
+::: moniker range=">= aspnetcore-2.2"
+
+<a name="routing-token-replacement-transformers-ref-label"></a>
+
+### <a name="use-a-parameter-transformer-to-customize-token-replacement"></a>Použití transformeru parametr k přizpůsobení náhradních tokenů
+
+Použití transformeru parametr, je možné přizpůsobit náhradních tokenů. Parametr transformer implementuje `IOutboundParameterTransformer` a transformuje hodnoty parametrů. Například vlastní `SlugifyParameterTransformer` parametr transformer změny `SubscriptionManagement` trasy hodnota, která má `subscription-management`.
+
+`RouteTokenTransformerConvention` Je vytváření modelu aplikace, které:
+
+* Parametr transformer platí pro všechny trasy atributů v aplikaci.
+* Přizpůsobí atribut token hodnoty trasy jako se nahradí.
+
+```csharp
+public class SubscriptionManagementController : Controller
+{
+    [HttpGet("[controller]/[action]")] // Matches '/subscription-management/list-all'
+    public IActionResult ListAll() { ... }
+}
+```
+
+`RouteTokenTransformerConvention` Je zaregistrovaný jako možnost v `ConfigureServices`.
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc(options =>
+    {
+        options.Conventions.Add(new RouteTokenTransformerConvention(
+                                     new SlugifyParameterTransformer()));
+    });
+}
+
+public class SlugifyParameterTransformer : IOutboundParameterTransformer
+{
+    public string TransformOutbound(object value)
+    {
+        if (value == null) { return null; }
+
+        // Slugify value
+        return Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+    }
+}
+```
+
+::: moniker-end
 
 <a name="routing-multiple-routes-ref-label"></a>
 

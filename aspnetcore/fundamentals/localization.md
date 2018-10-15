@@ -5,12 +5,12 @@ description: Zjistěte, jak ASP.NET Core nabízí služby a middleware pro lokal
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 6e8c4723ab0105b8c756221d3e3c5eebba6cc4e2
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 375d09d9bef59cf18b7805cbefe500aeb2e0cde7
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912028"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326001"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -206,9 +206,9 @@ Každá kombinace jazyk a jazykovou verzi (jiné než výchozí jazyk) vyžaduje
 
 ### <a name="configure-localization"></a>Konfigurace lokalizace
 
-Lokalizace je nakonfigurovaný v `ConfigureServices` metody:
+Lokalizace je nakonfigurovaný v `Startup.ConfigureServices` metody:
 
-[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet1)]
+[!code-csharp[](localization/sample/Localization/Startup.cs?name=snippet1)]
 
 * `AddLocalization` Lokalizační služby přidá do kontejneru služby. Kód výše také nastaví prostředky cesta k "Resources".
 
@@ -218,9 +218,9 @@ Lokalizace je nakonfigurovaný v `ConfigureServices` metody:
 
 ### <a name="localization-middleware"></a>Lokalizace middlewaru
 
-Aktuální jazykovou verzi na vyžádání je nastavena v lokalizace [Middleware](xref:fundamentals/middleware/index). Lokalizace middlewaru je povolený v `Configure` metody. Lokalizace middleware musí být nakonfigurovaná před veškerý middleware, který může zkontrolovat žádost o jazykové verzi (například `app.UseMvcWithDefaultRoute()`).
+Aktuální jazykovou verzi na vyžádání je nastavena v lokalizace [Middleware](xref:fundamentals/middleware/index). Lokalizace middlewaru je povolený v `Startup.Configure` metody. Lokalizace middleware musí být nakonfigurovaná před veškerý middleware, který může zkontrolovat žádost o jazykové verzi (například `app.UseMvcWithDefaultRoute()`).
 
-[!code-csharp[](localization/sample/Localization/Program.cs?name=snippet2)]
+[!code-csharp[](localization/sample/Localization/Startup.cs?name=snippet2)]
 
 `UseRequestLocalization` inicializuje `RequestLocalizationOptions` objektu. U každého požadavku seznamu z `RequestCultureProvider` v `RequestLocalizationOptions` je vypočten a prvním poskytovatelem, který úspěšně určuje jazykovou verzi požadavku se používá. Výchozí poskytovatele pocházejí z `RequestLocalizationOptions` třídy:
 

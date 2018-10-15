@@ -3,47 +3,41 @@ title: Pomocná rutina značek v ASP.NET Core MVC do mezipaměti
 author: pkellner
 description: Další informace o použití pomocné rutiny značky mezipaměti.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 11754d2858d8f02c7eb9baac8feda9b50ddb3d79
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 7d64c500168166b0a7a29d5b92473726d5a9f49a
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028152"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325338"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Pomocná rutina značek v ASP.NET Core MVC do mezipaměti
 
-Podle [Peter Kellner](http://peterkellner.net) 
+Podle [Peter Kellner](http://peterkellner.net) a [Luke Latham](https://github.com/guardrex) 
 
-Pomocná rutina značek mezipaměti umožňuje výrazně zlepšit výkon vaší aplikace ASP.NET Core pomocí ukládání do mezipaměti obsah k poskytovateli vnitřní mezipaměti ASP.NET Core.
+Pomocná rutina značek mezipaměti umožňuje zlepšit výkon vaší aplikace ASP.NET Core pomocí ukládání do mezipaměti obsah k poskytovateli vnitřní mezipaměti ASP.NET Core.
 
-Nastaví výchozí zobrazovací modul Razor `expires-after` až 20 minut.
+Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
-Následující kód Razor ukládá datum a čas:
+Následující kód Razor ukládá do mezipaměti na aktuální datum:
 
 ```cshtml
 <cache>@DateTime.Now</cache>
 ```
 
-První požadavek na stránku, která obsahuje `CacheTagHelper` zobrazí aktuální datum a čas. Další požadavky se zobrazí hodnota uložená v mezipaměti, dokud mezipaměti vyprší (výchozí nastavení 20 minut) nebo vyřadí se tlaku na paměť.
-
-Můžete nastavit dobu uložení do mezipaměti s následujícími atributy:
+První požadavek na stránku, který obsahuje pomocné rutiny značky zobrazuje aktuální datum. Další požadavky zobrazit hodnotu uloženou v mezipaměti, dokud mezipaměti vyprší (výchozí nastavení 20 minut) nebo data uložená v mezipaměti je odstraněn z mezipaměti.
 
 ## <a name="cache-tag-helper-attributes"></a>Atributy pomocné rutiny značky do mezipaměti
 
-- - -
+### <a name="enabled"></a>Povoleno
 
-### <a name="enabled"></a>Povoleno    
+| Typ atributu  | Příklady        | Výchozí |
+| --------------- | --------------- | ------- |
+| Boolean         | `true`, `false` | `true`  |
 
-
-| Typ atributu    | Platné hodnoty      |
-|----------------   |----------------   |
-| Logická hodnota           | "true" (výchozí)  |
-|                   | "false"   |
-
-
-Určuje, zda se uloží do mezipaměti obsah uzavřená v pomocné rutiny značky mezipaměti. Výchozí hodnota je `true`.  Pokud nastavit `false` této pomocné rutiny značky mezipaměti se neprojeví ukládání do mezipaměti na vykresleného výstupu.
+`enabled` Určuje, pokud obsah uzavřená v pomocné rutiny značky mezipaměti se ukládá do mezipaměti. Výchozí hodnota je `true`. Pokud hodnotu `false`, vykresleného výstupu je **není** uložené v mezipaměti.
 
 Příklad:
 
@@ -53,17 +47,15 @@ Příklad:
 </cache>
 ```
 
-- - -
+### <a name="expires-on"></a>vyprší dne
 
-### <a name="expires-on"></a>vyprší dne 
+| Typ atributu   | Příklad                            |
+| ---------------- | ---------------------------------- |
+| `DateTimeOffset` | `@new DateTime(2025,1,29,17,02,0)` |
 
-| Typ atributu |           Příklad hodnoty            |
-|----------------|------------------------------------|
-| DateTimeOffset | "@new DateTime(2025,1,29,17,02,0)" |
+`expires-on` Nastaví data absolutní vypršení platnosti položky v mezipaměti.
 
-Nastaví datum absolutní vypršení platnosti. V následujícím příkladu bude ukládat do mezipaměti obsah pomocné rutiny značky mezipaměti až do 17:02:00 na 29. ledna 2025.
-
-Příklad:
+Následující příklad ukládá do mezipaměti obsah pomocné rutiny značky mezipaměti až do 17:02:00 na 29. ledna 2025:
 
 ```cshtml
 <cache expires-on="@new DateTime(2025,1,29,17,02,0)">
@@ -71,15 +63,13 @@ Příklad:
 </cache>
 ```
 
-- - -
-
 ### <a name="expires-after"></a>Po vypršení platnosti
 
-| Typ atributu |        Příklad hodnoty         |
-|----------------|------------------------------|
-|    Časový interval    | "@TimeSpan.FromSeconds(120)" |
+| Typ atributu | Příklad                      | Výchozí    |
+| -------------- | ---------------------------- | ---------- |
+| `TimeSpan`     | `@TimeSpan.FromSeconds(120)` | 20 minut |
 
-Nastaví dobu od prvního požadavku pro ukládání do mezipaměti obsah. 
+`expires-after` Nastaví dobu od prvního požadavku pro ukládání do mezipaměti obsah.
 
 Příklad:
 
@@ -89,15 +79,15 @@ Příklad:
 </cache>
 ```
 
-- - -
+Nastaví výchozí zobrazovací modul Razor `expires-after` hodnota 20 minut.
 
 ### <a name="expires-sliding"></a>klouzavé vypršení platnosti
 
-| Typ atributu |        Příklad hodnoty        |
-|----------------|-----------------------------|
-|    Časový interval    | "@TimeSpan.FromSeconds(60)" |
+| Typ atributu | Příklad                     |
+| -------------- | --------------------------- |
+| `TimeSpan`     | `@TimeSpan.FromSeconds(60)` |
 
-Nastaví čas, který se položka mezipaměti by měla být vyřazena, pokud není přístup.
+Nastaví čas, který se položka mezipaměti by měla být vyřazena, pokud její hodnota nepřistupovalo.
 
 Příklad:
 
@@ -107,18 +97,15 @@ Příklad:
 </cache>
 ```
 
-- - -
-
 ### <a name="vary-by-header"></a>měnit podle hlavičky
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| String            | "User-Agent"                  |
-|                   | "User-Agent, kódování obsahu" |
+| Typ atributu | Příklady                                    |
+| -------------- | ------------------------------------------- |
+| String         | `User-Agent`, `User-Agent,content-encoding` |
 
-Přijímá hodnotu jedné hlavičce nebo čárkou oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti při změnách. Následující příklad monitoruje hodnota hlavičky `User-Agent`. V příkladu uloží do mezipaměti obsah pro každé jiné `User-Agent` uvedené na webový server.
+`vary-by-header` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti při změnách.
 
-Příklad:
+Následující příklad monitoruje hodnota hlavičky `User-Agent`. V příkladu ukládá do mezipaměti obsah pro každé jiné `User-Agent` uvedené na webový server:
 
 ```cshtml
 <cache vary-by-header="User-Agent">
@@ -126,18 +113,15 @@ Příklad:
 </cache>
 ```
 
-- - -
-
 ### <a name="vary-by-query"></a>se liší podle dotazu
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| String            | "Vytvořit"                |
-|                   | "Značku, Model" |
+| Typ atributu | Příklady             |
+| -------------- | -------------------- |
+| String         | `Make`, `Make,Model` |
 
-Přijímá hodnotu jedné hlavičce nebo čárkou oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, když se změní hodnota hlavičky. Následující příklad zobrazuje hodnoty `Make` a `Model`.
+`vary-by-query` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, když se změní hodnota hlavičky.
 
-Příklad:
+Následující příklad monitoruje hodnoty `Make` a `Model`. V příkladu ukládá do mezipaměti obsah pro každé jiné `Make` a `Model` uvedené na webový server:
 
 ```cshtml
 <cache vary-by-query="Make,Model">
@@ -145,18 +129,17 @@ Příklad:
 </cache>
 ```
 
-- - -
-
 ### <a name="vary-by-route"></a>se liší podle postupu
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| String            | "Vytvořit"                |
-|                   | "Značku, Model" |
+| Typ atributu | Příklady             |
+| -------------- | -------------------- |
+| String         | `Make`, `Make,Model` |
 
-Přijímá hodnotu jedné hlavičce nebo čárkou oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, pokud změna hodnoty parametru data trasy. Příklad:
+`vary-by-route` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti při změně hodnoty parametru dat trasy.
 
-*Startup.cs* 
+Příklad:
+
+*Startup.cs*:
 
 ```csharp
 routes.MapRoute(
@@ -164,7 +147,7 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
 ```
 
-*Index.cshtml*
+*Index.cshtml*:
 
 ```cshtml
 <cache vary-by-route="Make,Model">
@@ -172,18 +155,15 @@ routes.MapRoute(
 </cache>
 ```
 
-- - -
-
 ### <a name="vary-by-cookie"></a>se liší podle cookie
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| String            | ". AspNetCore.Identity.Application"                |
-|                   | ". AspNetCore.Identity.Application,HairColor" |
+| Typ atributu | Příklady                                                                         |
+| -------------- | -------------------------------------------------------------------------------- |
+| String         | `.AspNetCore.Identity.Application`, `.AspNetCore.Identity.Application,HairColor` |
 
-Přijímá hodnotu jedné hlavičce nebo čárkou oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, pokud se změní (s) hodnoty hlavičky. V následujícím příkladu vypadá v souboru cookie přidruženého k ASP.NET Core Identity. Když je ověření uživatele žádosti soubor cookie nastavení aktivuje aktualizace mezipaměti.
+`vary-by-cookie` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, pokud se změní hodnoty hlavičky.
 
-Příklad:
+Následující příklad monitoruje souboru cookie přidruženého k ASP.NET Core Identity. Když je uživatel ověřen, změny v souboru cookie Identity aktivuje aktualizace mezipaměti:
 
 ```cshtml
 <cache vary-by-cookie=".AspNetCore.Identity.Application">
@@ -191,20 +171,15 @@ Příklad:
 </cache>
 ```
 
-- - -
-
 ### <a name="vary-by-user"></a>se liší podle uživatele
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| Boolean             | "true"                  |
-|                     | "Nepravda" (výchozí) |
+| Typ atributu  | Příklady        | Výchozí |
+| --------------- | --------------- | ------- |
+| Boolean         | `true`, `false` | `true`  |
 
-Určuje, zda mezipaměti by měla resetovat při změně přihlášeného uživatele (nebo objekt kontextu zabezpečení). Aktuální uživatel se také označuje jako instanční objekt kontextu požadavku a lze je zobrazit v zobrazení Razor odkazem `@User.Identity.Name`.
+`vary-by-user` Určuje, zda mezipaměti resetuje při změně přihlášeného uživatele (nebo objekt kontextu zabezpečení). Aktuální uživatel se také označuje jako instanční objekt kontextu požadavku a lze je zobrazit v zobrazení Razor odkazem `@User.Identity.Name`.
 
-Následující příklad zjistí aktuálně přihlášeného uživatele.  
-
-Příklad:
+Následující příklad monitoruje aktuálně přihlášeného uživatele k aktivaci aktualizace mezipaměti:
 
 ```cshtml
 <cache vary-by-user="true">
@@ -212,26 +187,22 @@ Příklad:
 </cache>
 ```
 
-Pomocí tohoto atributu uchovává obsah v mezipaměti v průběhu cyklu přihlášení a odhlášení.  Při použití `vary-by-user="true"`, přihlášení a odhlášení akce zruší platnost mezipaměti pro ověřeného uživatele.  Mezipaměť je neplatná, protože nová hodnota jedinečný soubor cookie byl vygenerován při přihlášení. Mezipaměť je zachován z důvodu anonymní stavu Pokud je k dispozici žádný soubor cookie nebo vypršela platnost. To znamená, že pokud není přihlášen žádný uživatel, bude udržovat mezipaměti.
-
-- - -
+Pomocí tohoto atributu udržuje cyklu obsah v mezipaměti, prostřednictvím u přihlášení a odhlášení. Pokud je hodnota nastavená na `true`, ověřování cyklu zruší platnost mezipaměti pro ověřeného uživatele. Mezipaměť je neplatná, protože nová hodnota jedinečný soubor cookie se vygeneruje, když je ověření uživatele. Mezipaměť je zachován z důvodu anonymní stavu Pokud je k dispozici žádný soubor cookie nebo vypršela platnost souboru cookie. Pokud je uživatel **není** ověření do mezipaměti se zachová.
 
 ### <a name="vary-by"></a>se liší podle
 
-| Typ atributu | Příklad hodnoty |
-|----------------|----------------|
-|     String     |    "@Model"    |
+| Typ atributu | Příklad  |
+| -------------- | -------- |
+| String         | `@Model` |
 
-Umožňuje přizpůsobení získá jaká data uložená v mezipaměti. Při aktualizaci objektu, odkazuje atribut řetězec hodnotu změny, obsah pomocné rutiny značky mezipaměti. Často zřetězení hodnoty modelu jsou přiřazeny k tomuto atributu.  Efektivně, to znamená, že aktualizace zřetězených hodnot zruší platnost mezipaměti.
+`vary-by` umožňuje přizpůsobení jaká data se uloží do mezipaměti. Při aktualizaci objektu, odkazuje atribut řetězec hodnotu změny, obsah pomocné rutiny značky mezipaměti. Často zřetězení hodnoty modelu jsou přiřazeny k tomuto atributu. Efektivně výsledkem scénář, ve kterém aktualizaci zřetězených hodnot zruší platnost mezipaměti.
 
-V následujícím příkladu se předpokládá metoda kontroleru vykreslení zobrazení součtů celočíselnou hodnotu dva parametry trasy `myParam1` a `myParam2`a vrátí ji jako vlastnost jednoho modelu. Při změně tohoto součtu obsah pomocné rutiny značky mezipaměti je vykreslen a uložili do mezipaměti znovu.  
-
-Příklad:
+V následujícím příkladu se předpokládá metoda kontroleru vykreslení zobrazení součtů celočíselnou hodnotu dva parametry trasy `myParam1` a `myParam2`a vrátí součet jako vlastnost jednoho modelu. Při změně tohoto součtu obsah pomocné rutiny značky mezipaměti je vykreslen a uložili do mezipaměti znovu.  
 
 Akce:
 
 ```csharp
-public IActionResult Index(string myParam1,string myParam2,string myParam3)
+public IActionResult Index(string myParam1, string myParam2, string myParam3)
 {
     int num1;
     int num2;
@@ -241,26 +212,21 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 }
 ```
 
-*Index.cshtml*
+*Index.cshtml*:
 
 ```cshtml
-<cache vary-by="@Model"">
+<cache vary-by="@Model">
     Current Time Inside Cache Tag Helper: @DateTime.Now
 </cache>
 ```
 
-- - -
-
 ### <a name="priority"></a>Priorita
 
-| Typ atributu    | Příklad hodnoty                |
-|----------------   |----------------               |
-| CacheItemPriority  | "Vysoká"                   |
-|                    | "Nízká" |
-|                    | "NeverRemove" |
-|                    | "Normální" |
+| Typ atributu      | Příklady                               | Výchozí  |
+| ------------------- | -------------------------------------- | -------- |
+| `CacheItemPriority` | `High`, `Low`, `NeverRemove`, `Normal` | `Normal` |
 
-Obsahuje pokyny k vyřazení mezipaměti integrovanou mezipaměť na poskytovatele. Webový server vyřazení `Low` nejprve mezipaměti položky, když je přetížena paměť.
+`priority` Obsahuje pokyny k vyřazení mezipaměti integrovanou mezipaměť na poskytovatele. Webový server vyloučí `Low` nejprve mezipaměti položky, když je přetížena paměť.
 
 Příklad:
 
@@ -270,11 +236,11 @@ Příklad:
 </cache>
 ```
 
-`priority` Atribut nezaručuje konkrétní úroveň mezipaměti dobu uchování. `CacheItemPriority` je jenom návrh. Nastavení tohoto atributu na `NeverRemove` nezaručuje, že budou vždy uchovávat mezipaměti. Zobrazit [další prostředky](#additional-resources) Další informace.
+`priority` Atribut nezaručuje konkrétní úroveň mezipaměti dobu uchování. `CacheItemPriority` je jenom návrh. Nastavení tohoto atributu na `NeverRemove` nezaručuje, že se vždy zachovají položek v mezipaměti. Najdete v tématech [další prostředky](#additional-resources) části Další informace.
 
 Pomocná rutina značek mezipaměti je závislá na [služby mezipaměti paměti](xref:performance/caching/memory). Pomocná rutina značek mezipaměti přidá službu, pokud nebyla přidána.
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Mezipaměť v paměti](xref:performance/caching/memory)
-* [Úvod do systému Identity](xref:security/authentication/identity)
+* <xref:performance/caching/memory>
+* <xref:security/authentication/identity>

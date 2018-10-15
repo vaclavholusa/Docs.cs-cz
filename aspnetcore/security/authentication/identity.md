@@ -5,12 +5,12 @@ description: Pomocí Identity aplikace v ASP.NET Core. Zjistěte, jak nastavit p
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: e0494afd807080f4cd71127abce7bdb93f952dca
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47860950"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325507"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Úvod do Identity v ASP.NET Core
 
@@ -160,7 +160,7 @@ PowerShell používá jako oddělovač příkazu středník. Při použití pros
 Přihlašovací formulář se zobrazí při:
 
 * **Přihlášení** vybraný odkaz.
-* Když uživatel přistupuje k stránku, kde nejsou ověřené **nebo** ověřen, bude přesměrován na přihlašovací stránku.
+* Uživatel se pokusí otevřít stránku s omezeným přístupem, který uživatel nemá oprávnění k přístupu **nebo** při nebyly byl ověřen systémem.
 
 Když se odešle formulář na přihlašovací stránku, `OnPostAsync` akce je volána. `PasswordSignInAsync` je volán na `_signInManager` objektu (postkytovatel: injektáž závislostí).
 

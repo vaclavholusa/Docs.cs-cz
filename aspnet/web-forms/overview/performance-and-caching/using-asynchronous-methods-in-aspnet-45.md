@@ -8,12 +8,12 @@ ms.date: 06/06/2012
 ms.assetid: a585c9a2-7c8e-478b-9706-90f3739c50d1
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: eeb8ac4402b5e3d233082a749ad16ed98d4a71fc
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 61bb977af9dca6fc080151ffd6ea3d966f1b1592
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577805"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325416"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>Použití asynchronních metod v ASP.NET 4.5
 ====================
@@ -62,7 +62,7 @@ Obecně platí používejte synchronní metody byly splněny následující podm
 - Zjednodušení je mnohem důležitější než efektivitu.
 - Operace jsou primárně procesoru operace místo operace, které zahrnují rozsáhlou disku nebo nároky na síť. Použití asynchronních metod pro operace vázané na procesor žádné výhody a má za následek další režie.
 
-  Obecně platí použijte asynchronní metody byly splněny následující podmínky:
+Obecně platí použijte asynchronní metody byly splněny následující podmínky:
 
 - Volání služby, které lze využívat pomocí asynchronní metody a používáte .NET 4.5 nebo vyšší.
 - Operace jsou vázané na síť nebo vstupně-výstupní místo vázané na procesor.

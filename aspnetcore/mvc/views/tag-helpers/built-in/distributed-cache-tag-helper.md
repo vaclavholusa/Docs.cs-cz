@@ -3,44 +3,54 @@ title: Distribuovaná mezipaměť pomocná rutina značek v ASP.NET Core
 author: pkellner
 description: Další informace o použití distribuované mezipaměti pomocná rutina značek v.
 ms.author: riande
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 1b51164a6d3dab2eeaf64262d6f0d9961bd00d12
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: a5b33451a763c297c6d7885855a321c43435abb4
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028079"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325208"
 ---
 # <a name="distributed-cache-tag-helper-in-aspnet-core"></a>Distribuovaná mezipaměť pomocná rutina značek v ASP.NET Core
 
-Podle [Peter Kellner](http://peterkellner.net) 
+Podle [Peter Kellner](http://peterkellner.net) a [Luke Latham](https://github.com/guardrex)
 
 Pomocná rutina značek distribuované mezipaměti umožňuje výrazně zlepšit výkon vaší aplikace ASP.NET Core pomocí ukládání do mezipaměti obsah ke zdroji distribuované mezipaměti.
 
-Distribuované mezipaměti pomocná rutina značek v dědí ze základní třídy stejné jako pomocné rutiny značky mezipaměti. Všechny atributy přidružené k pomocné rutiny značky mezipaměti, budou fungovat i na pomocné rutiny značky distribuovat.
+Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
-Následuje distribuované mezipaměti pomocná rutina značek v **explicitní závislosti Princip** říká **konstruktor vkládání**. Konkrétně `IDistributedCache` rozhraní kontejneru je předána do konstruktoru distribuované mezipaměti pomocné rutiny značky společnosti. Pokud žádné konkrétní konkrétní implementaci `IDistributedCache` byl vytvořen `ConfigureServices`, obvykle nachází v souboru startup.cs a pak distribuované mezipaměti pomocná rutina značek v bude použit stejný zprostředkovatel v paměti pro ukládání dat uložených v mezipaměti jako základní pomocná rutina značek mezipaměti.
+Distribuované mezipaměti pomocná rutina značek v dědí ze základní třídy stejné jako pomocné rutiny značky mezipaměti. Všechny [pomocná rutina značek v mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper) atributy jsou k dispozici pomocné rutiny značky distribuován.
+
+Používá distribuované mezipaměti pomocná rutina značek v [konstruktor vkládání](xref:fundamentals/dependency-injection#constructor-injection-behavior). <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> Rozhraní je předána do konstruktoru distribuované mezipaměti pomocné rutiny značky společnosti. Pokud žádné konkrétní implementaci `IDistributedCache` se vytvoří v `Startup.ConfigureServices` (*Startup.cs*), distribuované mezipaměti pomocná rutina značek v používá stejný zprostředkovatel v paměti pro ukládání dat uložených v mezipaměti, jako [pomocná rutina značek mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper).
 
 ## <a name="distributed-cache-tag-helper-attributes"></a>Distribuovaná mezipaměť atributy pomocné rutiny značky
 
-- - -
+### <a name="attributes-shared-with-the-cache-tag-helper"></a>Atributy dostaly pomocné rutiny značky mezipaměti
 
-### <a name="enabled-expires-on-expires-after-expires-sliding-vary-by-header-vary-by-query-vary-by-route-vary-by-cookie-vary-by-user-vary-by-priority"></a>povolené vyprší dne vyprší po vypršení platnosti klouzavé měnit podle hlavičky se liší podle dotazu se liší podle postupu se liší podle cookie se liší podle uživatele se liší podle priority
+* `enabled`
+* `expires-on`
+* `expires-after`
+* `expires-sliding`
+* `vary-by-header`
+* `vary-by-query`
+* `vary-by-route`
+* `vary-by-cookie`
+* `vary-by-user`
+* `vary-by priority`
 
-Viz pomocná rutina značek v mezipaměti pro definice. Pomocná rutina značek v distribuované mezipaměti dědí ze stejné třídy jako pomocná rutina značek v mezipaměti, takže tyto atributy jsou běžné z pomocná rutina značek v mezipaměti.
+Distribuované mezipaměti pomocná rutina značek v dědí ze stejné třídy jako pomocná rutina značek v mezipaměti. Popis těchto atributů najdete v článku [pomocná rutina značek v mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper).
 
-- - -
+### <a name="name"></a>name
 
-### <a name="name-required"></a>název (povinné)
+| Typ atributu | Příklad                               |
+| -------------- | ------------------------------------- |
+| String         | `my-distributed-cache-unique-key-101` |
 
-| Typ atributu    | Příklad hodnoty     |
-|----------------   |----------------   |
-| odkazy řetězců    | "my-distributed-cache-unique-key-101"     |
+`name` je vyžadován. `name` Atribut se používá jako klíč pro každou instanci uložených mezipaměti. Na rozdíl od mezipaměti pomocné rutiny značky, který přiřazuje klíč mezipaměti ke každé instanci, na základě názvu stránky Razor a umístění v stránky Razor, distribuované mezipaměti pomocná rutina značek v pouze základů svůj klíč atributu `name`.
 
-Požadované `name` atribut se používá jako klíč do mezipaměti ukládají pro každou instanci distribuované mezipaměti pomocné rutiny značky. Na rozdíl od základní mezipaměti pomocné rutiny značky, který přiřazuje klíč ke každé instanci pomocná rutina značek v mezipaměti na základě názvu stránky Razor a umístění pomocná rutina značky razor stránce distribuované mezipaměti pomocná rutina značek v pouze základů svůj klíč atributu `name`
-
-Příklad použití:
+Příklad:
 
 ```cshtml
 <distributed-cache name="my-distributed-cache-unique-key-101">
@@ -50,7 +60,7 @@ Příklad použití:
 
 ## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>Implementace distribuované mezipaměti IDistributedCache pomocné rutiny značky
 
-Existují dvě implementace `IDistributedCache` součástí ASP.NET Core. Jeden je založena na SQL Server a druhý je založen na Redis. Podrobnosti o těchto implementacích najdete <xref:performance/caching/distributed>. Obou implementacích zahrnují nastavení instance objektu `IDistributedCache` v ASP.NET Core *Startup.cs*.
+Existují dvě implementace <xref:Microsoft.Extensions.Caching.Distributed.IDistributedCache> součástí ASP.NET Core. Jeden je založena na SQL Server, a druhý je založen na Redis. Podrobnosti o těchto implementacích najdete <xref:performance/caching/distributed>. Obou implementacích zahrnují nastavení instance objektu `IDistributedCache` v `Startup`.
 
 Neexistují žádné atributy značky konkrétně spojených s použitím žádnou konkrétní implementaci `IDistributedCache`.
 

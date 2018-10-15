@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 54ef82bf64552e71e53178fdbcd8d226ea99b012
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 7bd597acedade65f2be53f4f50a436981e576b1f
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913265"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326118"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Úvod do služby v ASP.NET Core Razor Pages
 
@@ -221,7 +221,7 @@ Tady je příklad tlačítko pro odstranění vykreslené zákazníků obraťte 
 <button type="submit" formaction="/?id=1&amp;handler=delete">delete</button>
 ```
 
-Při výběru tlačítka, formulář `POST` odeslán požadavek na server. Podle konvence je vybrán název metody obslužné rutiny na základě hodnoty `handler` parametr podle schéma `OnPost[handler]Async`.
+Při výběru tlačítka, formulář `POST` odeslán požadavek na server. Podle konvence je vybrán název metody obslužné rutiny založené na hodnotě `handler` parametr podle schéma `OnPost[handler]Async`.
 
 Vzhledem k tomu, `handler` je `delete` v tomto příkladu `OnPostDeleteAsync` obslužná rutina se používá k procesu `POST` požadavku. Pokud `asp-page-handler` je nastavena na jinou hodnotu, jako například `remove`, metodu obslužné rutiny stránky s názvem `OnPostRemoveAsync` zaškrtnuto.
 
@@ -264,7 +264,7 @@ services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
 
-Generovat výchozí šablony `SetCompatibilityVersion` volání ve ASP.NET Core 2.1, tak i 2.2.
+Generovat výchozí šablony `SetCompatibilityVersion` volání v ASP.NET Core 2.1 a 2.2.
 
 `SetCompatibilityVersion` Nastavuje možnost Razor Pages `AllowMappingHeadRequestsToGetHandler` k `true`.
 

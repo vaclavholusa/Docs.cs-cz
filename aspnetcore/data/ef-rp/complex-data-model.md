@@ -5,12 +5,12 @@ description: V tomto kurzu přidat další entity a relace a přizpůsobte si da
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: 4f35dd81c34a9123c20bb4925def93f69f0aaa13
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220596"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49326092"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – Model dat – 5 z 8
 
@@ -432,7 +432,7 @@ public Student Student { get; set; }
 
 Existuje vztah n: n mezi `Student` a `Course` entity. `Enrollment` Entity funguje jako tabulka many-to-many spojení *s datovou částí* v databázi. "S datovou částí" znamená, že `Enrollment` tabulka obsahuje další data kromě FKs pro spojené tabulky (v tomto případě primárnímu Klíči a `Grade`).
 
-Následující obrázek znázorňuje, jak tyto vztahy vypadat v diagramu entity. (Tento diagram se vygeneroval pomocí EF Power Tools pro EF 6.x. Vytvoření diagramu, které nejsou součástí tohoto kurzu.)
+Následující obrázek znázorňuje, jak tyto vztahy vypadat v diagramu entity. (Tento diagram se vygeneroval pomocí [EF Power Tools](https://marketplace.visualstudio.com/items?itemName=ErikEJ.EntityFramework6PowerToolsCommunityEdition) pro EF 6.x. Vytvoření diagramu, které nejsou součástí tohoto kurzu.)
 
 ![Kurz student mnoho na mnoho vztah](complex-data-model/_static/student-course.png)
 

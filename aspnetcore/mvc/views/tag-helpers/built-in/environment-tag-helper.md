@@ -3,61 +3,68 @@ title: Pomocná rutina značky prostředí v ASP.NET Core
 author: pkellner
 description: Pomocná rutina značky prostředí ASP.NET Core definované, včetně všech vlastností
 ms.author: riande
-ms.date: 07/14/2017
+ms.custom: mvc
+ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
-ms.openlocfilehash: 4a283a3a03aa6cac228ec6effd02e3f1095be260
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 379f58ed37329f047d53adf1dcfdfd2ad6a6ca4e
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342221"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325234"
 ---
-# <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="b01e8-103">Pomocná rutina značky prostředí v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="b01e8-103">Environment Tag Helper in ASP.NET Core</span></span>
+# <a name="environment-tag-helper-in-aspnet-core"></a><span data-ttu-id="53f13-103">Pomocná rutina značky prostředí v ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="53f13-103">Environment Tag Helper in ASP.NET Core</span></span>
 
-<span data-ttu-id="b01e8-104">Podle [Peter Kellner](http://peterkellner.net) a [Ateya Hisham Bin](https://twitter.com/hishambinateya)</span><span class="sxs-lookup"><span data-stu-id="b01e8-104">By [Peter Kellner](http://peterkellner.net) and [Hisham Bin Ateya](https://twitter.com/hishambinateya)</span></span>
+<span data-ttu-id="53f13-104">Podle [Peter Kellner](http://peterkellner.net), [Hisham Bin Ateya](https://twitter.com/hishambinateya), a [Luke Latham](https://github.com/guardrex)</span><span class="sxs-lookup"><span data-stu-id="53f13-104">By [Peter Kellner](http://peterkellner.net), [Hisham Bin Ateya](https://twitter.com/hishambinateya), and [Luke Latham](https://github.com/guardrex)</span></span>
 
-<span data-ttu-id="b01e8-105">Pomocná rutina značky prostředí podmíněně vykreslí obsah uzavřené podle aktuální hostitelského prostředí.</span><span class="sxs-lookup"><span data-stu-id="b01e8-105">The Environment Tag Helper conditionally renders its enclosed content based on the current hosting environment.</span></span> <span data-ttu-id="b01e8-106">Jeho jediný atribut `names` je čárkami oddělený seznam prostředí názvů, který pokud všechny odpovídaly aktuálním prostředí, aktivují uzavřené obsah k vykreslení.</span><span class="sxs-lookup"><span data-stu-id="b01e8-106">Its single attribute `names` is a comma separated list of environment names, that if any match to the current environment, will trigger the enclosed content to be rendered.</span></span>
+<span data-ttu-id="53f13-105">Pomocná rutina značky prostředí podmíněně vykreslí obsah uzavřené na základě aktuálního [hostitelské prostředí](xref:fundamentals/environments).</span><span class="sxs-lookup"><span data-stu-id="53f13-105">The Environment Tag Helper conditionally renders its enclosed content based on the current [hosting environment](xref:fundamentals/environments).</span></span> <span data-ttu-id="53f13-106">Pomocná rutina značky prostředí jeden atribut, `names`, je čárkou oddělený seznam názvů prostředí.</span><span class="sxs-lookup"><span data-stu-id="53f13-106">The Environment Tag Helper's single attribute, `names`, is a comma-separated list of environment names.</span></span> <span data-ttu-id="53f13-107">Pokud se názvy zadané prostředí shodují v aktuálním prostředí, se uzavřené obsah zobrazí.</span><span class="sxs-lookup"><span data-stu-id="53f13-107">If any of the provided environment names match the current environment, the enclosed content is rendered.</span></span>
 
-## <a name="environment-tag-helper-attributes"></a><span data-ttu-id="b01e8-107">Atributy pomocné rutiny značky prostředí</span><span class="sxs-lookup"><span data-stu-id="b01e8-107">Environment Tag Helper Attributes</span></span>
+<span data-ttu-id="53f13-108">Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.</span><span class="sxs-lookup"><span data-stu-id="53f13-108">For an overview of Tag Helpers, see <xref:mvc/views/tag-helpers/intro>.</span></span>
 
-### <a name="names"></a><span data-ttu-id="b01e8-108">názvy</span><span class="sxs-lookup"><span data-stu-id="b01e8-108">names</span></span>
+## <a name="environment-tag-helper-attributes"></a><span data-ttu-id="53f13-109">Atributy pomocné rutiny značky prostředí</span><span class="sxs-lookup"><span data-stu-id="53f13-109">Environment Tag Helper Attributes</span></span>
 
-<span data-ttu-id="b01e8-109">Přijímá jediný název hostitelské prostředí nebo čárkami oddělený seznam hostování názvy prostředí, které aktivují vykreslování uzavřené obsah.</span><span class="sxs-lookup"><span data-stu-id="b01e8-109">Accepts a single hosting environment name or a comma-separated list of hosting environment names that trigger the rendering of the enclosed content.</span></span>
+### <a name="names"></a><span data-ttu-id="53f13-110">názvy</span><span class="sxs-lookup"><span data-stu-id="53f13-110">names</span></span>
 
-<span data-ttu-id="b01e8-110">Tyto hodnoty jsou ve srovnání s aktuální hodnota vrácená z ASP.NET Core statickou vlastnost `HostingEnvironment.EnvironmentName`.</span><span class="sxs-lookup"><span data-stu-id="b01e8-110">These value(s) are compared to the current value returned from the ASP.NET Core static property `HostingEnvironment.EnvironmentName`.</span></span>  <span data-ttu-id="b01e8-111">Tato hodnota je jeden z následujících: **pracovní**; **Vývoj** nebo **produkční**.</span><span class="sxs-lookup"><span data-stu-id="b01e8-111">This value is one of the following: **Staging**; **Development** or **Production**.</span></span> <span data-ttu-id="b01e8-112">Porovnání ignoruje velikost písmen.</span><span class="sxs-lookup"><span data-stu-id="b01e8-112">The comparison ignores case.</span></span>
+<span data-ttu-id="53f13-111">`names` Přijímá jediný název hostitelské prostředí nebo čárkami oddělený seznam hostování názvy prostředí, které aktivují vykreslování uzavřené obsah.</span><span class="sxs-lookup"><span data-stu-id="53f13-111">`names` accepts a single hosting environment name or a comma-separated list of hosting environment names that trigger the rendering of the enclosed content.</span></span>
 
-<span data-ttu-id="b01e8-113">Příkladem platné `environment` je pomocná rutina značky:</span><span class="sxs-lookup"><span data-stu-id="b01e8-113">An example of a valid `environment` tag helper is:</span></span>
+<span data-ttu-id="53f13-112">Hodnoty prostředí jsou ve srovnání s aktuální hodnotu vrácenou příkazem [IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*).</span><span class="sxs-lookup"><span data-stu-id="53f13-112">Environment values are compared to the current value returned by [IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*).</span></span> <span data-ttu-id="53f13-113">Porovnání ignoruje velikost písmen.</span><span class="sxs-lookup"><span data-stu-id="53f13-113">The comparison ignores case.</span></span>
+
+<span data-ttu-id="53f13-114">Následující příklad používá pomocná rutina značky prostředí.</span><span class="sxs-lookup"><span data-stu-id="53f13-114">The following example uses an Environment Tag Helper.</span></span> <span data-ttu-id="53f13-115">Pokud hostitelského prostředí je pracovní nebo produkční prostředí, je zobrazení obsahu:</span><span class="sxs-lookup"><span data-stu-id="53f13-115">The content is rendered if the hosting environment is Staging or Production:</span></span>
 
 ```cshtml
 <environment names="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
 
-## <a name="include-and-exclude-attributes"></a><span data-ttu-id="b01e8-114">zahrnutí a vyloučení atributy</span><span class="sxs-lookup"><span data-stu-id="b01e8-114">include and exclude attributes</span></span>
+::: moniker range=">= aspnetcore-2.0"
 
-<span data-ttu-id="b01e8-115">ASP.NET Core 2.x přidá `include`  &  `exclude` atributy.</span><span class="sxs-lookup"><span data-stu-id="b01e8-115">ASP.NET Core 2.x adds the `include` & `exclude` attributes.</span></span> <span data-ttu-id="b01e8-116">Tyto atributy určují, vykreslování uzavřené obsahu na základě zahrnuté ani vyloučené hostování prostředí názvů.</span><span class="sxs-lookup"><span data-stu-id="b01e8-116">These attributes control rendering the enclosed content based on the included or excluded hosting environment names.</span></span>
+## <a name="include-and-exclude-attributes"></a><span data-ttu-id="53f13-116">zahrnutí a vyloučení atributy</span><span class="sxs-lookup"><span data-stu-id="53f13-116">include and exclude attributes</span></span>
 
-### <a name="include-aspnet-core-20-and-later"></a><span data-ttu-id="b01e8-117">Zahrnout ASP.NET Core 2.0 a vyšší</span><span class="sxs-lookup"><span data-stu-id="b01e8-117">include ASP.NET Core 2.0 and later</span></span>
+<span data-ttu-id="53f13-117">`include` & `exclude` atributy ovládacího prvku vykreslování uzavřené obsahu na základě zahrnuté ani vyloučené hostování prostředí názvů.</span><span class="sxs-lookup"><span data-stu-id="53f13-117">`include` & `exclude` attributes control rendering the enclosed content based on the included or excluded hosting environment names.</span></span>
 
-<span data-ttu-id="b01e8-118">`include` Vlastnost má podobné chování `names` atribut v ASP.NET Core 1.0.</span><span class="sxs-lookup"><span data-stu-id="b01e8-118">The `include` property has a similar behavior of the `names` attribute in ASP.NET Core 1.0.</span></span>
+### <a name="include"></a><span data-ttu-id="53f13-118">include</span><span class="sxs-lookup"><span data-stu-id="53f13-118">include</span></span>
+
+<span data-ttu-id="53f13-119">`include` Vlastnost vykazuje podobné chování jako `names` atribut.</span><span class="sxs-lookup"><span data-stu-id="53f13-119">The `include` property exhibits similar behavior to the `names` attribute.</span></span> <span data-ttu-id="53f13-120">Uvedené v prostředí `include` hodnota atributu musí odpovídat aplikace hostitelské prostředí ([IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*)) k vykreslení obsahu `<environment>` značky.</span><span class="sxs-lookup"><span data-stu-id="53f13-120">An environment listed in the `include` attribute value must match the app's hosting environment ([IHostingEnvironment.EnvironmentName](xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment.EnvironmentName*)) to render the content of the `<environment>` tag.</span></span>
 
 ```cshtml
 <environment include="Staging,Production">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
 </environment>
 ```
 
-### <a name="exclude-aspnet-core-20-and-later"></a><span data-ttu-id="b01e8-119">vyloučit ASP.NET Core 2.0 a vyšší</span><span class="sxs-lookup"><span data-stu-id="b01e8-119">exclude ASP.NET Core 2.0 and later</span></span>
+### <a name="exclude"></a><span data-ttu-id="53f13-121">exclude</span><span class="sxs-lookup"><span data-stu-id="53f13-121">exclude</span></span>
 
-<span data-ttu-id="b01e8-120">Naproti tomu `exclude` vlastnost `EnvironmentTagHelper` vykreslení uzavřené obsahu pro všechny názvy hostitelských prostředí s výjimkou vymazáním, který jste zadali.</span><span class="sxs-lookup"><span data-stu-id="b01e8-120">In contrast, the `exclude` property lets the `EnvironmentTagHelper` render the enclosed content for all hosting environment names except the one(s) that you specified.</span></span>
+<span data-ttu-id="53f13-122">Rozdíl od `include` atribut obsah `<environment>` je vykreslen při hostování prostředí neodpovídá uvedené v prostředí `exclude` hodnotu atributu.</span><span class="sxs-lookup"><span data-stu-id="53f13-122">In contrast to the `include` attribute, the content of the `<environment>` tag is rendered when the hosting environment doesn't match an environment listed in the `exclude` attribute value.</span></span>
 
 ```cshtml
 <environment exclude="Development">
-  <strong>HostingEnvironment.EnvironmentName is Staging or Production</strong>
+    <strong>HostingEnvironment.EnvironmentName is not Development</strong>
 </environment>
 ```
 
-## <a name="additional-resources"></a><span data-ttu-id="b01e8-121">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="b01e8-121">Additional resources</span></span>
+::: moniker-end
+
+## <a name="additional-resources"></a><span data-ttu-id="53f13-123">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="53f13-123">Additional resources</span></span>
 
 * <xref:fundamentals/environments>

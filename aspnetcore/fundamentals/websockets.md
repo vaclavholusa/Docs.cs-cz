@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: e46c2decf92d21322f2079bf880df534e0224db5
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: b1e2180ed8dc93e2474ecca371d386830b7f3a9f
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911649"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348452"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>Webové sockety v ASP.NET Core
 
@@ -35,7 +35,7 @@ Tento článek vysvětluje, jak začít pracovat s objekty Websocket v ASP.NET C
 
   * Windows 8 nebo Windows Server 2012 nebo novější
   * Služba IIS 8 / 8 služby IIS Express
-  * Protokoly Websocket, musí být povolené ve službě IIS (najdete v článku [podpora služby IIS/IIS Express](#iisiis-express-support) části.)
+  * Musí být povolené protokoly Websocket (najdete v článku [podpora služby IIS/IIS Express](#iisiis-express-support) části.).
   
 * Pokud aplikace běží na [HTTP.sys](xref:fundamentals/servers/httpsys):
 
@@ -133,7 +133,15 @@ Při přijímání připojení soketu websocket bylo před zahájením smyčky, 
 
 Windows Server 2012 nebo novější a Windows 8 nebo novější s služby IIS/IIS Express 8 nebo novější obsahuje podporu protokolu WebSocket.
 
+> [!NOTE]
+> Při použití IIS Expressu, jsou vždy povoleny protokoly Websocket.
+
+### <a name="enabling-websockets-on-iis"></a>Povolení ve službě IIS WebSockets
+
 Pokud chcete povolit podporu protokolu WebSocket ve Windows serveru 2012 nebo novější:
+
+> [!NOTE]
+> Tyto kroky se nevyžadují, při použití IIS Expressu
 
 1. Použití **přidat role a funkce** z průvodce **spravovat** nabídky nebo na odkaz v **správce serveru**.
 1. Vyberte **instalace na základě rolí nebo na základě funkcí**. Vyberte **Další**.
@@ -145,6 +153,9 @@ Pokud chcete povolit podporu protokolu WebSocket ve Windows serveru 2012 nebo no
 1. Po dokončení instalace, vybrat **Zavřít** ukončíte průvodce.
 
 Pokud chcete povolit podporu protokolu WebSocket v systému Windows 8 nebo novější:
+
+> [!NOTE]
+> Tyto kroky se nevyžadují, při použití IIS Expressu
 
 1. Přejděte do **ovládací panely** > **programy** > **programy a funkce** > **zapnout Windows funkce na nebo vypnout** (levé straně obrazovky).
 1. Otevřete následující uzly: **Internetová informační služba** > **webové služby** > **funkce pro vývoj aplikací**.

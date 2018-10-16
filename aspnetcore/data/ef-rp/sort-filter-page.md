@@ -5,12 +5,12 @@ description: V tomto kurzu přidáte řazení, filtrování a stránkování fun
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 668d6e54a64022dda948170f72538f6d4cd9a49f
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 06669d69fa9fec87d262c2b5bfd8b11649259849
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011635"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348439"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – řazení, filtrování, stránkování – 3 z 8
 
@@ -97,9 +97,9 @@ K ověření funkčnosti řazení:
 
 Pokud chcete získat lepší přehled kódu:
 
-* V *Student/Index.cshtml.cs*, nastavit zarážku na `switch (sortOrder)`.
+* V *Students/Index.cshtml.cs*, nastavit zarážku na `switch (sortOrder)`.
 * Přidat kukátko pro `NameSort` a `DateSort`.
-* V *Student/Index.cshtml*, nastavit zarážku na `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
+* V *Students/Index.cshtml*, nastavit zarážku na `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
 
 Projděte skrze ladicí program.
 
@@ -235,9 +235,9 @@ Spusťte aplikaci a přejděte na stránku pro studenty.
 
 Pokud chcete získat lepší přehled kódu:
 
-* V *Student/Index.cshtml.cs*, nastavit zarážku na `switch (sortOrder)`.
+* V *Students/Index.cshtml.cs*, nastavit zarážku na `switch (sortOrder)`.
 * Přidat kukátko pro `NameSort`, `DateSort`, `CurrentSort`, a `Model.Student.PageIndex`.
-* V *Student/Index.cshtml*, nastavit zarážku na `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
+* V *Students/Index.cshtml*, nastavit zarážku na `@Html.DisplayNameFor(model => model.Student[0].LastName)`.
 
 Projděte skrze ladicí program.
 

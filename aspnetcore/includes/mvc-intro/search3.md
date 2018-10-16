@@ -33,7 +33,7 @@ Model zobrazení žánr film bude obsahovat:
 
    * Seznam videa.
    * A `SelectList` obsahující seznam žánrů. To vám umožní uživateli vybrat rozšířením podle tematických ze seznamu.
-   * `movieGenre`, který obsahuje vybrané žánr.
+   * `MovieGenre`, který obsahuje vybrané žánr.
 
 Nahradit `Index` metoda `MoviesController.cs` následujícím kódem:
 
@@ -47,7 +47,7 @@ Následující kód je `LINQ` dotaz, který načte všechny žánry z databáze.
 
 ```csharp
 movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())
-   ```
+```
 
 ## <a name="adding-search-by-genre-to-the-index-view"></a>Přidání vyhledávání podle žánru do zobrazení indexu
 
@@ -57,8 +57,8 @@ Aktualizace `Index.cshtml` následujícím způsobem:
 
 Prozkoumejte výrazu lambda použít v následujících pomocné rutiny HTML:
 
-`@Html.DisplayNameFor(model => model.movies[0].Title)`
+`@Html.DisplayNameFor(model => model.Movies[0].Title)`
  
-V předchozím kódu `DisplayNameFor` zkontroluje pomocné rutiny HTML `Title` vlastnost se odkazuje ve výrazu lambda lze zjistit název zobrazení. Vzhledem k tomu, že výraz lambda je zkontroloval spíše než vyhodnocen, jste neobdrželi narušení přístupu při `model`, `model.movies`, nebo `model.movies[0]` jsou `null` nebo je prázdný. Při vyhodnocování výrazu lambda (například `@Html.DisplayFor(modelItem => item.Title)`), jsou vyhodnocovány hodnoty vlastností modelu.
+V předchozím kódu `DisplayNameFor` zkontroluje pomocné rutiny HTML `Title` vlastnost se odkazuje ve výrazu lambda lze zjistit název zobrazení. Vzhledem k tomu, že výraz lambda je zkontroloval spíše než vyhodnocen, jste neobdrželi narušení přístupu při `model`, `model.Movies`, nebo `model.Movies[0]` jsou `null` nebo je prázdný. Při vyhodnocování výrazu lambda (například `@Html.DisplayFor(modelItem => item.Title)`), jsou vyhodnocovány hodnoty vlastností modelu.
 
 Otestujte aplikaci tak, že žánr, název filmu a obě.

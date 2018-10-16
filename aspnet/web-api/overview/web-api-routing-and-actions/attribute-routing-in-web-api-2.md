@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d16dcc618bf6c60714179601db14f4dd2a9e41ce
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 22eb2fd748d52ec95e813ada8b1bf3b4826ad573
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912149"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348478"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Směrování atributů v rozhraní ASP.NET Web API 2
 ====================
@@ -245,11 +245,11 @@ Chcete-li zadat název trasy, nastavte **název** vlastnost pro atribut. Násled
 <a id="order"></a>
 ## <a name="route-order"></a>Pořadí trasy
 
-Rozhraní se pokusí tak, aby odpovídaly identifikátor URI s trasy, je vyhodnocen jako trasy v určitém pořadí. Chcete-li určit pořadí, nastavte **RouteOrder** vlastnost pro atribut trasy. Nižší hodnoty jsou vyhodnocen jako první. Výchozí hodnota pořadí je nula.
+Rozhraní se pokusí tak, aby odpovídaly identifikátor URI s trasy, je vyhodnocen jako trasy v určitém pořadí. Chcete-li určit pořadí, nastavte **pořadí** vlastnost pro atribut trasy. Nižší hodnoty jsou vyhodnocen jako první. Výchozí hodnota pořadí je nula.
 
 Zde je, jak se určuje celkový počet pořadí:
 
-1. Porovnání **RouteOrder** vlastnost atribut trasy.
+1. Porovnání **pořadí** vlastnost atribut trasy.
 2. Podívejte se na každý segment identifikátoru URI v šabloně trasy. Pro každý segment pořadí následujícím způsobem:
 
     1. Literál segmenty.
@@ -271,4 +271,4 @@ Tyto postupy jsou uspořádaná následujícím způsobem.
 4. objednávky / {\*datum}
 5. objednávky / čekající na vyřízení
 
-Všimněte si, že "details" je segmentů literálů a před {id}"se zobrazí, ale"až"se zobrazí poslední vzhledem k tomu, **RouteOrder** vlastnost je 1. (Tento příklad předpokládá existuje se žádní zákazníci s názvem "details" nebo "čeká na vyřízení". Obecně platí snažte se vyhnout nejednoznačný trasy. V tomto příkladu lepší šablona trasy pro `GetByCustomer` je "zákazníkům / {customerName}")
+Všimněte si, že "details" je segmentů literálů a před {id}"se zobrazí, ale"až"se zobrazí poslední vzhledem k tomu, **pořadí** vlastnost je 1. (Tento příklad předpokládá existuje se žádní zákazníci s názvem "details" nebo "čeká na vyřízení". Obecně platí snažte se vyhnout nejednoznačný trasy. V tomto příkladu lepší šablona trasy pro `GetByCustomer` je "zákazníkům / {customerName}")

@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvářet, číst, aktualizovat, odstranit pomocí EF
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 25493f93daf3fe5e874ad1d06b918196cd1f074d
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: b30cc9a5a5bae520ec21e6314be7819484f9e580
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912810"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348465"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - CRUD - 2, 8
 
@@ -57,7 +57,7 @@ Prakticky automaticky generovaný kód [asynchronně vyhledá](/dotnet/api/micro
 * Vyhledá entitu s primární klíč (PK). Pokud entita s primárnímu Klíči sledován správou kontextu, je vrácen bez požadavek do databáze.
 * Je snadné a stručné.
 * Je optimalizovaný pro vyhledání jednu entitu.
-* V některých situacích může mít výhody výkonu, ale jsou zřídka se stane pro běžné webové aplikace.
+* V některých situacích může mít výhody výkonu, ale zřídka se pro běžné webové aplikace.
 * Implicitně používá [FirstAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_) místo [SingleAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_).
 
 Ale pokud budete chtít `Include` jinými entitami, pak `FindAsync` už není vhodné. To znamená, že budete muset opustit `FindAsync` a přesunout do dotazu v průběhu vaší aplikace.

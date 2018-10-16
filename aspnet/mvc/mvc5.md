@@ -4,16 +4,16 @@ title: ASP.NET MVC 5 | Dokumentace Microsoftu
 author: rick-anderson
 description: ASP.NET MVC 5 ASP.NET MVC 5 je architektura určená k vytváření aplikací škálovatelná webů založené na standardech pomocí zavedených návrhových postupů a sílu AS...
 ms.author: riande
-ms.date: 01/20/2014
+ms.date: 10/11/2018
 ms.assetid: f79fbf7f-59e5-4279-a832-c1a0294630f4
 msc.legacyurl: /mvc/mvc5
 msc.type: content
-ms.openlocfilehash: c837560e0ad9618decaba9761da9cf35e0f03f08
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c958d39c7eff0d581de6b05890b8e6df8bdb5207
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752241"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348257"
 ---
 <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
 ====================
@@ -21,7 +21,7 @@ ms.locfileid: "41752241"
 
 ### <a name="one-aspnet"></a>One ASP.NET
 
-Šablon projektu Web MVC bez problémů integrovat nové prostředí One ASP.NET. Můžete přizpůsobit projekt MVC a konfigurace ověřování pomocí Průvodce vytvořením projektu One ASP.NET. Úvodní kurz k ASP.NET MVC 5 najdete za [Začínáme s ASP.NET MVC 5](overview/getting-started/introduction/getting-started.md).
+Šablon projektu Web MVC bez problémů integrovat prostředí One ASP.NET. Můžete přizpůsobit projekt MVC a konfigurace ověřování pomocí Průvodce vytvořením projektu One ASP.NET. Úvodní kurz k ASP.NET MVC 5 najdete za [Začínáme s ASP.NET MVC 5](overview/getting-started/introduction/getting-started.md).
 
 Informace o upgradu projektů MVC 4 do MVC 5 najdete v tématu [pokyny k upgradu ASP.NET MVC 4 a projektem webového rozhraní API technologie ASP.NET MVC 5 a webovým rozhraním API 2](overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md).
 
@@ -31,7 +31,7 @@ Použití ASP.NET Identity pro ověřování a správě identit se aktualizovaly
 
 ### <a name="bootstrap"></a>Bootstrap
 
-Šablona projektu MVC byl aktualizován na použití [Bootstrap](http://getbootstrap.com/) k poskytování elegantní a rychle reagující vzhled a chování, které můžete snadno přizpůsobit. Další informace najdete v tématu [Bootstrap v šablony webových projektů Visual Studio 2013](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap).
+Šablona projektu MVC byl aktualizován na použití [Bootstrap](http://getbootstrap.com/) k poskytování elegantní a rychle reagující vzhled a chování, které můžete snadno přizpůsobit. Další informace najdete v tématu [Bootstrap v šablony webových projektů sady Visual Studio](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#bootstrap).
 
 ### <a name="authentication-filters"></a>Filtry ověřování
 
@@ -47,43 +47,45 @@ ASP.NET MVC teď podporuje [směrováním atributů](https://blogs.msdn.com/b/we
 
 ## <a name="new-web-project-experience"></a>Nové prostředí webového projektu
 
-Vylepšili jsme možnosti vytváření nových webových projektů v sadě Visual Studio 2013. V **nový webový projekt ASP.NET** dialogového okna můžete vybrat typ projektu chcete, nakonfigurovat libovolnou kombinaci technologie (webové formuláře, MVC, webové rozhraní API), nakonfigurujte možnosti ověřování a přidejte projekt testu jednotek.
+Visual Studio rozšířené možnosti vytváření nových webových projektů, spouští se v sadě Visual Studio 2013. V **nový webový projekt ASP.NET** dialogového okna můžete vybrat typ projektu chcete, nakonfigurovat libovolnou kombinaci technologie (webové formuláře, MVC, webové rozhraní API), nakonfigurujte možnosti ověřování, přidat podporu Dockeru a přidejte projekt testu jednotek.
 
-![Nový projekt ASP.NET](mvc5/_static/image1.png)
+![Nový projekt ASP.NET](mvc5/_static/new-aspnet-web-app-dialog.png)
 
-Nové dialogové okno umožňuje změnit výchozí nastavení ověřování pro celou řadu šablon. Například při vytváření projektu aplikace webových formulářů ASP.NET můžete vybrat některý z následujících možností:
+Dialogové okno umožňuje změnit výchozí nastavení ověřování pro celou řadu šablon. Například při vytváření projektu aplikace webových formulářů ASP.NET můžete vybrat některý z následujících možností:
 
 - Bez ověřování
 - Jednotlivých uživatelských účtů (členství technologie ASP.NET nebo sociální zprostředkovatele přihlášení)
-- Účty organizace (Active Directory v aplikaci internet)
+- Pracovní nebo školní účty (Active Directory v aplikaci internet)
 - Ověřování Windows (Active Directory v intranetu aplikace)
 
-![Možnosti ověřování](mvc5/_static/image2.png)
+![Možnosti ověřování](mvc5/_static/change-authentication-dialog.png)
 
-Další informace o nový proces pro vytváření webových projektů, naleznete v tématu [vytváření webových projektů ASP.NET v sadě Visual Studio 2013](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md). Další informace o nových možnostech ověřování najdete v tématu [ASP.NET Identity](../identity/overview/index.md).
+Další informace o procesu pro vytváření webových projektů, naleznete v tématu [vytváření webových projektů ASP.NET v sadě Visual Studio](../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md). Další informace o možnostech ověřování najdete v tématu [ASP.NET Identity](../identity/overview/index.md).
 
 <a id="scaffold"></a>
 ### <a name="aspnet-scaffolding"></a>ASP.NET generování uživatelského rozhraní
 
 ASP.NET generování uživatelského rozhraní je architektura generování kódu pro webové aplikace ASP.NET. To umožňuje snadno přidat do projektu, který komunikuje s datovým modelem často používaný kód.
 
-V předchozích verzích sady Visual Studio generování uživatelského rozhraní omezovala na projekty ASP.NET MVC. Pomocí sady Visual Studio 2013 můžete nyní používat generování uživatelského rozhraní pro libovolný projekt ASP.NET, včetně webových formulářů. Visual Studio 2013 pro projekt webových formulářů aktuálně nepodporuje generování stránek, ale můžete pořád používat generování uživatelského rozhraní s webovými formuláři tak, že přidáte k projektu závislosti MVC. Podpora pro generování stránky pro webové formuláře bude přidána v budoucí aktualizaci.
+Ve verzích sady Visual Studio před 2013 generování uživatelského rozhraní omezovala na projekty ASP.NET MVC. Spouští se v sadě Visual Studio 2013, můžete použít generování uživatelského rozhraní pro libovolný projekt ASP.NET, včetně webových formulářů. Visual Studio pro projekt webových formulářů aktuálně nepodporuje generování stránek, ale můžete pořád používat generování uživatelského rozhraní s webovými formuláři tak, že přidáte k projektu závislosti MVC. Podpora pro generování stránky pro webové formuláře bude přidána v budoucí verzi.
 
-Při používání generování uživatelského rozhraní, zajišťujeme, že všechny požadované závislosti jsou nainstalovány v projektu. Například pokud začínat projekt webových formulářů ASP.NET a poté použijte generování uživatelského rozhraní pro přidání Kontroleru webového rozhraní API, požadované balíčky NuGet a odkazy jsou přidány do projektu automaticky.
+Při používání generování uživatelského rozhraní, všechny požadované závislosti jsou nainstalovány v projektu. Například pokud začínat projekt webových formulářů ASP.NET a poté použijte generování uživatelského rozhraní pro přidání Kontroleru webového rozhraní API, požadované balíčky NuGet a odkazy jsou přidány do projektu automaticky.
 
-Chcete-li přidat generování uživatelského rozhraní MVC do projektu webových formulářů, přidejte **novou vygenerovanou položku** a vyberte **závislosti MVC 5** v dialogovém okně. Existují dvě možnosti pro generování uživatelského rozhraní MVC; Minimální a úplné. Pokud vyberete minimální, pouze balíčky NuGet a odkazy pro architekturu ASP.NET MVC se přidají do vašeho projektu. Pokud vyberete možnost Úplná minimální závislosti jsou přidány, a také požadované soubory obsahu pro projekt MVC.
+Chcete-li přidat generování uživatelského rozhraní MVC do projektu webových formulářů, přidejte **novou vygenerovanou položku** a vyberte **závislosti MVC 5** v dialogovém okně. Existují dvě možnosti pro generování uživatelského rozhraní MVC; **Minimální závislosti** a **úplné závislosti**. Pokud vyberete **minimální závislosti**, pouze balíčky NuGet a odkazy pro architekturu ASP.NET MVC jsou přidány do projektu. Pokud vyberete **úplné závislosti**, minimální závislosti jsou přidány a požadované soubory obsahu pro projekt MVC.
 
-Podpora pro generování kontrolerů asynchronní používá nové asynchronní funkce z Entity Framework 6.
+![Přidat dialog vygenerované uživatelské rozhraní v sadě Visual Studio](overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/add-scaffold.png)
+
+Podporu pro generování uživatelského rozhraní řadiče asynchronní používá asynchronní funkce z Entity Framework 6.
 
 Další informace a podrobné pokyny najdete v tématu [generování uživatelského rozhraní ASP.NET: Přehled](../visual-studio/overview/2013/aspnet-scaffolding-overview.md).
 
-### <a name="getting-help-and-reporting-issues"></a>Získání nápovědy a hlášení problémů s
+### <a name="get-help-and-report-issues"></a>Získání nápovědy a hlásit problémy
 
 - [Známé problémy a rozbíjející změny seznamu](../visual-studio/overview/2013/release-notes.md#knownissues)
 - Získejte pomoc a diskutovat o ASP.NET MVC 5 v [fóra](https://forums.asp.net/1146.aspx)
 - [Nahlásit chybu v ASP.NET MVC 5](https://github.com/aspnet/AspNetWebStack/issues)
 - [Vytvořit žádost o funkci](http://aspnet.uservoice.com/forums/41201-asp-net-mvc)
 
-### <a name="upgrading-from-aspnet-mvc-4"></a>Upgrade z architektury ASP.NET MVC 4
+### <a name="upgrade-from-aspnet-mvc-4"></a>Upgrade z architektury ASP.NET MVC 4
 
 Zobrazit [postupu při upgradu ASP.NET MVC 4 a webového rozhraní API projektu ASP.NET MVC 5 a webového rozhraní API 2](overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)

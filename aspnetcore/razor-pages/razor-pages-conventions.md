@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak směrování a aplikační konvence zprostředkovatele modelu můžete ovládací prvek stránky směrování, zjišťování a zpracování.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/17/2018
+ms.date: 10/12/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 13fd6c156afd5ab62739b09296a929120ce3450f
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011859"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348530"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>Konvence směrování a aplikačních stránky Razor v ASP.NET Core
 
@@ -93,7 +93,7 @@ Stránky Razor směrování a směrování sdílení řadiče MVC implementace. 
 
 Přidat delegáta pro [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) přidat [modelu konvencí](xref:mvc/controllers/application-model#conventions) , která platí pro stránky Razor.
 
-**Přidání vytváření modelu trasu pro všechny stránky**
+### <a name="add-a-route-model-convention-to-all-pages"></a>Přidání vytváření modelu trasu pro všechny stránky
 
 Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention) ke kolekci [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se použijí během model trasy stránky konstrukce.
 
@@ -117,7 +117,7 @@ Možnosti stránky Razor, jako je například přidávání [konvence](/dotnet/a
 
 ![Na stránce o žádá s segment GlobalRouteValue trasy. Na vykreslené stránce se zobrazí, že hodnota data trasy je zachycena v metodě OnGet stránky.](razor-pages-conventions/_static/about-page-global-template.png)
 
-**Přidejte aplikaci modelu konvence pro všechny stránky**
+### <a name="add-an-app-model-convention-to-all-pages"></a>Přidejte aplikaci modelu konvence pro všechny stránky
 
 Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageApplicationModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageapplicationmodelconvention) ke kolekci [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se použijí během model stránky v aplikaci konstrukce.
 
@@ -137,12 +137,12 @@ Tato ukázková aplikace používá `AddHeaderAttribute` třídy přidat záhlav
 
 ::: moniker range=">= aspnetcore-2.1"
 
-**Přidat konvence model obslužné rutiny pro všechny stránky**
+### <a name="add-a-handler-model-convention-to-all-pages"></a>Přidat konvence model obslužné rutiny pro všechny stránky
 
 Použití [konvence](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) vytvořit a přidat [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention) ke kolekci [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) instancí, které se použijí během model obslužné rutiny stránky konstrukce.
 
 ```csharp
-public class GlobalPageHandlerModelConvention 
+public class GlobalPageHandlerModelConvention
     : IPageHandlerModelConvention
 {
     public void Apply(PageHandlerModel model)
@@ -168,7 +168,7 @@ services.AddMvc()
 
 Výchozího zprostředkovatele modelu trasy, která je odvozena z [IPageRouteModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelprovider) vyvolá smluv, které poskytují body rozšiřitelnosti pro konfiguraci tras stránky.
 
-**Složka trasy modelu konvence**
+### <a name="folder-route-model-convention"></a>Složka trasy modelu konvence
 
 Použití [AddFolderRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection.addfolderroutemodelconvention) vytvořit a přidat [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention) , která vyvolá akci na [PageRouteModel](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageroutemodel) pro všechny stránky v části Zadaná složka.
 
@@ -184,7 +184,7 @@ Požadavek ukázky Page1 stránku na `localhost:5000/OtherPages/Page1/GlobalRout
 
 ![Page1 ve složce OtherPages žádá segmentu směrování GlobalRouteValue a OtherPagesRouteValue. Na vykreslené stránce ukazuje, že v metodě OnGet stránky jsou zachyceny hodnot dat trasy.](razor-pages-conventions/_static/otherpages-page1-global-and-otherpages-templates.png)
 
-**Stránka trasy modelu konvence**
+### <a name="page-route-model-convention"></a>Stránka trasy modelu konvence
 
 Použití [AddPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection.addpageroutemodelconvention) vytvořit a přidat [IPageRouteModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageroutemodelconvention) , která vyvolá akci na [PageRouteModel](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageroutemodel) stránky se zadaným Jméno.
 
@@ -199,6 +199,44 @@ Kdykoli je to možné, nemají nastavený `Order`, což má za následek `Order 
 Žádosti o stránku ukázky na `localhost:5000/About/GlobalRouteValue/AboutRouteValue` a zkontrolujte výsledek:
 
 ![Stránka je požadováno se segmenty směrování pro GlobalRouteValue a AboutRouteValue. Na vykreslené stránce ukazuje, že v metodě OnGet stránky jsou zachyceny hodnot dat trasy.](razor-pages-conventions/_static/about-page-global-and-about-templates.png)
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="use-a-parameter-transformer-to-customize-page-routes"></a>Použití transformátoru parametr k přizpůsobení stránky trasy
+
+Použití transformeru parametr lze přizpůsobit stránky trasy generovaných ASP.NET Core. Parametr transformer implementuje `IOutboundParameterTransformer` a transformuje hodnoty parametrů. Například vlastní `SlugifyParameterTransformer` parametr transformer změny `SubscriptionManagement` trasy hodnota, která má `subscription-management`.
+
+`PageRouteTransformerConvention` Stránky trasy modelu úmluvy transformátoru parametr pro složku a soubor segmenty název trasy pro automaticky generované stránky v aplikaci. Například soubor Razor Pages na */Pages/SubscriptionManagement/ViewAll.cshtml* bude mít jeho trasu přepsán z `/SubscriptionManagement/ViewAll` k `/subscription-management/view-all`.
+
+`PageRouteTransformerConvention` pouze transformuje automaticky generované segmentů směrování stránky, které pocházejí ze stránky Razor složku a název souboru. To nebude transformace segmenty směrování přidána s `@page` směrnice. Úmluvy nebude transformovat trasy přidal <xref:Microsoft.Extensions.DependencyInjection.PageConventionCollectionExtensions.AddPageRoute*>.
+
+`PageRouteTransformerConvention` Je zaregistrovaný jako možnost v `Startup.ConfigureServices`:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc()
+        .AddRazorPagesOptions(options =>
+            {
+                options.Conventions.Add(
+                    new PageRouteTransformerConvention(
+                        new SlugifyParameterTransformer()));
+            });
+}
+
+public class SlugifyParameterTransformer : IOutboundParameterTransformer
+{
+    public string TransformOutbound(object value)
+    {
+        if (value == null) { return null; }
+
+        // Slugify value
+        return Regex.Replace(value.ToString(), "([a-z])([A-Z])", "$1-$2").ToLower();
+    }
+}
+```
+
+::: moniker-end
 
 ## <a name="configure-a-page-route"></a>Konfigurace stránky trasy
 

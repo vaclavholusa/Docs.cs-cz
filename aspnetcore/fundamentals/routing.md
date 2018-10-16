@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: d9ba96c7b2abd35b1b13c84814bf3f776e8d8731
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861054"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348556"
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
@@ -391,7 +391,15 @@ Chcete-li omezit parametr se známou sadou možných hodnot, použijte regulárn
 
 ## <a name="parameter-transformer-reference"></a>Odkaz na parametr transformer
 
-Parametr transformátory spuštěn při generování odkazu pro `Route`. Parametr transformátory přijmout hodnoty trasy a transformovat na novou řetězcovou hodnotu. Transformovanou hodnotou je používán vytvořený odkaz. Například vlastní `slugify` transformer parametr vzoru trasy `blog\{article:slugify}` s `Url.Action(new { article = "MyTestArticle" })` generuje `blog\my-test-article`. Parametr transformátory implementovat `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer` a jsou nakonfigurované pomocí <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>.
+Parametr transformátory:
+
+* Při generování odkazu pro spuštění `Route`.
+* Implementace `Microsoft.AspNetCore.Routing.IOutboundParameterTransformer`.
+* Byli nakonfigurováni pomocí <xref:Microsoft.AspNetCore.Routing.RouteOptions.ConstraintMap>.
+* Přijmout hodnoty trasy a transformovat ho do novou řetězcovou hodnotu.
+* Transformovanou hodnotou je používán vytvořený odkaz.
+
+Například vlastní `slugify` transformer parametr vzoru trasy `blog\{article:slugify}` s `Url.Action(new { article = "MyTestArticle" })` generuje `blog\my-test-article`.
 
 Parametr transformátory také používají rozhraní k transformaci identifikátor URI, na který se přeloží koncový bod. Například technologie ASP.NET Core MVC používá parametr transformátory Transformace hodnoty trasy slouží k přiřazení `area`, `controller`, `action`, a `page`.
 
@@ -403,7 +411,10 @@ routes.MapRoute(
 
 Pomocí předchozího postupu akce `SubscriptionManagementController.GetAll()` je nalezena shoda s identifikátorem URI `/subscription-management/get-all`. Parametr transformer nedojde ke změně hodnoty trasy sloužící ke generování odkazu. `Url.Action("GetAll", "SubscriptionManagement")` Vypíše `/subscription-management/get-all`.
 
-ASP.NET Core MVC také součástí `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` konvence rozhraní API. Zadaný parametr transformer úmluvy platí pro všechny tokeny atribut trasy v aplikaci.
+ASP.NET Core nabízí vytváření rozhraní API pro parametr transformátory pomocí generovaného trasy:
+
+* ASP.NET Core MVC má `Microsoft.AspNetCore.Mvc.ApplicationModels.RouteTokenTransformerConvention` konvence rozhraní API. Tato konvence zadaný parametr transformer platí pro všechny trasy atributů v aplikaci. Parametr transformer transformuje tokeny atribut trasy, jako se nahradí. Další informace najdete v tématu [transformátoru parametr použít k přizpůsobení náhradních tokenů](/aspnet/core/mvc/controllers/routing#use-a-parameter-transformer-to-customize-token-replacement).
+* Stránky Razor má `Microsoft.AspNetCore.Mvc.ApplicationModels.PageRouteTransformerConvention` konvence rozhraní API. Tato konvence zadaný parametr transformer platí pro všechny automaticky zjistí stránky Razor. Parametr transformer transformuje složku a název segmenty souborů tras stránky Razor. Další informace najdete v tématu [transformátoru parametr použít k přizpůsobení stránky trasy](/aspnet/core/razor-pages/razor-pages-conventions#use-a-parameter-transformer-to-customize-page-routes).
 
 ::: moniker-end
 

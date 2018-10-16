@@ -6,21 +6,20 @@ ms.author: casoper
 ms.date: 09/21/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 0efc95f508ef84d2728f503f1edd886ce6ae7a79
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: a7a109909d66b1016e78eedc8b802068143c65e3
+ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028255"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49348543"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>Cloudové ověřování ve webovém rozhraní API pomocí Azure Active Directory B2C v ASP.NET Core
 
 Podle [kamera Soper](https://twitter.com/camsoper)
 
-[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) je cloudové řešení správy identit pro webové a mobilní aplikace. Tato služba poskytuje ověřování pro aplikace hostované v cloudu i lokálně. Typy ověřování zahrnují jednotlivé účty, účty sociálních sítí a podnikových účtů federovaných. Kromě toho Azure AD B2C umožňuje ověřování službou Multi-Factor Authentication s minimální konfigurací.
+[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C) je cloudové řešení správy identit pro webové a mobilní aplikace. Tato služba poskytuje ověřování pro aplikace hostované v cloudu i lokálně. Typy ověřování zahrnují jednotlivé účty, účty sociálních sítí a podnikových účtů federovaných. Azure AD B2C taky poskytuje ověřování službou Multi-Factor Authentication s minimální konfigurací.
 
-> [!TIP]
-> Azure Active Directory (Azure AD) a Azure AD B2C jsou nabídky samostatných produktů. Klient služby Azure AD představuje organizace, zatímco tenanta služby Azure AD B2C představuje kolekci identit pro použití s aplikacemi předávajících stran. Další informace najdete v tématu [Azure AD B2C: Nejčastější dotazy (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs).
+Azure Active Directory (Azure AD) a Azure AD B2C jsou nabídky samostatných produktů. Klient služby Azure AD představuje organizace, zatímco tenanta služby Azure AD B2C představuje kolekci identit pro použití s aplikacemi předávajících stran. Další informace najdete v tématu [Azure AD B2C: Nejčastější dotazy (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs).
 
 Vzhledem k tomu, že webové rozhraní API bez uživatelského rozhraní, že se nám přesměruje uživatele na zabezpečené token službě, jako je Azure AD B2C. Místo toho rozhraní API je předán nosný token z volající aplikace, které již ověření uživatele v Azure AD B2C. Rozhraní API pak ověří daný token bez zásahu uživatele s přímým přístupem.
 
@@ -57,14 +56,14 @@ Použijte následující hodnoty:
 
 | Nastavení                       | Hodnota               | Poznámky                                                                                  |
 |-------------------------------|---------------------|----------------------------------------------------------------------------------------|
-| **Jméno**                      | *&lt;Název rozhraní API&gt;*  | Zadejte **název** pro aplikace, který popisuje vaši aplikaci pro zákazníky.                     |
+| **Jméno**                      | *{Název rozhraní API}*        | Zadejte **název** pro aplikace, který popisuje vaši aplikaci pro zákazníky.                     |
 | **Zahrnout webovou aplikaci / webové rozhraní API** | Ano                 |                                                                                        |
 | **Povolit implicitní tok**       | Ano                 |                                                                                        |
 | **Adresa URL odpovědi**                 | `https://localhost` | Adresy URL odpovědí jsou koncové body, kam Azure AD B2C vrací všechny tokeny, které vaše aplikace požaduje. |
 | **Identifikátor URI ID aplikace**                | *api*               | Identifikátor URI není nutné přeložit na fyzickou adresu. Pouze musí být jedinečný.     |
 | **Zahrnout nativního klienta**     | Ne                  |                                                                                        |
 
-Jakmile je rozhraní API zaregistrované, zobrazí se seznam aplikací a rozhraní API v tenantovi. Vyberte rozhraní API, který byl právě zaregistrováno. Vyberte **kopírování** ikony napravo **ID aplikace** pole, které chcete zkopírovat do schránky. Vyberte **publikované obory** a ověřte, výchozí *user_impersonation* obor je k dispozici.
+Jakmile je rozhraní API zaregistrované, zobrazí se seznam aplikací a rozhraní API v tenantovi. Vyberte rozhraní API, který byl dříve zaregistrován. Vyberte **kopírování** ikony napravo **ID aplikace** pole, které chcete zkopírovat do schránky. Vyberte **publikované obory** a ověřte, výchozí *user_impersonation* obor je k dispozici.
 
 ## <a name="create-an-aspnet-core-app-in-visual-studio-2017"></a>Vytvoření aplikace ASP.NET Core v sadě Visual Studio 2017
 
@@ -78,7 +77,7 @@ V sadě Visual Studio:
 
     ![Tlačítko Změnit ověřování](./azure-ad-b2c-webapi/change-auth-button.png)
 
-4. V **změna ověřování** dialogového okna, vyberte **jednotlivé uživatelské účty**a pak vyberte **připojit k existujícímu úložišti uživatelů v cloudu** v rozevírací nabídce. 
+4. V **změna ověřování** dialogového okna, vyberte **jednotlivé uživatelské účty** > **připojit k existujícímu úložišti uživatelů v cloudu**.
 
     ![Dialogové okno Změnit ověřování](./azure-ad-b2c-webapi/change-auth-dialog.png)
 
@@ -86,9 +85,9 @@ V sadě Visual Studio:
 
     | Nastavení                       | Hodnota                                                 |
     |-------------------------------|-------------------------------------------------------|
-    | **Název domény**               | *&lt;název domény tenanta B2C&gt;*          |
-    | **ID aplikace**            | *&lt;Vložte ID aplikace ze schránky&gt;* |
-    | **Zásady registrace / přihlášení** | `B2C_1_SiUpIn`                                        |
+    | **Název domény**               | *{název domény tenanta B2C}*                |
+    | **ID aplikace**            | *{ID aplikace ze schránky vložte}*       |
+    | **Zásady registrace / přihlášení** | B2C_1_SiUpIn                                          |
 
     Vyberte **OK** zavřete **změna ověřování** dialogového okna. Vyberte **OK** k vytvoření webové aplikace.
 
@@ -107,7 +106,7 @@ V sadě Visual Studio spusťte rozhraní API. Visual Studio spustí prohlížeč
 
 ### <a name="register-postman-as-a-web-app"></a>Zaregistrujte se jako webová aplikace Postman
 
-Od Postman simuluje webové aplikace, který můžete získat tokeny od tenanta Azure AD B2C, musí být zaregistrované v tenantovi jako webovou aplikaci. Registrovat pomocí nástroje Postman [kroky v dokumentaci k](/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-web-app) pod **zaregistrovat webovou aplikaci** oddílu. Zastavení při **vytvořit tajný kód klienta aplikace webového** oddílu. Pro účely tohoto kurzu není nutné tajný kód klienta. 
+Od Postman simuluje webové aplikace, který získává tokeny z tenanta Azure AD B2C, musí být zaregistrované v tenantovi jako webovou aplikaci. Registrovat pomocí nástroje Postman [kroky v dokumentaci k](/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-web-app) pod **zaregistrovat webovou aplikaci** oddílu. Zastavení při **vytvořit tajný kód klienta aplikace webového** oddílu. Pro účely tohoto kurzu není nutné tajný kód klienta. 
 
 Použijte následující hodnoty:
 
@@ -117,16 +116,16 @@ Použijte následující hodnoty:
 | **Zahrnout webovou aplikaci / webové rozhraní API** | Ano                              |                                 |
 | **Povolit implicitní tok**       | Ano                              |                                 |
 | **Adresa URL odpovědi**                 | `https://getpostman.com/postman` |                                 |
-| **Identifikátor URI ID aplikace**                | *&lt;Ponechte prázdné&gt;*            | Pro účely tohoto kurzu není nutné. |
+| **Identifikátor URI ID aplikace**                | *{ponechejte prázdné}*                  | Pro účely tohoto kurzu není nutné. |
 | **Zahrnout nativního klienta**     | Ne                               |                                 |
 
 Nově zaregistrovaný webové aplikace potřebuje oprávnění pro přístup k webovým rozhraním API jménem uživatele.  
 
 1. Vyberte **Postman** v seznamu aplikací a pak vyberte **přístup přes rozhraní API** z nabídky na levé straně.
-2. Vyberte **+ přidat**.
-3. V **vybrat rozhraní API** rozevíracím seznamu vyberte název webového rozhraní API.
-4. V **vyberte obory** rozevírací seznam, omdwdatamart všechny obory.
-5. Vyberte **Ok**.
+1. Vyberte **+ přidat**.
+1. V **vybrat rozhraní API** rozevíracím seznamu vyberte název webového rozhraní API.
+1. V **vyberte obory** rozevírací seznam, omdwdatamart všechny obory.
+1. Vyberte **Ok**.
 
 Poznámka: aplikace Postman ID aplikace, jako je potřeba získat nosný token.
 
@@ -151,7 +150,7 @@ Z **vytvořit nový** dialogové okno:
 
 Pokud chcete ověřit, že webové rozhraní API vyžaduje ověření, nejprve vytvoříte žádost o bez ověřování.
 
-1. V **zadejte adresu URL žádosti** zadejte adresu URL pro `ValuesController`. Adresa URL je stejné, jako je zobrazen v prohlížeči s **hodnoty rozhraníapi/** připojí. Příkladem může být `https://localhost:44375/api/values`.
+1. V **zadejte adresu URL žádosti** zadejte adresu URL pro `ValuesController`. Adresa URL je stejné, jako je zobrazen v prohlížeči s **hodnoty rozhraníapi/** připojí. Například `https://localhost:44375/api/values`.
 2. Vyberte **odeslat** tlačítko.
 3. Všimněte si, že stav odpovědi je *401 Neautorizováno*.
 
@@ -173,19 +172,21 @@ Chcete-li provést ověřený požadavek do webového rozhraní API, je potřeba
 
    |                Nastavení                 |                                             Hodnota                                             |                                                                                                                                    Poznámky                                                                                                                                     |
    |----------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-   |      <strong>Název tokenu</strong>       |                                  <em>&lt;Název tokenu&gt;</em>                                  |                                                                                                                   Zadejte popisný název pro daný token.                                                                                                                    |
+   |      <strong>Název tokenu</strong>       |                                          *{Název tokenu}*                                       |                                                                                                                   Zadejte popisný název pro daný token.                                                                                                                    |
    |      <strong>Typ udělení</strong>       |                                           Implicitní                                            |                                                                                                                                                                                                                                                                              |
-   |     <strong>Adresa URL zpětného volání</strong>      |                               `https://getpostman.com/postman`                                |                                                                                                                                                                                                                                                                              |
-   |       <strong>Ověřovací adresa URL</strong>        | `https://login.microsoftonline.com/tfp/<tenant domain name>/B2C_1_SiUpIn/oauth2/v2.0/authorize` |                                                                                                  Nahraďte <em>&lt;název domény tenantu&gt;</em> s názvem domény vašeho tenanta.                                                                                                  |
-   |       <strong>ID klienta</strong>       |                <em>&lt;Zadejte aplikace Postman <b>ID aplikace</b>&gt;</em>                 |                                                                                                                                                                                                                                                                              |
-   |         <strong>Rozsah</strong>         |         `https://<tenant domain name>/<api>/user_impersonation openid offline_access`         | Nahraďte <em>&lt;název domény tenantu&gt;</em> s názvem domény vašeho tenanta. Nahraďte <em>&lt;api&gt;</em> s identifikátorem URI ID aplikace dáte webového rozhraní API při první registraci (v tomto případě `api`). Vzor adresy URL je: <em>https://{tenant}.onmicrosoft.com/{api-id-uri}/{scope název}</em>. |
-   |         <strong>Stav</strong>         |                                 <em>&lt;Ponechte prázdné&gt;</em>                                  |                                                                                                                                                                                                                                                                              |
+   |     <strong>Adresa URL zpětného volání</strong>      |                                 `https://getpostman.com/postman`                              |                                                                                                                                                                                                                                                                              |
+   |       <strong>Ověřovací adresa URL</strong>        | `https://login.microsoftonline.com/{tenant domain name}/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` |  Nahraďte *{název domény tenantu}* s názvem domény vašeho tenanta. **Důležité**: Tato adresa URL musí mít stejný název domény jako co se nachází v `AzureAdB2C.Instance` ve webovém rozhraní API *appsettings.json* souboru. Další informace v POZNÁMCE&dagger;.                                                  |
+   |       <strong>ID klienta</strong>       |                *{Zadejte aplikaci Postman <b>ID aplikace</b>}*                              |                                                                                                                                                                                                                                                                              |
+   |         <strong>Rozsah</strong>         |         `https://{tenant domain name}/{api}/user_impersonation openid offline_access`       | Nahraďte *{název domény tenantu}* s názvem domény vašeho tenanta. Nahraďte *{api}* s identifikátorem URI ID aplikace dáte webového rozhraní API při první registraci (v tomto případě `api`). Vzor adresy URL je: `https://{tenant}.onmicrosoft.com/{api-id-uri}/{scope name}`.         |
+   |         <strong>Stav</strong>         |                                      *{ponechejte prázdné}*                                          |                                                                                                                                                                                                                                                                              |
    | <strong>Ověření klienta</strong> |                                Odeslat přihlašovací údaje pro klienta v textu                                |                                                                                                                                                                                                                                                                              |
 
+    > [!NOTE]
+    > &dagger; Zobrazí se dialogové okno nastavení zásad, na portálu Azure Active Directory B2C dvě možné adresy URL: jeden ve formátu `https://login.microsoftonline.com/`{název domény tenantu} / {Další informace o cestě} a druhý ve formátu `https://{tenant name}.b2clogin.com/`{název domény tenantu} / {další informace o cestě}. Má **kritické** , součástí domény v `AzureAdB2C.Instance` ve webovém rozhraní API *appsettings.json* soubor odpovídá identifikátoru použitému ve webové aplikaci *appsettings.json* souboru. Jedná se o stejnou doménu, používá pro pole Adresa URL pro ověřování v nástroji Postman. Všimněte si, že Visual Studio používá mírně odlišné formát adresy URL, než co se zobrazí na portálu. Shodují domény, adresa URL funguje.
 
 3. Vyberte **požádat o Token** tlačítko.
 
-4. Postman se otevře nové okno obsahující dialog přihlášení tenanta Azure AD B2C. Přihlaste se pomocí existujícího účtu (Pokud se jeden vytvořil testování zásad) nebo vyberte **zaregistrujte se hned teď** vytvořte nový účet. **Zapomněli jste heslo?** odkaz se používá k obnovení zapomenutého hesla.
+4. Postman se otevře nové okno obsahující tenanta Azure AD B2C přihlašovacího dialogového okna. Přihlaste se pomocí existujícího účtu (Pokud se jeden vytvořil testování zásad) nebo vyberte **zaregistrujte se hned teď** vytvořte nový účet. **Zapomněli jste heslo?** odkaz se používá k obnovení zapomenutého hesla.
 
 5. Po úspěšném přihlášení, okno se zavře a **SPRAVOVAT přístupové TOKENY** se zobrazí dialogové okno. Posuňte se dolů dolů, vyberte **použijte Token** tlačítko.
 

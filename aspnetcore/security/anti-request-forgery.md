@@ -4,14 +4,14 @@ author: steve-smith
 description: Zjistěte, jak zabránit v napadení webových aplikací, kde škodlivý webu mohou mít vliv na interakci mezi prohlížeče klienta a aplikace.
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/19/2018
+ms.date: 10/11/2018
 uid: security/anti-request-forgery
-ms.openlocfilehash: 6a30e1e2321ca3a81d6e1a320d1d87dddb3033c7
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 213d6d09501b5428bdaad454ec487702ef2a02a6
+ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095785"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49325910"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Útokům zabránilo webů žádosti padělání (XSRF/CSRF) v ASP.NET Core
 
@@ -179,6 +179,31 @@ ASP.NET Core obsahuje tři [filtry](xref:mvc/controllers/filters) pro práci s a
 
 Přizpůsobení [antiforgery možnosti](/dotnet/api/Microsoft.AspNetCore.Antiforgery.AntiforgeryOptions) v `Startup.ConfigureServices`:
 
+::: moniker range=">= aspnetcore-2.0"
+
+```csharp
+services.AddAntiforgery(options => 
+{
+    // Set Cookie properties using CookieBuilder properties†.
+    options.FormFieldName = "AntiforgeryFieldname";
+    options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
+    options.SuppressXFrameOptionsHeader = false;
+});
+```
+
+&dagger;Nastavte antiforgery `Cookie` vlastností pomocí vlastnosti [CookieBuilder](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder) třídy.
+
+| Možnost | Popis |
+| ------ | ----------- |
+| [Soubor cookie](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.cookie) | Určuje nastavení použité k vytvoření antiforgery soubory cookie. |
+| [FormFieldName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.formfieldname) | Název skryté pole formuláře antiforgery systému použije k vykreslení antiforgery tokeny v zobrazeních. |
+| [HeaderName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.headername) | Název hlavičky používá antiforgery systémem. Pokud `null`, systém bere v úvahu pouze data formuláře. |
+| [SuppressXFrameOptionsHeader](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.suppressxframeoptionsheader) | Určuje, jestli se má potlačit generování `X-Frame-Options` záhlaví. Ve výchozím nastavení je záhlaví generovány s hodnotou "SAMEORIGIN". Výchozí hodnota je `false`. |
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
 ```csharp
 services.AddAntiforgery(options => 
 {
@@ -202,6 +227,8 @@ services.AddAntiforgery(options =>
 | [HeaderName](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.headername) | Název hlavičky používá antiforgery systémem. Pokud `null`, systém bere v úvahu pouze data formuláře. |
 | [Vlastnost RequireSsl](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.requiressl) | Určuje, zda je požadován protokol SSL antiforgery systému. Pokud `true`, neúspěšné žádosti jiného typu než SSL. Výchozí hodnota je `false`. Tato vlastnost je zastaralá a bude v budoucí verzi odebrána. Doporučenou alternativou je nastavit Cookie.SecurePolicy. |
 | [SuppressXFrameOptionsHeader](/dotnet/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions.suppressxframeoptionsheader) | Určuje, jestli se má potlačit generování `X-Frame-Options` záhlaví. Ve výchozím nastavení je záhlaví generovány s hodnotou "SAMEORIGIN". Výchozí hodnota je `false`. |
+
+::: moniker-end
 
 Další informace najdete v tématu [CookieAuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.CookieAuthenticationOptions).
 

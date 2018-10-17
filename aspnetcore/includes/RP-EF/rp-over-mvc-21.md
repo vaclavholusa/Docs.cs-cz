@@ -2,6 +2,8 @@
 
 V tomto kurzu nebyl upgradován na verzi ASP.NET Core 2.1. ASP.NET Core 2.0 verzi tohoto kurzu je k dispozici výběrem **ASP.NET Core 2.0** výše uvedené tabulky obsahu nebo v horní části stránky:
 
+![tutoriály ](~//data/ef-rp/read-related-data/_static/2.1.png)
+
 ASP.NET Core 2.1 Razor Pages verzi tohoto kurzu má mnoho vylepšení verze 2.0.
 
 2.0 kurzu se naučíte ASP.NET, MVC Core a Entity Framework Core pomocí kontrolerů a zobrazení. Stránky Razor je na stránce programovací model, který je vytváření webového uživatelského rozhraní jednodušší a produktivnější. Doporučujeme, abyste [Razor Pages](xref:data/ef-rp/intro) kurz přes verze MVC. Kurz pro stránky Razor:

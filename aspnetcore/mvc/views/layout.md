@@ -3,20 +3,29 @@ title: Rozložení v ASP.NET Core
 author: ardalis
 description: Zjistěte, jak používat společné rozložení, sdílet direktivy a spustit běžné kód před vykreslení zobrazení v aplikaci ASP.NET Core.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 10/18/2018
 uid: mvc/views/layout
-ms.openlocfilehash: ad0b339572f387be8a636204015ffc361947acb8
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: b23fd4e0b1d91a4dd5aae548aa2b2081aa37a561
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41753339"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391294"
 ---
 # <a name="layout-in-aspnet-core"></a>Rozložení v ASP.NET Core
 
-Podle [Steve Smith](https://ardalis.com/)
+Podle [Steve Smith](https://ardalis.com/) a [společnosti Dave Brock](https://twitter.com/daveabrock)
 
-Zobrazení často sdílení visual a programové prvků. V tomto článku se dozvíte, jak používat společné rozložení, sdílet direktivy a spustit společný kód před vykreslení zobrazení v aplikaci ASP.NET Core.
+Zobrazení stránky a často sdílení visual a programové prvků. Tento článek ukazuje, jak:
+
+* Použití běžných rozložení.
+* Sdílet direktivy.
+* Spusťte společný kód před vykreslování stránky nebo zobrazení.
+
+Tento dokument popisuje rozložení pro dva různé přístupy k ASP.NET Core MVC: Razor Pages a kontrolery zobrazení. Pro toto téma jsou minimální rozdíly:
+
+* Stránky Razor jsou v *stránky* složky.
+* Kontrolery se používá k zobrazení *zobrazení* složku pro zobrazení.
 
 ## <a name="what-is-a-layout"></a>Co je rozložení
 
@@ -26,15 +35,21 @@ Většina webových aplikací mají společné rozložení, který poskytuje už
 
 Společné struktury HTML, jako jsou skripty a šablony stylů také často používá mnoho stránek v rámci aplikace. Všechny tyto sdílené prvky mohou být definovány v *rozložení* soubor, který může odkazovat ve všech zobrazeních použít v aplikaci. Rozložení snížit duplicitního kódu v zobrazeních, usnadňuje postupujte [není opakujte sami (zkušební) Princip](http://deviq.com/don-t-repeat-yourself/).
 
-Podle konvence je výchozí rozložení aplikace ASP.NET Core s názvem `_Layout.cshtml`. Šablony projektů Visual Studio ASP.NET Core MVC zahrnuje tento soubor rozložení `Views/Shared` složky:
+Podle konvence je výchozí rozložení aplikace ASP.NET Core s názvem *_Layout.cshtml*. Soubor rozložení pro nové projekty ASP.NET Core, které jsou vytvořené pomocí šablon:
 
-![zobrazení složky v Průzkumníku řešení](layout/_static/web-project-views.png)
+* Stránky Razor: *Pages/Shared/_Layout.cshtml*
 
-Toto rozložení definuje šablonu nejvyšší úrovně pro zobrazení v aplikaci. Aplikace nevyžadují rozložení a aplikací můžete definovat více než jedno rozložení s různá zobrazení zadání různá rozložení.
+  ![stránky složku v Průzkumníku řešení](layout/_static/rp-web-project-views.png)
 
-Příklad `_Layout.cshtml`:
+* Kontroler se zobrazeními: *Views/Shared/_Layout.cshtml*
 
-[!code-html[](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
+ ![zobrazení složky v Průzkumníku řešení](layout/_static/mvc-web-project-views.png)
+
+Rozložení definuje šablonu nejvyšší úrovně pro zobrazení v aplikaci. Aplikace nevyžadují rozložení. Aplikace můžete definovat více než jedno rozložení s různá zobrazení zadání různá rozložení.
+
+Následující kód ukazuje soubor rozložení pro vytvoření projektu s kontroler a zobrazení šablony:
+
+[!code-html[](~/common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=44,72)]
 
 ## <a name="specifying-a-layout"></a>Určení rozložení
 
@@ -42,7 +57,7 @@ Zobrazení Razor je k dispozici `Layout` vlastnost. Jednotlivá zobrazení zadat
 
 [!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
 
-Zadané rozložení můžete použít úplnou cestu (Příklad: `/Views/Shared/_Layout.cshtml`) nebo částečný název (Příklad: `_Layout`). Když částečný název zadán, bude hledat rozložení souboru pomocí jeho procesu zjišťování standardní zobrazovací modul Razor. Složky spojené kontroleru je nejprve prohledán, za nímž následuje `Shared` složky. Tento proces zjišťování je stejný jako ten, který používá ke zjišťování [částečná zobrazení](partial.md).
+Zadané rozložení můžete použít úplnou cestu (například */Pages/Shared/_Layout.cshtml* nebo */Views/Shared/_Layout.cshtml*) nebo částečný název (Příklad: `_Layout`). Když částečný název zadán, bude hledat rozložení souboru pomocí jeho procesu zjišťování standardní zobrazovací modul Razor. Složky, pokud existuje metoda obslužné rutiny (nebo řadič) je nejprve prohledán, za nímž následuje *Shared* složky. Tento proces zjišťování je stejný jako ten, který používá ke zjišťování [částečná zobrazení](partial.md).
 
 Ve výchozím nastavení, musí volat každou rozložení `RenderBody`. Všude, kde volání `RenderBody` je umístěn, bude vykreslen obsah zobrazení.
 
@@ -50,19 +65,37 @@ Ve výchozím nastavení, musí volat každou rozložení `RenderBody`. Všude, 
 
 ### <a name="sections"></a>Oddíly
 
-Rozložení můžete volitelně odkazovat na jeden nebo více *oddíly*, voláním `RenderSection`. Oddíly umožňují organizovat umístění některých prvků stránky. Každé volání `RenderSection` můžete určit, zda je tento oddíl požadované nebo volitelné. Pokud není nalezen požadovaný oddíl, bude vyvolána výjimka. Jednotlivá zobrazení zadejte obsah, který mohl být vykreslen v rámci oddílu pomocí `@section` syntaxi Razor. Pokud zobrazení určující sekci, je nutné vykreslit (nebo dojde k chybě).
+Rozložení můžete volitelně odkazovat na jeden nebo více *oddíly*, voláním `RenderSection`. Oddíly umožňují organizovat umístění některých prvků stránky. Každé volání `RenderSection` můžete určit, zda je tento oddíl požadované nebo volitelné:
 
-Příklad `@section` definice v zobrazení:
+```html
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
+```
+
+Pokud není nalezen požadovaný oddíl, je vyvolána výjimka. Jednotlivá zobrazení zadejte obsah, který mohl být vykreslen v rámci oddílu pomocí `@section` syntaxi Razor. Pokud na stránce nebo zobrazení určující sekci, je nutné vykreslit (nebo dojde k chybě).
+
+Příklad `@section` definice v zobrazení pro stránky Razor:
 
 ```html
 @section Scripts {
      <script type="text/javascript" src="/scripts/main.js"></script>
-   }
-   ```
+}
+```
 
-Ve výše uvedeném kódu, skripty pro ověření jsou přidány do `scripts` části zobrazení, která obsahuje formulář. Ostatní zobrazení ve stejné aplikaci nemusí potřebovat další skripty a tak nebude potřeba nadefinovat oddíl skripty.
+V předchozím kódu *scripts/main.js* se přidá do `scripts` části na stránku nebo zobrazení. Další stránky nebo zobrazení ve stejné aplikaci nemusí potřebovat tento skript a nebude nadefinoval oddíl skripty.
 
-Oddíly definované v zobrazení jsou k dispozici pouze v její okamžitý rozložení stránky. Nelze se odkazovat z částečných zobrazení, zobrazení komponenty nebo jiných částí systému zobrazení.
+Následující kód používá [pomocná rutina částečné značky](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper) k vykreslení *_ValidationScriptsPartial.cshtml*:
+
+```html
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+```
+
+Předchozí kód generovaný serverem [generování uživatelského rozhraní Identity](xref:security/authentication/scaffold-identity).
+
+Oddíly definované v stránku nebo zobrazení jsou k dispozici pouze v její okamžitý rozložení stránky. Nelze se odkazovat z částečných zobrazení, zobrazení komponenty nebo jiných částí systému zobrazení.
 
 ### <a name="ignoring-sections"></a>Oddíly se ignoruje
 
@@ -76,20 +109,14 @@ Text a každý oddíl na stránce Razor musí být buď vykreslen nebo ignorovat
 
 ## <a name="importing-shared-directives"></a>Import sdílených direktivy
 
-Zobrazení pomocí direktivy Razor můžete provést řadu věcí, například obory názvů pro import nebo provádění [injektáž závislostí](dependency-injection.md). Direktivy, které sdílí mnoho zobrazení je možné zadat běžný `_ViewImports.cshtml` souboru. `_ViewImports` Soubor podporuje následující direktivy:
+Zobrazení a stránky můžete použít direktivy Razor pro import obory názvů a použití [injektáž závislostí](dependency-injection.md). Direktivy, které sdílí mnoho zobrazení je možné zadat běžný *_ViewImports.cshtml* souboru. `_ViewImports` Soubor podporuje následující direktivy:
 
 * `@addTagHelper`
-
 * `@removeTagHelper`
-
 * `@tagHelperPrefix`
-
 * `@using`
-
 * `@model`
-
 * `@inherits`
-
 * `@inject`
 
 Tento soubor nepodporuje další funkce Razor, jako je například funkce a definice části.
@@ -98,35 +125,34 @@ Ukázka `_ViewImports.cshtml` souboru:
 
 [!code-html[](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
 
-`_ViewImports.cshtml` Soubor pro aplikaci ASP.NET Core MVC je obvykle umístěn ve `Views` složky. A `_ViewImports.cshtml` souboru je možné použít v jakékoli složce, ve kterém případu, použijí se jenom u zobrazení v této složce a jejích podsložkách. `_ViewImports` zpracování souborů začínají na kořenové úrovni, a potom pro každou složku k umístění zobrazení, tak nastavení zadané na kořenové úrovni lze přepsat na úrovni složek.
+*_ViewImports.cshtml* soubor pro aplikaci ASP.NET Core MVC je obvykle umístěn ve *stránky* (nebo *zobrazení*) složky. A *_ViewImports.cshtml* souboru je možné použít v jakékoli složce, v takovém případě se použijí jenom u ke stránkám nebo zobrazení v této složce a jejích podsložkách. `_ViewImports` soubory se zpracovávají spouštění na kořenové úrovni a potom pro každou složku dovedou až k pozici stránky nebo zobrazení samotný. `_ViewImports` bylo nastaveno na kořenové úrovni může přepsat na úrovni složek.
 
-Například, pokud kořenové úrovni `_ViewImports.cshtml` soubor Určuje `@model` a `@addTagHelper`a další `_ViewImports.cshtml` určuje jiný soubor ve složce přidružené kontroleru zobrazení `@model` a přidá další `@addTagHelper`, zobrazení bude mít přístup k oběma pomocných rutin značek a bude používat ten `@model`.
+Například předpokládejme, že:
 
-Pokud je položek víc `_ViewImports.cshtml` soubory jsou spuštěny pro zobrazení, kombinované chování direktiv součástí `ViewImports.cshtml` soubory budou následujícím způsobem:
+* Kořenové úrovni *_ViewImports.cshtml* soubor obsahuje `@model MyModel1` a `@addTagHelper *, MyTagHelper1`.
+* Podsložky *_ViewImports.cshtml* soubor obsahuje `@model MyModel2` a `@addTagHelper *, MyTagHelper2`.
+
+Stránky a zobrazení v podsložce bude mít přístup k oběma pomocných rutin značek a `MyModel2` modelu.
+
+Pokud je položek víc *_ViewImports.cshtml* soubory se nacházejí v hierarchii souborů kombinované chování direktivy jsou:
 
 * `@addTagHelper`, `@removeTagHelper`: všech spuštění, v pořadí
-
 * `@tagHelperPrefix`: na ten nejbližší do zobrazení přepíše všechny ostatní
-
 * `@model`: na ten nejbližší do zobrazení přepíše všechny ostatní
-
 * `@inherits`: na ten nejbližší do zobrazení přepíše všechny ostatní
-
 * `@using`: všechny jsou zahrnuty; duplicity se ignorují.
-
 * `@inject`: pro každou vlastnost na ten nejbližší do zobrazení přepíše všechny ostatní se stejným názvem vlastnosti
 
 <a name="viewstart"></a>
 
 ## <a name="running-code-before-each-view"></a>Spuštění kódu před každou zobrazení
 
-Pokud máte kód, je potřeba spustit před každé zobrazení, musí být umístěné ve `_ViewStart.cshtml` souboru. Podle konvence `_ViewStart.cshtml` soubor se nachází v `Views` složky. Příkazy uvedené v `_ViewStart.cshtml` jsou spouštěny před každou úplné zobrazení (nikoli rozložení a není částečná zobrazení). Stejně jako [ViewImports.cshtml](xref:mvc/views/layout#viewimports), `_ViewStart.cshtml` jsou hierarchická. Pokud `_ViewStart.cshtml` soubor je definován ve složce přidružené kontroleru zobrazení, se spustí po definovanému v kořenovém adresáři `Views` složku (pokud existuje).
+Kód, který je potřeba spustit před každou zobrazení nebo stránky musí být umístěné ve *soubor _ViewStart.cshtml* souboru. Podle konvence *soubor _ViewStart.cshtml* soubor se nachází v *stránky* (nebo *zobrazení*) složky. Příkazy uvedené v *soubor _ViewStart.cshtml* jsou spouštěny před každou úplné zobrazení (nikoli rozložení a není částečná zobrazení). Stejně jako [ViewImports.cshtml](xref:mvc/views/layout#viewimports), *soubor _ViewStart.cshtml* jsou hierarchická. Pokud *soubor _ViewStart.cshtml* soubor je definován ve složce zobrazení nebo stránky se spustí po definovanému v kořenovém adresáři *stránky* (nebo *zobrazení*) složku (pokud existuje).
 
-Ukázka `_ViewStart.cshtml` souboru:
+Ukázka *soubor _ViewStart.cshtml* souboru:
 
 [!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
 
-Výše uvedeného souboru Určuje, zda budou používat všechna zobrazení `_Layout.cshtml` rozložení.
+Výše uvedeného souboru Určuje, zda budou používat všechna zobrazení *_Layout.cshtml* rozložení.
 
-> [!NOTE]
-> Ani `_ViewStart.cshtml` ani `_ViewImports.cshtml` jsou obvykle umístěny v `/Views/Shared` složky. Verze těchto souborů úrovni aplikace by měl být umístěn v přímo `/Views` složky.
+*Soubor _ViewStart.cshtml* a *_ViewImports.cshtml* jsou **není** obvykle umístěné v */stránek/Shared* (nebo   */zobrazení/Shared*) složka. Verze těchto souborů úrovni aplikace by měl být umístěn v přímo */stránky* (nebo */zobrazení*) složky.

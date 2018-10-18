@@ -5,12 +5,12 @@ description: Seznam podrobné pokyny k tom, jak vyvíjet aplikace ASP.NET Core.
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: 3d2fbb453c8f6510806d8dc263ea344023aa4cda
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c7c17da1bc5fdc2f8e451ad11ebd8b42d1723a31
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454788"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391073"
 ---
 # <a name="aspnet-core-tutorials"></a>Kurzy k ASP.NET Core
 
@@ -73,7 +73,6 @@ Tyto podrobné návody pro vývoj aplikací ASP.NET Core jsou k dispozici:
 * [Použití nástroje Gulp](xref:client-side/using-gulp)
 * [Použití nástroje Grunt](xref:client-side/using-grunt)
 * [Správa balíčků na straně klienta nástrojem Bower](xref:client-side/bower)
-* [Tvorba interaktivních webů pomocí sady nástrojů Bootstrap](xref:client-side/bootstrap)
 
 ## <a name="test"></a>Test
 

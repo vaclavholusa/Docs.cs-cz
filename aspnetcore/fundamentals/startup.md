@@ -1,17 +1,17 @@
 ---
 title: Spuštění aplikace v ASP.NET Core
 author: ardalis
-description: Zjistěte, jak třídu pro spuštění v ASP.NET Core konfiguruje služby a kanál žádosti o aplikace.
+description: Vysvětluje, jak třídu pro spuštění v ASP.NET Core konfiguruje služby a kanál žádosti o aplikace.
 ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 923d17be9c2bb1a9d338599d1cdc4c34302cddab
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 392dc83666bc6b9012adc6c32169ae7bdc7ed8d7
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040092"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391112"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -62,7 +62,7 @@ Po přidání služeb do kontejneru jsou tyto služby k dispozici v celé aplika
 
 Hostitel webové aplikace může konfigurovat některé služby před voláním metod ve třídě `Startup`. Podrobnosti naleznete v tématu [Hostitel v ASP.NET Core](xref:fundamentals/host/index).
 
-Pro funkce, které vyžadují složitější konfiguraci, existují rozšiřující metody `Add[Service]` nad rozhraním [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Typická webová aplikace může registrovat například služby pro Entity Framework, Identity a MVC:
+Pro funkce, které vyžadují složitější konfiguraci, existují rozšiřující metody `Add[Service]` nad rozhraním [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection). Typická aplikace ASP.NET Core zaregistruje služby pro Entity Framework, Identity a MVC:
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 

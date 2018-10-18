@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 765abd36c5182f291499042e787bcb4fcc727997
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 6336d9608f41c367c46d5b9552141546bc782b7d
+ms.sourcegitcommit: 12a8bdb8e83ca9c23c06f3bc6507c9e1a60ea7e5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48910850"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49401865"
 ---
 <a name="introduction-to-signalr-security"></a>Úvod do zabezpečení knihovnou SignalR
 ====================
@@ -85,6 +85,14 @@ Pro každý požadavek server ověřuje obsah tokenu k zajištění, že žádos
 ![](introduction-to-security/_static/image4.png)
 
 Id připojení je součástí procesu ověřování, by neměla zobrazit jeden uživatel id připojení pro jiné uživatele nebo uložení hodnoty na straně klienta, jako například do souboru cookie.
+
+#### <a name="connection-tokens-vs-other-token-types"></a>Připojení tokeny vs. jiné typy tokenů
+
+Připojení tokeny jsou označeny čas od času pomocí nástroje pro zabezpečení, protože zdají být tokeny relace nebo ověřovacích tokenů, které představuje riziko, pokud je vystavené.
+
+Token připojení SignalR není ověřovací token. Používá se pro potvrzení, že uživatel vytvořit tuto žádost je stejný jako ten, který propojení vytvořil. Token připojení je nezbytné, protože funkce SignalR technologie ASP.NET umožňuje připojení k přesunutí mezi servery. Token připojení přidruží konkrétní uživatel ale nebude vyhodnocení identitu uživatele, který zadal žádost. Pro žádost SignalR k ověření správně musí mít další token, který se vyhodnotí identitu uživatele, jako je soubor cookie nebo nosný token. Ale připojení token sám neposkytuje žádné deklarace identity, která byla žádost učiněna daným uživatelem, pouze to, že ID připojení obsažené v tokenu je propojená s tímto uživatelem.
+
+Protože token připojení poskytuje žádná deklarace ověřování vlastní, není to považováno za "relace" nebo "ověřování" token. Pořízení tokenu připojení daného uživatele a přehráním žádost o ověření jako jiný uživatel (nebo neověřené žádosti) se nezdaří, protože nebude odpovídat identitu uživatele požadavku a identit uložených v tokenu.
 
 <a id="rejoingroup"></a>
 

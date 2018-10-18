@@ -8,12 +8,12 @@ ms.date: 03/03/2014
 ms.assetid: 5344b74e-b888-479a-92bc-601a33bd61a2
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf10a78b106475ffc01b732b21088bad67eb93d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 670f81ca1ef9923575cb2fee1747f06f426963d8
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752720"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391216"
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Kód úpravy webových formulářů ASP.NET v sadě Visual Studio 2013
 ====================
@@ -42,9 +42,6 @@ K dokončení tohoto návodu budete potřebovat:
     > Microsoft Visual Studio 2013 a Microsoft Visual Studio Express 2013 for Web bude často se označuje jako Visual Studio v celé této sérii kurzů.  
     >   
     > Pokud používáte Visual Studio, Tento názorný průvodce předpokládá, že jste vybrali **vývoj pro Web** kolekce nastavení při prvním spuštění sady Visual Studio. Další informace najdete v tématu [postupy: Výběr nastavení prostředí vývoje webu](https://msdn.microsoft.com/library/ff521558.aspx).
-
-  Úvod do sady Visual Studio a technologie ASP.NET, naleznete v tématu [vytvoření stránky základních webových formulářů ASP.NET 4.5 v sadě Visual Studio 2013](creating-a-basic-web-forms-page.md).   
- 
 
 ## <a name="creating-a-web-application-project-and-a-page"></a>Vytvoření projektu webové aplikace a na stránce
 

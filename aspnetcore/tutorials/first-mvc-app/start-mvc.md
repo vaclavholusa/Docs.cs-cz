@@ -5,12 +5,12 @@ description: Zjistěte, jak začít pracovat s ASP.NET Core MVC a sady Visual St
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 41f986a06ec46dc025c4e8218745b4a513e8ee2a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: fe555e4cfcaec5d4bb8ccee00b06d1bbcaae9dcd
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011696"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391203"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>Začínáme s ASP.NET Core MVC a sady Visual Studio
 
@@ -48,12 +48,12 @@ Dokončení **nový projekt** dialogové okno:
 Dokončení **nové základní webové aplikace ASP.NET (.NET Core) – MvcMovie** dialogové okno:
 
 * V poli verze selektoru rozevíracího seznamu vyberte **ASP.NET Core 2.1**
-* Vyberte **webové Application(Model-View-Controller)**
+* Vyberte **webová aplikace (Model-View-Controller)**
 * Klepněte na **OK**.
 
 ![Dialogové okno Nový projekt, .net core v levém podokně, web ASP.NET Core ](start-mvc/_static/new_project22-21.png)
 
-Visual Studio používá výchozí šablonu pro projekt MVC, který jste právě vytvořili. Zadáním názvu projektu a výběr několika možností Teď máte funkční aplikaci. Toto je základní počáteční projekt, a je vhodné oddělení na zahájení,
+Visual Studio používá výchozí šablonu pro projekt MVC, který jste právě vytvořili. Zadáním názvu projektu a výběr několika možností Teď máte funkční aplikaci. Toto je základní počáteční projekt a je dobrým začátkem.
 
 Klepněte na **F5** ke spuštění aplikace v režimu ladění nebo **Ctrl-F5** v režimu bez ladění.
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->

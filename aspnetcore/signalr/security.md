@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/security
-ms.openlocfilehash: b66c7fbfbaee4c70a68f3132875fbc81018c3e20
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 98b5eb7be87920aacf7a941f76ff652ae7905303
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095129"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391255"
 ---
 # <a name="security-considerations-in-aspnet-core-signalr"></a>Informace o zabezpečení ve funkci SignalR technologie ASP.NET Core
 
@@ -57,6 +57,58 @@ public void Configure(IApplicationBuilder app)
 
 > [!NOTE]
 > SignalR je nekompatibilní s integrovaná funkce CORS v Azure App Service.
+
+### <a name="websocket-origin-restriction"></a>Omezení objektu websocket na straně zdroje
+
+Poskytovanou CORS se nevztahují na objekty Websocket. Prohlížeče neprovádějte požadavků CORS přípravné ani provést respektovat zadaná v omezení `Access-Control` záhlaví při provádění požadavků protokolu WebSocket. Ale prohlížeče odesílají `Origin` záhlaví při vydávání žádostí protokolu WebSocket. Měli byste nakonfigurovat aplikace k ověření tyto hlavičky, aby bylo možné zajistit, aby pocházející ze streamovacího zdroje, které očekáváte, že jsou povoleny pouze objekty Websocket.
+
+V ASP.NET Core 2.1 toho lze dosáhnout pomocí vlastního middlewaru, který můžete umístit **nad `UseSignalR`a veškerý middleware ověřování** ve vaší `Configure` metody:
+
+```csharp
+// In your Startup class, add a static field listing the allowed Origin values:
+private static readonly HashSet<string> _allowedOrigins = new HashSet<string>()
+{
+    // Add allowed origins here. For example:
+    "http://www.mysite.com",
+    "http://mysite.com",
+};
+
+// In your Configure method:
+public void Configure(IApplicationBuilder app)
+{
+    // ... other middleware ...
+
+    // Validate Origin header on WebSocket requests to prevent unexpected cross-site WebSocket requests
+    app.Use((context, next) =>
+    {
+        // Check for a WebSocket request.
+        if(string.Equals(context.Request.Headers["Upgrade"], "websocket"))
+        {
+            var origin = context.Request.Headers["Origin"];
+
+            // If there is no origin header, or if the origin header doesn't match an allowed value:
+            if(string.IsNullOrEmpty(origin) && !_allowedOrigins.Contains(origin))
+            {
+                // The origin is not allowed, reject the request
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                return Task.CompletedTask;
+            }
+        }
+
+        // The request is not a WebSocket request or is a valid Origin, so let it continue
+        return next();
+    });
+
+    // ... other middleware ...
+
+    app.UseSignalR();
+
+    // ... other middleware ...
+}
+```
+
+> [!NOTE]
+> `Origin` Záhlaví je řízen zcela klienta a, podobně jako `Referer` záhlaví, můžete zfalšovaná. Tyto hlavičky byste nikdy neměli používat jako mechanismus ověřování.
 
 ### <a name="access-token-logging"></a>Protokolování token přístupu
 

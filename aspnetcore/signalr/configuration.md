@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/configuration
-ms.openlocfilehash: 72fc53cad7caf55e85d0668c9dbea1a70fc8674b
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 855446003ae9d994854d4d8bb7d0f542a22734e4
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292333"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391099"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>Konfigurace jádra SignalR technologie ASP.NET
 
@@ -120,7 +120,7 @@ Možnosti klienta lze nakonfigurovat podle `HubConnectionBuilder` typ (k dispozi
 
 ### <a name="configure-logging"></a>Konfigurace protokolování
 
-Protokolování je nakonfigurován v klientu .NET pomocí `ConfigureLogging` metody. Protokolování poskytovatelů a filtry můžete zaregistrovat stejně, jako jsou na serveru. Zobrazit [protokolování v ASP.NET Core](xref:fundamentals/logging/index#how-to-add-providers) Další informace naleznete v dokumentaci.
+Protokolování je nakonfigurován v klientu .NET pomocí `ConfigureLogging` metody. Protokolování poskytovatelů a filtry můžete zaregistrovat stejně, jako jsou na serveru. Zobrazit [protokolování v ASP.NET Core](xref:fundamentals/logging/index) Další informace naleznete v dokumentaci.
 
 > [!NOTE]
 > Aby bylo možné zaregistrovat poskytovatele protokolování, je nutné nainstalovat potřebné balíčky. Najdete v článku [vestavěné protokolování poskytovatelé](xref:fundamentals/logging/index#built-in-logging-providers) část dokumentace pro úplný seznam.

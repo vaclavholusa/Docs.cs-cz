@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/11/2018
 uid: mvc/views/partial
-ms.openlocfilehash: a836ed073dfe769fc3cc0cd0622b17937747928b
-ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
+ms.openlocfilehash: d3d2f55645881dd05f7663e0a9d3e45d6bb6d77f
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45601753"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477680"
 ---
 # <a name="partial-views-in-aspnet-core"></a>Částečná zobrazení v ASP.NET Core
 
@@ -44,7 +44,7 @@ Není použít částečné zobrazení, ve kterém jsou vyžadována k vykreslen
 
 ## <a name="declare-partial-views"></a>Deklarujte částečné zobrazení
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range=">= aspnetcore-2.0"
 
 Částečné zobrazení je *.cshtml* souboru označení udržována v rámci *zobrazení* složky (MVC) nebo *stránky* složky (stránky Razor).
 
@@ -52,11 +52,11 @@ V ASP.NET Core MVC, řadič <xref:Microsoft.AspNetCore.Mvc.ViewResult> je schope
 
 Na rozdíl od zobrazení MVC nebo vykreslení stránky částečné zobrazení nespustí *soubor _ViewStart.cshtml*. Další informace o *soubor _ViewStart.cshtml*, naleznete v tématu <xref:mvc/views/layout>.
 
-Názvy souborů částečné zobrazení často začínají podtržítkem (`_`). Tyto zásady vytváření názvů není povinné, ale pomáhá vizuálně odlišili od zobrazení a stránky částečné zobrazení. Pokud název souboru začíná podtržítkem, stránky Razor nezpracovává souboru označení jako stránky Razor Pages, i v případě, že soubor kódu obsahuje `@page` směrnice.
+Názvy souborů částečné zobrazení často začínají podtržítkem (`_`). Tyto zásady vytváření názvů není povinné, ale pomáhá vizuálně odlišili od zobrazení a stránky částečné zobrazení.
 
 ::: moniker-end
 
-::: moniker range="< aspnetcore-2.1"
+::: moniker range="< aspnetcore-2.0"
 
 Částečné zobrazení je *.cshtml* souboru označení udržována v rámci *zobrazení* složky.
 

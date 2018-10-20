@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 08/20/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 2d39488caeea0c87d2efc79f265de7feb200f096
-ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
+ms.openlocfilehash: 3bad02c650c717b33386f028cb223d14c0a34ff9
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41755515"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477628"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>Autor pomocných rutin značek v ASP.NET Core
 
@@ -113,6 +113,8 @@ Tento postup funguje u atributu "href" tak dlouho, dokud aktuálně neexistuje v
 1. Aktualizace značky *Views/Home/Contact.cshtml* soubor se tyto změny: [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
 2. Spusťte aplikaci a ověřte, že se vygeneruje správné odkazy.
+
+<a name="self-closing"></a>
     
    > [!NOTE]
    > Pokud byste chtěli zapsat e-mailu značky samouzavírací (`<email mail-to="Rick" />`), by také být samouzavírací závěrečný výstup. Povolit možnost zapisovat značka s počáteční značce (`<email mail-to="Rick">`) musí uspořádání třídy následujícím kódem:

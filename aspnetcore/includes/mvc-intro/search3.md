@@ -32,8 +32,9 @@ Přidejte následující `MovieGenreViewModel` třídu *modely* složky:
 Model zobrazení žánr film bude obsahovat:
 
    * Seznam videa.
-   * A `SelectList` obsahující seznam žánrů. To vám umožní uživateli vybrat rozšířením podle tematických ze seznamu.
+   * A `SelectList` obsahující seznam žánrů. To umožňuje uživateli vybrat rozšířením podle tematických ze seznamu.
    * `MovieGenre`, který obsahuje vybrané žánr.
+   * `SearchString`, který obsahuje uživatele zadejte do textového pole hledání text.
 
 Nahradit `Index` metoda `MoviesController.cs` následujícím kódem:
 
@@ -44,6 +45,8 @@ Následující kód je `LINQ` dotaz, který načte všechny žánry z databáze.
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_LINQ)]
 
 `SelectList` Žánrů se vytvořila projekci odlišné žánry (nechceme náš seznam select mít duplicitní žánry).
+
+Když uživatel vyhledává položku, se uchovávají hledanou hodnotu do vyhledávacího pole. Pokud chcete zachovat hledané hodnotě, naplnění `SearchString` vlastnost s hledanou hodnotu. Hodnota vyhledávání je `searchString` parametr `Index` akce kontroleru.
 
 ```csharp
 movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync())

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: f4e5a414b92e3ca65e19188ebd2bfaef6f32fee7
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893087"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477524"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Odpověď do mezipaměti middlewaru v ASP.NET Core
 
@@ -159,7 +159,7 @@ Při testování a řešení potíží s chování ukládání do mezipaměti, m
 * [Middleware](xref:fundamentals/middleware/index)
 * [Mezipaměť v paměti](xref:performance/caching/memory)
 * [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Zjištění změn se změna tokenů](xref:fundamentals/primitives/change-tokens)
+* [Zjištění změn se změna tokenů](xref:fundamentals/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 * [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

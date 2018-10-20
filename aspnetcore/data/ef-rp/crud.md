@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvářet, číst, aktualizovat, odstranit pomocí EF
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: b30cc9a5a5bae520ec21e6314be7819484f9e580
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 4af16bdf3928609214c1255cdd411312c8b7d3f3
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348465"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477433"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - CRUD - 2, 8
 
@@ -24,7 +24,7 @@ Podle [Petr Dykstra](https://github.com/tdykstra), [Jan Macek P](https://twitter
 
 V tomto kurzu, vygenerované CRUD (vytváření, čtení, aktualizace nebo odstranění) se zkontroluje a vlastní kód.
 
-Chcete-li minimalizovat složitost a ponechat tyto kurzy, zaměřuje na EF Core, EF Core kód slouží v modelech stránky. Někteří vývojáři používat vrstvu služby nebo [použitému vzoru úložišť](xref:fundamentals/repository-pattern) v vytvořit abstraktní vrstvu mezi uživatelského rozhraní (stránky Razor) a vrstva přístupu k datům.
+Chcete-li minimalizovat složitost a ponechat tyto kurzy, zaměřuje na EF Core, EF Core kód slouží v modelech stránky. Někteří vývojáři použít model služby vrstvy nebo úložiště v vytvořit abstraktní vrstvu mezi uživatelského rozhraní (stránky Razor) a vrstva přístupu k datům.
 
 V tomto kurzu, vytvořit, upravit, odstranit a podrobnosti stránky Razor *studenty* jsou zkoumány složky.
 

@@ -5,12 +5,12 @@ description: Zjistěte, jak nakonfigurovat poskytovatelé vlastního úložišt�
 ms.author: riande
 ms.date: 09/17/2018
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: db51c39cc700f93917f54c80adbfe7922ffcd67e
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: e206cf584d92a17d61676d71abc6fb577ae63453
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011258"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477615"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Poskytovatelé vlastního úložiště pro ASP.NET Core Identity
 
@@ -41,7 +41,7 @@ dotnet new webapi -au Individual
 
 ## <a name="the-aspnet-core-identity-architecture"></a>Architektura ASP.NET Core Identity
 
-ASP.NET Core Identity se skládá z tříd pojmenovanou manažerů a úložiště. *Správci* jsou základní třídy, které vývojář aplikace používá k provádění operací, jako je například vytváření Identity user. *Úložiště* jsou třídy nižší úrovně, které určují, jak jsou entity, jako jsou uživatelé a role, trvalé. Postupujte podle úložišť [použitému vzoru úložišť](xref:fundamentals/repository-pattern) a jsou úzce svázány s mechanismus trvalosti. Správci jsou oddělené od úložiště, což znamená, že nahradíte mechanismu trvalosti beze změny kódu aplikace (s výjimkou konfigurace).
+ASP.NET Core Identity se skládá z tříd pojmenovanou manažerů a úložiště. *Správci* jsou základní třídy, které vývojář aplikace používá k provádění operací, jako je například vytváření Identity user. *Úložiště* jsou třídy nižší úrovně, které určují, jak jsou entity, jako jsou uživatelé a role, trvalé. Úložiště podle tohoto vzoru vytvořené úložiště a jsou úzce svázány s mechanismus trvalosti. Správci jsou oddělené od úložiště, což znamená, že nahradíte mechanismu trvalosti beze změny kódu aplikace (s výjimkou konfigurace).
 
 Následující diagram znázorňuje, jak webová aplikace komunikuje s správce, zatímco úložiště interakci s vrstvy přístupu k datům.
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: afbd8fa9eedefe97fa993d63a1edc6d0cc4ab0c4
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 193bfc7651b6da6db69e8c15bd6beb82906bde0a
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325988"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477667"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Injektáž závislostí v ASP.NET Core
 
@@ -538,7 +538,7 @@ Metoda factory jedné služby, jako je například druhý argument [AddSingleton
 
 ## <a name="recommendations"></a>Doporučení
 
-Při práci s injektáž závislostí, mít na paměti tato doporučení:
+* `async/await` a `Task` závislosti služby rozlišení není podporováno. C# nepodporuje asynchronní konstruktory, proto je doporučený vzor používání asynchronních metod po synchronně překladu služby.
 
 * Vyhněte se ukládání dat a konfigurace přímo do kontejneru služby. Například by neměla uživatele nákupního košíku přidat obvykle do kontejneru služby. Konfigurace by měl používat [možnosti vzor](xref:fundamentals/configuration/options). Podobně nepoužívejte "vlastník dat" objekty, které existují pouze pokud chcete povolit přístup na některý objekt. Je lepší požádat o skutečné položky prostřednictvím DI.
 
@@ -557,7 +557,6 @@ DI je *alternativní* na vzorech přístupu statická/globální objekt. Nebudet
 * <xref:mvc/views/dependency-injection>
 * <xref:mvc/controllers/dependency-injection>
 * <xref:security/authorization/dependencyinjection>
-* <xref:fundamentals/repository-pattern>
 * <xref:fundamentals/startup>
 * <xref:test/index>
 * <xref:fundamentals/middleware/extensibility>

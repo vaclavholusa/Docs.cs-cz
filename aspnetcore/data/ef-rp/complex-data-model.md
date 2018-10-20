@@ -5,12 +5,12 @@ description: V tomto kurzu přidat další entity a relace a přizpůsobte si da
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 4f35dd81c34a9123c20bb4925def93f69f0aaa13
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326092"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477654"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – Model dat – 5 z 8
 
@@ -574,9 +574,15 @@ The ALTER TABLE statement conflicted with the FOREIGN KEY constraint "FK_dbo.Cou
 database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ```
 
-Při spuštění migrace s existujícími daty, může být omezení cizího klíče, které nejsou splněné stávající data. V tomto kurzu se vytvoří nová databáze, aby vás nečekala žádná porušení omezení cizího klíče. Zobrazit [stanovení omezení cizího klíče s starších dat](#fk) pokyny o tom, jak vyřešit porušení cizího klíče v aktuální databázi.
+## <a name="apply-the-migration"></a>Použití migrace
 
-### <a name="drop-and-update-the-database"></a>Vyřaďte a aktualizaci databáze
+Teď, když máte existující databázi, musíte přemýšlet o tom, jak na ně vztahují budoucí změny. Tento kurz ukazuje dva přístupy:
+* [Vyřadit a znovu vytvořit databázi](#drop)
+* [Použití migrace k existující databázi](#applyexisting). Tato metoda je složité a časově náročné, je upřednostňovaný způsob pro každodenní praxe produkční prostředí. **Poznámka:**: Toto je volitelné části tohoto kurzu. Můžete provést rozevírací a znovu vytvořit kroky a tuto část přeskočit. Pokud chcete postupovat podle kroků v této části, nemáte proveďte rozevírací nabídku a znovu vytvořit kroky. 
+
+<a name="drop"></a>
+
+### <a name="drop-and-re-create-the-database"></a>Vyřadit a znovu vytvořit databázi
 
 Kód v aktualizovaném `DbInitializer` přidá data počáteční hodnotu pro nové entity. Pokud chcete vynutit EF Core k vytvoření nové databáze, vyřaďte a aktualizaci databáze:
 
@@ -620,13 +626,13 @@ Zkontrolujte **CourseAssignment** tabulky:
 
 ![Data CourseAssignment v SSOX](complex-data-model/_static/ssox-ci-data.png)
 
-<a name="fk"></a>
+<a name="applyexisting"></a>
 
-## <a name="fixing-foreign-key-constraints-with-legacy-data"></a>Řešení omezení cizího klíče s starších dat
+### <a name="apply-the-migration-to-the-existing-database"></a>Použití migrace k existující databázi
 
-Tato část je nepovinná.
+Tato část je nepovinná. Tento postup funguje pouze v případě, že jste přeskočili předchozí [vyřaďte a znovu vytvořit databázi](#drop) oddílu.
 
-Při spuštění migrace s existujícími daty, může být omezení cizího klíče, které nejsou splněné stávající data. S použitím provozních dat musí být kroky potřebného k migraci existujících dat. Tato část poskytuje příklad opravuje narušení omezení cizího klíče. Neprovádějte změny kódu bez předchozího provedení zálohy. Nenastavujte tyto změny kódu, je-li dokončit předchozí části a aktualizována v databázi.
+Při spuštění migrace s existujícími daty, může být omezení cizího klíče, které nejsou splněné s existujícími daty. S použitím provozních dat musí být kroky potřebného k migraci existujících dat. Tato část poskytuje příklad opravuje narušení omezení cizího klíče. Neprovádějte změny kódu bez předchozího provedení zálohy. Nenastavujte tyto změny kódu, je-li dokončit předchozí části a aktualizována v databázi.
 
 *{Timestamp}_ComplexDataModel.cs* soubor obsahuje následující kód:
 
@@ -639,7 +645,7 @@ Chcete-li `ComplexDataModel` migraci vám nebudeme nic s existujícími daty:
 * Změňte kód a zadejte nový sloupec (`DepartmentID`) výchozí hodnotu.
 * Vytvořte falešnou oddělení s názvem "Temp" tak, aby fungoval jako výchozí oddělení.
 
-### <a name="fix-the-foreign-key-constraints"></a>Oprava omezení cizího klíče
+#### <a name="fix-the-foreign-key-constraints"></a>Oprava omezení cizího klíče
 
 Aktualizace `ComplexDataModel` třídy `Up` metody:
 

@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvořit aplikaci pro stránky Razor pomocí Entity F
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: 89002f7b4a5af17a9404b14822086c7a9a6ec265
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f714934a2ef804813290ae0c04432470a2ba5816
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011454"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477563"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Stránky Razor pomocí Entity Framework Core v ASP.NET Core – kurz 1 z 8
 
@@ -187,9 +187,9 @@ Proces vygenerované uživatelské rozhraní vytvořit a změnit následující 
 * *Stránky/studenty* vytvoření, odstranění, podrobností, úpravy, Index.
 * *Data/SchoolContext.cs*
 
-### <a name="files-updates"></a>Soubory aktualizace
+### <a name="file-updates"></a>Aktualizace souboru
 
-* *Startup.cs* : změny tohoto souboru v jsou podrobně popsané v další části.
+* *Startup.cs* : změny tohoto souboru jsou podrobně popsané v další části.
 * *appSettings.JSON* : přidat připojovací řetězec použitý pro připojení k místní databázi.
 
 ## <a name="examine-the-context-registered-with-dependency-injection"></a>Prozkoumání kontextu registrovaný pomocí vkládání závislostí

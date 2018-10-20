@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 960aa18f9d14f633118ccd716201e61464085c05
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: be2e81d1aa6a89d65414d53a70ca2d2fb5d2d3a3
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325923"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477186"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>Mezipaměť in-memory v ASP.NET Core
 
@@ -173,7 +173,7 @@ Použití `CancellationTokenSource` umožňuje více položek mezipaměti vyřaz
 ## <a name="additional-resources"></a>Další zdroje
 
 * [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Zjištění změn se změna tokenů](xref:fundamentals/primitives/change-tokens)
+* [Zjištění změn se změna tokenů](xref:fundamentals/change-tokens)
 * [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
 * [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
 * [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

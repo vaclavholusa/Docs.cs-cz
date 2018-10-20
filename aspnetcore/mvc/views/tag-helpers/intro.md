@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: c2af9099fe439e1cdbf9ba86ffae3b2b0f67391e
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 4b9bceb3ce0153af2d9a30c402febe09707145b7
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751908"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477303"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>Pomocné rutiny značek v ASP.NET Core
 
@@ -68,7 +68,7 @@ Pokud vytvoříte novou webovou aplikaci ASP.NET Core s názvem *AuthoringTagHel
 
 [!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
-`@addTagHelper` – Direktiva zpřístupní pomocných rutin značek k zobrazení. V takovém případě je soubor zobrazení *Pages/_ViewImports.cshtml*, která ve výchozím nastavení zdědí všechny soubory v *stránky* složky a podsložky; zpřístupnění pomocných rutin značek. Výše uvedený kód používá syntaxe zástupných znaků ("\*") určíte, že všechny pomocných rutin značek v zadaném sestavení (*Microsoft.AspNetCore.Mvc.TagHelpers*) bude k dispozici pro každý soubor zobrazení v *zobrazení* nebo dílčí adresáři. První parametr po `@addTagHelper` určuje pomocných rutin značek k načtení (používáme "\*" pro všechny pomocných rutin značek), a druhý parametr "Microsoft.AspNetCore.Mvc.TagHelpers" Určuje sestavení, který obsahuje pomocné rutiny značek. *Microsoft.AspNetCore.Mvc.TagHelpers* je sestavení pro integrované pomocné rutiny značek základní technologie ASP.NET.
+`@addTagHelper` – Direktiva zpřístupní pomocných rutin značek k zobrazení. V takovém případě je soubor zobrazení *Pages/_ViewImports.cshtml*, která ve výchozím nastavení zdědí všechny soubory v *stránky* složce a jejích podsložkách; zpřístupnění pomocných rutin značek. Výše uvedený kód používá syntaxe zástupných znaků ("\*") určíte, že všechny pomocných rutin značek v zadaném sestavení (*Microsoft.AspNetCore.Mvc.TagHelpers*) bude k dispozici pro každý soubor zobrazení v *zobrazení* adresáře nebo podadresáře. První parametr po `@addTagHelper` určuje pomocných rutin značek k načtení (používáme "\*" pro všechny pomocných rutin značek), a druhý parametr "Microsoft.AspNetCore.Mvc.TagHelpers" Určuje sestavení, který obsahuje pomocné rutiny značek. *Microsoft.AspNetCore.Mvc.TagHelpers* je sestavení pro integrované pomocné rutiny značek základní technologie ASP.NET.
 
 K vystavení všechny pomocných rutin značek v tomto projektu (která vytvoří sestavení s názvem *AuthoringTagHelpers*), můžete využít následující:
 
@@ -127,6 +127,10 @@ Na následujícím obrázku kód předpony pomocné rutiny značky nastavena na 
 ![obrázek](intro/_static/thp.png)
 
 Stejná pravidla hierarchie, které se vztahují `@addTagHelper` platí také pro `@tagHelperPrefix`.
+
+## <a name="self-closing-tag-helpers"></a>Samouzavírací pomocných rutin značek
+
+Mnoho pomocných rutin značek nelze použít jako samouzavírací značky. Několik pomocných rutin značek jsou navržené tak být samouzavírací značky. Použití pomocné rutiny značky, který nebyl navržen, aby se samouzavírací potlačí vykresleného výstupu. Samouzavírací pomocné rutiny značky výsledkem samouzavírací značky v vykresleného výstupu. Další informace najdete v tématu [tato poznámka](xref:mvc/views/tag-helpers/authoring#self-closing) v [vytváření pomocných rutin značek](xref:mvc/views/tag-helpers/authoring).
 
 ## <a name="intellisense-support-for-tag-helpers"></a>Podpora IntelliSense pro pomocné rutiny značek
 

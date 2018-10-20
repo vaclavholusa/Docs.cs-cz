@@ -4,14 +4,14 @@ author: guardrex
 description: Další informace o webového hostitele v ASP.NET Core, který je zodpovědný za spouštění a životního cyklu správy aplikací.
 ms.author: riande
 ms.custom: mvc
-ms.date: 09/01/2018
+ms.date: 10/18/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: 8b6517b009a289d6b93e2cc1bea60ecace61a3c6
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: e19f12f69dfdd5653aea9c6be2b05f24009b875e
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326157"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477446"
 ---
 # <a name="aspnet-core-web-host"></a>Webového hostitele ASP.NET Core
 
@@ -184,7 +184,7 @@ Hostitel používá kterékoli z těchto možností nastaví hodnotu poslední. 
 **Typ**: *řetězec*  
 **Výchozí**: název sestavení obsahující vstupní bod aplikace.  
 **Sada s použitím**: `UseSetting`  
-**Proměnná prostředí**: `ASPNETCORE_APPLICATIONKEY`
+**Proměnná prostředí**: `ASPNETCORE_APPLICATIONNAME`
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -365,15 +365,13 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="hosting-startup-exclude-assemblies"></a>Hostování sestavení vyloučit při spuštění
 
-POPIS
+Řetězec oddělený středníkem při spuštění sestavení mají vyloučit při spuštění hostování.
 
 **Klíč**: hostingStartupExcludeAssemblies  
 **Typ**: *řetězec*  
 **Výchozí**: prázdný řetězec  
 **Sada s použitím**: `UseSetting`  
 **Proměnná prostředí**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
-
-Řetězec oddělený středníkem při spuštění sestavení mají vyloučit při spuštění hostování.
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)

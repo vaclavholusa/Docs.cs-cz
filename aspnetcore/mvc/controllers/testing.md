@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: f036181f43d12ece89243fa3b0b0070ea84f8bc7
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 582a5ba461ee2df73b99e4f499e8152f7c6cb7cf
+ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010985"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "49477160"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Testovací kontroler logiku v ASP.NET Core
 
@@ -67,7 +67,7 @@ Když [ModelState](xref:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictiona
 
 Druhý test ověří, že `ModelState` platí:
 
-* Nový `BrainstormSession` přidá (prostřednictvím [úložiště](xref:fundamentals/repository-pattern)).
+* Nový `BrainstormSession` přidá (prostřednictvím úložiště).
 * Metoda vrátí `RedirectToActionResult` s očekávané vlastnosti.
 
 Imitaci volání, které nejsou volány jsou obvykle ignoruje, ale volání `Verifiable` volání na konci instalace umožňuje mock ověřování do testu. To se provádí pomocí volání `mockRepo.Verify`, který selže test, pokud nebyla volána metoda očekávané.
@@ -185,5 +185,4 @@ Pro relaci platný `id`, finální testování potvrdí, že:
 * <xref:test/index>
 * <xref:test/integration-tests>
 * [Vytváření a spouštění testování částí pomocí sady Visual Studio](/visualstudio/test/unit-test-your-code).
-* <xref:fundamentals/repository-pattern>
 * [Princip explicitní závislosti.](https://deviq.com/explicit-dependencies-principle/)

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 12075f68dd828680f6bfbd46ea22ebd7bbe52dc7
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5092564ad885b0de090129a7a0f0bbbd472cb868
+ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326014"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652342"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>Hostitele ASP.NET Core ve Windows se službou IIS
 
@@ -85,13 +85,19 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-Modul ASP.NET Core generuje dynamický port přiřadit back endový proces. `CreateDefaultBuilder` volání <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> metodu, která převezme dynamický port a nakonfiguruje Kestrel k naslouchání `http://localhost:{dynamicPort}/`. Tím se přepíše ostatní konfigurace adresy URL, jako je například volání `UseUrls` nebo [Kestrel pro naslouchání API](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá jenom na porty zadána při spuštění aplikaci bez služby IIS.
+Modul ASP.NET Core generuje dynamický port přiřadit k procesu back-endu. `CreateDefaultBuilder` volání <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderIISExtensions.UseIISIntegration*> metody. `UseIISIntegration` Nakonfiguruje Kestrel k naslouchání na dynamický port na IP adresu místního hostitele (`127.0.0.1`). Pokud dynamický port je 1234, Kestrel naslouchá na `127.0.0.1:1234`. Tato konfigurace nahrazuje jiné konfigurace adresy URL poskytnuté:
+
+* `UseUrls`
+* [Rozhraní API od kestrel naslouchání](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [Konfigurace](xref:fundamentals/configuration/index) (nebo [možnost příkazového řádku--adresy URL](xref:fundamentals/host/web-host#override-configuration))
+
+Volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá na porty určené pouze při spuštěné aplikaci bez služby IIS.
 
 Další informace o modelech hostování a mimo proces, najdete v článku <xref:fundamentals/servers/aspnet-core-module> tématu a <xref:host-and-deploy/aspnet-core-module>.
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+::: moniker range="= aspnetcore-2.1"
 
 Typické *Program.cs* volání <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> zahájíte nastavení hostitele. `CreateDefaultBuilder` nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako integrace webového serveru a umožňuje služby IIS tím, že nakonfigurujete základní cesty a port pro [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
 
@@ -101,7 +107,33 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-Modul ASP.NET Core generuje dynamický port přiřadit back endový proces. `CreateDefaultBuilder` volání [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) metodu, která převezme dynamický port a nakonfiguruje Kestrel k naslouchání `http://localhost:{dynamicPort}/`. Tím se přepíše ostatní konfigurace adresy URL, jako je například volání `UseUrls` nebo [Kestrel pro naslouchání API](xref:fundamentals/servers/kestrel#endpoint-configuration). Proto volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá na portu zadána při spuštění aplikaci bez služby IIS.
+Modul ASP.NET Core generuje dynamický port přiřadit k procesu back-endu. `CreateDefaultBuilder` volání [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) metody. `UseIISIntegration` Nakonfiguruje Kestrel k naslouchání na dynamický port na IP adresu místního hostitele (`127.0.0.1`). Pokud dynamický port je 1234, Kestrel naslouchá na `127.0.0.1:1234`. Tato konfigurace nahrazuje jiné konfigurace adresy URL poskytnuté:
+
+* `UseUrls`
+* [Rozhraní API od kestrel naslouchání](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [Konfigurace](xref:fundamentals/configuration/index) (nebo [možnost příkazového řádku--adresy URL](xref:fundamentals/host/web-host#override-configuration))
+
+Volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá na portu zadat jenom při spuštěné aplikaci bez služby IIS.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+Typické *Program.cs* volání <xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*> zahájíte nastavení hostitele. `CreateDefaultBuilder` nakonfiguruje [Kestrel](xref:fundamentals/servers/kestrel) jako integrace webového serveru a umožňuje služby IIS tím, že nakonfigurujete základní cesty a port pro [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module):
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+Modul ASP.NET Core generuje dynamický port přiřadit k procesu back-endu. `CreateDefaultBuilder` volání [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) metody. `UseIISIntegration` Nakonfiguruje Kestrel k naslouchání na dynamický port na IP adresu místního hostitele (`localhost`). Pokud dynamický port je 1234, Kestrel naslouchá na `localhost:1234`. Tato konfigurace nahrazuje jiné konfigurace adresy URL poskytnuté:
+
+* `UseUrls`
+* [Rozhraní API od kestrel naslouchání](xref:fundamentals/servers/kestrel#endpoint-configuration)
+* [Konfigurace](xref:fundamentals/configuration/index) (nebo [možnost příkazového řádku--adresy URL](xref:fundamentals/host/web-host#override-configuration))
+
+Volání `UseUrls` nebo jeho Kestrel `Listen` rozhraní API nejsou povinné, když pomocí modulu. Pokud `UseUrls` nebo `Listen` nazývá Kestrel naslouchá na portu zadat jenom při spuštěné aplikaci bez služby IIS.
 
 ::: moniker-end
 
@@ -118,7 +150,12 @@ var host = new WebHostBuilder()
 
 Obě [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) a [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) jsou povinné. Volání kódu `UseIISIntegration` nemá vliv na přenositelnost kódu. Pokud aplikace není spuštěna za služby IIS (například spuštění aplikace přímo na Kestrel), `UseIISIntegration` nepracuje.
 
-Modul ASP.NET Core generuje dynamický port přiřadit back endový proces. `UseIISIntegration` Metoda vybere dynamický port a nakonfiguruje Kestrel k naslouchání `http://locahost:{dynamicPort}/`. Tím se přepíše ostatní konfigurace adresy URL, jako je například volání `UseUrls`. Proto volání `UseUrls` není povinné, při použití modulu. Pokud `UseUrls` nazývá Kestrel naslouchá na portu zadána při spuštění aplikaci bez služby IIS.
+Modul ASP.NET Core generuje dynamický port přiřadit k procesu back-endu. `UseIISIntegration` Nakonfiguruje Kestrel k naslouchání na dynamický port na IP adresu místního hostitele (`localhost`). Pokud dynamický port je 1234, Kestrel naslouchá na `localhost:1234`. Tato konfigurace nahrazuje jiné konfigurace adresy URL poskytnuté:
+
+* `UseUrls`
+* [Konfigurace](xref:fundamentals/configuration/index) (nebo [možnost příkazového řádku--adresy URL](xref:fundamentals/host/web-host#override-configuration))
+
+Volání `UseUrls` není povinné, při použití modulu. Pokud `UseUrls` nazývá Kestrel naslouchá na portu zadat jenom při spuštěné aplikaci bez služby IIS.
 
 Pokud `UseUrls` je volána v aplikaci ASP.NET Core 1.0, volání **před** volání `UseIISIntegration` tak, aby port nakonfigurovaný modul není přepsán. Toto pořadí volání není požadován spolu s ASP.NET Core 1.1, protože modul nastavení přepíše `UseUrls`.
 

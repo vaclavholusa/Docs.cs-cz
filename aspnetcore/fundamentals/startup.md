@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 392dc83666bc6b9012adc6c32169ae7bdc7ed8d7
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 20c7630d949f78e737fdcaad0f189cd30cdebbfa
+ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391112"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652316"
 ---
 # <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
@@ -44,7 +44,7 @@ Ve třídě `Startup` se běžně používá [vkládání závislostí](xref:fun
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-Alternativou ke vložení `IHostingEnvironment` je použití přístupu založeného na konvencích. Aplikace může definovat oddělenou `Startup` třídu pro různá prostředí (například `StartupDevelopment`). Odpovídající `Startup` třída je vybrána v době běhu. Třída, jejíž název má příponu odpovídající aktuálnímu prostředí, je upřednostněna. Pokud aplikace běží ve vývojovém prostředí a obsahuje třídu `Startup` i třídu `StartupDevelopment`, použije se třída `StartupDevelopment` . Další informace naleznete v tématu [Používání více prostředí](xref:fundamentals/environments#environment-based-startup-class-and-methods).
+Alternativou ke vložení `IHostingEnvironment` je použití přístupu založeného na konvencích. Pokud aplikace definuje samostatný `Startup` třídy pro různá prostředí (například `StartupDevelopment`), odpovídající `Startup` třídy je vybrané v době běhu. Třída, jejíž název má příponu odpovídající aktuálnímu prostředí, je upřednostněna. Pokud aplikace běží ve vývojovém prostředí a obsahuje třídu `Startup` i třídu `StartupDevelopment`, použije se třída `StartupDevelopment` . Další informace naleznete v tématu [Používání více prostředí](xref:fundamentals/environments#environment-based-startup-class-and-methods).
 
 Další informace o `WebHostBuilder` naleznete ve článku [Hosting](xref:fundamentals/host/index). Informace o zpracování chyb během spuštění naleznete v tématu [Zpracování výjimek při spuštění](xref:fundamentals/error-handling#startup-exception-handling).
 

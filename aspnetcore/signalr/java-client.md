@@ -5,16 +5,16 @@ description: Zjistěte, jak používat klientskou sadou Java funkce SignalR tech
 monikerRange: '>= aspnetcore-2.2'
 ms.author: mimengis
 ms.custom: mvc
-ms.date: 09/06/2018
+ms.date: 10/18/2018
 uid: signalr/java-client
-ms.openlocfilehash: 0eba59a05ea6fd3fed46fcab86ac20caf40ebb65
-ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
+ms.openlocfilehash: 77ea338f08b1986e69ba8ef1578c4cfe01a310de
+ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46482915"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "49652303"
 ---
-# <a name="aspnet-core-signalr-java-client"></a>Klientskou sadou Java funkce SignalR technologie ASP.NET Core
+# <a name="aspnet-core-signalr-java-client"></a>Klientskou sadou Java základní funkce SignalR technologie ASP.NET
 
 Podle [Mikael Mengistu](https://twitter.com/MikaelM_12)
 
@@ -26,12 +26,13 @@ Konzolovou aplikaci Java vzorku, který odkazuje tento článek používá klien
 
 ## <a name="install-the-signalr-java-client-package"></a>Instalace balíčku pro klienta SignalR Java
 
-*Signalr 0.1.0 preview2 35174* soubor JAR umožňuje klientům připojení k rozbočovačům SignalR. Číslo verze nejnovější soubor JAR, najdete v tématu [výsledky hledání Maven](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav).
+*Signalr 1.0.0 preview3 35501* soubor JAR umožňuje klientům připojení k rozbočovačům SignalR. Číslo verze nejnovější soubor JAR, najdete v tématu [výsledky hledání Maven](https://search.maven.org/search?q=g:com.microsoft.signalr%20AND%20a:signalr).
 
 Pokud používáte Gradle, přidejte následující řádek, který `dependencies` část vaší *build.gradle* souboru:
 
 ```gradle
-implementation 'com.microsoft.aspnet:signalr:0.1.0-preview2-35174'
+implementation 'com.microsoft.signalr:signalr:1.0.0-preview3-35501'
+implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
 ```
 
 Pokud pomocí nástroje Maven, přidejte následující řádky uvnitř `<dependencies>` prvek vaše *pom.xml* souboru:
@@ -42,29 +43,45 @@ Pokud pomocí nástroje Maven, přidejte následující řádky uvnitř `<depend
 
 K navázání `HubConnection`, `HubConnectionBuilder` by měla sloužit. Při vytváření připojení se dá nakonfigurovat úrovně rozbočovače adresy URL a protokolu. Nakonfigurujte veškeré požadované možnosti voláním některé z `HubConnectionBuilder` metody před `build`. Zahájit připojení s `start`.
 
-[!code-java[Build hub connection](java-client/sample/src/main/java/Chat.java?range=17-20)]
+[!code-java[Build hub connection](java-client/sample/src/main/java/Chat.java?range=16-17)]
 
 ## <a name="call-hub-methods-from-client"></a>Volání metod rozbočovače na z klienta
 
 Volání `send` volá metodu rozbočovače. Předat název metody rozbočovače a argumentů podle metody rozbočovače na `send`.
 
-[!code-java[send method](java-client/sample/src/main/java/Chat.java?range=31)]
+[!code-java[send method](java-client/sample/src/main/java/Chat.java?range=28)]
 
 ## <a name="call-client-methods-from-hub"></a>Volání metody klienta od rozbočovače
 
 Použití `hubConnection.on` definovat metody na straně klienta, která může volat rozbočovače. Definujte metody po sestavení, ale před spuštěním připojení.
 
-[!code-java[Define client methods](java-client/sample/src/main/java/Chat.java?range=22-24)]
+[!code-java[Define client methods](java-client/sample/src/main/java/Chat.java?range=19-21)]
+
+## <a name="add-logging"></a>Přidání protokolování
+
+Používá klientskou sadou SignalR Java [SLF4J](https://www.slf4j.org/) knihovny pro protokolování. Jde o rozhraní API vysoké úrovně protokolování, který umožňuje uživatelům knihovny zvolili vlastní implementace protokolování konkrétní díky možnostem protokolování konkrétní závislost. Následující fragment kódu ukazuje, jak používat `java.util.logging` s klientskou sadou SignalR Java.
+
+```gradle
+implementation 'org.slf4j:slf4j-jdk14:1.7.25'
+```
+
+Pokud nenakonfigurujete přihlášení závislostí, načte SLF4J protokolovacího nástroje výchozí žádné operace s tímto upozorněním:
+
+```
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+```
+
+To můžete bezpečně ignorovat.
 
 ## <a name="known-limitations"></a>Známá omezení
 
-Jde o předběžnou verzi preview klienta Java. Existuje mnoho funkcí, které se zatím nepodporují. Následující mezery se pracuje v budoucích verzích:
+Toto je verze preview služby klientskou sadou Java. Některé funkce nejsou podporovány:
 
-* Pouze primitivní typy mohou být přijímány jako parametry a návratové typy.
-* Rozhraní API jsou synchronní.
-* V tuto chvíli je podporován pouze typ "Odeslat" volání. "Vyvolat" a vysílání datového proudu návratové hodnoty nejsou podporovány.
 * Pouze protokol JSON je podporován.
 * Je podporován pouze přenosu objekty Websocket.
+* Streamování se ještě nepodporuje.
 
 ## <a name="additional-resources"></a>Další zdroje
 

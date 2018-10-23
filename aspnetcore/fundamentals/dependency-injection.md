@@ -1,7 +1,7 @@
----
-title: Injektáž závislostí v ASP.NET Core
+﻿---
+title: Vkládání závislostí v ASP.NET Core
 author: guardrex
-description: Zjistěte, jak ASP.NET Core implementuje injektáž závislostí a způsobu jeho použití.
+description: Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a jak se používá.
 ms.author: riande
 ms.custom: mvc
 ms.date: 07/02/2018
@@ -13,19 +13,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/20/2018
 ms.locfileid: "49477667"
 ---
-# <a name="dependency-injection-in-aspnet-core"></a>Injektáž závislostí v ASP.NET Core
+# <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/), [Scott Addie](https://scottaddie.com), a [Luke Latham](https://github.com/guardrex)
 
-ASP.NET Core podporuje závislost vkládání (DI) software vzor návrhu, což je technika, pro dosažení [řízení IOC (Inversion)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) mezi třídami a jejich závislosti.
+ASP.NET Core podporuje návrhový vzor vkládání závislostí (Dependency Injection, DI), což je technika používaná pro dosažení [inverze řízení (Inversion of Control, IOC)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) mezi třídami a jejich závislostmi.
 
 Další informace specifické pro vkládání závislostí do kontrolerů MVC najdete v tématu <xref:mvc/controllers/dependency-injection>.
 
 [Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="overview-of-dependency-injection"></a>Přehled injektáž závislostí
+## <a name="overview-of-dependency-injection"></a>Přehled vkládání závislostí
 
-A *závislost* je libovolný objekt, který vyžaduje jiný objekt. Zkontrolujte následující `MyDependency` třídy s `WriteMessage` metodu, která jiných tříd v aplikaci závisí na:
+*Závislost* je libovolný objekt, který je vyžadován jiným objektem. Prohlédněte si následující třídu `MyDependency` s metodou `WriteMessage`, na které závisí jiné třídy v aplikaci:
 
 ```csharp
 public class MyDependency
@@ -46,7 +46,7 @@ public class MyDependency
 
 ::: moniker range=">= aspnetcore-2.1"
 
-Instance `MyDependency` třídy lze provádět `WriteMessage` metody, které jsou k dispozici na třídu. `MyDependency` Třídy je závislost `IndexModel` třídy:
+Pro zpřístupnění metody `WriteMessage` v jiné třídě je možné vytvořit instanci třídy `MyDependency`. Třída `MyDependency` je závislost třídy `IndexModel`:
 
 ```csharp
 public class IndexModel : PageModel
@@ -65,7 +65,7 @@ public class IndexModel : PageModel
 
 ::: moniker range="<= aspnetcore-2.0"
 
-Instance `MyDependency` třídy lze provádět `WriteMessage` metody, které jsou k dispozici na třídu. `MyDependency` Třídy je závislost `HomeController` třídy:
+Pro zpřístupnění metody `WriteMessage` v jiné třídě je možné vytvořit instanci třídy `MyDependency`. Třída `MyDependency` je závislostí třídy `HomeController`:
 
 ```csharp
 public class HomeController : Controller
@@ -84,19 +84,19 @@ public class HomeController : Controller
 
 ::: moniker-end
 
-Vytvoří třídu a přímo závisí `MyDependency` instance. Závislosti kódu (například v předchozím příkladu) jsou problematické a mělo by se vyhnout z následujících důvodů:
+Třída vytváří instanci třídy `MyDependency`, na které přímo závisí. Přímé závislosti v kódu (jako ta v předchozím příkladu) jsou problematické a měli byste se jim vyhnout z následujících důvodů:
 
-* Chcete-li nahradit `MyDependency` s jinou implementaci třídy musí být změněny.
-* Pokud `MyDependency` má závislosti, musíte je nakonfigurovat pomocí třídy. Ve velkých projektech s více třídami v závislosti na `MyDependency`, kód konfigurace stane rozmístěny na aplikaci.
-* Tato implementace je obtížné testování částí. Aplikace by měla používat model nebo se zakázaným inzerováním `MyDependency` třídu, která není možné s tímto přístupem.
+* Chcete-li nahradit `MyDependency` jinou implementací, musí být modifikována třída, která na ní závisí.
+* Pokud má třída `MyDependency` sama závislosti, musí být taktéž nakonfigurovány v dané třídě. Ve velkých projektech s více třídami závislých na `MyDependency` je tak konfigurační kód roztroušen na různých místech aplikace.
+* Tento způsob implementace je obtížný na jednotkové testování. Aplikace by měla používat mock nebo stub třídy `MyDependency`, což však není možné s tímto přístupem.
 
-Injektáž závislostí řeší tyto problémy prostřednictvím:
+Vkládání závislostí řeší tyto problémy prostřednictvím:
 
-* Použití rozhraní abstraktní implementace závislostí.
-* Registrace závislosti v kontejneru služby. ASP.NET Core nabízí integrovanou službu kontejneru, [IServiceProvider](/dotnet/api/system.iserviceprovider). Služby jsou registrované aplikace `Startup.ConfigureServices` metody.
-* *Vkládání* služby do konstruktoru třídy, ve kterém se používá. Rozhraní framework přebírá odpovědnost vytvoření instance závislosti a jejich zničení, pokud už je nepotřebujete.
+* Použití rozhraní k abstrakci implementace závislostí.
+* Registrace závislosti v kontejneru služeb. ASP.NET Core poskytuje integrovaný kontejner služeb, [IServiceProvider](/dotnet/api/system.iserviceprovider). Služby jsou registrované v metodě `Startup.ConfigureServices` aplikace.
+* *Vkládání* služeb do konstruktoru třídy, ve které se používá. Framework přebírá zodpovědnost za vytváření instancí závislostí a jejich uvolňování, kdy již nejsou dále potřebné.
 
-V [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples), `IMyDependency` rozhraní definuje metody, která poskytuje služby do aplikace:
+V [ukázkové aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples) definuje rozhraní `IMyDependency` metody, které poskytuje služba aplikaci:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -110,7 +110,7 @@ V [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/fu
 
 ::: moniker-end
 
-Toto rozhraní je implementováno podle konkrétního typu implementujícího typ `MyDependency`:
+Toto rozhraní je implementováno konkrétním typem `MyDependency`:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -124,11 +124,11 @@ Toto rozhraní je implementováno podle konkrétního typu implementujícího ty
 
 ::: moniker-end
 
-`MyDependency` Požadavky [ILogger&lt;TCategoryName&gt; ](/dotnet/api/microsoft.extensions.logging.ilogger-1) 've svém konstruktoru. Není zřetězené způsobem pomocí vkládání závislostí. Každá požadovaná závislost zase požaduje svoje vlastní závislosti. Kontejner řeší závislosti v grafu a vrátí službu zcela přeložit. Souhrnný sadu závislosti, které je třeba vyřešit se obvykle označuje jako *strom závislostí*, *graf závislosti*, nebo *graf objektu*.
+Třída `MyDependency` požaduje [ILogger&lt;TCategoryName&gt; ](/dotnet/api/microsoft.extensions.logging.ilogger-1) ve svém konstruktoru. Není neobvyklé používat zřetězené vkládání závislostí. Každá požadovaná závislost může v zápětí požadovat své vlastní závislosti. Kontejner řeší závislosti v grafu a vrací plně vyřešené služby. Množina závislostí, které musí být rozhodnuty, se obvykle označuje jako *strom závislostí*, *graf závislostí*, nebo *graf objektů*.
 
-`IMyDependency` a `ILogger<TCategoryName>` musí být zaregistrovaný v kontejneru služby. `IMyDependency` je zaregistrovaný v `Startup.ConfigureServices`. `ILogger<TCategoryName>` registraci protokolování abstrakce infrastrukturu, takže má [služby poskytované rozhraním](#framework-provided-services) registrován ve výchozím nastavení v rámci rozhraní.
+`IMyDependency` a `ILogger<TCategoryName>` musí být zaregistrovány v kontejneru služeb. `IMyDependency` je zaregistrovaný v `Startup.ConfigureServices`. `ILogger<TCategoryName>` je registrován infrastrukturou pro abstrakci protokolování, takže je [službou poskytovanou frameworkem](#framework-provided-services) registrovanou ve výchozím nastavení frameworkem.
 
-V ukázkové aplikaci `IMyDependency` služba není registrována s konkrétní typ `MyDependency`. Registrace obory doba platnosti služby k době života jeden požadavek. [Služba životnosti](#service-lifetimes) jsou popsány dále v tomto tématu.
+V ukázkové aplikaci je služba `IMyDependency` registrována s konkrétním typem `MyDependency`. Registrace specifikuje rámec životnosti služby na životnost jednoho požadavku. [Životnosti služby](#service-lifetimes) jsou popsány dále v tomto tématu.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -143,9 +143,9 @@ V ukázkové aplikaci `IMyDependency` služba není registrována s konkrétní 
 ::: moniker-end
 
 > [!NOTE]
-> Každý `services.Add{SERVICE_NAME}` – metoda rozšíření přidá (a potenciálně nakonfiguruje) služby. Například `services.AddMvc()` přidá služby Razor Pages a vyžadují MVC. Doporučujeme, aby aplikace postupujte podle Tato konvence. Rozšiřující metody v umístění [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) obor názvů pro zapouzdření skupiny registrací služby.
+> Každá rozšiřující metoda `services.Add{SERVICE_NAME}` přidává (a potenciálně konfiguruje) služby. Například `services.AddMvc()` přidává služby Stránek Razor a MVC. Doporučujeme, aby v aplikacích byla tato konvence dodržena. Umístěte rozšiřující metody do jmenného prostoru [Microsoft.Extensions.DependencyInjection](/dotnet/api/microsoft.extensions.dependencyinjection) pro zapouzdření skupin registrací služeb.
 
-Pokud konstruktor služby vyžaduje jednoduchého typu, například `string`, primitivní vlastnost může být vloženy pomocí [konfigurace](xref:fundamentals/configuration/index) nebo [možnosti vzor](xref:fundamentals/configuration/options):
+Pokud konstruktor služby vyžaduje primitivní typ, například `string`, může být vložen pomocí [konfigurace](xref:fundamentals/configuration/index) nebo [vzoru možností (options pattern)](xref:fundamentals/configuration/options):
 
 ```csharp
 public class MyDependency : IMyDependency
@@ -161,9 +161,9 @@ public class MyDependency : IMyDependency
 }
 ```
 
-Instance služby je požadováno prostřednictvím konstruktoru třídy, kde se služba používá a přiřadí do privátní pole. Pole se používá pro přístup ke službě podle potřeby v rámci třídy.
+Instance služby je požadována prostřednictvím konstruktoru třídy, kde se služba využívá a přiřazuje do privátního pole. Toto pole se používá pro přístup ke službě podle potřeby v rámci celé třídy.
 
-V ukázkové aplikaci `IMyDependency` instance je požadováno a použít k volání služby `WriteMessage` metody:
+V ukázkové aplikaci je požadována instance `IMyDependency` a posléze použita k volání metody `WriteMessage` dané služby:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -177,11 +177,11 @@ V ukázkové aplikaci `IMyDependency` instance je požadováno a použít k vol�
 
 ::: moniker-end
 
-## <a name="framework-provided-services"></a>Služby poskytované rozhraním
+## <a name="framework-provided-services"></a>Služby poskytované frameworkem
 
-`Startup.ConfigureServices` Metoda odpovídá za definování služeb aplikace využívá, včetně funkcí platformy, jako je například Entity Framework Core a ASP.NET Core MVC. Na začátku `IServiceCollection` poskytnuté `ConfigureServices` obsahuje následující definice služby (v závislosti na [konfiguraci hostitele](xref:fundamentals/host/index)):
+Metoda `Startup.ConfigureServices` zodpovídá za definování služeb používaných aplikací, včetně funkcí platformy, jako je například Entity Framework Core a ASP.NET Core MVC. Zpočátku jsou v `IServiceCollection`, který je poskytován metodě `ConfigureServices`, definovány následující služby (v závislosti na [konfiguraci hostitele](xref:fundamentals/host/index)):
 
-| Typ služby | Doba platnosti |
+| Typ služby | Životnost |
 | ------------ | -------- |
 | [Microsoft.AspNetCore.Hosting.Builder.IApplicationBuilderFactory](/dotnet/api/microsoft.aspnetcore.hosting.builder.iapplicationbuilderfactory) | Přechodná |
 | [Microsoft.AspNetCore.Hosting.IApplicationLifetime](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime) | Singleton |
@@ -198,7 +198,7 @@ V ukázkové aplikaci `IMyDependency` instance je požadováno a použít k vol�
 | [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | Singleton |
 | [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | Singleton |
 
-Metody rozšíření kolekce služby je možné zaregistrovat službu (a jeho závislé služby, pokud je to nutné), tato konvence při použití jediného `Add{SERVICE_NAME}` metodu rozšíření k registraci všech služeb vyžadují danou službu. Následující kód je příklad toho, jak přidat další služby do kontejneru pomocí metody rozšíření [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext), [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity), a [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc):
+Pokud je dostupná rozšiřující metoda rozšiřující kolekci služeb o registraci služby (případě jejích závislých služeb, je-li to požadováno), je zvykem použít jedinou rozšiřující metodu `Add{SERVICE_NAME}` k registraci všech služeb vyžadovaných danou službu. Následující kód je příkladem toho, jak přidat dodatečné služby do kontejneru pomocí rozšiřujících metod [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext), [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity), a [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc):
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -214,50 +214,50 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Další informace najdete v tématu [ServiceCollection třídy](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollection) v dokumentaci k rozhraní API.
+Další informace naleznete v tématu [Třída ServiceCollection](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollection) v dokumentaci k rozhraní API.
 
 ## <a name="service-lifetimes"></a>Životnost služby
 
-Zvolte odpovídající životnost pro každé registrovanou službu. ASP.NET Core services můžete nakonfigurovat následující životní cyklus:
+Zvolte odpovídající životnost pro každou registrovanou službu. Služby ASP.NET Core můžete nakonfigurovat s následujícími životnostmi:
 
-**Přechodná**
+**Transient (přechodná)**
 
-Přechodná doba platnosti služby se vytvoří pokaždé, když jste žádali. Tato doba platnosti je nejvhodnější pro zjednodušené, bezstavových služeb.
+Služby s přechodnou životností se vytvoří pokaždé, kdy jsou požadovány. Tato životnost je vhodná pro jednoduché, bezstavové služby.
 
-**Obor**
+**Scoped (vymezená)**
 
-S vymezeným oborem životnost služby se vytvoří jednou každý požadavek.
-
-> [!WARNING]
-> Při použití služby s vymezeným oborem v middleware, vloží službu do `Invoke` nebo `InvokeAsync` metody. Prostřednictvím konstruktoru vkládání není vložit, protože nutí službě a chovají se jako singleton. Další informace naleznete v tématu <xref:fundamentals/middleware/index>.
-
-**singleton**
-
-Deklarace služeb typu singleton životnost se vytvoří při prvním jste žádali (nebo když `ConfigureServices` spuštění a instance je zadán s registrací služby). Každý další požadavek používá stejnou instanci. Pokud aplikace vyžaduje chování typu singleton, se doporučuje povolení kontejneru služby ke správě životnosti služby. Nemusíte implementovat vzor návrhu typu singleton a poskytnout uživatelský kód ke správě životnosti objektu ve třídě.
+Služby s vymezenou životností se vytváří jedinkrát za HTTP požadavek.
 
 > [!WARNING]
-> Je nebezpečné vyřešit vymezené služby z typu singleton. Může to způsobit služby má nesprávný stav při zpracování následných žádostí.
+> Při použití služby s vymezenou živostností v middlewaru vkládejte službu do metody `Invoke` nebo `InvokeAsync`. Nevkládejte službu prostřednictvím konstruktoru, protože se služba bude chovat se jako singleton. Další informace naleznete v tématu <xref:fundamentals/middleware/index>.
 
-### <a name="constructor-injection-behavior"></a>Konstruktor chování vkládání
+**Singleton**
 
-Služby se dají vyřešit dva mechanismy:
+Služby se životností typu singleton se vytvoří při prvním vyžádání služby (nebo když je spuštěna metoda `ConfigureServices` a instance je specifikována při registraci služby). Každý další požadavek použije stejnou instanci. Pokud je v aplikaci vyžadováno chování ve stylu návrhového vzoru Singleton, doporučuje se použít kontejner služeb ke správě životnosti takového objektu. Neposkytujte vlastní implementaci návrhového vzoru Singleton a umožněte tak uživatelskému kódu spravovat životnost objektu v rámci třídy.
+
+> [!WARNING]
+> Je nebezpečné získávat vymezené služby ze singletonů. Může to způsobit nesprávný stav služby při zpracování následujících požadavků.
+
+### <a name="constructor-injection-behavior"></a>Chování vkládání pomocí konstruktoru
+
+Služby mohou být řešeny pomocí dvou mechanismů:
 
 * `IServiceProvider`
-* [ActivatorUtilities](/dotnet/api/microsoft.extensions.dependencyinjection.activatorutilities) &ndash; umožňuje vytvoření objektu bez registrace služby v kontejneru pro vkládání závislostí. `ActivatorUtilities` se používá s přístupných abstrakce, jako je například pomocných rutin značek, kontrolery MVC a vazače modelů.
+* [ActivatorUtilities](/dotnet/api/microsoft.extensions.dependencyinjection.activatorutilities) &ndash; umožňuje vytvoření objektu bez registrace služby v kontejneru pro vkládání závislostí. `ActivatorUtilities` se používá s uživatelsky orientovanými abstrakcemi, jako jsou například Tag Helpery, kontrolery MVC a bindery modelů.
 
-Konstruktory mohou přijímat argumenty, které nejsou součástí injektáž závislostí, ale argumenty musí přiřadit výchozí hodnoty.
+Konstruktory mohou přijímat argumenty, které nejsou poskytovány v rámci vkládání závislostí, ale takové argumenty musí mít přiřazené výchozí hodnoty.
 
-Když jsou vyřešeny služby `IServiceProvider` nebo `ActivatorUtilities`, vyžaduje konstruktor vkládání *veřejné* konstruktoru.
+Pokud jsou služby řešeny pomocí `IServiceProvider` nebo `ActivatorUtilities`, pak je vyžadován *veřejný* konstruktor.
 
 Když jsou vyřešeny služby `ActivatorUtilities`, vkládání konstruktor vyžaduje, že pouze jeden použít konstruktor existuje. Přetížení konstruktoru jsou podporované, ale může existovat pouze jedním přetížením, jehož argumenty lze všechny splnit vkládání závislostí.
 
-## <a name="entity-framework-contexts"></a>Kontext Entity Framework
+## <a name="entity-framework-contexts"></a>Kontexty Entity Frameworku
 
-Entity Framework kontexty má přidat do kontejneru služby pomocí vymezených životnost. Tento problém řeší automaticky volání [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext) metoda při registraci kontext databáze. Služby, které používají kontext databáze by měl také použít s vymezeným oborem životnost.
+Kontexty Entity Frameworku by měly být přidány do kontejneru služeb s vymezenou životností. To je automaticky zajištěno voláním metody [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext) při registraci databázového kontextu. Služby, které používají databázový kontext, by měly mít taktéž vymezenou životnost.
 
-## <a name="lifetime-and-registration-options"></a>Doba života a možností registrace
+## <a name="lifetime-and-registration-options"></a>Životnosti a možnosti registrace
 
-Chcete-li prokázali rozdíl mezi možnostmi životnost a registraci, zvažte následující rozhraní, které představují úlohy jako operaci s jedinečným identifikátorem `OperationId`. V závislosti na konfiguraci životnosti služby operace pro následující rozhraní kontejneru poskytuje stejné nebo jiné instanci služby na požádání třídou:
+Na ukázku rozdílů mezi životnostmi a možnostmi registrace si prohlédněte následující rozhraní reprezentující úlohy jako operace s jedinečným identifikátorem `OperationId`. V závislosti na tom, jak je životnost této služby nakonfigurována pro následující rozhraní, poskytne kontejner stejnou nebo rozdílnou instanci služby během vyžádání třídou:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -271,7 +271,7 @@ Chcete-li prokázali rozdíl mezi možnostmi životnost a registraci, zvažte n�
 
 ::: moniker-end
 
-Rozhraní jsou implementovány v `Operation` třídy. `Operation` Konstruktor vytvoří identifikátor GUID, pokud jeden není zadán:
+Rozhraní jsou implementovány ve třídě `Operation`. Konstruktor `Operation` vytvoří identifikátor GUID, pokud není explicitně poskytnut:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -285,7 +285,7 @@ Rozhraní jsou implementovány v `Operation` třídy. `Operation` Konstruktor vy
 
 ::: moniker-end
 
-`OperationService` Zaregistrován to záleží na každé z nich `Operation` typy. Když `OperationService` žádá pomocí vkládání závislostí, obdrží buď novou instanci třídy každé služby nebo stávající instance podle doby života ze závislých služeb.
+Služba `OperationService` je zaregistrována tak, aby závisela na jednotlivých typech tříd `Operation`. Když je `OperationService` vyžádána pomocí vkládání závislostí, obdrží buď novou nebo stávající instanci třídy jednotlivých služeb v závislosti na životnosti závislých služeb.
 
 * Pokud přechodné služby se vytvoří při požadavku `OperationId` z `IOperationTransient` služby se liší od `OperationId` z `OperationService`. `OperationService` obdrží novou instanci třídy `IOperationTransient` třídy. Vrací novou instanci jinou `OperationId`.
 * Pokud vymezené služby se vytvoří každý požadavek, `OperationId` z `IOperationScoped` služba je stejné jako u `OperationService` v rámci požadavku. Obě služby napříč požadavky, sdílet jiné `OperationId` hodnotu.
@@ -303,7 +303,7 @@ Rozhraní jsou implementovány v `Operation` třídy. `Operation` Konstruktor vy
 
 ::: moniker-end
 
-V `Startup.ConfigureServices`, každý typ je přidat do kontejneru podle životnosti s názvem:
+V `Startup.ConfigureServices` je každý typ přidán do kontejneru na základě svého pojmenování podle životnosti:
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -317,11 +317,11 @@ V `Startup.ConfigureServices`, každý typ je přidat do kontejneru podle život
 
 ::: moniker-end
 
-`IOperationSingletonInstance` Služba používá konkrétní instanci s známé ID `Guid.Empty`. Je jasné, když tento typ se používá (její identifikátor GUID se všemi nulovými hodnotami).
+Služba `IOperationSingletonInstance` používá konkrétní instanci se známým ID nastaveným na `Guid.Empty`. Je pak zřejmé, kdy je tento typ použit (jeho identifikátor GUID obsahuje samé nuly).
 
 ::: moniker range=">= aspnetcore-2.1"
 
-Ukázková aplikace předvádí správu životnosti objektů v rámci a mezi jednotlivé požadavky. Ukázková aplikace `IndexModel` požadavků každý druh `IOperation` typ a `OperationService`. Stránce se pak zobrazí všechny třídy modelu stránky a služby `OperationId` hodnoty prostřednictvím vlastnosti přiřazení:
+Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých požadavků a mezi nimi. Třída `IndexModel` ukázkové aplikace vyžaduje každý druh typu `IOperation` a službu `OperationService`. Stránka následně vypisuje všechny hodnoty `OperationId` modelu stránky a služby prostřednictvím přiřazených vlastností:
 
 [!code-csharp[](dependency-injection/samples/2.x/DependencyInjectionSample/Pages/Index.cshtml.cs?name=snippet1&highlight=7-11,14-18,21-25)]
 
@@ -329,55 +329,55 @@ Ukázková aplikace předvádí správu životnosti objektů v rámci a mezi jed
 
 ::: moniker range="<= aspnetcore-2.0"
 
-Ukázková aplikace předvádí správu životnosti objektů v rámci a mezi jednotlivé požadavky. Obsahuje ukázkovou aplikaci `OperationsController` , že každý žádosti druh `IOperation` typ a `OperationService`. `Index` Akce nastaví služby do `ViewBag` pro zobrazení služby `OperationId` hodnoty:
+Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých požadavků a mezi nimi. Ukázková aplikace obsahuje `OperationsController`, který vyžaduje každý druh typu `IOperation` a službu `OperationService`. Akce `Index` nastaví služby do objektu `ViewBag`, aby bylo možné zobrazit hodnotu `OperationId` služby:
 
 [!code-csharp[](dependency-injection/samples/1.x/DependencyInjectionSample/Controllers/OperationsController.cs?name=snippet1)]
 
 ::: moniker-end
 
-Dva následující výstup ukazuje výsledky dvou požadavků:
+Následující výpis ukazuje výsledek dvou HTTP požadavků:
 
 **První požadavek:**
 
 Operace kontroleru:
 
-Přechodné: d233e165-f417-469b-a866-1cf1935d2518  
-Obor: 5d997e2d-55f5-4a64-8388-51c4e3a1ad19  
-Jednotlivý prvek: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
+Transient: d233e165-f417-469b-a866-1cf1935d2518  
+Scoped: 5d997e2d-55f5-4a64-8388-51c4e3a1ad19  
+Singleton: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
 Instance: 00000000-0000-0000-0000-000000000000
 
-`OperationService` operace:
+Operace `OperationService`:
 
-Přechodné: c6b049eb-1318-4e31-90f1-eb2dd849ff64  
-Obor: 5d997e2d-55f5-4a64-8388-51c4e3a1ad19  
-Jednotlivý prvek: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
+Transient: c6b049eb-1318-4e31-90f1-eb2dd849ff64  
+Scoped: 5d997e2d-55f5-4a64-8388-51c4e3a1ad19  
+Singleton: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
 Instance: 00000000-0000-0000-0000-000000000000
 
-**Druhou žádost:**
+**Druhý požadavek:**
 
 Operace kontroleru:
 
-Přechodné: b63bd538-0a37-4ff1-90ba-081c5138dda0  
-Obor: 31e820c5-4834-4d22-83fc-a60118acb9f4  
-Jednotlivý prvek: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
+Transient: b63bd538-0a37-4ff1-90ba-081c5138dda0  
+Scoped: 31e820c5-4834-4d22-83fc-a60118acb9f4  
+Singleton: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
 Instance: 00000000-0000-0000-0000-000000000000
 
 `OperationService` operace:
 
-Přechodné: c4cbacb8-36a2-436d-81c8-8c1b78808aaf  
-Obor: 31e820c5-4834-4d22-83fc-a60118acb9f4  
-Jednotlivý prvek: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
+Transient: c4cbacb8-36a2-436d-81c8-8c1b78808aaf  
+Scoped: 31e820c5-4834-4d22-83fc-a60118acb9f4  
+Singleton: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
 Instance: 00000000-0000-0000-0000-000000000000
 
-Podívejte se, které `OperationId` hodnoty se liší v rámci požadavku a mezi požadavky:
+Všimněte si, které hodnoty `OperationId` se liší v rámci požadavku a mezi požadavky:
 
-* *Přechodné* objekty jsou vždy odlišné. Všimněte si, že přechodná `OperationId` hodnota prvního a druhého požadavky se liší pro obě `OperationService` operací a napříč požadavky. Novou instanci se poskytuje pro každou službu a požadavek.
-* *Obor* objekty jsou stejné v rámci požadavku, ale jiné napříč požadavky.
-* *Jednotlivý prvek* objekty jsou stejné pro všechny objekty a všechny požadavky bez ohledu na to, jestli se `Operation` instance je k dispozici v `ConfigureServices`.
+* Objekty s přechodnou životností jsou vždy rozdílné. Poznamenejme, že se hodnota přechodného `OperationId` pro první i druhý požadavek liší jak pro obě operace `OperationService`, tak i mezi požadavky. Nová instance je poskytnuta pro každou službu a každý požadavek.
+* Objekty s vymezenou životností jsou stejné v rámci jednoho požadavku, ale jiné napříč různými požadavky.
+* Objekty se živostností typu singleton jsou stejné pro všechny objekty a všechny požadavky bez ohledu na to, jestli je instance `Operation` poskytnuta v `ConfigureServices`.
 
-## <a name="call-services-from-main"></a>Volání služby z hlavní
+## <a name="call-services-from-main"></a>Volání služeb z main
 
-Vytvoření [IServiceScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescope) s [IServiceScopeFactory.CreateScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescopefactory.createscope) vyřešit vymezené služby v rámci oboru aplikace. Tento přístup je užitečný pro přístup k vymezené služby při spuštění počítače a spouštět úlohy inicializace. Následující příklad ukazuje, jak získat kontext pro `MyScopedService` v `Program.Main`:
+Vytvořte [IServiceScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescope) obsahující metodu [IServiceScopeFactory.CreateScope](/dotnet/api/microsoft.extensions.dependencyinjection.iservicescopefactory.createscope) k rozhodování služeb s životností vymezenou v rámci oboru aplikace. Tento způsob je užitečný pro přístup k službám s vymezenou životností při provádění inicializačních úloh během spuštění. Následující příklad ukazuje, jak získat kontext pro `MyScopedService` v `Program.Main`:
 
 ```csharp
 public static void Main(string[] args)
@@ -404,49 +404,49 @@ public static void Main(string[] args)
 }
 ```
 
-## <a name="scope-validation"></a>Rozsah ověřování
+## <a name="scope-validation"></a>Ověření rámce životnosti
 
 ::: moniker range=">= aspnetcore-2.0"
 
-Když aplikace běží ve vývojovém prostředí, poskytovatele služeb výchozí provádí kontroly pro ověření, že:
+Pokud aplikace běží ve vývojovém prostředí, výchozí poskytovatel služeb provádí kontroly pro ověření toho, že:
 
-* Vymezené služby nejsou přímo nebo nepřímo vyřešit z kořenové poskytovatele služeb.
-* Vymezené služby nejsou přímo nebo nepřímo vloženy do jednotlivých prvků.
+* Služby s vymezenou živostností nejsou přímo nebo nepřímo rozhodovány z kořenového poskytovatele služeb.
+* Služby s vymezenou živostností nejsou přímo nebo nepřímo vkládány do singletonů.
 
 ::: moniker-end
 
-Poskytovatel služeb root je vytvořen, když [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider) je volána. Doba života poskytovatele služeb kořenový odpovídá životnost aplikace/serveru při zprostředkovatel začíná aplikace a je uvolněna při ukončení aplikace.
+Kořenový poskytovatel služeb je vytvořen při volání [BuildServiceProvider](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectioncontainerbuilderextensions.buildserviceprovider). Životnost kořenového poskytovatele služeb odpovídá životnosti aplikace/serveru, tedy poskytovatel vzniká se startem aplikace a je uvolněn při ukončení aplikace.
 
-Vymezené služby jsou uvolněna pomocí kontejneru, který je vytvořil. Pokud vymezené služby se vytvoří v kořenovém kontejneru, životnost služby je efektivně povýšen na jednotlivý prvek, protože to je jenom uvolněn pomocí Kořenový kontejner při vypnutí serveru/aplikace. Ověřování služby Obory zachytí tyto situace při `BuildServiceProvider` je volána.
+Služby s vymezenou životností jsou uvolňovány kontejnerem, který je vytvořil. Pokud jsou služby s vymezenou životností vytvořeny v kořenovém kontejneru, životnost služby je efektivně povýšen na singleton, protože je uvolněn pomocí kořenového kontejneru pouze při vypnutí serveru/aplikace. Validací rámce životnosti služeb ošetřuje tyto situace při volání `BuildServiceProvider`.
 
 Další informace naleznete v tématu <xref:fundamentals/host/web-host#scope-validation>.
 
-## <a name="request-services"></a>Žádost o služby
+## <a name="request-services"></a>Služby požadavků
 
-Žádost o služby k dispozici v rámci ASP.NET Core z `HttpContext` jsou vystaveny prostřednictvím [HttpContext.RequestServices](/dotnet/api/microsoft.aspnetcore.http.httpcontext.requestservices) kolekce.
+Služby dostupné v rámci požadavků ASP.NET Core z `HttpContext` jsou zpřístupněny prostřednictvím kolekce [HttpContext.RequestServices](/dotnet/api/microsoft.aspnetcore.http.httpcontext.requestservices).
 
-Žádost o služby představují služby nakonfigurovaný a požadovány v rámci aplikace. Pokud objekty určení závislostí, jsou tyto splněno typy nalezené v `RequestServices`, nikoli `ApplicationServices`.
+Služby požadavků představují služby nakonfigurované a požadováné v rámci aplikace. Pokud objekty specifikují závislosti, jsou řešeny pomocí typů dostupných v `RequestServices`, nikoli `ApplicationServices`.
 
-Aplikace obvykle by neměly používat tyto vlastnosti přímo. Místo toho požadavku typy, třídy vyžadovat prostřednictvím konstruktor třídy a povolit rozhraní framework vložit závislosti. To poskytuje třídy, které usnadňuje testování (najdete v článku [testování a ladění](xref:test/index) témata).
+Aplikace by obvykle neměly používat tyto vlastnosti přímo. Místo toho získávejte požadované typy pomocí konstruktoru třídy a nechte framework vložit odpovídající závislosti. Výsledné třídy jsou snáze testovatelné (vizte téma [Testování a ladění](xref:test/index)).
 
 > [!NOTE]
-> Raději jako parametry konstruktoru pro přístup k žádosti o závislosti `RequestServices` kolekce.
+> Pro přístup ke kolekci `RequestServices` upřednostněte získávání závislostí jako parametr konstruktoru.
 
-## <a name="design-services-for-dependency-injection"></a>Služby návrhu pro vkládání závislostí
+## <a name="design-services-for-dependency-injection"></a>Návrh služeb pro vkládání závislostí
 
 Osvědčené postupy jsou následující:
 
-* Navrhujte služby pomocí vkládání závislostí získat jejich závislosti.
-* Vyhněte se volání metody stavová a statické (postup známý jako [statické plevami](https://deviq.com/static-cling/)).
-* Vyhněte se přímé vytváření instancí závislých tříd v rámci služeb. Přímé vytvoření instance páry v odstupu kód pro konkrétní implementaci.
+* Navrhujte služby tak, aby využívaly vkládání závislostí pro získání jejich závislostí.
+* Vyhněte se stavovému, statickému volání metod (postup známý jako [static cling](https://deviq.com/static-cling/)).
+* Vyhněte se přímému vytváření instancí závislých tříd v rámci služeb. Přímé vytváření instancí způsobuje přímou závislost na konkrétní implementaci.
 
-Pomocí následujících [SOLID zásady z objektu orientovaný návrh](https://deviq.com/solid/), třídy aplikace jsou často přirozeně na malé, skvěle a snadno otestované.
+Dodržováním [zásad SOLID objektově orientovaného návrhu](https://deviq.com/solid/) lze často vyprodukovat malé, dobře navržené a snadno testovatelné třídy aplikace.
 
-Pokud třída zdá se, že máte příliš mnoho vložených závislostí, je obecně znak, třída má příliš mnoho zodpovědnosti a porušuje [jedné zásadě odpovědnost (SRP)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#single-responsibility). Pokus o Refaktorovat třídy některé z jeho zodpovědnosti přesunutím do nové třídy. Mějte na paměti, která tříd modelu stránky Razor Pages a třídy kontroleru MVC byste se zaměřit na aspekty uživatelského rozhraní. Obchodní pravidla a data přístup implementace podrobnosti by měly být neustále ve třídách, které jsou vhodné pro tyto [oddělení obavy](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns).
+Pokud má třída nepřiměřeně mnoho vložených závislostí, je to obecně znakem toho, že má třída příliš mnoho zodpovědností a porušuje tak [zásadu jediné zodpovědnosti (Single Responsibility Principle, SRP)](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#single-responsibility). V tom případě se pokuste refaktorovat třídu tak, že některé z jeho zodpovědností přesunete do nové třídy. Mějte na paměti, že třídy modelů stránek Razor a třídy kontrolerů MVC by měly být zaměřeny na aspekty uživatelského rozhraní. Business pravidla a konkrétní implementace přístupu k datům by měly být v odpovídajících třídách respektující [princip oddělení zopovědnosti](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#separation-of-concerns).
 
-### <a name="disposal-of-services"></a>Vyřazení služby
+### <a name="disposal-of-services"></a>Uvolnění služeb
 
-Kontejner volá `Dispose` pro `IDisposable` typy ji vytvoří. Pokud instance je přidat do kontejneru v uživatelském kódu, není automaticky odstraněn.
+Kontejner volá metodu `Dispose` u všech typů, které vytvořil a které implementují rozhraní `IDisposable`. Instance přidané do kontejneru pomocí uživatelské kódu nejsou automaticky uvolňovány.
 
 ```csharp
 // Services that implement IDisposable:
@@ -474,30 +474,30 @@ public void ConfigureServices(IServiceCollection services)
 ::: moniker range="= aspnetcore-1.0"
 
 > [!NOTE]
-> V ASP.NET Core 1.0, kontejner volá metodu dispose v *všechny* `IDisposable` objektů, včetně těch, které se nepovedlo vytvořit.
+> V ASP.NET Core 1.0 volá kontejner metodu Dispose u *všech* `IDisposable` objektů včetně těch, které se nepovedlo vytvořit.
 
 ::: moniker-end
 
-## <a name="default-service-container-replacement"></a>Výchozí služba kontejneru nahrazení
+## <a name="default-service-container-replacement"></a>Nahrazení výchozího kontejneru služeb
 
-Integrovaná služba kontejneru je určen pro sloužit potřebám rozhraní framework a většina uživatelů aplikací. Doporučujeme používat integrované kontejneru, pokud potřebujete konkrétní funkce, která nepodporuje. Některé z funkcí podporovaných v 3. stran kontejnery nebyl nalezen v předdefinované kontejneru:
+Integrovaný kontejner služeb je primárně určen pro naplnění potřeb frameworku a většiny uživatelských aplikací. Doporučujeme používat integrovaný kontejner, dokud nebudete potřebovat specifické funkce nepodporované kontejnerem. Některé z funkcí podporovaných v kontejnerech 3. stran neobsažených ve výchozím kontejneru jsou:
 
-* Vkládání vlastnosti
+* Vkládání pomocí vlastností
 * Vkládání podle názvu
-* Podřízené kontejnery
-* Management vlastní doba života
-* `Func<T>` Podpora pro opožděná inicializace
+* Vnořené kontejnery
+* Vlastní správa životnosti
+* Podpora `Func<T>` pro línou inicializaci
 
-Najdete v článku [injektáž závislostí souboru readme.md](https://github.com/aspnet/DependencyInjection#using-other-containers-with-microsoftextensionsdependencyinjection) seznam některých kontejnerů, které podporují adaptéry.
+Pro seznam některých kontejnerů podporujících adaptéry, vizte [Soubor readme.md ke Vkládání závislostí](https://github.com/aspnet/DependencyInjection#using-other-containers-with-microsoftextensionsdependencyinjection).
 
-Následující příklad nahradí kontejneru integrované s [Autofac](https://autofac.org/):
+Následující příklad nahrazuje integrovaný kontejner kontejnerem [Autofac](https://autofac.org/):
 
-* Instalovat balíčky odpovídajícího kontejneru:
+* Nainstalujte odpovídající balíčky kontejneru:
 
     * [Autofac](https://www.nuget.org/packages/Autofac/)
     * [Autofac.Extensions.DependencyInjection](https://www.nuget.org/packages/Autofac.Extensions.DependencyInjection/)
 
-* Konfigurace kontejneru v `Startup.ConfigureServices` a vraťte se `IServiceProvider`:
+* Nakonfigurujte kontejner v `Startup.ConfigureServices` a vraťte `IServiceProvider`:
 
     ```csharp
     public IServiceProvider ConfigureServices(IServiceCollection services)
@@ -514,9 +514,9 @@ Následující příklad nahradí kontejneru integrované s [Autofac](https://au
     }
     ```
 
-    Použití kontejneru 3. stran `Startup.ConfigureServices` musí vracet `IServiceProvider`.
+    `Startup.ConfigureServices` musí vracet `IServiceProvider` pro použití kontejneru 3. stran.
 
-* Konfigurace Autofac v `DefaultModule`:
+* Konfigurace Autofacu v `DefaultModule`:
 
     ```csharp
     public class DefaultModule : Module
@@ -528,13 +528,13 @@ Následující příklad nahradí kontejneru integrované s [Autofac](https://au
     }
     ```
 
-Za běhu Autofac lze přeložit typy a vložení závislosti. Další informace o používání Autofac pomocí ASP.NET Core, najdete v článku [Autofac dokumentaci](https://docs.autofac.org/en/latest/integration/aspnetcore.html).
+Za běhu je použit Autofac pro rozhodování typů a vkládání závislostí. Další informace o používání Autofac s ASP.NET Core naleznete v [dokumentaci Autofac](https://docs.autofac.org/en/latest/integration/aspnetcore.html).
 
-### <a name="thread-safety"></a>Bezpečnost vlákna
+### <a name="thread-safety"></a>Bezpečný přístup z více vláken
 
-Deklarace služeb typu singleton musí být bezpečné pro vlákna. Pokud služby typu singleton obsahuje závislost na přechodné služby, přechodné služby také muset být bezpečné, v závislosti, jak se používají v typu singleton.
+Singleton služby musí být bezpečné pro přístup z více vláken. Pokud služby typu singleton obsahují závislosti na službách s přechodnou životností, pak je možné, že tyto služby budou muset být taktéž zabezpečeny pro přístup z více vláken v závislosti na tom, jak jsou používány v rámci singleton služby.
 
-Metoda factory jedné služby, jako je například druhý argument [AddSingleton&lt;TService&gt;(IServiceCollection, Func&lt;IServiceProvider, TService&gt;)](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions.addsingleton#Microsoft_Extensions_DependencyInjection_ServiceCollectionServiceExtensions_AddSingleton__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Func_System_IServiceProvider___0__), nebude musí být bezpečné pro vlákna. Typ, jako jsou (`static`) konstruktor, ji má zaručeno, že má být volána po jednom vlákně.
+Factory metody jedné služby, jako je například druhý argument metody [AddSingleton&lt;TService&gt;(IServiceCollection, Func&lt;IServiceProvider, TService&gt;)](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions.addsingleton#Microsoft_Extensions_DependencyInjection_ServiceCollectionServiceExtensions_AddSingleton__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Func_System_IServiceProvider___0__), nebude musí být bezpečné pro přístup z více vláken. Stejně jako u typového (`static`) konstruktoru je zaručeno, že je volán jednou jediným vláknem.
 
 ## <a name="recommendations"></a>Doporučení
 
@@ -542,13 +542,13 @@ Metoda factory jedné služby, jako je například druhý argument [AddSingleton
 
 * Vyhněte se ukládání dat a konfigurace přímo do kontejneru služby. Například by neměla uživatele nákupního košíku přidat obvykle do kontejneru služby. Konfigurace by měl používat [možnosti vzor](xref:fundamentals/configuration/options). Podobně nepoužívejte "vlastník dat" objekty, které existují pouze pokud chcete povolit přístup na některý objekt. Je lepší požádat o skutečné položky prostřednictvím DI.
 
-* Vyhněte se statické přístup ke službám (příklad staticky – zadáním [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) pro použití jinde).
+* Vyhněte se statickému přístupu ke službám (například staticky typovaným [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) pro použití jinde).
 
 * Vyhněte se použití *služby lokátoru vzor*. Není třeba vyvolat <xref:System.IServiceProvider.GetService*> při DI místo toho můžete získat instanci služby. Další variantou Lokátor služby, aby se vkládá objekt factory, který řeší závislosti za běhu. Obě tyto postupy kombinace [ovládacího prvku inverzi](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#dependency-inversion) strategie.
 
-* Vyhněte se statické přístup k `HttpContext` (například [IHttpContextAccessor.HttpContext](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor.httpcontext)).
+* Vyhněte se statickému přístupu k `HttpContext` (například [IHttpContextAccessor.HttpContext](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor.httpcontext)).
 
-Stejně jako všechny sadu doporučení mohou nastat situace, ve kterém jsou vyžadována doporučení se ignoruje. Výjimky se vyskytují jen vzácně&mdash;většinou zvláštní případy v rámci samotného rozhraní.
+Stejně jako u všech doporučení mohou nastat situace, ve kterých je možné tato doporučení ignorovat. Výjimky se vyskytují jen vzácně &ndash; nejčastěji jsou to speciální případy uvnitř frameworku samotného.
 
 DI je *alternativní* na vzorech přístupu statická/globální objekt. Nebudete moci využít výhod DI, jsou-li zkombinovány s přístupem statický objekt.
 
@@ -560,9 +560,9 @@ DI je *alternativní* na vzorech přístupu statická/globální objekt. Nebudet
 * <xref:fundamentals/startup>
 * <xref:test/index>
 * <xref:fundamentals/middleware/extensibility>
-* [Zápis čistý kód v ASP.NET Core s injektáž závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
-* [Spravované kontejneru návrhu aplikace, Prelude: Kam patří kontejneru?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
-* [Princip explicitní závislosti.](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
-* [Inverze – kontejnery ovládacích prvků a vzor injektáž závislostí (Martina Fowlera)](https://www.martinfowler.com/articles/injection.html)
-* [Je nový spojovací ("vzájemné připevnění" kódu pro konkrétní implementaci)](https://ardalis.com/new-is-glue)
-* [Postup při registraci služby s více rozhraními v ASP.NET Core DI](https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/)
+* [Psaní čistého kódu v ASP.NET Core pomocí vkládání závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
+* [Návrh aplikace spravované kontejnerem, předehra: Kam patří kontejner?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
+* [Princip explicitních závislostí](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
+* [Kontejner inverze závislostí a vzor vkládání závislostí (Martin Fowler)](https://www.martinfowler.com/articles/injection.html)
+* [Nové je slepované ("lepení" kódu pro konkrétní implementaci)](https://ardalis.com/new-is-glue)
+* [Postup pro registraci služeb s více rozhraními v ASP.NET Core DI](https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/)

@@ -563,7 +563,7 @@ Vkládání závislostí je *alternativou* ke vzorům statického/globálního p
 * <xref:fundamentals/middleware/extensibility>
 * [Psaní čistého kódu v ASP.NET Core pomocí vkládání závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Návrh aplikace spravované kontejnerem, předehra: Kam patří kontejner?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
-* [Princip explicitních závilostí](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
-* [Kontejner inverze závislostí a vzor vkládání závilostí (Martina Fowler)](https://www.martinfowler.com/articles/injection.html)
+* [Princip explicitních závislostí](/dotnet/standard/modern-web-apps-azure-architecture/architectural-principles#explicit-dependencies)
+* [Kontejner inverze závislostí a vzor vkládání závislostí (Martin Fowler)](https://www.martinfowler.com/articles/injection.html)
 * [Nové je slepované ("lepení" kódu pro konkrétní implementaci)](https://ardalis.com/new-is-glue)
 * [Postup pro registraci služeb s více rozhraními v ASP.NET Core DI](https://andrewlock.net/how-to-register-a-service-with-multiple-interfaces-for-in-asp-net-core-di/)

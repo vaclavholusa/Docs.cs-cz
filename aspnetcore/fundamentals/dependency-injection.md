@@ -1,4 +1,4 @@
-﻿---
+---
 title: Vkládání závislostí v ASP.NET Core
 author: guardrex
 description: Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a jak se používá.
@@ -65,7 +65,7 @@ public class IndexModel : PageModel
 
 ::: moniker range="<= aspnetcore-2.0"
 
-Pro zpřístupnění metody `WriteMessage` v jiné třídě je možné vytvořit instanci třídy `MyDependency`. Třída `MyDependency` je závislostí třídy `HomeController`:
+Pro zpřístupnění metody `MyDependency` v jiné třídě je možné vytvořit instanci třídy `WriteMessage`. Třída `MyDependency` je závislost třídy `HomeController`:
 
 ```csharp
 public class HomeController : Controller
@@ -287,9 +287,9 @@ Rozhraní jsou implementovány ve třídě `Operation`. Konstruktor `Operation` 
 
 Služba `OperationService` je zaregistrována tak, aby závisela na jednotlivých typech tříd `Operation`. Když je `OperationService` vyžádána pomocí vkládání závislostí, obdrží buď novou nebo stávající instanci třídy jednotlivých služeb v závislosti na životnosti závislých služeb.
 
-* Pokud přechodné služby se vytvoří při požadavku `OperationId` z `IOperationTransient` služby se liší od `OperationId` z `OperationService`. `OperationService` obdrží novou instanci třídy `IOperationTransient` třídy. Vrací novou instanci jinou `OperationId`.
-* Pokud vymezené služby se vytvoří každý požadavek, `OperationId` z `IOperationScoped` služba je stejné jako u `OperationService` v rámci požadavku. Obě služby napříč požadavky, sdílet jiné `OperationId` hodnotu.
-* Pokud jsou služby typu singleton a instanci typu singleton vytvořit jednou a použít v rámci všech požadavků a všemi službami, `OperationId` je konstantní napříč všemi požadavky služby.
+* Pokud jsou služby s přechodnou životností vytvořeny při vyžádání, `OperationId` služby `IOperationTransient` se bude lišit od `OperationId` služby `OperationService`. `OperationService` obdrží novou instanci třídy `IOperationTransient`. Nová instance implikuje rozdílné `OperationId`.
+* Pokud jsou služby s vymezenou životností vytvořeny při požadavku, `OperationId` ze služby `IOperationScoped` je stejné jako u `OperationService` v rámci požadavku. Napříč různými požadavky obě služby sdílejí jinou hodnotu `OperationId`.
+* Pokud jsou singletony a služby se životností typu singleton vytvářeny jednou napříč všemi požadavky a službami, `OperationId` je konstantní mezi všemi požadavky služeb.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -329,7 +329,7 @@ Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých po�
 
 ::: moniker range="<= aspnetcore-2.0"
 
-Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých požadavků a mezi nimi. Ukázková aplikace obsahuje `OperationsController`, který vyžaduje každý druh typu `IOperation` a službu `OperationService`. Akce `Index` nastaví služby do objektu `ViewBag`, aby bylo možné zobrazit hodnotu `OperationId` služby:
+Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých požadavků a mezi nimi. Obsahuje ukázkovou aplikaci `OperationsController` , že každý žádosti druh `IOperation` typ a `OperationService`. `Index` Akce nastaví služby do `ViewBag` pro zobrazení služby `OperationId` hodnoty:
 
 [!code-csharp[](dependency-injection/samples/1.x/DependencyInjectionSample/Controllers/OperationsController.cs?name=snippet1)]
 
@@ -362,7 +362,7 @@ Scoped: 31e820c5-4834-4d22-83fc-a60118acb9f4
 Singleton: 01271bc1-9e31-48e7-8f7c-7261b040ded9  
 Instance: 00000000-0000-0000-0000-000000000000
 
-`OperationService` operace:
+Operace `OperationService`:
 
 Transient: c4cbacb8-36a2-436d-81c8-8c1b78808aaf  
 Scoped: 31e820c5-4834-4d22-83fc-a60118acb9f4  
@@ -371,9 +371,9 @@ Instance: 00000000-0000-0000-0000-000000000000
 
 Všimněte si, které hodnoty `OperationId` se liší v rámci požadavku a mezi požadavky:
 
-* Objekty s přechodnou životností jsou vždy rozdílné. Poznamenejme, že se hodnota přechodného `OperationId` pro první i druhý požadavek liší jak pro obě operace `OperationService`, tak i mezi požadavky. Nová instance je poskytnuta pro každou službu a každý požadavek.
-* Objekty s vymezenou životností jsou stejné v rámci jednoho požadavku, ale jiné napříč různými požadavky.
-* Objekty se živostností typu singleton jsou stejné pro všechny objekty a všechny požadavky bez ohledu na to, jestli je instance `Operation` poskytnuta v `ConfigureServices`.
+* *Přechodné* objekty jsou vždy odlišné. Všimněte si, že přechodná `OperationId` hodnota prvního a druhého požadavky se liší pro obě `OperationService` operací a napříč požadavky. Novou instanci se poskytuje pro každou službu a požadavek.
+* *Obor* objekty jsou stejné v rámci požadavku, ale jiné napříč požadavky.
+* *Jednotlivý prvek* objekty jsou stejné pro všechny objekty a všechny požadavky bez ohledu na to, jestli se `Operation` instance je k dispozici v `ConfigureServices`.
 
 ## <a name="call-services-from-main"></a>Volání služeb z main
 
@@ -480,7 +480,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="default-service-container-replacement"></a>Nahrazení výchozího kontejneru služeb
 
-Integrovaný kontejner služeb je primárně určen pro naplnění potřeb frameworku a většiny uživatelských aplikací. Doporučujeme používat integrovaný kontejner, dokud nebudete potřebovat specifické funkce nepodporované kontejnerem. Některé z funkcí podporovaných v kontejnerech 3. stran neobsažených ve výchozím kontejneru jsou:
+Integrovaná služba kontejneru je určen pro sloužit potřebám rozhraní framework a většina uživatelů aplikací. Doporučujeme používat integrované kontejneru, pokud potřebujete konkrétní funkce, která nepodporuje. Některé z funkcí podporovaných v 3. stran kontejnery nebyl nalezen v předdefinované kontejneru:
 
 * Vkládání pomocí vlastností
 * Vkládání podle názvu
@@ -514,7 +514,7 @@ Následující příklad nahrazuje integrovaný kontejner kontejnerem [Autofac](
     }
     ```
 
-    `Startup.ConfigureServices` musí vracet `IServiceProvider` pro použití kontejneru 3. stran.
+    Použití kontejneru 3. stran `Startup.ConfigureServices` musí vracet `IServiceProvider`.
 
 * Konfigurace Autofacu v `DefaultModule`:
 
@@ -548,7 +548,7 @@ Factory metody jedné služby, jako je například druhý argument metody [AddSi
 
 * Vyhněte se statickému přístupu k `HttpContext` (například [IHttpContextAccessor.HttpContext](/dotnet/api/microsoft.aspnetcore.http.ihttpcontextaccessor.httpcontext)).
 
-Stejně jako u všech doporučení mohou nastat situace, ve kterých je možné tato doporučení ignorovat. Výjimky se vyskytují jen vzácně &ndash; nejčastěji jsou to speciální případy uvnitř frameworku samotného.
+Stejně jako u všech doporučení mohou nastat situace, ve kterých je možné tato doporučení ignorovat. Výjimky se vyskytují jen vzácně &mdash; nejčastěji jsou to speciální případy uvnitř frameworku samotného.
 
 DI je *alternativní* na vzorech přístupu statická/globální objekt. Nebudete moci využít výhod DI, jsou-li zkombinovány s přístupem statický objekt.
 

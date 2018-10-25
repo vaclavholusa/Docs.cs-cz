@@ -5,12 +5,12 @@ description: Nechte si představit ASP.NET Core, což je platformově univerzál
 ms.author: riande
 ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 85f2aa04e4b6692dd03a63f14bcebdec97ee270e
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: 69ab702e9d9f8d746b7bc546d4f2bbb831ff59c7
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454775"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911686"
 ---
 # <a name="introduction-to-aspnet-core"></a>Úvod do ASP.NET Core
 
@@ -27,18 +27,7 @@ ASP.NET Core je platformově univerzální, vysoce výkonná architektura typu [
 
 Miliony vývojářů už dříve k vytváření webových aplikací používali [ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview) (což bude platit i nadále). ASP.NET Core je přepracovanou verzí ASP.NET 4.x se změněnou architekturou. Výsledkem je odlehčené a modulárnější prostředí.
 
-ASP.NET Core nabízí následující výhody:
-
-* Jednotné prostředí pro vytváření webového uživatelského rozhraní a webových rozhraní API.
-* Integrace [moderní architektury klienta](xref:client-side/index) a vývojových pracovních postupů
-* [Konfigurační systém](xref:fundamentals/configuration/index) založený na prostředí, který je připravený pro cloud.
-* Integrovaná [injektáž závislostí](xref:fundamentals/dependency-injection).
-* Odlehčený, [vysoce výkonný](https://github.com/aspnet/benchmarks), modulární kanál požadavků HTTP
-* Možnost hostování ve službě [IIS](xref:host-and-deploy/iis/index), [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), [Docker](xref:host-and-deploy/docker/index) nebo samoobslužné hostování ve vlastním procesu
-* Souběžná správa různých verzí aplikace, když cílovou platformou je [.NET Core](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server)
-* Nabízí nástroje, které usnadňují vývoj moderních webů.
-* Možnost kompilace a spuštění v systémech Windows, Mac OS a Linux.
-* Architektura zaměřená na open-source a [komunitu](https://live.asp.net/)
+[!INCLUDE[](~/includes/benefits.md)]
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>Vytváření webových rozhraní API a webového uživatelského rozhraní v ASP.NET Core MVC
 
@@ -56,9 +45,16 @@ Architektura ASP.NET Core MVC nabízí funkce umožňující vytvářet [webová
 
 Architektura ASP.NET Core se hladce integruje do oblíbených klientských rozhraní a knihoven, včetně [Angular](xref:spa/angular), [React](xref:spa/react) a [Bootstrap](xref:client-side/bootstrap). Další informace najdete v článku [Vývoj na straně klienta](xref:client-side/index).
 
+<a name="target-framework"></a>
+
 ## <a name="aspnet-core-targeting-net-framework"></a>Cílení ASP.NET Core na .NET Framework
 
 Cílem ASP.NET Core může být .NET Core nebo .NET Framework. Aplikace ASP.NET Core, jejichž cílem je .NET Framework, nejsou multiplatformní, ale běží jen ve Windows. V ASP.NET Core neplánujeme odebrat podporu pro cílení na .NET Framework. ASP.NET Core se obecně skládá z knihoven [.NET Standard](/dotnet/standard/net-standard). Aplikace vytvořené pomocí .NET Standard 2.0 běží všude, kde se podporuje .NET Standard 2.0.
+
+ASP.NET Core 2.x se podporuje ve verzích .NET Framework kompatibilních s .NET Standard 2.0:
+
+* Důrazně se doporučuje .NET Framework 4.7.1 a novější.
+* .NET Framework 4.6.1 a novější.
 
 Cílení na .NET Core má několik výhod, které přibývají s každou vydanou verzí. Mezi výhody .NET Core oproti .NET Framework patří:
 

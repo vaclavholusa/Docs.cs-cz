@@ -5,12 +5,12 @@ description: Nechte si představit ASP.NET Core, což je platformově univerzál
 ms.author: riande
 ms.date: 9/28/2018
 uid: index
-ms.openlocfilehash: 69ab702e9d9f8d746b7bc546d4f2bbb831ff59c7
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 3bb86fa255548ff66592ac14c1020e0c6b47959c
+ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911686"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49391154"
 ---
 # <a name="introduction-to-aspnet-core"></a>Úvod do ASP.NET Core
 
@@ -43,7 +43,7 @@ Architektura ASP.NET Core MVC nabízí funkce umožňující vytvářet [webová
 
 ## <a name="client-side-development"></a>Vývoj klientské strany
 
-Architektura ASP.NET Core se hladce integruje do oblíbených klientských rozhraní a knihoven, včetně [Angular](xref:spa/angular), [React](xref:spa/react) a [Bootstrap](xref:client-side/bootstrap). Další informace najdete v článku [Vývoj na straně klienta](xref:client-side/index).
+Architektura ASP.NET Core se hladce integruje do oblíbených klientských rozhraní a knihoven, včetně [Angular](xref:spa/angular), [React](xref:spa/react) a [Bootstrap](https://getbootstrap.com/). Další informace najdete v článku [Vývoj na straně klienta](xref:client-side/index).
 
 <a name="target-framework"></a>
 

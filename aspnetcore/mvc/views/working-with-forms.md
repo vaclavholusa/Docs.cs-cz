@@ -3,15 +3,15 @@ title: Pomocných rutin značek ve formulářích v ASP.NET Core
 author: rick-anderson
 description: Popisuje předdefinované pomocných rutin značek použít s formuláři.
 ms.author: riande
-ms.custom: H1Hack27Feb2017
-ms.date: 02/14/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: e613dc1e85b84cc5e2b8ad2bf3958040257d1966
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: efc71cc8d072769cde07e129b6d9bb933fc2f7af
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911276"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090212"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Pomocných rutin značek ve formulářích v ASP.NET Core
 
@@ -29,7 +29,7 @@ V mnoha případech pomocných rutin HTML poskytnout alternativní způsob konkr
 
 * Generuje kód HTML [ \<formulář >](https://www.w3.org/TR/html401/interact/forms.html) `action` hodnota atributu pro akce řadiče MVC nebo pojmenovanou trasu
 
-* Vytváří skrytý [tokenu pro ověření žádosti](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) paděláním požadavku mezi weby (při použití s `[ValidateAntiForgeryToken]` atributu v metodě akce HTTP Post)
+* Vytváří skrytý [tokenu pro ověření žádosti](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) paděláním požadavku mezi weby (při použití s `[ValidateAntiForgeryToken]` atributu v metodě akce HTTP Post)
 
 * Poskytuje `asp-route-<Parameter Name>` atribut, ve kterém `<Parameter Name>` se přidá do hodnoty trasy. `routeValues` Parametry `Html.BeginForm` a `Html.BeginRouteForm` poskytuje podobné funkce.
 
@@ -48,7 +48,7 @@ Pomocná rutina formuláře značky výše uvedené vytvoří následující kó
 </form>
 ```
 
-Generuje modul runtime pro MVC `action` hodnotu atributu z atributů pomocné rutiny značky formuláře `asp-controller` a `asp-action`. Pomocná rutina značky formuláře také vytváří skrytý [tokenu pro ověření žádosti](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) paděláním požadavku mezi weby (při použití s `[ValidateAntiForgeryToken]` atributu v metodě akce HTTP Post). Ochrana proti padělání žádosti více webů čistě formuláře HTML je obtížné, pomocné rutiny značky formuláře poskytuje tato služba za vás.
+Generuje modul runtime pro MVC `action` hodnotu atributu z atributů pomocné rutiny značky formuláře `asp-controller` a `asp-action`. Pomocná rutina značky formuláře také vytváří skrytý [tokenu pro ověření žádosti](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) paděláním požadavku mezi weby (při použití s `[ValidateAntiForgeryToken]` atributu v metodě akce HTTP Post). Ochrana proti padělání žádosti více webů čistě formuláře HTML je obtížné, pomocné rutiny značky formuláře poskytuje tato služba za vás.
 
 ### <a name="using-a-named-route"></a>Pomocí pojmenovanou trasu
 
@@ -106,9 +106,9 @@ Type expected
 
 |Typ formátu .NET|Typ vstupu|
 |---|---|
-|BOOL|type=”checkbox”|
+|BOOL|typ = "zaškrtávací políčko"|
 |String|typ = "text"|
-|DateTime|type=”datetime”|
+|DateTime|typ = "data a času"|
 |Byte|typ = "cislo"|
 |int|typ = "cislo"|
 |Jednoduché, Double|typ = "cislo"|
@@ -119,12 +119,12 @@ V následující tabulce jsou uvedeny některé běžné [anotacemi dat](/dotnet
 
 |Atribut|Typ vstupu|
 |---|---|
-|[Email]|typ = "e-mail"|
+|[EmailAddress]|typ = "e-mail"|
 |[Url]|typ = "url"|
 |[HiddenInput]|typ = "skrytá"|
-|[Telefon]|typ = "tel"|
+|[Phone]|typ = "tel"|
 |[DataType(DataType.Password)]| typ = "password"|
-|[DataType(DataType.Date)]| type=”date”|
+|[DataType(DataType.Date)]| typ = "datum"|
 |[DataType(DataType.Time)]| typ = "čas"|
 
 
@@ -244,7 +244,6 @@ Následující syntaxe Razor ukazuje, jak k iteraci v kolekci:
 *Views/Shared/EditorTemplates/ToDoItem.cshtml* šablony:
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
-
 
 >[!NOTE]
 >Vždy používejte `for` (a *není* `foreach`) k iteraci přes seznam. Vyhodnocení v LINQ indexer výraz může být nákladné a byste měli minimalizovat.
@@ -574,10 +573,10 @@ Správné `<option>` bude vybraný element (obsahují `selected="selected"` atri
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Pomocné rutiny značek](xref:mvc/views/tag-helpers/intro)
+* <xref:mvc/views/tag-helpers/intro>
 * [Element formuláře HTML](https://www.w3.org/TR/html401/interact/forms.html)
 * [Požádat o Token pro ověření](/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
-* [Vazby modelu](xref:mvc/models/model-binding)
-* [Ověření modelu](xref:mvc/models/validation)
+* <xref:mvc/models/model-binding>
+* <xref:mvc/models/validation>
 * [IAttributeAdapter rozhraní](/dotnet/api/Microsoft.AspNetCore.Mvc.DataAnnotations.IAttributeAdapter)
 * [Fragmenty kódu pro tento dokument](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/working-with-forms/sample/final)

@@ -3,18 +3,19 @@ title: DevOps s využitím ASP.NET Core a Azure | Nasazení aplikace do služby 
 author: CamSoper
 description: Průvodce, který poskytuje pokyny k začátku do konce na vytváření procesních toků pro DevOps pro aplikace ASP.NET Core hostované v Azure.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 33026ed510aae63a9e580aa5d708f94aad778fca
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340131"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090934"
 ---
 # <a name="deploy-an-app-to-app-service"></a>Nasazení aplikace do služby App Service
 
-[Azure App Service](https://docs.microsoft.com/azure/app-service/) je Azure web hostitelskou platformu. Nasazení webové aplikace do služby Azure App Service můžete provést ručně nebo pomocí automatizovaného procesu. Tato část průvodce popisuje metody nasazení, které můžete aktivovat ručně nebo pomocí příkazového řádku skriptu nebo aktivuje ručně pomocí sady Visual Studio.
+[Azure App Service](/azure/app-service/) je Azure web hostitelskou platformu. Nasazení webové aplikace do služby Azure App Service můžete provést ručně nebo pomocí automatizovaného procesu. Tato část průvodce popisuje metody nasazení, které můžete aktivovat ručně nebo pomocí příkazového řádku skriptu nebo aktivuje ručně pomocí sady Visual Studio.
 
 V této části budete provádět následující úlohy:
 
@@ -70,7 +71,7 @@ Z příkazové okno stáhnout kód, sestavte projekt a spusťte následujícím 
 
 ## <a name="create-the-azure-app-service-web-app"></a>Vytvoření webové aplikace Azure App Service
 
-Pokud chcete nasadit aplikaci, bude nutné k vytvoření služby App Service [webovou aplikaci](https://docs.microsoft.com/azure/app-service/app-service-web-overview). Po vytvoření webové aplikace nasadíte do něj z místního počítače pomocí Gitu.
+Pokud chcete nasadit aplikaci, bude nutné k vytvoření služby App Service [webovou aplikaci](/azure/app-service/app-service-web-overview). Po vytvoření webové aplikace nasadíte do něj z místního počítače pomocí Gitu.
 
 1. Přihlaste se k [Azure Cloud Shell](https://shell.azure.com/bash). Poznámka: Při přihlášení poprvé Cloud Shell zobrazí výzvu k vytvoření účtu úložiště pro konfigurační soubory. Přijměte výchozí hodnoty nebo zadejte jedinečný název.
 
@@ -88,7 +89,7 @@ Pokud chcete nasadit aplikaci, bude nutné k vytvoření služby App Service [we
     az group create --location centralus --name AzureTutorial
     ```
 
-    `az` Vyvolá příkaz [rozhraní příkazového řádku Azure](https://docs.microsoft.com/cli/azure/). Rozhraní příkazového řádku můžete spustit místně, ale použití ve službě Cloud Shell šetří čas a konfigurace.
+    `az` Vyvolá příkaz [rozhraní příkazového řádku Azure](/cli/azure/). Rozhraní příkazového řádku můžete spustit místně, ale použití ve službě Cloud Shell šetří čas a konfigurace.
 
     c. Vytvoření plánu služby App Service na úrovni S1. Plán služby App Service je seskupení webové aplikace, které sdílejí stejnou cenovou úroveň. Úroveň S1 není zdarma, ale vyžaduje se pro funkci přípravné sloty.
 
@@ -238,7 +239,7 @@ V další části se dozvíte, jak vytvořit kanál DevOps s kanály Azure.
 
 ## <a name="additional-reading"></a>Další čtení
 
-* [Přehled Web Apps](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
-* [Vytvoření webové aplikace .NET Core využívající SQL Database ve službě Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
-* [Nakonfigurujte přihlašovací údaje nasazení pro službu Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials)
-* [Nastavení přípravných prostředí ve službě Azure App Service](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing)
+* [Přehled Web Apps](/azure/app-service/app-service-web-overview)
+* [Vytvoření webové aplikace .NET Core využívající SQL Database ve službě Azure App Service](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
+* [Nakonfigurujte přihlašovací údaje nasazení pro službu Azure App Service](/azure/app-service/app-service-deployment-credentials)
+* [Nastavení přípravných prostředí ve službě Azure App Service](/azure/app-service/web-sites-staged-publishing)

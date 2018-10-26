@@ -3,14 +3,15 @@ title: ASP.NET Core MVC s EF Core – migrace - 4 z 10
 author: rick-anderson
 description: V tomto kurzu začnete používat funkci migrace EF Core ke správě změn datových modelů v aplikaci ASP.NET Core MVC.
 ms.author: tdykstra
-ms.date: 03/15/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 556d7d4ad05679ebfce6c909b29610482bb3f350
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 21ef3a675579d8a6671343d84cbe4f4b62979679
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011463"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090807"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC s EF Core – migrace - 4 z 10
 
@@ -37,7 +38,7 @@ Chcete-li pracovat s migrací, můžete použít **Konzola správce balíčků**
 EF nástroje pro rozhraní příkazového řádku (CLI) jsou k dispozici v [Microsoft.EntityFrameworkCore.Tools.DotNet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools.DotNet). K instalaci tohoto balíčku, přidejte ji tak `DotNetCliToolReference` kolekce v *.csproj* souboru, jak je znázorněno. **Poznámka:** je potřeba nainstalovat tento balíček úpravou *.csproj* soubor; nelze použít `install-package` příkaz nebo grafické uživatelské rozhraní Správce balíčků. Můžete upravit *.csproj* kliknutím pravým tlačítkem myši na název projektu v souboru **Průzkumníka řešení** a vyberete **upravit ContosoUniversity.csproj**.
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?range=12-15&highlight=2)]
-  
+
 (Čísla verze v tomto příkladu byly aktuální v době tento kurz je napsán.)
 
 ## <a name="change-the-connection-string"></a>Změňte připojovací řetězec
@@ -104,7 +105,7 @@ Pokud jste vytvořili počáteční migraci databáze již existuje, vygeneruje 
 
 Migrace vytvoří *snímku* aktuální schéma databáze v *Migrations/SchoolContextModelSnapshot.cs*. Při přidání migrace EF Určuje, co se změnilo porovnáním datový model, který soubor snímku.
 
-Při odstranění migrace, použijte [migrace ef dotnet odebrat](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkazu. `dotnet ef migrations remove` Odstraní migraci a zajistí, že je správně obnovit snímek.
+Při odstranění migrace, použijte [migrace ef dotnet odebrat](/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) příkazu. `dotnet ef migrations remove` Odstraní migraci a zajistí, že je správně obnovit snímek.
 
 Zobrazit [migrace EF Core v prostředí Team](/ef/core/managing-schemas/migrations/teams) Další informace o tom, jak použít soubor snímku.
 
@@ -116,7 +117,7 @@ V příkazovém řádku zadejte následující příkaz k vytvoření databáze 
 dotnet ef database update
 ```
 
-Výstup z příkazu je podobný `migrations add` příkazu, s tím rozdílem, že pro SQL příkazy, které nastavení databáze naleznete v protokolech. Většina protokolů jsou vynechány v následujícím ukázkovém výstupu. Pokud nechcete zobrazit tato úroveň podrobností ve zprávách protokolu, můžete změnit úroveň protokolu v *appsettings. Development.JSON* souboru. Další informace najdete v tématu [Úvod k protokolování](xref:fundamentals/logging/index).
+Výstup z příkazu je podobný `migrations add` příkazu, s tím rozdílem, že pro SQL příkazy, které nastavení databáze naleznete v protokolech. Většina protokolů jsou vynechány v následujícím ukázkovém výstupu. Pokud nechcete zobrazit tato úroveň podrobností ve zprávách protokolu, můžete změnit úroveň protokolu v *appsettings. Development.JSON* souboru. Další informace naleznete v tématu <xref:fundamentals/logging/index>.
 
 ```text
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
@@ -143,7 +144,7 @@ info: Microsoft.EntityFrameworkCore.Database.Command[200101]
 Done.
 ```
 
-Použití **Průzkumník objektů systému SQL Server** ke kontrole databáze, jako jste to udělali v prvním kurzu.  Můžete si všimnout přidání __EFMigrationsHistory tabulku, která uchovává informace o migraci, které se použily k databázi. Zobrazení dat v této tabulce, zobrazí jeden řádek pro první migraci. (Poslední protokolu v předchozím příkladu výstupu rozhraní příkazového řádku se zobrazí, která vytváří tento řádek příkazu INSERT.)
+Použití **Průzkumník objektů systému SQL Server** ke kontrole databáze, jako jste to udělali v prvním kurzu.  Můžete si všimnout, přidání \_ \_EFMigrationsHistory tabulku, která uchovává informace o migraci, které se použily k databázi. Zobrazení dat v této tabulce, zobrazí jeden řádek pro první migraci. (Poslední protokolu v předchozím příkladu výstupu rozhraní příkazového řádku se zobrazí, která vytváří tento řádek příkazu INSERT.)
 
 Spuštění aplikace pro ověření, že všechno funguje stále stejná jako předtím.
 
@@ -154,13 +155,13 @@ Spuštění aplikace pro ověření, že všechno funguje stále stejná jako p�
 
 EF nástroje pro správu migrace je k dispozici z příkazů rozhraní příkazového řádku .NET Core nebo z rutin prostředí PowerShell v sadě Visual Studio **Konzola správce balíčků** okno (PMC). Tento kurz ukazuje, jak používat rozhraní příkazového řádku, ale pokud dáváte přednost, můžete použít konzolu PMC.
 
-EF příkazů pro příkazy PMC jsou v [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) balíčku. Tento balíček je už součástí [metabalíček](xref:fundamentals/metapackage) Microsoft.aspnetcore.all, takže není nutné k jeho instalaci.
+EF příkazů pro příkazy PMC jsou v [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) balíčku. Tento balíček je součástí [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app), takže není nutné přidat odkaz na balíček, pokud vaše aplikace obsahuje odkaz na balíček pro `Microsoft.AspNetCore.App`.
 
 **Důležité:** to není stejného balíčku, jako je instalace rozhraní příkazového řádku tak, že upravíte *.csproj* souboru. Název tohoto objektu končí `Tools`, na rozdíl od názvu balíčku rozhraní příkazového řádku, které končí na `Tools.DotNet`.
 
-Další informace o příkazech rozhraní příkazového řádku najdete v tématu [rozhraní příkazového řádku .NET Core](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet).
+Další informace o příkazech rozhraní příkazového řádku najdete v tématu [rozhraní příkazového řádku .NET Core](/ef/core/miscellaneous/cli/dotnet).
 
-Další informace o příkazech PMC najdete v tématu [Konzola správce balíčků (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).
+Další informace o příkazech PMC najdete v tématu [Konzola správce balíčků (Visual Studio)](/ef/core/miscellaneous/cli/powershell).
 
 ## <a name="summary"></a>Souhrn
 

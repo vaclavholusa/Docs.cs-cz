@@ -3,14 +3,15 @@ title: Stránky Razor s EF Core v ASP.NET Core – Model dat – 5 z 8
 author: rick-anderson
 description: V tomto kurzu přidat další entity a relace a přizpůsobte si datový model zadáním formátování, ověřování a pravidel mapování.
 ms.author: riande
-ms.date: 6/31/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: b81918cbd74200f0672f3002f916523fb4a9a914
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 9a0d5a8e722487ccf7e08aadb39f838a0963451d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477654"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090964"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – Model dat – 5 z 8
 
@@ -121,6 +122,7 @@ Přidání `Column` atribut změní základní model `SchoolContext`. Základní
 ```SQL
 SqlException: Invalid column name 'FirstName'.
 ```
+
 Aktualizace databáze:
 
 * Sestavte projekt.
@@ -157,7 +159,7 @@ Otevřete tabulku studentů v SSOX:
 
 ![Tabulky Studenti v SSOX po migraci](complex-data-model/_static/ssox-after-migration.png)
 
-Před migrací se použil, název sloupce byly typu [nvarchar(MAX)](https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql). Název sloupce jsou nyní `nvarchar(50)`. Změnil se název sloupce z `FirstMidName` k `FirstName`.
+Před migrací se použil, název sloupce byly typu [nvarchar(MAX)](/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql). Název sloupce jsou nyní `nvarchar(50)`. Změnil se název sloupce z `FirstMidName` k `FirstName`.
 
 > [!Note]
 > V následující části sestavení aplikace na několik fází generuje chyby kompilátoru. Podle pokynů určit, kdy k sestavení aplikace.
@@ -295,7 +297,7 @@ Aktualizace *Models/Course.cs* následujícím kódem:
 
 EF Core nevyžaduje vlastnosti cizího klíče pro daný datový model, pokud model nemá vlastnost navigace u související entity.
 
-EF Core FKs automaticky vytvoří v databázi bez ohledu na to budete potřebovat. EF Core vytvoří [stínové vlastnosti](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pro automaticky vytvořené FKs. Máte cizího klíče v datovém modelu můžete provést aktualizace, jednodušší a efektivnější. Představte si třeba modelu kde vlastnost FK `DepartmentID` je *není* zahrnuté. Když kurzu entity jsou načtena upravit:
+EF Core FKs automaticky vytvoří v databázi bez ohledu na to budete potřebovat. EF Core vytvoří [stínové vlastnosti](/ef/core/modeling/shadow-properties) pro automaticky vytvořené FKs. Máte cizího klíče v datovém modelu můžete provést aktualizace, jednodušší a efektivnější. Představte si třeba modelu kde vlastnost FK `DepartmentID` je *není* zahrnuté. Když kurzu entity jsou načtena upravit:
 
 * `Department` Entity má hodnotu null, pokud nejsou explicitně načtení.
 * K aktualizaci kurzu entity `Department` musíte entitu nejdřív načíst.
@@ -314,7 +316,7 @@ public int CourseID { get; set; }
 
 Ve výchozím nastavení EF Core předpokládá, že PK hodnoty jsou generovány pomocí databáze. DB generované PK hodnoty je obvykle nejlepší přístup. Pro `Course` entity, uživatel Určuje, PK Například kurzu číslo, například řadu 1000 pro oddělení matematické, řadu 2000 pro anglickou oddělení.
 
-`DatabaseGenerated` Atribut lze použít také pro generování výchozích hodnot. Například databáze může automaticky generovat pole s datem a zaznamenávat data řádku byl vytvořen nebo aktualizován. Další informace najdete v tématu [vygenerovaným vlastnostem](https://docs.microsoft.com/ef/core/modeling/generated-properties).
+`DatabaseGenerated` Atribut lze použít také pro generování výchozích hodnot. Například databáze může automaticky generovat pole s datem a zaznamenávat data řádku byl vytvořen nebo aktualizován. Další informace najdete v tématu [vygenerovaným vlastnostem](/ef/core/modeling/generated-properties).
 
 ### <a name="foreign-key-and-navigation-properties"></a>Vlastnosti cizího klíče a navigace
 
@@ -478,7 +480,7 @@ Složený klíč zajistí:
 `Enrollment` Entity spojení definuje vlastní PK tak, aby byly možné duplicity toto řazení. Aby se tyto duplicitní hodnoty:
 
 * Přidat jedinečný index pro pole cizího klíče nebo
-* Konfigurace `Enrollment` s primární složený klíč podobný `CourseAssignment`. Další informace najdete v tématu [indexy](https://docs.microsoft.com/ef/core/modeling/indexes).
+* Konfigurace `Enrollment` s primární složený klíč podobný `CourseAssignment`. Další informace najdete v tématu [indexy](/ef/core/modeling/indexes).
 
 ## <a name="update-the-db-context"></a>Aktualizovat kontext databáze
 
@@ -490,7 +492,7 @@ Předchozí kód přidá nové entity a nakonfiguruje `CourseAssignment` složen
 
 ## <a name="fluent-api-alternative-to-attributes"></a>Fluent API alternativou k atributům
 
-`OnModelCreating` Metoda v předchozím kódu používá *rozhraní fluent API* konfigurace chování EF Core. Rozhraní API se nazývá "fluent", protože je často používána zavěšování řadu volání metody společně na jediném příkazu. [Následující kód](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration) je příkladem rozhraní fluent API:
+`OnModelCreating` Metoda v předchozím kódu používá *rozhraní fluent API* konfigurace chování EF Core. Rozhraní API se nazývá "fluent", protože je často používána zavěšování řadu volání metody společně na jediném příkazu. [Následující kód](/ef/core/modeling/#methods-of-configuration) je příkladem rozhraní fluent API:
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -516,7 +518,7 @@ Některé atributy použité v tomto kurzu se používají pro:
 * EF Core jenom konfiguraci (například `HasKey`).
 * Konfigurace ověření a EF Core (například `[StringLength(50)]`).
 
-Další informace o atributech vs. rozhraní fluent API najdete v tématu [metody konfigurace](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration).
+Další informace o atributech vs. rozhraní fluent API najdete v tématu [metody konfigurace](/ef/core/modeling/#methods-of-configuration).
 
 ## <a name="entity-diagram-showing-relationships"></a>Diagram znázorňující entitami
 
@@ -577,6 +579,7 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 ## <a name="apply-the-migration"></a>Použití migrace
 
 Teď, když máte existující databázi, musíte přemýšlet o tom, jak na ně vztahují budoucí změny. Tento kurz ukazuje dva přístupy:
+
 * [Vyřadit a znovu vytvořit databázi](#drop)
 * [Použití migrace k existující databázi](#applyexisting). Tato metoda je složité a časově náročné, je upřednostňovaný způsob pro každodenní praxe produkční prostředí. **Poznámka:**: Toto je volitelné části tohoto kurzu. Můžete provést rozevírací a znovu vytvořit kroky a tuto část přeskočit. Pokud chcete postupovat podle kroků v této části, nemáte proveďte rozevírací nabídku a znovu vytvořit kroky. 
 

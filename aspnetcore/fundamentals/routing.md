@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 500cefbc7caee2054b4afda7c1277685862f5ad4
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: 96df625113b0c33ee8a9e9bb7dccec9a2c28348a
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348556"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090999"
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
 Podle [Ryanem Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Funkce směrování je zodpovědná za mapování příchozího požadavku k obslužné rutině trasy. Trasy jsou definovány v aplikaci a nakonfigurovaná při spuštění aplikace. Trasy můžete volitelně extrakci hodnot z adresy URL, obsaženy v požadavku a tyto hodnoty je pak možné pro zpracování požadavku. Pomocí informací o směrování z aplikace, funkci směrování je také možnost k vygenerování adres URL, které se mapují k obslužné rutině trasy. Proto směrování najdete obslužná rutina trasy na základě adresy URL nebo adresa URL odpovídající obslužná rutina trasy na základě informací o obslužnou rutinu trasy.
+Funkce směrování je zodpovědná za mapování příchozího požadavku k obslužné rutině trasy. Trasy jsou definovány v aplikaci a nakonfigurovaná při spuštění aplikace. Trasy můžete volitelně extrakci hodnot z adresy URL, obsaženy v požadavku a tyto hodnoty je pak možné pro zpracování požadavku. Pomocí informací o směrování z aplikace, funkci směrování je také možnost k vygenerování adres URL, které se mapují k obslužné rutině trasy. Proto směrování můžete najít obslužná rutina trasy podle adresy URL, nebo najít adresu URL odpovídající obslužná rutina trasy na základě informací o obslužnou rutinu trasy.
 
 > [!IMPORTANT]
 > Tento dokument popisuje směrování nízké úrovně ASP.NET Core. Informace o směrování ASP.NET Core MVC najdete v tématu <xref:mvc/controllers/routing>.
@@ -47,7 +47,7 @@ Shoda během `RouteAsync` také nastaví vlastnosti `RouteContext.RouteData` na 
 
 [RouteData.Values](xref:Microsoft.AspNetCore.Routing.RouteData.Values*) je slovník *hodnot trasy* vytvořenými trasy. Tyto hodnoty jsou obvykle určeny tokenizaci adresu URL a je možné přijímat uživatelský vstup nebo další dispatching rozhodnutí v aplikaci.
 
-[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*) je kontejner objektů a dat o další data související s porovnávané trasy. `DataTokens` jsou k dispozici pro podporu přiřazování dat o stavu se každý postup tak, aby aplikace mohly rozhodnutí později založené na směrování, které odpovídá. Tyto hodnoty jsou definovány pro vývojáře a proveďte **není** ovlivňují chování směrování žádným způsobem. Kromě toho hodnoty dočasně uložily v datové tokeny, jež může být libovolného typu, na rozdíl od hodnoty trasy, které musí být snadno převést do a z řetězce.
+[RouteData.DataTokens](xref:Microsoft.AspNetCore.Routing.RouteData.DataTokens*) je kontejner objektů a dat o další data související s porovnávané trasy. `DataTokens` jsou k dispozici pro podporu přiřazování dat o stavu se každý postup tak, aby aplikace mohly rozhodnutí později založené na směrování, které odpovídá. Tyto hodnoty jsou definovány pro vývojáře a proveďte **není** ovlivňují chování směrování žádným způsobem. Kromě toho hodnoty dočasně uložily v `RouteData.DataTokens` může být libovolného typu, rozdíl od `RouteData.Values`, která musí být snadno převést do a z řetězce.
 
 [RouteData.Routers](xref:Microsoft.AspNetCore.Routing.RouteData.Routers*) je seznam tras, které účastnila úspěšně odpovídající požadavek. Trasy můžete vnořit do mezi sebou. `Routers` Vlastnost odpovídá cestě prostřednictvím logického stromu tras, z kterých vzniklo shoda. Obecně platí, první položky v `Routers` je kolekce tras a byste měli použít pro generování adresy URL. Poslední položky v `Routers` je obslužná rutina trasy, který odpovídá.
 
@@ -63,7 +63,7 @@ Primární vstupů na `GetVirtualPath` jsou:
 * [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*)
 * [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*)
 
-Trasy primárně používat hodnoty trasy poskytované `Values` a `AmbientValues` rozhodnout, kde je možné generovat adresu URL a jaké hodnoty je třeba zahrnout. `AmbientValues` Sada hodnot trasy, které byly vytvořeny z odpovídajících aktuální požadavek systému směrování. Naproti tomu `Values` jsou hodnoty trasy, které určují, jak generovat požadovanou adresu URL pro aktuální operaci. `HttpContext` Je k dispozici v případě, že trasy je potřeba získat služby nebo další data související s aktuálním kontextu.
+Trasy primárně používat hodnoty trasy poskytované `Values` a `AmbientValues` rozhodnout, jestli je možné generovat adresu URL a jaké hodnoty je třeba zahrnout. `AmbientValues` Sada hodnot trasy, které byly vytvořeny z odpovídajících aktuální požadavek systému směrování. Naproti tomu `Values` jsou hodnoty trasy, které určují, jak generovat požadovanou adresu URL pro aktuální operaci. `HttpContext` Je k dispozici v případě, že trasy je potřeba získat služby nebo další data související s aktuálním kontextu.
 
 > [!TIP]
 > Představte si, že [VirtualPathContext.Values](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.Values*) jako přepsání pro sadu [VirtualPathContext.AmbientValues](xref:Microsoft.AspNetCore.Routing.VirtualPathContext.AmbientValues*). Generování adresy URL se pokusí znovu použít hodnoty trasy z aktuální žádosti k tomu, aby k vygenerování adres URL pro odkazů pomocí stejného postupu nebo hodnoty trasy.

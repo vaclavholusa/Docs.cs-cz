@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 7794b3c10e26720d3e7ef8965f99b204a3c58d5c
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 7383d123be4d1e7a20eb93646e630119583350e6
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870931"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091090"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>Stav relace a aplikace v ASP.NET Core
 
@@ -70,7 +70,7 @@ Stav relace je třeba následujícího chování:
 
 Poskytovatel mezipaměti v paměti ukládá data relace v paměti na server, ve kterém se aplikace nachází. Ve scénáři farmy serveru:
 
-* Použití *rychlé relace* a jejich zapojení každá relace pro konkrétní aplikaci instance na jednotlivých serverech. [Azure App Service](https://azure.microsoft.com/services/app-service/) používá [požádat o směrování žádostí na aplikace](/iis/extensions/planning-for-arr/using-the-application-request-routing-module) vynutit rychlé relace ve výchozím nastavení. Rychlé relace však může ovlivnit škálovatelnost a zkomplikovat aktualizace webové aplikace. Lepším řešením je použití Redis nebo SQL Server distribuovaná mezipaměť, která nevyžaduje rychlé relace. Další informace najdete v tématu [práce s distribuovanou mezipamětí](xref:performance/caching/distributed).
+* Použití *rychlé relace* a jejich zapojení každá relace pro konkrétní aplikaci instance na jednotlivých serverech. [Azure App Service](https://azure.microsoft.com/services/app-service/) používá [požádat o směrování žádostí na aplikace](/iis/extensions/planning-for-arr/using-the-application-request-routing-module) vynutit rychlé relace ve výchozím nastavení. Rychlé relace však může ovlivnit škálovatelnost a zkomplikovat aktualizace webové aplikace. Lepším řešením je použití Redis nebo SQL Server distribuovaná mezipaměť, která nevyžaduje rychlé relace. Další informace naleznete v tématu <xref:performance/caching/distributed>.
 * Soubor cookie relace se šifruje pomocí [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector). Ochrana dat musejí být správně nakonfigurovány ke čtení souborů cookie relací na každém počítači. Další informace najdete v tématu [ochrany dat v ASP.NET Core](xref:security/data-protection/index) a [zprostředkovateli úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers).
 
 ### <a name="configure-session-state"></a>Nakonfigurovat stav relace
@@ -87,7 +87,7 @@ Poskytovatel mezipaměti v paměti ukládá data relace v paměti na server, ve 
 
 ::: moniker-end
 
-* Některé z [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) mezipaměti paměti. `IDistributedCache` Implementace se používá jako záložní úložiště pro relaci. Další informace najdete v tématu [práce s distribuovanou mezipamětí](xref:performance/caching/distributed).
+* Některé z [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) mezipaměti paměti. `IDistributedCache` Implementace se používá jako záložní úložiště pro relaci. Další informace naleznete v tématu <xref:performance/caching/distributed>.
 * Volání [AddSession](/dotnet/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions.addsession) v `ConfigureServices`.
 * Volání [UseSession](/dotnet/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_) v `Configure`.
 
@@ -434,7 +434,7 @@ Použití [injektáž závislostí](xref:fundamentals/dependency-injection) zpř
 
 * "Nepovedlo se přeložit služby pro typ"Microsoft.Extensions.Caching.Distributed.IDistributedCache"při pokusu o aktivaci"Microsoft.AspNetCore.Session.DistributedSessionStore"."
 
-  To je obvykle způsobeno selhání nakonfigurujte alespoň jednu `IDistributedCache` implementace. Další informace najdete v tématu [práce s distribuovanou mezipamětí](xref:performance/caching/distributed) a [ukládat do mezipaměti v paměti](xref:performance/caching/memory).
+  To je obvykle způsobeno selhání nakonfigurujte alespoň jednu `IDistributedCache` implementace. Další informace naleznete v tématu <xref:performance/caching/distributed> a <xref:performance/caching/memory>.
 
 * V události, která relace, které middleware nepodaří zachována relaci (například, pokud záložní úložiště není k dispozici), middleware protokoluje výjimku a požadavek pokračuje normálním způsobem. To vede k nepředvídatelné chování.
 

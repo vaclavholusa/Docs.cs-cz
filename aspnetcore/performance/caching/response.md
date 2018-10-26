@@ -5,12 +5,12 @@ description: Další informace o použití odpověď do mezipaměti pro nižší
 ms.author: riande
 ms.date: 09/20/2017
 uid: performance/caching/response
-ms.openlocfilehash: 4bf61502738d70760679ec98c8f2f303eca9d504
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: bbf5b649bac9d31aa6d0ecdc3828648677b05716
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477486"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090690"
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -68,7 +68,7 @@ Další informace najdete v tématu [ukládat do mezipaměti v paměti](xref:per
 
 K ukládání dat v paměti, když je aplikace hostovaná v cloudu nebo serveru farmy pomocí distribuované mezipaměti. Mezipaměť je sdílen mezi servery, které zpracovávají požadavky. Klient může odeslat žádost, kterou provádí služba jakýkoli server ve skupině, pokud je k dispozici data uložená v mezipaměti klienta. ASP.NET Core nabízí systému SQL Server a mezipamětí Redis distribuovat.
 
-Další informace najdete v tématu [práce s distribuovanou mezipamětí](xref:performance/caching/distributed).
+Další informace naleznete v tématu <xref:performance/caching/distributed>.
 
 ### <a name="cache-tag-helper"></a>Pomocné rutiny značky do mezipaměti
 
@@ -230,9 +230,9 @@ Cache-Control: public,max-age=60
 
 * [Ukládání odpovědí do mezipaměti](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [Mezipaměť v paměti](xref:performance/caching/memory)
-* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Zjištění změn se změna tokenů](xref:fundamentals/change-tokens)
-* [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
-* [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:fundamentals/change-tokens>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

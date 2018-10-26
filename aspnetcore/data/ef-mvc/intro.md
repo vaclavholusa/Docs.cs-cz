@@ -3,14 +3,15 @@ title: ASP.NET Core MVC s Entity Framework Core – kurz 1 10
 author: rick-anderson
 description: ''
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 46cc5144a289637a0fb1c1c2ac22aba2d881af52
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 6f867875ed670065ef76728342d3854281f08ae4
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336104"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091064"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>ASP.NET Core MVC s Entity Framework Core – kurz 1 10
 
@@ -28,7 +29,7 @@ Ukázková aplikace je webovou stránku pro fiktivní společnosti Contoso Unive
 
 [Stažení nebo zobrazení dokončené aplikace.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF Core 2.0 je nejnovější verze EF, ale ještě nemá všechny funkce verze EF 6.x. Informace o tom, jak si vybrat mezi EF 6.x a EF Core, najdete v části [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Pokud se rozhodnete EF 6.x, naleznete v tématu [předchozí verze v této sérii kurzů](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
+EF Core 2.0 je nejnovější verze EF, ale ještě nemá všechny funkce verze EF 6.x. Informace o tom, jak si vybrat mezi EF 6.x a EF Core, najdete v části [EF Core vs. EF6.x](/ef/efcore-and-ef6/). Pokud se rozhodnete EF 6.x, naleznete v tématu [předchozí verze v této sérii kurzů](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 > [!NOTE]
 > ASP.NET Core 1.1 tohoto kurzu, najdete v článku [verze VS 2017 Update 2 v tomto kurzu ve formátu PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
@@ -106,11 +107,11 @@ Stisknutím kláves CTRL + F5 ke spuštění projektu nebo zvolte **ladit > Spus
 
 ## <a name="entity-framework-core-nuget-packages"></a>Entity Framework Core NuGet balíčky
 
-Do projektu přidat podporu EF Core, nainstalujte poskytovatele databáze, kterou chcete cílit. Tento kurz používá systém SQL Server a je balíček zprostředkovatele [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/). Tento balíček je součástí [metabalíček](xref:fundamentals/metapackage) Microsoft.aspnetcore.all, takže není nutné k jeho instalaci.
+Do projektu přidat podporu EF Core, nainstalujte poskytovatele databáze, kterou chcete cílit. Tento kurz používá systém SQL Server a je balíček zprostředkovatele [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/). Tento balíček je součástí [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app), takže není nutné, pokud vaše aplikace obsahuje odkaz na balíček pro odkazujte na balíček `Microsoft.AspNetCore.App` balíčku.
 
 Tento balíček a jeho závislosti (`Microsoft.EntityFrameworkCore` a `Microsoft.EntityFrameworkCore.Relational`) poskytují podporu runtime pro EF. Přidejte balíček nástroje v pozdější [migrace](migrations.md) kurzu.
 
-Informace o dalších poskytovatelů databáze, které jsou dostupné pro Entity Framework Core najdete v tématu [databáze poskytovatelé](https://docs.microsoft.com/ef/core/providers/).
+Informace o dalších poskytovatelů databáze, které jsou dostupné pro Entity Framework Core najdete v tématu [databáze poskytovatelé](/ef/core/providers/).
 
 ## <a name="create-the-data-model"></a>Vytvoření datového modelu
 
@@ -357,7 +358,7 @@ Je potřeba vědět při psaní asynchronního kódu, který používá Entity F
 
 * Pokud chcete využít výhod výkony těží z asynchronní kód, ujistěte se, že všechny knihovny balíčky, které používáte (například stránkování), asynchronní použijte i v případě volají všechny Entity Framework metody, které způsobují dotazů k odeslání do databáze.
 
-Další informace o asynchronním programování v rozhraní .NET najdete v tématu [asynchronní přehled](https://docs.microsoft.com/dotnet/articles/standard/async).
+Další informace o asynchronním programování v rozhraní .NET najdete v tématu [asynchronní přehled](/dotnet/articles/standard/async).
 
 ## <a name="summary"></a>Souhrn
 

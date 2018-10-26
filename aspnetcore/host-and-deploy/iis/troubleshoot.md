@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak diagnostikovat problémy s nasazením aplikací ASP.NET Core Internetové informační služby (IIS).
 ms.author: riande
 ms.custom: mvc
-ms.date: 02/07/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
-ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
+ms.openlocfilehash: 6a53c1ba5badd741afc3321ce21b047965c611db
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "41752806"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090599"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>Řešení potíží s ASP.NET Core ve službě IIS
 
@@ -23,10 +23,10 @@ V sadě Visual Studio projekt ASP.NET Core výchozí hodnota je [služby IIS Exp
 
 Další témata pro řešení potíží:
 
-[Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)  
+<xref:host-and-deploy/azure-apps/troubleshoot>  
 I když služba App Service používá [modul ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) a služby IIS pro hostování aplikací, v tématu vyhrazené pro pokyny, které jsou specifické pro App Service.
 
-[Ošetření chyb](xref:fundamentals/error-handling)  
+<xref:fundamentals/error-handling>  
 Objevte, jak zpracovávat chyby v aplikacích ASP.NET Core během vývoje v místním systému.
 
 [Další informace k ladění pomocí sady Visual Studio](/visualstudio/debugger/getting-started-with-the-debugger)  
@@ -133,7 +133,7 @@ Nastavení proměnné prostředí pro `ASPNETCORE_ENVIRONMENT` se doporučuje je
 
 ## <a name="common-startup-errors"></a>Běžné chyby spuštění 
 
-Zobrazit [ASP.NET Core běžné chyby odkaz](xref:host-and-deploy/azure-iis-errors-reference). Většina běžných problémů, které brání spuštění aplikace jsou zahrnuté v referenčním tématu.
+Viz <xref:host-and-deploy/azure-iis-errors-reference>. Většina běžných problémů, které brání spuštění aplikace jsou zahrnuté v referenčním tématu.
 
 ## <a name="slow-or-hanging-app"></a>Pomalá nebo Změ aplikace
 
@@ -167,7 +167,7 @@ Někdy funkční aplikace selže okamžitě po provedení upgradu buď .NET Core
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Úvod do zpracování chyb v ASP.NET Core](xref:fundamentals/error-handling)
-* [Referenční informace o běžných chybách pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
-* [Referenční dokumentace k modulu ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
-* [Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/aspnet-core-module>
+* <xref:host-and-deploy/azure-apps/troubleshoot>

@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/15/2018
 uid: web-api/index
-ms.openlocfilehash: d410f28ff7fda3bf33f73c06b3e626dfd4ee7dd8
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 763b95fb8ed3806bc67b7ad199153ea1027efa57
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41822137"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090417"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core
 
@@ -47,7 +47,7 @@ ASP.NET Core 2.1 přináší [[objektu ApiController]](xref:Microsoft.AspNetCore
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 
-Kompatibilita verze 2.1 nebo novější, nastavené přes <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>, je potřeba použít tento atribut. Například zvýrazněný kód do *Startup.ConfigureServices* nastaví příznak 2.1 kompatibility:
+Kompatibilita verze 2.1 nebo novější, nastavené přes <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>, je potřeba použít tento atribut. Například zvýrazněný kód do *Startup.ConfigureServices* nastaví příznak 2.2 kompatibility:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
 
@@ -61,15 +61,46 @@ Další možností je vytvořit třídu vlastní základní kontroler opatřen p
 
 Následující části popisují užitečných funkcí, které jsou přidány pomocí atributu.
 
+### <a name="problem-details-responses-for-error-status-codes"></a>Problém podrobnosti odpovědi pro stavové kódy chyb
+
+ASP.NET Core 2.1 nebo novější obsahuje [ProblemDetails](xref:Microsoft.AspNetCore.Mvc.ProblemDetails), na základě typu [specifikaci RFC 7807](https://tools.ietf.org/html/rfc7807). `ProblemDetails` Typ poskytuje standardizovaný formát pro předávání počítač čitelné podrobnosti o chybách v odpovědi HTTP.
+
+V ASP.NET Core 2.2 a novější, MVC transformuje výsledky kódu stavu (stavový kód 400 a vyšší) chyby do výsledku s `ProblemDetails`. Vezměte v úvahu následující kód:
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_ProblemDetails_StatusCode&highlight=4)]
+
+Odpověď HTTP pro `NotFound` výsledek má stavový kód 404 s `ProblemDetails` podobný následujícímu textu:
+
+```js
+{
+    type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+    title: "Not Found",
+    status: 404,
+    traceId: "0HLHLV31KRN83:00000001"
+}
+```
+
+Podrobnosti o problému vyžaduje příznak kompatibility 2.2 nebo novější. Výchozí chování je zakázaná. Pokud [SuppressMapClientErrors](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressMapClientErrors> --> je nastavena na `true`. Následující zvýrazněný kód z `Startup.ConfigureServices` zakáže podrobnosti o problému:
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=8)]
+
+Použití [ClientErrorMapping](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.ClientErrorMapping> --> vlastnosti ke konfiguraci obsah `ProblemDetails` odpovědi. Například následující kód aktualizace `type` vlastnost obdržíte kód odpovědi 404:
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=10)]
+
 ### <a name="automatic-http-400-responses"></a>Automatické odpovědi HTTP 400
 
 Chyby ověření automaticky aktivuje odpověď HTTP 400. Následující kód bude nutná u akcí:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
+Použití <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.InvalidModelStateResponseFactory> přizpůsobení výstup výsledné odpovědi.
+
 Výchozí chování je zakázaná. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> je nastavena na `true`. Přidejte následující kód do *Startup.ConfigureServices* po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
+
+Pomocí příznaku kompatibility 2.2 nebo novější, je výchozí typ odpovědi vrátí 400 odpovědí <xref:Microsoft.AspNetCore.Mvc.ValidationProblemDetails>. Použít [SuppressUseValidationProblemDetailsForInvalidModelStateResponses](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressUseValidationProblemDetailsForInvalidModelStateResponses> --> vlastnost na používání ASP.NET Core 2.1 Chyba formát.
 
 ### <a name="binding-source-parameter-inference"></a>Odvození parametr zdroje vazby
 

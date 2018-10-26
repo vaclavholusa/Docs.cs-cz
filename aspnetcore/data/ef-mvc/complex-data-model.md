@@ -3,14 +3,15 @@ title: ASP.NET Core MVC s EF Core – Model dat – 5 10
 author: rick-anderson
 description: V tomto kurzu přidat další entity a relace a přizpůsobte si datový model zadáním formátování, ověřování a pravidel mapování.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 87212edbfe34af6de938cf95314501e56e64a8be
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011765"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091038"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC s EF Core – Model dat – 5 10
 
@@ -232,7 +233,7 @@ V *Models/Course.cs*, nahraďte kód, který jste přidali dříve následujíc�
 
 Kurz entita má vlastnost cizího klíče `DepartmentID` který odkazuje na související entity oddělení a má `Department` navigační vlastnost.
 
-Entity Framework nevyžaduje, můžete přidat vlastnost cizího klíče do datového modelu, když máte navigační vlastnost pro související entity.  EF automaticky vytvoří cizí klíče v databázi bez ohledu na to budete potřebovat a vytvoří [stínové vlastnosti](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pro ně. Ale s cizího klíče v datovém modelu může být aktualizace jednodušší a efektivnější. Například při načtení entity kurzu upravit entity oddělení má hodnotu null Pokud načtete nemusíte ho, proto při aktualizaci entity kurzu budete mít se nejdřív načíst entity oddělení. Pokud vlastnost cizího klíče `DepartmentID` je zahrnuta v datovém modelu, není nutné k načtení entity oddělení před aktualizací.
+Entity Framework nevyžaduje, můžete přidat vlastnost cizího klíče do datového modelu, když máte navigační vlastnost pro související entity.  EF automaticky vytvoří cizí klíče v databázi bez ohledu na to budete potřebovat a vytvoří [stínové vlastnosti](/ef/core/modeling/shadow-properties) pro ně. Ale s cizího klíče v datovém modelu může být aktualizace jednodušší a efektivnější. Například při načtení entity kurzu upravit entity oddělení má hodnotu null Pokud načtete nemusíte ho, proto při aktualizaci entity kurzu budete mít se nejdřív načíst entity oddělení. Pokud vlastnost cizího klíče `DepartmentID` je zahrnuta v datovém modelu, není nutné k načtení entity oddělení před aktualizací.
 
 ### <a name="the-databasegenerated-attribute"></a>Atribut DatabaseGenerated
 
@@ -246,7 +247,7 @@ public int CourseID { get; set; }
 
 Ve výchozím nastavení Entity Framework předpokládá, že hodnoty primárního klíče je generován databází. Který se má ve většině scénářů. Pro entity kurzu, budete však použít číslo uživatel zadal kurzu například řadu 1000 pro jedno oddělení, řadu 2000 pro jiného oddělení a tak dále.
 
-`DatabaseGenerated` Atribut lze také generovat výchozí hodnoty, jako v případě sloupců databáze slouží k záznamu datum řádek byl vytvořen nebo aktualizován.  Další informace najdete v tématu [vygenerovaným vlastnostem](https://docs.microsoft.com/ef/core/modeling/generated-properties).
+`DatabaseGenerated` Atribut lze také generovat výchozí hodnoty, jako v případě sloupců databáze slouží k záznamu datum řádek byl vytvořen nebo aktualizován.  Další informace najdete v tématu [vygenerovaným vlastnostem](/ef/core/modeling/generated-properties).
 
 ### <a name="foreign-key-and-navigation-properties"></a>Vlastnosti cizího klíče a navigace
 
@@ -373,7 +374,7 @@ V databázi pro vztah many-to-many kurzů vedených kurzy se vyžaduje tabulku s
 
 Protože cizí klíče nejsou s možnou hodnotou Null a dohromady jedinečně identifikují každý řádek v tabulce, není nutné pro samostatný primární klíč. *InstructorID* a *CourseID* vlastnosti by měla fungovat jako složený primární klíč. Jediný způsob, jak identifikovat složené primárního klíče na EF je použít *rozhraní fluent API* (ho nelze provést s použitím atributů). Uvidíte jak nakonfigurovat složený primární klíč v další části.
 
-Složený klíč zajistí, že i když můžete mít více řádků pro jeden kurz a více řádků pro jeden instruktorem, nemůže mít více řádků pro stejnou instruktorem a kurzu. `Enrollment` Spojení entita definuje vlastní primární klíč tak, aby byly možné duplicity toto řazení. Aby se tyto duplikáty, mohou přidat jedinečný index na pole cizích klíčů nebo nakonfigurovat `Enrollment` s primární složený klíč podobný `CourseAssignment`. Další informace najdete v tématu [indexy](https://docs.microsoft.com/ef/core/modeling/indexes).
+Složený klíč zajistí, že i když můžete mít více řádků pro jeden kurz a více řádků pro jeden instruktorem, nemůže mít více řádků pro stejnou instruktorem a kurzu. `Enrollment` Spojení entita definuje vlastní primární klíč tak, aby byly možné duplicity toto řazení. Aby se tyto duplikáty, mohou přidat jedinečný index na pole cizích klíčů nebo nakonfigurovat `Enrollment` s primární složený klíč podobný `CourseAssignment`. Další informace najdete v tématu [indexy](/ef/core/modeling/indexes).
 
 ## <a name="update-the-database-context"></a>Aktualizace kontext databáze
 
@@ -385,7 +386,7 @@ Tento kód přidá nové entity a nakonfiguruje CourseAssignment entita složen�
 
 ## <a name="fluent-api-alternative-to-attributes"></a>Fluent API alternativou k atributům
 
-Kód v `OnModelCreating` metodu `DbContext` třídy používá *rozhraní fluent API* konfigurace EF chování. Rozhraní API se nazývá "fluent", protože je často používána zavěšování řadu volání metody společně na jediném příkazu, jako v následujícím příkladu od [EF Core dokumentaci](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration):
+Kód v `OnModelCreating` metodu `DbContext` třídy používá *rozhraní fluent API* konfigurace EF chování. Rozhraní API se nazývá "fluent", protože je často používána zavěšování řadu volání metody společně na jediném příkazu, jako v následujícím příkladu od [EF Core dokumentaci](/ef/core/modeling/#methods-of-configuration):
 
 ```csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -400,7 +401,7 @@ V tomto kurzu se při použití rozhraní fluent API pouze pro mapování datab�
 
 Někteří vývojáři dávají přednost používání rozhraní fluent API výhradně tak, aby se zachovat jejich tříd entit "vyčištění." Pokud chcete, a existuje několik přizpůsobení, které lze provést pouze s použitím rozhraní fluent API je možné kombinovat atributy a dynamického rozhraní API, ale obecně doporučeným postupem je zvolte jednu z těchto dvou přístupů a použití, který konzistentně dosahovat. Pokud používáte obě, mějte na paměti, že bez ohledu na to dojde ke konfliktu, rozhraní Fluent API přepisuje atributy.
 
-Další informace o atributech vs. rozhraní fluent API najdete v tématu [metody konfigurace](https://docs.microsoft.com/ef/core/modeling/#methods-of-configuration).
+Další informace o atributech vs. rozhraní fluent API najdete v tématu [metody konfigurace](/ef/core/modeling/#methods-of-configuration).
 
 ## <a name="entity-diagram-showing-relationships"></a>Diagram znázorňující entitami
 

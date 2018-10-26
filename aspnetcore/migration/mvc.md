@@ -1,65 +1,81 @@
 ---
-title: Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
+title: Migrace z technologie ASP.NET MVC do ASP.NET Core MVC
 author: ardalis
-description: Zjistěte, jak začít pracovat migrace projektu aplikace ASP.NET MVC do architektury ASP.NET MVC jádra.
+description: Zjistěte, jak začít s migrací projektu aplikace ASP.NET MVC do ASP.NET Core MVC.
 ms.author: riande
 ms.date: 03/07/2017
 uid: migration/mvc
-ms.openlocfilehash: 6fecc820177ca5033cfd00d632904a950c1b29bb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e2ecc5b1a5e2ede4c815807d4e1b1499ae1a4242
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274772"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090469"
 ---
-# <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrace z rozhraní ASP.NET MVC na jádro ASP.NET MVC
+# <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migrace z technologie ASP.NET MVC do ASP.NET Core MVC
 
-Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [ADAM Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), a [Scott Addie](https://scottaddie.com)
+Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), a [Scott Addie](https://scottaddie.com)
 
-Tento článek ukazuje, jak začít s migrací do projektu aplikace ASP.NET MVC [ASP.NET MVC základní](../mvc/overview.md). V procesu se označuje mnoho věcí, které se změnily z rozhraní ASP.NET MVC. Migrace z rozhraní ASP.NET MVC je více proces krok a tento článek se zabývá počáteční nastavení, základní řadiče a zobrazení, statický obsah a závislosti na straně klienta. Další články zahrnovat migraci konfigurace a kód identit v mnoha projekty ASP.NET MVC nalezen.
+Tento článek popisuje, jak začít, migrace projektu aplikace ASP.NET MVC [ASP.NET Core MVC](../mvc/overview.md). V procesu se zvýrazní spousta věcí, které byly změněny z technologie ASP.NET MVC. Migrace z technologie ASP.NET MVC je o více krocích a tento článek se týká počáteční nastavení, základní kontrolerů a zobrazení, statický obsah a závislostí na straně klienta. Další články zahrnují migraci konfigurací a kódem identit v mnoha projektů ASP.NET MVC.
 
 > [!NOTE]
-> Čísla verzí v ukázkách nemusí být aktuální. Musíte aktualizovat projekty, odpovídajícím způsobem.
+> Čísla verzí v ukázkách, nemusí být aktuální. Budete muset aktualizovat vaše projekty odpovídajícím způsobem.
 
 ## <a name="create-the-starter-aspnet-mvc-project"></a>Vytvořit úvodní projektu ASP.NET MVC
 
-K předvedení upgradu, začneme vytvořením aplikace ASP.NET MVC. Vytvořit s názvem *WebApp1* , obor názvů odpovídá projektu ASP.NET Core vytvoříme v dalším kroku.
+Abychom si předvedli upgradu, Začneme tím, že vytvoříte aplikaci ASP.NET MVC. Vytvořte s názvem *WebApp1* tak obor názvů odpovídá projekt ASP.NET Core, vytvoříme v dalším kroku.
 
 ![Dialogové okno Visual Studio nový projekt](mvc/_static/new-project.png)
 
-![Dialogové okno nové webové aplikace: projektu šablony MVC vybrali panelu šablony ASP.NET](mvc/_static/new-project-select-mvc-template.png)
+![Dialogové okno nové webové aplikace: Šablona projektu MVC vybrali panelu šablony ASP.NET](mvc/_static/new-project-select-mvc-template.png)
 
-*Volitelné:* změnit název řešení od *WebApp1* k *Mvc5*. Visual Studio zobrazí název nového řešení (*Mvc5*), což usnadňuje říct tento projekt z projektu další.
+*Volitelné:* změnit název řešení od *WebApp1* k *Mvc5*. Visual Studio zobrazí nový název řešení (*Mvc5*), což usnadňuje zjistit tento projekt z projektu.
 
-## <a name="create-the-aspnet-core-project"></a>Vytvoření projektu ASP.NET Core
+## <a name="create-the-aspnet-core-project"></a>Vytvořit projekt ASP.NET Core
 
-Vytvořte novou *prázdný* ASP.NET Core webové aplikace se stejným názvem jako předchozí projekt (*WebApp1*), obory názvů v dva projekty shodovat. S o stejný obor názvů usnadňuje zkopírujte kód mezi dva projekty. Budete mít k vytvoření tohoto projektu v jiném adresáři než předchozí projekt, který používá stejný název.
+Vytvořte nový *prázdný* webové aplikace ASP.NET Core se stejným názvem jako předchozí projekt (*WebApp1*) tedy odpovídat oboru názvů na dva projekty. S stejný obor názvů umožňuje snadnější zkopírovat kód mezi dva projekty. Budete mít k vytvoření tohoto projektu do jiného adresáře než předchozí projekt, který používá stejný název.
 
-![Dialogové okno Nový projekt](mvc/_static/new_core.png)
+![Dialogové okno nového projektu](mvc/_static/new_core.png)
 
-![Dialogové okno nové webové aplikace ASP.NET: prázdná šablona projektu vybrané panelu ASP.NET Core šablony](mvc/_static/new-project-select-empty-aspnet5-template.png)
+![Dialogové okno nové webové aplikace ASP.NET: Šablona prázdný projekt vybraný v panelech šablony ASP.NET Core](mvc/_static/new-project-select-empty-aspnet5-template.png)
 
-* *Volitelné:* vytvoření nové aplikace ASP.NET Core pomocí *webové aplikace* šablona projektu. Název projektu *WebApp1*a vyberte některou možnost ověřování z **jednotlivé uživatelské účty**. Přejmenujte tuto aplikaci a *FullAspNetCore*. Vytvoření tohoto projektu šetří čas v převodu. Můžete si prohlédnout kód generovaný šablony najdete v části konečný výsledek nebo zkopírujte kód do projektu převod. Je také užitečné, pokud zablokuje v kroku převod k porovnání s projektem šablona vytvořena.
+* *Volitelné:* vytvoření nové aplikace ASP.NET Core pomocí *webovou aplikaci* šablony projektu. Pojmenujte projekt *WebApp1*a vyberte možnost ověřování **jednotlivé uživatelské účty**. Přejmenovat tuto aplikaci k *FullAspNetCore*. Vytvoření projektu ušetříte čas při převodu. Můžete si prohlédnout kód generovaný šablony najdete v článku konečný výsledek nebo zkopírujte kód do projektu převodu. Je také užitečné, pokud jste zaseknout se na krok převodu k porovnání s projektem šablona vytvořena.
 
-## <a name="configure-the-site-to-use-mvc"></a>Konfigurace lokality k použití MVC
+## <a name="configure-the-site-to-use-mvc"></a>Konfigurace lokality, aby používala MVC
 
-* Pokud je cílem .NET Core, metapackage ASP.NET Core se přidá do projektu, názvem `Microsoft.AspNetCore.All` ve výchozím nastavení. Tento balíček obsahuje balíčky jako `Microsoft.AspNetCore.Mvc` a `Microsoft.AspNetCore.StaticFiles`. Pokud cílení na rozhraní .NET Framework, třeba jednotlivě uvedené v souboru *.csproj balíček odkazuje.
+::: moniker range=">= aspnetcore-2.1"
 
-`Microsoft.AspNetCore.Mvc` je rozhraní ASP.NET MVC jádra. `Microsoft.AspNetCore.StaticFiles` je obslužná rutina statických souborů. Modul runtime ASP.NET Core je modulární a musí explicitně přihlášení poskytovat statické soubory (viz [statické soubory](xref:fundamentals/static-files)).
+* Při cílení na .NET Core [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app) se odkazuje ve výchozím nastavení. Tento balíček obsahuje balíčky běžně používané balíčky aplikací MVC. Pokud se zaměřujete na rozhraní .NET Framework, musí být odkazy na balíčky uvedené jednotlivě v souboru projektu.
 
-* Otevřete *Startup.cs* souboru a změnit kód tak, aby odpovídala následující:
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+* Při cílení na .NET Core [metabalíček Microsoft.aspnetcore.all](xref:fundamentals/metapackage) se odkazuje ve výchozím nastavení. Tento balíček obsahuje balíčky běžně používané balíčky aplikací MVC. Pokud se zaměřujete na rozhraní .NET Framework, musí být odkazy na balíčky uvedené jednotlivě v souboru projektu.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+* Při cílení na .NET Core nebo .NET Framework, balíčků balíčky běžně používané podle aplikací MVC jsou jednotlivě uvedené v souboru projektu.
+
+::: moniker-end
+
+`Microsoft.AspNetCore.Mvc` je rozhraní ASP.NET Core MVC. `Microsoft.AspNetCore.StaticFiles` je obslužná rutina statický soubor. Modul runtime ASP.NET Core je modulární a musí se explicitně výslovný souhlas se doručování statických souborů (viz [statické soubory](xref:fundamentals/static-files)).
+
+* Otevřít *Startup.cs* soubor a změňte kód tak, aby odpovídala následující:
 
   [!code-csharp[](mvc/sample/Startup.cs?highlight=13,26-31)]
 
-`UseStaticFiles` Metoda rozšíření přidá obslužné rutiny statických souborů. Jak je uvedeno nahoře, modulem runtime ASP.NET je modulární a musí explicitně přihlášení poskytovat statické soubory. `UseMvc` Přidá metody rozšíření směrování. Další informace najdete v tématu [spuštění aplikace](xref:fundamentals/startup) a [směrování](xref:fundamentals/routing).
+`UseStaticFiles` – Metoda rozšíření přidá obslužnou rutinu statický soubor. Jak už bylo zmíněno dříve, modul runtime ASP.NET je modulární a musí explicitně připojíte k doručování statických souborů. `UseMvc` Přidá metody rozšíření směrování. Další informace najdete v tématu [spuštění aplikace](xref:fundamentals/startup) a [směrování](xref:fundamentals/routing).
 
-## <a name="add-a-controller-and-view"></a>Přidání kontroleru a zobrazení
+## <a name="add-a-controller-and-view"></a>Přidat kontroler a zobrazení
 
-V této části přidáte minimální řadiče a zobrazení, která bude sloužit jako zástupné symboly ASP.NET MVC jsou řadič MVC a zobrazení, že budete migrovat v další části.
+V této části přidáte minimální kontroler a zobrazení, která bude sloužit jako zástupné symboly pro kontroler ASP.NET MVC a zobrazení, že provedeme migraci v další části.
 
 * Přidat *řadiče* složky.
 
-* Přidat **třídy Kontroleru** s názvem *HomeController.cs* k *řadiče* složky.
+* Přidat **třída Kontroleru rozhraní** s názvem *HomeController.cs* k *řadiče* složky.
 
 ![Přidat novou položku – dialogové okno](mvc/_static/add_mvc_ctl.png)
 
@@ -67,7 +83,7 @@ V této části přidáte minimální řadiče a zobrazení, která bude slouži
 
 * Přidat *zobrazení Domů* složky.
 
-* Přidat **zobrazení syntaxe Razor** s názvem *Index.cshtml* k *zobrazení Domů* složky.
+* Přidat **zobrazení Razor** s názvem *Index.cshtml* k *zobrazení Domů* složky.
 
 ![Přidat novou položku – dialogové okno](mvc/_static/view.png)
 
@@ -75,7 +91,7 @@ Struktura projektu je zobrazena níže:
 
 ![Průzkumník řešení zobrazující soubory a složky WebApp1](mvc/_static/project-structure-controller-view.png)
 
-Nahraďte obsah *Views/Home/Index.cshtml* soubor s následující:
+Nahraďte obsah *Views/Home/Index.cshtml* souboru následujícím kódem:
 
 ```html
 <h1>Hello world!</h1>
@@ -83,13 +99,13 @@ Nahraďte obsah *Views/Home/Index.cshtml* soubor s následující:
 
 Spusťte aplikaci.
 
-![Webovou aplikaci, otevřete v Microsoft Edge](mvc/_static/hello-world.png)
+![Webová aplikace otevřít v Microsoft Edge](mvc/_static/hello-world.png)
 
-V tématu [řadiče](xref:mvc/controllers/actions) a [zobrazení](xref:mvc/views/overview) Další informace.
+Zobrazit [řadiče](xref:mvc/controllers/actions) a [zobrazení](xref:mvc/views/overview) Další informace.
 
-Teď, když máme minimální funkční projekt ASP.NET Core, můžeme začít migrace funkce z projektu ASP.NET MVC. Je potřeba přesunout následující:
+Když teď máme minimální funkční projekt ASP.NET Core, můžeme začít migrace funkce z projektu ASP.NET MVC. Musíme přejít následující:
 
-* obsah na straně klienta (šablon stylů CSS, písma a skripty)
+* obsah na straně klienta (šablon stylů CSS, písem a skripty)
 
 * kontrolery
 
@@ -101,55 +117,55 @@ Teď, když máme minimální funkční projekt ASP.NET Core, můžeme začít m
 
 * filtry
 
-* Přihlaste se vstup/výstup Identity (to se provádí v dalším kurzu).
+* Protokol vstup a výstup, Identity (to se provádí v dalším kurzu).
 
-## <a name="controllers-and-views"></a>Kontrolery a zobrazení
+## <a name="controllers-and-views"></a>Zobrazení a kontrolerů
 
-* Zkopírujte všechny metody z rozhraní ASP.NET MVC `HomeController` do nového `HomeController`. Upozorňujeme, že v architektuře ASP.NET MVC předdefinované šablony řadiče akce metoda návratový typ je [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); v aplikaci ASP.NET MVC jádra, metody akce návratový `IActionResult` místo. `ActionResult` implementuje `IActionResult`, takže není nutné změnit návratový typ vaší metody akce.
+* Kopírování všech metod v ASP.NET MVC `HomeController` k novému `HomeController`. Všimněte si, že v architektuře ASP.NET MVC, návratový typ metody serveru integrovanou šablonu kontroleru akce [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); v ASP.NET Core MVC metody akce vrácené `IActionResult` místo. `ActionResult` implementuje `IActionResult`, takže není nutné změnit návratový typ metody akce.
 
-* Kopírování *About.cshtml*, *Contact.cshtml*, a *Index.cshtml* Razor zobrazit soubory z projektu ASP.NET MVC do projektu ASP.NET Core.
+* Kopírovat *About.cshtml*, *Contact.cshtml*, a *Index.cshtml* Razor zobrazit soubory z projektu ASP.NET MVC do projektu ASP.NET Core.
 
-* Spuštění aplikace ASP.NET Core a testování jednotlivých metod. Jsme jste nemigrovali rozložení souboru nebo styly ještě, takže vykreslené zobrazení obsahovat pouze obsah souborů zobrazení. Nebudete mít rozložení souboru vygenerovaného odkazy `About` a `Contact` zobrazení, takže budete muset je vyvolat z prohlížeče (Nahraďte **4492** číslem portu, na které se používají ve vašem projektu).
+* Spuštění aplikace ASP.NET Core a testování jednotlivých metod. Jsme jste nemigrovali soubor rozložení nebo styly, takže vykreslené zobrazení obsahovat pouze obsah v zobrazení souborů. Nebudete mít rozložení souboru vygenerovaného odkazy `About` a `Contact` zobrazení, takže budete mít k vyvolání z prohlížeče (nahradit **4492** se číslo portu používané ve vašem projektu).
 
   * `http://localhost:4492/home/about`
 
   * `http://localhost:4492/home/contact`
 
-![Kontaktujte stránky](mvc/_static/contact-page.png)
+![Stránka kontaktu](mvc/_static/contact-page.png)
 
-Poznámka: nedostatek položky stylů a nabídky. To jsme budete opravíme v další části.
+Všimněte si, absenci stylů a položek nabídky. To Změníme v další části.
 
 ## <a name="static-content"></a>Statický obsah
 
-V předchozích verzích rozhraní ASP.NET MVC statický obsah hostitelem byl z kořenového adresáře webového projektu a byl smíšeného s soubory na straně serveru. V ASP.NET Core, statický obsah uložený v *wwwroot* složky. Budete chtít zkopírujte statický obsah z původního aplikaci ASP.NET MVC *wwwroot* složku ve vašem projektu ASP.NET Core. V této ukázkové převod:
+V předchozích verzích rozhraní ASP.NET MVC statický obsah hostovaný z kořenového adresáře webového projektu a byla smíšeného s soubory na straně serveru. V ASP.NET Core je statický obsah hostovaný v *wwwroot* složky. Budete chtít zkopírovat statický obsah ze staré aplikaci ASP.NET MVC *wwwroot* složky v projektu ASP.NET Core. V této ukázkové převodu:
 
-* Kopírování *favicon.ico* soubor z původní projekt MVC *wwwroot* složky v projektu ASP.NET Core.
+* Kopírování *favicon.ico* soubor z původní projekt MVC tak, aby *wwwroot* složky v projektu ASP.NET Core.
 
-Starý ASP.NET MVC projektu používá [Bootstrap](https://getbootstrap.com/) pro jeho stylů a úložišť, službou Bootstrap nástroje soubory *obsahu* a *skripty* složek. Šablony, která generuje staré projektu ASP.NET MVC, odkazuje na Bootstrap v rozložení souboru (*Views/Shared/_Layout.cshtml*). Může zkopírovat *bootstrap.js* a *bootstrap.css* soubory z rozhraní ASP.NET MVC projektu do *wwwroot* složky v novém projektu. Místo toho přidáme podporu Bootstrap (a další klientské knihovny) pomocí sítím CDN v další části.
+Staré rozhraní ASP.NET MVC používá projekt [Bootstrap](https://getbootstrap.com/) stylů a úložišť spuštění souborů *obsahu* a *skripty* složek. Šablona, která vygeneruje původního projektu ASP.NET MVC, odkazuje na spuštění v souboru rozložení (*Views/Shared/_Layout.cshtml*). Můžete zkopírovat *bootstrap.js* a *bootstrap.css* projektu soubory z technologie ASP.NET MVC *wwwroot* složky v novém projektu. Místo toho přidáme podporu Bootstrap (a dalších knihoven na straně klienta) pomocí CDN v další části.
 
-## <a name="migrate-the-layout-file"></a>Migrace na soubor rozložení
+## <a name="migrate-the-layout-file"></a>Migrujte soubor rozložení
 
-* Kopírování *soubor _ViewStart.cshtml* soubor z původního projektu ASP.NET MVC *zobrazení* složky do projektů ASP.NET Core *zobrazení* složky. *Soubor _ViewStart.cshtml* soubor nebyl změněn v aplikaci ASP.NET MVC jádra.
+* Kopírovat *soubor _ViewStart.cshtml* souboru z původního projektu ASP.NET MVC *zobrazení* složku do projektu ASP.NET Core *zobrazení* složky. *Soubor _ViewStart.cshtml* nedošlo ke změně souboru v ASP.NET Core MVC.
 
-* Vytvoření *zobrazení a sdílených* složky.
+* Vytvoření *zobrazení/Shared* složky.
 
-* *Volitelné:* kopie *_ViewImports.cshtml* z *FullAspNetCore* projektu MVC *zobrazení* složky do projektů ASP.NET Core  *Zobrazení* složky. Odeberte všechny deklarace oboru názvů v *_ViewImports.cshtml* souboru. *_ViewImports.cshtml* soubor poskytuje obory názvů pro všechny soubory, zobrazení a přináší [značky Pomocníci](xref:mvc/views/tag-helpers/intro). Pomocníci značky se používají v nové rozložení souboru. *_ViewImports.cshtml* souboru je nového pro ASP.NET Core.
+* *Volitelné:* kopírování *_ViewImports.cshtml* z *FullAspNetCore* projekt MVC *zobrazení* složku do projektu ASP.NET Core  *Zobrazení* složky. Odebrat všechny deklarace oboru názvů v *_ViewImports.cshtml* souboru. *_ViewImports.cshtml* soubor obsahuje obory názvů pro všechny soubory, zobrazení a přináší [pomocných rutin značek](xref:mvc/views/tag-helpers/intro). Pomocné rutiny značek se používají v novém souboru rozložení. *_ViewImports.cshtml* souboru je nového v ASP.NET Core.
 
-* Kopírování *_Layout.cshtml* soubor z původního projektu ASP.NET MVC *zobrazení a sdílených* složky do projektů ASP.NET Core *zobrazení a sdílených* složky.
+* Kopírovat *_Layout.cshtml* souboru z původního projektu ASP.NET MVC *zobrazení/Shared* složku do projektu ASP.NET Core *zobrazení/Shared* složky.
 
-Otevřete *_Layout.cshtml* souboru a proveďte následující změny (dokončený kód je zobrazené dole):
+Otevřít *_Layout.cshtml* soubor a proveďte následující změny (dokončený kód je zobrazené dole):
 
-* Nahraďte `@Styles.Render("~/Content/css")` s `<link>` elementu, který chcete načíst *bootstrap.css* (viz níže).
+* Nahraďte `@Styles.Render("~/Content/css")` s `<link>` element načíst *bootstrap.css* (viz níže).
 
 * Odebrat `@Scripts.Render("~/bundles/modernizr")`.
 
-* Komentář `@Html.Partial("_LoginPartial")` řádku (obklopit řádek s `@*...*@`). Vrátí k němu v budoucnu kurzu.
+* Okomentujte `@Html.Partial("_LoginPartial")` řádku (před a za řádek s `@*...*@`). Se vrátí k němu v budoucích kurzech.
 
 * Nahraďte `@Scripts.Render("~/bundles/jquery")` s `<script>` – element (viz níže).
 
 * Nahraďte `@Scripts.Render("~/bundles/bootstrap")` s `<script>` – element (viz níže).
 
-Nahrazení kód pro zahrnutí Bootstrap CSS:
+Nahrazení kódu pro zahrnutí CSS Bootstrapu:
 
 ```html
 <link rel="stylesheet"
@@ -158,7 +174,7 @@ Nahrazení kód pro zahrnutí Bootstrap CSS:
     crossorigin="anonymous">
 ```
 
-Nahrazení značky jQuery a Bootstrap JavaScript zahrnutí:
+Nahrazení značky jQuery a zahrnutí Bootstrap JavaScript:
 
 ```html
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -166,25 +182,25 @@ Nahrazení značky jQuery a Bootstrap JavaScript zahrnutí:
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 ```
 
-Aktualizovaný *_Layout.cshtml* souboru jsou uvedeny níže:
+Aktualizovaný *_Layout.cshtml* souboru je uveden níže:
 
 [!code-cshtml[](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7-10,29,41-44)]
 
-Zobrazte webu v prohlížeči. Nyní by se měly správně načíst s očekávanou styly na místě.
+Zobrazte webu v prohlížeči. Teď by měl správně načíst data pomocí očekávané styly na místě.
 
-* *Volitelné:* můžete chtít zkuste použít nový soubor rozložení. Pro tento projekt můžete zkopírovat soubor rozložení z *FullAspNetCore* projektu. Nový soubor rozložení používá [značky Pomocníci](xref:mvc/views/tag-helpers/intro) a má další vylepšení.
+* *Volitelné:* můžete chtít zkuste použít nový soubor rozložení. Pro tento projekt můžete zkopírovat soubor rozložení z *FullAspNetCore* projektu. Nový soubor rozložení, který používá [pomocných rutin značek](xref:mvc/views/tag-helpers/intro) a dalších vylepšení.
 
-## <a name="configure-bundling-and-minification"></a>Konfigurace sdružování a minimalizace
+## <a name="configure-bundling-and-minification"></a>Konfigurace sdružování a minifikace
 
-Informace o tom, jak nakonfigurovat sdružování a minimalizace najdete v tématu [sdružování a Minifikace](../client-side/bundling-and-minification.md).
+Informace o tom, jak nakonfigurovat sdružování a minifikace najdete v tématu [sdružování a Minifikace](../client-side/bundling-and-minification.md).
 
-## <a name="solve-http-500-errors"></a>Řešení chyb HTTP 500
+## <a name="solve-http-500-errors"></a>Řešení chyby HTTP 500
 
-Existuje mnoho problémů, které můžou způsobit chybová zpráva HTTP 500 které neobsahují žádné informace na zdroj problému. Například pokud *Views/_ViewImports.cshtml* soubor obsahuje obor názvů, který neexistuje v projektu, získáte chyby HTTP 500. Ve výchozím nastavení v aplikacích ASP.NET Core `UseDeveloperExceptionPage` rozšíření je přidán do `IApplicationBuilder` a provést, když je konfigurace *vývoj*. To je podrobně popsaná v následující kód:
+Existuje mnoho problémů, které může způsobit chybovou zprávu 500 protokolu HTTP, které neobsahují žádné informace o příčiny problému. Například pokud *Views/_ViewImports.cshtml* soubor obsahuje obor názvů, který neexistuje v projektu, zobrazí se chyby HTTP 500. Ve výchozím nastavení aplikace ASP.NET Core `UseDeveloperExceptionPage` rozšíření se přidá do `IApplicationBuilder` a spuštěn, když je konfigurace *vývoj*. To je podrobně popsán v následujícím kódu:
 
 [!code-csharp[](mvc/sample/Startup.cs?highlight=19-22)]
 
-ASP.NET Core převede neošetřených výjimek ve webové aplikaci do chybové odpovědi HTTP 500. Za normálních okolností podrobnosti o chybě nejsou součástí těchto odpovědí, aby se zabránilo úniku potenciálně citlivých informací o serveru. V tématu **pomocí stránky výjimka vývojáře** v [zpracovávat chyby](../fundamentals/error-handling.md) Další informace.
+Neošetřené výjimky ve webové aplikaci ASP.NET Core převede do chybové odpovědi protokolu HTTP 500. Za normálních okolností. Podrobnosti o chybě nejsou součástí tyto odpovědi, aby se zabránilo úniku citlivých informací o serveru. V tématu **na stránce výjimek pro vývojáře** v [zpracování chyb](../fundamentals/error-handling.md) Další informace.
 
 ## <a name="additional-resources"></a>Další zdroje
 

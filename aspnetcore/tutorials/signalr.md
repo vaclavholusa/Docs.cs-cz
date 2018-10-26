@@ -7,23 +7,23 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 55fb6b1c13549129a00541c1228956a93854ad78
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 77ad5c6869b87b832e2bdfa61da7b80961323783
+ms.sourcegitcommit: f2d14a7518d6ee51aca9333818ac1276e7b5ecef
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578026"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50134558"
 ---
 # <a name="tutorial-get-started-with-aspnet-core-signalr"></a>Kurz: Začínáme s knihovnou SignalR technologie ASP.NET Core
 
 V tomto kurzu se naučíte se základy vytváření aplikace v reálném čase pomocí nástroje SignalR. Získáte informace o následujících postupech:
 
 > [!div class="checklist"]
-> * Vytvoření projektu webové aplikace.
+> * Vytvoření webového projektu.
 > * Přidání knihovny klienta SignalR.
 > * Vytvoření rozbočovače SignalR.
 > * Nakonfigurujte projekt tak, aby používaly SignalR.
-> * Přidejte kód, který používá Centrum pro odesílání zpráv z libovolného klienta na všechny připojené klienty.
+> * Přidejte kód, který odesílá zprávy z libovolného klienta na všechny připojené klienty.
 
 Na konci budete mít funkční aplikaci chatu:
 

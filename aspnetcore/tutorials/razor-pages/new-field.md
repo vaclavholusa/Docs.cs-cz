@@ -4,20 +4,21 @@ author: rick-anderson
 description: Ukazuje, jak přidat nové pole do stránky Razor pomocí Entity Framework Core
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 05/30/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d6d59ff336095e2f1b8b2e9a0338b7791605ad7a
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: f8be269887903797803257d8a21e002519102047
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010894"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089510"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>Přidat nové pole do stránky v ASP.NET Core Razor
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-V této části použijete [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) migrace Code First pro přidání nového pole do modelu a migraci, které změnit na databázi.
+V této části použijete [Entity Framework](/ef/core/get-started/aspnetcore/new-db) migrace Code First pro přidání nového pole do modelu a migraci, které změnit na databázi.
 
 Při použití automaticky vytvořit databázi, Code First EF Code First:
 
@@ -96,7 +97,9 @@ Zobrazit [dokončit soubor SeedData.cs](https://github.com/aspnet/Docs/blob/mast
 
 Sestavte řešení.
 
-<a name="pmc"></a> Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola správce balíčků**.
+<a name="pmc"></a>
+
+Z **nástroje** nabídce vyberte možnost **Správce balíčků NuGet > Konzola správce balíčků**.
 V konzole PMC zadejte následující příkazy:
 
 ```powershell
@@ -111,7 +114,9 @@ Update-Database
 
 Název "Hodnocení" je volitelný a slouží k pojmenování souboru migrace. Je vhodné použít smysluplný název souboru migrace.
 
-<a name="ssox"></a> Při odstranění všech záznamů v databázi, bude inicializátoru naplnit databáze a zahrnout `Rating` pole. To lze provést pomocí odstranit odkazy v prohlížeči nebo z [Průzkumník objektů systému Sql Server](xref:tutorials/razor-pages/sql#ssox) (SSOX). Pokud chcete odstranit databázi z SSOX:
+<a name="ssox"></a>
+
+Při odstranění všech záznamů v databázi, bude inicializátoru naplnit databáze a zahrnout `Rating` pole. To lze provést pomocí odstranit odkazy v prohlížeči nebo z [Průzkumník objektů systému Sql Server](xref:tutorials/razor-pages/sql#ssox) (SSOX). Pokud chcete odstranit databázi z SSOX:
 
 * Vyberte databázi v SSOX.
 * Klikněte pravým tlačítkem na databázi a vyberte *odstranit*.

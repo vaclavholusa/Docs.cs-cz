@@ -3,14 +3,15 @@ title: Ověření modelu v ASP.NET Core MVC
 author: tdykstra
 description: Další informace o ověření modelu v ASP.NET Core MVC.
 ms.author: riande
-ms.date: 07/31/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: mvc/models/validation
-ms.openlocfilehash: fe036f261b80f6134078835080409720d149374d
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312151"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090947"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v ASP.NET Core MVC
 
@@ -27,6 +28,13 @@ Naštěstí má .NET abstrahovaná ověření do atributů ověření. Tyto atri
 ## <a name="validation-attributes"></a>Ověřování atributů
 
 Ověřování atributů představují způsob, jak nakonfigurovat ověřování modelu, tak, aby se koncepčně podobá ověření na pole v databázové tabulky. To zahrnuje omezení, jako je například přiřazení datových typů nebo povinná pole. Jiné typy ověření, které zahrnuje použití vzorců k datům a vynucování obchodních pravidel, jako je například platební kartu, telefonní číslo nebo e-mailovou adresu. Atributy ověření provést vynucují požadavky pro tyto mnohem jednodušší a usnadňuje používání.
+
+Jsou zadané atributy ověření na úrovni vlastnost: 
+
+```csharp 
+[Required] 
+public string MyProperty { get; set; } 
+``` 
 
 Níže je s poznámkami `Movie` modelů z aplikace, která uchovává informace o filmů a televizních pořadů. Většina vlastností jsou povinné a několik vlastností řetězce mají požadavky na délku. Kromě toho je omezení číselného rozsahu v místě `Price` vlastnost od 0 do $999,99, spolu s vlastní ověřovací atribut.
 
@@ -62,7 +70,7 @@ Neumožňující [typů hodnot](/dotnet/csharp/language-reference/keywords/value
 
 Vazby modelu MVC, která se týká ověření a atributů ověření, zamítne formuláře pole obsahující chybí hodnota nebo prázdné znaky Null typu. Chybí `BindRequired` atribut na cílovou vlastnost vazby modelu přeskočí chybějící data pro typy neumožňující, ve kterém chybí pole formuláře z příchozí data formuláře.
 
-[BindRequired atribut](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (viz také [přizpůsobit chování vazby modelu s atributy](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes)) je užitečný k zajištění toho, dokončení data formuláře. Při použití na vlastnost, systém vazby modelu vyžaduje hodnotu pro tuto vlastnost. Při použití na typ, systém vazby modelu vyžaduje hodnoty pro všechny vlastnosti tohoto typu.
+[BindRequired atribut](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (viz také <xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes>) je užitečný k zajištění toho, dokončení data formuláře. Při použití na vlastnost, systém vazby modelu vyžaduje hodnotu pro tuto vlastnost. Při použití na typ, systém vazby modelu vyžaduje hodnoty pro všechny vlastnosti tohoto typu.
 
 Při použití [Nullable\<T > typ](/dotnet/csharp/programming-guide/nullable-types/) (například `decimal?` nebo `System.Nullable<decimal>`) a označte ji `Required`, se provádí kontroly ověřování na straně serveru, jako kdyby byly standardní typ připouštějící hodnotu Null (pro vlastnost například `string`).
 
@@ -256,4 +264,4 @@ Pokud je potřeba ověřit dvě nebo více polí s `[Remote]` atribut, je uvád�
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, jako jsou všechny argumenty atributu musí být konstantní výraz. Proto se nesmí používat [interpolovaný řetězec](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) nebo volání [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) inicializovat `AdditionalFields`. Pro každé další pole, které přidáte do `[Remote]` atribut, je nutné přidat další argument na odpovídající metodu akce kontroleru.
+`AdditionalFields`, jako jsou všechny argumenty atributu musí být konstantní výraz. Proto se nesmí používat [interpolovaný řetězec](/dotnet/csharp/language-reference/keywords/interpolated-strings) nebo volání [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) inicializovat `AdditionalFields`. Pro každé další pole, které přidáte do `[Remote]` atribut, je nutné přidat další argument na odpovídající metodu akce kontroleru.

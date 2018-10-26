@@ -5,12 +5,12 @@ description: Zjistěte, jak používat tokeny změn ke sledování změn.
 ms.author: riande
 ms.date: 11/10/2017
 uid: fundamentals/change-tokens
-ms.openlocfilehash: 1cf3693764919a8fd064584ab7b7ad237e8465b3
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: cfa9950d6460ef59399d3adc05b5e3865d2f37f7
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391438"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090875"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Zjištění změn s tokeny změn v ASP.NET Core
 
@@ -195,9 +195,9 @@ var compositeChangeToken =
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Mezipaměť v paměti](xref:performance/caching/memory)
-* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
-* [Middleware pro ukládání odpovědí do mezipaměti](xref:performance/caching/middleware)
-* [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:performance/caching/response>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

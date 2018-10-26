@@ -3,14 +3,14 @@ title: DevOps s využitím ASP.NET Core a Azure | Průběžná integrace a nasaz
 author: CamSoper
 description: Průvodce, který poskytuje pokyny k začátku do konce na vytváření procesních toků pro DevOps pro aplikace ASP.NET Core hostované v Azure.
 ms.author: scaddie
-ms.date: 08/17/2018
+ms.date: 10/24/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: 18a59a1ff6fd6bbf51ff664764725b8972dfa1bf
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340105"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090528"
 ---
 # <a name="continuous-integration-and-deployment"></a>Průběžná integrace a nasazování
 
@@ -230,7 +230,7 @@ Definice sestavení **úlohy** karta obsahuje seznam jednotlivých kroků, kter�
     > [!NOTE]
     > Chcete-li ověřit pracovní jednotky testů, upravte *SimpleFeedReader.Tests\Services\NewsServiceTests.cs* záměrně přerušení jednoho z testů. Například změnit `Assert.True(result.Count > 0);` k `Assert.False(result.Count > 0);` v `Returns_News_Stories_Given_Valid_Uri` metody. Potvrďte a odešlete změny na Githubu. Sestavení se aktivuje a selže. Stav kanálu sestavení se změní na **nepovedlo**. Vrácení změn, potvrzení a nabízených oznámení znovu. Sestavení úspěšné.
 
-1. **Publikování** &mdash; Executes `dotnet publish --configuration release --output <local_path_on_build_agent>` příkazu *ZIP* soubor s artefakty, které mají být nasazeny. `--output` Určuje umístění pro publikování aplikace *ZIP* souboru. Zda je zadáno umístění předáním [předdefinované proměnné](https://docs.microsoft.com/vsts/pipelines/build/variables) s názvem `$(build.artifactstagingdirectory)`. Tato proměnná rozšíří na místní cestu, například *c:\agent\_work\1\a*, agenta sestavení.
+1. **Publikování** &mdash; Executes `dotnet publish --configuration release --output <local_path_on_build_agent>` příkazu *ZIP* soubor s artefakty, které mají být nasazeny. `--output` Určuje umístění pro publikování aplikace *ZIP* souboru. Zda je zadáno umístění předáním [předdefinované proměnné](/azure/devops/pipelines/build/variables) s názvem `$(build.artifactstagingdirectory)`. Tato proměnná rozšíří na místní cestu, například *c:\agent\_work\1\a*, agenta sestavení.
 1. **Publikování artefaktů** &mdash; Publishes *ZIP* vytvářených souborů **publikovat** úloh. Úloha přijímá *ZIP* umístění jako parametr, což je předdefinovaná proměnná souboru `$(build.artifactstagingdirectory)`. *ZIP* soubor je publikován jako složku s názvem *vyřadit*.
 
 Klikněte na definici sestavení **Souhrn** odkaz k zobrazení historie sestavení s definicí:

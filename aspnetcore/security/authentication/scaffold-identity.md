@@ -4,37 +4,38 @@ author: rick-anderson
 description: Zjistěte, jak automaticky vygenerovat identitu v projektu aplikace ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 08/16/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 37ad9897fbc5eb1822ed2413334b4fce9050296b
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 94ccfc8aa2ad37d89de42f276cb2f808a08cd55e
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523035"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090638"
 ---
-# <a name="scaffold-identity-in-aspnet-core-projects"></a><span data-ttu-id="c420e-103">Identity vygenerované uživatelské rozhraní v projektech ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="c420e-103">Scaffold Identity in ASP.NET Core projects</span></span>
+# <a name="scaffold-identity-in-aspnet-core-projects"></a><span data-ttu-id="f9df7-103">Identity vygenerované uživatelské rozhraní v projektech ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="f9df7-103">Scaffold Identity in ASP.NET Core projects</span></span>
 
-<span data-ttu-id="c420e-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="c420e-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="f9df7-104">Podle [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="f9df7-104">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="c420e-105">ASP.NET Core 2.1 nebo novější obsahuje [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:razor-pages/ui-class).</span><span class="sxs-lookup"><span data-stu-id="c420e-105">ASP.NET Core 2.1 and later provides [ASP.NET Core Identity](xref:security/authentication/identity) as a [Razor Class Library](xref:razor-pages/ui-class).</span></span> <span data-ttu-id="c420e-106">Aplikace, které obsahují Identity můžete použít Generátor selektivně Přidání zdrojového kódu obsažen v knihovně Razor třídu (RCL) Identity.</span><span class="sxs-lookup"><span data-stu-id="c420e-106">Applications that include Identity can apply the scaffolder to selectively add the source code contained in the Identity Razor Class Library (RCL).</span></span> <span data-ttu-id="c420e-107">Můžete chtít vygenerování zdrojového kódu, abyste mohli upravit kód a změnit chování.</span><span class="sxs-lookup"><span data-stu-id="c420e-107">You might want to generate source code so you can modify the code and change the behavior.</span></span> <span data-ttu-id="c420e-108">Například může dát pokyn generátor pro generování kódu při registraci.</span><span class="sxs-lookup"><span data-stu-id="c420e-108">For example, you could instruct the scaffolder to generate the code used in registration.</span></span> <span data-ttu-id="c420e-109">Generovaného kódu mají přednost před stejný kód v Identity RCL.</span><span class="sxs-lookup"><span data-stu-id="c420e-109">Generated code takes precedence over the same code in the Identity RCL.</span></span> <span data-ttu-id="c420e-110">Získejte úplnou kontrolu nad uživatelského rozhraní a nepoužívat výchozí RCL, najdete v části [vytvořit úplnou identity uživatelského rozhraní zdroj](#full).</span><span class="sxs-lookup"><span data-stu-id="c420e-110">To gain full control of the UI and not use the default RCL, see the section [Create full identity UI source](#full).</span></span>
+<span data-ttu-id="f9df7-105">ASP.NET Core 2.1 nebo novější obsahuje [ASP.NET Core Identity](xref:security/authentication/identity) jako [knihovny tříd Razor](xref:razor-pages/ui-class).</span><span class="sxs-lookup"><span data-stu-id="f9df7-105">ASP.NET Core 2.1 and later provides [ASP.NET Core Identity](xref:security/authentication/identity) as a [Razor Class Library](xref:razor-pages/ui-class).</span></span> <span data-ttu-id="f9df7-106">Aplikace, které obsahují Identity můžete použít Generátor selektivně Přidání zdrojového kódu obsažen v knihovně Razor třídu (RCL) Identity.</span><span class="sxs-lookup"><span data-stu-id="f9df7-106">Applications that include Identity can apply the scaffolder to selectively add the source code contained in the Identity Razor Class Library (RCL).</span></span> <span data-ttu-id="f9df7-107">Můžete chtít vygenerování zdrojového kódu, abyste mohli upravit kód a změnit chování.</span><span class="sxs-lookup"><span data-stu-id="f9df7-107">You might want to generate source code so you can modify the code and change the behavior.</span></span> <span data-ttu-id="f9df7-108">Například může dát pokyn generátor pro generování kódu při registraci.</span><span class="sxs-lookup"><span data-stu-id="f9df7-108">For example, you could instruct the scaffolder to generate the code used in registration.</span></span> <span data-ttu-id="f9df7-109">Generovaného kódu mají přednost před stejný kód v Identity RCL.</span><span class="sxs-lookup"><span data-stu-id="f9df7-109">Generated code takes precedence over the same code in the Identity RCL.</span></span> <span data-ttu-id="f9df7-110">Získejte úplnou kontrolu nad uživatelského rozhraní a nepoužívat výchozí RCL, najdete v části [vytvořit úplnou identity uživatelského rozhraní zdroj](#full).</span><span class="sxs-lookup"><span data-stu-id="f9df7-110">To gain full control of the UI and not use the default RCL, see the section [Create full identity UI source](#full).</span></span>
 
-<span data-ttu-id="c420e-111">Aplikace, které provádějí **není** zahrnout ověřování můžete použít generátor a přidejte příslušný balíček RCL Identity.</span><span class="sxs-lookup"><span data-stu-id="c420e-111">Applications that do **not** include authentication can apply the scaffolder to add the RCL Identity package.</span></span> <span data-ttu-id="c420e-112">Máte možnost výběru Identity kód chcete vygenerovat.</span><span class="sxs-lookup"><span data-stu-id="c420e-112">You have the option of selecting Identity code to be generated.</span></span>
+<span data-ttu-id="f9df7-111">Aplikace, které provádějí **není** zahrnout ověřování můžete použít generátor a přidejte příslušný balíček RCL Identity.</span><span class="sxs-lookup"><span data-stu-id="f9df7-111">Applications that do **not** include authentication can apply the scaffolder to add the RCL Identity package.</span></span> <span data-ttu-id="f9df7-112">Máte možnost výběru Identity kód chcete vygenerovat.</span><span class="sxs-lookup"><span data-stu-id="f9df7-112">You have the option of selecting Identity code to be generated.</span></span>
 
-<span data-ttu-id="c420e-113">I když generátor generuje většinu kódu nezbytné, budete muset aktualizovat projekt proces dokončete.</span><span class="sxs-lookup"><span data-stu-id="c420e-113">Although the scaffolder generates most of the necessary code, you'll have to update your project to complete the process.</span></span> <span data-ttu-id="c420e-114">Tento dokument popisuje kroky potřebné k dokončení generování uživatelského rozhraní aktualizace Identity.</span><span class="sxs-lookup"><span data-stu-id="c420e-114">This document explains the steps needed to complete an Identity scaffolding update.</span></span>
+<span data-ttu-id="f9df7-113">I když generátor generuje většinu kódu nezbytné, budete muset aktualizovat projekt proces dokončete.</span><span class="sxs-lookup"><span data-stu-id="f9df7-113">Although the scaffolder generates most of the necessary code, you'll have to update your project to complete the process.</span></span> <span data-ttu-id="f9df7-114">Tento dokument popisuje kroky potřebné k dokončení generování uživatelského rozhraní aktualizace Identity.</span><span class="sxs-lookup"><span data-stu-id="f9df7-114">This document explains the steps needed to complete an Identity scaffolding update.</span></span>
 
-<span data-ttu-id="c420e-115">Při spuštění generátor Identity *ScaffoldingReadme.txt* vytvoří soubor v adresáři projektu.</span><span class="sxs-lookup"><span data-stu-id="c420e-115">When the Identity scaffolder is run, a *ScaffoldingReadme.txt* file is created in the project directory.</span></span> <span data-ttu-id="c420e-116">*ScaffoldingReadme.txt* soubor obsahuje obecné pokyny, co je potřeba k dokončení generování uživatelského rozhraní aktualizace Identity.</span><span class="sxs-lookup"><span data-stu-id="c420e-116">The *ScaffoldingReadme.txt* file contains general instructions on what's needed to complete the Identity scaffolding update.</span></span> <span data-ttu-id="c420e-117">Tento dokument obsahuje podrobnější pokyny než *ScaffoldingReadme.txt* souboru.</span><span class="sxs-lookup"><span data-stu-id="c420e-117">This document contains more complete instructions than the *ScaffoldingReadme.txt* file.</span></span>
+<span data-ttu-id="f9df7-115">Při spuštění generátor Identity *ScaffoldingReadme.txt* vytvoří soubor v adresáři projektu.</span><span class="sxs-lookup"><span data-stu-id="f9df7-115">When the Identity scaffolder is run, a *ScaffoldingReadme.txt* file is created in the project directory.</span></span> <span data-ttu-id="f9df7-116">*ScaffoldingReadme.txt* soubor obsahuje obecné pokyny, co je potřeba k dokončení generování uživatelského rozhraní aktualizace Identity.</span><span class="sxs-lookup"><span data-stu-id="f9df7-116">The *ScaffoldingReadme.txt* file contains general instructions on what's needed to complete the Identity scaffolding update.</span></span> <span data-ttu-id="f9df7-117">Tento dokument obsahuje podrobnější pokyny než *ScaffoldingReadme.txt* souboru.</span><span class="sxs-lookup"><span data-stu-id="f9df7-117">This document contains more complete instructions than the *ScaffoldingReadme.txt* file.</span></span>
 
-<span data-ttu-id="c420e-118">Doporučujeme používat systém správy zdrojového kódu, které jsou uvedeny rozdíly souborů a umožňuje zpět mimo změny.</span><span class="sxs-lookup"><span data-stu-id="c420e-118">We recommend using a source control system that shows file differences and allows you to back out of changes.</span></span> <span data-ttu-id="c420e-119">Zkontrolujte změny po spuštění generátor Identity.</span><span class="sxs-lookup"><span data-stu-id="c420e-119">Inspect the changes after running the Identity scaffolder.</span></span>
+<span data-ttu-id="f9df7-118">Doporučujeme používat systém správy zdrojového kódu, které jsou uvedeny rozdíly souborů a umožňuje zpět mimo změny.</span><span class="sxs-lookup"><span data-stu-id="f9df7-118">We recommend using a source control system that shows file differences and allows you to back out of changes.</span></span> <span data-ttu-id="f9df7-119">Zkontrolujte změny po spuštění generátor Identity.</span><span class="sxs-lookup"><span data-stu-id="f9df7-119">Inspect the changes after running the Identity scaffolder.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c420e-120">Při použití se vyžadují služby [dvoufaktorové ověřování](xref:security/authentication/identity-enable-qrcodes), [účtu potvrzení a heslo pro obnovení](xref:security/authentication/accconfirm)a další funkce zabezpečení s identitou.</span><span class="sxs-lookup"><span data-stu-id="c420e-120">Services are required when using [Two Factor Authentication](xref:security/authentication/identity-enable-qrcodes), [Account confirmation and password recovery](xref:security/authentication/accconfirm), and other security features with Identity.</span></span> <span data-ttu-id="c420e-121">Služby nebo zástupné procedury služby nejsou generovány při generování uživatelského rozhraní Identity.</span><span class="sxs-lookup"><span data-stu-id="c420e-121">Services or service stubs aren't generated when scaffolding Identity.</span></span> <span data-ttu-id="c420e-122">Služby a povolení těchto funkcí je nutné přidat ručně.</span><span class="sxs-lookup"><span data-stu-id="c420e-122">Services to enable these features must be added manually.</span></span> <span data-ttu-id="c420e-123">Viz například [vyžadují e-mailové potvrzení](xref:security/authentication/accconfirm#require-email-confirmation).</span><span class="sxs-lookup"><span data-stu-id="c420e-123">For example, see [Require Email Confirmation](xref:security/authentication/accconfirm#require-email-confirmation).</span></span>
+> <span data-ttu-id="f9df7-120">Při použití se vyžadují služby [dvoufaktorové ověřování](xref:security/authentication/identity-enable-qrcodes), [účtu potvrzení a heslo pro obnovení](xref:security/authentication/accconfirm)a další funkce zabezpečení s identitou.</span><span class="sxs-lookup"><span data-stu-id="f9df7-120">Services are required when using [Two Factor Authentication](xref:security/authentication/identity-enable-qrcodes), [Account confirmation and password recovery](xref:security/authentication/accconfirm), and other security features with Identity.</span></span> <span data-ttu-id="f9df7-121">Služby nebo zástupné procedury služby nejsou generovány při generování uživatelského rozhraní Identity.</span><span class="sxs-lookup"><span data-stu-id="f9df7-121">Services or service stubs aren't generated when scaffolding Identity.</span></span> <span data-ttu-id="f9df7-122">Služby a povolení těchto funkcí je nutné přidat ručně.</span><span class="sxs-lookup"><span data-stu-id="f9df7-122">Services to enable these features must be added manually.</span></span> <span data-ttu-id="f9df7-123">Viz například [vyžadují e-mailové potvrzení](xref:security/authentication/accconfirm#require-email-confirmation).</span><span class="sxs-lookup"><span data-stu-id="f9df7-123">For example, see [Require Email Confirmation](xref:security/authentication/accconfirm#require-email-confirmation).</span></span>
 
-## <a name="scaffold-identity-into-an-empty-project"></a><span data-ttu-id="c420e-124">Vygenerované uživatelské rozhraní identity do prázdného projektu</span><span class="sxs-lookup"><span data-stu-id="c420e-124">Scaffold identity into an empty project</span></span>
+## <a name="scaffold-identity-into-an-empty-project"></a><span data-ttu-id="f9df7-124">Vygenerované uživatelské rozhraní identity do prázdného projektu</span><span class="sxs-lookup"><span data-stu-id="f9df7-124">Scaffold identity into an empty project</span></span>
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg.md)]
 
-<span data-ttu-id="c420e-125">Přidejte následující zvýrazněný volání `Startup` třídy:</span><span class="sxs-lookup"><span data-stu-id="c420e-125">Add the following highlighted calls to the `Startup` class:</span></span>
+<span data-ttu-id="f9df7-125">Přidejte následující zvýrazněný volání `Startup` třídy:</span><span class="sxs-lookup"><span data-stu-id="f9df7-125">Add the following highlighted calls to the `Startup` class:</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupEmpty.cs?name=snippet1&highlight=5,20-23)]
 
@@ -42,7 +43,7 @@ ms.locfileid: "46523035"
 
 [!INCLUDE[](~/includes/scaffold-identity/migrations.md)]
 
-## <a name="scaffold-identity-into-a-razor-project-without-existing-authorization"></a><span data-ttu-id="c420e-126">Vygenerované uživatelské rozhraní identity do projektu Razor bez existující autorizace</span><span class="sxs-lookup"><span data-stu-id="c420e-126">Scaffold identity into a Razor project without existing authorization</span></span>
+## <a name="scaffold-identity-into-a-razor-project-without-existing-authorization"></a><span data-ttu-id="f9df7-126">Vygenerované uživatelské rozhraní identity do projektu Razor bez existující autorizace</span><span class="sxs-lookup"><span data-stu-id="f9df7-126">Scaffold identity into a Razor project without existing authorization</span></span>
 
 <!--
 set projNam=RPnoAuth
@@ -60,31 +61,31 @@ dotnet ef database update
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg.md)]
 
-<span data-ttu-id="c420e-127">Identita je nakonfigurovaný v *Areas/Identity/IdentityHostingStartup.cs*.</span><span class="sxs-lookup"><span data-stu-id="c420e-127">Identity is configured in *Areas/Identity/IdentityHostingStartup.cs*.</span></span> <span data-ttu-id="c420e-128">Další informace najdete v tématu [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span><span class="sxs-lookup"><span data-stu-id="c420e-128">for more information, see [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span></span>
+<span data-ttu-id="f9df7-127">Identita je nakonfigurovaný v *Areas/Identity/IdentityHostingStartup.cs*.</span><span class="sxs-lookup"><span data-stu-id="f9df7-127">Identity is configured in *Areas/Identity/IdentityHostingStartup.cs*.</span></span> <span data-ttu-id="f9df7-128">Další informace najdete v tématu [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span><span class="sxs-lookup"><span data-stu-id="f9df7-128">for more information, see [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span></span>
 
 <a name="efm"></a>
 
-### <a name="migrations-useauthentication-and-layout"></a><span data-ttu-id="c420e-129">Migrace, UseAuthentication a rozložení</span><span class="sxs-lookup"><span data-stu-id="c420e-129">Migrations, UseAuthentication, and layout</span></span>
+### <a name="migrations-useauthentication-and-layout"></a><span data-ttu-id="f9df7-129">Migrace, UseAuthentication a rozložení</span><span class="sxs-lookup"><span data-stu-id="f9df7-129">Migrations, UseAuthentication, and layout</span></span>
 
 [!INCLUDE[](~/includes/scaffold-identity/migrations.md)]
 
 <a name="useauthentication"></a>
 
-### <a name="enable-authentication"></a><span data-ttu-id="c420e-130">Povolení ověřování</span><span class="sxs-lookup"><span data-stu-id="c420e-130">Enable authentication</span></span>
+### <a name="enable-authentication"></a><span data-ttu-id="f9df7-130">Povolení ověřování</span><span class="sxs-lookup"><span data-stu-id="f9df7-130">Enable authentication</span></span>
 
-<span data-ttu-id="c420e-131">V `Configure` metodu `Startup` třídy, zavolejte [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) po `UseStaticFiles`:</span><span class="sxs-lookup"><span data-stu-id="c420e-131">In the `Configure` method of the `Startup` class, call [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) after `UseStaticFiles`:</span></span>
+<span data-ttu-id="f9df7-131">V `Configure` metodu `Startup` třídy, zavolejte [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) po `UseStaticFiles`:</span><span class="sxs-lookup"><span data-stu-id="f9df7-131">In the `Configure` method of the `Startup` class, call [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) after `UseStaticFiles`:</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
-### <a name="layout-changes"></a><span data-ttu-id="c420e-132">Změny rozložení</span><span class="sxs-lookup"><span data-stu-id="c420e-132">Layout changes</span></span>
+### <a name="layout-changes"></a><span data-ttu-id="f9df7-132">Změny rozložení</span><span class="sxs-lookup"><span data-stu-id="f9df7-132">Layout changes</span></span>
 
-<span data-ttu-id="c420e-133">Volitelné: Přidejte částečné přihlášení (`_LoginPartial`) pro soubor rozložení:</span><span class="sxs-lookup"><span data-stu-id="c420e-133">Optional: Add the login partial (`_LoginPartial`) to the layout file:</span></span>
+<span data-ttu-id="f9df7-133">Volitelné: Přidejte částečné přihlášení (`_LoginPartial`) pro soubor rozložení:</span><span class="sxs-lookup"><span data-stu-id="f9df7-133">Optional: Add the login partial (`_LoginPartial`) to the layout file:</span></span>
 
 [!code-html[Main](scaffold-identity/sample/_Layout.cshtml?highlight=37)]
 
-## <a name="scaffold-identity-into-a-razor-project-with-authorization"></a><span data-ttu-id="c420e-134">Vygenerované uživatelské rozhraní identity do projektu Razor s autorizací</span><span class="sxs-lookup"><span data-stu-id="c420e-134">Scaffold identity into a Razor project with authorization</span></span>
+## <a name="scaffold-identity-into-a-razor-project-with-authorization"></a><span data-ttu-id="f9df7-134">Vygenerované uživatelské rozhraní identity do projektu Razor s autorizací</span><span class="sxs-lookup"><span data-stu-id="f9df7-134">Scaffold identity into a Razor project with authorization</span></span>
 
 <!--
 Use >=2.1: dotnet new webapp -au Individual -o RPauth
@@ -100,9 +101,9 @@ dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --file
 -->
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
-<span data-ttu-id="c420e-135">Některé možnosti Identity jsou nakonfigurované v *Areas/Identity/IdentityHostingStartup.cs*.</span><span class="sxs-lookup"><span data-stu-id="c420e-135">Some Identity options are configured in *Areas/Identity/IdentityHostingStartup.cs*.</span></span> <span data-ttu-id="c420e-136">Další informace najdete v tématu [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span><span class="sxs-lookup"><span data-stu-id="c420e-136">For more information, see [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span></span>
+<span data-ttu-id="f9df7-135">Některé možnosti Identity jsou nakonfigurované v *Areas/Identity/IdentityHostingStartup.cs*.</span><span class="sxs-lookup"><span data-stu-id="f9df7-135">Some Identity options are configured in *Areas/Identity/IdentityHostingStartup.cs*.</span></span> <span data-ttu-id="f9df7-136">Další informace najdete v tématu [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span><span class="sxs-lookup"><span data-stu-id="f9df7-136">For more information, see [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration).</span></span>
 
-## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a><span data-ttu-id="c420e-137">Vygenerované uživatelské rozhraní identity do projektu aplikace MVC bez existující autorizace</span><span class="sxs-lookup"><span data-stu-id="c420e-137">Scaffold identity into an MVC project without existing authorization</span></span>
+## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a><span data-ttu-id="f9df7-137">Vygenerované uživatelské rozhraní identity do projektu aplikace MVC bez existující autorizace</span><span class="sxs-lookup"><span data-stu-id="f9df7-137">Scaffold identity into an MVC project without existing authorization</span></span>
 
 <!--
 set projNam=MvcNoAuth
@@ -120,23 +121,23 @@ dotnet ef database update
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg.md)]
 
-<span data-ttu-id="c420e-138">Volitelné: Přidejte částečné přihlášení (`_LoginPartial`) k *Views/Shared/_Layout.cshtml* souboru:</span><span class="sxs-lookup"><span data-stu-id="c420e-138">Optional: Add the login partial (`_LoginPartial`) to the *Views/Shared/_Layout.cshtml* file:</span></span>
+<span data-ttu-id="f9df7-138">Volitelné: Přidejte částečné přihlášení (`_LoginPartial`) k *Views/Shared/_Layout.cshtml* souboru:</span><span class="sxs-lookup"><span data-stu-id="f9df7-138">Optional: Add the login partial (`_LoginPartial`) to the *Views/Shared/_Layout.cshtml* file:</span></span>
 
 [!code-html[](scaffold-identity/sample/_LayoutMvc.cshtml?highlight=37)]
 
-* <span data-ttu-id="c420e-139">Přesunout *Pages/Shared/_LoginPartial.cshtml* do souboru *Views/Shared/_LoginPartial.cshtml*</span><span class="sxs-lookup"><span data-stu-id="c420e-139">Move the *Pages/Shared/_LoginPartial.cshtml* file to *Views/Shared/_LoginPartial.cshtml*</span></span>
+* <span data-ttu-id="f9df7-139">Přesunout *Pages/Shared/_LoginPartial.cshtml* do souboru *Views/Shared/_LoginPartial.cshtml*</span><span class="sxs-lookup"><span data-stu-id="f9df7-139">Move the *Pages/Shared/_LoginPartial.cshtml* file to *Views/Shared/_LoginPartial.cshtml*</span></span>
 
-<span data-ttu-id="c420e-140">Identita je nakonfigurovaný v *Areas/Identity/IdentityHostingStartup.cs*.</span><span class="sxs-lookup"><span data-stu-id="c420e-140">Identity is configured in *Areas/Identity/IdentityHostingStartup.cs*.</span></span> <span data-ttu-id="c420e-141">Další informace najdete v tématu IHostingStartup.</span><span class="sxs-lookup"><span data-stu-id="c420e-141">For more information, see IHostingStartup.</span></span>
+<span data-ttu-id="f9df7-140">Identita je nakonfigurovaný v *Areas/Identity/IdentityHostingStartup.cs*.</span><span class="sxs-lookup"><span data-stu-id="f9df7-140">Identity is configured in *Areas/Identity/IdentityHostingStartup.cs*.</span></span> <span data-ttu-id="f9df7-141">Další informace najdete v tématu IHostingStartup.</span><span class="sxs-lookup"><span data-stu-id="f9df7-141">For more information, see IHostingStartup.</span></span>
 
 [!INCLUDE[](~/includes/scaffold-identity/migrations.md)]
 
-<span data-ttu-id="c420e-142">Volání [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) po `UseStaticFiles`:</span><span class="sxs-lookup"><span data-stu-id="c420e-142">Call [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) after `UseStaticFiles`:</span></span>
+<span data-ttu-id="f9df7-142">Volání [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) po `UseStaticFiles`:</span><span class="sxs-lookup"><span data-stu-id="f9df7-142">Call [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) after `UseStaticFiles`:</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupMvcNoAuth.cs?name=snippet1&highlight=23)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
-## <a name="scaffold-identity-into-an-mvc-project-with-authorization"></a><span data-ttu-id="c420e-143">Vygenerované uživatelské rozhraní identity do projektu aplikace MVC s autorizací</span><span class="sxs-lookup"><span data-stu-id="c420e-143">Scaffold identity into an MVC project with authorization</span></span>
+## <a name="scaffold-identity-into-an-mvc-project-with-authorization"></a><span data-ttu-id="f9df7-143">Vygenerované uživatelské rozhraní identity do projektu aplikace MVC s autorizací</span><span class="sxs-lookup"><span data-stu-id="f9df7-143">Scaffold identity into an MVC project with authorization</span></span>
 
 <!--
 dotnet new mvc -au Individual -o MvcAuth
@@ -148,32 +149,32 @@ dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --fil
 
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
 
-<span data-ttu-id="c420e-144">Odstranit *stránek/Shared* složky a soubory v této složce.</span><span class="sxs-lookup"><span data-stu-id="c420e-144">Delete the *Pages/Shared* folder and the files in that folder.</span></span>
+<span data-ttu-id="f9df7-144">Odstranit *stránek/Shared* složky a soubory v této složce.</span><span class="sxs-lookup"><span data-stu-id="f9df7-144">Delete the *Pages/Shared* folder and the files in that folder.</span></span>
 
 <a name="full"></a>
 
-## <a name="create-full-identity-ui-source"></a><span data-ttu-id="c420e-145">Vytvoření zdroje plnou identitou uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="c420e-145">Create full identity UI source</span></span>
+## <a name="create-full-identity-ui-source"></a><span data-ttu-id="f9df7-145">Vytvoření zdroje plnou identitou uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="f9df7-145">Create full identity UI source</span></span>
 
-<span data-ttu-id="c420e-146">Pokud chcete zachovat plnou kontrolu nad Identity uživatelského rozhraní, spusťte generátor Identity a vyberte **přepsat všechny soubory**.</span><span class="sxs-lookup"><span data-stu-id="c420e-146">To maintain full control of the Identity UI, run the Identity scaffolder and select **Override all files**.</span></span>
+<span data-ttu-id="f9df7-146">Pokud chcete zachovat plnou kontrolu nad Identity uživatelského rozhraní, spusťte generátor Identity a vyberte **přepsat všechny soubory**.</span><span class="sxs-lookup"><span data-stu-id="f9df7-146">To maintain full control of the Identity UI, run the Identity scaffolder and select **Override all files**.</span></span>
 
-<span data-ttu-id="c420e-147">Následující zvýrazněný kód ukazuje změny nahraďte výchozí uživatelské rozhraní Identity Identity ve webové aplikaci ASP.NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="c420e-147">The following highlighted code shows the changes to replace the default Identity UI with Identity in an ASP.NET Core 2.1 web app.</span></span> <span data-ttu-id="c420e-148">Můžete k tomu mají plnou kontrolu nad Identity uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c420e-148">You might want to do this to have full control of the Identity UI.</span></span>
+<span data-ttu-id="f9df7-147">Následující zvýrazněný kód ukazuje změny nahraďte výchozí uživatelské rozhraní Identity Identity ve webové aplikaci ASP.NET Core 2.1.</span><span class="sxs-lookup"><span data-stu-id="f9df7-147">The following highlighted code shows the changes to replace the default Identity UI with Identity in an ASP.NET Core 2.1 web app.</span></span> <span data-ttu-id="f9df7-148">Můžete k tomu mají plnou kontrolu nad Identity uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="f9df7-148">You might want to do this to have full control of the Identity UI.</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
 
-<span data-ttu-id="c420e-149">V následujícím kódu se nahradí výchozí Identity:</span><span class="sxs-lookup"><span data-stu-id="c420e-149">The default Identity is replaced in the following code:</span></span>
+<span data-ttu-id="f9df7-149">V následujícím kódu se nahradí výchozí Identity:</span><span class="sxs-lookup"><span data-stu-id="f9df7-149">The default Identity is replaced in the following code:</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
 
-<span data-ttu-id="c420e-150">Následující kód nastaví [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath), [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath), a [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):</span><span class="sxs-lookup"><span data-stu-id="c420e-150">The following the code sets the [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath), [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath), and [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):</span></span>
+<span data-ttu-id="f9df7-150">Následující kód nastaví [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath), [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath), a [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):</span><span class="sxs-lookup"><span data-stu-id="f9df7-150">The following the code sets the [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath), [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath), and [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
 
-<span data-ttu-id="c420e-151">Registrace `IEmailSender` implementace, například:</span><span class="sxs-lookup"><span data-stu-id="c420e-151">Register an `IEmailSender` implementation, for example:</span></span>
+<span data-ttu-id="f9df7-151">Registrace `IEmailSender` implementace, například:</span><span class="sxs-lookup"><span data-stu-id="f9df7-151">Register an `IEmailSender` implementation, for example:</span></span>
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet4)]
 
 [!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet)]
 
-## <a name="additional-resources"></a><span data-ttu-id="c420e-152">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="c420e-152">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="f9df7-152">Další zdroje</span><span class="sxs-lookup"><span data-stu-id="f9df7-152">Additional resources</span></span>
 
-* [<span data-ttu-id="c420e-153">Změny kódu ověřování ASP.NET Core 2.1 a vyšší</span><span class="sxs-lookup"><span data-stu-id="c420e-153">Changes to authentication code to ASP.NET Core 2.1 and later</span></span>](xref:migration/20_21#changes-to-authentication-code)
+* [<span data-ttu-id="f9df7-153">Změny kódu ověřování ASP.NET Core 2.1 a vyšší</span><span class="sxs-lookup"><span data-stu-id="f9df7-153">Changes to authentication code to ASP.NET Core 2.1 and later</span></span>](xref:migration/20_21#changes-to-authentication-code)

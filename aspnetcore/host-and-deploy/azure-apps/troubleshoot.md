@@ -1,17 +1,17 @@
 ---
-title: Řešení potíží s ASP.NET Core ve službě Azure App Service
+title: Řešení chyb při spuštění ASP.NET Core ve službě Azure App Service
 author: guardrex
 description: Zjistěte, jak diagnostikovat problémy s nasazením služby ASP.NET Core Azure App Service.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/31/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: a995c743b4e43be8bea5329affb3f2c736b1d016
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 05bb024f5b0d2b554cc861c250a92fd7ae23437f
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902551"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090742"
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Řešení potíží s ASP.NET Core ve službě Azure App Service
 
@@ -108,7 +108,7 @@ Protokol stdout modul ASP.NET Core zaznamenává často užitečné chybové zpr
 
 ## <a name="common-startup-errors"></a>Běžné chyby spuštění 
 
-Zobrazit [ASP.NET Core běžné chyby odkaz](xref:host-and-deploy/azure-iis-errors-reference). Většina běžných problémů, které brání spuštění aplikace jsou zahrnuté v referenčním tématu.
+Viz <xref:host-and-deploy/azure-iis-errors-reference>. Většina běžných problémů, které brání spuštění aplikace jsou zahrnuté v referenčním tématu.
 
 ## <a name="slow-or-hanging-app"></a>Pomalá nebo Změ aplikace
 
@@ -175,8 +175,8 @@ Další informace najdete v tématu [povolit protokolování diagnostiky pro web
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Úvod do zpracování chyb v ASP.NET Core](xref:fundamentals/error-handling)
-* [Referenční informace o běžných chybách pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)
+* <xref:fundamentals/error-handling>
+* <xref:host-and-deploy/azure-iis-errors-reference>
 * [Řešení potíží s webovou aplikací ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
 * [Řešení potíží s chybami HTTP typu "502 – Chybná brána" a "503 Služba není dostupná" ve službě Azure web apps](/azure/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [Řešení problémů s výkonem pomalých webových aplikací ve službě Azure App Service](/azure/app-service/app-service-web-troubleshoot-performance-degradation)

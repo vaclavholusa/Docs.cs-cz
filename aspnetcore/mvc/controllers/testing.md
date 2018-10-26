@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: 582a5ba461ee2df73b99e4f499e8152f7c6cb7cf
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 8fb50506e6f4e274592c4fd45d4c7876681ebc6d
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477160"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090179"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Testovací kontroler logiku v ASP.NET Core
 
@@ -75,7 +75,7 @@ Imitaci volání, které nejsou volány jsou obvykle ignoruje, ale volání `Ver
 > [!NOTE]
 > Díky Moq knihovny používané v tomto příkladu je možné kombinovat mocks ověřitelný nebo "přísné", s neověřitelného mocks (také nazývané "dojde ke ztrátě" mocks nebo zástupné procedury). Další informace o [přizpůsobení chování model s využitím Moq](https://github.com/Moq/moq4/wiki/Quickstart#customizing-mock-behavior).
 
-Jiné řadiče v ukázkové aplikaci zobrazí informace týkající se konkrétní debaty. Kontroler obsahuje logiku se neplatná `id` hodnoty (jsou k dispozici dva `return` scénáře v následujícím příkladu pro tyto scénáře). Finální `return` příkaz vrátí nový `StormSessionViewModel` k zobrazení:
+[SessionController](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/controllers/testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs) v ukázce aplikace se zobrazí informace týkající se konkrétní debaty. Kontroler obsahuje logiku se neplatná `id` hodnoty (jsou k dispozici dva `return` scénáře v následujícím příkladu pro tyto scénáře). Finální `return` příkaz vrátí nový `StormSessionViewModel` k zobrazení (*Controllers/SessionController.cs*):
 
 [!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?name=snippet_SessionController&highlight=12-16,18-22,31)]
 
@@ -185,4 +185,4 @@ Pro relaci platný `id`, finální testování potvrdí, že:
 * <xref:test/index>
 * <xref:test/integration-tests>
 * [Vytváření a spouštění testování částí pomocí sady Visual Studio](/visualstudio/test/unit-test-your-code).
-* [Princip explicitní závislosti.](https://deviq.com/explicit-dependencies-principle/)
+* [Princip explicitních závislostí](https://deviq.com/explicit-dependencies-principle/)

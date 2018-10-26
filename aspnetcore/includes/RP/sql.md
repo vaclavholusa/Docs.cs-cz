@@ -2,9 +2,11 @@
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty se záznamy v databázi. Kontext databáze je zaregistrován [injektáž závislostí](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda ve *Startup.cs* souboru:
+`MovieContext` Objekt zpracovává úlohu s připojením k databázi a mapování `Movie` objekty se záznamy v databázi. Kontext databáze je zaregistrován [Dependency Injection (DI)](xref:fundamentals/dependency-injection) kontejneru v `ConfigureServices` metoda ve *Startup.cs* souboru:
 
 [!code-csharp[](code/Startup.cs?name=snippet2&highlight=6-8)]
+
+Další informace o používání `DbContext` s DI, přečtěte si téma [pomocí DbContext s DI](/ef/core/miscellaneous/configuring-dbcontext#using-dbcontext-with-dependency-injection).
 
 ## <a name="sqlite"></a>SQLite
 

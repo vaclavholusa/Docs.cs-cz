@@ -3,14 +3,15 @@ title: ASP.NET Core MVC s EF Core – aktualizace souvisejících dat – 7 10
 author: rick-anderson
 description: V tomto kurzu budete aktualizovat souvisejících dat prostřednictvím aktualizace pole cizích klíčů a navigační vlastnosti.
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 37985c945f2e4b15cfcefb0c126c3209e0bdeac4
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38126723"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090729"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC s EF Core – aktualizace souvisejících dat – 7 10
 
@@ -88,7 +89,7 @@ V *Views/Courses/Delete.cshtml*kurzu číselného pole v horní části a přide
 
 V *Views/Courses/Details.cshtml*, provést stejnou změnu, který jste právě provedli pro *Delete.cshtml*.
 
-### <a name="test-the-course-pages"></a>Změňte některá přiřazení kurzu.
+### <a name="test-the-course-pages"></a>Testování stránek kurzu
 
 Spusťte aplikaci, vyberte **kurzy** klikněte na tlačítko **vytvořit nový**a zadejte data pro nový kurzu:
 
@@ -290,7 +291,7 @@ Testování tak, že aplikaci spustíte a vytváření instruktorem.
 
 ## <a name="handling-transactions"></a>Zpracování transakcí
 
-Jak je vysvětleno v [CRUD kurzu](crud.md), Entity Framework implementuje implicitně transakce. Pro scénáře, kde můžete potřebovat mít lepší kontrolu – například pokud budete chtít zahrnout operace provedené mimo rozhraní Entity Framework v rámci transakce – viz [transakce](https://docs.microsoft.com/ef/core/saving/transactions).
+Jak je vysvětleno v [CRUD kurzu](crud.md), Entity Framework implementuje implicitně transakce. Pro scénáře, kde můžete potřebovat mít lepší kontrolu – například pokud budete chtít zahrnout operace provedené mimo rozhraní Entity Framework v rámci transakce – viz [transakce](/ef/core/saving/transactions).
 
 ## <a name="summary"></a>Souhrn
 

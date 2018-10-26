@@ -1,24 +1,24 @@
 ---
-title: Autorizaci s konkrétní schéma v ASP.NET Core
+title: Autorizovat s konkrétní schéma v ASP.NET Core
 author: rick-anderson
-description: Tento článek vysvětluje, jak omezit identity pro konkrétní schéma při práci s více metod ověřování.
+description: Tento článek vysvětluje, jak omezit identity na konkrétní schéma při práci s několika metod ověřování.
 ms.author: riande
-ms.date: 10/12/2017
+ms.date: 10/22/2018
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: 231c664006ee7ff91f471aa8d16c1fd18dcbabb1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fbe9f32e01a214f41b5a6e9f43e8fdee5fc612df
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278197"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089393"
 ---
-# <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>Autorizaci s konkrétní schéma v ASP.NET Core
+# <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>Autorizovat s konkrétní schéma v ASP.NET Core
 
-V některých případech, například jednostránkové aplikace (SPA) je běžné použít více metod ověřování. Aplikace může například použít ověřování založené na soubor cookie k přihlášení a ověřování nosiče JWT pro JavaScript požadavky. V některých případech aplikace může mít více instancí obslužnou rutinu ověřování. Například dvě souboru cookie obslužné rutiny, kde jeden obsahuje základní identity a jedna se vytvoří při použití služby Multi-Factor authentication (MFA) byla spuštěna. MFA mohou být vyvolány, protože uživatel si vyžádal, operace, která vyžaduje další bezpečnostní.
+V některých případech, například jednostránkové aplikace (SPA) je běžné použití více metod ověřování. Aplikace může například používat ověřování na základě souborů cookie pro přihlášení a ověřování nosného tokenu JWT pro požadavky jazyka JavaScript. V některých případech se aplikace může mít více instancí obslužnou rutinu ověřování. Například dvě obslužné rutiny souborů cookie kde jedna obsahuje základní identitu a jedno se vytvoří při aktivaci služby Multi-Factor authentication (MFA). Vícefaktorové ověřování můžou být vyvolány, protože uživatel si vyžádal operace, která vyžaduje dodatečné zabezpečení.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Schéma ověřování má název, když ověřovací služby se konfiguruje během ověřování. Příklad:
+Schéma ověřování má název, pokud je nakonfigurovaná služba ověřování během ověřování. Příklad:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -36,14 +36,14 @@ public void ConfigureServices(IServiceCollection services)
         });
 ```
 
-V předchozí kód byly přidány dvě obslužné rutiny ověřování: jeden pro soubory cookie a jeden pro nosiče.
+V předchozím kódu byly přidány dva ověřování obslužných rutin: jednu pro soubory cookie a jednu pro nosiče.
 
 >[!NOTE]
->Určení výchozího schématu výsledkem `HttpContext.User` nastavenou na danou identitu. Pokud není toto chování žádoucí, zakažte ho vyvoláním bez parametrů formu `AddAuthentication`.
+>Určení výchozí schéma vede `HttpContext.User` nastavenou na tuto identitu. Pokud toto chování není žádoucí, zakažte vyvoláním konstruktor bez parametrů formu `AddAuthentication`.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Při ověřování middlewares byly nastaveny při ověřování, jsou pojmenované schémat ověřování. Příklad:
+Schémata ověřování jsou pojmenovány při ověřování middlewares se nastavily při ověřování. Příklad:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -68,18 +68,18 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
     });
 ```
 
-V předchozí kód byly přidány dva middlewares ověřování: jeden pro soubory cookie a jeden pro nosiče.
+V předchozím kódu byly přidány dva middlewares ověřování: jednu pro soubory cookie a jednu pro nosiče.
 
 >[!NOTE]
->Určení výchozího schématu výsledkem `HttpContext.User` nastavenou na danou identitu. Pokud není toto chování žádoucí, ji zakázat nastavením `AuthenticationOptions.AutomaticAuthenticate` vlastnost `false`.
+>Určení výchozí schéma vede `HttpContext.User` nastavenou na tuto identitu. Pokud toto chování není žádoucí, zakázat nastavením `AuthenticationOptions.AutomaticAuthenticate` vlastnost `false`.
 
 ---
 
-## <a name="selecting-the-scheme-with-the-authorize-attribute"></a>Výběr schéma s atributem autorizovat
+## <a name="selecting-the-scheme-with-the-authorize-attribute"></a>Výběr schématu s atributem Authorize
 
-V místě autorizaci aplikace udává obslužné rutiny, který se má použít. Vyberte obslužná rutina, pomocí kterého aplikace předáním čárkami oddělený seznam schémat ověřování k ověření `[Authorize]`. `[Authorize]` Atribut určuje schéma ověřování nebo schémata používat bez ohledu na to, zda je nakonfigurován výchozí. Příklad:
+Přejme během autorizace aplikace udává, že obslužná rutina, který se má použít. Vyberte obslužnou rutinu, pomocí kterého aplikace předáním čárkami oddělený seznam režimů ověřování k ověření `[Authorize]`. `[Authorize]` Atribut určuje schéma ověřování nebo použití bez ohledu na to, jestli je nakonfigurovaná výchozí schémata. Příklad:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 [Authorize(AuthenticationSchemes = AuthSchemes)]
@@ -107,9 +107,9 @@ public class MixedController : Controller
 
 ---
 
-V předchozím příkladu soubor cookie i nosiče obslužné rutiny spustit a možnost vytvořit a připojit identity pro aktuálního uživatele. Zadáním pouze jeden schéma odpovídající obslužná rutina se spustí.
+V předchozím příkladu se souborem cookie nebo nosiče obslužné rutiny spustit a mít možnost vytvořit a připojit identitu pro aktuálního uživatele. Zadáním jednoho schéma pouze odpovídající obslužná rutina se spustí.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET základní 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 [Authorize(AuthenticationSchemes = 
@@ -127,11 +127,11 @@ public class MixedController : Controller
 
 ---
 
-V předchozí kód spustí jenom obslužná rutina s schéma "Nosiče". Všechny identity na základě souborů cookie se ignorují.
+V předchozím kódu pouze obslužná rutina se schématem "Nosiče" se spustí. Jsou ignorovány všechny identity na základě souboru cookie.
 
-## <a name="selecting-the-scheme-with-policies"></a>Výběr schéma pomocí zásad
+## <a name="selecting-the-scheme-with-policies"></a>Výběr schématu se zásadami
 
-Pokud chcete zadat požadované schémata v [zásad](xref:security/authorization/policies), můžete nastavit `AuthenticationSchemes` kolekce při přidávání vaše zásady:
+Pokud chcete zadat požadované schémata v [zásady](xref:security/authorization/policies), můžete nastavit `AuthenticationSchemes` kolekce při přidání zásady:
 
 ```csharp
 services.AddAuthorization(options =>
@@ -145,9 +145,62 @@ services.AddAuthorization(options =>
 });
 ```
 
-V předchozím příkladu "Over18" zásady lze spustit pouze s identitou vytvořené obslužná rutina "Nosiče". Použijte zásady podle nastavení `[Authorize]` atributu `Policy` vlastnost:
+V předchozím příkladu spuštěno "Over18" zásady pouze u identity vytvoří "Nosiče" obslužnou rutinou. Použijte zásady tak, že nastavíte `[Authorize]` atributu `Policy` vlastnost:
 
 ```csharp
 [Authorize(Policy = "Over18")]
 public class RegistrationController : Controller
 ```
+
+::: moniker range=">= aspnetcore-2.0"
+
+## <a name="use-multiple-authentication-schemes"></a>Použití více schémat ověřování
+
+Některé aplikace může potřebovat pro podporu více typů ověřování. Vaše aplikace může například ověřovat uživatele ze služby Azure Active Directory a z databáze uživatelů. Dalším příkladem je aplikace, která ověřuje uživatele z Active Directory Federation Services a Azure Active Directory B2C. V tomto případě aplikace by měla přijímat nosný token JWT z několika vystavitelů.
+
+Přidáte všechna schémata ověřování, které chcete přijmout. Například následující kód na `Startup.ConfigureServices` přidá dva režimy ověřování nosiče JWT s jinou vydavatelů:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Code omitted for brevity
+
+    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(options =>
+        {
+            options.Audience = "https://localhost:5000/";
+            options.Authority = "https://localhost:5000/identity/";
+        })
+        .AddJwtBearer("AzureAD", options =>
+        {
+            options.Audience = "https://localhost:5000/";
+            options.Authority = "https://login.microsoftonline.com/eb971100-6f99-4bdc-8611-1bc8edd7f436/";
+        });
+}
+```
+
+> [!NOTE]
+> Pouze jeden ověřování nosného tokenu JWT je registrovaný pomocí výchozího schématu ověřování `JwtBearerDefaults.AuthenticationScheme`. Další ověření musí být registrována pomocí jedinečného ověřování schématu.
+
+Dalším krokem je aktualizace výchozích zásad autorizace tak, aby přijímal obou režimů ověřování. Příklad:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    // Code omitted for brevity
+
+    services.AddAuthorization(options =>
+    {
+        var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
+            JwtBearerDefaults.AuthenticationScheme,
+            "AzureAD");
+        defaultAuthorizationPolicyBuilder = 
+            defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+        options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+    });
+}
+```
+
+Jako výchozí zásady autorizace je přepsána, je možné použít jednoduchý `[Authorize]` atribut v zařízení. Kontrolér přijímá požadavky pak pomocí tokenů JWT vydaného vystavitele první nebo druhé.
+
+::: moniker-end

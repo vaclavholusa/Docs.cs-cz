@@ -3,14 +3,15 @@ title: ASP.NET Core MVC s EF Core – CRUD - 2 z 10
 author: rick-anderson
 description: ''
 ms.author: tdykstra
-ms.date: 03/15/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-mvc/crud
-ms.openlocfilehash: de9b0bd1e0346d4c12f256e6226353f1ab47ed11
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 34927415beadaa3f5c9035a9101e3c99f7cbc395
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477576"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090820"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC s EF Core – CRUD - 2 z 10
 
@@ -91,7 +92,7 @@ Tím se vytvoří následující kód HTML při `item.ID` 6:
 <a href="/Students/Edit?studentID=6">Edit</a>
 ```
 
-Další informace o pomocných rutin značek, naleznete v tématu [pomocné rutiny značky v ASP.NET Core](xref:mvc/views/tag-helpers/intro).
+Další informace o pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
 ### <a name="add-enrollments-to-the-details-view"></a>Přidat registraci k zobrazení podrobností
 
@@ -121,7 +122,7 @@ Tento kód přidá Student entita vytvořená pomocí ASP.NET Core MVC vazač mo
 
 Můžete odebrat `ID` z `Bind` atribut, protože ID je hodnota primárního klíče, které SQL Server se nastaví automaticky při vložení řádku. Vstup od uživatele nelze nastavit hodnotu ID.
 
-Jiné než `Bind` atribut, bloku try-catch je pouze změny provedené na automaticky generovaný kód. Pokud výjimka, která je odvozena z `DbUpdateException` je zachycena, zatímco se ukládají se změny, zobrazí se obecné chybové zprávy. `DbUpdateException` výjimky jsou někdy způsobeny něco mimo aplikací, nikoli programovací chyba, takže uživatele se doporučuje to chcete zkusit znovu. I když není implementovaná v této ukázce, typicky zaznamenávají produkční kvality aplikace výjimku. Další informace najdete v tématu **protokolu insight** tématu [monitorování a Telemetrie (vytváření skutečných cloudových aplikací s Azure)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
+Jiné než `Bind` atribut, bloku try-catch je pouze změny provedené na automaticky generovaný kód. Pokud výjimka, která je odvozena z `DbUpdateException` je zachycena, zatímco se ukládají se změny, zobrazí se obecné chybové zprávy. `DbUpdateException` výjimky jsou někdy způsobeny něco mimo aplikací, nikoli programovací chyba, takže uživatele se doporučuje to chcete zkusit znovu. I když není implementovaná v této ukázce, typicky zaznamenávají produkční kvality aplikace výjimku. Další informace najdete v tématu **protokolu insight** tématu [monitorování a Telemetrie (vytváření skutečných cloudových aplikací s Azure)](/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
 
 `ValidateAntiForgeryToken` Atribut lze zabránit útokům padělání (CSRF) podvržení žádosti. Token, který se automaticky vloží do zobrazení podle [FormTagHelper](xref:mvc/views/working-with-forms#the-form-tag-helper) a je dostupná při odeslání formuláře uživatelem. Token, který je ověřen `ValidateAntiForgeryToken` atribut. Další informace o CSRF najdete v tématu [ochrana proti padělání požadavků](../../security/anti-request-forgery.md).
 
@@ -277,7 +278,7 @@ V *Startup.cs*, volání [AddDbContext rozšiřující metoda](https://github.co
 
 ## <a name="handling-transactions"></a>Zpracování transakcí
 
-Ve výchozím nastavení rozhraní Entity Framework implementuje implicitně transakce. V situacích, kdy provést změny na více řádcích nebo tabulky a poté zavolejte `SaveChanges`, Entity Framework automaticky zajišťuje, že všechny změny úspěch nebo selžou všechny. Pokud některé změny nejprve dokončení a potom se stane chyba, tyto změny se automaticky vrátí zpět. Pro scénáře, kde můžete potřebovat mít lepší kontrolu – například pokud budete chtít zahrnout operace provedené mimo rozhraní Entity Framework v rámci transakce – viz [transakce](https://docs.microsoft.com/ef/core/saving/transactions).
+Ve výchozím nastavení rozhraní Entity Framework implementuje implicitně transakce. V situacích, kdy provést změny na více řádcích nebo tabulky a poté zavolejte `SaveChanges`, Entity Framework automaticky zajišťuje, že všechny změny úspěch nebo selžou všechny. Pokud některé změny nejprve dokončení a potom se stane chyba, tyto změny se automaticky vrátí zpět. Pro scénáře, kde můžete potřebovat mít lepší kontrolu – například pokud budete chtít zahrnout operace provedené mimo rozhraní Entity Framework v rámci transakce – viz [transakce](/ef/core/saving/transactions).
 
 ## <a name="no-tracking-queries"></a>Sledování bez dotazy
 
@@ -291,7 +292,7 @@ Můžete zakázat sledování objektů entit v paměti, že volání `AsNoTracki
 
 * Chcete připojit entitu, aby bylo možné ji aktualizovat, ale dříve, který jste získali stejné entity k jinému účelu. Vzhledem k tomu, že entita již sledován správou kontext databáze, nelze připojit entitu, kterou chcete změnit. Jeden způsob, jak tuto situaci je volání `AsNoTracking` na předchozí dotaz.
 
-Další informace najdete v tématu [sledování vs. Sledování bez](https://docs.microsoft.com/ef/core/querying/tracking).
+Další informace najdete v tématu [sledování vs. Sledování bez](/ef/core/querying/tracking).
 
 ## <a name="summary"></a>Souhrn
 

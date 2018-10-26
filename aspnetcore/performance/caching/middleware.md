@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/26/2017
 uid: performance/caching/middleware
-ms.openlocfilehash: d991bc48ed07ee71b0decaa0bee4df811fdc74c4
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: b5eef012356236d600d026e5161a2df5a7954e3b
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477524"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090482"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Odpověď do mezipaměti middlewaru v ASP.NET Core
 
@@ -120,10 +120,10 @@ Middleware respektuje pravidla [specifikace HTTP 1.1 ukládání do mezipaměti]
 
 Pro větší kontrolu nad chování ukládání do mezipaměti prozkoumejte další funkce ukládání do mezipaměti ASP.NET Core. V následujících tématech:
 
-* [Mezipaměť v paměti](xref:performance/caching/memory)
-* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Pomocná rutina značek v ASP.NET Core MVC do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>
 
 ## <a name="troubleshooting"></a>Poradce při potížích
 
@@ -155,11 +155,11 @@ Při testování a řešení potíží s chování ukládání do mezipaměti, m
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* [Spuštění aplikace](xref:fundamentals/startup)
-* [Middleware](xref:fundamentals/middleware/index)
-* [Mezipaměť v paměti](xref:performance/caching/memory)
-* [Práce s distribuovanou mezipamětí](xref:performance/caching/distributed)
-* [Zjištění změn se změna tokenů](xref:fundamentals/change-tokens)
-* [Ukládání odpovědí do mezipaměti](xref:performance/caching/response)
-* [Uložení pomocné rutiny značky do mezipaměti](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Pomocná rutina značek v distribuované mezipaměti](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:fundamentals/startup>
+* <xref:fundamentals/middleware/index>
+* <xref:performance/caching/memory>
+* <xref:performance/caching/distributed>
+* <xref:fundamentals/change-tokens>
+* <xref:performance/caching/response>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>

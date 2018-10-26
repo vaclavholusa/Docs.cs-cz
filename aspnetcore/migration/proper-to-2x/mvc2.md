@@ -3,14 +3,15 @@ title: Migrace z ASP.NET do ASP.NET Core 2.0
 author: isaac2004
 description: Získat pokyny pro migraci stávajících rozhraní ASP.NET MVC nebo webového rozhraní API aplikací pro ASP.NET Core 2.0.
 ms.author: scaddie
-ms.date: 08/27/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: migration/mvc2
-ms.openlocfilehash: 42fbabb2fe5bd79a72cd220230faa9d75ff1c9d8
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 006eeeba28dbd351698e46547abe3c96818a63d9
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538384"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090456"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core-20"></a>Migrace z ASP.NET do ASP.NET Core 2.0
 
@@ -28,7 +29,8 @@ Nainstalujte **jeden** z těchto věcí [.NET soubory ke stažení: Windows](htt
   * **Vývoj pro různé platformy .NET core** pracovního vytížení
 
 ## <a name="target-frameworks"></a>Cílové architektury
-Projekty ASP.NET Core 2.0 nabízejí vývojářům možnost cílení na .NET Core a .NET Framework. Zobrazit [volba mezi .NET Core a .NET Framework pro serverové aplikace](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server) k určení, která Cílová architektura je nejvhodnější.
+
+Projekty ASP.NET Core 2.0 nabízejí vývojářům možnost cílení na .NET Core a .NET Framework. Zobrazit [volba mezi .NET Core a .NET Framework pro serverové aplikace](/dotnet/standard/choosing-core-framework-server) k určení, která Cílová architektura je nejvhodnější.
 
 Při cílení na rozhraní .NET Framework, projektech muset odkazovat na jednotlivé balíčky NuGet.
 
@@ -40,17 +42,20 @@ Cílení na .NET Core umožňuje eliminovat řadu odkazy na balíček explicitn�
 </ItemGroup>
 ```
 
-Při použití Microsoft.aspnetcore.all žádné balíčky odkazuje Microsoft.aspnetcore.all nasazených s aplikací. Store modulu Runtime .NET Core zahrnuje tyto prostředky a že předkompilovaný ke zlepšení výkonu. Zobrazit [metabalíček Microsoft.aspnetcore.all pro ASP.NET Core 2.x](xref:fundamentals/metapackage) další podrobnosti.
+Při použití Microsoft.aspnetcore.all žádné balíčky odkazuje Microsoft.aspnetcore.all nasazených s aplikací. Store modulu Runtime .NET Core zahrnuje tyto prostředky a že předkompilovaný ke zlepšení výkonu. Zobrazit <xref:fundamentals/metapackage> další podrobnosti.
 
 ## <a name="project-structure-differences"></a>Rozdíly struktura projektu
-*.Csproj* zjednodušili jsme formát souborů v ASP.NET Core. Některé důležité změny patří:
-- Explicitní zařazení souborů není nezbytné pro ně být považováno za součást projektu. Tím se snižuje riziko konfliktů sloučení XML při práci na velkých týmů.
-- Neexistují žádné na základě identifikátoru GUID odkazy na jiné projekty, což zlepšuje čitelnost souboru.
-- Tento soubor lze upravovat bez uvolnění v sadě Visual Studio:
 
-    ![Upravit CSPROJ možnost místní nabídky v sadě Visual Studio 2017](_static/EditProjectVs2017.png)
+*.Csproj* zjednodušili jsme formát souborů v ASP.NET Core. Některé důležité změny patří:
+
+* Explicitní zařazení souborů není nezbytné pro ně být považováno za součást projektu. Tím se snižuje riziko konfliktů sloučení XML při práci na velkých týmů.
+* Neexistují žádné na základě identifikátoru GUID odkazy na jiné projekty, což zlepšuje čitelnost souboru.
+* Tento soubor lze upravovat bez uvolnění v sadě Visual Studio:
+
+  ![Upravit CSPROJ možnost místní nabídky v sadě Visual Studio 2017](_static/EditProjectVs2017.png)
 
 ## <a name="globalasax-file-replacement"></a>Nahrazení souboru Global.asax
+
 ASP.NET Core zavedl nový mechanismus pro spuštění aplikace. Vstupní bod pro aplikace ASP.NET je *Global.asax* souboru. Úlohy, jako je konfigurace směrování a filtrování a oblasti registrace zachází *Global.asax* souboru.
 
 [!code-csharp[](samples/globalasax-sample.cs)]
@@ -77,9 +82,10 @@ ASP.NET Core používá podobný přístup, ale nemusí spoléhat na OWIN pro zp
 
 Host a aplikace byla odděleném poskytující možnost přechodu na různé platformy v budoucnu.
 
-**Poznámka:** najdete podrobnější referenční dokumentace k ASP.NET Core spuštění a Middleware, naleznete v tématu [při spuštění v ASP.NET Core](xref:fundamentals/startup)
+Najdete podrobnější referenční dokumentace k ASP.NET Core spuštění a Middleware, naleznete v tématu <xref:fundamentals/startup>.
 
 ## <a name="storing-configurations"></a>Ukládání konfigurace
+
 Podporuje ASP.NET ukládat nastavení. Tato nastavení se používají, například pro podporu prostředí, do kterého byly nasazené aplikace. Běžnou praxí je pro uložení všech vlastních páry klíč hodnota v `<appSettings>` část *Web.config* souboru:
 
 [!code-xml[](samples/webconfig-sample.xml)]
@@ -107,7 +113,7 @@ Rozšíření tohoto přístupu, aby proces robustnější, jako je třeba použ
 services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"));
 ````
 
-**Poznámka:** najdete podrobnější referenční dokumentace ke konfiguraci ASP.NET Core, najdete v části [konfigurace v ASP.NET Core](xref:fundamentals/configuration/index).
+**Poznámka:** najdete podrobnější referenční dokumentace ke konfiguraci ASP.NET Core, najdete v části <xref:fundamentals/configuration/index>.
 
 ## <a name="native-dependency-injection"></a>Injektáž závislostí nativní
 
@@ -133,7 +139,7 @@ Protože injektáž závislostí je součástí ASP.NET Core, můžete přidat s
 
 Úložiště lze vloženy kdekoliv, protože dřív platilo pomocí Unity.
 
-Další informace o injektáž závislostí v ASP.NET Core najdete v tématu [injektáž závislostí](xref:fundamentals/dependency-injection).
+Další informace o injektáž závislostí v ASP.NET Core najdete v tématu <xref:fundamentals/dependency-injection>.
 
 ## <a name="serving-static-files"></a>Zpracování statických souborů.
 
@@ -149,7 +155,7 @@ V ASP.NET Core, statické soubory se ukládají do "kořenový adresář webové
 
 Například prostředek obrázku v *wwwroot/imagí* , jako je přístupná v prohlížeči v umístění složka `http://<app>/images/<imageFileName>`.
 
-**Poznámka:** podrobnější odkaz na zpracování statických souborů v ASP.NET Core, najdete v části [statické soubory](xref:fundamentals/static-files).
+**Poznámka:** podrobnější odkaz na zpracování statických souborů v ASP.NET Core, najdete v části <xref:fundamentals/static-files>.
 
 ## <a name="additional-resources"></a>Další zdroje
 

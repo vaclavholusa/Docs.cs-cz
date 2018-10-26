@@ -4,14 +4,14 @@ author: guardrex
 description: Zjistěte, jak ASP.NET Core implementuje vkládání závislostí a jak se používá.
 ms.author: riande
 ms.custom: mvc
-ms.date: 07/02/2018
+ms.date: 10/24/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 193bfc7651b6da6db69e8c15bd6beb82906bde0a
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 566b85f5b71e365bd4bb0023156ac956a13b45fe
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477667"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50091077"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -65,7 +65,7 @@ public class IndexModel : PageModel
 
 ::: moniker range="<= aspnetcore-2.0"
 
-Pro zpřístupnění metody `MyDependency` v jiné třídě je možné vytvořit instanci třídy `WriteMessage`. Třída `MyDependency` je závislost třídy `HomeController`:
+Pro zpřístupnění metody `WriteMessage` v jiné třídě je možné vytvořit instanci třídy `MyDependency`. Třída `MyDependency` je závislostí třídy `HomeController`:
 
 ```csharp
 public class HomeController : Controller
@@ -195,8 +195,8 @@ Metoda `Startup.ConfigureServices` zodpovídá za definování služeb používa
 | [Microsoft.Extensions.ObjectPool.ObjectPoolProvider](/dotnet/api/microsoft.extensions.objectpool.objectpoolprovider) | Singleton |
 | [Microsoft.Extensions.Options.IConfigureOptions&lt;T&gt;](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1) | Přechodná |
 | [Microsoft.Extensions.Options.IOptions&lt;T&gt;](/dotnet/api/microsoft.extensions.options.ioptions-1) | Singleton |
-| [System.Diagnostics.DiagnosticSource](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticsource) | Singleton |
-| [System.Diagnostics.DiagnosticListener](https://docs.microsoft.com/dotnet/core/api/system.diagnostics.diagnosticlistener) | Singleton |
+| [System.Diagnostics.DiagnosticSource](/dotnet/core/api/system.diagnostics.diagnosticsource) | Singleton |
+| [System.Diagnostics.DiagnosticListener](/dotnet/core/api/system.diagnostics.diagnosticlistener) | Singleton |
 
 Pokud je dostupná rozšiřující metoda rozšiřující kolekci služeb o registraci služby (případě jejích závislých služeb, je-li to požadováno), je zvykem použít jedinou rozšiřující metodu `Add{SERVICE_NAME}` k registraci všech služeb vyžadovaných danou službu. Následující kód je příkladem toho, jak přidat dodatečné služby do kontejneru pomocí rozšiřujících metod [AddDbContext](/dotnet/api/microsoft.extensions.dependencyinjection.entityframeworkservicecollectionextensions.adddbcontext), [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity), a [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc):
 
@@ -249,7 +249,7 @@ Konstruktory mohou přijímat argumenty, které nejsou poskytovány v rámci vkl
 
 Pokud jsou služby řešeny pomocí `IServiceProvider` nebo `ActivatorUtilities`, pak je vyžadován *veřejný* konstruktor.
 
-Když jsou vyřešeny služby `ActivatorUtilities`, vkládání konstruktor vyžaduje, že pouze jeden použít konstruktor existuje. Přetížení konstruktoru jsou podporované, ale může existovat pouze jedním přetížením, jehož argumenty lze všechny splnit vkládání závislostí.
+Když jsou vyřešeny služby `ActivatorUtilities`, vkládání konstruktor vyžaduje, že pouze jeden použít konstruktor existuje. Přetížení konstruktoru je podporováno, ale může existovat pouze jedno přetížením, jehož argumenty jsou splnitelné vkládáním závislostí.
 
 ## <a name="entity-framework-contexts"></a>Kontexty Entity Frameworku
 
@@ -329,7 +329,7 @@ Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých po�
 
 ::: moniker range="<= aspnetcore-2.0"
 
-Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých požadavků a mezi nimi. Obsahuje ukázkovou aplikaci `OperationsController` , že každý žádosti druh `IOperation` typ a `OperationService`. `Index` Akce nastaví služby do `ViewBag` pro zobrazení služby `OperationId` hodnoty:
+Ukázková aplikace demonstruje živostnosti objektů v rámci jednotlivých požadavků a mezi nimi. Ukázková aplikace obsahuje `OperationsController`, který vyžaduje každý druh typu`IOperation` a službu `OperationService`. Akce `Index` nastaví služby do objektu `ViewBag`, aby bylo možné zobrazit hodnotu `OperationId` služby:
 
 [!code-csharp[](dependency-injection/samples/1.x/DependencyInjectionSample/Controllers/OperationsController.cs?name=snippet1)]
 
@@ -371,9 +371,9 @@ Instance: 00000000-0000-0000-0000-000000000000
 
 Všimněte si, které hodnoty `OperationId` se liší v rámci požadavku a mezi požadavky:
 
-* *Přechodné* objekty jsou vždy odlišné. Všimněte si, že přechodná `OperationId` hodnota prvního a druhého požadavky se liší pro obě `OperationService` operací a napříč požadavky. Novou instanci se poskytuje pro každou službu a požadavek.
-* *Obor* objekty jsou stejné v rámci požadavku, ale jiné napříč požadavky.
-* *Jednotlivý prvek* objekty jsou stejné pro všechny objekty a všechny požadavky bez ohledu na to, jestli se `Operation` instance je k dispozici v `ConfigureServices`.
+* Objekty s *přechodnou* životností jsou vždy rozdílné. Poznamenejme, že se hodnota přechodného `OperationId` pro první i druhý požadavek liší jak pro obě operace `OperationService`, tak i mezi požadavky. Nová instance je poskytnuta pro každou službu a každý požadavek.
+* Objekty s vymezenou *životností* jsou stejné v rámci jednoho požadavku, ale jiné napříč různými požadavky.
+* Objekty se živostností typu *singleton jsou* stejné pro všechny objekty a všechny požadavky bez ohledu na to, jestli je instance `Operation` poskytnuta v `ConfigureServices`.
 
 ## <a name="call-services-from-main"></a>Volání služeb z main
 
@@ -480,7 +480,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="default-service-container-replacement"></a>Nahrazení výchozího kontejneru služeb
 
-Integrovaná služba kontejneru je určen pro sloužit potřebám rozhraní framework a většina uživatelů aplikací. Doporučujeme používat integrované kontejneru, pokud potřebujete konkrétní funkce, která nepodporuje. Některé z funkcí podporovaných v 3. stran kontejnery nebyl nalezen v předdefinované kontejneru:
+Integrovaný kontejner služeb je primárně určen pro naplnění potřeb frameworku a většiny uživatelských aplikací. Doporučujeme používat integrovaný kontejner, dokud nebudete potřebovat specifické funkce nepodporované kontejnerem. Některé z funkcí podporovaných v kontejnerech 3. stran neobsažených ve výchozím kontejneru jsou:
 
 * Vkládání pomocí vlastností
 * Vkládání podle názvu
@@ -494,8 +494,8 @@ Následující příklad nahrazuje integrovaný kontejner kontejnerem [Autofac](
 
 * Nainstalujte odpovídající balíčky kontejneru:
 
-    * [Autofac](https://www.nuget.org/packages/Autofac/)
-    * [Autofac.Extensions.DependencyInjection](https://www.nuget.org/packages/Autofac.Extensions.DependencyInjection/)
+  * [Autofac](https://www.nuget.org/packages/Autofac/)
+  * [Autofac.Extensions.DependencyInjection](https://www.nuget.org/packages/Autofac.Extensions.DependencyInjection/)
 
 * Nakonfigurujte kontejner v `Startup.ConfigureServices` a vraťte `IServiceProvider`:
 
@@ -514,7 +514,7 @@ Následující příklad nahrazuje integrovaný kontejner kontejnerem [Autofac](
     }
     ```
 
-    Použití kontejneru 3. stran `Startup.ConfigureServices` musí vracet `IServiceProvider`.
+    `Startup.ConfigureServices` musí vracet `IServiceProvider` pro použití kontejneru 3. stran.
 
 * Konfigurace Autofacu v `DefaultModule`:
 
@@ -540,7 +540,7 @@ Factory metody jedné služby, jako je například druhý argument metody [AddSi
 
 * `async/await` a `Task` závislosti služby rozlišení není podporováno. C# nepodporuje asynchronní konstruktory, proto je doporučený vzor používání asynchronních metod po synchronně překladu služby.
 
-* Vyhněte se ukládání dat a konfigurace přímo do kontejneru služby. Například by neměla uživatele nákupního košíku přidat obvykle do kontejneru služby. Konfigurace by měl používat [možnosti vzor](xref:fundamentals/configuration/options). Podobně nepoužívejte "vlastník dat" objekty, které existují pouze pokud chcete povolit přístup na některý objekt. Je lepší požádat o skutečné položky prostřednictvím DI.
+* Vyhněte se ukládání dat a konfigurace přímo do kontejneru služeb. Například nákupní košík uživatele by neměl být přidáván do kontejneru služeb. Konfigurace by měla používat [vzor možností (options pattern)](xref:fundamentals/configuration/options). Podobně se vystříhejte použití objektů "držící data", jejichž jediným účelem je poskytnutí přístupu k některému jinému objektu. Je lepší požádat o skutečné položky prostřednictvím DI.
 
 * Vyhněte se statickému přístupu ke službám (například staticky typovaným [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices) pro použití jinde).
 

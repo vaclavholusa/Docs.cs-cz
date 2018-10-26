@@ -4,14 +4,14 @@ author: rick-anderson
 description: Další informace o nastavení serveru Nginx jako reverzní proxy server na Ubuntu 16.04 směrovat provoz protokolu HTTP k webové aplikaci ASP.NET Core spuštěnou v prostředí Kestrel.
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/09/2018
+ms.date: 10/23/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 8d3c158b44c9f30e7c0746398306aa1c0fd9e15b
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: ea2631f5112efabac07275f86e65432889cb8081
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912113"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090500"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Hostitele ASP.NET Core v Linuxu se serverem Nginx
 
@@ -66,13 +66,6 @@ Testování aplikace:
 
 Reverzní proxy server je společné nastavení pro poskytování dynamické webové aplikace. Reverzní proxy server ukončí požadavek HTTP a předá jej do aplikace ASP.NET Core.
 
-::: moniker range=">= aspnetcore-2.0"
-
-> [!NOTE]
-> Buď konfiguraci&mdash;s nebo bez něj reverzní proxy server&mdash;je platný a podporované konfigurace pro hostování pro ASP.NET Core 2.0 nebo novější. Další informace najdete v tématu [použití Kestrel s reverzní proxy server](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
-
-::: moniker-end
-
 ### <a name="use-a-reverse-proxy-server"></a>Použít reverzní proxy server
 
 Kestrel se skvěle hodí pro poskytování dynamický obsah z ASP.NET Core. Však nejsou možnosti obsluhující web jako komplexní jako servery služby IIS, Apache nebo Nginx. Reverzní proxy server může převzít práce, jako je například obsluhuje statický obsah, ukládání do mezipaměti požadavky, komprese požadavků a ukončení protokolu SSL ze serveru HTTP. Reverzní proxy server může nacházet na vyhrazený počítač nebo může být nasadí společně se službou serveru HTTP.
@@ -83,7 +76,7 @@ Vzhledem k tomu, že žádosti jsou předávány podle reverzní proxy server, p
 
 Jakékoli součásti, která závisí na schéma, jako je například ověřování, generování odkazů, přesměrování a zeměpisná poloha, musí být umístěn po vyvolání Middleware předané záhlaví. Jako obecné pravidlo by měla předávat Middleware záhlaví spustit před dalším middlewarem s výjimkou diagnostiky a middleware pro zpracování chyb. Toto uspořádání zajistí, že middleware spoléhání se na informace předávané záhlaví může spotřebovat hodnoty hlavičky pro zpracování.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.0"
 
 Vyvolat [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) metoda `Startup.Configure` před voláním [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) nebo podobné režimu middleware ověřování. Nakonfigurujte middleware předávat `X-Forwarded-For` a `X-Forwarded-Proto` hlavičky:
 
@@ -96,7 +89,9 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 app.UseAuthentication();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Vyvolat [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) metoda `Startup.Configure` před voláním [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) a [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) nebo podobné schéma ověřování middleware. Nakonfigurujte middleware předávat `X-Forwarded-For` a `X-Forwarded-Proto` hlavičky:
 
@@ -114,7 +109,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 });
 ```
 
----
+::: moniker-end
 
 Pokud ne [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) jsou určené pro middleware, jsou výchozí hlavičky pro předávání `None`.
 
@@ -333,7 +328,7 @@ sudo ufw enable
 
 Edit *src/http/ngx_http_header_filter_module.c*:
 
-```c
+```
 static char ngx_http_server_string[] = "Server: Web Server" CRLF;
 static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 ```
@@ -348,9 +343,9 @@ Konfigurace serveru s další požadované moduly. Zvažte použití brány fire
 
 * Posílení zabezpečení, když některé postupy uvedené v následující */etc/nginx/nginx.conf* souboru. Mezi příklady patří výběrem silnější šifrování a přesměrovat veškerý provoz prostřednictvím protokolu HTTP na HTTPS.
 
-* Přidání `HTTP Strict-Transport-Security` záhlaví (HSTS) zajišťuje, všechny následné požadavky odeslané klientem jsou pouze přes protokol HTTPS.
+* Přidání `HTTP Strict-Transport-Security` záhlaví (HSTS) zajišťuje, že jsou všechny následné požadavky od klienta přes protokol HTTPS.
 
-* Nepřidávejte záhlaví zabezpečení přenosu Strict nebo zvolit odpovídající `max-age` Pokud bude v budoucnu zakázání protokolu SSL.
+* Nepřidávejte HSTS záhlaví nebo zvolit odpovídající `max-age` Pokud bude v budoucnu zakázání protokolu SSL.
 
 Přidat */etc/nginx/proxy.conf* konfiguračního souboru:
 
@@ -361,15 +356,20 @@ Upravit */etc/nginx/nginx.conf* konfigurační soubor. Tento příklad obsahuje 
 [!code-nginx[](linux-nginx/nginx.conf?highlight=2)]
 
 #### <a name="secure-nginx-from-clickjacking"></a>Zabezpečení serveru Nginx z útoků typu clickjacking
-Útoků typu Clickjacking je škodlivý techniku, která umožňuje shromažďovat nakažené uživatel klikne. Útoků typu Clickjacking triky victim (návštěvníka) do kliknutím na nakažené lokality. Použití X-FRAME-OPTIONS pro zabezpečení webu.
 
-Upravit *nginx.conf* souboru:
+[Útoků typu Clickjacking](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger), označované také jako *uživatelského rozhraní zjednávání nápravy útoku*, je napadením se zlými úmysly, kde návštěvníků webu je nalákaní, odkaz nebo tlačítko na stránce jiné než aktuálně navštívený. Použití `X-FRAME-OPTIONS` k zabezpečení webu.
 
-```bash
-sudo nano /etc/nginx/nginx.conf
-```
+Ke zmírnění útoků typu clickjacking útoků:
 
-Přidejte řádek `add_header X-Frame-Options "SAMEORIGIN";` a uložte soubor a pak restartujte server Nginx.
+1. Upravit *nginx.conf* souboru:
+
+   ```bash
+   sudo nano /etc/nginx/nginx.conf
+   ```
+
+   Přidejte řádek `add_header X-Frame-Options "SAMEORIGIN";`.
+1. Uložte soubor.
+1. Restartujte server Nginx.
 
 #### <a name="mime-type-sniffing"></a>Typ MIME pro analýzu sítě
 

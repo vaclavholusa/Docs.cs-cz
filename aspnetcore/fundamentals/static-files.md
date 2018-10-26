@@ -4,14 +4,14 @@ author: rick-anderson
 description: Zjistěte, jak poskytovat zabezpečení statické soubory a konfigurace statického souboru hostování chování middlewaru ve webové aplikaci ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/18/2018
+ms.date: 10/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 63ebc5ce5094053eca08a9212b3b4c074c4bed64
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5d34bd18c263a9dc2c126be3de53726979d8358e
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325975"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090768"
 ---
 # <a name="static-files-in-aspnet-core"></a>Statické soubory v ASP.NET Core
 
@@ -23,23 +23,25 @@ Statické soubory, jako jsou HTML, CSS, obrázky a JavaScript, představují maj
 
 ## <a name="serve-static-files"></a>Doručování statických souborů
 
-Statické soubory jsou uloženy v kořenovém adresáři vašeho projektu web. Výchozí adresář je  *\<content_root > / wwwroot*, ale můžete změnit prostřednictvím [UseWebRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usewebroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseWebRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) metody. Zobrazit [obsahu kořenové](xref:fundamentals/index#content-root) a [kořenový adresář webové](xref:fundamentals/index#web-root) Další informace.
+Statické soubory jsou uloženy v kořenovém adresáři vašeho projektu web. Výchozí adresář je  *\<content_root > / wwwroot*, ale můžete změnit prostřednictvím [UseWebRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usewebroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseWebRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) metody. Zobrazit [obsahu kořenové](xref:fundamentals/index#content-root) a [kořenový adresář webové](xref:fundamentals/index#web-root-webroot) Další informace.
 
 Hostitel webové aplikace musí být informováni obsahu kořenový adresář.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+::: moniker range=">= aspnetcore-2.0"
 
 `WebHost.CreateDefaultBuilder` Metoda nastaví kořenu obsahu do aktuálního adresáře:
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=9)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Nastavení obsahu kořenovém adresáři aktuální adresář vyvoláním [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseContentRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) uvnitř `Program.Main`:
 
 [!code-csharp[](static-files/samples/1x/Program.cs?name=snippet_ProgramClass&highlight=7)]
 
----
+::: moniker-end
 
 Statické soubory jsou přístupné přes cestu relativní vzhledem k kořenový adresář webové. Například **webovou aplikaci** šablonu projektu obsahuje několik složek v rámci *wwwroot* složky:
 
@@ -50,15 +52,23 @@ Statické soubory jsou přístupné přes cestu relativní vzhledem k kořenový
 
 Formát identifikátoru URI pro přístup k souboru v *image* je podsložka *http://\<server_address > /images/\<image_file_name >*. Například *http://localhost:9189/images/banner3.svg*.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+::: moniker range=">= aspnetcore-2.1"
+
+Pokud se zaměřujete na rozhraní .NET Framework, přidejte [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) do svého projektu balíček. Pokud je zaměřen na .NET Core [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app) zahrnuje tento balíček.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
 
 Pokud se zaměřujete na rozhraní .NET Framework, přidejte [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) do svého projektu balíček. Pokud je zaměřen na .NET Core [metabalíček Microsoft.aspnetcore.all](xref:fundamentals/metapackage) zahrnuje tento balíček.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
 
 Přidat [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) do svého projektu balíček.
 
----
+::: moniker-end
 
 Konfigurace [middleware](xref:fundamentals/middleware/index) umožňující poskytování obsahu statických souborů.
 
@@ -71,6 +81,8 @@ Vyvolat [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileexte
 Bezparametrová `UseStaticFiles` soubory v kořenovém adresáři webové jako servable označí přetížení metody. Následující odkazy na kód *wwwroot/images/banner1.svg*:
 
 [!code-cshtml[](static-files/samples/1x/Views/Home/Index.cshtml?name=snippet_static_file_wwwroot)]
+
+V předchozím kódu znak tilda `~/` odkazuje na webroot. Další informace najdete v tématu [kořenový adresář webové](xref:fundamentals/index#web-root-webroot).
 
 ### <a name="serve-files-outside-of-web-root"></a>Soubory mimo kořenový adresář webové poskytovat
 

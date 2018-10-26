@@ -3,14 +3,15 @@ title: DevOps s využitím ASP.NET Core a Azure | Monitorování a ladění
 author: CamSoper
 description: Průvodce, který poskytuje pokyny k začátku do konce na vytváření procesních toků pro DevOps pro aplikace ASP.NET Core hostované v Azure.
 ms.author: casoper
-ms.date: 08/07/2018
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: azure/devops/monitor
-ms.openlocfilehash: c2fc88493aee04d7ea2781d17e808581e89d2082
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: c4013de574fdf34114f2ae6c6a2150d72f807578
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39722614"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090181"
 ---
 # <a name="monitor-and-debug"></a>Monitorování a ladění
 
@@ -52,11 +53,11 @@ Aplikace služby App Service web apps je snadné sledování v reálném čase. 
 
 ## <a name="advanced-monitoring"></a>Rozšířené monitorování
 
-[Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) je centralizovaná služba pro monitorování všech metrik a nastavení výstrah napříč službami Azure. V rámci Azure Monitor správci podrobně sledovat výkon a identifikovat trendy. Jednotlivé služby Azure nabízí svůj vlastní [nastavení metriky](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-supported-metrics#microsoftwebsites-excluding-functions) do Azure monitoru.
+[Azure Monitor](/azure/monitoring-and-diagnostics/) je centralizovaná služba pro monitorování všech metrik a nastavení výstrah napříč službami Azure. V rámci Azure Monitor správci podrobně sledovat výkon a identifikovat trendy. Jednotlivé služby Azure nabízí svůj vlastní [nastavení metriky](/azure/monitoring-and-diagnostics/monitoring-supported-metrics#microsoftwebsites-excluding-functions) do Azure monitoru.
 
 ## <a name="profile-with-application-insights"></a>Profil Application insights
 
-[Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) je služba Azure pro analýzu výkonu a stability webových aplikací a jak uživatelé používají. Data ze služby Application Insights je rozsáhlejší a podrobnější než u Azure Monitor. Data můžete zadat, vývojáři a správci s informace o klíči pro zlepšení aplikace. Application Insights je přidat do prostředku služby Azure App Service bez jakýchkoli změn kódu.
+[Application Insights](/azure/application-insights/app-insights-overview) je služba Azure pro analýzu výkonu a stability webových aplikací a jak uživatelé používají. Data ze služby Application Insights je rozsáhlejší a podrobnější než u Azure Monitor. Data můžete zadat, vývojáři a správci s informace o klíči pro zlepšení aplikace. Application Insights je přidat do prostředku služby Azure App Service bez jakýchkoli změn kódu.
 
 1. Otevřít [webu Azure portal](https://portal.azure.com)a potom přejděte na *mywebapp\<unique_number\>*  služby App Service.
 1. Z **přehled** klikněte na tlačítko **Application Insights** dlaždici.
@@ -77,9 +78,9 @@ Při použití aplikace, data hromadí. Vyberte **aktualizovat** znovu načíst 
 
 ![Karta Přehled Application Insights](./media/monitoring/app-insights-overview.png)
 
-Application Insights poskytuje užitečné informace na straně serveru bez další konfigurace. Chcete-li získat co nejvíce ze služby Application Insights [instrumentaci vaší aplikace pomocí Application Insights SDK](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core). Pokud správně nakonfigurovaná, které služba poskytuje začátku do konce monitorování v rámci webového serveru a prohlížeče, včetně výkonu na straně klienta. Další informace najdete v tématu [dokumentace k Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview).
+Application Insights poskytuje užitečné informace na straně serveru bez další konfigurace. Chcete-li získat co nejvíce ze služby Application Insights [instrumentaci vaší aplikace pomocí Application Insights SDK](/azure/application-insights/app-insights-asp-net-core). Pokud správně nakonfigurovaná, které služba poskytuje začátku do konce monitorování v rámci webového serveru a prohlížeče, včetně výkonu na straně klienta. Další informace najdete v tématu [dokumentace k Application Insights](/azure/application-insights/app-insights-overview).
 
-## <a name="logging"></a>protokolování
+## <a name="logging"></a>Protokolování
 
 Protokoly webového serveru a aplikace jsou zakázané ve výchozím nastavení ve službě Azure App Service. Povolení protokolů pomocí následujících kroků:
 
@@ -93,7 +94,7 @@ Protokoly webového serveru a aplikace jsou zakázané ve výchozím nastavení 
 1. Zadejte **dobu uchování** ve dnech. Například 30.
 1. Klikněte na tlačítko **Uložit**.
 
-Pro webovou aplikaci se generují protokoly ASP.NET Core a web server (App Service). Stahování lze provádět pomocí FTP/FTPS informace zobrazené. Heslo je stejná jako přihlašovací údaje pro nasazení, vytvořili dříve v tomto průvodci. Může být protokoly [Streamovat přímo do svého místního počítače pomocí Powershellu nebo rozhraní příkazového řádku Azure](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log#download). Můžete se také protokoly [zobrazit ve službě Application Insights](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log#how-to-view-logs-in-application-insights).
+Pro webovou aplikaci se generují protokoly ASP.NET Core a web server (App Service). Stahování lze provádět pomocí FTP/FTPS informace zobrazené. Heslo je stejná jako přihlašovací údaje pro nasazení, vytvořili dříve v tomto průvodci. Může být protokoly [Streamovat přímo do svého místního počítače pomocí Powershellu nebo rozhraní příkazového řádku Azure](/azure/app-service/web-sites-enable-diagnostic-log#download). Můžete se také protokoly [zobrazit ve službě Application Insights](/azure/app-service/web-sites-enable-diagnostic-log#how-to-view-logs-in-application-insights).
 
 ## <a name="log-streaming"></a>Streamování protokolů
 
@@ -104,21 +105,21 @@ Protokoly aplikací a webového serveru můžete streamování v reálném čase
 
     ![Propojení stream protokolů](./media/monitoring/log-stream.png)
 
-Můžete se také protokoly [Streamovat prostřednictvím Azure Powershellu nebo rozhraní příkazového řádku Azure](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log#streamlogs), včetně Cloud Shell.
+Můžete se také protokoly [Streamovat prostřednictvím Azure Powershellu nebo rozhraní příkazového řádku Azure](/azure/app-service/web-sites-enable-diagnostic-log#streamlogs), včetně Cloud Shell.
 
 ## <a name="alerts"></a>Upozornění
 
-Azure Monitor poskytuje také [upozornění v reálném čase](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-alerts-portal) na základě metrik, správy událostí a jiných kritérií.
+Azure Monitor poskytuje také [upozornění v reálném čase](/azure/monitoring-and-diagnostics/insights-alerts-portal) na základě metrik, správy událostí a jiných kritérií.
 
 > *Poznámka: Aktuálně upozornění na metriky webové aplikace je k dispozici pouze ve službě upozornění (klasická).*
 
-[Upozornění (klasická) služby](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal) najdete ve službě Azure Monitor nebo v části **monitorování** část nastavení služby App Service.
+[Upozornění (klasická) služby](/azure/monitoring-and-diagnostics/monitor-quick-resource-metric-alert-portal) najdete ve službě Azure Monitor nebo v části **monitorování** část nastavení služby App Service.
 
 ![Upozornění (klasická) odkaz](./media/monitoring/alerts.png)
 
 ## <a name="live-debugging"></a>Živé ladění
 
-Azure App Service může být [vzdáleně ladit pomocí sady Visual Studio](https://docs.microsoft.com/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) když protokoly neposkytují dostatek informací. Ale vzdálené ladění vyžaduje, aby aplikace kompilována se symboly ladění. Ladění nelze provádět v produkčním prostředí, s výjimkou jako poslední možnost.
+Azure App Service může být [vzdáleně ladit pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug) když protokoly neposkytují dostatek informací. Ale vzdálené ladění vyžaduje, aby aplikace kompilována se symboly ladění. Ladění nelze provádět v produkčním prostředí, s výjimkou jako poslední možnost.
 
 ## <a name="conclusion"></a>Závěr
 
@@ -134,9 +135,9 @@ V této části jste dokončili následující úlohy:
 
 ## <a name="additional-reading"></a>Další čtení
 
-* [Řešení potíží s ASP.NET Core ve službě Azure App Service](https://docs.microsoft.com/aspnet/core/host-and-deploy/azure-apps/troubleshoot)
-* [Referenční informace o běžných chybách pro Azure App Service a IIS s ASP.NET Core](https://docs.microsoft.com/aspnet/core/host-and-deploy/azure-iis-errors-reference)
-* [Monitorování výkonu webových aplikací Azure pomocí Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-azure-web-apps)
-* [Povolení protokolování diagnostiky pro webové aplikace ve službě Azure App Service](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log)
-* [Řešení potíží s webovou aplikací ve službě Azure App Service pomocí sady Visual Studio](https://docs.microsoft.com/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
-* [Vytvoření klasického upozornění metrik ve službě Azure Monitor pro Azure services – Azure portal](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-alerts-portal)
+* <xref:host-and-deploy/azure-apps/troubleshoot>
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* [Monitorování výkonu webových aplikací Azure pomocí Application Insights](/azure/application-insights/app-insights-azure-web-apps)
+* [Povolení protokolování diagnostiky pro webové aplikace ve službě Azure App Service](/azure/app-service/web-sites-enable-diagnostic-log)
+* [Řešení potíží s webovou aplikací ve službě Azure App Service pomocí sady Visual Studio](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio)
+* [Vytvoření klasického upozornění metrik ve službě Azure Monitor pro Azure services – Azure portal](/azure/monitoring-and-diagnostics/insights-alerts-portal)

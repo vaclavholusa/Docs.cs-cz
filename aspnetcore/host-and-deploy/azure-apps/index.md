@@ -4,14 +4,14 @@ author: guardrex
 description: Tento článek obsahuje odkazy na hostiteli Azure a nasazení prostředků.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/29/2018
+ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 315261c4d20970fc399cc2a879dd452bdf3be93f
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: b238630d6f762e2b9fad1060f8150185bcf413fe
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326053"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090225"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Nasazení aplikace ASP.NET Core do Azure App Service
 
@@ -29,10 +29,10 @@ Vytvoření a nasazení webové aplikace ASP.NET Core do služby Azure App Servi
 
 Jsou k dispozici v dokumentaci k ASP.NET Core v následujících článcích:
 
-[Publikování do Azure pomocí sady Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs)  
+<xref:tutorials/publish-to-azure-webapp-using-vs>  
 Zjistěte, jak publikovat aplikace ASP.NET Core do služby Azure App Service pomocí sady Visual Studio.
 
-[Průběžné nasazování do Azure pomocí sady Visual Studio a systému Git](xref:host-and-deploy/azure-apps/azure-continuous-deployment)  
+<xref:host-and-deploy/azure-apps/azure-continuous-deployment>  
 Zjistěte, jak vytvořit webovou aplikaci ASP.NET Core pomocí sady Visual Studio a nasaďte ji do služby Azure App Service pro průběžné nasazování pomocí Gitu.
 
 [Vytvořit svůj první kanál s kanály Azure](/azure/devops/pipelines/get-started-yaml)  
@@ -45,13 +45,13 @@ Objevte omezení spuštění modulu runtime služby Azure App Service vynucovan�
 
 ## <a name="application-configuration"></a>Konfigurace aplikace
 
-V technologii ASP.NET Core 2.0 nebo novější následující balíčky NuGet poskytují funkce automatického protokolování pro aplikace nasazené do služby Azure App Service:
+Následující balíčky NuGet poskytují funkce automatického protokolování pro aplikace nasazené do služby Azure App Service:
 
 * [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/) používá [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration) k zajištění integrace světla nahoru ASP.NET Core pomocí služby Azure App Service. Poskytované funkce přidání protokolování `Microsoft.AspNetCore.AzureAppServicesIntegration` balíčku.
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/) spustí [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics) Přidání poskytovatelů protokolování diagnostiky služby Azure App Service v `Microsoft.Extensions.Logging.AzureAppServices` balíčku.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/) poskytuje implementace protokolovací nástroj pro podporu funkcí streamování protokolů a protokoly diagnostiky Azure App Service.
 
-Pokud cílí na .NET Core a odkazování [metabalíček Microsoft.aspnetcore.all](xref:fundamentals/metapackage), balíčky jsou již zahrnuty. Chybí balíčky z novější [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Pokud cílí na rozhraní .NET Framework nebo odkazující `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all, odkazují na balíčky jednotlivé protokolování.
+Pokud cílí na .NET Core a odkazování [metabalíček Microsoft.aspnetcore.all](xref:fundamentals/metapackage), předchozí balíčky jsou zahrnuty. Chybí balíčky z [Microsoft.AspNetCore.App Microsoft.aspnetcore.all](xref:fundamentals/metapackage-app). Pokud cílí na rozhraní .NET Framework nebo odkazující `Microsoft.AspNetCore.App` Microsoft.aspnetcore.all, odkazují na balíčky jednotlivé protokolování.
 
 ::: moniker-end
 
@@ -79,13 +79,13 @@ Zjistěte, jak kontrolovat kvóty a metriky pro aplikace a plány služby App Se
 [Povolení protokolování diagnostiky pro webové aplikace ve službě Azure App Service](/azure/app-service/web-sites-enable-diagnostic-log)  
 Zjistěte, jak povolit a přístup k protokolování diagnostiky pro stavové kódy HTTP, neúspěšných požadavků a aktivity webového serveru.
 
-[Úvod do zpracování chyb v ASP.NET Core](xref:fundamentals/error-handling)  
+<xref:fundamentals/error-handling>  
 Seznamte se s běžné přístupy k zpracování chyb v aplikacích ASP.NET Core.
 
-[Řešení potíží s ASP.NET Core ve službě Azure App Service](xref:host-and-deploy/azure-apps/troubleshoot)  
+<xref:host-and-deploy/azure-apps/troubleshoot>  
 Zjistěte, jak diagnostikovat problémy s nasazením služby Azure App Service s aplikací ASP.NET Core.
 
-[Referenční informace o běžných chybách pro Azure App Service a IIS s ASP.NET Core](xref:host-and-deploy/azure-iis-errors-reference)  
+<xref:host-and-deploy/azure-iis-errors-reference>  
 V tématu běžné chyby konfigurace nasazení pro aplikace hostované pomocí Azure App Service/IIS s Poradce při potížích.
 
 ## <a name="data-protection-key-ring-and-deployment-slots"></a>Aktualizační kanál klíč ochrany dat a sloty nasazení
@@ -99,7 +99,7 @@ Po záměně mezi sloty nasazení, jakéhokoli systému pomocí ochrany dat nebu
 * Úložiště SQL
 * Redis cache
 
-Další informace najdete v tématu [zprostředkovateli úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers).
+Další informace naleznete v tématu <xref:security/data-protection/implementation/key-storage-providers>.
 
 ## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>Nasazení ve verzi preview ASP.NET Core do služby Azure App Service
 

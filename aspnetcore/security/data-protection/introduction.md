@@ -3,14 +3,15 @@ title: Ochrana dat ASP.NET Core
 author: rick-anderson
 description: Další informace o konceptu ochranu dat a principy návrhu rozhraní API ASP.NET Core Data Protection.
 ms.author: riande
-ms.date: 10/14/2016
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: security/data-protection/introduction
-ms.openlocfilehash: a49eee89e8c11b26c76ba167215c141482159933
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 37f170a3e8a46ef2215b0999358d46dd402636df
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292294"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50089545"
 ---
 # <a name="aspnet-core-data-protection"></a>Ochrana dat ASP.NET Core
 
@@ -44,7 +45,7 @@ Začali jsme díky identifikaci problémů s existující zásobníku. Jakmile j
 
 Pomocí těchto zásad v úvahu Vyvinuli jsme proto představují jednoduchou, [snadno použitelné](xref:security/data-protection/using-data-protection) data protection zásobníku.
 
-Ochranu dat ASP.NET Core API nejsou určené především pro neomezenou trvalost důvěrné datových částí. Jiné technologie, jako je [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) a [Azure Rights Management](https://docs.microsoft.com/rights-management/) jsou vhodnější pro scénář neomezené úložiště, a mají možnosti odpovídajícím způsobem silné správu klíčů. Ale nutné dodat, není nic zakazují vývojář pro dlouhodobou ochranu důvěrných dat pomocí data protection API ASP.NET Core.
+Ochranu dat ASP.NET Core API nejsou určené především pro neomezenou trvalost důvěrné datových částí. Jiné technologie, jako je [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) a [Azure Rights Management](/rights-management/) jsou vhodnější pro scénář neomezené úložiště, a mají možnosti odpovídajícím způsobem silné správu klíčů. Ale nutné dodat, není nic zakazují vývojář pro dlouhodobou ochranu důvěrných dat pomocí data protection API ASP.NET Core.
 
 ## <a name="audience"></a>Cílová skupina
 

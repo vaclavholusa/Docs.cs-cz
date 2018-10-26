@@ -5,14 +5,14 @@ description: Zjistěte, jak nakonfigurovat aplikaci pomocí dvojice název hodno
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/17/2018
+ms.date: 10/24/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 474824cccdc63bb3dc3978ed68cf4c89cec12ad5
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: 06445eb2ecec4cf101b23a4bfe131b2c56a18f62
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391139"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090303"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
@@ -151,7 +151,7 @@ Při implementaci tohoto přístupu:
 
 Použití [nástroj tajný klíč správce](xref:security/app-secrets) udržovat `ClientSecret` mimo projekt stromu zdrojového kódu. Pomocí manažera tajných přidružit k určitému projektu tajných kódů aplikace a sdílet mezi více projekty.
 
-Při vývoji aplikace rozhraní .NET Framework v prostředí, které podporuje certifikáty, můžete ověřovat do služby Azure Key Vault pomocí certifikátu X.509. Privátní klíč certifikátu X.509 se spravuje přes operační systém. Další informace najdete v tématu [ověřování pomocí certifikátu místo tajného klíče klienta](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret). Použití `AddAzureKeyVault` přetížení přijímající `X509Certificate2` (`_env` v následujícím příkladu:
+Při vývoji aplikace rozhraní .NET Framework v prostředí, které podporuje certifikáty, můžete ověřovat do služby Azure Key Vault pomocí certifikátu X.509. Privátní klíč certifikátu X.509 se spravuje přes operační systém. Další informace najdete v tématu [ověřování pomocí certifikátu místo tajného klíče klienta](/azure/key-vault/key-vault-use-from-web-application#authenticate-with-a-certificate-instead-of-a-client-secret). Použití `AddAzureKeyVault` přetížení přijímající `X509Certificate2` (`_env` v následujícím příkladu:
 
 ```csharp
 var builtConfig = config.Build();

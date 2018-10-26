@@ -4,22 +4,27 @@ author: rick-anderson
 description: Seznamte se základními koncepty pro vytváření aplikací ASP.NET Core.
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 10/25/2018
 uid: fundamentals/index
-ms.openlocfilehash: 83dfb5707700da01c45bae3c0c00e67ca397d402
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 56344315acc59003248ffaf1e61455b94a93a545
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325468"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090716"
 ---
 # <a name="aspnet-core-fundamentals"></a>Základy ASP.NET Core
 
-Aplikace ASP.NET Core je konzolová aplikace, která vytváří webový server ve své `Main` metodě:
+Aplikace ASP.NET Core je konzolová aplikace, která vytvoří webovým serverem v jeho `Program.Main` metoda. `Main` Aplikace je metoda *spravované vstupní bod*:
 
 ::: moniker range=">= aspnetcore-2.0"
 
 [!code-csharp[](index/snapshots/2.x/Program.cs)]
+
+.NET Core hostitele:
+
+* Načtení [.NET Core runtime](https://github.com/dotnet/coreclr).
+* První argument příkazového řádku používá jako cestu pro spravované binární soubor, který obsahuje vstupní bod (`Main`) a zahájí provádění kódu.
 
 V metodě `Main` se volá metoda [WebHost.CreateDefaultBuilder](xref:Microsoft.AspNetCore.WebHost.CreateDefaultBuilder*), která poskytuje implementaci návrhového vzoru [Builder](https://wikipedia.org/wiki/Builder_pattern) a umožňuje tak sestavení hostitele webové aplikace. Samotný Builder obsahuje metody, které specifikují webový server (například <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>), který se má použít, a třídu pro spuštění (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>). Ve výše uvedeném příkladu je automaticky použit webový server [Kestrel](xref:fundamentals/servers/kestrel). ASP.NET Core se zároveň pokusí o spuštění aplikace ve službě IIS, pokud je k dispozici. Voláním patřičné rozšiřující metody je možné aplikaci hostovat i na jiných webových serverech, jako například [HTTP.sys](xref:fundamentals/servers/httpsys). `UseStartup` je vysvětleno v další části.
 
@@ -30,6 +35,11 @@ Typ <xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder>, který je vrácen jako 
 ::: moniker range="< aspnetcore-2.0"
 
 [!code-csharp[](index/snapshots/1.x/Program.cs)]
+
+.NET Core hostitele:
+
+* Načtení [.NET Core runtime](https://github.com/dotnet/coreclr).
+* První argument příkazového řádku používá jako cestu pro spravované binární soubor, který obsahuje vstupní bod (`Main`) a zahájí provádění kódu.
 
 V metodě `Main` se používá třída <xref:Microsoft.AspNetCore.Hosting.WebHostBuilder>, která implementuje návrhový vzor [Builder](https://wikipedia.org/wiki/Builder_pattern) a umožňuje tak sestavení hostitele webové aplikace. Samotný Builder obsahuje metody, které specifikují webový server (například <xref:Microsoft.AspNetCore.Hosting.WebHostBuilderKestrelExtensions.UseKestrel*>), který se má použít, a třídu pro spuštění (<xref:Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions.UseStartup*>). Ve výše uvedeném příkladu je použit webový server [Kestrel](xref:fundamentals/servers/kestrel). Voláním patřičné rozšiřující metody je možné aplikaci hostovat i na jiných webových serverech, jako například [WebListener](xref:fundamentals/servers/weblistener).  `UseStartup` je vysvětleno v další části.
 
@@ -75,9 +85,11 @@ Další informace naleznete v tématu <xref:fundamentals/startup>.
 
 Kořen obsahu (Content Root) je bázová cesta k libovolnému obsahu využívaného aplikací, jako jsou například pohledy, [Stránky Razor](xref:razor-pages/index) a statický obsah (obrázky apod.). Ve výchozím nastavení je kořenu obsahu stejný jako bázová cesta aplikace ke spustitelnému souboru, který je hostitelem aplikace.
 
-## <a name="web-root"></a>Kořen webu
+## <a name="web-root-webroot"></a>Kořenový adresář webové (webroot)
 
-Kořen webu (Web Root) je adresář projektu, který obsahuje veřejné, statické prostředky, jako jsou např. kaskádové styly, JavaScript a obrázky.
+Webroot aplikace je adresář, do projektu obsahující veřejné, statické prostředky, jako jsou šablony stylů CSS, JavaScript a soubory obrázků. Ve výchozím nastavení *wwwroot* je webroot.
+
+Pro syntaxi Razor (*.cshtml*) soubory tilda lomítky `~/` odkazuje webroot. Cesty začínající `~/` se označují jako virtuální cesty.
 
 ## <a name="dependency-injection-services"></a>Vkládání závislostí (služby)
 

@@ -3,14 +3,15 @@ title: Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat �
 author: rick-anderson
 description: V tomto kurzu čtení a zobrazení souvisejících dat – to znamená, že data, která načte Entity Framework do navigační vlastnosti.
 ms.author: riande
-ms.date: 11/05/2017
+ms.custom: mvc
+ms.date: 10/24/2018
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: e8b59c19eac2c2adc1f13cf1e44f750576686c87
-ms.sourcegitcommit: 6e6002de467cd135a69e5518d4ba9422d693132a
+ms.openlocfilehash: b3a60c3f983dba8761b219773f827c39ff82cb01
+ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49348491"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50090859"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>Stránky Razor s EF Core v ASP.NET Core – čtení souvisejících dat – 6 8
 
@@ -32,7 +33,7 @@ Dokončené stránky pro účely tohoto kurzu na následujících obrázcích:
 
 Existuje několik způsobů, EF Core můžete načíst související data do navigační vlastnosti entity:
 
-* [Předběžné načítání](https://docs.microsoft.com/ef/core/querying/related-data#eager-loading). Předběžné načítání je při dotazu na jeden typ entity také načtení souvisejících entit. Při čtení je entita, související data načtena. Obvykle v důsledku jednoho spojení dotaz, který zkopíruje všechna data, který je nezbytný. EF Core vydá pro některé typy nemůžou dočkat, až načítání více dotazů. Vydání více dotazů může být efektivnější než v případě u některých dotazů v EF6 tam, kde byla jeden dotaz. Předběžné načítání je zadán s `Include` a `ThenInclude` metody.
+* [Předběžné načítání](/ef/core/querying/related-data#eager-loading). Předběžné načítání je při dotazu na jeden typ entity také načtení souvisejících entit. Při čtení je entita, související data načtena. Obvykle v důsledku jednoho spojení dotaz, který zkopíruje všechna data, který je nezbytný. EF Core vydá pro některé typy nemůžou dočkat, až načítání více dotazů. Vydání více dotazů může být efektivnější než v případě u některých dotazů v EF6 tam, kde byla jeden dotaz. Předběžné načítání je zadán s `Include` a `ThenInclude` metody.
 
   ![Předběžné načítání příklad](read-related-data/_static/eager-loading.png)
  
@@ -47,11 +48,11 @@ Existuje několik způsobů, EF Core můžete načíst související data do nav
 
   Poznámka: EF Core automaticky opravuje vlastnosti navigace s jinými entitami, které byly dříve načtena do instance kontextu. I v případě, že jsou data pro navigační vlastnost *není* výslovně zahrnuty, vlastnost pořád naplněný, pokud některé nebo všechny související entity byly dříve načteny.
 
-* [Explicitní načtení](https://docs.microsoft.com/ef/core/querying/related-data#explicit-loading). Pokud entita je nejdřív přečíst, související data nebude načten. Načíst související data, když je potřeba, musí být kód zapsán. Explicitní načtení pomocí samostatné dotazy za následek více dotazy odeslané do databáze. S explicitní načtení, určuje kód navigačních vlastností, které mají být načteny. Použití `Load` metodu explicitní načtení. Příklad:
+* [Explicitní načtení](/ef/core/querying/related-data#explicit-loading). Pokud entita je nejdřív přečíst, související data nebude načten. Načíst související data, když je potřeba, musí být kód zapsán. Explicitní načtení pomocí samostatné dotazy za následek více dotazy odeslané do databáze. S explicitní načtení, určuje kód navigačních vlastností, které mají být načteny. Použití `Load` metodu explicitní načtení. Příklad:
 
   ![Příklad explicitní načtení](read-related-data/_static/explicit-loading.png)
 
-* [Opožděné načtení](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [Opožděné načtení byl přidán do EF Core ve verzi 2.1](/ef/core/querying/related-data#lazy-loading). Pokud entita je nejdřív přečíst, související data nebude načten. Při prvním přístupu k vlastnosti navigace se automaticky načte data požadovaná pro tuto navigační vlastnost. Bude odeslán dotaz do databáze pokaždé, když vlastnost navigace pracuje poprvé.
+* [Opožděné načtení](/ef/core/querying/related-data#lazy-loading). [Opožděné načtení byl přidán do EF Core ve verzi 2.1](/ef/core/querying/related-data#lazy-loading). Pokud entita je nejdřív přečíst, související data nebude načten. Při prvním přístupu k vlastnosti navigace se automaticky načte data požadovaná pro tuto navigační vlastnost. Bude odeslán dotaz do databáze pokaždé, když vlastnost navigace pracuje poprvé.
 
 * `Select` Operátor načte pouze souvisejících dat, které jsou potřeba.
 

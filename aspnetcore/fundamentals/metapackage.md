@@ -5,14 +5,14 @@ description: Metabalíček Microsoft.aspnetcore.all se nedoporučuje pro ASP.NET
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 10/24/2018
+ms.date: 10/25/2018
 uid: fundamentals/metapackage
-ms.openlocfilehash: f78684cb31976f976aec5e1773bcc728dfecc82e
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: d95bafd412969bb8db38499bd2ff01af510d872c
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090703"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148847"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>Metabalíček Microsoft.aspnetcore.all pro ASP.NET Core 2.0
 
@@ -37,13 +37,31 @@ Proces oříznutí balíčku můžete použít k odebrání balíčků, které n
 
 Následující *.csproj* souboru odkazy `Microsoft.AspNetCore.All` Microsoft.aspnetcore.all pro ASP.NET Core:
 
-[!code-xml[](metapackage/samples/Metapackage.All.Example.csproj?highlight=6)]
+[!code-xml[](metapackage/samples/Metapackage.All.Example.csproj?highlight=8)]
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="implicit-versioning"></a>Implicitní vytváření verzí
+
+V ASP.NET Core 2.1 nebo novější, můžete zadat `Microsoft.AspNetCore.All` odkaz bez verze balíčku. Pokud není zadána verze, je určen implicitní verze sady SDK (`Microsoft.NET.Sdk.Web`). Doporučujeme, abyste spoléhat na implicitní verze určené sady SDK a nastavení nejsou explicitně číslo verze na odkaz na balíček. Pokud máte dotazy týkající se tento přístup, ponechte v Githubu komentář [diskuse implicitní verze Microsoft.AspNetCore.App](https://github.com/aspnet/Docs/issues/6430).
+
+Implicitní verze je nastaveno na `major.minor.0` pro přenosné aplikace. Mechanismus vpřed sdílené architektuře aplikace spouští nejnovější kompatibilní verzi mezi nainstalovaných sdílené architektury. Chcete-li zaručit, že při vývoji se používá stejnou verzi, testovacím i produkčním prostředí, ujistěte se, že stejná verze modulu sdílené framework je nainstalována ve všech prostředích. Samostatná aplikace, číslo verze implicitní je nastavena na `major.minor.patch` sdílené Framework dodávat v nainstalované sady SDK.
+
+Zadáním čísla verze na `Microsoft.AspNetCore.All` nemá odkaz na balíček **není** zaručit, že tato verze sdíleného framework je vybrán. Předpokládejme například, ale není určená verze "2.1.1", ale je nainstalovaná "2.1.3". V takovém případě bude aplikace používat "2.1.3". Však není doporučena, můžete zakázat Posunutí vpřed (opravy a/nebo menší). Další informace týkající se příkaz dotnet hostitele vpřed a jak nakonfigurovat své chování najdete v tématu [dotnet hostitele dopředné posunutí](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md).
+
+Sady SDK projektu musí být nastaveno na `Microsoft.NET.Sdk.Web` v souboru projektu použije implicitní verzi `Microsoft.AspNetCore.All`. Když `Microsoft.NET.Sdk` SDK je zadána (`<Project Sdk="Microsoft.NET.Sdk">` v horní části souboru projektu), následující upozornění:
+
+*NU1604 upozornění: Závislost projektu metabalíček neobsahuje inkluzivní dolní mez. Dolní mez zahrňte do verze závislosti zajistit výsledky obnovení budou konzistentní.*
+
+Jedná se o známý problém s .NET Core 2.1 SDK a bude opravený v .NET Core 2.2 SDK.
+
+::: moniker-end
 
 <a name="migrate"></a>
 
 ## <a name="migrating-from-microsoftaspnetcoreall-to-microsoftaspnetcoreapp"></a>Migrace z metabalíček na Microsoft.AspNetCore.App
 
-Následující balíčky jsou součástí `Microsoft.AspNetCore.All` , ale ne `Microsoft.AspNetCore.App` balíčku. 
+Následující balíčky jsou součástí `Microsoft.AspNetCore.All` , ale ne `Microsoft.AspNetCore.App` balíčku.
 
 * `Microsoft.AspNetCore.ApplicationInsights.HostingStartup`
 * `Microsoft.AspNetCore.AzureAppServices.HostingStartup`

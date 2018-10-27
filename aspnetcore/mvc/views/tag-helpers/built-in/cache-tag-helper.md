@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 7d64c500168166b0a7a29d5b92473726d5a9f49a
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325338"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50148808"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Pomocná rutina značek v ASP.NET Core MVC do mezipaměti
 
@@ -119,7 +119,7 @@ Následující příklad monitoruje hodnota hlavičky `User-Agent`. V příkladu
 | -------------- | -------------------- |
 | String         | `Make`, `Make,Model` |
 
-`vary-by-query` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, když se změní hodnota hlavičky.
+`vary-by-query` přijímá čárkami oddělený seznam <xref:Microsoft.AspNetCore.Http.IQueryCollection.Keys*> v řetězci dotazu (<xref:Microsoft.AspNetCore.Http.HttpRequest.Query*>), který aktivuje aktualizace mezipaměti, když zadejte hodnotu kterékoli uvedené změny klíče.
 
 Následující příklad monitoruje hodnoty `Make` a `Model`. V příkladu ukládá do mezipaměti obsah pro každé jiné `Make` a `Model` uvedené na webový server:
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 10/29/2018
 ms.technology: aspnet
 msc.type: content
-ms.openlocfilehash: d5a3916c3df9778d14be80342bafbc3456a69a03
-ms.sourcegitcommit: f2d14a7518d6ee51aca9333818ac1276e7b5ecef
+ms.openlocfilehash: 4dcc62573fad13ec8b37b2c59e884eec7ca80b92
+ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "50134532"
+ms.locfileid: "50148834"
 ---
 # <a name="configuration-builders-for-aspnet"></a>Konfigurace počítačů pro technologii ASP.NET
 
@@ -29,7 +29,7 @@ Konfigurace počítačů:
 
 ## <a name="keyvalue-configuration-builders"></a>Tvůrci konfigurace klíč hodnota
 
-Běžný scénář, který může být zpracována tvůrci konfigurace je mechanismus nahrazení základní klíč/hodnota pro konfigurační oddíly funkce, které se řídí vzorem klíč/hodnota. Rozhraní .NET Framework konceptu ConfigurationBuilders není omezena pouze na konkrétní konfigurační oddíly funkce nebo vzorce. Nicméně mnoho tvůrci konfigurace v `Microsoft.Configuration.ConfigurationBuilders` ([githubu](https://github.com/aspnet/MicrosoftConfigurationBuilders)), [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders) práce v rámci vzoru klíč/hodnota.
+Běžný scénář, který může být zpracována tvůrci konfigurace je mechanismus nahrazení základní klíč/hodnota pro konfigurační oddíly funkce, které se řídí vzorem klíč/hodnota. Rozhraní .NET Framework konceptu ConfigurationBuilders není omezena pouze na konkrétní konfigurační oddíly funkce nebo vzorce. Nicméně mnoho tvůrci konfigurace v `Microsoft.Configuration.ConfigurationBuilders` ([githubu](https://github.com/aspnet/MicrosoftConfigurationBuilders), [NuGet](https://www.nuget.org/packages?q=Microsoft.Configuration.ConfigurationBuilders)) práce v rámci vzoru klíč/hodnota.
 
 ## <a name="keyvalue-configuration-builders-settings"></a>Nastavení tvůrci konfigurace klíč hodnota
 

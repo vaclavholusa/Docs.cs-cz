@@ -5,16 +5,16 @@ description: Další informace o použití částí aplikace, které jsou abstra
 ms.author: riande
 ms.date: 01/04/2017
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 41ae3fd4059844698ded4551dcedc8933ab8cff6
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: c0d3ad6bcdf2e56df915b176b28759c59e76faf6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011310"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206560"
 ---
 # <a name="application-parts-in-aspnet-core"></a>Částí aplikace v ASP.NET Core
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 *Aplikace část* je abstrakcí nad prostředky, které aplikace, ze kterého MVC funkce, jako je řadiče zobrazení komponenty, nebo může být zjištěny pomocných rutin značek. Jedním z příkladů části aplikace je AssemblyPart, který zapouzdřuje odkaz na sestavení a zpřístupňuje typy a odkazy na sestavení. *Funkce poskytovatele* fungují s částí aplikace k naplnění funkce aplikace ASP.NET Core MVC. Případ použití hlavní částí aplikace je k tomu, abyste do konfigurace aplikace pro zjišťování (nebo vyloučit načítání) funkcemi technologie MVC ze sestavení.
 

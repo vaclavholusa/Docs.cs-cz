@@ -5,12 +5,12 @@ description: Další informace o použití odpověď do mezipaměti pro nižší
 ms.author: riande
 ms.date: 09/20/2017
 uid: performance/caching/response
-ms.openlocfilehash: bbf5b649bac9d31aa6d0ecdc3828648677b05716
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 99093cd281ffa8dddc574dc27254c0175e2651b3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090690"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207365"
 ---
 # <a name="response-caching-in-aspnet-core"></a>Ukládání odpovědí do mezipaměti v ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Jan Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.c
 > [!NOTE]
 > Ukládání odpovědí do mezipaměti v Razor Pages je k dispozici v ASP.NET Core 2.1 nebo novější.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 Ukládání odpovědí do mezipaměti snižuje počet požadavků, které odešle klient nebo server proxy webový server. Ukládání odpovědí do mezipaměti také snižuje množství práce provádí webového serveru pro generování odpovědi. Ukládání odpovědí do mezipaměti se řídí hlavičky, které určují, jak chcete klienta, serveru proxy a middlewarem do mezipaměti odpovědi.
 

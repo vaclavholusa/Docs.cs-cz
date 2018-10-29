@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
 uid: test/razor-pages-tests
-ms.openlocfilehash: 924908a92eea23fd2dc81a3809e74760d9295e4f
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: 5116ec3c3d6c27f9b0e098f82c82dd7b7337b8f6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477407"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207495"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>Testování částí stránky Razor v ASP.NET Core
 
@@ -30,7 +30,7 @@ Toto téma předpokládá, že máte základní znalosti o aplikace Razor Pages 
 * [Začínáme se stránkami Razor](xref:tutorials/razor-pages/razor-pages-start)
 * [Testování jednotek C# v .NET Core pomocí příkazu dotnet test a xUnit](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/razor-pages-tests/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/razor-pages-tests/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 Ukázkový projekt se skládá ze dvou aplikací:
 

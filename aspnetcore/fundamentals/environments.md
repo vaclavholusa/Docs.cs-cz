@@ -5,12 +5,12 @@ description: Zjistěte, jak řídit chování aplikace napříč několika prost
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: de3c3fd5a2f0e49366d9d5b4e992d0247bcab0e5
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 865257d127084671036147dd1f28c9c4843feef6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577519"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206845"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>Používání více prostředí v ASP.NET Core
 
@@ -18,7 +18,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ASP.NET Core nakonfiguruje chování aplikace založené na prostředí modulu runtime pomocí proměnné prostředí.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="environments"></a>Prostředí
 
@@ -278,7 +278,7 @@ Načtení konfigurace podle prostředí, doporučujeme:
 
 * *appSettings* soubory (* appsettings.&lt; <Environment> &gt;.json). Zobrazit [konfigurace: poskytovatel konfigurace souboru](xref:fundamentals/configuration/index#file-configuration-provider).
 * proměnné prostředí (nastavený v každém systému je hostitelem aplikace). V tématu [konfigurace: poskytovatel konfigurace souboru](xref:fundamentals/configuration/index#file-configuration-provider) a [bezpečné ukládání tajných kódů aplikace při vývoji: proměnné prostředí](xref:security/app-secrets#environment-variables).
-* Tajný klíč správce (ve vývojovém prostředí pouze). Zobrazit <xref:security/app-secrets>.
+* Tajný klíč správce (ve vývojovém prostředí pouze). Viz <xref:security/app-secrets>.
 
 ## <a name="environment-based-startup-class-and-methods"></a>Na základě prostředí při spuštění třídy a metody
 

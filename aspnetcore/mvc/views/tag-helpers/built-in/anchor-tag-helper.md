@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 13508729c1e3b64a8b0e6965da57880738ab85c3
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 01c5833210b73dafb763602d363afcf9e7bc0122
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325546"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206273"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>Ukotvení pomocné rutiny značky v ASP.NET Core
 
@@ -21,7 +21,7 @@ Podle [Peter Kellner](http://peterkellner.net) a [Scott Addie](https://github.co
 
 Přehled pomocných rutin značek, naleznete v tématu <xref:mvc/views/tag-helpers/intro>.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 *SpeakerController* se používá v ukázky v tomto dokumentu:
 

@@ -8,12 +8,12 @@ ms.date: 03/26/2015
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 02a0153f20e9390a5ab8d4ecb4f73556b339d9a9
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 5092476c6cf59bea6fab6fa6f169ff11ec4c9c4a
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48576452"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207482"
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Vytvoření zabezpečené webové aplikace ASP.NET MVC 5 s přihlášením, e-mailu potvrzení a resetováním hesla (C#)
 ====================
@@ -56,6 +56,8 @@ Obvykle chcete novým uživatelům zabránit v účtování žádná data k webu
 
 <a id="SG"></a>
 ## <a name="hook-up-sendgrid"></a>Připojení SendGrid
+
+Pokyny v této části nejsou aktuální. Zobrazit [poskytovatele e-mailu Sendgridu konfigurace](/aspnet/core/security/authentication/accconfirm#configure-email-provider) pro aktualizace pokynů.
 
 Tento kurz vysvětluje pouze přidání e-mailové oznámení prostřednictvím [SendGrid](http://sendgrid.com/), můžete poslat e-mailu pomocí protokolu SMTP a další mechanismy (naleznete v tématu [další prostředky](#addRes)).
 

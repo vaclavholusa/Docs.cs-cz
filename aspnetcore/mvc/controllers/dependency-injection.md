@@ -5,12 +5,12 @@ description: Zjistěte, jak ASP.NET Core MVC řadiče vyžádat jejich závislos
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 12247dbbbb6de3f8feb7bc37caec4ecf4bd21719
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342130"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206338"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>Injektáž závislostí do kontrolerů v ASP.NET Core
 
@@ -20,7 +20,7 @@ Podle [Steve Smith](https://ardalis.com/)
 
 Kontrolery ASP.NET Core MVC by měl požádat o jejich závislosti explicitně prostřednictvím jejich konstruktory. V některých případech akce jednotlivých kontroleru může vyžadovat služby a nemusí mít smysl požadavku na úrovni kontroleru. V takovém případě můžete vložit službu jako parametr v metodě akce.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="dependency-injection"></a>Injektáž závislostí
 

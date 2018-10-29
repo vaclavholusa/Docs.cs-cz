@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 566b85f5b71e365bd4bb0023156ac956a13b45fe
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: d9eb6a01e096c7e8cbcb0979e24331a8d5316a14
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091077"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207651"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -21,7 +21,7 @@ ASP.NET Core podporuje návrhový vzor vkládání závislostí (Dependency Inje
 
 Další informace specifické pro vkládání závislostí do kontrolerů MVC najdete v tématu <xref:mvc/controllers/dependency-injection>.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="overview-of-dependency-injection"></a>Přehled vkládání závislostí
 

@@ -7,18 +7,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: performance/response-compression
-ms.openlocfilehash: d5e0b6ed21c14f2e76396cde846c69a76ad40794
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 8c3d74b6a346d51507d3c278b03ddc842feea13e
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578143"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207976"
 ---
 # <a name="response-compression-in-aspnet-core"></a>Kompresi odpovědí v ASP.NET Core
 
 Podle [Luke Latham](https://github.com/guardrex)
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 Šířka pásma sítě je omezená prostředků. Na odezvu aplikace, je obvykle nezmenšit velikost této odpovědi často výrazně zvyšuje. Jedním ze způsobů ke zmenšení velikosti datové části je kompresi odpovědí vaší aplikace.
 

@@ -2,17 +2,16 @@
 title: Co je nového v ASP.NET Core 2.1
 author: isaac2004
 description: Informace o nových funkcích v ASP.NET Core 2.1.
-monikerRange: = aspnetcore-2.1
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: aspnetcore-2.1
-ms.openlocfilehash: acbed75e2e894569816669e250795c95482bde2a
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: e16bb874f317b922f3900b540596f6ff38debb2f
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41819474"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206832"
 ---
 # <a name="whats-new-in-aspnet-core-21"></a>Co je nového v ASP.NET Core 2.1
 

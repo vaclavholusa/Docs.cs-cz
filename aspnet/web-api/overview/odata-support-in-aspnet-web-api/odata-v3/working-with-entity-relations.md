@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 1e4c2eb4-b6cf-42ff-8a65-4d71ddca0394
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
 msc.type: authoredcontent
-ms.openlocfilehash: fc1c6b938c4e4be379edf1a495ca47f5f5f2eb4f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f78b5cf36789032f90d3d073698f7a439507277f
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755278"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206858"
 ---
 <a name="supporting-entity-relations-in-odata-v3-with-web-api-2"></a>Podpora relací prvků v OData v3 s webovým rozhraním API 2
 ====================
@@ -65,7 +65,7 @@ Chcete-li tuto žádost o podporu, přidejte následující metodu do `ProductsC
 
 [!code-csharp[Main](working-with-entity-relations/samples/sample6.cs)]
 
-*Klíč* parametr je klíč produktu. Metoda v tomto případě vrátí související entita & #8212 `Supplier` instance. Název metody i název parametru jsou důležité. Obecně platí Pokud navigační vlastnost s názvem "X", musíte přidat metodu s názvem "Metody GetX". Metoda přijme parametr s názvem "*klíč*", shoduje s datovým typem nadřazené položky klíče.
+*Klíč* parametr je klíč produktu. Metoda vrátí související entity&#8212;v tomto případě `Supplier` instance. Název metody i název parametru jsou důležité. Obecně platí Pokud navigační vlastnost s názvem "X", musíte přidat metodu s názvem "Metody GetX". Metoda přijme parametr s názvem "*klíč*", shoduje s datovým typem nadřazené položky klíče.
 
 Je také důležité zahrnout **[FromOdataUri]** atribut *klíč* parametru. Tento atribut oznamuje webového rozhraní API pro použití pravidel syntaxe OData při analýze klíč z identifikátoru URI požadavku.
 

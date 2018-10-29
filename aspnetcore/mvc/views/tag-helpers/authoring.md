@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: a0d822056e1c95b3017357de8f83b6749b1224de
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 01e6af13c3a16de368528b1650543d36ef910571
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091051"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207833"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a>Autor pomocných rutin značek v ASP.NET Core
 
 Podle [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="get-started-with-tag-helpers"></a>Začínáme s pomocných rutin značek
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: fundamentals/owin
-ms.openlocfilehash: db28eeff88a13dc95c469f3b7c0746c807da830f
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: eb5cf92a6dcc3ddb9e2f56cd72a710b66f7fae06
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41752521"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206884"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>Otevřete Web Interface pro .NET (OWIN) s ASP.NET Core
 
@@ -29,7 +29,7 @@ To umožňuje zajistit také jejich hostování nad OWIN kompatibilní serveru/h
 > [!NOTE]
 > Pomocí těchto adaptérů součástí nákladů na výkon. Neměli byste používat aplikace s využitím pouze součásti ASP.NET Core `Microsoft.AspNetCore.Owin` balíčku nebo adaptéry.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="running-owin-middleware-in-the-aspnet-core-pipeline"></a>Spuštění OWIN middleware v kanálu ASP.NET Core
 
@@ -249,14 +249,14 @@ OWIN závisí `IDictionary<string,object>` objekt ke sdělování informací v c
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
-| owin. ID žádosti | `String` | Nepovinné |
+| owin. ID žádosti | `String` | volitelná, |
 
 ### <a name="response-data-owin-v100"></a>Data odpovědi (OWIN v1.0.0)
 
 | Key               | Hodnota (typ) | Popis |
 | ----------------- | ------------ | ----------- |
-| owin. ResponseStatusCode | `int` | Nepovinné |
-| owin. ResponseReasonPhrase | `String` | Nepovinné |
+| owin. ResponseStatusCode | `int` | volitelná, |
+| owin. ResponseReasonPhrase | `String` | volitelná, |
 | owin. ResponseHeaders | `IDictionary<string,string[]>`  | |
 | owin. ResponseBody | `Stream`  | |
 
@@ -312,8 +312,8 @@ OWIN závisí `IDictionary<string,object>` objekt ke sdělování informací v c
 | websocket.ReceiveAsync | `WebSocketReceiveAsync` | Zobrazit [signatura delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
 | objekt websocket. CloseAsync | `WebSocketCloseAsync` | Zobrazit [signatura delegáta](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
 | objekt websocket. CallCancelled | `CancellationToken` |  |
-| objekt websocket. ClientCloseStatus | `int` | Nepovinné |
-| objekt websocket. ClientCloseDescription | `String` | Nepovinné |
+| objekt websocket. ClientCloseStatus | `int` | volitelná, |
+| objekt websocket. ClientCloseDescription | `String` | volitelná, |
 
 ## <a name="additional-resources"></a>Další zdroje
 

@@ -5,18 +5,18 @@ description: Další informace o adrese URL přepsání a přesměrování s Mid
 ms.author: riande
 ms.date: 08/17/2017
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: d9f33f34f75fe7bf534146c5a426335e74635018
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5a1891c838436467fb49ff6288587fab08201179
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326066"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207183"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Middleware v ASP.NET Core přepisování adres URL
 
 Podle [Luke Latham](https://github.com/guardrex) a [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/) ([stažení](xref:index#how-to-download-a-sample))
 
 Přepisování adres URL je úprava žádosti o adresy URL v závislosti na jeden nebo více předdefinovaných pravidel. Přepisování adres URL vytvoří abstrakci mezi umístění prostředků a jejich adresy tak, aby umístění a adresy nejsou připojeny úzce. Existuje několik scénářů, kdy je vhodné přepisování adres URL:
 
@@ -399,9 +399,9 @@ Middleware podporuje následující proměnné serveru modul přepisování adre
 
 ### <a name="method-based-rule"></a>Pravidlo na základě – metoda
 
-Použití `Add(Action<RewriteContext> applyRule)` implementovat vlastní logiku pravidla v metodě. `RewriteContext` Zpřístupňuje `HttpContext` pro použití v metodě. `context.Result` Určuje, jak další kanálu probíhá zpracování.
+Použití `Add(Action<RewriteContext> applyRule)` implementovat vlastní logiku pravidla v metodě. `RewriteContext` Zpřístupňuje `HttpContext` pro použití v metodě. `RewriteContext.Result` Určuje, jak další kanálu probíhá zpracování.
 
-| kontext. Výsledek                       | Akce                                                          |
+| `RewriteContext.Result`              | Akce                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules` (výchozí) | Pokračovat v použití pravidel                                         |
 | `RuleResult.EndResponse`             | Zastavit použití pravidel a odeslání odpovědi                       |
@@ -437,7 +437,7 @@ Původní žádosti: `/file.xml`
 
 ### <a name="irule-based-rule"></a>Pravidlo na základě IRule
 
-Použití `Add(IRule)` k implementaci vlastní logiky pravidla ve třídě, která je odvozena z `IRule`. Pomocí `IRule` nabízí větší flexibilitu v porovnání s využitím pravidel založených na volání metody přístupu. Odvozené třídy mohou být konstruktor, kde můžete předat parametry `ApplyRule` metody.
+Použití `Add(IRule)` k zapouzdření pravidlo logiku do třídy, která implementuje `IRule` rozhraní. Pomocí `IRule` nabízí větší flexibilitu v porovnání s využitím pravidel založených na volání metody přístupu. Vaší společnosti jednotně uplatňovat třídy může obsahovat konstruktor, kde můžete předat parametry `ApplyRule` metody.
 
 ::: moniker range=">= aspnetcore-2.0"
 

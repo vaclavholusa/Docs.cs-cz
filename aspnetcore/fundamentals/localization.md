@@ -5,12 +5,12 @@ description: Zjistěte, jak ASP.NET Core nabízí služby a middleware pro lokal
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 375d09d9bef59cf18b7805cbefe500aeb2e0cde7
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: 5014d697603d802929b417e6439d4cc6983184d2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49326001"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207586"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalizace a lokalizace v ASP.NET Core
 
@@ -30,7 +30,7 @@ Lokalizace aplikací zahrnuje následující:
 
 3. Implementovat strategii vyberte jazykovou verzi pro každý požadavek
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/Localization) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="make-the-apps-content-localizable"></a>Aby lokalizovatelný obsah aplikace
 
@@ -303,12 +303,12 @@ Použití `RequestLocalizationOptions` přidat nebo odebrat zprostředkovatele l
 
 ### <a name="set-the-culture-programmatically"></a>Nastavit jazykovou verzi prostřednictvím kódu programu
 
-Tato ukázka **Localization.StarterWeb** projekt [Githubu](https://github.com/aspnet/entropy) obsahuje uživatelského rozhraní pro nastavení `Culture`. *Views/Shared/_SelectLanguagePartial.cshtml* souboru umožňuje vybrat jazykové verze ze seznamu podporovaných jazykových verzí:
+Tato ukázka **Localization.StarterWeb** projekt [Githubu](https://github.com/aspnet/entropy) obsahuje uživatelského rozhraní pro nastavení `Culture`. *Views/Shared/_SelectLanguagePartial.cshtml* souboru můžete vybrat ze seznamu podporovaných jazykových verzí jazykovou verzi:
 
 
 [!code-cshtml[](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
 
-*Views/Shared/_SelectLanguagePartial.cshtml* soubor je přidán do `footer` rozložení souboru, bude k dispozici pro všechna zobrazení:
+*Views/Shared/_SelectLanguagePartial.cshtml* přidá soubor `footer` rozložení souboru tak bude k dispozici pro všechna zobrazení:
 
 [!code-cshtml[](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
 
@@ -316,7 +316,7 @@ Tato ukázka **Localization.StarterWeb** projekt [Githubu](https://github.com/as
 
 [!code-csharp[](localization/sample/Localization/Controllers/HomeController.cs?range=57-67)]
 
-Nelze připojit *_SelectLanguagePartial.cshtml* na ukázkový kód pro tento projekt. **Localization.StarterWeb** projekt [Githubu](https://github.com/aspnet/entropy) obsahuje kód pro flow `RequestLocalizationOptions` pro Razor, která se částečné prostřednictvím [injektáž závislostí](dependency-injection.md) kontejneru.
+Nelze zařadit *_SelectLanguagePartial.cshtml* na ukázkový kód pro tento projekt. **Localization.StarterWeb** projekt [Githubu](https://github.com/aspnet/entropy) obsahuje kód pro flow `RequestLocalizationOptions` pro Razor, která se částečné prostřednictvím [injektáž závislostí](dependency-injection.md) kontejneru.
 
 ## <a name="globalization-and-localization-terms"></a>Globalizace a lokalizace podmínky
 

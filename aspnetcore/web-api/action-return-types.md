@@ -6,18 +6,18 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 179a3e23ebc13a40b8e2d955b6adcc23d9a0f323
-ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
+ms.openlocfilehash: 84300eae4271c3ee4387be022c3576dc83e144eb
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126719"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207521"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>Návratové typy akcí kontroleru v rozhraní Web API ASP.NET Core
 
 Podle [Scott Addie](https://github.com/scottaddie)
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/action-return-types/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/action-return-types/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ASP.NET Core nabízí že následující možnosti pro akce kontroleru webového rozhraní API vrací typy:
 

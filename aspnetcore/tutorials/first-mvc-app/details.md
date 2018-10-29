@@ -5,12 +5,12 @@ description: Další informace o metodě kontroleru podrobnosti a zobrazit v zá
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: ce5b2af148ddba9bc718345c0b8074da8724308d
-ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
+ms.openlocfilehash: c5d21bc70aae4c1a1d10bb333871eeef25a1879c
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47454801"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50208002"
 ---
 # <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>Zkontrolujte podrobnosti a odstranit metody aplikace ASP.NET Core
 
@@ -73,7 +73,7 @@ public async Task<IActionResult> Delete(int id, bool notUsed)
 
 ### <a name="publish-to-azure"></a>Publikování do Azure
 
-Informace o nasazení do Azure, viz [kurz: vytvoření aplikace ASP.NET se službou SQL Database v Azure](/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase). Pokyny jsou určené pro aplikace ASP.NET, není aplikace v ASP.NET Core, ale postup je stejný.
+Informace o nasazení do Azure najdete v tématu [kurz: vytvoření webové aplikace .NET Core využívající SQL Database ve službě Azure App Service](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb).
 
 > [!div class="step-by-step"]
 > [Předchozí](validation.md)

@@ -5,12 +5,12 @@ description: Zjistěte, jak vytvořit aplikace Razor Pages s uživatelskými dat
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 71b7855958b530b8bac32843a8d1e7db0113ffd9
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 7d9521686c67ab9120238886d50af081ce4c6907
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48912628"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207859"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -88,11 +88,11 @@ V ASP.NET Core 2.1 `User.IsInRole` selže při použití `AddDefaultIdentity`. T
 
 ## <a name="the-starter-and-completed-app"></a>Starter a dokončené aplikace
 
-[Stáhněte si](xref:tutorials/index#how-to-download-a-sample) [Dokončit](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) aplikace. [Test](#test-the-completed-app) dokončené aplikace tak, že jste se seznámili s jeho funkcí zabezpečení.
+[Stáhněte si](xref:index#how-to-download-a-sample) [Dokončit](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2) aplikace. [Test](#test-the-completed-app) dokončené aplikace tak, že jste se seznámili s jeho funkcí zabezpečení.
 
 ### <a name="the-starter-app"></a>Úvodní aplikaci
 
-[Stáhněte si](xref:tutorials/index#how-to-download-a-sample) [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) aplikace.
+[Stáhněte si](xref:index#how-to-download-a-sample) [starter](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/starter2) aplikace.
 
 Spusťte aplikaci, klepněte **ContactManager** propojit a ověření můžete vytvářet, upravovat a odstraňovat kontakt.
 
@@ -249,7 +249,7 @@ Aktualizace modelu stránku odstranit sloužící k ověření, že uživatel m�
 
 V současné době ukazuje uživatelského rozhraní upravovat a odstraňovat kontakty, které uživatel nemůže upravovat odkazy.
 
-Vstříkněte autorizační služba v *Views/_ViewImports.cshtml* souboru tak, aby byl k dispozici pro všechna zobrazení:
+Vloží autorizační službu v *Views/_ViewImports.cshtml* souboru tak, aby byl k dispozici pro všechna zobrazení:
 
 [!code-cshtml[](secure-data/samples/final2.1/Pages/_ViewImports.cshtml?highlight=6-99)]
 
@@ -328,7 +328,7 @@ dotnet ef migrations add initial
 dotnet ef database update
 ```
 
-* Aktualizace **ContactManager** ukotvení v *Pages/_Layout.cshtml* souboru:
+* Aktualizace **ContactManager** ukotvit v *Pages/_Layout.cshtml* souboru:
 
 ```cshtml
 <a asp-page="/Contacts/Index" class="navbar-brand">ContactManager</a>

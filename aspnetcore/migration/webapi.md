@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: migration/webapi
-ms.openlocfilehash: 3c4ded874de2700e1290022a535c08f30dce9490
-ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
+ms.openlocfilehash: f5d886a7c3182b5cd372762ade67c2e748051049
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861015"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207274"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>Migrace z rozhraní ASP.NET Web API pro ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Scott Addie](https://twitter.com/scott_addie) a [Steve Smith](https://ard
 
 Rozhraní Web API pro ASP.NET 4.x je služba HTTP, kterou půjde používat celou řadu klientů, včetně prohlížečů a mobilních zařízení. Webové rozhraní API aplikace modelů do jednodušší programovacího modelu říká ASP.NET Core MVC a sjednocuje ASP.NET Core MVC ASP.NET 4.x společnosti. Tento článek popisuje kroky potřebné k migraci z ASP.NET 4.x webového rozhraní API pro ASP.NET Core MVC.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>Požadavky
 

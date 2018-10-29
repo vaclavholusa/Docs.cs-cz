@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/01/2018
 uid: fundamentals/file-providers
-ms.openlocfilehash: a0d326f5fc995cb903380315879d39a8ce851d06
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 3274615a0d6b6f928301ce97d18f5d9768963a30
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48913213"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207313"
 ---
 # <a name="file-providers-in-aspnet-core"></a>Zprostředkovatelé souborů v ASP.NET Core
 
@@ -24,7 +24,7 @@ ASP.NET Core abstrahuje přístupu k systému souborů prostřednictvím zprost�
 * [Razor](xref:mvc/views/razor) zprostředkovatelé souborů používá k nalezení stránek a zobrazení.
 * Nástroje pro .NET core používá k určení, které soubory by se měly zveřejňovat zprostředkovatelé souborů a vzory glob.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="file-provider-interfaces"></a>Rozhraní poskytovatele souboru
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: 8fb50506e6f4e274592c4fd45d4c7876681ebc6d
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 18674f85a0cf8c6dfffa94a2160f7182752674f7
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090179"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207989"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Testovací kontroler logiku v ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Steve Smith](https://ardalis.com/)
 
 [Kontrolery](xref:mvc/controllers/actions) přehrát hlavní roli ve všech aplikacích technologie ASP.NET Core MVC. V důsledku toho byste měli mít jistotu, které se chovají kontrolerů tak, jak má. Automatizované testy můžete detekovat chyby, před nasazením aplikace do produkčního prostředí.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/testing/sample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="unit-tests-of-controller-logic"></a>Testy jednotek logice kontroleru
 

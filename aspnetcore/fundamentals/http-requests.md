@@ -1,5 +1,5 @@
 ---
-title: Iniciování požadavků HTTP
+title: Iniciování HTTP požadavků
 author: stevejgordon
 description: Další informace o použití rozhraní IHttpClientFactory ke správě instance logického HttpClient v ASP.NET Core.
 monikerRange: '>= aspnetcore-2.1'
@@ -7,14 +7,14 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/07/2018
 uid: fundamentals/http-requests
-ms.openlocfilehash: 2a1bf78edb5068d8b10d66e5ef306b1ad4395da6
-ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
+ms.openlocfilehash: 693e9d64f47704400cbfa9e46b866f39278d82f6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41752523"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207638"
 ---
-# <a name="initiate-http-requests"></a>Iniciování požadavků HTTP
+# <a name="initiate-http-requests"></a>Iniciování HTTP požadavků
 
 Podle [Glenn Condron](https://github.com/glennc), [Ryanem Nowak](https://github.com/rynowak), a [Steve Gordon](https://github.com/stevejgordon)
 
@@ -25,7 +25,7 @@ Podle [Glenn Condron](https://github.com/glennc), [Ryanem Nowak](https://github.
 * Spravuje sdružování a dobu života základní `HttpClientMessageHandler` instancí se vyhnout běžným potížím DNS, ke kterým dochází při správě ručně `HttpClient` životnosti.
 * Přidá prostředí konfigurovat protokolování (prostřednictvím `ILogger`) pro všechny požadavky odeslané prostřednictvím klientů, které jsou vytvořeny procesem.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/http-requests/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -233,7 +233,7 @@ Vyřazení klienta není povinné. Vyřazení zruší odchozí požadavky a zár
 
 Zachování jediného `HttpClient` instance zachování připojení pro dlouhé době se běžně používá dříve, než vzniku `IHttpClientFactory`. Tento model se stane zbytečné po migraci na `IHttpClientFactory`.
 
-## <a name="logging"></a>protokolování
+## <a name="logging"></a>Protokolování
 
 Klienty vytvořené prostřednictvím `IHttpClientFactory` záznam protokolu zpráv pro všechny požadavky. Povolte úroveň příslušné informace v konfiguraci protokolování tak, aby se zobrazit výchozí zprávy protokolu. Dodatečné protokolování, jako je například protokolování hlavičky požadavku je zahrnuta pouze na úroveň trasování.
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 06445eb2ecec4cf101b23a4bfe131b2c56a18f62
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: c6dc8b9c462841351b3ada72deeae727da356a6c
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090303"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207885"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>Zprostředkovatel konfigurace Azure Key Vault v ASP.NET Core
 
@@ -20,7 +20,7 @@ Podle [Luke Latham](https://github.com/guardrex) a [Andrew Stanton sestry](https
 
 Tento dokument popisuje, jak používat [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) poskytovatel konfigurace pro načtení hodnoty konfigurace aplikace z Azure Key Vault tajných kódů. Azure Key Vault je Cloudová služba, která pomáhá chránit kryptografické klíče a tajné klíče používané aplikacemi a službami. Řízení přístupu k citlivým konfigurační data patří běžné scénáře a splňuje požadavek na FIPS 140-2 úrovně 2 ověřit modulů hardwarového zabezpečení (HSM) při ukládání konfigurační data. Tato funkce je k dispozici pro aplikace, které cílí ASP.NET Core 1.1 nebo vyšší.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="package"></a>Balíček
 

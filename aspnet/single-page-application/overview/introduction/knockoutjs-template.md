@@ -8,12 +8,12 @@ ms.date: 01/30/2013
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 328046363666944f121dedc1883bbe83f5b079d2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 60bc8bf95cace722244ffc87ff4c00126a0ed2a0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41756876"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207443"
 ---
 <a name="single-page-application-knockoutjs-template"></a>Jednostránková aplikace: Šablona KnockoutJS
 ====================
@@ -163,7 +163,7 @@ Kontrolery MVC jsou také umístěny ve složce řadiče řešení. `HomeControl
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 
-Když se uživatelé přihlásí, zobrazí se jim hlavní uživatelské rozhraní. Zobrazí se jim v opačném případě panelu přihlášení. Všimněte si, že se stane toto podmíněné vykreslování na straně serveru. Nikdy se pokusí skrýt citlivý obsah na straně klienta & #8212anything odesílané v odpovědi protokolu HTTP je viditelná pro uživatele, který sleduje nezpracované zprávy HTTP.
+Když se uživatelé přihlásí, zobrazí se jim hlavní uživatelské rozhraní. Zobrazí se jim v opačném případě panelu přihlášení. Všimněte si, že se stane toto podmíněné vykreslování na straně serveru. Nikdy se pokusí skrýt citlivý obsah na straně klienta&#8212;cokoli, co můžete odeslat v odpovědi protokolu HTTP je viditelná pro uživatele, který sleduje nezpracované zprávy HTTP.
 
 ## <a name="client-side-javascript-and-knockoutjs"></a>JavaScript na straně klienta a knihovnou Knockout.js
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 6af6a90b24b3d5d97547544e5e87b02c4358b136
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: cd06cb1056e1c856214d2440533aad5789907107
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090501"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207339"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>Stránky Razor s EF Core v ASP.NET Core - souběžnosti - 8 8
 
@@ -19,7 +19,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Petr Dykstra](https://g
 
 [!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
-Tento kurz ukazuje, jak řešit konflikty při více uživateli aktualizovat entitu současně (ve stejnou dobu). Pokud narazíte na potíže nelze vyřešit, [stažení nebo zobrazení dokončené aplikace.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [Pokyny ke stažení](xref:tutorials/index#how-to-download-a-sample).
+Tento kurz ukazuje, jak řešit konflikty při více uživateli aktualizovat entitu současně (ve stejnou dobu). Pokud narazíte na potíže nelze vyřešit, [stažení nebo zobrazení dokončené aplikace.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [Pokyny ke stažení](xref:index#how-to-download-a-sample).
 
 ## <a name="concurrency-conflicts"></a>Konflikty souběžnosti
 

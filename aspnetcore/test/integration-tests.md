@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 15186383497f8dd9a9766f8fe7cf32f70a121c8e
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: a136a362cd8973b3684f9a70bd4792d75238eab0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477589"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207872"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>Integrační testy v ASP.NET Core
 
@@ -22,7 +22,7 @@ Integrační testy Ujistěte se, že součásti vaší aplikace správně fungov
 
 V tomto tématu se předpokládá základní znalost testů jednotek. Pokud neznáte pojmy testu, přečtěte si článek [testování jednotek v .NET Core a .NET Standard](/dotnet/core/testing/) téma a jeho odkazovaný obsah.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 Ukázková aplikace je aplikace Razor Pages a předpokládá základní znalost stránky Razor. Pokud neznáte stránky Razor, naleznete v následujících tématech:
 

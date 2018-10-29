@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/25/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 7f19db0a1d12b904daff989bc969daf8d2302bfa
-ms.sourcegitcommit: 4bdf7703aed86ebd56b9b4bae9ad5700002af32d
+ms.openlocfilehash: f9b1c3fbfafa839c116688e0ac63804afcd5dbe0
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49325780"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206670"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Hostitele ASP.NET Core ve službě Windows
 
@@ -19,7 +19,7 @@ Podle [Luke Latham](https://github.com/guardrex) a [Petr Dykstra](https://github
 
 Aplikace ASP.NET Core je možné hostovat na Windows bez použití služby IIS jako [Windows Service](/dotnet/framework/windows-services/introduction-to-windows-service-applications). Pokud hostovaný jako služba Windows, aplikace se automaticky spustí po restartování počítače.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="convert-a-project-into-a-windows-service"></a>Převést projekt do služby Windows
 

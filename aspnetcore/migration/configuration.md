@@ -1,53 +1,53 @@
 ---
-title: Migruje konfiguraci pro jádro ASP.NET
+title: Migrace konfigurace do ASP.NET Core
 author: ardalis
-description: Zjistěte, jak migrovat konfigurace z projektu aplikace ASP.NET MVC do projektu aplikace ASP.NET MVC jádra.
+description: Zjistěte, jak migrovat konfigurace z projektu aplikace ASP.NET MVC do projektu aplikace ASP.NET Core MVC.
 ms.author: riande
 ms.date: 10/14/2016
 uid: migration/configuration
-ms.openlocfilehash: 40b332f9042a4ce793acd29ef5e3f3e389056a62
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5a1c4d0cbbdf74a00073c654e78a05f44948caae
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275817"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50205909"
 ---
-# <a name="migrate-configuration-to-aspnet-core"></a>Migruje konfiguraci pro jádro ASP.NET
+# <a name="migrate-configuration-to-aspnet-core"></a>Migrace konfigurace do ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com/) a [Scott Addie](https://scottaddie.com)
 
-V předchozím článku jsme začali [migrovat projektu aplikace ASP.NET MVC do architektury ASP.NET MVC základní](xref:migration/mvc). V tomto článku jsme migruje konfiguraci.
+V předchozím článku jsme začali [migrace projektu aplikace ASP.NET MVC do ASP.NET Core MVC](xref:migration/mvc). V tomto článku budeme migrovat konfiguraci.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="setup-configuration"></a>Nastavení konfigurace
 
-ASP.NET Core už používá *Global.asax* a *web.config* soubory, které jsou použity v předchozích verzích technologie ASP.NET. V předchozích verzích technologie ASP.NET byl uveden logika spuštění aplikace do `Application_StartUp` metoda v rámci *Global.asax*. Později v architektuře ASP.NET MVC *Startup.cs* souboru je zahrnutý v kořenovém adresáři projektu; a byla volána, když se aplikace spustí. ASP.NET Core přijal tento přístup zcela tím, že všechny logika spuštění v *Startup.cs* souboru.
+ASP.NET Core se už používá *Global.asax* a *web.config* soubory, které používá předchozí verzí technologie ASP.NET. V předchozích verzích technologie ASP.NET, aplikace logiky po spuštění byl umístěn v `Application_StartUp` metody v rámci *Global.asax*. Později v ASP.NET MVC *Startup.cs* byl soubor zahrnut v kořenovém adresáři projektu; a byla volána při spuštění aplikace. ASP.NET Core přijala tento přístup úplně tak, že celé spouštěcí logiky *Startup.cs* souboru.
 
-*Web.config* souboru nahradila také v ASP.NET Core. Konfigurace samotného může být nyní nakonfigurována, jako součást spuštění aplikace postup popsaný v *Startup.cs*. Konfigurace může stále používat soubory XML, ale obvykle projektů ASP.NET Core umístí hodnoty konfigurace v souboru ve formátu JSON, jako *appSettings.JSON určený*. ASP.NET Core konfiguračního systému může také snadný přístup k proměnné prostředí, které můžete zadat [zabezpečení a odolnosti umístění](xref:security/app-secrets) pro konkrétní prostředí hodnoty. To platí hlavně pro tajné klíče jako připojovací řetězce a klíče rozhraní API, které by neměla být zaškrtnuta do správy zdrojového kódu. V tématu [konfigurace](xref:fundamentals/configuration/index) Další informace o konfiguraci v ASP.NET Core.
+*Web.config* souboru nahradila také v ASP.NET Core. Konfigurace samotného lze nyní nastavit, je popsáno v postupu při spuštění aplikace v rámci *Startup.cs*. Konfigurace můžete stále využít soubory XML, ale obvykle projekty ASP.NET Core, umístí hodnoty konfigurace v souboru ve formátu JSON, jako například *appsettings.json*. Systém konfigurace ASP.NET Core můžete také snadno přistupovat k proměnné prostředí, které můžete zadat [zabezpečené a robustní umístění](xref:security/app-secrets) pro hodnoty v závislosti na prostředí. To platí zejména pro tajné kódy jako jsou připojovací řetězce a klíče rozhraní API, které by neměly být zařazeno do správy zdrojového kódu. Zobrazit [konfigurace](xref:fundamentals/configuration/index) získat další informace o konfiguraci v ASP.NET Core.
 
-V tomto článku jsme začínáte s částečně migrované projektu ASP.NET Core z [předchozím článku](xref:migration/mvc). Chcete-li nastavit konfiguraci, přidejte následující konstruktor a vlastnost, která má *Startup.cs* soubor umístěný v kořenovém adresáři projektu:
+Pro účely tohoto článku jsme začínáte s částečně migrovaného projektu ASP.NET Core z [předchozím článku](xref:migration/mvc). Chcete-li nastavit konfiguraci, přidejte následující konstruktor a nastavte *Startup.cs* souboru umístěného v kořenovém adresáři projektu:
 
 [!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-16)]
 
-Poznámka, která v tomto okamžiku *Startup.cs* soubor nebude kompilovat, protože musíme přidejte následující `using` příkaz:
+Všimněte si, který v tomto okamžiku *Startup.cs* soubor nebude kompilovat, protože stále je potřeba přidat následující `using` – příkaz:
 
 ```csharp
 using Microsoft.Extensions.Configuration;
 ```
 
-Přidat *appSettings.JSON určený* souboru do kořenového adresáře projektu pomocí šablony odpovídající položky:
+Přidat *appsettings.json* souboru do kořenového adresáře projektu pomocí šablony položky odpovídající:
 
 ![Přidat AppSettings JSON](configuration/_static/add-appsettings-json.png)
 
 ## <a name="migrate-configuration-settings-from-webconfig"></a>Migrace nastavení konfigurace ze souboru web.config
 
-Naše projektu ASP.NET MVC zahrnout požadované databáze připojovací řetězec v *web.config*v `<connectionStrings>` elementu. V našem projektu ASP.NET Core přidáme k ukládání těchto informací v *appSettings.JSON určený* souboru. Otevřete *appSettings.JSON určený*a Všimněte si, že již zahrnuje následující:
+Zahrnuté připojovací řetězec databáze v našem projektu ASP.NET MVC *web.config*v `<connectionStrings>` elementu. V našem projektu ASP.NET Core, budeme k ukládání příslušných informací v *appsettings.json* souboru. Otevřít *appsettings.json*a Všimněte si, že už obsahuje následující:
 
 [!code-json[](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
 
-Ve zvýrazněný řádek použité v ukázkách výše, změňte název databáze z **_CHANGE_ME** na název vaší databáze.
+V zvýrazněný řádek uvedené výše, změňte název databáze z **_CHANGE_ME** na název vaší databáze.
 
 ## <a name="summary"></a>Souhrn
 
-ASP.NET Core umístí všechny logika spuštění aplikace v jednom souboru, ve kterém může být nezbytné služby a závislosti definované a nakonfigurovaná. Nahradí *web.config* soubor s flexibilní konfigurace funkcí, které můžete využít celou řadu formáty souborů, například JSON, jakož i proměnné prostředí.
+ASP.NET Core umístí všechny spouštěcí logiky aplikace v jediném souboru, ve kterém může být nezbytných služeb a závislosti definované a nakonfigurovaná. Nahradí *web.config* soubor s flexibilní konfiguraci funkce, která můžete využít širokou škálu formátů souborů, jako je JSON, stejně jako proměnné prostředí.

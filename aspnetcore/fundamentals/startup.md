@@ -6,18 +6,20 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 20c7630d949f78e737fdcaad0f189cd30cdebbfa
-ms.sourcegitcommit: ce6b6792c650708e92cdea051a5d166c0708c7c0
+ms.openlocfilehash: 2212344cb3c651714e8c520b096ab0c4eaf5a180
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49652316"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206453"
 ---
-# <a name="application-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
+# <a name="app-startup-in-aspnet-core"></a>Spuštění aplikace v ASP.NET Core
 
 Podle [Steve Smith](https://ardalis.com), [Petr Dykstra](https://github.com/tdykstra), a [Luke Latham](https://github.com/guardrex)
 
 Třída `Startup` konfiguruje služby a kanál zpracování požadavků aplikace.
+
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/) ([stažení](xref:index#how-to-download-a-sample)).
 
 ## <a name="the-startup-class"></a>Třída Startup
 
@@ -96,7 +98,7 @@ Použijte [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilt
 
 Každý `IStartupFilter` implementuje jeden nebo více middlewarů v kanálu zpracování požadavků. Filtry jsou volány v pořadí, ve kterém byly přidány do kontejneru služeb. Filtry mohou přidávat middleware před nebo po předání řízení dalšímu filtru, tedy připojují se na začátek nebo konec kanálu aplikace.
 
-[Ukázková aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/) ([stažení](xref:tutorials/index#how-to-download-a-sample)) ukazuje, jak zaregistrovat middleware s pomocí `IStartupFilter`. Ukázková aplikace obsahuje middleware, který nastavuje hodnoty možností z parametru řetězce dotazu (query string parameter):
+Ukázková aplikace předvádí, jak zaregistrovat middleware s `IStartupFilter`. Ukázková aplikace obsahuje middleware, který nastavuje hodnoty možností z parametru řetězce dotazu (query string parameter):
 
 [!code-csharp[](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: df7af9fd05c19c42357989bbd8a81da062a564cc
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: d1e94fdc89fbebc264dc001bbf35666af16f4799
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43893100"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50208028"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>Zpracování chyb v ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Steve Smith](https://ardalis.com/) a [Petr Dykstra](https://github.com/td
 
 Tento článek se věnuje běžné přístupy k zpracování chyb v aplikacích ASP.NET Core.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/samples/2.x/ErrorHandlingSample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/samples/2.x/ErrorHandlingSample) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="the-developer-exception-page"></a>Stránce výjimek pro vývojáře
 

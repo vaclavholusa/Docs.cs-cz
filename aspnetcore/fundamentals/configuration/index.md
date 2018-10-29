@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/09/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: f60b0611a8fa1880273dd465f23a262c135c37db
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: cbc48222aeb4a1d23144bfb70aece5a83a700d09
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148899"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207898"
 ---
 # <a name="configuration-in-aspnet-core"></a>Konfigurace v ASP.NET Core
 
@@ -54,7 +54,7 @@ Konfigurace aplikace v ASP.NET Core je založená na páry klíč hodnota stanov
 
 *Možnosti vzor* je rozšířením konfigurace koncepty popsané v tomto tématu. Možnosti třídy používá k reprezentování skupiny související nastavení. Další informace o použití vzoru možnosti najdete v tématu <xref:fundamentals/configuration/options>.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 Příklady uvedené v tomto tématu využívají:
 

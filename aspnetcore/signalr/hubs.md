@@ -7,18 +7,18 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: 17e3ee23967bc1097a3121b3e3e5b58cebe3887d
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: be42314afad4ff43d2fcf1abbc96c5b78c773977
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538359"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206013"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>Použití rozbočovače signalr pro ASP.NET Core
 
 Podle [Rachel Appel](https://twitter.com/rachelappel) a [Kevin Griffin](https://twitter.com/1kevgriff)
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(jak stáhnout)](xref:tutorials/index#how-to-download-a-sample)
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/hubs/sample/ ) [(jak stáhnout)](xref:index#how-to-download-a-sample)
 
 ## <a name="what-is-a-signalr-hub"></a>Co je rozbočovače SignalR
 

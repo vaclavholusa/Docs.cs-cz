@@ -8,12 +8,12 @@ ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: ce2d705a93577b0c6d28f86069873c6ecd891db6
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9041f8d15a449a517594f8051c3d9f0ceb18a8a3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41755297"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207014"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>Oprava chyby "Serverová aplikace není k dispozici" po použití aktualizace zabezpečení pro IE
 ====================
@@ -38,7 +38,7 @@ Usilovně pracujeme na trvalé řešení tohoto problému. Do té doby můžete 
 4. Znovu zaregistruje technologie ASP.NET. Tím se vytvoří nová náhodné heslo pro účet a použije výchozí nastavení přístupu ovládací prvek technologie ASP.NET pro něj
 5. Restartování služby IIS
 
-Dávkový soubor obsahuje pevně zakódované dočasné heslo "<strong>1pass@word</strong>" který budete vyzváni k zadání pro příkaz runas při spuštění dávkového souboru. Po dokončení příkazu Spustit jako heslo k účtu ASPNET se znovu vytvoří s silné náhodnou hodnotu. Všimněte si, že dávkový soubor může selhat, pokud pevně zakódované heslo nesplňuje požadavky na složitost hesla ve vašem prostředí. Pokud je to tento případ, můžete ji změnit na jinou hodnotu, která je vhodná pro vaše prostředí.
+Dávkový soubor obsahuje pevně zakódované dočasné heslo "<strong>1pass\@slovo</strong>" který budete vyzváni k zadání pro příkaz runas při spuštění dávkového souboru. Po dokončení příkazu Spustit jako heslo k účtu ASPNET se znovu vytvoří s silné náhodnou hodnotu. Všimněte si, že dávkový soubor může selhat, pokud pevně zakódované heslo nesplňuje požadavky na složitost hesla ve vašem prostředí. Pokud je to tento případ, můžete ji změnit na jinou hodnotu, která je vhodná pro vaše prostředí.
 
 *> [!IMPORTANT]* Pokud jste přidali vlastní řízení přístupu nebo oprávnění databáze účtu pro účet ASPNET, bude nutné znovu vytvořit po dokončení tento dávkový soubor. Je to proto, když se znovu vytvoří účet, se zobrazí nový identifikátor zabezpečení (SID).
 
@@ -51,7 +51,7 @@ Dávkový soubor je součástí samorozbalovací archivu níže. Jeho použití:
 3. Extrahujte obsah c:\
 4. Vybrat spustit z nabídky start a zadejte `cmd.exe`
 5. V příkazu Otevřít windows, zadejte `c:\fixup.cmd`.
-6. Po zobrazení výzvy zadejte <strong>1pass@word</strong> jako heslo.
+6. Po zobrazení výzvy zadejte <strong>1pass\@slovo</strong> jako heslo.
 7. Pokud máte nastavení řízení přístupu dříve vlastní nebo oprávnění databáze účtu pro účet ASPNET, budete muset znovu použít tato nastavení.
 
 Mnoho omluvu se za nepříjemnosti, která je příčinou. Další informace vám publikování, protože je k dispozici.

@@ -5,12 +5,12 @@ description: Ukazuje, jak vytvořit aplikaci pro stránky Razor pomocí Entity F
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: f714934a2ef804813290ae0c04432470a2ba5816
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: a234d5fefd671d4503f6c63b79074d47c893f69c
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477563"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207703"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>Stránky Razor pomocí Entity Framework Core v ASP.NET Core – kurz 1 z 8
 
@@ -24,7 +24,7 @@ Contoso University ukázkovou webovou aplikaci ukazuje, jak vytvořit aplikaci A
 
 Ukázková aplikace je webovou stránku pro fiktivní společnosti Contoso University. Zahrnuje funkce, jako student přijetí, kurz vytvoření a přiřazení instruktorem. Tato stránka je první ze série kurzů, které vysvětlují, jak vytvořit ukázková aplikace Contoso University.
 
-[Stažení nebo zobrazení dokončené aplikace.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [Pokyny ke stažení](xref:tutorials/index#how-to-download-a-sample).
+[Stažení nebo zobrazení dokončené aplikace.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [Pokyny ke stažení](xref:index#how-to-download-a-sample).
 
 ## <a name="prerequisites"></a>Požadavky
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: security/ip-safelist
-ms.openlocfilehash: 362d1ded00bda3f328e029fb467f2b3eeaa01396
-ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
+ms.openlocfilehash: 286f199c0d9164fa70d511aba523210c85c2fdfd
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44126706"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207729"
 ---
 # <a name="client-ip-safelist-for-aspnet-core"></a>Safelist IP klienta pro ASP.NET Core
 
@@ -25,7 +25,7 @@ Tento článek popisuje tři způsoby, jak implementovat safelist IP (označovan
 
 Ukázková aplikace ukazuje oba přístupy. V obou případech je uložen řetězec obsahující schválených klientských IP adres v nastavení aplikace. Middleware nebo filtr analyzuje řetězec do seznam a zkontroluje, zda vzdálené IP je v seznamu. V opačném případě se vrátí stavový kód HTTP 403 Zakázáno.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/ip-safelist/samples/2.x/ClientIpAspNetCore) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/ip-safelist/samples/2.x/ClientIpAspNetCore) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="the-safelist"></a>Safelist
 

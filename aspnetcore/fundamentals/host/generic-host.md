@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 0924e2764958911dc1711d5427f6dd58e8873739
-ms.sourcegitcommit: f5d403004f3550e8c46585fdbb16c49e75f495f3
+ms.openlocfilehash: e5f91ed64b7f8402dfe938f0fa8a0d94755d15c6
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "49477602"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207716"
 ---
 # <a name="net-generic-host"></a>Obecný hostitele .NET
 
@@ -24,7 +24,7 @@ Cílem obecný hostitele je oddělit kanálu HTTP z hostitele webového rozhran�
 
 Obecný hostitele je nového v ASP.NET Core 2.1 a není vhodné pro scénáře hostování webů. Pro web scénářích hostování, použijte [webového hostitele](xref:fundamentals/host/web-host). Obecný hostitele je ve vývoji a nahraďte webového hostitele v budoucí verzi fungovat jako primární hostitele rozhraní API scénáře jiným protokolem než HTTP a protokolu HTTP.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/) ([stažení](xref:index#how-to-download-a-sample))
 
 Při spuštění ukázkové aplikace [Visual Studio Code](https://code.visualstudio.com/), použijte *externí nebo integrovaného terminálu*. Nejdou spustit v ukázce `internalConsole`.
 

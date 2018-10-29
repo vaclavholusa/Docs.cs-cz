@@ -7,12 +7,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: b3eb643daf230336ce5def96007b6096f86390e6
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: 7b34187747d3081998b8b60a72adae78cafe2c3e
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148938"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207963"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>Migrace aplikací ASP.NET MVC do kontejnerů s Windows
 
@@ -71,7 +71,7 @@ Klikněte na tlačítko **publikovat**, a sady Visual Studio zkopíruje všechny
 Definujte vaši image Dockeru v souboru Dockerfile. Soubor Dockerfile obsahuje pokyny pro základní image, další součásti, aplikace, kterou chcete spustit a další konfigurace Image.  Soubor Dockerfile je vstupem `docker build` příkaz, který vytvoří bitovou kopii.
 
 Sestavíte image založenou na `microsoft/aspnet` image uložená na [Docker Hubu](https://hub.docker.com/r/microsoft/aspnet/).
-Základní image `microsoft/aspnet`, je image Windows serveru. Obsahuje jádro systému Windows Server, služba IIS a ASP.NET 4.6.2. Při spuštění této image ve vašem kontejneru se automaticky spustí službu IIS a nainstalované weby.
+Základní image `microsoft/aspnet`, je image Windows serveru. Obsahuje jádro systému Windows Server, služba IIS a ASP.NET 4.7.2. Při spuštění této image ve vašem kontejneru se automaticky spustí službu IIS a nainstalované weby.
 
 Soubor Dockerfile, který vytvoří image vypadá takto:
 
@@ -122,18 +122,7 @@ V mnoha příkladech dockeru může se zobrazit -p mapování portů kontejneru 
 
 ## <a name="verify-in-the-browser"></a>Ověřte v prohlížeči
 
-> [!NOTE]
-> V aktuální verzi Windows kontejneru nelze vyhledat `http://localhost`.
-> Toto je známý chování v WinNAT a bude v budoucnu řešit. Dokud, která je určena, budete muset použít IP adresu kontejneru.
-
-Po spuštění kontejneru vyhledejte jeho IP adresu, abyste mohli připojit ke spuštěnému kontejneru z prohlížeče:
-
-```console
-docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" randomanswers
-172.31.194.61
-```
-
-Připojit ke spuštěnému kontejneru pomocí adresy IPv4 `http://172.31.194.61` , jak ukazuje příklad. Zadejte tuto adresu URL do prohlížeče a měli byste vidět web spuštěný.
+Po spuštění kontejneru, připojte se k spuštěného kontejneru pomocí `http://localhost` , jak ukazuje příklad. Zadejte tuto adresu URL do prohlížeče a měli byste vidět web spuštěný.
 
 > [!NOTE]
 > Některé softwary VPN nebo proxy serveru brání přejdete na web.
@@ -145,10 +134,9 @@ Obsahuje adresáře ukázka na Githubu [skript prostředí PowerShell](https://g
 ./run.ps1
 ```
 
-Výše uvedeného příkazu sestaví image, zobrazí seznam imagí na svém počítači, spustí kontejner a IP adresu pro tento kontejner.
+Výše uvedeného příkazu sestaví image, se zobrazí seznam imagí na svém počítači a spustí kontejner.
 
-Chcete kontejner zastavit, vydávání `docker
-stop` příkaz:
+Chcete kontejner zastavit, vydávání `docker stop` příkaz:
 
 ```console
 docker stop randomanswers

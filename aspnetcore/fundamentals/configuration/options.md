@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 0ab920cc8890f2a1e4d1fb8d783dea666751a53f
-ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
+ms.openlocfilehash: 359bd438066aefcf572c91dacee99e85c0f10b1a
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48911289"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207352"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Vzor možnosti v ASP.NET Core
 
@@ -22,7 +22,7 @@ Možnosti vzor používá k reprezentování skupiny související nastavení t�
 * [Princip oddělení rozhraní (ISP)](http://deviq.com/interface-segregation-principle/): scénáře (třídy), které závisí na nastavení konfigurace záviset pouze na nastavení konfigurace, které používají.
 * [Oddělení oblastí zájmu](http://deviq.com/separation-of-concerns/): nastavení pro různé části aplikace nejsou závislé nebo propojených mezi sebou.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample)) Tento článek je usnadňuje její sledování s ukázkovou aplikací.
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample) ([stažení](xref:index#how-to-download-a-sample)) Tento článek je usnadňuje její sledování s ukázkovou aplikací.
 
 ## <a name="prerequisites"></a>Požadavky
 

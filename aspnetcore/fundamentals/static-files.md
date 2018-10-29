@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 5d34bd18c263a9dc2c126be3de53726979d8358e
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 5d00e6ba57053d17b45a24a1c57a446cb3db22ca
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090768"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207131"
 ---
 # <a name="static-files-in-aspnet-core"></a>Statické soubory v ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Scott Addie](https://t
 
 Statické soubory, jako jsou HTML, CSS, obrázky a JavaScript, představují majetek, který obsluhuje aplikace ASP.NET Core přímo pro klienty. Některé konfigurace je potřeba povolit poskytování obsahu těchto souborů.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="serve-static-files"></a>Doručování statických souborů
 

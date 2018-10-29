@@ -5,12 +5,12 @@ description: Vysvětlení, používání ověřování souborem cookie bez ASP.N
 ms.author: riande
 ms.date: 10/11/2017
 uid: security/authentication/cookie
-ms.openlocfilehash: 8045a1bf27853ff5f03166e7cf10d89e2ad38fd1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 8add7559557d505397c3be8d8a48aa2e9d9e45e8
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011833"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207417"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>Ověřování souborem cookie bez ASP.NET Core Identity
 
@@ -18,7 +18,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT) a [Luke Latham](https://g
 
 Jak už víte, v předchozích tématech ověřování [ASP.NET Core Identity](xref:security/authentication/identity) je ověřování dokončeno, plně vybavené zprostředkovatele pro vytváření a správa přihlášení. Můžete ale použít vlastní logiku ověřování vlastní soubor cookie s ověřováním pomocí čas od času. Ověřování na základě souborů cookie slouží jako zprostředkovatel ověřování samostatné bez ASP.NET Core Identity.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 Pro demonstrační účely v ukázkové aplikaci je uživatelský účet pro hypotetické uživatele Marie Rodriguez pevně zakódované do aplikace. Použití uživatelského jména e-mailu "maria.rodriguez@contoso.com" a jakékoli heslo k přihlášení uživatele. Ověření uživatele v `AuthenticateUser` metodu *Pages/Account/Login.cshtml.cs* souboru. V reálný příklad uživatel by ověřovány proti databázi.
 

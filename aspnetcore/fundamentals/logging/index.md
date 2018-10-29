@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/11/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 65e6b13dc3430d7bd9b513da34fbd53e349f9cc2
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: f7cfb3823a188f28398d59e0d009e9ddc159dc32
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091103"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207573"
 ---
 # <a name="logging-in-aspnet-core"></a>Protokolování v ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Steve Smith](https://ardalis.com/) a [Petr Dykstra](https://github.com/td
 
 ASP.NET Core podporuje protokolování rozhraní API, která funguje s různých poskytovatelů třetích stran a vestavěné protokolování. Tento článek ukazuje, jak používat rozhraní API protokolování s předdefinované zprostředkovatele.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="add-providers"></a>Přidat zprostředkovatele
 

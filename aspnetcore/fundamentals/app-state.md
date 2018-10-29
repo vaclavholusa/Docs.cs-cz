@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 7383d123be4d1e7a20eb93646e630119583350e6
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: da20538a0dc6e13caedaf6a1130e66981dcb7af2
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091090"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207287"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>Stav relace a aplikace v ASP.NET Core
 
@@ -19,7 +19,7 @@ Podle [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ar
 
 HTTP je Bezstavová protokol. Bez dalších kroků, požadavky HTTP jsou nezávislé zprávy, které nechcete zachovat hodnoty uživatele nebo stav aplikace. Tento článek popisuje několik přístupů, které chcete zachovat data a aplikace stavu mezi žádostí uživatele.
 
-[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/samples) ([stažení](xref:index#how-to-download-a-sample))
 
 ## <a name="state-management"></a>Správa stavu
 
@@ -128,8 +128,8 @@ Chcete-li přepsat výchozí relace, použijte [SessionOptions](/dotnet/api/micr
 | Možnost | Popis |
 | ------ | ----------- |
 | [Soubor cookie](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.cookie) | Určuje nastavení použité k vytvoření souboru cookie. [Název](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name) výchozí hodnota je [SessionDefaults.CookieName](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiename) (`.AspNetCore.Session`). [Cesta](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path) výchozí hodnota je [SessionDefaults.CookiePath](/dotnet/api/microsoft.aspnetcore.session.sessiondefaults.cookiepath) (`/`). [SameSite](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.samesite) výchozí hodnota je [SameSiteMode.Lax](/dotnet/api/microsoft.aspnetcore.http.samesitemode) (`1`). [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) výchozí hodnota je `true`. [IsEssential](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.isessential) výchozí hodnota je `false`. |
-| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | `IdleTimeout` Určuje, jak dlouho může být relace nečinná předtím, než jsou opuštěných jeho obsah. Každá relace přístup obnoví časový limit. Všimněte si, že toto platí jenom pro obsah relace, není soubor cookie. Výchozí hodnota je 20 minut. |
-| [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | Maximální množství času povoleny relace načtení z úložiště nebo k potvrzení zpět do úložiště. Všimněte si, že to může platit pouze pro asynchronní operace. Tento časový limit se dají zakázat pomocí [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan). Výchozí hodnota je 1 minuta. |
+| [IdleTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.idletimeout) | `IdleTimeout` Určuje, jak dlouho může být relace nečinná předtím, než jsou opuštěných jeho obsah. Každá relace přístup obnoví časový limit. Toto nastavení platí jenom pro obsah relace, není soubor cookie. Výchozí hodnota je 20 minut. |
+| [IOTimeout](/dotnet/api/microsoft.aspnetcore.builder.sessionoptions.iotimeout) | Maximální množství času povoleny relace načtení z úložiště nebo k potvrzení zpět do úložiště. Toto nastavení může platí jenom pro asynchronní operace. Tento časový limit se dají zakázat pomocí [InfiniteTimeSpan](/dotnet/api/system.threading.timeout.infinitetimespan). Výchozí hodnota je 1 minuta. |
 
 Relace do souboru cookie používá ke sledování a identifikace požadavků z jediného prohlížeče. Ve výchozím nastavení, je tento soubor cookie s názvem `.AspNetCore.Session`, a používá cestu k `/`. Protože výchozí soubor cookie nemá určenou doménu, to nebude zpřístupněn pro skript na straně klienta na stránce (protože [HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) výchozí hodnota je `true`).
 

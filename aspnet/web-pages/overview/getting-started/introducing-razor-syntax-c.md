@@ -9,11 +9,11 @@ ms.assetid: aa67d304-583b-4bf8-a231-195656cfb587
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
 ms.openlocfilehash: 347e5ddbc02866887d3f422ecc291e5e3dfacaaf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41757134"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50207911"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Úvod k programování v rozhraní ASP.NET Web používající syntaxi Razor (C#)
 ====================
@@ -342,13 +342,13 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
 
 :::row:::
     :::column:::
-        <strong>– Metoda</strong>
+        <strong>Method</strong>
     :::column-end:::
     :::column:::
-        <strong>Popis</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>Příklad</strong>
+        <strong>Example</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -357,7 +357,7 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
         `AsInt(), IsInt()`
     :::column-end:::
     :::column:::
-        Převede řetězec představující celé číslo (např. "593") na celé číslo.
+        Converts a string that represents a whole number (like "593") to an integer.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
@@ -369,7 +369,7 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
         `AsBool(), IsBool()`
     :::column-end:::
     :::column:::
-        Převede řetězec jako &quot;true&quot; nebo &quot;false&quot; s typem Boolean.
+        Converts a string like &quot;true&quot; or &quot;false&quot; to a Boolean type.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
@@ -381,7 +381,7 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
         `AsFloat(), IsFloat()`
     :::column-end:::
     :::column:::
-        Převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na číslo s plovoucí desetinnou čárkou.
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a floating-point number.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
@@ -393,7 +393,8 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
         `AsDecimal(), IsDecimal()`
     :::column-end:::
     :::column:::
-        Převede řetězec obsahující desetinná hodnota jako &quot;1.3&quot; nebo &quot;7.439&quot; na desetinné číslo. (V technologii ASP.NET je přesnější než číslo s plovoucí desetinnou čárkou desetinné číslo.) :::column-end:::
+        Converts a string that has a decimal value like &quot;1.3&quot; or &quot;7.439&quot; to a decimal number. (In ASP.NET, a decimal number is more precise than a floating-point number.)
+    :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
     :::column-end:::
@@ -404,7 +405,7 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
         `AsDateTime(), IsDateTime()`
     :::column-end:::
     :::column:::
-        Převede řetězec představující hodnotu data a času na ASP.NET `DateTime` typu.
+        Converts a string that represents a date and time value to the ASP.NET `DateTime` type.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
@@ -416,7 +417,7 @@ Následující tabulka uvádí některé běžné metody převodu a testování 
         `ToString()`
     :::column-end:::
     :::column:::
-        Převede jakýkoli jiný typ dat na řetězec.
+        Converts any other data type to a string.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
@@ -430,13 +431,13 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
 
 :::row:::
     :::column:::
-        <strong>– Operátor</strong>
+        <strong>Operator</strong>
     :::column-end:::
     :::column:::
-        <strong>Popis</strong>
+        <strong>Description</strong>
     :::column-end:::
     :::column:::
-        <strong>Příklady</strong>
+        <strong>Examples</strong>
     :::column-end:::
 :::row-end:::
 * * *
@@ -445,7 +446,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `+` `-` `*` `/`
     :::column-end:::
     :::column:::
-        Matematické operátory používat ve výrazech pro číselná.
+        Math operators used in numerical expressions.
     :::column-end:::
     :::column:::
         [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
@@ -457,7 +458,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `=`
     :::column-end:::
     :::column:::
-        Přiřazení. Přiřadí hodnotu na pravé straně příkazu na objekt na levé straně.
+        Assignment. Assigns the value on the right side of a statement to the object on the left side.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
@@ -469,7 +470,8 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `==`
     :::column-end:::
     :::column:::
-        Rovnost. Vrátí `true` Pokud jsou hodnoty stejné. (Všimněte si rozdílu mezi `=` operátor a `==` operátor.) :::column-end:::
+        Equality. Returns `true` if the values are equal. (Notice the distinction between the `=` operator and the `==` operator.)
+    :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
     :::column-end:::
@@ -480,7 +482,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `!=`
     :::column-end:::
     :::column:::
-        Nerovnost. Vrátí `true` Pokud hodnoty nejsou shodné.
+        Inequality. Returns `true` if the values are not equal.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
@@ -492,7 +494,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `< > <= >=`
     :::column-end:::
     :::column:::
-        Less – než, větší-než, menší než – nebo se znaménkem rovná a větší než nebo rovno.
+        Less-than, greater-than, less-than-or-equal, and greater-than-or-equal.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
@@ -504,7 +506,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `+`
     :::column-end:::
     :::column:::
-        Zřetězení, který se používá pro připojení řetězce. ASP.NET ví rozdíl mezi tento operátor a operátor sčítání na základě datového typu výrazu.
+        Concatenation, which is used to join strings. ASP.NET knows the difference between this operator and the addition operator based on the data type of the expression.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
@@ -513,10 +515,10 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
 * * *
 :::row:::
     :::column:::
-        `+=``-=`
+        `+=` `-=`
     :::column-end:::
     :::column:::
-        Přírůstek a snížení operátory, které operátorů sčítání a odečítání 1 (v uvedeném pořadí) z proměnné.
+        The increment and decrement operators, which add and subtract 1 (respectively) from a variable.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
@@ -528,7 +530,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `.`
     :::column-end:::
     :::column:::
-        Tečka. Použít k rozlišení objekty a jejich vlastnosti a metody.
+        Dot. Used to distinguish objects and their properties and methods.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
@@ -540,7 +542,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `()`
     :::column-end:::
     :::column:::
-        Závorky. Použít skupinové výrazy a předat parametry metody.
+        Parentheses. Used to group expressions and to pass parameters to methods.
     :::column-end:::
     :::column:::
         [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
@@ -552,7 +554,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `[]`
     :::column-end:::
     :::column:::
-        Složené závorky. Používá pro přístup k hodnoty pole nebo kolekce.
+        Brackets. Used for accessing values in arrays or collections.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
@@ -564,7 +566,7 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
         `!`
     :::column-end:::
     :::column:::
-        Není. Obrátí `true` hodnota, která se `false` a naopak. Obvykle se používá jako zjednodušený způsob, jak otestovat pro `false` (to znamená pro není `true`).
+        Not. Reverses a `true` value to `false` and vice versa. Typically used as a shorthand way to test for `false` (that is, for not `true`).
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
@@ -573,10 +575,10 @@ Operátor je klíčové slovo nebo znak, který říká technologie ASP.NET, jak
 * * *
 :::row:::
     :::column:::
-        `&&`<code>&#124;&#124;</code>
+        `&&` <code>&#124;&#124;</code>
     :::column-end:::
     :::column:::
-        Logický operátor AND a které se používají k propojení podmínky společně.
+        Logical AND and OR, which are used to link conditions together.
     :::column-end:::
     :::column:::
         [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]

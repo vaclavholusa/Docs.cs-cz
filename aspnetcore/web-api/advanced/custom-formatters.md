@@ -1,57 +1,57 @@
 ---
-title: Vlastní formátování v webového rozhraní API ASP.NET Core
+title: Vlastní formátování v rozhraní Web API ASP.NET Core
 author: rick-anderson
-description: Zjistěte, jak vytvořit a použít vlastní formátování webové rozhraní API v ASP.NET Core.
+description: Zjistěte, jak vytvořit a použít vlastní formátovací moduly pro webová rozhraní API v ASP.NET Core.
 ms.author: tdykstra
 ms.date: 02/08/2017
 uid: web-api/advanced/custom-formatters
-ms.openlocfilehash: a21fcea68d957d0344309c9bbd3286b71c092f60
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a038cd9c05950333fce9e72f67d6721198fae4d3
+ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273855"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50206312"
 ---
-# <a name="custom-formatters-in-aspnet-core-web-api"></a>Vlastní formátování v webového rozhraní API ASP.NET Core
+# <a name="custom-formatters-in-aspnet-core-web-api"></a>Vlastní formátování v rozhraní Web API ASP.NET Core
 
-Podle [tní Dykstra](https://github.com/tdykstra)
+podle [Petr Dykstra](https://github.com/tdykstra)
 
-Jádro ASP.NET MVC má integrovanou podporu pro výměnu dat ve webové rozhraní API pomocí formátu JSON, XML nebo prostý text. Tento článek ukazuje, jak přidat podporu dalších formátech tak, že vytvoříte vlastní formátování.
+ASP.NET Core MVC obsahuje integrovanou podporu pro výměnu dat ve webovém rozhraní API s použitím formátu JSON, XML nebo prostý text. Tento článek ukazuje, jak přidat podporu pro další formáty tak, že vytvoříte vlastní formátovací moduly.
 
-[Zobrazit nebo stáhnout ukázkový kód](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample) ([stažení](xref:tutorials/index#how-to-download-a-sample))
+[Zobrazení nebo stažení ukázkového kódu](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample) ([stažení](xref:index#how-to-download-a-sample))
 
-## <a name="when-to-use-custom-formatters"></a>Kdy použít vlastní formátování
+## <a name="when-to-use-custom-formatters"></a>Kdy použít vlastní formátovací moduly
 
-Pokud chcete použít vlastní formátování [vyjednávání obsahu](xref:web-api/advanced/formatting#content-negotiation) proces pro podporu typ obsahu, který nepodporuje integrované formátovací moduly (JSON, XML a prostý text).
+Pokud chcete použít vlastní formátovací modul [vyjednávání obsahu](xref:web-api/advanced/formatting#content-negotiation) proces pro podporu typu obsahu, který není podporován předdefinované formátování (JSON, XML a prostý text).
 
-Například, pokud některé z klientů pro webového rozhraní API může zpracovat [Protobuf](https://github.com/google/protobuf) formátu, můžete chtít použít Protobuf s těmito klienty, protože je efektivnější. Nebo můžete chtít webového rozhraní API k odeslání kontaktní názvy a adresy v [soubor vCard](https://wikipedia.org/wiki/VCard) formát, běžně používaný formát pro výměnu kontaktní údaje. Ukázková aplikace součástí v tomto článku implementuje jednoduchý soubor vCard formátování.
+Například, pokud některé z klientů pro vaše webové rozhraní API může zpracovat [Protobuf](https://github.com/google/protobuf) formátu, můžete chtít použít Protobuf s těmito klienty, protože je mnohem efektivnější. Nebo můžete chtít vaše webové rozhraní API k odeslání jména kontaktů a adresy v [vCard](https://wikipedia.org/wiki/VCard) formát, běžně používaný formát pro výměnu kontaktní údaje. Ukázkovou aplikaci k dispozici v tomto článku implementuje jednoduchou vCard formátování.
 
 ## <a name="overview-of-how-to-use-a-custom-formatter"></a>Přehled o tom, jak používat vlastní formátování
 
-Zde jsou kroky, jak vytvořit a používat vlastní formátování:
+Tady jsou kroky k vytvoření a použití vlastní formátovací modul:
 
 * Vytvořte třídu formátování výstupu, pokud chcete serializovat data k odeslání do klienta.
-* Vytvořte třídu vstupní formátovací modul, pokud chcete k deserializaci data přijatá z klienta.
-* Přidání instance formátovací moduly, které `InputFormatters` a `OutputFormatters` kolekcí v [MvcOptions](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions).
+* Vytvořte třídu vstupní formátovací modul, pokud chcete zrušit serializaci dat přijatých z klienta.
+* Doplnit dodatečné instance vaší formátovací moduly, `InputFormatters` a `OutputFormatters` kolekce v [MvcOptions](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions).
 
 Následující části obsahují pokyny a příklady kódu pro každý z těchto kroků.
 
-## <a name="how-to-create-a-custom-formatter-class"></a>Jak vytvořit vlastní formátování třídu
+## <a name="how-to-create-a-custom-formatter-class"></a>Jak vytvořit třídu vlastního formátování
 
-Pokud chcete vytvořit formátování:
+Chcete-li vytvořit formátování:
 
-* Třída odvozena od příslušné základní třídy.
+* Třídy odvozen od příslušné základní třídy.
 * Zadejte platné médium typy a kódování v konstruktoru.
-* Přepsání `CanReadType` / `CanWriteType` metody
-* Přepsání `ReadRequestBodyAsync` / `WriteResponseBodyAsync` metody
+* Přepsat `CanReadType` / `CanWriteType` metody
+* Přepsat `ReadRequestBodyAsync` / `WriteResponseBodyAsync` metody
   
-### <a name="derive-from-the-appropriate-base-class"></a>Odvozena od příslušné základní třídy
+### <a name="derive-from-the-appropriate-base-class"></a>Odvozen od příslušné základní třídy
 
-Text typy médií (například soubor vCard), jsou odvozeny od [TextInputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.textinputformatter) nebo [TextOutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.textoutputformatter) základní třídy.
+Typ média textu (například soubor vCard), jsou odvozeny z [TextInputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.textinputformatter) nebo [TextOutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.textoutputformatter) základní třídy.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=classdef)]
 
-Pro binární typy jsou odvozeny od [InputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.inputformatter) nebo [OutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformatter) základní třídy.
+Pro binární typy jsou odvozeny z [InputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.inputformatter) nebo [OutputFormatter](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformatter) základní třídy.
 
 ### <a name="specify-valid-media-types-and-encodings"></a>Zadejte platné médium typy a kódování
 
@@ -60,42 +60,42 @@ V konstruktoru, určete přidáním do platné médium typy a kódování `Suppo
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=ctor&highlight=3,5-6)]
 
 > [!NOTE]
-> Nelze provést konstruktor vkládání závislostí v třída formátovacího modulu. Například nelze získat protokolovacího nástroje přidáním protokolovacího nástroje parametr konstruktoru. Pro přístup ke službám, budete muset použít objektu context, který získá předané do vaší metody. Příklad kódu [pod](#read-write) ukazuje, jak to udělat.
+> Injektáž závislostí konstruktoru ve třídě formátovacího modulu nelze provést. Například nelze získat protokolovač tak, že přidáte parametr protokolovač konstruktoru. Pro přístup ke službám, budete muset použít objekt kontextu, který získá předán do metody. Příklad kódu [níže](#read-write) ukazuje, jak to provést.
 
-### <a name="override-canreadtypecanwritetype"></a>Přepsání CanReadType/CanWriteType
+### <a name="override-canreadtypecanwritetype"></a>Přepsat CanReadType/CanWriteType
 
-Zadejte typ můžete deserializovat do nebo z serializovat přepsáním `CanReadType` nebo `CanWriteType` metody. Například může být pouze nebudete moct vytvořit soubor vCard text ze `Contact` a naopak.
+Určení typu lze deserializovat do nebo z serializovat tak, že přepíšete `CanReadType` nebo `CanWriteType` metody. Například může být pouze budete moci vytvořit vCard text z `Contact` typu a naopak.
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=canwritetype)]
 
-#### <a name="the-canwriteresult-method"></a>Metoda CanWriteResult
+#### <a name="the-canwriteresult-method"></a>CanWriteResult – metoda
 
-V některých případech je nutné přepsat `CanWriteResult` místo `CanWriteType`. Použití `CanWriteResult` Pokud jsou splněny následující podmínky:
+V některých scénářích je nutné přepsat `CanWriteResult` místo `CanWriteType`. Použití `CanWriteResult` Pokud jsou splněny následující podmínky:
 
 * Vaše metoda akce vrací třídu modelu.
-* Existují odvozené třídy, které může být vrácena za běhu.
-* Je třeba vědět za běhu, který odvozené, že byla vrácena třída akce.
+* Existují odvozených tříd, které může být vrácena za běhu.
+* Musíte znát za běhu, který odvozené třídy vrátil akce.
 
-Předpokládejme například, vrátí podpis metody akce `Person` typ, ale může vrátit `Student` nebo `Instructor` typ odvozený z `Person`. Pokud chcete, aby vaše formátování, které bude zpracovávat jenom `Student` objekty, zkontrolujte typ [objekt](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformattercanwritecontext#Microsoft_AspNetCore_Mvc_Formatters_OutputFormatterCanWriteContext_Object) v kontextu objektu poskytnuté `CanWriteResult` metoda. Všimněte si, že není potřeba použít `CanWriteResult` při vrácení metody akce `IActionResult`; v takovém případě `CanWriteType` metoda přijímá typ modulu runtime.
+Předpokládejme například, vrátí podpis metody akce `Person` typu, ale může vrátit `Student` nebo `Instructor` typ, který je odvozen od `Person`. Pokud chcete, aby vaše formátovací modul pro zpracování pouze `Student` objekty, zkontrolujte typ [objekt](/dotnet/api/microsoft.aspnetcore.mvc.formatters.outputformattercanwritecontext#Microsoft_AspNetCore_Mvc_Formatters_OutputFormatterCanWriteContext_Object) v objektu kontextu k dispozici na `CanWriteResult` metody. Všimněte si, že není nutné používat `CanWriteResult` při vrácení metody akce `IActionResult`; v takovém případě `CanWriteType` metoda přijímá typ modulu runtime.
 
 <a id="read-write"></a>
 ### <a name="override-readrequestbodyasyncwriteresponsebodyasync"></a>Override ReadRequestBodyAsync/WriteResponseBodyAsync
 
-Vykonávají samotnou práci deserializaci nebo serializace ve `ReadRequestBodyAsync` nebo `WriteResponseBodyAsync`. Zvýrazněné řádky v následujícím příkladu ukazují, jak získat služby z kontejneru pro vkládání závislosti (je již nelze získat z konstruktoru parametrů).
+Vykonávají samotnou práci rušení serializace nebo serializace v `ReadRequestBodyAsync` nebo `WriteResponseBodyAsync`. Zvýrazněné řádky v následujícím příkladu ukazují, jak získat služby z kontejneru pro vkládání závislosti (je již nelze získat z parametrů konstruktoru).
 
 [!code-csharp[](custom-formatters/sample/Formatters/VcardOutputFormatter.cs?name=writeresponse&highlight=3-4)]
 
-## <a name="how-to-configure-mvc-to-use-a-custom-formatter"></a>Postup konfigurace MVC používat vlastní formátování
+## <a name="how-to-configure-mvc-to-use-a-custom-formatter"></a>Jak nakonfigurovat MVC pomocí vlastního formátovacího modulu
 
-Pokud chcete používat vlastní formátovací modul, přidejte instance třídy pro formátování `InputFormatters` nebo `OutputFormatters` kolekce.
+Pokud chcete použít vlastní formátovací modul, přidat instanci formátovacího modulu třídy, která se `InputFormatters` nebo `OutputFormatters` kolekce.
 
 [!code-csharp[](custom-formatters/sample/Startup.cs?name=mvcoptions&highlight=3-4)]
 
-Formátovací moduly jsou vyhodnocovány v pořadí, v jakém že jste je vložili. První z nich má přednost před.
+Formátovací moduly jsou vyhodnocovány v pořadí, v jakém že je vkládat v případě potřeby. První z nich má přednost.
 
 ## <a name="next-steps"></a>Další kroky
 
-Najdete v článku [ukázkové aplikace](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample), který implementuje jednoduchý soubor vCard vstup a výstup formátování. Aplikace čte a zapisuje vCard, který vypadat podobně jako v následujícím příkladu:
+Najdete v článku [ukázkovou aplikaci](https://github.com/aspnet/Docs/tree/master/aspnetcore/web-api/advanced/custom-formatters/sample), který implementuje jednoduchou vCard vstup a formátování výstupu. Aplikace čte a zapisuje vCard, která vypadají, jako v následujícím příkladu:
 
 ```
 BEGIN:VCARD
@@ -106,6 +106,6 @@ UID:20293482-9240-4d68-b475-325df4a83728
 END:VCARD
 ```
 
-Chcete-li zobrazit soubor vCard výstup, spusťte aplikaci a odešlete požadavek Get s přijmout záhlaví "text/vcard" k `http://localhost:63313/api/contacts/` (při spuštění ze sady Visual Studio) nebo `http://localhost:5000/api/contacts/` (při spuštění z příkazového řádku).
+Chcete-li zobrazit vCard výstup, spusťte aplikaci a odeslat požadavek Get s přijmout záhlaví "text/vcard" k `http://localhost:63313/api/contacts/` (při spuštění ze sady Visual Studio) nebo `http://localhost:5000/api/contacts/` (při spuštění z příkazového řádku).
 
-Pro přidání vizitky ke kolekci v paměti kontaktů, odeslat požadavek Post na stejnou adresu URL, s hlavičku Content-Type "text/vcard" a soubor vCard text v těle naformátován jako v předchozím příkladu.
+Přidat do kolekce v paměti kontaktů vizitku, odešlete požadavek Post na stejnou adresu URL, s hlavičkou Content-Type "text/vcard" a textem vCard v textu ve formátu jako v příkladu výše.

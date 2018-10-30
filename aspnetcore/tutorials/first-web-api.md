@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: tutorials/first-web-api
-ms.openlocfilehash: 2694388324cdbd246aad6c88d8439171704dfe89
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: 88d1958ce5c42d559754972a855c1ffe22ab45a6
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "39722513"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234576"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core a Visual Studio
 
@@ -21,7 +21,7 @@ V tomto kurzu sestavení webového rozhraní API pro správu seznam "úkolů". U
 
 Existují tři verze tohoto kurzu:
 
-* Windows: Webové rozhraní API pomocí sady Visual Studio na Windows (Tento kurz)
+* Windows: Webové rozhraní API pomocí sady Visual Studio na Windows (kurz, najdete v článku [videoverzi](https://www.youtube.com/watch?v=TTkhEyGBfAk))
 * macOS: [webového rozhraní API pomocí sady Visual Studio pro Mac](xref:tutorials/first-web-api-mac)
 * macOS, Linux, Windows: [webového rozhraní API pomocí Visual Studio Code](xref:tutorials/web-api-vsc)
 

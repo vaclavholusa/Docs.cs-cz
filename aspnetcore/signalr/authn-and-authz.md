@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 31d5f753e043157caf43fa8df54e310ea0efd17b
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207937"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234537"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>Ověřování a autorizace v knihovně SignalR technologie ASP.NET Core
 
@@ -28,11 +28,13 @@ SignalR je možné s [ověřování ASP.NET Core](xref:security/authentication/i
 
 V aplikaci založené na prohlížeči umožňuje ověřování souborů cookie své stávající přihlašovací údaje k automaticky směrovat do připojení SignalR. Při používání prohlížeče klienta, je potřeba žádná další konfigurace. Pokud je uživatel přihlášen do vaší aplikace, připojení SignalR automaticky zdědí toto ověřování.
 
-Ověřování souborů cookie se nedoporučuje, pokud aplikace potřebuje pouze k ověření uživatelů z prohlížeče klienta. Při použití [klienta .NET](xref:signalr/dotnet-client), `Cookies` vlastnost lze nastavit v `.WithUrl` volání s cílem poskytnout soubor cookie. Ověřování souborem cookie z klienta .NET však vyžaduje aplikaci poskytují rozhraní API pro výměnu ověřovacích dat pro soubor cookie.
+Soubory cookie jsou specifické pro prohlížeč tak, aby odesílal přístupové tokeny, ale můžete jim poslat neprohlížečových klientů. Při použití [klienta .NET](xref:signalr/dotnet-client), `Cookies` vlastnost lze nastavit v `.WithUrl` volání s cílem poskytnout soubor cookie. Ověřování souborem cookie z klienta .NET však vyžaduje aplikaci poskytují rozhraní API pro výměnu ověřovacích dat pro soubor cookie.
 
 ### <a name="bearer-token-authentication"></a>Ověřování tokenu nosiče
 
-Ověřování tokenu nosiče je doporučený postup při používání klientů kromě prohlížeče klienta. V takovém případě klienta poskytuje přístupový token, který server ověří a použije k identifikaci uživatele. Podrobnosti o ověřování tokenu nosiče jsou nad rámec tohoto dokumentu. Na serveru, je nakonfigurován pomocí ověřování tokenu nosiče [middleware nosiče JWT](/dotnet/api/microsoft.extensions.dependencyinjection.jwtbearerextensions.addjwtbearer).
+Klient může poskytnout přístupový token namísto použití do souboru cookie. Server ověří token a použije ho k identifikaci uživatele. Toto ověření se provádí pouze v případě, že připojení existuje. Během existence připojení serveru nebude znovu ověřit automaticky vyhledat token zrušení.
+
+Na serveru, je nakonfigurován pomocí ověřování tokenu nosiče [middleware nosiče JWT](/dotnet/api/microsoft.extensions.dependencyinjection.jwtbearerextensions.addjwtbearer).
 
 V klientovi JavaScript token, který se dá zadat pomocí [accessTokenFactory](xref:signalr/configuration#configure-bearer-authentication) možnost.
 
@@ -55,6 +57,10 @@ var connection = new HubConnectionBuilder()
 Standardní webové rozhraní API se odešlou nosné tokeny v hlavičce HTTP. SignalR je však nelze nastavit tyto hlavičky v prohlížečích, při použití některých přenosů. Při použití Server-Sent události a protokoly Websocket, se přenášejí token jako parametr řetězce dotazu. Aby bylo možné na serveru z toho důvodu je vyžadována další konfigurace:
 
 [!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?name=snippet)]
+
+### <a name="cookies-vs-bearer-tokens"></a>Soubory cookie vs. nosné tokeny 
+
+Protože soubory cookie jsou specifické pro prohlížeče, odesílání z jiných typů klientů zvyšuje složitost ve srovnání s odesíláním nosné tokeny. Z tohoto důvodu není ověřování souborů cookie nedoporučuje, pokud aplikace potřebuje pouze k ověření uživatelů z prohlížeče klienta. Ověřování tokenu nosiče je doporučený postup při používání klientů kromě prohlížeče klienta.
 
 ### <a name="windows-authentication"></a>Ověřování systému Windows
 

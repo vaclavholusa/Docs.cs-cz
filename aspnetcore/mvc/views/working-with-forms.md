@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: efc71cc8d072769cde07e129b6d9bb933fc2f7af
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 7319fbbfe3e78e61526f9042b2b6004a351c2186
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090212"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234615"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>Pomocných rutin značek ve formulářích v ASP.NET Core
 
@@ -245,8 +245,7 @@ Následující syntaxe Razor ukazuje, jak k iteraci v kolekci:
 
 [!code-HTML[](working-with-forms/sample/final/Views/Shared/EditorTemplates/ToDoItem.cshtml)]
 
->[!NOTE]
->Vždy používejte `for` (a *není* `foreach`) k iteraci přes seznam. Vyhodnocení v LINQ indexer výraz může být nákladné a byste měli minimalizovat.
+`foreach` má být použit pokud je to možné, při hodnotě se bude používat v `asp-for` nebo `Html.DisplayFor` ekvivalentní kontextu. Obecně platí `for` je obecně lepší než `foreach` (Pokud tento scénář umožňuje) vzhledem k tomu, že to nemusí přidělovat enumerátor; ale vyhodnocování indexeru ve výrazu LINQ může být nákladné a byste měli minimalizovat.
 
 &nbsp;
 

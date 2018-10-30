@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.date: 09/10/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 4ac7952f26500285fc1c8f9453feb3ea8b33851a
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 3cec37719b743b3c805ada77249f526278e44599
+ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089824"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50234602"
 ---
 # <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>Rozdíly mezi funkce SignalR technologie ASP.NET a technologie SignalR technologie ASP.NET Core
 
@@ -56,9 +56,9 @@ app.UseSignalR(routes =>
 });
 ```
 
-### <a name="sticky-sessions-now-required"></a>Nyní vyžaduje rychlé relace
+### <a name="sticky-sessions"></a>Rychlé relace
 
-Z důvodu jak horizontální navýšení kapacity pracoval jsem s se funkce SignalR technologie ASP.NET klienti znovu připojit a odesílání zpráv na libovolný server ve farmě. Z důvodu změny na model horizontální navýšení kapacity, jakož i nenabízí připojování to se už nepodporuje. Jakmile se klient připojí k serveru, musí pracovat na stejném serveru po dobu trvání připojení.
+Model horizontálním navýšením kapacity pro funkci SignalR technologie ASP.NET umožňuje klientům znovu připojit a odesílání zpráv na libovolný server ve farmě. V knihovně SignalR technologie ASP.NET Core musí klient pracovat na stejném serveru po dobu trvání připojení. Pro škálování, použití Redis, to znamená, že se vyžaduje rychlé relace. Pro práci s horizontálním navýšením kapacity [služby Azure SignalR](/azure/azure-signalr/), rychlé relace nejsou vyžadovány, protože služba zpracovává připojení ke klientům. 
 
 ### <a name="single-hub-per-connection"></a>Jedno Centrum za připojení
 

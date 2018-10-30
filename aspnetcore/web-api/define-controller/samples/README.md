@@ -2,7 +2,8 @@
 
 Tato ukázková aplikace se skládá z následující projekty:
 
-- **WebApiSample.Api**: cílení na .NET Core 2.1 projektu ASP.NET Core 2.1.
+- **WebApiSample.Api.22*: ASP.NET Core 2.2 projekt cílí na .NET Core 2.2.
+- **WebApiSample.Api.21**: cílení na .NET Core 2.1 projektu ASP.NET Core 2.1.
 - **WebApiSample.Api.Pre21**: ASP.NET Core 2.0 projekt cílí na .NET Core 2.0.
 - **WebApiSample.DataAccess**: Knihovna tříd A .NET Standard 2.0 slouží jako vrstvě přístupu k datům pro 2 projekty webového rozhraní API.
 

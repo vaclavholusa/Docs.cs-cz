@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/25/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f9b1c3fbfafa839c116688e0ac63804afcd5dbe0
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 6e8e3cdc9d40ebe00fb8b78107c585e57e9e7c73
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50206670"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244772"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Hostitele ASP.NET Core ve službě Windows
 
@@ -235,7 +235,12 @@ Služby, které interakci s žádostí z Internetu nebo podnikové síti a jsou 
 
 ## <a name="configure-https"></a>Konfigurace HTTPS
 
-Zadejte [konfigurace koncového bodu HTTPS serveru Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration).
+Jak nakonfigurovat službu s koncovým bodem zabezpečení:
+
+1. Vytvořte certifikát X.509, který pro hostování systému získání certifikátů vaší platformě a mechanismy nasazení.
+1. Zadejte [konfigurace koncového bodu HTTPS serveru Kestrel](xref:fundamentals/servers/kestrel#endpoint-configuration) mohl certifikát používat.
+
+Použití certifikátu vývoj pro ASP.NET Core HTTPS k zabezpečení koncového bodu služby se nepodporuje.
 
 ## <a name="current-directory-and-content-root"></a>Aktuální adresář a obsahu root
 

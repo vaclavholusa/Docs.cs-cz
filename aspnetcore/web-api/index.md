@@ -4,14 +4,14 @@ author: scottaddie
 description: Další informace o funkcích, které jsou k dispozici pro vytváření webových rozhraní API v ASP.NET Core a kdy je vhodné používat jednotlivé funkce.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 08/15/2018
+ms.date: 10/30/2018
 uid: web-api/index
-ms.openlocfilehash: 950f4e8afa13bf297ea8658ef1c1bea0c9b62936
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: b3e26bee5e4dc8937e810bc5db300a486437f568
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234589"
+ms.locfileid: "50244759"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>Vytvoření webového rozhraní API pomocí ASP.NET Core
 
@@ -27,13 +27,13 @@ Dědí <xref:Microsoft.AspNetCore.Mvc.ControllerBase> třídy v kontroleru, kter
 
 ::: moniker range=">= aspnetcore-2.1"
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
 
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-2.0"
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
 
 ::: moniker-end
 
@@ -41,66 +41,81 @@ Dědí <xref:Microsoft.AspNetCore.Mvc.ControllerBase> třídy v kontroleru, kter
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="annotate-class-with-apicontrollerattribute"></a>Třída s atributem ApiControllerAttribute opatřit poznámkami
+## <a name="annotation-with-apicontrollerattribute"></a>Poznámka s ApiControllerAttribute
 
 ASP.NET Core 2.1 přináší [[objektu ApiController]](xref:Microsoft.AspNetCore.Mvc.ApiControllerAttribute) atribut k označení webového rozhraní API třídy kontroleru. Příklad:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 
-Kompatibilita verze 2.1 nebo novější, nastavené přes <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>, je potřeba použít tento atribut. Například zvýrazněný kód do *Startup.ConfigureServices* nastaví příznak 2.2 kompatibility:
+Kompatibilita verze 2.1 nebo novější, nastavené přes <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>, je potřeba použít tento atribut na úrovni kontroleru. Například zvýrazněný kód do `Startup.ConfigureServices` nastaví příznak 2.1 kompatibility:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
 
 Další informace naleznete v tématu <xref:mvc/compatibility-version>.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+V ASP.NET Core 2.2 nebo vyšší `[ApiController]` atribut lze použít k sestavení. Poznámka tímto způsobem použít chování webového rozhraní API do všech řadičů v sestavení. Mějte na paměti, že neexistuje žádný způsob, jak se odhlásit pro jednotlivé řadiče. Jako doporučení, je třeba použít atributy úrovně sestavení `Startup` třídy:
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Startup.cs?name=snippet_ApiControllerAttributeOnAssembly&highlight=1)]
+
+Kompatibilita verze 2.2 nebo vyšší, nastavené přes <xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*>, je potřeba použít tento atribut na úrovni sestavení.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
 
 `[ApiController]` Atribut běžně doplňuje `ControllerBase` povolit chování specifické pro REST pro řadiče. `ControllerBase` poskytuje přístup k metodám například <xref:Microsoft.AspNetCore.Mvc.ControllerBase.NotFound*> a <xref:Microsoft.AspNetCore.Mvc.ControllerBase.File*>.
 
 Další možností je vytvořit třídu vlastní základní kontroler opatřen poznámkou `[ApiController]` atribut:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/MyBaseController.cs?name=snippet_ControllerSignature)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/MyBaseController.cs?name=snippet_ControllerSignature)]
 
 Následující části popisují užitečných funkcí, které jsou přidány pomocí atributu.
-
-### <a name="problem-details-responses-for-error-status-codes"></a>Problém podrobnosti odpovědi pro stavové kódy chyb
-
-ASP.NET Core 2.1 nebo novější obsahuje [ProblemDetails](xref:Microsoft.AspNetCore.Mvc.ProblemDetails), na základě typu [specifikaci RFC 7807](https://tools.ietf.org/html/rfc7807). `ProblemDetails` Typ poskytuje standardizovaný formát pro předávání počítač čitelné podrobnosti o chybách v odpovědi HTTP.
-
-V ASP.NET Core 2.2 a novější, MVC transformuje výsledky kódu stavu (stavový kód 400 a vyšší) chyby do výsledku s `ProblemDetails`. Vezměte v úvahu následující kód:
-
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_ProblemDetails_StatusCode&highlight=4)]
-
-Odpověď HTTP pro `NotFound` výsledek má stavový kód 404 s `ProblemDetails` podobný následujícímu textu:
-
-```json
-{
-    type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
-    title: "Not Found",
-    status: 404,
-    traceId: "0HLHLV31KRN83:00000001"
-}
-```
-
-Podrobnosti o problému vyžaduje příznak kompatibility 2.2 nebo novější. Výchozí chování je zakázaná. Pokud [SuppressMapClientErrors](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressMapClientErrors> --> je nastavena na `true`. Následující zvýrazněný kód z `Startup.ConfigureServices` zakáže podrobnosti o problému:
-
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=8)]
-
-Použití [ClientErrorMapping](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  Until these resolve, link to the parent class <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.ClientErrorMapping> --> vlastnosti ke konfiguraci obsah `ProblemDetails` odpovědi. Například následující kód aktualizace `type` vlastnost obdržíte kód odpovědi 404:
-
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=10)]
 
 ### <a name="automatic-http-400-responses"></a>Automatické odpovědi HTTP 400
 
 Chyby ověření automaticky aktivuje odpověď HTTP 400. Následující kód bude nutná u akcí:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
 Použití <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.InvalidModelStateResponseFactory> přizpůsobení výstup výsledné odpovědi.
 
-Výchozí chování je zakázaná. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> je nastavena na `true`. Přidejte následující kód do *Startup.ConfigureServices* po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
+Výchozí chování je zakázaná. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressModelStateInvalidFilter> je nastavena na `true`. Přidejte následující kód do `Startup.ConfigureServices` po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_<version_number>);`:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
+::: moniker-end
 
-Pomocí příznaku kompatibility 2.2 nebo novější, je výchozí typ odpovědi vrátí 400 odpovědí <xref:Microsoft.AspNetCore.Mvc.ValidationProblemDetails>. Použít [SuppressUseValidationProblemDetailsForInvalidModelStateResponses](/dotnet/api/microsoft.aspnetcore.Mvc.ApiBehaviorOptions) <!--  <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressUseValidationProblemDetailsForInvalidModelStateResponses> --> vlastnost na používání ASP.NET Core 2.1 Chyba formát.
+::: moniker range=">= aspnetcore-2.2"
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.1"
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+Pomocí příznaku kompatibility 2.2 nebo novější, je výchozí typ odpovědi pro odpovědi HTTP 400 <xref:Microsoft.AspNetCore.Mvc.ValidationProblemDetails>. `ValidationProblemDetails` Typ v souladu s [specifikaci RFC 7807](https://tools.ietf.org/html/rfc7807). Nastavte `SuppressUseValidationProblemDetailsForInvalidModelStateResponses` vlastnost `true` na místo toho vrátí Chyba formátu ASP.NET Core 2.1 <xref:Microsoft.AspNetCore.Mvc.SerializableError>. Přidejte následující kód do `Startup.ConfigureServices`:
+
+```csharp
+services.AddMvc()
+    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+    .ConfigureApiBehaviorOptions(options =>
+    {
+        options
+          .SuppressUseValidationProblemDetailsForInvalidModelStateResponses = true;
+    });
+```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
 
 ### <a name="binding-source-parameter-inference"></a>Odvození parametr zdroje vazby
 
@@ -120,37 +135,103 @@ Zdrojový atribut vazby definuje umístění, ve kterém není nalezena hodnota 
 
 Bez `[ApiController]` atribut, vytvoření vazby zdroje nejsou explicitně definovány atributy. V následujícím příkladu `[FromQuery]` atribut označuje, že `discontinuedOnly` je zadána hodnota parametru v řetězci dotazu v adrese URL požadavku:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_BindingSourceAttributes&highlight=3)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/ProductsController.cs?name=snippet_BindingSourceAttributes&highlight=3)]
 
 Odvozená pravidla se použijí pro zdroje dat výchozí parametry akce. Tato pravidla konfigurace zdroje připojení, v opačném případě budete pravděpodobně pro ruční použití na parametry akce. Atributy zdroje vazby chovají následovně:
 
-* **[FromBody]**  odvodit pro komplexní typ parametrů. Výjimkou z tohoto pravidla je libovolný integrované, komplexní typ zvláštní význam, jako například <xref:Microsoft.AspNetCore.Http.IFormCollection> a <xref:System.Threading.CancellationToken>. Zdrojový kód odvození vazby ignoruje tyto speciální typy. `[FromBody]` není odvodit pro jednoduché typy, jako například `string` nebo `int`. Proto `[FromBody]` atribut by měl použít pro jednoduché typy, které tuto funkci potřebujete. Pokud má akci explicitně zadán více než jeden parametr (prostřednictvím `[FromBody]`) nebo odvozený jako vázaný z textu požadavku, je vyvolána výjimka. Například následující akce podpisy způsobit výjimku:
+* **[FromBody]**  odvodit pro komplexní typ parametrů. Výjimkou z tohoto pravidla je libovolný integrované, komplexní typ zvláštní význam, jako například <xref:Microsoft.AspNetCore.Http.IFormCollection> a <xref:System.Threading.CancellationToken>. Zdrojový kód odvození vazby ignoruje tyto speciální typy. `[FromBody]` není odvodit pro jednoduché typy, jako například `string` nebo `int`. Proto `[FromBody]` atribut by měl použít pro jednoduché typy, které tuto funkci je potřeba. Pokud má akci explicitně zadán více než jeden parametr (prostřednictvím `[FromBody]`) nebo odvozený jako vázaný z textu požadavku, je vyvolána výjimka. Například následující akce podpisy způsobit výjimku:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/TestController.cs?name=snippet_ActionsCausingExceptions)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/TestController.cs?name=snippet_ActionsCausingExceptions)]
 
 * **[FromForm]**  odvodit pro parametry akce typu <xref:Microsoft.AspNetCore.Http.IFormFile> a <xref:Microsoft.AspNetCore.Http.IFormFileCollection>. Není odvodit pro jednoduché nebo uživatelem definované typy.
 * **[FromRoute]**  odvodit pro název parametru žádné akce odpovídající parametr v šabloně trasy. Když víc tras odpovídá parametru akce, je považován za libovolnou hodnotu trasy `[FromRoute]`.
 * **[FromQuery]**  odvodit pro všechny ostatní parametry akce.
 
-Výchozí pravidla pro odvození jsou zakázané. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressInferBindingSourcesForParameters> je nastavena na `true`. Přidejte následující kód do *Startup.ConfigureServices* po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
+Výchozí pravidla pro odvození jsou zakázané. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressInferBindingSourcesForParameters> je nastavena na `true`. Přidejte následující kód do `Startup.ConfigureServices` po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_<version_number>);`:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=4)]
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=6)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.1"
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=4)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
 
 ### <a name="multipartform-data-request-inference"></a>Odvození multipart/formulář data požadavku
 
 Když parametr akce je opatřen poznámkou [[FromForm]](xref:Microsoft.AspNetCore.Mvc.FromFormAttribute) atribut, `multipart/form-data` žádosti je odvozený typ obsahu.
 
-Výchozí chování je zakázaná. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressConsumesConstraintForFormFileParameters> je nastavena na `true`. Přidejte následující kód do *Startup.ConfigureServices* po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
+Výchozí chování je zakázaná. Pokud <xref:Microsoft.AspNetCore.Mvc.ApiBehaviorOptions.SuppressConsumesConstraintForFormFileParameters> je nastavena na `true`.
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=3)]
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+Přidejte následující kód do `Startup.ConfigureServices`:
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.1"
+
+Přidejte následující kód do `Startup.ConfigureServices` po `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);`:
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=3)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
 
 ### <a name="attribute-routing-requirement"></a>Atribut směrování požadavků
 
 Směrování atributů se změní na požadavek. Příklad:
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=1)]
+[!code-csharp[](define-controller/samples/WebApiSample.Api.21/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=1)]
 
-Akce jsou nedostupné přes [trasy konvenční](xref:mvc/controllers/routing#conventional-routing) definované v <xref:Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc*> nebo <xref:Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvcWithDefaultRoute*> v *Startup.Configure*.
+Akce jsou nedostupné přes [trasy konvenční](xref:mvc/controllers/routing#conventional-routing) definované v <xref:Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc*> nebo <xref:Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvcWithDefaultRoute*> v `Startup.Configure`.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+### <a name="problem-details-responses-for-error-status-codes"></a>Problém podrobnosti odpovědi pro stavové kódy chyb
+
+V ASP.NET Core 2.2 nebo vyšší, MVC transformuje chybného výsledku (výsledek s stavový kód 400 nebo vyšší) k výsledku s <xref:Microsoft.AspNetCore.Mvc.ProblemDetails>. `ProblemDetails` je:
+
+* Na základě typu [specifikaci RFC 7807](https://tools.ietf.org/html/rfc7807).
+* Standardizovaný formát pro zadávání podrobnosti o chybě Strojově čitelný v odpovědi HTTP.
+
+Vezměte v úvahu následující kód do kontroleru akce:
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Controllers/ProductsController.cs?name=snippet_ProblemDetailsStatusCode)]
+
+Odpověď HTTP pro `NotFound` má stavový kód 404 s `ProblemDetails` textu. Příklad:
+
+```json
+{
+    type: "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+    title: "Not Found",
+    status: 404,
+    traceId: "0HLHLV31KRN83:00000001"
+}
+```
+
+Podrobnosti o problému vyžaduje příznak kompatibility 2.2 nebo novější. Výchozí chování je zakázaná. Pokud `SuppressMapClientErrors` je nastavena na `true`. Přidejte následující kód do `Startup.ConfigureServices`:
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=8)]
+
+Použití `ClientErrorMapping` vlastnosti ke konfiguraci obsah `ProblemDetails` odpovědi. Například následující kód aktualizace `type` vlastnost obdržíte kód odpovědi 404:
+
+[!code-csharp[](define-controller/samples/WebApiSample.Api.22/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=10-11)]
 
 ::: moniker-end
 

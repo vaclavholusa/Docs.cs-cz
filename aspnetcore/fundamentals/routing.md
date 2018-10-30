@@ -6,18 +6,29 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/01/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 06059d720bd4444b1ec12e42d466ee54d1658203
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: a014782ba503bc8bd0fdefb4cb4f382aa8fde4cd
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207753"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244967"
 ---
 # <a name="routing-in-aspnet-core"></a>Směrování v ASP.NET Core
 
 Podle [Ryanem Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/), a [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Funkce směrování je zodpovědná za mapování příchozího požadavku k obslužné rutině trasy. Trasy jsou definovány v aplikaci a nakonfigurovaná při spuštění aplikace. Trasy můžete volitelně extrakci hodnot z adresy URL, obsaženy v požadavku a tyto hodnoty je pak možné pro zpracování požadavku. Pomocí informací o směrování z aplikace, funkci směrování je také možnost k vygenerování adres URL, které se mapují k obslužné rutině trasy. Proto směrování můžete najít obslužná rutina trasy podle adresy URL, nebo najít adresu URL odpovídající obslužná rutina trasy na základě informací o obslužnou rutinu trasy.
+
+Většina aplikací by měl zvolte základní a popisný směrování schéma, tak, že jsou adresy URL čitelný a srozumitelný. Výchozí trasa konvenční `{controller=Home}/{action=Index}/{id?}`:
+
+* Podporuje základní a popisný směrování schéma:
+* Je vhodná výchozí bod pro webové aplikace určena pro použití prohlížeče.
+
+Se běžně přidávají další stručném trasy k oblastem vysokou návštěvností aplikace v specializované situacích (třeba blogu, elektronického obchodování) pomocí [směrováním atributů](xref:mvc/controllers/routing#attribute-routing) nebo vyhrazené konvenční trasy.
+
+Webové rozhraní API používejte směrováním atributů pro model její funkce jako sada prostředků kde operace reprezentovány příkazy HTTP. To znamená, že mnoho operací (například GET, POST) se stejným prostředkem logické bude používat stejnou adresu URL. Směrování atributů poskytuje úroveň ovládací prvek, který je potřeba důkladně navrhnout místo adresy URL rozhraní API.
+
+Podpora generování adres URL MVC umožňuje aplikaci byly vyvinuty bez pevného kódování adresu URL, aby propojení aplikace. To umožňuje počínaje základní konfigurace směrování a úprava směrování po obrazec aplikace je určen.
 
 > [!IMPORTANT]
 > Tento dokument popisuje směrování nízké úrovně ASP.NET Core. Informace o směrování ASP.NET Core MVC najdete v tématu <xref:mvc/controllers/routing>.

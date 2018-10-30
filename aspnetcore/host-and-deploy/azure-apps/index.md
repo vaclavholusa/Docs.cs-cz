@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: b238630d6f762e2b9fad1060f8150185bcf413fe
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: c55a5202643bb947b3f38f67aec55ee5cf7b1496
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090225"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244746"
 ---
 # <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Nasazení aplikace ASP.NET Core do Azure App Service
 
@@ -207,6 +207,10 @@ Při nasazování samostatnou aplikaci:
 ### <a name="use-docker-with-web-apps-for-containers"></a>Použití Docker pro kontejnery s Web Apps
 
 [Docker Hubu](https://hub.docker.com/r/microsoft/aspnetcore/) obsahuje nejnovější Image Dockeru ve verzi preview. Image můžete použít jako základní image. Použít bitovou kopii a nasazení do Web Apps for Containers normálně.
+
+## <a name="protocol-settings-https"></a>Nastavení protokolu (HTTPS)
+
+Zabezpečený protokol vazby umožňují že zadat certifikát má použít při reakci na požadavky přes protokol HTTPS. Vazba vyžaduje platný privátní certifikát (*.pfx*) vydaný pro konkrétní název hostitele. Další informace najdete v tématu [kurz: vytvoření vazby existujícího vlastního certifikátu SSL k Azure Web Apps](/azure/app-service/app-service-web-tutorial-custom-ssl).
 
 ## <a name="additional-resources"></a>Další zdroje
 

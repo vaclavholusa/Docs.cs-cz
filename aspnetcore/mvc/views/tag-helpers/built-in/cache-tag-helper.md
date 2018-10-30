@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/10/2018
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 2590682755721a4bb14902b9fe7138a3bff56d31
-ms.sourcegitcommit: 54655f1e1abf0b64d19506334d94cfdb0caf55f6
+ms.openlocfilehash: fb69584f6e9d4756e175bbd6f3deb1f413b80fc5
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50148808"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244811"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Pomocná rutina značek v ASP.NET Core MVC do mezipaměti
 
@@ -135,7 +135,7 @@ Následující příklad monitoruje hodnoty `Make` a `Model`. V příkladu uklá
 | -------------- | -------------------- |
 | String         | `Make`, `Make,Model` |
 
-`vary-by-route` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti při změně hodnoty parametru dat trasy.
+`vary-by-route` přijímá čárkami oddělený seznam názvů parametr trasy, které aktivovat aktualizaci mezipaměti při změně hodnoty parametru dat trasy.
 
 Příklad:
 
@@ -161,7 +161,7 @@ routes.MapRoute(
 | -------------- | -------------------------------------------------------------------------------- |
 | String         | `.AspNetCore.Identity.Application`, `.AspNetCore.Identity.Application,HairColor` |
 
-`vary-by-cookie` přijímá čárkami oddělený seznam hodnot hlavičky, které aktivují aktualizace mezipaměti, pokud se změní hodnoty hlavičky.
+`vary-by-cookie` přijímá čárkami oddělený seznam názvů souborů cookie, které aktivují aktualizace mezipaměti, pokud se změní hodnoty souboru cookie.
 
 Následující příklad monitoruje souboru cookie přidruženého k ASP.NET Core Identity. Když je uživatel ověřen, změny v souboru cookie Identity aktivuje aktualizace mezipaměti:
 

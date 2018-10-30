@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: a9a373a54458faa21199019a4adbe69c0b94cb60
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: a4cd6e9adfcd85503b9843232903a243bc07c959
+ms.sourcegitcommit: 392a36ed269b88899d6bb652aa7f4dfb72e43e7f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577343"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50220658"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Použití jazyka HTML5 a kalendáře jQuery UI Datepicker s architekturou ASP.NET MVC – část 1
 ====================
@@ -54,7 +54,7 @@ Zde je, co se dozvíte:
 
 ### <a name="getting-started"></a>Začínáme
 
-Pokud ještě nemáte výpisu film aplikaci počáteční projekt, stáhněte si ho pomocí následujícího odkazu: [Stáhnout](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx? https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800). V Průzkumníku Windows, klikněte pravým tlačítkem myši *MvcMovie.zip* a vyberte možnost **vlastnosti**. V **MvcMovie.zip vlastnosti** dialogu **Odblokovat**. (Odblokování brání upozornění zabezpečení, ke které dojde při pokusu o použití *ZIP* soubor, který jste stáhli z webu.)
+Pokud ještě nemáte výpisu film aplikaci počáteční projekt, stáhněte si ho pomocí následujícího odkazu: [Stáhnout](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098). V Průzkumníku Windows, klikněte pravým tlačítkem myši *MvcMovie.zip* a vyberte možnost **vlastnosti**. V **MvcMovie.zip vlastnosti** dialogu **Odblokovat**. (Odblokování brání upozornění zabezpečení, ke které dojde při pokusu o použití *ZIP* soubor, který jste stáhli z webu.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 

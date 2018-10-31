@@ -16,13 +16,13 @@ ms.locfileid: "49391099"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>Konfigurace jádra SignalR technologie ASP.NET
 
-## <a name="jsonmessagepack-serialization-options"></a>Serializace JSON/MessagePack možnosti
+## <a name="jsonmessagepack-serialization-options"></a>Možnosti serializace JSON/MessagePack
 
-Funkce SignalR technologie ASP.NET Core pro kódování zpráv podporuje dva protokoly: [JSON](https://www.json.org/) a [MessagePack](https://msgpack.org/index.html). Všechny protokoly, které obsahuje možnosti konfigurace serializace.
+Funkce SignalR technologie ASP.NET Core pro kódování zpráv podporuje dva protokoly: [JSON](https://www.json.org/) a [MessagePack](https://msgpack.org/index.html). Oba protokoly umožňují konfiguraci serializace.
 
-Serializace JSON lze nastavit na serveru pomocí [AddJsonProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol) metody rozšíření, které mohou být přidány po [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) v vaše `Startup.ConfigureServices` metody. `AddJsonProtocol` Metoda přijímá delegát, který přijímá `options` objektu. [PayloadSerializerSettings](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) vlastnost k tomuto objektu je JSON.NET `JsonSerializerSettings` objekt, který můžete použít ke konfiguraci serializace argumenty a návratové hodnoty. Najdete v článku [JSON.NET dokumentaci](https://www.newtonsoft.com/json/help/html/Introduction.htm) další podrobnosti.
+Serializace JSON lze nastavit na serveru pomocí metody [AddJsonProtocol](/dotnet/api/microsoft.extensions.dependencyinjection.jsonprotocoldependencyinjectionextensions.addjsonprotocol), která m§že být volána po [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) ve vaší `Startup.ConfigureServices` metodě. Metoda `AddJsonProtocol` přijímá delegáta, který přijímá `options` objekt. Vlastnost [PayloadSerializerSettings](/dotnet/api/microsoft.aspnetcore.signalr.jsonhubprotocoloptions.payloadserializersettings) tohoto objektu je JSON.NET `JsonSerializerSettings` objekt, který může být použit ke konfiguraci serializace argumentů a návratových hodnoty. Více informací naleznete v [JSON.NET dokumentaci](https://www.newtonsoft.com/json/help/html/Introduction.htm).
 
-Jako příklad konfigurace serializátoru, který chcete použít místo výchozí názvy "camelCase", "PascalCase" názvy vlastností, pomocí následujícího kódu:
+Například pro konfiguraci serializátoru, aby použil "PascalCase" pro názvy vlastností namísto výchozího "camelCase", použijeme následující kódu:
 
 ```csharp
 services.AddSignalR()

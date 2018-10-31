@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: security/index
-ms.openlocfilehash: f3b1f74f2e3a991b72cae94019f42548e3858f20
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 4277266e20ab1921a2ba24d4500358ba90330370
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50091025"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50252942"
 ---
 # <a name="overview-of-aspnet-core-security"></a>Přehled zabezpečení ASP.NET Core
 
@@ -40,7 +40,7 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
 
 ## <a name="aspnet-core-security-documentation"></a>Dokumentace k zabezpečení ASP.NET Core
 
-* [Ověřování](xref:security/authentication/index)
+* Ověřování
   * [Úvod do systému Identity](xref:security/authentication/identity)
   * [Povolení ověřování přes Facebook, Google a další externí zprostředkovatele](xref:security/authentication/social/index)
   * [Povolení ověření přes WS-Federation](xref:security/authentication/ws-federation)
@@ -54,7 +54,7 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
     * [Volání webového rozhraní API webové aplikace ASP.NET Core pomocí Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
     * [Webovou aplikaci ASP.NET Core s Azure AD B2C](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
   * [Zabezpečení aplikací ASP.NET serverem IdentityServer4](https://identityserver4.readthedocs.io)
-* [Autorizace](xref:security/authorization/index)
+* Autorizace
   * [Úvod](xref:security/authorization/introduction)
   * [Vytvoření aplikace s uživatelskými daty chráněnými autorizací](xref:security/authorization/secure-data)
   * [Jednoduchá autorizace](xref:security/authorization/simple)
@@ -65,10 +65,10 @@ Existují další chyby zabezpečení, které byste měli vědět. Další infor
   * [Autorizace na základě prostředků](xref:security/authorization/resourcebased)
   * [Autorizace na základě zobrazení](xref:security/authorization/views)
   * [Omezení identity schématem](xref:security/authorization/limitingidentitybyscheme)
-* [Ochrana dat](xref:security/data-protection/index)
+* Ochrana dat
   * [Úvod do ochrany dat](xref:security/data-protection/introduction)
   * [Začínáme s rozhraními API na ochranu dat](xref:security/data-protection/using-data-protection)
-  * [Rozhraní API příjemců](xref:security/data-protection/consumer-apis/index)
+  * Rozhraní API příjemců
     * [Přehled rozhraní API příjemců](xref:security/data-protection/consumer-apis/overview)
     * [Účelové řetězce](xref:security/data-protection/consumer-apis/purpose-strings)
     * [Hierarchie účelů a víceklientská architektura](xref:security/data-protection/consumer-apis/purpose-strings-multitenancy)

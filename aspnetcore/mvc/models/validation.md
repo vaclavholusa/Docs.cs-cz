@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 73d41b4718071d00a6f80b33de182da2ad90f331
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: 1063fdccb97e55e6b0eb6689187134ff41c10a02
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50090947"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253153"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>Ověření modelu v ASP.NET Core MVC
 
@@ -22,6 +22,8 @@ Podle [Rachel Appel](https://github.com/rachelappel)
 Předtím, než aplikace ukládá data do databáze, aplikace musí ověřit data. Data musí být kontrolované potenciálních bezpečnostních hrozeb, ověřit, že je správně naformátovaný podle typu a velikosti a musí odpovídat pravidla. Ověření je nezbytné, i když může být redundantní chybám a únavná implementovat. V aplikaci MVC se stane ověření klienta i serveru.
 
 Naštěstí má .NET abstrahovaná ověření do atributů ověření. Tyto atributy obsahují kód pro ověření, a tím snižuje množství kódu, který musíte napsat.
+
+V ASP.NET Core 2.2 a novější modul runtime ASP.NET Core zkratům ověření (přeskočí), pokud můžete určit, že daný model grafu nevyžaduje ověření. Přeskočení ověření může poskytnout výrazné zlepšení výkonu při ověřování modelů, které nelze nebo nemáte žádné přidružené validátorů. Bylo přeskočeno ověření zahrnuje objekty, jako jsou kolekcí primitivních elementů (`byte[]`, `string[]`, `Dictionary<string, string>`atd), nebo komplexního objektu grafy bez žádné validátory.
 
 [Zobrazit nebo stáhnout ukázky z Githubu](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/validation/sample).
 

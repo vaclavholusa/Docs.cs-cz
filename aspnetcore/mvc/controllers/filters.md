@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6803e8e3a285716792427e9fb059c204f5a88ecb
-ms.sourcegitcommit: f43f430a166a7ec137fcad12ded0372747227498
+ms.openlocfilehash: e5305852fad058961661373f9310d6dcaf30aa16
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49391307"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253192"
 ---
 # <a name="filters-in-aspnet-core"></a>Filtry v ASP.NET Core
 
@@ -261,7 +261,7 @@ Filtr autorizace byste psát pouze pokud vytváříte vlastní autorizace framew
 
 By neměla vyvolávat výjimky v rámci filtry autorizace, protože nic bude zpracovávat výjimky (filtry výjimek nebude jejich zpracování). Zvažte výzvu, když dojde k výjimce.
 
-Další informace o [autorizace](../../security/authorization/index.md).
+Další informace o [autorizace](xref:security/authorization/introduction).
 
 ## <a name="resource-filters"></a>Filtry prostředků
 

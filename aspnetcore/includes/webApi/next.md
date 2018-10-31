@@ -2,8 +2,8 @@
 
 * Informace o použití trvalé databáze najdete tady:
 
-  * [Vytvoření webové aplikace stránky Razor pomocí ASP.NET Core](xref:tutorials/index)
-  * [Práce s daty v ASP.NET Core](xref:data/index)
+  * <xref:tutorials/razor-pages/index>
+  * <xref:data/ef-rp/index>
 
 * <xref:host-and-deploy/azure-apps/index>
 * <xref:host-and-deploy/index>

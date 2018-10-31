@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/23/2018
 uid: mvc/controllers/testing
-ms.openlocfilehash: 18674f85a0cf8c6dfffa94a2160f7182752674f7
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 939a4b0162fad778f5f4717462074b9390542a50
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207989"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50252992"
 ---
 # <a name="test-controller-logic-in-aspnet-core"></a>Testovací kontroler logiku v ASP.NET Core
 
@@ -182,7 +182,6 @@ Pro relaci platný `id`, finální testování potvrdí, že:
 
 ## <a name="additional-resources"></a>Další zdroje
 
-* <xref:test/index>
 * <xref:test/integration-tests>
 * [Vytváření a spouštění testování částí pomocí sady Visual Studio](/visualstudio/test/unit-test-your-code).
 * [Princip explicitních závislostí](https://deviq.com/explicit-dependencies-principle/)

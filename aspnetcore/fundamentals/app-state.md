@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: da20538a0dc6e13caedaf6a1130e66981dcb7af2
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 5ca909681ca9da3fae0391991902da97581852be
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207287"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253179"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>Stav relace a aplikace v ASP.NET Core
 
@@ -71,7 +71,7 @@ Stav relace je třeba následujícího chování:
 Poskytovatel mezipaměti v paměti ukládá data relace v paměti na server, ve kterém se aplikace nachází. Ve scénáři farmy serveru:
 
 * Použití *rychlé relace* a jejich zapojení každá relace pro konkrétní aplikaci instance na jednotlivých serverech. [Azure App Service](https://azure.microsoft.com/services/app-service/) používá [požádat o směrování žádostí na aplikace](/iis/extensions/planning-for-arr/using-the-application-request-routing-module) vynutit rychlé relace ve výchozím nastavení. Rychlé relace však může ovlivnit škálovatelnost a zkomplikovat aktualizace webové aplikace. Lepším řešením je použití Redis nebo SQL Server distribuovaná mezipaměť, která nevyžaduje rychlé relace. Další informace naleznete v tématu <xref:performance/caching/distributed>.
-* Soubor cookie relace se šifruje pomocí [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector). Ochrana dat musejí být správně nakonfigurovány ke čtení souborů cookie relací na každém počítači. Další informace najdete v tématu [ochrany dat v ASP.NET Core](xref:security/data-protection/index) a [zprostředkovateli úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers).
+* Soubor cookie relace se šifruje pomocí [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector). Ochrana dat musejí být správně nakonfigurovány ke čtení souborů cookie relací na každém počítači. Další informace najdete v tématu <xref:security/data-protection/introduction> a [zprostředkovateli úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers).
 
 ### <a name="configure-session-state"></a>Nakonfigurovat stav relace
 
@@ -274,7 +274,7 @@ Výběru poskytovatele TempData zahrnuje třeba mít na paměti, jako napříkla
 
 1. Aplikace již používá stav relace? Pokud ano, použití TempData poskytovatele stavu relace má bez dalších nákladů na aplikaci (kromě množství dat).
 2. Aplikace používá TempData pouze zřídka u relativně malých objemů dat (až 500 bajtů)? Pokud tedy TempData zprostředkovatele souborů cookie přidá s malými náklady pro každý požadavek, který představuje TempData. V opačném případě může být výhodné vyhnout verzemi velké množství dat v každém požadavku, dokud spotřebované TempData TempData zprostředkovatel stavu relací.
-3. Aplikace běží v serverové farmě na více serverů? Pokud tedy není žádná další konfigurace povinná používat poskytovatele TempData souboru cookie mimo ochrany dat (naleznete v tématu [ochranu dat](xref:security/data-protection/index) a [zprostředkovateli úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers)).
+3. Aplikace běží v serverové farmě na více serverů? Pokud tedy není žádná další konfigurace povinná používat poskytovatele TempData souboru cookie mimo ochrany dat (viz <xref:security/data-protection/introduction> a [zprostředkovateli úložiště klíčů](xref:security/data-protection/implementation/key-storage-providers)).
 
 > [!NOTE]
 > Většina webových klientů (například webové prohlížeče) vynutit omezení maximální velikosti jednotlivých souborů cookie a celkový počet souborů cookie. Při použití zprostředkovatele TempData souboru cookie, ověřte, že aplikace nebude tato omezení překročí. Celková velikost dat vezměte v úvahu. Účet pro zvýšení velikost souboru cookie kvůli šifrování a dělením dat do bloků.

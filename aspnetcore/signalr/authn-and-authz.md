@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 7cfe90115b0710fba196693efd309f7c914f0ad4
-ms.sourcegitcommit: 2ef32676c16f76282f7c23154d13affce8c8bf35
+ms.openlocfilehash: aa1721ba1802e1bfba04d57378085a136c100deb
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50234537"
+ms.locfileid: "50252903"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>Ověřování a autorizace v knihovně SignalR technologie ASP.NET Core
 
@@ -22,7 +22,7 @@ Podle [Andrew Stanton sestry](https://twitter.com/anurse)
 
 ## <a name="authenticate-users-connecting-to-a-signalr-hub"></a>Ověření uživatelé připojení k rozbočovači SignalR
 
-SignalR je možné s [ověřování ASP.NET Core](xref:security/authentication/index) Chcete-li přidružit uživatele ke každé připojení. V rozbočovači, ověřovacích dat je přístupný z [ `HubConnectionContext.User` ](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) vlastnost. Ověřování umožňuje IOT hub a volat metody pro všechna připojení, které jsou spojeny s konkrétním uživatelem (viz [spravovat uživatele a skupiny v knihovně SignalR](xref:signalr/groups) Další informace). Několik připojení může být spojen s jedním uživatelem.
+SignalR je možné s [ověřování ASP.NET Core](xref:security/authentication/identity) Chcete-li přidružit uživatele ke každé připojení. V rozbočovači, ověřovacích dat je přístupný z [ `HubConnectionContext.User` ](/dotnet/api/microsoft.aspnetcore.signalr.hubconnectioncontext.user) vlastnost. Ověřování umožňuje IOT hub a volat metody pro všechna připojení, které jsou spojeny s konkrétním uživatelem (viz [spravovat uživatele a skupiny v knihovně SignalR](xref:signalr/groups) Další informace). Několik připojení může být spojen s jedním uživatelem.
 
 ### <a name="cookie-authentication"></a>Ověřování souborů cookie
 

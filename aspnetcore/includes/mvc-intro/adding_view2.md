@@ -115,6 +115,6 @@ Data přijatá z adresy URL a předat pomocí řadiče [vazač modelu MVC](xref:
 
 ![O zobrazení úvodní popisek a frází Hello Rick zobrazí čtyřikrát](~/tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
-V příkladu výše jsme použili `ViewData` slovníku k předání dat z kontroleru zobrazení. Později v tomto kurzu budeme používat model zobrazení k předání dat z kontroleru zobrazení. Přístup modelu zobrazení k předávání dat je obvykle mnohem upřednostňované nad `ViewData` slovníku přístup. Zobrazit [ViewModel vs ViewData vs objekt ViewBag vs TempData vs relace v MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc) Další informace.
+V příkladu výše jsme použili `ViewData` slovníku k předání dat z kontroleru zobrazení. Později v tomto kurzu budeme používat model zobrazení k předání dat z kontroleru zobrazení. Přístup modelu zobrazení k předávání dat je obvykle mnohem upřednostňované nad `ViewData` slovníku přístup. Zobrazit [použití položek ViewBag, ViewData a TempData ](http://www.rachelappel.com/when-to-use-viewbag-viewdata-or-tempdata-in-asp-net-mvc-3-applications/) Další informace.
 
 Dobře, to bylo druh "M" pro model, ale není typ databáze. Pojďme se na to co jsme se naučili a vytvořit databázi videa.

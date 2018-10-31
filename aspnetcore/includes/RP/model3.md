@@ -1,4 +1,5 @@
 <a name="cli"></a>
+
 ## <a name="add-scaffold-tooling-and-perform-initial-migration"></a>Přidat vygenerované uživatelské rozhraní nástroje a provádět počáteční migraci
 
 Přidejte následující řádky do *RazorPagesMovie.csproj* souboru, těsně před uzavírací `</Project>` značky:
@@ -7,7 +8,8 @@ Přidejte následující řádky do *RazorPagesMovie.csproj* souboru, těsně p�
 <ItemGroup>
   <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.1.0-preview1-final"/>
 </ItemGroup>
-```  
+```
+  
 Z příkazového řádku spusťte následující příkazy rozhraní příkazového řádku .NET Core:
 
 ```console

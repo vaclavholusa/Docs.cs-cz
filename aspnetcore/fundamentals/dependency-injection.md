@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: d9eb6a01e096c7e8cbcb0979e24331a8d5316a14
-ms.sourcegitcommit: 375e9a67f5e1f7b0faaa056b4b46294cc70f55b7
+ms.openlocfilehash: 3626ce834b904db64c1976aefc77dc60a7bfdf1c
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50207651"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50253166"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>Vkládání závislostí v ASP.NET Core
 
@@ -427,7 +427,7 @@ Služby dostupné v rámci požadavků ASP.NET Core z `HttpContext` jsou zpřís
 
 Služby požadavků představují služby nakonfigurované a požadováné v rámci aplikace. Pokud objekty specifikují závislosti, jsou řešeny pomocí typů dostupných v `RequestServices`, nikoli `ApplicationServices`.
 
-Aplikace by obvykle neměly používat tyto vlastnosti přímo. Místo toho získávejte požadované typy pomocí konstruktoru třídy a nechte framework vložit odpovídající závislosti. Výsledné třídy jsou snáze testovatelné (vizte téma [Testování a ladění](xref:test/index)).
+Aplikace by obvykle neměly používat tyto vlastnosti přímo. Místo toho získávejte požadované typy pomocí konstruktoru třídy a nechte framework vložit odpovídající závislosti. To poskytuje třídy, které usnadňuje testování.
 
 > [!NOTE]
 > Pro přístup ke kolekci `RequestServices` upřednostněte získávání závislostí jako parametr konstruktoru.
@@ -558,7 +558,6 @@ DI je *alternativní* na vzorech přístupu statická/globální objekt. Nebudet
 * <xref:mvc/controllers/dependency-injection>
 * <xref:security/authorization/dependencyinjection>
 * <xref:fundamentals/startup>
-* <xref:test/index>
 * <xref:fundamentals/middleware/extensibility>
 * [Psaní čistého kódu v ASP.NET Core pomocí vkládání závislostí (MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [Návrh aplikace spravované kontejnerem, předehra: Kam patří kontejner?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)

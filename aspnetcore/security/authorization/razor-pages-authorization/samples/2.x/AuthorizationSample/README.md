@@ -1,8 +1,8 @@
 # <a name="aspnet-core-authorization-sample"></a>Ukázka autorizace ASP.NET Core
 
-Tento příklad ukazuje použití stránky Razor autorizace konvencemi. Tento příklad znázorňuje funkce popsané v [stránky Razor autorizace konvence](https://docs.microsoft.com/aspnet/core/security/authorization/razor-pages-authorization) tématu.
+Tento příklad ukazuje použití autorizace stránek Razor podle konvence. Tato ukázka demonstruje funkce popsané v [konvence autorizace stránek Razor](https://docs.microsoft.com/aspnet/core/security/authorization/razor-pages-authorization) tématu.
 
-Autorizace uživatelů v této ukázce používá funkce popsané v souboru cookie ověřování [souboru cookie ověřování bez ASP.NET Core Identity](https://docs.microsoft.com/aspnet/core/security/authentication/cookie) tématu. Informace o používání ASP.NET Core Identity, najdete v tématech v [ověřování](https://docs.microsoft.com/aspnet/core/security/authentication/index) části dokumentace.
+Autorizace uživatelů v této ukázce se používá ověřování souborů cookie funkce popsané v [použití ověřování souborem cookie bez ASP.NET Core Identity](https://docs.microsoft.com/aspnet/core/security/authentication/cookie) tématu. Informace o používání technologie ASP.NET Core Identity najdete v tématu <xref:security/authentication/identity>.
 
 Při spuštění ukázky, použijte e-mailovou adresu **maria.rodriguez@contoso.com** k ověření uživatele.
 

@@ -1,4 +1,4 @@
-Následující tabulka Podrobnosti ASP.NET Core kódu generátorů parametry:
+Následující tabulka obsahuje podrobnosti o parametry generátor kódu ASP.NET Core:
 
 | Parametr               | Popis|
 | ----------------- | ------------ |
@@ -13,10 +13,12 @@ Použití `h` přepínače můžete zobrazit nápovědu pro `aspnet-codegenerato
 ```console
 dotnet aspnet-codegenerator razorpage -h
 ```
+
 <a name="test"></a>
+
 ### <a name="test-the-app"></a>Testování aplikace
 
-* Spusťte aplikaci a připojit `/Movies` na adresu URL v prohlížeči (`http://localhost:port/movies`).
+* Spusťte aplikaci a připojit `/Movies` na adresu URL v prohlížeči (`http://localhost:port/Movies`).
 * Test **vytvořit** odkaz.
 
   ![Vytvoření stránky](../../tutorials/razor-pages/model/_static/conan.png)
@@ -27,7 +29,4 @@ dotnet aspnet-codegenerator razorpage -h
 
 Pokud se zobrazí chyba podobná následující, ověřte máte spusťte migrace a aktualizovat databázi:
 
-```
-An unhandled exception occurred while processing the request.
-'no such table: Movie'.
-```
+`An unhandled exception occurred while processing the request. 'no such table: Movie'.`

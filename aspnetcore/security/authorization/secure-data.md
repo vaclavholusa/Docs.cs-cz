@@ -5,12 +5,12 @@ description: Zjistěte, jak vytvořit aplikace Razor Pages s uživatelskými dat
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 786e83eb28722e83eea46def962593f58ad524e2
-ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
+ms.openlocfilehash: 185628d4e06c9b5ae7f2685c10ea9e46dd5abe92
+ms.sourcegitcommit: 4a6bbe84db24c2f3dd2de065de418fde952c8d40
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "50244837"
+ms.locfileid: "50253218"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Vytvoření aplikace ASP.NET Core s uživatelskými daty chráněnými autorizací
 
@@ -71,16 +71,16 @@ Ukázka obsahuje následující rutiny autorizace:
 V tomto kurzu je advanced. Měli byste se seznámit s:
 
 * [ASP.NET Core](xref:tutorials/first-mvc-app/start-mvc)
-* [Ověřování](xref:security/authentication/index)
+* [Ověřování](xref:security/authentication/identity)
 * [Potvrzení účtu a obnovení hesla](xref:security/authentication/accconfirm)
-* [Autorizace](xref:security/authorization/index)
+* [Autorizace](xref:security/authorization/introduction)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.1"
 
-V ASP.NET Core 2.1 `User.IsInRole` selže při použití `AddDefaultIdentity`. Tento kurz používá `AddDefaultIdentity` a vyžaduje tudíž ASP.NET Core 2.2 ve verzi preview 1 nebo novější. Zobrazit [tento problém Githubu](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) pro vyřešit.
+V ASP.NET Core 2.1 `User.IsInRole` selže při použití `AddDefaultIdentity`. Tento kurz používá `AddDefaultIdentity` a vyžaduje tudíž ASP.NET Core 2.2 nebo vyšší. Zobrazit [tento problém Githubu](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) pro vyřešit.
 
 ::: moniker-end
 
@@ -352,7 +352,7 @@ Otestujte, že aplikace naplnila databázi. Pokud existují nějaké řádky v k
 
 * [Vytvoření webové aplikace .NET Core využívající SQL Database ve službě Azure App Service](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 * [ASP.NET Core povolení Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop). Toto testovací prostředí obsahuje větší podrobnosti o funkcích zabezpečení v tomto kurzu.
-* [Autorizace v ASP.NET Core: jednoduchý, role, založené na deklaracích a vlastní](xref:security/authorization/index)
+* <xref:security/authorization/introduction>
 * [Autorizace na základě zásad](xref:security/authorization/policies)
 
 ::: moniker-end

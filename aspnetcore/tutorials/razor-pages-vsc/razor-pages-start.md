@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/24/2018
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: 9ea66134c524a6a1a670d55bae4e66cf38a45274
-ms.sourcegitcommit: 4d74644f11e0dac52b4510048490ae731c691496
+ms.openlocfilehash: f18d0a8b3ce24c9844b02f8a0b6360f7e1b1bdb7
+ms.sourcegitcommit: c43a6f1fe72d7c2db4b5815fd532f2b45d964e07
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50089849"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50244850"
 ---
 # <a name="get-started-with-aspnet-core-razor-pages-in-visual-studio-code"></a>Začínáme s ASP.NET Core Razor Pages ve Visual Studio Code
 
@@ -65,7 +65,7 @@ Visual Studio Code (VS Code), vyberte **soubor > Otevřít složku**a pak vybert
 
 ### <a name="launch-the-app"></a>Spuštění aplikace
 
-Stisknutím kláves Ctrl + F5 spusťte aplikaci bez ladění. Alternativně z **ladění** nabídce vyberte možnost **spustit bez ladění**.
+Z **ladění** nabídce vyberte možnost **spustit bez ladění**. Alternativně můžete stiskněte klávesovou zkratku, zobrazí vedle možnosti nabídky. Tento zástupce se liší podle operačního systému.
 
 V dalším kurzu přidáme modelu do projektu. 
 
